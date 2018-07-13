@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+
+           <!--banque menu -->
+
+          <menuitem action="base.action_res_bank_form" name="Banques" id="menu_action_res_bank_form2" parent="account.menu_finance_bank_and_cash" sequence="11" groups="base.group_no_one"/>
+           <!-- modification vue relevé -->
+          <record id="view_bank_statement_form" model="ir.ui.view">
+              <field name="name">account.bank.statement.form.inherit2</field>
+              <field name="model">account.bank.statement</field>
+              <field name="inherit_id" ref="account_payment.view_bank_statement_form"/>
+              <field name="arch" type="xml">
+               <button name="%(account_payment.action_account_populate_statement_confirm)d" position="replace">
+                   <button name="%(account_payment.action_account_populate_statement_confirm)d"  string="Import Payment Lines" type="action" icon="gtk-execute" invisible="1"/>
+               </button>
+              </field>
+          </record>
+
+  		<record model="ir.ui.view" id="view_bank_statement_form_inherit1">
+          <field name="name">account.bank.statement.form.inherit1</field>
+          <field name="model">account.bank.statement</field>
+          <field name="type">form</field>
+          <field name="inherit_id" ref="account.view_bank_statement_form"/>
+          <field name="arch" type="xml">
+          	
+          	  <xpath expr="//header" position="replace">
+          	  	<header>
+                    <field name="all_lines_reconciled" invisible="1" />
+                    <span attrs="{'invisible':['|',('all_lines_reconciled','=',True),('line_ids','=',[])]}">
+                        <button name="%(account.action_bank_reconcile_bank_statements)d" states="draft" string="Reconcile" type="action" class="oe_highlight" invisible="1"/>
+                    </span>
+                    <button name="button_confirm" states="draft" string="Confirmer" type="object" class="oe_highlight" groups="bank_reconcile.group_reconcile_bank_g1"/>
+                    <button name="button_cancel" states="confirm" string="Cancel Statement" type="object"/>
+                     <button name="button_draft" states="rapproche,nnrapproche" string="Remettre à Draft" type="object"/>
+          			<field name="state" widget="statusbar" statusbar_visible="draft,confirm,rapproche,nnrapproche"/>
+                </header>
+			  </xpath>
+              <button name="%(account.action_view_account_statement_from_invoice_lines)d" position="replace">
+              	<button class="oe_inline oe_stat_button" name="%(account.action_view_account_statement_from_invoice_lines)d" string="Import Invoice" type="action" attrs="{'invisible':[('state','=','confirm')]}" widget="statinfo" icon="fa-pencil-square-o" invisible="1"/>
+              </button>
+              <button name="button_journal_entries" position="replace">
+              	<button class="oe_inline oe_stat_button" name="button_journal_entries"
+                                string="Journal Items" type="object"
+                                attrs="{'invisible':[('move_line_ids','=',[])]}" icon="fa-bars" invisible="1"/>
+              </button>
+          		<field name="journal_id" position="after">
+          			<field name="bank_id" attrs="{'readonly': [('state','!=','draft')]}"/>
+          		</field>
+          		<field name="journal_id" position="replace">
+          			<field name="journal_id" invisible="0"/>
+                    <field name="last_balance_date"/>
+          		</field>
+
+          		<field name="date" position="replace">
+          			<field name="date" attrs="{'readonly': [('state','!=','draft')]}"/>
+          		</field>
+          		<field name="period_id" position="replace">
+          			<field name="period_id" attrs="{'readonly': [('state','!=','draft')]}"/>
+          		</field>
+          		<field name="balance_start" position="replace">
+          			<field name="balance_start" attrs="{'readonly': [('state','!=','draft')]}"/>
+          		</field>
+          		<field name="balance_end_real" position="replace">
+          			<field name="balance_end_real" attrs="{'readonly': [('state','!=','draft')]}"/>
+          		</field>
+                <xpath expr="//notebook/page[@name='statement_line_ids']" position="replace">
+                	<page string="Transactions" name="statement_line_ids">
+                            <field name="line_ids" context="{'date':date}" attrs="{'readonly': [('state','!=','draft')]}">
+			                   <tree editable="bottom" string="Statement lines">
+			                   		<field name="journal_entry_id" invisible="1"/>
+			                       <field name="sequence" readonly="1" invisible="1"/>
+			                       <field name="date"/>
+			                       <field name="name"/>
+                                   <field name="bank_operation_id" select="0"/>
+			                       <field name="ref" invisible="1"/>
+			                       <field name="partner_id" domain="[
+                                        '&amp;',
+                                            '|',('parent_id','=',False),('is_company','=',True),
+                                            '|',('customer','=',True),('supplier','=',True)]"
+                                         context="{'default_supplier': 1}"
+                                         attrs="{'readonly' : [('journal_entry_id', '!=', False)] }" invisible="1"/>
+			                       <field name="amount"/>
+			                       <field name="move_stat_id" readonly="1" string="Rapp"/>
+			                       <field name="note" readonly="1"/>
+                                   <field name="amount_currency" groups="base.group_multi_currency" attrs="{'readonly' : [('journal_entry_id', '!=', False)] }"/>
+                                   <field name="currency_id" groups="base.group_multi_currency" attrs="{'readonly' : [('journal_entry_id', '!=', False)] }"/>
+                                   <field name="bank_account_id" groups="base.group_no_one" attrs="{'readonly' : [('journal_entry_id', '!=', False)] }"
+                                        domain="['|', ('partner_id', '=', partner_id), ('partner_id', '=', False)]"/>
+			                   </tree>
+                            </field>
+                        </page>
+                </xpath>
+          </field>
+      </record>
+      
+      <record id="view_bank_statement_tree_inherit" model="ir.ui.view">
+          <field name="name">account.bank.statement.tree.inherit1</field>
+          <field name="model">account.bank.statement</field>
+          <field name="inherit_id" ref="account.view_bank_statement_tree"/>
+          <field name="arch" type="xml">
+              <field name="journal_id" position="replace">
+                  <button name="journal_id"  invisible="1"/>
+              </field>
+          </field>
+      </record>
+
+         <!--
+      Account Bank Statement Line
+    -->
+    <!-- liste des lignes de releve en exception  -->
+     <record id="action_account_bank_statement_line_exception_tree_view" model="ir.actions.act_window">
+        <field name="name">Lignes des Relevés en Exception</field>
+        <field name="res_model">account.bank.statement.line</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[('state','=','exception')]</field>
+    </record>
+    <menuitem id="menu_parent_reconcile_bank" sequence="5" name="Rapprochement Bancaire" parent="account.menu_finance"/>
+    <menuitem id="menu_account_bank_statement_line_exception" name="Lignes des relevés en exception" parent="menu_parent_reconcile_bank" action="action_account_bank_statement_line_exception_tree_view" groups="bank_reconcile.group_reconcile_bank_g2"/>
+
+
+    <record model="ir.ui.view" id="account_bank_statement_line_form">
+        <field name="name">account.bank.statement.line.form</field>
+        <field name="model">account.bank.statement.line</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Account Bank Statement Line">
+                <group>
+                    <group>
+                        <field name="date" readonly="1"/>
+                         <field name="name" select="1"/>
+                         <field name="bank_operation_id" select="0"/>
+                         <field name="note" readonly="1"/>
+                         <field name="amount" readonly="1"/>
+                    </group>
+                    <group>
+                         <field name="move_stat_id" string="Lettre.rapp" readonly="1"/>
+                         <field name="rapprocher" string="Rapproché ?" readonly="1"/>
+                         <field name="reconciliation_id" string="Réf traitement rapp" readonly="1"/>
+                         <field name="state" readonly="1"/>
+                         <field name="account_id" invisible="1"/>
+                         <field name="statement_id" string="Relevé" readonly="1"/>
+                         <field name="bank_account_id" invisible="1"/>
+                    </group>
+
+
+                </group>
+
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="account_bank_statement_line_tree">
+        <field name="name">account.bank.statement.line.tree</field>
+        <field name="model">account.bank.statement.line</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree string="Account Bank Statement Line" >
+            	 <field name="statement_id"  string="Relevé"/>
+	             <field name="date" />
+	             <field name="name" select="1" />
+                 <field name="bank_operation_id" />
+	             <field name="amount" />
+                 <field name="state" />
+                 <field name="rapprocher" string="Rapproché ?" />
+                 <field name="move_stat_id" string="Lettre.rapp"/>
+            </tree>
+        </field>
+    </record>
+
+        <record model="ir.ui.view" id="account_bank_statement_line_search">
+        <field name="name">account.bank.statement.line.search</field>
+        <field name="model">account.bank.statement.line</field>
+        <field name="type">search</field>
+        <field name="arch" type="xml">
+            <search string="Account Bank Statement Line" >
+            	 <field name="statement_id"  string="Relevé"/>
+                 <field name="reconciliation_id" />
+	             <field name="date" />
+	             <field name="name"  />
+                 <field name="bank_operation_id" />
+	             <field name="amount" />
+	             <field name="move_stat_id" string="Lettre.rapp" />
+	             <field name="note" />
+            </search>
+        </field>
+    </record>
+
+
+    <record id="action_bank_statementline_view" model="ir.actions.act_window">
+        <field name="name">Lignes des relevés bancaires</field>
+        <field name="res_model">account.bank.statement.line</field>
+        <field name="view_type">form</field>
+         <field name="domain">[('statement_id.journal_id.type','=','bank')]</field>
+        <field name="view_mode">tree,form,search</field>
+    </record>
+
+    <menuitem parent="account.menu_finance_bank_and_cash" id="menu_action_bank_tree" action="action_bank_statementline_view" sequence="8" groups="bank_reconcile.group_reconcile_bank_g2"/>
+      
+
+      
+
+      
+    </data>
+</openerp>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<openerp>
+    <data>
+
+        <record id="vat_report_wizard_view" model="ir.ui.view">
+            <field name="name">vat.report.wizard.view</field>
+            <field name="model">vat.report.wizard</field>
+            <field name="arch" type="xml">
+
+                <form string="Export Excel" version="7.0">
+                     <group colspan="4">
+	                     <separator string="Export Terminé" colspan="4"/>
+	                     <field name="name_file" invisible="1" colspan="4"/>
+	                     <separator string=" " colspan="4"/>
+	                     <field name="data" nolabel="1" readonly="1" filename="name_file" colspan="4"/>
+                         <footer>
+	                     	<button icon="gtk-close" special="cancel" string="Fermer"/>
+	                     </footer>
+                    </group>
+                </form>
+
+            </field>
+        </record>
+
+   </data>
+</openerp>

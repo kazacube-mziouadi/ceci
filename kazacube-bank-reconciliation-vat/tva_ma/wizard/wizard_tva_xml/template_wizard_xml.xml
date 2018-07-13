@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<openerp>
+    <data>
+        <template id="tva_xml_template">
+
+                        <DeclarationReleveDeduction>
+                          <identifiantFiscal t-esc="identifiantFiscal"/>
+                                <annee t-esc="date_year"/>
+                                    <periode t-esc="periodicity"/>
+                                        <regime t-esc="type_period"/>
+                                            <releveDeductions>
+                                                <t t-foreach="lines" t-as="l">
+                                            <rd>
+
+
+                                                <ord t-esc="ord+1"/>
+                                                <num t-esc="l[1]"/>
+                                                <des t-esc="l[5]"/>
+                                                <mht t-esc="l[7]"/>
+                                                <tva t-esc="l[9]"/>
+                                                <ttc t-esc="l[10]"/>
+                                                <refF>
+                                                    <if t-esc="l[3]"/>
+                                                        <nom t-esc="l[2]"/>
+                                                            <ice t-esc="l[4]"/>
+                                                </refF>
+                                                <tx t-esc="l[8]"/>
+                                                <mp>
+                                                    <id t-esc="l[16]"/>
+                                                </mp>
+                                                <dpai t-esc="l[0]"/>
+                                                <dfac t-esc="l[14]"/>
+
+                                            </rd>
+                                                </t>
+                                        </releveDeductions>
+                                    </DeclarationReleveDeduction>
+        </template>
+    </data>
+</openerp>

@@ -1,0 +1,405 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<openerp>
+    <data>
+
+        <record id="vat_payment_lines_search" model="ir.ui.view">
+            <field name="name">vat.payment.lines.search</field>
+            <field name="model">account.vat.payment.line</field>
+            <field name="priority" eval="1"/>
+            <field name="arch" type="xml">
+                <search string="TVA">
+                    <field name="invoice_id" filter_domain="[('invoice_id','ilike',self)]" string="Facture"/>
+                    <field name="vat_statement_id" filter_domain="[('vat_statement_id','ilike',self)]" string="Déclaration TVA"/>
+                    <filter string="Imposable" domain="[('vat_type','=','sale')]" />
+                    <filter string="Déductible" domain="[('vat_type','=','purchase')]" />
+                    <filter string="Brouillon" domain="[('state','=','draft')]"/>
+                    <filter string="Validées" domain="[('state','=','confirmed')]"/>
+                    <filter string="Clôturées" domain="[('state','=','closed')]" />
+                    <group expand="0" string="Group By">
+                        <filter string="Déclaration TVA" domain="[]" context="{'group_by':'vat_statement_id'}"/>
+                        <filter string="Statut" domain="[]" context="{'group_by':'state'}"/>
+                        <filter string="Type TVA" domain="[]" context="{'group_by':'vat_type'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record id="vat_bank_lines_search" model="ir.ui.view">
+            <field name="name">vat.bank.lines.search</field>
+            <field name="model">account.vat.bank.line</field>
+            <field name="priority" eval="1"/>
+            <field name="arch" type="xml">
+                <search string="TVA">
+                    <field name="vat_statement_id" filter_domain="[('vat_statement_id','ilike',self)]" string="Déclaration TVA"/>
+                    <filter string="Imposable" domain="[('vat_type','=','sale')]" />
+                    <filter string="Déductible" domain="[('vat_type','=','purchase')]" />
+                    <filter string="Brouillon" domain="[('state','=','draft')]"/>
+                    <filter string="Validées" domain="[('state','=','confirmed')]"/>
+                    <filter string="Clôturées" domain="[('state','=','closed')]" />
+                    <group expand="0" string="Group By">
+                        <filter string="Déclaration TVA" domain="[]" context="{'group_by':'vat_statement_id'}"/>
+                        <filter string="Statut" domain="[]" context="{'group_by':'state'}"/>
+                        <filter string="Type TVA" domain="[]" context="{'group_by':'vat_type'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record id="vat_bank_moves_search" model="ir.ui.view">
+            <field name="name">vat.bank.moves.search</field>
+            <field name="model">account.vat.move.line</field>
+            <field name="priority" eval="1"/>
+            <field name="arch" type="xml">
+                <search string="TVA">
+                    <field name="vat_statement_id" filter_domain="[('vat_statement_id','ilike',self)]" string="Déclaration TVA"/>
+                    <filter string="Imposable" domain="[('vat_type','=','sale')]" />
+                    <filter string="Déductible" domain="[('vat_type','=','purchase')]" />
+                    <filter string="Brouillon" domain="[('state','=','draft')]"/>
+                    <filter string="Validées" domain="[('state','=','confirmed')]"/>
+                    <filter string="Clôturées" domain="[('state','=','closed')]" />
+                    <group expand="0" string="Group By">
+                        <filter string="Déclaration TVA" domain="[]" context="{'group_by':'vat_statement_id'}"/>
+                        <filter string="Statut" domain="[]" context="{'group_by':'state'}"/>
+                        <filter string="Type TVA" domain="[]" context="{'group_by':'vat_type'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+
+        <record id="action_show_vat_payment_lines" model="ir.actions.act_window">
+            <field name="name">TVA</field>
+            <field name="res_model">account.vat.payment.line</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree</field>
+            <field name="search_view_id" ref="vat_payment_lines_search"/>
+        </record>
+
+        <record id="action_show_vat_full_payment_lines" model="ir.actions.act_window">
+            <field name="name">TVA</field>
+            <field name="res_model">account.vat.payment.line</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree</field>
+            <field name="domain">[('full_partial','=','full')]</field>
+            <field name="search_view_id" ref="vat_payment_lines_search"/>
+        </record>
+
+        <record id="action_show_vat_partial_payment_lines" model="ir.actions.act_window">
+            <field name="name">TVA</field>
+            <field name="res_model">account.vat.payment.line</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree</field>
+            <field name="domain">[('full_partial','=','partial')]</field>
+            <field name="search_view_id" ref="vat_payment_lines_search"/>
+        </record>
+
+        <record id="action_show_vat_bank_lines" model="ir.actions.act_window">
+            <field name="name">TVA</field>
+            <field name="res_model">account.vat.bank.line</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree</field>
+            <field name="search_view_id" ref="vat_bank_lines_search"/>
+        </record>
+
+        <record id="action_show_vat_move_lines" model="ir.actions.act_window">
+            <field name="name">TVA</field>
+            <field name="res_model">account.vat.move.line</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree</field>
+            <field name="search_view_id" ref="vat_bank_moves_search"/>
+        </record>
+
+        <record id="action_show_reconciled_vat_move_lines" model="ir.actions.act_window">
+            <field name="name">TVA</field>
+            <field name="res_model">account.vat.move.line</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree</field>
+            <field name="domain">[('move_type','=','reconciled_isolated')]</field>
+            <field name="search_view_id" ref="vat_bank_moves_search"/>
+        </record>
+
+        <record id="action_show_isolated_vat_move_lines" model="ir.actions.act_window">
+            <field name="name">TVA</field>
+            <field name="res_model">account.vat.move.line</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree</field>
+            <field name="domain">[('move_type','=','isolated')]</field>
+            <field name="search_view_id" ref="vat_bank_moves_search"/>
+        </record>
+
+        <record id="account_vat_statement_form_view" model="ir.ui.view">
+            <field name="name">account.vat.statement.form</field>
+            <field name="model">account.vat.statement</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+            	<form string="Déclaration TVA">
+                    <header>
+                        <button name="set_draft" type="object" string="Brouillon" class="oe_highlight" states="confirmed"/>
+                        <button name="set_confirmed" type="object" string="Valider" class="oe_highlight" states="draft" confirm="Etes-vous sûr de vouloir confirmer cette déclaration de TVA ?"/>
+                        <button name="set_closed" type="object" string="Clôturer" class="oe_highlight" states="confirmed" confirm="Etes-vous sûr de vouloir clôturer cette déclaration de TVA ?"/>
+                        <button string="Export excel" type="object" name="button_report_excel" colspan="1" icon="gtk-goto-bottom"/>
+                        <button string="Export XML" type="object" name="button_report_xml" colspan="1" icon="gtk-goto-bottom"/>
+                        <field name="state" widget="statusbar"/>
+                    </header>
+                    <sheet>
+                        <group col="4">
+                            <group colspan="2">
+                                <field name="name" attrs="{'readonly': [('state','in',['confirmed','closed'])]}"/>
+                                <field name="fiscalyear_id" attrs="{'readonly': [('state','in',['confirmed','closed'])]}"/>
+                                <field name="type_period_tva" attrs="{'readonly': [('state','in',['confirmed','closed'])]}" />
+                            </group>
+                            <group colspan="2">
+                                <field name="period_id" attrs="{'readonly': [('state','in',['confirmed','closed'])]}"/>
+                                <field name="date_debut"  />
+                                <field name="date_fin"  />
+                            </group>
+                            <group colspan="2">
+                                <field name="tva_sale" readonly="1"  />
+                                <field name="tva_purchase" readonly="1"/>
+                            </group>
+                            <group colspan="2">
+                                    <field name="bank_reconcile" attrs="{'readonly': [('state','in',['confirmed','closed'])]}"/>
+                            </group>
+                            <group colspan="2">
+                                <button name="gen_vat" string="Générer les lignes de TVA" type="object" icon="STOCK_EXECUTE" states="draft" confirm="Cette action va écraser les lignes existantes. voulez-vous continuer ?"/>
+                            </group>
+                        </group>
+                        
+                        <notebook colspan="4">
+                            <page string="Encaissements/Décaissements">
+                                <separator colspan="4" string="TVA sur Encaissements" attrs="{'invisible': [('tva_purchase','=',True)]}" />
+                                <separator colspan="4" string="TVA sur Décaissements" attrs="{'invisible': [('tva_sale','=',True)]}" />
+                                <button class="oe_inline oe_stat_button" type="action" name="%(tva_ma.action_show_vat_payment_lines)d"  context="{'search_default_vat_statement_id': active_id,'default_vat_statement_id': active_id}" icon="fa-list">
+                                    <field string="Lignes" name="nb_payment_lines" widget="statinfo"/>
+                                </button>
+                                <button class="oe_inline oe_stat_button" type="action" name="%(tva_ma.action_show_vat_full_payment_lines)d"  context="{'search_default_vat_statement_id': active_id,'default_vat_statement_id': active_id}" icon="fa-list">
+                                    <field string="Total" name="nb_full_payment_lines" widget="statinfo"/>
+                                </button>
+                                <button class="oe_inline oe_stat_button" type="action" name="%(tva_ma.action_show_vat_partial_payment_lines)d"  context="{'search_default_vat_statement_id': active_id,'default_vat_statement_id': active_id}" icon="fa-list">
+                                    <field string="Partiel" name="nb_partial_payment_lines" widget="statinfo"/>
+                                </button>
+                                <field name="vat_ids1" attrs="{'readonly': [('state','in',['confirmed','closed'])]}">
+                                    <tree editable="bottom">
+                                        <field name="invoice_date"/>
+                                        <field name="payment_date"/>
+                                        <field name="reglement_method_id"/>
+                                        <field name="bank_statement_date" invisible="1"/>
+                                        <field name="bank_statement_line_date"/>
+                                        <field name="invoice_id"/>
+                                        <field name="invoice_state"/>
+                                        <field name="invoice_partner_id"/>
+                                        <field name="nature"/>
+                                        <field name="invoice_currency_id"/>
+                                        <field name="tax_id"/>
+                                        <field name="invoice_amount_untaxed" sum="invoice_amount_untaxed"/>
+                                        <field name="invoice_amount_tax" sum="invoice_amount_tax"/>
+                                        <field name="invoice_amount_total" sum="invoice_amount_total"/>
+                                        <field name="payment_amount_untaxed" sum="payment_amount_untaxed"/>
+                                        <field name="payment_amount_tax" sum="payment_amount_tax"/>
+                                        <field name="payment_amount" sum="payment_amount"/>
+                                        <field name="full_partial" readonly="1"/>
+                                    </tree>
+                                </field>
+                            </page>
+                            <page string="Relevés bancaires">
+                                <separator colspan="4" string="TVA sur relevés bancaires"/>
+                                <button class="oe_inline oe_stat_button" type="action" name="%(tva_ma.action_show_vat_bank_lines)d"  context="{'search_default_vat_statement_id': active_id,'default_vat_statement_id': active_id}" icon="fa-list">
+                                    <field string="Lignes" name="nb_bank_lines" widget="statinfo"/>
+                                </button>
+                                <field name="vat_ids2" attrs="{'readonly': [('state','in',['confirmed','closed'])]}">
+                                    <tree editable="bottom">
+                                        <field name="invoice_date"/>
+                                        <field name="invoice_number"/>
+                                        <field name="invoice_currency_id"/>
+                                        <field name="payment_date"/>
+                                        <field name="reglement_method_id"/>
+                                        <field name="date"/>
+                                        <field name="invoice_partner_id"/>
+                                        <field name="partner_name"/>
+                                        <field name="partner_ifu"/>
+                                        <field name="partner_ice"/>
+                                        <field name="nature"/>
+                                        <field name="name"/>
+                                        <field name="tax_id"/>
+                                        <field name="invoice_amount_untaxed" sum="invoice_amount_untaxed"/>
+                                        <field name="invoice_amount_tax" sum="invoice_amount_tax"/>
+                                        <field name="invoice_amount_total" sum="invoice_amount_total"/>
+                                        <field name="amount_untaxed" sum="amount_untaxed"/>
+                                        <field name="amount_tax" sum="amount_tax"/>
+                                        <field name="amount" sum="amount"/>
+                                    </tree>
+                                </field>
+                            </page>
+                            <page string="Ecritures comptables manuelles">
+                                <separator colspan="4" string="TVA sur écritures comptables manuelles"/>
+                                <button class="oe_inline oe_stat_button" type="action" name="%(tva_ma.action_show_vat_move_lines)d"  context="{'search_default_vat_statement_id': active_id,'default_vat_statement_id': active_id}" icon="fa-list">
+                                    <field string="Lignes" name="nb_move_lines" widget="statinfo"/>
+                                </button>
+                                <button class="oe_inline oe_stat_button" type="action" name="%(tva_ma.action_show_reconciled_vat_move_lines)d"  context="{'search_default_vat_statement_id': active_id,'default_vat_statement_id': active_id}" icon="fa-list">
+                                    <field string="Lettrées" name="nb_reconciled_move_lines" widget="statinfo"/>
+                                </button>
+                                <button class="oe_inline oe_stat_button" type="action" name="%(tva_ma.action_show_isolated_vat_move_lines)d"  context="{'search_default_vat_statement_id': active_id,'default_vat_statement_id': active_id}" icon="fa-list">
+                                    <field string="Isolées" name="nb_isolated_move_lines" widget="statinfo"/>
+                                </button>
+                                <group colspan="2">
+                                    <button name="action_pick_moves" string="Séléction des lignes à déclarer" type="object" icon="STOCK_SORT_DESCENDING" class="oe_link" states="draft" />
+                                </group>
+                                <field name="vat_ids3" attrs="{'readonly': [('state','in',['confirmed','closed'])]}">
+                                    <tree editable="bottom">
+                                        <field name="invoice_date"/>
+                                        <field name="invoice_number"/>
+                                        <field name="invoice_currency_id"/>
+                                        <field name="payment_date"/>
+                                        <field name="reglement_method_id"/>
+                                        <field name="date"/>
+                                        <field name="invoice_partner_id"/>
+                                        <field name="partner_name"/>
+                                        <field name="partner_ifu"/>
+                                        <field name="partner_ice"/>
+                                        <field name="nature"/>
+                                        <field name="name"/>
+                                        <field name="ref"/>
+                                        <field name="tax_id"/>
+                                        <field name="invoice_amount_untaxed" sum="invoice_amount_untaxed"/>
+                                        <field name="invoice_amount_tax" sum="invoice_amount_tax"/>
+                                        <field name="invoice_amount_total" sum="invoice_amount_total"/>
+                                        <field name="amount_untaxed" sum="amount_untaxed"/>
+                                        <field name="amount_tax" sum="amount_tax"/>
+                                        <field name="amount" sum="amount"/>
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+	             </form>
+            </field>
+        </record>
+
+        <record id="account_vat_statement_tree_view" model="ir.ui.view">
+            <field name="name">account.vat.statement.tree</field>
+            <field name="model">account.vat.statement</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+            	<tree string="Déclaration TVA">
+                    <field name="name"/>
+                    <field name="fiscalyear_id"/>
+                    <field name="type_period_tva" />
+                    <field name="period_id" />
+                    <field name="date_debut"/>
+                    <field name="date_fin"/>
+                    <field name="state"/>
+	             </tree>
+            </field>
+        </record>
+
+        <record id="account_vat_payment_line_tree_view" model="ir.ui.view">
+            <field name="name">account.vat.payment.line.tree</field>
+            <field name="model">account.vat.payment.line</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+            	<tree string="TVA" create="false" delete="false" edit="false">
+                    <field name="invoice_date"/>
+                    <field name="payment_date"/>
+                    <field name="invoice_id"/>
+                    <field name="invoice_state"/>
+                    <field name="invoice_partner_id"/>
+                    <field name="invoice_currency_id"/>
+                    <field name="tax_id"/>
+                    <field name="invoice_amount_untaxed"/>
+                    <field name="invoice_amount_total"/>
+                    <field name="payment_amount"/>
+                    <field name="full_partial" readonly="1"/>
+                    <field name="payment_amount_tax"/>
+	             </tree>
+            </field>
+        </record>
+
+        <record id="account_vat_bank_line_tree_view" model="ir.ui.view">
+            <field name="name">account.vat.bank.line.tree</field>
+            <field name="model">account.vat.bank.line</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+            	<tree string="TVA" create="false" delete="false" edit="false">
+                    <field name="date"/>
+                    <field name="name"/>
+                    <field name="tax_id"/>
+                    <field name="amount_untaxed"/>
+                    <field name="amount"/>
+                    <field name="amount_tax"/>
+	             </tree>
+            </field>
+        </record>
+
+        <record id="account_vat_move_line_tree_view" model="ir.ui.view">
+            <field name="name">account.vat.move.line.tree</field>
+            <field name="model">account.vat.move.line</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+            	<tree string="TVA">
+                    <field name="date"/>
+                    <field name="name"/>
+                    <field name="tax_id"/>
+                    <field name="amount_untaxed"/>
+                    <field name="amount"/>
+                    <field name="amount_tax"/>
+	             </tree>
+            </field>
+        </record>
+
+        <record id="action_vat_statement_sale" model="ir.actions.act_window">
+            <field name="name">TVA déductible</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">account.vat.statement</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="context">{'default_tva_purchase':1}</field>
+            <field name="domain">[('tva_purchase','=',True)]</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Cliquez ici pour ajouter une nouvelle déclaration de TVA
+                </p>
+            </field>
+        </record>
+
+        <record id="action_vat_statement_purchase" model="ir.actions.act_window">
+            <field name="name">TVA imposable</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">account.vat.statement</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="context">{'default_tva_sale':1}</field>
+            <field name="domain">[('tva_sale','=',True)]</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Cliquez ici pour ajouter une nouvelle déclaration de TVA
+                </p>
+            </field>
+        </record>
+
+
+        <record id="report_excel_wizard_view" model="ir.ui.view">
+            <field name="name">report.excel.wizard.view</field>
+            <field name="model">report.excel.wizard</field>
+            <field name="arch" type="xml">
+
+                <form string="Export Excel" version="7.0">
+                     <group colspan="4">
+	                     <separator string="Export Terminé" colspan="4"/>
+	                     <field name="name_file" invisible="1" colspan="4"/>
+	                     <separator string=" " colspan="4"/>
+	                     <field name="data" nolabel="1" readonly="1" filename="name_file" colspan="4"/>
+                         <footer>
+	                     	<button icon="gtk-close" special="cancel" string="Fermer"/>
+	                     </footer>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+
+		<menuitem id="sale_vat_menu" name="TVA déductible" parent="menu_tva" action="action_vat_statement_sale" sequence="0" groups="account.group_account_manager"/>
+        <menuitem id="purchase_vat_menu" name="TVA imposable" parent="menu_tva" action="action_vat_statement_purchase" sequence="0" groups="account.group_account_manager"/>
+
+    </data>
+</openerp>

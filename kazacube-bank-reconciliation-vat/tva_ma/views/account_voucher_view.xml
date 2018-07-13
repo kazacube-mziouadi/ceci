@@ -1,0 +1,44 @@
+<?xml version="1.0" ?>
+<openerp>
+
+    <data>
+    		<!-- voucher view	-->
+		<record model="ir.ui.view" id="view_vendor_receipt_form_inherit_1">
+			<field name="name">account.voucher.receipt.form.inherit_1</field>
+			<field name="model">account.voucher</field>
+			<field name="inherit_id" ref="account_voucher.view_vendor_receipt_form" />
+			<field name="type">form</field>
+			<field name="arch" type="xml">
+				<field name="company_id" position="after">
+					<field name="reglement_method_id" required="1" />
+				</field>
+           </field>
+		</record>
+		
+		<record model="ir.ui.view" id="view_vendor_payment_form_inherit_1">
+			<field name="name">account.voucher.payment.form.inherit_1</field>
+			<field name="model">account.voucher</field>
+			<field name="inherit_id" ref="account_voucher.view_vendor_payment_form" />
+			<field name="type">form</field>
+			<field name="arch" type="xml">
+				<field name="company_id" position="after">
+					<field name="reglement_method_id" required="1"/>
+				</field>
+           </field>
+		</record>
+
+		<record model="ir.ui.view" id="view_vendor_receipt_dialog_form_inherit_2">
+			<field name="name">account.voucher.receipt.dialog_form.inherit_2</field>
+			<field name="model">account.voucher</field>
+			<field name="inherit_id" ref="account_voucher.view_vendor_receipt_dialog_form" />
+			<field name="type">form</field>
+			<field name="arch" type="xml">
+				<field name="company_id" position="after">
+					<field name="reglement_method_id" required="1"/>
+				</field>
+           </field>
+		</record>
+		
+		
+    </data>
+</openerp>

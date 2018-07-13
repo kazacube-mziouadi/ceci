@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data noupdate="0">
+
+        <record id="list0" model="account.invoice.tva.reglement">
+            <field name="name">Espèces</field>
+            <field name="id_xml"> 1</field>
+
+        </record>
+        <record id="list1" model="account.invoice.tva.reglement">
+            <field name="name">Chèque</field>
+            <field name="id_xml">2</field>
+        </record>
+        <record id="list2" model="account.invoice.tva.reglement">
+            <field name="name">Prélèvement</field>
+            <field name="id_xml"> 3 </field>
+
+        </record>
+        
+
+        
+        <record id="list3" model="account.invoice.tva.reglement">
+            <field name="name">Virement</field>
+            <field name="id_xml"> 4</field>
+
+        </record>
+        
+
+
+		<record id="list4" model="account.invoice.tva.reglement">
+            <field name="name">Effet</field>
+            <field name="id_xml"> 5</field>
+
+        </record>
+        <record id="list5" model="account.invoice.tva.reglement">
+            <field name="name">Compenstation</field>
+            <field name="id_xml"> 6</field>
+
+        </record>
+        <record id="list6" model="account.invoice.tva.reglement">
+            <field name="name">Autres</field>
+            <field name="id_xml"> 7</field>
+
+        </record>
+
+    </data>
+</openerp>

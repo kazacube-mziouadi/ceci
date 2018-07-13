@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record model="ir.ui.view" id="bank_operation_tree_view">
+            <field name="name">bank.operation.tree</field>
+            <field name="model">bank.operation</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="Opérations Bancaires">
+                    <field name="code"/>
+                    <field name="name"/>
+                    <field name="type"/>
+
+                </tree>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="bank_operation_form_view">
+            <field name="name">bank.operation.form</field>
+            <field name="model">bank.operation</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Opérations Bancaires">
+                    <field name="code"/>
+                    <field name="name"/>
+                    <field name="type"/>
+
+                </form>
+            </field>
+        </record>
+
+
+        <record model="ir.actions.act_window" id="action_operation_bank_tree_view">
+                <field name="name">Opérations Bancaires</field>
+                <field name="type">ir.actions.act_window</field>
+                <field name="res_model">bank.operation</field>
+                <field name="view_type">form</field>
+                <field name="view_mode">tree,form</field>
+         </record>
+
+
+    <menuitem id="menu_operation_bank" name="Opérations Bancaires" parent="menu_parent_reconcile_bank"
+                  action="action_operation_bank_tree_view" groups="bank_reconcile.group_reconcile_bank_g2"/>
+    </data>
+</openerp>

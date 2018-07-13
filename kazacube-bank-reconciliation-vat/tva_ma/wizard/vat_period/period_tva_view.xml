@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="view_period_tva" model="ir.ui.view">
+            <field name="name">Générer periodes de TVA</field>
+            <field name="model">period.tva.inv</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+             <form string="Create Periode TVA">
+                    <group col="4">
+                        <group colspan="2">
+                            <field name="date_start" invisible="1"/>
+                            <field name="date_stop" invisible="1"/>
+                            <field name="fiscalyear_id" on_change="onchange_fiscalyear_id(fiscalyear_id)"/>
+                        </group>
+                    </group>
+                    <footer>
+	                 	<button name="create_period1" string="Create Monthly Period TVA" type="object" icon="terp-gtk-go-back-rtl"/>
+	                 	<button name="create_period3" string="Create Quarterly Period TVA" type="object" icon="terp-gtk-go-back-rtl"/>
+                        ou
+                        <button special="cancel" string="Cancel" icon="gtk-cancel"/>
+                    </footer>
+            </form>
+            </field>
+        </record>
+
+        <record id="view_period_tva_tree" model="ir.ui.view">
+            <field name="name">Consulter periodes de TVA</field>
+            <field name="model">account.period.tva</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+             <tree string="Periodes TVA">
+             		<field name="name"/>
+             		<field name="code"/>
+             		<field name="date_start"/>
+                    <field name="date_stop" />
+                    <field name="state"/>
+                    <field name="description"/>
+                    <field name="title1"/>
+                    <field name="title2"/>
+            </tree>
+            </field>
+        </record>
+        <record id="action_view_period_tva" model="ir.actions.act_window">
+            <field name="name">Générer periodes de TVA</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">period.tva.inv</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="view_period_tva"/>
+            <field name="target">new</field>
+        </record>
+        <record id="action_view_period_tva_tree" model="ir.actions.act_window">
+            <field name="name">Consulter periodes de TVA</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">account.period.tva</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="view_period_tva_tree"/>
+        </record>
+
+
+        <menuitem name="Consulter periodes de TVA"  id="period_tva2" parent="menu_rapprochement_tva_config" action="action_view_period_tva_tree" sequence="4"/>
+
+        <menuitem name="Générer periodes de TVA"  id="period_tva1" parent="menu_rapprochement_tva_config" action="action_view_period_tva" sequence="5"/>
+
+<!-- <menuitem name="Editer Taxe par Compte"  id="tax" parent="menu_rapprochement_tva_config" action="action_account_invoice_tva_tax" sequence="7"/>-->
+    </data>
+</openerp>

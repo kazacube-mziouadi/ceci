@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<openerp>
+    <data>
+
+        <record model="ir.ui.view" id="xml_tva_wizard_view">
+            <field name="name">xml.wizard.tva.form</field>
+            <field name="model">report.tva.xml.wizard</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Télé-declaration TVA">
+                    <p>
+                        Votre TVA a été convertie en fichiers xml. Téléchargez le fichier ci-dessous sur votre ordinateur
+                    </p>
+                    <group>
+                        <field name="tva_filename"  invisible="1"/>
+                        <field name="TVA_file" filename="tva_filename" readonly="1"/>
+                    </group>
+
+                    <footer>
+                        <button string="Fermer" class="oe_link" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+    </data>
+</openerp>

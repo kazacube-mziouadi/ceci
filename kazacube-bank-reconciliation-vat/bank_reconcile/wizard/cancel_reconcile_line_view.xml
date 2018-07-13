@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<openerp>
+    <data>
+            
+                                 <!-- wizard  reconcile  -->
+             
+            
+            <record model="ir.ui.view" id="cancel_reconcile_line_form_view">
+                <field name="name">cancel.reconcile.line.form</field>
+                <field name="model">cancel.reconcile.line</field>
+                <field name="type">form</field>
+                <field name="arch" type="xml">
+                    <form string="Annulation du rapprochement">
+                        <sheet>
+                            <div>
+                             <p class="oe_grey">
+                                   Cet assistant vous permet d'annuler le rapprochement bancaire des lignes selectionnées.
+
+                             </p>
+
+                            </div>
+                            <footer>
+	                          <button name="action_cancel_reconcile" string="Valider l'annulation" type="object" class="oe_highlight"/>
+	                          ou
+	                          <button string="Annuler" class="oe_link" special="cancel"/>
+	                     </footer>
+                        </sheet>
+
+                    </form>
+                </field>
+            </record>
+      
+            <record model="ir.actions.act_window" id="cancel_reconcile_line_action">
+                <field name="name">Annulation du rapprochement</field>
+                <field name="res_model">cancel.reconcile.line</field>
+                <field name="type">ir.actions.act_window</field>
+                <field name="view_type">form</field>
+                <field name="view_mode">form</field>
+                <field name="target">new</field>
+            </record>
+            
+            <record model="ir.values" id="correction_bank_line_exception">
+	            <field name="name">Annuler le rapprochement</field>
+	            <field name="key2">client_action_multi</field>
+	            <field name="value" eval="'ir.actions.act_window,' + str(ref('cancel_reconcile_line_action'))" />
+	            <field name="key">action</field>
+	            <field name="model">account.bank.statement.line</field>
+        	</record>
+            
+    </data>
+</openerp>

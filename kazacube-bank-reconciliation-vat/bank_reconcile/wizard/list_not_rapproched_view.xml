@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<openerp>
+    <data>
+            
+                                 <!-- wizard prepare reconcile  -->
+             
+            
+            <record model="ir.ui.view" id="list_not_rapproched_form_view">
+                <field name="name">list.not.rapproched.form</field>
+                <field name="model">list.not.rapproched</field>
+                <field name="type">form</field>
+                <field name="arch" type="xml">
+                    <form string="Impression Rapport de Rapprochement" version="7.0">
+                        <group colspan="4">
+                        	<field name="bank_id" />
+	                        <field name="fiscalyear_id" on_change="onchange_fiscalyear_id(fiscalyear_id)"/>
+	                        <field name="period_id" on_change="onchange_period_id(fiscalyear_id,period_id)"/>
+	                        <field name="account_id"  domain="[('type','!=','view')]"/>
+	                    </group>
+                        <newline/>
+	                     <footer>
+	                          <button name="print_report" string="Valider" type="object" class="oe_highlight"/>
+	                          	ou
+	                          <button string="Annuler" class="oe_link" special="cancel"/>
+	                     </footer>
+                    </form>
+                </field>
+            </record>
+      
+            <record model="ir.actions.act_window" id="list_not_rapproched_action">
+                <field name="name">Impression Situation des  Rapprochements</field>
+                <field name="res_model">list.not.rapproched</field>
+                <field name="type">ir.actions.act_window</field>
+                <field name="view_type">form</field>
+                <field name="view_mode">form</field>
+                <field name="target">new</field>
+            </record>
+            
+           <menuitem id="situation_rapprochement_menu" name="Impression Situation des  Rapprochements" parent="menu_parent_reconcile_bank" action="list_not_rapproched_action" sequence="551" groups="bank_reconcile.group_reconcile_bank_g2"/>
+           
+    </data>
+</openerp>

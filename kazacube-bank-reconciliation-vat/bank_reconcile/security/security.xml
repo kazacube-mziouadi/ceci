@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<openerp>
+    <data>
+    
+	    <record id="group_reconcile_bank_g1" model="res.groups">
+	        <field name="name">Confirmation Releve</field>
+	    </record>
+	    
+	    <record id="group_reconcile_bank_g2" model="res.groups">
+	        <field name="name">Préparation Releve/Traitement rapprochement</field>
+	    </record>
+	    
+    	
+    </data>
+</openerp>

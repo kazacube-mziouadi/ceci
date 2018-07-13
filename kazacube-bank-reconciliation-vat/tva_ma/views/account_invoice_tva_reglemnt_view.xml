@@ -1,0 +1,42 @@
+<?xml version="1.0" ?>
+<openerp>
+
+    <data>
+    	<record id="account_invoice_tva_reglement_form" model="ir.ui.view">
+            <field name="name">account.invoice.tva.reglement.form</field>
+            <field name="model">account.invoice.tva.reglement</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form>
+                    <field name="name"/>
+                    <field name="id_xml"></field>
+                </form>
+            </field>
+        </record>
+        
+        <record id="account_invoice_tva_reglement_tree" model="ir.ui.view">
+            <field name="name">account.invoice.tva.reglement.tree</field>
+            <field name="model">account.invoice.tva.reglement</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree editable="top">
+                    <field name="name"/>
+                    <field name="id_xml"></field>
+                </tree>
+        	</field>
+        </record>
+
+        <record model="ir.actions.act_window" id="action_account_invoice_tva_reglement">
+	        <field name="name">Méthodes de règlement</field>
+	        <field name="res_model">account.invoice.tva.reglement</field>
+	        <field name="view_type">form</field>
+	        <field name="view_mode">tree,form</field>
+	        <field name="view_id" ref="account_invoice_tva_reglement_tree"/>
+        </record>
+
+    <menuitem name="Déclarations TVA"  id="menu_tva" parent="account.menu_finance" groups="account.group_account_manager"/>
+    <menuitem name="Configuration"  id="menu_rapprochement_tva_config" parent="menu_tva" />
+    <menuitem name="Méthodes de règlement"  id="methode_reglement" parent="menu_rapprochement_tva_config" action="action_account_invoice_tva_reglement" sequence="6"/>
+    
+    </data>
+</openerp>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <!-- modification vue ecritures comptables -->
+
+  		<record model="ir.ui.view" id="view_move_line_search_inherit1">
+          <field name="name">account.move.line.search.inherit1</field>
+          <field name="model">account.move.line</field>
+          <field name="type">search</field>
+          <field name="inherit_id" ref="account.view_account_move_line_filter"/>
+          <field name="arch" type="xml">
+          		<field name="journal_id" position="after">
+          			<field name="reconciliation_id"/>
+          		</field>
+          </field>
+        </record>
+  		<record model="ir.ui.view" id="view_move_line_tree_inherit1">
+          <field name="name">account.move.line.tree.inherit1</field>
+          <field name="model">account.move.line</field>
+          <field name="type">tree</field>
+          <field name="inherit_id" ref="account.view_move_line_tree"/>
+          <field name="arch" type="xml">
+          		<field name="reconcile_id" position="after">
+          			<field name="move_stat_id" readonly="1"/>
+          		</field>
+          </field>
+      </record>
+
+
+
+    <!-- liste des lignes ecritures en exception  -->
+
+        <record id="action_account_move_line_exception_tree_view" model="ir.actions.act_window">
+            <field name="name">Écritures comptables en Exception</field>
+            <field name="res_model">account.move.line</field>
+           	<field name="type">ir.actions.act_window</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[('state1','=','exception')]</field>
+        </record>
+        <menuitem id="menu_account_move_line_exception" name="Écritures comptables en exception"
+                  parent="menu_parent_reconcile_bank" action="action_account_move_line_exception_tree_view"
+                  groups="bank_reconcile.group_reconcile_bank_g2"/>
+
+        <!-- liste des lignes ecritures rapprochées  -->
+
+        <record id="action_account_move_line_rapprochees_tree_view" model="ir.actions.act_window">
+            <field name="name">Écritures comptables Rapprochées</field>
+            <field name="res_model">account.move.line</field>
+           	<field name="type">ir.actions.act_window</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[('state1','=','normal'),('rapprocher','=',True')]</field>
+        </record>
+
+    	<menuitem id="menu_account_move_line_rapprochees" name="Écritures comptables Rapprochées"
+                  parent="menu_parent_reconcile_bank" action="action_account_move_line_rapprochees_tree_view"
+                  groups="bank_reconcile.group_reconcile_bank_g2"/>
+
+    </data>
+</openerp>

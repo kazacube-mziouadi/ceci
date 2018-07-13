@@ -1,0 +1,661 @@
+# Translation of OpenERP Server.
+# This file contains the translation of the following modules:
+#	* tva_p
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: OpenERP Server 6.0.4\n"
+"Report-Msgid-Bugs-To: support@openerp.com\n"
+"POT-Creation-Date: 2013-07-27 16:23+0000\n"
+"PO-Revision-Date: 2013-07-31 11:42-0000\n"
+"Last-Translator: abdel\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+
+#. module: tva_p
+#: view:account.tva:0
+msgid "Fournisseur"
+msgstr "Fournisseur"
+
+#. module: tva_p
+#: view:account.tva.confirm:0
+msgid "Confirm TVAs"
+msgstr "Confirmer TVA"
+
+#. module: tva_p
+#: selection:account.tva.print.excel,type_period_tva:0
+#: selection:tva.dec.wizard,type_period_tva:0
+msgid "Monthly"
+msgstr "Mois"
+
+#. module: tva_p
+#: field:account.tva.line,invoice_date_regelement:0
+msgid "Date of Payment"
+msgstr "Date de Paiement"
+
+#. module: tva_p
+#: field:account.tva.print.excel,name:0
+msgid "Filename"
+msgstr "Nom du Fichier"
+
+#. module: tva_p
+#: view:account.tva:0
+msgid "Group By..."
+msgstr "Group By..."
+
+#. module: tva_p
+#: model:ir.model,name:tva_p.model_tva_dec_wizard
+msgid "tva.dec.wizard"
+msgstr "tva.dec.wizard"
+
+#. module: tva_p
+#: model:ir.actions.act_window,name:tva_p.action_account_invoice_tva_reglement
+#: model:ir.ui.menu,name:tva_p.methode_reglement
+msgid "Méthodes de règlement"
+msgstr "Méthodes de règlement"
+
+#. module: tva_p
+#: view:account.tva:0
+msgid "Confirm TVA"
+msgstr "Confirmer TVA"
+
+#. module: tva_p
+#: model:ir.model,name:tva_p.model_period_inv
+msgid "period.inv"
+msgstr "period.inv"
+
+#. module: tva_p
+#: field:account.tva,invoice_tax:0
+msgid "Tax Account"
+msgstr "Compte de Taxe"
+
+#. module: tva_p
+#: model:ir.model,name:tva_p.model_account_period_tva
+msgid "Account period tva"
+msgstr "Periode de TVA"
+
+#. module: tva_p
+#: field:account.period.tva,company_id:0
+msgid "Company"
+msgstr "Société"
+
+#. module: tva_p
+#: view:account.tva.tax:0
+msgid "TAX"
+msgstr "TAX"
+
+#. module: tva_p
+#: help:account.period.tva,special:0
+msgid "These periods can overlap."
+msgstr "Ces périodes peuvent se chevaucher."
+
+#. module: tva_p
+#: selection:account.tva.print.excel,state:0
+msgid "choose"
+msgstr "Choisir"
+
+#. module: tva_p
+#: view:account.tva:0
+#: field:account.tva.line,tva_id:0
+msgid "TVA"
+msgstr "TVA"
+
+#. module: tva_p
+#: field:account.tva,identif_fiscal:0
+msgid "Fiscal Identification"
+msgstr "Identification Fiscale"
+
+#. module: tva_p
+#: view:period.tva.inv:0
+msgid "Create Quarterly Period TVA"
+msgstr "Créer des Périodes Trimestrielles de TVA"
+
+#. module: tva_p
+#: field:account.invoice.tva.reglement,name:0
+msgid "Methode de reglement"
+msgstr "Méthode de réglement"
+
+#. module: tva_p
+#: selection:account.tva.print.excel,state:0
+msgid "get"
+msgstr "get"
+
+#. module: tva_p
+#: constraint:account.move.line:0
+msgid "You can not create move line on closed account."
+msgstr "Impossible de créer une ligne d'écriture sur un compte clôturé"
+
+#. module: tva_p
+#: view:account.tva:0
+#: field:account.tva,notes:0
+msgid "Notes"
+msgstr "Notes"
+
+#. module: tva_p
+#: view:period.tva.inv:0
+msgid "Create Periode TVA"
+msgstr "Créer Période de TVA"
+
+#. module: tva_p
+#: view:period.tva.inv:0
+msgid "Create Monthly Period TVA"
+msgstr "Créer des Périodes Mensuelles de TVA"
+
+#. module: tva_p
+#: view:account.tva.print.excel:0
+msgid "Print TVAs"
+msgstr "Expoter La Declaration de TVA"
+
+#. module: tva_p
+#: sql_constraint:account.move.line:0
+msgid "Wrong credit or debit value in accounting entry !"
+msgstr "Valeur erronée au crédit ou au débit de la pièce comptable !"
+
+#. module: tva_p
+#: model:ir.model,name:tva_p.model_account_tva
+#: model:ir.model,name:tva_p.model_account_tva_line
+msgid "management tva"
+msgstr "Gestion de Déclaration TVA"
+
+#. module: tva_p
+#: view:grouper.tva:0
+#: model:ir.actions.act_window,name:tva_p.action_grouper_tva
+msgid "Grouper TVAs"
+msgstr "Grouper Les TVAs"
+
+#. module: tva_p
+#: field:account.tva.tax,name:0
+msgid "Tax Name"
+msgstr "Nom de Taxe"
+
+#. module: tva_p
+#: field:account.tva.line,reconcile_id:0
+msgid "Reconcile"
+msgstr "Lettrage"
+
+#. module: tva_p
+#: field:account.tva.line,reference:0
+msgid "Reference"
+msgstr "Reference"
+
+#. module: tva_p
+#: field:account.tva.tax,tax_id:0
+msgid "Tax"
+msgstr "Taxe"
+
+#. module: tva_p
+#: view:account.tva.print.excel:0
+msgid "Print TVAS"
+msgstr "Exporter Une Déclaration de TVA"
+
+#. module: tva_p
+#: field:account.tva,invoice_customer:0
+#: model:ir.model,name:tva_p.model_res_partner
+msgid "Partner"
+msgstr "Partenaire"
+
+#. module: tva_p
+#: field:account.tva,operation:0
+msgid "Operation"
+msgstr "Opération"
+
+#. module: tva_p
+#: field:account.period.tva,date_stop:0
+msgid "Fin de periode"
+msgstr "Fin de période"
+
+#. module: tva_p
+#: field:account.move.line,reglement_method_id:0
+#: field:account.tva.line,invoice_reglement_method:0
+#: field:account.voucher,reglement_method_id:0
+msgid "Method of Payment"
+msgstr "Type de Paiement"
+
+#. module: tva_p
+#: model:ir.model,name:tva_p.model_period_tva_inv
+msgid "Creation des Periodes TVA"
+msgstr "Création des Périodes de TVA"
+
+#. module: tva_p
+#: selection:account.tva.print.excel,type_period_tva:0
+#: selection:tva.dec.wizard,type_period_tva:0
+msgid "Quarterly"
+msgstr "Trimestriel"
+
+#. module: tva_p
+#: view:account.tva:0
+#: field:account.tva,state:0
+msgid "State"
+msgstr "Statut"
+
+#. module: tva_p
+#: field:period.tva.inv,date_start:0
+msgid "Start of Period"
+msgstr "Début de Période"
+
+#. module: tva_p
+#: field:account.tva,invoice_date:0
+msgid "Date Invoice"
+msgstr "Date de Facture"
+
+#. module: tva_p
+#: field:account.period.tva,title1:0
+msgid "Title CA Imposable"
+msgstr "Titre CA Imposable"
+
+#. module: tva_p
+#: view:account.tva:0
+msgid "Nature de Marchandise"
+msgstr "Nature de Marchandise"
+
+#. module: tva_p
+#: field:tva.dec.wizard,date_debut:0
+msgid "Date debut"
+msgstr "Date de debut"
+
+#. module: tva_p
+#: field:account.tva.print.excel,state:0
+msgid "state"
+msgstr "Statut"
+
+#. module: tva_p
+#: model:ir.actions.act_window,name:tva_p.action_account_invoice_tva_tax
+#: model:ir.ui.menu,name:tva_p.tax
+msgid "Editer Taxe par Compte"
+msgstr "Editer Taxe par Compte"
+
+#. module: tva_p
+#: model:ir.ui.menu,name:tva_p.menu_rapprochement_tva_config
+msgid "Configuration"
+msgstr "Configuration"
+
+#. module: tva_p
+#: field:account.tva,invoice_id:0
+#: field:account.tva,invoice_number:0
+msgid "Number Invoice"
+msgstr "Numéro de Facture"
+
+#. module: tva_p
+#: field:account.tva.print.excel,type_period_tva:0
+#: field:tva.dec.wizard,type_period_tva:0
+msgid "Type of Period TVA"
+msgstr "Type de Période de TVA"
+
+#. module: tva_p
+#: model:ir.model,name:tva_p.model_account_invoice_tva_reglement
+msgid "account.invoice.tva.reglement"
+msgstr "account.invoice.tva.reglement"
+
+#. module: tva_p
+#: model:ir.model,name:tva_p.model_account_tva_print_excel
+msgid "print report to excel"
+msgstr "Exporter déclaration Vers Excel"
+
+#. module: tva_p
+#: field:account.tva,invoice_amount_tax:0
+msgid "Amount Tax"
+msgstr "Montant de Taxe"
+
+#. module: tva_p
+#: field:account.tva,invoice_period_tva:0
+msgid "Period TVA"
+msgstr "Période de TVA"
+
+#. module: tva_p
+#: help:account.period.tva,state:0
+msgid "When monthly periods are created. The state is 'Draft'. At the end of monthly period it is in 'Done' state."
+msgstr "Lorsque les Périodes Mensuelles sont créés. L'état est «draft». A la fin de la période Mensuelle, L'état est «Terminé»."
+
+#. module: tva_p
+#: field:account.tva,invoice_rate_tax:0
+msgid "Percentage of Tax"
+msgstr "Pourcentage de Taxe"
+
+#. module: tva_p
+#: view:account.tva:0
+msgid "Search TVA"
+msgstr "Recherche de TVA"
+
+#. module: tva_p
+#: field:account.period.tva,title2:0
+msgid "Title TVA Deductible"
+msgstr "Titre de TVA Déductible"
+
+#. module: tva_p
+#: view:account.tva:0
+#: field:account.tva,tva_line:0
+msgid "TVA Lines"
+msgstr "Lignes de TVA"
+
+#. module: tva_p
+#: model:ir.actions.act_window,name:tva_p.action_create_tva
+#: model:ir.ui.menu,name:tva_p.creta_tva_menu
+msgid "Préparer déclaration"
+msgstr "Préparer déclaration"
+
+#. module: tva_p
+#: field:account.tva,invoice_currency:0
+msgid "Currency"
+msgstr "Devise"
+
+#. module: tva_p
+#: field:account.tva.print.excel,tva_sale:0
+#: field:tva.dec.wizard,tva_sale:0
+msgid "CA Imposable"
+msgstr "CA Imposable"
+
+#. module: tva_p
+#: field:account.tva,invoice_amount_total:0
+msgid "Amount Total"
+msgstr "Montant Total"
+
+#. module: tva_p
+#: view:account.tva:0
+msgid "Invoiced"
+msgstr "Facturé"
+
+#. module: tva_p
+#: field:res.partner,identif_fiscal:0
+msgid "Fiscal Idetification"
+msgstr "Idetification Fiscale"
+
+#. module: tva_p
+#: view:account.tva:0
+msgid "Re-open TVA"
+msgstr "Re-Ouvrir TVA"
+
+#. module: tva_p
+#: model:ir.ui.menu,name:tva_p.menu_tva
+msgid "Déclarations TVA"
+msgstr "Déclarations TVA"
+
+#. module: tva_p
+#: selection:account.period.tva,state:0
+#: view:account.tva:0
+#: selection:account.tva,state:0
+msgid "Closed"
+msgstr "Fermé"
+
+#. module: tva_p
+#: model:ir.model,name:tva_p.model_account_tva_confirm
+msgid "Confirm the selected tva's"
+msgstr "Cofirmer Les TVAs Sélectionné"
+
+#. module: tva_p
+#: field:account.tva,invoice_amount_encaisse:0
+msgid "Cashed"
+msgstr "Encaissé"
+
+#. module: tva_p
+#: field:account.period.tva,state:0
+msgid "Status"
+msgstr "Statut"
+
+#. module: tva_p
+#: model:ir.actions.act_window,name:tva_p.action_account_invoice_tva
+#: model:ir.ui.menu,name:tva_p.factures_rapprocher
+msgid "Détails TVA collectée"
+msgstr "Détails TVA collectée"
+
+#. module: tva_p
+#: field:account.tva.dec.reconcile,lettrage_name:0
+msgid "Lettrage"
+msgstr "Lettrage"
+
+#. module: tva_p
+#: view:account.tva:0
+msgid "Conceded"
+msgstr "Encaissé"
+
+#. module: tva_p
+#: model:ir.model,name:tva_p.model_account_move_line
+msgid "Journal Items"
+msgstr "Écritures comptables"
+
+#. module: tva_p
+#: field:account.tva,invoice_amount_facture:0
+msgid "Charged"
+msgstr "Facturé"
+
+#. module: tva_p
+#: constraint:account.move.line:0
+msgid "Company must be same for its related account and period."
+msgstr "La société doit être la même pour les comptes et périodes liées."
+
+#. module: tva_p
+#: view:tva.dec.wizard:0
+msgid "Valider"
+msgstr "Valider"
+
+#. module: tva_p
+#: constraint:account.move.line:0
+msgid "The date of your Journal Entry is not in the defined period!"
+msgstr "La date de la pièce comptable n'est pas dans la période définie."
+
+#. module: tva_p
+#: field:account.period.tva,special:0
+msgid "Opening/Closing Period"
+msgstr "Ouvertue/Fermeture Période"
+
+#. module: tva_p
+#: view:account.tva.print.excel:0
+#: model:ir.actions.act_window,name:tva_p.action_account_tva_print
+msgid "Export TVAs to Excel"
+msgstr "Export déclaration vers Excel"
+
+#. module: tva_p
+#: model:ir.actions.act_window,name:tva_p.action_view_period_tva
+#: model:ir.ui.menu,name:tva_p.period_tva1
+msgid "Générer periodes de TVA"
+msgstr "Générer periodes de TVA"
+
+#. module: tva_p
+#: model:ir.actions.act_window,name:tva_p.action_view_wizard_tva_print
+#: model:ir.ui.menu,name:tva_p.action_tva_printe
+msgid "Export déclaration vers Excel"
+msgstr "Export déclaration vers Excel"
+
+#. module: tva_p
+#: field:account.period.tva,code:0
+msgid "Code"
+msgstr "Code"
+
+#. module: tva_p
+#: view:account.tva.print.excel:0
+msgid "Export done"
+msgstr "Export Fait"
+
+#. module: tva_p
+#: model:ir.model,name:tva_p.model_account_voucher
+msgid "Accounting Voucher"
+msgstr "Justificatif comptable"
+
+#. module: tva_p
+#: field:account.tva.print.excel,period_id:0
+#: field:tva.dec.wizard,period_id:0
+msgid "Period"
+msgstr "Periode"
+
+#. module: tva_p
+#: field:account.tva.print.excel,tva_purchase:0
+#: field:tva.dec.wizard,tva_purchase:0
+msgid "TVA Deductible"
+msgstr "TVA déductible"
+
+#. module: tva_p
+#: field:tva.dec.wizard,date_fin:0
+msgid "Date fin"
+msgstr "Date de Fin"
+
+#. module: tva_p
+#: view:account.tva:0
+msgid "Invoice"
+msgstr "Facture"
+
+#. module: tva_p
+#: view:grouper.tva:0
+#: view:period.tva.inv:0
+#: view:tva.dec.wizard:0
+msgid "Cancel"
+msgstr "Annuler"
+
+#. module: tva_p
+#: view:account.tva.confirm:0
+#: view:account.tva.print.excel:0
+msgid "Close"
+msgstr "Fermer"
+
+#. module: tva_p
+#: field:account.tva,account_move_id:0
+msgid "Moves"
+msgstr "Moves"
+
+#. module: tva_p
+#: selection:account.period.tva,state:0
+#: view:account.tva:0
+#: selection:account.tva,state:0
+msgid "Open"
+msgstr "Open"
+
+#. module: tva_p
+#: field:account.tva.dec.reconcile,account_move_line_id:0
+#: field:account.tva.line,account_move_line_id:0
+msgid "Account Move Line"
+msgstr "Lignes de Mouvements"
+
+#. module: tva_p
+#: model:ir.model,name:tva_p.model_account_tva_tax
+msgid "account.tva.tax"
+msgstr "account.tva.tax"
+
+#. module: tva_p
+#: field:account.tva,invoice_state:0
+msgid "state Invoice"
+msgstr "Statut de Facture"
+
+#. module: tva_p
+#: model:ir.actions.act_window,name:tva_p.action_account_invoice_tva_deductible
+#: model:ir.ui.menu,name:tva_p.tva_ded
+msgid "Détails TVA déductible"
+msgstr "Détails TVA déductible"
+
+#. module: tva_p
+#: model:ir.model,name:tva_p.model_grouper_tva
+msgid "Groupement TVA"
+msgstr "Groupement de TVA"
+
+#. module: tva_p
+#: field:account.period.tva,description:0
+msgid "Description"
+msgstr "Description"
+
+#. module: tva_p
+#: view:account.period.tva:0
+msgid "Periodes TVA"
+msgstr "Periodes de TVA"
+
+#. module: tva_p
+#: model:ir.model,name:tva_p.model_account_tva_dec_reconcile
+msgid "account.tva.dec.reconcile"
+msgstr "account.tva.dec.reconcile"
+
+#. module: tva_p
+#: field:period.tva.inv,date_stop:0
+msgid "End of Period"
+msgstr "Fin de Période"
+
+#. module: tva_p
+#: field:account.period.tva,type:0
+msgid "Type of TVA"
+msgstr "Type de TVA"
+
+#. module: tva_p
+#: field:account.tva.line,name:0
+msgid "Name"
+msgstr "Nom"
+
+#. module: tva_p
+#: field:account.tva,invoice_amount_untaxed:0
+msgid "Amount HT"
+msgstr "Montant HT"
+
+#. module: tva_p
+#: field:account.period.tva,name:0
+msgid "Période"
+msgstr "Période"
+
+#. module: tva_p
+#: field:account.tva.tax,account_tax_id:0
+msgid "Account Tax"
+msgstr "Compte de Taxe"
+
+#. module: tva_p
+#: field:account.period.tva,fiscalyear_id:0
+#: field:account.tva.print.excel,fiscalyear_id:0
+#: field:period.tva.inv,fiscalyear_id:0
+#: field:tva.dec.wizard,fiscalyear_id:0
+msgid "Fiscal Year"
+msgstr "Exercice Comptable"
+
+#. module: tva_p
+#: model:ir.actions.act_window,name:tva_p.action_view_period_tva_tree
+#: model:ir.ui.menu,name:tva_p.period_tva2
+msgid "Consulter periodes de TVA"
+msgstr "Consulter periodes de TVA"
+
+#. module: tva_p
+#: view:account.tva.confirm:0
+#: model:ir.actions.act_window,name:tva_p.action_account_tva_confirm
+msgid "Confirm Draft TVAs"
+msgstr "Confirmer Les TVAs"
+
+#. module: tva_p
+#: field:account.period.tva,date_start:0
+msgid "Début de periode"
+msgstr "Début de periode"
+
+#. module: tva_p
+#: view:account.tva:0
+#: field:account.tva,declare_tva:0
+msgid "Declared"
+msgstr "Declaré"
+
+#. module: tva_p
+#: field:account.tva.line,amount_paid:0
+msgid "Amount Paid"
+msgstr "Montant Payé"
+
+#. module: tva_p
+#: view:account.tva:0
+#: field:account.tva,invoice_tva_due_encaisse:0
+msgid "TVA due"
+msgstr "TVA due"
+
+#. module: tva_p
+#: view:tva.dec.wizard:0
+msgid "Create TVA"
+msgstr "Créer Une Déclaration de TVA"
+
+#. module: tva_p
+#: field:account.tva.dec.reconcile,account_move_reconcile_id:0
+msgid "Account Move Reconcile"
+msgstr "Lettrage"
+
+#. module: tva_p
+#: field:account.tva.print.excel,data:0
+msgid "File"
+msgstr "Fichier"
+
+#. module: tva_p
+#: field:account.tva,type_tva:0
+msgid "Type Tva"
+msgstr "Type de TVA"
+
+#. module: tva_p
+#: constraint:account.move.line:0
+msgid "You can not create move line on view account."
+msgstr "Vous ne pouvez pas créer de ligne d'écriture sur un compte de type \"Vue\"."
+

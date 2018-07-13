@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<openerp>
+    <data>
+            
+                                 <!-- wizard prepare reconcile  -->
+             
+            
+            <record model="ir.ui.view" id="account_line_exception_form_view">
+                <field name="name">account.line.exception.form</field>
+                <field name="model">account.line.exception</field>
+                <field name="type">form</field>
+                <field name="arch" type="xml">
+                    <form string="Mettre Les Ecritures en Exception">
+                        <group colspan="4">
+	                        <field name="fiscalyear_id" attrs="{'readonly': [('state', '=', 'open')]}" />
+	                        <field name="periode_id" attrs="{'readonly': [('state', '=', 'open')]}" />
+	                        <field name="account_id" attrs="{'readonly': [('state', '=', 'open')]}"/>
+                            <field name="state" invisible="1" />
+	                    </group>
+	                    <button name="edit_lines" states='draft' string="Appliquer les filtres" type="object" class="oe_highlight"/>
+                        <newline/>
+
+                        <group >
+
+                        	<field name="move_lines" nolabel="1" mode="tree" attrs="{'invisible': [('state', '=', 'draft')]}" >
+                        	    <tree  editable="top" delete="false" create="false">
+                                    <field name="date" readonly="True"/>
+                                    <field name="name" readonly="True"/>
+                                    <field name="partner_id" readonly="True"/>
+                                    <field name="account_id"  readonly="True" />
+                                    <field name="debit" sum="Total Debit" readonly="True"/>
+                                    <field name="credit" sum="Total Credit" readonly="True"/>
+                                    <field name="exception" string="Mettre en exception ?"/>
+                                </tree>
+                            </field>
+                        </group>
+                     <footer attrs="{'invisible': [('state', '=', 'draft')]}" >
+                          <button name="action_move_line_excep"  string="Valider" type="object" class="oe_highlight"/>
+                          <button name="action_reset"  string="Remettre à zéro" type="object" class="oe_highlight"/>
+                          ou
+                          <button string="Annuler" class="oe_link" special="cancel"/>
+                     </footer>
+                    </form>
+                </field>
+            </record>
+      
+            <record model="ir.actions.act_window" id="account_line_exception_action">
+                <field name="name">Mettre les écritures comptables en exception</field>
+                <field name="res_model">account.line.exception</field>
+                <field name="type">ir.actions.act_window</field>
+                <field name="view_type">form</field>
+                <field name="view_mode">form</field>
+                <field name="target">new</field>
+            </record>
+            
+            <menuitem id="account_line_exception_menu" name="Mettre Les Ecritures en Exception" parent="menu_parent_reconcile_bank" action="account_line_exception_action" sequence="550" groups="bank_reconcile.group_reconcile_bank_g2"/>
+           
+    </data>
+</openerp>

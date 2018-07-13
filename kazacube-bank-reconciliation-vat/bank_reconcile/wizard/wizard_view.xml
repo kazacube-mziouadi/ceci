@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<openerp>
+    <data>
+            
+                                 <!-- wizard prepare reconcile  -->
+             
+            
+            <record model="ir.ui.view" id="prepare_reconcile_wizard_form_view">
+                <field name="name">prepare.reconcile.wizard.form</field>
+                <field name="model">prepare.reconcile.wizard</field>
+                <field name="type">form</field>
+                <field name="arch" type="xml">
+                    <form string="Préparation des relevés bancaires" version="7.0">
+                       <group>
+                        <group colspan="2">
+                           <!-- <field name="fiscalyear_id" /> -->
+                           <field name="fiscalyear_id" on_change="onchange_fiscalyear(fiscalyear_id)" />
+                        </group>
+                        <group colspan="2">
+                           <field name="period_ids"/>
+                        </group>
+                        <group colspan="2">
+                           <field name="bank_ids"/>
+                        </group>
+                       </group>
+                     <footer>
+                          <button name="action_create_bank_statement" string="Créer" type="object" class="oe_highlight"/>
+                          ou
+                          <button string="Annuler" class="oe_link" special="cancel"/>
+                     </footer>
+                    </form>
+                </field>
+            </record>
+
+      
+            <record model="ir.actions.act_window" id="prepare_reconcile_wizard_action">
+                <field name="name">Préparation des relevés bancaires</field>
+                <field name="res_model">prepare.reconcile.wizard</field>
+                <field name="type">ir.actions.act_window</field>
+                <field name="view_type">form</field>
+                <field name="view_mode">form</field>
+                <field name="target">new</field>
+                
+            </record>
+            
+            <record model="ir.values" id="ir_values_prepare_reconcile_wizard">
+                <field name="model" eval="'account.bank.statement'"/>
+                <field name="name">Préparer Relevés Bancaires</field>
+                <field name="value" eval="'ir.actions.act_window,%d'%prepare_reconcile_wizard_action"/>
+            </record>
+            
+            <menuitem id="prepare_reconcile_wizard_menu" name="Préparer Relevés Bancaires" parent="menu_parent_reconcile_bank" action="prepare_reconcile_wizard_action" sequence="500" groups="bank_reconcile.group_reconcile_bank_g2"/>
+           
+    </data>
+</openerp>

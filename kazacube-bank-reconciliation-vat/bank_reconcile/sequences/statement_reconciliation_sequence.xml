@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data noupdate="1">
+			<!-- Rapprochement -->
+        <!--<record id="seq_type_bank_reconcile" model="ir.sequence.type">-->
+            <!--<field name="name">Rapprochement Bancaire</field>-->
+            <!--<field name="code">move.statement.relation</field>-->
+        <!--</record>-->
+
+        <!--<record id="seq_bank_reconcile" model="ir.sequence">-->
+            <!--<field name="name">Rapprochement Bancaire</field>-->
+            <!--<field name="code">move.statement.relation</field>-->
+            <!--<field name="prefix">RA/</field>-->
+            <!--<field name="padding">0</field>-->
+        <!--</record>-->
+
+        <record id="seq_type_bank_reconcile" model="ir.sequence">
+            <field name="name">Rapprochement Bancaire</field>
+            <field name="code">move.statement.relation</field>
+            <field name="prefix">RA/</field>
+            <field name="padding">0</field>
+        </record>
+
+                    <!-- Exception Rapprochement -->
+        <!--<record id="seq_type_bank_reconcile_exception" model="ir.sequence.type">-->
+            <!--<field name="name">Rapprochement Bancaire Exception</field>-->
+            <!--<field name="code">relation.exception</field>-->
+        <!--</record>-->
+        <!---->
+        <!--<record id="seq_bank_reconcile_exception" model="ir.sequence">-->
+            <!--<field name="name">Rapprochement Bancaire Exception</field>-->
+            <!--<field name="code">relation.exception</field>-->
+            <!--<field name="prefix">RA/Ex</field>-->
+            <!--<field name="padding">0</field>-->
+        <!--</record>-->
+
+        <record id="seq_type_bank_reconcile_exception" model="ir.sequence">
+            <field name="name">Rapprochement Bancaire Exception</field>
+            <field name="code">relation.exception</field>
+            <field name="prefix">RA/Ex</field>
+            <field name="padding">0</field>
+        </record>
+                 <!-- Traitement Rapprochement -->
+
+        <!--<record id="seq_reconcile_treatment_type" model="ir.sequence.type">-->
+            <!--<field name="name">Traitement Rapprochement Bancaire </field>-->
+            <!--<field name="code">bank.reconcile</field>-->
+        <!--</record>-->
+
+        <!--<record id="sequence_reconcile_treatment" model="ir.sequence">-->
+            <!--<field name="name">Rapprochement Bancaire Exception</field>-->
+            <!--<field name="code">bank.reconcile</field>-->
+            <!--<field name="prefix">TRB</field>-->
+            <!--<field name="padding">5</field>-->
+        <!--</record>-->
+        <!---->
+
+        <record id="sequence_type_reconcile_treatment" model="ir.sequence">
+            <field name="name">Rapprochement Bancaire Exception</field>
+            <field name="code">bank.reconcile</field>
+            <field name="prefix">TRB</field>
+            <field name="padding">5</field>
+        </record>
+
+    </data>
+</openerp>

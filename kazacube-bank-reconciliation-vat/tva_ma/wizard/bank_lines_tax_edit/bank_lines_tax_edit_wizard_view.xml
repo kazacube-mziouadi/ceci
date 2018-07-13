@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+
+        <!-- bank lines tax edit wizard -->
+
+        <record id="bank_lines_tax_edit_wizard" model="ir.ui.view">
+            <field name="name">bank.lines.tax.edit.wizard.view</field>
+            <field name="model">bank.lines.tax.edit.wizard</field>
+            <field name="arch" type="xml">
+                <form string="Modification de la taxe">
+                    <group col="4">
+                        <group colspan="2">
+                            <field name="tax_id" required="1" />
+                            <field name="nb_lines" readonly="1"/>
+                        </group>
+                    </group>
+                    <footer>
+                        <button string="Valider" class="oe_highlight" type="object" name="action_edit"/>
+                        ou
+                        <button string="Annuler" class="oe_link" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <!-- Action -->
+
+        <act_window id="action_bank_lines_tax_edit_wizard"
+                    name="Modifier la taxe"
+                    res_model="bank.lines.tax.edit.wizard"
+                    src_model="account.vat.bank.line"
+                    view_mode="form"
+                    target ="new"
+                    key2="client_action_multi"
+                    groups="account.group_account_manager"
+                    />
+
+        
+
+    </data>
+</openerp>

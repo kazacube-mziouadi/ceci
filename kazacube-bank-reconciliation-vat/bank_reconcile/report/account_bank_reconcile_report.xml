@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+    	<report 
+            id="action_report_situation_rapprochement_bancaires" 
+            model="list.not.rapproched" 
+            string="Situation des Rapprochements Bancaires"
+            report_type="qweb-pdf"
+            name="bank_reconcile.report_situation_rapprochement" 
+            file="bank_reconcile.report_situation_rapprochement"
+            menu="False"
+            auto="False"
+        />
+    </data>
+</openerp>

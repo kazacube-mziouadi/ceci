@@ -1,0 +1,116 @@
+Code,Type d'opération,Type
+01,Chèques payés,D
+02,Remises de chèques,C
+03,Chèques impayés,D
+04,Versements espèces,C
+05,Virements reçus,C
+06,Virements émis,D
+07,LCR/BOR domiciliés,D
+08,Prélèvements et TIP domiciliés,D
+09,Prélèvements et TIP émis,C
+10,Prélèvements et TIP rejetés/impayés,D
+11,Factures cartes de paiement/DAB-GAB,C
+11,Factures cartes de paiement/DAB-GAB,D
+12,Rejet de virement,C
+13,Virements de trésorerie reçus,C
+14,Virements de trésorerie émis,D
+15,Remises de chèques sur caisse,C
+16,Remises de chèques sur rayon (-->01/12/2004),C
+17,Remises de chèques hors rayon (-->01/12/2004),C
+18,Autres virements reçus,C
+19,Virements à échéance émis E-2,D
+20,Virements à échéance émis E-3,D
+21,Autres virements émis,D
+22,TIP domiciliés,D
+23,Prélèvements domiciliés,D
+24,TIP émis,C
+25,Prélèvement émis,C
+26,TIP rejetés / impayés,D
+27,Prélèvements rejetés / impayés,D
+28,Factures cartes payées,D
+29,Retrait DAB-GAB,D
+30,Factures cartes remises,C
+31,Remises d'effets à l'encaissement,C
+32,Remises à l'escompte (papier commercial / chèque),C
+33,Effets impayés,D
+34,Incidents sur effets,C
+34,Incidents sur effets,D
+35,Remises de LCR/BOR à l'encaissement,C
+36,Remise de facture CB crédit,D
+37,Remises de LCR/BOR à l'escompte,C
+38,Facture CB impayée / rejetée,D
+39,Virements d'Origine Extérieur (VOE) reçus,C
+40,Virements EDI (VEDI) reçus,C
+41,Transferts vers/en provenance de l'étranger,D
+41,Transferts vers/en provenance de l'étranger,C
+42,Achats/Ventes de devises,D
+42,Achats/Ventes de devises,C
+43,Autres opérations avec l'étranger,D
+43,Autres opérations avec l'étranger,C
+44,Transfert émis,D
+45,Transfert reçus,C
+46,Achats de devises au comptant,D
+47,Ventes de devises au comptant,C
+48,Levée sur achat à terme,D
+49,Livraison sur vente à terme,C
+50,Virements EDI (VEDI) émis,D
+51,Achats et Ventes de titres,D
+51,Achats et Ventes de titres,C
+52,Diverses opérations sur titres,D
+52,Diverses opérations sur titres,C
+53,Achats/Souscriptions VM/BF,D
+54,Ventes de VM/BF,C
+55,Solde de liquidation - BF,C
+55,Solde de liquidation - BF,D
+56,Achats OPCVM,D
+57,Ventes OPCVM,C
+58,Achats TCN,D
+59,Ventes TCN,C
+60,Réservé,R
+61,Agios,D
+61,Agios,C
+62,Commissions et frais divers,D
+63,Produits financiers,C
+64,Commissions y compris taxes,D
+65,Commissions hors taxes,D
+66,Commissions non taxables,D
+67,Taxes,D
+68,Autres opérations avec l'étranger - Débit,D
+69,Autres opérations avec l'étranger - Crédit,C
+70,Charges financières,D
+71,Tirage de crédits,C
+72,Échéance crédits,D
+73,Émission de valeurs mobilières,C
+74,Émission de titres de créances,C
+75,Remboursement,D
+76,Dépôt à terme,D
+77,Échéance dépôt à terme,C
+78,Virements Référencés (VR) reçus,C
+79,Virements Référencés (VR) émis,D
+80,Achats autres TC,D
+81,Ventes autres TC,C
+82,Contrats,C
+82,Contrats,D
+83,Options,C
+83,Options,D
+84,Achats Bourses Étrangères,D
+85,Ventes Bourses Étrangères,C
+86,Opérations sur titres,C
+86,Opérations sur titres,D
+87,Revenus sur titres,C
+88,Commissions et droits de garde,D
+89,Remboursement impôts étrangers,C
+90,VCOM émis,D
+91,Opérations diverses,C
+91,Opérations diverses,D
+92,Centralisation de recettes,C
+92,Centralisation de recettes,D
+93,Centralisation de dépenses,C
+93,Centralisation de dépenses,D
+94,Centralisation de trésorerie,C
+95,Centralisation de trésorerie,D
+96,Télérèglements domiciliés,D
+97,Télérèglements émis,C
+98,Télérèglements rejetés/impayés,D
+99,Annulations et régularisations,C
+99,Annulations et régularisations,D

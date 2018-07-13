@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<openerp>
+    <data>
+            
+                                 <!-- wizard prepare reconcile  -->
+             
+            
+            <record model="ir.ui.view" id="correct_bank_line_exception_form_view">
+                <field name="name">correct.bank.line.exception.form</field>
+                <field name="model">correct.bank.line.exception</field>
+                <field name="type">form</field>
+                <field name="arch" type="xml">
+                    <form string="Annuler l'exception" version="7.0">
+	                     <footer>
+	                          <button name="action_correct_bank_line_excep" string="Valider" type="object" class="oe_highlight"/>
+	                          ou
+	                          <button string="Annuler" class="oe_link" special="cancel"/>
+	                     </footer>
+                    </form>
+                </field>
+            </record>
+      
+            <record model="ir.actions.act_window" id="correct_bank_line_exception_action">
+                <field name="name">Corrrection de l'exception</field>
+                <field name="res_model">correct.bank.line.exception</field>
+                <field name="type">ir.actions.act_window</field>
+                <field name="view_type">form</field>
+                <field name="view_mode">form</field>
+                <field name="target">new</field>
+            </record>
+            
+            <record model="ir.values" id="correction_bank_line_exception">
+	            <field name="name">Corrrection de l'exception</field>
+	            <field name="key2">client_action_multi</field>
+	            <field name="value" eval="'ir.actions.act_window,' + str(ref('correct_bank_line_exception_action'))" />
+	            <field name="key">action</field>
+	            <field name="model">account.bank.statement.line</field>
+        	</record>
+            
+    </data>
+</openerp>

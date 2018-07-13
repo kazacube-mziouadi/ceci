@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+
+        <!-- move lines vat get wizard -->
+
+        <record id="move_lines_vat_wizard_view" model="ir.ui.view">
+            <field name="name">move.lines.vat.wizard.view</field>
+            <field name="model">move.lines.vat.wizard</field>
+            <field name="arch" type="xml">
+                <form string="Récupération de la TVA">
+                    <group col="4">
+                        <group colspan="4">
+                            <separator string="Ecritures lettrées sans facture" colspan="4" attrs="{'invisible': [('line_ids1','=',[])]}" />
+                            <field name="line_ids1" nolabel="1" attrs="{'invisible': [('line_ids1','=',[])]}" >
+                                <tree string="Lignes à récupérer" editable="top" create="false" delete="false" colors="green:state == 'to_add'">
+                                    <field name="state" invisible="1"/>
+                                    <field name="date"/>
+                                    <field name="name"/>
+                                    <field name="ref"/>
+                                    <field name="partner_id"/>
+                                    <field name="journal_id"/>
+                                    <field name="account_id"/>
+                                    <field name="debit"/>
+                                    <field name="credit"/>
+                                    <field name="tax_id"/>
+                                    <button name="draft"  type="object" icon="gtk-cancel" states="to_add"/>
+                                    <button name="to_add"  type="object" icon="gtk-add" states="draft"/>
+                                </tree>
+                            </field>
+                            <separator string="Ecritures isolées" colspan="4" attrs="{'invisible': [('line_ids2','=',[])]}"/>
+                            <field name="line_ids2" nolabel="1" attrs="{'invisible': [('line_ids2','=',[])]}" >
+                                <tree string="Lignes à récupérer" editable="top" create="false" delete="false" colors="green:state == 'to_add'">
+                                    <field name="state" invisible="1"/>
+                                    <field name="date"/>
+                                    <field name="name"/>
+                                    <field name="ref"/>
+                                    <field name="partner_id"/>
+                                    <field name="journal_id"/>
+                                    <field name="account_id"/>
+                                    <field name="debit"/>
+                                    <field name="credit"/>
+                                    <field name="tax_id"/>
+                                    <button name="draft"  type="object" icon="gtk-cancel" states="to_add"/>
+                                    <button name="to_add"  type="object" icon="gtk-add" states="draft"/>
+                                </tree>
+                            </field>
+                        </group>
+                    </group>
+                    <footer>
+                        <button string="Valider" class="oe_highlight" type="object" name="action_validate"/>
+                        ou
+                        <button string="Annuler" class="oe_link" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+
+    </data>
+</openerp>

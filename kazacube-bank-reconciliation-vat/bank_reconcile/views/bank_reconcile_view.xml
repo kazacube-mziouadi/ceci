@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="action_show_bank_statement_lines" model="ir.actions.act_window">
+            <field name="name">Lignes de relevé</field>
+            <field name="res_model">account.bank.statement.line</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree</field>
+            <field name="search_view_id" ref="bank_reconcile.account_bank_statement_line_search"/>
+        </record>
+         <record id="action_show_account_move_lines" model="ir.actions.act_window">
+            <field name="name">Ecritures comptables</field>
+            <field name="res_model">account.move.line</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree</field>
+             <field name="search_view_id" ref="account.view_account_move_line_filter"/>
+        </record>
+
+        <record model="ir.ui.view" id="bank_reconcil_form_view">
+            <field name="name">bank.reconcile.form</field>
+            <field name="model">reconcile.bank</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Rapprochement Bancaire">
+
+                    <header>
+                        <button name="action_validate" states="confirmed" string="Valider le Rapprochement" class="oe_highlight" type="object" groups="bank_reconcile.group_reconcile_bank_g1"/>
+                        <!--button name="action_draft" states="confirmed,done" string="Annuler le Rapprochement" class="oe_highlight" type="object" groups="bank_reconcile.group_reconcile_bank_g1"/-->
+                        <button name="auto_reconcile_action" states="confirmed" string="Rapprochement Auto" type="object" class="oe_highlight" groups="bank_reconcile.group_reconcile_bank_g1" />
+                        <button  name="action_confirm" string="Remplir les lignes" states="draft,confirmed" type="object" class="oe_highlight" groups="bank_reconcile.group_reconcile_bank_g1"/>
+                        <field name="state" widget="statusbar" />
+                    </header>
+                     <div class="oe_right oe_button_box" name="buttons">
+                        <button class="oe_inline oe_stat_button" type="action" name="%(bank_reconcile.action_show_account_move_lines)d"  context="{'search_default_reconciliation_id': active_id,'default_reconciliation_id': active_id}" icon="fa-list">
+                                    <field string="Ecritures Comptables" name="move_lines_count" widget="statinfo"/>
+                        </button>
+                        <button class="oe_inline oe_stat_button" type="action" name="%(bank_reconcile.action_show_bank_statement_lines)d"  context="{'search_default_reconciliation_id': active_id,'default_reconciliation_id': active_id}" icon="fa-list">
+                                    <field string="Lignes de relevé" name="statment_lines_count" widget="statinfo"/>
+                         </button>
+                    </div>
+                    <group>
+                        <group>
+                             <field name="name" attrs="{'readonly': [('state','!=','draft')]}"/>
+                             <field name="date" attrs="{'readonly': [('state','!=','draft')]}"/>
+                             <field name="fiscalyear_id"  attrs="{'readonly': [('state','!=','draft')]}"/>
+                             <field name="periode_id"  attrs="{'readonly': [('state','!=','draft')]}"/>
+                        </group>
+                        <group>
+                            <field name="account_bank_statement_id" attrs="{'readonly': [('state','!=','draft')]}"/>
+                            <field name="journal_id"  attrs="{'readonly': [('state','!=','draft')]}"/>
+                            <field name="account_id" domain="[('type','!=','view')]" attrs="{'readonly': [('state','!=','draft')]}"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="A rapprocher" attrs="{'invisible': [('state','=','draft')]}">
+                            <group colspan="4" col="4">
+                                <separator string="Ecritures Comptables"/>
+                                <button class="oe_highlight" name="action_rapprocher" string="Rapprocher" type="object" attrs="{'invisible': [('state','!=','confirmed')]}"/>
+                                <separator string="Lignes Relevé Bancaire"/>
+                            </group>
+
+                            <group >
+                                <field name="account_move_line_ids"   context="{'reconciliation_id':active_id}" nolabel="1"
+                                       attrs="{'readonly': [('state','=','done')]}">
+                                <tree colors="blue:state == 'draft';black:state == 'posted'" editable="top" string="Journal Items" delete="false" create="false">
+                                        <field name="date" readonly="True"/>
+                                        <field name="ref" readonly="True"/>
+                                        <field name="visible" invisible="1"/>
+                                        <field name="partner_id" on_change="onchange_partner_id(False, partner_id, account_id, debit, credit, parent.date, parent.journal_id, context)" readonly="True"/>
+                                        <field name="account_id" domain="[('journal_id','=',parent.journal_id),('company_id', '=', parent.company_id)]" readonly="True" invisible="1"/>
+                                        <field name="debit" sum="Total Debit" readonly="True" class="oe_subtotal_footer_separator"/>
+                                        <field name="credit" sum="Total Credit" readonly="True" class="oe_subtotal_footer_separator"/>
+                                        <field name="tax_code_id" readonly="True" invisible="1"/>
+                                        <field name="tax_amount" readonly="True" invisible="1"/>
+                                        <field name="state" invisible="0" />
+                                        <field name="move_stat_id" string="L.Rapp" readonly="1"/>
+                                        <field name="rapprocher" string="Rapp" nolabel="1" on_change="onchange_rapprocher_move(rapprocher)"/>
+                                    </tree>
+                                </field>
+
+                                <field name="bank_statement_line_ids"  domain="[('visible','=',True)]" context="{'reconciliation_id':active_id}" nolabel="1"
+                                      mode="tree" attrs="{'readonly': [('state','=','done')]}">
+                                    <tree  editable="top" string="Statement lines" delete="false" create="false">
+                                        <field reload_on_button='1' name="rapprocher"  string="Rapp" nolabel="1" on_change="onchange_rapprocher_statement(rapprocher)"/>
+                                        <field name="date" readonly="True"/>
+                                        <field name="move_stat_id" string="L.Rapp" readonly="1"/>
+                                        <field name="name" readonly="True"/>
+                                        <field name="ref" readonly="True" invisible="1"/>
+                                        <field name="partner_id" readonly="True" invisible="1"/>
+                                        <field name="account_id" readonly="True" invisible="1"/>
+                                        <field name="amount" readonly="True" sum="Total Debit" class="oe_subtotal_footer_separator"/>
+                                        <field name="visible" invisible="1"/>
+                                        <field name="note"/>
+                                    </tree>
+                                 </field>
+                            </group>
+                        </page>
+                    </notebook>
+
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="bank_reconcile_tree_view">
+            <field name="name">bank.reconcile.tree</field>
+            <field name="model">reconcile.bank</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="Rapprochement Bancaire">
+                    <field name="name"/>
+                    <field name="date"/>
+                    <field name="fiscalyear_id"/>
+                    <field name="periode_id"/>
+                    <field name="account_id"/>
+                    <field name="account_bank_statement_id"/>
+                    <field name="state"/>
+                </tree>
+            </field>
+        </record>
+
+
+
+
+        <record model="ir.actions.act_window" id="action_reconcile_bank_tree_view">
+                <field name="name">Rapprochement Bancaire</field>
+                <field name="type">ir.actions.act_window</field>
+                <field name="res_model">reconcile.bank</field>
+                <field name="view_type">form</field>
+                <field name="context">{'journal_type':'bank'}</field>
+                <field name="view_mode">tree,form</field>
+         </record>
+         <record model="ir.actions.act_window" id="action_reconcile_bank_form_view">
+                <field name="name">Rapprochement Bancaire</field>
+                <field name="type">ir.actions.act_window</field>
+                <field name="res_model">reconcile.bank</field>
+                <field name="view_type">form</field>
+                <field name="context">{'journal_type':'bank'}</field>
+                <field name="view_mode">form</field>
+         </record>
+        <menuitem id="menu_reconcile_bank" name="Traitement de rapprochement bancaire" parent="menu_parent_reconcile_bank"
+                  action="action_reconcile_bank_tree_view" groups="bank_reconcile.group_reconcile_bank_g2"/>
+    </data>
+</openerp>

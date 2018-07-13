@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<openerp>
+    <data>
+            
+                                 <!-- wizard prepare reconcile  -->
+             
+            
+            <record model="ir.ui.view" id="open_account_line_exception_form_view">
+                <field name="name">open.account.line.exception.form</field>
+                <field name="model">open.account.line.exception</field>
+                <field name="type">form</field>
+                <field name="arch" type="xml">
+                    <form string="Annuler l'exception" version="7.0">
+	                     <footer>
+	                          <button name="action_open_move_line_excep" string="Valider" type="object" class="oe_highlight"/>
+	                          ou
+	                          <button string="Annuler" class="oe_link" special="cancel"/>
+	                     </footer>
+                    </form>
+                </field>
+            </record>
+      
+            <record model="ir.actions.act_window" id="open_account_line_exception_action">
+                <field name="name">Annuler l'exception</field>
+                <field name="res_model">open.account.line.exception</field>
+                <field name="type">ir.actions.act_window</field>
+                <field name="view_type">form</field>
+                <field name="view_mode">form</field>
+                <field name="target">new</field>
+            </record>
+            
+            <record model="ir.values" id="annulation_account_move_line_exception">
+	            <field name="name">Annuler l'exception</field>
+	            <field name="key2">client_action_multi</field>
+	            <field name="value" eval="'ir.actions.act_window,' + str(ref('open_account_line_exception_action'))" />
+	            <field name="key">action</field>
+	            <field name="model">account.move.line</field>
+        	</record>
+            
+
+        <menuitem id="open_account_line_exception_menu" name="RE-Mettre Les Ecritures" parent="menu_parent_reconcile_bank" action="open_account_line_exception_action" sequence="555" groups="bank_reconcile.group_reconcile_bank_g2"/>
+           
+    </data>
+</openerp>
