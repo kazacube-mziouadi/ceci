@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+
+        <record id="cdr_view" model="ir.ui.view">
+          <field name="name">CDR</field>
+          <field name="model">cdr</field>
+          <field name="type">form</field>
+          <field name="arch" type="xml">
+            <form string="Assistant de génération du CPC">
+                <div>
+                   <p class="oe_grey">
+                       Cet assistant vous permet de générer l'état compte de produits et charges (CPC)
+                   </p>
+               </div>
+                <group>
+                    <field name="fiscalyear" />
+                    <newline/>
+                    <field name="fiscalyear2" />
+                </group>
+                 <footer>
+                        <button string="Imprimer" class="oe_highlight" type="object" name="print_cdr_report"/>
+                        <button string="Annuler" class="oe_link" special="cancel"/>
+               </footer>
+            </form>
+	</field>
+        </record>
+        <record id="action_cdr_menu" model="ir.actions.act_window">
+            <field name="name">Compte de produits et charges</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">cdr</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="cdr_view"/>
+            <field name="target">new</field>
+        </record>
+
+        <!-- <menuitem
+                icon="STOCK_PRINT"
+                name="Compte de resultat"
+                parent="account.menu_finance_reports"
+                action="action_cdr_menu"
+                id="menu_general_cdr_report"
+               /> -->
+         <delete id="account.menu_account_report_pl" model="ir.ui.menu"/>
+
+
+        <record model="ir.values" id="action_cdr_report_values1">
+            <field name="model_id" ref="account.model_account_account" />
+            <field name="object" eval="1" />
+            <field name="name">CDR</field>
+            <field name="key2">client_print_multi</field>
+            <field name="value" eval="'ir.actions.act_window,' +str(ref('action_cdr_menu'))" />
+            <field name="key">action</field>
+            <field name="model">account.account</field>
+        </record>
+
+    </data>
+</openerp>

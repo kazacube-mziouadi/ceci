@@ -1,0 +1,1238 @@
+<?xml version="1.0" encoding="ISO-8859-15"?>
+<openerp>
+  <data noupdate="1">
+
+    <record id="l10n_bilan" model="l10n.ma.report">
+      <field name="name">Bilan Comptable</field>
+      <field name="code">bilan</field>
+    </record>
+
+    <record id="l10n_cdr" model="l10n.ma.report">
+      <field name="name">Compte de Resultat</field>
+      <field name="code">cdr</field>
+    </record>
+
+<record id="l10_ma_act211" model="l10n.ma.line">
+    <field name="name">Immobilisations en non-valeur : Frais préliminaires </field>
+    <field name="definition">{'load':['+:211:S'],'except':[]}</field>
+    <field name="code">act211</field>
+    <field name="report_id" ref="l10n_bilan"/>
+  </record>
+<record id="l10_ma_act211b" model="l10n.ma.line">
+    <field name="name">Amortissements des frais préliminaires</field>
+    <field name="definition">{'load':['-:2811:S'], 'except':[]}</field>
+    <field name="code">act211b</field>
+    <field name="report_id" ref="l10n_bilan"/>
+  </record>
+
+<record id="l10_ma_act212" model="l10n.ma.line">
+    <field name="name">Immobilisations en non-valeur : Charges à répartir sur plusieurs exercices</field>
+    <field name="definition">{'load':['+:212:S'], 'except':[]}</field>
+    <field name="code">act212</field>
+    <field name="report_id" ref="l10n_bilan"/>
+  </record>
+
+ <record id="l10_ma_act212b" model="l10n.ma.line">
+    <field name="name">Amortissements des charges à  répartir</field>
+    <field name="definition">{'load':['-:2812:S'], 'except':[]}</field>
+    <field name="code">act212b</field>
+    <field name="report_id" ref="l10n_bilan"/>
+  </record>
+
+<record id="l10_ma_act213" model="l10n.ma.line">
+    <field name="name">Immobilisations en non-valeur : Primes de remboursement des obligations</field>
+    <field name="definition">{'load':['+:213:S'],'except':[]}</field>
+    <field name="code">act213</field>
+    <field name="report_id" ref="l10n_bilan"/>
+</record>
+
+<record id="l10_ma_act213b" model="l10n.ma.line">
+    <field name="name">Amortissements des primes de remboursement des obligations</field>
+    <field name="definition">{'load':['-:2813:S'], 'except':[]}</field>
+    <field name="code">act213b</field>
+    <field name="report_id" ref="l10n_bilan"/>
+  </record>
+
+<record id="l10_ma_act21" model="l10n.ma.line">
+    <field name="name">Actif : Immobilisations en non-valeur (A)</field>
+    <field name="definition">{'load':['+:211:S','+:212:S','+:213:S'], 'except':[]}</field>
+    <field name="code">act21</field>
+    <field name="report_id" ref="l10n_bilan"/>
+  </record>
+
+<record id="l10_ma_act21b" model="l10n.ma.line">
+    <field name="name">Actif : Immobilisations en non-valeur (A)</field>
+    <field name="definition">{'load':['-:2811:S','-:2812:S','-:2813:S'], 'except':[]}</field>
+    <field name="code">act21b</field>
+    <field name="report_id" ref="l10n_bilan"/>
+  </record>
+
+<record id="l10_ma_act221" model="l10n.ma.line">
+    <field name="name">Immobilisations incorporelles : Immobilisations en recherche et développement</field>
+    <field name="definition">{'load':['+:221:S'], 'except':[]}</field>
+    <field name="code">act221</field>
+    <field name="report_id" ref="l10n_bilan"/>
+  </record>
+ <record id="l10_ma_act221b" model="l10n.ma.line">
+    <field name="name">Amortissements de l'immobilisation en recherche et développement</field>
+    <field name="definition">{'load':['-:2821:S'], 'except':[]}</field>
+    <field name="code">act221b</field>
+    <field name="report_id" ref="l10n_bilan"/>
+  </record>
+
+ <record id="l10_ma_act222" model="l10n.ma.line">
+    <field name="name">Immobilisations incorporelles : Brevets,marques, droits et valeurs similaies</field>
+    <field name="definition">{'load':['+:222:S'], 'except':[]}</field>
+    <field name="code">act222</field>
+    <field name="report_id" ref="l10n_bilan"/>
+  </record>
+<record id="l10_ma_act222b" model="l10n.ma.line">
+    <field name="name">Amortissements des brevets, marques, droits et valeurs similaires</field>
+    <field name="definition">{'load':['-:2822:S'], 'except':[]}</field>
+    <field name="code">act222b</field>
+    <field name="report_id" ref="l10n_bilan"/>
+  </record>
+<record id="l10_ma_act223" model="l10n.ma.line">
+    <field name="name">Immobilisations incorporelles : Fonds commercial</field>
+    <field name="definition">{'load':['+:223:S'], 'except':[]}</field>
+    <field name="code">act223</field>
+    <field name="report_id" ref="l10n_bilan"/>
+  </record>
+<record id="l10_ma_act223b" model="l10n.ma.line">
+    <field name="name">Amortissements du fonds commercial</field>
+    <field name="definition">{'load':['-:2823:S'], 'except':[]}</field>
+    <field name="code">act223b</field>
+    <field name="report_id" ref="l10n_bilan"/>
+  </record>
+  <record id="l10_ma_act228" model="l10n.ma.line">
+    <field name="name">Immobilisations incorporelles : Autres immobilisations incorporelles</field>
+    <field name="definition">{'load':['+:228:S'], 'except':[]}</field>
+    <field name="code">act228</field>
+    <field name="report_id" ref="l10n_bilan"/>
+  </record>
+ <record id="l10_ma_act228b" model="l10n.ma.line">
+    <field name="name">Amortissements des autres immobilisations incorporelles</field>
+    <field name="definition">{'load':['-:2828:S'], 'except':[]}</field>
+    <field name="code">act228b</field>
+    <field name="report_id" ref="l10n_bilan"/>
+  </record>
+
+<record id="l10_ma_act22" model="l10n.ma.line">
+    <field name="name">Actif : Immobilisations incorporelles (B)</field>
+    <field name="definition">{'load':['+:221:S','+:222:S','+:223:S','+:228:S'], 'except':[]}</field>
+    <field name="code">act22</field>
+    <field name="report_id" ref="l10n_bilan"/>
+  </record>
+<record id="l10_ma_act22b" model="l10n.ma.line">
+    <field name="name">Amortissement : Immobilisations incorporelles (B)</field>
+    <field name="definition">{'load':['-:2821:S','-:2822:S','-:2823:S','-:2828:S'], 'except':[]}</field>
+    <field name="code">act22b</field>
+    <field name="report_id" ref="l10n_bilan"/>
+  </record>
+
+<record id="l10_ma_act231" model="l10n.ma.line">
+    <field name="name">Immobilisations corporelles : Terrains</field>
+    <field name="definition">{'load':['+:231:S'], 'except':[]}</field>
+    <field name="code">act231</field>
+    <field name="report_id" ref="l10n_bilan"/>
+  </record>
+
+<record id="l10_ma_act231b" model="l10n.ma.line">
+    <field name="name">Amortissements des terrains</field>
+    <field name="definition">{'load':['-:2831:S'], 'except':[]}</field>
+    <field name="code">act231b</field>
+    <field name="report_id" ref="l10n_bilan"/>
+  </record>
+
+<record id="l10_ma_act232" model="l10n.ma.line">
+    <field name="name">Immobilisations corporelles : Constructions</field>
+    <field name="definition">{'load':['+:232:S'], 'except':[]}</field>
+    <field name="code">act232</field>
+    <field name="report_id" ref="l10n_bilan"/>
+  </record>
+<record id="l10_ma_act232b" model="l10n.ma.line">
+    <field name="name">Amortissements des constructions</field>
+    <field name="definition">{'load':['-:2832:S'], 'except':[]}</field>
+    <field name="code">act232b</field>
+    <field name="report_id" ref="l10n_bilan"/>
+  </record>
+
+  <record id="l10_ma_act233" model="l10n.ma.line">
+    <field name="name">Immobilisations corporelles : Installations techniques , matériel et outillage</field>
+    <field name="definition">{'load':['+:233:S'], 'except':[]}</field>
+    <field name="code">act233</field>
+    <field name="report_id" ref="l10n_bilan"/>
+  </record>
+<record id="l10_ma_act233b" model="l10n.ma.line">
+    <field name="name">Amortissements des installations techniques, matériel et outillage</field>
+    <field name="definition">{'load':['-:2833:S'], 'except':[]}</field>
+    <field name="code">act233b</field>
+    <field name="report_id" ref="l10n_bilan"/>
+  </record>
+  <record id="l10_ma_act234" model="l10n.ma.line">
+    <field name="name">Immobilisations corporelles : Matériel de transport</field>
+    <field name="definition">{'load':['+:234:S'], 'except':[]}</field>
+    <field name="code">act234</field>
+    <field name="report_id" ref="l10n_bilan"/>
+  </record>
+<record id="l10_ma_act234b" model="l10n.ma.line">
+    <field name="name">Amortissements du matériel de transport</field>
+    <field name="definition">{'load':['-:2834:S'], 'except':[]}</field>
+    <field name="code">act234b</field>
+    <field name="report_id" ref="l10n_bilan"/>
+  </record>
+ <record id="l10_ma_act235" model="l10n.ma.line">
+    <field name="name">Immobilisations corporelles : Mobiliers, matériel de bureau et aménag. divers</field>
+    <field name="definition">{'load':['+:235:S'], 'except':[]}</field>
+    <field name="code">act235</field>
+    <field name="report_id" ref="l10n_bilan"/>
+  </record>
+ <record id="l10_ma_act235b" model="l10n.ma.line">
+    <field name="name">Amortissements du mobilier, matériel de bureau et aménagements divers</field>
+    <field name="definition">{'load':['-:2835:S'], 'except':[]}</field>
+    <field name="code">act235b</field>
+    <field name="report_id" ref="l10n_bilan"/>
+  </record>
+  <record id="l10_ma_act238" model="l10n.ma.line">
+    <field name="name">Immobilisations corporelles : Autres immobilisations corporelles</field>
+    <field name="definition">{'load':['+:238:S'], 'except':[]}</field>
+    <field name="code">act238</field>
+    <field name="report_id" ref="l10n_bilan"/>
+  </record>
+ <record id="l10_ma_act238b" model="l10n.ma.line">
+    <field name="name">Amortissements des autres immobilisations corporelles</field>
+    <field name="definition">{'load':['-:2838:S'], 'except':[]}</field>
+    <field name="code">act238b</field>
+    <field name="report_id" ref="l10n_bilan"/>
+  </record>
+  <record id="l10_ma_act239" model="l10n.ma.line">
+    <field name="name">Immobilisations corporelles : Immobilisations corporelles en cours</field>
+    <field name="definition">{'load':['+:239:S'], 'except':[]}</field>
+    <field name="code">act239</field>
+    <field name="report_id" ref="l10n_bilan"/>
+  </record>
+ <record id="l10_ma_act23" model="l10n.ma.line">
+    <field name="name">Actif : Immobilisations corporlles (C)</field>
+    <field name="definition">{'load':['+:231:S','+:232:S','+:233:S','+:234:S','+:235:S','+:238:S','+:239:S'], 'except':[]}</field>
+    <field name="code">act23</field>
+    <field name="report_id" ref="l10n_bilan"/>
+  </record>
+ <record id="l10_ma_act23b" model="l10n.ma.line">
+    <field name="name">Amortissement : Immobilisations corporlles (C)</field>
+    <field name="definition">{'load':['-:2831:S','-:2832:S','-:2833:S','-:2834:S','-:2835:S','-:2838:S','-:2839:S'], 'except':[]}</field>
+    <field name="code">act23b</field>
+    <field name="report_id" ref="l10n_bilan"/>
+  </record>
+
+<record id="l10_ma_act241" model="l10n.ma.line">
+    <field name="name">Immobilisations financières : Prêts immobilisés</field>
+    <field name="definition">{'load':['+:241:S'], 'except':[]}</field>
+    <field name="code">act241</field>
+    <field name="report_id" ref="l10n_bilan"/>
+  </record>
+ <record id="l10_ma_act248" model="l10n.ma.line">
+    <field name="name">Immobilisations financières : Autres créances financières</field>
+    <field name="definition">{'load':['+:248:S'], 'except':[]}</field>
+    <field name="code">act248</field>
+    <field name="report_id" ref="l10n_bilan"/>
+  </record>
+  <record id="l10_ma_act251" model="l10n.ma.line">
+    <field name="name">Immobilisations financières : Titres de participation</field>
+    <field name="definition">{'load':['+:251:S'], 'except':[]}</field>
+    <field name="code">act251</field>
+    <field name="report_id" ref="l10n_bilan"/>
+  </record>
+ <record id="l10_ma_act258" model="l10n.ma.line">
+    <field name="name">Immobilisations financières : Autres titres immobilisés</field>
+    <field name="definition">{'load':['+:258:S'], 'except':[]}</field>
+    <field name="code">act258</field>
+    <field name="report_id" ref="l10n_bilan"/>
+  </record>
+<record id="l10_ma_act24" model="l10n.ma.line">
+    <field name="name">Actif : Immobilisations financières (D)</field>
+    <field name="definition">{'load':['+:241:S','+:248:S','+:251:S','+:258:S'], 'except':[]}</field>
+    <field name="code">act24</field>
+    <field name="report_id" ref="l10n_bilan"/>
+  </record>
+ <record id="l10_ma_act271" model="l10n.ma.line">
+    <field name="name">Écarts de conversion : Diminution des créances immobilisés</field>
+    <field name="definition">{'load':['+:271:S'], 'except':[]}</field>
+    <field name="code">act271</field>
+    <field name="report_id" ref="l10n_bilan"/>
+  </record>
+  <record id="l10_ma_act272" model="l10n.ma.line">
+    <field name="name">Écarts de conversion : Diminution des créances immobilisés</field>
+    <field name="definition">{'load':['+:272:S'], 'except':[]}</field>
+    <field name="code">act272</field>
+    <field name="report_id" ref="l10n_bilan"/>
+  </record>
+<record id="l10_ma_act27" model="l10n.ma.line">
+    <field name="name">Actif : Écarts de conversion - Actif (E)</field>
+    <field name="definition">{'load':['+:271:S','+:272:S'], 'except':[]}</field>
+    <field name="code">act27</field>
+    <field name="report_id" ref="l10n_bilan"/>
+  </record>
+<record id="l10_ma_actT1" model="l10n.ma.line">
+    <field name="name">Actif : Total Actif Immobilisé</field>
+    <field name="definition">{'load':['+:21:S','+:22:S','+:23:S','+:24:S','+:27:S'], 'except':[]}</field>
+    <field name="code">actT1</field>
+    <field name="report_id" ref="l10n_bilan"/>
+  </record>
+ <record id="l10_ma_act311" model="l10n.ma.line">
+    <field name="name">Stocks : Marchandises</field>
+    <field name="definition">{'load':['+:311:S'], 'except':[]}</field>
+    <field name="code">act311</field>
+    <field name="report_id" ref="l10n_bilan"/>
+  </record>
+<record id="l10_ma_act311b" model="l10n.ma.line">
+    <field name="name">Provisions pour dépréciation des marchandises</field>
+    <field name="definition">{'load':['-:3911:S'], 'except':[]}</field>
+    <field name="code">act311b</field>
+    <field name="report_id" ref="l10n_bilan"/>
+  </record>
+ <record id="l10_ma_act312" model="l10n.ma.line">
+    <field name="name">Stocks : Matières et fournit. consommables</field>
+    <field name="definition">{'load':['+:312:S'], 'except':[]}</field>
+    <field name="code">act312</field>
+    <field name="report_id" ref="l10n_bilan"/>
+  </record>
+ <record id="l10_ma_act312b" model="l10n.ma.line">
+    <field name="name">Provisions pour dépréciation des matières et fournitures</field>
+    <field name="definition">{'load':['-:3912:S'], 'except':[]}</field>
+    <field name="code">act312b</field>
+    <field name="report_id" ref="l10n_bilan"/>
+  </record>
+<record id="l10_ma_act313" model="l10n.ma.line">
+    <field name="name">Stocks : Produits en cours</field>
+    <field name="definition">{'load':['+:3913:S'], 'except':[]}</field>
+    <field name="code">act313</field>
+    <field name="report_id" ref="l10n_bilan"/>
+  </record>
+  <record id="l10_ma_act313b" model="l10n.ma.line">
+    <field name="name">Provisions pour dépréciation des produits en cours</field>
+    <field name="definition">{'load':['-:313:S'], 'except':[]}</field>
+    <field name="code">act313b</field>
+    <field name="report_id" ref="l10n_bilan"/>
+  </record>
+ <record id="l10_ma_act314" model="l10n.ma.line">
+    <field name="name">Stocks : Produits intermid. et prod. résiduels</field>
+    <field name="definition">{'load':['+:3914:S'], 'except':[]}</field>
+    <field name="code">act314</field>
+    <field name="report_id" ref="l10n_bilan"/>
+  </record>
+ <record id="l10_ma_act314b" model="l10n.ma.line">
+    <field name="name">Provisions pour dépréciation des produits intermédiaires</field>
+    <field name="definition">{'load':['-:314:S'], 'except':[]}</field>
+    <field name="code">act314b</field>
+    <field name="report_id" ref="l10n_bilan"/>
+  </record>
+ <record id="l10_ma_act315" model="l10n.ma.line">
+    <field name="name">Stocks : Produits finis</field>
+    <field name="definition">{'load':['+:315:S'], 'except':[]}</field>
+    <field name="code">act315</field>
+    <field name="report_id" ref="l10n_bilan"/>
+  </record>
+<record id="l10_ma_act315b" model="l10n.ma.line">
+    <field name="name">Provisions pour dépréciation des produits finis</field>
+    <field name="definition">{'load':['-:3915:S'], 'except':[]}</field>
+    <field name="code">act315b</field>
+    <field name="report_id" ref="l10n_bilan"/>
+  </record>
+
+ <record id="l10_ma_act31" model="l10n.ma.line">
+    <field name="name">Actif : Stocks (F)</field>
+    <field name="definition">{'load':['+:311:S','+:312:S','+:313:S','+:314:S','+:315:S'], 'except':[]}</field>
+    <field name="code">act31</field>
+    <field name="report_id" ref="l10n_bilan"/>
+  </record>
+
+ <record id="l10_ma_act31b" model="l10n.ma.line">
+    <field name="name">Dépreciation : Stocks (F)</field>
+    <field name="definition">{'load':['-:3911:S','-:3912:S','-:3913:S','-:3914:S','-:3915:S'], 'except':[]}</field>
+    <field name="code">act31b</field>
+    <field name="report_id" ref="l10n_bilan"/>
+  </record>
+
+ <record id="l10_ma_act341" model="l10n.ma.line">
+    <field name="name">Créances de l'actif circulant : Fournis. débiteurs, avances et acomptes</field>
+    <field name="definition">{'load':['+:341:S'], 'except':[]}</field>
+    <field name="code">act341</field>
+    <field name="report_id" ref="l10n_bilan"/>
+  </record>
+ <record id="l10_ma_act341b" model="l10n.ma.line">
+    <field name="name">Provisions pour dépréciation - fournisseurs débiteurs, avances et acomptes</field>
+    <field name="definition">{'load':['-:3941:S'], 'except':[]}</field>
+    <field name="code">act341b</field>
+    <field name="report_id" ref="l10n_bilan"/>
+  </record>
+<record id="l10_ma_act342" model="l10n.ma.line">
+    <field name="name">Créances de l'actif circulant : Clients et comptes rattachés</field>
+    <field name="definition">{'load':['+:342:S'], 'except':[]}</field>
+    <field name="code">act342</field>
+    <field name="report_id" ref="l10n_bilan"/>
+  </record>
+  <record id="l10_ma_act342b" model="l10n.ma.line">
+    <field name="name">Provisions pour dépréciation des clients et comptes rattachés</field>
+    <field name="definition">{'load':['-:3942:S'], 'except':[]}</field>
+    <field name="code">act342b</field>
+    <field name="report_id" ref="l10n_bilan"/>
+  </record>
+ <record id="l10_ma_act343" model="l10n.ma.line">
+    <field name="name">Créances de l'actif circulant : Personnel</field>
+    <field name="definition">{'load':['+:343:S'], 'except':[]}</field>
+    <field name="code">act343</field>
+    <field name="report_id" ref="l10n_bilan"/>
+  </record>
+  <record id="l10_ma_act343b" model="l10n.ma.line">
+    <field name="name">Provisions pour dépréciation du personnel - débiteur</field>
+    <field name="definition">{'load':['-:3943:S'], 'except':[]}</field>
+    <field name="code">act343b</field>
+    <field name="report_id" ref="l10n_bilan"/>
+  </record>
+<record id="l10_ma_act345" model="l10n.ma.line">
+    <field name="name">Créances de l'actif circulant : État</field>
+    <field name="definition">{'load':['+:345:S'], 'except':[]}</field>
+    <field name="code">act345</field>
+    <field name="report_id" ref="l10n_bilan"/>
+  </record>
+ <record id="l10_ma_act346" model="l10n.ma.line">
+    <field name="name">Créances de l'actif circulant : Comptes d'associés</field>
+    <field name="definition">{'load':['+:346:S'], 'except':[]}</field>
+    <field name="code">act346</field>
+    <field name="report_id" ref="l10n_bilan"/>
+  </record>
+  <record id="l10_ma_act346b" model="l10n.ma.line">
+    <field name="name">Provisions pour dépréciation des comptes d'associés débiteurs</field>
+    <field name="definition">{'load':['-:3946:S'], 'except':[]}</field>
+    <field name="code">act346b</field>
+    <field name="report_id" ref="l10n_bilan"/>
+  </record>
+<record id="l10_ma_act348" model="l10n.ma.line">
+    <field name="name">Créances de l'actif circulant : Autres débiteurs</field>
+    <field name="definition">{'load':['+:348:S'], 'except':[]}</field>
+    <field name="code">act348</field>
+    <field name="report_id" ref="l10n_bilan"/>
+  </record>
+  <record id="l10_ma_act348b" model="l10n.ma.line">
+    <field name="name">Provisions pour dépréciation des autres débiteurs</field>
+    <field name="definition">{'load':['-:3948:S'], 'except':[]}</field>
+    <field name="code">act348b</field>
+    <field name="report_id" ref="l10n_bilan"/>
+  </record>
+ <record id="l10_ma_act349" model="l10n.ma.line">
+    <field name="name">Créances de l'actif circulant : Comptes de régularisation Actif</field>
+    <field name="definition">{'load':['+:349:S'], 'except':[]}</field>
+    <field name="code">act349</field>
+    <field name="report_id" ref="l10n_bilan"/>
+  </record>
+ <record id="l10_ma_act34" model="l10n.ma.line">
+    <field name="name">Actif : Créances de l'actif circulant (G)</field>
+    <field name="definition">{'load':['+:341:S','+:342:S','+:343:S','+:345:S','+:346:S','+:348:S','+:349:S'], 'except':[]}</field>
+    <field name="code">act34</field>
+    <field name="report_id" ref="l10n_bilan"/>
+  </record> 
+ <record id="l10_ma_act34b" model="l10n.ma.line">
+    <field name="name">Dépreciation : Créances de l'actif circulant (G)</field>
+    <field name="definition">{'load':['-:3941:S','-:3942:S','-:3943:S','-:3946:S','-:3948:S'], 'except':[]}</field>
+    <field name="code">act34b</field>
+    <field name="report_id" ref="l10n_bilan"/>
+  </record> 
+
+ <record id="l10_ma_act350" model="l10n.ma.line">
+    <field name="name">Titres et valeurs de placement: Titres et valeurs de placement</field>
+    <field name="definition">{'load':['+:350:S'], 'except':[]}</field>
+    <field name="code">act350</field>
+    <field name="report_id" ref="l10n_bilan"/>
+  </record>
+<record id="l10_ma_act350b" model="l10n.ma.line">
+    <field name="name">Provisions pour dépréciation des titres et valeurs de placement</field>
+    <field name="definition">{'load':['-:3950:S'], 'except':[]}</field>
+    <field name="code">act350b</field>
+    <field name="report_id" ref="l10n_bilan"/>
+ </record>
+  <record id="l10_ma_act35" model="l10n.ma.line">
+    <field name="name">Actif : Titres et valeurs de placement (H)</field>
+    <field name="definition">{'load':['+:350:S'], 'except':[]}</field>
+    <field name="code">act35</field>
+    <field name="report_id" ref="l10n_bilan"/>
+  </record>
+ <record id="l10_ma_act37" model="l10n.ma.line">
+    <field name="name">Actif : Écarts de conversion-Actif (I) (AC)</field>
+    <field name="definition">{'load':['+:37:S'], 'except':[]}</field>
+    <field name="code">act37</field>
+    <field name="report_id" ref="l10n_bilan"/>
+  </record>
+<record id="l10_ma_actT2" model="l10n.ma.line">
+    <field name="name">Actif : Total Actif Circulant</field>
+    <field name="definition">{'load':['+:31:S','+:34:S','+:35:S','+:37:S'], 'except':[]}</field>
+    <field name="code">actT2</field>
+    <field name="report_id" ref="l10n_bilan"/>
+  </record>
+ <record id="l10_ma_act511" model="l10n.ma.line">
+    <field name="name">Trésorerie Actif : Chèques et valeurs à encaisser</field>
+    <field name="definition">{'load':['+:511:S'], 'except':[]}</field>
+    <field name="code">act511</field>
+    <field name="report_id" ref="l10n_bilan"/>
+  </record>
+  <record id="l10_ma_act514" model="l10n.ma.line">
+    <field name="name">Trésorerie Actif : Banques, Trésorerie Générale,Chèques postaux</field>
+    <field name="definition">{'load':['+:514:S'], 'except':[]}</field>
+    <field name="code">act514</field>
+    <field name="report_id" ref="l10n_bilan"/>
+  </record>
+  <record id="l10_ma_act516" model="l10n.ma.line">
+    <field name="name">Trésorerie Actif : Caisse, Régies d'avances et accréditifs</field>
+    <field name="definition">{'load':['+:516:S'], 'except':[]}</field>
+    <field name="code">act516</field>
+    <field name="report_id" ref="l10n_bilan"/>
+  </record>
+<record id="l10_ma_act51" model="l10n.ma.line">
+    <field name="name">Actif : Trésorerie Actif</field>
+    <field name="definition">{'load':['+:511:S','+:514:S','+:516:S'], 'except':[]}</field>
+    <field name="code">act51</field>
+    <field name="report_id" ref="l10n_bilan"/>
+  </record>
+ <record id="l10_ma_actT3" model="l10n.ma.line">
+    <field name="name">Actif : Total Trésorerie Actif</field>
+    <field name="definition">{'load':['+:511:S','+:514:S','+:516:S'], 'except':[]}</field>
+    <field name="code">actT3</field>
+    <field name="report_id" ref="l10n_bilan"/>
+  </record>
+<record id="l10_ma_pas111" model="l10n.ma.line">
+    <field name="name">Capitaux propres : Capital social ou personnel</field>
+    <field name="definition">{'load':['-:111:S'], 'except':[]}</field>
+    <field name="code">pas111</field>
+    <field name="report_id" ref="l10n_bilan"/>
+  </record>
+<record id="l10_ma_pas112" model="l10n.ma.line">
+    <field name="name">Capitaux propres : Primes d'émission, de fusion, d'apport</field>
+    <field name="definition">{'load':['-:112:S'], 'except':[]}</field>
+    <field name="code">pas112</field>
+    <field name="report_id" ref="l10n_bilan"/>
+  </record>
+  <record id="l10_ma_pas113" model="l10n.ma.line">
+    <field name="name">Capitaux propres : Écarts de réévaluation</field>
+    <field name="definition">{'load':['-:113:S'], 'except':[]}</field>
+    <field name="code">pas113</field>
+    <field name="report_id" ref="l10n_bilan"/>
+  </record>
+  <record id="l10_ma_pas114" model="l10n.ma.line">
+    <field name="name">Capitaux propres : Réserve légale</field>
+    <field name="definition">{'load':['-:114:S'], 'except':[]}</field>
+    <field name="code">pas114</field>
+    <field name="report_id" ref="l10n_bilan"/>
+  </record>
+  <record id="l10_ma_pas115" model="l10n.ma.line">
+    <field name="name">Capitaux propres : Autres réserves</field>
+    <field name="definition">{'load':['-:115:S'], 'except':[]}</field>
+    <field name="code">pas115</field>
+    <field name="report_id" ref="l10n_bilan"/>
+  </record>
+  <record id="l10_ma_pas116" model="l10n.ma.line">
+    <field name="name">Capitaux propres : Report à nouveau</field>
+    <field name="definition">{'load':['-:116:S'], 'except':[]}</field>
+    <field name="code">pas116</field>
+    <field name="report_id" ref="l10n_bilan"/>
+  </record>
+  <record id="l10_ma_pas118" model="l10n.ma.line">
+    <field name="name">Capitaux propres : Résultat net en instance d'affectation</field>
+    <field name="definition">{'load':['-:118:S'], 'except':[]}</field>
+    <field name="code">pas118</field>
+    <field name="report_id" ref="l10n_bilan"/>
+  </record>
+  <record id="l10_ma_pas119" model="l10n.ma.line">
+    <field name="name">Capitaux propres : Résultat net de l'exercice</field>
+    <field name="definition">{'load':['-:119:S'], 'except':[]}</field>
+    <field name="code">pas119</field>
+    <field name="report_id" ref="l10n_bilan"/>
+  </record>
+<record id="l10_ma_pas11" model="l10n.ma.line">
+    <field name="name">Passif : Capitaux propres (A)</field>
+    <field name="definition">{'load':['-:111:S','-:112:S','-:113:S','-:114:S','-:115:S','-:116:S','-:118:S','-:119:S'], 'except':[]}</field>
+    <field name="code">pas11</field>
+    <field name="report_id" ref="l10n_bilan"/>
+  </record>
+<record id="l10_ma_pas131" model="l10n.ma.line">
+    <field name="name">Capitaux propres assimilés : Subventions d'investissement</field>
+    <field name="definition">{'load':['-:131:S'], 'except':[]}</field>
+    <field name="code">pas131</field>
+    <field name="report_id" ref="l10n_bilan"/>
+  </record>
+<record id="l10_ma_pas135" model="l10n.ma.line">
+    <field name="name">Capitaux propres assimilés : Provisions réglementées</field>
+    <field name="definition">{'load':['-:135:S'], 'except':[]}</field>
+    <field name="code">pas135</field>
+    <field name="report_id" ref="l10n_bilan"/>
+  </record>
+<record id="l10_ma_pas13" model="l10n.ma.line">
+    <field name="name">Passif : Capitaux propres assimilés (B)</field>
+    <field name="definition">{'load':['-:131:S','-:135:S'], 'except':[]}</field>
+    <field name="code">pas13</field>
+    <field name="report_id" ref="l10n_bilan"/>
+  </record>
+ <record id="l10_ma_pas141" model="l10n.ma.line">
+    <field name="name">Dettes de financement : Emprunts obligataires</field>
+    <field name="definition">{'load':['-:141:S'], 'except':[]}</field>
+    <field name="code">pas141</field>
+    <field name="report_id" ref="l10n_bilan"/>
+  </record>
+  <record id="l10_ma_pas148" model="l10n.ma.line">
+    <field name="name">Dettes de financement : Autres dettes de financement</field>
+    <field name="definition">{'load':['-:148:S'], 'except':[]}</field>
+    <field name="code">pas148</field>
+    <field name="report_id" ref="l10n_bilan"/>
+  </record>
+ <record id="l10_ma_pas14" model="l10n.ma.line">
+    <field name="name">Passif : Dettes de financement ( C )</field>
+    <field name="definition">{'load':['-:141:S','-:148:S'], 'except':[]}</field>
+    <field name="code">pas14</field>
+    <field name="report_id" ref="l10n_bilan"/>
+  </record>
+ <record id="l10_ma_pas151" model="l10n.ma.line">
+    <field name="name">Provisions durables pour risques et charges : provisions pour risques</field>
+    <field name="definition">{'load':['-:151:S'], 'except':[]}</field>
+    <field name="code">pas151</field>
+    <field name="report_id" ref="l10n_bilan"/>
+  </record>
+  <record id="l10_ma_pas155" model="l10n.ma.line">
+    <field name="name">Provisions durables pour risques et charges : provisions pour charges</field>
+    <field name="definition">{'load':['-:155:S'], 'except':[]}</field>
+    <field name="code">pas155</field>
+    <field name="report_id" ref="l10n_bilan"/>
+  </record>
+ <record id="l10_ma_pas15" model="l10n.ma.line">
+    <field name="name">Passif : Provisions durables pour risques et charges (D)</field>
+    <field name="definition">{'load':['-:151:S','-:155:S'], 'except':[]}</field>
+    <field name="code">pas15</field>
+    <field name="report_id" ref="l10n_bilan"/>
+  </record>
+
+ <record id="l10_ma_pas171" model="l10n.ma.line">
+    <field name="name">Écarts de conversion - Passif : Augmentation des créances immobilisées</field>
+    <field name="definition">{'load':['-:171:S'], 'except':[]}</field>
+    <field name="code">pas171</field>
+    <field name="report_id" ref="l10n_bilan"/>
+  </record>
+  <record id="l10_ma_pas172" model="l10n.ma.line">
+    <field name="name">Écarts de conversion - Passif : Diminution des dettes de financement</field>
+    <field name="definition">{'load':['-:172:S'], 'except':[]}</field>
+    <field name="code">pas172</field>
+    <field name="report_id" ref="l10n_bilan"/>
+  </record>
+<record id="l10_ma_pas17" model="l10n.ma.line">
+    <field name="name">Passif : Écarts de conversion - Passif (E)</field>
+    <field name="definition">{'load':['-:171:S','-:172:S'], 'except':[]}</field>
+    <field name="code">pas17</field>
+    <field name="report_id" ref="l10n_bilan"/>
+  </record>
+<record id="l10_ma_past1" model="l10n.ma.line">
+    <field name="name">Passif : Total Financement permanent</field>
+    <field name="definition">{'load':['-:11:S','-:13:S','-:14:S','-:15:S','-:17:S'], 'except':[]}</field>
+    <field name="code">past1</field>
+    <field name="report_id" ref="l10n_bilan"/>
+  </record>
+  <record id="l10_ma_pas441" model="l10n.ma.line">
+    <field name="name">Dettes du passif circulant : Fournisseurs et comptes rattachés</field>
+    <field name="definition">{'load':['-:441:S'], 'except':[]}</field>
+    <field name="code">pas441</field>
+    <field name="report_id" ref="l10n_bilan"/>
+  </record>
+  <record id="l10_ma_pas442" model="l10n.ma.line">
+    <field name="name">Dettes du passif circulant : Fournisseurs et comptes rattachés</field>
+    <field name="definition">{'load':['-:442:S'], 'except':[]}</field>
+    <field name="code">pas442</field>
+    <field name="report_id" ref="l10n_bilan"/>
+  </record>
+  <record id="l10_ma_pas443" model="l10n.ma.line">
+    <field name="name">Dettes du passif circulant : Personnel ? créditeur</field>
+    <field name="definition">{'load':['-:443:S'], 'except':[]}</field>
+    <field name="code">pas443</field>
+    <field name="report_id" ref="l10n_bilan"/>
+  </record>
+  <record id="l10_ma_pas444" model="l10n.ma.line">
+    <field name="name">Dettes du passif circulant : Organismes sociaux</field>
+    <field name="definition">{'load':['-:444:S'], 'except':[]}</field>
+    <field name="code">pas444</field>
+    <field name="report_id" ref="l10n_bilan"/>
+  </record>
+  <record id="l10_ma_pas445" model="l10n.ma.line">
+    <field name="name">Dettes du passif circulant : Etat ? créditeur</field>
+    <field name="definition">{'load':['-:445:S'], 'except':[]}</field>
+    <field name="code">pas445</field>
+    <field name="report_id" ref="l10n_bilan"/>
+  </record>
+  <record id="l10_ma_pas446" model="l10n.ma.line">
+    <field name="name">Dettes du passif circulant : Comptes d'associés - créditeur</field>
+    <field name="definition">{'load':['-:446:S'], 'except':[]}</field>
+    <field name="code">pas446</field>
+    <field name="report_id" ref="l10n_bilan"/>
+  </record>
+  <record id="l10_ma_pas448" model="l10n.ma.line">
+    <field name="name">Dettes du passif circulant : Autres créanciers</field>
+    <field name="definition">{'load':['-:448:S'], 'except':[]}</field>
+    <field name="code">pas448</field>
+    <field name="report_id" ref="l10n_bilan"/>
+  </record>
+  <record id="l10_ma_pas449" model="l10n.ma.line">
+    <field name="name">Dettes du passif circulant : Comptes de régularisation ? passif</field>
+    <field name="definition">{'load':['-:449:S'], 'except':[]}</field>
+    <field name="code">pas449</field>
+    <field name="report_id" ref="l10n_bilan"/>
+  </record>
+  <record id="l10_ma_pas450" model="l10n.ma.line">
+    <field name="name">Passif : Autres provisions pour risques et charges (G)</field>
+    <field name="definition">{'load':['-:450:S'], 'except':[]}</field>
+    <field name="code">pas450</field>
+    <field name="report_id" ref="l10n_bilan"/>
+  </record>
+  <record id="l10_ma_pas470" model="l10n.ma.line">
+    <field name="name">Passif : Écarts de conversion - Passif (H) (éléments circulant)</field>
+    <field name="definition">{'load':['-:470:S'], 'except':[]}</field>
+    <field name="code">pas470</field>
+    <field name="report_id" ref="l10n_bilan"/>
+  </record>
+<record id="l10_ma_pas44" model="l10n.ma.line">
+    <field name="name">Passif : Dettes du passif circulant (F)</field>
+    <field name="definition">{'load':['-:441:S','-:442:S','-:443:S','-:444:S','-:445:S','-:446:S','-:448:S','-:449:S'], 'except':[]}</field>
+    <field name="code">pas44</field>
+    <field name="report_id" ref="l10n_bilan"/>
+  </record>
+<record id="l10_ma_past2" model="l10n.ma.line">
+    <field name="name">Passif : Total Passif Circulant </field>
+    <field name="definition">{'load':['-:44:S','-:450:S','-:470:S'], 'except':[]}</field>
+    <field name="code">past2</field>
+    <field name="report_id" ref="l10n_bilan"/>
+  </record>
+ <record id="l10_ma_pas552" model="l10n.ma.line">
+    <field name="name">Trésorerie Passif : Crédits d?escompte</field>
+    <field name="definition">{'load':['-:552:S'], 'except':[]}</field>
+    <field name="code">pas552</field>
+    <field name="report_id" ref="l10n_bilan"/>
+  </record>
+  <record id="l10_ma_pas553" model="l10n.ma.line">
+    <field name="name">Trésorerie Passif : Crédits de trésorerie</field>
+    <field name="definition">{'load':['-:553:S'], 'except':[]}</field>
+    <field name="code">pas553</field>
+    <field name="report_id" ref="l10n_bilan"/>
+  </record>
+  <record id="l10_ma_pas554" model="l10n.ma.line">
+    <field name="name">Trésorerie Passif : Banques (Soldes créditeurs)</field>
+    <field name="definition">{'load':['-:554:S'], 'except':[]}</field>
+    <field name="code">pas554</field>
+    <field name="report_id" ref="l10n_bilan"/>
+  </record>
+
+<record id="l10_ma_pas55" model="l10n.ma.line">
+    <field name="name">Passif : Trésorerie Passif</field>
+    <field name="definition">{'load':['-:552:S','-:553:S','-:554:S'], 'except':[]}</field>
+    <field name="code">pas55</field>
+    <field name="report_id" ref="l10n_bilan"/>
+  </record>
+<!-- Compte de resultat -->
+<record id="l10_ma_pdt711" model="l10n.ma.line">
+    <field name="name">Ventes de marchandises</field>
+    <field name="definition">{'load':['-:711:S'],'except':[]}</field>
+    <field name="code">pdt711</field>
+    <field name="report_id" ref="l10n_cdr"/>
+  </record>
+<!-- Exercices antérieurs -->
+<record id="l10_ma_pdt7118" model="l10n.ma.line">
+    <field name="name">Ventes de marchandises des exercices antérieurs</field>
+    <field name="definition">{'load':['-:7118:S'], 'except':[]}</field>
+    <field name="code">pdt7118</field>
+    <field name="report_id" ref="l10n_cdr"/>
+  </record>
+ 
+  <record id="l10_ma_pdt712" model="l10n.ma.line">
+    <field name="name">Ventes de biens et services produits</field>
+    <field name="definition">{'load':['-:712:S'], 'except':[]}</field>
+    <field name="code">pdt712</field>
+    <field name="report_id" ref="l10n_cdr"/>
+  </record>
+<!-- Exercices antérieurs -->
+  <record id="l10_ma_pdt7128" model="l10n.ma.line">
+    <field name="name">Ventes de biens et services produits des exercices antérieurs</field>
+    <field name="definition">{'load':['-:7128:S'], 'except':[]}</field>
+    <field name="code">pdt7128</field>
+    <field name="report_id" ref="l10n_cdr"/>
+  </record>
+
+  <record id="l10_ma_pdt713" model="l10n.ma.line">
+    <field name="name">Variation de stocks de produits</field>
+    <field name="definition">{'load':['-:713:S'], 'except':[]}</field>
+    <field name="code">pdt713</field>
+    <field name="report_id" ref="l10n_cdr"/>
+  </record>
+ <record id="l10_ma_pdt714" model="l10n.ma.line">
+    <field name="name">Immobilisations produites par l'entreprise pour elle même</field>
+    <field name="definition">{'load':['-:714:S'], 'except':[]}</field>
+    <field name="code">pdt714</field>
+    <field name="report_id" ref="l10n_cdr"/>
+  </record>
+<!-- Exercices antérieurs -->
+
+ <record id="l10_ma_pdt7148" model="l10n.ma.line">
+    <field name="name">Immobilisations produites des exercices antérieurs</field>
+    <field name="definition">{'load':['-:7148:S'], 'except':[]}</field>
+    <field name="code">pdt7148</field>
+    <field name="report_id" ref="l10n_cdr"/>
+  </record>
+
+<record id="l10_ma_pdt716" model="l10n.ma.line">
+    <field name="name">Subventions d'exploitation</field>
+    <field name="definition">{'load':['-:716:S'], 'except':[]}</field>
+    <field name="code">pdt716</field>
+    <field name="report_id" ref="l10n_cdr"/>
+  </record>
+<!-- Exercices antérieurs -->
+<record id="l10_ma_pdt7168" model="l10n.ma.line">
+    <field name="name">Subventions d'exploitation des exercices antérieurs</field>
+    <field name="definition">{'load':['-:7168:S'], 'except':[]}</field>
+    <field name="code">pdt7168</field>
+    <field name="report_id" ref="l10n_cdr"/>
+  </record>
+
+  <record id="l10_ma_pdt718" model="l10n.ma.line">
+    <field name="name">Autres produits d'exploitation</field>
+    <field name="definition">{'load':['-:718:S'], 'except':[]}</field>
+    <field name="code">pdt718</field>
+    <field name="report_id" ref="l10n_cdr"/>
+  </record>
+
+<!-- Exercices antérieurs -->
+  <record id="l10_ma_pdt7188" model="l10n.ma.line">
+    <field name="name">Autres produits d'exploitation des exercice antérieurs</field>
+    <field name="definition">{'load':['-:7188:S'], 'except':[]}</field>
+    <field name="code">pdt7188</field>
+    <field name="report_id" ref="l10n_cdr"/>
+  </record>
+
+  <record id="l10_ma_pdt719" model="l10n.ma.line">
+    <field name="name">Reprises d'exploitation;transferts de charges</field>
+    <field name="definition">{'load':['-:719:S'], 'except':[]}</field>
+    <field name="code">pdt719</field>
+    <field name="report_id" ref="l10n_cdr"/>
+  </record>
+
+<!-- Exercices antérieurs -->
+  <record id="l10_ma_pdt7198" model="l10n.ma.line">
+    <field name="name">Reprises sur amor. et prov. des exercice antérieurs</field>
+    <field name="definition">{'load':['-:7198:S'], 'except':[]}</field>
+    <field name="code">pdt7198</field>
+    <field name="report_id" ref="l10n_cdr"/>
+  </record>
+
+  <record id="l10_ma_pdt71" model="l10n.ma.line">
+    <field name="name">Produits d'exploitation</field>
+    <field name="definition">{'load':['-:711:S','-:712:S','-:713:S','-:714:S','-:716:S','-:718:S','-:719:S'], 'except':[]}</field>
+    <field name="code">pdt71</field>
+    <field name="report_id" ref="l10n_cdr"/>
+  </record>
+
+<record id="l10_ma_chg611" model="l10n.ma.line">
+    <field name="name">Achat revendus de marchandises</field>
+    <field name="definition">{'load':['+:611:S'], 'except':[]}</field>
+    <field name="code">chg611</field>
+    <field name="report_id" ref="l10n_cdr"/>
+  </record>
+<!-- Exercices antérieurs -->
+<record id="l10_ma_chg6118" model="l10n.ma.line">
+    <field name="name">Achat revendus de marchandises des exercices antérieurs</field>
+    <field name="definition">{'load':['+:6118:S'], 'except':[]}</field>
+    <field name="code">chg6118</field>
+    <field name="report_id" ref="l10n_cdr"/>
+  </record>
+
+<record id="l10_ma_chg612" model="l10n.ma.line">
+    <field name="name">Achats consommés de matières et fournitures</field>
+    <field name="definition">{'load':['+:612:S'], 'except':[]}</field>
+    <field name="code">chg612</field>
+    <field name="report_id" ref="l10n_cdr"/>
+  </record>
+<!-- Exercices antérieurs -->
+<record id="l10_ma_chg6128" model="l10n.ma.line">
+    <field name="name">Achats de matières et de fournitures des exercices antérieurs</field>
+    <field name="definition">{'load':['+:6128:S'], 'except':[]}</field>
+    <field name="code">chg6128</field>
+    <field name="report_id" ref="l10n_cdr"/>
+  </record>
+
+  <record id="l10_ma_chg613" model="l10n.ma.line">
+    <field name="name">Autres charges externes</field>
+    <field name="definition">{'load':['+:613:S','+:614:S'], 'except':[]}</field>
+    <field name="code">chg613</field>
+    <field name="report_id" ref="l10n_cdr"/>
+  </record>
+
+<!-- Exercices antérieurs -->
+  <record id="l10_ma_chg6148" model="l10n.ma.line">
+    <field name="name">Autres charges externes des exercices antérieurs</field>
+    <field name="definition">{'load':['+:6148:S'], 'except':[]}</field>
+    <field name="code">chg6148</field>
+    <field name="report_id" ref="l10n_cdr"/>
+  </record>
+
+  <record id="l10_ma_chg616" model="l10n.ma.line">
+    <field name="name">Impôts et taxes</field>
+    <field name="definition">{'load':['+:616:S'], 'except':[]}</field>
+    <field name="code">chg616</field>
+    <field name="report_id" ref="l10n_cdr"/>
+  </record>
+<!-- Exercices antérieurs -->
+  <record id="l10_ma_chg6168" model="l10n.ma.line">
+    <field name="name">Impôts et taxes des exerercices antérieurs</field>
+    <field name="definition">{'load':['+:6168:S'], 'except':[]}</field>
+    <field name="code">chg6168</field>
+    <field name="report_id" ref="l10n_cdr"/>
+  </record>
+
+  <record id="l10_ma_chg617" model="l10n.ma.line">
+    <field name="name">Charges de personnel</field>
+    <field name="definition">{'load':['+:617:S'], 'except':[]}</field>
+    <field name="code">chg617</field>
+    <field name="report_id" ref="l10n_cdr"/>
+  </record>
+<!-- Exercices antérieurs -->
+  <record id="l10_ma_chg6178" model="l10n.ma.line">
+    <field name="name">Charges de personnel des exerercices antérieurs</field>
+    <field name="definition">{'load':['+:6178:S'], 'except':[]}</field>
+    <field name="code">chg6178</field>
+    <field name="report_id" ref="l10n_cdr"/>
+  </record>
+
+  <record id="l10_ma_chg618" model="l10n.ma.line">
+    <field name="name">Autres charges d'exploitation</field>
+    <field name="definition">{'load':['+:618:S'], 'except':[]}</field>
+    <field name="code">chg618</field>
+    <field name="report_id" ref="l10n_cdr"/>
+  </record>
+<!-- Exercices antérieurs -->
+  <record id="l10_ma_chg6188" model="l10n.ma.line">
+    <field name="name">Autres charges d'exploitation des exerercices antérieurs</field>
+    <field name="definition">{'load':['+:6188:S'], 'except':[]}</field>
+    <field name="code">chg6188</field>
+    <field name="report_id" ref="l10n_cdr"/>
+  </record>
+
+  <record id="l10_ma_chg619" model="l10n.ma.line">
+    <field name="name">Dotation d'exploitation</field>
+    <field name="definition">{'load':['+:619:S'], 'except':[]}</field>
+    <field name="code">chg619</field>
+    <field name="report_id" ref="l10n_cdr"/>
+  </record>
+<!-- Exercices antérieurs -->
+  <record id="l10_ma_chg6198" model="l10n.ma.line">
+    <field name="name">Dotation d'exploitation</field>
+    <field name="definition">{'load':['+:6198:S'], 'except':[]}</field>
+    <field name="code">chg6198</field>
+    <field name="report_id" ref="l10n_cdr"/>
+  </record>
+
+  <record id="l10_ma_chg61" model="l10n.ma.line">
+    <field name="name">Charges d'exploitation</field>
+    <field name="definition">{'load':['+:611:S','+:612:S','+:613:S','+:614:S','+:616:S','+:617:S','+:618:S','+:619:S'], 'except':[]}</field>
+    <field name="code">chg61</field>
+    <field name="report_id" ref="l10n_cdr"/>
+  </record>
+
+  <record id="l10_ma_pdt732" model="l10n.ma.line">
+    <field name="name">Produits des titres de participation et autres titres immobilisés</field>
+    <field name="definition">{'load':['-:732:S'], 'except':[]}</field>
+    <field name="code">pdt732</field>
+    <field name="report_id" ref="l10n_cdr"/>
+  </record>
+<!-- Exercices antérieurs -->
+  <record id="l10_ma_pdt7328" model="l10n.ma.line">
+    <field name="name">Produits des titres de participation et autres titres immobilisés des exercices antérieurs</field>
+    <field name="definition">{'load':['-:7328:S'], 'except':[]}</field>
+    <field name="code">pdt7328</field>
+    <field name="report_id" ref="l10n_cdr"/>
+  </record>
+
+  <record id="l10_ma_pdt733" model="l10n.ma.line">
+    <field name="name">Gains de change</field>
+    <field name="definition">{'load':['-:733:S'], 'except':[]}</field>
+    <field name="code">pdt733</field>
+    <field name="report_id" ref="l10n_cdr"/>
+  </record>
+<!-- Exercices antérieurs -->
+  <record id="l10_ma_pdt7338" model="l10n.ma.line">
+    <field name="name">Gains de change des exercices antérieurs</field>
+    <field name="definition">{'load':['-:7338:S'], 'except':[]}</field>
+    <field name="code">pdt7338</field>
+    <field name="report_id" ref="l10n_cdr"/>
+  </record>
+
+  <record id="l10_ma_pdt738" model="l10n.ma.line">
+    <field name="name">Intérêts et autres produits financiers</field>
+    <field name="definition">{'load':['-:738:S'], 'except':[]}</field>
+    <field name="code">pdt738</field>
+    <field name="report_id" ref="l10n_cdr"/>
+  </record>
+<!-- Exercices antérieurs -->
+  <record id="l10_ma_pdt7388" model="l10n.ma.line">
+    <field name="name">Intérêts et autres produits financiers des exercices antérieurs</field>
+    <field name="definition">{'load':['-:7388:S'], 'except':[]}</field>
+    <field name="code">pdt7388</field>
+    <field name="report_id" ref="l10n_cdr"/>
+  </record>
+
+
+  <record id="l10_ma_pdt739" model="l10n.ma.line">
+    <field name="name">Reprises financières, transferts de charges</field>
+    <field name="definition">{'load':['-:739:S'], 'except':[]}</field>
+    <field name="code">pdt739</field>
+    <field name="report_id" ref="l10n_cdr"/>
+  </record>
+<!-- Exercices antérieurs -->
+  <record id="l10_ma_pdt7398" model="l10n.ma.line">
+    <field name="name">Reprises sur dotations financières des exercices antérieurs</field>
+    <field name="definition">{'load':['-:7398:S'], 'except':[]}</field>
+    <field name="code">pdt7398</field>
+    <field name="report_id" ref="l10n_cdr"/>
+  </record>
+
+<record id="l10_ma_pdt73" model="l10n.ma.line">
+    <field name="name">Produits financiers</field>
+    <field name="definition">{'load':['-:732:S','-:733:S','-:738:S','-:739:S'], 'except':[]}</field>
+    <field name="code">pdt73</field>
+    <field name="report_id" ref="l10n_cdr"/>
+  </record>
+
+<record id="l10_ma_chg631" model="l10n.ma.line">
+    <field name="name">Charges d'intérêts</field>
+    <field name="definition">{'load':['+:631:S'], 'except':[]}</field>
+    <field name="code">chg631</field>
+    <field name="report_id" ref="l10n_cdr"/>
+  </record>
+<!-- Exercices antérieurs -->
+<record id="l10_ma_chg6318" model="l10n.ma.line">
+    <field name="name">Charges d'intérêts des exercices antérieurs</field>
+    <field name="definition">{'load':['+:6318:S'], 'except':[]}</field>
+    <field name="code">chg6318</field>
+    <field name="report_id" ref="l10n_cdr"/>
+  </record>
+  
+  <record id="l10_ma_chg633" model="l10n.ma.line">
+    <field name="name">Pertes de change</field>
+    <field name="definition">{'load':['+:633:S'], 'except':[]}</field>
+    <field name="code">chg633</field>
+    <field name="report_id" ref="l10n_cdr"/>
+  </record>
+<!-- Exercices antérieurs -->
+  <record id="l10_ma_chg6338" model="l10n.ma.line">
+    <field name="name">Pertes de change des exercices antérieurs</field>
+    <field name="definition">{'load':['+:6338:S'], 'except':[]}</field>
+    <field name="code">chg6338</field>
+    <field name="report_id" ref="l10n_cdr"/>
+  </record>
+
+  <record id="l10_ma_chg638" model="l10n.ma.line">
+    <field name="name">Autres charges financières</field>
+    <field name="definition">{'load':['+:638:S'], 'except':[]}</field>
+    <field name="code">chg638</field>
+    <field name="report_id" ref="l10n_cdr"/>
+  </record>
+<!-- Exercices antérieurs -->
+  <record id="l10_ma_chg6388" model="l10n.ma.line">
+    <field name="name">Autres charges financières des exercices antérieurs</field>
+    <field name="definition">{'load':['+:6388:S'], 'except':[]}</field>
+    <field name="code">chg6388</field>
+    <field name="report_id" ref="l10n_cdr"/>
+  </record>
+
+  <record id="l10_ma_chg639" model="l10n.ma.line">
+    <field name="name">Dotations financières</field>
+    <field name="definition">{'load':['+:639:S'], 'except':[]}</field>
+    <field name="code">chg639</field>
+    <field name="report_id" ref="l10n_cdr"/>
+  </record>
+<!-- Exercices antérieurs -->
+  <record id="l10_ma_chg6398" model="l10n.ma.line">
+    <field name="name">Dotations financières des exercices antérieurs</field>
+    <field name="definition">{'load':['+:6398:S'], 'except':[]}</field>
+    <field name="code">chg6398</field>
+    <field name="report_id" ref="l10n_cdr"/>
+  </record>
+
+ <record id="l10_ma_chg63" model="l10n.ma.line">
+    <field name="name">Charges financières</field>
+    <field name="definition">{'load':['+:631:S','+:633:S','+:638:S','+:639:S'], 'except':[]}</field>
+    <field name="code">chg63</field>
+    <field name="report_id" ref="l10n_cdr"/>
+  </record>
+<record id="l10_ma_pdt751" model="l10n.ma.line">
+    <field name="name">Produits de cessions d'immobilisations</field>
+    <field name="definition">{'load':['-:751:S'], 'except':[]}</field>
+    <field name="code">pdt751</field>
+    <field name="report_id" ref="l10n_cdr"/>
+  </record>
+<!-- Exercices antérieurs -->
+<record id="l10_ma_pdt7518" model="l10n.ma.line">
+    <field name="name">Produits de cessions d'immobilisations des exercices antérieurs</field>
+    <field name="definition">{'load':['-:7518:S'], 'except':[]}</field>
+    <field name="code">pdt7518</field>
+    <field name="report_id" ref="l10n_cdr"/>
+  </record>
+
+  <record id="l10_ma_pdt756" model="l10n.ma.line">
+    <field name="name">Subventions d'équilibre</field>
+    <field name="definition">{'load':['-:756:S'], 'except':[]}</field>
+    <field name="code">pdt756</field>
+    <field name="report_id" ref="l10n_cdr"/>
+  </record>
+<!-- Exercices antérieurs -->
+  <record id="l10_ma_pdt7568" model="l10n.ma.line">
+    <field name="name">Subventions d'équilibre reçues des exercices antérieurs</field>
+    <field name="definition">{'load':['-:7568:S'], 'except':[]}</field>
+    <field name="code">pdt7568</field>
+    <field name="report_id" ref="l10n_cdr"/>
+  </record>
+
+  <record id="l10_ma_pdt757" model="l10n.ma.line">
+    <field name="name">Reprises sur subventions d'investissement</field>
+    <field name="definition">{'load':['-:757:S'], 'except':[]}</field>
+    <field name="code">pdt757</field>
+    <field name="report_id" ref="l10n_cdr"/>
+  </record>
+<!-- Exercices antérieurs -->
+  <record id="l10_ma_pdt7578" model="l10n.ma.line">
+    <field name="name">Reprises sur subventions d'investissement des exercices antérieurs</field>
+    <field name="definition">{'load':['-:7578:S'], 'except':[]}</field>
+    <field name="code">pdt7578</field>
+    <field name="report_id" ref="l10n_cdr"/>
+  </record>
+
+  <record id="l10_ma_pdt758" model="l10n.ma.line">
+    <field name="name">Autres produits non courants</field>
+    <field name="definition">{'load':['-:758:S'], 'except':[]}</field>
+    <field name="code">pdt758</field>
+    <field name="report_id" ref="l10n_cdr"/>
+  </record>
+<!-- Exercices antérieurs -->
+  <record id="l10_ma_pdt7588" model="l10n.ma.line">
+    <field name="name">Autres produits non courants des exercices antérieurs</field>
+    <field name="definition">{'load':['-:7588:S'], 'except':[]}</field>
+    <field name="code">pdt7588</field>
+    <field name="report_id" ref="l10n_cdr"/>
+  </record>
+
+  <record id="l10_ma_pdt759" model="l10n.ma.line">
+    <field name="name">Reprises non courantes; transferts de charges</field>
+    <field name="definition">{'load':['-:759:S'], 'except':[]}</field>
+    <field name="code">pdt759</field>
+    <field name="report_id" ref="l10n_cdr"/>
+  </record>
+<!-- Exercices antérieurs -->
+  <record id="l10_ma_pdt7598" model="l10n.ma.line">
+    <field name="name">Reprises non courantes des exercices antérieurs</field>
+    <field name="definition">{'load':['-:7598:S'], 'except':[]}</field>
+    <field name="code">pdt7598</field>
+    <field name="report_id" ref="l10n_cdr"/>
+  </record>
+
+<record id="l10_ma_pdt75" model="l10n.ma.line">
+    <field name="name">Produits non courants</field>
+    <field name="definition">{'load':['-:751:S','-:756:S','-:757:S','-:758:S','-:759:S'], 'except':[]}</field>
+    <field name="code">pdt75</field>
+    <field name="report_id" ref="l10n_cdr"/>
+  </record>
+ <record id="l10_ma_chg651" model="l10n.ma.line">
+    <field name="name">Valeurs nettes d'amortissement des immobilisations cédées</field>
+    <field name="definition">{'load':['+:651:S'], 'except':[]}</field>
+    <field name="code">chg651</field>
+    <field name="report_id" ref="l10n_cdr"/>
+  </record>
+<!-- Exercices antérieurs -->
+ <record id="l10_ma_chg6518" model="l10n.ma.line">
+    <field name="name">Valeurs nettes d'amortissement des immobilisations cédées des exercices antérieurs</field>
+    <field name="definition">{'load':['+:6518:S'], 'except':[]}</field>
+    <field name="code">chg6518</field>
+    <field name="report_id" ref="l10n_cdr"/>
+  </record>
+  
+  <record id="l10_ma_chg656" model="l10n.ma.line">
+    <field name="name">Subventions accordées</field>
+    <field name="definition">{'load':['+:656:S'], 'except':[]}</field>
+    <field name="code">chg656</field>
+    <field name="report_id" ref="l10n_cdr"/>
+  </record>
+<!-- Exercices antérieurs -->
+  <record id="l10_ma_chg6568" model="l10n.ma.line">
+    <field name="name">Subventions accordées des exercices antérieurs</field>
+    <field name="definition">{'load':['+:6568:S'], 'except':[]}</field>
+    <field name="code">chg6568</field>
+    <field name="report_id" ref="l10n_cdr"/>
+  </record>
+
+  <record id="l10_ma_chg658" model="l10n.ma.line">
+    <field name="name">Autres charges non courantes</field>
+    <field name="definition">{'load':['+:658:S'], 'except':[]}</field>
+    <field name="code">chg658</field>
+    <field name="report_id" ref="l10n_cdr"/>
+  </record>
+<!-- Exercices antérieurs -->
+  <record id="l10_ma_chg6588" model="l10n.ma.line">
+    <field name="name">Autres charges non courantes des exercices antérieurs</field>
+    <field name="definition">{'load':['+:6588:S'], 'except':[]}</field>
+    <field name="code">chg6588</field>
+    <field name="report_id" ref="l10n_cdr"/>
+  </record>
+
+  <record id="l10_ma_chg659" model="l10n.ma.line">
+    <field name="name">Dotations non courantes aux amortissements et aux provisions</field>
+    <field name="definition">{'load':['+:659:S'], 'except':[]}</field>
+    <field name="code">chg659</field>
+    <field name="report_id" ref="l10n_cdr"/>
+  </record>
+<!-- Exercices antérieurs -->
+  <record id="l10_ma_chg6598" model="l10n.ma.line">
+    <field name="name">Dotations non courantes des exercices antérieurs</field>
+    <field name="definition">{'load':['+:6598:S'], 'except':[]}</field>
+    <field name="code">chg6598</field>
+    <field name="report_id" ref="l10n_cdr"/>
+  </record>
+
+<record id="l10_ma_chg65" model="l10n.ma.line">
+    <field name="name">Charges non courantes</field>
+    <field name="definition">{'load':['+:651:S','+:656:S','+:658:S','+:659:S'], 'except':[]}</field>
+    <field name="code">chg65</field>
+    <field name="report_id" ref="l10n_cdr"/>
+  </record>
+
+  <record id="l10_ma_chg670" model="l10n.ma.line">
+    <field name="name">Impôts sur les bénéfices</field>
+    <field name="definition">{'load':['+:670:S'], 'except':[]}</field>
+    <field name="code">chg670</field>
+    <field name="report_id" ref="l10n_cdr"/>
+  </record>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</data>
+</openerp>

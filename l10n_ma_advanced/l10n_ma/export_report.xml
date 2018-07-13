@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<openerp>
+  <data>
+
+	<report
+            id="l10n_ma_balance_fyear"
+            string="Balance Six Colonne"
+            model="account.account"
+            name="balance.fyear"
+            rml="l10n_ma/report/balance_fyear.rml"
+	    auto="False"
+	    menu="False"/>
+
+</data>
+</openerp>

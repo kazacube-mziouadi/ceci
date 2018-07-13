@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="account_report_general_ledger_view" model="ir.ui.view">
+            <field name="name">General Ledger</field>
+            <field name="model">account.report.general.ledger</field>
+            <field name="type">form</field>
+            <field name="inherit_id" ref="account.account_report_general_ledger_view" />
+            <field name="arch" type="xml">
+            <data>
+            <field name="sortby" position="after">
+            	<field name="type_report"/>
+            </field>
+            <footer>
+                <button name="check_report" string="Print" type="object" default_focus="1" class="oe_highlight"/>
+            </footer>
+            </data>
+            </field>
+        </record>
+        
+        <record id="account_general_ledger_export_view" model="ir.ui.view">
+            <field name="name">account.general.ledger.export.form</field>
+            <field name="model">account.general.ledger.export</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+            <form string="Export Grand Livre">
+           		<field name="state" invisible="1"/>
+                <group colspan="4" states="get">
+                    <separator string="Export done" colspan="4"/>
+                    <field name="name" invisible="1" colspan="4"/>
+                    <field name="data" nolabel="1" readonly="1" filename="name" colspan="4"/>
+                    <button icon="gtk-Close" special="cancel" string="Close"/>
+                </group>
+            </form>
+            </field>
+        </record>
+        <delete id="account.menu_account_report_pl" model="ir.ui.menu"/>
+
+
+        <menuitem
+            icon="STOCK_PRINT"
+            name="Grand Livre"
+            parent="account.menu_finance_reports"
+            action="account.action_account_general_ledger_menu"
+            id="menu_general_ledger"
+           />
+        
+    </data>
+</openerp>

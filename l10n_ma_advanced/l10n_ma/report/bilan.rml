@@ -1,0 +1,3057 @@
+<?xml version="1.0"?>
+<document filename="test.pdf">
+  <template pageSize="(595.0,842.0)" title="Test" author="Martin Simon" allowSplitting="20">
+    <pageTemplate id="first">
+      <frame id="first" x1="57.0" y1="20.0" width="481" height="802"/>
+    </pageTemplate>
+  </template>
+  <stylesheet>
+    <blockTableStyle id="Standard_Outline">
+      <blockAlignment value="LEFT"/>
+      <blockValign value="TOP"/>
+    </blockTableStyle>
+    <blockTableStyle id="Tableau">
+      <blockAlignment value="LEFT"/>
+      <blockValign value="TOP"/>
+    </blockTableStyle>
+    <blockTableStyle id="Table3">
+      <blockAlignment value="LEFT"/>
+      <blockValign value="TOP"/>
+
+  <blockTopPadding length="1.6"/>
+      <blockBottomPadding length="1.0"/>
+
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="0,0" stop="0,-1"/>
+      <lineStyle kind="LINEAFTER" colorName="#000000" start="0,0" stop="0,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="0,0" stop="0,0"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="0,-1" stop="0,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="1,0" stop="1,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="1,0" stop="1,0"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="1,-1" stop="1,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="2,0" stop="2,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="2,0" stop="2,0"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="2,-1" stop="2,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="3,0" stop="3,0"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="3,-1" stop="3,-1"/>
+      <lineStyle kind="LINEAFTER" colorName="#000000" start="4,0" stop="4,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="4,0" stop="4,0"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="4,-1" stop="4,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="5,0" stop="5,-1"/>
+      <lineStyle kind="LINEAFTER" colorName="#000000" start="5,0" stop="5,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="5,0" stop="5,0"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="5,-1" stop="5,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="0,1" stop="0,-1"/>
+      <lineStyle kind="LINEAFTER" colorName="#000000" start="0,1" stop="0,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="0,-1" stop="0,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="1,1" stop="1,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="1,1" stop="1,1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="1,-1" stop="1,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="2,1" stop="2,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="2,1" stop="2,1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="2,-1" stop="2,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="3,1" stop="3,-1"/>
+      <lineStyle kind="LINEAFTER" colorName="#000000" start="3,1" stop="3,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="3,1" stop="3,1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="3,-1" stop="3,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="4,1" stop="4,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="4,1" stop="4,1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="4,-1" stop="4,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="5,1" stop="5,-1"/>
+      <lineStyle kind="LINEAFTER" colorName="#000000" start="5,1" stop="5,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="5,1" stop="5,1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="5,-1" stop="5,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="0,2" stop="0,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="1,2" stop="1,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="1,2" stop="1,2"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="1,-1" stop="1,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="2,2" stop="2,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="2,2" stop="2,2"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="2,-1" stop="2,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="3,2" stop="3,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="3,2" stop="3,2"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="3,-1" stop="3,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="4,2" stop="4,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="4,2" stop="4,2"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="4,-1" stop="4,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="5,2" stop="5,-1"/>
+      <lineStyle kind="LINEAFTER" colorName="#000000" start="5,2" stop="5,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="5,2" stop="5,2"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="5,-1" stop="5,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="0,3" stop="0,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="1,3" stop="1,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="1,3" stop="1,3"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="1,-1" stop="1,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="2,3" stop="2,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="2,3" stop="2,3"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="2,-1" stop="2,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="3,3" stop="3,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="3,3" stop="3,3"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="3,-1" stop="3,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="4,3" stop="4,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="4,3" stop="4,3"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="4,-1" stop="4,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="5,3" stop="5,-1"/>
+      <lineStyle kind="LINEAFTER" colorName="#000000" start="5,3" stop="5,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="5,3" stop="5,3"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="5,-1" stop="5,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="0,4" stop="0,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="1,4" stop="1,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="1,-1" stop="1,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="2,4" stop="2,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="2,-1" stop="2,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="3,4" stop="3,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="3,-1" stop="3,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="4,4" stop="4,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="4,-1" stop="4,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="5,4" stop="5,-1"/>
+      <lineStyle kind="LINEAFTER" colorName="#000000" start="5,4" stop="5,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="5,-1" stop="5,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="0,5" stop="0,-1"/>
+      <lineStyle kind="LINEAFTER" colorName="#000000" start="0,5" stop="0,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="1,5" stop="1,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="1,-1" stop="1,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="2,5" stop="2,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="2,-1" stop="2,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="3,5" stop="3,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="3,-1" stop="3,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="4,5" stop="4,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="4,-1" stop="4,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="5,5" stop="5,-1"/>
+      <lineStyle kind="LINEAFTER" colorName="#000000" start="5,5" stop="5,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="5,-1" stop="5,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="0,6" stop="0,-1"/>
+      <lineStyle kind="LINEAFTER" colorName="#000000" start="0,6" stop="0,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="1,6" stop="1,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="1,6" stop="1,6"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="1,-1" stop="1,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="2,6" stop="2,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="2,6" stop="2,6"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="2,-1" stop="2,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="3,6" stop="3,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="3,6" stop="3,6"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="3,-1" stop="3,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="4,6" stop="4,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="4,6" stop="4,6"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="4,-1" stop="4,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="5,6" stop="5,-1"/>
+      <lineStyle kind="LINEAFTER" colorName="#000000" start="5,6" stop="5,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="5,6" stop="5,6"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="5,-1" stop="5,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="0,7" stop="0,-1"/>
+      <lineStyle kind="LINEAFTER" colorName="#000000" start="0,7" stop="0,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="1,7" stop="1,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="1,7" stop="1,7"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="1,-1" stop="1,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="2,7" stop="2,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="2,7" stop="2,7"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="2,-1" stop="2,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="3,7" stop="3,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="3,7" stop="3,7"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="3,-1" stop="3,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="4,7" stop="4,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="4,7" stop="4,7"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="4,-1" stop="4,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="5,7" stop="5,-1"/>
+      <lineStyle kind="LINEAFTER" colorName="#000000" start="5,7" stop="5,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="5,7" stop="5,7"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="5,-1" stop="5,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="0,8" stop="0,-1"/>
+      <lineStyle kind="LINEAFTER" colorName="#000000" start="0,8" stop="0,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="1,8" stop="1,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="1,-1" stop="1,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="2,8" stop="2,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="2,-1" stop="2,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="3,8" stop="3,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="3,-1" stop="3,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="4,8" stop="4,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="4,-1" stop="4,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="5,8" stop="5,-1"/>
+      <lineStyle kind="LINEAFTER" colorName="#000000" start="5,8" stop="5,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="5,-1" stop="5,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="0,9" stop="0,-1"/>
+      <lineStyle kind="LINEAFTER" colorName="#000000" start="0,9" stop="0,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="1,9" stop="1,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="1,-1" stop="1,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="2,9" stop="2,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="2,-1" stop="2,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="3,9" stop="3,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="3,-1" stop="3,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="4,9" stop="4,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="4,-1" stop="4,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="5,9" stop="5,-1"/>
+      <lineStyle kind="LINEAFTER" colorName="#000000" start="5,9" stop="5,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="5,-1" stop="5,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="0,10" stop="0,-1"/>
+      <lineStyle kind="LINEAFTER" colorName="#000000" start="0,10" stop="0,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="1,10" stop="1,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="1,-1" stop="1,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="2,10" stop="2,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="2,-1" stop="2,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="3,10" stop="3,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="3,-1" stop="3,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="4,10" stop="4,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="4,-1" stop="4,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="5,10" stop="5,-1"/>
+      <lineStyle kind="LINEAFTER" colorName="#000000" start="5,10" stop="5,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="5,-1" stop="5,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="0,11" stop="0,-1"/>
+      <lineStyle kind="LINEAFTER" colorName="#000000" start="0,11" stop="0,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="1,11" stop="1,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="1,11" stop="1,11"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="1,-1" stop="1,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="2,11" stop="2,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="2,11" stop="2,11"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="2,-1" stop="2,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="3,11" stop="3,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="3,11" stop="3,11"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="3,-1" stop="3,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="4,11" stop="4,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="4,11" stop="4,11"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="4,-1" stop="4,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="5,11" stop="5,-1"/>
+      <lineStyle kind="LINEAFTER" colorName="#000000" start="5,11" stop="5,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="5,11" stop="5,11"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="5,-1" stop="5,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="0,12" stop="0,-1"/>
+      <lineStyle kind="LINEAFTER" colorName="#000000" start="0,12" stop="0,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="1,12" stop="1,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="1,12" stop="1,12"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="1,-1" stop="1,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="2,12" stop="2,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="2,12" stop="2,12"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="2,-1" stop="2,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="3,12" stop="3,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="3,12" stop="3,12"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="3,-1" stop="3,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="4,12" stop="4,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="4,12" stop="4,12"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="4,-1" stop="4,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="5,12" stop="5,-1"/>
+      <lineStyle kind="LINEAFTER" colorName="#000000" start="5,12" stop="5,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="5,12" stop="5,12"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="5,-1" stop="5,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="0,13" stop="0,-1"/>
+      <lineStyle kind="LINEAFTER" colorName="#000000" start="0,13" stop="0,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="1,13" stop="1,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="1,-1" stop="1,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="2,13" stop="2,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="2,-1" stop="2,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="3,13" stop="3,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="3,-1" stop="3,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="4,13" stop="4,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="4,-1" stop="4,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="5,13" stop="5,-1"/>
+      <lineStyle kind="LINEAFTER" colorName="#000000" start="5,13" stop="5,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="5,-1" stop="5,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="0,14" stop="0,-1"/>
+      <lineStyle kind="LINEAFTER" colorName="#000000" start="0,14" stop="0,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="1,14" stop="1,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="1,-1" stop="1,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="2,14" stop="2,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="2,-1" stop="2,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="3,14" stop="3,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="3,-1" stop="3,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="4,14" stop="4,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="4,-1" stop="4,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="5,14" stop="5,-1"/>
+      <lineStyle kind="LINEAFTER" colorName="#000000" start="5,14" stop="5,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="5,-1" stop="5,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="0,15" stop="0,-1"/>
+      <lineStyle kind="LINEAFTER" colorName="#000000" start="0,15" stop="0,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="1,15" stop="1,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="1,-1" stop="1,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="2,15" stop="2,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="2,-1" stop="2,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="3,15" stop="3,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="3,-1" stop="3,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="4,15" stop="4,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="4,-1" stop="4,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="5,15" stop="5,-1"/>
+      <lineStyle kind="LINEAFTER" colorName="#000000" start="5,15" stop="5,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="5,-1" stop="5,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="0,16" stop="0,-1"/>
+      <lineStyle kind="LINEAFTER" colorName="#000000" start="0,16" stop="0,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="1,16" stop="1,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="1,-1" stop="1,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="2,16" stop="2,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="2,-1" stop="2,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="3,16" stop="3,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="3,-1" stop="3,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="4,16" stop="4,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="4,-1" stop="4,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="5,16" stop="5,-1"/>
+      <lineStyle kind="LINEAFTER" colorName="#000000" start="5,16" stop="5,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="5,-1" stop="5,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="0,17" stop="0,-1"/>
+      <lineStyle kind="LINEAFTER" colorName="#000000" start="0,17" stop="0,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="1,17" stop="1,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="1,-1" stop="1,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="2,17" stop="2,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="2,-1" stop="2,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="3,17" stop="3,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="3,-1" stop="3,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="4,17" stop="4,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="4,-1" stop="4,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="5,17" stop="5,-1"/>
+      <lineStyle kind="LINEAFTER" colorName="#000000" start="5,17" stop="5,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="5,-1" stop="5,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="0,18" stop="0,-1"/>
+      <lineStyle kind="LINEAFTER" colorName="#000000" start="0,18" stop="0,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="1,18" stop="1,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="1,-1" stop="1,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="2,18" stop="2,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="2,-1" stop="2,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="3,18" stop="3,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="3,-1" stop="3,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="4,18" stop="4,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="4,-1" stop="4,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="5,18" stop="5,-1"/>
+      <lineStyle kind="LINEAFTER" colorName="#000000" start="5,18" stop="5,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="5,-1" stop="5,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="0,19" stop="0,-1"/>
+      <lineStyle kind="LINEAFTER" colorName="#000000" start="0,19" stop="0,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="1,19" stop="1,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="1,19" stop="1,19"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="1,-1" stop="1,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="2,19" stop="2,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="2,19" stop="2,19"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="2,-1" stop="2,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="3,19" stop="3,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="3,19" stop="3,19"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="3,-1" stop="3,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="4,19" stop="4,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="4,19" stop="4,19"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="4,-1" stop="4,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="5,19" stop="5,-1"/>
+      <lineStyle kind="LINEAFTER" colorName="#000000" start="5,19" stop="5,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="5,19" stop="5,19"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="5,-1" stop="5,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="0,20" stop="0,-1"/>
+      <lineStyle kind="LINEAFTER" colorName="#000000" start="0,20" stop="0,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="1,20" stop="1,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="1,20" stop="1,20"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="1,-1" stop="1,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="2,20" stop="2,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="2,20" stop="2,20"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="2,-1" stop="2,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="3,20" stop="3,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="3,20" stop="3,20"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="3,-1" stop="3,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="4,20" stop="4,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="4,20" stop="4,20"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="4,-1" stop="4,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="5,20" stop="5,-1"/>
+      <lineStyle kind="LINEAFTER" colorName="#000000" start="5,20" stop="5,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="5,20" stop="5,20"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="5,-1" stop="5,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="0,21" stop="0,-1"/>
+      <lineStyle kind="LINEAFTER" colorName="#000000" start="0,21" stop="0,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="1,21" stop="1,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="1,-1" stop="1,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="2,21" stop="2,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="2,-1" stop="2,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="3,21" stop="3,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="3,-1" stop="3,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="4,21" stop="4,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="4,-1" stop="4,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="5,21" stop="5,-1"/>
+      <lineStyle kind="LINEAFTER" colorName="#000000" start="5,21" stop="5,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="5,-1" stop="5,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="0,22" stop="0,-1"/>
+      <lineStyle kind="LINEAFTER" colorName="#000000" start="0,22" stop="0,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="1,22" stop="1,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="1,-1" stop="1,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="2,22" stop="2,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="2,-1" stop="2,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="3,22" stop="3,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="3,-1" stop="3,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="4,22" stop="4,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="4,-1" stop="4,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="5,22" stop="5,-1"/>
+      <lineStyle kind="LINEAFTER" colorName="#000000" start="5,22" stop="5,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="5,-1" stop="5,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="0,23" stop="0,-1"/>
+      <lineStyle kind="LINEAFTER" colorName="#000000" start="0,23" stop="0,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="1,23" stop="1,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="1,-1" stop="1,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="2,23" stop="2,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="2,-1" stop="2,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="3,23" stop="3,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="3,-1" stop="3,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="4,23" stop="4,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="4,-1" stop="4,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="5,23" stop="5,-1"/>
+      <lineStyle kind="LINEAFTER" colorName="#000000" start="5,23" stop="5,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="5,-1" stop="5,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="0,24" stop="0,-1"/>
+      <lineStyle kind="LINEAFTER" colorName="#000000" start="0,24" stop="0,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="1,24" stop="1,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="1,24" stop="1,24"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="1,-1" stop="1,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="2,24" stop="2,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="2,24" stop="2,24"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="2,-1" stop="2,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="3,24" stop="3,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="3,24" stop="3,24"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="3,-1" stop="3,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="4,24" stop="4,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="4,24" stop="4,24"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="4,-1" stop="4,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="5,24" stop="5,-1"/>
+      <lineStyle kind="LINEAFTER" colorName="#000000" start="5,24" stop="5,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="5,24" stop="5,24"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="5,-1" stop="5,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="0,25" stop="0,-1"/>
+      <lineStyle kind="LINEAFTER" colorName="#000000" start="0,25" stop="0,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="1,25" stop="1,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="1,25" stop="1,25"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="1,-1" stop="1,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="2,25" stop="2,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="2,25" stop="2,25"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="2,-1" stop="2,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="3,25" stop="3,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="3,25" stop="3,25"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="3,-1" stop="3,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="4,25" stop="4,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="4,25" stop="4,25"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="4,-1" stop="4,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="5,25" stop="5,-1"/>
+      <lineStyle kind="LINEAFTER" colorName="#000000" start="5,25" stop="5,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="5,25" stop="5,25"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="5,-1" stop="5,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="0,26" stop="0,-1"/>
+      <lineStyle kind="LINEAFTER" colorName="#000000" start="0,26" stop="0,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="1,26" stop="1,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="1,-1" stop="1,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="2,26" stop="2,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="2,-1" stop="2,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="3,26" stop="3,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="3,-1" stop="3,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="4,26" stop="4,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="4,-1" stop="4,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="5,26" stop="5,-1"/>
+      <lineStyle kind="LINEAFTER" colorName="#000000" start="5,26" stop="5,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="5,-1" stop="5,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="0,27" stop="0,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="0,27" stop="0,27"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="1,27" stop="1,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="1,27" stop="1,27"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="1,-1" stop="1,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="2,27" stop="2,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="2,27" stop="2,27"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="2,-1" stop="2,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="3,27" stop="3,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="3,27" stop="3,27"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="3,-1" stop="3,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="4,27" stop="4,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="4,27" stop="4,27"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="4,-1" stop="4,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="5,27" stop="5,-1"/>
+      <lineStyle kind="LINEAFTER" colorName="#000000" start="5,27" stop="5,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="5,27" stop="5,27"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="5,-1" stop="5,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="0,28" stop="0,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="1,28" stop="1,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="1,28" stop="1,28"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="1,-1" stop="1,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="2,28" stop="2,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="2,28" stop="2,28"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="2,-1" stop="2,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="3,28" stop="3,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="3,28" stop="3,28"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="3,-1" stop="3,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="4,28" stop="4,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="4,28" stop="4,28"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="4,-1" stop="4,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="5,28" stop="5,-1"/>
+      <lineStyle kind="LINEAFTER" colorName="#000000" start="5,28" stop="5,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="5,28" stop="5,28"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="5,-1" stop="5,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="1,29" stop="1,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="1,29" stop="1,29"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="1,-1" stop="1,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="2,29" stop="2,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="2,29" stop="2,29"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="2,-1" stop="2,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="3,29" stop="3,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="3,29" stop="3,29"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="3,-1" stop="3,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="4,29" stop="4,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="4,29" stop="4,29"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="4,-1" stop="4,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="5,29" stop="5,-1"/>
+      <lineStyle kind="LINEAFTER" colorName="#000000" start="5,29" stop="5,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="5,29" stop="5,29"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="5,-1" stop="5,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="0,30" stop="0,-1"/>
+      <lineStyle kind="LINEAFTER" colorName="#000000" start="0,30" stop="0,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="1,30" stop="1,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="1,-1" stop="1,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="2,30" stop="2,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="2,-1" stop="2,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="3,30" stop="3,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="3,-1" stop="3,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="4,30" stop="4,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="4,-1" stop="4,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="5,30" stop="5,-1"/>
+      <lineStyle kind="LINEAFTER" colorName="#000000" start="5,30" stop="5,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="5,-1" stop="5,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="0,31" stop="0,-1"/>
+      <lineStyle kind="LINEAFTER" colorName="#000000" start="0,31" stop="0,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="1,31" stop="1,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="1,-1" stop="1,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="2,31" stop="2,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="2,-1" stop="2,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="3,31" stop="3,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="3,-1" stop="3,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="4,31" stop="4,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="4,-1" stop="4,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="5,31" stop="5,-1"/>
+      <lineStyle kind="LINEAFTER" colorName="#000000" start="5,31" stop="5,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="5,-1" stop="5,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="0,32" stop="0,-1"/>
+      <lineStyle kind="LINEAFTER" colorName="#000000" start="0,32" stop="0,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="1,32" stop="1,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="1,-1" stop="1,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="2,32" stop="2,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="2,-1" stop="2,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="3,32" stop="3,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="3,-1" stop="3,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="4,32" stop="4,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="4,-1" stop="4,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="5,32" stop="5,-1"/>
+      <lineStyle kind="LINEAFTER" colorName="#000000" start="5,32" stop="5,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="5,-1" stop="5,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="0,33" stop="0,-1"/>
+      <lineStyle kind="LINEAFTER" colorName="#000000" start="0,33" stop="0,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="1,33" stop="1,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="1,-1" stop="1,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="2,33" stop="2,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="2,-1" stop="2,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="3,33" stop="3,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="3,-1" stop="3,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="4,33" stop="4,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="4,-1" stop="4,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="5,33" stop="5,-1"/>
+      <lineStyle kind="LINEAFTER" colorName="#000000" start="5,33" stop="5,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="5,-1" stop="5,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="0,34" stop="0,-1"/>
+      <lineStyle kind="LINEAFTER" colorName="#000000" start="0,34" stop="0,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="1,34" stop="1,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="1,34" stop="1,34"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="1,-1" stop="1,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="2,34" stop="2,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="2,34" stop="2,34"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="2,-1" stop="2,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="3,34" stop="3,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="3,34" stop="3,34"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="3,-1" stop="3,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="4,34" stop="4,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="4,34" stop="4,34"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="4,-1" stop="4,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="5,34" stop="5,-1"/>
+      <lineStyle kind="LINEAFTER" colorName="#000000" start="5,34" stop="5,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="5,34" stop="5,34"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="5,-1" stop="5,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="0,35" stop="0,-1"/>
+      <lineStyle kind="LINEAFTER" colorName="#000000" start="0,35" stop="0,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="1,35" stop="1,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="1,35" stop="1,35"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="1,-1" stop="1,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="2,35" stop="2,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="2,35" stop="2,35"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="2,-1" stop="2,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="3,35" stop="3,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="3,35" stop="3,35"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="3,-1" stop="3,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="4,35" stop="4,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="4,35" stop="4,35"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="4,-1" stop="4,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="5,35" stop="5,-1"/>
+      <lineStyle kind="LINEAFTER" colorName="#000000" start="5,35" stop="5,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="5,35" stop="5,35"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="5,-1" stop="5,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="0,36" stop="0,-1"/>
+      <lineStyle kind="LINEAFTER" colorName="#000000" start="0,36" stop="0,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="1,36" stop="1,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="1,-1" stop="1,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="2,36" stop="2,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="2,-1" stop="2,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="3,36" stop="3,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="3,-1" stop="3,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="4,36" stop="4,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="4,-1" stop="4,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="5,36" stop="5,-1"/>
+      <lineStyle kind="LINEAFTER" colorName="#000000" start="5,36" stop="5,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="5,-1" stop="5,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="0,37" stop="0,-1"/>
+      <lineStyle kind="LINEAFTER" colorName="#000000" start="0,37" stop="0,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="1,37" stop="1,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="1,-1" stop="1,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="2,37" stop="2,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="2,-1" stop="2,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="3,37" stop="3,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="3,-1" stop="3,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="4,37" stop="4,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="4,-1" stop="4,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="5,37" stop="5,-1"/>
+      <lineStyle kind="LINEAFTER" colorName="#000000" start="5,37" stop="5,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="5,-1" stop="5,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="0,38" stop="0,-1"/>
+      <lineStyle kind="LINEAFTER" colorName="#000000" start="0,38" stop="0,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="1,38" stop="1,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="1,-1" stop="1,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="2,38" stop="2,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="2,-1" stop="2,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="3,38" stop="3,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="3,-1" stop="3,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="4,38" stop="4,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="4,-1" stop="4,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="5,38" stop="5,-1"/>
+      <lineStyle kind="LINEAFTER" colorName="#000000" start="5,38" stop="5,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="5,-1" stop="5,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="0,39" stop="0,-1"/>
+      <lineStyle kind="LINEAFTER" colorName="#000000" start="0,39" stop="0,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="1,39" stop="1,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="1,-1" stop="1,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="2,39" stop="2,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="2,-1" stop="2,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="3,39" stop="3,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="3,-1" stop="3,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="4,39" stop="4,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="4,-1" stop="4,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="5,39" stop="5,-1"/>
+      <lineStyle kind="LINEAFTER" colorName="#000000" start="5,39" stop="5,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="5,-1" stop="5,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="0,40" stop="0,-1"/>
+      <lineStyle kind="LINEAFTER" colorName="#000000" start="0,40" stop="0,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="1,40" stop="1,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="1,-1" stop="1,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="2,40" stop="2,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="2,-1" stop="2,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="3,40" stop="3,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="3,-1" stop="3,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="4,40" stop="4,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="4,-1" stop="4,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="5,40" stop="5,-1"/>
+      <lineStyle kind="LINEAFTER" colorName="#000000" start="5,40" stop="5,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="5,-1" stop="5,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="0,41" stop="0,-1"/>
+      <lineStyle kind="LINEAFTER" colorName="#000000" start="0,41" stop="0,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="1,41" stop="1,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="1,-1" stop="1,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="2,41" stop="2,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="2,-1" stop="2,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="3,41" stop="3,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="3,-1" stop="3,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="4,41" stop="4,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="4,-1" stop="4,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="5,41" stop="5,-1"/>
+      <lineStyle kind="LINEAFTER" colorName="#000000" start="5,41" stop="5,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="5,-1" stop="5,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="0,42" stop="0,-1"/>
+      <lineStyle kind="LINEAFTER" colorName="#000000" start="0,42" stop="0,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="1,42" stop="1,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="1,42" stop="1,42"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="1,-1" stop="1,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="2,42" stop="2,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="2,42" stop="2,42"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="2,-1" stop="2,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="3,42" stop="3,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="3,42" stop="3,42"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="3,-1" stop="3,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="4,42" stop="4,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="4,42" stop="4,42"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="4,-1" stop="4,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="5,42" stop="5,-1"/>
+      <lineStyle kind="LINEAFTER" colorName="#000000" start="5,42" stop="5,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="5,42" stop="5,42"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="5,-1" stop="5,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="0,43" stop="0,-1"/>
+      <lineStyle kind="LINEAFTER" colorName="#000000" start="0,43" stop="0,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="1,43" stop="1,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="1,43" stop="1,43"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="1,-1" stop="1,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="2,43" stop="2,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="2,43" stop="2,43"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="2,-1" stop="2,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="3,43" stop="3,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="3,43" stop="3,43"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="3,-1" stop="3,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="4,43" stop="4,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="4,43" stop="4,43"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="4,-1" stop="4,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="5,43" stop="5,-1"/>
+      <lineStyle kind="LINEAFTER" colorName="#000000" start="5,43" stop="5,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="5,43" stop="5,43"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="5,-1" stop="5,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="0,44" stop="0,-1"/>
+      <lineStyle kind="LINEAFTER" colorName="#000000" start="0,44" stop="0,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="0,44" stop="0,44"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="1,44" stop="1,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="1,44" stop="1,44"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="1,-1" stop="1,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="2,44" stop="2,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="2,44" stop="2,44"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="2,-1" stop="2,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="3,44" stop="3,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="3,44" stop="3,44"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="3,-1" stop="3,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="4,44" stop="4,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="4,44" stop="4,44"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="4,-1" stop="4,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="5,44" stop="5,-1"/>
+      <lineStyle kind="LINEAFTER" colorName="#000000" start="5,44" stop="5,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="5,44" stop="5,44"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="5,-1" stop="5,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="0,45" stop="0,-1"/>
+      <lineStyle kind="LINEAFTER" colorName="#000000" start="0,45" stop="0,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="1,45" stop="1,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="1,45" stop="1,45"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="1,-1" stop="1,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="2,45" stop="2,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="2,45" stop="2,45"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="2,-1" stop="2,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="3,45" stop="3,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="3,45" stop="3,45"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="3,-1" stop="3,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="4,45" stop="4,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="4,45" stop="4,45"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="4,-1" stop="4,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="5,45" stop="5,-1"/>
+      <lineStyle kind="LINEAFTER" colorName="#000000" start="5,45" stop="5,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="5,45" stop="5,45"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="5,-1" stop="5,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="0,46" stop="0,-1"/>
+      <lineStyle kind="LINEAFTER" colorName="#000000" start="0,46" stop="0,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="1,46" stop="1,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="1,46" stop="1,46"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="1,-1" stop="1,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="2,46" stop="2,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="2,46" stop="2,46"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="2,-1" stop="2,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="3,46" stop="3,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="3,46" stop="3,46"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="3,-1" stop="3,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="4,46" stop="4,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="4,46" stop="4,46"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="4,-1" stop="4,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="5,46" stop="5,-1"/>
+      <lineStyle kind="LINEAFTER" colorName="#000000" start="5,46" stop="5,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="5,46" stop="5,46"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="5,-1" stop="5,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="0,47" stop="0,-1"/>
+      <lineStyle kind="LINEAFTER" colorName="#000000" start="0,47" stop="0,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="1,47" stop="1,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="1,-1" stop="1,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="2,47" stop="2,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="2,-1" stop="2,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="3,47" stop="3,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="3,-1" stop="3,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="4,47" stop="4,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="4,-1" stop="4,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="5,47" stop="5,-1"/>
+      <lineStyle kind="LINEAFTER" colorName="#000000" start="5,47" stop="5,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="5,-1" stop="5,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="0,48" stop="0,-1"/>
+      <lineStyle kind="LINEAFTER" colorName="#000000" start="0,48" stop="0,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="1,48" stop="1,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="1,-1" stop="1,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="2,48" stop="2,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="2,-1" stop="2,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="3,48" stop="3,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="3,-1" stop="3,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="4,48" stop="4,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="4,-1" stop="4,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="5,48" stop="5,-1"/>
+      <lineStyle kind="LINEAFTER" colorName="#000000" start="5,48" stop="5,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="5,-1" stop="5,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="0,49" stop="0,-1"/>
+      <lineStyle kind="LINEAFTER" colorName="#000000" start="0,49" stop="0,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="0,-1" stop="0,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="1,49" stop="1,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="1,49" stop="1,49"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="1,-1" stop="1,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="2,49" stop="2,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="2,49" stop="2,49"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="2,-1" stop="2,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="3,49" stop="3,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="3,49" stop="3,49"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="3,-1" stop="3,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="4,49" stop="4,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="4,49" stop="4,49"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="4,-1" stop="4,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="5,49" stop="5,-1"/>
+      <lineStyle kind="LINEAFTER" colorName="#000000" start="5,49" stop="5,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="5,49" stop="5,49"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="5,-1" stop="5,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="0,50" stop="0,-1"/>
+      <lineStyle kind="LINEAFTER" colorName="#000000" start="0,50" stop="0,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="0,50" stop="0,50"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="0,-1" stop="0,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="1,50" stop="1,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="1,50" stop="1,50"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="1,-1" stop="1,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="2,50" stop="2,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="2,50" stop="2,50"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="2,-1" stop="2,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="3,50" stop="3,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="3,50" stop="3,50"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="3,-1" stop="3,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="4,50" stop="4,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="4,50" stop="4,50"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="4,-1" stop="4,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="5,50" stop="5,-1"/>
+      <lineStyle kind="LINEAFTER" colorName="#000000" start="5,50" stop="5,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="5,50" stop="5,50"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="5,-1" stop="5,-1"/>
+      <blockBackground colorName="#e6e6e6" start="0,50" stop="0,-1"/>
+      <blockBackground colorName="#e6e6e6" start="1,50" stop="1,-1"/>
+      <blockBackground colorName="#e6e6e6" start="2,50" stop="2,-1"/>
+      <blockBackground colorName="#e6e6e6" start="3,50" stop="3,-1"/>
+      <blockBackground colorName="#e6e6e6" start="4,50" stop="4,-1"/>
+      <blockBackground colorName="#e6e6e6" start="5,50" stop="5,-1"/>
+    </blockTableStyle>
+    <blockTableStyle id="Tableau3">
+      <blockAlignment value="LEFT"/>
+      <blockValign value="TOP"/>
+
+  <blockTopPadding length="1.6"/>
+      <blockBottomPadding length="1.0"/>
+
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="0,0" stop="0,-1"/>
+      <lineStyle kind="LINEAFTER" colorName="#000000" start="0,0" stop="0,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="0,0" stop="0,0"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="0,-1" stop="0,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="1,0" stop="1,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="1,0" stop="1,0"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="1,-1" stop="1,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="2,0" stop="2,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="2,0" stop="2,0"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="2,-1" stop="2,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="3,0" stop="3,-1"/>
+      <lineStyle kind="LINEAFTER" colorName="#000000" start="3,0" stop="3,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="3,0" stop="3,0"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="3,-1" stop="3,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="0,1" stop="0,-1"/>
+      <lineStyle kind="LINEAFTER" colorName="#000000" start="0,1" stop="0,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="0,1" stop="0,1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="1,1" stop="1,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="1,1" stop="1,1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="1,-1" stop="1,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="2,1" stop="2,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="2,1" stop="2,1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="2,-1" stop="2,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="3,1" stop="3,-1"/>
+      <lineStyle kind="LINEAFTER" colorName="#000000" start="3,1" stop="3,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="3,1" stop="3,1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="3,-1" stop="3,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="0,2" stop="0,-1"/>
+      <lineStyle kind="LINEAFTER" colorName="#000000" start="0,2" stop="0,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="1,2" stop="1,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="1,2" stop="1,2"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="1,-1" stop="1,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="2,2" stop="2,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="2,2" stop="2,2"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="2,-1" stop="2,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="3,2" stop="3,-1"/>
+      <lineStyle kind="LINEAFTER" colorName="#000000" start="3,2" stop="3,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="3,2" stop="3,2"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="3,-1" stop="3,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="0,3" stop="0,-1"/>
+      <lineStyle kind="LINEAFTER" colorName="#000000" start="0,3" stop="0,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="1,3" stop="1,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="1,-1" stop="1,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="2,3" stop="2,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="2,-1" stop="2,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="3,3" stop="3,-1"/>
+      <lineStyle kind="LINEAFTER" colorName="#000000" start="3,3" stop="3,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="3,-1" stop="3,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="0,4" stop="0,-1"/>
+      <lineStyle kind="LINEAFTER" colorName="#000000" start="0,4" stop="0,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="1,4" stop="1,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="1,-1" stop="1,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="2,4" stop="2,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="2,-1" stop="2,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="3,4" stop="3,-1"/>
+      <lineStyle kind="LINEAFTER" colorName="#000000" start="3,4" stop="3,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="3,-1" stop="3,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="0,5" stop="0,-1"/>
+      <lineStyle kind="LINEAFTER" colorName="#000000" start="0,5" stop="0,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="1,5" stop="1,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="1,-1" stop="1,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="2,5" stop="2,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="2,-1" stop="2,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="3,5" stop="3,-1"/>
+      <lineStyle kind="LINEAFTER" colorName="#000000" start="3,5" stop="3,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="3,-1" stop="3,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="0,6" stop="0,-1"/>
+      <lineStyle kind="LINEAFTER" colorName="#000000" start="0,6" stop="0,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="1,6" stop="1,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="1,-1" stop="1,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="2,6" stop="2,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="2,-1" stop="2,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="3,6" stop="3,-1"/>
+      <lineStyle kind="LINEAFTER" colorName="#000000" start="3,6" stop="3,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="3,-1" stop="3,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="0,7" stop="0,-1"/>
+      <lineStyle kind="LINEAFTER" colorName="#000000" start="0,7" stop="0,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="1,7" stop="1,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="1,-1" stop="1,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="2,7" stop="2,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="2,-1" stop="2,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="3,7" stop="3,-1"/>
+      <lineStyle kind="LINEAFTER" colorName="#000000" start="3,7" stop="3,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="3,-1" stop="3,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="0,8" stop="0,-1"/>
+      <lineStyle kind="LINEAFTER" colorName="#000000" start="0,8" stop="0,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="1,8" stop="1,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="1,-1" stop="1,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="2,8" stop="2,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="2,-1" stop="2,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="3,8" stop="3,-1"/>
+      <lineStyle kind="LINEAFTER" colorName="#000000" start="3,8" stop="3,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="3,-1" stop="3,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="0,9" stop="0,-1"/>
+      <lineStyle kind="LINEAFTER" colorName="#000000" start="0,9" stop="0,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="1,9" stop="1,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="1,-1" stop="1,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="2,9" stop="2,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="2,-1" stop="2,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="3,9" stop="3,-1"/>
+      <lineStyle kind="LINEAFTER" colorName="#000000" start="3,9" stop="3,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="3,-1" stop="3,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="0,10" stop="0,-1"/>
+      <lineStyle kind="LINEAFTER" colorName="#000000" start="0,10" stop="0,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="1,10" stop="1,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="1,10" stop="1,10"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="1,-1" stop="1,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="2,10" stop="2,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="2,10" stop="2,10"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="2,-1" stop="2,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="3,10" stop="3,-1"/>
+      <lineStyle kind="LINEAFTER" colorName="#000000" start="3,10" stop="3,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="3,10" stop="3,10"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="3,-1" stop="3,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="0,11" stop="0,-1"/>
+      <lineStyle kind="LINEAFTER" colorName="#000000" start="0,11" stop="0,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="1,11" stop="1,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="1,11" stop="1,11"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="1,-1" stop="1,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="2,11" stop="2,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="2,11" stop="2,11"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="2,-1" stop="2,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="3,11" stop="3,-1"/>
+      <lineStyle kind="LINEAFTER" colorName="#000000" start="3,11" stop="3,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="3,11" stop="3,11"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="3,-1" stop="3,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="0,12" stop="0,-1"/>
+      <lineStyle kind="LINEAFTER" colorName="#000000" start="0,12" stop="0,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="1,12" stop="1,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="1,-1" stop="1,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="2,12" stop="2,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="2,-1" stop="2,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="3,12" stop="3,-1"/>
+      <lineStyle kind="LINEAFTER" colorName="#000000" start="3,12" stop="3,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="3,-1" stop="3,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="0,13" stop="0,-1"/>
+      <lineStyle kind="LINEAFTER" colorName="#000000" start="0,13" stop="0,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="1,13" stop="1,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="1,13" stop="1,13"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="1,-1" stop="1,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="2,13" stop="2,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="2,13" stop="2,13"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="2,-1" stop="2,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="3,13" stop="3,-1"/>
+      <lineStyle kind="LINEAFTER" colorName="#000000" start="3,13" stop="3,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="3,13" stop="3,13"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="3,-1" stop="3,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="0,14" stop="0,-1"/>
+      <lineStyle kind="LINEAFTER" colorName="#000000" start="0,14" stop="0,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="1,14" stop="1,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="1,14" stop="1,14"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="1,-1" stop="1,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="2,14" stop="2,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="2,14" stop="2,14"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="2,-1" stop="2,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="3,14" stop="3,-1"/>
+      <lineStyle kind="LINEAFTER" colorName="#000000" start="3,14" stop="3,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="3,14" stop="3,14"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="3,-1" stop="3,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="0,15" stop="0,-1"/>
+      <lineStyle kind="LINEAFTER" colorName="#000000" start="0,15" stop="0,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="1,15" stop="1,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="1,-1" stop="1,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="2,15" stop="2,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="2,-1" stop="2,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="3,15" stop="3,-1"/>
+      <lineStyle kind="LINEAFTER" colorName="#000000" start="3,15" stop="3,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="3,-1" stop="3,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="0,16" stop="0,-1"/>
+      <lineStyle kind="LINEAFTER" colorName="#000000" start="0,16" stop="0,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="1,16" stop="1,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="1,16" stop="1,16"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="1,-1" stop="1,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="2,16" stop="2,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="2,16" stop="2,16"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="2,-1" stop="2,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="3,16" stop="3,-1"/>
+      <lineStyle kind="LINEAFTER" colorName="#000000" start="3,16" stop="3,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="3,16" stop="3,16"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="3,-1" stop="3,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="0,17" stop="0,-1"/>
+      <lineStyle kind="LINEAFTER" colorName="#000000" start="0,17" stop="0,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="1,17" stop="1,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="1,17" stop="1,17"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="1,-1" stop="1,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="2,17" stop="2,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="2,17" stop="2,17"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="2,-1" stop="2,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="3,17" stop="3,-1"/>
+      <lineStyle kind="LINEAFTER" colorName="#000000" start="3,17" stop="3,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="3,17" stop="3,17"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="3,-1" stop="3,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="0,18" stop="0,-1"/>
+      <lineStyle kind="LINEAFTER" colorName="#000000" start="0,18" stop="0,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="1,18" stop="1,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="1,-1" stop="1,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="2,18" stop="2,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="2,-1" stop="2,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="3,18" stop="3,-1"/>
+      <lineStyle kind="LINEAFTER" colorName="#000000" start="3,18" stop="3,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="3,-1" stop="3,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="0,19" stop="0,-1"/>
+      <lineStyle kind="LINEAFTER" colorName="#000000" start="0,19" stop="0,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="1,19" stop="1,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="1,19" stop="1,19"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="1,-1" stop="1,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="2,19" stop="2,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="2,19" stop="2,19"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="2,-1" stop="2,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="3,19" stop="3,-1"/>
+      <lineStyle kind="LINEAFTER" colorName="#000000" start="3,19" stop="3,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="3,19" stop="3,19"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="3,-1" stop="3,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="0,20" stop="0,-1"/>
+      <lineStyle kind="LINEAFTER" colorName="#000000" start="0,20" stop="0,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="1,20" stop="1,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="1,20" stop="1,20"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="1,-1" stop="1,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="2,20" stop="2,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="2,20" stop="2,20"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="2,-1" stop="2,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="3,20" stop="3,-1"/>
+      <lineStyle kind="LINEAFTER" colorName="#000000" start="3,20" stop="3,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="3,20" stop="3,20"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="3,-1" stop="3,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="0,21" stop="0,-1"/>
+      <lineStyle kind="LINEAFTER" colorName="#000000" start="0,21" stop="0,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="0,-1" stop="0,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="1,21" stop="1,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="1,-1" stop="1,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="2,21" stop="2,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="2,-1" stop="2,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="3,21" stop="3,-1"/>
+      <lineStyle kind="LINEAFTER" colorName="#000000" start="3,21" stop="3,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="3,-1" stop="3,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="0,22" stop="0,-1"/>
+      <lineStyle kind="LINEAFTER" colorName="#000000" start="0,22" stop="0,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="0,22" stop="0,22"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="0,-1" stop="0,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="1,22" stop="1,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="1,22" stop="1,22"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="1,-1" stop="1,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="2,22" stop="2,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="2,22" stop="2,22"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="2,-1" stop="2,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="3,22" stop="3,-1"/>
+      <lineStyle kind="LINEAFTER" colorName="#000000" start="3,22" stop="3,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="3,22" stop="3,22"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="3,-1" stop="3,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="0,23" stop="0,-1"/>
+      <lineStyle kind="LINEAFTER" colorName="#000000" start="0,23" stop="0,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="1,23" stop="1,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="1,23" stop="1,23"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="1,-1" stop="1,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="2,23" stop="2,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="2,23" stop="2,23"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="2,-1" stop="2,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="3,23" stop="3,-1"/>
+      <lineStyle kind="LINEAFTER" colorName="#000000" start="3,23" stop="3,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="3,23" stop="3,23"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="3,-1" stop="3,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="0,24" stop="0,-1"/>
+      <lineStyle kind="LINEAFTER" colorName="#000000" start="0,24" stop="0,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="1,24" stop="1,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="1,24" stop="1,24"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="1,-1" stop="1,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="2,24" stop="2,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="2,24" stop="2,24"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="2,-1" stop="2,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="3,24" stop="3,-1"/>
+      <lineStyle kind="LINEAFTER" colorName="#000000" start="3,24" stop="3,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="3,24" stop="3,24"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="3,-1" stop="3,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="0,25" stop="0,-1"/>
+      <lineStyle kind="LINEAFTER" colorName="#000000" start="0,25" stop="0,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="1,25" stop="1,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="1,-1" stop="1,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="2,25" stop="2,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="2,-1" stop="2,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="3,25" stop="3,-1"/>
+      <lineStyle kind="LINEAFTER" colorName="#000000" start="3,25" stop="3,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="3,-1" stop="3,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="0,26" stop="0,-1"/>
+      <lineStyle kind="LINEAFTER" colorName="#000000" start="0,26" stop="0,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="1,26" stop="1,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="1,-1" stop="1,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="2,26" stop="2,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="2,-1" stop="2,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="3,26" stop="3,-1"/>
+      <lineStyle kind="LINEAFTER" colorName="#000000" start="3,26" stop="3,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="3,-1" stop="3,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="0,27" stop="0,-1"/>
+      <lineStyle kind="LINEAFTER" colorName="#000000" start="0,27" stop="0,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="1,27" stop="1,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="1,-1" stop="1,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="2,27" stop="2,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="2,-1" stop="2,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="3,27" stop="3,-1"/>
+      <lineStyle kind="LINEAFTER" colorName="#000000" start="3,27" stop="3,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="3,-1" stop="3,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="0,28" stop="0,-1"/>
+      <lineStyle kind="LINEAFTER" colorName="#000000" start="0,28" stop="0,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="1,28" stop="1,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="1,-1" stop="1,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="2,28" stop="2,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="2,-1" stop="2,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="3,28" stop="3,-1"/>
+      <lineStyle kind="LINEAFTER" colorName="#000000" start="3,28" stop="3,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="3,-1" stop="3,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="0,29" stop="0,-1"/>
+      <lineStyle kind="LINEAFTER" colorName="#000000" start="0,29" stop="0,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="1,29" stop="1,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="1,-1" stop="1,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="2,29" stop="2,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="2,-1" stop="2,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="3,29" stop="3,-1"/>
+      <lineStyle kind="LINEAFTER" colorName="#000000" start="3,29" stop="3,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="3,-1" stop="3,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="0,30" stop="0,-1"/>
+      <lineStyle kind="LINEAFTER" colorName="#000000" start="0,30" stop="0,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="1,30" stop="1,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="1,-1" stop="1,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="2,30" stop="2,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="2,-1" stop="2,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="3,30" stop="3,-1"/>
+      <lineStyle kind="LINEAFTER" colorName="#000000" start="3,30" stop="3,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="3,-1" stop="3,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="0,31" stop="0,-1"/>
+      <lineStyle kind="LINEAFTER" colorName="#000000" start="0,31" stop="0,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="1,31" stop="1,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="1,-1" stop="1,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="2,31" stop="2,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="2,-1" stop="2,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="3,31" stop="3,-1"/>
+      <lineStyle kind="LINEAFTER" colorName="#000000" start="3,31" stop="3,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="3,-1" stop="3,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="0,32" stop="0,-1"/>
+      <lineStyle kind="LINEAFTER" colorName="#000000" start="0,32" stop="0,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="1,32" stop="1,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="1,32" stop="1,32"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="1,-1" stop="1,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="2,32" stop="2,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="2,32" stop="2,32"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="2,-1" stop="2,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="3,32" stop="3,-1"/>
+      <lineStyle kind="LINEAFTER" colorName="#000000" start="3,32" stop="3,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="3,32" stop="3,32"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="3,-1" stop="3,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="0,33" stop="0,-1"/>
+      <lineStyle kind="LINEAFTER" colorName="#000000" start="0,33" stop="0,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="1,33" stop="1,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="1,33" stop="1,33"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="1,-1" stop="1,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="2,33" stop="2,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="2,33" stop="2,33"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="2,-1" stop="2,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="3,33" stop="3,-1"/>
+      <lineStyle kind="LINEAFTER" colorName="#000000" start="3,33" stop="3,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="3,33" stop="3,33"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="3,-1" stop="3,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="0,34" stop="0,-1"/>
+      <lineStyle kind="LINEAFTER" colorName="#000000" start="0,34" stop="0,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="0,34" stop="0,34"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="0,-1" stop="0,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="1,34" stop="1,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="1,34" stop="1,34"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="1,-1" stop="1,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="2,34" stop="2,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="2,34" stop="2,34"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="2,-1" stop="2,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="3,34" stop="3,-1"/>
+      <lineStyle kind="LINEAFTER" colorName="#000000" start="3,34" stop="3,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="3,34" stop="3,34"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="3,-1" stop="3,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="0,35" stop="0,-1"/>
+      <lineStyle kind="LINEAFTER" colorName="#000000" start="0,35" stop="0,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="1,35" stop="1,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="1,35" stop="1,35"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="1,-1" stop="1,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="2,35" stop="2,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="2,35" stop="2,35"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="2,-1" stop="2,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="3,35" stop="3,-1"/>
+      <lineStyle kind="LINEAFTER" colorName="#000000" start="3,35" stop="3,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="3,35" stop="3,35"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="3,-1" stop="3,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="0,36" stop="0,-1"/>
+      <lineStyle kind="LINEAFTER" colorName="#000000" start="0,36" stop="0,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="1,36" stop="1,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="1,36" stop="1,36"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="1,-1" stop="1,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="2,36" stop="2,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="2,36" stop="2,36"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="2,-1" stop="2,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="3,36" stop="3,-1"/>
+      <lineStyle kind="LINEAFTER" colorName="#000000" start="3,36" stop="3,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="3,36" stop="3,36"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="3,-1" stop="3,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="0,37" stop="0,-1"/>
+      <lineStyle kind="LINEAFTER" colorName="#000000" start="0,37" stop="0,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="1,37" stop="1,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="1,-1" stop="1,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="2,37" stop="2,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="2,-1" stop="2,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="3,37" stop="3,-1"/>
+      <lineStyle kind="LINEAFTER" colorName="#000000" start="3,37" stop="3,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="3,-1" stop="3,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="0,38" stop="0,-1"/>
+      <lineStyle kind="LINEAFTER" colorName="#000000" start="0,38" stop="0,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="1,38" stop="1,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="1,-1" stop="1,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="2,38" stop="2,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="2,-1" stop="2,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="3,38" stop="3,-1"/>
+      <lineStyle kind="LINEAFTER" colorName="#000000" start="3,38" stop="3,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="3,-1" stop="3,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="0,39" stop="0,-1"/>
+      <lineStyle kind="LINEAFTER" colorName="#000000" start="0,39" stop="0,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="1,39" stop="1,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="1,39" stop="1,39"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="1,-1" stop="1,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="2,39" stop="2,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="2,39" stop="2,39"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="2,-1" stop="2,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="3,39" stop="3,-1"/>
+      <lineStyle kind="LINEAFTER" colorName="#000000" start="3,39" stop="3,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="3,39" stop="3,39"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="3,-1" stop="3,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="0,40" stop="0,-1"/>
+      <lineStyle kind="LINEAFTER" colorName="#000000" start="0,40" stop="0,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="0,40" stop="0,40"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="0,-1" stop="0,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="1,40" stop="1,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="1,40" stop="1,40"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="1,-1" stop="1,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="2,40" stop="2,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="2,40" stop="2,40"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="2,-1" stop="2,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="3,40" stop="3,-1"/>
+      <lineStyle kind="LINEAFTER" colorName="#000000" start="3,40" stop="3,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="3,40" stop="3,40"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="3,-1" stop="3,-1"/>
+      <blockBackground colorName="#e6e6e6" start="0,40" stop="0,-1"/>
+      <blockBackground colorName="#e6e6e6" start="1,40" stop="1,-1"/>
+      <blockBackground colorName="#e6e6e6" start="2,40" stop="2,-1"/>
+      <blockBackground colorName="#e6e6e6" start="3,40" stop="3,-1"/>
+    </blockTableStyle>
+    <initialize>
+      <paraStyle name="all" alignment="justify"/>
+    </initialize>
+    <paraStyle name="P1" fontName="Times-Roman" fontSize="6.0" leading="8" spaceBefore="0.0" spaceAfter="0.0"/>
+    <paraStyle name="P2" fontName="Times-Bold" fontSize="9.0" leading="11" alignment="CENTER" spaceBefore="0.0" spaceAfter="0.0"/>
+    <paraStyle name="P3" fontName="Times-Roman" fontSize="7.0" leading="9" alignment="RIGHT" spaceBefore="0.0" spaceAfter="0.0"/>
+    <paraStyle name="P4" fontName="Times-Roman" fontSize="7.0" leading="9" alignment="CENTER" spaceBefore="0.0" spaceAfter="0.0"/>
+    <paraStyle name="P5" fontName="Times-Roman" fontSize="7.0" leading="9" alignment="RIGHT" spaceBefore="0.0" spaceAfter="0.0"/>
+    <paraStyle name="P6" fontName="Times-Bold" fontSize="7.0" leading="9" alignment="RIGHT" spaceBefore="0.0" spaceAfter="0.0"/>
+    <paraStyle name="P7" fontName="Times-Roman" fontSize="7.0" leading="9" alignment="RIGHT" spaceBefore="0.0" spaceAfter="0.0"/>
+    <paraStyle name="P8" fontName="Helvetica" fontSize="7.0" leading="9" alignment="CENTER"/>
+    <paraStyle name="P9" fontName="Helvetica" fontSize="7.0" leading="9" alignment="CENTER"/>
+    <paraStyle name="P10" fontName="Times-Roman" fontSize="7.0" leading="9"/>
+    <paraStyle name="P11" fontName="Times-Roman" fontSize="7.0" leading="9"/>
+    <paraStyle name="P12" fontName="Helvetica" fontSize="7.0" leading="9" alignment="CENTER"/>
+    <paraStyle name="P13" fontName="Times-Roman" fontSize="8.0" leading="10"/>
+    <paraStyle name="P14" rightIndent="0.0" leftIndent="0.0" fontName="Times-Bold" fontSize="7.0" leading="9" alignment="RIGHT" spaceBefore="0.0" spaceAfter="0.0"/>
+    <paraStyle name="P15" rightIndent="0.0" leftIndent="0.0" fontName="Times-Roman" fontSize="7.0" leading="9" alignment="RIGHT" spaceBefore="0.0" spaceAfter="0.0"/>
+    <paraStyle name="P16" rightIndent="0.0" leftIndent="0.0" fontName="Times-Roman" fontSize="7.0" leading="9" alignment="LEFT" spaceBefore="0.0" spaceAfter="0.0"/>
+    <paraStyle name="P17" rightIndent="0.0" leftIndent="0.0" fontName="Times-Roman" fontSize="7.0" leading="9" alignment="RIGHT" spaceBefore="0.0" spaceAfter="0.0"/>
+    <paraStyle name="P18" rightIndent="0.0" leftIndent="0.0" fontName="Times-Roman" fontSize="7.0" leading="9" alignment="CENTER" spaceBefore="0.0" spaceAfter="0.0"/>
+    <paraStyle name="P19" rightIndent="0.0" leftIndent="0.0" fontName="Times-Bold" fontSize="7.0" leading="9" spaceBefore="0.0" spaceAfter="0.0"/>
+    <paraStyle name="P20" rightIndent="0.0" leftIndent="0.0" fontName="Times-Bold" fontSize="7.0" leading="9" alignment="LEFT" spaceBefore="0.0" spaceAfter="0.0"/>
+    <paraStyle name="P21" rightIndent="0.0" leftIndent="0.0" fontName="Times-Bold" fontSize="7.0" leading="9" alignment="RIGHT" spaceBefore="0.0" spaceAfter="0.0"/>
+    <paraStyle name="P22" rightIndent="0.0" leftIndent="0.0" fontName="Times-Bold" fontSize="7.0" leading="9" alignment="CENTER" spaceBefore="0.0" spaceAfter="0.0"/>
+    <paraStyle name="P23" rightIndent="0.0" leftIndent="0.0" fontName="Times-Roman" fontSize="7.0" leading="9" spaceBefore="0.0" spaceAfter="0.0"/>
+    <paraStyle name="P24" rightIndent="0.0" leftIndent="0.0" fontName="Times-Roman" fontSize="6.0" leading="8" alignment="CENTER" spaceBefore="0.0" spaceAfter="0.0"/>
+    <paraStyle name="P25" rightIndent="0.0" leftIndent="0.0" fontName="Times-Bold" fontSize="6.0" leading="8" alignment="CENTER" spaceBefore="0.0" spaceAfter="0.0"/>
+    <paraStyle name="P26" rightIndent="0.0" leftIndent="0.0" fontName="Times-Roman" fontSize="7.0" leading="9" spaceBefore="0.0" spaceAfter="0.0"/>
+    <paraStyle name="P27" rightIndent="0.0" leftIndent="0.0" fontName="Times-Roman" fontSize="7.0" leading="9" alignment="LEFT" spaceBefore="0.0" spaceAfter="0.0"/>
+    <paraStyle name="P28" rightIndent="0.0" leftIndent="0.0" fontName="Times-Bold" fontSize="7.0" leading="9" spaceBefore="0.0" spaceAfter="0.0"/>
+    <paraStyle name="P29" rightIndent="0.0" leftIndent="0.0" fontName="Times-Bold" fontSize="7.0" leading="9" alignment="RIGHT" spaceBefore="0.0" spaceAfter="0.0"/>
+    <paraStyle name="P30" rightIndent="0.0" leftIndent="0.0" fontName="Helvetica" fontSize="7.0" leading="9" alignment="CENTER" spaceBefore="0.0" spaceAfter="0.0"/>
+    <paraStyle name="P31" rightIndent="0.0" leftIndent="0.0" fontName="Times-Roman" fontSize="7.0" leading="9" alignment="LEFT" spaceBefore="0.0" spaceAfter="0.0"/>
+    <paraStyle name="P32" rightIndent="0.0" leftIndent="0.0" fontName="Times-Roman" fontSize="7.0" leading="9" alignment="LEFT" spaceBefore="0.0" spaceAfter="0.0"/>
+    <paraStyle name="P33" rightIndent="0.0" leftIndent="0.0" fontName="Times-Roman" fontSize="7.0" leading="9" alignment="LEFT" spaceBefore="0.0" spaceAfter="0.0"/>
+    <paraStyle name="P34" rightIndent="0.0" leftIndent="0.0" fontName="Times-Bold" fontSize="7.0" leading="9" alignment="RIGHT" spaceBefore="0.0" spaceAfter="0.0"/>
+    <paraStyle name="P35" rightIndent="0.0" leftIndent="0.0" fontName="Times-Bold" fontSize="7.0" leading="9" alignment="RIGHT" spaceBefore="0.0" spaceAfter="0.0"/>
+    <paraStyle name="P36" rightIndent="0.0" leftIndent="0.0" fontName="Times-Roman" fontSize="7.0" leading="9" alignment="RIGHT" spaceBefore="0.0" spaceAfter="0.0"/>
+    <paraStyle name="P37" rightIndent="0.0" leftIndent="0.0" fontName="Times-Bold" fontSize="7.0" leading="9" alignment="RIGHT" spaceBefore="0.0" spaceAfter="0.0"/>
+    <paraStyle name="P38" rightIndent="0.0" leftIndent="0.0" fontName="Times-Bold" fontSize="7.0" leading="9" alignment="LEFT" spaceBefore="0.0" spaceAfter="0.0"/>
+    <paraStyle name="P39" rightIndent="0.0" leftIndent="0.0" fontName="Times-Bold" fontSize="7.0" leading="9" alignment="RIGHT" spaceBefore="0.0" spaceAfter="0.0"/>
+    <paraStyle name="P40" rightIndent="0.0" leftIndent="0.0" fontName="Times-Roman" fontSize="7.0" leading="9" alignment="RIGHT" spaceBefore="0.0" spaceAfter="0.0"/>
+    <paraStyle name="P41" rightIndent="0.0" leftIndent="0.0" fontName="Times-Roman" fontSize="7.0" leading="9" alignment="LEFT" spaceBefore="0.0" spaceAfter="0.0"/>
+    <paraStyle name="P42" rightIndent="0.0" leftIndent="0.0" fontName="Times-Bold" fontSize="7.0" leading="9" alignment="RIGHT" spaceBefore="0.0" spaceAfter="0.0"/>
+    <paraStyle name="P43" rightIndent="0.0" leftIndent="0.0" fontName="Helvetica" fontSize="7.0" leading="9" alignment="CENTER" spaceBefore="0.0" spaceAfter="0.0"/>
+    <paraStyle name="P44" rightIndent="0.0" leftIndent="0.0" fontName="Helvetica" fontSize="7.0" leading="9" alignment="CENTER" spaceBefore="0.0" spaceAfter="0.0"/>
+    <paraStyle name="P45" rightIndent="0.0" leftIndent="0.0" fontName="Helvetica" fontSize="7.0" leading="9" alignment="CENTER" spaceBefore="0.0" spaceAfter="0.0"/>
+    <paraStyle name="P46" rightIndent="0.0" leftIndent="0.0" fontName="Helvetica" fontSize="7.0" leading="9" alignment="CENTER" spaceBefore="0.0" spaceAfter="0.0"/>
+    <paraStyle name="P47" rightIndent="0.0" leftIndent="0.0" fontName="Times-Roman" fontSize="7.0" leading="9" alignment="LEFT" spaceBefore="0.0" spaceAfter="0.0"/>
+    <paraStyle name="P48" rightIndent="0.0" leftIndent="0.0" fontName="Times-Roman" fontSize="7.0" leading="9" alignment="LEFT" spaceBefore="0.0" spaceAfter="0.0"/>
+    <paraStyle name="P49" rightIndent="0.0" leftIndent="0.0" fontName="Times-Bold" fontSize="7.0" leading="9" alignment="RIGHT" spaceBefore="0.0" spaceAfter="0.0"/>
+    <paraStyle name="P50" rightIndent="0.0" leftIndent="0.0" fontName="Helvetica" fontSize="7.0" leading="9" alignment="CENTER" spaceBefore="0.0" spaceAfter="0.0"/>
+    <paraStyle name="P51" rightIndent="0.0" leftIndent="0.0" fontName="Times-Bold" fontSize="7.0" leading="9" alignment="CENTER" spaceBefore="1.0" spaceAfter="1.0"/>
+    <paraStyle name="P52" rightIndent="0.0" leftIndent="0.0" fontName="Times-Bold" fontSize="6.0" leading="8" alignment="CENTER" spaceBefore="1.0" spaceAfter="1.0"/>
+    <paraStyle name="P53" rightIndent="0.0" leftIndent="0.0" fontName="Times-Bold" fontSize="7.0" leading="9" alignment="CENTER" spaceBefore="1.0" spaceAfter="1.0"/>
+    <paraStyle name="P54" fontName="Times-Bold" fontSize="6.0" leading="8" spaceBefore="0.0" spaceAfter="6.0"/>
+    <paraStyle name="P55" fontName="Times-Roman" fontSize="6.0" leading="8" spaceBefore="0.0" spaceAfter="6.0"/>
+    <paraStyle name="P56" fontName="Helvetica" fontSize="7.0" leading="9" alignment="CENTER"/>
+    <paraStyle name="Standard" fontName="Times-Roman"/>
+    <paraStyle name="Text body" fontName="Times-Roman" spaceBefore="0.0" spaceAfter="6.0"/>
+    <paraStyle name="Heading" fontName="Helvetica" fontSize="14.0" leading="17" spaceBefore="12.0" spaceAfter="6.0"/>
+    <paraStyle name="List" fontName="Times-Roman" spaceBefore="0.0" spaceAfter="6.0"/>
+    <paraStyle name="Table Contents" fontName="Times-Roman" spaceBefore="0.0" spaceAfter="6.0"/>
+    <paraStyle name="Table Heading" fontName="Times-Roman" alignment="CENTER" spaceBefore="0.0" spaceAfter="6.0"/>
+    <paraStyle name="Caption" fontName="Times-Italic" fontSize="12.0" leading="15" spaceBefore="6.0" spaceAfter="6.0"/>
+    <paraStyle name="Index" fontName="Times-Roman"/>
+    <paraStyle name="Preformatted Text" fontName="Helvetica" fontSize="10.0" leading="13" spaceBefore="0.0" spaceAfter="0.0"/>
+    <paraStyle name="Table Contents (user)" fontName="Times-Roman" spaceBefore="0.0" spaceAfter="6.0"/>
+    <paraStyle name="Table Heading (user)" fontName="Times-Roman" alignment="CENTER" spaceBefore="0.0" spaceAfter="6.0"/>
+    <images/>
+  </stylesheet>
+  <story>
+    <para style="P1">[[ _load('bilan',data['form'])]]</para>
+    <blockTable colWidths="178.0,124.0,179.0" style="Tableau">
+      <tr>
+        <td>
+          <para style="P55">Imprimé le : [[ time.strftime('%d-%m-%Y') ]]</para>
+          <para style="P54">
+            <font color="white"> </font>
+          </para>
+        </td>
+        <td>
+          <para style="P2">BILAN (Actif)</para>
+          <para style="P4">(Modèle Normal)</para>
+        </td>
+        <td>
+          <para style="P3">Exercice du [[ time.strftime('%d-%m-%Y',time.strptime(date_start,'%Y-%m-%d'))]] au [[ time.strftime('%d-%m-%Y',time.strptime(date_stop,'%Y-%m-%d'))]]</para>
+          <para style="P5">Tenue de Compte : [[ company.currency_id.name ]]</para>
+        </td>
+      </tr>
+    </blockTable>
+    <blockTable colWidths="19.0,213.0,62.0,59.0,64.0,64.0" style="Table3">
+      <tr>
+        <td>
+          <para style="P18">
+            <font color="white"> </font>
+          </para>
+        </td>
+        <td>
+          <para style="P51">ACTIF</para>
+        </td>
+        <td>
+          <para style="P22">
+            <font color="white"> </font>
+          </para>
+        </td>
+        <td>
+          <para style="P22">EXERCICE</para>
+        </td>
+        <td>
+          <para style="P22">
+            <font color="white"> </font>
+          </para>
+        </td>
+        <td>
+          <para style="P22">EXERCICE PRECEDENT</para>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <para style="P24">
+            <font color="white"> </font>
+          </para>
+        </td>
+        <td>
+          <para style="P52">
+            <font color="white"> </font>
+          </para>
+        </td>
+        <td>
+          <para style="P25">Brut</para>
+        </td>
+        <td>
+          <para style="P25">Amort. et prov.</para>
+        </td>
+        <td>
+          <para style="P25">Net</para>
+        </td>
+        <td>
+          <para style="P25">Net</para>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <para style="P20">
+            <font color="white"> </font>
+          </para>
+        </td>
+        <td>
+          <para style="P19">Immobilisations en non-valeur (A)</para>
+        </td>
+        <td>
+          <para style="P21">[[formatLang(act21)]]</para>
+        </td>
+        <td>
+          <para style="P21">[[formatLang(act21b)]]</para>
+        </td>
+        <td>
+          <para style="P6">[[formatLang(act21-act21b)]]</para>
+        </td>
+        <td>
+          <para style="P6">[[formatLang(oldact21-oldact21b)]]</para>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <para style="P10">
+            <font color="white"> </font>
+          </para>
+        </td>
+        <td>
+          <para style="P26">Frais préliminaires</para>
+        </td>
+        <td>
+          <para style="P17">[[formatLang(act211)]]</para>
+        </td>
+        <td>
+          <para style="P17">[[formatLang(act211b)]]</para>
+        </td>
+        <td>
+          <para style="P7">[[formatLang(act211-act211b)]]</para>
+        </td>
+        <td>
+          <para style="P7">[[formatLang(oldact211-oldact211b)]]</para>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <para style="P10">
+            <font color="white"> </font>
+          </para>
+        </td>
+        <td>
+          <para style="P23">Charges à répartir sur plusieurs exercices</para>
+        </td>
+        <td>
+          <para style="P17">[[formatLang(act212)]]</para>
+        </td>
+        <td>
+          <para style="P17">[[formatLang(act212b)]]</para>
+        </td>
+        <td>
+          <para style="P7">[[formatLang(act212-act212b)]]</para>
+        </td>
+        <td>
+          <para style="P7">[[formatLang(oldact212-oldact212b)]]</para>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <para style="P8">A</para>
+        </td>
+        <td>
+          <para style="P23">Primes de remboursement des obligations</para>
+        </td>
+        <td>
+          <para style="P17">[[formatLang(act213)]]</para>
+        </td>
+        <td>
+          <para style="P17">[[formatLang(act213b)]]</para>
+        </td>
+        <td>
+          <para style="P7">[[formatLang(act213-act213b)]]</para>
+        </td>
+        <td>
+          <para style="P7">[[formatLang(oldact213-oldact213b)]]</para>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <para style="P8">C</para>
+        </td>
+        <td>
+          <para style="P19">Immobilisations incorporelles (B)</para>
+        </td>
+        <td>
+          <para style="P21">[[formatLang(act22)]]</para>
+        </td>
+        <td>
+          <para style="P21">[[formatLang(act22b)]]</para>
+        </td>
+        <td>
+          <para style="P6">[[formatLang(act22-act22b)]]</para>
+        </td>
+        <td>
+          <para style="P6">[[formatLang(oldact22-oldact22b)]]</para>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <para style="P30">T</para>
+        </td>
+        <td>
+          <para style="P26">Immobilisations en recherche et développement</para>
+        </td>
+        <td>
+          <para style="P17">[[formatLang(act221)]]</para>
+        </td>
+        <td>
+          <para style="P17">[[formatLang(act221b)]]</para>
+        </td>
+        <td>
+          <para style="P7">[[formatLang(act221-act221b)]]</para>
+        </td>
+        <td>
+          <para style="P7">[[formatLang(oldact221-oldact221b)]]</para>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <para style="P8">I</para>
+        </td>
+        <td>
+          <para style="P26">Brevets,marques, droits et valeurs similaires</para>
+        </td>
+        <td>
+          <para style="P17">[[formatLang(act222)]]</para>
+        </td>
+        <td>
+          <para style="P17">[[formatLang(act222b)]]</para>
+        </td>
+        <td>
+          <para style="P7">[[formatLang(act222-act222b)]]</para>
+        </td>
+        <td>
+          <para style="P7">[[formatLang(oldact222-oldact222b)]]</para>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <para style="P8">F</para>
+        </td>
+        <td>
+          <para style="P23"><font face="Times-Roman"/>Fonds commercial</para>
+        </td>
+        <td>
+          <para style="P17">[[formatLang(act223)]]</para>
+        </td>
+        <td>
+          <para style="P17">[[formatLang(act223b)]]</para>
+        </td>
+        <td>
+          <para style="P7">[[formatLang(act223-act223b)]]</para>
+        </td>
+        <td>
+          <para style="P7">[[formatLang(oldact223-oldact223b)]]</para>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <para style="P8">
+            <font color="white"> </font>
+          </para>
+        </td>
+        <td>
+          <para style="P26">Autres immobilisations incorporelles</para>
+        </td>
+        <td>
+          <para style="P17">[[formatLang(act228)]]</para>
+        </td>
+        <td>
+          <para style="P17">[[formatLang(act228b)]]</para>
+        </td>
+        <td>
+          <para style="P7">[[formatLang(act228-act228b)]]</para>
+        </td>
+        <td>
+          <para style="P7">[[formatLang(oldact228-oldact228b)]]</para>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <para style="P8">I</para>
+        </td>
+        <td>
+          <para style="P19">Immobilisations corporelles (C)</para>
+        </td>
+        <td>
+          <para style="P21">[[formatLang(act23)]]</para>
+        </td>
+        <td>
+          <para style="P21">[[formatLang(act23b)]]</para>
+        </td>
+        <td>
+          <para style="P6">[[formatLang(act23-act23b)]]</para>
+        </td>
+        <td>
+          <para style="P6">[[formatLang(oldact23-oldact23b)]]</para>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <para style="P30">M</para>
+        </td>
+        <td>
+          <para style="P16"><font face="Times-Roman">T</font>errains</para>
+        </td>
+        <td>
+          <para style="P17">[[formatLang(act231)]]</para>
+        </td>
+        <td>
+          <para style="P17">[[formatLang(act231b)]]</para>
+        </td>
+        <td>
+          <para style="P7">[[formatLang(act231-act231b)]]</para>
+        </td>
+        <td>
+          <para style="P7">[[formatLang(oldact231-oldact231b)]]</para>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <para style="P8">M</para>
+        </td>
+        <td>
+          <para style="P16"><font face="Times-Roman">C</font>onstructions</para>
+        </td>
+        <td>
+          <para style="P17">[[formatLang(act232)]]</para>
+        </td>
+        <td>
+          <para style="P17">[[formatLang(act232b)]]</para>
+        </td>
+        <td>
+          <para style="P7">[[formatLang(act232-act232b)]]</para>
+        </td>
+        <td>
+          <para style="P7">[[formatLang(oldact232-oldact232b)]]</para>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <para style="P8">O</para>
+        </td>
+        <td>
+          <para style="P16"><font face="Times-Roman">I</font>nstallations techniques, matériel et outillage</para>
+        </td>
+        <td>
+          <para style="P17">[[formatLang(act233)]]</para>
+        </td>
+        <td>
+          <para style="P17">[[formatLang(act233b)]]</para>
+        </td>
+        <td>
+          <para style="P7">[[formatLang(act233-act233b)]]</para>
+        </td>
+        <td>
+          <para style="P7">[[formatLang(oldact233-oldact233b)]]</para>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <para style="P8">B</para>
+        </td>
+        <td>
+          <para style="P16">Matériel de transport</para>
+        </td>
+        <td>
+          <para style="P17">[[formatLang(act234)]]</para>
+        </td>
+        <td>
+          <para style="P17">[[formatLang(act234b)]]</para>
+        </td>
+        <td>
+          <para style="P7">[[formatLang(act234-act234b)]]</para>
+        </td>
+        <td>
+          <para style="P7">[[formatLang(oldact234-oldact234b)]]</para>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <para style="P8">I</para>
+        </td>
+        <td>
+          <para style="P16">Mobiliers, matériel de bureau et aménagements divers</para>
+        </td>
+        <td>
+          <para style="P17">[[formatLang(act235)]]</para>
+        </td>
+        <td>
+          <para style="P17">[[formatLang(act235b)]]</para>
+        </td>
+        <td>
+          <para style="P7">[[formatLang(act235-act235b)]]</para>
+        </td>
+        <td>
+          <para style="P7">[[formatLang(oldact235-oldact235b)]]</para>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <para style="P8">L</para>
+        </td>
+        <td>
+          <para style="P27">Autres immobilisations corporelles</para>
+        </td>
+        <td>
+          <para style="P17">[[formatLang(act238)]]</para>
+        </td>
+        <td>
+          <para style="P17">[[formatLang(act238b)]]</para>
+        </td>
+        <td>
+          <para style="P7">[[formatLang(act238-act238b)]]</para>
+        </td>
+        <td>
+          <para style="P7">[[formatLang(oldact238-oldact238b)]]</para>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <para style="P8">I</para>
+        </td>
+        <td>
+          <para style="P16"><font face="Times-Roman">I</font>mmobilisations corporelles en cours</para>
+        </td>
+        <td>
+          <para style="P17">[[formatLang(act239)]]</para>
+        </td>
+        <td>
+          <para style="P17">
+            <font color="white"> </font>
+          </para>
+        </td>
+        <td>
+          <para style="P7">[[formatLang(act239)]]</para>
+        </td>
+        <td>
+          <para style="P7">[[formatLang(oldact239)]]</para>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <para style="P8">S</para>
+        </td>
+        <td>
+          <para style="P19">Immobilisations financières (D)</para>
+        </td>
+        <td>
+          <para style="P21">[[formatLang(act24)]]</para>
+        </td>
+        <td>
+          <para style="P14">
+            <font color="white"> </font>
+          </para>
+        </td>
+        <td>
+          <para style="P21">[[formatLang(act24)]]</para>
+        </td>
+        <td>
+          <para style="P21">[[formatLang(oldact24)]]</para>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <para style="P30">E</para>
+        </td>
+        <td>
+          <para style="P27">Prêts immobilisés</para>
+        </td>
+        <td>
+          <para style="P17">[[formatLang(act241)]]</para>
+        </td>
+        <td>
+          <para style="P17">
+            <font color="white"> </font>
+          </para>
+        </td>
+        <td>
+          <para style="P17">[[formatLang(act241)]]</para>
+        </td>
+        <td>
+          <para style="P17">[[formatLang(oldact241)]]</para>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <para style="P11">
+            <font color="white"> </font>
+          </para>
+        </td>
+        <td>
+          <para style="P27">Autres créances financières</para>
+        </td>
+        <td>
+          <para style="P17">[[formatLang(act248)]]</para>
+        </td>
+        <td>
+          <para style="P17">
+            <font color="white"> </font>
+          </para>
+        </td>
+        <td>
+          <para style="P17">[[formatLang(act248)]]</para>
+        </td>
+        <td>
+          <para style="P17">[[formatLang(oldact248)]]</para>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <para style="P11">
+            <font color="white"> </font>
+          </para>
+        </td>
+        <td>
+          <para style="P27">Titres de participation</para>
+        </td>
+        <td>
+          <para style="P17">[[formatLang(act251)]]</para>
+        </td>
+        <td>
+          <para style="P17">
+            <font color="white"> </font>
+          </para>
+        </td>
+        <td>
+          <para style="P17">[[formatLang(act251)]]</para>
+        </td>
+        <td>
+          <para style="P17">[[formatLang(oldact251)]]</para>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <para style="P11">
+            <font color="white"> </font>
+          </para>
+        </td>
+        <td>
+          <para style="P16"><font face="Times-Roman">A</font>utres titres immobilisés</para>
+        </td>
+        <td>
+          <para style="P17">[[formatLang(act258)]]</para>
+        </td>
+        <td>
+          <para style="P17">
+            <font color="white"> </font>
+          </para>
+        </td>
+        <td>
+          <para style="P17">[[formatLang(act258)]]</para>
+        </td>
+        <td>
+          <para style="P17">[[formatLang(oldact258)]]</para>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <para style="P20">
+            <font color="white"> </font>
+          </para>
+        </td>
+        <td>
+          <para style="P28">Écarts de conversion - Actif (E)</para>
+        </td>
+        <td>
+          <para style="P21">[[formatLang(act27)]]</para>
+        </td>
+        <td>
+          <para style="P21">
+            <font color="white"> </font>
+          </para>
+        </td>
+        <td>
+          <para style="P21">[[formatLang(act27)]]</para>
+        </td>
+        <td>
+          <para style="P21">[[formatLang(oldact27)]]</para>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <para style="P11">
+            <font color="white"> </font>
+          </para>
+        </td>
+        <td>
+          <para style="P27">Diminution des créances immobilisées</para>
+        </td>
+        <td>
+          <para style="P17">[[formatLang(act271)]]</para>
+        </td>
+        <td>
+          <para style="P17">
+            <font color="white"> </font>
+          </para>
+        </td>
+        <td>
+          <para style="P17">[[formatLang(act271)]]</para>
+        </td>
+        <td>
+          <para style="P17">[[formatLang(oldact271)]]</para>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <para style="P11">
+            <font color="white"> </font>
+          </para>
+        </td>
+        <td>
+          <para style="P27">Augmentation des dettes de financement</para>
+        </td>
+        <td>
+          <para style="P17">[[formatLang(act272)]]</para>
+        </td>
+        <td>
+          <para style="P17">
+            <font color="white"> </font>
+          </para>
+        </td>
+        <td>
+          <para style="P17">[[formatLang(act272)]]</para>
+        </td>
+        <td>
+          <para style="P17">[[formatLang(oldact272)]]</para>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <para style="P21">
+            <font color="white"> </font>
+          </para>
+        </td>
+        <td>
+          <para style="P29">TOTAL I (A+B+C+D+E)</para>
+        </td>
+        <td>
+          <para style="P14">[[formatLang(actT1)]]</para>
+        </td>
+        <td>
+          <para style="P14">[[formatLang(act21b+act22b+act23b)]] </para>
+        </td>
+        <td>
+          <para style="P21">[[formatLang(actT1-act21b-act22b- act23b)]]</para>
+        </td>
+        <td>
+          <para style="P21">[[formatLang(oldactT1-oldact21b-oldact22b-oldact23b)]]</para>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <para style="P8">
+            <font color="white"> </font>
+          </para>
+        </td>
+        <td>
+          <para style="P28">Stocks (F)</para>
+        </td>
+        <td>
+          <para style="P14">[[formatLang(act31)]]</para>
+        </td>
+        <td>
+          <para style="P14">[[formatLang(act31b)]]</para>
+        </td>
+        <td>
+          <para style="P6">[[formatLang(act31 - act31b)]]</para>
+        </td>
+        <td>
+          <para style="P6">[[formatLang(oldact31 - oldact31b)]]</para>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <para style="P8">A</para>
+        </td>
+        <td>
+          <para style="P31">Marchandises</para>
+        </td>
+        <td>
+          <para style="P15">[[formatLang(act311)]]</para>
+        </td>
+        <td>
+          <para style="P15">[[formatLang(act311b)]]</para>
+        </td>
+        <td>
+          <para style="P7">[[formatLang(act311-act311b)]]</para>
+        </td>
+        <td>
+          <para style="P7">[[formatLang(oldact311-oldact311b)]]</para>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <para style="P8">C</para>
+        </td>
+        <td>
+          <para style="P31">Matières et fournit. consommables</para>
+        </td>
+        <td>
+          <para style="P15">[[formatLang(act312)]]</para>
+        </td>
+        <td>
+          <para style="P15">[[formatLang(act312b)]]</para>
+        </td>
+        <td>
+          <para style="P7">[[formatLang(act312-act312b)]]</para>
+        </td>
+        <td>
+          <para style="P7">[[formatLang(oldact312-oldact312b)]]</para>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <para style="P30">T</para>
+        </td>
+        <td>
+          <para style="P31">Produits en cours</para>
+        </td>
+        <td>
+          <para style="P15">[[formatLang(act313)]]</para>
+        </td>
+        <td>
+          <para style="P15">[[formatLang(act313b)]]</para>
+        </td>
+        <td>
+          <para style="P7">[[formatLang(act313-act313b)]]</para>
+        </td>
+        <td>
+          <para style="P7">[[formatLang(oldact313-oldact313b)]]</para>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <para style="P8">I</para>
+        </td>
+        <td>
+          <para style="P31">Produits intermid. et prod. résiduels </para>
+        </td>
+        <td>
+          <para style="P15">[[formatLang(act314)]]</para>
+        </td>
+        <td>
+          <para style="P15">[[formatLang(act314b)]]</para>
+        </td>
+        <td>
+          <para style="P7">[[formatLang(act314-act314b)]]</para>
+        </td>
+        <td>
+          <para style="P7">[[formatLang(oldact314-oldact314b)]]</para>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <para style="P8">F</para>
+        </td>
+        <td>
+          <para style="P31">Produits finis</para>
+        </td>
+        <td>
+          <para style="P15">[[formatLang(act315)]]</para>
+        </td>
+        <td>
+          <para style="P15">[[formatLang(act315b)]]</para>
+        </td>
+        <td>
+          <para style="P7">[[formatLang(act315-act315b)]]</para>
+        </td>
+        <td>
+          <para style="P7">[[formatLang(oldact315-oldact315b)]]</para>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <para style="P30">
+            <font color="white"> </font>
+          </para>
+        </td>
+        <td>
+          <para style="P28">Créances de l'actif circulant (G)</para>
+        </td>
+        <td>
+          <para style="P14">[[formatLang(act34)]]</para>
+        </td>
+        <td>
+          <para style="P14">[[formatLang(act34b)]]</para>
+        </td>
+        <td>
+          <para style="P6">[[formatLang(act34 - act34b)]]</para>
+        </td>
+        <td>
+          <para style="P6">[[formatLang(oldact34 - oldact34b)]]</para>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <para style="P8">C</para>
+        </td>
+        <td>
+          <para style="P31">
+            <font face="Times-Roman">Fournisseurs débiteurs, avances et acomptes </font>
+          </para>
+        </td>
+        <td>
+          <para style="P15">[[formatLang(act341)]]</para>
+        </td>
+        <td>
+          <para style="P15">[[formatLang(act341b)]]</para>
+        </td>
+        <td>
+          <para style="P7">[[formatLang(act341-act341b)]]</para>
+        </td>
+        <td>
+          <para style="P7">[[formatLang(oldact341-oldact341b)]]</para>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <para style="P8">I</para>
+        </td>
+        <td>
+          <para style="P31">Clients et comptes rattachés</para>
+        </td>
+        <td>
+          <para style="P15">[[formatLang(act342)]]</para>
+        </td>
+        <td>
+          <para style="P15">[[formatLang(act342b)]]</para>
+        </td>
+        <td>
+          <para style="P7">[[formatLang(act342-act342b)]]</para>
+        </td>
+        <td>
+          <para style="P7">[[formatLang(oldact342-oldact342b)]]</para>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <para style="P8">R</para>
+        </td>
+        <td>
+          <para style="P31">Personnel</para>
+        </td>
+        <td>
+          <para style="P15">[[formatLang(act343)]]</para>
+        </td>
+        <td>
+          <para style="P15">[[formatLang(act343b)]]</para>
+        </td>
+        <td>
+          <para style="P7">[[formatLang(act343-act343b)]]</para>
+        </td>
+        <td>
+          <para style="P7">[[formatLang(oldact343-oldact343b)]]</para>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <para style="P8">C</para>
+        </td>
+        <td>
+          <para style="P31">État</para>
+        </td>
+        <td>
+          <para style="P15">[[formatLang(act345)]]</para>
+        </td>
+        <td>
+          <para style="P17">
+            <font color="white"> </font>
+          </para>
+        </td>
+        <td>
+          <para style="P15">[[formatLang(act345)]]</para>
+        </td>
+        <td>
+          <para style="P15">[[formatLang(oldact345)]]</para>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <para style="P8">U</para>
+        </td>
+        <td>
+          <para style="P32">Comptes d'associés débiteurs</para>
+        </td>
+        <td>
+          <para style="P15">[[formatLang(act346)]]</para>
+        </td>
+        <td>
+          <para style="P15">[[formatLang(act346b)]]</para>
+        </td>
+        <td>
+          <para style="P7">[[formatLang(act346-act346b)]]</para>
+        </td>
+        <td>
+          <para style="P7">[[formatLang(oldact346-oldact346b)]]</para>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <para style="P8">L</para>
+        </td>
+        <td>
+          <para style="P31">Autres débiteurs</para>
+        </td>
+        <td>
+          <para style="P15">[[formatLang(act348)]]</para>
+        </td>
+        <td>
+          <para style="P15">[[formatLang(act348b)]]</para>
+        </td>
+        <td>
+          <para style="P7">[[formatLang(act348-act348b)]]</para>
+        </td>
+        <td>
+          <para style="P7">[[formatLang(oldact348-oldact348b)]]</para>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <para style="P8">A</para>
+        </td>
+        <td>
+          <para style="P31">Comptes de régularisation Actif</para>
+        </td>
+        <td>
+          <para style="P15">[[formatLang(act349)]]</para>
+        </td>
+        <td>
+          <para style="P15">
+            <font color="white"> </font>
+          </para>
+        </td>
+        <td>
+          <para style="P15">[[formatLang(act349)]]</para>
+        </td>
+        <td>
+          <para style="P15">[[formatLang(oldact349)]]</para>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <para style="P30">N</para>
+        </td>
+        <td>
+          <para style="P28">Titres et valeurs de placement (H)</para>
+        </td>
+        <td>
+          <para style="P14">[[formatLang(act35)]]</para>
+        </td>
+        <td>
+          <para style="P14">[[formatLang(act350b)]]</para>
+        </td>
+        <td>
+          <para style="P14">[[formatLang(act35+act350b)]] </para>
+        </td>
+        <td>
+          <para style="P14">[[formatLang(oldact35+oldact350b)]] </para>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <para style="P30">T</para>
+        </td>
+        <td>
+          <para style="P28">Écarts de conversion-Actif (I) (éléments circulant)</para>
+        </td>
+        <td>
+          <para style="P14">[[formatLang(act37)]]</para>
+        </td>
+        <td>
+          <para style="P21">
+            <font color="white"> </font>
+          </para>
+        </td>
+        <td>
+          <para style="P14">[[formatLang(act37)]]</para>
+        </td>
+        <td>
+          <para style="P14">[[formatLang(oldact37)]]</para>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <para style="P33">
+            <font color="white"> </font>
+          </para>
+        </td>
+        <td>
+          <para style="P29">TOTAL II (F+G+H+I)</para>
+        </td>
+        <td>
+          <para style="P21">[[formatLang(actT2)]]</para>
+        </td>
+        <td>
+          <para style="P14">[[formatLang(act31b+act34b+ act350b)]] </para>
+        </td>
+        <td>
+          <para style="P6">[[formatLang(actT2-act31b+act34b+ act350b)]] </para>
+        </td>
+        <td>
+          <para style="P6">[[formatLang(oldactT2-oldact31b+oldact34b+ oldact350b)]]</para>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <para style="P30">T</para>
+        </td>
+        <td>
+          <para style="P28">Trésorerie - Actif</para>
+        </td>
+        <td>
+          <para style="P14">[[formatLang(act51)]]</para>
+        </td>
+        <td>
+          <para style="P14">
+            <font color="white"> </font>
+          </para>
+        </td>
+        <td>
+          <para style="P14">[[formatLang(act51)]]</para>
+        </td>
+        <td>
+          <para style="P14">[[formatLang(oldact51)]]</para>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <para style="P8">R</para>
+        </td>
+        <td>
+          <para style="P33">Chèques et valeurs à encaisser</para>
+        </td>
+        <td>
+          <para style="P15">[[formatLang(act511)]]</para>
+        </td>
+        <td>
+          <para style="P15">
+            <font color="white"> </font>
+          </para>
+        </td>
+        <td>
+          <para style="P15">[[formatLang(act511)]]</para>
+        </td>
+        <td>
+          <para style="P15">[[formatLang(oldact511)]]</para>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <para style="P8">E</para>
+        </td>
+        <td>
+          <para style="P31">Banques, Trésorerie Générale, Chèques postaux</para>
+        </td>
+        <td>
+          <para style="P15">[[formatLang(act514)]]</para>
+        </td>
+        <td>
+          <para style="P15">
+            <font color="white"> </font>
+          </para>
+        </td>
+        <td>
+          <para style="P15">[[formatLang(act514)]]</para>
+        </td>
+        <td>
+          <para style="P15">[[formatLang(oldact514)]]</para>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <para style="P8">S</para>
+        </td>
+        <td>
+          <para style="P31">Caisse, Régies d'avances et accréditifs</para>
+        </td>
+        <td>
+          <para style="P15">[[formatLang(act516)]]</para>
+        </td>
+        <td>
+          <para style="P15">
+            <font color="white"> </font>
+          </para>
+        </td>
+        <td>
+          <para style="P15">[[formatLang(act516)]]</para>
+        </td>
+        <td>
+          <para style="P15">[[formatLang(oldact516)]]</para>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <para style="P8">O</para>
+        </td>
+        <td>
+          <para style="P29">TOTAL III</para>
+        </td>
+        <td>
+          <para style="P14">[[formatLang(actT3)]]</para>
+        </td>
+        <td>
+          <para style="P14">
+            <font color="white"> </font>
+          </para>
+        </td>
+        <td>
+          <para style="P14">[[formatLang(actT3)]]</para>
+        </td>
+        <td>
+          <para style="P14">[[formatLang(oldactT3)]]</para>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <para style="P37">
+            <font color="white"> </font>
+          </para>
+        </td>
+        <td>
+          <para style="P36">
+            <font face="Times-Bold">TOTAL GENERAL ( I + II + III )</font>
+          </para>
+        </td>
+        <td>
+          <para style="P14">[[formatLang(actT1+actT2+ actT3)]]</para>
+        </td>
+        <td>
+          <para style="P14">[[formatLang(act21b+act22b+act23b+act31b+act34b+act350b)]]</para>
+        </td>
+        <td>
+          <para style="P14">[[formatLang(actT1+actT2+actT3-act21b-act22b-act23b-act31b-act34b-act350b)]]</para>
+        </td>
+        <td>
+          <para style="P14">[[formatLang(oldactT1+oldactT2+oldactT3-oldact21b-oldact22b-oldact23b-oldact31b-oldact34b-oldact350b)]]</para>
+        </td>
+      </tr>
+    </blockTable>
+    <para style="P2">BILAN (Passif)</para>
+    <para style="P4">(Modèle Normal)</para>
+    <blockTable colWidths="19.0,335.0,64.0,64.0" style="Tableau3">
+      <tr>
+        <td>
+          <para style="P30">
+            <font color="white"> </font>
+          </para>
+        </td>
+        <td>
+          <para style="P53">PASSIF</para>
+        </td>
+        <td>
+          <para style="P22">EXERCICE</para>
+        </td>
+        <td>
+          <para style="P22">EXERCICE PRECEDENT</para>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <para style="P9">F</para>
+        </td>
+        <td>
+          <para style="P38">Capitaux propres (A)</para>
+        </td>
+        <td>
+          <para style="P21">[[formatLang(pas11)]]</para>
+        </td>
+        <td>
+          <para style="P21">[[formatLang(oldpas11)]]</para>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <para style="P9">I</para>
+        </td>
+        <td>
+          <para style="P31">Capital social ou personnel (1)</para>
+        </td>
+        <td>
+          <para style="P40">[[formatLang(pas111)]]</para>
+        </td>
+        <td>
+          <para style="P40">[[formatLang(oldpas111)]]</para>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <para style="P9">N</para>
+        </td>
+        <td>
+          <para style="P41">Primes d'émission, de fusion, d'apport</para>
+        </td>
+        <td>
+          <para style="P40">[[formatLang(pas112)]]</para>
+        </td>
+        <td>
+          <para style="P40">[[formatLang(oldpas112)]]</para>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <para style="P9">A</para>
+        </td>
+        <td>
+          <para style="P47">Écarts de réévaluation</para>
+        </td>
+        <td>
+          <para style="P40">[[formatLang(pas113)]]</para>
+        </td>
+        <td>
+          <para style="P40">[[formatLang(oldpas113)]]</para>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <para style="P9">N</para>
+        </td>
+        <td>
+          <para style="P47">Réserve légale</para>
+        </td>
+        <td>
+          <para style="P40">[[formatLang(pas114)]]</para>
+        </td>
+        <td>
+          <para style="P40">[[formatLang(oldpas114)]]</para>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <para style="P9">C</para>
+        </td>
+        <td>
+          <para style="P47">Autres réserves</para>
+        </td>
+        <td>
+          <para style="P40">[[formatLang(pas115)]]</para>
+        </td>
+        <td>
+          <para style="P40">[[formatLang(oldpas115)]]</para>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <para style="P9">E</para>
+        </td>
+        <td>
+          <para style="P47">Report à nouveau (2)</para>
+        </td>
+        <td>
+          <para style="P40">[[formatLang(pas116)]]</para>
+        </td>
+        <td>
+          <para style="P40">[[formatLang(oldpas116)]]</para>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <para style="P9">M</para>
+        </td>
+        <td>
+          <para style="P47">Résultat net en instance d'affectation (2)</para>
+        </td>
+        <td>
+          <para style="P40">[[formatLang(pas118)]]</para>
+        </td>
+        <td>
+          <para style="P40">[[formatLang(oldpas118)]]</para>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <para style="P43">E</para>
+        </td>
+        <td>
+          <para style="P48">Résultat net de l'exercice (2)</para>
+        </td>
+        <td>
+          <para style="P40">[[formatLang(pas119)]]</para>
+        </td>
+        <td>
+          <para style="P40">[[formatLang(oldpas119)]]</para>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <para style="P9">N</para>
+        </td>
+        <td>
+          <para style="P38">Capitaux propres assimilés (B)</para>
+        </td>
+        <td>
+          <para style="P21">[[formatLang(pas13)]]</para>
+        </td>
+        <td>
+          <para style="P21">[[formatLang(oldpas13)]]</para>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <para style="P9">T</para>
+        </td>
+        <td>
+          <para style="P48">Subventions d'investissement</para>
+        </td>
+        <td>
+          <para style="P17">[[formatLang(pas131)]]</para>
+        </td>
+        <td>
+          <para style="P17">[[formatLang(oldpas131)]]</para>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <para style="P43">
+            <font color="white"> </font>
+          </para>
+        </td>
+        <td>
+          <para style="P48">Provisions réglementées</para>
+        </td>
+        <td>
+          <para style="P17">[[formatLang(pas135)]]</para>
+        </td>
+        <td>
+          <para style="P17">[[formatLang(oldpas135)]]</para>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <para style="P9">P</para>
+        </td>
+        <td>
+          <para style="P38">Dettes de financement ( C )</para>
+        </td>
+        <td>
+          <para style="P21">[[formatLang(pas14)]]</para>
+        </td>
+        <td>
+          <para style="P21">[[formatLang(oldpas14)]]</para>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <para style="P9">E</para>
+        </td>
+        <td>
+          <para style="P48">Emprunts obligataires</para>
+        </td>
+        <td>
+          <para style="P17">[[formatLang(pas141)]]</para>
+        </td>
+        <td>
+          <para style="P17">[[formatLang(oldpas141)]]</para>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <para style="P43">R</para>
+        </td>
+        <td>
+          <para style="P48">Autres dettes de financement</para>
+        </td>
+        <td>
+          <para style="P17">[[formatLang(pas148)]]</para>
+        </td>
+        <td>
+          <para style="P17">[[formatLang(oldpas148)]]</para>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <para style="P9">M</para>
+        </td>
+        <td>
+          <para style="P38">Provisions durables pour risques et charges (D)</para>
+        </td>
+        <td>
+          <para style="P21">[[formatLang(pas15)]]</para>
+        </td>
+        <td>
+          <para style="P21">[[formatLang(oldpas15)]]</para>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <para style="P9">A</para>
+        </td>
+        <td>
+          <para style="P48">Provisions pour risques</para>
+        </td>
+        <td>
+          <para style="P17">[[formatLang(pas151)]]</para>
+        </td>
+        <td>
+          <para style="P17">[[formatLang(oldpas151)]]</para>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <para style="P44">N</para>
+        </td>
+        <td>
+          <para style="P48">Provisions pour charges</para>
+        </td>
+        <td>
+          <para style="P17">[[formatLang(pas155)]]</para>
+        </td>
+        <td>
+          <para style="P17">[[formatLang(oldpas155)]]</para>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <para style="P12">E</para>
+        </td>
+        <td>
+          <para style="P38">Écarts de conversion - Passif (E)</para>
+        </td>
+        <td>
+          <para style="P21">[[formatLang(pas17)]]</para>
+        </td>
+        <td>
+          <para style="P21">[[formatLang(oldpas17)]]</para>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <para style="P9">N</para>
+        </td>
+        <td>
+          <para style="P48">Augmentation des créances immobilisées</para>
+        </td>
+        <td>
+          <para style="P17">[[formatLang(pas171)]]</para>
+        </td>
+        <td>
+          <para style="P17">[[formatLang(oldpas171)]]</para>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <para style="P43">T</para>
+        </td>
+        <td>
+          <para style="P48">Diminution des dettes de financement</para>
+        </td>
+        <td>
+          <para style="P17">[[formatLang(pas172)]]</para>
+        </td>
+        <td>
+          <para style="P17">[[formatLang(oldpas172)]]</para>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <para style="P43">
+            <font color="white"> </font>
+          </para>
+        </td>
+        <td>
+          <para style="P34">TOTAL I (A+B+C+D+E)</para>
+        </td>
+        <td>
+          <para style="P39">[[formatLang(past1)]]</para>
+        </td>
+        <td>
+          <para style="P39">[[formatLang(oldpast1)]]</para>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <para style="P45">P</para>
+        </td>
+        <td>
+          <para style="P38">Dettes du passif circulant (F)</para>
+        </td>
+        <td>
+          <para style="P21">[[formatLang(pas44)]]</para>
+        </td>
+        <td>
+          <para style="P21">[[formatLang(oldpas44)]]</para>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <para style="P12">A</para>
+        </td>
+        <td>
+          <para style="P48">Fournisseurs et comptes rattachés</para>
+        </td>
+        <td>
+          <para style="P17">[[formatLang(pas441)]]</para>
+        </td>
+        <td>
+          <para style="P17">[[formatLang(oldpas441)]]</para>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <para style="P9">S</para>
+        </td>
+        <td>
+          <para style="P48">Clients créditeurs, avances et acomptes</para>
+        </td>
+        <td>
+          <para style="P17">[[formatLang(pas442)]]</para>
+        </td>
+        <td>
+          <para style="P17">[[formatLang(oldpas442)]]</para>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <para style="P9">S</para>
+        </td>
+        <td>
+          <para style="P48">Personnel – créditeur</para>
+        </td>
+        <td>
+          <para style="P17">[[formatLang(pas443)]]</para>
+        </td>
+        <td>
+          <para style="P17">[[formatLang(oldpas443)]]</para>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <para style="P9">I</para>
+        </td>
+        <td>
+          <para style="P48">Organismes sociaux</para>
+        </td>
+        <td>
+          <para style="P17">[[formatLang(pas444)]]</para>
+        </td>
+        <td>
+          <para style="P17">[[formatLang(oldpas444)]]</para>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <para style="P9">F</para>
+        </td>
+        <td>
+          <para style="P48">Etat – créditeur</para>
+        </td>
+        <td>
+          <para style="P17">[[formatLang(pas445)]]</para>
+        </td>
+        <td>
+          <para style="P17">[[formatLang(oldpas445)]]</para>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <para style="P9">
+            <font color="white"> </font>
+          </para>
+        </td>
+        <td>
+          <para style="P48">Comptes d'associés - créditeurs</para>
+        </td>
+        <td>
+          <para style="P17">[[formatLang(pas446)]]</para>
+        </td>
+        <td>
+          <para style="P17">[[formatLang(oldpas446)]]</para>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <para style="P9">C</para>
+        </td>
+        <td>
+          <para style="P48">Autres créanciers</para>
+        </td>
+        <td>
+          <para style="P17">[[formatLang(pas448)]]</para>
+        </td>
+        <td>
+          <para style="P17">[[formatLang(oldpas448)]]</para>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <para style="P9">I</para>
+        </td>
+        <td>
+          <para style="P48">Comptes de régularisation – passif</para>
+        </td>
+        <td>
+          <para style="P17">[[formatLang(pas449)]]</para>
+        </td>
+        <td>
+          <para style="P17">[[formatLang(oldpas449)]]</para>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <para style="P9">R</para>
+        </td>
+        <td>
+          <para style="P38">Autres provisions pour risques et charges (G)</para>
+        </td>
+        <td>
+          <para style="P21">[[formatLang(pas450)]]</para>
+        </td>
+        <td>
+          <para style="P21">[[formatLang(oldpas450)]]</para>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <para style="P9">C</para>
+        </td>
+        <td>
+          <para style="P38">Écarts de conversion - Passif (H) (éléments circulant)</para>
+        </td>
+        <td>
+          <para style="P21">[[formatLang(pas470)]]</para>
+        </td>
+        <td>
+          <para style="P21">[[formatLang(oldpas470)]]</para>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <para style="P47">
+            <font color="white"> </font>
+          </para>
+        </td>
+        <td>
+          <para style="P35">TOTAL II (F+G+H)</para>
+        </td>
+        <td>
+          <para style="P39">[[formatLang(past2)]]</para>
+        </td>
+        <td>
+          <para style="P39">[[formatLang(oldpast2)]]</para>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <para style="P46">T</para>
+        </td>
+        <td>
+          <para style="P38">Trésorerie - Passif</para>
+        </td>
+        <td>
+          <para style="P21">[[formatLang(pas55)]]</para>
+        </td>
+        <td>
+          <para style="P21">[[formatLang(oldpas55)]]</para>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <para style="P9">R</para>
+        </td>
+        <td>
+          <para style="P48">Crédits d’escompte</para>
+        </td>
+        <td>
+          <para style="P17">[[formatLang(pas552)]]</para>
+        </td>
+        <td>
+          <para style="P17">[[formatLang(oldpas552)]]</para>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <para style="P9">E</para>
+        </td>
+        <td>
+          <para style="P48">Crédits de trésorerie</para>
+        </td>
+        <td>
+          <para style="P17">[[formatLang(pas553)]]</para>
+        </td>
+        <td>
+          <para style="P17">[[formatLang(oldpas553)]]</para>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <para style="P9">S</para>
+        </td>
+        <td>
+          <para style="P48">Banques (Soldes créditeurs)</para>
+        </td>
+        <td>
+          <para style="P17">[[formatLang(pas554)]]</para>
+        </td>
+        <td>
+          <para style="P17">[[formatLang(oldpas554)]]</para>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <para style="P50">O</para>
+        </td>
+        <td>
+          <para style="P49">TOTAL III</para>
+        </td>
+        <td>
+          <para style="P21">[[formatLang(pas55)]]</para>
+        </td>
+        <td>
+          <para style="P21">[[formatLang(oldpas55)]]</para>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <para style="P42">
+            <font color="white"> </font>
+          </para>
+        </td>
+        <td>
+          <para style="P42">TOTAL GENERAL (I + II + III)</para>
+        </td>
+        <td>
+          <para style="P14">[[formatLang(past1+past2+ pas55)]]</para>
+        </td>
+        <td>
+          <para style="P14">[[formatLang(oldpast1+oldpast2+ oldpas55)]]</para>
+        </td>
+      </tr>
+    </blockTable>
+    <para style="P13">
+      <font color="white"> </font>
+    </para>
+    <para style="P13">(1) Capital Personnel Débiteur</para>
+    <para style="P13">(2) Bénéficiaire (+), Déficitaire (-)</para>
+  </story>
+</document>

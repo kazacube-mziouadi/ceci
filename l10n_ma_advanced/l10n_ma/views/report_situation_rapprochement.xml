@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+<data>
+
+<template id="report_situation_rapprochement">
+    <t t-call="report.html_container">
+        <t t-set="data_report_margin_top" t-value="12"/>
+        <t t-set="data_report_header_spacing" t-value="9"/>
+        <t t-set="data_report_dpi" t-value="110"/>
+          <t t-call="report.internal_layout">
+          	<div class="page">
+	          	<div align="center" style="width: 1300px;">
+		          	<h1 style="width: 1300px;">Situation des Rapprochements Bancaires AU <span t-esc="formatLang(period(data).date_stop or '', date=True)"/></h1>
+	        	</div>
+
+			        <div class="act_as_table data_table" style="width: 1350px;">
+			            <div class="act_as_row labels" >
+			                <div class="act_as_cell" >Code Banque</div>
+			                <div class="act_as_cell" >N° Compte Bancaire</div>
+			                <div class="act_as_cell" >Banque</div>
+			                <div class="act_as_cell" >N° Compte Comptable</div>
+			            </div>
+			            <div class="act_as_row" align="center">
+			                <div class="act_as_cell"><p t-esc="bank(data).code"/></div>
+			                <div class="act_as_cell" ><p t-esc="bank(data).bank_account"/></div>
+			                <div class="act_as_cell" ><p t-esc="bank(data).name"/></div>
+			                <div class="act_as_cell" ><p t-esc="account(data).code"/></div>
+			            </div>
+			        </div>
+					<div class="act_as_table data_table" align="center">
+			         	<div class="act_as_row labels" align="center">
+				            <div class="act_as_cell" style="width: 700px;">Écritures Comptables</div>
+				            <div class="act_as_cell" style="width: 650px;">Écritures Bancaires</div>
+				        </div>
+			       	</div>
+			        <div class="act_as_table data_table" align="center">
+			           <div class="act_as_thead">
+				            <div class="act_as_row labels">
+				                    <div class="act_as_cell first_column" style="width: 100px;">Dt. Opér</div>
+				                    <div class="act_as_cell" style="width: 250px;">Libellé</div>
+				                    <div class="act_as_cell " style="width: 100px;">Débit</div>
+				                    <div class="act_as_cell " style="width: 100px;">Crédit</div>
+				                    <div class="act_as_cell" style="width: 150px;">Pièce</div>
+				                    <div class="act_as_cell first_column" style="width: 100px;">Dt. Opér</div>
+				                    <div class="act_as_cell " style="width: 100px;">Débit</div>
+				                    <div class="act_as_cell " style="width: 100px;">Crédit</div>
+				                    <div class="act_as_cell" style="width: 350px;">Libellé</div>
+				            </div>
+			           </div>
+			           <t t-foreach="get_lines(data)" t-as="line">
+			            	<div class="act_as_row lines">
+			                      <div class="act_as_cell"><p t-esc="formatLang(line['date'] or '',date=True)"/></div>
+			                      <div class="act_as_cell"><p t-esc="line['name'] or ''"/></div>
+			                      <div class="act_as_cell amount"><p t-esc="line['debit'] or 0.0"/></div>
+			                      <div class="act_as_cell amount" ><p t-esc="line['credit'] or 0.0" /></div>
+			                      <div class="act_as_cell"><span t-esc="line['piece']"/></div>
+			                      <div class="act_as_cell"><p t-esc="formatLang(line['date_op_bank'] or '',date=True)"/></div>
+				                  <div class="act_as_cell amount"><span t-esc="abs(get_line_debit(line))"/></div>
+				                  <div class="act_as_cell amount" ><span t-esc="get_line_credit(line)"/></div>
+			                      <div class="act_as_cell"><span t-esc="line['libelle']"/></div>
+			            	</div>
+			            </t>
+			            <div style="break-line-before: always;">
+					        <div class="act_as_table data_table" align="center">				    		
+					    		<div class="act_as_row labels">
+					                <div class="act_as_cell first_column" style="width: 350px;"><strong>Cumul écritures non rapprochées</strong></div>
+					                <div class="act_as_cell amount" style="width: 100px;"><span t-esc="get_debit(data)"/></div>	
+						            <div class="act_as_cell amount" style="width: 100px;"><span t-esc="abs(get_credit(data))"/></div>		
+						            <div class="act_as_cell amount" style="width: 150px;"></div>	
+						           	<div class="act_as_cell amount" style="width: 100px;"></div>	    
+						            <div class="act_as_cell amount" style="width: 100px;"><span t-esc="abs(get_bank_debit(data))"/></div>	
+						            <div class="act_as_cell amount" style="width: 100px;"><span t-esc="get_bank_credit(data)"/></div>		
+						            <div class="act_as_cell first_column" style="width: 350px;"><strong>Cumul écritures bancaires non rapprochées</strong></div>
+					        	</div>
+					        	<div class="act_as_row labels">
+					                <div class="act_as_cell first_column" style="width: 350px;"><strong>Solde écritures non rapprochées</strong></div>
+				                    <div class="act_as_cell amount" style="width: 100px;"><span t-esc="get_solde_debit(data)"/></div>
+				                    <div class="act_as_cell amount" style="width: 100px;"><span t-esc="abs(get_solde_credit(data))"/></div>
+						            <div class="act_as_cell" style="width: 150px;"></div>	
+						           	<div class="act_as_cell" style="width: 100px;"></div>	 
+						          	<div class="act_as_cell amount" style="width: 100px;"><span t-esc="abs(get_solde_bank_debit(data))"/></div>
+				                    <div class="act_as_cell amount" style="width: 100px;"><span t-esc="get_solde_bank_credit(data)"/></div>
+						            <div class="act_as_cell first_column" style="width: 350px;"><strong>Solde écritures bancaires non rapprochées</strong></div>
+					        	</div>
+					        	<div class="act_as_row labels">
+					                <div class="act_as_cell first_column" style="width: 350px;"><strong>Cumul écritures rapprochées</strong></div>
+					                <div class="act_as_cell amount" style="width: 100px;"><span t-esc="move_line_credit(data)"/></div>	
+						            <div class="act_as_cell amount" style="width: 100px;"><span t-esc="move_line_debit(data)"/></div>		
+						            <div class="act_as_cell amount" style="width: 150px;"></div>	
+						           	<div class="act_as_cell amount" style="width: 100px;"></div>	    
+						            <div class="act_as_cell amount" style="width: 100px;"><span t-esc="abs(get_bank_rapp_debit(data))"/></div>	
+						            <div class="act_as_cell amount" style="width: 100px;"><span t-esc="get_bank_rapp_credit(data)"/></div>		
+						            <div class="act_as_cell first_column" style="width: 350px;"><strong>Cumul écritures bancaires rapprochées</strong></div>
+					        	</div>
+					        	<div class="act_as_row labels">
+					                <div class="act_as_cell first_column" style="width: 350px;"><strong>Nouveau Solde au <span t-esc="formatLang(period(data).date_stop or '',date=True)"/></strong></div>
+						            <div class="act_as_cell amount" style="width: 100px;"><span t-esc="solde_comptable_debit(data)"/></div>		
+						      		<div class="act_as_cell amount" style="width: 100px;"><span t-esc="abs(solde_comptable_credit(data))"/></div>		
+						            <div class="act_as_cell amount" style="width: 100px;"></div>		
+						            <div class="act_as_cell amount" style="width: 150px;"></div>	
+									<div class="act_as_cell amount" style="width: 100px;"><span t-esc="abs(get_nouveau_solde_debit(data))"/></div>	
+						            <div class="act_as_cell amount" style="width: 100px;"><span t-esc="get_nouveau_solde_credit(data)"/></div>		
+					             	<div class="act_as_cell" style="width: 225px;"><strong>Nouveau Solde au <span t-esc="formatLang(period(data).date_stop or '',date=True)"/></strong></div>	                      
+					        	</div>
+			        		</div>
+	                	</div>
+	              	</div>
+	        	</div>
+        	</t>
+    	</t>
+</template>
+
+<template id="situation_style" name="situation report" inherit_id="report.minimal_layout">
+	<xpath expr="//head" position="inside">
+		<link rel="stylesheet" href="/bank_reconcile/static/src/css/bank_reconcile.css"/>
+	</xpath>
+</template>
+
+</data>
+</openerp>

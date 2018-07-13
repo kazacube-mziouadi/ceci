@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="account_account_form_view" model="ir.ui.view">
+            <field name="name">account.account.form</field>
+            <field name="model">account.account</field>
+            <field name="type">form</field>
+            <field name="inherit_id" ref="account.view_account_form" />
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='type']" position="after">
+                    <field name="user_type" string="Type de compte"/>
+                </xpath>
+                <xpath expr="//field[@name='debit_account_type_id']" position="attributes">
+                    <attribute name="attrs">{'required': False}</attribute>
+                    <attribute name="invisible">True</attribute>
+                </xpath>
+                <xpath expr="//field[@name='credit_account_type_id']" position="attributes">
+                    <attribute name="attrs">{'required': False}</attribute>
+                    <attribute name="invisible">True</attribute>
+                </xpath>
+            </field>
+        </record>
+        <record id="account_account_template_form_view" model="ir.ui.view">
+            <field name="name">account.account.template.form</field>
+            <field name="model">account.account.template</field>
+            <field name="type">form</field>
+            <field name="inherit_id" ref="account.view_account_template_form" />
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='type']" position="after">
+                    <field name="user_type" string="Type de compte"/>
+                </xpath>
+                <xpath expr="//field[@name='debit_account_type_id']" position="attributes">
+                    <attribute name="attrs">{'required': False}</attribute>
+                    <attribute name="invisible">True</attribute>
+                </xpath>
+                <xpath expr="//field[@name='credit_account_type_id']" position="attributes">
+                    <attribute name="attrs">{'required': False}</attribute>
+                    <attribute name="invisible">True</attribute>
+                </xpath>
+            </field>
+        </record>
+        <record id="view_form_general_partner_ma" model="ir.ui.view">
+			<field name="name">view_form_general_partner_ma</field>
+			<field name="inherit_id" ref="account_openprod.view_form_general_partner" />
+			<field name="model">res.partner</field>
+			<field name="arch" type="xml">
+                <xpath expr="//field[@name='siret_number']" position="after">
+                    <field name="ice_number" string="ICE"/>
+                    <field name="capital" />
+                    <field name="rc" />
+                    <field name="patente" />
+                    <field name="cnss" />
+                    <field name="num_if" />
+                </xpath>
+                <xpath expr="//field[@name='ape_number']" position="attributes">
+                    <attribute name="invisible">True</attribute>
+                </xpath>
+            </field>
+		</record>
+    </data>
+</openerp>

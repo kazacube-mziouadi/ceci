@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<openerp>
+    <data>
+     <record id="balance_fyear_export" model="ir.ui.view">
+          <field name="name">Balance Fiscal Year export</field>
+          <field name="model">balance.fyear.export</field>
+          <field name="type">form</field>
+          <field name="arch" type="xml">
+           <form string="Report export">
+               <group>
+                       <separator string="Export terminé" colspan="4"/>
+                       <field name="name" invisible="1" width="100" colspan="4"/>
+                       <field name="data" nolabel="1" readonly="1" width="100" filename="name" colspan="4"/>
+               </group>
+                       <newline/>
+                       <button icon="gtk-cancel" special="cancel" string="Cancel" colspan="2"/>
+             </form>
+          </field>
+        </record>
+           
+        <record id="balance_fyear_view2" model="ir.ui.view">
+          <field name="name">Balance Fiscal Year</field>
+          <field name="model">balance.fyear</field>
+          <field name="type">form</field>
+          <field name="arch" type="xml">
+           <form string="Report Options">
+               <div>
+                   <p class="oe_grey">
+                       Cet assistant vous permet de générer une balance à 6 colonne en pdf et en excel
+                   </p>
+               </div>
+               <group>
+             
+                   <field name="chart_account_id" widget='selection' string="Plan de comptes"/>
+                   <newline/>
+                   <field name="fiscalyear_id" string="Année fiscale" required="1"/>
+                   <field name="fiscalyear_prec" string="Année fiscale réf"  required="1"/>
+                   <field name="target_move" string="Mouvements cibles" />
+                   <field name="display_account" string="Comptes affichés" />
+                  <field name="type_report"/>
+                  <field name="type_compte" attrs="{'invisible':[('type_report', '=', 'pdf')], 'required':[('type_report', '=', 'xls')]}"/>
+               </group>
+                        <notebook tabpos="up" colspan="4">
+                            <page string="Filtres" name="filters">
+                                 <group>
+                                     <field name="filter" string="Filtre par " on_change="onchange_filter(filter, fiscalyear_id)" colspan="4"/>
+                                     <group attrs="{'invisible':[('filter', '!=', 'filter_date')]}">
+                                        <separator string="Dates" colspan="4"/>
+                                        <field name="date_from" string="Date début"
+                                               attrs="{'readonly':[('filter', '!=', 'filter_date')], 'required':[('filter', '=', 'filter_date')]}" colspan="4"/>
+                                        <field name="date_to" string="Date fin"
+                                               attrs="{'readonly':[('filter', '!=', 'filter_date')], 'required':[('filter', '=', 'filter_date')]}"  colspan="4"/>
+                                     </group>
+                                     <group attrs="{'invisible':[('filter', '!=', 'filter_period')]}">
+                                           <separator string="Périodes"  colspan="4"/>
+                                            <field name="period_from"  string="Début période" domain="[('fiscalyear_id', '=', fiscalyear_id)]"
+                                               attrs="{'readonly':[('filter','!=','filter_period')], 'required':[('filter', '=', 'filter_period')]}" colspan="4"/>
+                                            <field name="period_to" string="Fin période" domain="[('fiscalyear_id', '=', fiscalyear_id)]"
+                                               attrs="{'readonly':[('filter','!=','filter_period')], 'required':[('filter', '=', 'filter_period')]}" colspan="4"/>
+                                    </group>
+
+                                </group>
+                            </page>
+                        </notebook>
+               <footer>
+                        <button string="Imprimer" class="oe_highlight" type="object" name="check_report"/>
+                        <button string="Annuler" class="oe_link" special="cancel"/>
+               </footer>
+            </form>
+          </field>
+        </record>
+
+        <record id="action_fybalance_menu2" model="ir.actions.act_window">
+            <field name="name">Balance à six colonnes </field>
+            <field name="res_model">balance.fyear</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="balance_fyear_view2"/>
+            <field name="target">new</field>
+        </record>
+
+        <menuitem
+                icon="STOCK_PRINT"
+                name="Balance six colonnes"
+                parent="account.menu_finance_reports"
+                action="action_fybalance_menu2"
+                id="menu_general_FYBalance_report_2"
+               />
+    </data>
+</openerp>
