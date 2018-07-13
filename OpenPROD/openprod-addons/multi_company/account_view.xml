@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+    
+        <!-- FORM VIEW Customer invoice -->
+        <record id='account_customer_openprod_invoice_inherit_form_multi_company' model='ir.ui.view'>
+            <field name="name">account_customer_openprod_invoice_inherit_form_multi_company</field>
+            <field name="model">account.invoice</field>
+            <field name="inherit_id" ref="sale.account_customer_openprod_invoice_inherit_form"/>
+            <field name="priority" eval="3200"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='account_id']" position="attributes">
+                    <attribute name="domain">[('type', '=', 'receivable'), ('company_id', '=', company_id)]</attribute> 
+                </xpath>
+                <xpath expr="//field[@name='invoice_line_ids']//form//field[@name='account_id']" position="attributes">
+                    <attribute name="domain">[('company_id', '=', company_id)]</attribute> 
+                </xpath>
+                <xpath expr="//field[@name='invoice_line_ids']//form//field[@name='invoice_line_tax_ids']" position="attributes">
+                    <attribute name="domain">[('type_tax_use', '!=', 'purchase'),('company_id', '=', company_id)]</attribute> 
+                </xpath>
+            </field>
+        </record>
+        
+        
+        
+        <record id="account_cust_openprod_invoice_line_form_sale_multi_company" model="ir.ui.view">
+            <field name="name">account_cust_openprod_invoice_line_form_sale_multi_company</field>
+            <field name="model">account.invoice.line</field>
+            <field name="inherit_id" ref="sale.account_cust_openprod_invoice_line_form_sale" />
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='account_id']" position="attributes">
+                    <attribute name="domain">[('company_id', '=', company_id)]</attribute> 
+                </xpath>
+                <xpath expr="//field[@name='invoice_line_tax_ids']" position="attributes">
+                    <attribute name="domain">[('type_tax_use', '!=', 'purchase'), ('company_id', '=', company_id)]</attribute> 
+                </xpath>
+            </field>
+        </record>
+        
+        
+        
+        <!-- FORM VIEW Invoice lines -->
+        <record id='view_form_purchase_invoice_line_multi_company' model='ir.ui.view'>
+            <field name="name">view_form_purchase_invoice_line_multi_company</field>
+            <field name="model">account.invoice.line</field>
+            <field name="inherit_id" ref="purchase.view_form_purchase_invoice_line"/>
+            <field name="priority" eval="3200"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='account_id']" position="attributes">
+                    <attribute name="domain">[('company_id', '=', company_id)]</attribute> 
+                </xpath>
+                <xpath expr="//field[@name='invoice_line_tax_ids']" position="attributes">
+                    <attribute name="domain">[('type_tax_use', '!=', 'sale'),('company_id', '=', company_id)]</attribute> 
+                </xpath>
+                
+            </field>
+        </record>
+        
+        
+        
+        <!-- FORM VIEW Supplier invoice -->
+        <record id='account_supplier_openprod_invoice_inherit_form_multi_company' model='ir.ui.view'>
+            <field name="name">account_supplier_openprod_invoice_inherit_form_multi_company</field>
+            <field name="model">account.invoice</field>
+            <field name="inherit_id" ref="purchase.account_supplier_openprod_invoice_inherit_form"/>
+            <field name="priority" eval="3200"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='account_id']" position="attributes">
+                    <attribute name="domain">[('type', '=', 'payable'), ('company_id', '=', company_id)]</attribute> 
+                </xpath>
+                <xpath expr="//field[@name='invoice_line_ids']//form//field[@name='account_id']" position="attributes">
+                    <attribute name="domain">[('company_id', '=', company_id)]</attribute> 
+                </xpath>
+                <xpath expr="//field[@name='invoice_line_ids']//form//field[@name='invoice_line_tax_ids']" position="attributes">
+                    <attribute name="domain">[('type_tax_use', '!=', 'sale'),('company_id', '=', company_id)]</attribute> 
+                </xpath>
+            </field>
+        </record>
+        
+        
+        
+    </data>
+</openerp>

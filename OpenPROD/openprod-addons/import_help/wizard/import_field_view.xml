@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+		<!-- FORM VIEW Import help -->
+		<record id='view_form_import_help' model='ir.ui.view'>
+			<field name="name">view_form_import_help</field>
+			<field name="model">import.help.fields.wizard</field>
+			<field name="arch" type="xml">
+				<form string="Import help">
+					<group colspan="4" col="4">
+						<field name="model_id" colspan="4" />
+						<field name="import_type" />
+						<field name="update_import_help" attrs="{'invisible': [('import_type', '!=', 'update')]}"/>
+					</group>
+					<footer>
+						<button name="import_model" string="OK" type="object" class="oe_highlight" />
+						or
+						<button string="Cancel" class="oe_link" special="cancel" />
+					</footer>
+				</form>
+			</field>
+		</record>
+		
+		<!-- ACTION Import help fields -->
+		<record id="act_import_help_fields_wizard" model="ir.actions.act_window">
+			<field name="name">Update a model</field>
+			<field name="res_model">import.help.fields.wizard</field>
+			<field name="view_type">form</field>
+			<field name="target">new</field>
+			<field name="view_mode">form</field>
+		</record>
+		
+		<menuitem name="Update a model" action="act_import_help_fields_wizard" id="menu_import_help_fields_wizard" parent="menu_import_help" />
+	</data>
+</openerp>

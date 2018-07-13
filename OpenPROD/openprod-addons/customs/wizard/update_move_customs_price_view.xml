@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+		<!-- ======================== -->
+		<!-- UPDATE CUSTOM PRICE MOVE -->
+		<!-- ======================== -->
+
+		<record model="ir.ui.view" id="view_form_update_move_customs_price">
+			<field name="name">view_form_update_move_customs_price</field>
+			<field name="model">update.move.customs.price</field>
+			<field name="type">form</field>
+			<field name="arch" type="xml">
+				<form string="Update customs price">
+					<group>
+						<group colspan="4" col="4" string="Enter the new prices and currencies for the picking's move">
+							<field name="update_move_line_ids" colspan="4" nolabel="1">
+								<tree editable="bottom" create="false">
+									<field name="move_id" invisible="1" />
+									<field name="move_uom_category_id" invisible="1" />
+									<field name="product_id" readonly="1" />
+									<field name="is_customs_price" />
+									<field name="price" attrs="{'required': [('is_customs_price', '=', True)]}" />
+									<field name="currency_id" attrs="{'required': [('is_customs_price', '=', True)]}" />
+									<field name="customs_unit_id" attrs="{'required': [('is_customs_price', '=', True)]}" domain="[('category_id', '=', move_uom_category_id)]" />
+								</tree>
+							</field>
+						</group>
+						<footer>
+							<button name="update_customs_price_move" string="Update prices" type="object" class="oe_highlight" />
+							or
+							<button string="Cancel" class="oe_link" special="cancel" />
+						</footer>
+					</group>
+				</form>
+			</field>
+		</record>
+
+		<record model="ir.actions.act_window" id="action_update_move_customs_price">
+			<field name="name">Update customs price move</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="res_model">update.move.customs.price</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">form</field>
+			<field name="target">new</field>
+		</record>
+	</data>
+</openerp>

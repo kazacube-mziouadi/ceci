@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><templates><template autoinsert="true" context="org.python.pydev.editor.templates.python" deleted="false" description="Binary field" enabled="true" name="ofbinary">@api.one
+def _get_${name}_binary_filesystem(self):
+    attachment_obj = self.env['ir.attachment']
+    attachment_rs = attachment_obj.search([('res_model','=',self._name),('res_id','=',self.id),('binary_field','=','${name}')])
+    if attachment_rs:
+        self.${name} = attachment_rs[0].datas
+    else:
+    	self.${name} = False
+
+@api.one
+def _set_${name}_binary_filesystem(self):
+    attachment_obj = self.env['ir.attachment']
+    attachment_rs = attachment_obj.search([('res_model','=',self._name),('res_id','=',self.id),('binary_field','=','${name}'),('is_binary_field','=',True)])
+    if self.${name}:
+        if attachment_rs:
+            attachment_rs.datas = self.${name}
+        else:
+            attachment_obj.create({'res_model': self._name, 'res_id': self.id, 'name': '${name} datas' , 'is_binary_field': True, 'binary_field': '${name}', 'datas': self.${name}, 'datas_fname':'${name} datas'})
+    else:
+        attachment_rs.unlink()
+    
+${name}  = fields.Binary(string='${string}', compute='_get_${name}_binary_filesystem', inverse='_set_${name}_binary_filesystem', help='${help}')</template><template autoinsert="true" context="org.python.pydev.editor.templates.python" deleted="false" description="Binary field not stored as attachment" enabled="true" name="ofbinary_no_attach">${name}  = fields.Binary(string='${string}', help='${help}')</template></templates>

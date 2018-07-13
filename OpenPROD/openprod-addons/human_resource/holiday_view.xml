@@ -1,0 +1,369 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+    
+        <menuitem name="Holiday" id="menu_holiday_resource" parent="menu_human_resource_main" sequence="20" groups="group_menu_human_resource_user" />
+        <menuitem name="Holiday" id="menu_holiday_resource_config" parent="menu_human_resource_config" sequence="20" groups="group_menu_human_resource_config" />
+    	
+    	<!-- ===================== -->
+		<!-- HOLIDAY RESOURCE TYPE -->
+		<!-- ===================== -->
+    	
+    	<!-- FORM VIEW Holiday resource type -->
+		<record id='view_form_resource_holiday_type' model='ir.ui.view'>
+			<field name="name">view_form_resource_holiday_type</field>
+			<field name="model">resource.holiday.type</field>
+			<field name="arch" type="xml">
+				<form string="Holiday type" version="8.0">
+		           <group colspan="4" col="4" string="Settings">
+					    <field name="name" />
+		                <field name="duration" />
+					    <field name="allow_override" />
+		                <field name="need_validation" />
+		                <field name="group_id" attrs="{'invisible': [('need_validation', '!=', True)], 'required': [('need_validation', '=', True)]}"/>
+		           </group>
+				</form>
+			</field>
+		</record>
+		
+		<!-- TREE VIEW Holiday resource type -->
+		<record id='view_tree_resource_holiday_type' model='ir.ui.view'>
+			<field name="name">view_tree_resource_holiday_type</field>
+			<field name="model">resource.holiday.type</field>
+			<field name="arch" type="xml">
+				<tree string="Holiday type" version="8.0">
+				    <field name="name" />
+	                <field name="duration" />
+				    <field name="allow_override" />
+				</tree>
+			</field>
+		</record>
+		
+		<!-- SEARCH VIEW Holiday resource type -->
+		<record id='view_search_resource_holiday_type' model='ir.ui.view'>
+			<field name="name">view_search_resource_holiday_type</field>
+			<field name="model">resource.holiday.type</field>
+			<field name="arch" type="xml">
+				<search version="8.0">
+					<field name="name" />
+				</search>
+			</field>
+		</record>
+		
+		<!-- ACTION Holiday resource type -->
+		<record id="act_resource_holiday_type" model="ir.actions.act_window">
+		    <field name="name">Holiday type</field>
+		    <field name="res_model">resource.holiday.type</field>
+		    <field name="view_type">form</field>
+		    <field name="view_mode">tree,form</field>
+		    <field name="domain">[]</field>
+		    <field name="context">{}</field>
+		    <field name="search_view_id" ref="view_search_resource_holiday_type"/>
+		</record>
+		
+		<menuitem name="Holiday type" action="act_resource_holiday_type" id="menu_holiday_type_config" parent="menu_holiday_resource_config" groups="group_menu_human_resource_config"
+		 sequence="10"/>
+
+    	<!-- ================ -->
+		<!-- HOLIDAY RESOURCE -->
+		<!-- ================ -->
+		
+		<!-- FORM VIEW Holiday resource -->
+		<record id='view_form_resource_holiday' model='ir.ui.view'>
+			<field name="name">view_form_resource_holiday</field>
+			<field name="model">resource.holiday</field>
+            <field name="priority" eval="3"/>
+			<field name="arch" type="xml">
+				<form string="Resource holiday" version="8.0">
+					<header>
+		               <field name="state" widget="statusbar"/>
+		           </header>
+		           <group colspan="4" col="4" string="Details">
+					    <field name="name" />
+		                <field name="holiday_type_id" />
+		                <field name="employee_id" />
+		                <field name="giving_type" invisible="1"/>
+		                <field name="giving_id" invisible="1"/>
+		           </group>
+		           <group colspan="4" col="6" string="Dates">
+		                <field name="start_date" attrs="{'invisible': [('giving_type', '!=', 'demand')], 'required': [('giving_type', '=', 'demand')]}"/>
+		                <field name="end_date" attrs="{'invisible': [('giving_type', '!=', 'demand')], 'required': [('giving_type', '=', 'demand')]}"/>
+		                <field name="giving_time" attrs="{'invisible': [('giving_type', '!=', 'giving')], 'required': [('giving_type', '=', 'giving')]}"/>
+		                <field name="demand_time" attrs="{'invisible': [('giving_type', '!=', 'demand')]}"/>
+		                <field name="total_duration" invisible="1"/>
+		           </group>
+		           <notebook>
+		           </notebook>
+				</form>
+			</field>
+		</record>
+		
+		<!-- TREE VIEW Holiday resource -->
+		<record id='view_tree_resource_holiday' model='ir.ui.view'>
+			<field name="name">view_tree_resource_holiday</field>
+			<field name="model">resource.holiday</field>
+            <field name="priority" eval="2"/>
+			<field name="arch" type="xml">
+				<tree string="Resource holiday" version="8.0">
+				    <field name="name" />
+	                <field name="holiday_type_id" />
+	                <field name="employee_id" />
+	                <field name="start_date" />
+	                <field name="end_date" />
+	                <field name="total_duration" />
+	                <field name="state"/>
+	                <field name="giving_type" invisible="1"/>
+	                <field name="my_holiday" invisible="1"/>
+				</tree>
+			</field>
+		</record>
+		
+		<!-- CALENDAR VIEW Holiday resource -->
+        <record model="ir.ui.view" id="view_calendar_resource_holiday">
+            <field name="name">view_calendar_resource_holiday</field>
+            <field name="model">resource.holiday</field>
+            <field name="priority" eval="1"/>
+            <field name="arch" type="xml">
+                <calendar string="Resource holidays" date_start="start_date" date_stop="end_date" color="holiday_type_id" quick_add="False" >
+                    <field name="name"/>
+                    <field name="holiday_type_id"/>
+                </calendar>
+            </field>
+        </record>
+		
+		<!-- CALENDAR VIEW Holiday resource -->
+        <record model="ir.ui.view" id="view_calendar_all_resource_holiday">
+            <field name="name">view_calendar_all_resource_holiday</field>
+            <field name="model">resource.holiday</field>
+            <field name="priority" eval="10"/>
+            <field name="arch" type="xml">
+                <calendar string="Resource holidays" date_start="start_date" date_stop="end_date" color="employee_id" quick_add="False" >
+                    <field name="name"/>
+                    <field name="employee_id"/>
+                    <field name="holiday_type_id"/>
+                </calendar>
+            </field>
+        </record>
+		
+		<!-- SEARCH VIEW Holiday resource -->
+		<record id='view_search_resource_holiday' model='ir.ui.view'>
+			<field name="name">view_search_resource_holiday</field>
+			<field name="model">resource.holiday</field>
+			<field name="arch" type="xml">
+				<search version="8.0">
+					<field name="name" />
+	                <field name="holiday_type_id" />
+	                <field name="employee_id" />
+	               	<field name="state" widget="statusbar"/>
+	               <group expand="0" string="Filters">
+						<filter string="Giving" domain="[('giving_type', '=', 'giving')]"/>
+						<filter string="Demand" domain="[('giving_type', '=', 'demand')]"/>
+						<filter string="To approved" domain="[('state', '=', 'to_approved')]"/>
+						<filter string="My holidays" name="my_holidays_filter" domain="[('my_holiday', '=', True)]"/>
+					</group>
+					<group expand="0" string="Group by...">
+						<filter string="Employee" name="group_by_resource" context="{'group_by' : 'employee_id'}" />
+						<filter string="Holiday type" name="group_by_type" context="{'group_by' : 'holiday_type_id'}" />
+						<filter string="State" context="{'group_by' : 'state'}" />
+					</group>
+				</search>
+			</field>
+		</record>
+		
+		<!-- ACTION Holiday resource demand -->
+		<record id="act_resource_holiday_demand" model="ir.actions.act_window">
+		    <field name="name">Holiday demand</field>
+		    <field name="res_model">resource.holiday</field>
+		    <field name="view_type">form</field>
+		    <field name="view_mode">calendar,tree,form</field>
+		    <field name="domain">[('giving_type', '=', 'demand')]</field>
+		    <field name="context">{'default_giving_type': 'demand', 'search_default_my_holidays_filter': 1, 'search_default_group_by_type': 1}</field>
+		    <field name="search_view_id" ref="view_search_resource_holiday"/>
+		</record>
+		
+		<menuitem name="Holiday demand" action="act_resource_holiday_demand" id="menu_holiday_resource_demand" parent="menu_holiday_resource" groups="group_menu_human_resource_user" 
+		 sequence="10"/>
+		
+		<!-- ACTION Holiday resource summary -->
+		<record id="act_resource_holiday_summary" model="ir.actions.act_window">
+		    <field name="name">My holidays summary</field>
+		    <field name="res_model">resource.holiday</field>
+		    <field name="view_type">form</field>
+		    <field name="view_mode">tree,form</field>
+		    <field name="domain">[]</field>
+		    <field name="context">{'create': False, 'search_default_my_holidays_filter': 1}</field>
+		    <field name="search_view_id" ref="view_search_resource_holiday"/>
+		</record>
+		
+		<menuitem name="My holiday summary" action="act_resource_holiday_summary" id="menu_my_holiday_resource_summary" parent="menu_holiday_resource" groups="group_menu_human_resource_user" 
+		 sequence="20"/>
+		
+		<!-- ACTION Holiday resource all summary -->
+		<record id="act_resource_holiday_all_summary" model="ir.actions.act_window">
+		    <field name="name">Holidays summary</field>
+		    <field name="res_model">resource.holiday</field>
+		    <field name="view_type">form</field>
+		    <field name="view_mode">tree,form</field>
+		    <field name="domain">[]</field>
+		    <field name="context">{'search_default_group_by_resource': 1}</field>
+		    <field name="search_view_id" ref="view_search_resource_holiday"/>
+		</record>
+		
+		<menuitem name="Holidays summary" action="act_resource_holiday_all_summary" id="menu_all_holiday_resource_summary" parent="menu_holiday_resource" groups="group_menu_human_resource_manager" 
+		 sequence="30"/>
+		
+		<!-- ACTION Holiday resource demand to validate -->
+		<record id="act_resource_holiday_demand_to_validate" model="ir.actions.act_window">
+		    <field name="name">Holiday demand to validate</field>
+		    <field name="res_model">resource.holiday</field>
+		    <field name="view_type">form</field>
+		    <field name="view_mode">tree,form</field>
+		    <field name="domain">[('state', '=', 'to_approved')]</field>
+		    <field name="context">{'create': False}</field>
+		    <field name="search_view_id" ref="view_search_resource_holiday"/>
+		</record>
+		
+		<menuitem name="Holiday demand to validate" action="act_resource_holiday_demand_to_validate" id="menu_holiday_resource_demand_to_validate" parent="menu_holiday_resource" groups="group_menu_human_resource_manager" 
+		 sequence="40"/>
+		 
+	 	<!-- PIVOT VIEW Holiday resource -->	
+		<record id="view_holiday_resource_pivot" model="ir.ui.view">
+	        <field name="name">view_holiday_resource_pivot</field>
+	        <field name="model">resource.holiday</field>
+	        <field name="arch" type="xml">
+	            <pivot string="Holidays">
+	                <field name="holiday_type_id" type="col"/>
+	                <field name="employee_id" type="row"/>
+	                <field name="total_duration" type="measure"/>
+	            </pivot>
+	        </field>
+    	</record>
+    	
+		<!-- GRAPH VIEW Holiday resource -->	
+		 <record id="view_graph_holiday_resource" model="ir.ui.view">
+	         <field name="name">view_graph_holiday_resource</field>
+	         <field name="model">resource.holiday</field>
+	         <field name="arch" type="xml">
+	             <graph string="Holidays">
+	                 <field name="holiday_type_id" type="col"/>
+	                <field name="employee_id" type="row"/>
+	                <field name="total_duration" type="measure"/>
+	             </graph>
+	         </field>
+    	</record>
+    	
+    	<!-- ACTION Holiday resource pivot -->
+		<record id="action_holiday_resource_pivot" model="ir.actions.act_window">
+		    <field name="name">Holidays</field>
+		    <field name="res_model">resource.holiday</field>
+		    <field name="view_type">form</field>
+		    <field name="view_mode">pivot,graph</field>
+		    <field name="domain">[]</field>
+		    <field name="context">{}</field>
+		    <field name="view_id" ref="view_holiday_resource_pivot" />
+		</record>
+	
+		<menuitem name="Holidays" action="action_holiday_resource_pivot" id="menu_holiday_resource_analysis" parent="menu_human_resource_analysis" groups="group_menu_human_resource_manager"/>
+    	
+    	<!-- ACTION All holiday resource calendar -->
+		<record id="action_all_holiday_resource_calendar" model="ir.actions.act_window">
+		    <field name="name">Holidays</field>
+		    <field name="res_model">resource.holiday</field>
+		    <field name="view_type">form</field>
+		    <field name="view_mode">calendar</field>
+		    <field name="domain">[('giving_type', '=', 'demand')]</field>
+		    <field name="context">{}</field>
+		    <field name="view_id" ref="view_calendar_all_resource_holiday" />
+		</record>
+	
+		<menuitem name="Holiday's calendar" action="action_all_holiday_resource_calendar" id="menu_all_holiday_resource_calendar" parent="menu_human_resource_analysis" groups="group_menu_human_resource_manager"/>
+		
+
+    	<!-- ======================= -->
+		<!-- HOLIDAY RESOURCE GIVING -->
+		<!-- ======================= -->
+		
+		<!-- FORM VIEW Holiday resource giving -->
+		<record id='view_form_resource_holiday_giving' model='ir.ui.view'>
+			<field name="name">view_form_resource_holiday_giving</field>
+			<field name="model">resource.holiday.giving</field>
+			<field name="arch" type="xml">
+				<form string="Holiday giving" version="8.0">
+					<header>
+		                <field name="state" widget="statusbar"/>
+		           </header>
+		           <group colspan="4" col="6" string="Details">
+					    <field name="name" />
+		                <field name="holiday_type_id" />
+		                <field name="duration" />
+		                <field name="method" />
+		                <field name="employee_id" attrs="{'invisible': [('method', '!=', 'employee')], 'required': [('method', '=', 'employee')]}"/>
+		                <field name="employee_category_id" attrs="{'invisible': [('method', '!=', 'employee_category')], 'required': [('method', '=', 'employee_category')]}"/>
+		           </group>
+		           <group colspan="4" col="4" string="Comment">
+		                <field name="comment" colspan="4" nolabel="1"/>
+		           </group>
+		           <notebook>
+		           </notebook>
+				</form>
+			</field>
+		</record>
+		
+		<!-- TREE VIEW Holiday resource giving -->
+		<record id='view_tree_resource_holiday_giving' model='ir.ui.view'>
+			<field name="name">view_tree_resource_holiday_giving</field>
+			<field name="model">resource.holiday.giving</field>
+			<field name="arch" type="xml">
+				<tree string="Holiday giving" version="8.0">
+				    <field name="name" />
+	                <field name="holiday_type_id" />
+	                <field name="duration" />
+	                <field name="method" />
+	                <field name="employee_id" />
+	                <field name="employee_category_id" />
+	                <field name="state" />
+				</tree>
+			</field>
+		</record>
+		
+		<!-- SEARCH VIEW Holiday resource giving -->
+		<record id='view_search_resource_holiday_giving' model='ir.ui.view'>
+			<field name="name">view_search_resource_holiday_giving</field>
+			<field name="model">resource.holiday.giving</field>
+			<field name="arch" type="xml">
+				<search version="8.0">
+					<field name="name" />
+	                <field name="holiday_type_id" />
+	                <field name="employee_id" />
+	                <field name="employee_category_id" />
+	               	<field name="state" widget="statusbar"/>
+	               <group expand="0" string="Filters">
+						<filter string="Employee method" domain="[('method', '=', 'employee')]"/>
+						<filter string="Category method" domain="[('method', '=', 'employee_category')]"/>
+						<filter string="To approved" domain="[('state', '=', 'to_approved')]"/>
+					</group>
+					<group expand="0" string="Group by...">
+						<filter string="Employee" context="{'group_by' : 'employee_id'}" />
+						<filter string="Holiday type" context="{'group_by' : 'holiday_type_id'}" />
+						<filter string="State" context="{'group_by' : 'state'}" />
+					</group>
+				</search>
+			</field>
+		</record>
+		
+		<!-- ACTION Holiday resource giving -->
+		<record id="act_resource_holiday_giving_demand" model="ir.actions.act_window">
+		    <field name="name">Holiday giving demand</field>
+		    <field name="res_model">resource.holiday.giving</field>
+		    <field name="view_type">form</field>
+		    <field name="view_mode">tree,form</field>
+		    <field name="domain">[]</field>
+		    <field name="context">{}</field>
+		    <field name="search_view_id" ref="view_search_resource_holiday_giving"/>
+		</record>
+		
+		<menuitem name="Holiday giving demand" action="act_resource_holiday_giving_demand" id="menu_holiday_giving_demand" parent="menu_holiday_resource_config" groups="group_menu_human_resource_config" 
+		 sequence="20"/>
+		
+    </data>
+</openerp>

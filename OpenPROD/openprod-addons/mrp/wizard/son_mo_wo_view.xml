@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+	
+		<record model="ir.ui.view" id="view_form_son_mo_wiz">
+			<field name="name">view_form_son_mo_wiz</field>
+			<field name="model">son.mo.wiz</field>
+			<field name="type">form</field>
+			<field name="arch" type="xml">
+				<form string="See MOs son of the MO">
+					<group colspan="4" col="4">
+						<field name="mo_id" invisible="1" />
+						<field name="mo_ids" nolabel="1" colspan="4" />
+					</group>
+					<footer>
+						<button name="action_cancel" string="Cancel MOs" type="object" class="oe_highlight" />
+                        <button name="action_delete" string="Delete MOs" type="object" class="oe_highlight" />
+                        or
+						<button string="Close" class="oe_highlight" special="cancel" />
+					</footer>
+				</form>
+			</field>
+		</record>
+
+		<record model="ir.actions.act_window" id="action_son_mo_wiz">
+			<field name="name">See MOs son of the MO</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="res_model">son.mo.wiz</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">form</field>
+			<field name="target">new</field>
+		</record>
+		
+		<record model="ir.ui.view" id="view_form_son_wo_wiz">
+            <field name="name">view_form_son_wo_wiz</field>
+            <field name="model">son.wo.wiz</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="See WOs son of the WO">
+                    <group colspan="4" col="4">
+                        <field name="mo_id" invisible="1" />
+                        <field name="wo_ids" nolabel="1" colspan="4" />
+                    </group>
+                    <footer>
+                        <button name="action_cancel" string="Cancel WOs" type="object" class="oe_highlight" />
+                        <button name="action_delete" string="Delete WOs" type="object" class="oe_highlight" />
+                        or
+                        <button string="Close" class="oe_highlight" special="cancel" />
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="action_son_wo_wiz">
+            <field name="name">See WOs son of the WO</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">son.wo.wiz</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+		
+	</data>
+</openerp>

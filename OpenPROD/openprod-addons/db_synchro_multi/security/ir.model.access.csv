@@ -1,0 +1,10 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_db_synchro_category,db.synchro.category,model_db_synchro_category,base.group_user,1,1,1,1
+access_db_synchro_synchro,db.synchro.synchro,model_db_synchro_synchro,base.group_user,1,1,1,1
+access_db_synchro_synchro_base_line,db.synchro.synchro.base.line,model_db_synchro_synchro_base_line,base.group_user,1,1,1,1
+access_db_synchro_synchro_record,db.synchro.synchro.record,model_db_synchro_synchro_record,base.group_user,1,1,1,1
+access_db_synchro_synchro_history,db.synchro.synchro.history,model_db_synchro_synchro_history,base.group_user,1,1,1,1
+access_db_synchro_synchro_m2o,db.synchro.synchro.m2o,model_db_synchro_synchro_m2o,base.group_user,1,1,1,1
+access_base_syncro_src_id,db.synchro.src.id,model_db_synchro_src_id,base.group_user,1,1,1,1
+access_base_syncro_constant_fields,db.synchro.constant.fields,model_db_synchro_constant_fields,base.group_user,1,1,1,1
+access_db_synchro_launching,db.synchro.launching,model_db_synchro_launching,base.group_user,1,1,1,1

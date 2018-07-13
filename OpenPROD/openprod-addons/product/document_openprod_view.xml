@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+	
+		<!-- FORM VIEW Document openprod -->
+		<record id='view_form_product_document_openprod' model='ir.ui.view'>
+			<field name="name">view_form_product_document_openprod</field>
+			<field name="model">document.openprod</field>
+			<field name="priority" eval="1200" />
+			<field name="inherit_id" ref="base_openprod.view_form_document_openprod_id" />
+			<field name="arch" type="xml">
+				<xpath expr="//separator[@name='document_separator']" position="after">
+					<button class="oe_inline oe_stat_button" type="object" string="Products" name="show_product_from_document" icon="fa-cubes" />
+				</xpath>
+			</field>
+		</record>				
+				
+	</data>
+</openerp>

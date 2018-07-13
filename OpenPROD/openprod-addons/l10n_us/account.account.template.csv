@@ -1,0 +1,123 @@
+id,code,name,type,parent_id:id,reconcile,chart_template_id:id,close_method
+coa_basic,0,Basic,view,,FALSE,l10n_us.account_chart_template_basic,none
+asset,1,Assets,view,coa_basic,FALSE,l10n_us.account_chart_template_basic,none
+current_asset,100,Current Assets,view,asset,FALSE,l10n_us.account_chart_template_basic,none
+cash_expenditure,1000,Cash or Cash Equivalents,view,current_asset,FALSE,l10n_us.account_chart_template_basic,none
+receivables,1200,Receivable,view,current_asset,FALSE,l10n_us.account_chart_template_basic,none
+account_receivable,12001,Account Receivable,receivable,receivables,TRUE,l10n_us.account_chart_template_basic,unreconciled
+fixed_asset,150,Fixed Assets,view,asset,FALSE,l10n_us.account_chart_template_basic,none
+15000,15000,Furniture and Equipment,other,fixed_asset,FALSE,l10n_us.account_chart_template_basic,none
+17000,17000,Accumulated Depreciation,other,fixed_asset,FALSE,l10n_us.account_chart_template_basic,none
+liability_equity,2,Liabilities and Equity,view,coa_basic,FALSE,l10n_us.account_chart_template_basic,none
+liability,20,Liabilities,view,liability_equity,FALSE,l10n_us.account_chart_template_basic,none
+current_liability,200,Current Liabilities,view,liability,FALSE,l10n_us.account_chart_template_basic,none
+payable,2000,Payable,view,current_liability,FALSE,l10n_us.account_chart_template_basic,none
+account_payable,20001,Account Payable,payable,payable,TRUE,l10n_us.account_chart_template_basic,unreconciled
+other_current_liability,240,Other Current Liabilities,view,liability,FALSE,l10n_us.account_chart_template_basic,none
+24000,24000,Payroll Liabilities,other,other_current_liability,FALSE,l10n_us.account_chart_template_basic,none
+25500,25500,Sales Tax Payable,other,other_current_liability,FALSE,l10n_us.account_chart_template_basic,none
+26500,26500,Use Tax Payable,other,other_current_liability,FALSE,l10n_us.account_chart_template_basic,none
+equity,30,Equity,view,liability_equity,FALSE,l10n_us.account_chart_template_basic,none
+30100,30100,Capital Stock,other,equity,FALSE,l10n_us.account_chart_template_basic,none
+30200,30200,Dividends Paid,other,equity,FALSE,l10n_us.account_chart_template_basic,none
+30000,30000,Opening Balance Equity,other,equity,FALSE,l10n_us.account_chart_template_basic,none
+32000,32000,Retained Earnings,other,equity,FALSE,l10n_us.account_chart_template_basic,none
+expense,60,Expenses,view,coa_basic,FALSE,l10n_us.account_chart_template_basic,none
+60000,60000,Advertising and Promotion,other,expense,FALSE,l10n_us.account_chart_template_basic,none
+60200,60200,Automobile Expense,other,expense,FALSE,l10n_us.account_chart_template_basic,none
+60400,60400,Bank Service Charges,other,expense,FALSE,l10n_us.account_chart_template_basic,none
+61000,61000,Business Licenses and Permits,other,expense,FALSE,l10n_us.account_chart_template_basic,none
+62000_financial_services,62000,Continuing Education,other,expense,FALSE,l10n_us.account_chart_template_basic,none
+61400,61400,Charitable Contributions,other,expense,FALSE,l10n_us.account_chart_template_basic,none
+61700,61700,Computer and Internet Expenses,other,expense,FALSE,l10n_us.account_chart_template_basic,none
+62400,62400,Depreciation Expense,other,expense,FALSE,l10n_us.account_chart_template_basic,none
+62500,62500,Dues and Subscriptions,other,expense,FALSE,l10n_us.account_chart_template_basic,none
+62600,62600,Equipment Rental,other,expense,FALSE,l10n_us.account_chart_template_basic,none
+63500,63500,Janitorial Expense,other,expense,FALSE,l10n_us.account_chart_template_advertising,none
+insurance,633,Insurance Expense,view,expense,FALSE,l10n_us.account_chart_template_basic,none
+63310,63310,General Liability Insurance,other,insurance,FALSE,l10n_us.account_chart_template_basic,none
+63320,63320,Health Insurance,other,insurance,FALSE,l10n_us.account_chart_template_basic,none
+63330,63330,Life and Disability Insurance,other,insurance,FALSE,l10n_us.account_chart_template_basic,none
+63350,63350,Professional Liability,other,insurance,FALSE,l10n_us.account_chart_template_basic,none
+63360,63360,Worker's Compensation,other,insurance,FALSE,l10n_us.account_chart_template_basic,none
+63400,63400,Interest Expense,other,expense,FALSE,l10n_us.account_chart_template_basic,none
+64300,64300,Meals and Entertainment,other,expense,FALSE,l10n_us.account_chart_template_basic,none
+64700,64700,Miscellaneous Expense,other,expense,FALSE,l10n_us.account_chart_template_basic,none
+64900,64900,Office Supplies,other,expense,FALSE,l10n_us.account_chart_template_basic,none
+66000,66000,Payroll Expenses,other,expense,FALSE,l10n_us.account_chart_template_basic,none
+66500,66500,Postage and Delivery,other,expense,FALSE,l10n_us.account_chart_template_basic,none
+66660_financial_services,66600,Printing and Reproduction,other,expense,FALSE,l10n_us.account_chart_template_basic,none
+66700,66700,Professional Fees,other,expense,FALSE,l10n_us.account_chart_template_basic,none
+67100,67100,Rent Expense,other,expense,FALSE,l10n_us.account_chart_template_basic,none
+67200,67200,Repairs and Maintenance,other,expense,FALSE,l10n_us.account_chart_template_basic,none
+68000,68000,Taxes - Property,other,expense,FALSE,l10n_us.account_chart_template_basic,none
+68100,68100,Telephone Expense,other,expense,FALSE,l10n_us.account_chart_template_basic,none
+68400,68400,Travel Expense,other,expense,FALSE,l10n_us.account_chart_template_basic,none
+68600,68600,Utilities,other,expense,FALSE,l10n_us.account_chart_template_basic,none
+income,40,Income,view,coa_basic,FALSE,l10n_us.account_chart_template_basic,none
+other_income,70,Other Income,view,coa_basic,FALSE,l10n_us.account_chart_template_basic,none
+70000_advertising,70000,Finance Charge Income,other,other_income,FALSE,l10n_us.account_chart_template_basic,none
+70200,70200,Interest Income,other,other_income,FALSE,l10n_us.account_chart_template_basic,none
+70500,70500,Proceeds from Sale of Assets,other,other_income,FALSE,l10n_us.account_chart_template_basic,none
+70100_advertising,70100,Insurance Proceeds Received,other,other_income,FALSE,l10n_us.account_chart_template_basic,none
+cost_of_goods_sold,50,Cost of Goods Sold,view,coa_basic,FALSE,l10n_us.account_chart_template_cogs,none
+53600_construction_trades,53600,Other Job Related Costs,other,cost_of_goods_sold,FALSE,l10n_us.account_chart_template_cogs,none
+42400_advertising,42400,Commission income,other,income,FALSE,l10n_us.account_chart_template_advertising,none
+48300_advertising,48300,Sales Discounts,other,income,FALSE,l10n_us.account_chart_template_advertising,none
+50300_advertising,50300,Commissions Paid,other,cost_of_goods_sold,FALSE,l10n_us.account_chart_template_advertising,none
+51700_advertising,51700,Media Purchased for Clients,other,cost_of_goods_sold,FALSE,l10n_us.account_chart_template_advertising,none
+51800_advertising,51800,Merchant Account Fees,other,cost_of_goods_sold,FALSE,l10n_us.account_chart_template_advertising,none
+53500_advertising,53500,Subcontracted Services,other,cost_of_goods_sold,FALSE,l10n_us.account_chart_template_advertising,none
+64200_advertising,64200,Marketing Expense,other,expense,FALSE,l10n_us.account_chart_template_advertising,none
+41200_agriculture,41200,Agricultural Program Payments,other,income,FALSE,l10n_us.account_chart_template_agriculture,none
+42500_agriculture,42500,Commodity Credit Loans,other,income,FALSE,l10n_us.account_chart_template_agriculture,none
+42800_agriculture,42800,Cooperative Distributions,other,income,FALSE,l10n_us.account_chart_template_agriculture,none
+42900_agriculture,42900,Crop Insurance Proceeds,other,income,FALSE,l10n_us.account_chart_template_agriculture,none
+43000_agriculture,43000,Crop Sales,other,income,FALSE,l10n_us.account_chart_template_agriculture,none
+43100_agriculture,43100,Custom Hire Income,other,income,FALSE,l10n_us.account_chart_template_agriculture,none
+43600_agriculture,43600,Farmers Market Sales,other,income,FALSE,l10n_us.account_chart_template_agriculture,none
+44100_agriculture,44100,Fuel Tax Credits and Other Inc.,other,income,FALSE,l10n_us.account_chart_template_agriculture,none
+45500_agriculture,45500,Livestock Sales,other,income,FALSE,l10n_us.account_chart_template_agriculture,none
+47400_agriculture,47400,Rental Income,other,income,FALSE,l10n_us.account_chart_template_agriculture,none
+61100_agriculture,61100,Car and Truck Expenses,other,expense,FALSE,l10n_us.account_chart_template_agriculture,none
+61500_agriculture,61500,Chemicals Purchased,other,expense,FALSE,l10n_us.account_chart_template_agriculture,none
+61900_agriculture,61900,Conservation Expenses,other,expense,FALSE,l10n_us.account_chart_template_agriculture,none
+62300_agriculture,62300,Custom Hire and Contract Labor,other,expense,FALSE,l10n_us.account_chart_template_agriculture,none
+62900_agriculture,62900,Feed Purchased,other,expense,FALSE,l10n_us.account_chart_template_agriculture,none
+63000_agriculture,63000,Fertilizers and Lime,other,expense,FALSE,l10n_us.account_chart_template_agriculture,none
+63100_agriculture,63100,Freight and Trucking,other,expense,FALSE,l10n_us.account_chart_template_agriculture,none
+63200_agriculture,63200,"Gasoline, Fuel and Oil",other,expense,FALSE,l10n_us.account_chart_template_agriculture,none
+67500_agriculture,67500,Seeds and Plants Purchased,other,expense,FALSE,l10n_us.account_chart_template_agriculture,none
+67800_agriculture,67800,Small Tools and Equipment,other,expense,FALSE,l10n_us.account_chart_template_agriculture,none
+67900_agriculture,67900,Storage and Warehousing,other,expense,FALSE,l10n_us.account_chart_template_agriculture,none
+68500_agriculture,68500,Uniforms,other,expense,FALSE,l10n_us.account_chart_template_agriculture,none
+68800_agriculture,68800,"Veterinary, Breeding, Medicine",other,expense,FALSE,l10n_us.account_chart_template_agriculture,none
+24600_construction_trades,24600,Customer Deposits Received,other,other_current_liability,FALSE,l10n_us.account_chart_template_construction,none
+45100_construction_trades,45100,Job Income,other,income,FALSE,l10n_us.account_chart_template_construction,none
+50800_construction_trades,50800,Commissions Paid,other,cost_of_goods_sold,FALSE,l10n_us.account_chart_template_construction,none
+51400_construction_trades,51400,Equipment Rental for Jobs,other,cost_of_goods_sold,FALSE,l10n_us.account_chart_template_construction,none
+51800_construction_trades,51800,Job Materials Purchased,other,cost_of_goods_sold,FALSE,l10n_us.account_chart_template_construction,none
+52000_construction_trades,52000,Merchant Account Fees,other,cost_of_goods_sold,FALSE,l10n_us.account_chart_template_construction,none
+53800_construction_trades,53800,Subcontractors Expense,other,cost_of_goods_sold,FALSE,l10n_us.account_chart_template_construction,none
+54100_construction_trades,54100,Tools and Small Equipment,other,cost_of_goods_sold,FALSE,l10n_us.account_chart_template_construction,none
+48000_financial_services,42800,Service Income,other,income,FALSE,l10n_us.account_chart_template_financial_service,none
+47900_general_service,47900,Sales,other,income,FALSE,l10n_us.account_chart_template_general_service,none
+10900_legal_services,10900,Client Trust Account,other,current_asset,False,l10n_us.account_chart_template_legal_service,none
+other_current_asset_legal_services,123,Other Current Assets,view,asset,FALSE,l10n_us.account_chart_template_legal_service,none
+12300_legal_services,12300,Advanced Client Costs,other,other_current_asset_legal_services,False,l10n_us.account_chart_template_legal_service,none
+12310_legal_services,12310,Court Costs,other,other_current_asset_legal_services,False,l10n_us.account_chart_template_legal_service,none
+12320_legal_services,12320,Expert Witness Fees,other,other_current_asset_legal_services,False,l10n_us.account_chart_template_legal_service,none
+12330_legal_services,12330,Filing Fees,other,other_current_asset_legal_services,False,l10n_us.account_chart_template_legal_service,none
+other_asset_legal_services,187,Other Assets,view,asset,FALSE,l10n_us.account_chart_template_legal_service,none
+18700_legal_services,18700,Security Deposits Asset,other,other_asset_legal_services,False,l10n_us.account_chart_template_legal_service,none
+41100_legal_services,41100,Administrative Fees,other,income,False,l10n_us.account_chart_template_legal_service,none
+45400_legal_services,45400,Legal Fee Income,other,income,False,l10n_us.account_chart_template_legal_service,none
+48800_legal_services,48800,Settlement Income,other,income,False,l10n_us.account_chart_template_legal_service,none
+47900_general_product,47910,Sales,other,income,False,l10n_us.account_chart_template_general_product,none
+48300_general_product,48310,Sales Discounts,other,income,False,l10n_us.account_chart_template_general_product,none
+48900_general_product,48900,Shipping and Delivery Income,other,income,False,l10n_us.account_chart_template_general_product,none
+51100_general_product,51100,Freight and Shipping Costs,other,cost_of_goods_sold,False,l10n_us.account_chart_template_general_product,none
+52500_general_product,52500,Purchase Discounts,other,cost_of_goods_sold,False,l10n_us.account_chart_template_general_product,none
+52900_general_product,52900,Purchases - Resale Items,other,cost_of_goods_sold,False,l10n_us.account_chart_template_general_product,none
+base_miscincome,49000,Miscellaneous Income,other,income,False,l10n_us.account_chart_template_basic,none
+base_miscexpense,69000,Miscellaneous Expense,other,expense,False,l10n_us.account_chart_template_basic,none

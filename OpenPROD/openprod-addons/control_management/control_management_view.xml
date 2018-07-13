@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+	
+		<!-- CONTROL MANAGEMENT MENU -->
+		<menuitem id="control_management_main_menu" name="Control management" web_icon="base_openprod,static/description/control.png" />
+		
+	</data>
+</openerp>

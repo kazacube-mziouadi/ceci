@@ -1,0 +1,284 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* plastics_industry
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 9.0c\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-07-12 13:27+0000\n"
+"PO-Revision-Date: 2017-07-12 13:27+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: plastics_industry
+#: code:addons/plastics_industry/mrp.py:18
+#: code:addons/plastics_industry/mrp.py:151
+#: code:addons/plastics_industry/product.py:16
+#: code:addons/plastics_industry/wizard/change_mold.py:36
+#, python-format
+msgid "100%"
+msgstr "100%"
+
+#. module: plastics_industry
+#: code:addons/plastics_industry/mrp.py:20
+#: code:addons/plastics_industry/mrp.py:153
+#: code:addons/plastics_industry/product.py:18
+#: code:addons/plastics_industry/wizard/change_mold.py:38
+#, python-format
+msgid "25/75"
+msgstr "25/75"
+
+#. module: plastics_industry
+#: code:addons/plastics_industry/mrp.py:17
+#: code:addons/plastics_industry/mrp.py:150
+#: code:addons/plastics_industry/product.py:15
+#: code:addons/plastics_industry/wizard/change_mold.py:35
+#, python-format
+msgid "50/50"
+msgstr "50/50"
+
+#. module: plastics_industry
+#: code:addons/plastics_industry/mrp.py:19
+#: code:addons/plastics_industry/mrp.py:152
+#: code:addons/plastics_industry/product.py:17
+#: code:addons/plastics_industry/wizard/change_mold.py:37
+#, python-format
+msgid "75/25"
+msgstr "75/25"
+
+#. module: plastics_industry
+#: model:ir.ui.view,arch_db:plastics_industry.view_form_change_mold_id
+msgid "Cancel"
+msgstr "Annuler"
+
+#. module: plastics_industry
+#: model:ir.actions.act_window,name:plastics_industry.act_change_mold_id
+#: model:ir.ui.view,arch_db:plastics_industry.view_form_change_mold_id
+#: model:ir.ui.view,arch_db:plastics_industry.view_tree_mrp_workorder
+msgid "Change mold"
+msgstr "Changer le moule"
+
+#. module: plastics_industry
+#: model:ir.ui.view,arch_db:plastics_industry.view_tree_mrp_workorder
+msgid "Confirm date"
+msgstr "Confirmer la date"
+
+#. module: plastics_industry
+#: model:ir.model.fields,field_description:plastics_industry.field_change_mold_create_uid
+msgid "Created by"
+msgstr "Créé par"
+
+#. module: plastics_industry
+#: model:ir.model.fields,field_description:plastics_industry.field_change_mold_create_date
+msgid "Created on"
+msgstr "Créé le"
+
+#. module: plastics_industry
+#: model:ir.model.fields,field_description:plastics_industry.field_change_mold_display_name
+msgid "Display Name"
+msgstr "Display Name"
+
+#. module: plastics_industry
+#: code:addons/plastics_industry/mrp.py:270
+#: code:addons/plastics_industry/mrp.py:275
+#: code:addons/plastics_industry/mrp.py:280
+#, python-format
+msgid "Error"
+msgstr "Erreur"
+
+#. module: plastics_industry
+#: model:ir.model.fields,field_description:plastics_industry.field_change_mold_group_id
+msgid "Group"
+msgstr "Groupement"
+
+#. module: plastics_industry
+#: model:ir.model,name:plastics_industry.model_mrp_group_wo
+msgid "Group work order object"
+msgstr "Group work order object"
+
+#. module: plastics_industry
+#: model:ir.model.fields,field_description:plastics_industry.field_change_mold_id
+msgid "ID"
+msgstr "ID"
+
+#. module: plastics_industry
+#: model:ir.model.fields,field_description:plastics_industry.field_change_mold___last_update
+msgid "Last Modified on"
+msgstr "Dernière modification le"
+
+#. module: plastics_industry
+#: model:ir.model.fields,field_description:plastics_industry.field_change_mold_write_uid
+msgid "Last Updated by"
+msgstr "Dernière mise à jour par"
+
+#. module: plastics_industry
+#: model:ir.model.fields,field_description:plastics_industry.field_change_mold_write_date
+msgid "Last Updated on"
+msgstr "Dernière mise à jour le"
+
+#. module: plastics_industry
+#: model:ir.model.fields,field_description:plastics_industry.field_change_mold_resource_id
+msgid "Machin"
+msgstr "Machine"
+
+#. module: plastics_industry
+#: model:ir.model.fields,field_description:plastics_industry.field_change_mold_mo_id
+msgid "Mo"
+msgstr "OF"
+
+#. module: plastics_industry
+#: model:ir.model.fields,field_description:plastics_industry.field_change_mold_mold_id
+#: model:ir.model.fields,field_description:plastics_industry.field_mrp_routing_line_mold_id
+#: model:ir.model.fields,field_description:plastics_industry.field_mrp_workorder_mold_id
+#: model:ir.model.fields,field_description:plastics_industry.field_product_product_is_mold
+msgid "Mold"
+msgstr "Moule"
+
+#. module: plastics_industry
+#: model:ir.model.fields,field_description:plastics_industry.field_mrp_workorder_need_delay_validation
+msgid "Need delay validation"
+msgstr "Need delay validation"
+
+#. module: plastics_industry
+#: model:ir.model.fields,help:plastics_industry.field_change_mold___last_update
+#: model:ir.model.fields,help:plastics_industry.field_change_mold_create_date
+#: model:ir.model.fields,help:plastics_industry.field_change_mold_create_uid
+#: model:ir.model.fields,help:plastics_industry.field_change_mold_date
+#: model:ir.model.fields,help:plastics_industry.field_change_mold_display_name
+#: model:ir.model.fields,help:plastics_industry.field_change_mold_group_id
+#: model:ir.model.fields,help:plastics_industry.field_change_mold_id
+#: model:ir.model.fields,help:plastics_industry.field_change_mold_mo_id
+#: model:ir.model.fields,help:plastics_industry.field_change_mold_mold_id
+#: model:ir.model.fields,help:plastics_industry.field_change_mold_number_imprint
+#: model:ir.model.fields,help:plastics_industry.field_change_mold_product_id
+#: model:ir.model.fields,help:plastics_industry.field_change_mold_quantity
+#: model:ir.model.fields,help:plastics_industry.field_change_mold_resource_id
+#: model:ir.model.fields,help:plastics_industry.field_change_mold_routing_id
+#: model:ir.model.fields,help:plastics_industry.field_change_mold_routing_line_id
+#: model:ir.model.fields,help:plastics_industry.field_change_mold_type_mold
+#: model:ir.model.fields,help:plastics_industry.field_change_mold_wo_id
+#: model:ir.model.fields,help:plastics_industry.field_change_mold_write_date
+#: model:ir.model.fields,help:plastics_industry.field_change_mold_write_uid
+#: model:ir.model.fields,help:plastics_industry.field_mrp_routing_line_mold_id
+#: model:ir.model.fields,help:plastics_industry.field_mrp_routing_line_number_imprint
+#: model:ir.model.fields,help:plastics_industry.field_mrp_routing_line_type_mold
+#: model:ir.model.fields,help:plastics_industry.field_mrp_workorder_mold_id
+#: model:ir.model.fields,help:plastics_industry.field_mrp_workorder_need_delay_validation
+#: model:ir.model.fields,help:plastics_industry.field_mrp_workorder_number_imprint
+#: model:ir.model.fields,help:plastics_industry.field_mrp_workorder_type_mold
+#: model:ir.model.fields,help:plastics_industry.field_product_product_is_mold
+#: model:ir.model.fields,help:plastics_industry.field_product_product_number_imprint
+#: model:ir.model.fields,help:plastics_industry.field_product_product_type_mold
+msgid "Not defined"
+msgstr "Non définie"
+
+#. module: plastics_industry
+#: model:ir.model.fields,field_description:plastics_industry.field_change_mold_number_imprint
+#: model:ir.model.fields,field_description:plastics_industry.field_mrp_routing_line_number_imprint
+#: model:ir.model.fields,field_description:plastics_industry.field_mrp_workorder_number_imprint
+#: model:ir.model.fields,field_description:plastics_industry.field_product_product_number_imprint
+msgid "Number of imprint"
+msgstr "Nombre d'empreinte"
+
+#. module: plastics_industry
+#: model:ir.ui.view,arch_db:plastics_industry.view_form_change_mold_id
+msgid "OK"
+msgstr "OK"
+
+#. module: plastics_industry
+#: model:ir.ui.view,arch_db:plastics_industry.view_form_mrp_routing_line
+#: model:ir.ui.view,arch_db:plastics_industry.view_form_mrp_routing_line_simple
+#: model:ir.ui.view,arch_db:plastics_industry.view_form_mrp_workorder
+#: model:ir.ui.view,arch_db:plastics_industry.view_form_product_plastics_industry
+msgid "Plastics industry"
+msgstr "Plasturgie"
+
+#. module: plastics_industry
+#: model:ir.model,name:plastics_industry.model_product_product
+#: model:ir.model.fields,field_description:plastics_industry.field_change_mold_product_id
+msgid "Product"
+msgstr "Produit"
+
+#. module: plastics_industry
+#: model:ir.model.fields,field_description:plastics_industry.field_change_mold_quantity
+msgid "Quantity"
+msgstr "Quantité"
+
+#. module: plastics_industry
+#: model:ir.model,name:plastics_industry.model_mrp_resource
+msgid "Resource"
+msgstr "Ressource"
+
+#. module: plastics_industry
+#: model:ir.model,name:plastics_industry.model_mrp_routing
+#: model:ir.model.fields,field_description:plastics_industry.field_change_mold_routing_id
+msgid "Routing"
+msgstr "Gamme"
+
+#. module: plastics_industry
+#: model:ir.model,name:plastics_industry.model_mrp_routing_line
+#: model:ir.model.fields,field_description:plastics_industry.field_change_mold_routing_line_id
+msgid "Routing line"
+msgstr "Ligne de gamme"
+
+#. module: plastics_industry
+#: model:ir.model.fields,field_description:plastics_industry.field_change_mold_date
+msgid "Start date"
+msgstr "Date de début"
+
+#. module: plastics_industry
+#: model:ir.ui.view,arch_db:plastics_industry.view_form_change_mold_id
+msgid "The work order is part of a grouping that will modify the other work orders apartment to this grouping"
+msgstr "L'ordre de travail fait partie d'un groupement cela va modifier les autres ordres de travail appartement à ce groupement."
+
+#. module: plastics_industry
+#: model:ir.model.fields,field_description:plastics_industry.field_change_mold_type_mold
+#: model:ir.model.fields,field_description:plastics_industry.field_mrp_routing_line_type_mold
+#: model:ir.model.fields,field_description:plastics_industry.field_mrp_workorder_type_mold
+#: model:ir.model.fields,field_description:plastics_industry.field_product_product_type_mold
+msgid "Type mold"
+msgstr "Type de moule"
+
+#. module: plastics_industry
+#: model:ir.model.fields,field_description:plastics_industry.field_change_mold_wo_id
+msgid "WO"
+msgstr "OT"
+
+#. module: plastics_industry
+#: model:ir.model,name:plastics_industry.model_change_mold
+msgid "Wizard change mold"
+msgstr "Wizard changement de moule"
+
+#. module: plastics_industry
+#: code:addons/plastics_industry/mrp.py:275
+#, python-format
+msgid "Work orders must have the same mold."
+msgstr "Les ordres de travail doivent avoir le même moule."
+
+#. module: plastics_industry
+#: code:addons/plastics_industry/mrp.py:280
+#, python-format
+msgid "Work orders must have the same resource."
+msgstr "Les ordres de travail doivent avoir la même ressource."
+
+#. module: plastics_industry
+#: code:addons/plastics_industry/mrp.py:270
+#, python-format
+msgid "Work orders must have the same routing line."
+msgstr "Les ordres de travail doivent avoir la même ligne de gamme."
+
+#. module: plastics_industry
+#: model:ir.model,name:plastics_industry.model_mrp_workorder
+msgid "Workorder"
+msgstr "Ordre de travail"
+
+#. module: plastics_industry
+#: model:ir.ui.view,arch_db:plastics_industry.view_form_change_mold_id
+msgid "or"
+msgstr "ou"
+

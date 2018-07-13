@@ -1,0 +1,14 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_stock_reserve_report,stock.reserve.report,model_stock_reserve_report,base.group_user,1,1,1,1
+
+access_certificate_template_user,certificate.template,model_certificate_template,product.product_user,1,0,0,0
+access_certificate_template_manager,certificate.template,model_certificate_template,product.product_manager,1,1,1,1
+access_certificate_template_administrator,certificate.template,model_certificate_template,product.product_responsible,1,1,1,1
+
+access_certificate_line_user,certificate.line,model_certificate_line,product.product_user,1,0,0,0
+access_certificate_line_manager,certificate.line,model_certificate_line,product.product_manager,1,1,1,1
+access_certificate_line_administrator,certificate.line,model_certificate_line,product.product_responsible,1,1,1,1
+
+access_certificate_line_application_user,certificate.line.application,model_certificate_line_application,product.product_user,1,0,0,0
+access_certificate_line_application_manager,certificate.line.application,model_certificate_line_application,product.product_manager,1,1,1,1
+access_certificate_line_application_administrator,certificate.line.application,model_certificate_line_application,product.product_responsible,1,1,1,1

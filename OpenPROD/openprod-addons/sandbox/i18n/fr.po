@@ -1,0 +1,303 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* sandbox
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 9.0c\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-05-12 12:10+0000\n"
+"PO-Revision-Date: 2017-05-12 12:10+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: sandbox
+#. openerp-web
+#: code:addons/sandbox/static/src/js/index.js:106
+#, python-format
+msgid "3 Months"
+msgstr "3 Mois"
+
+#. module: sandbox
+#. openerp-web
+#: code:addons/sandbox/static/src/js/index.js:144
+#, python-format
+msgid "Apply to day"
+msgstr "Appliquer au jour"
+
+#. module: sandbox
+#. openerp-web
+#: code:addons/sandbox/static/src/js/index.js:143
+#, python-format
+msgid "Apply to week"
+msgstr "Appliquer à la semaine"
+
+#. module: sandbox
+#. openerp-web
+#: code:addons/sandbox/static/src/js/index.js:58
+#, python-format
+msgid "Area :"
+msgstr "Atelier :"
+
+#. module: sandbox
+#: model:ir.model.fields,field_description:sandbox.field_mrp_workorder_asynchronous
+msgid "Asynchronous"
+msgstr "Asynchrone"
+
+#. module: sandbox
+#. openerp-web
+#: code:addons/sandbox/static/src/js/index.js:145
+#: model:ir.ui.view,arch_db:sandbox.wizard_sandbox_reset
+#: model:ir.ui.view,arch_db:sandbox.wizard_sandbox_validate
+#, python-format
+msgid "Cancel"
+msgstr "Annuler"
+
+#. module: sandbox
+#. openerp-web
+#: code:addons/sandbox/static/src/js/index.js:97
+#, python-format
+msgid "Clean Arrows"
+msgstr "Effecer les flèches"
+
+#. module: sandbox
+#: model:ir.model.fields,field_description:sandbox.field_sandbox_wizard_reset_create_uid
+#: model:ir.model.fields,field_description:sandbox.field_sandbox_wizard_validate_create_uid
+msgid "Created by"
+msgstr "Crée par"
+
+#. module: sandbox
+#: model:ir.model.fields,field_description:sandbox.field_sandbox_wizard_reset_create_date
+#: model:ir.model.fields,field_description:sandbox.field_sandbox_wizard_validate_create_date
+msgid "Created on"
+msgstr "Crée le"
+
+#. module: sandbox
+#. openerp-web
+#: code:addons/sandbox/static/src/js/index.js:84
+#, python-format
+msgid "Date :"
+msgstr "Date :"
+
+#. module: sandbox
+#. openerp-web
+#: code:addons/sandbox/static/src/js/index.js:103
+#, python-format
+msgid "Day"
+msgstr "Jour"
+
+#. module: sandbox
+#. openerp-web
+#: code:addons/sandbox/static/src/js/index.js:98
+#, python-format
+msgid "Day :"
+msgstr "Jour :"
+
+#. module: sandbox
+#: model:ir.model.fields,field_description:sandbox.field_sandbox_wizard_reset_display_name
+#: model:ir.model.fields,field_description:sandbox.field_sandbox_wizard_validate_display_name
+msgid "Display Name"
+msgstr "Nom d'affichage"
+
+#. module: sandbox
+#. openerp-web
+#: code:addons/sandbox/static/src/js/index.js:139
+#, python-format
+msgid "Duration :"
+msgstr "Duré :"
+
+#. module: sandbox
+#. openerp-web
+#: code:addons/sandbox/static/src/js/index.js:135
+#, python-format
+msgid "End time :"
+msgstr "Date de fin :"
+
+#. module: sandbox
+#. openerp-web
+#: code:addons/sandbox/static/src/js/index.js:94
+#, python-format
+msgid "Filtre"
+msgstr "Filtre"
+
+#. module: sandbox
+#. openerp-web
+#: code:addons/sandbox/static/src/js/index.js:78
+#, python-format
+msgid "Final product :"
+msgstr "Produit final :"
+
+#. module: sandbox
+#: model:ir.model.fields,field_description:sandbox.field_mrp_workorder_sandbox_first_resource_id
+msgid "First Resource"
+msgstr "Ressource première"
+
+#. module: sandbox
+#: model:ir.model.fields,field_description:sandbox.field_sandbox_wizard_reset_id
+#: model:ir.model.fields,field_description:sandbox.field_sandbox_wizard_validate_id
+msgid "ID"
+msgstr "ID"
+
+#. module: sandbox
+#: model:ir.ui.view,arch_db:sandbox.view_search_mrp_workorder
+msgid "Is asynchronous"
+msgstr "OT Asynchrone"
+
+#. module: sandbox
+#: model:ir.model.fields,field_description:sandbox.field_sandbox_wizard_reset___last_update
+#: model:ir.model.fields,field_description:sandbox.field_sandbox_wizard_validate___last_update
+msgid "Last Modified on"
+msgstr "Dernière modification le"
+
+#. module: sandbox
+#: model:ir.model.fields,field_description:sandbox.field_sandbox_wizard_reset_write_uid
+#: model:ir.model.fields,field_description:sandbox.field_sandbox_wizard_validate_write_uid
+msgid "Last Updated by"
+msgstr "Dernière mise-à-jour par"
+
+#. module: sandbox
+#: model:ir.model.fields,field_description:sandbox.field_sandbox_wizard_reset_write_date
+#: model:ir.model.fields,field_description:sandbox.field_sandbox_wizard_validate_write_date
+msgid "Last Updated on"
+msgstr "Dernière mise-à-jour le"
+
+#. module: sandbox
+#. openerp-web
+#: code:addons/sandbox/static/src/js/index.js:72
+#, python-format
+msgid "Manufacturing order :"
+msgstr "OF :"
+
+#. module: sandbox
+#. openerp-web
+#: code:addons/sandbox/static/src/js/index.js:105
+#, python-format
+msgid "Month"
+msgstr "Mois"
+
+#. module: sandbox
+#: model:ir.model.fields,field_description:sandbox.field_mrp_workorder_sandbox_planned_end_date
+msgid "Planned End Date"
+msgstr "Date de fin planifié"
+
+#. module: sandbox
+#: model:ir.model.fields,field_description:sandbox.field_mrp_workorder_sandbox_planned_start_date
+msgid "Planned Start Date"
+msgstr "Date de début planifié"
+
+#. module: sandbox
+#. openerp-web
+#: code:addons/sandbox/static/src/js/index.js:117
+#: model:ir.ui.view,arch_db:sandbox.wizard_sandbox_reset
+#, python-format
+msgid "Reset"
+msgstr "Réinitialiser"
+
+#. module: sandbox
+#. openerp-web
+#: code:addons/sandbox/static/src/js/sandbox.js:75
+#: model:ir.actions.act_window,name:sandbox.act_reset_sandbox
+#, python-format
+msgid "Reset Sandbox"
+msgstr "Réinitialiser le bac à sable"
+
+#. module: sandbox
+#: model:ir.ui.view,arch_db:sandbox.wizard_sandbox_reset
+msgid "Reset sandbox"
+msgstr "Réinitialiser le bac à sablex"
+
+#. module: sandbox
+#: model:ir.ui.view,arch_db:sandbox.wizard_sandbox_reset
+msgid "Reset sandbox ?"
+msgstr "Réinitialiser le bac à sable ?"
+
+#. module: sandbox
+#. openerp-web
+#: code:addons/sandbox/static/src/js/index.js:90
+#, python-format
+msgid "Resources :"
+msgstr "Resources :"
+
+#. module: sandbox
+#. openerp-web
+#: code:addons/sandbox/static/src/js/index.js:66
+#, python-format
+msgid "Sale :"
+msgstr "Vente :"
+
+#. module: sandbox
+#: model:ir.actions.act_url,name:sandbox.act_sandbox
+#: model:ir.ui.view,arch_db:sandbox.view_form_mrp_workorder
+msgid "Sandbox"
+msgstr "Bac à sable"
+
+#. module: sandbox
+#. openerp-web
+#: code:addons/sandbox/static/src/js/index.js:131
+#, python-format
+msgid "Start time :"
+msgstr "Date de bébut :"
+
+#. module: sandbox
+#. openerp-web
+#: code:addons/sandbox/static/src/js/index.js:118
+#: model:ir.ui.view,arch_db:sandbox.wizard_sandbox_validate
+#, python-format
+msgid "Validate"
+msgstr "Valider"
+
+#. module: sandbox
+#. openerp-web
+#: code:addons/sandbox/static/src/js/sandbox.js:74
+#: model:ir.actions.act_window,name:sandbox.act_validate_sandbox
+#, python-format
+msgid "Validate Sandbox"
+msgstr "Valider le bac à sable"
+
+#. module: sandbox
+#: model:ir.ui.view,arch_db:sandbox.wizard_sandbox_validate
+msgid "Validate sandbox"
+msgstr "Valider le bac à sable"
+
+#. module: sandbox
+#: model:ir.ui.view,arch_db:sandbox.wizard_sandbox_validate
+msgid "Validate sandbox ?"
+msgstr "Valider le bac à sable ?"
+
+#. module: sandbox
+#. openerp-web
+#: code:addons/sandbox/static/src/js/index.js:104
+#, python-format
+msgid "Week"
+msgstr "Semaine"
+
+#. module: sandbox
+#: model:ir.ui.menu,name:sandbox.menu_wo_sandbox
+msgid "Work Orders Sandbox"
+msgstr "Bac à sable OT"
+
+#. module: sandbox
+#: model:ir.model,name:sandbox.model_mrp_workorder
+msgid "Workorder"
+msgstr "OT"
+
+#. module: sandbox
+#: model:ir.ui.view,arch_db:sandbox.wizard_sandbox_reset
+#: model:ir.ui.view,arch_db:sandbox.wizard_sandbox_validate
+msgid "or"
+msgstr "ou"
+
+#. module: sandbox
+#: model:ir.model,name:sandbox.model_sandbox_wizard_reset
+msgid "sandbox.wizard_reset"
+msgstr "sandbox.wizard_reset"
+
+#. module: sandbox
+#: model:ir.model,name:sandbox.model_sandbox_wizard_validate
+msgid "sandbox.wizard_validate"
+msgstr "sandbox.wizard_validate"
+

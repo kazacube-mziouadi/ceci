@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+	
+		<record model="ir.ui.view" id="view_form_purchase_subcontracting_rm">
+			<field name="name">view_form_purchase_subcontracting_rm</field>
+			<field name="model">purchase.subcontracting.rm</field>
+			<field name="type">form</field>
+			<field name="arch" type="xml">
+				<form string="Subcontracting purchase RM">
+					<group colspan="4" col="4">
+						<group colspan="4" col="6">
+							<field name="wo_id" domain="[('is_subcontracting', '=', True)]" />
+							<field name="supplier_id" required="1"	
+								   domain="service_ids and [('supplierinfo_service_search', 'in', service_ids)] or [('is_company', '=', True), ('is_supplier', '=', True), ('is_seller', '=', True)]" />
+							<field name="location_id" required="1" domain="location_id and [('id', '=', location_id)] or []" />
+							<field name="quantity" required="1" />
+							<field name="uom_id"/>
+							<field name="final_product_id"/>
+							<field name="service_ids" colspan="4" invisible="1" />
+						</group>
+						<group colspan="4" col="4" string="RM">
+							<field name="line_ids" colspan="4" nolabel="1" >
+								<tree string="RM" editable="top">
+									<field name="wo_id" invisible="1" />
+									<field name="rm_fp_draft_id" invisible="1" />
+									<field name="date" required="1" />
+									<field name="product_id" domain="product_id and [('id', '=', product_id)] or []" required="1" />
+									<field name="need_qty" />
+									<field name="forecast_delivred_qty" />
+									<field name="wo_in_use_qty" />
+									<field name="wo_remaining_need_qty" />
+									<field name="order_qty" attrs="{'readonly': [('no_order_qty', '=', True)], 'required': [('no_order_qty', '!=', True)]}" />
+									<field name="virtual_stock" />
+									<field name="onstock_qty" required="1" />
+									<field name="release_qty" />
+									<field name="release_virtual_qty" />
+									<field name="uom_id" />
+									<field name="supplier_id" domain="product_id and[('supplierinfo_product_search', '=', product_id)] or [('id', '=', False)]"
+										   attrs="{'readonly': [('no_order_qty', '=', True)], 'required': [('order_qty', '!=', False), ('order_qty', '!=', 0,0), ('no_order_qty', '!=', True)]}" />
+									<field name="type" required="1" />
+									<field name="no_order_qty" invisible="1" />
+									<field name="type_rm_fp" invisible="1" />
+									<field name="wiz_qty" invisible="1" />
+								</tree>
+							</field>
+						</group>
+					</group>
+					<footer>
+						<button name="validate" string="Ok" type="object" class="oe_highlight" />
+						or
+						<button string="Cancel" class="oe_link" special="cancel" />
+					</footer>
+				</form>
+			</field>
+		</record>
+
+		<record model="ir.actions.act_window" id="action_purchase_subcontracting_rm">
+			<field name="name">Subcontracting purchase RM</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="res_model">purchase.subcontracting.rm</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">form</field>
+			<field name="target">new</field>
+		</record>
+		
+		
+		
+		<record model="ir.ui.view" id="view_form_purchase_subcontracting_fp">
+			<field name="name">view_form_purchase_subcontracting_fp</field>
+			<field name="model">purchase.subcontracting.fp</field>
+			<field name="type">form</field>
+			<field name="arch" type="xml">
+				<form string="Subcontracting purchase FP">
+					<group colspan="4" col="4">
+						<group colspan="4" col="6">
+							<field name="wo_id" domain="[('is_subcontracting', '=', True)]" />
+							<field name="supplier_id" required="1"	
+								   domain="[('supplierinfo_service_search', 'in', service_ids)]" />
+							<field name="location_id" required="1" domain="location_id and [('id', '=', location_id)] or []" />
+							<field name="date" required="1" />
+							<field name="quantity" required="1" />
+							<field name="uom_id"/>
+							<field name="final_product_id"/>
+							<field name="no_generate_rm" />
+							<field name="type" attrs="{'invisible':[('no_direct_fp', '=', True)]}" />
+							<field name="type2" attrs="{'invisible':[('no_direct_fp', '!=', True)]}" />
+							<field name="no_direct_fp" invisible="1" />
+						</group>
+						<field name="service_ids" colspan="4" invisible="1" />
+						<group colspan="4" col="4" string="Services">
+							<field name="wiz_service_ids" colspan="4" nolabel="1" >
+								<tree string="Services" editable="top">
+									<field name="wo_id" invisible="1" />
+									<field name="consum_service_id" invisible="1" />
+									<field name="product_id" />
+									<field name="quantity" />
+									<field name="uom_id" />
+									<field name="price_total" />
+								</tree>
+							</field>
+						</group>
+						<group colspan="4" col="4" string="RM" attrs="{'invisible':[('no_generate_rm', '=', True)]}">
+							<field name="line_ids" colspan="4" nolabel="1" attrs="{'invisible':[('no_generate_rm', '=', True)]}">
+								<tree string="RM" editable="top">
+									<field name="wo_id" invisible="1" />
+									<field name="rm_fp_draft_id" invisible="1" />
+									<field name="date" required="1" />
+									<field name="product_id" domain="product_id and [('id', '=', product_id)] or []" required="1" />
+									<field name="need_qty" />
+									<field name="forecast_delivred_qty" />
+									<field name="wo_in_use_qty" />
+									<field name="wo_remaining_need_qty" />
+									<field name="order_qty" attrs="{'readonly': [('no_order_qty', '=', True)], 'required': [('no_order_qty', '!=', True)]}" />
+									<field name="virtual_stock" />
+									<field name="onstock_qty" required="1" />
+									<field name="release_qty" />
+									<field name="release_virtual_qty" />
+									<field name="uom_id" />
+									<field name="supplier_id" domain="product_id and[('supplierinfo_product_search', '=', product_id)] or [('id', '=', False)]"
+										   attrs="{'readonly': [('no_order_qty', '=', True)], 'required': [('order_qty', '!=', False), ('order_qty', '!=', 0,0), ('no_order_qty', '!=', True)]}" />
+									<field name="type" required="1" />
+									<field name="no_order_qty" invisible="1" />
+									<field name="type_rm_fp" invisible="1" />
+									<field name="wiz_qty" invisible="1" />
+								</tree>
+							</field>
+						</group>
+						<field name="fp_supplier_id" 
+							   attrs="{'invisible':[('type', '!=', 'direct')], 'required':[('type', '=', 'direct')]}" 
+							   domain="service_ids and [('next_wo_supplierinfo_service_search', '=', wo_id)] or [('is_company', '=', True), ('is_supplier', '=', True), ('is_seller', '=', True)]"/>
+						<field name="fp_location_id" domain="[('usage', 'in', ('customer', 'supplier'))]" 
+							   attrs="{'invisible':[('type', '!=', 'direct'), ('no_direct_fp', '=', True)], 'required':[('type', '=', 'direct'), ('no_direct_fp', '!=', True)]}" />
+						<group colspan="4" col="4" string="FP">
+							<field name="fp_line_ids" colspan="4" nolabel="1" >
+								<tree string="FP" editable="top">
+									<field name="wo_id" invisible="1" />
+									<field name="rm_fp_draft_id" invisible="1" />
+									<field name="date" invisible="1" />
+									<field name="product_id" domain="product_id and [('id', '=', product_id)] or []" required="1" />
+									<field name="need_qty" />
+									<field name="uom_id" />
+									<field name="no_order_qty" invisible="1" />
+									<field name="type_rm_fp" invisible="1" />
+									<field name="type" invisible="1" />
+									<field name="wiz_qty" invisible="1" />
+								</tree>
+							</field>
+						</group>
+					</group>
+					<footer>
+						<button name="validate" string="Ok" type="object" class="oe_highlight" attrs="{'invisible':[('type', '=', 'direct')]}" />
+						<button name="validate" string="Ok" type="object" class="oe_highlight" confirm="Are you on the delivery of final products supplier is in the following OT." 
+								attrs="{'invisible':[('type', '!=', 'direct')]}" />
+						or
+						<button string="Cancel" class="oe_link" special="cancel" />
+					</footer>
+				</form>
+			</field>
+		</record>
+
+		<record model="ir.actions.act_window" id="action_purchase_subcontracting_fp">
+			<field name="name">Subcontracting purchase FP</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="res_model">purchase.subcontracting.fp</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">form</field>
+			<field name="target">new</field>
+		</record>
+		
+				
+		<record model="ir.ui.view" id="view_form_subcontracting_regul_wiz">
+            <field name="name">view_form_subcontracting_regul_wiz</field>
+            <field name="model">subcontracting.regul.wiz</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Subcontracting regulation">
+                    <group colspan="4" col="4">
+                        <field name="wo_id" invisible="1" />
+                        <field name="line_ids" colspan="4" nolabel="1" >
+                            <tree string="Services" editable="top" create="false" delete="false" >
+                                <field name="product_id" readonly="1" />
+                                <field name="uom_id" readonly="1" />
+                                <field name="sent_qty" readonly="1" />
+                                <field name="consummed_qty" readonly="1" />
+                                <field name="regul_qty" readonly="1" />
+                                <field name="remaining_qty" readonly="1" />
+                                <button name="button_modificate" string="Modificate" type="object" class="oe_highlight" />
+                            </tree>
+                        </field>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+
+        <record model="ir.actions.act_window" id="action_subcontracting_regul_wiz">
+            <field name="name">Subcontracting regulation</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">subcontracting.regul.wiz</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+		
+		
+		<record model="ir.ui.view" id="view_form_subcontracting_regul_wiz_action">
+            <field name="name">view_form_subcontracting_regul_wiz_action</field>
+            <field name="model">subcontracting.regul.wiz.action</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Modificate">
+                    <group colspan="4" col="6">
+                        <field name="action_type" required="1" />
+                        <field name="regul_qty" required="1" />
+                        <field name="reallocation_wo_id" attrs="{'invisible':[('action_type', '!=', 'reallocation')], 'required':[('action_type', '=', 'reallocation')]}"/>
+                    </group>
+                    <footer>
+                        <button name="validate" string="Ok" type="object" class="oe_highlight" />
+                        or
+                        <button name="button_cancel" string="Cancel" type="object" class="oe_link" />
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+
+        <record model="ir.actions.act_window" id="action_subcontracting_regul_wiz_action">
+            <field name="name">Modificate</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">subcontracting.regul.wiz.action</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+        
+        
+        <record model="ir.ui.view" id="view_form_subcontracting_inventory_location">
+            <field name="name">view_form_subcontracting_inventory_location</field>
+            <field name="model">subcontracting.inventory.location</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Subcontracting location inventory">
+                    <group colspan="4" col="4">
+                        <field name="location_id" required="1" />
+                        <button name="visualization" string="Visualization" type="object" class="oe_highlight" />
+                        <field name="line_ids" colspan="4" nolabel="1" >
+                            <tree string="Lines" editable="top" create="false" delete="false" >
+                                <field name="product_id" readonly="1" />
+                                <field name="qty" readonly="1" />
+                                <field name="uom_id" readonly="1" />
+                            </tree>
+                        </field>
+                    </group>
+                    <footer>
+                        <button string="Close" class="oe_link" special="cancel" />
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+
+        <record model="ir.actions.act_window" id="action_subcontracting_inventory_location">
+            <field name="name">Subcontracting location inventory</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">subcontracting.inventory.location</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+		
+	</data>
+</openerp>

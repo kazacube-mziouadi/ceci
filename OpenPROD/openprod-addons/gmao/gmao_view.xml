@@ -1,0 +1,430 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+	
+	    <menuitem name="GMAO" id="menu_gmao_id" web_icon="base_openprod,static/description/maintenance.png" />
+	    <menuitem name="GMAO" id="submenu_gmao_id" parent="menu_gmao_id" sequence="10" />
+	    <menuitem name="Analisys" id="submenu_gmao_analisys_id" parent="menu_gmao_id" sequence="20" />
+	    <menuitem name="Configuration" id="submenu_gmao_configuration_id" parent="menu_gmao_id" sequence="30" />
+		
+		<!-- ======================== -->
+        <!--   Maintenance park  -->
+        <!-- ======================== -->
+		<record id="act_gmao_park_id" model="ir.actions.act_window">
+		    <field name="name">Equipments</field>
+		    <field name="res_model">park</field>
+		    <field name="view_type">form</field>
+		    <field name="view_mode">tree,form</field>
+		    <field name="domain">[('type', '=', 'intern')]</field>
+		    <field name="context">{'default_type': 'intern'}</field>
+		    <field name="search_view_id" ref="base_gmao_sav.view_search_park_id"/>
+		</record>
+		
+		<record id="act_gmao_park_id_tree" model="ir.actions.act_window.view">
+		    <field name="sequence" eval="10"/>
+		    <field name="view_mode">tree</field>
+		    <field name="view_id" ref="base_gmao_sav.view_tree_park_id"/>
+		    <field name="act_window_id" ref="act_gmao_park_id"/>
+		</record>
+		
+		<record model="ir.actions.act_window.view" id="act_gmao_park_id_form">
+		    <field name="sequence" eval="20"/>
+		    <field name="view_mode">form</field>
+		    <field name="view_id" ref="base_gmao_sav.view_form_park_id"/>
+		    <field name="act_window_id" ref="act_gmao_park_id"/>
+		</record>
+        
+		<menuitem name="Equipments" action="act_gmao_park_id" id="menu_gmao_park_id" parent="submenu_gmao_id" sequence="10" 
+		          groups="group_menu_gmao_user1" />
+        <menuitem name="Create equipments" action="base_gmao_sav.act_wiz_create_park_gmao" id="menu_wiz_create_park_gmao" 
+                  parent="submenu_gmao_id" sequence="20" groups="group_menu_gmao_user1" />
+        
+        
+        <!-- ======================== -->
+        <!--   Maintenance Operation  -->
+        <!-- ======================== -->
+        
+		
+		<!-- ACTION maintenance_operation -->
+		<record id="act_gmao_maintenance_operation_id" model="ir.actions.act_window">
+		    <field name="name">List model maintenance operations</field>
+		    <field name="res_model">maintenance.operation</field>
+		    <field name="view_type">form</field>
+		    <field name="view_mode">tree,form</field>
+		    <field name="domain">[]</field>
+		    <field name="context">{}</field>
+		    <field name="search_view_id" ref="base_gmao_sav.view_search_maintenance_operation_id"/>
+		</record>
+		
+		<record id="act_gmao_maintenance_operation_id_tree" model="ir.actions.act_window.view">
+		    <field name="sequence" eval="10"/>
+		    <field name="view_mode">tree</field>
+		    <field name="view_id" ref="base_gmao_sav.view_tree_maintenance_operation_id"/>
+		    <field name="act_window_id" ref="act_gmao_maintenance_operation_id"/>
+		</record>
+		
+		<record model="ir.actions.act_window.view" id="act_gmao_maintenance_operation_id_form">
+		    <field name="sequence" eval="20"/>
+		    <field name="view_mode">form</field>
+		    <field name="view_id" ref="base_gmao_sav.view_form_maintenance_operation_id"/>
+		    <field name="act_window_id" ref="act_gmao_maintenance_operation_id"/>
+		</record>
+		
+		<menuitem name="List model maintenance operation" action="act_gmao_maintenance_operation_id" 
+		          id="menu_gmao_maintenance_operation_id" parent="submenu_gmao_configuration_id" sequence="10" groups="group_menu_gmao_config1" />
+		
+		
+		<!-- ======================== -->
+        <!--       Intervention       -->
+        <!-- ======================== -->
+		
+		
+		<record id='view_form_intervention_gmao_id' model='ir.ui.view'>
+            <field name="name">view_form_intervention_gmao_id</field>
+            <field name="model">intervention</field>
+            <field name="arch" type="xml">
+                <form string="Interventions" version="8.0">
+                    <header>
+                        <field name="state" widget="statusbar" statusbar_visible="waiting,affect,performed,done,cancel" clickable="True" />
+                    </header>
+                    <group colspan="4" col="9">
+                        <group colspan="8" col="8">
+                            <group colspan="8" col="9">
+                                <group colspan="3" col="3">
+                                    <field name="name" colspan="3" />
+                                    <field name="applicant_id" colspan="3" />
+                                    <field name="emergency" colspan="3" />
+                                    <field name="customer_id" attrs="{'required': [('park_type', '=', 'external')], 'invisible':[('park_type', '!=', 'external')]}" 
+                                               domain="[('can_order', '=', True), ('is_customer', '=', True)]" colspan="3" />
+                                    <field name="currency_id" colspan="3"
+                                           attrs="{'invisible': ['|', ('type_invoice', '=', 'no_billable'), ('sale_line_ids', '=', False), 
+                                                                 ('quotation_ids', '=', False), ('invoice_ids', '=', False), ('piece_maintenance_ids', '=', False)]}" />
+                                </group>
+                                <group colspan="3" col="3">
+                                    <field name="type" colspan="3" required="1" />
+                                    <field name="responsible_id" colspan="3" attrs="{'required': [('state', 'not in', ('waiting', 'cancel'))]}" />
+                                    <field name="park_type" colspan="3" />
+                                    <field name="contact_id" options="{'no_create': True}" domain="[('partner_contact_sale_order', '=', customer_id)]" />
+                                </group>
+                                <group colspan="3" col="3">
+                                    <field name="park_id" colspan="3" domain="[('type', '=', 'intern')]" context="{'default_type': 'intern', 'type_park': 'intern'}" string="Equipment" />
+                                    <field name="maintenance_operation_id" colspan="3" domain="park_id and [('domain_park_id', '=', park_id)] or [('id', '=', False)]" attrs="{'invisible': [('type', '=', 'repair_sav')]}" />
+                                    <field name="type_invoice" colspan="3" />
+                                    <field name="park_num_serie_id" invisible="1" />
+                                    <field name="is_intern" invisible="1" />
+                                </group>
+                            </group>
+                            <notebook colspan="8">
+                                <page string="Analisys" attrs="{'invisible':[('type', 'in', ('preventive', 'security'))]}" >
+                                    <group colspan="8" col="4" string="Analisys" >
+                                        <field name="type_failure_id" />
+                                        <field name="cause_id" />
+                                        <group colspan="4" col="4" >
+                                            <field name="description" colspan="9" nolabel="1" />
+                                        </group>
+                                    </group>
+                                </page>
+                                <page string="Planning">
+                                    <group colspan="8" col="9">
+                                        <group colspan="3" col="3">
+                                            <group colspan="3" col="3" string="Request" >
+                                                <field name="date_create" colspan="3" />
+                                                <field name="start_date_requested" colspan="3" />
+                                                <field name="ended_date_requested" colspan="3" />
+                                                <field name="tolerance" colspan="3" />
+                                            </group>
+                                        </group>
+                                        <group colspan="6" col="6">
+                                            <group colspan="3" col="3" string="Planning" attrs="{'invisible': [('type', '=', 'repair_sav')]}" >
+                                                <field name="start_date_planned" colspan="3" attrs="{'required': [('state', 'not in', ('waiting', 'cancel')), ('type', '!=', 'repair_sav')]}" />
+                                                <field name="time_theo_interv" colspan="3"  widget="float_time" />
+                                                <field name="ended_date_planned" colspan="3" attrs="{'required': [('state', 'not in', ('waiting', 'cancel')), ('type', '!=', 'repair_sav')]}" />
+                                                <field name="time_synchro_resource" colspan="3" />
+                                            </group>
+                                            <group colspan="3" col="3" string="Production" attrs="{'invisible': [('type', '=', 'repair_sav')]}" >
+                                                <field name="start_date_real" colspan="3" attrs="{'required': [('state', 'in', ('performed', 'done')), ('type', '!=', 'repair_sav')]}" />
+                                                <field name="time_real_interv" colspan="3"  widget="float_time" />
+                                                <field name="ended_date_real" colspan="3" attrs="{'required': [('state', '=', 'done'), ('type', '!=', 'repair_sav')]}" />
+                                                <field name="alert" colspan="3" />
+                                            </group>
+                                        </group>
+                                    </group>
+                                </page>
+                                <page string="Resources/materials" >
+                                    <group colspan="8" col="8" string="Pieces of maintenance" >
+                                        <field name="piece_maintenance_ids" colspan="8" nolabel="1">
+                                            <tree editable="bottom" string="Pieces of maintenance">
+                                                <field name="product_id" />
+                                                <field name="description" />
+                                                <field name="qty" />
+                                                <field name="uom_id" domain="product_id and [('category_id', '=', uom_category_id)] or []" />
+                                                <field name="price" column_invisible="[('type_invoice', '!=', 'billable')]" />
+                                                <field name="is_to_invoice" invisible="1" column_invisible="[('type_invoice', '!=', 'billable')]" />
+                                                <field name="invoice_line_id" invisible="1" column_invisible="[('type_invoice', '!=', 'billable')]" />
+                                                <field name="purchase_id" invisible="1" />
+                                                <button name="button_create_purchase" string="Create purchase" type="object" 
+                                                        icon="fa-check" colspan="4" attrs="{'invisible': ['|', '|', '|', ('is_wo_rm', '=', True), ('purchase_id', '!=', False), ('park_type', '!=', 'external'), ('product_id', '=', False)]}" />
+                                                <field name="picking_id" invisible="1" />
+                                                <field name="is_wo_rm" invisible="1" />
+                                                <field name="uom_category_id" invisible="1" />
+                                                <field name="park_type" invisible="1" />
+                                                <field name="type_invoice" invisible="1" />
+                                            </tree>
+                                        </field>
+                                    </group> 
+                                    <group colspan="8" col="8" string="Resources" attrs="{'invisible': [('type', '=', 'repair_sav')]}" >
+                                        <field name="resource_intervention_ids" colspan="8" nolabel="1">
+                                            <tree editable="bottom" string="Resources">
+                                                <field name="categ_resource_id" />
+                                                <field name="resource_id" domain="[('domain_resource_gmao', 'in', all_resource_ids)]"/>
+                                                <field name="start_date" />
+                                                <field name="end_date" />
+                                                <field name="time" widget="float_time" />
+                                                <field name="all_resource_ids" invisible="1" />
+                                            </tree>
+                                        </field>
+                                    </group> 
+                                    <group colspan="8" col="8" string="Manufacturings orders of repair" attrs="{'invisible': [('type', '!=', 'repair_sav')]}"  >
+                                        <field name="mo_ids" nolabel="1" colspane="8" />
+                                    </group>
+                                </page>
+                                <page string="Instructions/Notes">
+                                    <group colspan="8" col="8" string="Instructions" >
+                                        <field name="instruction_intervention_ids" colspan="8" nolabel="1">
+                                            <tree string="Instructions">
+                                                <field name="sequence" />
+                                                <field name="name" />
+                                                <field name="plan_id" />
+                                                <field name="time" widget="float_time" />
+                                                <field name="date" />
+                                                <field name="user_id" />
+                                                <field name="state" />
+                                                <button name="wkf_done" string="Finish" type="object" states="to_do" icon="fa-check" />
+                                                <button name="wkf_todo" string="To do" type="object" states="cancel" icon="fa-check" />
+                                                <button name="wkf_cancel" string="Cancel" type="object" states="to_do,done" icon="gtk-cancel" />
+                                            </tree>
+                                            <form string="Instructions">
+                                                <group colspan="4" col="4">
+                                                    <field name="sequence" />
+                                                    <field name="name" />
+                                                    <field name="plan_id" />
+                                                    <field name="time" widget="float_time" />
+                                                    <field name="date" />
+                                                    <field name="user_id" />
+                                                    <field name="state" readonly="1" />
+                                                    <group colspan="4" col="4" string="Description" >
+                                                        <field name="description" colspan="4" nolabel="1" />
+                                                    </group>
+                                                </group>
+                                            </form>
+                                        </field>
+                                    </group>
+                                    <group colspan="8" col="8" string="Notes" >
+                                        <field name="note" colspan="8" nolabel="1"/>
+                                    </group>
+                                </page>
+                                <page string="Quotations" attrs="{'invisible':[('park_type', '!=', 'external')]}" >
+                                    <group colspan="8" col="9" string="Quotations">
+                                        <field name="quotation_ids" nolabel="1" colspan="9" context="{'default_customer_id': customer_id}" >
+                                            <tree editable="bottom" string="Quotations">
+                                                <field name="product_id" domain="customer_id and 
+                                                                                [('sale_ok', '=', True), '|', ('sale_product_customerinfo', '=', customer_id), ('free_sale', '=', True)] 
+                                                                                or [('sale_ok', '=', True)]" />
+                                                <field name="qty" />
+                                                <field name="price" />
+                                                <field name="uom_id" domain="product_id and [('category_id', '=', uom_category_id)] or []" />
+                                                <field name="currency_id" />
+                                                <field name="uom_category_id" invisible="1" />
+                                                <field name="customer_id" invisible="1" />
+                                            </tree>
+                                        </field>
+                                        <field name="invoicing_spare_part" colspan="3" />
+                                    </group>
+                                    <group colspan="8" col="8" string="Sales">
+                                        <field name="sale_id" colspan="4" attrs="{'readonly': [('sale_line_ids', '!=', False)]}"
+                                               domain="[('state', '=', 'draft'), ('partner_id', '=', customer_id), ('currency_id', '=', currency_id)]" />
+                                        <field name="sale_line_ids" nolabel="1" colspan="8" >
+                                            <tree editable="bottom" string="Sales lines" create="false" >
+                                                <field name="sale_partner_id"/>
+                                                <field name="product_id"/>
+                                                <field name="requested_date"/>
+                                                <field name="confirmed_departure_date" string="Confirmed date"/>
+                                                <field name="uom_qty" string="Qty"/>
+                                                <field name="delivered_qty"/>
+                                                <field name="remaining_qty"/>
+                                                <field name="uom_id"/>
+                                                <field name="sale_state"/>
+                                            </tree>
+                                        </field>
+                                    </group>
+                                </page>
+                                <page string="Times">
+                                    <group colspan="8" col="5" string="Times" >
+                                        <field name="invoice_product_id" attrs="{'invisible':[('park_type', '!=', 'external')]}"/>
+                                        <label for="invoice_price" attrs="{'invisible':[('park_type', '!=', 'external')]}" />
+                                        <div attrs="{'invisible':[('park_type', '!=', 'external')]}" >
+                                            <field name="invoice_price" colspan="1" class="oe_inline" nolabel="1" attrs="{'invisible':[('park_type', '!=', 'external')]}" />
+                                            <field name="currency_invoice_id" colspan="1" class="oe_inline" nolabel="1" attrs="{'invisible':[('park_type', '!=', 'external')]}" />
+                                        </div>
+                                        <group colspan="5" col="5" >
+                                            <field name="timetracking_ids" colspan="5" nolabel="1" >
+                                                <tree string="Lists of charges" editable="bottom" create="false" >
+                                                    <field name="start_date" />
+                                                    <field name="end_date" required="1" />
+                                                    <field name="time" required="1" widget="float_time" />
+                                                    <field name="resource_id" required="1" />
+                                                    <field name="hourly_cost" invisible="1" />
+                                                    <field name="is_to_invoice" invisible="1" />
+                                                    <field name="invoice_line_id" invisible="1" />
+                                                </tree>
+                                            </field>
+                                        </group>
+                                        <group colspan="5" col="5" >
+                                            <field name="note_time" colspan="5" nolabel="1" />
+                                        </group>
+                                    </group>
+                                </page>
+                                <page string="Invoices" invisible="1" >
+                                    <group colspan="8" col="4" string="Invoicing"  >
+                                        <group colspan="2" col="2" >
+                                            <field name="is_invoice_times_past" colspane="2" />
+                                        </group>
+                                        <group colspan="2" col="2" >
+                                            <field name="is_invoice_piece_maintenance" colspane="2" attrs="{'readonly': [('invoicing_spare_part', '=', True)]}"/>
+                                        </group>
+                                        <field name="invoice_ids" nolabel="1" colspan="4" />
+                                    </group>
+                                </page>
+                                <page string="Communications">
+                                    <group colspan="8" col="8" string="Mails">
+                                        <field name="mail_ids" nolabel="1" colspan="8" />
+                                    </group>
+                                </page>
+                            </notebook>
+                        </group>
+                        <group colspan="1" col="1" class="op_shortcuts" >
+                            <separator colspan="1" string="Actions" name="separator_actions_menu"/>
+                            <button name="action_send_mail" type="object" string="Send Mail" class="oe_inline oe_stat_button" icon="fa-envelope"/>
+                            <button name="button_importation_maintenance_operation" string="Import maintenance operation" 
+                                    type="object" class="oe_inline oe_stat_button" icon="fa-download" attrs="{'invisible': [('maintenance_operation_id', '=', False)]}" />
+                            <button name="%(base_gmao_sav.act_wizard_create_timetracking_intervention)d" string="Declare time" 
+                                    type="action" icon="fa-hourglass-half" colspan="2" class="oe_inline oe_stat_button"
+                                    context="{'default_end_date': (datetime.datetime.utcnow()).strftime('%Y-%m-%d %H:%M:%S'), 'default_hourly_cost': invoice_price}" />
+                        </group>
+                    </group>
+                </form>
+            </field>
+        </record>
+        
+        
+		<!-- ACTION intervention -->
+		<record id="act_gmao_intervention_id" model="ir.actions.act_window">
+		    <field name="name">Lists of interventions</field>
+		    <field name="res_model">intervention</field>
+		    <field name="view_type">form</field>
+		    <field name="view_mode">tree,form,calendar,kanban</field>
+		    <field name="domain">[('park_type', '=', 'intern')]</field>
+		    <field name="context">{'default_is_intern': True}</field>
+		    <field name="search_view_id" ref="base_gmao_sav.view_search_intervention_id"/>
+		</record>
+		
+		<record id="act_gmao_intervention_id_tree" model="ir.actions.act_window.view">
+		    <field name="sequence" eval="10"/>
+		    <field name="view_mode">tree</field>
+		    <field name="view_id" ref="base_gmao_sav.view_tree_intervention_id"/>
+		    <field name="act_window_id" ref="act_gmao_intervention_id"/>
+		</record>
+		
+		<record model="ir.actions.act_window.view" id="act_gmao_intervention_id_form">
+		    <field name="sequence" eval="20"/>
+		    <field name="view_mode">form</field>
+		    <field name="view_id" ref="view_form_intervention_gmao_id"/>
+		    <field name="act_window_id" ref="act_gmao_intervention_id"/>
+		</record>
+
+        <menuitem name="Lists of interventions" action="act_gmao_intervention_id" id="menu_gmao_intervention_id" parent="submenu_gmao_id" sequence="30" groups="group_menu_gmao_user1" />
+        
+        
+        <!-- ======================== -->
+        <!--          Counter         -->
+        <!-- ======================== -->
+		
+		<!-- ACTION counter -->
+		<record id="act_gmao_counter_id" model="ir.actions.act_window">
+		    <field name="name">Definition counters</field>
+		    <field name="res_model">counter</field>
+		    <field name="view_type">form</field>
+		    <field name="view_mode">tree,form</field>
+		    <field name="domain">[]</field>
+		    <field name="context">{}</field>
+		    <field name="search_view_id" ref="base_gmao_sav.view_search_counter_id"/>
+		</record>
+		
+		<record id="act_gmao_counter_id_tree" model="ir.actions.act_window.view">
+		    <field name="sequence" eval="10"/>
+		    <field name="view_mode">tree</field>
+		    <field name="view_id" ref="base_gmao_sav.view_tree_counter_id"/>
+		    <field name="act_window_id" ref="act_gmao_counter_id"/>
+		</record>
+		
+		<record model="ir.actions.act_window.view" id="act_gmao_counter_id_form">
+		    <field name="sequence" eval="20"/>
+		    <field name="view_mode">form</field>
+		    <field name="view_id" ref="base_gmao_sav.view_form_counter_id"/>
+		    <field name="act_window_id" ref="act_gmao_counter_id"/>
+		</record>
+		
+		<menuitem name="Definition counters" action="act_gmao_counter_id" id="menu_gmao_counter_id" 
+		          parent="submenu_gmao_configuration_id" sequence="20" groups="group_menu_gmao_config1" />
+        
+        <menuitem name="Type of failure intervention" action="base_gmao_sav.act_type_failure_intervention_id" sequence="30"
+                  id="menu_gmao_type_failure_intervention_id" parent="submenu_gmao_configuration_id" groups="group_menu_gmao_config1"/>
+        
+        <menuitem name="Cause intervention" action="base_gmao_sav.act_cause_intervention_id" sequence="40"
+                  id="menu_gmao_cause_intervention_id" parent="submenu_gmao_configuration_id" groups="group_menu_gmao_config1"/>
+		
+		
+		<!-- ======================== -->
+        <!--   Resource_intervention  -->
+        <!-- ======================== -->
+        
+        
+        <!-- ACTION resource_intervention -->
+        <record id="act_gmao_resource_intervention_id" model="ir.actions.act_window">
+            <field name="name">Resources interventions</field>
+            <field name="res_model">resource.intervention</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">calendar,tree,form,kanban</field>
+            <field name="domain">[('park_type', '=', 'intern')]</field>
+            <field name="context">{}</field>
+            <field name="search_view_id" ref="base_gmao_sav.view_search_resource_intervention_id"/>
+        </record>
+        
+        <record id="act_gmao_resource_intervention_id_calendar" model="ir.actions.act_window.view">
+            <field name="sequence" eval="10"/>
+            <field name="view_mode">calendar</field>
+            <field name="view_id" ref="base_gmao_sav.view_calendar_resource_interventions_id"/>
+            <field name="act_window_id" ref="act_gmao_resource_intervention_id"/>
+        </record>
+        
+        <record id="act_gmao_resource_intervention_id_tree" model="ir.actions.act_window.view">
+            <field name="sequence" eval="20"/>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="base_gmao_sav.view_tree_resource_intervention_id"/>
+            <field name="act_window_id" ref="act_gmao_resource_intervention_id"/>
+        </record>
+        
+        <record model="ir.actions.act_window.view" id="act_gmao_resource_intervention_id_form">
+            <field name="sequence" eval="30"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="base_gmao_sav.view_form_resource_intervention_id"/>
+            <field name="act_window_id" ref="act_gmao_resource_intervention_id"/>
+        </record>
+        
+        <menuitem name="Resource intervention" action="act_gmao_resource_intervention_id" id="menu_gmao_resource_intervention_id" 
+                  parent="submenu_gmao_id" sequence="40" groups="group_menu_gmao_user1" />
+		
+		
+		
+	</data>
+</openerp>

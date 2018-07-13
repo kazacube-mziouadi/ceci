@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+		<!-- FORM VIEW Simulation -->
+		<record id='view_form_mrp_simulation' model='ir.ui.view'>
+			<field name="name">view_form_mrp_simulation</field>
+			<field name="model">mrp.simulation</field>
+			<field name="arch" type="xml">
+				<form string="Simulation" version="8.0">
+					<header>
+						<button name="simulate_button" states="draft" string="Simulate" type="object" class="oe_highlight" />
+						<button type="action" string="Plan done" states="progress" name="%(mrp.act_mrp_planning_mo_done_id)d" class="oe_highlight" attrs="{'invisible':['|', ('wo_ids', '=', [])]}" />
+						<button name="conf_delay_button" string="Confirm date" type="object" class="oe_highlight" attrs="{'invisible': [('need_delay_validation', '!=', True)]}" />
+						<button name="wkf_draft" states="cancel" string="Draft" type="object" class="oe_highlight" />
+						<button name="wkf_done" states="delay_confirmation" string="Done" type="object" class="oe_highlight" />
+						<button name="wkf_cancel" states="draft,progress, done" string="Cancel" type="object" class="openprod_cancel_button" confirm="Are you sure you want to cancel this simulation?" />
+						<button name="wkf_reset" states="done" string="Reset" type="object" class="openprod_cancel_button" confirm="Are you sure you want to reset this simulation?" />
+						<field name="state" widget="statusbar" statusbar_visible="draft,progress,done" />
+					</header>
+					<field name="need_delay_validation" invisible="1" />
+					<field name="unit_price" invisible="1" />
+					<group colspan="4" col="9">
+						<group colspan="8" col="4">
+							<group colspan="4" col="8">
+								<field name="product_id" colspan="4" />
+								<field name="simulation_name" />
+								<!-- <field name="warning" /> -->
+								<field name="procurement_deleted" />
+								<field name="customer_id" />
+								<field name="sale_line_id" />
+								<label for="sale_uom_qty" />
+								<div>
+									<field name="sale_uom_qty" class="oe_inline" />
+									<field name="sale_uom_id" class="oe_inline" />
+								</div>
+								<field name="planned_end_date" />
+								<field name="requested_date" readonly="0" required="1" />
+								<field name="date_ok" />
+								<field name="needed_quantity" />
+								<label for="quantity" />
+								<div>
+									<field name="quantity" class="oe_inline" />
+									<field name="uom_id" class="oe_inline" />
+								</div>
+								<notebook colspan="8">
+									<page string="BoM">
+										<group colspan="4" col="2" string="Lines">
+											<field name="simulation_line_ids" colspan="2" nolabel="1">
+												<tree colors="red:critical_path==True;blue:supply_method=='produce'">
+													<field name="product_id" invisible="1" />
+													<field name="name" />
+													<button name="%(sale_purchase.action_display_reservation)d" string="Display reservations" type="action" context="{'reservation_product_id': product_id}" icon="fa-area-chart" class="oe_inline oe_stat_button" />
+													<field name="quantity" />
+													<field name="uom_id" />
+													<field name="supplier_id" />
+													<field name="delay" />
+													<field name="available_stock" />
+													<field name="virtual_stock" />
+													<field name="availability" widget="progressbar" />
+													<field name="availability_date" />
+													<field name="supply_method" invisible="1" />
+													<field name="product_id" invisible="1" />
+													<field name="critical_path" invisible="1" />
+												</tree>
+											</field>
+										</group>
+									</page>
+									<page string="Work orders">
+										<group colspan="4" col="2" string="Work orders">
+											<field name="wo_ids" colspan="2" nolabel="1">
+												<tree default_order="sale_line_id ASC,sorting_level ASC" string="Workorders" version="8.0" colors="gray:state=='cancel'; blue:state=='draft'; brown:state=='done';">
+													<field name="color_priority_need_move" colors="red:color_priority_need_move==3; orange:color_priority_need_move==2; green:color_priority_need_move==1; black:color_priority_need_move==4" string=" " invisible="0" />
+													<field name="label" style="margin-left: 1000px" />
+													<field name="mo_id" />
+													<field name="name" />
+													<field name="quantity" />
+													<field name="uom_id" />
+													<button name="%(mrp.act_change_date_wo)d" string="Change Date" type="action" icon="terp-calendar" attrs="{'invisible':[('state', 'in', ('cancel', 'done'))]}" />
+													<field name="planned_start_date" />
+													<field name="planned_end_date" />
+													<field name="availability" widget="progressbar" />
+													<button type="action" string="Change resource" name="%(mrp.act_mrp_change_resource_wo_id)d" icon="terp-personal" />
+													<field name="first_resource_id" />
+													<field name="state" />
+													<field name="sorting_level" invisible="1" />
+													<field name="sale_line_id" invisible="1" />
+												</tree>
+											</field>
+										</group>
+									</page>
+									<page string="Purchases">
+										<group colspan="4" col="2" string="Raw material">
+											<field name="rm_pol_ids" colspan="2" nolabel="1" />
+										</group>
+										<group colspan="4" col="2" string="Final product">
+											<field name="fp_pol_ids" colspan="2" nolabel="1" />
+										</group>
+									</page>
+									<page string="Administration">
+										<group colspan="4" col="4">
+											<field name="mo_id" required="0" />
+											<field name="multi_level" />
+											<field name="bom_id" />
+											<field name="routing_id" />
+											<label for="note_manufacturing" string="Note for manufacturing" />
+											<field name="note_manufacturing" colspan="4" nolabel="1" />
+										</group>
+									</page>
+								</notebook>
+							</group>
+						</group>
+						<group colspan="1" col="1" class="op_shortcuts">
+							<separator colspan="1" string="Actions" name="separator_actions_menu" />
+							<button type="action" string="Plan at earlier" name="%(mrp.act_mrp_planning_mo_at_earlier_id)d" class="oe_inline oe_stat_button" icon="fa-calendar-minus-o" attrs="{'invisible':['|', ('wo_ids', '=', [])]}" context="{'default_is_from_simulation': True}" />
+							<button type="action" string="Plan at the latest" name="%(mrp.act_mrp_planning_mo_at_the_latest_id)d" class="oe_inline oe_stat_button" icon="fa-calendar-plus-o" attrs="{'invisible':['|', ('wo_ids', '=', [])]}" context="{'default_is_from_simulation': True}" />
+							<button name="button_del_mo_and_son_mo" string="Delete MO and son MO" type="object" class="oe_inline oe_stat_button" icon="fa-times" confirm="Warning, you will remove MO and children" attrs="{'invisible': [('wo_ids', '=', False)]}" />
+						</group>
+					</group>
+				</form>
+			</field>
+		</record>
+
+		<!-- TREE VIEW Simulation -->
+		<record id='view_tree_mrp_simulation' model='ir.ui.view'>
+			<field name="name">view_tree_mrp_simulation</field>
+			<field name="model">mrp.simulation</field>
+			<field name="arch" type="xml">
+				<tree string="Simulations" version="8.0">
+					<field name="simulation_name" />
+					<field name="product_id" />
+					<field name="quantity" />
+					<field name="customer_id" />
+					<field name="requested_date" />
+					<field name="procurement_deleted" />
+					<field name="state" />
+					<field name="need_delay_validation" invisible="1" />
+					<button name="conf_delay_button" string="Confirm date" type="object" attrs="{'invisible': [('need_delay_validation', '!=', True)]}" />
+				</tree>
+			</field>
+		</record>
+
+		<!-- SEARCH VIEW Simulation -->
+		<record id='view_search_mrp_simulation' model='ir.ui.view'>
+			<field name="name">view_search_mrp_simulation</field>
+			<field name="model">mrp.simulation</field>
+			<field name="arch" type="xml">
+				<search version="8.0">
+					<field name="simulation_name" />
+					<field name="product_id" />
+					<field name="quantity" />
+					<field name="customer_id" />
+					<field name="requested_date" />
+					<field name="state" />
+				</search>
+			</field>
+		</record>
+
+		<!-- ACTION Simulation -->
+		<record id="act_mrp_simulation" model="ir.actions.act_window">
+			<field name="name">Simulation</field>
+			<field name="res_model">mrp.simulation</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+			<field name="search_view_id" ref="view_search_mrp_simulation" />
+		</record>
+		<menuitem name="Simulation" action="act_mrp_simulation" id="menu_mrp_simulation" parent="mrp.menu_production_manufacturing" sequence="100" />
+	</data>
+</openerp>

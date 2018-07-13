@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+
+		<!-- FORM VIEW Bom -->
+		<record id='view_form_mrp_bom' model='ir.ui.view'>
+			<field name="name">view_form_mrp_bom</field>
+			<field name="model">mrp.bom</field>
+			<field name="inherit_id" ref="mrp.view_form_mrp_bom" />
+			<field name="arch" type="xml">
+				<xpath expr="//field[@name='price_total_component']" position="after">
+					<field name="variant_category_ids" invisible="1" />
+				</xpath>
+				<xpath expr="//field[@name='bom_ids']/tree/field[@name='price_unit']" position="after">
+					<field name="categories_str" />
+					<field name="has_parent_variant_categories" invisible="1" />
+					<button name="%(act_edit_categories)d" type="action" string="Edit" icon="gtk-edit" class="oe_inline oe_stat_button" attrs="{'invisible':[('has_parent_variant_categories', '=', False)]}" />
+				</xpath>
+				<xpath expr="//field[@name='bom_ids']/form//field[@name='price_unit']" position="after">
+                    <field name="categories_str" />
+                    <field name="has_parent_variant_categories" invisible="1" />
+                    <button name="%(act_edit_categories)d" type="action" string="Edit" icon="gtk-edit" class="oe_inline oe_stat_button" attrs="{'invisible':[('has_parent_variant_categories', '=', False)]}" />
+                </xpath>
+				<xpath expr="//field[@name='product_id']" position="attributes">
+					<attribute name="domain">[('produce_ok','=',True),('model_id', '=', False)]</attribute>
+				</xpath>
+			</field>
+		</record>
+
+		<!-- FORM VIEW Manufacturing -->
+		<record id='view_form_mrp_manufacturingorder' model='ir.ui.view'>
+			<field name="name">view_form_mrp_manufacturingorder</field>
+			<field name="model">mrp.manufacturingorder</field>
+			<field name="inherit_id" ref="mrp.view_form_mrp_manufacturingorder" />
+			<field name="arch" type="xml">
+				<xpath expr="//group[@name='options_page']" position="after">
+					<group string="Variant values">
+						<field name="variant_value_ids" nolabel="1" attrs="{'readonly':[('workorder_ids', '!=', [])]}">
+							<tree editable="bottom">
+								<field name="variant_category_id" />
+								<field name="value" />
+							</tree>
+						</field>
+					</group>
+				</xpath>
+				<xpath expr="//button[@name='action_generating_wo']" position="before">
+					<button class="oe_inline oe_stat_button" string="Configure" type="action" name="%(act_fill_questionnaire)d"
+						icon="fa-gears" context="{'default_mo_id':active_id}" attrs="{'invisible':[('workorder_ids', '!=', [])]}" />
+				</xpath>
+			</field>
+		</record>
+
+	</data>
+</openerp>

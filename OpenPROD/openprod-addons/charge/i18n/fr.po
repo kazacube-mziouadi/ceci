@@ -1,0 +1,58 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* charge
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 9.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-01-21 08:48+0000\n"
+"PO-Revision-Date: 2016-01-21 08:48+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: charge
+#: model:ir.model,name:charge.model_calendar_loading
+msgid "Calendar Loading"
+msgstr "Suivi de charges"
+
+#. module: charge
+#: model:ir.ui.menu,name:charge.menu_charge_categories
+msgid "Categories"
+msgstr "Catégories"
+
+#. module: charge
+#: model:ir.model.fields,field_description:charge.field_calendar_loading_resource_category_id
+msgid "Category of first resource"
+msgstr "Catégorie de la première ressource"
+
+#. module: charge
+#: model:ir.ui.menu,name:charge.menu_charge
+msgid "Charge"
+msgstr "Charge"
+
+#. module: charge
+#: model:ir.actions.act_window,name:charge.act_charge_categ_resource
+msgid "Charge per category"
+msgstr "Charge par catégorie"
+
+#. module: charge
+#: model:ir.actions.act_window,name:charge.act_charge_resource
+#: model:ir.ui.view,arch_db:charge.view_graph_charge_resource
+msgid "Charge per resource"
+msgstr "Charge par ressource"
+
+#. module: charge
+#: model:ir.ui.view,arch_db:charge.view_graph_charge_categ_resource
+msgid "Charge per resource category"
+msgstr "Charge par catégorie de ressource"
+
+#. module: charge
+#: model:ir.ui.menu,name:charge.menu_charge_resource
+msgid "Resources"
+msgstr "Ressources"
+

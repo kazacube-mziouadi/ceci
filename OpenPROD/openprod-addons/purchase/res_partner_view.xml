@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+		
+		<!-- FORM VIEW Partner -->
+		<record id="view_form_partner_purchase" model="ir.ui.view">
+			<field name="name">view_form_partner_purchase</field>
+			<field name="inherit_id" ref="partner_openprod.openprod_view_partner_form" />
+			<field name="model">res.partner</field>
+			<field name="arch" type="xml">
+				<xpath expr="//page[@name='contacts_notes_page']" position="after">
+					<page string="Purchase" attrs="{'invisible': ['|', ('is_supplier', '=', False), ('is_company', '=', False)]}">
+						<group colspan="4" col="6">
+							<group colspan="2" col="2">
+								<group colspan="2" col="2" string="Order management" name="group_order_management" >
+									<field name="purchase_stat_family_id" domain="[('is_purchase','=',True)]" context="{'default_is_purchase': True}"/>
+									<field name="purchaser_id"/>
+									<field name="gei_code"/>
+									<field name="num_with_supplier"/>
+								</group>
+								<group colspan="2" col="2" string="Delivery" name="group_purchase_delivery" attrs="{'readonly': [('delivered_by', '!=', True)]}" >
+									<field name="partial_purchase_delivery"/>
+									<field name="generate_purchase_rest"/>
+									<field name="supplier_account_position_id" attrs="{'required': [('is_company', '=', True),('is_supplier', '=', True), ('state', '=', 'qualified'),('delivered_by', '=', True)]}"/>
+								</group>
+								<group colspan="2" col="2" string="Communication method" name='purchase_delivery_reminder'>
+									<field name="purchase_receipt_demand"/>
+									<field name="supplier_reminder"/>
+									<field name="reminder_delay" attrs="{'invisible': [('supplier_reminder','=',False)]}"/>
+									<field name="purchase_contact_ids" options="{'no_create': True}" widget="many2many_tags"
+									 domain="[('contact_in_partner_purchase', 'in', contact_ids)]"/>
+									<field name="purchase_communication_method"/>
+									<field name="purchase_communication_value"/>
+								</group>
+							</group>
+							<group colspan="4" col="2">
+								<group colspan="2" col="4" string="Description">
+									<field name="is_seller"/>
+									<field name="invoiced_by"/>
+									<field name="delivered_by"/>
+									<field name="paid_to"/>
+									<field name="purchase_type_ids" colspan="4" nolabel="1" attrs="{'invisible': ['|', '|', ('is_seller', '=', False), ('is_supplier', '=', False), ('is_company', '=', False)]}" >
+										<tree editable="bottom">
+											<field name="sequence"/>
+											<field name="partner_type"/>
+											<field name="partner_type_id" context="{'default_is_company': True, 'default_is_supplier': True, 'default_is_seller': True, 'default_invoiced_by': True, 'default_delivered_by': True, 'default_paid_to': True}"
+                                                   domain="[('id','!=',parent.id),(partner_type,'=',True),('is_company','=',True),'|', ('state','!=','stopped'), ('state','=',False)]" 
+                                                   attrs="{'readonly': [('partner_type', '=', False)], 'required': [('partner_type', '!=', False)]}"/>
+										</tree>
+									</field>
+									<field name="purchase_type_inv_ids" colspan="4" nolabel="1" attrs="{'invisible': ['|', '|', ('is_seller', '=', True), ('is_supplier', '=', False), ('is_company', '=', False)]}" />
+								</group>
+								<group colspan="2" col="4" string="Paiement process management" name="purchase_paiement_process" attrs="{'readonly': [('paid_to', '!=', True)]}" >
+									<group colspan="4" col="4">
+										<field name="property_supplier_payment_term_id" attrs="{'required': [('is_company', '=', True),('is_supplier', '=', True), ('state', '=', 'qualified'),('paid_to', '=', True)]}"/>
+										<field name="purchase_invoicing_method_id" attrs="{'required': [('is_company', '=', True),('is_supplier', '=', True), ('state', '=', 'qualified'),('paid_to', '=', True)]}"/>
+										<field name="purchase_payment_method_id" attrs="{'required': [('is_company', '=', True),('is_supplier', '=', True), ('state', '=', 'qualified'),('paid_to', '=', True)]}"/>
+									</group>
+									<group colspan="4" col="6">
+										<field name="purchase_discount_management"/>
+										<field name="purchase_max_delay" attrs="{'invisible': [('purchase_discount_management', '=', False)], 'required': [('is_supplier','=',True),('is_company','=',True),('purchase_discount_management','=',True)]}"/>
+										<field name="purchase_discount_value" attrs="{'invisible': [('purchase_discount_management', '=', False)], 'required': [('is_supplier','=',True),('is_company','=',True),('purchase_discount_management','=',True)]}"/>
+									</group>
+								</group>
+							</group>
+							<group colspan="4" col="2" string="Note on purchase order header" name="purchase_note">
+								<field name="note_purchase_header" nolabel="1" colspan="2"/>
+							</group>
+						</group>
+					</page>
+				</xpath>
+				<xpath expr="//group[@name='purchase_transp_contact']" position="inside" >
+					<group colspan="2" col="4" string="Purchase" attrs="{'invisible': [('is_supplier', '=', False)], 'readonly': [('delivered_by', '!=', True)]}" name="group_purchase_transp" >
+						<group colspan="4" col="2">
+							<field name="purchase_incoterm_id"/>
+							<field name="purchase_invoice_postage" attrs="{'invisible': [('purchase_incoterm_id', '=', 1)], 'required': [('purchase_incoterm_id', 'not in', (1, False)),('is_supplier', '=', True)]}"/>
+							<field name="purchase_threshold" attrs="{'invisible': ['|', ('purchase_invoice_postage', '!=', 'threshold'), ('purchase_incoterm_id', '=', 1)], 'required': [('purchase_invoice_postage', '=', 'threshold'), ('purchase_incoterm_id', '!=', 1)]}"/>
+							<field name="purchase_forwarding_agent_id"/>
+							<field name="purchase_delivery_delay" attrs="{'required': [('is_supplier', '=', True), ('is_company', '=', True), ('delivered_by', '=', True)]}"/>
+						</group>
+						<separator string="Note on receipt order" colspan="4"/>
+						<field name="note_receipt_order" colspan="4" nolabel="1"/>
+					</group>
+				</xpath>
+				<xpath expr="//separator[@name='separator_analysis_menu']" position="after">
+					<button class="oe_inline oe_stat_button" type="object" string="Purchases" name="show_partner_purchase" icon="fa-credit-card"
+					attrs="{'invisible': ['|',('is_company', '=', False), ('is_supplier', '=', False), ('is_seller', '=', False)]}" />
+				</xpath>
+			</field>
+		</record>
+		
+				<!-- SEARCH VIEW Supplier-->
+		<record id='openprod_view_partner_supplier_search' model='ir.ui.view'>
+			<field name="name">openprod_view_partner_supplier_search</field>
+			<field name="inherit_id" ref="partner_openprod.openprod_view_partner_supplier_search" />
+			<field name="model">res.partner</field>
+			<field name="arch" type="xml">
+				<xpath expr="//filter[@name='partner_state']" position="after">
+					<filter string="My suppliers" domain="[('purchaser_id', '=', uid)]"/>
+					<filter string="Purchase stat family" domain="[]" context="{'group_by': 'purchase_stat_family_id'}" />
+					<filter string="Purchaser" domain="[]" context="{'group_by': 'purchaser_id'}" />
+				</xpath>
+			</field>
+		</record>
+		
+		<!-- =================== -->
+		<!-- PARTNER STAT FAMILY -->
+		<!-- =================== -->
+		
+		<!-- SEARCH VIEW Partner stat family -->
+		<record id='view_search_partner_stat_purchase_family' model='ir.ui.view'>
+			<field name="name">view_search_partner_stat_purchase_family</field>
+			<field name="model">partner.stat.family</field>
+			<field name="arch" type="xml">
+				<search version="8.0">
+					<field name="name"/>
+				</search>
+			</field>
+		</record>
+		
+		<!-- FORM VIEW Partner stat purchase family -->
+		<record id="view_form_res_partner_stat_family" model="ir.ui.view">
+			<field name="name">view_form_res_partner_stat_family</field>
+			<field name="inherit_id" ref="partner_openprod.view_form_res_partner_stat_family"/>
+			<field name="model">partner.stat.family</field>
+			<field name="arch" type="xml">
+				<xpath expr="//field[@name='name']" position="after">
+					<field name="is_purchase"/>
+				</xpath>
+			</field>
+		</record>
+		
+		
+		<!-- ACTION Partner stat purchase family -->
+		<record id="act_partner_stat_purchase_family" model="ir.actions.act_window">
+		    <field name="name">Partner purchase stat family</field>
+		    <field name="res_model">partner.stat.family</field>
+		    <field name="view_type">form</field>
+		    <field name="view_mode">tree,form</field>
+		    <field name="domain">[('is_purchase', '=', True)]</field>
+		    <field name="context">{'default_is_purchase': True}</field>
+		    <field name="search_view_id" ref="view_search_partner_stat_purchase_family"/>
+		</record>
+		
+		<menuitem name="Partner purchase stat family" action="act_partner_stat_purchase_family" id="menu_open_purchase_stat_family" parent="partner_openprod.menu_partner_categories" groups="partner_openprod.group_menu_partner_manager"/>
+        <menuitem name="Partner purchase stat family" action="act_partner_stat_purchase_family" id="menu_open_purchase_stat_family_supplier" parent="menu_purchase_configuration_supplier" groups="partner_openprod.group_menu_partner_manager"/>
+	</data>
+</openerp>

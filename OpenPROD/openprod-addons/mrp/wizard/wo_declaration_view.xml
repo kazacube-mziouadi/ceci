@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+		
+		<!-- ================================ -->
+		<!-- 	WorkOrder Declaration Main    -->
+		<!-- ================================ -->
+		
+		<record model="ir.ui.view" id="view_form_wo_declaration_main">
+			<field name="name">view_form_wo_declaration_main</field>
+			<field name="model">wo.declaration.main</field>
+			<field name="type">form</field>
+			<field name="arch" type="xml">
+				<form string="Manufacturing declaration">
+					<group colspan="4" col="4">
+						<field name="wo_id" domain="[('state', 'not in', ('draft', 'plan', 'waiting', 'cancel'))]" context="{'domain_scan_id':True}" />
+						<field name="type" />
+						<field name="user_id" />
+						<field name="product_id" />
+						<field name="quantity" />
+						<field name="uom_id" />
+						<field name="date" />
+						<field name="is_simple_declaration" />
+					</group>
+					<footer>
+						<button name="action_validate" string="OK" type="object" class="oe_highlight" />
+						or
+						<button string="Cancel" class="oe_link" special="cancel" />
+					</footer>
+				</form>
+			</field>
+		</record>
+
+		<record model="ir.actions.act_window" id="action_wo_declaration_main">
+			<field name="name">Manufacturing declaration</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="res_model">wo.declaration.main</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">form</field>
+			<field name="target">new</field>
+		</record>
+		
+		
+		
+		<!-- ============================================= -->
+		<!-- 	WorkOrder Declaration Label Consumption    -->
+		<!-- ============================================= -->
+		
+		<record id='view_form_assign_label_wo_consumption' model='ir.ui.view'>
+			<field name="name">view_form_assign_label_wo_consumption</field>
+			<field name="model">assign.label.wo.consumption</field>
+			<field name="arch" type="xml">
+				<form string="Assign label" version="8.0">
+					<group colspan="4" col="4">
+						<field name="move_id" invisible="1" />
+						<field name="consumption_line_id" invisible="1" />
+						<group colspan="4" col="6">
+							<field name="product_id" />
+							<field name="product_qty" />
+							<field name="uom_id" />
+							<field name="is_variable_double_unit" invisible="1" />
+						</group>
+						<field name="line_ids" colspan="4" nolabel="1" context="{'default_consumption_line_id': consumption_line_id, 'is_variable_double_unit': is_variable_double_unit}" options="{'no_create': True}">
+							<tree string="lines" editable="top">
+								<field name="is_variable_double_unit" invisible="1" />
+								<field name="consumption_line_id" invisible="1" />
+								<field name="label_id" domain="[('assign_label_wo_consumption', 'in', consumption_line_id)]" />
+								<field name="quantity_init" />
+								<field name="quantity" />
+								<field name="uom_id" />
+								<field name="quantity_init_inv" invisible="1" />
+								<field name="sec_quantity_init" groups="base.group_variable_dual_unit" />
+								<field name="sec_uom_qty" groups="base.group_variable_dual_unit" attrs="{'readonly': [('is_variable_double_unit', '!=', True)]}" />
+								<field name="sec_uom_id"  readonly="1" />
+							</tree>
+						</field>
+					</group>
+					<footer>
+						<button name="action_validate" string="OK" type="object" class="oe_highlight" />
+						or
+						<button string="Cancel" class="oe_link" special="cancel" />
+					</footer>
+				</form>
+			</field>
+		</record>
+
+		<!-- ACTION Assign label -->
+		<record id="act_assign_label_wo_consumption_form" model="ir.actions.act_window">
+			<field name="name">Assign label</field>
+			<field name="res_model">assign.label.wo.consumption</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">form</field>
+			<field name="target">new</field>
+		</record>
+		
+		
+        <record model="ir.ui.view" id="view_form_assign_add_label_wo_consumption">
+            <field name="name">view_form_assign_add_label_wo_consumption</field>
+            <field name="model">assign.add.label.wo.consumption</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Labels">
+                    <group colspan="4" col="4">
+                        <field name="label_ids" colspan="4" nolabel="1" domain="[('assign_label_wo_consumption', 'in', wdcl_id)]" />
+	                    <field name="wdcl_id" colspan="4" invisible="1" />
+                    </group>
+                    <footer>
+                        <button name="action_validate" string="OK" type="object" class="oe_highlight" />
+                        or
+                        <button string="Cancel" class="oe_link" special="cancel" />
+                    </footer>
+               </form>
+            </field>
+       </record>
+                    		
+		<!-- ======================================= -->
+		<!-- 	WorkOrder Declaration Consumption    -->
+		<!-- ======================================= -->
+		
+		<record model="ir.ui.view" id="view_form_wo_declaration_consumption">
+			<field name="name">view_form_wo_declaration_consumption</field>
+			<field name="model">wo.declaration.consumption</field>
+			<field name="type">form</field>
+			<field name="arch" type="xml">
+				<form string="Declaration Consumption">
+					<group colspan="4" col="4">
+						<field name="declaration_id" invisible="1" />
+						<field name="wo_id" invisible="1" />
+						<field name="quantity" invisible="1" />
+						<field name="is_produce" invisible="1" />
+						<field name="is_labels" invisible="1" />
+						<field name="line_ids" nolabel="1" colspan="4" >
+							<tree string="line" editable="top">
+								<field name="product_id" readonly="1" />
+								<field name="is_variable_double_unit" invisible="1" />
+								<field name="quantity" 	attrs="{'readonly': [('track_label', '=', True)]}" />
+								<field name="label_qty" attrs="{'invisible': [('track_label', '=', False)]}" readonly="1" />
+								<field name="uom_id" />
+								<field name="sec_uom_qty" groups="base.group_variable_dual_unit"  attrs="{'readonly': ['|', ('is_variable_double_unit', '!=', True), ('track_label', '=', True)]}"/>
+								<field name="sec_label_qty" groups="base.group_variable_dual_unit"  attrs="{'invisible': [('track_label', '=', False)]}" readonly="1" />
+								<field name="sec_uom_id" groups="base.group_variable_dual_unit" />
+								<field name="is_invisible" invisible="1" />
+								<field name="move_id" invisible="1" />
+								<field name="parent_id" invisible="1" />
+								<field name="track_label" invisible="1" />
+								<field name="track_out_lot" invisible="1" />
+								<field name="lot_id" context="{'default_product_id': product_id}" attrs="{'readonly': [('track_out_lot', '!=', True)]}" domain="[('product_id', '=', product_id)]"/>
+                                <button name="button_modif_assign_label_wo_consumption_form" string="Modif label qty" type="object" class="oe_inline oe_stat_button" attrs="{'invisible':[('track_label', '=', False)]}" context="{'is_variable_double_unit': is_variable_double_unit}" />
+                                <button name="button_add_assign_label_wo_consumption_form" string="Add label" type="object" class="oe_inline oe_stat_button" attrs="{'invisible':[('track_label', '=', False)]}" />
+							</tree>
+						</field>
+						<group colspan="4" col="4" string="Zone scan" attrs="{'invisible': [('is_labels', '!=', True)]}" >
+						  <field name="labels_names" nolabel="1" colspan="4" />
+						  <button name="action_validate_scanne" string="Valide scan" type="object" class="oe_highlight" />
+                        </group>
+					</group>
+					<footer>
+						<button name="action_validate" string="OK" type="object" class="oe_highlight" />
+						or
+						<button string="Cancel" class="oe_link" special="cancel" />
+					</footer>
+				</form>
+			</field>
+		</record>
+		
+		<record model="ir.actions.act_window" id="act_wo_declaration_consumption_form">
+            <field name="name">Declaration Consumption</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">wo.declaration.consumption</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+	
+	
+	
+		<!-- =================================== -->
+		<!-- 	WorkOrder Declaration Produce    -->
+		<!-- =================================== -->
+		
+		<record model="ir.ui.view" id="view_form_wo_declaration_produce">
+			<field name="name">view_form_wo_declaration_produce</field>
+			<field name="model">wo.declaration.produce</field>
+			<field name="type">form</field>
+			<field name="arch" type="xml">
+				<form string="Declaration Produce">
+					<field name="is_variable_double_unit" invisible="1" />
+					<group colspan="4" col="6">
+						<group colspan="6" col="8" string="Informations WO" >
+							<field name="product_id" readonly="1" />
+							<field name="wo_id" readonly="1" />
+							<field name="uom_id" readonly="1" />
+<!-- 							<group colspan="2" col="2" attrs="{'invisible': [('is_variable_double_unit', '!=', True)]}" /> -->
+<!-- 							<group colspan="2" col="2" attrs="{'invisible': [('is_variable_double_unit', '!=', True)]}" /> -->
+<!-- 							<field name="sec_uom_id" readonly="1" attrs="{'invisible': [('is_variable_double_unit', '!=', True)]}" /> -->
+                             
+                            <!--  group quantité  -->
+                            <field name="quantity" readonly="1" />
+                            <field name="qty_ok" attrs="{'readonly': [('is_control_declaration', '=', True)]}" />
+                            <field name="qty_quarantine" attrs="{'readonly': [('is_control_declaration', '=', True)]}" />
+                            <field name="qty_hs" attrs="{'readonly': [('is_control_declaration', '=', True)]}" />
+                            <group colspan="2" attrs="{'invisible': [('is_variable_double_unit', '!=', True)]}" />
+                            <field name="sec_qty_ok" attrs="{'readonly': [('is_control_declaration', '=', True)], 'invisible': [('is_variable_double_unit', '!=', True)]}" />
+                            <field name="sec_qty_quarantine" attrs="{'readonly': [('is_control_declaration', '=', True)], 'invisible': [('is_variable_double_unit', '!=', True)]}" />
+                            <field name="sec_qty_hs" attrs="{'readonly': [('is_control_declaration', '=', True)], 'invisible': [('is_variable_double_unit', '!=', True)]}" />
+                            
+                            <!--  group action  -->
+                            <field name="wind_up" />
+                            <field name="new_auto_lot" attrs="{'invisible': [('track_label', '!=', True)]}" />
+                            <field name="lot_id" attrs="{'invisible': ['|', ('track_label', '!=', True), ('new_auto_lot', '!=', False)], 'required': [('track_label', '=', True), ('new_auto_lot', '!=', True)]}" 
+                                   create="False" domain="[('domain_lot_wo', '=', wo_id)]" />
+                            <field name="control_declaration_id" domain="[('id', '=', control_declaration_id)]" 
+                                   attrs="{'invisible': [('is_control_declaration', '=', False)], 'readonly': [('is_control_declaration', '!=', False)]}"/>
+                            <button name="button_control_declaration" string="Control Declaration" type="object" class="oe_highlight" colspan="1" 
+                                    attrs="{'invisible': ['|', ('is_recalculate_frequency_control', '=', True), ('is_control_declaration', '=', False)]}" />
+                            <field name="quality_rl" invisible="1" />
+						</group>
+						<group colspan="6" col="8" string="Label UM" attrs="{'invisible': [('track_label', '!=', True)]}" groups="stock.group_display_um" >
+	                        <group colspan="1" col="2">
+	                            <field name="new_auto_um" />
+	                        </group>
+	                        <group colspan="6" col="6">
+	                            <field name="label_um_number" attrs="{'invisible': [('new_auto_um', '=', False)]}" colspan="2" />
+	                            <field name="label_template_um_id" domain="[('type', '=', 'um')]" attrs="{'invisible': [('new_auto_um', '=', False)], 'required': [('new_auto_um', '=', True)]}" colspan="2" />
+	                            <field name="label_um_id" attrs="{'invisible': [('new_auto_um', '=', True)]}" colspan="2" domain="[('type', '=', 'um')]" />
+	                        </group>
+	                    </group>
+						<group colspan="6" col="6" string="Labels" attrs="{'invisible': [('track_label', '!=', True)]}" >
+							<field name="nb_label" attrs="{'invisible': ['|', ('track_label', '!=', True), ('label_mo_repair_id', '!=', False)], 'required': [('track_label', '=', True), ('label_mo_repair_id', '=', False)]}"/>
+							<field name="qty_label" attrs="{'invisible': ['|', ('track_label', '!=', True), ('label_mo_repair_id', '!=', False)], 'required': [('track_label', '=', True), ('label_mo_repair_id', '=', False)]}"/>
+							<field name="is_print_label" attrs="{'invisible': [('track_label', '!=', True)]}" />
+							<newline attrs="{'invisible': ['|', '|', ('track_label', '!=', True), ('is_variable_double_unit', '!=', True), ('label_mo_repair_id', '!=', False)]}" />
+							<group colspan="2" col="2" attrs="{'invisible': ['|', '|', ('track_label', '!=', True), ('is_variable_double_unit', '!=', True), ('label_mo_repair_id', '!=', False)]}" />
+							<field name="sec_qty_label" attrs="{'invisible': ['|', '|', ('track_label', '!=', True), ('is_variable_double_unit', '!=', True), ('label_mo_repair_id', '!=', False)], 'required': [('track_label', '=', True), ('label_mo_repair_id', '=', False)]}"/>
+							<newline attrs="{'invisible': ['|', '|', ('track_label', '!=', True), ('is_variable_double_unit', '!=', True), ('label_mo_repair_id', '!=', False)]}" />
+							<field name="label_template_id" attrs="{'invisible': ['|', ('track_label', '!=', True), ('label_mo_repair_id', '!=', False)], 'required': [('track_label', '=', True), ('label_mo_repair_id', '=', False)]}"/>
+							<button name="generate_label" string="Generate Label" type="object" class="oe_highlight" attrs="{'invisible': ['|', '|', ('track_label', '!=', True), ('label_mo_repair_id', '!=', False), ('label_mo_repair_id', '!=', False)]}" colspan="1" />
+							<button name="delete_label" string="Delete Label" type="object" class="oe_highlight" attrs="{'invisible': ['|', '|', ('track_label', '!=', True), ('is_generate','=',False), ('label_mo_repair_id', '!=', False)]}" colspan="1" />
+							<field name="is_expiry_date" invisible="1" />
+							<field name="expiry_date" attrs="{'invisible': ['|', ('track_label', '!=', True), ('is_expiry_date', '!=', True)], 'required': [('track_label', '=', True), ('is_expiry_date', '=', True)]}" />
+							<field name="label_mo_repair_id" invisible="1" />
+							<field name="asign_label_ids" 
+								   nolabel="1" colspan="6" domain="[('id', '=', False)]" attrs="{'invisible': [('track_label', '!=', True)]}" context="{'default_label_mo_repair_id': label_mo_repair_id}">
+								<tree string="Label" editable="top">
+									<field name="is_variable_double_unit" invisible="1" />
+									<field name="label_id" attrs="{'readonly':['|', ('label_mo_repair_id', '=', False), ('is_no_modif_qty', '=', True)], 'required':[('label_mo_repair_id', '!=', False), ('is_no_modif_qty', '=', False)]}" domain="label_mo_repair_id and [('id', '=', label_mo_repair_id)] or []" />
+									<field name="quantity" required="1" attrs="{'readonly': [('is_no_modif_qty', '=', True)]}" />
+									<field name="uom_id" readonly="1" />
+									<field name="sec_uom_qty" groups="base.group_variable_dual_unit" attrs="{'readonly': [('is_variable_double_unit', '!=', True)]}" />
+									<field name="sec_uom_id" groups="base.group_variable_dual_unit" readonly="1" />
+									<field name="for_quarantine" />
+									<field name="label_name" attrs="{'readonly': [('is_no_modif_qty', '=', True)]}" />
+									<field name="is_no_modif_qty" invisible="1" />
+									<field name="consumption_line_id" invisible="1" />
+									<field name="label_mo_repair_id" invisible="1" />
+								</tree>
+							</field>
+						</group>
+						<group colspan="6" string="Note on produce" >
+							<field name="note" nolabel="1" colspan="6" />
+						</group>
+						<field name="move_id" invisible="1" />
+						<field name="declaration_id" invisible="1" />
+						<field name="track_label" invisible="1" />
+						<field name="is_generate" invisible="1" />
+						<field name="consumption_id" invisible="1"/>
+						<field name="theorical_consumption" invisible="1"/>
+						<field name="is_control_declaration" invisible="1"/>
+						<field name="is_recalculate_frequency_control" invisible="1"/>
+					</group>
+					<footer>
+						<button name="action_validate" string="OK" type="object" class="oe_highlight" />
+						or
+						<button string="Cancel" class="oe_link" name="action_cancel" type="object" />
+					</footer>
+				</form>
+			</field>
+		</record>
+		
+		<record model="ir.actions.act_window" id="act_wo_declaration_produce_form">
+            <field name="name">Declaration Produce</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">wo.declaration.produce</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+	
+	</data>
+</openerp>

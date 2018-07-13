@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<openerp>
+	<data>
+		<template id="assets_backend" name="web_export_view assets" inherit_id="web.assets_backend">
+			<xpath expr="." position="inside">
+				<script type="text/javascript" src="/web_modify_view/static/src/js/web_modify_view.js"></script>
+			</xpath>
+		</template>
+
+		<template id="assets_backend_list_view" name="web_export_view_list_view assets" inherit_id="web.assets_backend">
+			<xpath expr="." position="inside">
+				<script type="text/javascript" src="/web_modify_view/static/src/js/list_view.js"></script>
+			</xpath>
+		</template>
+
+		<!-- FORM VIEW Edit tree wizard -->
+		<record id='view_form_edit_tree_wizard' model='ir.ui.view'>
+			<field name="name">edit_tree_wizard</field>
+			<field name="model">edit.tree.wizard</field>
+			<field name="arch" type="xml">
+				<form string="Edit tree wizard" version="8.0">
+                    <group>
+                        <field name="name" />
+                        <field name="priority" groups="base.group_erp_manager" />
+                    </group>
+                    <group string="Groups">
+                        <field name="group_ids" nolabel="1" />
+                    </group>
+					<group string="Edit tree fields">
+						<field name="model" invisible="1" />
+						<field name="field_ids" nolabel="1" context="{'model':model}">
+							<tree editable="bottom">
+								<field name="field_id" />
+								<field name="sequence" />
+								<field name="attributes" invisible="1" />
+							</tree>
+						</field>
+						<field name="hidden_field_ids" context="{'model':model}" invisible="1">
+							<tree>
+								<field name="field_id" />
+								<field name="sequence" />
+								<field name="attributes" />
+							</tree>
+						</field>
+					</group>
+					<group>
+						<button class="btn-primary" string="Override" type="object" name="override_view" />
+						<button string="Cancel" special="cancel" class="btn-default" />
+					</group>
+				</form>
+			</field>
+		</record>
+
+		<!-- ACTION Edit tree wizard -->
+		<record id="act_edit_tree_view" model="ir.actions.act_window">
+			<field name="name">Edit tree wizard</field>
+			<field name="res_model">edit.tree.wizard</field>
+			<field name="view_mode">form</field>
+			<field name="view_type">form</field>
+		</record>
+	</data>
+</openerp>

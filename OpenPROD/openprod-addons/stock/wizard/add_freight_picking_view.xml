@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+    
+        <record model="ir.ui.view" id="view_form_add_freight_picking">
+            <field name="name">view_form_add_freight_picking</field>
+            <field name="model">add.freight.picking</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Add freight picking">
+                    <group>
+                        <group colspan="4" col="4" >
+                            <field name="total_price"/>
+                            <field name="currency_id"/>
+                            <group colspan="4" col="4" string="Pickings">
+                            <field name="picking_ids" coslpan="4" nolabel="1" />
+                            </group>
+                        </group>
+                        <footer>
+                            <button name="validate" string="Validate" type="object" class="oe_highlight" />
+                            or
+                            <button string="Cancel" class="oe_link" special="cancel" />
+                        </footer>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <act_window 
+	        name="Add freight picking" 
+	        res_model="add.freight.picking" 
+	        src_model="stock.picking" 
+	        view_mode="form" 
+	        target="new" 
+	        groups="group_menu_delivery_order,group_menu_receipt_order"
+	        key2="client_action_multi" 
+	        id="act_add_freight_picking" />
+
+    </data>
+</openerp>

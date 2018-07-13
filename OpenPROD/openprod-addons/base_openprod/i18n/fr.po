@@ -1,0 +1,2146 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* base_openprod
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 9.0c\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-04-10 14:39+0000\n"
+"PO-Revision-Date: 2017-04-10 14:39+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: base_openprod
+#: code:addons/base_openprod/workflow/addons.py:163
+#, python-format
+msgid "%s is not ASCII"
+msgstr "%s n'est pas ASCII"
+
+#. module: base_openprod
+#: model:ir.ui.view,arch_db:base_openprod.calendar_event_kanban_view
+msgid "<b>Affected user : </b>"
+msgstr "<b>Affecté à : </b>"
+
+#. module: base_openprod
+#: model:ir.ui.view,arch_db:base_openprod.calendar_event_kanban_view
+msgid "<b>Change limit date</b>"
+msgstr "<b>Modifier la date limite</b>"
+
+#. module: base_openprod
+#: model:ir.ui.view,arch_db:base_openprod.calendar_event_kanban_view
+msgid "<b>Date from : </b>"
+msgstr "<b>Date de début : </b>"
+
+#. module: base_openprod
+#: model:ir.ui.view,arch_db:base_openprod.calendar_event_kanban_view
+msgid "<b>Limit date : </b>"
+msgstr "<b>Date limite : </b>"
+
+#. module: base_openprod
+#: model:ir.ui.view,arch_db:base_openprod.calendar_event_kanban_view
+msgid "<b>State : </b>"
+msgstr "<b>Etat : </b>"
+
+#. module: base_openprod
+#: model:ir.ui.view,arch_db:base_openprod.calendar_event_kanban_view
+msgid "<b>Time : </b>"
+msgstr "<b>Durée : </b>"
+
+#. module: base_openprod
+#: model:ir.ui.view,arch_db:base_openprod.calendar_event_kanban_view
+msgid "<b>Type : </b>"
+msgstr "<b>Type : </b>"
+
+#. module: base_openprod
+#: model:ir.model.fields,help:base_openprod.field_wkf_transition_button_confirm
+msgid "A confirm sentence display when you click on the button"
+msgstr "A confirm sentence display when you click on the button"
+
+#. module: base_openprod
+#: model:ir.ui.view,arch_db:base_openprod.view_form_calendar_event
+msgid "Accept"
+msgstr "Accepter"
+
+#. module: base_openprod
+#: model:ir.actions.act_window,name:base_openprod.action_see_one_action
+#: model:ir.actions.act_window,name:base_openprod.see_actions
+#: model:ir.model.fields,field_description:base_openprod.field_resource_timetracking_action_id
+#: model:ir.model.fields,field_description:base_openprod.field_wizard_create_timetracking_action_id
+msgid "Action"
+msgstr "Action"
+
+#. module: base_openprod
+#: model:ir.actions.act_window,name:base_openprod.action_see_one_action_popup
+msgid "Action Pop-up"
+msgstr "Action Pop-up"
+
+#. module: base_openprod
+#: model:ir.ui.view,arch_db:base_openprod.view_search_calendar_event
+msgid "Action type"
+msgstr "Type d'action"
+
+#. module: base_openprod
+#: model:ir.actions.act_window,name:base_openprod.action_user_action_target_new
+#: model:ir.actions.act_window,name:base_openprod.action_user_all_actions
+#: model:ir.actions.act_window,name:base_openprod.action_user_my_action
+#: model:ir.ui.view,arch_db:base_openprod.view_form_calendar_event
+#: model:ir.ui.view,arch_db:base_openprod.view_form_mrp_resource
+msgid "Actions"
+msgstr "Actions"
+
+#. module: base_openprod
+#: model:ir.model,name:base_openprod.model_action_state
+msgid "Actions state"
+msgstr "Etats des actions"
+
+#. module: base_openprod
+#: model:ir.model,name:base_openprod.model_action_type
+msgid "Actions type"
+msgstr "Type des actions"
+
+#. module: base_openprod
+#: model:ir.model.fields,field_description:base_openprod.field_mrp_resource_active
+#: model:ir.model.fields,field_description:base_openprod.field_wkf_instance_is_active
+#: model:ir.model.fields,field_description:base_openprod.field_wkf_is_active
+#: model:ir.ui.view,arch_db:base_openprod.view_workflow_search
+msgid "Active"
+msgstr "Actif"
+
+#. module: base_openprod
+#: model:ir.model.fields,field_description:base_openprod.field_resource_timetracking_activity
+#: model:ir.model.fields,field_description:base_openprod.field_wizard_create_timetracking_activity
+#: model:ir.model.fields,field_description:base_openprod.field_wkf_instance_activity_id
+#: model:ir.ui.view,arch_db:base_openprod.view_search_resource_timetracking
+msgid "Activity"
+msgstr "Activité"
+
+#. module: base_openprod
+#: model:res.groups,name:base_openprod.resource_responsible
+msgid "Administrator"
+msgstr "Administrateur"
+
+#. module: base_openprod
+#: model:ir.ui.view,arch_db:base_openprod.view_workflow_transition_form_default
+msgid "Advanced button options"
+msgstr "Advanced button options"
+
+#. module: base_openprod
+#: model:ir.model.fields,field_description:base_openprod.field_calendar_event_affected_user_id
+msgid "Affected to"
+msgstr "Affecté à"
+
+#. module: base_openprod
+#: model:ir.model.fields,field_description:base_openprod.field_calendar_event_affected_user_kanban
+msgid "Affected user"
+msgstr "Utilisateur affecté"
+
+#. module: base_openprod
+#: model:ir.model.fields,field_description:base_openprod.field_calendar_event_alert_period
+msgid "Alert period"
+msgstr "Période d'alerte"
+
+#. module: base_openprod
+#: code:addons/base_openprod/common_model.py:37
+#: code:addons/base_openprod/common_model.py:258
+#: code:addons/base_openprod/user_action.py:261
+#, python-format
+msgid "All"
+msgstr "Tous"
+
+#. module: base_openprod
+#: model:ir.ui.menu,name:base_openprod.menu_all_actions
+msgid "All actions"
+msgstr "Toutes les actions"
+
+#. module: base_openprod
+#: model:ir.ui.menu,name:base_openprod.menu_all_calendars
+msgid "All calendars"
+msgstr "Tous les calendriers"
+
+#. module: base_openprod
+#: model:ir.actions.act_window,name:base_openprod.action_all_document_openprod_id
+#: model:ir.ui.menu,name:base_openprod.menu_all_document_openprod
+msgid "All documents"
+msgstr "Tous les documents"
+
+#. module: base_openprod
+#: model:ir.model.fields,field_description:base_openprod.field_ir_cron_friday
+msgid "All friday"
+msgstr "Tous les vendredi"
+
+#. module: base_openprod
+#: model:ir.model.fields,field_description:base_openprod.field_ir_cron_monday
+msgid "All monday"
+msgstr "Tous les lundi"
+
+#. module: base_openprod
+#: model:ir.actions.act_window,name:base_openprod.action_all_notes_openprod_id
+#: model:ir.ui.menu,name:base_openprod.menu_all_note_openprod
+msgid "All notes"
+msgstr "Toutes les notes"
+
+#. module: base_openprod
+#: model:ir.model.fields,field_description:base_openprod.field_ir_cron_saturday
+msgid "All saturday"
+msgstr "Tous les samedi"
+
+#. module: base_openprod
+#: model:ir.model.fields,field_description:base_openprod.field_ir_cron_sunday
+msgid "All sunday"
+msgstr "Tous les dimanche"
+
+#. module: base_openprod
+#: model:ir.model.fields,field_description:base_openprod.field_ir_cron_thursday
+msgid "All thursday"
+msgstr "Tous les jeudi"
+
+#. module: base_openprod
+#: model:ir.model.fields,field_description:base_openprod.field_ir_cron_tuesday
+msgid "All tuesday"
+msgstr "Tous les mardi"
+
+#. module: base_openprod
+#: model:ir.model.fields,field_description:base_openprod.field_ir_cron_wednesday
+msgid "All wednesday"
+msgstr "Tous les mercredi"
+
+#. module: base_openprod
+#: model:ir.model.fields,field_description:base_openprod.field_workflow_display_state_always_visible
+msgid "Always visible"
+msgstr "Toujours visible"
+
+#. module: base_openprod
+#: code:addons/base_openprod/cron_log.py:217
+#, python-format
+msgid "Another process/thread is already busy executing this job"
+msgstr "Un autre processus exécute déjà ce job"
+
+#. module: base_openprod
+#: model:action.type,name:base_openprod.appointment_type_action
+msgid "Appointment"
+msgstr "Rendez-vous"
+
+#. module: base_openprod
+#: code:addons/base_openprod/common_model.py:270
+#, python-format
+msgid "April"
+msgstr "Avril"
+
+#. module: base_openprod
+#: code:addons/base_openprod/workflow/addons.py:354
+#, python-format
+msgid "Are you sure to want to reset workflow?"
+msgstr "Êtes vous certain de vouloir réinitialiser le flux de travail?"
+
+#. module: base_openprod
+#: model:ir.model.fields,field_description:base_openprod.field_document_openprod_attachment
+msgid "Attachment"
+msgstr "Pièce jointe"
+
+#. module: base_openprod
+#: model:ir.ui.view,arch_db:base_openprod.view_form_calendar_event
+msgid "Attendees"
+msgstr "Participants"
+
+#. module: base_openprod
+#: model:ir.ui.view,arch_db:base_openprod.view_form_calendar_event
+msgid "Attendees and invitations"
+msgstr "Participants et invitations"
+
+#. module: base_openprod
+#: model:ir.model.fields,field_description:base_openprod.field_wkf_attrs_buttons
+msgid "Attrs buttons"
+msgstr "Attrs buttons"
+
+#. module: base_openprod
+#: code:addons/base_openprod/common_model.py:274
+#, python-format
+msgid "August"
+msgstr "Août"
+
+#. module: base_openprod
+#: model:ir.model.fields,field_description:base_openprod.field_calendar_event_auth_group_ids
+#: model:ir.model.fields,field_description:base_openprod.field_document_openprod_group_ids
+#: model:ir.model.fields,field_description:base_openprod.field_note_openprod_group_ids
+#: model:ir.ui.view,arch_db:base_openprod.view_form_calendar_event
+#: model:ir.ui.view,arch_db:base_openprod.view_form_document_openprod_id
+#: model:ir.ui.view,arch_db:base_openprod.view_form_note_openprod_id
+msgid "Authorized groups"
+msgstr "Groupes autorisés"
+
+#. module: base_openprod
+#: model:ir.model.fields,field_description:base_openprod.field_calendar_event_auth_user_ids
+#: model:ir.model.fields,field_description:base_openprod.field_document_openprod_user_ids
+#: model:ir.model.fields,field_description:base_openprod.field_note_openprod_user_ids
+#: model:ir.ui.view,arch_db:base_openprod.view_form_calendar_event
+#: model:ir.ui.view,arch_db:base_openprod.view_form_document_openprod_id
+#: model:ir.ui.view,arch_db:base_openprod.view_form_note_openprod_id
+msgid "Authorized users"
+msgstr "Utilisateurs autorisés"
+
+#. module: base_openprod
+#: model:ir.model.fields,help:base_openprod.field_ir_cron_last_month
+msgid "Business Day Month End is selected, you can enter a number of shift days:  0: Last business day of the month, -1: Before last business day of the month, 1: First business day after the end of the month"
+msgstr "Si Fin de mois est sélectionné, vous pouvez entrer un nombre de jours: 0: Dernier jour du mois, -1: Avant dernier jour du mois, 1: Premier jour après la fin du mois"
+
+#. module: base_openprod
+#: model:ir.ui.view,arch_db:base_openprod.view_workflow_transition_form_default
+msgid "Button"
+msgstr "Bouton"
+
+#. module: base_openprod
+#: model:ir.model.fields,field_description:base_openprod.field_wkf_transition_button_confirm
+msgid "Button confirm"
+msgstr "Button confirm"
+
+#. module: base_openprod
+#: model:ir.model.fields,field_description:base_openprod.field_wkf_transition_button_label
+msgid "Button label"
+msgstr "Libellé bouton"
+
+#. module: base_openprod
+#: model:ir.model.fields,help:base_openprod.field_wkf_transition_button_class
+msgid "CSS class applied to the button"
+msgstr "CSS class applied to the button"
+
+#. module: base_openprod
+#: model:ir.actions.act_window,name:base_openprod.action_user_all_calendar
+msgid "Calendars"
+msgstr "Calendriers"
+
+#. module: base_openprod
+#: model:action.type,name:base_openprod.call_reminder_type_action
+msgid "Call reminder"
+msgstr "Rappel téléphonique"
+
+#. module: base_openprod
+#: model:ir.model.fields,field_description:base_openprod.field_wkf_activity_can_not_be_deleted
+msgid "Can not be deleted"
+msgstr "Non supprimable"
+
+#. module: base_openprod
+#: model:action.state,name:base_openprod.cancel_action_state
+#: model:ir.ui.view,arch_db:base_openprod.view_form_update_timetracking_state
+msgid "Cancel"
+msgstr "Annuler"
+
+#. module: base_openprod
+#: model:workflow.transition.group,name:base_openprod.wkf_transition_grp_cancel
+msgid "Cancel flow"
+msgstr "Flux d'annulation"
+
+#. module: base_openprod
+#: code:addons/base_openprod/resource_timetracking.py:30
+#: code:addons/base_openprod/wizard/wizard_create_timetracking.py:286
+#, python-format
+msgid "Cancelled"
+msgstr "Annulée"
+
+#. module: base_openprod
+#: model:ir.ui.view,arch_db:base_openprod.view_form_mrp_resource
+msgid "Categories"
+msgstr "Catégories"
+
+#. module: base_openprod
+#: model:ir.actions.act_window,name:base_openprod.act_category_resource
+#: model:ir.ui.menu,name:base_openprod.menu_category_resource
+#: model:ir.ui.view,arch_db:base_openprod.view_form_category_resource
+#: model:ir.ui.view,arch_db:base_openprod.view_tree_category_resource
+msgid "Category resources"
+msgstr "Catégorie de ressources"
+
+#. module: base_openprod
+#: model:ir.ui.view,arch_db:base_openprod.view_form_document_openprod_id
+msgid "Change version"
+msgstr "Changer de version"
+
+#. module: base_openprod
+#: model:ir.model.fields,help:base_openprod.field_wkf_transition_is_default
+msgid "Check this box if this transition is the default transition of the activity (In case the activity is disabled, this transition process will default)"
+msgstr "Check this box if this transition is the default transition of the activity (In case the activity is disabled, this transition process will default)"
+
+#. module: base_openprod
+#: model:ir.model.fields,field_description:base_openprod.field_wkf_transition_button_class
+msgid "Class"
+msgstr "Class"
+
+#. module: base_openprod
+#: code:addons/base_openprod/resource_timetracking.py:20
+#: code:addons/base_openprod/wizard/wizard_create_timetracking.py:30
+#, python-format
+msgid "Cleaning"
+msgstr "Nettoyage"
+
+#. module: base_openprod
+#: model:ir.ui.view,arch_db:base_openprod.view_form_all_reset_workflow
+#: model:ir.ui.view,arch_db:base_openprod.view_form_copy_access_user
+#: model:ir.ui.view,arch_db:base_openprod.view_form_create_new_document_version
+#: model:ir.ui.view,arch_db:base_openprod.view_form_switch_openprod_document
+#: model:ir.ui.view,arch_db:base_openprod.view_form_wizard_create_timetracking
+msgid "Close"
+msgstr "Fermer"
+
+#. module: base_openprod
+#: model:ir.model.fields,field_description:base_openprod.field_calendar_event_color
+msgid "Color"
+msgstr "Couleur"
+
+#. module: base_openprod
+#: model:ir.model.fields,field_description:base_openprod.field_mrp_resource_category_company_id
+#: model:ir.model.fields,field_description:base_openprod.field_mrp_resource_company_id
+msgid "Company"
+msgstr "Société"
+
+#. module: base_openprod
+#: model:ir.model.fields,field_description:base_openprod.field_calendar_event_confidentiality
+#: model:ir.model.fields,field_description:base_openprod.field_document_openprod_confidentiality
+#: model:ir.model.fields,field_description:base_openprod.field_note_openprod_confidentiality
+msgid "Confidentiality"
+msgstr "Confidentialité"
+
+#. module: base_openprod
+#: model:ir.ui.menu,name:base_openprod.menu_resource_configuration
+#: model:ir.ui.menu,name:base_openprod.menu_technical_data_configuration
+#: model:ir.ui.view,arch_db:base_openprod.view_company_form_base
+msgid "Configuration"
+msgstr "Configuration"
+
+#. module: base_openprod
+#: model:ir.model.fields,field_description:base_openprod.field_wkf_transition_button_context
+msgid "Context"
+msgstr "Contexte"
+
+#. module: base_openprod
+#: model:ir.model.fields,help:base_openprod.field_wkf_transition_button_context
+msgid "Context of button. Write context without \"{}\" \n"
+"Example:\n"
+"(\"validate_order\": True)"
+msgstr "Context of button. Write context without \"{}\" \n"
+"Example:\n"
+"(\"validate_order\": True)"
+
+#. module: base_openprod
+#: model:ir.ui.menu,name:base_openprod.menu_maintenance
+msgid "Contract"
+msgstr "Contrat"
+
+#. module: base_openprod
+#: model:ir.model.fields,field_description:base_openprod.field_maintenance_contract_openprod_contract_number
+msgid "Contract number"
+msgstr "Numéro de contrat"
+
+#. module: base_openprod
+#: code:addons/base_openprod/res_currency.py:24
+#: model:ir.model.fields,field_description:base_openprod.field_res_currency_conversion_help
+#, python-format
+msgid "Conversion help"
+msgstr "Aide facteur conversion"
+
+#. module: base_openprod
+#: model:ir.actions.act_window,name:base_openprod.action_form_copy_access_user
+#: model:ir.ui.view,arch_db:base_openprod.view_form_copy_access_user
+msgid "Copy access users"
+msgstr "Copier les droits utilisateurs"
+
+#. module: base_openprod
+#: model:ir.ui.view,arch_db:base_openprod.view_form_all_reset_workflow
+#: model:ir.ui.view,arch_db:base_openprod.view_form_wizard_create_timetracking
+msgid "Create Timetracking"
+msgstr "Créer ligne de temps"
+
+#. module: base_openprod
+#: model:ir.model,name:base_openprod.model_wizard_create_timetracking
+msgid "Create a timetracking entry, or edit similar entries"
+msgstr "Créer une ligne de temps, ou modifier des temps similaires"
+
+#. module: base_openprod
+#: model:ir.ui.view,arch_db:base_openprod.view_form_create_new_document_version
+msgid "Create new version"
+msgstr "Créer une nouvelle version"
+
+#. module: base_openprod
+#: model:ir.ui.view,arch_db:base_openprod.view_workflow_activity_form_required
+msgid "Create the associated state"
+msgstr "Créer l'état associé"
+
+#. module: base_openprod
+#: model:ir.model.fields,field_description:base_openprod.field_action_state_create_uid
+#: model:ir.model.fields,field_description:base_openprod.field_action_type_create_uid
+#: model:ir.model.fields,field_description:base_openprod.field_all_reset_workflow_create_uid
+#: model:ir.model.fields,field_description:base_openprod.field_copy_access_user_create_uid
+#: model:ir.model.fields,field_description:base_openprod.field_document_directory_create_uid
+#: model:ir.model.fields,field_description:base_openprod.field_document_openprod_create_uid
+#: model:ir.model.fields,field_description:base_openprod.field_document_type_openprod_create_uid
+#: model:ir.model.fields,field_description:base_openprod.field_ir_cron_log_create_uid
+#: model:ir.model.fields,field_description:base_openprod.field_maintenance_contract_openprod_create_uid
+#: model:ir.model.fields,field_description:base_openprod.field_message_wizard_create_uid
+#: model:ir.model.fields,field_description:base_openprod.field_mrp_resource_category_create_uid
+#: model:ir.model.fields,field_description:base_openprod.field_mrp_resource_create_uid
+#: model:ir.model.fields,field_description:base_openprod.field_new_document_version_wizard_create_uid
+#: model:ir.model.fields,field_description:base_openprod.field_note_openprod_create_uid
+#: model:ir.model.fields,field_description:base_openprod.field_resource_timetracking_create_uid
+#: model:ir.model.fields,field_description:base_openprod.field_switch_document_wizard_create_uid
+#: model:ir.model.fields,field_description:base_openprod.field_udpate_timetracking_state_create_uid
+#: model:ir.model.fields,field_description:base_openprod.field_wizard_create_timetracking_create_uid
+#: model:ir.model.fields,field_description:base_openprod.field_workflow_base_create_uid
+#: model:ir.model.fields,field_description:base_openprod.field_workflow_display_state_create_uid
+#: model:ir.model.fields,field_description:base_openprod.field_workflow_transition_group_create_uid
+msgid "Created by"
+msgstr "Créé par"
+
+#. module: base_openprod
+#: model:ir.model.fields,field_description:base_openprod.field_action_state_create_date
+#: model:ir.model.fields,field_description:base_openprod.field_action_type_create_date
+#: model:ir.model.fields,field_description:base_openprod.field_all_reset_workflow_create_date
+#: model:ir.model.fields,field_description:base_openprod.field_copy_access_user_create_date
+#: model:ir.model.fields,field_description:base_openprod.field_document_directory_create_date
+#: model:ir.model.fields,field_description:base_openprod.field_document_openprod_create_date
+#: model:ir.model.fields,field_description:base_openprod.field_document_type_openprod_create_date
+#: model:ir.model.fields,field_description:base_openprod.field_ir_cron_log_create_date
+#: model:ir.model.fields,field_description:base_openprod.field_maintenance_contract_openprod_create_date
+#: model:ir.model.fields,field_description:base_openprod.field_message_wizard_create_date
+#: model:ir.model.fields,field_description:base_openprod.field_mrp_resource_category_create_date
+#: model:ir.model.fields,field_description:base_openprod.field_mrp_resource_create_date
+#: model:ir.model.fields,field_description:base_openprod.field_new_document_version_wizard_create_date
+#: model:ir.model.fields,field_description:base_openprod.field_note_openprod_create_date
+#: model:ir.model.fields,field_description:base_openprod.field_resource_timetracking_create_date
+#: model:ir.model.fields,field_description:base_openprod.field_switch_document_wizard_create_date
+#: model:ir.model.fields,field_description:base_openprod.field_udpate_timetracking_state_create_date
+#: model:ir.model.fields,field_description:base_openprod.field_wizard_create_timetracking_create_date
+#: model:ir.model.fields,field_description:base_openprod.field_workflow_base_create_date
+#: model:ir.model.fields,field_description:base_openprod.field_workflow_display_state_create_date
+#: model:ir.model.fields,field_description:base_openprod.field_workflow_transition_group_create_date
+msgid "Created on"
+msgstr "Créé le"
+
+#. module: base_openprod
+#: model:ir.actions.act_window,name:base_openprod.act_cron_log
+#: model:ir.model,name:base_openprod.model_ir_cron_log
+#: model:ir.ui.menu,name:base_openprod.menu_cron_log
+#: model:ir.ui.view,arch_db:base_openprod.view_form_cron_log
+msgid "Cron log"
+msgstr "Journal du cron"
+
+#. module: base_openprod
+#: model:ir.ui.view,arch_db:base_openprod.view_tree_cron_log
+msgid "Cron logs"
+msgstr "Journaux des crons"
+
+#. module: base_openprod
+#: model:ir.model,name:base_openprod.model_res_currency
+msgid "Currency"
+msgstr "Devise"
+
+#. module: base_openprod
+#: model:ir.model.fields,field_description:base_openprod.field_document_openprod_date
+#: model:ir.model.fields,field_description:base_openprod.field_note_openprod_date
+#: model:ir.model.fields,field_description:base_openprod.field_wkf_instance_date
+msgid "Date"
+msgstr "Date"
+
+#. module: base_openprod
+#: model:ir.model.fields,field_description:base_openprod.field_mrp_resource_start_date
+msgid "Date Start"
+msgstr "Date de début"
+
+#. module: base_openprod
+#: model:ir.model.fields,field_description:base_openprod.field_mrp_resource_stop_date
+msgid "Date Stop"
+msgstr "Date de fin"
+
+#. module: base_openprod
+#: model:ir.ui.view,arch_db:base_openprod.view_form_calendar_event
+msgid "Day of Month"
+msgstr "Jour du mois"
+
+#. module: base_openprod
+#: model:ir.model.fields,field_description:base_openprod.field_wizard_create_timetracking_day_only
+msgid "Day only"
+msgstr "Journée seulement"
+
+#. module: base_openprod
+#: code:addons/base_openprod/common_model.py:278
+#, python-format
+msgid "December"
+msgstr "Décembre"
+
+#. module: base_openprod
+#: model:ir.ui.view,arch_db:base_openprod.view_form_calendar_event
+msgid "Declare time"
+msgstr "Déclarer les temps"
+
+#. module: base_openprod
+#: model:ir.ui.view,arch_db:base_openprod.view_form_calendar_event
+msgid "Decline"
+msgstr "Décliner"
+
+#. module: base_openprod
+#: model:ir.model.fields,help:base_openprod.field_wkf_activity_sequence
+msgid "Define the display order of instances of activities in the records using this workflow"
+msgstr "Définit l'ordre d'affichage des instances des activités dans un enregistrement utilisant ce flux de travail"
+
+#. module: base_openprod
+#: model:ir.model.fields,help:base_openprod.field_workflow_display_state_sequence
+msgid "Define the state order in the record status bar"
+msgstr "Définit l'ordre des états dans la barre d'état des enregistrements"
+
+#. module: base_openprod
+#: model:ir.ui.view,arch_db:base_openprod.calendar_event_kanban_view
+msgid "Delete"
+msgstr "Supprimer"
+
+#. module: base_openprod
+#: model:ir.model.fields,field_description:base_openprod.field_document_openprod_description
+#: model:ir.model.fields,field_description:base_openprod.field_mrp_resource_description
+#: model:ir.model.fields,field_description:base_openprod.field_note_openprod_description
+#: model:ir.ui.view,arch_db:base_openprod.view_form_calendar_event
+#: model:ir.ui.view,arch_db:base_openprod.view_form_document_openprod_id
+#: model:ir.ui.view,arch_db:base_openprod.view_form_mrp_resource
+#: model:ir.ui.view,arch_db:base_openprod.view_form_note_openprod_id
+msgid "Description"
+msgstr "Description"
+
+#. module: base_openprod
+#: model:ir.ui.menu,name:base_openprod.menu_desk_main
+msgid "Desk"
+msgstr "Bureau"
+
+#. module: base_openprod
+#: model:res.groups,name:base_openprod.group_desk_manager
+msgid "Desk manager"
+msgstr "Manager bureau"
+
+#. module: base_openprod
+#: model:res.groups,name:base_openprod.group_desk_user
+msgid "Desk user"
+msgstr "Utilisateur bureau"
+
+#. module: base_openprod
+#: model:ir.ui.view,arch_db:base_openprod.view_form_calendar_event
+#: model:ir.ui.view,arch_db:base_openprod.view_form_document_openprod_id
+#: model:ir.ui.view,arch_db:base_openprod.view_form_note_openprod_id
+#: model:ir.ui.view,arch_db:base_openprod.view_form_wizard_create_timetracking
+msgid "Details"
+msgstr "Détails"
+
+#. module: base_openprod
+#: model:ir.ui.menu,name:base_openprod.menu_document_directory_openprod
+msgid "Directories"
+msgstr "Documents"
+
+#. module: base_openprod
+#: model:ir.actions.act_window,name:base_openprod.act_document_directory
+#: model:ir.model.fields,field_description:base_openprod.field_document_openprod_directory_id
+#: model:ir.ui.view,arch_db:base_openprod.view_directory_directory
+msgid "Directory"
+msgstr "Répertoire"
+
+#. module: base_openprod
+#: code:addons/base_openprod/common_model.py:558
+#, python-format
+msgid "Directory %s not empty, please move or delete %s"
+msgstr "Le répertoire %s n'est pas vide, veuillez déplacer ou supprimer %s"
+
+#. module: base_openprod
+#: model:ir.model.fields,field_description:base_openprod.field_action_state_display_name
+#: model:ir.model.fields,field_description:base_openprod.field_action_type_display_name
+#: model:ir.model.fields,field_description:base_openprod.field_all_reset_workflow_display_name
+#: model:ir.model.fields,field_description:base_openprod.field_copy_access_user_display_name
+#: model:ir.model.fields,field_description:base_openprod.field_document_directory_display_name
+#: model:ir.model.fields,field_description:base_openprod.field_document_openprod_display_name
+#: model:ir.model.fields,field_description:base_openprod.field_document_type_openprod_display_name
+#: model:ir.model.fields,field_description:base_openprod.field_ir_cron_log_display_name
+#: model:ir.model.fields,field_description:base_openprod.field_maintenance_contract_openprod_display_name
+#: model:ir.model.fields,field_description:base_openprod.field_message_wizard_display_name
+#: model:ir.model.fields,field_description:base_openprod.field_mrp_resource_category_display_name
+#: model:ir.model.fields,field_description:base_openprod.field_mrp_resource_display_name
+#: model:ir.model.fields,field_description:base_openprod.field_new_document_version_wizard_display_name
+#: model:ir.model.fields,field_description:base_openprod.field_note_openprod_display_name
+#: model:ir.model.fields,field_description:base_openprod.field_resource_timetracking_display_name
+#: model:ir.model.fields,field_description:base_openprod.field_switch_document_wizard_display_name
+#: model:ir.model.fields,field_description:base_openprod.field_udpate_timetracking_state_display_name
+#: model:ir.model.fields,field_description:base_openprod.field_wizard_create_timetracking_display_name
+#: model:ir.model.fields,field_description:base_openprod.field_workflow_base_display_name
+#: model:ir.model.fields,field_description:base_openprod.field_workflow_display_state_display_name
+#: model:ir.model.fields,field_description:base_openprod.field_workflow_transition_group_display_name
+msgid "Display Name"
+msgstr "Nom affiché"
+
+#. module: base_openprod
+#: model:ir.model.fields,field_description:base_openprod.field_action_state_not_display_state
+msgid "Display state"
+msgstr "Afficher l'état"
+
+#. module: base_openprod
+#: model:ir.model.fields,field_description:base_openprod.field_wkf_display_state_visible
+msgid "Display state visible"
+msgstr "États visibles"
+
+#. module: base_openprod
+#: model:ir.model.fields,field_description:base_openprod.field_wkf_display_state_ids
+msgid "Display states"
+msgstr "États affichés"
+
+#. module: base_openprod
+#: code:addons/base_openprod/user_action.py:19
+#: code:addons/base_openprod/user_action.py:252
+#: model:ir.ui.view,arch_db:base_openprod.view_search_calendar_event
+#, python-format
+msgid "Do list"
+msgstr "Do list"
+
+#. module: base_openprod
+#. openerp-web
+#: code:addons/base_openprod/static/src/js/document_openprod.js:31
+#: model:ir.actions.act_window,name:base_openprod.document_openprod_see_form
+#, python-format
+msgid "Document"
+msgstr "Document"
+
+#. module: base_openprod
+#: model:ir.ui.view,arch_db:base_openprod.view_form_document_type_openprod_id
+msgid "Document type's name"
+msgstr "Nom du type de document"
+
+#. module: base_openprod
+#: model:ir.actions.act_window,name:base_openprod.action_document_openprod_id_target_new
+#: model:ir.ui.menu,name:base_openprod.menu_main_document_openprod
+#: model:ir.ui.view,arch_db:base_openprod.view_form_document_openprod_id
+#: model:ir.ui.view,arch_db:base_openprod.view_tree_document_openprod_id
+#: model:ir.ui.view,arch_db:base_openprod.view_tree_document_type_openprod_id
+msgid "Documents"
+msgstr "Éditions"
+
+#. module: base_openprod
+#: model:ir.model,name:base_openprod.model_document_openprod
+#: model:ir.model,name:base_openprod.model_document_type_openprod
+msgid "Documents Openprod"
+msgstr "Documents Openprod"
+
+#. module: base_openprod
+#: model:ir.actions.act_window,name:base_openprod.action_document_type_openprod_id
+#: model:ir.ui.menu,name:base_openprod.menu_document_type_openprod
+#: model:ir.ui.view,arch_db:base_openprod.view_form_document_type_openprod_id
+msgid "Documents type"
+msgstr "Type de document"
+
+#. module: base_openprod
+#: model:action.state,name:base_openprod.done_action_state
+msgid "Done"
+msgstr "Terminée"
+
+#. module: base_openprod
+#: model:action.state,name:base_openprod.draft_action_state
+#: code:addons/base_openprod/common_model.py:248
+#: code:addons/base_openprod/resource_timetracking.py:27
+#: code:addons/base_openprod/wizard/wizard_create_timetracking.py:283
+#, python-format
+msgid "Draft"
+msgstr "Brouillon"
+
+#. module: base_openprod
+#: model:ir.model.fields,field_description:base_openprod.field_wizard_create_timetracking_duration
+msgid "Duration"
+msgstr "Durée"
+
+#. module: base_openprod
+#: model:ir.ui.view,arch_db:base_openprod.calendar_event_kanban_view
+msgid "Edit"
+msgstr "Modifier"
+
+#. module: base_openprod
+#: model:ir.model,name:base_openprod.model_mail_compose_message
+msgid "Email composition wizard"
+msgstr "Assistant de composition de courriel"
+
+#. module: base_openprod
+#: model:ir.model.fields,field_description:base_openprod.field_resource_timetracking_end_date
+#: model:ir.model.fields,field_description:base_openprod.field_wizard_create_timetracking_end_date
+msgid "End Date"
+msgstr "Date de fin"
+
+#. module: base_openprod
+#: model:ir.model.fields,field_description:base_openprod.field_document_openprod_end_date
+#: model:ir.model.fields,field_description:base_openprod.field_ir_cron_log_end_date
+#: model:ir.model.fields,field_description:base_openprod.field_maintenance_contract_openprod_end_date
+msgid "End date"
+msgstr "Date de fin"
+
+#. module: base_openprod
+#: sql_constraint:wizard.create.timetracking:0
+msgid "End date is before start date"
+msgstr "La date de fin est avant la date de début"
+
+#. module: base_openprod
+#: model:ir.model.fields,field_description:base_openprod.field_action_state_end_state
+msgid "End do"
+msgstr "End do"
+
+#. module: base_openprod
+#: model:ir.model.fields,field_description:base_openprod.field_calendar_event_end_of_week
+msgid "End of week"
+msgstr "Fin du weekend"
+
+#. module: base_openprod
+#: model:ir.model.fields,field_description:base_openprod.field_calendar_event_end_state_related
+msgid "End state"
+msgstr "End state"
+
+#. module: base_openprod
+#: model:ir.ui.view,arch_db:base_openprod.view_form_create_new_document_version
+#: model:ir.ui.view,arch_db:base_openprod.view_form_switch_openprod_document
+msgid "Enter the new version"
+msgstr "Entrez la nouvelle version"
+
+#. module: base_openprod
+#: model:ir.ui.view,arch_db:base_openprod.view_form_wizard_create_timetracking
+msgid "Enter the time values"
+msgstr "Entrez les valeurs de temps"
+
+#. module: base_openprod
+#: code:addons/base_openprod/common_model.py:410
+#: code:addons/base_openprod/ir_config_parameter.py:19
+#: code:addons/base_openprod/wizard/copy_access_user.py:43
+#: model:ir.model.fields,field_description:base_openprod.field_ir_cron_log_error
+#: model:ir.ui.view,arch_db:base_openprod.view_form_cron_log
+#, python-format
+msgid "Error"
+msgstr "Erreur"
+
+#. module: base_openprod
+#: constraint:calendar.event:0
+msgid "Error ! End date cannot be set before start date."
+msgstr "Erreur ! La date de fin ne doit pas être antérieure à la date de début."
+
+#. module: base_openprod
+#: model:ir.model,name:base_openprod.model_calendar_event
+msgid "Event"
+msgstr "Événement"
+
+#. module: base_openprod
+#: model:ir.ui.view,arch_db:base_openprod.view_workflow_transition_form_default
+msgid "Ex: 'validate_order': True"
+msgstr "Ex: 'validate_order': True"
+
+#. module: base_openprod
+#: model:ir.ui.view,arch_db:base_openprod.view_workflow_transition_form_default
+msgid "Ex: ['|', '|', ('file1', '=', 1), ('file1', '=', 2)]"
+msgstr "Ex: ['|', '|', ('file1', '=', 1), ('file1', '=', 2)]"
+
+#. module: base_openprod
+#: model:ir.ui.view,arch_db:base_openprod.view_workflow_transition_form_default
+msgid "Ex: openprod_logical_button"
+msgstr "Ex: openprod_logical_button"
+
+#. module: base_openprod
+#: model:ir.model.fields,field_description:base_openprod.field_document_openprod_extension
+msgid "Extension"
+msgstr "Extension"
+
+#. module: base_openprod
+#: code:addons/base_openprod/common_model.py:29
+#, python-format
+msgid "External Note"
+msgstr "Note externe"
+
+#. module: base_openprod
+#: code:addons/base_openprod/common_model.py:268
+#, python-format
+msgid "February"
+msgstr "Février"
+
+#. module: base_openprod
+#. openerp-web
+#: code:addons/base_openprod/static/src/js/document_openprod.js:31
+#, python-format
+msgid "File"
+msgstr "Fichier"
+
+#. module: base_openprod
+#: model:ir.model.fields,field_description:base_openprod.field_document_openprod_fname
+msgid "Filename"
+msgstr "Filename"
+
+#. module: base_openprod
+#: model:ir.ui.view,arch_db:base_openprod.view_search_calendar_event
+#: model:ir.ui.view,arch_db:base_openprod.view_search_document_openprod
+#: model:ir.ui.view,arch_db:base_openprod.view_search_resource_timetracking
+msgid "Filters"
+msgstr "Filtres"
+
+#. module: base_openprod
+#: model:ir.model.fields,field_description:base_openprod.field_resource_timetracking_is_first_resource
+msgid "First Resource"
+msgstr "Première ressource"
+
+#. module: base_openprod
+#: model:ir.model.fields,field_description:base_openprod.field_document_directory_full_path
+msgid "Full path"
+msgstr "Full path"
+
+#. module: base_openprod
+#: model:ir.ui.view,arch_db:base_openprod.view_form_mrp_resource
+msgid "Generality"
+msgstr "Géneralités"
+
+#. module: base_openprod
+#: model:ir.model.fields,field_description:base_openprod.field_wkf_transition_filter_group_id
+msgid "Group"
+msgstr "Groupe"
+
+#. module: base_openprod
+#: model:ir.ui.view,arch_db:base_openprod.view_search_category_resource
+#: model:ir.ui.view,arch_db:base_openprod.view_search_document_openprod
+#: model:ir.ui.view,arch_db:base_openprod.view_search_note_openprod
+#: model:ir.ui.view,arch_db:base_openprod.view_search_resource_timetracking
+msgid "Group By..."
+msgstr "Regrouper par..."
+
+#. module: base_openprod
+#: model:ir.model.fields,field_description:base_openprod.field_wkf_transition_button_group_id
+msgid "Group Required"
+msgstr "Groupe requis"
+
+#. module: base_openprod
+#: model:ir.ui.view,arch_db:base_openprod.view_search_calendar_event
+msgid "Group by..."
+msgstr "Grouper par..."
+
+#. module: base_openprod
+#: model:ir.model,name:base_openprod.model_workflow_transition_group
+msgid "Group to allow filtering transitions"
+msgstr "Groupe pour filtrer les transitions"
+
+#. module: base_openprod
+#: model:ir.model.fields,field_description:base_openprod.field_resource_timetracking_hourly_cost
+msgid "Hourly cost"
+msgstr "Coût horaire"
+
+#. module: base_openprod
+#: model:ir.model.fields,field_description:base_openprod.field_mrp_resource_category_hourly_rate
+msgid "Hourly rate"
+msgstr "Coût horaires"
+
+#. module: base_openprod
+#: model:ir.model.fields,field_description:base_openprod.field_mrp_resource_hourly_rate
+msgid "Hourly_rate"
+msgstr "Coût horaires"
+
+#. module: base_openprod
+#: code:addons/base_openprod/mrp_resource.py:34
+#, python-format
+msgid "Human"
+msgstr "Humaine"
+
+#. module: base_openprod
+#: model:ir.model.fields,field_description:base_openprod.field_action_state_id
+#: model:ir.model.fields,field_description:base_openprod.field_action_type_id
+#: model:ir.model.fields,field_description:base_openprod.field_all_reset_workflow_id
+#: model:ir.model.fields,field_description:base_openprod.field_copy_access_user_id
+#: model:ir.model.fields,field_description:base_openprod.field_document_directory_id
+#: model:ir.model.fields,field_description:base_openprod.field_document_openprod_id
+#: model:ir.model.fields,field_description:base_openprod.field_document_type_openprod_id
+#: model:ir.model.fields,field_description:base_openprod.field_ir_cron_log_id
+#: model:ir.model.fields,field_description:base_openprod.field_maintenance_contract_openprod_id
+#: model:ir.model.fields,field_description:base_openprod.field_message_wizard_id
+#: model:ir.model.fields,field_description:base_openprod.field_mrp_resource_category_id
+#: model:ir.model.fields,field_description:base_openprod.field_mrp_resource_id
+#: model:ir.model.fields,field_description:base_openprod.field_new_document_version_wizard_id
+#: model:ir.model.fields,field_description:base_openprod.field_note_openprod_id
+#: model:ir.model.fields,field_description:base_openprod.field_resource_timetracking_id
+#: model:ir.model.fields,field_description:base_openprod.field_switch_document_wizard_id
+#: model:ir.model.fields,field_description:base_openprod.field_udpate_timetracking_state_id
+#: model:ir.model.fields,field_description:base_openprod.field_wizard_create_timetracking_id
+#: model:ir.model.fields,field_description:base_openprod.field_workflow_base_id
+#: model:ir.model.fields,field_description:base_openprod.field_workflow_display_state_id
+#: model:ir.model.fields,field_description:base_openprod.field_workflow_transition_group_id
+msgid "ID"
+msgstr "Identifiant"
+
+#. module: base_openprod
+#: model:ir.model.fields,help:base_openprod.field_wkf_activity_required
+msgid "If this field is checked, instances of activities in the records using this workflow cannot be deactivate"
+msgstr "Si ce champ est coché, les instances des activités dans les enregistrements utilisant ce workflow ne pourront pas être désactivées"
+
+#. module: base_openprod
+#: model:ir.model.fields,help:base_openprod.field_wkf_activity_can_not_be_deleted
+msgid "If this field is checked, the activity is required by the system"
+msgstr "Si ce champ est coché, l'activité est requise par le système"
+
+#. module: base_openprod
+#: model:ir.model.fields,help:base_openprod.field_action_state_not_display_state
+#: model:ir.model.fields,help:base_openprod.field_calendar_event_not_display_related
+msgid "If this field is checked, the state will not be take into the computation of lateness actions"
+msgstr "Si ce champ est coché, l'état ne sera pas pris en compte dans les calculs (actions en retard...)"
+
+#. module: base_openprod
+#: model:ir.model.fields,help:base_openprod.field_workflow_display_state_always_visible
+msgid "If this field is checked, this state will be always visible in the status bar"
+msgstr "Si ce champ est coché, cet état sera toujours visible dans la barre d'état"
+
+#. module: base_openprod
+#: model:ir.model.fields,help:base_openprod.field_calendar_event_alert_period
+msgid "In days"
+msgstr "En jours"
+
+#. module: base_openprod
+#: code:addons/base_openprod/resource_timetracking.py:29
+#: code:addons/base_openprod/wizard/wizard_create_timetracking.py:285
+#, python-format
+msgid "In error"
+msgstr "En erreur"
+
+#. module: base_openprod
+#: model:action.state,name:base_openprod.in_progress_action_state
+msgid "In progress"
+msgstr "En attente"
+
+#. module: base_openprod
+#: model:ir.ui.view,arch_db:base_openprod.view_search_calendar_event
+msgid "In the week"
+msgstr "Dans la semaine"
+
+#. module: base_openprod
+#: model:action.type,name:base_openprod.incoming_call_type_action
+msgid "Incoming call"
+msgstr "Appel entrant"
+
+#. module: base_openprod
+#: model:ir.model.fields,field_description:base_openprod.field_document_openprod_index_content
+msgid "Index content"
+msgstr "Contenu indexé"
+
+#. module: base_openprod
+#: model:ir.ui.view,arch_db:base_openprod.view_form_document_openprod_id
+msgid "Indexed content"
+msgstr "Contenu indexé"
+
+#. module: base_openprod
+#: model:ir.ui.view,arch_db:base_openprod.view_form_mrp_resource
+msgid "Informations"
+msgstr "Informations"
+
+#. module: base_openprod
+#: model:ir.ui.view,arch_db:base_openprod.view_form_wkf_instance
+msgid "Instance"
+msgstr "Instance"
+
+#. module: base_openprod
+#: model:ir.ui.view,arch_db:base_openprod.view_tree_wkf_instance
+msgid "Instances"
+msgstr "Instances"
+
+#. module: base_openprod
+#: code:addons/base_openprod/common_model.py:28
+#, python-format
+msgid "Intern Note"
+msgstr "Note interne"
+
+#. module: base_openprod
+#: model:ir.model.fields,field_description:base_openprod.field_wkf_transition_attrs
+msgid "Invisibility conditions"
+msgstr "Conditions d'invisibilité"
+
+#. module: base_openprod
+#: model:ir.model.fields,help:base_openprod.field_wkf_transition_attrs
+msgid "Invisibility conditions of button\n"
+"Example:\n"
+"['|', ('name', '=', 'abc'), ('is_model', '=', True)]\n"
+"Button will be invisible if record name is 'abc' or if record field 'is_model' is checked\n"
+"N.B.: Used fields must be in the from view of object"
+msgstr "Conditions d'invisibilité du bouton\n"
+"Exemple:\n"
+"['|', ('name', '=', 'abc'), ('is_model', '=', True)]\n"
+"Le bouton sera invisible dons le cas où nom de l'enregistrement es 'abc' ou si le champ 'is_model' de celui-ci est coché \n"
+"\n"
+"N.B.: Les champs utilisés doivent être dans la vue formulaire de l'objet"
+
+#. module: base_openprod
+#: model:ir.ui.view,arch_db:base_openprod.view_form_calendar_event
+msgid "Invitation details"
+msgstr "Détails des invitations"
+
+#. module: base_openprod
+#: model:ir.ui.view,arch_db:base_openprod.view_form_calendar_event
+msgid "Invitations"
+msgstr "Invitations"
+
+#. module: base_openprod
+#: model:ir.model.fields,field_description:base_openprod.field_action_state_is_default
+#: model:ir.model.fields,field_description:base_openprod.field_wkf_transition_is_default
+msgid "Is default"
+msgstr "Par défaut"
+
+#. module: base_openprod
+#: code:addons/base_openprod/common_model.py:267
+#, python-format
+msgid "January"
+msgstr "Janvier"
+
+#. module: base_openprod
+#: code:addons/base_openprod/common_model.py:273
+#, python-format
+msgid "July"
+msgstr "Juillet"
+
+#. module: base_openprod
+#: code:addons/base_openprod/common_model.py:272
+#, python-format
+msgid "June"
+msgstr "Juin"
+
+#. module: base_openprod
+#: model:ir.model.fields,field_description:base_openprod.field_workflow_display_state_label
+msgid "Label"
+msgstr "Libellé"
+
+#. module: base_openprod
+#: model:ir.model.fields,help:base_openprod.field_wkf_transition_button_label
+msgid "Label visible in the button"
+msgstr "Libellé visible dans le bouton"
+
+#. module: base_openprod
+#: model:ir.model.fields,help:base_openprod.field_workflow_display_state_label
+msgid "Label visible in the record status bar"
+msgstr "Libellé visible dans la barre d'état de l'enregistrement"
+
+#. module: base_openprod
+#: model:ir.model.fields,field_description:base_openprod.field_action_state___last_update
+#: model:ir.model.fields,field_description:base_openprod.field_action_type___last_update
+#: model:ir.model.fields,field_description:base_openprod.field_all_reset_workflow___last_update
+#: model:ir.model.fields,field_description:base_openprod.field_copy_access_user___last_update
+#: model:ir.model.fields,field_description:base_openprod.field_document_directory___last_update
+#: model:ir.model.fields,field_description:base_openprod.field_document_openprod___last_update
+#: model:ir.model.fields,field_description:base_openprod.field_document_type_openprod___last_update
+#: model:ir.model.fields,field_description:base_openprod.field_ir_cron_log___last_update
+#: model:ir.model.fields,field_description:base_openprod.field_maintenance_contract_openprod___last_update
+#: model:ir.model.fields,field_description:base_openprod.field_message_wizard___last_update
+#: model:ir.model.fields,field_description:base_openprod.field_mrp_resource___last_update
+#: model:ir.model.fields,field_description:base_openprod.field_mrp_resource_category___last_update
+#: model:ir.model.fields,field_description:base_openprod.field_new_document_version_wizard___last_update
+#: model:ir.model.fields,field_description:base_openprod.field_note_openprod___last_update
+#: model:ir.model.fields,field_description:base_openprod.field_resource_timetracking___last_update
+#: model:ir.model.fields,field_description:base_openprod.field_switch_document_wizard___last_update
+#: model:ir.model.fields,field_description:base_openprod.field_udpate_timetracking_state___last_update
+#: model:ir.model.fields,field_description:base_openprod.field_wizard_create_timetracking___last_update
+#: model:ir.model.fields,field_description:base_openprod.field_workflow_base___last_update
+#: model:ir.model.fields,field_description:base_openprod.field_workflow_display_state___last_update
+#: model:ir.model.fields,field_description:base_openprod.field_workflow_transition_group___last_update
+msgid "Last Modified on"
+msgstr "Dernière modification le"
+
+#. module: base_openprod
+#: model:ir.model.fields,field_description:base_openprod.field_action_state_write_uid
+#: model:ir.model.fields,field_description:base_openprod.field_action_type_write_uid
+#: model:ir.model.fields,field_description:base_openprod.field_all_reset_workflow_write_uid
+#: model:ir.model.fields,field_description:base_openprod.field_copy_access_user_write_uid
+#: model:ir.model.fields,field_description:base_openprod.field_document_directory_write_uid
+#: model:ir.model.fields,field_description:base_openprod.field_document_openprod_write_uid
+#: model:ir.model.fields,field_description:base_openprod.field_document_type_openprod_write_uid
+#: model:ir.model.fields,field_description:base_openprod.field_ir_cron_log_write_uid
+#: model:ir.model.fields,field_description:base_openprod.field_maintenance_contract_openprod_write_uid
+#: model:ir.model.fields,field_description:base_openprod.field_message_wizard_write_uid
+#: model:ir.model.fields,field_description:base_openprod.field_mrp_resource_category_write_uid
+#: model:ir.model.fields,field_description:base_openprod.field_mrp_resource_write_uid
+#: model:ir.model.fields,field_description:base_openprod.field_new_document_version_wizard_write_uid
+#: model:ir.model.fields,field_description:base_openprod.field_note_openprod_write_uid
+#: model:ir.model.fields,field_description:base_openprod.field_resource_timetracking_write_uid
+#: model:ir.model.fields,field_description:base_openprod.field_switch_document_wizard_write_uid
+#: model:ir.model.fields,field_description:base_openprod.field_udpate_timetracking_state_write_uid
+#: model:ir.model.fields,field_description:base_openprod.field_wizard_create_timetracking_write_uid
+#: model:ir.model.fields,field_description:base_openprod.field_workflow_base_write_uid
+#: model:ir.model.fields,field_description:base_openprod.field_workflow_display_state_write_uid
+#: model:ir.model.fields,field_description:base_openprod.field_workflow_transition_group_write_uid
+msgid "Last Updated by"
+msgstr "Dernière mise à jour par"
+
+#. module: base_openprod
+#: model:ir.model.fields,field_description:base_openprod.field_action_state_write_date
+#: model:ir.model.fields,field_description:base_openprod.field_action_type_write_date
+#: model:ir.model.fields,field_description:base_openprod.field_all_reset_workflow_write_date
+#: model:ir.model.fields,field_description:base_openprod.field_copy_access_user_write_date
+#: model:ir.model.fields,field_description:base_openprod.field_document_directory_write_date
+#: model:ir.model.fields,field_description:base_openprod.field_document_openprod_write_date
+#: model:ir.model.fields,field_description:base_openprod.field_document_type_openprod_write_date
+#: model:ir.model.fields,field_description:base_openprod.field_ir_cron_log_write_date
+#: model:ir.model.fields,field_description:base_openprod.field_maintenance_contract_openprod_write_date
+#: model:ir.model.fields,field_description:base_openprod.field_message_wizard_write_date
+#: model:ir.model.fields,field_description:base_openprod.field_mrp_resource_category_write_date
+#: model:ir.model.fields,field_description:base_openprod.field_mrp_resource_write_date
+#: model:ir.model.fields,field_description:base_openprod.field_new_document_version_wizard_write_date
+#: model:ir.model.fields,field_description:base_openprod.field_note_openprod_write_date
+#: model:ir.model.fields,field_description:base_openprod.field_resource_timetracking_write_date
+#: model:ir.model.fields,field_description:base_openprod.field_switch_document_wizard_write_date
+#: model:ir.model.fields,field_description:base_openprod.field_udpate_timetracking_state_write_date
+#: model:ir.model.fields,field_description:base_openprod.field_wizard_create_timetracking_write_date
+#: model:ir.model.fields,field_description:base_openprod.field_workflow_base_write_date
+#: model:ir.model.fields,field_description:base_openprod.field_workflow_display_state_write_date
+#: model:ir.model.fields,field_description:base_openprod.field_workflow_transition_group_write_date
+msgid "Last Updated on"
+msgstr "Dernière mise à jour le"
+
+#. module: base_openprod
+#: model:ir.model.fields,field_description:base_openprod.field_ir_cron_is_last_month
+msgid "Last day month"
+msgstr "Dernier jour du mois"
+
+#. module: base_openprod
+#: model:ir.model.fields,field_description:base_openprod.field_wizard_create_timetracking_previous_time_ids
+#: model:ir.ui.view,arch_db:base_openprod.view_form_wizard_create_timetracking
+msgid "Last times"
+msgstr "Derniers temps"
+
+#. module: base_openprod
+#: model:ir.model.fields,field_description:base_openprod.field_document_openprod_last_version_id
+msgid "Last version"
+msgstr "Dernière version"
+
+#. module: base_openprod
+#: model:ir.ui.view,arch_db:base_openprod.view_form_calendar_event
+msgid "Link"
+msgstr "Lien"
+
+#. module: base_openprod
+#: model:ir.model.fields,field_description:base_openprod.field_calendar_event_link_object
+msgid "Link object"
+msgstr "Objet lié"
+
+#. module: base_openprod
+#: model:ir.ui.view,arch_db:base_openprod.view_form_calendar_event
+msgid "Linked document"
+msgstr "Document lié"
+
+#. module: base_openprod
+#: model:ir.ui.view,arch_db:base_openprod.view_form_document_openprod_id
+msgid "Linked objects"
+msgstr "Objets liés"
+
+#. module: base_openprod
+#: model:ir.model.fields,field_description:base_openprod.field_all_reset_workflow_list_ids
+msgid "List ids"
+msgstr "List ids"
+
+#. module: base_openprod
+#: code:addons/base_openprod/mrp_resource.py:35
+#, python-format
+msgid "Machine"
+msgstr "Machine"
+
+#. module: base_openprod
+#: model:workflow.transition.group,name:base_openprod.wkf_transition_grp_with_mail
+msgid "Mail flow"
+msgstr "Flux de mail"
+
+#. module: base_openprod
+#: model:ir.model.fields,field_description:base_openprod.field_wkf_transition_mail_template_id
+msgid "Mail template"
+msgstr "Modèle de mail"
+
+#. module: base_openprod
+#: model:ir.actions.act_window,name:base_openprod.act_maintenance_contract_openprod
+#: model:ir.ui.view,arch_db:base_openprod.view_form_maintenance_contract_openprod
+msgid "Maintenance contract"
+msgstr "Contrat de maintenance"
+
+#. module: base_openprod
+#: model:ir.ui.view,arch_db:base_openprod.view_tree_maintenance_contract_openprod
+msgid "Maintenance contracts"
+msgstr "Contrats de maintenance"
+
+#. module: base_openprod
+#: model:res.groups,name:base_openprod.resource_manager
+msgid "Manager"
+msgstr "Gestionnaire"
+
+#. module: base_openprod
+#: model:workflow.transition.group,name:base_openprod.wkf_transition_grp_manual_invoicing
+msgid "Manual invoicing"
+msgstr "Facturation manuelle"
+
+#. module: base_openprod
+#: code:addons/base_openprod/common_model.py:269
+#, python-format
+msgid "March"
+msgstr "Mars"
+
+#. module: base_openprod
+#: code:addons/base_openprod/common_model.py:271
+#, python-format
+msgid "May"
+msgstr "Mai"
+
+#. module: base_openprod
+#: model:action.type,name:base_openprod.meeting_type_action
+msgid "Meeting"
+msgstr "Réunion"
+
+#. module: base_openprod
+#: model:ir.module.category,name:base_openprod.module_menu_category
+msgid "Menu rights"
+msgstr "Droits des menus"
+
+#. module: base_openprod
+#: model:ir.model,name:base_openprod.model_mail_message
+msgid "Message"
+msgstr "Message"
+
+#. module: base_openprod
+#: code:addons/base_openprod/wizard/message_wizard.py:25
+#: model:ir.model,name:base_openprod.model_message_wizard
+#: model:ir.ui.view,arch_db:base_openprod.view_form_message_wizard
+#, python-format
+msgid "Message wizard"
+msgstr "Pop message"
+
+#. module: base_openprod
+#: model:ir.model.fields,field_description:base_openprod.field_all_reset_workflow_name
+msgid "Model"
+msgstr "Modèle"
+
+#. module: base_openprod
+#. openerp-web
+#: code:addons/base_openprod/static/src/js/document_openprod.js:31
+#, python-format
+msgid "Modif"
+msgstr "Modif"
+
+#. module: base_openprod
+#: model:ir.model.fields,field_description:base_openprod.field_document_openprod_month
+#: model:ir.ui.view,arch_db:base_openprod.view_search_document_openprod
+msgid "Month"
+msgstr "Mois"
+
+#. module: base_openprod
+#: model:ir.model.fields,field_description:base_openprod.field_ir_cron_is_more_details
+msgid "More details"
+msgstr "Plus de détails"
+
+#. module: base_openprod
+#: model:ir.ui.menu,name:base_openprod.menu_main_actions
+#: model:ir.ui.menu,name:base_openprod.menu_my_actions
+#: model:ir.ui.view,arch_db:base_openprod.view_search_calendar_event
+msgid "My actions"
+msgstr "Mes actions"
+
+#. module: base_openprod
+#: model:ir.actions.act_window,name:base_openprod.action_user_my_calendar
+#: model:ir.ui.menu,name:base_openprod.menu_my_calendar
+msgid "My calendar"
+msgstr "Mon calendrier"
+
+#. module: base_openprod
+#: model:ir.actions.act_window,name:base_openprod.action_document_openprod_id
+#: model:ir.ui.menu,name:base_openprod.menu_document_openprod
+msgid "My documents"
+msgstr "Mes documents"
+
+#. module: base_openprod
+#: model:ir.actions.act_window,name:base_openprod.action_note_openprod_id
+#: model:ir.ui.menu,name:base_openprod.menu_my_note_openprod
+msgid "My notes"
+msgstr "Mes notes"
+
+#. module: base_openprod
+#. openerp-web
+#: code:addons/base_openprod/static/src/js/document_openprod.js:31
+#: model:ir.model.fields,field_description:base_openprod.field_action_state_name
+#: model:ir.model.fields,field_description:base_openprod.field_action_type_name
+#: model:ir.model.fields,field_description:base_openprod.field_document_directory_name
+#: model:ir.model.fields,field_description:base_openprod.field_document_type_openprod_name
+#: model:ir.model.fields,field_description:base_openprod.field_ir_cron_log_name
+#: model:ir.model.fields,field_description:base_openprod.field_message_wizard_name
+#: model:ir.model.fields,field_description:base_openprod.field_mrp_resource_category_name
+#: model:ir.model.fields,field_description:base_openprod.field_mrp_resource_name
+#: model:ir.model.fields,field_description:base_openprod.field_resource_timetracking_name
+#: model:ir.model.fields,field_description:base_openprod.field_wizard_create_timetracking_name
+#: model:ir.model.fields,field_description:base_openprod.field_wkf_instance_name
+#: model:ir.model.fields,field_description:base_openprod.field_workflow_display_state_name
+#: model:ir.model.fields,field_description:base_openprod.field_workflow_transition_group_name
+#: model:ir.ui.view,arch_db:base_openprod.view_form_wkf_instance
+#, python-format
+msgid "Name"
+msgstr "Nom"
+
+#. module: base_openprod
+#: code:addons/base_openprod/workflow/addons.py:279
+#, python-format
+msgid "Name must be ASCII"
+msgstr "Le nom doit être ASCII"
+
+#. module: base_openprod
+#: model:ir.model.fields,field_description:base_openprod.field_ir_cron_last_month
+msgid "Nb before/after last day month"
+msgstr "Nb avant/après le dernier jour du mois"
+
+#. module: base_openprod
+#: model:ir.actions.act_window,name:base_openprod.action_create_new_document_version
+#: model:ir.actions.act_window,name:base_openprod.action_switch_new_document
+#: model:ir.ui.view,arch_db:base_openprod.view_form_create_new_document_version
+#: model:ir.ui.view,arch_db:base_openprod.view_form_switch_openprod_document
+msgid "New version"
+msgstr "Nouvelle version"
+
+#. module: base_openprod
+#: model:ir.ui.view,arch_db:base_openprod.view_search_resource_timetracking
+msgid "No Done"
+msgstr "Non terminé"
+
+#. module: base_openprod
+#: model:ir.model.fields,field_description:base_openprod.field_calendar_event_not_display_related
+msgid "Not display state"
+msgstr "Etat non affiché"
+
+#. module: base_openprod
+#: model:ir.model.fields,field_description:base_openprod.field_ir_config_parameter_note
+msgid "Note"
+msgstr "Note"
+
+#. module: base_openprod
+#: model:ir.model,name:base_openprod.model_note_openprod
+msgid "Note Openprod"
+msgstr "Note Openprod"
+
+#. module: base_openprod
+#: model:ir.actions.act_window,name:base_openprod.action_note_openprod_id_target_new
+#: model:ir.ui.menu,name:base_openprod.menu_main_note_openprod
+#: model:ir.ui.view,arch_db:base_openprod.view_form_note_openprod_id
+#: model:ir.ui.view,arch_db:base_openprod.view_tree_note_openprod_id
+msgid "Notes"
+msgstr "Notes"
+
+#. module: base_openprod
+#: code:addons/base_openprod/common_model.py:277
+#, python-format
+msgid "November"
+msgstr "Novembre"
+
+#. module: base_openprod
+#: model:ir.model.fields,field_description:base_openprod.field_all_reset_workflow_nb_recording
+msgid "Number recording"
+msgstr "Nombre d'enregistrements"
+
+#. module: base_openprod
+#: code:addons/base_openprod/common_model.py:250
+#, python-format
+msgid "Obsolete"
+msgstr "Obsolète"
+
+#. module: base_openprod
+#: code:addons/base_openprod/common_model.py:276
+#, python-format
+msgid "October"
+msgstr "Octobre"
+
+#. module: base_openprod
+#: model:ir.model.fields,field_description:base_openprod.field_document_openprod_version_ids
+#: model:ir.ui.view,arch_db:base_openprod.view_form_document_openprod_id
+msgid "Old versions"
+msgstr "Anciennes versions"
+
+#. module: base_openprod
+#: code:addons/base_openprod/cron_log.py:201
+#, python-format
+msgid "Only the admin user is allowed to execute inactive cron jobs manually"
+msgstr "Seul l'admin peut lancer des cron manuellement"
+
+#. module: base_openprod
+#: model:ir.ui.view,arch_db:base_openprod.view_search_calendar_event
+msgid "Orange"
+msgstr "Orange"
+
+#. module: base_openprod
+#: model:ir.model.fields,field_description:base_openprod.field_copy_access_user_original_user_id
+msgid "Original user"
+msgstr "Utilisateur original"
+
+#. module: base_openprod
+#: model:ir.ui.view,arch_db:base_openprod.view_search_document_openprod
+msgid "Orphans"
+msgstr "Orphelins"
+
+#. module: base_openprod
+#: model:ir.model.fields,field_description:base_openprod.field_document_directory_owner_id
+msgid "Owner"
+msgstr "Owner"
+
+#. module: base_openprod
+#: model:ir.model.fields,field_description:base_openprod.field_document_directory_parent_id
+msgid "Parent"
+msgstr "Parent"
+
+#. module: base_openprod
+#: model:ir.model,name:base_openprod.model_res_partner
+msgid "Partner"
+msgstr "Partenaire"
+
+#. module: base_openprod
+#: model:workflow.transition.group,name:base_openprod.wkf_transition_grp_payment
+msgid "Payment flow"
+msgstr "Flux du paiement"
+
+#. module: base_openprod
+#: model:action.type,name:base_openprod.personal_type_action
+msgid "Personal"
+msgstr "Personnel"
+
+#. module: base_openprod
+#: model:ir.ui.view,arch_db:base_openprod.view_search_calendar_event
+msgid "Plan actions"
+msgstr "Actions planifiées"
+
+#. module: base_openprod
+#: code:addons/base_openprod/user_action.py:20
+#: code:addons/base_openprod/user_action.py:253
+#, python-format
+msgid "Planned action"
+msgstr "Action planifiée"
+
+#. module: base_openprod
+#: model:ir.model.fields,field_description:base_openprod.field_wkf_activity_position_x
+msgid "Position x"
+msgstr "Position x"
+
+#. module: base_openprod
+#: model:ir.model.fields,field_description:base_openprod.field_wkf_activity_position_y
+msgid "Position y"
+msgstr "Position y"
+
+#. module: base_openprod
+#: code:addons/base_openprod/resource_timetracking.py:19
+#: code:addons/base_openprod/wizard/wizard_create_timetracking.py:29
+#, python-format
+msgid "Production"
+msgstr "Production"
+
+#. module: base_openprod
+#: model:ir.ui.view,arch_db:base_openprod.view_res_currency_base
+msgid "Rates"
+msgstr "Taux"
+
+#. module: base_openprod
+#: model:ir.ui.view,arch_db:base_openprod.view_form_calendar_event
+msgid "Recurrence"
+msgstr "Récurrence"
+
+#. module: base_openprod
+#: model:ir.ui.view,arch_db:base_openprod.view_search_calendar_event
+msgid "Red"
+msgstr "Rouge"
+
+#. module: base_openprod
+#: model:ir.model,name:base_openprod.model_all_reset_workflow
+msgid "Reinitialiser le workflow pour plusieurs enregistrements"
+msgstr "Reinitialiser le workflow pour plusieurs enregistrements"
+
+#. module: base_openprod
+#: model:ir.model.fields,field_description:base_openprod.field_calendar_event_related_type
+msgid "Related type"
+msgstr "Type d'action"
+
+#. module: base_openprod
+#: model:ir.ui.view,arch_db:base_openprod.view_company_form_base
+msgid "Report Configuration"
+msgstr "Configuration de rapport"
+
+#. module: base_openprod
+#: model:ir.model.fields,field_description:base_openprod.field_wkf_activity_required
+#: model:ir.model.fields,field_description:base_openprod.field_wkf_instance_required
+msgid "Required"
+msgstr "Requis"
+
+#. module: base_openprod
+#: model:workflow.transition.group,name:base_openprod.wkf_transition_grp_reset
+msgid "Reset flow"
+msgstr "Flux de réinitialisation"
+
+#. module: base_openprod
+#: code:addons/base_openprod/workflow/addons.py:354
+#: model:ir.ui.view,arch_db:base_openprod.view_form_all_reset_workflow
+#, python-format
+msgid "Reset workflow"
+msgstr "Réinitialiser le flux de travail"
+
+#. module: base_openprod
+#: model:ir.actions.act_window,name:base_openprod.act_mrp_resource
+#: model:ir.model,name:base_openprod.model_mrp_resource
+#: model:ir.model.fields,field_description:base_openprod.field_res_users_resource_id
+#: model:ir.model.fields,field_description:base_openprod.field_resource_timetracking_resource_id
+#: model:ir.model.fields,field_description:base_openprod.field_wizard_create_timetracking_resource_id
+#: model:ir.module.category,name:base_openprod.module_resource
+#: model:ir.ui.menu,name:base_openprod.menu_mrp_resource
+#: model:ir.ui.menu,name:base_openprod.menu_resource_main
+#: model:ir.ui.view,arch_db:base_openprod.view_form_mrp_resource
+#: model:ir.ui.view,arch_db:base_openprod.view_search_resource_timetracking
+msgid "Resource"
+msgstr "Ressource"
+
+#. module: base_openprod
+#: model:res.groups,name:base_openprod.group_menu_resource_analyse
+msgid "Resource analysis"
+msgstr "Analyses ressources"
+
+#. module: base_openprod
+#: model:ir.model,name:base_openprod.model_mrp_resource_category
+msgid "Resource category "
+msgstr "Catégorie ressource"
+
+#. module: base_openprod
+#: model:res.groups,name:base_openprod.group_menu_resource_config
+msgid "Resource configuration"
+msgstr "Configuration ressource"
+
+#. module: base_openprod
+#: model:res.groups,name:base_openprod.group_menu_resource_user
+msgid "Resource user"
+msgstr "Utilisateur ressource"
+
+#. module: base_openprod
+#: model:ir.model.fields,field_description:base_openprod.field_mrp_resource_category_resource_ids
+#: model:ir.ui.view,arch_db:base_openprod.view_tree_mrp_resource
+msgid "Resources"
+msgstr "Ressources"
+
+#. module: base_openprod
+#: model:ir.model.fields,field_description:base_openprod.field_mrp_resource_category_resource_ids_2069
+msgid "Resources category"
+msgstr "Catégorie de ressources"
+
+#. module: base_openprod
+#: code:addons/base_openprod/common_model.py:38
+#: code:addons/base_openprod/common_model.py:259
+#: code:addons/base_openprod/user_action.py:262
+#: model:ir.model.fields,field_description:base_openprod.field_document_openprod_user_id
+#, python-format
+msgid "Responsible"
+msgstr "Responsable"
+
+#. module: base_openprod
+#: model:ir.ui.view,arch_db:base_openprod.ir_cron_view
+msgid "Run Manually"
+msgstr "Exécuter Manuellement"
+
+#. module: base_openprod
+#: model:ir.ui.view,arch_db:base_openprod.view_form_document_openprod_id
+#: model:ir.ui.view,arch_db:base_openprod.view_form_note_openprod_id
+msgid "Save"
+msgstr "Sauvegarder"
+
+#. module: base_openprod
+#: model:ir.ui.view,arch_db:base_openprod.view_form_calendar_event
+msgid "Select attendees..."
+msgstr "Selectionnez les participants..."
+
+#. module: base_openprod
+#: model:ir.ui.view,arch_db:base_openprod.view_form_calendar_event
+msgid "Send mail"
+msgstr "Envoyer un mail"
+
+#. module: base_openprod
+#: code:addons/base_openprod/common_model.py:275
+#, python-format
+msgid "September"
+msgstr "Septembre"
+
+#. module: base_openprod
+#: model:ir.model.fields,field_description:base_openprod.field_wkf_activity_sequence
+#: model:ir.model.fields,field_description:base_openprod.field_wkf_instance_sequence
+#: model:ir.model.fields,field_description:base_openprod.field_workflow_display_state_sequence
+msgid "Sequence"
+msgstr "Séquence"
+
+#. module: base_openprod
+#: model:ir.model.fields,help:base_openprod.field_wkf_transition_button_specific_sequence
+msgid "Sequence of buttons display. If this field is at 0, it is the transition sequence who will be take into account"
+msgstr "Séquence d'affichage des boutons. Si ce champ est à 0, c'est la séquence de la transitions qui sera prise en compte"
+
+#. module: base_openprod
+#: code:addons/base_openprod/resource_timetracking.py:18
+#: code:addons/base_openprod/wizard/wizard_create_timetracking.py:28
+#, python-format
+msgid "Setting"
+msgstr "Réglage"
+
+#. module: base_openprod
+#: model:ir.model.fields,field_description:base_openprod.field_wizard_create_timetracking_sibling_ids
+msgid "Sibling"
+msgstr "Parents"
+
+#. module: base_openprod
+#: model:action.type,name:base_openprod.simple_action_type_action
+msgid "Simple action"
+msgstr "Action simple"
+
+#. module: base_openprod
+#: model:ir.model.fields,field_description:base_openprod.field_wkf_transition_button_specific_sequence
+msgid "Specific sequence"
+msgstr "Séquence spécifique"
+
+#. module: base_openprod
+#: model:workflow.transition.group,name:base_openprod.wkf_transition_grp_standard_without_mail
+msgid "Standard flow without mail"
+msgstr "Flux standard sans mail"
+
+#. module: base_openprod
+#: model:ir.model.fields,field_description:base_openprod.field_resource_timetracking_start_date
+#: model:ir.model.fields,field_description:base_openprod.field_wizard_create_timetracking_start_date
+msgid "Start Date"
+msgstr "Date de début"
+
+#. module: base_openprod
+#: model:ir.model.fields,field_description:base_openprod.field_ir_cron_log_start_date
+#: model:ir.model.fields,field_description:base_openprod.field_maintenance_contract_openprod_start_date
+msgid "Start date"
+msgstr "Date de début"
+
+#. module: base_openprod
+#: code:addons/base_openprod/workflow/addons.py:324
+#: model:ir.model.fields,field_description:base_openprod.field_calendar_event_state_id
+#: model:ir.model.fields,field_description:base_openprod.field_document_openprod_state
+#: model:ir.model.fields,field_description:base_openprod.field_maintenance_contract_openprod_state
+#: model:ir.model.fields,field_description:base_openprod.field_resource_timetracking_state
+#: model:ir.model.fields,field_description:base_openprod.field_udpate_timetracking_state_state
+#: model:ir.model.fields,field_description:base_openprod.field_workflow_base_display_state
+#, python-format
+msgid "State"
+msgstr "État"
+
+#. module: base_openprod
+#: model:ir.model.fields,field_description:base_openprod.field_action_state_to_do_state
+msgid "State to do"
+msgstr "Etat à faire"
+
+#. module: base_openprod
+#. openerp-web
+#: code:addons/base_openprod/static/src/js/document_openprod.js:31
+#, python-format
+msgid "Status"
+msgstr "Statut"
+
+#. module: base_openprod
+#: code:addons/base_openprod/mrp_resource.py:36
+#, python-format
+msgid "Subcontracting"
+msgstr "Sous-traitance"
+
+#. module: base_openprod
+#: model:ir.model.fields,field_description:base_openprod.field_document_openprod_name
+#: model:ir.model.fields,field_description:base_openprod.field_note_openprod_name
+msgid "Subject"
+msgstr "Objet"
+
+#. module: base_openprod
+#: model:ir.model,name:base_openprod.model_resource_timetracking
+msgid "Suivi des temps"
+msgstr "Suivi des temps"
+
+#. module: base_openprod
+#: model:ir.ui.view,arch_db:base_openprod.view_form_switch_openprod_document
+msgid "Switch the document"
+msgstr "Basculer le document"
+
+#. module: base_openprod
+#: model:ir.model.fields,field_description:base_openprod.field_wizard_create_timetracking_target
+msgid "Target"
+msgstr "Cible"
+
+#. module: base_openprod
+#: model:ir.model.fields,field_description:base_openprod.field_wizard_create_timetracking_target_type
+msgid "Target type"
+msgstr "Type de pointage"
+
+#. module: base_openprod
+#: model:ir.ui.menu,name:base_openprod.menu_technical_data_main
+msgid "Technical data"
+msgstr "Données techniques"
+
+#. module: base_openprod
+#: model:res.groups,name:base_openprod.group_menu_tech_data_config
+msgid "Technical data configuration"
+msgstr "Configuration des données techniques"
+
+#. module: base_openprod
+#: model:ir.model.fields,help:base_openprod.field_workflow_display_state_name
+msgid "Technical state name. Usable in write function"
+msgstr "Nom technique de l'état. Utilisable dans la fonction write"
+
+#. module: base_openprod
+#: model:ir.ui.view,arch_db:base_openprod.view_form_calendar_event
+msgid "The"
+msgstr "Le"
+
+#. module: base_openprod
+#: model:ir.model.fields,help:base_openprod.field_wkf_transition_button_group_id
+msgid "The group that a user must have to be authorized to view button."
+msgstr "Groupe auquel l'utilisateur doit appartenir pour voir le bouton."
+
+#. module: base_openprod
+#: code:addons/base_openprod/workflow/addons.py:127
+#: code:addons/base_openprod/workflow/addons.py:143
+#, python-format
+msgid "This activity is required by system"
+msgstr "Cette activité est requise par le système"
+
+#. module: base_openprod
+#: model:ir.actions.act_window,name:base_openprod.act_wizard_create_timetracking_action
+msgid "Time declaration"
+msgstr "Déclaration des temps"
+
+#. module: base_openprod
+#: model:ir.ui.menu,name:base_openprod.menu_resource_time_management
+msgid "Time management"
+msgstr "Gestion du temps"
+
+#. module: base_openprod
+#: model:ir.model.fields,field_description:base_openprod.field_resource_timetracking_time
+msgid "Time scrolling"
+msgstr "Temps de défilement"
+
+#. module: base_openprod
+#: model:ir.model.fields,field_description:base_openprod.field_resource_timetracking_time_spent
+msgid "Time spent"
+msgstr "Time passé"
+
+#. module: base_openprod
+#: model:ir.model.fields,field_description:base_openprod.field_calendar_event_timetracking_ids
+#: model:ir.ui.view,arch_db:base_openprod.view_form_calendar_event
+msgid "Times"
+msgstr "Temps"
+
+#. module: base_openprod
+#: model:ir.ui.menu,name:base_openprod.menu_action_declaration_timetracking
+msgid "Times declaration"
+msgstr "Déclaration des temps"
+
+#. module: base_openprod
+#: model:ir.actions.act_window,name:base_openprod.act_resource_timetracking
+#: model:ir.ui.menu,name:base_openprod.menu_resource_timetracking_management
+#: model:ir.ui.view,arch_db:base_openprod.view_form_resource_timetracking
+#: model:ir.ui.view,arch_db:base_openprod.view_tree_resource_timetracking
+msgid "Timetracking"
+msgstr "Suivi des Temps"
+
+#. module: base_openprod
+#: model:ir.ui.view,arch_db:base_openprod.view_form_resource_timetracking
+msgid "Timetracking line"
+msgstr "Ligne de suivi des temps"
+
+#. module: base_openprod
+#: model:action.state,name:base_openprod.to_do_action_state
+#: model:ir.ui.view,arch_db:base_openprod.view_search_calendar_event
+msgid "To do"
+msgstr "A faire"
+
+#. module: base_openprod
+#: model:ir.model.fields,field_description:base_openprod.field_resource_timetracking_is_to_invoice
+msgid "To invoice"
+msgstr "À facturer"
+
+#. module: base_openprod
+#: model:ir.ui.view,arch_db:base_openprod.view_form_document_openprod_id
+msgid "To switch"
+msgstr "Basculer"
+
+#. module: base_openprod
+#: model:ir.ui.view,arch_db:base_openprod.view_search_calendar_event
+msgid "Today"
+msgstr "Aujourd'hui"
+
+#. module: base_openprod
+#: model:ir.ui.view,arch_db:base_openprod.view_form_calendar_event
+msgid "Total"
+msgstr "Total"
+
+#. module: base_openprod
+#. openerp-web
+#: code:addons/base_openprod/static/src/js/document_openprod.js:31
+#: model:ir.model.fields,field_description:base_openprod.field_action_type_type
+#: model:ir.model.fields,field_description:base_openprod.field_calendar_event_type_id_1949
+#: model:ir.model.fields,field_description:base_openprod.field_document_openprod_type_id
+#: model:ir.model.fields,field_description:base_openprod.field_mrp_resource_type
+#: model:ir.model.fields,field_description:base_openprod.field_note_openprod_type
+#: model:ir.ui.view,arch_db:base_openprod.view_search_document_openprod
+#: model:ir.ui.view,arch_db:base_openprod.view_search_note_openprod
+#, python-format
+msgid "Type"
+msgstr "Type"
+
+#. module: base_openprod
+#: code:addons/base_openprod/wizard/copy_access_user.py:43
+#, python-format
+msgid "Unable to find a user with login='admin'"
+msgstr "Impossible de trouver un utilisateur avec login='admin'"
+
+#. module: base_openprod
+#: model:ir.ui.view,arch_db:base_openprod.view_form_calendar_event
+msgid "Uncertain"
+msgstr "Incertain"
+
+#. module: base_openprod
+#: model:ir.model.fields,help:base_openprod.field_wkf_transition_visible_button
+msgid "Uncheck this box to set button invisible"
+msgstr "Uncheck this box to set button invisible"
+
+#. module: base_openprod
+#: model:ir.ui.view,arch_db:base_openprod.view_form_calendar_event
+msgid "Until"
+msgstr "Jusqu'à"
+
+#. module: base_openprod
+#: model:ir.ui.view,arch_db:base_openprod.view_form_update_timetracking_state
+msgid "Update"
+msgstr "Mise à jour"
+
+#. module: base_openprod
+#: model:ir.actions.act_window,name:base_openprod.act_update_resource_timetracking
+msgid "Update state"
+msgstr "Mise à jour de l'état"
+
+#. module: base_openprod
+#: model:ir.ui.view,arch_db:base_openprod.view_form_update_timetracking_state
+msgid "Update times state"
+msgstr "Mise à jour de l'état des temps"
+
+#. module: base_openprod
+#. openerp-web
+#: code:addons/base_openprod/common_model.py:36
+#: code:addons/base_openprod/common_model.py:257
+#: code:addons/base_openprod/static/src/js/document_openprod.js:31
+#: code:addons/base_openprod/user_action.py:260
+#: model:ir.model.fields,field_description:base_openprod.field_note_openprod_user_id
+#: model:ir.model.fields,field_description:base_openprod.field_resource_timetracking_user_id
+#: model:ir.model.fields,field_description:base_openprod.field_wizard_create_timetracking_user_id
+#: model:ir.ui.view,arch_db:base_openprod.view_search_resource_timetracking
+#: model:res.groups,name:base_openprod.resource_user
+#, python-format
+msgid "User"
+msgstr "Utilisateur"
+
+#. module: base_openprod
+#: model:ir.model,name:base_openprod.model_res_users
+#: model:ir.model.fields,field_description:base_openprod.field_copy_access_user_user_ids
+msgid "Users"
+msgstr "Utilisateurs"
+
+#. module: base_openprod
+#: model:ir.ui.view,arch_db:base_openprod.view_form_copy_access_user
+#: model:ir.ui.view,arch_db:base_openprod.view_form_wizard_create_timetracking
+msgid "Validate"
+msgstr "Valider"
+
+#. module: base_openprod
+#: model:ir.ui.view,arch_db:base_openprod.view_form_wizard_create_timetracking
+msgid "Validate and close"
+msgstr "Valider et fermer"
+
+#. module: base_openprod
+#: code:addons/base_openprod/common_model.py:249
+#: code:addons/base_openprod/resource_timetracking.py:28
+#: code:addons/base_openprod/wizard/wizard_create_timetracking.py:284
+#: model:ir.ui.view,arch_db:base_openprod.view_search_document_openprod
+#, python-format
+msgid "Validated"
+msgstr "Validé"
+
+#. module: base_openprod
+#. openerp-web
+#: code:addons/base_openprod/static/src/js/document_openprod.js:31
+#: model:ir.model.fields,field_description:base_openprod.field_document_openprod_version
+#: model:ir.model.fields,field_description:base_openprod.field_new_document_version_wizard_version
+#: model:ir.model.fields,field_description:base_openprod.field_switch_document_wizard_version
+#: model:ir.model.fields,field_description:base_openprod.field_wkf_version
+#, python-format
+msgid "Version"
+msgstr "Version"
+
+#. module: base_openprod
+#: model:ir.model.fields,field_description:base_openprod.field_wkf_versioning_date
+msgid "Versioning date"
+msgstr "Date de versionnage"
+
+#. module: base_openprod
+#: model:ir.model.fields,field_description:base_openprod.field_wkf_transition_visible_button
+msgid "Visible button"
+msgstr "Bouton visible"
+
+#. module: base_openprod
+#: code:addons/base_openprod/resource_timetracking.py:17
+#: code:addons/base_openprod/wizard/wizard_create_timetracking.py:27
+#, python-format
+msgid "Waiting"
+msgstr "En attente"
+
+#. module: base_openprod
+#: model:ir.model.fields,field_description:base_openprod.field_resource_timetracking_week_number
+msgid "Week number"
+msgstr "Numéro semaine"
+
+#. module: base_openprod
+#: model:ir.model.fields,field_description:base_openprod.field_wkf_transition_with_mail
+msgid "With mail"
+msgstr "Avec courriel"
+
+#. module: base_openprod
+#: code:addons/base_openprod/common_model.py:266
+#, python-format
+msgid "Without month"
+msgstr "Pas de mois"
+
+#. module: base_openprod
+#: model:ir.model,name:base_openprod.model_copy_access_user
+msgid "Wizard copy access user"
+msgstr "Wizard copie droits utilisateur"
+
+#. module: base_openprod
+#: model:ir.model,name:base_openprod.model_new_document_version_wizard
+msgid "Wizard for new document version creation"
+msgstr "Wizard pour la création de la nouvelle version du document"
+
+#. module: base_openprod
+#: model:ir.model,name:base_openprod.model_switch_document_wizard
+msgid "Wizard to switch the openprod document"
+msgstr "Wizard pour basculer les documents openprod"
+
+#. module: base_openprod
+#: model:ir.model,name:base_openprod.model_udpate_timetracking_state
+msgid "Wizard which allow to update the state of the times"
+msgstr "Wizard qui permet de mettre à jour l'état des temps"
+
+#. module: base_openprod
+#: model:ir.model.fields,field_description:base_openprod.field_workflow_base_wkf_instance_ids
+msgid "Wkf instance ids"
+msgstr "Ids des instances de wkf"
+
+#. module: base_openprod
+#: model:ir.model.fields,field_description:base_openprod.field_workflow_base_wkf_progress_instance
+msgid "Wkf progress instance"
+msgstr "Instance en cours"
+
+#. module: base_openprod
+#: code:addons/base_openprod/workflow/addons.py:347
+#: code:addons/base_openprod/workflow/addons.py:350
+#: model:ir.model.fields,field_description:base_openprod.field_workflow_base_wkf_id
+#: model:ir.model.fields,field_description:base_openprod.field_workflow_display_state_wkf_id
+#, python-format
+msgid "Workflow"
+msgstr "Flux de travail"
+
+#. module: base_openprod
+#: model:ir.model.fields,field_description:base_openprod.field_document_openprod_year
+#: model:ir.ui.view,arch_db:base_openprod.view_search_document_openprod
+msgid "Year"
+msgstr "Année"
+
+#. module: base_openprod
+#: model:ir.ui.view,arch_db:base_openprod.view_form_calendar_event
+msgid "You can link your action to a document (e.g : a purchase, a work order...). You can't have more than one document per action"
+msgstr "Vous pouvez lier votre action à un document (ex: un achat, un ordre de travail...). Vous ne pouvez avoir plus d'un document lié par action"
+
+#. module: base_openprod
+#: constraint:calendar.event:0
+msgid "You can't have more than one link between an action and an other object"
+msgstr "Vous ne pouvez avoir plus d'un lien entre une action et un autre objet"
+
+#. module: base_openprod
+#: constraint:calendar.event:0
+msgid "You can't have recurrent event linked to this models"
+msgstr "Vous ne pouvez avoir d'événement récurrent lié à ce modèle"
+
+#. module: base_openprod
+#: code:addons/base_openprod/ir_config_parameter.py:19
+#, python-format
+msgid "You cannot delete any record"
+msgstr "You cannot delete any record"
+
+#. module: base_openprod
+#: code:addons/base_openprod/common_model.py:410
+#, python-format
+msgid "You cannot delete this record because there is a new version linked to him"
+msgstr "Vous ne pouvez supprimer cet enregistrement car il y a une nouvelle version qui lui est liée"
+
+#. module: base_openprod
+#: model:ir.model.fields,field_description:base_openprod.field_calendar_event_button_save_visible
+#: model:ir.model.fields,field_description:base_openprod.field_document_openprod_button_save_visible
+#: model:ir.model.fields,field_description:base_openprod.field_note_openprod_button_save_visible
+msgid "button_save_visible"
+msgstr "button_save_visible"
+
+#. module: base_openprod
+#: model:ir.model,name:base_openprod.model_document_directory
+msgid "document.directory"
+msgstr "document.directory"
+
+#. module: base_openprod
+#: model:ir.model.fields,help:base_openprod.field_document_openprod_attachment
+msgid "help"
+msgstr "Aide"
+
+#. module: base_openprod
+#: model:ir.model,name:base_openprod.model_ir_autovacuum
+msgid "ir.autovacuum"
+msgstr "ir.autovacuum"
+
+#. module: base_openprod
+#: model:ir.model,name:base_openprod.model_ir_config_parameter
+msgid "ir.config_parameter"
+msgstr "ir.config_parameter"
+
+#. module: base_openprod
+#: model:ir.model,name:base_openprod.model_ir_cron
+msgid "ir.cron"
+msgstr "ir.cron"
+
+#. module: base_openprod
+#: model:ir.model,name:base_openprod.model_maintenance_contract_openprod
+msgid "maintenance contract.openprod"
+msgstr "maintenance contract.openprod"
+
+#. module: base_openprod
+#: model:ir.ui.view,arch_db:base_openprod.view_form_all_reset_workflow
+#: model:ir.ui.view,arch_db:base_openprod.view_form_copy_access_user
+#: model:ir.ui.view,arch_db:base_openprod.view_form_create_new_document_version
+#: model:ir.ui.view,arch_db:base_openprod.view_form_switch_openprod_document
+#: model:ir.ui.view,arch_db:base_openprod.view_form_update_timetracking_state
+#: model:ir.ui.view,arch_db:base_openprod.view_form_wizard_create_timetracking
+msgid "or"
+msgstr "ou"
+
+#. module: base_openprod
+#: model:ir.ui.view,arch_db:base_openprod.view_tree_directory
+msgid "strings"
+msgstr "strings"
+
+#. module: base_openprod
+#: model:ir.model,name:base_openprod.model_workflow
+msgid "workflow"
+msgstr "flux de travail (workflow)"
+
+#. module: base_openprod
+#: model:ir.model,name:base_openprod.model_workflow_activity
+msgid "workflow.activity"
+msgstr "workflow.activity"
+
+#. module: base_openprod
+#: model:ir.model,name:base_openprod.model_workflow_base
+msgid "workflow.base"
+msgstr "workflow.base"
+
+#. module: base_openprod
+#: model:ir.model,name:base_openprod.model_workflow_display_state
+msgid "workflow.display.state"
+msgstr "workflow.display.state"
+
+#. module: base_openprod
+#: model:ir.model,name:base_openprod.model_workflow_instance
+msgid "workflow.instance"
+msgstr "workflow.instance"
+
+#. module: base_openprod
+#: model:ir.model,name:base_openprod.model_workflow_transition
+msgid "workflow.transition"
+msgstr "workflow.transition"
+

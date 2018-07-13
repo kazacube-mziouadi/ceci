@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='utf-8'?>
+<openerp>
+	<data noupdate="1">
+
+		<!-- Action type -->
+		<record model="action.type" id="google_type_action">
+			<field name="name">Google</field>
+			<field name="type">plan</field>
+		</record>
+
+	</data>
+</openerp>

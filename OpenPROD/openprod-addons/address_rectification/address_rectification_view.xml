@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+	
+		<!-- ADDRESS RECTIFICATION FORM -->
+		<record model="ir.ui.view" id="address_rectification_view_form">
+			<field name="name">address.rectification.view.form</field>
+			<field name="model">address.rectification</field>
+			<field name="type">form</field>
+			<field name="priority" eval="1010" />
+			<field name="arch" type="xml">
+				<form string="Address rectification">
+					<button name="go" type="object" string="Write"/>
+				</form>
+			</field>
+		</record>
+
+		<!-- ADDRESS RECTIFICATION ACTION -->
+		<record model="ir.actions.act_window" id="address_rectification_action">
+			<field name="name">Address rectification</field>
+			<field name="res_model">address.rectification</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">form</field>
+			<field name="target">new</field>
+		</record>
+		
+		<!-- ADDRESS RECTIFICATION MENU -->
+		<menuitem id="address_rectification_menu" action="address_rectification_action" string="Address rectification"/>
+		
+	</data>
+</openerp>

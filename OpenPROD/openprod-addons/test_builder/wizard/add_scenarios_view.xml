@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+		<!-- FORM VIEW Add Scenarios -->
+		<record id='view_form_add_scenarios' model='ir.ui.view'>
+			<field name="name">view_form_add_scenarios</field>
+			<field name="model">add.scenarios</field>
+			<field name="arch" type="xml">
+				<form string="Add Scenarios" version="8.0">
+					<field name="scenario_ids" />
+					<field name="batch_id" invisible="1" />
+					<group>
+						<button type="object" name="add_scenarios" string="Add" class="oe_highlight" />
+					</group>
+				</form>
+			</field>
+		</record>
+
+		<!-- ACTION Add Scenarios -->
+		<record id="act_add_scenarios" model="ir.actions.act_window">
+			<field name="name">Add Scenarios</field>
+			<field name="res_model">add.scenarios</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">form</field>
+			<field name="target">new</field>
+		</record>
+
+	</data>
+</openerp>

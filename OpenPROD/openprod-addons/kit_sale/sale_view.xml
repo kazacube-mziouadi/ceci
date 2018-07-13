@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+
+		<!-- FORM VIEW Sale order -->
+		<record id='view_form_kit_for_sale_order' model='ir.ui.view'>
+			<field name="name">view_form_kit_for_sale_order</field>
+			<field name="model">sale.order</field>
+			<field name="priority" eval="1200" />
+			<field name="inherit_id" ref="sale.view_form_sale_order" />
+			<field name="arch" type="xml">
+				<xpath expr="//group[@name='action_menu']" position="inside">
+					<separator string="Kit" colspan="1" attrs="{'invisible': ['|',('state', '!=', 'draft'), ('type', 'in', ('open','call'))]}"/>
+					<button class="oe_inline oe_stat_button" type="action" string="Create a kit" name="%(action_generate_kit_sale)d" icon="fa-plus-square"
+					 attrs="{'invisible': ['|',('state', '!=', 'draft'), ('type', 'in', ('open','call'))]}"/>
+				</xpath>
+			</field>
+		</record>
+	
+	</data>
+</openerp>

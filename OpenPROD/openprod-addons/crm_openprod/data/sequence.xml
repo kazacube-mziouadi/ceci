@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data noupdate="1">
+
+        <!-- Sequences for CRM -->
+        <record id="seq_crm" model="ir.sequence">
+            <field name="name">CRM</field>
+            <field name="code">crm</field>
+            <field name="prefix">CRM</field>
+            <field name="padding">4</field>
+            <field name="company_id" eval="False"/>
+        </record>
+        
+        
+    </data>
+</openerp>

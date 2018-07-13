@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+		<!-- FORM VIEW Choose picking -->
+		<record id='view_form_choose_picking_wizard' model='ir.ui.view'>
+			<field name="name">view_form_choose_picking_wizard</field>
+			<field name="model">choose.picking.wizard</field>
+			<field name="arch" type="xml">
+				<form string="Choose picking" version="8.0">
+					<p>
+						Choose picking which affect the transfer
+					</p>
+					<field name="transfer_id" invisible="1" />
+					<field name="warehouse_id" invisible="1" />
+					<group>
+						<field name="picking_id" domain="[('type', '=', 'out'), ('state', '=', 'waiting'), ('warehouse_id', '=', warehouse_id)]" />
+					</group>
+					<footer>
+						<button name="choose_picking" string="OK" type="object" class="oe_highlight" />
+						or
+						<button string="Cancel" class="oe_link" special="cancel" />
+					</footer>
+				</form>
+			</field>
+		</record>
+
+		<!-- ACTION Create close label -->
+		<record id="act_choose_picking_wizard" model="ir.actions.act_window">
+			<field name="name">Choose picking</field>
+			<field name="res_model">choose.picking.wizard</field>
+			<field name="view_type">form</field>
+			<field name="target">new</field>
+			<field name="view_mode">form</field>
+		</record>
+	</data>
+</openerp>

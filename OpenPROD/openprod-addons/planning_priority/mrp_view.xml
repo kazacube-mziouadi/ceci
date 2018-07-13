@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+        <record id="view_form_mrp_workorder_planning_priority_wo_id" model="ir.ui.view">
+            <field name="name">view_form_mrp_workorder_planning_priority_wo_id</field>
+            <field name="inherit_id" ref="mrp.view_form_mrp_workorder" />
+            <field name="priority" eval="1400" />
+            <field name="model">mrp.workorder</field>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='availability_date_rm']" position="before">
+                    <field name="planning_priority" colspan="4" />
+                </xpath>
+            </field>
+        </record>
+        
+        
+        <record id='view_tree_mrp_workorder_planning_priority' model='ir.ui.view'>
+            <field name="name">view_tree_mrp_workorder_planning_priority</field>
+            <field name="model">mrp.workorder</field>
+            <field name="inherit_id" ref="mrp.view_tree_mrp_workorder" />
+            <field name="priority" eval="1400" />
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='planned_start_date']" position="before">
+                    <field name="planning_priority" />
+                    <button type="action" string="Priority wo" name="%(act_wizard_priority_wo_id)d" icon="fa-exchange" 
+                            attrs="{'invisible':[('state', 'not in', ('draft', 'waiting', 'plan'))]}" />
+                </xpath>
+            </field>
+        </record>
+         
+
+	</data>
+</openerp>

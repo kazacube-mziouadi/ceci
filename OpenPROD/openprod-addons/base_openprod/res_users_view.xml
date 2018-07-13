@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+		<!-- FORM VIEW Users -->
+        <record id="inherit_base_openprod_view_form_users_resource" model="ir.ui.view">
+            <field name="name">inherit_base_openprod_view_form_users_resource</field>
+            <field name="inherit_id" ref="base.view_users_form" />
+            <field name="model">res.users</field>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='partner_id']" position="after">
+                    <field name="resource_id" />
+                </xpath>
+            </field>
+        </record>
+
+	</data>
+</openerp>

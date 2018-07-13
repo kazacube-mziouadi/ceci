@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<scenario>
+  <reference_res_id>7e51e2a2-5590-11e6-b18d-d4bed96ca9a7</reference_res_id>
+  <model_id>stock.label</model_id>
+  <create_date>2016-07-29 13:29:36</create_date>
+  <name>Balancing</name>
+  <sequence>30</sequence>
+  <notes/>
+  <__last_update>2016-08-01 12:49:33</__last_update>
+  <company_id>Pi-Technologie</company_id>
+  <write_uid>[1, 'Administrator']</write_uid>
+  <parent_id/>
+  <shared_custom>False</shared_custom>
+  <ack_code>ACK</ack_code>
+  <write_date>2016-08-01 12:49:33</write_date>
+  <warehouse_ids>Warehouse</warehouse_ids>
+  <active>True</active>
+  <display_name>Balancing</display_name>
+  <type>scenario</type>
+  <create_uid>[1, 'Administrator']</create_uid>
+  <hardware_ids>[1]</hardware_ids>
+  <Step __last_update="2016-08-01 09:13:57" create_date="2016-07-29 13:48:35" create_uid="[1, 'Administrator']" display_name="Error Q" name="Error Q" no_back="False" reference_res_id="250fad48-5593-11e6-acc6-d4bed96ca9a7" step_back="False" step_start="False" step_stop="False" write_date="2016-08-01 09:13:57" write_uid="[1, 'Administrator']"/>
+  <Step __last_update="2016-07-29 14:26:48" create_date="2016-07-29 13:43:54" create_uid="[1, 'Administrator']" display_name="Missing label" name="Missing label" no_back="False" reference_res_id="7da381ec-5592-11e6-b683-d4bed96ca9a7" step_back="False" step_start="False" step_stop="False" write_date="2016-07-29 14:26:48" write_uid="[1, 'Administrator']"/>
+  <Step __last_update="2016-07-29 15:02:49" create_date="2016-07-29 13:51:25" create_uid="[1, 'Administrator']" display_name="Confirm" name="Confirm" no_back="False" reference_res_id="8a80b50a-5593-11e6-97ef-d4bed96ca9a7" step_back="False" step_start="False" step_stop="False" write_date="2016-07-29 15:02:49" write_uid="[1, 'Administrator']"/>
+  <Step __last_update="2016-07-29 15:17:31" create_date="2016-07-29 13:45:06" create_uid="[1, 'Administrator']" display_name="Enter qty" name="Enter qty" no_back="False" reference_res_id="a8f000b4-5592-11e6-9c8e-d4bed96ca9a7" step_back="False" step_start="False" step_stop="False" write_date="2016-07-29 15:17:31" write_uid="[1, 'Administrator']"/>
+  <Step __last_update="2016-07-29 15:13:01" create_date="2016-07-29 13:31:05" create_uid="[1, 'Administrator']" display_name="Start" name="Start" no_back="False" reference_res_id="b3b45ce0-5590-11e6-88c4-d4bed96ca9a7" step_back="False" step_start="True" step_stop="False" write_date="2016-07-29 15:13:01" write_uid="[1, 'Administrator']"/>
+  <Step __last_update="2016-07-29 15:11:22" create_date="2016-07-29 13:31:21" create_uid="[1, 'Administrator']" display_name="End" name="End" no_back="False" reference_res_id="bd01e916-5590-11e6-a652-d4bed96ca9a7" step_back="False" step_start="False" step_stop="True" write_date="2016-07-29 15:11:22" write_uid="[1, 'Administrator']"/>
+  <Transition __last_update="2016-07-29 13:51:42" condition="True" create_date="2016-07-29 13:47:54" create_uid="[1, 'Administrator']" display_name="sfgbdfg" from_id="a8f000b4-5592-11e6-9c8e-d4bed96ca9a7" name="sfgbdfg" reference_res_id="0ca7fc56-5593-11e6-b6cc-d4bed96ca9a7" sequence="10" to_id="8a80b50a-5593-11e6-97ef-d4bed96ca9a7" tracer="" transition_type="scanner" write_date="2016-07-29 13:51:42" write_uid="[1, 'Administrator']"/>
+  <Transition __last_update="2016-08-01 09:13:17" condition="message != terminal.scenario_id.ack_code" create_date="2016-08-01 09:13:17" create_uid="[1, 'Administrator']" display_name="not ack'ed" from_id="250fad48-5593-11e6-acc6-d4bed96ca9a7" name="not ack'ed" reference_res_id="2f38d862-57c8-11e6-a3f5-247703b3adb4" sequence="0" to_id="250fad48-5593-11e6-acc6-d4bed96ca9a7" tracer="" transition_type="scanner" write_date="2016-08-01 09:13:17" write_uid="[1, 'Administrator']"/>
+  <Transition __last_update="2016-07-29 15:08:07" condition="message[0] != 'Q' and message[-1] != 'Q' and message.replace('Q', '').isdigit()" create_date="2016-07-29 13:49:49" create_uid="[1, 'Administrator']" display_name="qsdf" from_id="a8f000b4-5592-11e6-9c8e-d4bed96ca9a7" name="qsdf" reference_res_id="514399c4-5593-11e6-8bd0-d4bed96ca9a7" sequence="0" to_id="250fad48-5593-11e6-acc6-d4bed96ca9a7" tracer="" transition_type="scanner" write_date="2016-07-29 15:08:07" write_uid="[1, 'Administrator']"/>
+  <Transition __last_update="2016-08-01 09:13:26" condition="True" create_date="2016-07-29 13:50:29" create_uid="[1, 'Administrator']" display_name="zgtrt" from_id="250fad48-5593-11e6-acc6-d4bed96ca9a7" name="zgtrt" reference_res_id="69246942-5593-11e6-915b-d4bed96ca9a7" sequence="10" to_id="a8f000b4-5592-11e6-9c8e-d4bed96ca9a7" tracer="" transition_type="scanner" write_date="2016-08-01 09:13:26" write_uid="[1, 'Administrator']"/>
+  <Transition __last_update="2016-07-29 14:55:02" condition="model.search_count(cr, uid, [('id', '=', int(message))]) == 0" create_date="2016-07-29 13:44:37" create_uid="[1, 'Administrator']" display_name="qfdg" from_id="b3b45ce0-5590-11e6-88c4-d4bed96ca9a7" name="qfdg" reference_res_id="9740c75e-5592-11e6-b806-d4bed96ca9a7" sequence="10" to_id="7da381ec-5592-11e6-b683-d4bed96ca9a7" tracer="" transition_type="scanner" write_date="2016-07-29 14:55:02" write_uid="[1, 'Administrator']"/>
+  <Transition __last_update="2016-07-29 13:45:29" condition="True" create_date="2016-07-29 13:45:29" create_uid="[1, 'Administrator']" display_name="qrg" from_id="b3b45ce0-5590-11e6-88c4-d4bed96ca9a7" name="qrg" reference_res_id="b679d980-5592-11e6-880b-d4bed96ca9a7" sequence="20" to_id="a8f000b4-5592-11e6-9c8e-d4bed96ca9a7" tracer="" transition_type="scanner" write_date="2016-07-29 13:45:29" write_uid="[1, 'Administrator']"/>
+  <Transition __last_update="2016-07-29 13:52:48" condition="True" create_date="2016-07-29 13:52:48" create_uid="[1, 'Administrator']" display_name="qfezrgf" from_id="8a80b50a-5593-11e6-97ef-d4bed96ca9a7" name="qfezrgf" reference_res_id="bc061386-5593-11e6-afcf-d4bed96ca9a7" sequence="0" to_id="b3b45ce0-5590-11e6-88c4-d4bed96ca9a7" tracer="" transition_type="scanner" write_date="2016-07-29 13:52:48" write_uid="[1, 'Administrator']"/>
+  <Transition __last_update="2016-07-29 14:51:24" condition="message != t.scenario_id.ack_code" create_date="2016-07-29 13:46:29" create_uid="[1, 'Administrator']" display_name="qsf" from_id="7da381ec-5592-11e6-b683-d4bed96ca9a7" name="qsf" reference_res_id="da340eae-5592-11e6-8499-d4bed96ca9a7" sequence="0" to_id="7da381ec-5592-11e6-b683-d4bed96ca9a7" tracer="" transition_type="scanner" write_date="2016-07-29 14:51:24" write_uid="[1, 'Administrator']"/>
+  <Transition __last_update="2016-07-29 13:32:20" condition="message == '0'" create_date="2016-07-29 13:32:20" create_uid="[1, 'Administrator']" display_name="quit" from_id="b3b45ce0-5590-11e6-88c4-d4bed96ca9a7" name="quit" reference_res_id="e052ce1c-5590-11e6-a3c2-d4bed96ca9a7" sequence="0" to_id="bd01e916-5590-11e6-a652-d4bed96ca9a7" tracer="" transition_type="scanner" write_date="2016-07-29 13:32:20" write_uid="[1, 'Administrator']"/>
+  <Transition __last_update="2016-07-29 13:46:55" condition="True" create_date="2016-07-29 13:46:55" create_uid="[1, 'Administrator']" display_name="stgfret" from_id="7da381ec-5592-11e6-b683-d4bed96ca9a7" name="stgfret" reference_res_id="e9a9ded6-5592-11e6-982b-d4bed96ca9a7" sequence="10" to_id="b3b45ce0-5590-11e6-88c4-d4bed96ca9a7" tracer="" transition_type="scanner" write_date="2016-07-29 13:46:55" write_uid="[1, 'Administrator']"/>
+</scenario>

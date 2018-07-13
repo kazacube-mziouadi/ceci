@@ -1,0 +1,32 @@
+# -*- coding: utf-8 -*-
+{
+    'name': 'Shipment',
+    'version': '0.1',
+    'author': 'Objectif PI',
+    'license': 'Open-prod license',
+    'category': 'Wharehouse',
+    'description': """ Shipment """,
+    'website': 'http://objectif-pi.com',
+    'images': [],
+    'depends': [
+        'edi_openprod',
+        'sale_purchase',
+        'printers_stock',
+    ],
+    'data': [
+        'wizard/partial_picking_shipment_view.xml',
+        'wizard/volume_compute_view.xml',
+        'wizard/print_picking_view.xml',
+        'shipment_view.xml',
+        'stock_view.xml',
+        'res_partner_view.xml',
+        'security/ir.model.access.csv',
+        'data/shipment_sequence.xml',
+        'data/shipment_mail_template.xml',
+    ],
+    'qweb': [],
+    'demo': [],
+    'test': [],
+    'installable': True,
+    'auto_install': False,
+}

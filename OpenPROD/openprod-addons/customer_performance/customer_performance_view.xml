@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+		<!-- FORM VIEW customer_performance -->
+		<record id='view_form_customer_performance_analysis' model='ir.ui.view'>
+			<field name="name">view_form_customer_performance_analysis</field>
+			<field name="model">customer_performance.analysis</field>
+			<field name="arch" type="xml">
+				<form string="Customer Performance" version="8.0">
+                    <group colspan="4" col="9">
+                        <group colspan="8" col="4">
+                            <group colspan="4" col="4"> 
+                                <group colspan="2" col="2">
+                                    <field name="customer_id"/>
+                                    <field name="year" noformat="1"/>
+                                    <field name="customer_category_id"/>
+                                </group>    
+                                <group colspan="2" col="2">
+                                    <field name="date_from"/>
+                                    <field name="date_to"/>
+                                    <field name="customer_grade"/>
+                                </group>    
+                            </group>
+                            <group colspan="4" col="4">
+                                <notebook colspan="4">
+                                    <page string="Indicators">
+                                        <group colspan="4" col="4">
+                                            <group colspan="2" col="2">
+                                                <group colspan="2" col="2" string="Volumetry">
+                                                    <field name="year_expense"/>
+                                                    <field name="sale_order_line_quantity"/>
+                                                    <field name="sold_product_quantity"/>
+                                                </group>
+                                                <group colspan="2" col="2" string="Delay">
+                                                    <field name="service_rate"/>
+                                                    <field name="late_order_line_quantity"/>
+                                                    <field name="late_day_avg_quantity"/>
+                                                </group>
+                                                <group colspan="2" col="2" string="Quality">
+                                                    <field name="non_conformity_quantity"/>
+                                                </group>
+                                            </group>
+                                            <group colspan="2" col="2">
+                                            <group colspan="2" col="2" string="Comments">
+                                                <field name="comment_ids" colspan="2" nolabel="1">
+                                                    <tree>
+                                                        <field name="date"/>
+                                                        <field name="type"/>
+                                                        <field name="description"/>
+                                                    </tree>
+                                                    <form>
+                                                        <group colspan="4" col="4" string="Details">
+                                                            <group colspan="2" col="2">
+                                                                <field name="name" />
+                                                                <field name="type" />
+                                                                <field name="date" />
+                                                            </group>
+                                                            <group colspan="2" col="2" name="note_groupe">
+                                                                <field name="user_id" />
+                                                                <field name="confidentiality" />
+                                                            </group>
+                                                        </group>
+                                                        <group colspan="4" col="4" attrs="{'invisible': [('confidentiality', '!=', 'user')]}">
+                                                            <group colspan="2" col="2" string="Authorized users">
+                                                                <field name="user_ids" colspan="2" nolabel="1"/>
+                                                            </group>
+                                                            <group colspan="2" col="2" string="Authorized groups">
+                                                                <field name="group_ids" colspan="2" nolabel="1"/>
+                                                            </group>
+                                                        </group>                        
+                                                        <group colspan="4" col="4" string="Description">
+                                                            <field name="description" colspan="4" nolabel="1"/>
+                                                        </group>
+                                                    </form>
+                                                </field>
+                                            </group>
+                                            <group colspan="2" col="2" string="Invoices">
+                                                 <field name="customer_invoice_outstanding"/>
+                                                 <field name="customer_exceed_invoice_outstanding"/>
+                                            </group>
+                                        </group>
+                                        </group>
+                                    </page>
+                                </notebook>
+                            </group>
+                        </group>
+                        <group colspan="1" col="1" class="op_shortcuts" name="customer_performance_action_menu">
+                            <separator string="Analysis" colspan="1" name="separator_analysis_menu"/>
+                            <button class="oe_inline oe_stat_button" type="object" string="Sale lines" name="show_sale_order_lines" icon="fa-list-ul" context="{'search_late_line': False}"/>
+                            <button class="oe_inline oe_stat_button" type="object" string="Late sale lines" name="show_sale_order_lines" icon="fa-calendar-times-o" context="{'only_late_line': True}"/>
+                            <button class="oe_inline oe_stat_button" type="object" string="Non conformity" name="show_non_conformity_lines" icon="fa-exclamation-circle"/>
+                        </group>
+                    </group>
+				</form>
+			</field>
+		</record>
+		
+		<!-- ACTION Customer performance -->
+        <record id="act_customer_performance" model="ir.actions.act_window">
+            <field name="name">Customer performance</field>
+            <field name="res_model">customer_performance.analysis</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[]</field>
+            <field name="context">{}</field>
+        </record>
+        
+        <!-- TREE VIEW Customer performance -->
+        <record id='view_tree_customer_performance' model='ir.ui.view'>
+            <field name="name">view_tree_supplier_performance</field>
+            <field name="model">customer_performance.analysis</field>
+            <field name="arch" type="xml">
+                <tree string="Customer performance" version="8.0">
+                    <field name="customer_id"/>
+                    <field name="date_from"/>
+                    <field name="date_to"/>
+                    <field name="year"/>
+                    <field name="customer_category_id" />
+                    <field name="customer_grade"/>
+                </tree>
+            </field>
+        </record>
+
+		<menuitem id="menu_customer_performance" name="Customer Performance" action="act_customer_performance" parent="sale.menu_sale_analysis" />
+
+		<!-- ============= -->
+        <!-- NOTE OPENPROD -->
+        <!-- ============= -->
+
+        <!-- FORM VIEW note openprod -->
+        <record id="view_form_supp_performance_note_openprod_inherit" model="ir.ui.view">
+            <field name="name">view_form_customer_performance_note_openprod_inherit</field>
+            <field name="inherit_id" ref="base_openprod.view_form_note_openprod_id" />
+            <field name="model">note.openprod</field>
+            <field name="arch" type="xml">
+                <xpath expr="//group[@name='note_groupe']" position="inside">
+                    <field name="customer_performance_id" invisible="context.get('from_object', False)"/>
+                </xpath>
+            </field>
+        </record>
+	</data>
+</openerp>

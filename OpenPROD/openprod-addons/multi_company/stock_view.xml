@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id='view_form_stock_warehouse_orderpoint_multi_company' model='ir.ui.view'>
+            <field name="name">view_form_stock_warehouse_orderpoint_multi_company</field>
+            <field name="model">stock.warehouse.orderpoint</field>
+            <field name="inherit_id" ref="stock.view_form_stock_warehouse_orderpoint"/>
+            <field name="priority" eval="3400" />
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='uom_id']" position="after">
+                    <field name="company_id" required="1" />
+                </xpath>
+            </field>
+        </record>
+
+        <!-- TREE VIEW Orderpoint -->
+        <record id='view_tree_stock_warehouse_orderpoint_multi_company' model='ir.ui.view'>
+            <field name="name">view_tree_stock_warehouse_orderpoint_multi_company</field>
+            <field name="model">stock.warehouse.orderpoint</field>
+            <field name="inherit_id" ref="stock.view_tree_stock_warehouse_orderpoint"/>
+            <field name="priority" eval="3400" />
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='end_date']" position="after">
+                    <field name="company_id" />
+                </xpath>
+            </field>
+        </record>
+        
+        
+    </data>
+</openerp>

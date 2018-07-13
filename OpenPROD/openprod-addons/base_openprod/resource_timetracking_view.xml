@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+		<!-- ===================== -->
+		<!-- RESOURCE TIMETRACKING -->
+		<!-- ===================== -->
+		
+		<!-- FORM VIEW Resource Timetracking -->
+        <record id='view_form_resource_timetracking' model='ir.ui.view'>
+            <field name="name">view_form_resource_timetracking</field>
+            <field name="model">resource.timetracking</field>
+            <field name="arch" type="xml">
+                <form string="Timetracking" version="8.0">
+                	<header>
+						<field name="state" widget="statusbar" required="1"/>
+					</header>
+                    <group colspan="4" col="6" string="Timetracking line" name="timetracking_first_group">
+	                    <field name="name" />
+	                    <field name="activity" readonly="1" />
+                        <field name="resource_id" />
+                        <field name="is_first_resource" />
+	                    <field name="start_date" required="1" />
+	                    <field name="end_date" />
+	                    <field name="user_id" readonly="1" />
+	                    <field name="time" widget="float_time_seconds" required="1" />
+	                    <field name="time_spent" widget="float_time_seconds" />
+                    </group>
+                </form>
+            </field>
+        </record>
+		
+		
+		<!-- TREE VIEW Resource Timetracking -->
+		<record id='view_tree_resource_timetracking' model='ir.ui.view'>
+			<field name="name">view_tree_resource_timetracking</field>
+			<field name="model">resource.timetracking</field>
+			<field name="arch" type="xml">
+				<tree string="Timetracking" version="8.0">
+					<field name="name" />
+					<field name="activity" />
+					<field name="resource_id"/>
+                    <field name="is_first_resource" />
+					<field name="user_id" />
+					<field name="start_date" />
+					<field name="end_date" />
+					<field name="time" widget="float_time_seconds" />
+					<field name="time_spent" widget="float_time_seconds" />
+					<field name="state" />
+				</tree>
+			</field>
+		</record>
+    	
+    	<!-- SEARCH VIEW Resource Timetracking -->
+		<record id='view_search_resource_timetracking' model='ir.ui.view'>
+			<field name="name">view_search_resource_timetracking</field>
+			<field name="model">resource.timetracking</field>
+			<field name="arch" type="xml">
+				<search version="8.0">
+					<group>
+						<field name="activity" />
+						<field name="resource_id" />
+						<field name="user_id" />
+						<field name="start_date" />
+						<field name="end_date" />
+					</group>
+					<newline />
+					<group expand="0" string="Filters">
+						<filter name="no_done" string="No Done" icon="terp-personal" domain="[('end_date', '=', False)]"/>
+					</group>
+					<group expand="0" string="Group By...">
+						<filter string="Activity" icon="terp-partner" context="{'group_by' : 'activity'}" />
+						<separator orientation="vertical" />
+						<filter string="Resource" icon="terp-partner" context="{'group_by' : 'resource_id'}" />
+                        <separator orientation="vertical" />
+						<filter string="User" icon="terp-partner" context="{'group_by' : 'user_id'}" />
+					</group>
+				</search>
+			</field>
+		</record>
+		
+    	<!-- ACTION Resource Timetracking -->
+		<record id="act_resource_timetracking" model="ir.actions.act_window">
+		    <field name="name">Timetracking</field>
+		    <field name="res_model">resource.timetracking</field>
+		    <field name="view_type">form</field>
+		    <field name="view_mode">tree,form</field>
+		    <field name="domain">[]</field>
+		    <field name="context">{}</field>
+		    <field name="search_view_id" ref="view_search_resource_timetracking"/>
+		</record>
+		
+		<record id="act_resource_timetracking_id_tree" model="ir.actions.act_window.view">
+		    <field name="sequence" eval="10"/>
+		    <field name="view_mode">tree</field>
+		    <field name="view_id" ref="view_tree_resource_timetracking"/>
+		    <field name="act_window_id" ref="act_resource_timetracking"/>
+		</record>
+		
+		<record model="ir.actions.act_window.view" id="act_resource_timetracking_id_form">
+		    <field name="sequence" eval="20"/>
+		    <field name="view_mode">form</field>
+		    <field name="view_id" ref="view_form_resource_timetracking"/>
+		    <field name="act_window_id" ref="act_resource_timetracking"/>
+		</record>
+		
+		<menuitem name="Timetracking" action="act_resource_timetracking" id="menu_resource_timetracking_management" parent="menu_resource_time_management" groups="group_menu_resource_analyse"/>
+		
+	</data>
+</openerp>

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+
+		<!-- FORM VIEW Operations -->
+		<record id='view_form_mrp_routing_line' model='ir.ui.view'>
+			<field name="name">view_form_mrp_routing_line</field>
+			<field name="model">mrp.routing.line</field>
+			<field name="inherit_id" ref="mrp.view_form_mrp_routing_line" />
+			<field name="priority" eval="3400" />
+			<field name="arch" type="xml">
+				<xpath expr="//field[@name='tool_ids']" position="before">
+					<group colspan="4" col="6" string="Plastics industry">
+						<field name="mold_id" domain="[('type', '=', 'tech_tool')]" />
+						<field name="type_mold" attrs="{'invisible': [('mold_id', '=', False)], 'required': [('mold_id', '!=', False)]}" />
+						<field name="number_imprint" attrs="{'invisible': [('mold_id', '=', False)], 'required': [('mold_id', '!=', False)]}" />
+					</group>
+				</xpath>
+			</field>
+		</record>
+
+
+		<record id='view_form_mrp_routing_line_simple' model='ir.ui.view'>
+			<field name="name">view_form_mrp_routing_line_simple</field>
+			<field name="model">mrp.routing.line</field>
+			<field name="inherit_id" ref="mrp.view_form_mrp_routing_line_simple" />
+			<field name="priority" eval="3400" />
+			<field name="arch" type="xml">
+				<xpath expr="//field[@name='rl_resource_category_ids']" position="attributes">
+					<attribute name="mode">tree,form</attribute>
+				</xpath>
+				<xpath expr="//field[@name='rl_resource_category_ids']/kanban" position="replace" />
+				<xpath expr="//field[@name='tool_ids']" position="before">
+					<group colspan="4" col="6" string="Plastics industry">
+						<field name="mold_id" domain="[('type', '=', 'tech_tool')]" />
+						<field name="type_mold" attrs="{'invisible': [('mold_id', '=', False)], 'required': [('mold_id', '!=', False)]}" />
+						<field name="number_imprint" attrs="{'invisible': [('mold_id', '=', False)], 'required': [('mold_id', '!=', False)]}" />
+					</group>
+				</xpath>
+			</field>
+		</record>
+
+
+		<record id='view_form_mrp_workorder' model='ir.ui.view'>
+			<field name="name">view_form_mrp_workorder</field>
+			<field name="model">mrp.workorder</field>
+			<field name="inherit_id" ref="mrp.view_form_mrp_workorder" />
+			<field name="priority" eval="3400" />
+			<field name="arch" type="xml">
+				<xpath expr="//group[@name='mrp_tools_group']" position="before">
+					<group colspan="4" col="6" string="Plastics industry">
+						<field name="mold_id" domain="[('type', '=', 'tech_tool')]" />
+						<field name="type_mold" attrs="{'invisible': [('mold_id', '=', False)], 'required': [('mold_id', '!=', False)]}" />
+						<field name="number_imprint" attrs="{'invisible': [('mold_id', '=', False)], 'required': [('mold_id', '!=', False)]}" />
+					</group>
+				</xpath>
+			</field>
+		</record>
+
+
+
+		<record id='view_tree_mrp_workorder' model='ir.ui.view'>
+			<field name="name">view_tree_mrp_workorder</field>
+			<field name="model">mrp.workorder</field>
+			<field name="inherit_id" ref="mrp.view_tree_mrp_workorder" />
+			<field name="priority" eval="3400" />
+			<field name="arch" type="xml">
+				<xpath expr="//field[@name='group_wo_id']" position="after">
+					<field name="mold_id" />
+					<button type="action" string="Change mold" name="%(act_change_mold_id)d" icon="fa-exchange" attrs="{'invisible':[('mold_id', '=', False)]}" />
+				</xpath>
+				<xpath expr="//field[@name='sequence']" position="replace" />
+                <xpath expr="//field[@name='name']" position="replace" />
+                <xpath expr="//field[@name='mo_id']" position="after">
+                    <field name="routing_line_id" />
+                </xpath>
+                <xpath expr="//field[@name='state']" position="after">
+                    <field name="need_delay_validation" invisible="1" />
+                    <button name="conf_delay_button" string="Confirm date" type="object" attrs="{'invisible': [('need_delay_validation', '!=', True)]}" />
+                </xpath>
+                
+                
+			</field>
+		</record>
+		
+
+
+	</data>
+</openerp>

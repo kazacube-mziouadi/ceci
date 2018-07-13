@@ -1,0 +1,1017 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+
+		<menuitem name="Product" id="menu_product_main" parent="base_openprod.menu_technical_data_main" sequence="1" />
+		<menuitem name="Product" id="menu_product_conf" parent="base_openprod.menu_technical_data_configuration" sequence="1" />
+
+		<menuitem name="Quality" id="menu_quality_main" sequence="17" web_icon="base_openprod,static/description/quality.png" />
+		<menuitem name="Configuration" id="menu_quality_conf" parent="menu_quality_main" sequence="40" />
+
+		<!-- ========= -->
+		<!-- PACKAGING -->
+		<!-- ========= -->
+		<!-- FORM VIEW Product Packaging -->
+		<record id='view_form_product_packaging' model='ir.ui.view'>
+			<field name="name">view_form_product_packaging</field>
+			<field name="model">product.packaging</field>
+			<field name="arch" type="xml">
+				<form string="Product Packaging" version="8.0">
+					<group colspan="4" col="4">
+						<group colspan="4" col="6">
+							<field name="name" />
+							<field name="total_qty" />
+							<field name="price" />
+						</group>
+						<group colspan="4" col="4" string="Parcel">
+							<field name="parcel_qty" />
+							<field name="parcel_sizing_id" />
+						</group>
+						<group colspan="4" col="6" string="Pallet">
+							<field name="layer_nb" />
+							<field name="pallet_sizing_id" />
+							<field name="parcel_per_layer_nb" />
+						</group>
+						<group colspan="4" col="4" string="Remarks">
+							<field name="note" colspan="4" nolabel="1" />
+						</group>
+					</group>
+				</form>
+			</field>
+		</record>
+
+		<!-- TREE VIEW Product Packaging -->
+		<record id='view_tree_product_packaging' model='ir.ui.view'>
+			<field name="name">view_tree_product_packaging</field>
+			<field name="model">product.packaging</field>
+			<field name="arch" type="xml">
+				<tree string="Product Packagings" version="8.0">
+					<field name="name" />
+					<field name="price" />
+					<field name="parcel_qty" />
+					<field name="layer_nb" />
+					<field name="parcel_per_layer_nb" />
+				</tree>
+			</field>
+		</record>
+
+		<!-- SEARCH VIEW Product Packaging -->
+		<record id='view_search_product_packaging' model='ir.ui.view'>
+			<field name="name">view_search_product_packaging</field>
+			<field name="model">product.packaging</field>
+			<field name="arch" type="xml">
+				<search version="8.0">
+					<field name="name" />
+					<field name="note" />
+				</search>
+			</field>
+		</record>
+
+		<!-- ACTION Product Packaging -->
+		<record id="act_product_packaging" model="ir.actions.act_window">
+			<field name="name">Product Packaging</field>
+			<field name="res_model">product.packaging</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+			<field name="domain">[]</field>
+			<field name="context">{}</field>
+			<field name="search_view_id" ref="view_search_product_packaging" />
+		</record>
+
+		<menuitem name="Product Packaging" action="act_product_packaging" id="menu_product_packaging" parent="menu_product_conf" groups="base_openprod.group_menu_tech_data_config" />
+
+
+		<!-- ============== -->
+		<!-- PRODUCT SIZING -->
+		<!-- ============== -->
+
+		<!-- FORM VIEW Product sizing -->
+		<record id='view_form_product_sizing' model='ir.ui.view'>
+			<field name="name">view_form_product_sizing</field>
+			<field name="model">product.sizing</field>
+			<field name="arch" type="xml">
+				<form string="Product sizing" version="8.0">
+					<group colspan="4" col="6">
+						<field name="product_id" colspan="6" />
+						<field name="height" />
+						<field name="width" />
+						<field name="depth" />
+					</group>
+				</form>
+			</field>
+		</record>
+
+		<!-- TREE VIEW Product sizing -->
+		<record id='view_tree_product_sizing' model='ir.ui.view'>
+			<field name="name">view_tree_product_sizing</field>
+			<field name="model">product.sizing</field>
+			<field name="arch" type="xml">
+				<tree string="Product sizings" version="8.0">
+					<field name="product_id" />
+					<field name="height" />
+					<field name="width" />
+					<field name="depth" />
+				</tree>
+			</field>
+		</record>
+
+		<!-- SEARCH VIEW Product sizing -->
+		<record id='view_search_product_sizing' model='ir.ui.view'>
+			<field name="name">view_search_product_sizing</field>
+			<field name="model">product.sizing</field>
+			<field name="arch" type="xml">
+				<search version="8.0">
+					<field name="product_id" />
+				</search>
+			</field>
+		</record>
+
+		<!-- ACTION Product sizing -->
+		<record id="act_product_sizing" model="ir.actions.act_window">
+			<field name="name">Product sizing</field>
+			<field name="res_model">product.sizing</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+			<field name="domain">[]</field>
+			<field name="context">{}</field>
+			<field name="search_view_id" ref="view_search_product_sizing" />
+		</record>
+
+		<menuitem name="Product sizing" action="act_product_sizing" id="menu_product_sizing" parent="menu_product_conf" groups="base_openprod.group_menu_tech_data_config" />
+
+
+		<!-- ============ -->
+		<!-- UOM CATEGORY -->
+		<!-- ============ -->
+
+		<!-- FORM VIEW UoM Category -->
+		<record id='view_form_uom_category' model='ir.ui.view'>
+			<field name="name">view_form_uom_category</field>
+			<field name="model">product.uom.category</field>
+			<field name="arch" type="xml">
+				<form string="Units of Measure category">
+					<group>
+						<field name="name" />
+					</group>
+				</form>
+			</field>
+		</record>
+
+		<!-- TREE VIEW UoM Category -->
+		<record id='view_tree_uom_category' model='ir.ui.view'>
+			<field name="name">view_tree_uom_category</field>
+			<field name="model">product.uom.category</field>
+			<field name="arch" type="xml">
+				<tree string="UoMs" version="8.0">
+					<field name="name" />
+				</tree>
+			</field>
+		</record>
+
+		<!-- SEARCH VIEW UoM Category -->
+		<record id='view_search_uom_category' model='ir.ui.view'>
+			<field name="name">view_search_uom_category</field>
+			<field name="model">product.uom.category</field>
+			<field name="arch" type="xml">
+				<search version="8.0">
+					<field name="name" />
+				</search>
+			</field>
+		</record>
+
+		<!-- ACTION UoM Category -->
+		<record id="act_uom_category" model="ir.actions.act_window">
+			<field name="name">UoM category</field>
+			<field name="res_model">product.uom.category</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+			<field name="domain">[]</field>
+			<field name="context">{}</field>
+			<field name="search_view_id" ref="view_search_uom_category" />
+		</record>
+
+		<!-- === -->
+		<!-- UOM -->
+		<!-- === -->
+
+		<!-- FORM VIEW UoM -->
+		<record id='view_form_uom' model='ir.ui.view'>
+			<field name="name">view_form_uom</field>
+			<field name="model">product.uom</field>
+			<field name="arch" type="xml">
+				<form string="Units of Measure">
+					<group>
+						<group>
+							<field name="name" />
+							<field name="category_id" />
+							<field name="type" />
+							<label for="factor" />
+							<div>
+								<field name="factor" attrs="{'invisible': [('type', '!=', 'smaller')]}" />
+								<field name="factor_inv" attrs="{'invisible': [('type', '!=', 'bigger')]}" />
+								<p attrs="{'invisible':[('type','!=','smaller')]}" class="oe_grey">
+									e.g: 1 * (reference unit) = ratio * (this unit)
+								</p>
+								<p attrs="{'invisible':[('type','!=','bigger')]}" class="oe_grey">
+									e.g: 1 * (this unit) = ratio * (reference unit)
+								</p>
+							</div>
+						</group>
+						<group>
+							<field name="price_unit" />
+							<field name="management_unit" />
+							<field name="active" />
+							<field name="rounding" />
+						</group>
+					</group>
+				</form>
+			</field>
+		</record>
+
+		<!-- TREE VIEW UoM -->
+		<record id='view_tree_uom' model='ir.ui.view'>
+			<field name="name">view_tree_uom</field>
+			<field name="model">product.uom</field>
+			<field name="arch" type="xml">
+				<tree string="UoMs" version="8.0">
+					<field name="category_id" />
+					<field name="name" />
+					<field name="price_unit" />
+					<field name="management_unit" />
+					<field name="factor" />
+				</tree>
+			</field>
+		</record>
+
+		<!-- SEARCH VIEW UoM -->
+		<record id='view_search_uom' model='ir.ui.view'>
+			<field name="name">view_search_uom</field>
+			<field name="model">product.uom</field>
+			<field name="arch" type="xml">
+				<search version="8.0">
+					<filter name="price_unit" string="Price unit" domain="[('price_unit', '=', True)]" />
+					<field name="category_id" />
+					<field name="name" />
+				</search>
+			</field>
+		</record>
+
+		<!-- ACTION UoM -->
+		<record id="act_uom" model="ir.actions.act_window">
+			<field name="name">UoM</field>
+			<field name="res_model">product.uom</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+			<field name="domain">[]</field>
+			<field name="context">{}</field>
+			<field name="search_view_id" ref="view_search_uom" />
+		</record>
+
+		<!-- ======== -->
+		<!-- CATEGORY -->
+		<!-- ======== -->
+
+		<record id="product_category_search_view" model="ir.ui.view">
+			<field name="name">product.category.search</field>
+			<field name="model">product.category</field>
+			<field name="arch" type="xml">
+				<search string="Product Categories">
+					<field name="name" string="Product Categories" />
+					<field name="parent_id" />
+					<filter string="Normal" domain="[('type', '=', 'normal')]" name="filter_type_normal" />
+					<filter string="View" domain="[('type', '=', 'view')]" name="filter_type_view" />
+				</search>
+			</field>
+		</record>
+
+		<!-- ACTION Related Products -->
+		<record id="act_related_products" model="ir.actions.act_window">
+			<field name="name">Related Products</field>
+			<field name="res_model">product.product</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+			<field name="domain">[('categ_id', '=', active_id)]</field>
+		</record>
+
+		<record id="product_category_form_view" model="ir.ui.view">
+			<field name="name">product.category.form</field>
+			<field name="model">product.category</field>
+			<field name="arch" type="xml">
+				<form class="oe_form_configuration">
+					<group col="9">
+						<group colspan="8" col="2" name="group_main">
+							<div class="oe_title" colspan="2">
+								<label for="name" string="Category name" class="oe_edit_only" />
+								<h1>
+									<field name="name" placeholder="e.g. Lamps" />
+								</h1>
+							</div>
+							<group name="first" col="4" string="Category Type">
+								<field name="parent_id" />
+								<field name="type" />
+							</group>
+							<group string="Quality" colspan="4" col="4" attrs="{'invisible':[('type', '!=', 'normal')]}">
+								<group string="Plan of Control" colspan="2" col="2" name="plan_of_control_group">
+									<field name="quality_control_ids" colspan="2" nolabel="1">
+										<tree editable="top" string="Products">
+											<field name="type" />
+											<field name="control_id" domain="[('type', '=', type)]" context="{'default_type': type}" />
+											<field name="partner_id" />
+											<field name="frequency_value" />
+											<field name="date_next_frequency" invisible="1" />
+											<field name="int_next_frequency" invisible="1" />
+										</tree>
+									</field>
+								</group>
+							</group>
+						</group>
+						<group colspan="1" col="1" class="op_shortcuts" name="action_menu">
+							<separator string="Analysis" colspan="1" name="separator_analysis_menu" />
+							<button class="oe_inline oe_stat_button" type="action" string="Products" name="%(act_related_products)d" icon="fa-comments-o" attrs="{'invisible':[('type', '!=', 'normal')]}" />
+						</group>
+					</group>
+				</form>
+			</field>
+		</record>
+
+		<record id="product_category_list_view" model="ir.ui.view">
+			<field name="name">product.category.list</field>
+			<field name="model">product.category</field>
+			<field name="priority">1</field>
+			<field name="arch" type="xml">
+				<tree string="Product Categories">
+					<field name="display_name" />
+					<field name="name" />
+					<field name="type" />
+				</tree>
+			</field>
+		</record>
+
+		<record id="product_category_structure_view" model="ir.ui.view">
+			<field name="name">product.category.list</field>
+			<field name="model">product.category</field>
+			<field name="priority">1000</field>
+			<field name="type">tree</field>
+			<field name="field_parent">child_ids</field>
+			<field name="arch" type="xml">
+				<tree string="Category structure">
+					<field name="name" />
+				</tree>
+			</field>
+		</record>
+
+		<record id="product_category_structure_action" model="ir.actions.act_window">
+			<field name="name">Category structure</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="res_model">product.category</field>
+			<field name="view_type">tree</field>
+			<field name="view_mode">tree</field>
+			<field name="view_id" ref="product_category_structure_view" />
+		</record>
+
+		<menuitem id="menu_product_category_structure" name="Category structure" action="product_category_structure_action" parent="menu_product_conf" sequence="3" groups="base_openprod.group_menu_tech_data_config" />
+
+		<record id="product_category_tree_view" model="ir.ui.view">
+			<field name="name">product.category.tree</field>
+			<field name="model">product.category</field>
+			<field name="field_parent">child_ids</field>
+			<field name="arch" type="xml">
+				<tree toolbar="True" string="Product Categories">
+					<field name="name" />
+				</tree>
+			</field>
+		</record>
+
+		<record id="product_category_action" model="ir.actions.act_window">
+			<field name="name">Products by Category</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="res_model">product.category</field>
+			<field name="domain">[('parent_id','=',False)]</field>
+			<field name="view_type">tree</field>
+			<field name="view_id" ref="product_category_tree_view" />
+			<field name="help" type="html">
+				<p>
+					Here is a list of all your products classified by category. You
+					can click a category to get the list of all products linked to
+					this category or to a child of this category.
+				</p>
+			</field>
+		</record>
+
+		<menuitem action="product_category_action" id="menu_products_category" parent="menu_product_conf" sequence="30" groups="base_openprod.group_menu_tech_data_config" />
+
+		<record id="product_category_action_form" model="ir.actions.act_window">
+			<field name="name">Product Categories</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="res_model">product.category</field>
+			<field name="view_type">form</field>
+			<field name="search_view_id" ref="product_category_search_view" />
+			<field name="view_id" ref="product_category_list_view" />
+		</record>
+		<menuitem action="product_category_action_form" id="menu_product_category_action_form" parent="menu_product_conf" sequence="2" groups="base_openprod.group_menu_tech_data_config" />
+
+
+		<record id="product_normal_action_tree" model="ir.actions.act_window">
+			<field name="name">Products List</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="res_model">product.product</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form,kanban</field>
+			<field name="context">{'categ_id':active_id, 'search_default_categ_id':active_id}</field>
+		</record>
+		<record id="ir_product_category_open" model="ir.values">
+			<field eval="'tree_but_open'" name="key2" />
+			<field eval="'product.category'" name="model" />
+			<field name="name">Products by Categories</field>
+			<field eval="'ir.actions.act_window,%d'%product_normal_action_tree" name="value" />
+		</record>
+
+
+		<!-- ======================== -->
+		<!-- PRODUCT TEMPLATE (DUMMY) -->
+		<!-- ======================== -->
+		<!-- FORM VIEW PRODUCT -->
+		<record id='product_template_form_view' model='ir.ui.view'>
+			<field name="name">view_form_product_template</field>
+			<field name="model">product.template</field>
+			<field name="arch" type="xml">
+				<form string="Product">
+					<notebook>
+						<page name="sales">
+						</page>
+					</notebook>
+				</form>
+			</field>
+		</record>
+		<record id='product_template_search_view' model='ir.ui.view'>
+			<field name="name">product_template_search_view</field>
+			<field name="model">product.template</field>
+			<field name="arch" type="xml">
+				<search>
+					<field name="product_variant_ids" />
+					<group string="Group by...">
+					</group>
+				</search>
+			</field>
+		</record>
+
+		<!-- ======= -->
+		<!-- PRODUCT -->
+		<!-- ======= -->
+		<!-- FORM VIEW PRODUCT -->
+		<record id='view_form_product' model='ir.ui.view'>
+			<field name="name">view_form_product</field>
+			<field name="model">product.product</field>
+			<field name="arch" type="xml">
+				<form string="Product">
+					<header>
+						<field name="state" widget="statusbar" clickable="True" />
+					</header>
+					<group colspan="4" col="9">
+						<group colspan="8">
+							<group colspan="4" col="10">
+								<group colspan="1">
+									<field name="picture" nolabel="1" widget="image" class="oe_avatar oe_left" />
+								</group>
+								<group colspan="3" col="2">
+									<field name="name" />
+									<field name="code" />
+								</group>
+								<group colspan="3" col="2">
+									<field name="uom_id" domain="[('management_unit', '=', True)]" />
+									<field name="uom_category_id" invisible="1" />
+									<field name="dual_unit" groups="base.group_dual_unit" attrs="{'invisible': [('type', '=', 'article')]}" />
+									<field name="dual_unit_type" groups="base.group_variable_dual_unit" attrs="{'invisible': [('dual_unit', '=', False)], 'required': [('dual_unit', '=', True)]}" />
+									<field name="sec_uom_id" groups="base.group_variable_dual_unit" attrs="{'invisible': [('dual_unit_type', '!=', 'variable')], 'required': [('dual_unit_type', '=', 'variable')]}" />
+									<field name="sec_uom_category_id" invisible="1" />
+								</group>
+								<group colspan="3" col="2">
+									<field name="type" />
+									<field name="categ_id" domain="[('type', '=', 'normal')]" context="{'default_type': 'normal'}" />
+									<field name="company_id" />
+								</group>
+							</group>
+							<notebook colspan="4">
+								<page string="Procurement" autofocus="autofocus" attrs="{'invisible': [('type', '=', 'article')]}">
+									<group string="Procurement" colspan="4" col="3" name='procurement_product_group'>
+										<group colspan="1" col="2" name='procurement_product_group_flag' >
+											<field name="supply_method" />
+											<field name="trigger_supply" />
+											<!-- <field name="supply_frequency" attrs="{'invisible': ['|', ('type', '=', 'service'), ('trigger_supply', '!=', 'make_to_plan')]}"/> -->
+										</group>
+										<group colspan="1" col="2">
+											<field name="sale_ok" />
+											<field name="purchase_ok" />
+										</group>
+										<group colspan="1" col="2" >
+											<field name="customer_material" attrs="{'invisible': ['|', ('type', '!=', 'stockable'), ('supply_method', '!=', 'buy')]}" />
+											<field name="manage_service_receipt" attrs="{'invisible': ['|', ('type', '!=', 'service'), ('purchase_ok', '=', False)]}" />
+											<field name="manage_service_delivery" attrs="{'invisible': ['|', ('type', '!=', 'service'), ('sale_ok', '=', False)]}" />
+										</group>
+									</group>
+								</page>
+								<page string="Technical tool" attrs="{'invisible': [('type', '!=', 'tech_tool')]}">
+									<group string="Technical" colspan="4" col="4" name="product_technical_page">
+										<field name="partner_id" />
+									</group>
+								</page>
+								<page string="Tracability" attrs="{'invisible': [('type', 'in', ('service', 'article'))]}">
+									<group colspan="4" col="4">
+										<group colspan="1" col="2">
+											<group string="Expiry date" colspan="2" col="2">
+												<field name="is_expiry_date" />
+												<field name="limit_type" attrs="{'invisible': [('is_expiry_date', '=', False)], 'required': [('is_expiry_date', '!=', False)]}" />
+												<field name="expiry_type" attrs="{'invisible': [('is_expiry_date', '=', False)]}" />
+												<group colspan="2" col="1" attrs="{'invisible': ['|', ('expiry_type', '!=', 'automatic'),('is_expiry_date', '=', False)]}">
+													<group colspan="1" col="2">
+														<separator string="Expiry date" colspan="2" />
+														<field name="expiry_year" />
+														<field name="expiry_month" />
+														<field name="expiry_day" />
+													</group>
+													<group colspan="1" col="2">
+														<separator string="Removal date" colspan="2" />
+														<field name="removal_year" />
+														<field name="removal_month" />
+														<field name="removal_day" />
+													</group>
+												</group>
+											</group>
+                                            <group string="Lots" colspan="2" col="2" attrs="{'invisible': [('track_label', '!=', False)]}">
+                                                <field name="track_in_lot" />
+                                                <field name="track_out_lot" />
+                                            </group>
+											<group string="Labels" colspan="2" col="2" attrs="{'invisible': ['|', ('track_in_lot', '!=', False), ('track_out_lot', '!=', False)]}">
+												<field name="track_label" />
+											</group>
+										</group>
+										<group colspan="3" col="1">
+											<group colspan="1" col="3">
+												<group colspan="2" col="4" string="Regulations management" name="regul_management">
+													<field name="conformity_certificate" />
+													<field name="guarantee" />
+													<field name="rohs_logo" />
+													<field name="guarantee_unity_id" />
+													<field name="regulatory_auto_logo" />
+												</group>
+												<group string="Diverse" colspan="1" col="2" >
+													<field name="gross_weight" />
+													<field name="net_weight" />
+												</group>
+											</group>
+										</group>
+									</group>
+								</page>
+								<page string="Quality" name="quality_product_page" attrs="{'invisible': [('type', '=', 'article')]}">
+									<group colspan="4" col="4">
+										<group string="Plan of Control" colspan="2" col="2" name="plan_control_group">
+											<field name="control_categ_syncro" />
+											<field name="quality_control_ids" colspan="2" nolabel="1" attrs="{'readonly': [('control_categ_syncro', '=', True)]}">
+												<tree editable="top" string="Products">
+													<field name="type" />
+													<field name="control_id" domain="[('type', '=', type)]" context="{'default_type': type}" />
+													<field name="partner_id" />
+													<field name="frequency_value" />
+													<field name="date_next_frequency" invisible="1" />
+													<field name="int_next_frequency" invisible="1" />
+												</tree>
+											</field>
+										</group>
+										<group string="Internal documents" colspan="4" col="4">
+											<field name="internal_plan_ids" colspan="4" nolabel="1" />
+										</group>
+									</group>
+								</page>
+								<page string="Notes and parameters" attrs="{'invisible': [('type', '=', 'article')]}">
+									<group colspan="2" col="2" string="Internal note">
+										<field name="internal_note" nolabel="1" />
+									</group>
+									<group colspan="4" col="4" string="Parameters" groups="product.product_parameters">
+										<field name="parameter_ids" nolabel="1">
+											<tree editable="top" string="Parameters">
+												<field name="type_param_id" />
+												<field name="value" />
+												<field name="price_unit" />
+												<field name="name" invisible="1" />
+											</tree>
+										</field>
+									</group>
+								</page>
+								<page string="Administration" groups="base.group_erp_manager" name="product_administration_page" attrs="{'invisible': [('type', '=', 'article')]}">
+									<group colspan="2" col="2">
+										<field name="active" attrs="{'readonly': [('state', '!=', 'obsolete')]}" />
+										<button name="%(product.action_change_dual_unit)d" string="Set fixed dual unit" type="action" class="oe_inline oe_stat_button" confirm="Be sure to check documents related to the product (purchases, sales, ...)" icon="fa-cube" />
+									</group>
+								</page>
+							</notebook>
+						</group>
+						<group colspan="1" col="1" class="op_shortcuts" name="action_menu">
+							<separator string="Actions" colspan="1" name="separator_action_menu" attrs="{'invisible': [('type', '=', 'article')]}" />
+							<button class="oe_inline oe_stat_button" type="action" string="Duplicate" name="%(product.action_change_product_uom)d" icon="fa-files-o" attrs="{'invisible': [('type', '=', 'article')]}" />
+							<separator string="Analysis" colspan="1" name="separator_analysis_menu" attrs="{'invisible': [('type', '=', 'article')]}" />
+						</group>
+					</group>
+				</form>
+			</field>
+		</record>
+
+		<!-- TREE VIEW PRODUCT -->
+		<record id='view_tree_product' model='ir.ui.view'>
+			<field name="name">view_tree_product</field>
+			<field name="model">product.product</field>
+			<field name="arch" type="xml">
+				<tree string="Products" version="8.0">
+					<field name="name" />
+					<field name="code" />
+					<field name="uom_id" />
+					<field name="categ_id" />
+					<field name="supply_method" />
+					<field name="type" />
+					<field name="state" invisible="1" />
+				</tree>
+			</field>
+		</record>
+
+		<!-- SEARCH VIEW PRODUCT -->
+		<record id='view_search_product' model='ir.ui.view'>
+			<field name="name">view_search_product</field>
+			<field name="model">product.product</field>
+			<field name="arch" type="xml">
+				<search>
+					<field name="name" />
+					<field name="code" />
+					<field name="categ_id" />
+					<field name="supply_method" />
+					<field name="type" />
+					<group expand="0" string="Filter">
+						<filter string="Purchased product" domain="[('purchase_ok', '=', True)]" name="filter_purchased_product" />
+						<filter string="Sold product" domain="[('sale_ok', '=', True)]" />
+					</group>
+					<group expand="0" string="Filter by state">
+						<filter string="In development product" domain="[('state', '=', 'dev')]" />
+						<filter string="Obsolete product" name="obsolete_product" domain="[('state', '=', 'obsolete')]" />
+					</group>
+					<group expand="0" string="Group By Manager" name="group_by_manager">
+					</group>
+					<group expand="0" string="Group By">
+						<filter string="Category" domain="[]" context="{'group_by': 'categ_id'}" />
+						<filter string="Supply method" domain="[]" context="{'group_by': 'supply_method'}" />
+						<filter string="Type" domain="[]" context="{'group_by': 'type'}" />
+					</group>
+				</search>
+			</field>
+		</record>
+
+		<!-- ACTION PRODUCT -->
+		<record id="act_product" model="ir.actions.act_window">
+			<field name="name">Product</field>
+			<field name="res_model">product.product</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+			<field name="domain">[]</field>
+			<field name="context">{}</field>
+			<field name="search_view_id" ref="view_search_product" />
+		</record>
+
+		<!-- ACTION Product form -->
+		<record model="ir.actions.act_window" id="product_product_see_form">
+			<field name="name">Product</field>
+			<field name="res_model">product.product</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">form</field>
+			<field name="view_id" ref="view_form_product" />
+			<field name="target">current</field>
+		</record>
+
+		<!-- ACTION Product see tree -->
+		<record model="ir.actions.act_window" id="action_see_all_product">
+			<field name="name">Product</field>
+			<field name="res_model">product.product</field>
+			<field name="view_type">form</field>
+			<field name="view_id" ref="view_tree_product" />
+			<field name="view_mode">tree,form</field>
+			<field name="target">current</field>
+		</record>
+
+		<menuitem name="Product" action="act_product" id="menu_product_product" parent="menu_product_main" groups="group_menu_product_user" />
+		<menuitem name="UoM" action="act_uom" id="menu_uom" parent="menu_product_conf" groups="base_openprod.group_menu_tech_data_config" />
+		<menuitem name="UoM category" action="act_uom_category" id="menu_uom_category" parent="menu_product_conf" groups="base_openprod.group_menu_tech_data_config" />
+
+
+
+		<!-- FORM VIEW quality_control -->
+		<record id='view_form_quality_control_id' model='ir.ui.view'>
+			<field name="name">view_form_quality_control_id</field>
+			<field name="model">quality.control</field>
+			<field name="arch" type="xml">
+				<form string="Quality Control" version="8.0">
+					<group colspan="4" col="4">
+						<field name="name" />
+						<field name="type" attrs="{'readonly': [('id', '!=', False)], 'invisible': [('id', '=', False)]}" />
+						<field name="frequency_type" />
+						<field name="frequency_mode" />
+						<group colspan="2" col="4" string="Value frequency">
+							<field name="frequency_manual" attrs="{'invisible': [('frequency_mode', '!=', 'manual')]}" colspan="2" />
+							<field name="formula" nolabel="1" attrs="{'invisible': [('frequency_mode', '!=', 'formula')]}" colspan="4" />
+							<field name="frequency_date_type" attrs="{'invisible': [('frequency_type', '!=', 'time')]}" colspan="2" />
+							<field name="id" invisible="1" />
+						</group>
+						<group colspan="2" col="2" string="Description">
+							<field name="description" nolabel="1" colspan="2" />
+						</group>
+						<group colspan="2" col="2" string="Controls">
+							<field name="type_control" />
+							<field name="type_numeric" attrs="{'invisible': [('type_control', '!=', 'numeric')], 'required': [('type_control', '=', 'numeric')]}" />
+							<field name="min_manual" colspan="2" attrs="{'invisible': ['|', ('type_control', '!=', 'numeric'), ('type_numeric', '!=', 'manual')]}" />
+							<field name="max_manual" colspan="2" attrs="{'invisible': ['|', ('type_control', '!=', 'numeric'), ('type_numeric', '!=', 'manual')]}" />
+							<field name="formula_numeric_min" colspan="2" attrs="{'invisible': ['|', ('type_control', '!=', 'numeric'), ('type_numeric', '!=', 'formula')]}" />
+							<field name="formula_numeric_max" colspan="2" attrs="{'invisible': ['|', ('type_control', '!=', 'numeric'), ('type_numeric', '!=', 'formula')]}" />
+							<field name="control_value_ids" attrs="{'invisible': [('type_control', '!=', 'selection')]}" nolabel="1" colspan="2" />
+							<field name="text_value" attrs="{'invisible': [('type_control', '!=', 'text')]}" nolabel="1" colspan="2" />
+						</group>
+						<group colspan="2" col="2" string="Plan/Picture">
+							<field name="plan" nolabel="1" widget="image" class="oe_avatar oe_left" />
+						</group>
+					</group>
+				</form>
+			</field>
+		</record>
+
+		<!-- TREE VIEW quality_control -->
+		<record id='view_tree_quality_control_id' model='ir.ui.view'>
+			<field name="name">view_tree_quality_control_id</field>
+			<field name="model">quality.control</field>
+			<field name="arch" type="xml">
+				<tree string="Quality Control" version="8.0">
+					<field name="name" />
+					<field name="type" />
+					<field name="frequency_type" />
+				</tree>
+			</field>
+		</record>
+
+		<!-- SEARCH VIEW quality_control -->
+		<record id='view_search_quality_control_id' model='ir.ui.view'>
+			<field name="name">view_search_quality_control_id</field>
+			<field name="model">quality.control</field>
+			<field name="arch" type="xml">
+				<search version="8.0">
+					<field name="name" />
+					<field name="type" />
+					<field name="frequency_type" />
+				</search>
+			</field>
+		</record>
+
+		<!-- ACTION quality_control -->
+		<record id="act_quality_control_id" model="ir.actions.act_window">
+			<field name="name">Quality Control</field>
+			<field name="res_model">quality.control</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+			<field name="domain">[]</field>
+			<field name="context">{}</field>
+			<field name="search_view_id" ref="view_search_quality_control_id" />
+		</record>
+
+		<record id="act_quality_control_id_tree" model="ir.actions.act_window.view">
+			<field name="sequence" eval="10" />
+			<field name="view_mode">tree</field>
+			<field name="view_id" ref="view_tree_quality_control_id" />
+			<field name="act_window_id" ref="act_quality_control_id" />
+		</record>
+
+		<record model="ir.actions.act_window.view" id="act_quality_control_id_form">
+			<field name="sequence" eval="20" />
+			<field name="view_mode">form</field>
+			<field name="view_id" ref="view_form_quality_control_id" />
+			<field name="act_window_id" ref="act_quality_control_id" />
+		</record>
+
+
+
+		<!-- FORM VIEW quality_control -->
+		<record id='view_form_quality_control_product_id' model='ir.ui.view'>
+			<field name="name">view_form_quality_control_product_id</field>
+			<field name="model">quality.control.product</field>
+			<field name="arch" type="xml">
+				<form string="Quality control product" version="8.0">
+					<group colspan="4" col="4" string="Quality control product">
+						<field name="product_id" />
+						<field name="type" />
+						<field name="control_id" />
+						<field name="frequency_value" />
+						<field name="date_next_frequency" invisible="1" />
+						<field name="int_next_frequency" invisible="1" />
+					</group>
+				</form>
+			</field>
+		</record>
+
+		<!-- TREE VIEW quality_control -->
+		<record id='view_tree_quality_control_product_id' model='ir.ui.view'>
+			<field name="name">view_tree_quality_control_product_id</field>
+			<field name="model">quality.control.product</field>
+			<field name="arch" type="xml">
+				<tree string="Quality control product" version="8.0">
+					<field name="product_id" />
+					<field name="type" />
+					<field name="control_id" />
+					<field name="frequency_value" />
+					<button name="button_view_quality_control" string="Quality control" type="object" icon="terp-tools" />
+					<field name="date_next_frequency" />
+					<field name="int_next_frequency" />
+				</tree>
+			</field>
+		</record>
+
+		<!-- SEARCH VIEW quality_control -->
+		<record id='view_search_quality_control_product_id' model='ir.ui.view'>
+			<field name="name">view_search_quality_control_product_id</field>
+			<field name="model">quality.control.product</field>
+			<field name="arch" type="xml">
+				<search version="8.0">
+					<field name="product_id" />
+					<field name="type" />
+					<field name="control_id" />
+					<field name="date_next_frequency" />
+					<field name="int_next_frequency" />
+				</search>
+			</field>
+		</record>
+
+		<!-- ACTION quality_control -->
+		<record id="act_quality_control_product_intern_id" model="ir.actions.act_window">
+			<field name="name">Quality control product</field>
+			<field name="res_model">quality.control.product</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+			<field name="domain">[]</field>
+			<field name="context">{}</field>
+			<field name="search_view_id" ref="view_search_quality_control_product_id" />
+		</record>
+
+		<record id="act_quality_control_product_intern_id_tree" model="ir.actions.act_window.view">
+			<field name="sequence" eval="10" />
+			<field name="view_mode">tree</field>
+			<field name="view_id" ref="view_tree_quality_control_product_id" />
+			<field name="act_window_id" ref="act_quality_control_product_intern_id" />
+		</record>
+
+		<record model="ir.actions.act_window.view" id="act_quality_control_product_intern_id_form">
+			<field name="sequence" eval="20" />
+			<field name="view_mode">form</field>
+			<field name="view_id" ref="view_form_quality_control_product_id" />
+			<field name="act_window_id" ref="act_quality_control_product_intern_id" />
+		</record>
+
+		<!-- ACTION quality_control -->
+		<record id="act_quality_control_product_delivery_id" model="ir.actions.act_window">
+			<field name="name">Quality control product</field>
+			<field name="res_model">quality.control.product</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+			<field name="domain">[('type', 'in', ('all', 'delivery'))]</field>
+			<field name="context">{'default_type': 'delivery'}</field>
+			<field name="search_view_id" ref="view_search_quality_control_product_id" />
+		</record>
+
+		<record id="act_quality_control_product_delivery_id_tree" model="ir.actions.act_window.view">
+			<field name="sequence" eval="10" />
+			<field name="view_mode">tree</field>
+			<field name="view_id" ref="view_tree_quality_control_product_id" />
+			<field name="act_window_id" ref="act_quality_control_product_delivery_id" />
+		</record>
+
+		<record model="ir.actions.act_window.view" id="act_quality_control_product_delivery_id_form">
+			<field name="sequence" eval="20" />
+			<field name="view_mode">form</field>
+			<field name="view_id" ref="view_form_quality_control_product_id" />
+			<field name="act_window_id" ref="act_quality_control_product_delivery_id" />
+		</record>
+
+		<!-- ACTION quality_control_product -->
+		<record id="act_quality_control_product_reception_id" model="ir.actions.act_window">
+			<field name="name">Quality control product</field>
+			<field name="res_model">quality.control.product</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+			<field name="domain">[('type', 'in', ('all', 'reception', 'post_reception'))]</field>
+			<field name="context">{'default_type': 'reception'}</field>
+			<field name="search_view_id" ref="view_search_quality_control_product_id" />
+		</record>
+
+		<record id="act_quality_control_product_reception_id_tree" model="ir.actions.act_window.view">
+			<field name="sequence" eval="10" />
+			<field name="view_mode">tree</field>
+			<field name="view_id" ref="view_tree_quality_control_product_id" />
+			<field name="act_window_id" ref="act_quality_control_product_reception_id" />
+		</record>
+
+		<record model="ir.actions.act_window.view" id="act_quality_control_product_reception_id_form">
+			<field name="sequence" eval="20" />
+			<field name="view_mode">form</field>
+			<field name="view_id" ref="view_form_quality_control_product_id" />
+			<field name="act_window_id" ref="act_quality_control_product_reception_id" />
+		</record>
+
+		<menuitem name="Customers" id="menu_quality_customer_id" parent="menu_quality_main" sequence="10" />
+		<menuitem name="Suppliers" id="menu_quality_supplier_id" parent="menu_quality_main" sequence="20" />
+		<menuitem name="Analyse/Various" id="menu_quality_analyse_id" parent="menu_quality_main" sequence="50" />
+		<menuitem name="Quality Control" action="act_quality_control_id" id="menu_quality_control_id" parent="menu_quality_analyse_id" sequence="10" groups="group_menu_analysis_quality" />
+
+		<!-- <menuitem name="Product Quality Control" action="act_quality_control_product_delivery_id" id="menu_quality_control_product_delivey_id" parent="menu_quality_customer_id" sequence="10" /> -->
+		<menuitem name="Product quality control" action="act_quality_control_product_intern_id" id="quality_control_product_menu" parent="menu_quality_analyse_id" sequence="5" groups="group_menu_analysis_quality" />
+
+
+		<!-- FORM VIEW Parameter Dimension -->
+		<record id='view_form_parameter_dimension' model='ir.ui.view'>
+			<field name="name">view_form_parameter_dimension</field>
+			<field name="model">parameter.dimension</field>
+			<field name="arch" type="xml">
+				<form string="Parameter Dimension" version="8.0">
+					<group>
+						<field name="name" />
+						<field name="value" />
+						<field name="price_unit" />
+					</group>
+				</form>
+			</field>
+		</record>
+
+
+		<!-- FORM VIEW Parameter Dimension Type -->
+		<record id='view_form_parameter_dimension_type' model='ir.ui.view'>
+			<field name="name">view_form_parameter_dimension_type</field>
+			<field name="model">parameter.dimension.type</field>
+			<field name="arch" type="xml">
+				<form string="Parameter Dimension Type" version="8.0">
+					<group colspan="4" col="4">
+						<field name="name" />
+						<group colspan="4" col="4" string="Price formula">
+							<label string='Here is an example of the formula 14 + 6 * 3 - value.
+							"Value" is the only parameter that you can use and which corresponds to the value of the parameter that has this type of parameter' colspan="4" />
+							<field name="price_formula" colspan="4" nolabel="1" />
+						</group>
+					</group>
+				</form>
+			</field>
+		</record>
+
+
+		<!-- FORM VIEW Purchase property -->
+		<record id='view_form_purchase_property' model='ir.ui.view'>
+			<field name="name">view_form_purchase_property</field>
+			<field name="model">purchase.property</field>
+			<field name="arch" type="xml">
+				<form string="Purchase property" version="8.0">
+					<group colspan="4" col="4">
+						<field name="name" />
+						<field name="category_id" />
+						<field name="sale" />
+						<field name="purchase" />
+					</group>
+				</form>
+			</field>
+		</record>
+
+		<!-- TREE VIEW Purchase property -->
+		<record id='view_tree_purchase_property' model='ir.ui.view'>
+			<field name="name">view_tree_purchase_property</field>
+			<field name="model">purchase.property</field>
+			<field name="arch" type="xml">
+				<tree string="Purchase properties" version="8.0">
+					<field name="name" />
+					<field name="category_id" />
+					<field name="sale" />
+					<field name="purchase" />
+				</tree>
+			</field>
+		</record>
+
+		<!-- SEARCH VIEW Purchase property -->
+		<record id='view_search_purchase_property' model='ir.ui.view'>
+			<field name="name">view_search_purchase_property</field>
+			<field name="model">purchase.property</field>
+			<field name="arch" type="xml">
+				<search version="8.0">
+					<field name="name" />
+					<field name="category_id" />
+					<field name="sale" />
+					<field name="purchase" />
+				</search>
+			</field>
+		</record>
+
+		<!-- ACTION Purchase property -->
+		<record id="act_purchase_property" model="ir.actions.act_window">
+			<field name="name">Purchase property</field>
+			<field name="res_model">purchase.property</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+
+		<menuitem name="Purchase property" action="act_purchase_property" id="menu_purchase_property" parent="menu_product_conf" groups="base_openprod.group_menu_tech_data_config" />
+
+	</data>
+</openerp>

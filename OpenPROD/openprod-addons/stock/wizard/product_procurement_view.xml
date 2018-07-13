@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+		<!-- ACTION Product procurement wizard -->
+		<record id="act_product_procurement" model="ir.actions.act_window">
+			<field name="name">Product procurement wizard</field>
+			<field name="res_model">product.procurement.wizard</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">form</field>
+			<field name="target">new</field>
+		</record>
+		
+		<!-- FORM VIEW Product Procurement -->
+		<record id='view_form_product_procurement' model='ir.ui.view'>
+			<field name="name">product_procurement</field>
+			<field name="model">product.procurement.wizard</field>
+			<field name="arch" type="xml">
+				<form string="Product procurement" version="8.0">
+					<group>
+						<field name="product_id" />
+					</group>
+					<footer>
+						<button name="calculate" string="Calculate" type="object" class="oe_highlight" />
+						<button string="Cancel" class="oe_link" special="cancel" />
+					</footer>
+				</form>
+			</field>
+		</record>
+	</data>
+</openerp>

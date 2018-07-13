@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+	
+		<record model="ir.ui.view" id="view_form_stagger_sale_delivery">
+			<field name="name">view_form_stagger_sale_delivery</field>
+			<field name="model">stagger.sale.delivery</field>
+			<field name="type">form</field>
+			<field name="arch" type="xml">
+				<form string="Stagger delivery">
+					<group colspan="4" col="4" string="Stagger delivery">
+						<field name="sale_line_id"/>
+						<label string="" colspan="2"/>
+						<label for="quantity"/>
+						<div>
+							<field name="quantity" class="oe_inline"/>
+							<field name="uom_id" class="oe_inline"/>
+						</div>
+						<field name="new_date"/>
+					</group>
+					<footer>
+						<button name="action_stagger_sale_delivery" string="Stagger the delivery" type="object" class="oe_highlight" />
+						or
+						<button string="Cancel" class="oe_link" special="cancel" />
+					</footer>
+				</form>
+			</field>
+		</record>
+
+		<record model="ir.actions.act_window" id="action_stagger_sale_delivery">
+			<field name="name">Stagger the delivery</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="res_model">stagger.sale.delivery</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">form</field>
+			<field name="target">new</field>
+		</record>
+		
+	</data>
+</openerp>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+		<record id="view_change_product_uom" model="ir.ui.view">
+			<field name="name">view_change_product_uom</field>
+			<field name="inherit_id" ref="product.view_form_change_change_product_uom" />
+			<field name="model">change.product.uom</field>
+			<field name="arch" type="xml">
+				<xpath expr="//group[@name='copy_other_data']" position="inside">
+					<field name="copy_characteristics" />
+				</xpath>
+			</field>
+		</record>
+	</data>
+</openerp>

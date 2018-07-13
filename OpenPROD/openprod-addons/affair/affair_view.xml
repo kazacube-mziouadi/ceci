@@ -1,0 +1,510 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+		<!-- FORM VIEW Affair -->
+		<record id='view_form_affair_id' model='ir.ui.view'>
+			<field name="name">view_form_affair_id</field>
+			<field name="model">affair</field>
+			<field name="arch" type="xml">
+				<form string="Affair" version="8.0">
+					<header>
+						<field name="state_id" widget="statusbar" clickable="True" />
+					</header>
+					<group col="9">
+						<group colspan="8">
+							<group colspan="4" col="6">
+								<group colspan="2" col="2">
+									<field name="name" />
+									<field name="code" readonly="1" />
+									<field name="customer_id" domain="[('can_order', '=', True), ('is_customer', '=', True), ('state', '=', 'qualified')]" attrs="{'invisible': [('type', '!=', 'specific')], 'required': [('type', '=', 'specific')]}" />
+									<field name="responsible_id" />
+								</group>
+								<group colspan="2" col="2">
+									<field name="type" />
+									<field name="criticality" />
+									<field name="directory_id" />
+								</group>
+								<group colspan="2" col="2">
+									<field name="date" readonly="1" />
+									<field name="limit_date" />
+									<field name="end_date" />
+								</group>
+							</group>
+							<group colspan="4" col="4">
+								<notebook colspan="8">
+									<page string="Actions">
+										<group colspan="4" col="4" string="Description">
+											<field name="description" colspan="4" nolabel="1" />
+											<field name="user_event_ids" colspan="4" nolabel="1" context="{'reference_generat_auto': True}">
+												<tree>
+													<field name="name"/>
+													<field name="state_id"/>
+													<field name="affected_user_id"/>
+													<field name="duration"/>
+													<field name="state" invisible="1"/>
+												</tree>
+												<form string="Actions" version="8.0">
+													<group colspan="4" col="6">
+														<group colspan="2" col="2">
+															<field name="name" />
+															<field name="start_datetime" on_change="onchange_duration('start', start_datetime, duration)" attrs="{'invisible': [('related_type', '!=', 'plan')]}"/>
+															<field name="stop_datetime" on_change="onchange_duration('stop', stop_datetime, duration)"/>
+														</group>
+														<group colspan="2" col="2">
+															<field name="affected_user_id" />
+															<field name="duration" widget="float_time" on_change="onchange_duration('start', start_datetime, duration)" attrs="{'invisible': [('related_type', '!=', 'plan')]}"/>
+															<field name="alert_period" />
+														</group>
+														<group colspan="2" col="2">
+															<field name="alarm_ids" widget="many2many_tags"/>
+															<field name="type_id" />
+															<field name="state_id" required="1"/>
+															<field name="related_type" invisible="1"/>
+														</group>
+														<group colpsan="6" invisible="1">
+															<field name="state"/>
+															<field name="is_attendee"/>
+								                    		<field name="attendee_status"/>
+														</group>
+														<notebook colspan="6">
+							                        		<page string="Details">
+																<group colspan="4" col="4" string="Description">
+																	<field name="description" colspan="4" nolabel="1"/>
+																</group>
+																<group colspan="4" col="4" string="Details">
+																	<field name="user_id" />
+																	<field name="categ_ids"  widget="many2many_tags"/>
+																	<field name="location" />
+																	<group colspan="4" col="8">
+											                          	<button name="remove_seven_days" type="object" string="- 7" icon="gtk-go-back" colspan="1"/>
+																		<button name="remove_one_day" type="object" string="- 1" icon="gtk-go-back" colspan="1"/>
+											                          	<label colspan="4" string=""/>
+											                          	<button name="add_one_day" type="object" string="+ 1" icon="gtk-go-forward" colspan="1"/>
+											                          	<button name="add_seven_days" type="object" string="+ 7" icon="gtk-go-forward" colspan="1"/>
+																	</group>
+																</group>
+																<group colspan="4" col="4" string="Times">
+																	<field name="timetracking_ids" nolabel="1" colspan="4">
+																		<tree>
+																			<field name="name"/>
+																			<field name="activity"/>
+																			<field name="user_id"/>
+																			<field name="start_date"/>
+																			<field name="end_date"/>
+																			<field name="time" widget="float_time" sum="Total"/>
+																		</tree>
+																	</field>
+																</group>
+															</page>
+							                        		<page string="Attendees and invitations" attrs="{'invisible': [('related_type', '!=', 'plan')]}">
+							                        			<group colspan="4" col="4" string="Attendees">
+								                        			<label for="user_ids" string="Attendees" class="oe_edit_only"/>
+											                        <h2>
+											                            <field name="user_ids" widget="many2manyattendee"
+											                                placeholder="Select attendees..."
+											                                context="{'force_email':True}"
+											                                on_change="onchange_user_ids(user_ids)"
+											                                class="oe_inline"/>
+											                        </h2>
+										                        </group>
+										                        <group colspan="4" col="4" string="Invitations">
+								                        			<button name="do_sendmail" type="object" string="Send mail" icon="terp-mail-message-new" class="oe_link"/>
+										                            <field name="attendee_ids" widget="one2many" colspan="4" nolabel="1">
+										                                <tree string="Invitation details" editable="top" create="false" delete="false">
+										                                    <field name="user_id" />
+										                                    <field name="state" />
+										                                    <field name="email" widget="email"/>
+										                                    <button name="do_tentative" states="needsAction,declined,accepted" string="Uncertain" type="object" icon="terp-crm" />
+										                                    <button name="do_accept" string="Accept" states="needsAction,tentative,declined" type="object" icon="gtk-apply"/>
+										                                    <button name="do_decline" string="Decline" states="needsAction,tentative,accepted" type="object" icon="gtk-cancel"/>
+										                                </tree>
+										                            </field>
+										                        </group>
+							                        		</page>
+														</notebook>
+													</group>
+												</form>
+											</field>
+										</group>
+									</page>
+									<page string="Communications">
+										<group colspan="4" col="4" string="Emails">
+											<field name="mail_ids" colspan="4" nolabel="1"/>
+											<button name="action_send_mail" type="object" string="Send Mail" class="oe_inline oe_stat_button" icon="fa-envelope"/>
+										</group>
+									</page>
+									<page string="Notes">
+										<group colspan="4" col="4" string="Notes">
+											<field name="note_ids" colspan="4" nolabel="1" context="{'from_object': True}">
+												<form string="Notes" version="8.0">
+													<group colspan="4" col="1">
+														<group colspan="4" col="4" string="Details">
+															<field name="name" />
+															<field name="user_id" />
+															<field name="type" />
+															<field name="date" />
+															<separator string="Description" colspan="4" />
+															<field name="description" colspan="4" nolabel="1" />
+														</group>
+													</group>
+												</form>
+											</field>
+										</group>
+										<group colspan="4" col="4" string="Attachments">
+											<field name="document_ids" colspan="4" nolabel="1"
+												context="{'default_directory_id':directory_id}" />
+										</group>
+									</page>
+		<!-- 							<page string="Technical datas"> -->
+		<!-- 								<group colspan="4" col="4" string="BoM lines"> -->
+		<!-- 									<field name="bom_ids" colspan="4" nolabel="1" /> -->
+		<!-- 								</group> -->
+		<!-- 								<group colspan="4" col="4" string="Routing lines"> -->
+		<!-- 									<field name="rl_ids" colspan="4" nolabel="1" /> -->
+		<!-- 								</group> -->
+		<!-- 							</page> -->
+									<page string="Sales">
+										<group colspan="4" col="4" string="Sales">
+											<field name="sol_ids" colspan="4" nolabel="1" readonly="1"/>
+											<button class="oe_inline oe_stat_button" type="action" string="Create sale" name="%(sale.action_create_quick_sale)d" icon="fa-plus-square" context="{'create_quick_sale_other_data': {'affair_id': context.get('active_id')}}" />
+										</group>
+									</page>
+									<page string="Production">
+										<group colspan="4" col="4" string="Production" class="custom_width">
+											<field name="wo_ids" colspan="4" nolabel="1" >
+												<tree default_order="sale_line_id ASC,sorting_level ASC" string="Workorders" version="8.0" colors="gray:state=='cancel'; blue:state=='draft'; brown:state=='done';">
+													<field name="color_priority_need_move" colors="red:color_priority_need_move==3; orange:color_priority_need_move==2; green:color_priority_need_move==1; black:color_priority_need_move==4" string=" " invisible="0" />
+													<button type="action" string="Add RM" name="%(mrp.act_create_rm_id)d" icon="STOCK_ADD" />
+													<field name="label" style="margin-left: 1000px"/>
+													<field name="mo_id" />
+													<!-- <field name="final_product_id" /> -->
+													<!-- <field name="sequence" /> -->
+													<field name="name" />
+													<field name="quantity" />
+													<field name="uom_id" />
+													<field name="planned_start_date" />
+													<field name="planned_end_date" />
+													<!-- <field name="real_start_date" /> -->
+													<field name="availability" widget="progressbar" />
+												<!-- 	<field name="advancement" /> -->
+													<field name="first_resource_id" />
+													<field name="theo_total_cost" sum="Total" />
+													<field name="real_total_cost" sum="Total" />
+													<field name="total_time_theo" widget="float_time_seconds" sum="Total" />
+													<field name="total_time_real" widget="float_time_seconds" sum="Total" />
+													<field name="state" />
+													<field name="sorting_level" invisible="1" />
+													<field name="sale_line_id" invisible="1" />
+												</tree>
+											</field>
+											<button name="compute_wo_level" type="object" string="Compute level" class="oe_inline oe_stat_button" icon="fa-sort-amount-asc"/>
+										</group>
+									</page>
+									<page string="Purchases">
+										<group colspan="4" col="4" string="Purchases">
+											<field name="pol_ids" colspan="4" nolabel="1" readonly="1"/>
+										</group>
+									</page>
+									<page string="Costs">
+										<group colspan="4" col="4" string="Costs">
+											<field name="sol_price" colspan="4" />
+											<field name="wo_theo_cost" />
+											<field name="wo_real_cost" />
+											<field name="profit_margin_theo" />
+											<field name="profit_margin_real" />
+										</group>
+									</page>
+									<page string="Phase">
+										<group string="Phases">
+											<field name="phase_ids" nolabel="1">
+												<tree string="Project Phases" default_order="parent_left">
+													<field name="name_level" />
+													<field name="start_date" />
+													<field name="user_id" />
+													<field name="progress" widget="progressbar" />
+													<field name="charge" widget="float_time_seconds" sum="Total charge" />
+													<field name="resource_id" />
+													<field name="state"/>
+													<field name="parent_left" invisible="1" />
+												</tree>
+												<form string="project phase" version="8.0">
+													<group>
+														<group string="Description" colspan="1" col="2">
+															<field name="name" />
+															<field name="user_id" />
+															<field name="state" />
+															<field name="sequence" />
+															<field name="description" />
+														</group>
+														<group string="Link" colspan="1" col="2">	
+															<field name="parent_id" />			
+															<field name="next_ids" widget="many2many_tags" />
+														</group>
+														<group string="Planification" colspan="4" col="2">
+															<group colspan="1" col="2">	
+																<field name="start_date" attrs="{'invisible': [('child_ids', '!=', [])]}" />
+																<field name="end_date" attrs="{'invisible': ['|', ('child_ids', '!=', []), ('wo_ids', '=', [])]}" />
+																<field name="child_ids" invisible="1" />
+																<field name="event_ids" invisible="1" />
+																<field name="wo_ids" invisible="1" />
+																<field name="mo_ids" invisible="1" />
+																<field name="duration" attrs="{'invisible': ['|', ('child_ids', '!=', []), ('wo_ids', '!=', [])]}" />
+															</group>
+															<group colspan="1" col="2">								
+																<field name="charge" widget="float_time_seconds" attrs="{'readonly': ['|', ('event_ids', '!=', []), ('wo_ids', '!=', [])],'invisible': ['|', ('child_ids', '!=', [])]}" />
+																<field name="resource_id" attrs="{'invisible': ['|', ('child_ids', '!=', []), ('mo_ids', '!=', [])], 
+																	'readonly': ['|',
+																				('wo_ids', '!=', []),
+																				('event_ids', '!=', [])]}" />
+																<field name="progress" attrs="{'invisible': ['|', ('child_ids', '!=', []), ('mo_ids', '!=', [])],
+																								'readonly': ['|',
+																									('wo_ids', '!=', []),
+																									('event_ids', '!=', [])]}" />
+															</group>
+														</group>
+													</group>
+												</form>
+											</field>
+										</group>
+									</page>
+								</notebook>
+							</group>
+						</group>
+							<group colspan="1" col="1" class="op_shortcuts" name="action_menu">
+								<separator string="Actions" colspan="1" name="separator_action_menu" />
+								<button class="oe_inline oe_stat_button" type="action" string="Create Purchase" 
+									name="%(purchase.action_create_quick_purchase)d" icon="fa-money"
+									context="{'affair_id':active_id}" />
+							</group>
+					</group>
+				</form>
+			</field>
+		</record>
+
+		<!-- KANBAN VIEW Affair -->
+		<record model="ir.ui.view" id="view_kanban_affair_openprod">
+			<field name="name">Affair</field>
+			<field name="model">affair</field>
+			<field name="arch" type="xml">
+				<kanban default_group_by="state_id">
+					<field name="state_id" />
+					<field name="color" />
+					<field name="name" />
+					<field name="customer_id" />
+					<field name="responsible_id" />
+					<field name="date" />
+					<field name="limit_date" />
+					<field name="user_event_ids" />
+					<field name="criticality" />
+					<field name="nb_actions" />
+					<templates>
+						<t t-name="kanban-box">
+							<div t-attf-class="#{kanban_color(record.color.raw_value)} oe_kanban_global_click" 
+                        		t-attf-style="#{record.criticality.raw_value == 'critical' ? 'border-color:red;border-style: solid;border-width: 1px;' : ''}">
+								<div class="o_dropdown_kanban dropdown">
+									<a class="dropdown-toggle btn" data-toggle="dropdown" href="#" >
+                                        <span class="fa fa-bars fa-lg"/>
+                                    </a>
+									<ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+	                                    <t t-if="widget.editable"><li><a type="edit">Edit</a></li></t>
+	                                    <t t-if="widget.deletable"><li><a type="delete">Delete</a></li></t>
+	                                    <li><a name="action_send_mail" type="object">Send Email</a></li>
+	                                    <li><a type="action" name="%(base_openprod.action_user_action_target_new)d" context="{'reference_generat_auto': True}">Create task</a></li>
+	                                    <li><a type="action" name="%(base_openprod.action_note_openprod_id_target_new)d" context="{'reference_generat_auto': True}">Create note</a></li>
+									</ul>
+								</div>
+								<div class="oe_kanban_content">
+									<div>
+										<b>
+											<field name="name" />
+										</b>
+										,
+									</div>
+									<div>
+										<b>Customer : </b>
+										<t t-if="record.customer_id.raw_value">
+											<field name="customer_id" />
+										</t>
+									</div>
+									<div>
+										<b>Salesman : </b>
+										<t t-if="record.responsible_id.raw_value">
+											<field name="responsible_id" />
+										</t>
+									</div>
+									<div>
+										<b>Creation : </b>
+										<t t-if="record.date.raw_value">
+											<field name="date" />
+										</t>
+									</div>
+									<div>
+										<b>Limit : </b>
+										<t t-if="record.limit_date.raw_value">
+											<field name="limit_date" />
+										</t>
+									</div>
+									<div class="oe_kanban_footer_left" style="margin-top:8px;">
+										<span class='oe_kanban_mail_new' title='Important Messages' t-attf-style="background-color:#9AA7BC;padding:2px;">
+										<i class='fa fa-comments'/> <t t-raw="record.nb_actions.raw_value"/> Actions</span>
+									</div>
+								</div>
+								<div class="oe_clear"></div>
+							</div>
+						</t>
+					</templates>
+				</kanban>
+			</field>
+		</record>
+
+		<!-- TREE VIEW Affair -->
+		<record id='view_tree_affair_id' model='ir.ui.view'>
+			<field name="name">view_tree_affair_id</field>
+			<field name="model">affair</field>
+			<field name="arch" type="xml">
+				<tree string="Affairs" version="8.0">
+					<field name="display_name" />
+					<field name="customer_id" />
+					<field name="responsible_id" />
+					<field name="type" />
+					<field name="criticality" />
+					<field name="date" />
+					<field name="limit_date" />
+					<field name="end_date" />
+					<field name="state_id" />
+				</tree>
+			</field>
+		</record>
+
+		<!-- SEARCH VIEW Affair -->
+		<record id='view_search_affair_id' model='ir.ui.view'>
+			<field name="name">view_search_affair_id</field>
+			<field name="model">affair</field>
+			<field name="arch" type="xml">
+				<search version="8.0">
+					<filter icon="terp-personal+" string="My affairs" name="filter_salesman_active" domain="[('responsible_id','=',uid)]" />
+				</search>
+			</field>
+		</record>
+
+		<!-- ACTION Affair (My affairs) -->
+		<record id="act_affair_id" model="ir.actions.act_window">
+			<field name="name">Affair</field>
+			<field name="res_model">affair</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">kanban,tree,form</field>
+			<field name="domain">[]</field>
+			<field name="context">{'search_default_filter_salesman_active': 1}</field>
+			<field name="search_view_id" ref="view_search_affair_id" />
+		</record>
+
+		<!-- ACTION Affair (All affairs) -->
+		<record id="act_all_affair_id" model="ir.actions.act_window">
+			<field name="name">Affair</field>
+			<field name="res_model">affair</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">kanban,tree,form</field>
+			<field name="domain">[]</field>
+			<field name="context">{'group_by' : 'responsible_id'}</field>
+			<field name="search_view_id" ref="view_search_affair_id" />
+		</record>
+
+		<record id="act_affair_id_kanban" model="ir.actions.act_window.view">
+			<field name="sequence" eval="10" />
+			<field name="view_mode">kanban</field>
+			<field name="view_id" ref="view_kanban_affair_openprod" />
+			<field name="act_window_id" ref="act_affair_id" />
+		</record>
+
+		<record id="act_affair_id_tree" model="ir.actions.act_window.view">
+			<field name="sequence" eval="20" />
+			<field name="view_mode">tree</field>
+			<field name="view_id" ref="view_tree_affair_id" />
+			<field name="act_window_id" ref="act_affair_id" />
+		</record>
+
+		<record model="ir.actions.act_window.view" id="act_affair_id_form">
+			<field name="sequence" eval="30" />
+			<field name="view_mode">form</field>
+			<field name="view_id" ref="view_form_affair_id" />
+			<field name="act_window_id" ref="act_affair_id" />
+		</record>
+		
+		<record model="ir.actions.act_window" id="action_see_all_affair">
+			<field name="name">Affair</field>
+			<field name="res_model">affair</field>
+			<field name="view_type">form</field>
+			<field name="view_id" ref="view_tree_affair_id" />
+			<field name="view_mode">tree,form</field>
+			<field name="target">current</field>
+		</record>
+
+		<menuitem name="Affair" id="main_menu_affair_id" parent="project.menu_tasks" />
+		<menuitem name="My Affairs" action="act_affair_id" id="menu_affair_id" parent="main_menu_affair_id" groups="project.group_menu_project_user"/>
+		<menuitem name="All Affairs" action="act_all_affair_id" id="menu_all_affair_id" parent="main_menu_affair_id" groups="project.group_menu_project_manager"/>
+		<menuitem name="Configuration" id="menu_configuration_affair_openprod" parent="project.menu_tasks" />
+
+		<!-- ============ -->
+		<!-- AFFAIR STATE -->
+		<!-- ============ -->
+
+		<!-- FORM VIEW Affair state -->
+		<record id='view_form_state_affair_openprod' model='ir.ui.view'>
+			<field name="name">view_form_state_affair_openprod</field>
+			<field name="model">affair.state</field>
+			<field name="arch" type="xml">
+				<form string="Affair State" version="8.0">
+					<group colspan="4" col="4" string="Details">
+						<field name="name" />
+						<field name="sequence" />
+					</group>
+					<group colspan="4" col="2" string="Parameters">
+						<field name="fold" />
+						<label colspan="2" string="" />
+						<field name="is_end" />
+					</group>				
+					<group colspan="4" col="4" string="Description">
+						<field name="description" colspan="4" nolabel="1" />
+					</group>
+				</form>
+			</field>
+		</record>
+
+		<!-- TREE VIEW Affair state -->
+		<record id='view_tree_state_affair_openprod' model='ir.ui.view'>
+			<field name="name">view_tree_state_affair_openprod</field>
+			<field name="model">affair.state</field>
+			<field name="arch" type="xml">
+				<tree string="Affair state" version="8.0">
+					<field name="sequence" />
+					<field name="name" />
+					<field name="fold" />
+				</tree>
+			</field>
+		</record>
+
+		<!-- SEARCH VIEW Affair state -->
+		<record id='view_search_state_affair_openprod' model='ir.ui.view'>
+			<field name="name">view_search_state_affair_openprod</field>
+			<field name="model">affair.state</field>
+			<field name="arch" type="xml">
+				<search version="8.0">
+					<field name="name" />
+				</search>
+			</field>
+		</record>
+
+		<!-- ACTION Affair state -->
+		<record id="act_state_affair_openprod" model="ir.actions.act_window">
+			<field name="name">States</field>
+			<field name="res_model">affair.state</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+			<field name="domain">[]</field>
+			<field name="context">{}</field>
+			<field name="search_view_id" ref="view_search_state_affair_openprod" />
+		</record>
+
+		<menuitem name="States" action="act_state_affair_openprod" id="menu_state_affair_openprod" parent="menu_configuration_affair_openprod" groups="project.group_menu_project_config"/>
+	</data>
+</openerp>

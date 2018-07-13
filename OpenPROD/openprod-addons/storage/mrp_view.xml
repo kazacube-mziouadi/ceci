@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+
+		<!-- FORM VIEW mrp workorder -->
+		<record id='view_form_mrp_workorder_storage' model='ir.ui.view'>
+			<field name="name">view_form_mrp_workorder_storage</field>
+			<field name="model">mrp.workorder</field>
+			<field name="priority" eval="1000" />
+			<field name="inherit_id" ref="mrp.view_form_mrp_workorder" />
+			<field name="arch" type="xml">
+				<xpath expr="//separator[@name='separator_modif_menu']" position="before">
+					<button name="%(stock.act_stock_product_storage_in)d" string="Store" type="action" class="oe_inline oe_stat_button" icon="fa-sign-in" />
+				</xpath>
+			</field>
+		</record>
+
+	</data>
+</openerp>

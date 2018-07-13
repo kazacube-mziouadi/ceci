@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+		<!-- =============== -->
+		<!-- SALE ORDER LINE -->
+		<!-- =============== -->
+		<record model="ir.ui.view" id="view_form_sale_order_line_affair">
+			<field name="name">view_form_sale_order_line_affair</field>
+			<field name="inherit_id" ref="sale.view_form_sale_order_line" />
+			<field name="priority" eval="1400" />
+			<field name="model">sale.order.line</field>
+			<field name="arch" type="xml">
+				<field name="gross_weight" position="before">
+					<field name="affair_id" readonly="1"/>
+				</field>
+			</field>
+		</record>
+        
+  		<!-- SEARCH VIEW -->
+		<record id='view_search_sale_order_line_affair' model='ir.ui.view'>
+			<field name="name">view_search_sale_order_line_affair</field>
+			<field name="inherit_id" ref="sale.view_search_sale_order_line" />
+			<field name="priority" eval="1500" />
+			<field name="model">sale.order.line</field>
+			<field name="arch" type="xml">
+				<xpath expr="//field[last()]" position="after" >
+					<field name="affair_id" />
+				</xpath>
+			</field>
+		</record>
+
+
+		<!-- ========== -->
+		<!-- SALE ORDER -->
+		<!-- ========== -->
+		<record id='view_form_sale_order_affair' model='ir.ui.view'>
+			<field name="name">view_form_sale_order_affair</field>
+			<field name="inherit_id" ref="sale.view_form_sale_order" />
+			<field name="priority" eval="1400" />
+			<field name="model">sale.order</field>
+			<field name="arch" type="xml">
+				<xpath expr="//field[@name='order_line_ids']//form//field[@name='gross_weight']" position="before">
+					<field name="affair_id" context="{'default_customer_id': parent.partner_id}"/>
+				</xpath>
+			</field>
+		</record>
+		
+  		<!-- SEARCH VIEW -->
+<!-- 		<record id='view_search_sale_order_affair' model='ir.ui.view'> -->
+<!-- 			<field name="name">view_search_sale_order_affair</field> -->
+<!-- 			<field name="inherit_id" ref="sale.view_search_sale_order" /> -->
+<!-- 			<field name="priority" eval="1500" /> -->
+<!-- 			<field name="model">sale.order</field> -->
+<!-- 			<field name="arch" type="xml"> -->
+<!-- 				<xpath expr="//field[last()]" position="after" > -->
+<!-- 					<field name="affair_id" /> -->
+<!-- 				</xpath> -->
+<!-- 			</field> -->
+<!-- 		</record> -->
+	</data>
+</openerp>

@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<scenario>
+	<reference_res_id>11644038-b044-11e4-a5e2-247703b3adb4</reference_res_id>
+	<model_id>stock.move</model_id>
+	<name>STOCK MOVE</name>
+	<sequence>0</sequence>
+	<notes />
+	<active>True</active>
+	<display_name>STOCK MOVE</display_name>
+	<type>scenario</type>
+	<Step display_name="START" name="START"
+		no_back="False" reference_res_id="1ae19e58-b044-11e4-b378-247703b3adb4"
+		step_back="False" step_start="True" step_stop="False"/>
+	<Step display_name="END" name="END"
+		no_back="False" reference_res_id="20ec2e4e-b044-11e4-9419-247703b3adb4"
+		step_back="False" step_start="False" step_stop="True"/>
+	<Transition condition="t.tmp_val1 == '0'"
+		display_name="START --&gt; END" from_id="1ae19e58-b044-11e4-b378-247703b3adb4"
+		name="START --&gt; END" reference_res_id="305e965a-b044-11e4-9864-247703b3adb4"
+		sequence="0" to_id="20ec2e4e-b044-11e4-9419-247703b3adb4" tracer=""
+		transition_type="scanner"/>
+	<Transition condition="t.tmp_val1 != '0' and True or False"
+		display_name="START --&gt; START" from_id="1ae19e58-b044-11e4-b378-247703b3adb4"
+		name="START --&gt; START" reference_res_id="40e82518-b044-11e4-b107-247703b3adb4"
+		sequence="0" to_id="1ae19e58-b044-11e4-b378-247703b3adb4" tracer=""
+		transition_type="scanner"/>
+</scenario>

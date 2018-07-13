@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+		
+		<record model="ir.ui.view" id="view_form_all_reset_workflow">
+			<field name="name">view_form_all_reset_workflow</field>
+			<field name="model">all.reset.workflow</field>
+			<field name="type">form</field>
+			<field name="arch" type="xml">
+				<form string="Create Timetracking">
+					<group colspan="4" col="4" name="group_add_line">
+						<field name="list_ids" invisible="1" />
+						<field name="name" invisible="1" />
+						<field name="nb_recording" />
+					</group>
+					<footer>
+                        <button name="button_reset_workflow" string="Reset workflow" type="object" class="oe_highlight"/>
+                        or
+                        <button string="Close" class="oe_highlight" special="cancel" />
+                    </footer>
+				</form>
+			</field>
+		</record>
+
+	</data>
+</openerp>

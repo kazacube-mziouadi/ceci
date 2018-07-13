@@ -1,0 +1,56 @@
+--- account/report/account_invoice_report.py
++++ account/report/account_invoice_report.py
+@@ -109,9 +109,9 @@
+             'account_id', 'invoice_id', 'price_subtotal', 'product_id',
+             'quantity', 'uos_id',
+         ],
+-        'product.product': ['product_tmpl_id'],
+-        'product.template': ['categ_id'],
+-        'product.uom': ['category_id', 'factor', 'name', 'uom_type'],
++        'product.product': ['categ_id'],
++#         'product.template': ['categ_id'],
++        'product.uom': ['category_id', 'factor', 'name', 'type'],
+         'res.currency.rate': ['currency_id', 'name'],
+         'res.partner': ['country_id'],
+     }
+@@ -133,17 +133,17 @@
+                     ai.date_invoice AS date,
+                     ail.product_id, ai.partner_id, ai.payment_term, ai.period_id,
+                     CASE
+-                     WHEN u.uom_type::text <> 'reference'::text
++                     WHEN u.type::text <> 'reference'::text
+                         THEN ( SELECT product_uom.name
+                                FROM product_uom
+-                               WHERE product_uom.uom_type::text = 'reference'::text
++                               WHERE product_uom.type::text = 'reference'::text
+                                 AND product_uom.active
+                                 AND product_uom.category_id = u.category_id LIMIT 1)
+                         ELSE u.name
+                     END AS uom_name,
+                     ai.currency_id, ai.journal_id, ai.fiscal_position, ai.user_id, ai.company_id,
+                     count(ail.*) AS nbr,
+-                    ai.type, ai.state, pt.categ_id, ai.date_due, ai.account_id, ail.account_id AS account_line_id,
++                    ai.type, ai.state, pr.categ_id, ai.date_due, ai.account_id, ail.account_id AS account_line_id,
+                     ai.partner_bank_id,
+                     SUM(CASE
+                          WHEN ai.type::text = ANY (ARRAY['out_refund'::character varying::text, 'in_invoice'::character varying::text])
+@@ -194,7 +194,6 @@
+                 JOIN account_invoice ai ON ai.id = ail.invoice_id
+                 JOIN res_partner partner ON ai.commercial_partner_id = partner.id
+                 LEFT JOIN product_product pr ON pr.id = ail.product_id
+-                left JOIN product_template pt ON pt.id = pr.product_tmpl_id
+                 LEFT JOIN product_uom u ON u.id = ail.uos_id
+         """
+         return from_str
+@@ -203,9 +202,9 @@
+         group_by_str = """
+                 GROUP BY ail.product_id, ai.date_invoice, ai.id,
+                     ai.partner_id, ai.payment_term, ai.period_id, u.name, ai.currency_id, ai.journal_id,
+-                    ai.fiscal_position, ai.user_id, ai.company_id, ai.type, ai.state, pt.categ_id,
++                    ai.fiscal_position, ai.user_id, ai.company_id, ai.type, ai.state, pr.categ_id,
+                     ai.date_due, ai.account_id, ail.account_id, ai.partner_bank_id, ai.residual,
+-                    ai.amount_total, u.uom_type, u.category_id, ai.commercial_partner_id, partner.country_id
++                    ai.amount_total, u.type, u.category_id, ai.commercial_partner_id, partner.country_id
+         """
+         return group_by_str
+ 

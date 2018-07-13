@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+		<!-- FORM VIEW maintenance_contract -->
+		<record id='view_form_maintenance_contract_gmao_sav_id' model='ir.ui.view'>
+			<field name="name">view_form_maintenance_contract_gmao_sav_id</field>
+			<field name="inherit_id" ref="maintenance_contract.view_form_maintenance_contract_id" />
+			<field name="model">maintenance.contract</field>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='start_date']" position="after">
+                    <field name="is_maintenance_contract" />
+                </xpath>
+                <xpath expr="//page[@name='page_invoice']" position="after">
+                    <page string="Maintenances" attrs="{'readonly': [('state', 'in', ('done', 'cancel'))], 'invisible': [('is_maintenance_contract', '!=', True)]}" >
+                        <group colspan="8" col="4" >
+                            <group colspan="2" col="2" string="Maintenances operations" >
+	                            <field name="maintenance_operation_ids" colspan="2" nolabel="1" />
+	                        </group>
+	                        <group colspan="2" col="2" string="Parks" >
+	                            <field name="park_ids" colspan="2" nolabel="1" />
+	                        </group>
+                        </group>
+                    </page>
+                </xpath>
+			</field>
+		</record>
+		
+    </data>
+</openerp>

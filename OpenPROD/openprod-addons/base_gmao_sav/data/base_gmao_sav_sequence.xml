@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data noupdate="1">
+
+        <!-- Sequences for intervention -->
+        <record id="seq_intervention" model="ir.sequence">
+            <field name="name">Name Intervention</field>
+            <field name="code">intervention</field>
+            <field name="prefix">INTER</field>
+            <field name="padding">6</field>
+            <field name="company_id" eval="False"/>
+        </record>
+        
+        
+    </data>
+</openerp>

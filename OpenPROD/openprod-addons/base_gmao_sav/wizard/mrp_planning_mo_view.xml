@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+		
+		
+		<!-- FORM VIEW mrp_planning_mo_at_the_latest -->
+		<record id='view_form_mrp_planning_mo_at_the_latest_gmao_sav_id' model='ir.ui.view'>
+			<field name="name">view_form_mrp_planning_mo_at_the_latest_gmao_sav_id</field>
+			<field name="model">mrp.planning.mo.at.the.latest</field>
+			<field name="inherit_id" ref="mrp.view_form_mrp_planning_mo_at_the_latest_id" />
+			<field name="arch" type="xml">
+			    <xpath expr="//field[@name='automatic_purchase']" position="after">
+                    <field name="is_intervention" invisible="1" />
+                </xpath>
+				<xpath expr="//field[@name='is_sublevel']" position="attributes">
+                    <attribute name="attrs">{'invisible': [('is_intervention', '=', True)]}</attribute>
+                </xpath>
+                <xpath expr="//field[@name='is_product_sublevel_manufact']" position="attributes">
+                    <attribute name="attrs">{'invisible': [('is_intervention', '=', True)]}</attribute>
+                </xpath>
+                <xpath expr="//field[@name='is_procur_sublevel_purchase']" position="attributes">
+                    <attribute name="attrs">{'invisible': [('is_intervention', '=', True)]}</attribute>
+                </xpath>
+			</field>
+		</record>
+		
+	</data>
+</openerp>

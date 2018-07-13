@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+
+
+		<!-- ==================== -->
+		<!-- STOCK LABEL TEMPLATE -->
+		<!-- ==================== -->
+		
+		<!-- FORM VIEW Stock label template-->
+		<record id="view_form_label_template_printer" model="ir.ui.view">
+            <field name="name">view.form.label.template.printer</field>
+            <field name="model">stock.label.template</field>
+            <field name="inherit_id" ref="stock.view_form_label_template"/>
+            <field name="arch" type="xml">
+            	<xpath expr="//group[@name='label']" position="after">
+                    <group colspan="4" col="4" string="Printing">
+						<field name="report_id" />
+						<field name="printer_type_id" />
+						<field name="active_report" />
+						<field name="is_reprint_done" />
+					</group>
+                </xpath>
+            </field>
+        </record>
+        
+        
+		<!-- =========== -->
+		<!-- STOCK LABEL -->
+		<!-- =========== -->
+		
+		<!-- FORM VIEW Stock label -->
+		<record id="view_form_printer_label" model="ir.ui.view">
+            <field name="name">view.form.printer.label</field>
+            <field name="model">stock.label</field>
+            <field name="inherit_id" ref="stock.view_form_label"/>
+            <field name="arch" type="xml">
+            	<xpath expr="//group[@name='action_menu']" position="inside">
+                    <button name="print_one_label" string="Print label" type="object" class="oe_inline oe_stat_button" icon="fa-print"/>
+                </xpath>
+            </field>
+        </record>
+        
+        
+		<!-- ========== -->
+		<!-- STOCK MOVE -->
+		<!-- ========== -->
+		
+		<!-- FORM VIEW Stock move -->
+		<record id="view_form_printer_move" model="ir.ui.view">
+            <field name="name">view.form.printer.move</field>
+            <field name="model">stock.move</field>
+            <field name="inherit_id" ref="stock.view_form_move"/>
+            <field name="arch" type="xml">
+            	<xpath expr="//field[@name='move_label_ids']" position="before">
+                    <button class="oe_inline oe_stat_button" name="print_move_label" type="object" string="Print labels" icon="fa-plus-square" attrs="{'invisible': ['|', ('type', '!=', 'in'), ('state', '!=', 'done')]}" />
+                </xpath>
+            </field>
+        </record>
+        
+        
+        <!-- ============= -->
+		<!-- STOCK PICKING -->
+		<!-- ============= -->
+		
+		<!-- FORM VIEW PICKING OUT -->
+		<record id="view_form_stock_printer_picking_out" model="ir.ui.view">
+            <field name="name">view.form.stock.printer.picking.out</field>
+            <field name="model">stock.picking</field>
+            <field name="inherit_id" ref="stock.view_form_stock_picking_out"/>
+            <field name="arch" type="xml">
+            	<xpath expr="//field[@name='state']" position="before">
+                    <button name="print_picking" string="Print delivery order" type="object" class="oe_highlight"/>
+                </xpath>
+            	<xpath expr="//group[@name='picking_company']" position="after">
+            		<group string="Printing" colspan="1" col="4">
+						<field name="print_picking_report" />
+						<field name="report_type" attrs="{'invisible': [('print_picking_report', '=', False),('type', '!=', 'in')]}"/>
+						<field name="print_control" attrs="{'invisible': [('manage_documents', '=', False)]}"/>
+						<label colspan="2" string=""/>
+						<field name="print_label" />
+					</group>
+                </xpath>
+            </field>
+        </record>
+        
+        <!-- FORM VIEW PICKING IN -->
+		<record id="view_form_stock_printer_picking_in" model="ir.ui.view">
+            <field name="name">view.form.stock.printer.picking.in </field>
+            <field name="model">stock.picking</field>
+            <field name="inherit_id" ref="stock.view_form_stock_picking_in"/>
+            <field name="arch" type="xml">
+            	<xpath expr="//field[@name='state']" position="before">
+                   <button name="print_picking" string="Print receipt order" type="object" class="oe_highlight"/>
+                </xpath>
+                <xpath expr="//group[@name='picking_company']" position="after">
+            		<group string="Printing" colspan="1" col="2">
+						<field name="print_picking_report" />
+						<field name="print_control" attrs="{'invisible': [('manage_documents', '=', False)]}"/>
+						<field name="print_label" />
+					</group>
+                </xpath>
+                <xpath expr="//field[@name='move_ids']/tree/field[@name='state']" position="after">
+                	<button name="print_move_label" string="Print labels" type="object" class="oe_highlight" 
+                		attrs="{'invisible': ['|', '|', ('track_label_product', '!=', True), ('type', '!=', 'in'), ('state', '!=', 'done')]}"/>
+                </xpath>
+            </field>
+        </record>
+		
+		
+	</data>
+</openerp>

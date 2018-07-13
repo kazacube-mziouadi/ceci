@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+	
+		<record model="ir.ui.view" id="view_form_generate_kit_sale">
+			<field name="name">view_form_generate_kit_sale</field>
+			<field name="model">kit.sale</field>
+			<field name="type">form</field>
+			<field name="arch" type="xml">
+				<form string="Create a kit sale">
+					<group colspan="4" col="4">
+						<group colspan="4" col="6">
+							<field name="product_id"/>
+							<field name="sec_uom_qty"/>
+							<field name="sec_uom_id"/>
+							<field name="bom_id" domain="[('type', '=', 'kit'), ('state', '=', 'active'), ('product_id', '=', product_id)]"/>
+							<field name="type"/>
+							<field name="section_id" attrs="{'invisible': [('type', '!=', 'desc_heading')]}"/>
+							<field name="requested_date"/>
+							<field name="sale_id" invisible="1"/>
+							<field name="factor" invisible="1"/>
+							<field name="divisor" invisible="1"/>
+							<group colspan="6" col="6" string="Quantities">
+								<field name="uom_qty"/>
+								<field name="uom_id"/>
+								<label colspan="2" string=""/>
+								<field name="uop_qty"/>
+								<field name="uop_id"/>
+								<field name="currency_id"/>
+							</group>
+						</group>
+						<group colspan="4" col="4" string="Product lines">
+							<button name="import_kit_sale_line" string="Import lines" type="object" class="oe_highlight" />
+							<field name="line_ids" nolabel="1" colspan="4">
+								<tree editable="bottom" options="{'no_create': True}">
+									<field name="sequence"/>
+									<field name="product_id"/>
+									<field name="sec_uom_qty"/>
+									<field name="sec_uom_id"/>
+									<field name="unity_price"/>
+									<field name="uop_id"/>
+									<field name="total_price"/>
+								</tree>
+							</field>
+						</group>
+					</group>
+					<footer>
+						<button name="create_kit_sale" string="Create kit sale" type="object" class="oe_highlight" />
+						or
+						<button string="Cancel" class="oe_link" special="cancel" />
+					</footer>
+				</form>
+			</field>
+		</record>
+
+		<record model="ir.actions.act_window" id="action_generate_kit_sale">
+			<field name="name">Generate a kit sale</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="res_model">kit.sale</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">form</field>
+			<field name="target">new</field>
+		</record>
+		
+	</data>
+</openerp>

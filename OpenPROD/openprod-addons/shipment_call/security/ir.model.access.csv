@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_shipment_call_user,shipment.call,model_shipment_call,stock_location.group_stock_user,1,0,0,0
+access_shipment_call_manager,shipment.call,model_shipment_call,stock_location.group_stock_manager,1,1,0,0
+access_shipment_call_administrator,shipment.call,model_shipment_call,stock_location.group_stock_admin,1,1,1,1

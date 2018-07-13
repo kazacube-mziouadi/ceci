@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+	
+		<record model="ir.ui.view" id="view_form_print_partners_address">
+			<field name="name">view_form_print_partners_address</field>
+			<field name="model">wizard.print.partner.address</field>
+			<field name="type">form</field>
+			<field name="arch" type="xml">
+				<form string="Print partner address">
+					<group colspan="4" col="4" string="Select the printer">
+						<field name="printer_id"/>
+						<label colspan="2" string=""/>
+					</group>
+					<footer>
+						<button name="action_print_address" string="Print address" type="object" class="oe_highlight" />
+						or
+						<button string="Cancel" class="oe_link" special="cancel" />
+					</footer>
+				</form>
+			</field>
+		</record>
+		
+
+		<record model="ir.actions.act_window" id="action_print_partner_address">
+			<field name="name">Print partner address</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="res_model">wizard.print.partner.address</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">form</field>
+			<field name="target">new</field>
+		</record>
+		
+		
+		<act_window name="Print partner address" res_model="wizard.print.partner.address" 
+                    src_model="res.partner" view_mode="form" target="new" 
+                    key2="client_action_multi" id="act_print_partner_address" />
+		
+		
+	</data>
+</openerp>

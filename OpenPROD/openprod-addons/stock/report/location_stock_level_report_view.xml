@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+		<!-- LOCATION STOCK LEVEL TREE -->
+		<record model="ir.ui.view" id="location_stock_level_report_view_tree">
+			<field name="name">location.stock.level.report.view.tree</field>
+			<field name="model">location.stock.level.report</field>
+			<field name="priority" eval="1010" />
+			<field name="arch" type="xml">
+				<tree string="Stock level">
+					<field name="product_id" />
+					<field name="location_id" />
+					<field name="warehouse_id" />
+					<field name="uom_qty" />
+					<field name="uom_id" />
+					<button name="balancing" string="Balancing" type="object" icon="terp-product"/>
+				</tree>
+			</field>
+		</record>
+
+		<!-- LOCATION STOCK LEVEL SEARCH -->
+		<record model="ir.ui.view" id="location_stock_level_report_view_search">
+			<field name="name">location.stock.level.report.view.search</field>
+			<field name="model">location.stock.level.report</field>
+			<field name="priority" eval="1010" />
+			<field name="arch" type="xml">
+				<search string="Stock level">
+					<field name="product_id" />
+					<field name="location_id" />
+					<field name="warehouse_id" />
+					<filter string="QTY &lt; 0" domain="[('uom_qty', '&lt;', 0)]" />
+					<filter string="QTY &gt; 0" name="qty_sup_zero" domain="[('uom_qty', '&gt;', 0)]" />
+					<separator orientation="vertical" />
+					<filter string="Internal" name="filter_internal"  domain="[('location_id.usage', '=', 'internal')]" />
+					<group expand="0" string="Group By">
+						<filter string="Product" domain="[]" context="{'group_by': 'product_id'}" />
+						<filter string="Location" domain="[]" context="{'group_by': 'location_id'}" />
+						<filter string="Warehouse" domain="[]" context="{'group_by': 'warehouse_id'}" />
+					</group>
+				</search>
+			</field>
+		</record>
+
+		<!-- LOCATION STOCK LEVEL FORM -->
+		<record model="ir.ui.view" id="location_stock_level_report_view_form">
+			<field name="name">location.stock.level.report.view.form</field>
+			<field name="model">location.stock.level.report</field>
+			<field name="priority" eval="1010" />
+			<field name="arch" type="xml">
+				<form string="Stock level">
+					<field name="product_id" />
+					<field name="location_id" />
+					<field name="warehouse_id" />
+					<field name="uom_qty" />
+					<field name="uom_id" />
+				</form>
+			</field>
+		</record>
+
+		<!-- LOCATION STOCK LEVEL ACTION -->
+		<record model="ir.actions.act_window" id="location_stock_level_action">
+			<field name="name">Stock level</field>
+			<field name="res_model">location.stock.level.report</field>
+			<field name="view_type">form</field>
+			<field name="context">{'search_default_qty_sup_zero':1,'search_default_filter_internal':1}</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+
+		<!-- STOCK LEVEL ERROR MENU -->
+		<menuitem name="Stock level report" id="menu_location_stock_level_report" parent="menu_stock_stock_level" action="location_stock_level_action" sequence="5" groups="group_menu_stock_analyse"/>
+	</data>
+</openerp>

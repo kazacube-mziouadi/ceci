@@ -1,0 +1,825 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* mrp_ftpr
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 9.0c\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-06-28 14:16+0000\n"
+"PO-Revision-Date: 2017-06-28 14:16+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: mrp_ftpr
+#: model:ir.ui.view,arch_db:mrp_ftpr.view_form_mrp_ftpr
+msgid "Actions"
+msgstr "Actions"
+
+#. module: mrp_ftpr
+#: model:ir.model.fields,field_description:mrp_ftpr.field_mrp_ftpr_active
+#: model:ir.model.fields,field_description:mrp_ftpr.field_wizard_add_operation_resource4_is_active
+#: model:ir.ui.view,arch_db:mrp_ftpr.view_form_mrp_ftpr
+msgid "Active"
+msgstr "Actif"
+
+#. module: mrp_ftpr
+#: code:addons/mrp_ftpr/mrp.py:188
+#: model:ir.actions.act_window,name:mrp_ftpr.act_ftpr_add_resource_valid_view
+#: model:ir.ui.view,arch_db:mrp_ftpr.view_form_mrp_ftpr
+#: model:ir.ui.view,arch_db:mrp_ftpr.view_wizard_add_resource_valid_form
+#, python-format
+msgid "Add resource valid"
+msgstr "Ajouter une ressource"
+
+#. module: mrp_ftpr
+#: model:ir.ui.view,arch_db:mrp_ftpr.view_wizard_add_resource_valid_form
+msgid "Add resources"
+msgstr "Ajouter ressources"
+
+#. module: mrp_ftpr
+#: model:ir.model,name:mrp_ftpr.model_mrp_bom
+msgid "Bill of Material"
+msgstr "Nomenclature"
+
+#. module: mrp_ftpr
+#: model:ir.model.fields,field_description:mrp_ftpr.field_duplicate_ftpr_bom_id
+#: model:ir.model.fields,field_description:mrp_ftpr.field_mrp_ftpr_ftpr_bom_id
+#: model:ir.ui.view,arch_db:mrp_ftpr.view_form_mrp_ftpr
+msgid "BoM"
+msgstr "Nomenclature"
+
+#. module: mrp_ftpr
+#: model:ir.ui.view,arch_db:mrp_ftpr.view_tree_mrp_ftpr
+msgid "BoMs"
+msgstr "Nomenclatures"
+
+#. module: mrp_ftpr
+#: model:ir.model.fields,field_description:mrp_ftpr.field_mrp_ftpr_bom_id
+msgid "Bom"
+msgstr "Nomenclature"
+
+#. module: mrp_ftpr
+#: model:ir.ui.view,arch_db:mrp_ftpr.view_form_compute_ftpr_cost
+#: model:ir.ui.view,arch_db:mrp_ftpr.view_form_duplicate_ftpr
+#: model:ir.ui.view,arch_db:mrp_ftpr.view_form_importation_routing_line_ftpr
+#: model:ir.ui.view,arch_db:mrp_ftpr.view_wizard_add_resource_valid_form
+msgid "Cancel"
+msgstr "Annuler"
+
+#. module: mrp_ftpr
+#: model:ir.model.fields,field_description:mrp_ftpr.field_mrp_ftpr_child_complete_ids
+msgid "Child complete ids"
+msgstr "Child complete ids"
+
+#. module: mrp_ftpr
+#: model:ir.model.fields,field_description:mrp_ftpr.field_mrp_ftpr_child_structure_ids
+msgid "Child structure ids"
+msgstr "Child structure ids"
+
+#. module: mrp_ftpr
+#: model:ir.model.fields,field_description:mrp_ftpr.field_mrp_ftpr_base_coeff
+msgid "Coefficient"
+msgstr "Coefficient"
+
+#. module: mrp_ftpr
+#: model:ir.model.fields,field_description:mrp_ftpr.field_mrp_ftpr_company_id
+msgid "Company"
+msgstr "Société"
+
+#. module: mrp_ftpr
+#: model:ir.model.fields,field_description:mrp_ftpr.field_mrp_ftpr_bom_ids
+msgid "Component"
+msgstr "Composant"
+
+#. module: mrp_ftpr
+#: model:ir.model.fields,field_description:mrp_ftpr.field_mrp_ftpr_consumed_component_ids
+#: model:ir.ui.view,arch_db:mrp_ftpr.view_form_mrp_ftpr
+msgid "Components"
+msgstr "Composants"
+
+#. module: mrp_ftpr
+#: model:ir.model.fields,field_description:mrp_ftpr.field_mrp_ftpr_component_total_price
+msgid "Components total price"
+msgstr "Prix total des composants"
+
+#. module: mrp_ftpr
+#: model:ir.ui.view,arch_db:mrp_ftpr.view_form_compute_ftpr_cost
+msgid "Compute cost"
+msgstr "Calculer coût"
+
+#. module: mrp_ftpr
+#: model:ir.actions.act_window,name:mrp_ftpr.act_compute_ftpr_cost
+#: model:ir.ui.view,arch_db:mrp_ftpr.view_form_compute_ftpr_cost
+msgid "Compute ftpr cost"
+msgstr "Calculer coût FTPR"
+
+#. module: mrp_ftpr
+#: model:ir.ui.view,arch_db:mrp_ftpr.view_form_mrp_ftpr
+msgid "Compute price"
+msgstr "Calcul du prix"
+
+#. module: mrp_ftpr
+#: model:ir.model,name:mrp_ftpr.model_compute_ftpr_cost
+msgid "Compute routing cost"
+msgstr "Calculer coût gamme"
+
+#. module: mrp_ftpr
+#: model:ir.model.fields,field_description:mrp_ftpr.field_duplicate_ftpr_copy_instruc_controls
+msgid "Copy instructions and controls"
+msgstr "Copier les consignes et contrôles"
+
+#. module: mrp_ftpr
+#: model:ir.model.fields,field_description:mrp_ftpr.field_duplicate_ftpr_copy_complaints
+msgid "Copy link to complaints"
+msgstr "Copier le lien avec les réclamations"
+
+#. module: mrp_ftpr
+#: model:ir.model.fields,field_description:mrp_ftpr.field_duplicate_ftpr_copy_ope_attach
+msgid "Copy operations attachments"
+msgstr "Copier les fichiers joints des opérations"
+
+#. module: mrp_ftpr
+#: model:ir.ui.view,arch_db:mrp_ftpr.view_form_mrp_ftpr
+msgid "Cost"
+msgstr "Coût"
+
+#. module: mrp_ftpr
+#: model:ir.model.fields,field_description:mrp_ftpr.field_mrp_ftpr_bom_cost_history_ids
+#: model:ir.model.fields,field_description:mrp_ftpr.field_mrp_ftpr_component_cost_history_ids
+#: model:ir.ui.view,arch_db:mrp_ftpr.view_form_mrp_ftpr
+msgid "Cost history"
+msgstr "Historique des coûts"
+
+#. module: mrp_ftpr
+#: model:ir.model.fields,field_description:mrp_ftpr.field_compute_ftpr_cost_create_uid
+#: model:ir.model.fields,field_description:mrp_ftpr.field_duplicate_ftpr_create_uid
+#: model:ir.model.fields,field_description:mrp_ftpr.field_importation_routing_line_ftpr_create_uid
+#: model:ir.model.fields,field_description:mrp_ftpr.field_importation_routing_line_line_ftpr_create_uid
+#: model:ir.model.fields,field_description:mrp_ftpr.field_mrp_ftpr_create_uid
+#: model:ir.model.fields,field_description:mrp_ftpr.field_wizard_add_operation_resource2_create_uid
+#: model:ir.model.fields,field_description:mrp_ftpr.field_wizard_add_operation_resource4_create_uid
+#: model:ir.model.fields,field_description:mrp_ftpr.field_wizard_add_resource_valid_create_uid
+msgid "Created by"
+msgstr "Créé par"
+
+#. module: mrp_ftpr
+#: model:ir.model.fields,field_description:mrp_ftpr.field_compute_ftpr_cost_create_date
+#: model:ir.model.fields,field_description:mrp_ftpr.field_duplicate_ftpr_create_date
+#: model:ir.model.fields,field_description:mrp_ftpr.field_importation_routing_line_ftpr_create_date
+#: model:ir.model.fields,field_description:mrp_ftpr.field_importation_routing_line_line_ftpr_create_date
+#: model:ir.model.fields,field_description:mrp_ftpr.field_mrp_ftpr_create_date
+#: model:ir.model.fields,field_description:mrp_ftpr.field_wizard_add_operation_resource2_create_date
+#: model:ir.model.fields,field_description:mrp_ftpr.field_wizard_add_operation_resource4_create_date
+#: model:ir.model.fields,field_description:mrp_ftpr.field_wizard_add_resource_valid_create_date
+msgid "Created on"
+msgstr "Créé le"
+
+#. module: mrp_ftpr
+#: model:ir.ui.view,arch_db:mrp_ftpr.view_wizard_add_resource_valid_form
+msgid "DELETE"
+msgstr "Supprimer"
+
+#. module: mrp_ftpr
+#: model:ir.ui.view,arch_db:mrp_ftpr.view_wizard_add_resource_valid_form
+msgid "DOWN"
+msgstr "Descendre"
+
+#. module: mrp_ftpr
+#: model:ir.model.fields,field_description:mrp_ftpr.field_mrp_ftpr_start_date
+msgid "Date Start"
+msgstr "Date de départ"
+
+#. module: mrp_ftpr
+#: model:ir.model.fields,field_description:mrp_ftpr.field_mrp_ftpr_stop_date
+msgid "Date Stop"
+msgstr "Date de fin"
+
+#. module: mrp_ftpr
+#: model:ir.model.fields,field_description:mrp_ftpr.field_mrp_ftpr_template_ids
+#: model:ir.ui.view,arch_db:mrp_ftpr.view_form_mrp_ftpr
+msgid "Declension"
+msgstr "Déclinaision"
+
+#. module: mrp_ftpr
+#: model:ir.model.fields,field_description:mrp_ftpr.field_compute_ftpr_cost_display_name
+#: model:ir.model.fields,field_description:mrp_ftpr.field_duplicate_ftpr_display_name
+#: model:ir.model.fields,field_description:mrp_ftpr.field_importation_routing_line_ftpr_display_name
+#: model:ir.model.fields,field_description:mrp_ftpr.field_importation_routing_line_line_ftpr_display_name
+#: model:ir.model.fields,field_description:mrp_ftpr.field_mrp_ftpr_display_name
+#: model:ir.model.fields,field_description:mrp_ftpr.field_wizard_add_operation_resource2_display_name
+#: model:ir.model.fields,field_description:mrp_ftpr.field_wizard_add_operation_resource4_display_name
+#: model:ir.model.fields,field_description:mrp_ftpr.field_wizard_add_resource_valid_display_name
+msgid "Display Name"
+msgstr "Display Name"
+
+#. module: mrp_ftpr
+#: model:ir.ui.view,arch_db:mrp_ftpr.view_form_mrp_ftpr
+msgid "Draft"
+msgstr "Brouillon"
+
+#. module: mrp_ftpr
+#: model:ir.actions.act_window,name:mrp_ftpr.act_duplicate_ftpr
+#: model:ir.ui.view,arch_db:mrp_ftpr.view_form_duplicate_ftpr
+#: model:ir.ui.view,arch_db:mrp_ftpr.view_form_mrp_ftpr
+msgid "Duplicate FTPR"
+msgstr "Dupliquer FTPR"
+
+#. module: mrp_ftpr
+#: model:ir.model.fields,field_description:mrp_ftpr.field_mrp_ftpr_price_qty
+msgid "Economic series"
+msgstr "Séries économiques"
+
+#. module: mrp_ftpr
+#: model:ir.model.fields,field_description:mrp_ftpr.field_mrp_ftpr_efficiency
+msgid "Efficiency"
+msgstr "Efficacité"
+
+#. module: mrp_ftpr
+#: model:ir.model.fields,help:mrp_ftpr.field_mrp_ftpr_total_efficiency
+msgid "Efficiency BoM * efficiency Routing"
+msgstr "Efficacité Nomenclature * Efficacité Gamme"
+
+#. module: mrp_ftpr
+#: code:addons/mrp_ftpr/mrp.py:136
+#, python-format
+msgid "Error"
+msgstr "Erreur"
+
+#. module: mrp_ftpr
+#: model:ir.model.fields,field_description:mrp_ftpr.field_wizard_add_resource_valid_existing_resource_ids
+#: model:ir.ui.view,arch_db:mrp_ftpr.view_wizard_add_resource_valid_form
+msgid "Existing resources"
+msgstr "Ressources existantes"
+
+#. module: mrp_ftpr
+#: model:ir.actions.act_window,name:mrp_ftpr.act_mrp_ftpr
+#: model:ir.model,name:mrp_ftpr.model_mrp_ftpr
+#: model:ir.model.fields,field_description:mrp_ftpr.field_mrp_routing_ftpr_id
+#: model:ir.model.fields,field_description:mrp_ftpr.field_mrp_routing_line_ftpr_id
+#: model:ir.ui.menu,name:mrp_ftpr.menu_mrp_ftpr
+msgid "FTPR"
+msgstr "FTPR"
+
+#. module: mrp_ftpr
+#: model:ir.ui.view,arch_db:mrp_ftpr.view_search_mrp_ftpr
+msgid "Filters"
+msgstr "Filtres"
+
+#. module: mrp_ftpr
+#: model:ir.model.fields,field_description:mrp_ftpr.field_mrp_ftpr_formula_component
+msgid "Formula Qty"
+msgstr "Formula Qty"
+
+#. module: mrp_ftpr
+#: model:ir.ui.view,arch_db:mrp_ftpr.view_form_mrp_ftpr
+msgid "Formula qty"
+msgstr "Formule de qté"
+
+#. module: mrp_ftpr
+#: model:ir.model.fields,field_description:mrp_ftpr.field_compute_ftpr_cost_ftpr_ids
+#: model:ir.model.fields,field_description:mrp_ftpr.field_duplicate_ftpr_ftpr_id
+#: model:ir.model.fields,field_description:mrp_ftpr.field_importation_routing_line_ftpr_ftpr_id
+msgid "Ftpr"
+msgstr "Ftpr"
+
+#. module: mrp_ftpr
+#: model:ir.ui.view,arch_db:mrp_ftpr.view_search_mrp_ftpr
+msgid "Group By..."
+msgstr "Grouper par..."
+
+#. module: mrp_ftpr
+#: model:ir.model.fields,field_description:mrp_ftpr.field_compute_ftpr_cost_id
+#: model:ir.model.fields,field_description:mrp_ftpr.field_duplicate_ftpr_id
+#: model:ir.model.fields,field_description:mrp_ftpr.field_importation_routing_line_ftpr_id
+#: model:ir.model.fields,field_description:mrp_ftpr.field_importation_routing_line_line_ftpr_id
+#: model:ir.model.fields,field_description:mrp_ftpr.field_mrp_ftpr_id
+#: model:ir.model.fields,field_description:mrp_ftpr.field_wizard_add_operation_resource2_id
+#: model:ir.model.fields,field_description:mrp_ftpr.field_wizard_add_operation_resource4_id
+#: model:ir.model.fields,field_description:mrp_ftpr.field_wizard_add_resource_valid_id
+msgid "ID"
+msgstr "ID"
+
+#. module: mrp_ftpr
+#: model:ir.model.fields,field_description:mrp_ftpr.field_importation_routing_line_line_ftpr_is_import
+msgid "Import"
+msgstr "Importer"
+
+#. module: mrp_ftpr
+#: model:ir.model.fields,field_description:mrp_ftpr.field_importation_routing_line_line_ftpr_is_import_complaints
+msgid "Import complaints"
+msgstr "Importer réclamations"
+
+#. module: mrp_ftpr
+#: model:ir.model.fields,field_description:mrp_ftpr.field_importation_routing_line_line_ftpr_is_import_consigns
+msgid "Import consigns"
+msgstr "Importer consignes"
+
+#. module: mrp_ftpr
+#: model:ir.model.fields,field_description:mrp_ftpr.field_importation_routing_line_line_ftpr_is_import_consumed_service
+msgid "Import consumed services"
+msgstr "Importer service consommés"
+
+#. module: mrp_ftpr
+#: model:ir.model.fields,field_description:mrp_ftpr.field_importation_routing_line_line_ftpr_is_import_documents
+msgid "Import documents"
+msgstr "Importer documents"
+
+#. module: mrp_ftpr
+#: model:ir.model.fields,field_description:mrp_ftpr.field_importation_routing_line_line_ftpr_is_import_tools
+msgid "Import tools"
+msgstr "Importer outils"
+
+#. module: mrp_ftpr
+#: model:ir.model.fields,field_description:mrp_ftpr.field_importation_routing_line_ftpr_importation_routing_line_ids
+#: model:ir.model.fields,field_description:mrp_ftpr.field_importation_routing_line_line_ftpr_importation_routing_line_id
+msgid "Importation Routing line"
+msgstr "Importation Routing line"
+
+#. module: mrp_ftpr
+#: model:ir.actions.act_window,name:mrp_ftpr.act_importation_routing_line_ftpr
+#: model:ir.ui.view,arch_db:mrp_ftpr.view_form_importation_routing_line_ftpr
+#: model:ir.ui.view,arch_db:mrp_ftpr.view_form_mrp_ftpr
+msgid "Importation routing line"
+msgstr "Importation de ligne de gamme"
+
+#. module: mrp_ftpr
+#: model:ir.model,name:mrp_ftpr.model_importation_routing_line_line_ftpr
+msgid "Importation routing line line"
+msgstr "Importation de ligne de gamme"
+
+#. module: mrp_ftpr
+#: model:ir.ui.view,arch_db:mrp_ftpr.view_form_mrp_ftpr
+msgid "Infomations"
+msgstr "Infomations"
+
+#. module: mrp_ftpr
+#: model:ir.ui.view,arch_db:mrp_ftpr.view_form_mrp_ftpr
+msgid "Informations"
+msgstr "Informations"
+
+#. module: mrp_ftpr
+#: model:ir.ui.view,arch_db:mrp_ftpr.view_form_mrp_ftpr
+msgid "Is model"
+msgstr "Est modèle"
+
+#. module: mrp_ftpr
+#: model:ir.model.fields,field_description:mrp_ftpr.field_compute_ftpr_cost___last_update
+#: model:ir.model.fields,field_description:mrp_ftpr.field_duplicate_ftpr___last_update
+#: model:ir.model.fields,field_description:mrp_ftpr.field_importation_routing_line_ftpr___last_update
+#: model:ir.model.fields,field_description:mrp_ftpr.field_importation_routing_line_line_ftpr___last_update
+#: model:ir.model.fields,field_description:mrp_ftpr.field_mrp_ftpr___last_update
+#: model:ir.model.fields,field_description:mrp_ftpr.field_wizard_add_operation_resource2___last_update
+#: model:ir.model.fields,field_description:mrp_ftpr.field_wizard_add_operation_resource4___last_update
+#: model:ir.model.fields,field_description:mrp_ftpr.field_wizard_add_resource_valid___last_update
+msgid "Last Modified on"
+msgstr "Dernière modification le"
+
+#. module: mrp_ftpr
+#: model:ir.model.fields,field_description:mrp_ftpr.field_compute_ftpr_cost_write_uid
+#: model:ir.model.fields,field_description:mrp_ftpr.field_duplicate_ftpr_write_uid
+#: model:ir.model.fields,field_description:mrp_ftpr.field_importation_routing_line_ftpr_write_uid
+#: model:ir.model.fields,field_description:mrp_ftpr.field_importation_routing_line_line_ftpr_write_uid
+#: model:ir.model.fields,field_description:mrp_ftpr.field_mrp_ftpr_write_uid
+#: model:ir.model.fields,field_description:mrp_ftpr.field_wizard_add_operation_resource2_write_uid
+#: model:ir.model.fields,field_description:mrp_ftpr.field_wizard_add_operation_resource4_write_uid
+#: model:ir.model.fields,field_description:mrp_ftpr.field_wizard_add_resource_valid_write_uid
+msgid "Last Updated by"
+msgstr "Dernière mise à jour par"
+
+#. module: mrp_ftpr
+#: model:ir.model.fields,field_description:mrp_ftpr.field_compute_ftpr_cost_write_date
+#: model:ir.model.fields,field_description:mrp_ftpr.field_duplicate_ftpr_write_date
+#: model:ir.model.fields,field_description:mrp_ftpr.field_importation_routing_line_ftpr_write_date
+#: model:ir.model.fields,field_description:mrp_ftpr.field_importation_routing_line_line_ftpr_write_date
+#: model:ir.model.fields,field_description:mrp_ftpr.field_mrp_ftpr_write_date
+#: model:ir.model.fields,field_description:mrp_ftpr.field_wizard_add_operation_resource2_write_date
+#: model:ir.model.fields,field_description:mrp_ftpr.field_wizard_add_operation_resource4_write_date
+#: model:ir.model.fields,field_description:mrp_ftpr.field_wizard_add_resource_valid_write_date
+msgid "Last Updated on"
+msgstr "Dernière mise à jour le"
+
+#. module: mrp_ftpr
+#: model:ir.model.fields,field_description:mrp_ftpr.field_mrp_ftpr_mark
+msgid "Mark"
+msgstr "Repère topo"
+
+#. module: mrp_ftpr
+#: model:ir.model.fields,field_description:mrp_ftpr.field_mrp_ftpr_is_model
+#: model:ir.model.fields,field_description:mrp_ftpr.field_mrp_ftpr_template_id
+#: model:ir.ui.view,arch_db:mrp_ftpr.view_form_mrp_ftpr
+msgid "Model"
+msgstr "Modèle"
+
+#. module: mrp_ftpr
+#: model:ir.model.fields,field_description:mrp_ftpr.field_mrp_ftpr_name_ftpr
+msgid "Name"
+msgstr "Nom"
+
+#. module: mrp_ftpr
+#: model:ir.model.fields,field_description:mrp_ftpr.field_mrp_ftpr_note_mo
+msgid "Note on manufacturing"
+msgstr "Note sur OF"
+
+#. module: mrp_ftpr
+#: model:ir.ui.view,arch_db:mrp_ftpr.view_form_mrp_ftpr
+msgid "Note on wo"
+msgstr "Note sur OT"
+
+#. module: mrp_ftpr
+#: model:ir.ui.view,arch_db:mrp_ftpr.view_form_duplicate_ftpr
+#: model:ir.ui.view,arch_db:mrp_ftpr.view_form_importation_routing_line_ftpr
+#: model:ir.ui.view,arch_db:mrp_ftpr.view_wizard_add_resource_valid_form
+msgid "OK"
+msgstr "OK"
+
+#. module: mrp_ftpr
+#: model:ir.ui.view,arch_db:mrp_ftpr.view_form_mrp_ftpr
+msgid "Obsolete"
+msgstr "Obsolète"
+
+#. module: mrp_ftpr
+#: model:ir.ui.view,arch_db:mrp_ftpr.view_form_mrp_ftpr
+msgid "Open formula"
+msgstr "Ouvrir formule"
+
+#. module: mrp_ftpr
+#: model:ir.model.fields,field_description:mrp_ftpr.field_wizard_add_operation_resource2_operation_id
+#: model:ir.model.fields,field_description:mrp_ftpr.field_wizard_add_operation_resource4_operation_id
+msgid "Operation"
+msgstr "Opération"
+
+#. module: mrp_ftpr
+#: model:ir.model.fields,field_description:mrp_ftpr.field_mrp_ftpr_operation_consumed_ids
+#: model:ir.ui.view,arch_db:mrp_ftpr.view_form_mrp_ftpr
+msgid "Operations consumed"
+msgstr "Opérations consommées"
+
+#. module: mrp_ftpr
+#: model:ir.model.fields,field_description:mrp_ftpr.field_mrp_ftpr_option_id
+msgid "Option"
+msgstr "Option"
+
+#. module: mrp_ftpr
+#: model:ir.model.fields,field_description:mrp_ftpr.field_mrp_ftpr_parameter_product_text
+msgid "Parameter product text"
+msgstr "Parameter product text"
+
+#. module: mrp_ftpr
+#: model:ir.model.fields,field_description:mrp_ftpr.field_mrp_ftpr_price_last_date
+msgid "Price compute last date"
+msgstr "Date du dernier calcul de prix"
+
+#. module: mrp_ftpr
+#: model:ir.model.fields,field_description:mrp_ftpr.field_mrp_ftpr_price_total_component
+msgid "Price total"
+msgstr "Prix total"
+
+#. module: mrp_ftpr
+#: model:ir.model.fields,field_description:mrp_ftpr.field_mrp_ftpr_price_unit
+msgid "Price unit"
+msgstr "Prix unitaire"
+
+#. module: mrp_ftpr
+#: model:ir.model,name:mrp_ftpr.model_product_product
+#: model:ir.model.fields,field_description:mrp_ftpr.field_mrp_ftpr_product_id
+#: model:ir.ui.view,arch_db:mrp_ftpr.view_search_mrp_ftpr
+msgid "Product"
+msgstr "Produit"
+
+#. module: mrp_ftpr
+#: code:addons/mrp_ftpr/wizard/duplicate_ftpr.py:32
+#, python-format
+msgid "Product - other product"
+msgstr "Produit - autre produit"
+
+#. module: mrp_ftpr
+#: model:ir.model.fields,field_description:mrp_ftpr.field_mrp_ftpr_production_cost_price
+msgid "Production cost price"
+msgstr "Prix de revient"
+
+#. module: mrp_ftpr
+#: model:ir.model.fields,field_description:mrp_ftpr.field_mrp_ftpr_prod_family_id
+msgid "Production family"
+msgstr "Famille de production"
+
+#. module: mrp_ftpr
+#: model:ir.model.fields,field_description:mrp_ftpr.field_mrp_ftpr_property_ids
+msgid "Properties"
+msgstr "Propriétés"
+
+#. module: mrp_ftpr
+#: model:ir.model.fields,field_description:mrp_ftpr.field_mrp_ftpr_qty_component_compute
+msgid "Qty compute"
+msgstr "Qté calculée"
+
+#. module: mrp_ftpr
+#: model:ir.model.fields,field_description:mrp_ftpr.field_mrp_ftpr_qty_with_factor
+#: model:ir.model.fields,field_description:mrp_ftpr.field_mrp_ftpr_quantity
+msgid "Quantity"
+msgstr "Quantité"
+
+#. module: mrp_ftpr
+#: model:ir.model.fields,field_description:mrp_ftpr.field_mrp_ftpr_name
+msgid "Reference"
+msgstr "Référence"
+
+#. module: mrp_ftpr
+#: model:ir.model.fields,field_description:mrp_ftpr.field_wizard_add_operation_resource2_resource_id
+#: model:ir.model.fields,field_description:mrp_ftpr.field_wizard_add_operation_resource4_resource_id
+msgid "Resource"
+msgstr "Ressource"
+
+#. module: mrp_ftpr
+#: model:ir.model.fields,field_description:mrp_ftpr.field_wizard_add_operation_resource2_rl_resource_category_id
+#: model:ir.model.fields,field_description:mrp_ftpr.field_wizard_add_operation_resource4_rl_resource_category_id
+msgid "Resource categ"
+msgstr "Catég. de ressource"
+
+#. module: mrp_ftpr
+#: model:ir.model.fields,field_description:mrp_ftpr.field_wizard_add_operation_resource2_resource_categ_id
+msgid "Resource category"
+msgstr "Catégorie de ressource"
+
+#. module: mrp_ftpr
+#: model:ir.ui.view,arch_db:mrp_ftpr.view_wizard_add_resource_valid_form
+msgid "Resources"
+msgstr "Ressources"
+
+#. module: mrp_ftpr
+#: model:ir.ui.view,arch_db:mrp_ftpr.view_form_mrp_ftpr
+msgid "Revision"
+msgstr "Revision"
+
+#. module: mrp_ftpr
+#: model:ir.model.fields,field_description:mrp_ftpr.field_mrp_ftpr_revison_ids
+msgid "Revisions"
+msgstr "Révision"
+
+#. module: mrp_ftpr
+#: model:ir.model.fields,field_description:mrp_ftpr.field_mrp_ftpr_round
+msgid "Round"
+msgstr "Arrondi"
+
+#. module: mrp_ftpr
+#: model:ir.model,name:mrp_ftpr.model_mrp_routing
+#: model:ir.model.fields,field_description:mrp_ftpr.field_mrp_ftpr_routing_id
+msgid "Routing"
+msgstr "Gamme"
+
+#. module: mrp_ftpr
+#: model:ir.model.fields,field_description:mrp_ftpr.field_mrp_ftpr_routing_first_id
+#: model:ir.ui.view,arch_db:mrp_ftpr.view_search_mrp_ftpr
+msgid "Routing first"
+msgstr "Première gamme"
+
+#. module: mrp_ftpr
+#: model:ir.model.fields,field_description:mrp_ftpr.field_mrp_ftpr_routing_first_efficiency
+msgid "Routing first efficiency"
+msgstr "Efficacité de la première gamme"
+
+#. module: mrp_ftpr
+#: model:ir.model.fields,field_description:mrp_ftpr.field_mrp_ftpr_routing_first_price
+msgid "Routing first price"
+msgstr "Prix de la première gamme"
+
+#. module: mrp_ftpr
+#: model:ir.model,name:mrp_ftpr.model_mrp_routing_line
+#: model:ir.model.fields,field_description:mrp_ftpr.field_wizard_add_resource_valid_routing_line_id
+#: model:ir.ui.view,arch_db:mrp_ftpr.view_form_mrp_ftpr
+msgid "Routing line"
+msgstr "Ligne de gamme"
+
+#. module: mrp_ftpr
+#: model:ir.model.fields,field_description:mrp_ftpr.field_importation_routing_line_line_ftpr_routing_line_id
+msgid "Routing line model"
+msgstr "Modèle de lignes de gammes"
+
+#. module: mrp_ftpr
+#: model:ir.model.fields,field_description:mrp_ftpr.field_mrp_ftpr_routing_line_ids
+msgid "Routing lines"
+msgstr "Lignes de gammes"
+
+#. module: mrp_ftpr
+#: model:ir.model.fields,field_description:mrp_ftpr.field_importation_routing_line_ftpr_routing_id
+msgid "Routing model"
+msgstr "Gamme modèle"
+
+#. module: mrp_ftpr
+#: model:ir.model.fields,field_description:mrp_ftpr.field_mrp_ftpr_routing_ids
+msgid "Routings"
+msgstr "Gammes"
+
+#. module: mrp_ftpr
+#: model:ir.ui.view,arch_db:mrp_ftpr.view_form_importation_routing_line_ftpr
+msgid "Routings lines"
+msgstr "Lignes Gammes"
+
+#. module: mrp_ftpr
+#: model:ir.ui.view,arch_db:mrp_ftpr.view_form_mrp_ftpr
+msgid "Save"
+msgstr "Sauvegarder"
+
+#. module: mrp_ftpr
+#: model:ir.model.fields,field_description:mrp_ftpr.field_mrp_ftpr_sequence
+msgid "Sequence"
+msgstr "Séquence"
+
+#. module: mrp_ftpr
+#: model:ir.model.fields,field_description:mrp_ftpr.field_wizard_add_operation_resource4_sequence
+msgid "Sequence resource"
+msgstr "Séquence de la ressource"
+
+#. module: mrp_ftpr
+#: code:addons/mrp_ftpr/wizard/duplicate_ftpr.py:31
+#, python-format
+msgid "Simple - Same product"
+msgstr "Simple - Même produit"
+
+#. module: mrp_ftpr
+#: model:ir.model.fields,field_description:mrp_ftpr.field_mrp_ftpr_state
+#: model:ir.ui.view,arch_db:mrp_ftpr.view_search_mrp_ftpr
+msgid "State"
+msgstr "Etat"
+
+#. module: mrp_ftpr
+#: model:ir.model.fields,field_description:mrp_ftpr.field_mrp_ftpr_subproduct_ids
+msgid "Sub product"
+msgstr "Sous-produit"
+
+#. module: mrp_ftpr
+#: model:ir.ui.view,arch_db:mrp_ftpr.view_form_mrp_ftpr
+msgid "Subporduct"
+msgstr "Sous-produit"
+
+#. module: mrp_ftpr
+#: model:ir.model.fields,field_description:mrp_ftpr.field_mrp_ftpr_is_subtract_price_subproduct
+msgid "Subtract the price sub product to the final product"
+msgstr "Soustraire le prix des sous produits au produit final"
+
+#. module: mrp_ftpr
+#: model:ir.model.fields,field_description:mrp_ftpr.field_mrp_ftpr_total_efficiency
+msgid "Total efficiency"
+msgstr "Total efficiency"
+
+#. module: mrp_ftpr
+#: model:ir.model.fields,field_description:mrp_ftpr.field_duplicate_ftpr_type
+#: model:ir.model.fields,field_description:mrp_ftpr.field_mrp_ftpr_type
+msgid "Type"
+msgstr "Type"
+
+#. module: mrp_ftpr
+#: model:ir.model.fields,field_description:mrp_ftpr.field_mrp_ftpr_type_component
+msgid "Type component"
+msgstr "Type de composant"
+
+#. module: mrp_ftpr
+#: model:ir.model.fields,field_description:mrp_ftpr.field_mrp_ftpr_uom_id
+msgid "UOM"
+msgstr "UdM"
+
+#. module: mrp_ftpr
+#: model:ir.model.fields,field_description:mrp_ftpr.field_mrp_ftpr_uom_category_id
+msgid "UOM category"
+msgstr "UdM categorie"
+
+#. module: mrp_ftpr
+#: model:ir.ui.view,arch_db:mrp_ftpr.view_wizard_add_resource_valid_form
+msgid "UP"
+msgstr "Monter"
+
+#. module: mrp_ftpr
+#: model:ir.model.fields,field_description:mrp_ftpr.field_mrp_ftpr_component_price_unit_coeff
+#: model:ir.model.fields,field_description:mrp_ftpr.field_mrp_ftpr_price_unit_coeff
+msgid "Unit price with coefficient"
+msgstr "Prix unitaire avec coefficient"
+
+#. module: mrp_ftpr
+#: model:ir.model.fields,field_description:mrp_ftpr.field_mrp_ftpr_price_unit_no_coeff
+msgid "Unit price without coefficient"
+msgstr "Prix unitaire sans coefficient"
+
+#. module: mrp_ftpr
+#: model:ir.model.fields,help:mrp_ftpr.field_mrp_ftpr_price_qty
+msgid "Used to calculate the price of raw materials"
+msgstr "Utilisé pour calculer le prix des matières premières"
+
+#. module: mrp_ftpr
+#: model:ir.model.fields,field_description:mrp_ftpr.field_mrp_ftpr_is_valid_priceunit
+msgid "Valid price unit"
+msgstr "Unité de prix valide"
+
+#. module: mrp_ftpr
+#: model:ir.model.fields,field_description:mrp_ftpr.field_mrp_ftpr_version
+msgid "Version"
+msgstr "Version"
+
+#. module: mrp_ftpr
+#: model:ir.model.fields,field_description:mrp_ftpr.field_mrp_ftpr_version_historical_ids
+msgid "Version historical"
+msgstr "Historique des versions"
+
+#. module: mrp_ftpr
+#: model:ir.model,name:mrp_ftpr.model_duplicate_ftpr
+msgid "Wizard qui permet de dupliquer une FTPR"
+msgstr "Wizard qui permet de dupliquer une FTPR"
+
+#. module: mrp_ftpr
+#: model:ir.model,name:mrp_ftpr.model_importation_routing_line_ftpr
+msgid "Wizard that allows to import a routing of lines routing with a selected routing of model"
+msgstr "Wizard qui permet d'importer des lignes de gammes de la gamme modèle sélectionnée"
+
+#. module: mrp_ftpr
+#: code:addons/mrp_ftpr/mrp.py:136
+#, python-format
+msgid "You must use the duplicating wizard."
+msgstr "Vous devez utiliser le wizard pour la duplication."
+
+#. module: mrp_ftpr
+#: model:ir.model.fields,help:mrp_ftpr.field_mrp_ftpr_name
+msgid "mrp_bom.name.help"
+msgstr "mrp_bom.name.help"
+
+#. module: mrp_ftpr
+#: model:ir.model.fields,help:mrp_ftpr.field_mrp_ftpr_product_id
+msgid "mrp_bom.product_id.help"
+msgstr "mrp_bom.product_id.help"
+
+#. module: mrp_ftpr
+#: model:ir.model.fields,help:mrp_ftpr.field_mrp_ftpr_quantity
+msgid "mrp_bom.quantity.help"
+msgstr "mrp_bom.quantity.help"
+
+#. module: mrp_ftpr
+#: model:ir.model.fields,help:mrp_ftpr.field_mrp_ftpr_start_date
+msgid "mrp_bom.start_date.help"
+msgstr "mrp_bom.start_date.help"
+
+#. module: mrp_ftpr
+#: model:ir.model.fields,help:mrp_ftpr.field_mrp_ftpr_stop_date
+msgid "mrp_bom.stop_date.help"
+msgstr "mrp_bom.stop_date.help"
+
+#. module: mrp_ftpr
+#: model:ir.model.fields,help:mrp_ftpr.field_mrp_ftpr_uom_id
+msgid "mrp_bom.uom_id.help"
+msgstr "mrp_bom.uom_id.help"
+
+#. module: mrp_ftpr
+#: model:ir.ui.view,arch_db:mrp_ftpr.view_form_compute_ftpr_cost
+#: model:ir.ui.view,arch_db:mrp_ftpr.view_form_duplicate_ftpr
+#: model:ir.ui.view,arch_db:mrp_ftpr.view_form_importation_routing_line_ftpr
+#: model:ir.ui.view,arch_db:mrp_ftpr.view_wizard_add_resource_valid_form
+msgid "or"
+msgstr "ou"
+
+#. module: mrp_ftpr
+#: model:ir.ui.view,arch_db:mrp_ftpr.view_form_mrp_ftpr
+msgid "price_total_component"
+msgstr "price_total_component"
+
+#. module: mrp_ftpr
+#: model:ir.model.fields,field_description:mrp_ftpr.field_wizard_add_resource_valid_resource_ids
+#: model:ir.ui.view,arch_db:mrp_ftpr.view_wizard_add_resource_valid_form
+msgid "resources"
+msgstr "ressources"
+
+#. module: mrp_ftpr
+#: model:ir.ui.view,arch_db:mrp_ftpr.view_form_mrp_ftpr
+msgid "sum_cleaning_time"
+msgstr "sum_cleaning_time"
+
+#. module: mrp_ftpr
+#: model:ir.ui.view,arch_db:mrp_ftpr.view_form_mrp_ftpr
+msgid "sum_preparation_time"
+msgstr "sum_preparation_time"
+
+#. module: mrp_ftpr
+#: model:ir.ui.view,arch_db:mrp_ftpr.view_form_mrp_ftpr
+msgid "sum_production_time"
+msgstr "sum_production_time"
+
+#. module: mrp_ftpr
+#: model:ir.ui.view,arch_db:mrp_ftpr.view_form_mrp_ftpr
+msgid "sum_total_time"
+msgstr "sum_total_time"
+
+#. module: mrp_ftpr
+#: model:ir.model,name:mrp_ftpr.model_wizard_add_operation_resource2
+msgid "wizard.add.operation.resource2"
+msgstr "wizard.add.operation.resource2"
+
+#. module: mrp_ftpr
+#: model:ir.model,name:mrp_ftpr.model_wizard_add_operation_resource4
+msgid "wizard.add.operation.resource4"
+msgstr "wizard.add.operation.resource4"
+
+#. module: mrp_ftpr
+#: model:ir.model,name:mrp_ftpr.model_wizard_add_resource_valid
+msgid "wizard.add.resource.valid"
+msgstr "wizard.add.resource.valid"
+

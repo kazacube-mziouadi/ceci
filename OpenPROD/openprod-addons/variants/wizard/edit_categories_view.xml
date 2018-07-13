@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+
+		<!-- ACTION Edit Categories -->
+		<record id="act_edit_categories" model="ir.actions.act_window">
+			<field name="name">Edit categories</field>
+			<field name="res_model">variants.wizard.edit.categories</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">form</field>
+			<field name="target">new</field>
+		</record>
+
+		<record id='view_form_edit_categories' model='ir.ui.view'>
+			<field name="name">view_form_edit_categories</field>
+			<field name="model">variants.wizard.edit.categories</field>
+			<field name="arch" type="xml">
+				<form string="Edit categories" version="8.0">
+					<field name="category_ids" domain="[('id', 'in', parent_category_ids[0][2])]" />
+					<field name="parent_category_ids" invisible="1" />
+					<button name="save" type="object" string="Save" class="oe_highlight" />
+				</form>
+			</field>
+		</record>
+	</data>
+</openerp>

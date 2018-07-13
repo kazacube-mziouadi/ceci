@@ -1,0 +1,11 @@
+[openerp]
+database=openprod
+server=localhost
+port=8068
+user=admin
+password=admin
+
+
+
+
+ 

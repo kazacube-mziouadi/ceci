@@ -1,0 +1,148 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* printers_stock
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 9.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-01-04 13:21+0000\n"
+"PO-Revision-Date: 2016-01-04 13:21+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: printers_stock
+#: model:ir.model.fields,field_description:printers_stock.field_stock_label_template_active_report
+msgid "Active report"
+msgstr "Active report"
+
+#. module: printers_stock
+#: code:addons/printers_stock/printers_stock.py:109
+#: code:addons/printers_stock/printers_stock.py:190
+#: code:addons/printers_stock/printers_stock.py:221
+#: code:addons/printers_stock/printers_stock.py:231
+#: code:addons/printers_stock/printers_stock.py:262
+#, python-format
+msgid "Error"
+msgstr "Erreur"
+
+#. module: printers_stock
+#: model:ir.model,name:printers_stock.model_stock_label
+msgid "Label"
+msgstr "Étiquette"
+
+#. module: printers_stock
+#: model:ir.model,name:printers_stock.model_stock_label_template
+msgid "Label template"
+msgstr "Modèle d'étiquette"
+
+#. module: printers_stock
+#: code:addons/printers_stock/printers_stock.py:231
+#, python-format
+msgid "No active report found for this picking %s."
+msgstr "Pas de rapport actif trouvé pour ce picking %s."
+
+#. module: printers_stock
+#: code:addons/printers_stock/printers_stock.py:109
+#, python-format
+msgid "No printer found for the label %s."
+msgstr "Pas d'imprimante trouvée pour cette étiquette %s."
+
+#. module: printers_stock
+#: code:addons/printers_stock/printers_stock.py:221
+#, python-format
+msgid "No printer found for the picking %s."
+msgstr "Pas d'imprimante trouvée pour ce picking %s."
+
+#. module: printers_stock
+#: code:addons/printers_stock/printers_stock.py:262
+#, python-format
+msgid "No printer found in your preference"
+msgstr "Pas d'imprimante trouvée dans vos préférences"
+
+#. module: printers_stock
+#: model:ir.model.fields,field_description:printers_stock.field_stock_picking_print_control
+msgid "Print control and plans"
+msgstr "Imprimer contrôles et plans"
+
+#. module: printers_stock
+#: model:ir.ui.view,arch_db:printers_stock.view_form_stock_printer_picking_out
+msgid "Print delivery order"
+msgstr "Imprimer bon de livraison"
+
+#. module: printers_stock
+#: model:ir.ui.view,arch_db:printers_stock.view_form_printer_label
+msgid "Print label"
+msgstr "Imprimer étiquette"
+
+#. module: printers_stock
+#: model:ir.model.fields,field_description:printers_stock.field_stock_picking_print_label
+#: model:ir.ui.view,arch_db:printers_stock.view_form_printer_move
+#: model:ir.ui.view,arch_db:printers_stock.view_form_stock_printer_picking_in
+msgid "Print labels"
+msgstr "Imprimer étiquettes"
+
+#. module: printers_stock
+#: model:ir.model.fields,field_description:printers_stock.field_stock_picking_print_picking_report
+msgid "Print picking"
+msgstr "Imprimer le rapport"
+
+#. module: printers_stock
+#: model:ir.ui.view,arch_db:printers_stock.view_form_stock_printer_picking_in
+msgid "Print receipt order"
+msgstr "Imprimer bon de réception"
+
+#. module: printers_stock
+#: model:ir.model.fields,field_description:printers_stock.field_stock_label_template_printer_type_id
+msgid "Printer type"
+msgstr "Type d'imprimante"
+
+#. module: printers_stock
+#: model:ir.ui.view,arch_db:printers_stock.view_form_label_template_printer
+#: model:ir.ui.view,arch_db:printers_stock.view_form_stock_printer_picking_in
+#: model:ir.ui.view,arch_db:printers_stock.view_form_stock_printer_picking_out
+msgid "Printing"
+msgstr "Impression"
+
+#. module: printers_stock
+#: model:ir.model.fields,field_description:printers_stock.field_stock_label_template_report_id
+msgid "Report"
+msgstr "Rapport"
+
+#. module: printers_stock
+#: model:ir.model.fields,field_description:printers_stock.field_stock_picking_report_type
+msgid "Report type"
+msgstr "Type de rapport"
+
+#. module: printers_stock
+#: model:ir.model,name:printers_stock.model_stock_move
+msgid "Stock Move"
+msgstr "Mouvements"
+
+#. module: printers_stock
+#: model:ir.model,name:printers_stock.model_stock_picking
+msgid "Stock picking"
+msgstr "Stock Picking"
+
+#. module: printers_stock
+#: code:addons/printers_stock/printers_stock.py:310
+#, python-format
+msgid "With price"
+msgstr "Avec prix"
+
+#. module: printers_stock
+#: code:addons/printers_stock/printers_stock.py:311
+#, python-format
+msgid "Without price"
+msgstr "Sans prix"
+
+#. module: printers_stock
+#: code:addons/printers_stock/printers_stock.py:190
+#, python-format
+msgid "You need to check at least one case in the printing part for the picking %s (information tab)."
+msgstr "Vous devez cocher au moins l'une des cases de la partie 'impression' pour le picking %s (onglet informations)."
+

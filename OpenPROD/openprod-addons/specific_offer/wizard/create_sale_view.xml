@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+		
+		<!-- FORM VIEW Create quick sale -->
+		<record model="ir.ui.view" id="view_form_create_sale_from_offer">
+			<field name="name">view_form_create_sale_from_offer</field>
+			<field name="model">create.sale.from.offer</field>
+			<field name="type">form</field>
+			<field name="arch" type="xml">
+				<form string="Create quick sale">
+					<group colspan="4" col="6" string="Enter the values">
+						<field name="date"/>
+						<label for="quantity" />
+						<div>
+							<field name="quantity" class="oe_inline" />
+							<field name="sec_uom_id" class="oe_inline" />
+						</div>
+						<field name="product_id" invisible="1"/>
+						<field name="partner_id" invisible="1"/>
+						<field name="offer_id" invisible="1"/>
+					</group>
+					<footer>
+						<button name="create_sale_offer" string="Create a sale" type="object" class="oe_highlight" />
+						or
+						<button string="Cancel" class="oe_link" special="cancel" />
+					</footer>
+				</form>
+			</field>
+		</record>
+		
+		<!-- ACTION Create quick sale -->
+		<record model="ir.actions.act_window" id="action_create_sale_from_offer">
+			<field name="name">Create sale</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="res_model">create.sale.from.offer</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">form</field>
+			<field name="target">new</field>
+		</record>
+		
+	</data>
+</openerp>

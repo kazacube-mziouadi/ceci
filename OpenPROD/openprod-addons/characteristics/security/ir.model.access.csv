@@ -1,0 +1,16 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_characteristic_user,characteristic,model_characteristic,product.product_user,1,0,0,0
+access_characteristic_manager,characteristic,model_characteristic,product.product_manager,1,1,1,1
+access_characteristic_administrator,characteristic,model_characteristic,product.product_responsible,1,1,1,1
+
+access_characteristic_type_user,characteristic.type,model_characteristic_type,product.product_user,1,0,0,0
+access_characteristic_type_manager,characteristic.type,model_characteristic_type,product.product_manager,1,1,1,1
+access_characteristic_type_administrator,characteristic.type,model_characteristic_type,product.product_responsible,1,1,1,1
+
+access_characteristic_value_user,characteristic.value,model_characteristic_value,product.product_user,1,0,0,0
+access_characteristic_value_manager,characteristic.value,model_characteristic_value,product.product_manager,1,1,1,1
+access_characteristic_value_administrator,characteristic.value,model_characteristic_value,product.product_responsible,1,1,1,1
+
+access_characteristics_categories_user,characteristics.categories,model_characteristics_categories,product.product_user,1,0,0,0
+access_characteristics_categories_manager,characteristics.categories,model_characteristics_categories,product.product_manager,1,1,1,1
+access_characteristics_categories_administrator,characteristics.categories,model_characteristics_categories,product.product_responsible,1,1,1,1

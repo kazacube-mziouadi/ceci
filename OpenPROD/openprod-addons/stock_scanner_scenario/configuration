@@ -1,0 +1,8 @@
+installer 
+pip install openobject-library==1.0.1
+
+Configurer le fichier
+.oerpsentinel.py
+
+Import
+./import_scenario.py -p 8069 -d openprod -w admin -r --directory=/home/raphael/workspace/openprod-addons/stock_scanner_scenario/label_move/

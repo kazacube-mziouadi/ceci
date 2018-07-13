@@ -1,0 +1,49 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* specific_offer_variant
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 9.0c\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-10-14 13:18+0000\n"
+"PO-Revision-Date: 2016-10-14 13:18+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: specific_offer_variant
+#: model:ir.ui.view,arch_db:specific_offer_variant.view_form_specific_offer
+msgid "Configure"
+msgstr "Configurer"
+
+#. module: specific_offer_variant
+#: model:ir.model,name:specific_offer_variant.model_fill_questionnaire
+msgid "Fill a  questionnaire for a sale order line"
+msgstr "Fill a  questionnaire for a sale order line"
+
+#. module: specific_offer_variant
+#: model:ir.model.fields,field_description:specific_offer_variant.field_specific_offer_parameter_ids
+#: model:ir.ui.view,arch_db:specific_offer_variant.view_form_specific_offer
+msgid "Parameters"
+msgstr "Paramètres"
+
+#. module: specific_offer_variant
+#: model:ir.model.fields,field_description:specific_offer_variant.field_fill_questionnaire_specific_offer_id
+msgid "Specific offer"
+msgstr "Offre spécifique"
+
+#. module: specific_offer_variant
+#: model:ir.model.fields,field_description:specific_offer_variant.field_specific_offer_variant_value_ids
+#: model:ir.ui.view,arch_db:specific_offer_variant.view_form_specific_offer
+msgid "Variant values"
+msgstr "Valeurs de variante"
+
+#. module: specific_offer_variant
+#: model:ir.model,name:specific_offer_variant.model_specific_offer
+msgid "specific offer"
+msgstr "Offre spécifique"
+

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+        
+        <record id='view_search_quality_control_line_result_report_id_workorder' model='ir.ui.view'>
+            <field name="name">view_search_quality_control_declaration_line_result_id</field>
+            <field name="model">quality.control.line.result.report</field>
+            <field name="priority" eval="1600" />
+            <field name="inherit_id" ref="stock.view_search_quality_control_line_result_report_id" />
+            <field name="arch" type="xml">
+                <field name="picking_id" position="after">
+                    <field name="wo_id" />
+                </field>
+                <xpath expr="//filter[@name='picking_filter']" position="before">
+                    <filter string="WO" context="{'group_by' : 'wo_id'}" />
+   					<filter string="Production declaration" context="{'group_by' : 'wo_produce_id'}" />
+                </xpath>
+            </field>
+        </record>
+        
+	</data>
+</openerp>

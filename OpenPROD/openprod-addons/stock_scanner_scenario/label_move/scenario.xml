@@ -1,0 +1,24 @@
+<scenario>
+	<reference_res_id>be3a6e0e-f324-11e4-9498-247703b9cd04</reference_res_id>
+	<model_id>stock.label</model_id>
+	<create_date>2015-05-05 12:46:26</create_date>
+	<name>Move label</name>
+	<sequence>10</sequence>
+	<notes />
+	<__last_update>2015-05-06 06:30:52</__last_update>
+	<write_uid>[1, 'Administrator']</write_uid>
+	<parent_id />
+	<shared_custom>False</shared_custom>
+	<ack_code>ACK</ack_code>
+	<write_date>2015-05-06 06:30:52</write_date>
+	<warehouse_ids>entrepot</warehouse_ids>
+	<active>True</active>
+	<display_name>Move label</display_name>
+	<type>scenario</type>
+	<create_uid>[1, 'Administrator']</create_uid>
+	<hardware_ids>[1]</hardware_ids>
+	<Step __last_update="2015-05-06 06:27:11" create_date="2015-05-05 12:47:02" create_uid="[1, 'Administrator']" display_name="Start" name="Start" no_back="False" reference_res_id="d3cc9dbe-f324-11e4-848e-247703b9cd04" step_back="False" step_start="True" step_stop="False" write_date="2015-05-06 06:27:11" write_uid="[1, 'Administrator']" />
+	<Step __last_update="2015-05-06 06:27:12" create_date="2015-05-05 12:47:08" create_uid="[1, 'Administrator']" display_name="End" name="End" no_back="False" reference_res_id="d751f222-f324-11e4-a0fb-247703b9cd04" step_back="False" step_start="False" step_stop="True" write_date="2015-05-06 06:27:12" write_uid="[1, 'Administrator']" />
+	<Transition __last_update="2015-05-06 06:27:12" condition="message or not t.tmp_val1 or t.tmp_val4" create_date="2015-05-05 13:21:31" create_uid="[1, 'Administrator']" display_name="Start &gt; Start" from_id="d3cc9dbe-f324-11e4-848e-247703b9cd04" name="Start &gt; Start" reference_res_id="a4d16ce2-f329-11e4-9dde-247703b9cd04" sequence="0" to_id="d3cc9dbe-f324-11e4-848e-247703b9cd04" tracer="" transition_type="scanner" write_date="2015-05-06 06:27:12" write_uid="[1, 'Administrator']" />
+	<Transition __last_update="2015-05-06 06:27:12" condition="not message and t.tmp_val1 and not t.tmp_val4" create_date="2015-05-05 12:47:22" create_uid="[1, 'Administrator']" display_name="Start &gt; End" from_id="d3cc9dbe-f324-11e4-848e-247703b9cd04" name="Start &gt; End" reference_res_id="df9a0b68-f324-11e4-805d-247703b9cd04" sequence="10" to_id="d751f222-f324-11e4-a0fb-247703b9cd04" tracer="" transition_type="scanner" write_date="2015-05-06 06:27:12" write_uid="[1, 'Administrator']" />
+</scenario>

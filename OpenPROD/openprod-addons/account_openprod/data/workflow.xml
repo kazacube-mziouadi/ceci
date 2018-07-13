@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+		<record model="workflow.activity" id="account.act_open_test">
+			<field name="wkf_id" ref="account.wkf" />
+			<field name="name">re-open</field>
+			<field name="can_not_be_deleted">True</field>
+			<field name="action">action_reopen()</field>
+			<field name="kind">function</field>
+		</record>
+	</data>
+</openerp>

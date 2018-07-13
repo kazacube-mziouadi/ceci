@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+		<!-- ACTION Create task -->
+		<record id="act_create_task_wizard" model="ir.actions.act_window">
+			<field name="name">Create task</field>
+			<field name="res_model">create.task.wizard</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">form</field>
+			<field name="target">new</field>
+		</record>
+
+		<!-- FORM VIEW Create task -->
+		<record id='view_form_create_task' model='ir.ui.view'>
+			<field name="name">create_task</field>
+			<field name="model">create.task.wizard</field>
+			<field name="arch" type="xml">
+				<form string="Create task" version="8.0">
+					<group string="New task" colspan="4" col="4">
+						<field name="phase_id"/>
+						<field name="resource_id" attrs="{'invisible': [('mo_id', '!=', False)]}" />
+						<field name="propagate" attrs="{'invisible': [('mo_id', '=', False)]}" />
+						<field name="mo_id" invisible="1" />
+						<field name="event_id" invisible="1" />
+					</group>
+					<footer>
+						<button name="create_task" type="object" string="Create" class="oe_highlight" />
+						or
+						<button string="Cancel" special="cancel" class="oe_link" />
+					</footer>
+				</form>
+			</field>
+		</record>
+	</data>
+</openerp>

@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_mrp_ftpr_user,mrp.ftpr,model_mrp_ftpr,base.group_manufacturing_user,1,0,0,0
+access_mrp_ftpr_manager,mrp.ftpr,model_mrp_ftpr,base.group_manufacturing_manager,1,1,1,1
+access_mrp_ftpr_administrator,mrp.ftpr,model_mrp_ftpr,base.group_manufacturing_admin,1,1,1,1

@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data noupdate="0">
+
+		<!-- WORKFLOW -->
+		<record id="wkf_expense_report" model="workflow">
+			<field name="name">expense_report</field>
+			<field name="osv">expense.report</field>
+			<field name="on_create">True</field>
+		</record>
+
+
+		<!-- DISPLAY STATE -->
+		<record id="expense_report_display_state_draft" model="workflow.display.state">
+			<field name="wkf_id" ref="wkf_expense_report" />
+			<field name="sequence" eval="0" />
+			<field name="label">Draft</field>
+			<field name="name">draft</field>
+			<field name="always_visible" eval="True" />
+		</record>
+		<record id="expense_report_display_state_waiting" model="workflow.display.state">
+			<field name="wkf_id" ref="wkf_expense_report" />
+			<field name="sequence" eval="10" />
+			<field name="label">Waiting</field>
+			<field name="name">waiting</field>
+			<field name="always_visible" eval="True" />
+		</record>
+		<record id="expense_report_display_state_validated" model="workflow.display.state">
+            <field name="wkf_id" ref="wkf_expense_report" />
+            <field name="sequence" eval="20" />
+            <field name="label">Validated</field>
+            <field name="name">validated</field>
+            <field name="always_visible" eval="True" />
+        </record>
+        <record id="expense_report_display_state_payment_requested" model="workflow.display.state">
+            <field name="wkf_id" ref="wkf_expense_report" />
+            <field name="sequence" eval="30" />
+            <field name="label">Payment requested</field>
+            <field name="name">payment_requested</field>
+            <field name="always_visible" eval="True" />
+        </record>
+        <record id="expense_report_display_state_paid" model="workflow.display.state">
+            <field name="wkf_id" ref="wkf_expense_report" />
+            <field name="sequence" eval="30" />
+            <field name="label">Paid</field>
+            <field name="name">paid</field>
+            <field name="always_visible" eval="True" />
+        </record>
+		<record id="expense_report_display_state_cancel" model="workflow.display.state">
+			<field name="wkf_id" ref="wkf_expense_report" />
+			<field name="sequence" eval="40" />
+			<field name="label">Cancel</field>
+			<field name="name">cancel</field>
+			<field name="always_visible" eval="False" />
+		</record>
+
+
+		<!-- ACTIVITY -->
+		<!-- draft -->
+		<record id="expense_report_act_draft" model="workflow.activity">
+			<field name="wkf_id" ref="wkf_expense_report" />
+			<field name="name">Draft</field>
+			<field name="kind">function</field>
+			<field name="can_not_be_deleted">True</field>
+			<field name="required">True</field>
+			<field name="sequence" eval="10" />
+			<field name="flow_start" eval="True"/>
+			<field name="flow_stop" eval="False"/>
+			<field name="action">write({'display_state': 'draft', 'state': 'draft'})</field>
+		</record>
+		<!-- waiting -->
+        <record id="expense_report_act_waiting" model="workflow.activity">
+            <field name="wkf_id" ref="wkf_expense_report" />
+            <field name="name">Waiting</field>
+            <field name="kind">function</field>
+            <field name="can_not_be_deleted">True</field>
+            <field name="required">True</field>
+            <field name="sequence" eval="20" />
+            <field name="flow_start" eval="False"/>
+            <field name="flow_stop" eval="False"/>
+            <field name="action">write({'display_state': 'waiting', 'state': 'waiting'})
+                                 button_reset_taxes()</field>
+        </record>
+        <!-- validated -->
+        <record id="expense_report_act_validated" model="workflow.activity">
+            <field name="wkf_id" ref="wkf_expense_report" />
+            <field name="name">Validated</field>
+            <field name="kind">function</field>
+            <field name="can_not_be_deleted">True</field>
+            <field name="required">True</field>
+            <field name="sequence" eval="30" />
+            <field name="flow_start" eval="False"/>
+            <field name="flow_stop" eval="False"/>
+            <field name="action">write({'display_state': 'validated', 'state': 'validated'})
+                                 action_move_create()</field>
+        </record>
+        <!-- payment_requested -->
+        <record id="expense_report_act_payment_requested" model="workflow.activity">
+            <field name="wkf_id" ref="wkf_expense_report" />
+            <field name="name">Payment requested</field>
+            <field name="kind">function</field>
+            <field name="can_not_be_deleted">True</field>
+            <field name="required">True</field>
+            <field name="sequence" eval="40" />
+            <field name="flow_start" eval="False"/>
+            <field name="flow_stop" eval="False"/>
+            <field name="action">write({'display_state': 'payment_requested', 'state': 'payment_requested'})
+                                 action_generate_payment()</field>
+        </record>
+        <!-- paid -->
+        <record id="expense_report_act_paid" model="workflow.activity">
+            <field name="wkf_id" ref="wkf_expense_report" />
+            <field name="name">Paid</field>
+            <field name="kind">function</field>
+            <field name="can_not_be_deleted">True</field>
+            <field name="required">True</field>
+            <field name="sequence" eval="40" />
+            <field name="flow_start" eval="False"/>
+            <field name="flow_stop" eval="False"/>
+            <field name="action">write({'display_state': 'paid', 'state': 'paid'})</field>
+        </record>
+		<!-- Cancel -->
+		<record id="expense_report_act_cancel" model="workflow.activity">
+			<field name="wkf_id" ref="wkf_expense_report" />
+			<field name="name">Cancel</field>
+			<field name="kind">function</field>
+			<field name="can_not_be_deleted">True</field>
+			<field name="required">True</field>
+			<field name="sequence" eval="50" />
+			<field name="flow_start" eval="False"/>
+			<field name="flow_stop" eval="True"/>
+			<field name="action">write({'display_state': 'cancel', 'state': 'cancel'})
+			                     wkf_cancel()</field>
+		</record>
+
+
+		<!-- TRANSITION -->
+		<!-- draft to waiting -->
+		<record id="expense_report_draft_to_waiting" model="workflow.transition">
+			<field name="sequence" eval="10" />
+			<field name="act_from" ref="expense_report_act_draft" />
+			<field name="act_to" ref="expense_report_act_waiting" />
+			<field name="signal">waiting</field>
+			<field name="is_default">True</field>
+			<field name="visible_button">True</field>
+			<field name="button_label">Waiting</field>
+			<field name="button_class">openprod_logical_button</field>
+		</record>
+		<!-- waiting to validated -->
+		<record id="expense_report_waiting_to_validated" model="workflow.transition">
+			<field name="sequence" eval="20" />
+			<field name="act_from" ref="expense_report_act_waiting" />
+			<field name="act_to" ref="expense_report_act_validated" />
+			<field name="signal">validated</field>
+			<field name="is_default">True</field>
+			<field name="visible_button">True</field>
+			<field name="button_label">Validated</field>
+			<field name="button_class">openprod_logical_button</field>
+		</record>
+		<!-- validated to payment_requested -->
+        <record id="expense_report_validated_to_payment_requested" model="workflow.transition">
+            <field name="sequence" eval="30" />
+            <field name="act_from" ref="expense_report_act_validated" />
+            <field name="act_to" ref="expense_report_act_payment_requested" />
+            <field name="signal">payment_requested</field>
+            <field name="is_default">True</field>
+            <field name="visible_button">True</field>
+            <field name="button_label">Payment requested</field>
+            <field name="button_class">openprod_logical_button</field>
+        </record>
+        <!-- payment_requested to paid -->
+        <record id="expense_report_payment_requested_to_paid" model="workflow.transition">
+            <field name="sequence" eval="40" />
+            <field name="act_from" ref="expense_report_act_payment_requested" />
+            <field name="act_to" ref="expense_report_act_paid" />
+            <field name="signal">paid</field>
+            <field name="is_default">True</field>
+        </record>
+        <!-- cancel to draft -->
+        <record id="expense_report_cancel_to_draft" model="workflow.transition">
+            <field name="sequence" eval="50" />
+            <field name="act_from" ref="expense_report_act_cancel" />
+            <field name="act_to" ref="expense_report_act_draft" />
+            <field name="signal">draft</field>
+            <field name="is_default">True</field>
+            <field name="visible_button">True</field>
+            <field name="button_label">Draft</field>
+            <field name="button_class">openprod_logical_button</field>
+        </record>
+		<!-- draft to cancel -->
+        <record id="expense_report_draft_to_cancel" model="workflow.transition">
+            <field name="sequence" eval="60" />
+            <field name="act_from" ref="expense_report_act_draft" />
+            <field name="act_to" ref="expense_report_act_cancel" />
+            <field name="signal">draft_cancel</field>
+            <field name="is_default">True</field>
+            <field name="visible_button">True</field>
+            <field name="button_label">Cancel</field>
+            <field name="button_class">openprod_cancel_button</field>
+        </record>
+        <!-- waiting to cancel -->
+        <record id="expense_report_waiting_to_cancel" model="workflow.transition">
+            <field name="sequence" eval="70" />
+            <field name="act_from" ref="expense_report_act_waiting" />
+            <field name="act_to" ref="expense_report_act_cancel" />
+            <field name="signal">waiting_cancel</field>
+            <field name="is_default">True</field>
+            <field name="visible_button">True</field>
+            <field name="button_label">Cancel</field>
+            <field name="button_class">openprod_cancel_button</field>
+        </record>
+        <!-- validated to cancel -->
+        <record id="expense_report_validated_to_cancel" model="workflow.transition">
+            <field name="sequence" eval="80" />
+            <field name="act_from" ref="expense_report_act_validated" />
+            <field name="act_to" ref="expense_report_act_cancel" />
+            <field name="signal">validated_cancel</field>
+            <field name="is_default">True</field>
+            <field name="visible_button">True</field>
+            <field name="button_label">Cancel</field>
+            <field name="button_class">openprod_cancel_button</field>
+        </record>
+        <!-- payment_requested to cancel -->
+        <record id="expense_report_payment_requested_to_cancel" model="workflow.transition">
+            <field name="sequence" eval="90" />
+            <field name="act_from" ref="expense_report_act_payment_requested" />
+            <field name="act_to" ref="expense_report_act_cancel" />
+            <field name="signal">payment_requested_cancel</field>
+            <field name="is_default">True</field>
+            <field name="visible_button">True</field>
+            <field name="button_label">Cancel</field>
+            <field name="button_class">openprod_cancel_button</field>
+        </record>
+        <!-- paid to cancel -->
+        <record id="expense_report_paid_to_cancel" model="workflow.transition">
+            <field name="sequence" eval="100" />
+            <field name="act_from" ref="expense_report_act_paid" />
+            <field name="act_to" ref="expense_report_act_cancel" />
+            <field name="signal">paid_cancel</field>
+            <field name="is_default">True</field>
+            <field name="visible_button">True</field>
+            <field name="button_label">Cancel</field>
+            <field name="button_class">openprod_cancel_button</field>
+        </record>
+	</data>
+</openerp>

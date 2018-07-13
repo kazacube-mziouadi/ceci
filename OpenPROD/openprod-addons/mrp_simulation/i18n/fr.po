@@ -1,0 +1,658 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* mrp_simulation
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 9.0c\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-06-01 08:57+0000\n"
+"PO-Revision-Date: 2017-06-01 08:57+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: mrp_simulation
+#: model:ir.ui.view,arch_db:mrp_simulation.view_form_mrp_simulation
+msgid "Actions"
+msgstr "Actions"
+
+#. module: mrp_simulation
+#: model:ir.ui.view,arch_db:mrp_simulation.view_form_mrp_simulation
+msgid "Administration"
+msgstr "Administration"
+
+#. module: mrp_simulation
+#: model:ir.model.fields,field_description:mrp_simulation.field_mrp_simulation_affair_id
+msgid "Affair"
+msgstr "Affaire"
+
+#. module: mrp_simulation
+#: model:ir.model.fields,field_description:mrp_simulation.field_mrp_simulation_analytic_distribution_ids
+msgid "Analytic distribution"
+msgstr "Distribution Analytique"
+
+#. module: mrp_simulation
+#: model:ir.model.fields,field_description:mrp_simulation.field_mrp_simulation_analytic_line_ids
+msgid "Analytic lines"
+msgstr "Lignes analytiques"
+
+#. module: mrp_simulation
+#: model:ir.ui.view,arch_db:mrp_simulation.view_form_mrp_simulation
+msgid "Are you sure you want to cancel this simulation?"
+msgstr "Êtes-vous certain de vouloir annuler cette simulation?"
+
+#. module: mrp_simulation
+#: model:ir.ui.view,arch_db:mrp_simulation.view_form_mrp_simulation
+msgid "Are you sure you want to reset this simulation?"
+msgstr "Êtes-vous certain de vouloir réinitialiser cette simulation?"
+
+#. module: mrp_simulation
+#: model:ir.model.fields,field_description:mrp_simulation.field_mrp_simulation_line_availability
+msgid "Availability"
+msgstr "Disponibilité"
+
+#. module: mrp_simulation
+#: model:ir.model.fields,field_description:mrp_simulation.field_mrp_simulation_line_availability_date
+msgid "Availability date"
+msgstr "Date de dispo."
+
+#. module: mrp_simulation
+#: model:ir.model.fields,field_description:mrp_simulation.field_mrp_simulation_line_available_stock
+msgid "Available stock qty"
+msgstr "Stock (T0)"
+
+#. module: mrp_simulation
+#: model:ir.model.fields,field_description:mrp_simulation.field_mrp_simulation_bom_id
+#: model:ir.model.fields,field_description:mrp_simulation.field_mrp_simulation_line_bom_id
+#: model:ir.ui.view,arch_db:mrp_simulation.view_form_mrp_simulation
+msgid "BoM"
+msgstr "Nomenclature"
+
+#. module: mrp_simulation
+#: code:addons/mrp_simulation/simulation.py:217
+#, python-format
+msgid "BoM not found"
+msgstr "Aucune nomenclature trouvée"
+
+#. module: mrp_simulation
+#: code:addons/mrp_simulation/simulation.py:359
+#, python-format
+msgid "Buy"
+msgstr "Acheté"
+
+#. module: mrp_simulation
+#: code:addons/mrp_simulation/simulation.py:25
+#, python-format
+msgid "Cancel"
+msgstr "Annulée"
+
+#. module: mrp_simulation
+#: model:ir.ui.view,arch_db:mrp_simulation.view_form_mrp_simulation
+#, python-format
+msgid "Cancel"
+msgstr "Annuler"
+
+#. module: mrp_simulation
+#: model:ir.ui.view,arch_db:mrp_simulation.view_form_mrp_simulation
+msgid "Change Date"
+msgstr "Changer de date"
+
+#. module: mrp_simulation
+#: model:ir.ui.view,arch_db:mrp_simulation.view_form_mrp_simulation
+msgid "Change resource"
+msgstr "Changer de ressource"
+
+#. module: mrp_simulation
+#: model:ir.model.fields,field_description:mrp_simulation.field_mrp_simulation_color_priority_need_move
+msgid "Color priority need move"
+msgstr "Couleur"
+
+#. module: mrp_simulation
+#: model:ir.model.fields,field_description:mrp_simulation.field_mrp_simulation_company_id
+msgid "Company"
+msgstr "Société"
+
+#. module: mrp_simulation
+#: model:ir.ui.view,arch_db:mrp_simulation.view_form_mrp_simulation
+#: model:ir.ui.view,arch_db:mrp_simulation.view_tree_mrp_simulation
+msgid "Confirm date"
+msgstr "Confirmer la date"
+
+#. module: mrp_simulation
+#: model:ir.model.fields,field_description:mrp_simulation.field_mrp_simulation_create_uid
+#: model:ir.model.fields,field_description:mrp_simulation.field_mrp_simulation_line_create_uid
+msgid "Created by"
+msgstr "Créé par"
+
+#. module: mrp_simulation
+#: model:ir.model.fields,field_description:mrp_simulation.field_mrp_simulation_create_date
+#: model:ir.model.fields,field_description:mrp_simulation.field_mrp_simulation_line_create_date
+msgid "Created on"
+msgstr "Créé le"
+
+#. module: mrp_simulation
+#: model:ir.model.fields,field_description:mrp_simulation.field_mrp_simulation_line_critical_path
+msgid "Critical Path"
+msgstr "Chemin critique"
+
+#. module: mrp_simulation
+#: model:ir.model.fields,field_description:mrp_simulation.field_mrp_simulation_line_cumulative_delay
+msgid "Cumulative delay"
+msgstr "Délai cumulé"
+
+#. module: mrp_simulation
+#: model:ir.model.fields,field_description:mrp_simulation.field_mrp_simulation_customer_id
+msgid "Customer"
+msgstr "Client"
+
+#. module: mrp_simulation
+#: model:ir.model.fields,field_description:mrp_simulation.field_mrp_simulation_date_ok
+msgid "Date of availability"
+msgstr "Date de dispo."
+
+#. module: mrp_simulation
+#: model:ir.model.fields,field_description:mrp_simulation.field_mrp_simulation_line_delay
+msgid "Delay"
+msgstr "Délai"
+
+#. module: mrp_simulation
+#: code:addons/mrp_simulation/simulation.py:23
+#, python-format
+msgid "Delay confirmation"
+msgstr "Confirmation délai"
+
+#. module: mrp_simulation
+#: model:ir.ui.view,arch_db:mrp_simulation.view_form_mrp_simulation
+msgid "Delete MO and son MO"
+msgstr "Supprimer OF et OTs"
+
+#. module: mrp_simulation
+#: model:ir.model.fields,field_description:mrp_simulation.field_mrp_simulation_display_name
+#: model:ir.model.fields,field_description:mrp_simulation.field_mrp_simulation_line_display_name
+msgid "Display Name"
+msgstr "Nom"
+
+#. module: mrp_simulation
+#: model:ir.ui.view,arch_db:mrp_simulation.view_form_mrp_simulation
+msgid "Display reservations"
+msgstr "Affichage des réservations"
+
+#. module: mrp_simulation
+#: code:addons/mrp_simulation/simulation.py:24
+#, python-format
+msgid "Done"
+msgstr "Terminée"
+
+#. module: mrp_simulation
+#: model:ir.ui.view,arch_db:mrp_simulation.view_form_mrp_simulation
+msgid "Done"
+msgstr "Terminer"
+
+#. module: mrp_simulation
+#: code:addons/mrp_simulation/simulation.py:21
+#: model:ir.ui.view,arch_db:mrp_simulation.view_form_mrp_simulation
+#, python-format
+msgid "Draft"
+msgstr "Brouillon"
+
+#. module: mrp_simulation
+#: model:ir.model.fields,field_description:mrp_simulation.field_mrp_simulation_product_id
+msgid "Final Product"
+msgstr "Produit fini"
+
+#. module: mrp_simulation
+#: model:ir.ui.view,arch_db:mrp_simulation.view_form_mrp_simulation
+msgid "Final product"
+msgstr "Produit fini"
+
+#. module: mrp_simulation
+#: model:ir.model.fields,field_description:mrp_simulation.field_mrp_simulation_is_forecast
+msgid "Forecast"
+msgstr "Prévisionnelle"
+
+#. module: mrp_simulation
+#: model:ir.model.fields,field_description:mrp_simulation.field_mrp_simulation_id
+#: model:ir.model.fields,field_description:mrp_simulation.field_mrp_simulation_line_id
+msgid "ID"
+msgstr "ID"
+
+#. module: mrp_simulation
+#: code:addons/mrp_simulation/simulation.py:344
+#, python-format
+msgid "Impossible to copy a simulation."
+msgstr "Impossible de copier une simulation."
+
+#. module: mrp_simulation
+#: code:addons/mrp_simulation/simulation.py:295
+#, python-format
+msgid "Impossible to make done a simulation that requires a date confirmation."
+msgstr "Impossible de terminer une simulation qui requiert une confirmation de date."
+
+#. module: mrp_simulation
+#: model:ir.model.fields,field_description:mrp_simulation.field_mrp_simulation_internal_plan_ids
+msgid "Internal documents"
+msgstr "Documents internes"
+
+#. module: mrp_simulation
+#: model:ir.model.fields,field_description:mrp_simulation.field_mrp_simulation_is_month
+msgid "Is month"
+msgstr "Dans le mois"
+
+#. module: mrp_simulation
+#: model:ir.model.fields,field_description:mrp_simulation.field_mrp_simulation_is_next_week
+msgid "Is next week"
+msgstr "Dans la semaine suivante"
+
+#. module: mrp_simulation
+#: model:ir.model.fields,field_description:mrp_simulation.field_mrp_simulation_is_week
+msgid "Is week"
+msgstr "Dans la semaine"
+
+#. module: mrp_simulation
+#: model:ir.model.fields,field_description:mrp_simulation.field_mrp_simulation___last_update
+#: model:ir.model.fields,field_description:mrp_simulation.field_mrp_simulation_line___last_update
+msgid "Last Modified on"
+msgstr "Dernière modification le"
+
+#. module: mrp_simulation
+#: model:ir.model.fields,field_description:mrp_simulation.field_mrp_simulation_line_write_uid
+#: model:ir.model.fields,field_description:mrp_simulation.field_mrp_simulation_write_uid
+msgid "Last Updated by"
+msgstr "Dernière modification par"
+
+#. module: mrp_simulation
+#: model:ir.model.fields,field_description:mrp_simulation.field_mrp_simulation_line_write_date
+#: model:ir.model.fields,field_description:mrp_simulation.field_mrp_simulation_write_date
+msgid "Last Updated on"
+msgstr "Dernière modification le"
+
+#. module: mrp_simulation
+#: model:ir.model.fields,field_description:mrp_simulation.field_mrp_simulation_level
+#: model:ir.model.fields,field_description:mrp_simulation.field_mrp_simulation_line_level
+msgid "Level"
+msgstr "Niveau"
+
+#. module: mrp_simulation
+#: model:ir.model.fields,field_description:mrp_simulation.field_mrp_simulation_simulation_line_ids
+#: model:ir.ui.view,arch_db:mrp_simulation.view_form_mrp_simulation
+msgid "Lines"
+msgstr "Lignes"
+
+#. module: mrp_simulation
+#: model:ir.model,name:mrp_simulation.model_mrp_manufacturingorder
+#: model:ir.model.fields,field_description:mrp_simulation.field_mrp_simulation_mo_id
+msgid "Manufacturing order"
+msgstr "Ordre de fabrication"
+
+#. module: mrp_simulation
+#: model:ir.model.fields,field_description:mrp_simulation.field_mrp_simulation_real_rm_cost
+#: model:ir.model.fields,field_description:mrp_simulation.field_mrp_simulation_theo_rm_cost
+msgid "Material first cost"
+msgstr "Material first cost"
+
+#. module: mrp_simulation
+#: model:ir.model.fields,field_description:mrp_simulation.field_mrp_simulation_max_end_date
+msgid "Max End Date"
+msgstr "Date de fin max."
+
+#. module: mrp_simulation
+#: model:ir.model.fields,field_description:mrp_simulation.field_mrp_simulation_min_start_date
+msgid "Min Start Date"
+msgstr "Date de fin min."
+
+#. module: mrp_simulation
+#: model:ir.model.fields,field_description:mrp_simulation.field_mrp_simulation_month
+msgid "Month"
+msgstr "Mois"
+
+#. module: mrp_simulation
+#: model:ir.model.fields,field_description:mrp_simulation.field_mrp_simulation_multi_level
+msgid "Multi level"
+msgstr "Multi niveaux"
+
+#. module: mrp_simulation
+#: model:ir.model.fields,field_description:mrp_simulation.field_mrp_simulation_line_name
+#: model:ir.model.fields,field_description:mrp_simulation.field_mrp_simulation_name
+#: model:ir.model.fields,field_description:mrp_simulation.field_mrp_simulation_simulation_name
+msgid "Name"
+msgstr "Nom"
+
+#. module: mrp_simulation
+#: model:ir.model.fields,field_description:mrp_simulation.field_mrp_simulation_need_delay_validation
+msgid "Need delay validation"
+msgstr "Besoin d'une validation délai"
+
+#. module: mrp_simulation
+#: model:ir.model.fields,field_description:mrp_simulation.field_mrp_simulation_needed_quantity
+msgid "Needed quantity"
+msgstr "Quantité du besoin"
+
+#. module: mrp_simulation
+#: model:ir.model.fields,field_description:mrp_simulation.field_mrp_simulation_note_origin
+msgid "Note"
+msgstr "Note"
+
+#. module: mrp_simulation
+#: model:ir.model.fields,field_description:mrp_simulation.field_mrp_simulation_note_manufacturing
+msgid "Note Manufacturing"
+msgstr "Note fabrication"
+
+#. module: mrp_simulation
+#: model:ir.model.fields,field_description:mrp_simulation.field_mrp_simulation_note_planned
+msgid "Note Planned"
+msgstr "Note plannification"
+
+#. module: mrp_simulation
+#: model:ir.ui.view,arch_db:mrp_simulation.view_form_mrp_simulation
+msgid "Note for manufacturing"
+msgstr "Note pour la prodction"
+
+#. module: mrp_simulation
+#: model:ir.model.fields,field_description:mrp_simulation.field_mrp_simulation_line_option_id
+#: model:ir.model.fields,field_description:mrp_simulation.field_mrp_simulation_option_ids
+msgid "Options"
+msgstr "Options"
+
+#. module: mrp_simulation
+#: model:ir.model.fields,field_description:mrp_simulation.field_mrp_simulation_parameter_ids
+msgid "Parameters"
+msgstr "Paramètres"
+
+#. module: mrp_simulation
+#: model:ir.ui.view,arch_db:mrp_simulation.view_form_mrp_simulation
+msgid "Plan at earlier"
+msgstr "Planifier au plus tôt"
+
+#. module: mrp_simulation
+#: model:ir.ui.view,arch_db:mrp_simulation.view_form_mrp_simulation
+msgid "Plan at the latest"
+msgstr "Planifier au plus tard"
+
+#. module: mrp_simulation
+#: model:ir.ui.view,arch_db:mrp_simulation.view_form_mrp_simulation
+msgid "Plan done"
+msgstr "Planification terminée"
+
+#. module: mrp_simulation
+#: model:ir.model.fields,field_description:mrp_simulation.field_mrp_simulation_planned_end_date
+msgid "Planned End Date"
+msgstr "Date de fin planifiée"
+
+#. module: mrp_simulation
+#: model:ir.model.fields,field_description:mrp_simulation.field_mrp_simulation_planned_start_date
+msgid "Planned Start Date"
+msgstr "Date de début planifiée"
+
+#. module: mrp_simulation
+#: model:ir.model,name:mrp_simulation.model_procurement_order
+msgid "Procurement order"
+msgstr "Procurement order"
+
+#. module: mrp_simulation
+#: model:ir.model.fields,field_description:mrp_simulation.field_mrp_simulation_procurement_deleted
+msgid "Procurement order deleted"
+msgstr "Procurement order deleted"
+
+#. module: mrp_simulation
+#: code:addons/mrp_simulation/simulation.py:360
+#, python-format
+msgid "Produce"
+msgstr "Fabriqué"
+
+#. module: mrp_simulation
+#: model:ir.model.fields,field_description:mrp_simulation.field_mrp_simulation_real_produce_cost
+#: model:ir.model.fields,field_description:mrp_simulation.field_mrp_simulation_theo_produce_cost
+msgid "Produce cost"
+msgstr "Cout de fabrication"
+
+#. module: mrp_simulation
+#: model:ir.model.fields,field_description:mrp_simulation.field_mrp_simulation_produce_total_qty
+msgid "Produce total qty"
+msgstr "Qté total produite"
+
+#. module: mrp_simulation
+#: model:ir.model.fields,field_description:mrp_simulation.field_mrp_simulation_line_product_id
+msgid "Product id"
+msgstr "Produit"
+
+#. module: mrp_simulation
+#: model:ir.model.fields,field_description:mrp_simulation.field_mrp_simulation_prod_family_id
+msgid "Production family"
+msgstr "Famille de production"
+
+#. module: mrp_simulation
+#: code:addons/mrp_simulation/simulation.py:22
+#, python-format
+msgid "Progress"
+msgstr "En cours"
+
+#. module: mrp_simulation
+#: model:ir.ui.view,arch_db:mrp_simulation.view_form_mrp_simulation
+msgid "Purchases"
+msgstr "Achats"
+
+#. module: mrp_simulation
+#: model:ir.model.fields,field_description:mrp_simulation.field_mrp_simulation_line_quantity
+#: model:ir.model.fields,field_description:mrp_simulation.field_mrp_simulation_quantity
+msgid "Quantity"
+msgstr "Quantité"
+
+#. module: mrp_simulation
+#: model:ir.model.fields,field_description:mrp_simulation.field_mrp_simulation_fp_pol_ids
+#: model:ir.model.fields,field_description:mrp_simulation.field_mrp_simulation_rm_pol_ids
+msgid "RM PoL"
+msgstr "Lignes d'achat de matières premières"
+
+#. module: mrp_simulation
+#: model:ir.ui.view,arch_db:mrp_simulation.view_form_mrp_simulation
+msgid "Raw material"
+msgstr "Matière première"
+
+#. module: mrp_simulation
+#: model:ir.model.fields,field_description:mrp_simulation.field_mrp_simulation_wo_real_cost
+msgid "Real cost"
+msgstr "Prix réel"
+
+#. module: mrp_simulation
+#: model:ir.model.fields,field_description:mrp_simulation.field_mrp_simulation_requested_date
+msgid "Requested Date"
+msgstr "Date demandée"
+
+#. module: mrp_simulation
+#: model:ir.ui.view,arch_db:mrp_simulation.view_form_mrp_simulation
+msgid "Reset"
+msgstr "Réinitialiser"
+
+#. module: mrp_simulation
+#: model:ir.model.fields,field_description:mrp_simulation.field_mrp_simulation_line_routing_id
+#: model:ir.model.fields,field_description:mrp_simulation.field_mrp_simulation_routing_id
+msgid "Routing"
+msgstr "Gamme"
+
+#. module: mrp_simulation
+#: model:ir.model.fields,field_description:mrp_simulation.field_mrp_simulation_sale_uom_id
+msgid "Sale UoM"
+msgstr "UdM de vente"
+
+#. module: mrp_simulation
+#: model:ir.model.fields,field_description:mrp_simulation.field_mrp_simulation_sale_line_id
+msgid "Sale line"
+msgstr "Ligne de vente"
+
+#. module: mrp_simulation
+#: model:ir.model,name:mrp_simulation.model_sale_order_line
+msgid "Sale order line"
+msgstr "Ligne de vente"
+
+#. module: mrp_simulation
+#: model:ir.model.fields,field_description:mrp_simulation.field_mrp_simulation_sale_uom_qty
+msgid "Sale quantity"
+msgstr "Quantité de la vente"
+
+#. module: mrp_simulation
+#: model:ir.ui.view,arch_db:mrp_simulation.view_form_mrp_simulation
+msgid "Simulate"
+msgstr "Simuler"
+
+#. module: mrp_simulation
+#: model:ir.actions.act_window,name:mrp_simulation.act_mrp_simulation
+#: model:ir.model,name:mrp_simulation.model_mrp_simulation
+#: model:ir.model.fields,field_description:mrp_simulation.field_mrp_simulation_line_simulation_id
+#: model:ir.model.fields,field_description:mrp_simulation.field_procurement_order_simulation_id
+#: model:ir.model.fields,field_description:mrp_simulation.field_sale_order_line_simulation_id
+#: model:ir.ui.menu,name:mrp_simulation.menu_mrp_simulation
+#: model:ir.ui.view,arch_db:mrp_simulation.view_form_mrp_simulation
+msgid "Simulation"
+msgstr "Simulation"
+
+#. module: mrp_simulation
+#: model:ir.model,name:mrp_simulation.model_mrp_simulation_line
+msgid "Simulation line"
+msgstr "Ligne de simulation"
+
+#. module: mrp_simulation
+#: model:ir.ui.view,arch_db:mrp_simulation.view_tree_mrp_simulation
+msgid "Simulations"
+msgstr "Simulations"
+
+#. module: mrp_simulation
+#: model:ir.model.fields,field_description:mrp_simulation.field_mrp_simulation_state
+msgid "State"
+msgstr "État"
+
+#. module: mrp_simulation
+#: model:ir.model,name:mrp_simulation.model_stock_move
+msgid "Stock Move"
+msgstr "Mouvement de stock"
+
+#. module: mrp_simulation
+#: model:ir.model.fields,field_description:mrp_simulation.field_mrp_simulation_real_subcontracting_cost
+#: model:ir.model.fields,field_description:mrp_simulation.field_mrp_simulation_theo_subcontracting_cost
+msgid "Subcontracting cost"
+msgstr "Coût de sous-traitance"
+
+#. module: mrp_simulation
+#: model:ir.model.fields,field_description:mrp_simulation.field_mrp_simulation_line_supplier_id
+msgid "Supplier"
+msgstr "Fournisseur"
+
+#. module: mrp_simulation
+#: model:ir.model.fields,field_description:mrp_simulation.field_mrp_simulation_line_supply_method
+msgid "Supply method"
+msgstr "Méthode de fourniture"
+
+#. module: mrp_simulation
+#: model:ir.model.fields,field_description:mrp_simulation.field_mrp_simulation_task_id
+msgid "Task id"
+msgstr "Task id"
+
+#. module: mrp_simulation
+#: model:ir.model.fields,help:mrp_simulation.field_mrp_simulation_produce_total_qty
+msgid "The sum of the quantities manufactured (ok + quarantine, no HS)"
+msgstr "La somme des quantités fabriquées (ok + quarantaine, sans les HS)"
+
+#. module: mrp_simulation
+#: model:ir.model.fields,field_description:mrp_simulation.field_mrp_simulation_wo_theo_cost
+msgid "Theorical cost"
+msgstr "Theorical cost"
+
+#. module: mrp_simulation
+#: model:ir.model.fields,field_description:mrp_simulation.field_mrp_simulation_real_total_cost
+#: model:ir.model.fields,field_description:mrp_simulation.field_mrp_simulation_theo_total_cost
+msgid "Total cost"
+msgstr "Prix total"
+
+#. module: mrp_simulation
+#: model:ir.model.fields,field_description:mrp_simulation.field_mrp_simulation_line_total_price
+msgid "Total price"
+msgstr "Prix total"
+
+#. module: mrp_simulation
+#: model:ir.model.fields,field_description:mrp_simulation.field_mrp_simulation_type_compute_analytic_prod
+msgid "Type compute"
+msgstr "Type de calcul"
+
+#. module: mrp_simulation
+#: model:ir.model.fields,field_description:mrp_simulation.field_mrp_simulation_line_unit_price
+#: model:ir.model.fields,field_description:mrp_simulation.field_mrp_simulation_unit_price
+msgid "Unit price"
+msgstr "Prix unitaire"
+
+#. module: mrp_simulation
+#: model:ir.model.fields,field_description:mrp_simulation.field_mrp_simulation_line_uom_id
+#: model:ir.model.fields,field_description:mrp_simulation.field_mrp_simulation_uom_id
+msgid "UoM"
+msgstr "UdM"
+
+#. module: mrp_simulation
+#: model:ir.model.fields,field_description:mrp_simulation.field_mrp_simulation_line_virtual_stock
+msgid "Virtual stock qty"
+msgstr "Stock (T inf.)"
+
+#. module: mrp_simulation
+#: model:ir.model.fields,field_description:mrp_simulation.field_mrp_simulation_waiting_delay
+msgid "Waiting delay"
+msgstr "Attente délai"
+
+#. module: mrp_simulation
+#: model:ir.model.fields,field_description:mrp_simulation.field_mrp_simulation_warning
+msgid "Warning"
+msgstr "Attente"
+
+#. module: mrp_simulation
+#: model:ir.ui.view,arch_db:mrp_simulation.view_form_mrp_simulation
+msgid "Warning, you will remove MO and children"
+msgstr "Attention, vous allez supprimer l'OF et ses enfants"
+
+#. module: mrp_simulation
+#: model:ir.model.fields,field_description:mrp_simulation.field_mrp_simulation_week_number
+msgid "Week number"
+msgstr "Numéro de semaine"
+
+#. module: mrp_simulation
+#: model:ir.model.fields,field_description:mrp_simulation.field_mrp_simulation_is_without_bom
+msgid "Without BoM"
+msgstr "Sans nomenclature"
+
+#. module: mrp_simulation
+#: model:ir.model.fields,field_description:mrp_simulation.field_mrp_simulation_workorder_ids
+msgid "Work Orders"
+msgstr "Ordres de travail"
+
+#. module: mrp_simulation
+#: model:ir.model.fields,field_description:mrp_simulation.field_mrp_simulation_wo_ids
+#: model:ir.ui.view,arch_db:mrp_simulation.view_form_mrp_simulation
+msgid "Work orders"
+msgstr "Ordres de travail"
+
+#. module: mrp_simulation
+#: model:ir.model,name:mrp_simulation.model_mrp_workorder
+msgid "Workorder"
+msgstr "Ordre de travail"
+
+#. module: mrp_simulation
+#: model:ir.ui.view,arch_db:mrp_simulation.view_form_mrp_simulation
+msgid "Workorders"
+msgstr "Ordres de travail"
+
+#. module: mrp_simulation
+#: model:ir.model.fields,field_description:mrp_simulation.field_mrp_simulation_year
+msgid "Year"
+msgstr "Année"
+
+#. module: mrp_simulation
+#: model:ir.model.fields,field_description:mrp_simulation.field_mrp_manufacturingorder_simulation_id
+#: model:ir.model.fields,field_description:mrp_simulation.field_mrp_simulation_simulation_id
+#: model:ir.model.fields,field_description:mrp_simulation.field_mrp_workorder_simulation_id
+msgid "simulation"
+msgstr "simulation"
+
+#. module: mrp_simulation
+#: model:ir.model.fields,field_description:mrp_simulation.field_mrp_simulation_is_use_kit
+msgid "use kit"
+msgstr "Utilisation des kits"
+

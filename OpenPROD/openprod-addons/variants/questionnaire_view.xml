@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+
+		<!-- ACTION Questionnaire -->
+		<record id="act_questionnaire" model="ir.actions.act_window">
+			<field name="name">Questionnaire</field>
+			<field name="res_model">variants.questionnaire</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+
+		<!-- FORM VIEW Questionnaire -->
+		<record id='view_form_questionnaire' model='ir.ui.view'>
+			<field name="name">questionnaire</field>
+			<field name="model">variants.questionnaire</field>
+			<field name="arch" type="xml">
+				<form string="Questionnaire" version="8.0">
+					<group>
+						<field name="name" />
+					</group>
+					<group string="Question">
+						<field name="question_ids" nolabel="1">
+							<tree>
+								<field name="sequence" />
+								<field name="label" />
+								<field name="help_text" />
+								<field name="type" />
+							</tree>
+						</field>
+					</group>
+				</form>
+			</field>
+		</record>
+
+		<!-- FORM VIEW Question -->
+		<record id='view_form_question' model='ir.ui.view'>
+			<field name="name">question</field>
+			<field name="model">variants.question</field>
+			<field name="arch" type="xml">
+				<form string="Question" version="8.0">
+					<group col="4">
+						<field name="label" />
+						<group colspan="2"></group>
+						<field name="sequence" />
+						<field name="type" />
+						<field name="help_text" colspan="4" />
+					</group>
+					<group string="Variants" attrs="{'invisible':[('type', '!=', 'variant')]}">
+						<field name="variant_category_id" attrs="{'invisible':[('type', '!=', 'variant')]}" />
+						<field name="variant_category_value_ids" attrs="{'invisible':[('type', '!=', 'variant')]}" domain="[('variant_category_id', '=', variant_category_id)]" nolabel="1" colspan="2" />
+					</group>
+					<group string="Options" attrs="{'invisible':[('type', '!=', 'option')]}">
+						<field name="option_group_id" attrs="{'invisible':[('type', '!=', 'option')]}" />
+						<field name="option_group_value_ids" attrs="{'invisible':[('type', '!=', 'option')]}" domain="[('group_id', '=', option_group_id)]" context="{'default_group_id':option_group_id}" nolabel="1" colspan="2" />
+					</group>
+					<group string="Dimensions" attrs="{'invisible':[('type', '!=', 'dimension')]}">
+						<field name="dimension_type" attrs="{'invisible':[('type', '!=', 'dimension')]}" />
+					</group>
+					<group string="Condition">
+						<field name="questionnaire_id" invisible="1" />
+						<field name="condition_question" domain="[('questionnaire_id', '=', questionnaire_id), ('sequence', '&lt;', sequence)]" />
+						<field name="condition_operator" attrs="{'invisible':[('condition_question', '=', False)]}" />
+						<field name="condition_value_bool" attrs="{'invisible':[('condition_question_type', '!=', 'boolean')]}" />
+						<field name="condition_value_dimension" attrs="{'invisible':[('condition_question_type', '!=', 'dimension')]}" />
+						<field name="condition_value_option" attrs="{'invisible':[('condition_question_type', '!=', 'option')]}" />
+						<field name="condition_value_variant" attrs="{'invisible':[('condition_question_type', '!=', 'variant')]}" domain="[('id', 'possible_answers', condition_question)]" />
+						<field name="condition_question_type" invisible="1" />
+					</group>
+					<group string="Incompatibilities" attrs="{'invisible':[('type', 'in', ['dimension', 'boolean'])]}">
+						<field name="variant_incompatibility_ids" attrs="{'invisible':[('type', '!=', 'variant')]}" nolabel="1">
+							<tree editable="bottom">
+								<field name="first_value_id" />
+								<field name="second_value_id" />
+							</tree>
+						</field>
+						<field name="option_incompatibility_ids" attrs="{'invisible':[('type', '!=', 'option')]}" nolabel="1">
+							<tree editable="bottom">
+								<field name="first_value_id" />
+								<field name="second_value_id" />
+							</tree>
+						</field>
+					</group>
+					<group string="Dimension configuration" attrs="{'invisible':[('type', '!=', 'dimension')]}">
+						<field name="dimension_limit_type" />
+						<field name="dimension_limit_min" attrs="{'invisible':[('dimension_limit_type', '!=', 'between')]}" />
+						<field name="dimension_limit_max" attrs="{'invisible':[('dimension_limit_type', '!=', 'between')]}" />
+						<field name="dimension_possible_values" attrs="{'invisible':[('dimension_limit_type', '!=', 'selection')]}" nolabel="1" colspan="2">
+							<tree editable="bottom">
+								<field name="value" />
+							</tree>
+						</field>
+					</group>
+				</form>
+			</field>
+		</record>
+
+		<menuitem id="menu_questionnaire" name="Configurator MCQ" action="act_questionnaire" parent="product.menu_product_main" groups="base_openprod.group_menu_tech_data_config"/>
+	</data>
+</openerp>

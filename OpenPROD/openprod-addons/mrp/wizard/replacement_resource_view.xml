@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+		<record model="ir.ui.view" id="view_form_replacement_resource">
+			<field name="name">view_form_replacement_resource</field>
+			<field name="model">replacement.resource</field>
+			<field name="type">form</field>
+			<field name="arch" type="xml">
+				<form string="Resources replacement">
+					<group colspan="4" col="6">
+						<field name="resource_id" required="1"/>
+						<field name="new_resource_id" required="1"/>
+					</group>
+					<field name="line_ids" colspan="4" nolabel="1" domain="[('id','=',False)]">
+						<tree string="Lines">
+		                    <field name="product_id"/>
+		                    <field name="routing_line_id" />
+		                    <field name="resource_valid_id" />
+		                </tree>
+		                <form string="Lines">
+		                    <field name="product_id" readonly="1"/>
+		                    <field name="routing_line_id"  readonly="1"/>
+		                    <field name="resource_valid_id" />
+		                </form>
+					</field>
+					<footer>
+						<button name="action_validate" string="OK" type="object" class="oe_highlight" />
+						or
+						<button string="Cancel" class="oe_link" special="cancel" />
+					</footer>
+				</form>
+			</field>
+		</record>
+
+		<record model="ir.actions.act_window" id="action_replacement_resource">
+			<field name="name">Resources replacement</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="res_model">replacement.resource</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">form</field>
+			<field name="target">new</field>
+		</record>
+		
+	</data>
+</openerp>

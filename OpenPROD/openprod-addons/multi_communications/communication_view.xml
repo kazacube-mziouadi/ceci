@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+	
+		<!-- FORM VIEW Partner -->
+		<record id="view_form_partner_multi_com" model="ir.ui.view">
+			<field name="name">view_form_partner_multi_com</field>
+			<field name="inherit_id" ref="partner_openprod.openprod_view_partner_form" />
+			<field name="model">res.partner</field>
+			<field name="arch" type="xml">
+				<xpath expr="//field[@name='fax']" position="after">
+					<field name="communication_ids" nolabel="1" colspan="4"/>
+				</xpath>
+				<xpath expr="//field[@name='fax']" position="attributes">
+					<attribute name="invisible">1</attribute>
+				</xpath>
+				<xpath expr="//field[@name='phone']" position="attributes">
+					<attribute name="invisible">1</attribute>
+				</xpath>
+				<xpath expr="//field[@name='mobile']" position="attributes">
+					<attribute name="invisible">1</attribute>
+				</xpath>
+				<xpath expr="//field[@name='email']" position="attributes">
+					<attribute name="invisible">1</attribute>
+				</xpath>
+				<xpath expr="//field[@name='contact_ids']//form//field[@name='fax']" position="after">
+					<field name="communication_ids" nolabel="1" colspan="4"/>
+				</xpath>
+				<xpath expr="//field[@name='contact_ids']//form//field[@name='fax']" position="attributes">
+					<attribute name="invisible">1</attribute>
+				</xpath>
+				<xpath expr="//field[@name='contact_ids']//form//field[@name='phone']" position="attributes">
+					<attribute name="invisible">1</attribute>
+				</xpath>
+				<xpath expr="//field[@name='contact_ids']//form//field[@name='mobile']" position="attributes">
+					<attribute name="invisible">1</attribute>
+				</xpath>
+				<xpath expr="//field[@name='contact_ids']//form//field[@name='email']" position="attributes">
+					<attribute name="invisible">1</attribute>
+				</xpath>
+			</field>
+		</record>
+		
+		<!-- FORM VIEW Multi communication -->
+		<record id="view_multi_communication_form" model="ir.ui.view">
+            <field name="name">view_multi_communication_form</field>
+            <field name="model">multi.communication</field>
+            <field name="arch" type="xml">
+            	<form string="Communications" version="8.0">
+            		<group colspan="4" col="4">
+            			<group colspan="4" col="4">
+		           			<separator string="Communication value" colspan="4"/>
+		            		<field name="communication_type_id"/>
+							<field name="sequence"/>
+							<field name="name" colspan="4" />
+							<field name="type" invisible="1"/>
+            			</group>
+            			<group colspan="4" col="4">
+            				<group colspan="4" col="6"  attrs="{'invisible': ['|',('type', 'in', ('email', 'webp')), ('type', '=', False)]}">
+								<separator string="Communication details" colspan="6"/>
+								<label string="Note: Never put: the 0 to exit, or 00 of the International, for example 0474736901, enter International: 33 Code: 4 Number: 74736901, value will be calculated +33 4 74 73 39 01" colspan="6"/>
+								<field name="international"  attrs="{'required': [('type', 'not in', ['email',False, 'webp'])]}"/>
+								<field name="indicative"  attrs="{'required': [('type', 'not in', ['email',False, 'webp'])]}"/>
+								<field name="number"  attrs="{'required': [('type', 'not in', ['email',False, 'webp'])]}"/>
+								<field name="intern" attrs="{'required': [('type', 'not in', ['email',False, 'webp'])]}"/>
+            				</group>
+							<field name="value" attrs="{'invisible': [('type', 'not in', ['email',False, 'webp'])], 'required':['|',('type', 'in', ('email', 'webp')),('type', '=', False)] }"/>
+            			    <group colspan="4" col="4"  attrs="{'invisible': [('type', '!=', 'webp')]}">
+	            			    <field name="login"  attrs="{'required': [('type', '=', 'webp')]}"/>
+	                            <field name="password" attrs="{'required': [('type', '=', 'webp')]}"/>
+	                        </group>
+            			</group>
+					</group>
+                </form>
+            </field>
+        </record>
+		
+		<!-- TREE VIEW Multi communication -->
+		<record id='view_multi_communication_tree' model='ir.ui.view'>
+			<field name="name">view_multi_communication_tree</field>
+			<field name="model">multi.communication</field>
+			<field name="arch" type="xml">
+				<tree string="Communications" version="8.0">
+                    <field name="sequence"/>
+                    <field name="communication_type_id"/>
+                    <field name="name"/>
+				</tree>
+			</field>
+		</record>
+	
+	</data>
+</openerp>

@@ -1,0 +1,1199 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* edi_openprod
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 9.0c\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-02-17 09:42+0000\n"
+"PO-Revision-Date: 2017-02-17 09:42+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: edi_openprod
+#: model:ir.model.fields,help:edi_openprod.field_edi_transformation_get_file_ftp_archive
+msgid "Absolute path from ftp root or relative path from FTP directory path. \n"
+"If this field is empty, file will be delete from FTP."
+msgstr "Chemin absolu depuis root ou chemin relatif depuis le dossier FTP. \n"
+"Si ce champ est vide, le fichier sera supprimé du FTP."
+
+#. module: edi_openprod
+#: model:ir.model.fields,help:edi_openprod.field_edi_transformation_get_file_ftp_directory
+#: model:ir.model.fields,help:edi_openprod.field_edi_transformation_send_file_ftp_directory
+msgid "Absolute path from ftp root."
+msgstr "Absolute path from ftp root."
+
+#. module: edi_openprod
+#: model:ir.ui.view,arch_db:edi_openprod.view_form_edi_transformation_procedure
+msgid "Action"
+msgstr "Action"
+
+#. module: edi_openprod
+#: model:ir.model.fields,field_description:edi_openprod.field_edi_transformation_procedure_action_sql
+msgid "Action (SQL)"
+msgstr "Chemin absolu depuis root."
+
+#. module: edi_openprod
+#: model:ir.model.fields,field_description:edi_openprod.field_edi_transformation_procedure_action_sql_result
+msgid "Action (result)"
+msgstr "Action (result)"
+
+#. module: edi_openprod
+#: model:ir.model.fields,field_description:edi_openprod.field_edi_transformation_procedure_action_method
+msgid "Action method"
+msgstr "Action Méthode"
+
+#. module: edi_openprod
+#: model:ir.model.fields,field_description:edi_openprod.field_edi_transformation_procedure_action_type
+msgid "Action type"
+msgstr "Action type"
+
+#. module: edi_openprod
+#: model:ir.ui.view,arch_db:edi_openprod.edi_transformation_file_form
+#: model:ir.ui.view,arch_db:edi_openprod.edi_transformation_get_file_form
+#: model:ir.ui.view,arch_db:edi_openprod.view_form_edi_transformation_procedure
+#: model:ir.ui.view,arch_db:edi_openprod.view_form_edi_transformation_processing
+msgid "Actions"
+msgstr "Actions"
+
+#. module: edi_openprod
+#: code:addons/edi_openprod/edi_openprod.py:615
+#: model:ir.model.fields,field_description:edi_openprod.field_edi_transformation_get_file_is_active
+#: model:ir.model.fields,field_description:edi_openprod.field_edi_transformation_send_file_is_active
+#: model:ir.model.fields,field_description:edi_openprod.field_edi_transformation_sql_authorization_is_active
+#: model:ir.ui.view,arch_db:edi_openprod.view_form_edi_transformation_procedure
+#, python-format
+msgid "Active"
+msgstr "Actif"
+
+#. module: edi_openprod
+#: model:ir.ui.view,arch_db:edi_openprod.view_form_edi_transformation_procedure
+msgid "Administration"
+msgstr "Administration"
+
+#. module: edi_openprod
+#: code:addons/edi_openprod/procedures/csv_import.py:18
+#, python-format
+msgid "Allows a condition in the query example \"(table.name_columnsA is not null and table.name_columnsB! = false)\"."
+msgstr "Allows a condition in the query example \"(table.name_columnsA is not null and table.name_columnsB! = false)\"."
+
+#. module: edi_openprod
+#: model:ir.ui.view,arch_db:edi_openprod.view_form_edi_transformation_sql_authorization
+msgid "Application"
+msgstr "Application"
+
+#. module: edi_openprod
+#: model:ir.model.fields,field_description:edi_openprod.field_edi_transformation_sql_authorization_line_authorization_id
+#: model:ir.ui.menu,name:edi_openprod.menu_edi_transformation_sql_authorization
+#: model:ir.ui.view,arch_db:edi_openprod.view_form_edi_transformation_sql_authorization
+msgid "Authorization"
+msgstr "Autorisation"
+
+#. module: edi_openprod
+#: model:ir.model.fields,field_description:edi_openprod.field_edi_transformation_get_file_automatic_processing
+msgid "Automatic processing"
+msgstr "Exécution automatique"
+
+#. module: edi_openprod
+#: code:addons/edi_openprod/procedures/csv_import.py:11
+#, python-format
+msgid "CSV Import"
+msgstr "Import CSV"
+
+#. module: edi_openprod
+#: code:addons/edi_openprod/procedures/csv_from_sql.py:9
+#, python-format
+msgid "CSV from SQL"
+msgstr "SQL vers CSV"
+
+#. module: edi_openprod
+#: code:addons/edi_openprod/edi_openprod.py:616
+#: model:ir.ui.view,arch_db:edi_openprod.view_form_edi_transformation_procedure
+#, python-format
+msgid "Cancel"
+msgstr "Annuler"
+
+#. module: edi_openprod
+#: model:ir.model.fields,field_description:edi_openprod.field_edi_transformation_processing_category_id_11216
+#: model:ir.ui.view,arch_db:edi_openprod.view_search_edi_transformation_processing
+msgid "Category"
+msgstr "Catégorie"
+
+#. module: edi_openprod
+#: code:addons/edi_openprod/procedures/txt_import.py:12
+#, python-format
+msgid "Char"
+msgstr "Char"
+
+#. module: edi_openprod
+#: model:ir.model.fields,field_description:edi_openprod.field_edi_transformation_history_check
+#: model:ir.model.fields,field_description:edi_openprod.field_edi_transformation_procedure_check
+msgid "Check"
+msgstr "Verification"
+
+#. module: edi_openprod
+#: code:addons/edi_openprod/edi_openprod.py:990
+#: model:ir.ui.view,arch_db:edi_openprod.view_form_edi_choose_m2o
+#: model:ir.ui.view,arch_db:edi_openprod.view_form_edi_transformation_procedure
+#, python-format
+msgid "Choose a record"
+msgstr "Choisir un enregistrement"
+
+#. module: edi_openprod
+#: code:addons/edi_openprod/procedures/clear_file_list.py:7
+#, python-format
+msgid "Clear file list"
+msgstr "Vider la liste des fichiers"
+
+#. module: edi_openprod
+#: model:ir.ui.view,arch_db:edi_openprod.view_form_edi_choose_m2o
+msgid "Close"
+msgstr "Fermer"
+
+#. module: edi_openprod
+#: code:addons/edi_openprod/procedures/xls_from_sql.py:15
+#, python-format
+msgid "Column"
+msgstr "Column"
+
+#. module: edi_openprod
+#: code:addons/edi_openprod/procedures/txt_import.py:13
+#, python-format
+msgid "Columns list"
+msgstr "Liste colonnes"
+
+#. module: edi_openprod
+#: code:addons/edi_openprod/procedures/txt_import.py:14
+#, python-format
+msgid "Columns width"
+msgstr "Largeur colonnes"
+
+#. module: edi_openprod
+#: code:addons/edi_openprod/procedures/csv_import.py:18
+#, python-format
+msgid "Condition"
+msgstr "Condition"
+
+#. module: edi_openprod
+#: model:ir.ui.view,arch_db:edi_openprod.edi_transformation_get_file_form
+#: model:ir.ui.view,arch_db:edi_openprod.edi_transformation_send_file_form
+msgid "Configuration"
+msgstr "Configuration"
+
+#. module: edi_openprod
+#: model:ir.model.fields,field_description:edi_openprod.field_edi_choose_m2o_create_uid
+#: model:ir.model.fields,field_description:edi_openprod.field_edi_transformation_file_create_uid
+#: model:ir.model.fields,field_description:edi_openprod.field_edi_transformation_get_file_create_uid
+#: model:ir.model.fields,field_description:edi_openprod.field_edi_transformation_history_create_uid
+#: model:ir.model.fields,field_description:edi_openprod.field_edi_transformation_procedure_create_uid
+#: model:ir.model.fields,field_description:edi_openprod.field_edi_transformation_procedure_method_param_create_uid
+#: model:ir.model.fields,field_description:edi_openprod.field_edi_transformation_processing_category_create_uid
+#: model:ir.model.fields,field_description:edi_openprod.field_edi_transformation_processing_create_uid
+#: model:ir.model.fields,field_description:edi_openprod.field_edi_transformation_send_file_create_uid
+#: model:ir.model.fields,field_description:edi_openprod.field_edi_transformation_sql_authorization_create_uid
+#: model:ir.model.fields,field_description:edi_openprod.field_edi_transformation_sql_authorization_line_create_uid
+#: model:ir.model.fields,field_description:edi_openprod.field_edi_transformation_users_create_uid
+msgid "Created by"
+msgstr "Créer par"
+
+#. module: edi_openprod
+#: model:ir.model.fields,field_description:edi_openprod.field_edi_choose_m2o_create_date
+#: model:ir.model.fields,field_description:edi_openprod.field_edi_transformation_file_create_date
+#: model:ir.model.fields,field_description:edi_openprod.field_edi_transformation_get_file_create_date
+#: model:ir.model.fields,field_description:edi_openprod.field_edi_transformation_history_create_date
+#: model:ir.model.fields,field_description:edi_openprod.field_edi_transformation_procedure_create_date
+#: model:ir.model.fields,field_description:edi_openprod.field_edi_transformation_procedure_method_param_create_date
+#: model:ir.model.fields,field_description:edi_openprod.field_edi_transformation_processing_category_create_date
+#: model:ir.model.fields,field_description:edi_openprod.field_edi_transformation_processing_create_date
+#: model:ir.model.fields,field_description:edi_openprod.field_edi_transformation_send_file_create_date
+#: model:ir.model.fields,field_description:edi_openprod.field_edi_transformation_sql_authorization_create_date
+#: model:ir.model.fields,field_description:edi_openprod.field_edi_transformation_sql_authorization_line_create_date
+#: model:ir.model.fields,field_description:edi_openprod.field_edi_transformation_users_create_date
+msgid "Created on"
+msgstr "Créer le"
+
+#. module: edi_openprod
+#: model:ir.model.fields,field_description:edi_openprod.field_edi_transformation_get_file_cron_ids
+#: model:ir.model.fields,field_description:edi_openprod.field_edi_transformation_processing_cron_ids
+#: model:ir.ui.view,arch_db:edi_openprod.edi_transformation_get_file_form
+#: model:ir.ui.view,arch_db:edi_openprod.view_form_edi_transformation_processing
+msgid "Crons"
+msgstr "Crons"
+
+#. module: edi_openprod
+#: code:addons/edi_openprod/edi_openprod.py:387
+#, python-format
+msgid "DELETE FROM"
+msgstr "DELETE FROM"
+
+#. module: edi_openprod
+#: model:ir.ui.view,arch_db:edi_openprod.edi_transformation_file_form
+msgid "Dates"
+msgstr "Dates"
+
+#. module: edi_openprod
+#: code:addons/edi_openprod/procedures/csv_from_sql.py:12
+#: code:addons/edi_openprod/procedures/csv_import.py:14
+#, python-format
+msgid "Delimiter"
+msgstr "Délimiteur"
+
+#. module: edi_openprod
+#: model:ir.model.fields,field_description:edi_openprod.field_edi_transformation_processing_category_description
+msgid "Description"
+msgstr "Description"
+
+#. module: edi_openprod
+#: model:ir.ui.view,arch_db:edi_openprod.edi_transformation_get_file_form
+#: model:ir.ui.view,arch_db:edi_openprod.edi_transformation_send_file_form
+msgid "Directories"
+msgstr "Dossiers"
+
+#. module: edi_openprod
+#: model:ir.model.fields,field_description:edi_openprod.field_edi_choose_m2o_display_name
+#: model:ir.model.fields,field_description:edi_openprod.field_edi_transformation_file_display_name
+#: model:ir.model.fields,field_description:edi_openprod.field_edi_transformation_get_file_display_name
+#: model:ir.model.fields,field_description:edi_openprod.field_edi_transformation_history_display_name
+#: model:ir.model.fields,field_description:edi_openprod.field_edi_transformation_procedure_display_name
+#: model:ir.model.fields,field_description:edi_openprod.field_edi_transformation_procedure_method_param_display_name
+#: model:ir.model.fields,field_description:edi_openprod.field_edi_transformation_processing_category_display_name
+#: model:ir.model.fields,field_description:edi_openprod.field_edi_transformation_processing_display_name
+#: model:ir.model.fields,field_description:edi_openprod.field_edi_transformation_send_file_display_name
+#: model:ir.model.fields,field_description:edi_openprod.field_edi_transformation_sql_authorization_display_name
+#: model:ir.model.fields,field_description:edi_openprod.field_edi_transformation_sql_authorization_line_display_name
+#: model:ir.model.fields,field_description:edi_openprod.field_edi_transformation_users_display_name
+msgid "Display Name"
+msgstr "Nom affiché"
+
+#. module: edi_openprod
+#: model:ir.model.fields,field_description:edi_openprod.field_edi_transformation_procedure_is_doc_by_user
+msgid "Doc/User"
+msgstr "Doc/Utilisateur"
+
+#. module: edi_openprod
+#: model:ir.ui.view,arch_db:edi_openprod.view_form_edi_transformation_procedure
+msgid "Domain"
+msgstr "Domain"
+
+#. module: edi_openprod
+#: model:ir.model.fields,field_description:edi_openprod.field_edi_transformation_procedure_domain_sql
+msgid "Domain (SQL)"
+msgstr "Domain (SQL)"
+
+#. module: edi_openprod
+#: model:ir.model.fields,field_description:edi_openprod.field_edi_transformation_procedure_domain_sql_result
+msgid "Domain (result)"
+msgstr "Domaine (résultat)"
+
+#. module: edi_openprod
+#: code:addons/edi_openprod/edi_openprod.py:67
+#: code:addons/edi_openprod/edi_openprod.py:145
+#: code:addons/edi_openprod/edi_openprod.py:310
+#: code:addons/edi_openprod/edi_openprod.py:606
+#: code:addons/edi_openprod/edi_openprod.py:1017
+#, python-format
+msgid "Done"
+msgstr "Terminé"
+
+#. module: edi_openprod
+#: code:addons/edi_openprod/edi_openprod.py:66
+#: code:addons/edi_openprod/edi_openprod.py:143
+#: code:addons/edi_openprod/edi_openprod.py:308
+#: code:addons/edi_openprod/edi_openprod.py:605
+#: code:addons/edi_openprod/edi_openprod.py:614
+#: code:addons/edi_openprod/edi_openprod.py:1016
+#: model:ir.ui.view,arch_db:edi_openprod.view_form_edi_transformation_procedure
+#, python-format
+msgid "Draft"
+msgstr "Brouillon"
+
+#. module: edi_openprod
+#: model:ir.actions.act_window,name:edi_openprod.act_edi_transformation_procedure
+#: model:ir.ui.view,arch_db:edi_openprod.view_form_edi_transformation_procedure
+msgid "EDI Procedure"
+msgstr "Procédure EDI"
+
+#. module: edi_openprod
+#: model:ir.ui.view,arch_db:edi_openprod.view_tree_edi_transformation_procedure
+msgid "EDI Procedures"
+msgstr "Procédures EDI"
+
+#. module: edi_openprod
+#: model:ir.actions.act_window,name:edi_openprod.act_edi_transformation_processing
+#: model:ir.ui.view,arch_db:edi_openprod.view_form_edi_transformation_processing
+msgid "EDI Processing"
+msgstr "Traitement EDI"
+
+#. module: edi_openprod
+#: model:ir.ui.view,arch_db:edi_openprod.view_tree_edi_transformation_processing
+msgid "EDI Processings"
+msgstr "Traitements EDI"
+
+#. module: edi_openprod
+#: model:ir.actions.act_window,name:edi_openprod.act_edi_transformation_sql_authorization
+#: model:ir.model,name:edi_openprod.model_edi_transformation_sql_authorization
+#: model:ir.ui.view,arch_db:edi_openprod.view_form_edi_transformation_sql_authorization
+msgid "EDI SQL authorization"
+msgstr "Autorisation SQL EDI"
+
+#. module: edi_openprod
+#: model:ir.model,name:edi_openprod.model_edi_transformation_sql_authorization_line
+msgid "EDI SQL authorization line"
+msgstr "Ligne d'autorisation SQL EDI"
+
+#. module: edi_openprod
+#: model:ir.ui.view,arch_db:edi_openprod.view_tree_edi_transformation_sql_authorization
+msgid "EDI SQL authorizations"
+msgstr "Autorisations SQL EDI"
+
+#. module: edi_openprod
+#: model:ir.model,name:edi_openprod.model_edi_transformation_file
+msgid "EDI Transformation file"
+msgstr "EDI file"
+
+#. module: edi_openprod
+#: model:ir.model,name:edi_openprod.model_edi_transformation_get_file
+msgid "EDI Transformation get file"
+msgstr "Récupération fichier EDI"
+
+#. module: edi_openprod
+#: model:ir.model,name:edi_openprod.model_edi_transformation_history
+msgid "EDI Transformation history"
+msgstr "Historique EDI"
+
+#. module: edi_openprod
+#: model:ir.model,name:edi_openprod.model_edi_transformation_procedure
+msgid "EDI Transformation procedure"
+msgstr "Procédure EDI"
+
+#. module: edi_openprod
+#: model:ir.model,name:edi_openprod.model_edi_transformation_processing
+msgid "EDI Transformation processing"
+msgstr "Traitement EDI"
+
+#. module: edi_openprod
+#: model:ir.model,name:edi_openprod.model_edi_transformation_processing_category
+msgid "EDI Transformation processing category"
+msgstr "Catégorie traitement EDI"
+
+#. module: edi_openprod
+#: model:ir.model,name:edi_openprod.model_edi_transformation_send_file
+msgid "EDI Transformation send file"
+msgstr "Envoi fichier EDI"
+
+#. module: edi_openprod
+#: model:ir.model,name:edi_openprod.model_edi_transformation_users
+msgid "EDI Transformation users"
+msgstr "Utilisateurs EDI"
+
+#. module: edi_openprod
+#: model:ir.actions.act_window,name:edi_openprod.edi_transformation_file_action
+#: model:ir.ui.menu,name:edi_openprod.edi_transformation_file_menu
+msgid "EDI file"
+msgstr "EDI file"
+
+#. module: edi_openprod
+#: model:ir.ui.view,arch_db:edi_openprod.edi_transformation_file_form
+#: model:ir.ui.view,arch_db:edi_openprod.edi_transformation_file_tree
+msgid "EDI files"
+msgstr "EDI files"
+
+#. module: edi_openprod
+#: model:ir.model.fields,field_description:edi_openprod.field_ir_cron_edi_get_file_ids
+msgid "EDI get file"
+msgstr "Envoi fichier EDI"
+
+#. module: edi_openprod
+#: model:ir.ui.view,arch_db:edi_openprod.edi_transformation_history_tree
+msgid "EDI histories"
+msgstr "Historiques EDI"
+
+#. module: edi_openprod
+#: model:ir.actions.act_window,name:edi_openprod.edi_transformation_history_action
+#: model:ir.ui.menu,name:edi_openprod.edi_transformation_history_menu
+#: model:ir.ui.view,arch_db:edi_openprod.edi_transformation_history_form
+msgid "EDI history"
+msgstr "Historique EDI"
+
+#. module: edi_openprod
+#: model:ir.model.fields,field_description:edi_openprod.field_ir_cron_edi_processing_ids
+msgid "EDI processing"
+msgstr "Traitement EDI"
+
+#. module: edi_openprod
+#: model:ir.ui.menu,name:edi_openprod.edi_transformation_menu
+msgid "EDI transformation"
+msgstr "Transformation EDI"
+
+#. module: edi_openprod
+#: model:ir.model,name:edi_openprod.model_edi_transformation_procedure_method_param
+msgid "EDI transformation procedure method parameters"
+msgstr "Paramètres de la méthode de procédure"
+
+#. module: edi_openprod
+#: model:ir.model.fields,field_description:edi_openprod.field_edi_transformation_get_file_email_template_id
+#: model:ir.model.fields,field_description:edi_openprod.field_edi_transformation_processing_email_template_id
+msgid "Email Template"
+msgstr "Modèle de mail"
+
+#. module: edi_openprod
+#: model:ir.model.fields,field_description:edi_openprod.field_edi_transformation_history_end_date
+#: model:ir.model.fields,field_description:edi_openprod.field_edi_transformation_users_end_date
+msgid "End date"
+msgstr "Date de fin"
+
+#. module: edi_openprod
+#: code:addons/edi_openprod/procedures/csv_from_sql.py:16
+#: code:addons/edi_openprod/procedures/txt_from_sql.py:11
+#, python-format
+msgid "End line"
+msgstr "Ligne de fin"
+
+#. module: edi_openprod
+#: code:addons/edi_openprod/edi_openprod.py:68
+#: code:addons/edi_openprod/edi_openprod.py:144
+#: code:addons/edi_openprod/edi_openprod.py:309
+#: code:addons/edi_openprod/edi_openprod.py:607
+#: code:addons/edi_openprod/edi_openprod.py:1018
+#: code:addons/edi_openprod/procedures/send_files_ftp.py:53
+#: code:addons/edi_openprod/procedures/txt_import.py:56
+#, python-format
+msgid "Error"
+msgstr "Erreur"
+
+#. module: edi_openprod
+#: model:ir.ui.view,arch_db:edi_openprod.edi_transformation_get_file_form
+msgid "Errors"
+msgstr "Erreurs"
+
+#. module: edi_openprod
+#: code:addons/edi_openprod/procedures/csv_from_sql.py:14
+#: code:addons/edi_openprod/procedures/csv_import.py:16
+#, python-format
+msgid "Escapechar"
+msgstr "Escapechar"
+
+#. module: edi_openprod
+#: code:addons/edi_openprod/procedures/xls_from_sql.py:20
+#, python-format
+msgid "Exception columns"
+msgstr "Colonnes en exception"
+
+#. module: edi_openprod
+#: model:ir.ui.view,arch_db:edi_openprod.edi_transformation_file_form
+#: model:ir.ui.view,arch_db:edi_openprod.edi_transformation_file_tree
+#: model:ir.ui.view,arch_db:edi_openprod.edi_transformation_get_file_form
+msgid "Execute"
+msgstr "Exécuter"
+
+#. module: edi_openprod
+#: model:ir.ui.view,arch_db:edi_openprod.view_form_edi_transformation_procedure
+msgid "Execute action"
+msgstr "Exécuter action"
+
+#. module: edi_openprod
+#: model:ir.ui.view,arch_db:edi_openprod.view_form_edi_transformation_procedure
+#: model:ir.ui.view,arch_db:edi_openprod.view_form_edi_transformation_processing
+msgid "Execute all"
+msgstr "Tout exécuter"
+
+#. module: edi_openprod
+#: model:ir.ui.view,arch_db:edi_openprod.view_form_edi_transformation_procedure
+msgid "Execute domain"
+msgstr "Exécuter domaine"
+
+#. module: edi_openprod
+#: code:addons/edi_openprod/procedures/execute_method.py:9
+#, python-format
+msgid "Execute method"
+msgstr "Exécuter méthode"
+
+#. module: edi_openprod
+#: model:ir.ui.view,arch_db:edi_openprod.view_form_edi_transformation_procedure
+msgid "Execute verification"
+msgstr "Exécuter vérification"
+
+#. module: edi_openprod
+#: model:ir.ui.view,arch_db:edi_openprod.edi_transformation_file_form
+#: model:ir.ui.view,arch_db:edi_openprod.edi_transformation_get_file_form
+#: model:ir.ui.view,arch_db:edi_openprod.edi_transformation_send_file_form
+msgid "Execution"
+msgstr "Exécution"
+
+#. module: edi_openprod
+#: model:ir.model.fields,field_description:edi_openprod.field_edi_transformation_get_file_ftp_directory
+#: model:ir.model.fields,field_description:edi_openprod.field_edi_transformation_send_file_ftp_directory
+msgid "FTP Directory"
+msgstr "Dossier FTP"
+
+#. module: edi_openprod
+#: model:ir.model.fields,field_description:edi_openprod.field_edi_transformation_get_file_ftp_host
+#: model:ir.model.fields,field_description:edi_openprod.field_edi_transformation_send_file_ftp_host
+msgid "FTP Host"
+msgstr "Hôte FTP"
+
+#. module: edi_openprod
+#: model:ir.model.fields,field_description:edi_openprod.field_edi_transformation_get_file_ftp_password
+#: model:ir.model.fields,field_description:edi_openprod.field_edi_transformation_send_file_ftp_password
+msgid "FTP Password"
+msgstr "Mot de passe FTP"
+
+#. module: edi_openprod
+#: model:ir.model.fields,field_description:edi_openprod.field_edi_transformation_get_file_ftp_user
+#: model:ir.model.fields,field_description:edi_openprod.field_edi_transformation_send_file_ftp_user
+msgid "FTP User"
+msgstr "Utilisateur FTP"
+
+#. module: edi_openprod
+#: model:ir.model.fields,field_description:edi_openprod.field_edi_transformation_file_edi_file
+#: model:ir.ui.view,arch_db:edi_openprod.edi_transformation_get_file_form
+msgid "File"
+msgstr "Fichier"
+
+#. module: edi_openprod
+#: model:ir.model.fields,field_description:edi_openprod.field_edi_transformation_file_file_date
+msgid "File date"
+msgstr "Date du fichier"
+
+#. module: edi_openprod
+#: code:addons/edi_openprod/procedures/csv_from_sql.py:18
+#: code:addons/edi_openprod/procedures/execute_method.py:13
+#: code:addons/edi_openprod/procedures/jasper_from_sql.py:13
+#: code:addons/edi_openprod/procedures/txt_from_sql.py:13
+#: code:addons/edi_openprod/procedures/xls_from_sql.py:18
+#, python-format
+msgid "File name"
+msgstr "Nom du fichier"
+
+#. module: edi_openprod
+#: code:addons/edi_openprod/procedures/csv_from_sql.py:17
+#: code:addons/edi_openprod/procedures/txt_from_sql.py:12
+#, python-format
+msgid "File path"
+msgstr "Chemin du fichier"
+
+#. module: edi_openprod
+#: model:ir.model.fields,field_description:edi_openprod.field_edi_transformation_history_file_ids
+msgid "Files"
+msgstr "fichiers"
+
+#. module: edi_openprod
+#: model:ir.model.fields,field_description:edi_openprod.field_edi_transformation_get_file_file_filter
+msgid "Filter"
+msgstr "Filtrer"
+
+#. module: edi_openprod
+#: model:ir.model.fields,field_description:edi_openprod.field_edi_transformation_procedure_action_sql_formatting
+#: model:ir.model.fields,field_description:edi_openprod.field_edi_transformation_procedure_verification_sql_formatting
+msgid "Formating result"
+msgstr "Formater le résultat"
+
+#. module: edi_openprod
+#: model:ir.model.fields,field_description:edi_openprod.field_edi_transformation_get_file_ftp_archive
+msgid "Ftp archive"
+msgstr "Archive FTP"
+
+#. module: edi_openprod
+#: code:addons/edi_openprod/edi_openprod.py:59
+#, python-format
+msgid "Get"
+msgstr "Get"
+
+#. module: edi_openprod
+#: model:ir.actions.act_window,name:edi_openprod.edi_transformation_get_file_action
+#: model:ir.ui.menu,name:edi_openprod.edi_transformation_get_file_menu
+#: model:ir.ui.view,arch_db:edi_openprod.edi_transformation_get_file_form
+msgid "Get file"
+msgstr "Récupération de fichier"
+
+#. module: edi_openprod
+#: model:ir.ui.view,arch_db:edi_openprod.edi_transformation_get_file_tree
+msgid "Get file list"
+msgstr "Liste récupération fichier"
+
+#. module: edi_openprod
+#: model:ir.ui.view,arch_db:edi_openprod.view_form_edi_transformation_processing
+msgid "Go to procedure list view"
+msgstr "Aller à la liste des procédures"
+
+#. module: edi_openprod
+#: model:ir.ui.view,arch_db:edi_openprod.view_search_edi_transformation_processing
+msgid "Group by ..."
+msgstr "Grouper par ..."
+
+#. module: edi_openprod
+#: code:addons/edi_openprod/procedures/csv_from_sql.py:15
+#, python-format
+msgid "Header"
+msgstr "Entête"
+
+#. module: edi_openprod
+#: model:ir.model.fields,field_description:edi_openprod.field_edi_transformation_procedure_method_param_help
+msgid "Help"
+msgstr "Aide"
+
+#. module: edi_openprod
+#: model:ir.model.fields,field_description:edi_openprod.field_edi_transformation_file_history_id
+msgid "History"
+msgstr "Historique"
+
+#. module: edi_openprod
+#: model:ir.model.fields,field_description:edi_openprod.field_edi_choose_m2o_id
+#: model:ir.model.fields,field_description:edi_openprod.field_edi_transformation_file_id
+#: model:ir.model.fields,field_description:edi_openprod.field_edi_transformation_get_file_id
+#: model:ir.model.fields,field_description:edi_openprod.field_edi_transformation_history_id
+#: model:ir.model.fields,field_description:edi_openprod.field_edi_transformation_procedure_id
+#: model:ir.model.fields,field_description:edi_openprod.field_edi_transformation_procedure_method_param_id
+#: model:ir.model.fields,field_description:edi_openprod.field_edi_transformation_processing_category_id
+#: model:ir.model.fields,field_description:edi_openprod.field_edi_transformation_processing_id
+#: model:ir.model.fields,field_description:edi_openprod.field_edi_transformation_send_file_id
+#: model:ir.model.fields,field_description:edi_openprod.field_edi_transformation_sql_authorization_id
+#: model:ir.model.fields,field_description:edi_openprod.field_edi_transformation_sql_authorization_line_id
+#: model:ir.model.fields,field_description:edi_openprod.field_edi_transformation_users_id
+msgid "ID"
+msgstr "ID"
+
+#. module: edi_openprod
+#: code:addons/edi_openprod/procedures/send_files_ftp.py:9
+#, python-format
+msgid "ID send file"
+msgstr "ID envoie de fichier"
+
+#. module: edi_openprod
+#: model:ir.ui.view,arch_db:edi_openprod.view_form_edi_transformation_procedure
+msgid "IDS from domain : %(domain)s"
+msgstr "IDS du domaine : %(domain)s"
+
+#. module: edi_openprod
+#: code:addons/edi_openprod/edi_openprod.py:386
+#, python-format
+msgid "INSERT INTO"
+msgstr "INSERT INTO"
+
+#. module: edi_openprod
+#: model:ir.model.fields,field_description:edi_openprod.field_edi_transformation_get_file_ignore_file_errors
+msgid "Ignore file errors"
+msgstr "Ignorer les fichiers manquant"
+
+#. module: edi_openprod
+#: model:ir.model.fields,field_description:edi_openprod.field_edi_transformation_get_file_in_progress
+#: model:ir.model.fields,field_description:edi_openprod.field_edi_transformation_processing_in_progress
+msgid "In progress"
+msgstr "En cours"
+
+#. module: edi_openprod
+#: model:ir.ui.view,arch_db:edi_openprod.edi_transformation_get_file_form
+#: model:ir.ui.view,arch_db:edi_openprod.edi_transformation_send_file_form
+msgid "Informations"
+msgstr "Informations"
+
+#. module: edi_openprod
+#: model:ir.model.fields,field_description:edi_openprod.field_edi_transformation_procedure_is_edi_users
+msgid "Is edi users"
+msgstr "Is edi users"
+
+#. module: edi_openprod
+#: code:addons/edi_openprod/procedures/jasper_from_sql.py:12
+#, python-format
+msgid "Jasper document ID"
+msgstr "ID du Jasper document"
+
+#. module: edi_openprod
+#: code:addons/edi_openprod/procedures/jasper_from_sql.py:9
+#, python-format
+msgid "Jasper from SQL"
+msgstr "SQL vers Jasper"
+
+#. module: edi_openprod
+#: model:ir.model.fields,field_description:edi_openprod.field_edi_choose_m2o___last_update
+#: model:ir.model.fields,field_description:edi_openprod.field_edi_transformation_file___last_update
+#: model:ir.model.fields,field_description:edi_openprod.field_edi_transformation_get_file___last_update
+#: model:ir.model.fields,field_description:edi_openprod.field_edi_transformation_history___last_update
+#: model:ir.model.fields,field_description:edi_openprod.field_edi_transformation_procedure___last_update
+#: model:ir.model.fields,field_description:edi_openprod.field_edi_transformation_procedure_method_param___last_update
+#: model:ir.model.fields,field_description:edi_openprod.field_edi_transformation_processing___last_update
+#: model:ir.model.fields,field_description:edi_openprod.field_edi_transformation_processing_category___last_update
+#: model:ir.model.fields,field_description:edi_openprod.field_edi_transformation_send_file___last_update
+#: model:ir.model.fields,field_description:edi_openprod.field_edi_transformation_sql_authorization___last_update
+#: model:ir.model.fields,field_description:edi_openprod.field_edi_transformation_sql_authorization_line___last_update
+#: model:ir.model.fields,field_description:edi_openprod.field_edi_transformation_users___last_update
+msgid "Last Modified on"
+msgstr "Dernière modification leLast Modified on"
+
+#. module: edi_openprod
+#: model:ir.model.fields,field_description:edi_openprod.field_edi_choose_m2o_write_uid
+#: model:ir.model.fields,field_description:edi_openprod.field_edi_transformation_file_write_uid
+#: model:ir.model.fields,field_description:edi_openprod.field_edi_transformation_get_file_write_uid
+#: model:ir.model.fields,field_description:edi_openprod.field_edi_transformation_history_write_uid
+#: model:ir.model.fields,field_description:edi_openprod.field_edi_transformation_procedure_method_param_write_uid
+#: model:ir.model.fields,field_description:edi_openprod.field_edi_transformation_procedure_write_uid
+#: model:ir.model.fields,field_description:edi_openprod.field_edi_transformation_processing_category_write_uid
+#: model:ir.model.fields,field_description:edi_openprod.field_edi_transformation_processing_write_uid
+#: model:ir.model.fields,field_description:edi_openprod.field_edi_transformation_send_file_write_uid
+#: model:ir.model.fields,field_description:edi_openprod.field_edi_transformation_sql_authorization_line_write_uid
+#: model:ir.model.fields,field_description:edi_openprod.field_edi_transformation_sql_authorization_write_uid
+#: model:ir.model.fields,field_description:edi_openprod.field_edi_transformation_users_write_uid
+msgid "Last Updated by"
+msgstr "Dernière mise à jour par"
+
+#. module: edi_openprod
+#: model:ir.model.fields,field_description:edi_openprod.field_edi_choose_m2o_write_date
+#: model:ir.model.fields,field_description:edi_openprod.field_edi_transformation_file_write_date
+#: model:ir.model.fields,field_description:edi_openprod.field_edi_transformation_get_file_write_date
+#: model:ir.model.fields,field_description:edi_openprod.field_edi_transformation_history_write_date
+#: model:ir.model.fields,field_description:edi_openprod.field_edi_transformation_procedure_method_param_write_date
+#: model:ir.model.fields,field_description:edi_openprod.field_edi_transformation_procedure_write_date
+#: model:ir.model.fields,field_description:edi_openprod.field_edi_transformation_processing_category_write_date
+#: model:ir.model.fields,field_description:edi_openprod.field_edi_transformation_processing_write_date
+#: model:ir.model.fields,field_description:edi_openprod.field_edi_transformation_send_file_write_date
+#: model:ir.model.fields,field_description:edi_openprod.field_edi_transformation_sql_authorization_line_write_date
+#: model:ir.model.fields,field_description:edi_openprod.field_edi_transformation_sql_authorization_write_date
+#: model:ir.model.fields,field_description:edi_openprod.field_edi_transformation_users_write_date
+msgid "Last Updated on"
+msgstr "Dernière mise à jour le"
+
+#. module: edi_openprod
+#: model:ir.model.fields,field_description:edi_openprod.field_edi_transformation_procedure_last_date
+msgid "Last date"
+msgstr "Dernière date"
+
+#. module: edi_openprod
+#: model:ir.model.fields,field_description:edi_openprod.field_edi_transformation_file_last_date
+#: model:ir.model.fields,field_description:edi_openprod.field_edi_transformation_get_file_last_date
+#: model:ir.model.fields,field_description:edi_openprod.field_edi_transformation_send_file_last_date
+msgid "Last execution date"
+msgstr "Date dernière execution"
+
+#. module: edi_openprod
+#: model:ir.model.fields,field_description:edi_openprod.field_edi_transformation_procedure_last_start_date
+msgid "Last start date"
+msgstr "Date dernière exécution (Début)"
+
+#. module: edi_openprod
+#: model:ir.ui.view,arch_db:edi_openprod.view_form_edi_transformation_procedure
+msgid "Legend"
+msgstr "Légende"
+
+#. module: edi_openprod
+#: model:ir.model.fields,help:edi_openprod.field_edi_transformation_sql_authorization_processing_ids
+msgid "Let this field empty to apply authorization to all processing"
+msgstr "Laisser ce champ vide pour appliquer l'autorisation à tous les traitements"
+
+#. module: edi_openprod
+#: code:addons/edi_openprod/procedures/csv_import.py:17
+#, python-format
+msgid "Lets not import multiple times the same lines, you just put the name of the temporary table."
+msgstr "Pour ne pas importer plusieurs fois les mêmes lignes, il suffit de mettre le nom de la table temporaire."
+
+#. module: edi_openprod
+#: code:addons/edi_openprod/procedures/xls_from_sql.py:16
+#, python-format
+msgid "Line"
+msgstr "Ligne"
+
+#. module: edi_openprod
+#: code:addons/edi_openprod/procedures/txt_import.py:13
+#: code:addons/edi_openprod/procedures/txt_import.py:14
+#, python-format
+msgid "List"
+msgstr "Liste"
+
+#. module: edi_openprod
+#: model:ir.model.fields,field_description:edi_openprod.field_edi_transformation_file_log
+#: model:ir.model.fields,field_description:edi_openprod.field_edi_transformation_get_file_log
+#: model:ir.model.fields,field_description:edi_openprod.field_edi_transformation_procedure_log
+#: model:ir.model.fields,field_description:edi_openprod.field_edi_transformation_send_file_log
+msgid "Log"
+msgstr "Log"
+
+#. module: edi_openprod
+#: model:ir.ui.view,arch_db:edi_openprod.edi_transformation_get_file_form
+#: model:ir.ui.view,arch_db:edi_openprod.edi_transformation_send_file_form
+msgid "Login"
+msgstr "Login"
+
+#. module: edi_openprod
+#: model:ir.model.fields,field_description:edi_openprod.field_edi_transformation_procedure_method_param_m2o_model
+msgid "M2O model"
+msgstr "Modèle M2O"
+
+#. module: edi_openprod
+#: model:ir.model.fields,field_description:edi_openprod.field_edi_transformation_users_mail
+msgid "Mail"
+msgstr "Mail"
+
+#. module: edi_openprod
+#: model:ir.model.fields,field_description:edi_openprod.field_edi_transformation_processing_mail_error
+msgid "Mail error"
+msgstr "Mail erreur"
+
+#. module: edi_openprod
+#: code:addons/edi_openprod/edi_openprod.py:598
+#: model:ir.model.fields,field_description:edi_openprod.field_edi_transformation_procedure_method
+#: model:ir.ui.view,arch_db:edi_openprod.view_form_edi_transformation_procedure
+#, python-format
+msgid "Method"
+msgstr "Méthode"
+
+#. module: edi_openprod
+#: model:ir.ui.view,arch_db:edi_openprod.view_form_edi_transformation_procedure
+msgid "Method and parameters"
+msgstr "Méthode et paramètres"
+
+#. module: edi_openprod
+#: code:addons/edi_openprod/procedures/execute_method.py:12
+#, python-format
+msgid "Method name"
+msgstr "Nom de la méthode"
+
+#. module: edi_openprod
+#: model:ir.model.fields,field_description:edi_openprod.field_edi_choose_m2o_model
+msgid "Model"
+msgstr "Modèle"
+
+#. module: edi_openprod
+#: code:addons/edi_openprod/procedures/execute_method.py:11
+#, python-format
+msgid "Model name"
+msgstr "Nom du modèle"
+
+#. module: edi_openprod
+#: model:ir.model.fields,field_description:edi_openprod.field_edi_transformation_file_name
+#: model:ir.model.fields,field_description:edi_openprod.field_edi_transformation_get_file_name
+#: model:ir.model.fields,field_description:edi_openprod.field_edi_transformation_procedure_method_param_name
+#: model:ir.model.fields,field_description:edi_openprod.field_edi_transformation_procedure_name
+#: model:ir.model.fields,field_description:edi_openprod.field_edi_transformation_processing_category_name
+#: model:ir.model.fields,field_description:edi_openprod.field_edi_transformation_processing_name
+#: model:ir.model.fields,field_description:edi_openprod.field_edi_transformation_send_file_name
+#: model:ir.model.fields,field_description:edi_openprod.field_edi_transformation_sql_authorization_name
+msgid "Name"
+msgstr "Nom"
+
+#. module: edi_openprod
+#: code:addons/edi_openprod/procedures/txt_import.py:56
+#, python-format
+msgid "No table %s found."
+msgstr "Aucune table nommée %s."
+
+#. module: edi_openprod
+#: model:ir.model.fields,field_description:edi_openprod.field_edi_transformation_procedure_method_param_note
+msgid "Note"
+msgstr "Note"
+
+#. module: edi_openprod
+#: model:ir.model.fields,field_description:edi_openprod.field_edi_transformation_history_object_id
+msgid "Object id"
+msgstr "Objet id"
+
+#. module: edi_openprod
+#: model:ir.model.fields,field_description:edi_openprod.field_edi_transformation_history_object_model
+msgid "Object model"
+msgstr "Objet model"
+
+#. module: edi_openprod
+#: model:ir.model.fields,field_description:edi_openprod.field_edi_choose_m2o_param_id
+msgid "Param"
+msgstr "Param"
+
+#. module: edi_openprod
+#: model:ir.model.fields,field_description:edi_openprod.field_edi_transformation_procedure_method_param_label
+msgid "Parameter name"
+msgstr "Nom du paramètre"
+
+#. module: edi_openprod
+#: model:ir.model.fields,field_description:edi_openprod.field_edi_transformation_procedure_param_ids
+msgid "Parameters"
+msgstr "Paramètres"
+
+#. module: edi_openprod
+#: model:ir.model.fields,field_description:edi_openprod.field_edi_transformation_procedure_method_param_procedure_id
+#: model:ir.model.fields,field_description:edi_openprod.field_edi_transformation_users_procedure_id
+#: model:ir.ui.menu,name:edi_openprod.menu_edi_transformation_procedure
+msgid "Procedure"
+msgstr "Procédure"
+
+#. module: edi_openprod
+#: model:ir.model.fields,field_description:edi_openprod.field_edi_transformation_processing_procedure_ids
+#: model:ir.ui.view,arch_db:edi_openprod.view_form_edi_transformation_processing
+msgid "Procedures"
+msgstr "Procédures"
+
+#. module: edi_openprod
+#: model:ir.model.fields,field_description:edi_openprod.field_edi_transformation_file_processing_id
+#: model:ir.model.fields,field_description:edi_openprod.field_edi_transformation_history_processing_id
+#: model:ir.model.fields,field_description:edi_openprod.field_edi_transformation_procedure_processing_id
+#: model:ir.model.fields,field_description:edi_openprod.field_edi_transformation_sql_authorization_processing_ids
+#: model:ir.ui.menu,name:edi_openprod.menu_edi_transformation_processing
+#: model:ir.ui.view,arch_db:edi_openprod.edi_transformation_get_file_form
+msgid "Processing"
+msgstr "Traitement"
+
+#. module: edi_openprod
+#: model:ir.ui.view,arch_db:edi_openprod.view_form_edi_transformation_sql_authorization
+msgid "Processings"
+msgstr "Traitements"
+
+#. module: edi_openprod
+#: code:addons/edi_openprod/procedures/csv_from_sql.py:11
+#: code:addons/edi_openprod/procedures/jasper_from_sql.py:11
+#: code:addons/edi_openprod/procedures/send_files_mail.py:11
+#: code:addons/edi_openprod/procedures/txt_from_sql.py:10
+#: code:addons/edi_openprod/procedures/xls_from_sql.py:13
+#, python-format
+msgid "Query"
+msgstr "Requête"
+
+#. module: edi_openprod
+#: code:addons/edi_openprod/procedures/csv_from_sql.py:13
+#: code:addons/edi_openprod/procedures/csv_import.py:15
+#, python-format
+msgid "Quotechar"
+msgstr "Quotechar"
+
+#. module: edi_openprod
+#: model:ir.model.fields,field_description:edi_openprod.field_edi_choose_m2o_record_id
+msgid "Record ID"
+msgstr "ID de l'enregistrement"
+
+#. module: edi_openprod
+#: model:ir.model.fields,field_description:edi_openprod.field_edi_choose_m2o_record_name
+msgid "Record name"
+msgstr "Nom de l'enregistrement"
+
+#. module: edi_openprod
+#: model:ir.model.fields,field_description:edi_openprod.field_edi_transformation_procedure_method_param_required
+msgid "Required"
+msgstr "Requis"
+
+#. module: edi_openprod
+#: code:addons/edi_openprod/edi_openprod.py:58
+#, python-format
+msgid "Send"
+msgstr "Envoyé"
+
+#. module: edi_openprod
+#: model:ir.model.fields,help:edi_openprod.field_edi_transformation_procedure_is_doc_by_user
+msgid "Send only the user's documents."
+msgstr "Envoyer uniquement les documents de l'utilisateur."
+
+#. module: edi_openprod
+#: model:ir.actions.act_window,name:edi_openprod.edi_transformation_send_file_action
+#: model:ir.ui.menu,name:edi_openprod.edi_transformation_send_file_menu
+#: model:ir.ui.view,arch_db:edi_openprod.edi_transformation_send_file_form
+msgid "Send file"
+msgstr "Envoyé un fichier"
+
+#. module: edi_openprod
+#: code:addons/edi_openprod/procedures/send_files_ftp.py:53
+#, python-format
+msgid "Send file FTP error"
+msgstr "Send file FTP error"
+
+#. module: edi_openprod
+#: model:ir.ui.view,arch_db:edi_openprod.edi_transformation_send_file_tree
+msgid "Send file list"
+msgstr "Send file list"
+
+#. module: edi_openprod
+#: code:addons/edi_openprod/procedures/send_files_ftp.py:7
+#, python-format
+msgid "Send files"
+msgstr "Envoyé des fichiers"
+
+#. module: edi_openprod
+#: code:addons/edi_openprod/procedures/send_files_mail.py:8
+#, python-format
+msgid "Send mail"
+msgstr "Envoyé un mail"
+
+#. module: edi_openprod
+#: model:ir.model.fields,help:edi_openprod.field_edi_transformation_processing_mail_error
+msgid "Send mail if processing generate an error"
+msgstr "Envoie un mail si le traitement génère une erreur"
+
+#. module: edi_openprod
+#: model:ir.model.fields,field_description:edi_openprod.field_edi_transformation_procedure_sequence
+#: model:ir.model.fields,field_description:edi_openprod.field_edi_transformation_processing_sequence
+msgid "Sequence"
+msgstr "Séquence"
+
+#. module: edi_openprod
+#: code:addons/edi_openprod/procedures/xls_from_sql.py:14
+#, python-format
+msgid "Sheet"
+msgstr "Feuille"
+
+#. module: edi_openprod
+#: model:ir.model.fields,field_description:edi_openprod.field_edi_transformation_file_src
+msgid "Source"
+msgstr "Source"
+
+#. module: edi_openprod
+#: code:addons/edi_openprod/procedures/txt_from_sql.py:14
+#, python-format
+msgid "Split file"
+msgstr "Spliter fichier"
+
+#. module: edi_openprod
+#: code:addons/edi_openprod/edi_openprod.py:597
+#, python-format
+msgid "Sql"
+msgstr "Sql"
+
+#. module: edi_openprod
+#: model:ir.model.fields,field_description:edi_openprod.field_edi_transformation_history_start_date
+#: model:ir.model.fields,field_description:edi_openprod.field_edi_transformation_users_start_date
+msgid "Start date"
+msgstr "Date de début"
+
+#. module: edi_openprod
+#: model:ir.model.fields,field_description:edi_openprod.field_edi_transformation_file_state
+#: model:ir.model.fields,field_description:edi_openprod.field_edi_transformation_get_file_state
+#: model:ir.model.fields,field_description:edi_openprod.field_edi_transformation_procedure_state
+#: model:ir.model.fields,field_description:edi_openprod.field_edi_transformation_send_file_state
+msgid "State"
+msgstr "État"
+
+#. module: edi_openprod
+#: code:addons/edi_openprod/procedures/txt_from_sql.py:8
+#, python-format
+msgid "TXT from SQL"
+msgstr "SQL vers TXT"
+
+#. module: edi_openprod
+#: code:addons/edi_openprod/procedures/csv_import.py:13
+#: code:addons/edi_openprod/procedures/txt_import.py:12
+#, python-format
+msgid "Table"
+msgstr "Table"
+
+#. module: edi_openprod
+#: model:ir.model.fields,field_description:edi_openprod.field_edi_transformation_sql_authorization_line_name
+msgid "Table name"
+msgstr "Nom de la table"
+
+#. module: edi_openprod
+#: model:ir.model.fields,field_description:edi_openprod.field_edi_transformation_sql_authorization_table_ids
+#: model:ir.ui.view,arch_db:edi_openprod.view_form_edi_transformation_sql_authorization
+msgid "Tables"
+msgstr "Tables"
+
+#. module: edi_openprod
+#: code:addons/edi_openprod/procedures/send_files_mail.py:10
+#, python-format
+msgid "Template mail ID"
+msgstr "ID modèle de mail"
+
+#. module: edi_openprod
+#: code:addons/edi_openprod/procedures/xls_from_sql.py:19
+#, python-format
+msgid "Template name"
+msgstr "Nom du modèle"
+
+#. module: edi_openprod
+#: code:addons/edi_openprod/procedures/csv_import.py:17
+#, python-format
+msgid "Temporary table"
+msgstr "Table temporaire"
+
+#. module: edi_openprod
+#: code:addons/edi_openprod/procedures/txt_import.py:10
+#, python-format
+msgid "Text import (fixed width)"
+msgstr "Import texte (largeur fixe)"
+
+#. module: edi_openprod
+#: code:addons/edi_openprod/procedures/xls_from_sql.py:17
+#, python-format
+msgid "Tmp path"
+msgstr "Chemin temporaire"
+
+#. module: edi_openprod
+#: model:ir.model.fields,field_description:edi_openprod.field_edi_transformation_file_type
+#: model:ir.model.fields,field_description:edi_openprod.field_edi_transformation_procedure_method_param_type
+#: model:ir.model.fields,field_description:edi_openprod.field_edi_transformation_procedure_method_param_type_label
+#: model:ir.model.fields,field_description:edi_openprod.field_edi_transformation_sql_authorization_type
+msgid "Type"
+msgstr "Type"
+
+#. module: edi_openprod
+#: code:addons/edi_openprod/edi_openprod.py:385
+#, python-format
+msgid "UPDATE"
+msgstr "UPDATE"
+
+#. module: edi_openprod
+#: model:ir.model.fields,field_description:edi_openprod.field_edi_transformation_file_upload_date
+msgid "Upload date"
+msgstr "Date de téléchargement"
+
+#. module: edi_openprod
+#: model:ir.model.fields,field_description:edi_openprod.field_edi_transformation_file_user_id
+#: model:ir.model.fields,field_description:edi_openprod.field_edi_transformation_users_user_id
+msgid "User"
+msgstr "Utilisateur"
+
+#. module: edi_openprod
+#: model:ir.model.fields,field_description:edi_openprod.field_edi_transformation_procedure_edi_user_ids
+#: model:ir.ui.view,arch_db:edi_openprod.view_form_edi_transformation_procedure
+msgid "Users"
+msgstr "Utilisateurs"
+
+#. module: edi_openprod
+#: model:ir.ui.view,arch_db:edi_openprod.view_form_edi_choose_m2o
+msgid "Validate"
+msgstr "Valider"
+
+#. module: edi_openprod
+#: code:addons/edi_openprod/wizard/choose_m2o.py:35
+#: model:ir.model.fields,field_description:edi_openprod.field_edi_transformation_procedure_method_param_value
+#, python-format
+msgid "Value"
+msgstr "Valeur"
+
+#. module: edi_openprod
+#: model:ir.ui.view,arch_db:edi_openprod.view_form_edi_transformation_procedure
+msgid "Verification"
+msgstr "Vérification"
+
+#. module: edi_openprod
+#: model:ir.model.fields,field_description:edi_openprod.field_edi_transformation_procedure_verification_sql
+msgid "Verification (SQL)"
+msgstr "Vérification (SQL)"
+
+#. module: edi_openprod
+#: model:ir.model.fields,field_description:edi_openprod.field_edi_transformation_procedure_verification_sql_result
+msgid "Verification (result)"
+msgstr "Vérification (résultat)"
+
+#. module: edi_openprod
+#: code:addons/edi_openprod/procedures/xls_from_sql.py:11
+#, python-format
+msgid "XLS from SQL"
+msgstr "SQL vers XLS"
+
+#. module: edi_openprod
+#: model:ir.model,name:edi_openprod.model_edi_choose_m2o
+msgid "edi.choose.m2o"
+msgstr "edi.choose.m2o"
+
+#. module: edi_openprod
+#: model:ir.model.fields,field_description:edi_openprod.field_edi_transformation_file_edi_file_fname
+msgid "edi_file_fname"
+msgstr "edi_file_fname"
+
+#. module: edi_openprod
+#: model:ir.model,name:edi_openprod.model_ir_cron
+msgid "ir.cron"
+msgstr "ir.cron"
+
+#. module: edi_openprod
+#: model:ir.model.fields,field_description:edi_openprod.field_edi_transformation_get_file_processing_id
+msgid "Processing"
+msgstr "Traitement"
+

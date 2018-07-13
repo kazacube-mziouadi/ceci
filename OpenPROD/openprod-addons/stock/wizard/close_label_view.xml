@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+		<!-- FORM VIEW Create close label -->
+		<record id='view_form_close_label_wizard' model='ir.ui.view'>
+			<field name="name">view_form_close_label_wizard</field>
+			<field name="model">close.label.wizard</field>
+			<field name="arch" type="xml">
+				<form string="Close label" version="8.0">
+					<p>
+						Are you sure that you want to close this label(s)?
+					</p>
+					<footer>
+						<button name="close_label" string="OK" type="object" class="oe_highlight" />
+						or
+						<button string="Cancel" class="oe_link" special="cancel" />
+					</footer>
+				</form>
+			</field>
+		</record>
+
+		<!-- ACTION Stock level rectification -->
+		<act_window name="Close label" res_model="close.label.wizard" src_model="stock.label" view_mode="form" target="new" key2="client_action_multi" id="act_stock_close_label" />
+
+	</data>
+</openerp>

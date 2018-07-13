@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<openerp>
+    <data>
+		    
+        <template id="assets_backend" name="web_openprod assets" inherit_id="web.assets_backend">
+            <xpath expr="." position="inside">
+<!--                 <link rel="stylesheet" href="/web_openprod/static/src/css/notebook_style.css"/> -->
+                <link rel="stylesheet" href="/web_highstock/static/src/css/web_highstock.css"/>
+
+                <script type="text/javascript" src="/web_highstock/static/lib/highstock.js"></script>
+                <script type="text/javascript" src="/web_highstock/static/lib/exporting.js"></script>
+                <script type="text/javascript" src="/web_highstock/static/src/js/web_highstock2.js"></script>
+            </xpath>
+        </template>
+        
+    </data>
+</openerp>

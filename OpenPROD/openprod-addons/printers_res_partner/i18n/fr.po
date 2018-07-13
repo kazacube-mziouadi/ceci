@@ -1,0 +1,114 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* printers_res_partner
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 9.0c\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-06-21 09:41+0000\n"
+"PO-Revision-Date: 2017-06-21 09:41+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: printers_res_partner
+#: model:ir.ui.view,arch_db:printers_res_partner.view_form_print_partners_address
+msgid "Cancel"
+msgstr "Annuler"
+
+#. module: printers_res_partner
+#: model:ir.model.fields,field_description:printers_res_partner.field_wizard_print_partner_address_create_uid
+msgid "Created by"
+msgstr "Créé par"
+
+#. module: printers_res_partner
+#: model:ir.model.fields,field_description:printers_res_partner.field_wizard_print_partner_address_create_date
+msgid "Created on"
+msgstr "Créé le"
+
+#. module: printers_res_partner
+#: model:ir.model.fields,field_description:printers_res_partner.field_wizard_print_partner_address_display_name
+msgid "Display Name"
+msgstr "Nom affiché"
+
+#. module: printers_res_partner
+#: code:addons/printers_res_partner/printers_res_partner.py:26
+#: code:addons/printers_res_partner/printers_res_partner.py:28
+#, python-format
+msgid "Error"
+msgstr "Erreur"
+
+#. module: printers_res_partner
+#: model:ir.model.fields,field_description:printers_res_partner.field_wizard_print_partner_address_id
+msgid "ID"
+msgstr "ID"
+
+#. module: printers_res_partner
+#: model:ir.model.fields,field_description:printers_res_partner.field_wizard_print_partner_address___last_update
+msgid "Last Modified on"
+msgstr "Dernière modification le"
+
+#. module: printers_res_partner
+#: model:ir.model.fields,field_description:printers_res_partner.field_wizard_print_partner_address_write_uid
+msgid "Last Updated by"
+msgstr "Mis à jour par"
+
+#. module: printers_res_partner
+#: model:ir.model.fields,field_description:printers_res_partner.field_wizard_print_partner_address_write_date
+msgid "Last Updated on"
+msgstr "Mis à jour le"
+
+#. module: printers_res_partner
+#: model:ir.model.fields,field_description:printers_res_partner.field_wizard_print_partner_address_name
+msgid "Name"
+msgstr "Nom"
+
+#. module: printers_res_partner
+#: code:addons/printers_res_partner/printers_res_partner.py:26
+#: code:addons/printers_res_partner/printers_res_partner.py:28
+#, python-format
+msgid "No active report found for this partner %s."
+msgstr "Aucun rapport actif trouvé pour ce partenaire %s."
+
+#. module: printers_res_partner
+#: model:ir.model,name:printers_res_partner.model_res_partner
+msgid "Partner"
+msgstr "Partenaire"
+
+#. module: printers_res_partner
+#: model:ir.ui.view,arch_db:printers_res_partner.view_form_print_partner_address
+#: model:ir.ui.view,arch_db:printers_res_partner.view_form_print_partners_address
+msgid "Print address"
+msgstr "Imprimer l'adresse"
+
+#. module: printers_res_partner
+#: model:ir.actions.act_window,name:printers_res_partner.act_print_partner_address
+#: model:ir.actions.act_window,name:printers_res_partner.action_print_partner_address
+#: model:ir.ui.view,arch_db:printers_res_partner.view_form_print_partners_address
+msgid "Print partner address"
+msgstr "Imprimer l'adresse du partenaire"
+
+#. module: printers_res_partner
+#: model:ir.model.fields,field_description:printers_res_partner.field_wizard_print_partner_address_printer_id
+msgid "Printer"
+msgstr "Imprimante"
+
+#. module: printers_res_partner
+#: model:ir.ui.view,arch_db:printers_res_partner.view_form_print_partners_address
+msgid "Select the printer"
+msgstr "Sélectionnez l'imprimante"
+
+#. module: printers_res_partner
+#: model:ir.model,name:printers_res_partner.model_wizard_print_partner_address
+msgid "Wizard to print the partner address"
+msgstr "Wizard pour imprimer l'adresse du partenaire"
+
+#. module: printers_res_partner
+#: model:ir.ui.view,arch_db:printers_res_partner.view_form_print_partners_address
+msgid "or"
+msgstr "ou"
+

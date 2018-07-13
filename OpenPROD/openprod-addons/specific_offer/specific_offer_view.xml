@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+		<!-- ACTION specific offer -->
+		<record id="act_specific_offer" model="ir.actions.act_window">
+			<field name="name">specific_offer</field>
+			<field name="res_model">specific.offer</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+
+		<!-- FORM VIEW specific offer -->
+		<record id='view_form_specific_offer' model='ir.ui.view'>
+			<field name="name">Specific Offer</field>
+			<field name="model">specific.offer</field>
+			<field name="arch" type="xml">
+				<form string="specific offer" version="8.0">
+					<header>
+						<field name="state" widget="statusbar" clickable="True" />
+					</header>
+					<group colspan="4" col="9">
+						<group colspan="8" col="6">
+							<field name="sequence" readonly="1" />
+							<field name="name" />
+							<field name="partner_id" />
+							<field name="model_id" required="1" />
+							<field name="quantity" />
+							<field name="create_date" />
+							<field name="responsible_id" />
+							<field name="crm_id" />
+							<field name="proposition_date" />
+							<notebook colspan="6">
+								<page string="Configuration">
+									<group col="2">
+										<group string="Description" colspan="1">
+											<field name="description" nolabel="1" />
+										</group>
+										<group string="Options" colspan="1" groups="mrp.mrp_options">
+											<field name="option_ids" nolabel="1">
+												<tree editable="bottom">
+													<field name="option_id" />
+													<field name="price_unit" />
+												</tree>
+											</field>
+										</group>
+									</group>
+								</page>
+								<page string="Visualization">
+									<group col="6">
+										<button string="Simulate" icon="fa-list-ul" class="oe_inline oe_stat_button" type="object" name="simulate"
+											colspan="2" />
+										<group colspan="4" />
+										<field name="start_date_simulation" />
+										<field name="total_price" readonly="1" />
+										<field name="unit_price" readonly="1" />
+										<field name="end_date_simulation" readonly="1" />
+										<field name="price_rm" readonly="1" />
+										<field name="price_labour" readonly="1" />
+									</group>
+									<group string="Lines">
+										<field name="simulation_line_ids" readonly="1" nolabel="1">
+											<tree colors="red:critical_path==True;blue:supply_method=='produce'">
+												<field name="name" />
+												<field name="supply_method" />
+												<field name="quantity" />
+												<field name="stock_qty" />
+												<field name="supplier_id" />
+												<field name="option_id" groups="mrp.mrp_options" />
+												<field name="routing_id" />
+												<field name="delay" />
+												<field name="cumulative_delay" />
+												<field name="availability_date" />
+												<field name="unit_price" />
+												<field name="total_price" />
+												<field name="bom_id" />
+												<field name="product_id" invisible="1" />
+												<field name="critical_path" />
+												<button string="Update" type="action" name="%(act_change_simulation_line)d" attrs="{'invisible':[('supply_method', '!=', 'buy')]}"
+													icon="gtk-edit" class="oe_inline oe_stat_button" />
+											</tree>
+										</field>
+									</group>
+								</page>
+								<page string="Offer">
+									<group colspan="4" col="4">
+										<group colspan="2" col="4" string="Technical datas" name="specific_technical_data">
+											<field name="product_id" context="{'default_name': name, 'default_code': sequence}"
+												domain="partner_id and [('sale_ok', '=', True), '|', ('sale_product_customerinfo', '=', partner_id), ('free_sale', '=', True)] or [('sale_ok', '=', True)]"
+												readonly="1" />
+											<button string="Create product" type="object" name="create_specific_product" class="oe_inline oe_stat_button"
+												icon="fa-plus-square" colspan="2" attrs="{'invisible':[('product_id', '!=', False)]}" />
+											<separator colspan="4" string="Price serie" />
+											<field name="date_from" />
+											<field name="date_to" />
+											<field name="qty_ids" nolabel="1" colspan="4">
+												<tree editable="bottom">
+													<field name="quantity" />
+													<field name="price" />
+												</tree>
+											</field>
+											<label colspan="2" string="" />
+											<button string="Create or update customer reference" type="object" name="create_update_cust_ref"
+												class="oe_inline oe_stat_button" icon="fa-plus-square" colspan="2"
+												attrs="{'invisible':['|', ('product_id', '=', False), ('partner_id', '=', False)]}" />
+										</group>
+									</group>
+								</page>
+								<page string="Communications">
+									<group colspan="4" col="4" string="Emails">
+										<field name="mail_ids" colspan="4" nolabel="1" />
+										<button name="action_send_mail" type="object" string="Send Mail" />
+									</group>
+								</page>
+							</notebook>
+						</group>
+						<group colspan="1" col="1" class="op_shortcuts">
+							<button string="Create sale" type="object" name="create_new_sale" class="oe_inline oe_stat_button" icon="fa-plus-square"
+								attrs="{'invisible':['|', ('partner_id', '=', False), ('product_id', '=', False)]}" colspan="2" />
+							<button name="action_send_mail" type="object" string="Send Mail" class="oe_inline oe_stat_button" icon="fa-plus-square" colspan="2"  />
+						</group>
+					</group>
+				</form>
+			</field>
+		</record>
+
+		<!-- TREE VIEW specific offer -->
+		<record id='view_tree_specific_offer' model='ir.ui.view'>
+			<field name="name">specific_offer</field>
+			<field name="model">specific.offer</field>
+			<field name="arch" type="xml">
+				<tree>
+					<field name="sequence" />
+					<field name="name" />
+					<field name="model_id" />
+					<field name="partner_id" />
+				</tree>
+			</field>
+		</record>
+
+		<!-- SEARCH VIEW specific offer -->
+		<record id='view_search_specific_offer' model='ir.ui.view'>
+			<field name="name">specific_offer</field>
+			<field name="model">specific.offer</field>
+			<field name="arch" type="xml">
+				<search>
+					<field name="sequence" />
+					<field name="model_id" />
+					<field name="partner_id" />
+					<field name="name" />
+					<group expand="0" string="Group By">
+						<filter string="Partner" context="{'group_by': 'partner_id'}" />
+						<filter string="State" context="{'group_by': 'state'}" />
+					</group>
+				</search>
+			</field>
+		</record>
+
+		<menuitem id="menu_specific_offer" name="specific offer" action="act_specific_offer" parent="sale.menu_sales"
+			groups="sale.group_menu_sale_user" />
+
+		<record model="ir.actions.act_window" id="act_specific_offer_view_only_form">
+			<field name="name">Specific offer</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="res_model">specific.offer</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">form</field>
+			<field name="target">current</field>
+		</record>
+
+	</data>
+</openerp>

@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+	
+		<!-- FORM VIEW Partner -->
+		<record id="view_form_partner_multi_address" model="ir.ui.view">
+			<field name="name">view_form_partner_multi_address</field>
+			<field name="inherit_id" ref="partner_openprod.openprod_view_partner_form" />
+			<field name="model">res.partner</field>
+			<field name="arch" type="xml">
+				<xpath expr="//field[@name='address_name']" position="replace">
+					<field name="address_name" invisible="1"/>
+				</xpath>
+ 				<xpath expr="//group[@name='related_address']" position="replace"/>
+				<xpath expr="//field[@name='address_id']" position="after">
+					<field name="address_ids" nolabel="1" colspan="4" context="{'is_company':is_company,'default_name':corporate_name,'first_name':first_name}" attrs="{'invisible': [('company_address', '=', True)]}">
+						<form string="Address">
+							<group colspan="4" col="4">
+								<group colspan="4" col="4" string="Details">
+									<group colspan="2" col="2">
+										<field name="sequence"/>
+										<field name="name"/>
+										<field name="street"/>
+										<field name="street2"/>
+										<field name="street3"/>
+									</group>
+									<group colspan="2" col="2">
+										<field name="address_type"/>
+										<field name="zip"/>
+										<field name="city"/>
+										<field name="region_id" domain="[('country_id','=',country_id)]"/>
+										<field name="country_id"/>
+									</group>
+								</group>
+								<group colspan="4" col="4" string="Note">
+									<field name="address_note" colspan="4" nolabel="1"/>
+								</group>
+							</group>
+						</form>
+					</field>
+				</xpath>
+				<xpath expr="//group[@name='address_group']" position="attributes">
+					<attribute name="attrs">{'invisible': [('company_address', '=', True), ('is_company','=',False)]}</attribute>
+				</xpath>
+				<xpath expr="//field[@name='company_address']" position="after">
+					<field name="parent_address_id" attrs="{'invisible': [('company_address', '=', False)], 'required':[('company_address', '=', True)] }" domain="[('partner_address_id', '=', parent_id), ('partner_address_id', '!=', False)]" options="{'no_create': True}"/>
+				</xpath>
+				<xpath expr="//field[@name='contact_ids']" position="attributes">
+					<attribute name="context">{'default_address_id': address_id, 'no_parent': True, 'default_company_address': True, 'partner_view': True, 'default_lang':lang, 'default_parent_id':id}</attribute>
+				</xpath>
+				<xpath expr="//field[@name='contact_ids']" position="before">
+					<label string="Caution! You must save the partner before the creation or the modification of a contact!"/>
+				</xpath>
+				<xpath expr="//field[@name='contact_ids']//form//field[@name='address_name']" position="replace">
+					<field name="address_name" invisible="1"/>
+				</xpath>
+ 				<xpath expr="//field[@name='contact_ids']//form//group[@name='related_address']" position="replace"/>
+				<xpath expr="//field[@name='contact_ids']//form//field[@name='address_id']" position="after">
+					<field name="address_ids" nolabel="1" colspan="4" context="{'is_company':is_company,'default_name':name,'first_name':first_name}" attrs="{'invisible': [('company_address', '=', True)]}">
+						<form string="Address">
+							<group colspan="4" col="4">
+								<field name="sequence"/>
+								<field name="address_type"/>
+								<field name="name"/>
+								<field name="zip"/>
+								<field name="street"/>
+								<field name="city"/>
+								<field name="street2"/>
+								<field name="region_id" domain="[('country_id','=',country_id)]"/>
+								<field name="street3"/>
+								<field name="country_id"/>
+								<separator string="Note" colspan="4"/>
+								<field name="address_note" colspan="4" nolabel="1"/>
+							</group>
+						</form>
+					</field>
+				</xpath>
+				<xpath expr="//field[@name='contact_ids']//form//group[@name='address_group']" position="attributes">
+					<attribute name="attrs">{'invisible': [('company_address', '=', True), ('is_company','=',False)]}</attribute>
+				</xpath>
+				<xpath expr="//field[@name='contact_ids']//form//field[@name='company_address']" position="after">
+					<field name="parent_address_id" attrs="{'invisible': [('company_address', '=', False)], 'required':[('company_address', '=', True)] }" domain="[('partner_address_id', '=', parent.id), ('partner_address_id', '!=', False)]" options="{'no_create': True}"/>
+				</xpath>
+			</field>
+		</record>
+		
+		<!-- TREE VIEW Address -->
+		<record id="openprod_view_address_tree" model="ir.ui.view">
+			<field name="name">openprod_view_address_tree</field>
+			<field name="inherit_id" ref="partner_openprod.openprod_view_address_tree" />
+			<field name="model">address</field>
+			<field name="arch" type="xml">
+				<xpath expr="//field[@name='name']" position="before">
+					<field name="sequence"/>
+					<field name="address_type"/>
+				</xpath>
+			</field>
+		</record>
+		
+		<!-- FORM VIEW Address -->
+		<record id="openprod_view_address_form" model="ir.ui.view">
+			<field name="name">openprod_view_address_form</field>
+			<field name="inherit_id" ref="partner_openprod.openprod_view_address_form" />
+			<field name="model">address</field>
+			<field name="arch" type="xml">
+				<xpath expr="//field[@name='name']" position="after">
+					<field name="sequence" readonly="1"/>
+					<field name="address_type" readonly="1"/>
+				</xpath>
+			</field>
+		</record>
+		
+	</data>
+</openerp>

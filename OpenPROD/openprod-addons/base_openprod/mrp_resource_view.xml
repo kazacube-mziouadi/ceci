@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+		
+		<menuitem name="Resource" id="menu_resource_main" web_icon="base_openprod,static/description/ressource.png" />
+		<menuitem name="Time management" id="menu_resource_time_management" parent="menu_resource_main" sequence="30" />
+		<menuitem name="Configuration" id="menu_resource_configuration" parent="menu_resource_main" sequence="40" />
+		
+		
+		<!-- =========================== -->
+		<!-- 	MRP RESOURCE CATEGORY    -->
+		<!-- =========================== -->
+		
+		<!-- FORM VIEW Category resources -->
+		<record id='view_form_category_resource' model='ir.ui.view'>
+			<field name="name">view_form_category_resource</field>
+			<field name="model">mrp.resource.category</field>
+			<field name="arch" type="xml">
+				<form string="Category resources" version="8.0">
+					<group colspan="4" col="4" >
+						<field name="name" />
+						<field name="hourly_rate" />
+						<field name="resource_ids" colspan="4" nolabel="1"/>
+					</group>
+				</form>
+			</field>
+		</record>
+		
+		<!-- TREE VIEW Category resources -->
+		<record id='view_tree_category_resource' model='ir.ui.view'>
+			<field name="name">view_tree_category_resource</field>
+			<field name="model">mrp.resource.category</field>
+			<field name="arch" type="xml">
+				<tree string="Category resources" version="8.0">
+					<field name="name" />
+					<field name="hourly_rate" />
+				</tree>
+			</field>
+		</record>
+		
+		<!-- SEARCH VIEW Category resources -->
+		<record id='view_search_category_resource' model='ir.ui.view'>
+			<field name="name">view_search_category_resource</field>
+			<field name="model">mrp.resource.category</field>
+			<field name="arch" type="xml">
+				<search version="8.0">
+					<group>
+						<field name="name"/>
+					</group>
+					<newline />
+					<group expand="0" string="Group By...">
+					</group>
+				</search>
+			</field>
+		</record>
+		
+		<!-- ACTION Category resources -->
+		<record id="act_category_resource" model="ir.actions.act_window">
+		    <field name="name">Category resources</field>
+		    <field name="res_model">mrp.resource.category</field>
+		    <field name="view_type">form</field>
+		    <field name="view_mode">tree,form</field>
+		    <field name="domain">[]</field>
+		    <field name="context">{}</field>
+		    <field name="search_view_id" ref="view_search_category_resource"/>
+		</record>
+		
+		<record id="act_category_resource_tree" model="ir.actions.act_window.view">
+		    <field name="sequence" eval="10"/>
+		    <field name="view_mode">tree</field>
+		    <field name="view_id" ref="view_tree_category_resource"/>
+		    <field name="act_window_id" ref="act_category_resource"/>
+		</record>
+		
+		<record model="ir.actions.act_window.view" id="act_category_resource_form">
+		    <field name="sequence" eval="20"/>
+		    <field name="view_mode">form</field>
+		    <field name="view_id" ref="view_form_category_resource"/>
+		    <field name="act_window_id" ref="act_category_resource"/>
+		</record>
+		
+		<menuitem name="Category resources" action="act_category_resource" id="menu_category_resource" parent="menu_resource_configuration" sequence="20" groups="group_menu_resource_config"/>
+			
+			
+		<!-- ============== -->
+		<!-- 	RESOURCE    -->
+		<!-- ============== -->	
+		
+		<!-- FORM VIEW Resource -->
+		<record id='view_form_mrp_resource' model='ir.ui.view'>
+			<field name="name">view_form_mrp_resource</field>
+			<field name="model">mrp.resource</field>
+			<field name="arch" type="xml">
+				<form string="Resource" version="8.0">
+					<group colspan="4" col="9">
+						<group colspan="8">
+							<group colspan="4" col="6" >
+								<group colspan="2" col="2" >
+									<field name="name" />
+									<field name="company_id" />
+								</group>
+								<group colspan="2" col="2" >
+									<field name="type" />
+								</group>
+								<group colspan="2" col="2" >
+									<field name="active" />
+									<field name="hourly_rate" />
+								</group>
+							</group>
+							<notebook colspan="4">
+								<page string="Generality">
+									<group colspan="4" col="6" string="Informations" >
+										<group colspan="2" col="2" >
+											<field name="start_date" />
+											<field name="stop_date" />
+										</group>
+										<group colspan="4" col="4" >
+											<label for="description" string="Description" colspan="4"/>
+											<field name="description" nolabel="1" colspan="4"/>
+										</group>
+									</group>
+									<group colspan="4" col="4" string="Categories" >
+										<field name="category_resource_ids" colspan="4" nolabel="1"/>
+									</group>
+								</page>
+							</notebook>	
+						</group>
+						<group colspan="1" col="1" class="op_shortcuts" name="action_menu">
+							<separator string="Actions" colspan="1" name="separator_action_menu"/>
+						</group>
+					</group>				
+				</form>
+			</field>
+		</record>
+		
+		<!-- TREE VIEW Resource -->
+		<record id='view_tree_mrp_resource' model='ir.ui.view'>
+			<field name="name">view_tree_mrp_resource</field>
+			<field name="model">mrp.resource</field>
+			<field name="arch" type="xml">
+				<tree string="Resources" version="8.0">
+					<field name="name" />
+					<field name="company_id" />
+					<field name="active" />
+					<field name="type" />
+				</tree>
+			</field>
+		</record>
+		
+		<!-- SEARCH VIEW Resource -->
+		<record id='view_search_mrp_resource' model='ir.ui.view'>
+			<field name="name">view_search_mrp_resource</field>
+			<field name="model">mrp.resource</field>
+			<field name="arch" type="xml">
+				<search version="8.0">
+					<group>
+						<field name="name"/>
+					</group>
+				</search>
+			</field>
+		</record>
+		
+		<!-- ACTION Resource -->
+		<record id="act_mrp_resource" model="ir.actions.act_window">
+		    <field name="name">Resource</field>
+		    <field name="res_model">mrp.resource</field>
+		    <field name="view_type">form</field>
+		    <field name="view_mode">tree,form</field>
+		    <field name="domain">[]</field>
+		    <field name="context">{}</field>
+		    <field name="search_view_id" ref="view_search_mrp_resource"/>
+		</record>
+		
+		<menuitem name="Resource" action="act_mrp_resource" id="menu_mrp_resource" parent="menu_resource_configuration" sequence="10" groups="group_menu_resource_user"/>
+		
+    </data>
+</openerp>

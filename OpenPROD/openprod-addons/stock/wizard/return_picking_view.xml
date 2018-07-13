@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+		<!-- FORM VIEW Return picking -->
+		<record id='view_form_return_picking' model='ir.ui.view'>
+			<field name="name">return_picking</field>
+			<field name="model">stock.return.picking</field>
+			<field name="arch" type="xml">
+				<form string="Return picking" version="8.0">
+					<group colspan="4" col="4">
+						<field name="line_ids" colspan="4" nolabel="1">
+							<tree string="Lines" editable="bottom">
+								<field name="product_id" />
+								<field name="uom_qty" />
+								<field name="uom_id" readonly="1" />
+								<field name="sec_uom_qty" />
+								<field name="sec_uom_id" readonly="1" />
+								<field name="uoi_qty" />
+								<field name="uoi_id" readonly="1" />
+								<field name="move_id" invisible="1" />
+								<field name="label_id" invisible="1" />
+							</tree>
+						</field>
+						<group colspan="2" col="2">
+							<separator colspan="2" string="Return note" />
+							<field name="note" nolabel="1" colspan="2" />
+						</group>
+						<group colspan="2" col="2">
+							<field name="expected_return" />
+							<field name="expected_date" attrs="{'invisible': [('expected_return', '=', False)]}" />
+							<field name="invoice_state" />
+						</group>
+					</group>
+					<footer>
+						<button name="do_return" string="OK" type="object" class="oe_highlight" />
+						or
+						<button string="Cancel" class="oe_link" special="cancel" />
+					</footer>
+				</form>
+			</field>
+		</record>
+		<!-- ACTION Return picking -->
+		<record id="act_return_picking" model="ir.actions.act_window">
+			<field name="name">Return picking</field>
+			<field name="res_model">stock.return.picking</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">form</field>
+			<field name="target">new</field>
+		</record>
+	</data>
+</openerp>

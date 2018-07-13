@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+        <menuitem name="Certificates" id="menu_quality_certificate_id" parent="product.menu_quality_main" sequence="40" />
+        <!-- FORM VIEW Certificate template -->
+        <record id='view_form_certificate_template_id' model='ir.ui.view'>
+            <field name="name">view_form_certificate_template_id</field>
+            <field name="model">certificate.template</field>
+            <field name="arch" type="xml">
+                <form string="Certificate template" version="8.0">
+                    <header>
+                       <field name="state" widget="statusbar" statusbar_visible="draft,validate,cancel" clickable="True" />
+                    </header>
+                    <group colspan="4" col="9">
+                        <group colspan="8" col="4">
+                            <group colspan="4" col="6"  >
+                                <group colspan="2" col="2">
+                                    <field name="name" />
+                                </group>
+                                <group colspan="2" col="2">
+                                    <field name="validity_days" />
+                                </group>
+                                <group colspan="2" col="2">
+                                    <field name="type" />
+                                </group>
+                            </group>        
+                            <notebook colspan="4">
+                                <page string="Application list"  >
+                                    <field name="line_application_ids" nolabel="1" colspan="4" 
+                                           context="{'default_type': type, 'default_state': state}" >
+                                        <tree string="Application of certificates" version="8.0" editable="bottom">
+                                            <field name="name" />
+                                            <field name="resource_id" column_invisible="[('type', '!=', 'resource')]" 
+                                                   attrs="{'required': [('type', '=', 'resource')]}" domain="[('domain_certificate_management', 'not in', parent.list_ids_text)]" />
+                                            <field name="customer_id" column_invisible="[('type', '!=', 'customer')]" 
+                                                   attrs="{'required': [('type', '=', 'customer')]}" domain="[('domain_certificate_management', 'not in', parent.list_ids_text), ('is_customer', '=', True), ('is_company', '=', True)]" />
+                                            <field name="supplier_id" column_invisible="[('type', '!=', 'supplier')]" 
+                                                   attrs="{'required': [('type', '=', 'supplier')]}" domain="[('domain_certificate_management', 'not in', parent.list_ids_text), ('is_supplier', '=', True), ('is_company', '=', True)]" />
+                                            <field name="ref_customer_id" column_invisible="[('type', '!=', 'ref_customer')]" 
+                                                   attrs="{'required': [('type', '=', 'ref_customer')]}" domain="[('domain_certificate_management', 'not in', parent.list_ids_text)]" />
+                                            <field name="ref_supplier_id" column_invisible="[('type', '!=', 'ref_supplier')]" 
+                                                   attrs="{'required': [('type', '=', 'ref_supplier')]}" domain="[('domain_certificate_management', 'not in', parent.list_ids_text)]" />
+                                            <field name="status" />
+                                            <field name="expiry_date" />
+                                            <field name="type" invisible="1" />
+                                            <field name="state" invisible="1" />
+                                        </tree>
+                                    </field>
+                                    <field name="list_ids_text" invisible="1" />
+                                    <field name="type_text" invisible="1" />
+                                </page>
+                                <page string="Certificate list" >
+                                    <field name="line_ids" nolabel="1" colspan="4" 
+                                           context="{'default_type': type, 'default_state': state}" >
+                                        <tree string="Certificates" version="8.0" editable="bottom">
+                                            <field name="stop_date" />
+                                            <field name="resource_id" column_invisible="[('type', '!=', 'resource')]" 
+                                                   attrs="{'required': [('type', '=', 'resource')]}" domain="[('domain_certificate_management', 'in', parent.list_ids_text)]" />
+                                            <field name="customer_id" column_invisible="[('type', '!=', 'customer')]" 
+                                                   attrs="{'required': [('type', '=', 'customer')]}" domain="[('domain_certificate_management', 'in', parent.list_ids_text), ('is_customer', '=', True), ('is_company', '=', True)]" />
+                                            <field name="supplier_id" column_invisible="[('type', '!=', 'supplier')]" 
+                                                   attrs="{'required': [('type', '=', 'supplier')]}" domain="[('domain_certificate_management', 'in', parent.list_ids_text), ('is_supplier', '=', True), ('is_company', '=', True)]" />
+                                            <field name="ref_customer_id" column_invisible="[('type', '!=', 'ref_customer')]" 
+                                                   attrs="{'required': [('type', '=', 'ref_customer')]}" domain="[('domain_certificate_management', 'in', parent.list_ids_text)]" />
+                                            <field name="ref_supplier_id" column_invisible="[('type', '!=', 'ref_supplier')]" 
+                                                   attrs="{'required': [('type', '=', 'ref_supplier')]}" domain="[('domain_certificate_management', 'in', parent.list_ids_text)]" />
+                                            <field name="document_id" />
+                                            <field name="name" />
+                                            <field name="type" invisible="1" />
+                                            <field name="state" invisible="1" />
+                                        </tree>
+                                    </field>
+                                </page>
+                            </notebook>  
+                        </group>
+                        <group colspan="1" col="1" class="op_shortcuts" >
+                            <separator colspan="1" string="Actions" name="separator_actions_menu" attrs="{'invisible': [('state', '!=', 'draft')]}"/>
+                            <button name="button_add_certif_appli" string="Add certificate application" 
+                                    type="object" class="oe_inline oe_stat_button" icon="fa-reply" attrs="{'invisible': [('state', '!=', 'draft')]}" />
+                        </group>
+                    </group>
+                </form>
+            </field>
+        </record>
+        
+        
+        <!-- TREE VIEW Certificate template -->
+        <record id='view_tree_certificate_template_id' model='ir.ui.view'>
+            <field name="name">view_tree_certificate_template_id</field>
+            <field name="model">certificate.template</field>
+            <field name="arch" type="xml">
+                <tree string="Certificate templates" version="8.0">
+                    <field name="name" />
+                    <field name="validity_days" />
+                    <field name="type" />
+                </tree>
+            </field>
+        </record>
+        
+        
+        <!-- SEARCH VIEW Certificate template -->
+        <record id='view_search_certificate_template_id' model='ir.ui.view'>
+            <field name="name">view_search_certificate_template_id</field>
+            <field name="model">certificate.template</field>
+            <field name="arch" type="xml">
+                <search version="8.0">
+                    <field name="name" />
+                    <field name="validity_days" />
+                    <field name="type" />
+                    <field name="state" />
+                    <group expand="0" string="Group by...">
+                        <filter string="State" context="{'group_by' : 'state'}" />
+                        <filter string="Type" context="{'group_by' : 'type'}" />
+                    </group>
+                </search>
+            </field>
+        </record>
+        
+        
+        <!-- ACTION Certificate template -->
+        <record id="act_certificate_template_id" model="ir.actions.act_window">
+            <field name="name">Certificate template</field>
+            <field name="res_model">certificate.template</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[]</field>
+            <field name="context">{}</field>
+            <field name="search_view_id" ref="view_search_certificate_template_id"/>
+        </record>
+        
+        
+        <record id="act_certificate_template_id_tree" model="ir.actions.act_window.view">
+            <field name="sequence" eval="10"/>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="view_tree_certificate_template_id"/>
+            <field name="act_window_id" ref="act_certificate_template_id"/>
+        </record>
+        
+        
+        <record model="ir.actions.act_window.view" id="act_certificate_template_id_form">
+            <field name="sequence" eval="20"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_form_certificate_template_id"/>
+            <field name="act_window_id" ref="act_certificate_template_id"/>
+        </record>
+        
+        
+        <menuitem name="Certificate template" action="act_certificate_template_id" id="menu_certificate_template_id" sequence="10" parent="menu_quality_certificate_id" />
+        
+
+        
+        <!-- TREE VIEW Application of certificates -->
+        <record id='view_tree_certificate_line_application_id' model='ir.ui.view'>
+            <field name="name">view_tree_certificate_line_application_id</field>
+            <field name="model">certificate.line.application</field>
+            <field name="arch" type="xml">
+                <tree string="Application of certificates" version="8.0" editable="bottom" create="false" >
+                    <field name="certicate_template_id" readonly="1" />
+                    <field name="name"  />
+                    <field name="status" />
+                    <field name="resource_id" invisible="not context.get('act_resource', False)" />
+                    <field name="customer_id" invisible="not context.get('act_customer', False)" />
+                    <field name="ref_customer_id" invisible="not context.get('act_ref_customer', False)" />
+                    <field name="supplier_id" invisible="not context.get('act_supplier', False)" />
+                    <field name="ref_supplier_id" invisible="not context.get('act_ref_supplier', False)" />
+                    <field name="expiry_date" />
+                    <field name="state" readonly="1" />
+                </tree>
+            </field>
+        </record>
+        
+        
+        <!-- SEARCH VIEW Application of certificates -->
+        <record id='view_search_certificate_line_application_id' model='ir.ui.view'>
+            <field name="name">view_search_certificate_line_application_id</field>
+            <field name="model">certificate.line.application</field>
+            <field name="arch" type="xml">
+                <search version="8.0">
+                    <field name="name"/>
+                    <field name="status"/>
+                    <field name="expiry_date"/>
+                    <field name="resource_id" invisible="not context.get('act_resource', False)" />
+                    <field name="customer_id" invisible="not context.get('act_customer', False)" />
+                    <field name="ref_customer_id" invisible="not context.get('act_ref_customer', False)" />
+                    <field name="supplier_id" invisible="not context.get('act_supplier', False)" />
+                    <field name="ref_supplier_id" invisible="not context.get('act_ref_supplier', False)" />
+                    <field name="certicate_template_id" />
+                    <field name="state" />
+                    <group expand="0" string="Filters">
+                        <filter string="Expired certificate" domain="[('state', '=', 'validate'), '|', ('expiry_date', '=', False), ('expiry_date','&lt;',time.strftime('%Y-%m-%d'))]" name="expired_today"/>
+                        <filter string="Certificate expired in a month" domain="[('state', '=', 'validate'), ('expiry_date', '!=', False), ('expiry_date','&lt;',(datetime.date.today()+datetime.timedelta(days=(30))).strftime('%Y-%m-%d'))]" name="expired_month" />
+                    </group>
+                    <group expand="0" string="Group by...">
+                        <filter string="State" context="{'group_by' : 'state'}" />
+                    </group>
+                </search>
+            </field>
+        </record>
+        
+        
+        <!-- ACTION Application of certificates -->
+        <record id="act_certificate_line_application_resource_id" model="ir.actions.act_window">
+            <field name="name">Application of certificates resources</field>
+            <field name="res_model">certificate.line.application</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree</field>
+            <field name="domain">[('type', '=', 'resource')]</field>
+            <field name="context">{'act_resource': True}</field>
+            <field name="search_view_id" ref="view_search_certificate_line_application_id"/>
+        </record>
+        
+        
+        <record id="act_certificate_line_application_resource_id_tree" model="ir.actions.act_window.view">
+            <field name="sequence" eval="10"/>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="view_tree_certificate_line_application_id"/>
+            <field name="act_window_id" ref="act_certificate_line_application_resource_id"/>
+        </record>
+        
+        <!-- ACTION Application of certificates -->
+        <record id="act_certificate_line_application_customer_id" model="ir.actions.act_window">
+            <field name="name">Application of certificates customers</field>
+            <field name="res_model">certificate.line.application</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree</field>
+            <field name="domain">[('type', '=', 'customer')]</field>
+            <field name="context">{'act_customer': True}</field>
+            <field name="search_view_id" ref="view_search_certificate_line_application_id"/>
+        </record>
+        
+        
+        <record id="act_certificate_line_application_customer_id_tree" model="ir.actions.act_window.view">
+            <field name="sequence" eval="10"/>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="view_tree_certificate_line_application_id"/>
+            <field name="act_window_id" ref="act_certificate_line_application_customer_id"/>
+        </record>
+        
+        <!-- ACTION Application of certificates -->
+        <record id="act_certificate_line_application_ref_customer_id" model="ir.actions.act_window">
+            <field name="name">Application of certificates ref. customers</field>
+            <field name="res_model">certificate.line.application</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree</field>
+            <field name="domain">[('type', '=', 'ref_customer')]</field>
+            <field name="context">{'act_ref_customer': True}</field>
+            <field name="search_view_id" ref="view_search_certificate_line_application_id"/>
+        </record>
+        
+        
+        <record id="act_certificate_line_application_ref_customer_id_tree" model="ir.actions.act_window.view">
+            <field name="sequence" eval="10"/>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="view_tree_certificate_line_application_id"/>
+            <field name="act_window_id" ref="act_certificate_line_application_ref_customer_id"/>
+        </record>
+        
+        <!-- ACTION Application of certificates -->
+        <record id="act_certificate_line_application_supplier_id" model="ir.actions.act_window">
+            <field name="name">Application of certificates suppliers</field>
+            <field name="res_model">certificate.line.application</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree</field>
+            <field name="domain">[('type', '=', 'supplier')]</field>
+            <field name="context">{'act_supplier': True}</field>
+            <field name="search_view_id" ref="view_search_certificate_line_application_id"/>
+        </record>
+        
+        
+        <record id="act_certificate_line_application_supplier_id_tree" model="ir.actions.act_window.view">
+            <field name="sequence" eval="10"/>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="view_tree_certificate_line_application_id"/>
+            <field name="act_window_id" ref="act_certificate_line_application_supplier_id"/>
+        </record>
+        
+        <!-- ACTION Application of certificates -->
+        <record id="act_certificate_line_application_ref_supplier_id" model="ir.actions.act_window">
+            <field name="name">Application of certificates ref. suppliers</field>
+            <field name="res_model">certificate.line.application</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree</field>
+            <field name="domain">[('type', '=', 'ref_supplier')]</field>
+            <field name="context">{'act_ref_supplier': True}</field>
+            <field name="search_view_id" ref="view_search_certificate_line_application_id"/>
+        </record>
+        
+        
+        <record id="act_certificate_line_application_ref_supplier_id_tree" model="ir.actions.act_window.view">
+            <field name="sequence" eval="10"/>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="view_tree_certificate_line_application_id"/>
+            <field name="act_window_id" ref="act_certificate_line_application_ref_supplier_id"/>
+        </record>
+        
+        
+        <menuitem name="Application resource" action="act_certificate_line_application_resource_id" id="menu_certificate_line_application_resource_id" sequence="20" parent="menu_quality_certificate_id" />
+        <menuitem name="Application customer" action="act_certificate_line_application_customer_id" id="menu_certificate_line_application_customer_id" sequence="30" parent="menu_quality_certificate_id" />
+        <menuitem name="Application ref customer" action="act_certificate_line_application_ref_customer_id" id="menu_certificate_line_application_ref_customer_id" sequence="40" parent="menu_quality_certificate_id" />
+        <menuitem name="Application supplier" action="act_certificate_line_application_supplier_id" id="menu_certificate_line_application_supplier_id" sequence="50" parent="menu_quality_certificate_id" />
+        <menuitem name="Application ref supplier" action="act_certificate_line_application_ref_supplier_id" id="menu_certificate_line_application_ref_supplier_id" sequence="60" parent="menu_quality_certificate_id" />
+        
+    </data>
+</openerp>

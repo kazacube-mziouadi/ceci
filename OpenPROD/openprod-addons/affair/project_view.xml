@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+		<!-- FORM VIEW project phase -->
+		<record id="view_form_project_phase" model="ir.ui.view">
+			<field name="name">view_form_project_phase</field>
+			<field name="inherit_id" ref="project.view_form_project_phase" />
+			<field name="model">project.phase</field>
+			<field name="arch" type="xml">
+				<xpath expr="//field[@name='next_ids']" position="after">
+					<field name="affair_id" />
+				</xpath>
+				<xpath expr="//separator[@name='separator_action_menu']" position="after">
+					<button class="oe_inline oe_stat_button" type="action" string="Create Purchase" 
+						name="%(purchase.action_create_quick_purchase)d" icon="fa-money"
+						context="{'affair_id':affair_id}" attrs="{'invisible':[('is_model', '=', True)]}" />
+				</xpath>
+			</field>
+		</record>
+
+		<record id="view_tree_project_phase" model="ir.ui.view">
+			<field name="name">view_tree_project_phase</field>
+			<field name="inherit_id" ref="project.view_tree_project_phase" />
+			<field name="model">project.phase</field>
+			<field name="arch" type="xml">
+				<xpath expr="//field[@name='name_level']" position="after">
+					<field name="affair_id" />
+				</xpath>
+			</field>
+		</record>
+
+		<!-- SEARCH VIEW project phase -->
+		<record id='view_search_project_phase' model='ir.ui.view'>
+			<field name="name">project_phase</field>
+			<field name="model">project.phase</field>
+			<field name="inherit_id" ref="project.view_search_project_phase" />
+			<field name="arch" type="xml">
+				<xpath expr="//filter[@name='has_event']" position="after">
+					<filter name="affair" string="Affair" domain="[('affair_id', '!=', False)]" />
+				</xpath>
+				<xpath expr="//field[@name='user_id']" position="after">
+					<field name="affair_id" />
+				</xpath>
+			</field>
+		</record>
+	</data>
+</openerp>

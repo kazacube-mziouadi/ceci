@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+		<!-- ACTION delivery program -->
+		<record id="delivery_program_act" model="ir.actions.act_window">
+			<field name="name">Delivery program</field>
+			<field name="res_model">delivery.program</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+
+		<!-- TREE VIEW delivery program -->
+		<record id="delivery_program_tree" model="ir.ui.view">
+			<field name="name">delivery_program_tree</field>
+			<field name="model">delivery.program</field>
+			<field name="arch" type="xml">
+				<tree string="Delivery program">
+					<field name="name" />
+					<field name="customer_id" />
+					<field name="product_id" />
+					<field name="creation_date" />
+					<field name="is_generate_reservation" />
+					<field name="state" />
+				</tree>
+			</field>
+		</record>
+
+		<!-- FORM VIEW delivery program -->
+		<record id='delivery_program_form' model='ir.ui.view'>
+			<field name="name">delivery_program_form</field>
+			<field name="model">delivery.program</field>
+			<field name="arch" type="xml">
+				<form string="Delivery program" version="8.0">
+					<header>
+                        <button name="wkf_draft" string="Draft" type="object" class="oe_highlight" states="progress,done,obsolet,cancel" />
+                        <button name="wkf_progress" string="In progress" type="object" class="oe_highlight" states="draft,done,obsolet,cancel" />
+                        <button name="wkf_done" string="Done" type="object" class="oe_highlight" states="draft,progress,obsolet,cancel" />
+                        <button name="wkf_obsolet" string="Obsolet" type="object" class="oe_highlight" states="draft,progress,done,cancel" />
+                        <button name="wkf_cancel" string="Cancel" type="object" class="oe_highlight" states="draft,progress,done,obsolet" />
+						<field name="state" widget="statusbar" />
+					</header>
+					<group col="9">
+						<group colspan="8" col="6">
+							<group colspan="2" col="2">
+								<field name="name" />
+								<field name="product_id" />
+							</group>
+							<group colspan="2" col="2">
+								<field name="customer_id" />
+								<field name="is_generate_reservation" />
+							</group>
+							<group colspan="2" col="2">
+								<field name="creation_date" />
+                                <field name="is_forecast" />
+							</group>
+							<group colspan="6" col="2">
+								<notebook>
+									<page string="Program line">
+										<group colspan="4" col="2" string="Program line">
+											<field name="delivery_program_line_ids" nolabel="1" context="{'default_product_id': product_id, 'default_is_generate_reservation': is_generate_reservation}">
+												<tree editable="bottom">
+													<field name="date" />
+													<field name="product_id" />
+													<field name="quantity" />
+                                                    <field name="remaining_quantity" />
+													<field name="unit_id" />
+													<field name="sale_order_line_id" domain="[('product_id', '=', product_id)]" />
+													<button name="%(sale.action_create_quick_sale)d" string="SO" type="action" class="oe_inline" icon="fa-plus-square" />
+													<field name="type" />
+													<field name="stock_date" colors="red:stock_date &lt; 0;" />
+													<field name="closed_mo_ids" widget="many2many_tags" />
+													<button name="create_quick_mo_standard" string="MO" type="object" class="oe_inline oe_stat_button" icon="fa-plus-square" />
+													<field name="forecast_mo_ids" widget="many2many_tags" column_invisible="[('is_forecast', '=', False)]" />
+													<button name="create_quick_mo_forecast" string="MO" type="object" class="oe_inline oe_stat_button" icon="fa-plus-square" column_invisible="[('is_forecast', '=', False)]" />
+                                                    <field name="purchase_order_line_ids" widget="many2many_tags" />
+                                                    <button name="%(purchase.action_create_quick_purchase)d" string="Purchase" type="action" class="oe_inline oe_stat_button" icon="fa-plus-square" />
+													<field name="forecast_quantity" colors="red:forecast_quantity &lt; 0;" column_invisible="[('is_forecast', '=', False)]" />
+													<field name="is_generate_reservation" />
+                                                    <field name="is_forecast" invisible="1" />
+												</tree>
+											</field>
+										</group>
+									</page>
+									<page string="Reservation">
+										<group colspan="4" col="2" string="Reservation">
+											<field name="move_ids" nolabel="1">
+												<tree editable="bottom">
+													<field name="date" />
+													<field name="product_id" />
+													<field name="uom_qty" />
+													<field name="uom_id" />
+													<field name="location_id" />
+													<field name="location_dest_id" />
+													<field name="state" />
+												</tree>
+											</field>
+										</group>
+									</page>
+									<page string="Notes">
+										<group colspan="4" col="2" string="Notes">
+											<field name="notes" nolabel="1" />
+										</group>
+									</page>
+								</notebook>
+							</group>
+						</group>
+						<group class="op_shortcuts" name="action_menu" col="1">
+							<separator string="Actions" colspan="1" name="action_separator" widget="to_upper" />
+							<button name="compute" string="Compute" type="object" class="oe_inline oe_stat_button" icon="fa-calculator" />
+							<button name="add_delivery_program_line" string="Program line" type="object" class="oe_inline oe_stat_button" icon="fa-list" />
+						</group>
+					</group>
+				</form>
+			</field>
+		</record>
+
+		<!-- MENU delivery program -->
+		<menuitem id="delivery_program_menu" name="Delivery program" action="delivery_program_act" parent="sale.menu_sales" sequence="40" />
+
+		<!-- TREE VIEW delivery program line -->
+		<record id='delivery_program_line_tree' model='ir.ui.view'>
+			<field name="name">delivery_program_line_tree</field>
+			<field name="model">delivery.program.line</field>
+			<field name="arch" type="xml">
+				<tree string="Delivery program line">
+					<field name="date" />
+					<field name="product_id" />
+					<field name="quantity" />
+                    <field name="remaining_quantity" />
+					<field name="unit_id" />
+					<field name="sale_order_line_id" />
+					<field name="type" />
+					<field name="stock_date" />
+					<field name="closed_mo_ids" />
+					<field name="forecast_mo_ids" />
+					<field name="forecast_quantity" />
+					<field name="is_generate_reservation" />
+				</tree>
+			</field>
+		</record>
+
+		<!-- SEARCH VIEW EDI Procedure -->
+		<record id='delivery_program_line_search' model='ir.ui.view'>
+			<field name="name">delivery_program_line_search</field>
+			<field name="model">delivery.program.line</field>
+			<field name="arch" type="xml">
+				<search>
+					<field name="delivery_program_id" />
+				</search>
+			</field>
+		</record>
+
+		<!-- ACTION delivery program line -->
+		<record id="delivery_program_line_act" model="ir.actions.act_window">
+			<field name="name">Delivery program line</field>
+			<field name="res_model">delivery.program.line</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+			<field name="search_view_id" ref="delivery_program_line_search" />
+		</record>
+	</data>
+</openerp>

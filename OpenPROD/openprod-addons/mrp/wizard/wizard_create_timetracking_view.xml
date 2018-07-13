@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+	
+		<!-- =============================== -->
+		<!-- 	WIZARD CREATE TIMETRACKING   -->
+		<!-- =============================== -->
+		
+		<record model="ir.ui.view" id="view_form_wizard_create_timetracking_wo">
+			<field name="name">view_form_wizard_create_timetracking_wo</field>
+			<field name="inherit_id" ref="base_openprod.view_form_wizard_create_timetracking" />
+			<field name="model">wizard.create.timetracking</field>
+			<field name="arch" type="xml">
+				<field name="action_id" position="after">
+					<field name="wo_id" attrs="{'invisible': [('target_type', '!=', 'wo')], 'required': [('target_type', '=', 'wo')]}" context="{'domain_scan_id':True}" />
+					<field name="group_wo_id" attrs="{'invisible': [('group_wo_id', '=', False)]}" />
+					<field name="wo_group_ids" widget="many2many_tags" attrs="{'invisible': [('group_wo_id', '=', False)]}" />
+				</field>
+			</field>
+		</record>
+		
+		<record model="ir.actions.act_window" id="act_wizard_create_timetracking_mrp">
+			<field name="name">Time declaration</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="res_model">wizard.create.timetracking</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">form</field>
+			<field name="context">{'default_target_type': 'wo'}</field>
+			<field name="target">new</field>
+		</record>
+		
+	</data>
+</openerp>

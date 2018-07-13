@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+		<record id='view_form_planning_priority_wo_id' model='ir.ui.view'>
+			<field name="name">view_form_planning_priority_wo_id</field>
+			<field name="model">planning.priority.wo</field>
+			<field name="arch" type="xml">
+				<form string="Planning priority wo">
+					<group colspan="4" col="4">
+						<field name="date" />
+						<field name="type_priority" />
+						<field name="wo_ids" colspan="4" nolabel="1" />
+					</group>
+					<footer>
+						<button name="button_plannification_priority_wo" string="OK" type="object" class="oe_highlight" />
+						or
+						<button string="Cancel" class="oe_link" special="cancel" />
+					</footer>
+				</form>
+			</field>
+		</record>
+
+
+		<record id="act_planning_priority_wo_id" model="ir.actions.act_window">
+			<field name="name">Planning priority wo</field>
+			<field name="res_model">planning.priority.wo</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">form</field>
+			<field name="domain">[]</field>
+			<field name="target">new</field>
+			<field name="context">{}</field>
+		</record>
+		
+		<act_window 
+                name="Planning priority wo" 
+                res_model="planning.priority.wo" 
+                src_model="mrp.workorder" 
+                view_mode="form" 
+                target="new" 
+                key2="client_action_multi" 
+                id="action_planning_priority_wo_id"
+                context="{}" />
+
+		
+		
+        <record id='view_form_wizard_priority_wo_id' model='ir.ui.view'>
+            <field name="name">view_form_wizard_priority_wo_id</field>
+            <field name="model">wizard.priority.wo</field>
+            <field name="arch" type="xml">
+                <form string="Priority wo">
+                    <group colspan="4" col="4">
+                        <field name="planning_priority" colspan="2" />
+                        <field name="wo_ids" colspan="4" nolabel="1" />
+                    </group>
+                    <footer>
+                        <button name="button_validate" string="OK" type="object" class="oe_highlight" />
+                        or
+                        <button string="Cancel" class="oe_link" special="cancel" />
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+
+        <record id="act_wizard_priority_wo_id" model="ir.actions.act_window">
+            <field name="name">Priority wo</field>
+            <field name="res_model">wizard.priority.wo</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="domain">[]</field>
+            <field name="target">new</field>
+            <field name="context">{}</field>
+        </record>
+		
+        
+        <act_window 
+                name="Priority wo" 
+                res_model="wizard.priority.wo" 
+                src_model="mrp.workorder" 
+                view_mode="form" 
+                target="new" 
+                key2="client_action_multi" 
+                id="action_wizard_priority_wo_id"
+                context="{}" />
+
+
+	</data>
+</openerp>

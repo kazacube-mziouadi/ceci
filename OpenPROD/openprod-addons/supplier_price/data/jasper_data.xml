@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data noupdate="1">
+        <record id="supplier_price_jasper_data" model="jasper.document">
+            <field name="name">Supplier price modification</field>
+            <field name="model_id" ref="model_modif_price_productpartnerinfo"/>
+            <field name="report_unit">management_price_productpartnerinfo</field>
+            <field name="jasper_file">management_price_productpartnerinfo</field>
+            <field name="mode">sql</field>
+            <field name="only_one" eval="1"/>
+            <field name="duplicate">'1'</field>
+            <field name="enabled" eval="1"/>
+        </record>
+    </data>
+</openerp>

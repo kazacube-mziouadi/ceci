@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+		<!-- FORM VIEW Resource -->
+		<record id='view_form_mrp_manufacturingorder' model='ir.ui.view'>
+			<field name="name">view_form_mrp_manufacturingorder</field>
+			<field name="model">mrp.manufacturingorder</field>
+			<field name="inherit_id" ref="mrp.view_form_mrp_manufacturingorder" />
+			<field name="arch" type="xml">
+				<xpath expr="//separator[@name='separator_modif_menu']" position="before">
+					<field name="task_id" invisible="1" />
+					<button name="%(act_create_task_wizard)d" string="Create task" class="oe_inline oe_stat_button" icon="fa-calendar-plus-o"
+						attrs="{'invisible':[('task_id', '!=', False)]}" context="{'default_mo_id':id, 'default_propagate':True}" type="action" />
+				</xpath>
+			</field>
+		</record>
+	</data>
+</openerp>

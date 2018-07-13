@@ -1,0 +1,12 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_edi_transformation_file,edi.transformation.file,model_edi_transformation_file,base.group_user,1,1,1,1
+access_edi_transformation_get_file,edi.transformation.get.file,model_edi_transformation_get_file,base.group_user,1,1,1,1
+access_edi_transformation_send_file,edi.transformation.send.file,model_edi_transformation_send_file,base.group_user,1,1,1,1
+access_edi_transformation_sql_authorization,edi.transformation.sql.authorization,model_edi_transformation_sql_authorization,base.group_user,1,1,1,1
+access_edi_transformation_sql_authorization_line,edi.transformation.sql.authorization.line,model_edi_transformation_sql_authorization_line,base.group_user,1,1,1,1
+access_edi_transformation_processing_category,edi.transformation.processing.category,model_edi_transformation_processing_category,base.group_user,1,1,1,1
+access_edi_transformation_processing,edi.transformation.processing,model_edi_transformation_processing,base.group_user,1,1,1,1
+access_edi_transformation_procedure,edi.transformation.procedure,model_edi_transformation_procedure,base.group_user,1,1,1,1
+access_edi_transformation_procedure_method_param,edi.transformation.procedure.method.param,model_edi_transformation_procedure_method_param,base.group_user,1,1,1,1
+access_edi_transformation_history,edi.transformation.history,model_edi_transformation_history,base.group_user,1,1,1,1
+access_edi_transformation_users,edi.transformation.users,model_edi_transformation_users,base.group_user,1,1,1,1

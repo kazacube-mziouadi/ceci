@@ -1,0 +1,666 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+		<menuitem name="EDI transformation" id="edi_transformation_menu" groups="group_menu_edi_openprod" parent="base.menu_administration" sequence="10"/>
+		<menuitem name="Transformation" id="edi_transformation_menu_menu" parent="edi_transformation_menu" sequence="10" />
+		<menuitem name="Configuration" id="edi_transformation_menu_config" parent="edi_transformation_menu" sequence="20" />
+		<!-- ========== -->
+		<!-- PROCESSING -->
+		<!-- ========== -->
+		<!-- FORM VIEW EDI processing -->
+		<record id='view_form_edi_transformation_processing' model='ir.ui.view'>
+			<field name="name">view_form_edi_transformation_processing</field>
+			<field name="model">edi.transformation.processing</field>
+			<field name="arch" type="xml">
+				<form string="EDI Processing">
+					<group colspan="4" col="9">
+						<group colspan="8" col="8">
+							<group colspan="8" col="4">
+								<group colspan="2" col="2">
+									<field name="name" />
+									<field name="category_id" />
+									<field name="mail_error" />
+								</group>
+								<group colspan="2" col="2">
+									<field name="sequence" />
+									<field name="in_progress" />
+									<field name="email_template_id" attrs="{'invisible': [('mail_error', '!=', True)]}" />
+								</group>
+							</group>
+							<notebook colspan="8">
+								<page string="Procedures">
+									<group colspan="4" col="4" string="Procedures">
+										<field name="procedure_ids" nolabel="1" colspan="4"
+											context="{'noview_precessing': True}">
+											<tree string="Procedures" colors="grey:state=='cancel';blue:state=='draft';">
+												<field name="sequence" />
+												<field name="name" />
+												<field name="check" />
+												<field name="last_start_date" />
+												<field name="last_date" />
+												<field name="state" />
+											</tree>
+										</field>
+									</group>
+								</page>
+								<page string="Crons">
+									<group colspan="4" col="4" string="Crons">
+										<field name="cron_ids" nolabel="1" colspan="2"
+											context="{'search_default_active': 1}" />
+									</group>
+								</page>
+							</notebook>
+						</group>
+						<group colspan="1" col="1" class="op_shortcuts">
+							<separator colspan="1" string="Actions" name="separator_actions_menu" />
+							<button name="goto_procedure" string="Go to procedure list view"
+								type="object" icon="fa-list-ul" colspan="4"
+								class="oe_inline oe_stat_button" />
+							<button name="run_all" string="Execute all" type="object"
+								    icon="fa-cogs" colspan="4" class="oe_inline oe_stat_button" />
+						</group>
+					</group>
+				</form>
+			</field>
+		</record>
+
+		<!-- TREE VIEW EDI processing -->
+		<record id='view_tree_edi_transformation_processing' model='ir.ui.view'>
+			<field name="name">view_tree_edi_transformation_processing</field>
+			<field name="model">edi.transformation.processing</field>
+			<field name="arch" type="xml">
+				<tree string="EDI Processings">
+					<field name="sequence" />
+					<field name="name" />
+					<field name="category_id" colspan="8" />
+					<field name="in_progress" />
+				</tree>
+			</field>
+		</record>
+
+		<!-- SEARCH VIEW EDI processing -->
+		<record id='view_search_edi_transformation_processing' model='ir.ui.view'>
+			<field name="name">view_search_edi_transformation_processing</field>
+			<field name="model">edi.transformation.processing</field>
+			<field name="arch" type="xml">
+				<search>
+					<field name="name" />
+					<field name="sequence" />
+					<field name="category_id" />
+					<newline />
+					<group string="Group by ..." expand="0">
+						<filter string="Category" icon="terp-stock_symbol-selection"
+							domain="[]" name="group_by_category_id" context="{'group_by': 'category_id'}" />
+					</group>
+				</search>
+			</field>
+		</record>
+
+		<!-- ACTION EDI processing -->
+		<record id="act_edi_transformation_processing" model="ir.actions.act_window">
+			<field name="name">EDI Processing</field>
+			<field name="res_model">edi.transformation.processing</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+			<field name="search_view_id" ref="view_search_edi_transformation_processing" />
+		</record>
+		<menuitem name="Processing" action="act_edi_transformation_processing"
+			id="menu_edi_transformation_processing" parent="edi_transformation_menu_menu" />
+
+
+		<!-- ========= -->
+		<!-- PROCEDURE -->
+		<!-- ========= -->
+		<!-- FORM VIEW EDI Procedure -->
+		<record id='view_form_edi_transformation_procedure' model='ir.ui.view'>
+			<field name="name">view_form_edi_transformation_procedure</field>
+			<field name="model">edi.transformation.procedure</field>
+			<field name="arch" type="xml">
+				<form string="EDI Procedure">
+					<header>
+						<button name="wkf_draft" string="Draft" type="object"
+							class="oe_highlight" states="active,cancel" />
+						<button name="wkf_active" string="Active" type="object"
+							class="oe_highlight" states="draft,cancel" />
+						<button name="wkf_cancel" string="Cancel" type="object"
+							class="openprod_cancel_button" states="draft,active" />
+						<field name="state" widget="statusbar" statusbar_visible="draft,active" />
+					</header>
+					<group colspan="4" col="9">
+						<group colspan="8" col="8">
+							<group colspan="8" col="4">
+								<field name="name" />
+								<field name="processing_id" invisible="context.get('noview_precessing', False)" />
+								<field name="sequence" />
+								<field name="action_type" />
+							</group>
+							<notebook colspan="8">
+								<page string="Action"
+									attrs="{'invisible': [('action_type', '!=', 'sql')]}">
+									<group colspan="4" col="4" string="Action">
+										<separator string="Legend" colspan="6" />
+										<label string="IDS from domain : %%(domain)s" colspan="2" />
+										<field name="action_sql_formatting" />
+										<field name="action_sql" nolabel="1" colspan="4" />
+										<field name="action_sql_result" nolabel="1" colspan="4" />
+									</group>
+								</page>
+								<page string="Domain"
+									attrs="{'invisible': [('action_type', '!=', 'sql')]}">
+									<group colspan="4" col="4" string="Domain">
+										<field name="domain_sql" nolabel="1" colspan="4" />
+										<field name="domain_sql_result" nolabel="1" colspan="4" />
+									</group>
+								</page>
+								<page string="Verification"
+									attrs="{'invisible': [('action_type', '!=', 'sql')]}">
+									<group colspan="4" col="4" string="Verification">
+										<separator string="Legend" colspan="4" />
+										<label string="IDS from domain : %%(domain)s" colspan="2" />
+										<field name="verification_sql_formatting" />
+										<field name="verification_sql" nolabel="1" colspan="4" />
+										<field name="verification_sql_result" nolabel="1"
+											colspan="4" />
+									</group>
+								</page>
+								<page string="Method"
+									attrs="{'invisible': [('action_type', '!=', 'method')]}">
+									<group colspan="4" col="4" string="Method and parameters">
+										<field name="method" />
+										<field name="param_ids" nolabel="1" colspan="4">
+											<tree editable='bottom'>
+												<field name="name" invisible="1" />
+												<field name="label" readonly="1" />
+												<field name="type" invisible="1" />
+												<field name="m2o_model" invisible="1" />
+												<field name="type_label" readonly="1" />
+												<field name="value" attrs="{'required': [('required', '=', True)]}" />
+												<button name="choose_wizard" string="Choose a record"
+													type="object" icon="terp-stock_zoom"
+													attrs="{'invisible': [('type', '!=', 'many2one')]}" />
+												<field name="note" />
+												<field name="help" readonly="1" />
+												<field name="required" invisible="1" />
+											</tree>
+										</field>
+								    </group>
+									<group colspan="4" col="4" string="Users" attrs="{'invisible': [('is_edi_users', '!=', True)]}" >
+                                        <group colspan="2" col="2" >
+											<field name="is_edi_users" invisible="1" />
+											<field name="is_doc_by_user" attrs="{'invisible': [('method', '!=', ('send_files_mail'))]}" />
+									    </group>
+                                        <group colspan="2" col="2" />
+										<field name="edi_user_ids" nolabel="1" colspan="4" attrs="{'invisible': [('is_edi_users', '!=', True)]}" >
+										   <tree editable='bottom'>
+	                                            <field name="user_id" />
+	                                            <field name="start_date" />
+	                                            <field name="end_date" />
+	                                            <field name="mail" />
+	                                        </tree>
+	                                    </field>
+	                                </group>
+								</page>
+								<page string="Administration">
+									<group colspan="4" col="6">
+										<group colspan="6" col="4" string="Administration">
+											<field name="last_start_date" />
+											<field name="last_date" />
+											<field name="check" colspan="4" />
+											<field name="log" colspan="4" nolabel="1" />
+										</group>
+									</group>
+								</page>
+							</notebook>
+						</group>
+						<group colspan="1" col="1" class="op_shortcuts">
+							<separator colspan="1" string="Actions" name="separator_actions_menu" />
+							<button name="run_all" string="Execute all" type="object"
+								    icon="fa-cogs" colspan="4" class="oe_inline oe_stat_button" />
+							<button name="run_action" string="Execute action" type="object" attrs="{'invisible': [('action_type', '!=', 'sql')]}"
+								    icon="fa-check-circle" colspan="4" class="oe_inline oe_stat_button" />
+							<button name="run_domain" string="Execute domain" type="object" attrs="{'invisible': [('action_type', '!=', 'sql')]}"
+								    icon="fa-search" colspan="4" class="oe_inline oe_stat_button" />
+							<button name="run_verification" string="Execute verification" attrs="{'invisible': [('action_type', '!=', 'sql')]}"
+								    type="object" icon="fa-check" colspan="4" class="oe_inline oe_stat_button" />
+						</group>
+					</group>
+				</form>
+			</field>
+		</record>
+
+		<!-- TREE VIEW EDI Procedure -->
+		<record id='view_tree_edi_transformation_procedure' model='ir.ui.view'>
+			<field name="name">view_tree_edi_transformation_procedure</field>
+			<field name="model">edi.transformation.procedure</field>
+			<field name="arch" type="xml">
+				<tree string="EDI Procedures" colors="grey:state=='cancel';blue:state=='draft';">
+					<field name="name" />
+					<field name="processing_id" />
+					<field name="last_start_date" />
+					<field name="last_date" />
+					<field name="state" />
+				</tree>
+			</field>
+		</record>
+
+		<!-- SEARCH VIEW EDI Procedure -->
+		<record id='view_search_edi_transformation_procedure' model='ir.ui.view'>
+			<field name="name">view_search_edi_transformation_procedure</field>
+			<field name="model">edi.transformation.procedure</field>
+			<field name="arch" type="xml">
+				<search>
+					<field name="name" />
+					<field name="processing_id" />
+					<field name="state" />
+				</search>
+			</field>
+		</record>
+
+		<!-- ACTION EDI Procedure -->
+		<record id="act_edi_transformation_procedure" model="ir.actions.act_window">
+			<field name="name">EDI Procedure</field>
+			<field name="res_model">edi.transformation.procedure</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+			<field name="search_view_id" ref="view_search_edi_transformation_procedure" />
+		</record>
+		<menuitem name="Procedure" action="act_edi_transformation_procedure"
+			id="menu_edi_transformation_procedure" parent="edi_transformation_menu_menu" />
+
+
+
+		<!-- ================= -->
+		<!-- SQL Authorization -->
+		<!-- ================= -->
+		<!-- FORM VIEW EDI SQL authorization -->
+		<record id='view_form_edi_transformation_sql_authorization'
+			model='ir.ui.view'>
+			<field name="name">view_form_edi_transformation_sql_authorization
+			</field>
+			<field name="model">edi.transformation.sql.authorization</field>
+			<field name="arch" type="xml">
+				<form string="EDI SQL authorization">
+					<group colspan="4" col="4">
+						<field name="name" />
+						<field name="is_active" />
+					</group>
+					<group colspan="4" col="4" string="Authorization">
+						<field name="type" colspan="4" />
+						<field name="table_ids" nolabel="1" colspan="4">
+							<tree string="Tables" editable="bottom">
+								<field name="name" />
+							</tree>
+						</field>
+					</group>
+					<group colspan="4" col="4" string="Application">
+						<separator colspan="4" string="Processings" />
+						<field name="processing_ids" nolabel="1" colspan="4" />
+					</group>
+				</form>
+			</field>
+		</record>
+
+		<!-- TREE VIEW EDI SQL authorization -->
+		<record id='view_tree_edi_transformation_sql_authorization'
+			model='ir.ui.view'>
+			<field name="name">view_tree_edi_transformation_sql_authorization
+			</field>
+			<field name="model">edi.transformation.sql.authorization</field>
+			<field name="arch" type="xml">
+				<tree string="EDI SQL authorizations" colors="grey:is_active==False">
+					<field name="name" />
+					<field name="is_active" />
+					<field name="type" />
+				</tree>
+			</field>
+		</record>
+
+		<!-- SEARCH VIEW EDI SQL authorization -->
+		<record id='view_search_edi_transformation_sql_authorization'
+			model='ir.ui.view'>
+			<field name="name">view_search_edi_transformation_sql_authorization
+			</field>
+			<field name="model">edi.transformation.sql.authorization</field>
+			<field name="arch" type="xml">
+				<search>
+					<field name="name" />
+					<field name="is_active" />
+					<field name="type" />
+				</search>
+			</field>
+		</record>
+
+		<!-- ACTION EDI SQL authorization -->
+		<record id="act_edi_transformation_sql_authorization" model="ir.actions.act_window">
+			<field name="name">EDI SQL authorization</field>
+			<field name="res_model">edi.transformation.sql.authorization</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+			<field name="search_view_id" ref="view_search_edi_transformation_sql_authorization" />
+		</record>
+		<menuitem name="Authorization" action="act_edi_transformation_sql_authorization"
+			id="menu_edi_transformation_sql_authorization" parent="edi_transformation_menu_config" />
+
+
+		<!-- ======== -->
+		<!-- Get file -->
+		<!-- ======== -->
+		<record model="ir.ui.view" id="edi_transformation_get_file_form">
+			<field name="name">edi.transformation.get.file.form</field>
+			<field name="model">edi.transformation.get.file</field>
+			<field name="arch" type="xml">
+				<form string="Get file">
+					<header>
+						<field name="state" widget="statusbar" statusbar_visible="draft,done"
+							statusbar_colors='{"error":"red"}' />
+					</header>
+					<group colspan="4" col="9">
+						<group colspan="8" col="8">
+							<group colspan="8" col="8">
+								<field name="name" colspan="4" />
+								<field name="is_active" />
+								<field name="in_progress" />
+							</group>
+							<notebook colspan="8">
+								<page string="Informations">
+									<group colspan="4" string="Configuration">
+										<separator colspan="4" string="Login" />
+										<field name="ftp_host" />
+										<field name="ftp_user" />
+										<field name="ftp_password" password="True" />
+										<separator colspan="4" string="Directories" />
+										<field name="ftp_directory" />
+										<field name="ftp_archive" />
+										<separator colspan="4" string="File" />
+										<field name="file_filter" />
+										<separator colspan="4" string="Processing" />
+										<field name="automatic_processing" />
+										<field name="processing_id"
+											attrs="{'invisible': [('automatic_processing', '!=', True)]}" />
+										<separator colspan="4" string="Errors" />
+										<field name="ignore_file_errors" />
+										<field name="email_template_id"
+											attrs="{'invisible': [('ignore_file_errors', '=', True)]}" />
+									</group>
+									<group colspan="4" string="Execution">
+										<field name="last_date" colspan="2" />
+										<field name="log" colspan="4" nolabel="1" />
+									</group>
+								</page>
+								<page string="Crons">
+									<group colspan="4" string="Crons">
+										<field name="cron_ids" colspan="4" nolabel="1" />
+									</group>
+								</page>
+							</notebook>
+						</group>
+						<group colspan="1" col="1" class="op_shortcuts">
+							<separator colspan="1" string="Actions" name="separator_actions_menu" />
+							<button name="execute" string="Execute" type="object"
+								icon="fa-cogs" colspan="4" class="oe_inline oe_stat_button" />
+						</group>
+					</group>
+				</form>
+			</field>
+		</record>
+
+		<record model="ir.ui.view" id="edi_transformation_get_file_tree">
+			<field name="name">edi.transformation.get.file.tree</field>
+			<field name="model">edi.transformation.get.file</field>
+			<field name="arch" type="xml">
+				<tree string="Get file list">
+					<field name="name" />
+					<field name="ftp_host" />
+					<field name="ftp_user" />
+					<field name="ftp_password" />
+					<field name="ftp_directory" />
+					<field name="is_active" />
+					<field name="automatic_processing" />
+					<field name="last_date" />
+					<field name="in_progress" />
+				</tree>
+			</field>
+		</record>
+
+		<record id="edi_transformation_get_file_search" model="ir.ui.view">
+			<field name="name">edi.transformation.get.file.search</field>
+			<field name="model">edi.transformation.get.file</field>
+			<field name="arch" type="xml">
+				<search>
+					<field name="name" />
+					<field name="is_active" />
+				</search>
+			</field>
+		</record>
+
+		<record id="edi_transformation_get_file_action" model="ir.actions.act_window">
+			<field name="name">Get file</field>
+			<field name="res_model">edi.transformation.get.file</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+
+		<menuitem name="Get file" action="edi_transformation_get_file_action"
+			parent="edi_transformation_menu_menu" id="edi_transformation_get_file_menu"
+			sequence="10" />
+
+
+		<!-- ========= -->
+		<!-- Send file -->
+		<!-- ========= -->
+		<record model="ir.ui.view" id="edi_transformation_send_file_form">
+			<field name="name">edi.transformation.send.file.form</field>
+			<field name="model">edi.transformation.send.file</field>
+			<field name="arch" type="xml">
+				<form string="Send file">
+					<header>
+						<field name="state" widget="statusbar" statusbar_visible="draft,done"
+							statusbar_colors='{"error":"red"}' />
+					</header>
+					<group colspan="4" col="4">
+						<field name="name" />
+						<field name="is_active" />
+					</group>
+					<notebook colspan="4">
+						<page string="Informations">
+							<group colspan="4" string="Configuration">
+								<separator colspan="4" string="Login" />
+								<field name="ftp_host" />
+								<field name="ftp_user" />
+								<field name="ftp_password" password="True" />
+								<separator colspan="4" string="Directories" />
+								<field name="ftp_directory" />
+							</group>
+							<group colspan="4" string="Execution" col="2">
+								<field name="last_date" colspan="2" />
+								<field name="log" nolabel="1" colspan="2" />
+							</group>
+						</page>
+					</notebook>
+				</form>
+			</field>
+		</record>
+
+		<record model="ir.ui.view" id="edi_transformation_send_file_tree">
+			<field name="name">edi.transformation.send.file.tree</field>
+			<field name="model">edi.transformation.send.file</field>
+			<field name="arch" type="xml">
+				<tree string="Send file list">
+					<field name="name" />
+					<field name="ftp_host" />
+					<field name="ftp_user" />
+					<field name="ftp_password" />
+					<field name="ftp_directory" />
+					<field name="is_active" />
+					<field name="last_date" />
+				</tree>
+			</field>
+		</record>
+
+		<record id="edi_transformation_send_file_search" model="ir.ui.view">
+			<field name="name">edi.transformation.send.file.search</field>
+			<field name="model">edi.transformation.send.file</field>
+			<field name="arch" type="xml">
+				<search>
+					<field name="name" />
+					<field name="is_active" />
+				</search>
+			</field>
+		</record>
+
+		<record id="edi_transformation_send_file_action" model="ir.actions.act_window">
+			<field name="name">Send file</field>
+			<field name="res_model">edi.transformation.send.file</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+
+		<menuitem name="Send file" action="edi_transformation_send_file_action"
+			parent="edi_transformation_menu_menu" id="edi_transformation_send_file_menu"
+			sequence="10" />
+
+		<!-- ======== -->
+		<!-- EDI file -->
+		<!-- ======== -->
+		<record model="ir.ui.view" id="edi_transformation_file_form">
+			<field name="name">edi.transformation.file.form</field>
+			<field name="model">edi.transformation.file</field>
+			<field name="arch" type="xml">
+				<form string="EDI files">
+					<header>
+						<field name="state" widget="statusbar" statusbar_visible="draft,done"
+							statusbar_colors='{"error":"red"}' />
+					</header>
+					<group colspan="4" col="9">
+						<group colspan="8" col="8">
+							<group colspan="8" col="4">
+								<field name="name" />
+								<field name="src" />
+								<field name="type" />
+								<field name="edi_file" filename="edi_file_fname" />
+								<field name="edi_file_fname" invisible="1" />
+							</group>
+							<group colspan="8" col="4" string="Dates">
+								<field name="file_date" />
+								<field name="upload_date" />
+							</group>
+							<group colspan="8" col="4" string="Execution">
+								<field name="processing_id" />
+								<field name="last_date" />
+								<field name="log" colspan="4" nolabel="1" />
+							</group>
+						</group>
+						<group colspan="1" col="1" class="op_shortcuts">
+							<separator colspan="1" string="Actions" name="separator_actions_menu" />
+							<button name="execute" string="Execute" type="object"
+								icon="fa-cogs" colspan="4" class="oe_inline oe_stat_button" />
+						</group>
+					</group>
+				</form>
+			</field>
+		</record>
+
+		<record model="ir.ui.view" id="edi_transformation_file_tree">
+			<field name="name">edi.transformation.file.tree</field>
+			<field name="model">edi.transformation.file</field>
+			<field name="arch" type="xml">
+				<tree string="EDI files">
+					<field name="name" />
+					<field name="src" />
+					<field name="type" />
+					<field name="processing_id" />
+					<field name="file_date" />
+					<field name="upload_date" />
+					<field name="last_date" />
+					<field name="state" />
+					<button type="object" name="execute" string="Execute" icon="fa-cogs" />
+				</tree>
+			</field>
+		</record>
+
+		<record id="edi_transformation_file_search" model="ir.ui.view">
+			<field name="name">edi.transformation.file.search</field>
+			<field name="model">edi.transformation.file</field>
+			<field name="arch" type="xml">
+				<search>
+					<field name="name" />
+					<field name="type" />
+					<field name="state" />
+				</search>
+			</field>
+		</record>
+
+		<record id="edi_transformation_file_action" model="ir.actions.act_window">
+			<field name="name">EDI file</field>
+			<field name="res_model">edi.transformation.file</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+
+		<menuitem name="EDI file" action="edi_transformation_file_action"
+			parent="edi_transformation_menu_menu" id="edi_transformation_file_menu"
+			sequence="10" />
+
+
+		<!-- =========== -->
+		<!-- EDI HISTORY -->
+		<!-- =========== -->
+		<record model="ir.ui.view" id="edi_transformation_history_form">
+			<field name="name">edi.transformation.history.form</field>
+			<field name="model">edi.transformation.history</field>
+			<field name="arch" type="xml">
+				<form string="EDI history">
+					<group colspan="4" col="4">
+						<field name="processing_id" />
+						<field name="object_model" />
+						<field name="object_id" />
+						<field name="start_date" />
+						<field name="end_date" />
+						<field name="check" />
+						<field name="file_ids" nolabel="1" colspan="4" />
+					</group>
+				</form>
+			</field>
+		</record>
+
+		<record model="ir.ui.view" id="edi_transformation_history_tree">
+			<field name="name">edi.transformation.history.tree</field>
+			<field name="model">edi.transformation.history</field>
+			<field name="arch" type="xml">
+				<tree string="EDI histories">
+					<field name="processing_id" />
+					<field name="object_model" />
+					<field name="object_id" />
+					<field name="start_date" />
+					<field name="end_date" />
+					<field name="check" />
+				</tree>
+			</field>
+		</record>
+
+		<record id="edi_transformation_history_search" model="ir.ui.view">
+			<field name="name">edi.transformation.history.search</field>
+			<field name="model">edi.transformation.history</field>
+			<field name="arch" type="xml">
+				<search>
+					<field name="processing_id" />
+					<field name="object_model" />
+					<field name="object_id" />
+					<field name="check" />
+				</search>
+			</field>
+		</record>
+
+		<record id="edi_transformation_history_action" model="ir.actions.act_window">
+			<field name="name">EDI history</field>
+			<field name="res_model">edi.transformation.history</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+
+		<menuitem name="EDI history" action="edi_transformation_history_action"
+			parent="edi_transformation_menu_menu" id="edi_transformation_history_menu"
+			sequence="100" />
+
+	</data>
+</openerp>

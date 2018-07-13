@@ -1,0 +1,43 @@
+# -*- coding: utf-8 -*-
+{
+    'name' : 'Sale',
+    'version' : '1.3',
+    'author' : 'Objectif PI',
+    'license': 'Open-prod license',
+    'category' : 'Sale',
+    'description' : """ Sales management """,
+    'website': 'http://objectif-pi.com',
+    'images' : [],
+    'depends' : [
+                'stock',
+                ],
+                
+    'data': [
+             'security/sale_security.xml',
+             'security/ir.model.access.csv',
+             'data/sale_order_sequence.xml',
+             'data/sale_mail_template.xml',
+             'data/sale_order_workflow.xml',
+             'data/sale_ir_cron.xml',
+             'wizard/change_date_view.xml',
+             'wizard/create_quick_sale_view.xml',
+             'wizard/change_sale_wizard_view.xml',
+             'wizard/change_product_uom_view.xml',
+             'wizard/anticipated_invoice_view.xml',
+             'wizard/generate_called_order_view.xml',
+             'sale_view.xml',
+             'product_view.xml',
+             'stock_view.xml',
+             'res_partner_view.xml',
+             'account_invoice_view.xml',
+             'sale_order_analysis_view.xml',
+             'calendar_event_view.xml',
+             'res_company_view.xml',
+             ],
+             
+    'qweb' : [],
+    'demo': [],
+    'test': [],
+    'installable': True,
+    'auto_install': False,
+}

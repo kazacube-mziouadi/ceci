@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+		<!-- FORM VIEW mrp_planning_mo_at_earlier -->
+		<record id='view_form_planning_aligned_mo_id' model='ir.ui.view'>
+			<field name="name">view_form_planning_aligned_mo_id</field>
+			<field name="model">planning.aligned.mo</field>
+			<field name="arch" type="xml">
+				<form string="Planning aligned MO">
+					<group colspan="4" col="4">
+						<field name="date" />
+						<field name="type_alignment" />
+						<field name="is_sublevel" />
+					</group>
+					<footer>
+						<button name="button_plannification_mo_aligned" string="OK" type="object" class="oe_highlight" />
+						or
+						<button string="Cancel" class="oe_link" special="cancel" />
+					</footer>
+				</form>
+			</field>
+		</record>
+
+
+		<!-- ACTION mrp_planning_mo_at_earlier -->
+		<record id="act_planning_aligned_mo_id" model="ir.actions.act_window">
+			<field name="name">Planning aligned MO</field>
+			<field name="res_model">planning.aligned.mo</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">form</field>
+			<field name="domain">[]</field>
+			<field name="target">new</field>
+			<field name="context">{}</field>
+		</record>
+
+
+
+	</data>
+</openerp>

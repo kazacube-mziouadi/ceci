@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+	
+	    <record id='view_form_stock_warehouse_sav' model='ir.ui.view'>
+            <field name="name">view_form_stock_warehouse_sav</field>
+            <field name="model">stock.warehouse</field>
+            <field name="inherit_id" ref="stock_location.view_form_stock_warehouse" />
+            <field name="priority" eval="2000" />
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='quarantine_location_id']" position="after">
+                    <field name="location_sav_id" domain="[('usage', '!=', 'view')]" context="{'default_warehouse_id': id}" />
+                </xpath>
+            </field>
+        </record>
+        
+        
+	</data>
+</openerp>

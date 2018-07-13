@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+		<record id="view_form_wizard_substitution_product" model="ir.ui.view">
+			<field name="name">view_form_wizard_substitution_product</field>
+			<field name="model">wizard.substitution.product</field>
+			<field name="type">form</field>
+			<field name="arch" type="xml">
+				<form string="Substitution product" version="8.0">
+					<group colspan="4" col="4">
+					   <field name="product_id" domain="[('domain_substituion_product', 'in', (component_id, move_product_id))]" />
+					   <field name="partner_id" attrs="{'invisible': [('partner_invisible', '=', True)], 'required': [('partner_invisible', '=', False)]}" domain="product_id and[('supplierinfo_product_search', '=', product_id)] or [('id', '=', False)]" />
+					</group>
+					<field name="move_id" invisible="1" />
+					<field name="component_id" invisible="1" />
+					<field name="move_product_id" invisible="1" />
+					<field name="partner_invisible" invisible="1" />
+					<footer>
+						<button name="action_validation" string="OK" type="object" class="oe_highlight" />
+						or
+						<button string="Cancel" class="oe_link" special="cancel" />
+					</footer>
+				</form>
+			</field>
+		</record>
+	     
+	     <record model="ir.actions.act_window" id="act_wizard_substitution_product">
+			<field name="name">Substitution product</field>
+			<field name="res_model">wizard.substitution.product</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">form</field>
+			<field name="target">new</field>
+		</record>
+	</data>
+</openerp>

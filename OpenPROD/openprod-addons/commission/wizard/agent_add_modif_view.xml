@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+		<record id="view_form_add_agent_in_partner" model="ir.ui.view">
+			<field name="name">view_form_add_agent_in_partner</field>
+			<field name="model">add.agent.in.partner</field>
+			<field name="arch" type="xml">
+				<form string="Addition Agent in Partner">
+					<group colspan="4" col="4">
+						<field name="agent_id"/>
+						<field name="commission_id"/>
+					</group>
+					<group colspan="4" col="4">
+						<field name="is_propagate" />
+						<field name="is_propagate_draft" />
+					</group>
+					<field name="partner_ids" nolabel="1" colspan="4"/>
+					<footer>
+                        <button name="validate" string="OK" type="object" class="oe_highlight" />
+                        or
+                        <button string="Cancel" class="oe_link" special="cancel" />
+                    </footer>
+				</form>
+			</field>
+		</record>
+		
+		
+		<act_window 
+			name="Addition Agent in Partner"
+            res_model="add.agent.in.partner"
+            src_model="res.partner"
+            view_mode="form"
+            target="new"
+            key2="client_action_multi"
+            id="act_add_agent_in_partner"/>
+        
+        
+        <record model="ir.actions.act_window" id="action_add_agent_in_partner">
+            <field name="name">Addition Agent in Partner</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">add.agent.in.partner</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+            
+            
+        <record id="view_form_modif_agent_in_partner" model="ir.ui.view">
+			<field name="name">view_form_modif_agent_in_partner</field>
+			<field name="model">modif.agent.in.partner</field>
+			<field name="arch" type="xml">
+				<form string="Modificate Agent in Partner">
+					<group colspan="4" col="6">
+						<field name="agent_id"/>
+						<field name="new_agent_id"/>
+						<field name="commission_id"/>
+						<field name="is_propagate" />
+						<field name="is_propagate_draft" />
+					</group>
+					<footer>
+                        <button name="validate" string="OK" type="object" class="oe_highlight" />
+                        or
+                        <button string="Cancel" class="oe_link" special="cancel" />
+                    </footer>
+				</form>
+			</field>
+		</record>
+		
+		<act_window 
+			name="Modificate Agent in Partner"
+            res_model="modif.agent.in.partner"
+            src_model="commission.sale"
+            view_mode="form"
+            target="new"
+            key2="client_action_multi"
+            id="act_modif_agent_in_partner"/>
+        
+        
+        <record model="ir.actions.act_window" id="action_modif_agent_in_partner">
+            <field name="name">Modificate Agent in Partner</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">modif.agent.in.partner</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+        
+        
+	</data>
+</openerp>

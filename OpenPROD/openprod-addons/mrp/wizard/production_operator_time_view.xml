@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<openerp>
+	<data>
+		<record id="production_operator_time_form" model="ir.ui.view">
+			<field name="name">production.operator.time.form</field>
+			<field name="model">production.operator.time</field>
+			<field name="type">form</field>
+			<field name="arch" type="xml">
+				<form string="Impression Time Operator Production">
+					<group colspan="4" col="4">
+						<group colspan="4" col="4" string="Date" >
+						    <field name="week_num" />
+						    <field name="year_num" />
+							<field name="from_date" />
+							<field name="to_date" />
+						</group>
+						<group colspan="4" col="4" string="Filter others" >
+							<field name="mo_id" />
+							<field name="product_id" />
+							<field name="customer_id" />
+							<field name="user_id" />
+							<field name="resource_id" />
+							<field name="area_id" />
+						</group>
+						<footer>
+							<button string="Print" name="button_report_time_prod" type="object" class="oe_highlight" />
+							or
+							<button string="Cancel" class="oe_link" special="cancel" />
+						</footer>
+					</group>
+				</form>
+			</field>
+		</record>
+
+		<record model="ir.actions.act_window" id="production_operator_time_action">
+			<field name="name">Impression Time Operator Production</field>
+			<field name="res_model">production.operator.time</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">form</field>
+			<field name="target">new</field>
+		</record>
+		
+	</data>
+</openerp>

@@ -1,0 +1,619 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* expense_report
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 9.0c\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-01-09 08:37+0000\n"
+"PO-Revision-Date: 2017-01-09 08:37+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: expense_report
+#: model:ir.model.fields,field_description:expense_report.field_expense_report_line_reinvoicing
+msgid "% reinvoicing"
+msgstr "% de refacturation"
+
+#. module: expense_report
+#: model:ir.model.fields,field_description:expense_report.field_expense_report_account_id
+#: model:ir.model.fields,field_description:expense_report.field_expense_report_line_account_id
+msgid "Account"
+msgstr "Compte"
+
+#. module: expense_report
+#: model:ir.model,name:expense_report.model_account_move
+msgid "Account Entry"
+msgstr "Pièce comptable"
+
+#. module: expense_report
+#: model:ir.model.fields,field_description:expense_report.field_expense_report_pay_move_id
+msgid "Account move payment"
+msgstr "Écriture du paiement"
+
+#. module: expense_report
+#: model:ir.model.fields,field_description:expense_report.field_expense_report_valid_move_id
+msgid "Account move validation"
+msgstr "Écriture de validation"
+
+#. module: expense_report
+#: model:ir.model,name:expense_report.model_account_voucher
+msgid "Accounting Voucher"
+msgstr "Compte de paiement"
+
+#. module: expense_report
+#: model:ir.ui.view,arch_db:expense_report.expense_report_view_form
+msgid "Actions"
+msgstr "Actions"
+
+#. module: expense_report
+#: model:res.groups,name:expense_report.expense_report_responsible
+msgid "Administrator"
+msgstr "Administrateur"
+
+#. module: expense_report
+#: model:ir.model.fields,field_description:expense_report.field_expense_report_tax_amount
+msgid "Amount"
+msgstr "Compte"
+
+#. module: expense_report
+#: model:ir.model,name:expense_report.model_account_analytic_line
+msgid "Analytic Line"
+msgstr "Ligne analytique"
+
+#. module: expense_report
+#: model:ir.model.fields,field_description:expense_report.field_expense_report_line_account_analytic_id
+#: model:ir.model.fields,field_description:expense_report.field_expense_report_tax_account_analytic_id
+msgid "Analytic account"
+msgstr "Compte analytique"
+
+#. module: expense_report
+#: model:ir.model.fields,field_description:expense_report.field_expense_report_line_pad_id
+msgid "Analytic distribution"
+msgstr "Distribution analytique"
+
+#. module: expense_report
+#: model:ir.model.fields,field_description:expense_report.field_expense_report_tax_base_code_id
+msgid "Base Code"
+msgstr "Compte de base"
+
+#. module: expense_report
+#: model:ir.model.fields,field_description:expense_report.field_expense_report_tax_base_amount
+msgid "Base Code Amount"
+msgstr "Montant Hors Taxe"
+
+#. module: expense_report
+#: code:addons/expense_report/expense_report.py:34
+#: model:workflow.display.state,label:expense_report.expense_report_display_state_cancel
+#: model:workflow.transition,button_label:expense_report.expense_report_draft_to_cancel
+#: model:workflow.transition,button_label:expense_report.expense_report_paid_to_cancel
+#: model:workflow.transition,button_label:expense_report.expense_report_payment_requested_to_cancel
+#: model:workflow.transition,button_label:expense_report.expense_report_validated_to_cancel
+#: model:workflow.transition,button_label:expense_report.expense_report_waiting_to_cancel
+#, python-format
+msgid "Cancel"
+msgstr "Annuler"
+
+#. module: expense_report
+#: model:ir.model.fields,field_description:expense_report.field_expense_report_comment
+#: model:ir.ui.view,arch_db:expense_report.expense_report_view_form
+msgid "Comment"
+msgstr "Commentaire"
+
+#. module: expense_report
+#: code:addons/expense_report/expense_report.py:22
+#: model:ir.model.fields,field_description:expense_report.field_expense_report_company_id
+#: model:ir.model.fields,field_description:expense_report.field_expense_report_tax_company_id
+#, python-format
+msgid "Company"
+msgstr "Société"
+
+#. module: expense_report
+#: model:ir.ui.view,arch_db:expense_report.expense_report_view_form
+msgid "Create Reinvoice"
+msgstr "Créer refacturation"
+
+#. module: expense_report
+#: model:ir.model.fields,field_description:expense_report.field_expense_report_create_uid
+#: model:ir.model.fields,field_description:expense_report.field_expense_report_line_create_uid
+#: model:ir.model.fields,field_description:expense_report.field_expense_report_tax_create_uid
+msgid "Created by"
+msgstr "Créer par"
+
+#. module: expense_report
+#: model:ir.model.fields,field_description:expense_report.field_expense_report_create_date
+#: model:ir.model.fields,field_description:expense_report.field_expense_report_line_create_date
+#: model:ir.model.fields,field_description:expense_report.field_expense_report_tax_create_date
+msgid "Created on"
+msgstr "Créer le"
+
+#. module: expense_report
+#: model:ir.model.fields,field_description:expense_report.field_expense_report_company_currency_id
+#: model:ir.model.fields,field_description:expense_report.field_expense_report_currency_id
+#: model:ir.model.fields,field_description:expense_report.field_expense_report_line_currency_id
+#: model:ir.model.fields,field_description:expense_report.field_expense_report_tax_currency_id
+msgid "Currency"
+msgstr "Devise"
+
+#. module: expense_report
+#: model:ir.model.fields,field_description:expense_report.field_expense_report_customer_id
+msgid "Customer"
+msgstr "Client"
+
+#. module: expense_report
+#: model:ir.model.fields,field_description:expense_report.field_expense_report_name
+msgid "Description of the expense report"
+msgstr "Description de la note de frais"
+
+#. module: expense_report
+#: model:ir.model.fields,field_description:expense_report.field_expense_report_display_name
+#: model:ir.model.fields,field_description:expense_report.field_expense_report_line_display_name
+#: model:ir.model.fields,field_description:expense_report.field_expense_report_tax_display_name
+msgid "Display Name"
+msgstr "Nom"
+
+#. module: expense_report
+#: code:addons/expense_report/expense_report.py:29
+#: model:workflow.display.state,label:expense_report.expense_report_display_state_draft
+#: model:workflow.transition,button_label:expense_report.expense_report_cancel_to_draft
+#, python-format
+msgid "Draft"
+msgstr "Brouillon"
+
+#. module: expense_report
+#: code:addons/expense_report/expense_report.py:21
+#, python-format
+msgid "Employee (to repay)"
+msgstr "Employé (à rembourser)"
+
+#. module: expense_report
+#: code:addons/expense_report/account.py:53
+#: code:addons/expense_report/account.py:70
+#: code:addons/expense_report/expense_report.py:503
+#, python-format
+msgid "Error!"
+msgstr "Erreur!"
+
+#. module: expense_report
+#: model:ir.model,name:expense_report.model_expense_report
+#: model:ir.model.fields,field_description:expense_report.field_account_invoice_expense_report_id
+#: model:ir.model.fields,field_description:expense_report.field_expense_report_line_expense_report_id
+#: model:ir.model.fields,field_description:expense_report.field_expense_report_tax_expense_report_id
+#: model:ir.model.fields,field_description:expense_report.field_product_product_is_expense_report
+#: model:ir.module.category,name:expense_report.module_expense_report
+#: model:ir.ui.menu,name:expense_report.menu_act_hr_expense_report_id
+#: model:ir.ui.menu,name:expense_report.menu_human_resource_expense_report
+#: model:ir.ui.view,arch_db:expense_report.expense_report_view_form
+#: model:ir.ui.view,arch_db:expense_report.expense_report_view_tree
+msgid "Expense report"
+msgstr "Note de frais"
+
+#. module: expense_report
+#: model:res.groups,name:expense_report.group_menu_expense_report_config
+msgid "Expense report configurations"
+msgstr "Note de frais configuration"
+
+#. module: expense_report
+#: model:ir.model,name:expense_report.model_expense_report_line
+#: model:ir.model.fields,field_description:expense_report.field_account_analytic_line_erl_id
+msgid "Expense report line"
+msgstr "Ligne des notes de frais"
+
+#. module: expense_report
+#: model:res.groups,name:expense_report.group_menu_expense_report_manager
+msgid "Expense report managers"
+msgstr "Note de frais gestionnaire"
+
+#. module: expense_report
+#: model:ir.model,name:expense_report.model_expense_report_tax
+msgid "Expense report tax"
+msgstr "Taxes note de frais"
+
+#. module: expense_report
+#: model:res.groups,name:expense_report.group_menu_expense_report_user
+msgid "Expense report users"
+msgstr "Note de frais users"
+
+#. module: expense_report
+#: model:ir.actions.act_window,name:expense_report.action_expense_report
+msgid "Expense reports"
+msgstr "Notes de frais"
+
+#. module: expense_report
+#: model:ir.model.fields,help:expense_report.field_expense_report_tax_sequence
+msgid "Gives the sequence order when displaying a list of expense report tax."
+msgstr "Gives the sequence order when displaying a list of expense report tax."
+
+#. module: expense_report
+#: model:ir.ui.view,arch_db:expense_report.expense_report_view_form
+msgid "History"
+msgstr "Historique"
+
+#. module: expense_report
+#: model:ir.ui.view,arch_db:expense_report.expense_report_view_form
+msgid "History and link"
+msgstr "Historique et liens"
+
+#. module: expense_report
+#: model:ir.model.fields,field_description:expense_report.field_expense_report_id
+#: model:ir.model.fields,field_description:expense_report.field_expense_report_line_id
+#: model:ir.model.fields,field_description:expense_report.field_expense_report_tax_id
+msgid "ID"
+msgstr "ID"
+
+#. module: expense_report
+#: code:addons/expense_report/expense_report.py:215
+#: model:ir.model,name:expense_report.model_account_invoice
+#: model:ir.model.fields,field_description:expense_report.field_expense_report_invoice_id
+#, python-format
+msgid "Invoice"
+msgstr "Factures"
+
+#. module: expense_report
+#: model:ir.model.fields,field_description:expense_report.field_expense_report_tax_account_payment_id
+msgid "Invoice tax account (On payment)"
+msgstr "Compte de taxe (Paiement)"
+
+#. module: expense_report
+#: model:ir.model.fields,field_description:expense_report.field_expense_report_journal_id
+msgid "Journal"
+msgstr "Journal"
+
+#. module: expense_report
+#: model:ir.model.fields,field_description:expense_report.field_expense_report___last_update
+#: model:ir.model.fields,field_description:expense_report.field_expense_report_line___last_update
+#: model:ir.model.fields,field_description:expense_report.field_expense_report_tax___last_update
+msgid "Last Modified on"
+msgstr "Dernière modification le"
+
+#. module: expense_report
+#: model:ir.model.fields,field_description:expense_report.field_expense_report_line_write_uid
+#: model:ir.model.fields,field_description:expense_report.field_expense_report_tax_write_uid
+#: model:ir.model.fields,field_description:expense_report.field_expense_report_write_uid
+msgid "Last Updated by"
+msgstr "Dernière modification par"
+
+#. module: expense_report
+#: model:ir.model.fields,field_description:expense_report.field_expense_report_line_write_date
+#: model:ir.model.fields,field_description:expense_report.field_expense_report_tax_write_date
+#: model:ir.model.fields,field_description:expense_report.field_expense_report_write_date
+msgid "Last Updated on"
+msgstr "Dernière modification le"
+
+#. module: expense_report
+#: model:ir.ui.view,arch_db:expense_report.expense_report_view_form
+msgid "Line of expense report"
+msgstr "Ligne des notes de frais"
+
+#. module: expense_report
+#: model:ir.model.fields,field_description:expense_report.field_expense_report_line_ids
+msgid "Lines"
+msgstr "Lignes"
+
+#. module: expense_report
+#: model:ir.ui.view,arch_db:expense_report.expense_report_view_form
+msgid "Lines of expense report"
+msgstr "Lignes des notes de frais"
+
+#. module: expense_report
+#: model:ir.ui.view,arch_db:expense_report.expense_report_view_form
+msgid "Link"
+msgstr "Liens"
+
+#. module: expense_report
+#: model:res.groups,name:expense_report.expense_report_manager
+msgid "Manager"
+msgstr "Gestionnaire"
+
+#. module: expense_report
+#: model:ir.model.fields,field_description:expense_report.field_expense_report_tax_manual
+msgid "Manual"
+msgstr "Manuel"
+
+#. module: expense_report
+#: code:addons/expense_report/expense_report.py:241
+#, python-format
+msgid "No Analytic Journal!"
+msgstr "Pas de journal analytique!"
+
+#. module: expense_report
+#: code:addons/expense_report/expense_report.py:33
+#: model:workflow.display.state,label:expense_report.expense_report_display_state_paid
+#, python-format
+msgid "Paid"
+msgstr "Payé"
+
+#. module: expense_report
+#: model:ir.model.fields,field_description:expense_report.field_expense_report_pay_voucher_id
+#: model:ir.model.fields,field_description:expense_report.field_expense_report_payment
+msgid "Payment"
+msgstr "Paiement"
+
+#. module: expense_report
+#: model:ir.model.fields,field_description:expense_report.field_expense_report_payment_date
+msgid "Payment date"
+msgstr "Date du paiement"
+
+#. module: expense_report
+#: model:ir.model.fields,field_description:expense_report.field_expense_report_journal_payment_id
+msgid "Payment journal"
+msgstr "Journal du paiement"
+
+#. module: expense_report
+#: code:addons/expense_report/expense_report.py:32
+#: model:workflow.display.state,label:expense_report.expense_report_display_state_payment_requested
+#: model:workflow.transition,button_label:expense_report.expense_report_validated_to_payment_requested
+#, python-format
+msgid "Payment requested"
+msgstr "Paiement demandé"
+
+#. module: expense_report
+#: model:ir.model.fields,field_description:expense_report.field_expense_report_period_id
+msgid "Period"
+msgstr "Période"
+
+#. module: expense_report
+#: code:addons/expense_report/expense_report.py:360
+#, python-format
+msgid "Please enter the anaylique journal in the journal you have chosen (%s)!"
+msgstr "Veuillez saisir le journal analytique dans le journal que vous avez choisi (%s)!"
+
+#. module: expense_report
+#: model:ir.model,name:expense_report.model_product_product
+#: model:ir.model.fields,field_description:expense_report.field_expense_report_line_product_id
+msgid "Product"
+msgstr "Produit"
+
+#. module: expense_report
+#: model:ir.model.fields,field_description:expense_report.field_expense_report_line_quantity
+msgid "Quantity"
+msgstr "Quantité"
+
+#. module: expense_report
+#: model:ir.ui.view,arch_db:expense_report.expense_report_view_form
+msgid "Recompute taxes and total"
+msgstr "Recalculer taxes et total"
+
+#. module: expense_report
+#: model:ir.ui.view,arch_db:expense_report.expense_report_view_form
+msgid "Reinvoice"
+msgstr "Refacturer"
+
+#. module: expense_report
+#: model:ir.model.fields,field_description:expense_report.field_expense_report_reinvoicing_date
+msgid "Reinvoicing date"
+msgstr "Date de refacturation"
+
+#. module: expense_report
+#: model:ir.model.fields,field_description:expense_report.field_expense_report_reinvoicing_state
+msgid "Reinvoicing state"
+msgstr "État de refactorisation"
+
+#. module: expense_report
+#: model:ir.model.fields,field_description:expense_report.field_expense_report_line_remark
+msgid "Remark"
+msgstr "Remarque"
+
+#. module: expense_report
+#: model:ir.model.fields,field_description:expense_report.field_expense_report_requested_date
+msgid "Requested date"
+msgstr "Date demandée"
+
+#. module: expense_report
+#: model:ir.model.fields,field_description:expense_report.field_expense_report_tax_sequence
+msgid "Sequence"
+msgstr "Séquence"
+
+#. module: expense_report
+#: model:ir.model.fields,field_description:expense_report.field_expense_report_display_state
+#: model:ir.model.fields,field_description:expense_report.field_expense_report_state
+msgid "State"
+msgstr "État"
+
+#. module: expense_report
+#: model:ir.model.fields,field_description:expense_report.field_expense_report_amount_tax
+#: model:ir.model.fields,field_description:expense_report.field_expense_report_tax_tax_id
+#: model:ir.ui.view,arch_db:expense_report.expense_report_view_form
+msgid "Tax"
+msgstr "Taxe"
+
+#. module: expense_report
+#: model:ir.model.fields,field_description:expense_report.field_expense_report_tax_account_id
+msgid "Tax Account"
+msgstr "Compte de taxe"
+
+#. module: expense_report
+#: model:ir.model.fields,field_description:expense_report.field_expense_report_tax_tax_code_id
+msgid "Tax Code"
+msgstr "Compte de taxe"
+
+#. module: expense_report
+#: model:ir.model.fields,field_description:expense_report.field_expense_report_tax_tax_amount
+msgid "Tax Code Amount"
+msgstr "Montant de la taxe"
+
+#. module: expense_report
+#: model:ir.model.fields,field_description:expense_report.field_expense_report_tax_name
+msgid "Tax Description"
+msgstr "Description de la taxe"
+
+#. module: expense_report
+#: model:ir.model.fields,field_description:expense_report.field_expense_report_tax_line_ids
+msgid "Tax Lines"
+msgstr "Lignes de taxes"
+
+#. module: expense_report
+#: model:ir.model.fields,field_description:expense_report.field_expense_report_tax_tax_on_payment
+msgid "Tax on payment"
+msgstr "Taxe sur paiement"
+
+#. module: expense_report
+#: model:ir.model.fields,field_description:expense_report.field_expense_report_line_expense_line_tax_ids
+#: model:ir.ui.view,arch_db:expense_report.expense_report_view_form
+msgid "Taxes"
+msgstr "Taxes"
+
+#. module: expense_report
+#: model:ir.model.fields,help:expense_report.field_expense_report_tax_base_code_id
+msgid "The account basis of the tax declaration."
+msgstr "La base de compte de la déclaration fiscale."
+
+#. module: expense_report
+#: code:addons/expense_report/expense_report.py:504
+#, python-format
+msgid "The expense report can not be deleted if it is draft or canceled (%s)!"
+msgstr "La note de frais ne peut pas être supprimée, elle doit être brouillon ou annulée (%s)!"
+
+#. module: expense_report
+#: model:ir.model.fields,help:expense_report.field_expense_report_tax_tax_code_id
+msgid "The tax basis of the tax declaration."
+msgstr "La base de taxe de la déclaration fiscale."
+
+#. module: expense_report
+#: code:addons/expense_report/expense_report.py:401
+#: code:addons/expense_report/expense_report.py:463
+#, python-format
+msgid "There are no lines on your expense report!"
+msgstr "Il n'y a pas de lignes dans votre note de frais!"
+
+#. module: expense_report
+#: code:addons/expense_report/expense_report.py:466
+#, python-format
+msgid "There is no customer on your expense report!"
+msgstr "Il n'y a pas de client dans votre note de frais!"
+
+#. module: expense_report
+#: code:addons/expense_report/expense_report.py:59
+#, python-format
+msgid "To reinvoice"
+msgstr "À refacturer"
+
+#. module: expense_report
+#: model:ir.model.fields,field_description:expense_report.field_expense_report_amount_total
+#: model:ir.model.fields,field_description:expense_report.field_expense_report_amount_total_company_signed
+#: model:ir.model.fields,field_description:expense_report.field_expense_report_amount_total_signed
+#: model:ir.ui.view,arch_db:expense_report.expense_report_view_form
+msgid "Total"
+msgstr "Total"
+
+#. module: expense_report
+#: model:ir.model.fields,field_description:expense_report.field_expense_report_line_total_price
+msgid "Total price"
+msgstr "Prix total"
+
+#. module: expense_report
+#: model:ir.model.fields,field_description:expense_report.field_expense_report_line_price_unit
+msgid "Unit price"
+msgstr "Prix unitaire"
+
+#. module: expense_report
+#: model:ir.model.fields,field_description:expense_report.field_expense_report_amount_untaxed
+#: model:ir.model.fields,field_description:expense_report.field_expense_report_amount_untaxed_signed
+msgid "Untaxed Amount"
+msgstr "Montant HT"
+
+#. module: expense_report
+#: model:ir.model.fields,field_description:expense_report.field_expense_report_line_uom_id
+msgid "UoM"
+msgstr "UdM"
+
+#. module: expense_report
+#: model:ir.ui.view,arch_db:expense_report.expense_report_view_form
+msgid "Update taxes"
+msgstr "Mettre à jour les taxes"
+
+#. module: expense_report
+#: model:res.groups,name:expense_report.expense_report_user
+msgid "User"
+msgstr "Utilisateur"
+
+#. module: expense_report
+#: code:addons/expense_report/expense_report.py:320
+#, python-format
+msgid "User Error!"
+msgstr "Erreur utilisateur!"
+
+#. module: expense_report
+#: code:addons/expense_report/expense_report.py:31
+#: model:workflow.display.state,label:expense_report.expense_report_display_state_validated
+#: model:workflow.transition,button_label:expense_report.expense_report_waiting_to_validated
+#, python-format
+msgid "Validated"
+msgstr "Validé"
+
+#. module: expense_report
+#: model:ir.model.fields,field_description:expense_report.field_expense_report_validation_date
+msgid "Validation date"
+msgstr "Date de validation"
+
+#. module: expense_report
+#: model:workflow.display.state,label:expense_report.expense_report_display_state_waiting
+#: model:workflow.transition,button_label:expense_report.expense_report_draft_to_waiting
+msgid "Waiting"
+msgstr "Attente"
+
+#. module: expense_report
+#: code:addons/expense_report/expense_report.py:30
+#, python-format
+msgid "Waiting for validation"
+msgstr "Attente pour validation"
+
+#. module: expense_report
+#: code:addons/expense_report/expense_report.py:360
+#: code:addons/expense_report/expense_report.py:401
+#: code:addons/expense_report/expense_report.py:463
+#: code:addons/expense_report/expense_report.py:466
+#, python-format
+msgid "Warning"
+msgstr "Attention"
+
+#. module: expense_report
+#: model:ir.model.fields,field_description:expense_report.field_expense_report_wkf_instance_ids
+msgid "Wkf instance ids"
+msgstr "Ids des instances de wkf"
+
+#. module: expense_report
+#: model:ir.model.fields,field_description:expense_report.field_expense_report_wkf_progress_instance
+msgid "Wkf progress instance"
+msgstr "Instance en cours"
+
+#. module: expense_report
+#: model:ir.model.fields,field_description:expense_report.field_expense_report_wkf_id
+msgid "Workflow"
+msgstr "Flux de travail"
+
+#. module: expense_report
+#: code:addons/expense_report/account.py:54
+#: code:addons/expense_report/account.py:71
+#, python-format
+msgid "You can not delete this writing because it is related to an expense report, please cancel the expense report to be able to remove (%s)!"
+msgstr "Vous ne pouvez pas supprimer cette écriture car elle est reliée à une note de frais, veuillez annuler la note de frais pour la supprimer (%s)!"
+
+#. module: expense_report
+#: code:addons/expense_report/expense_report.py:321
+#, python-format
+msgid "You cannot create an invoice on a centralized journal. Uncheck the centralized counterpart box in the related journal from the configuration menu."
+msgstr "Vous ne pouvez pas créer une facture sur un journal centralisé. Décochez la case contrepartie centralisée pour le journal concerné dans le menu de configuration."
+
+#. module: expense_report
+#: code:addons/expense_report/expense_report.py:242
+#, python-format
+msgid "You have to define an analytic journal on the '%s' journal!"
+msgstr "Vous ne pouvez pas créer une facture sur un journal centralisé. Décochez la case contrepartie centralisée pour le journal concerné dans le menu de configuration."
+
+#. module: expense_report
+#: model:ir.model.fields,field_description:expense_report.field_expense_report_employee_id
+msgid "employee"
+msgstr "employé"
+
+#. module: expense_report
+#: code:addons/expense_report/expense_report.py:58
+#, python-format
+msgid "no reinvoicing"
+msgstr "Ne pas refacturer"
+

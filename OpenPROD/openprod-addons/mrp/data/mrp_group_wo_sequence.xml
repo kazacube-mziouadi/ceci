@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data noupdate="1">
+
+        <!-- Sequences for groupement ot -->
+        <record id="seq_mrp_group_wo" model="ir.sequence">
+            <field name="name">Name group wo</field>
+            <field name="code">group_wo</field>
+            <field name="prefix">Group</field>
+            <field name="padding">6</field>
+            <field name="company_id" eval="False"/>
+        </record>
+        
+        
+    </data>
+</openerp>

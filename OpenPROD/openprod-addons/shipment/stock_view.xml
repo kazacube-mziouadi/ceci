@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+		<!-- TREE VIEW PICKING OUT -->
+		<record id='view_tree_stock_picking_out' model='ir.ui.view'>
+			<field name="name">view_tree_stock_picking_out</field>
+			<field name="model">stock.picking</field>
+			<field name="inherit_id" ref="stock.view_tree_stock_picking_out" />
+			<field name="arch" type="xml">
+				<xpath expr="//field[@name='invoice_state']" position="after">
+					<field name='shipment_state' />
+					<field name='shipment_id' />
+					<button name="%(stock.act_partial_picking)d" type="action" string="Preparation done" context="{'default_not_done': True}" attrs="{'invisible': ['|', ('state', '!=', 'waiting'), ('shipment_state', '!=', 'tovalidate')]}" />
+					<button string="Add to shipment" type="object" name="add_to_shipment" class="oe_inline oe_stat_button" icon="fa-truck" attrs="{'invisible': ['|', '|', ('state', '!=', 'waiting'), ('shipment_id', '!=', False), ('shipment_state', '!=', 'done')]}" />
+<!-- 					<button name="%(act_partial_picking_shipment)d" type="action" string="To be Shipped" attrs="{'invisible': ['|', ('state', '!=', 'waiting'), ('lock', '=', True)]}" /> -->
+<!-- 					<field name='lock' invisible='1' /> -->
+				</xpath>
+			</field>
+		</record>
+		<!-- FORM VIEW PICKING OUT -->
+		<record id='view_form_stock_picking_out' model='ir.ui.view'>
+			<field name="name">view_form_stock_picking_out</field>
+			<field name="model">stock.picking</field>
+			<field name="inherit_id" ref="stock.view_form_stock_picking_out" />
+			<field name="arch" type="xml">
+				<xpath expr="//field[@name='invoice_state']" position="after">
+					<field name='shipment_state' readonly="1"/>
+				</xpath>
+				<xpath expr="//button[@name='%(stock.act_partial_picking)d']" position="before">
+                    <button name="%(stock.act_partial_picking)d" type="action" string="Preparation done" context="{'default_not_done': True}" attrs="{'invisible': ['|', ('state', '!=', 'waiting'), ('shipment_state', '!=', 'tovalidate')]}" />
+<!-- 					<button name="%(act_partial_picking_shipment)d" type="action" string="To be Shipped" attrs="{'invisible': ['|', ('state', '!=', 'waiting'), ('lock', '=', True)]}" /> -->
+				</xpath>
+				<xpath expr="//group[@name='transport_picking']" position="inside">
+					<field name="shipment_id" readonly='1' />
+				</xpath>
+				<xpath expr="//separator[@name='separator_action_menu']" position="after">
+					<button string="Add to shipment" type="object" name="add_to_shipment" class="oe_inline oe_stat_button" icon="fa-truck" attrs="{'invisible': ['|', '|', ('state', '!=', 'waiting'), ('shipment_id', '!=', False), ('shipment_state', '!=', 'done')]}" />
+					<button class="oe_inline oe_stat_button" type="object" string="Print" name="print_picking_button" icon="fa-print" />
+				</xpath>
+			</field>
+		</record>
+
+		<!-- SEARCH VIEW PICKING OUT -->
+		<record id='view_search_stock_picking_out' model='ir.ui.view'>
+			<field name="name">view_search_stock_picking_out</field>
+			<field name="model">stock.picking</field>
+			<field name="inherit_id" ref="stock.view_search_stock_picking_out" />
+			<field name="arch" type="xml">
+				<xpath expr="//field" position="before">
+					<field name="shipment_state" />
+				</xpath>
+			</field>
+		</record>
+		
+		<!-- FORM VIEW Stock label template-->
+        <record id="view_form_label_template_printer_shipment" model="ir.ui.view">
+            <field name="name">view_form_label_template_printer_shipment</field>
+            <field name="model">stock.label.template</field>
+            <field name="inherit_id" ref="printers_stock.view_form_label_template_printer"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='is_reprint_done']" position="after">
+                    <field name="is_reprint_valid" />
+                </xpath>
+            </field>
+        </record>
+		
+		
+	</data>
+</openerp>

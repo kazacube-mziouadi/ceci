@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+        <!-- FORM VIEW Bank statement -->
+		<record id='view_form_account_bank_statement_openprod_id' model='ir.ui.view'>
+			<field name="name">view_form_account_bank_statement_openprod_id</field>
+			<field name="model">account.bank.statement.openprod</field>
+			<field name="arch" type="xml">
+				<form string="Bank statement" version="8.0">
+				    <header>
+                        <field name="state" widget="statusbar" nolabel="1" statusbar_visible="draft,validated,done" />
+                    </header>
+                    <group colspan="4" col="9" >
+                        <group colspan="8" col="4" attrs="{'readonly': [('state', '!=', 'draft')]}" >
+                            <group colspan="4" col="6" >
+                                <group colspan="2" col="2" string="Various parameter" >
+                                    <field name="name" />
+                                    <field name="date" />
+                                    <field name="period_id" />
+                                    <field name="company_id" />
+                                </group>
+                                <group colspan="2" col="2" string="Bank parameter" >
+                                    <field name="journal_id" />
+                                    <field name="currency_id" />
+                                    <field name="init_solde" required="1" />
+                                    <field name="final_solde" required="1" />
+                                    <field name="final_solde_cal" invisible="1" />
+                                </group>
+                                <group colspan="2" col="2" string="Payment search parameter" >
+                                    <field name="nb_day_deviation" />
+                                    <field name="amount_deviation" />
+                                </group>
+                            </group>
+                            <notebook colspan="4">
+                                <page string="Lines" attrs="{'readonly': [('state', '!=', 'draft')]}" >
+                                    <group colspan="4" col="4" >
+	                                    <field name="line_ids" nolabel="1" colspan="4" context="{'default_currency_id': currency_id}" attrs="{'readonly': [('state', '!=', 'draft')]}" >
+	                                        <tree string="Lines" editable="bottom" colors="red: (debit and debit != amount_voucher) or credit and credit != amount_voucher);" >
+	                                            <field name="date" />    
+	                                            <field name="ref" />
+	                                            <field name="name" />
+	                                            <field name="partner_id" domain="credit and [('is_customer', '=', True)] or debit and [('is_supplier', '=', True)] or ['|', ('is_customer', '=', True), ('is_supplier', '=', True)]"
+	                                                   context="debit and {'default_is_company': True, 'default_is_supplier': True} or {'default_is_company': True, 'default_is_customer': True}" />
+	                                            <field name="account_id" domain="[('type', 'not in', ('view', 'closed'))]" />
+	                                            <field name="debit" sum="Sum debit" />
+	                                            <field name="credit" sum="Sum credit" />
+	                                            <field name="currency_id" />
+	                                            <field name="move_voucher_ids" widget="many2many_tags" 
+	                                                   domain="[('domain_search_move_voucher', 'in', (journal_id, credit, debit, partner_id, account_id, currency_id, date, 
+ 	                                                                                                  amount_deviation, nb_day_deviation, abso_currency_id, active_id))]" />
+	                                            <button name="button_view_account_voucher" string="Open voucher" class="oe_inline oe_stat_button" icon="fa-bars" type="object" attrs="{'invisible': [('move_voucher_ids', '=', False)]}" />
+	                                            <button name="button_generate_regulation_payment" string="Payment regulation" class="oe_inline oe_stat_button" icon="fa-link" type="object" attrs="{'invisible': [('state', '!=', 'draft')]}" />
+	                                            <field name="amount_voucher" readonly="1" sum="Sum amount voucher" />
+	                                            <field name="analysis" />
+	                                            <field name="move_invoice_ids" widget="many2many_tags" 
+	                                                   domain="[('domain_search_move_invoice', 'in', (name, credit, debit, partner_id, move_voucher_ids, amount_deviation, active_id))]" />
+	                                            <field name="amount_invoice" readonly="1" sum="Sum amount invoice" />
+	                                            <field name="reconcile_id" readonly="1" />
+	                                            <button name="button_reconcile_move_line" string="Letter generate" class="oe_inline oe_stat_button" icon="fa-link" type="object" 
+	                                                    attrs="{'invisible': ['|', ('state', '!=', 'validated'), ('reconcile_id', '!=', False)]}" />
+	                                            <field name="amount_deviation" invisible="1" />
+	                                            <field name="nb_day_deviation" invisible="1" />
+	                                            <field name="journal_id" invisible="1" />
+	                                            <field name="abso_currency_id" invisible="0" />
+	                                            <field name="state" invisible="1" />
+	                                        </tree>
+	                                    </field>
+		                           </group>
+                               </page>
+                               <page string="Move voucher no used" >
+                                    <field name="move_voucher_no_used_ids" nolabel="1" colspan="4" />
+                                </page>
+                            </notebook>
+                            <group colspan="4" col="4" >
+                                <group colspan="2" col="2" string="Record" >
+                                    <field name="record_final_solde" />
+                                    <field name="total_unused_bank" />
+                                    <field name="total_theoretical_bank" />
+                                </group>
+                                <group colspan="2" col="2" />
+                            </group>
+                        </group>
+                        <group colspan="1" col="1" class="op_shortcuts">
+                            <separator colspan="1" string="Actions" name="separator_actions_menu" attrs="{'invisible': [('state', '!=', 'draft')]}" />
+                            <button name="button_search_partner" string="Partner search" class="oe_inline oe_stat_button" icon="fa-search" type="object" attrs="{'invisible': [('state', '!=', 'draft')]}" />
+                            <button name="button_search_payment" string="Account move payment search" class="oe_inline oe_stat_button" icon="fa-search" type="object" attrs="{'invisible': [('state', '!=', 'draft')]}" />
+                            <button name="button_search_move_invoice" string="Account move invoices search" class="oe_inline oe_stat_button" icon="fa-search" type="object" attrs="{'invisible': [('state', '!=', 'draft')]}" />
+                            <separator string="Analysis" colspan="1" name="separator_analysis_menu" />
+                            <button class="oe_inline oe_stat_button" type="object" string="Bank statement lines" name="return_view_bank_statement_line_openprod" icon="fa-sign-in" />
+                        </group>
+                    </group>
+				</form>
+			</field>
+		</record>
+		
+		<!-- TREE VIEW Bank statement -->
+		<record id='view_tree_account_bank_statement_openprod_id' model='ir.ui.view'>
+			<field name="name">view_tree_account_bank_statement_openprod_id</field>
+			<field name="model">account.bank.statement.openprod</field>
+			<field name="arch" type="xml">
+				<tree string="Bank statements" version="8.0">
+				    <field name="name" />
+                    <field name="date" />
+                    <field name="period_id" />
+                    <field name="company_id" />
+                    <field name="journal_id" />
+                    <field name="init_solde" />
+                    <field name="final_solde" />
+				</tree>
+			</field>
+		</record>
+		
+		<!-- SEARCH VIEW Bank statement -->
+		<record id='view_search_account_bank_statement_openprod_id' model='ir.ui.view'>
+			<field name="name">view_search_account_bank_statement_openprod_id</field>
+			<field name="model">account.bank.statement.openprod</field>
+			<field name="arch" type="xml">
+				<search version="8.0">
+				    <field name="name" />
+                    <field name="period_id" />
+                    <field name="company_id" />
+                    <field name="journal_id" />
+				</search>
+			</field>
+		</record>
+		
+		<!-- ACTION Bank statement -->
+		<record id="act_account_bank_statement_openprod_id" model="ir.actions.act_window">
+		    <field name="name">Bank statement</field>
+		    <field name="res_model">account.bank.statement.openprod</field>
+		    <field name="view_type">form</field>
+		    <field name="view_mode">tree,form</field>
+		    <field name="domain">[]</field>
+		    <field name="context">{}</field>
+		    <field name="search_view_id" ref="view_search_account_bank_statement_openprod_id"/>
+		</record>
+		
+		<record id="act_account_bank_statement_openprod_id_tree" model="ir.actions.act_window.view">
+		    <field name="sequence" eval="10"/>
+		    <field name="view_mode">tree</field>
+		    <field name="view_id" ref="view_tree_account_bank_statement_openprod_id"/>
+		    <field name="act_window_id" ref="act_account_bank_statement_openprod_id"/>
+		</record>
+		
+		<record model="ir.actions.act_window.view" id="act_account_bank_statement_openprod_id_form">
+		    <field name="sequence" eval="20"/>
+		    <field name="view_mode">form</field>
+		    <field name="view_id" ref="view_form_account_bank_statement_openprod_id"/>
+		    <field name="act_window_id" ref="act_account_bank_statement_openprod_id"/>
+		</record>
+		
+		<menuitem name="Bank statement" id="menu_account_bank_statement_openprod_id_main" parent="account.menu_finance" sequence="10" />
+		<menuitem name="Bank statement" action="act_account_bank_statement_openprod_id" id="menu_account_bank_statement_openprod_id" parent="menu_account_bank_statement_openprod_id_main" sequence="10" />
+		
+		
+		
+		<!-- TREE VIEW Bank statement line -->
+		<record id='view_tree_account_bank_statement_line_openprod_id' model='ir.ui.view'>
+			<field name="name">view_tree_account_bank_statement_line_openprod_id</field>
+			<field name="model">account.bank.statement.line.openprod</field>
+			<field name="arch" type="xml">
+				<tree string="Bank statement lines" version="8.0" editable="bottom" attrs="{'readonly': [('state', '!=', 'draft')]}" >
+				    <field name="bank_statement_id" readonly="1" /> 
+				    <field name="period_id" />
+				    <field name="journal_id" />
+				    <field name="date" />    
+                    <field name="ref" />
+                    <field name="name" />
+                    <field name="partner_id" domain="credit and [('is_customer', '=', True)] or debit and [('is_supplier', '=', True)] or ['|', ('is_customer', '=', True), ('is_supplier', '=', True)]" />
+                    <field name="account_id" domain="[('type', 'not in', ('view', 'closed'))]" />
+                    <field name="debit" />
+                    <field name="credit" />
+                    <field name="currency_id" />
+                    <field name="move_voucher_ids" widget="many2many_tags" 
+                                                   domain="[('domain_search_move_voucher', 'in', (journal_id, credit, debit, partner_id, account_id, currency_id, date, 
+                                                                                                  amount_deviation, nb_day_deviation, abso_currency_id))]" />
+                    <field name="amount_voucher" readonly="1" sum="sum_amount_voucher" />
+                    <button name="button_generate_regulation_payment" string="Payment regulation" class="oe_inline oe_stat_button" icon="fa-link" type="object" attrs="{'invisible': [('state', '!=', 'draft')]}" />
+                    <field name="analysis" />
+                   <field name="move_invoice_ids" widget="many2many_tags"  domain="[('domain_search_move_invoice', 'in', (name, credit, debit, partner_id, move_voucher_ids, amount_deviation))]" />
+                   <field name="amount_invoice" readonly="1" sum="sum_amount_invoice" />
+                   <field name="reconcile_id" readonly="1" />
+                   <button name="button_reconcile_move_line" string="Letter generate" class="oe_inline oe_stat_button" icon="fa-link" type="object" attrs="{'invisible': [('state', '!=', 'validated')]}" />
+                   <field name="amount_deviation" invisible="1" />
+                   <field name="nb_day_deviation" invisible="1" />
+                   <field name="journal_id" invisible="1" />
+                   <field name="abso_currency_id" invisible="1" />
+                   <field name="state" invisible="1" />
+				</tree>
+			</field>
+		</record>
+		
+		<!-- SEARCH VIEW Bank statement line -->
+		<record id='view_search_account_bank_statement_line_openprod_id' model='ir.ui.view'>
+			<field name="name">view_search_account_bank_statement_line_openprod_id</field>
+			<field name="model">account.bank.statement.line.openprod</field>
+			<field name="arch" type="xml">
+				<search version="8.0">
+				    <field name="period_id" />
+				    <field name="bank_statement_id" />
+				    <field name="journal_id" />
+				    <field name="partner_id" />
+				     <group expand="0" string="Group By">
+                        <filter string="Partner" icon="terp-partner" domain="[]" context="{'group_by':'partner_id'}"/>
+                        <filter string="Journal" icon="terp-folder-orange" domain="[]" context="{'group_by':'journal_id'}"/>
+                        <filter string="Period" icon="terp-go-month" domain="[]" context="{'group_by':'period_id'}"/>
+                        <filter string="Bank statement" icon="fa-university" domain="[]" context="{'group_by':'bank_statement_id'}"/>
+                    </group>
+				</search>
+			</field>
+		</record>
+		
+		<!-- ACTION Bank statement line -->
+		<record id="act_account_bank_statement_line_openprod_id" model="ir.actions.act_window">
+		    <field name="name">Bank statement line</field>
+		    <field name="res_model">account.bank.statement.line.openprod</field>
+		    <field name="view_type">form</field>
+		    <field name="view_mode">tree</field>
+		    <field name="domain">[]</field>
+		    <field name="context">{}</field>
+		    <field name="search_view_id" ref="view_search_account_bank_statement_line_openprod_id"/>
+		</record>
+		
+		<record id="act_account_bank_statement_line_openprod_id_tree" model="ir.actions.act_window.view">
+		    <field name="sequence" eval="10"/>
+		    <field name="view_mode">tree</field>
+		    <field name="view_id" ref="view_tree_account_bank_statement_line_openprod_id"/>
+		    <field name="act_window_id" ref="act_account_bank_statement_line_openprod_id"/>
+		</record>
+		
+		<menuitem name="Bank statement lines" action="act_account_bank_statement_line_openprod_id" id="menu_account_bank_statement_line_openprod_id" parent="menu_account_bank_statement_openprod_id_main" sequence="20" />
+		
+    </data>
+</openerp>

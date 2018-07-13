@@ -1,0 +1,348 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+	
+		<menuitem name="Desk" id="menu_desk_main" sequence="4" web_icon="base_openprod,static/description/bureau.png" groups="base.group_user" />
+		<menuitem name="Messaging" id="mail.mail_feeds_main" groups="base.group_user" sequence="40" parent="menu_desk_main"/>
+	
+		<!-- FORM VIEW Note Openprod-->
+		<record id='view_form_note_openprod_id' model='ir.ui.view'>
+			<field name="name">view_form_note_openprod_id</field>
+			<field name="model">note.openprod</field>
+			<field name="arch" type="xml">
+				<form string="Notes" version="8.0">
+					<group colspan="4" col="1">
+						<button name="save_action" string="Save" type="object" class="oe_highlight" attrs="{'invisible': [('button_save_visible', '!=', True)]}" />
+						<field name="button_save_visible" invisible="1" />
+						<group colspan="4" col="4" string="Details">
+							<group colspan="2" col="2">
+								<field name="name" />
+								<field name="type" />
+								<field name="date" />
+							</group>
+							<group colspan="2" col="2" name="note_groupe">
+								<field name="user_id" />
+								<field name="confidentiality" />
+							</group>
+						</group>
+						<group colspan="4" col="4" attrs="{'invisible': [('confidentiality', '!=', 'user')]}">
+							<group colspan="2" col="2" string="Authorized users">
+								<field name="user_ids" colspan="2" nolabel="1"/>
+							</group>
+							<group colspan="2" col="2" string="Authorized groups">
+								<field name="group_ids" colspan="2" nolabel="1"/>
+							</group>
+						</group>						
+						<group colspan="4" col="4" string="Description">
+							<field name="description" colspan="4" nolabel="1"/>
+						</group>
+					</group>
+				</form>
+			</field>
+		</record>
+		
+		<!-- TREE VIEW Note Openprod -->
+		<record id='view_tree_note_openprod_id' model='ir.ui.view'>
+			<field name="name">view_tree_note_openprod_id</field>
+			<field name="model">note.openprod</field>
+			<field name="arch" type="xml">
+				<tree string="Notes" version="8.0">
+					<field name="name" />
+					<field name="user_id" />
+					<field name="type" />
+					<field name="date" />
+				</tree>
+			</field>
+		</record>
+		
+		<!-- SEARCH VIEW Note Openprod -->
+		<record id='view_search_note_openprod' model='ir.ui.view'>
+			<field name="name">view_search_note_openprod</field>
+			<field name="model">note.openprod</field>
+			<field name="arch" type="xml">
+				<search version="8.0">
+					<group>
+						<field name="date"/>
+						<field name="name"/>
+						<field name="user_id"/>
+					</group>
+					<newline />
+					<group expand="0" string="Group By...">
+						<filter string="Type" domain="[]" context="{'group_by': 'type'}"/>
+					</group>
+				</search>
+			</field>
+		</record>
+		
+		<!-- ACTION My note Openprod -->
+		<record id="action_note_openprod_id" model="ir.actions.act_window">
+		    <field name="name">My notes</field>
+		    <field name="res_model">note.openprod</field>
+		    <field name="view_type">form</field>
+		    <field name="view_mode">tree,form</field>
+		    <field name="domain">[('user_id', '=', uid)]</field>
+		    <field name="search_view_id" ref="view_search_note_openprod"/>
+		</record>
+		
+		<!-- ACTION All notes Openprod -->
+		<record id="action_all_notes_openprod_id" model="ir.actions.act_window">
+		    <field name="name">All notes</field>
+		    <field name="res_model">note.openprod</field>
+		    <field name="view_type">form</field>
+		    <field name="view_mode">tree,form</field>
+		    <field name="domain">[]</field>
+		    <field name="context">{}</field>
+		    <field name="search_view_id" ref="view_search_note_openprod"/>
+		</record>
+		
+		<menuitem name="Notes" id="menu_main_note_openprod" parent="menu_desk_main" sequence="20"/>
+		<menuitem name="My notes" action="action_note_openprod_id" id="menu_my_note_openprod" parent="menu_main_note_openprod" sequence="10" groups="group_desk_user"/>
+		<menuitem name="All notes" action="action_all_notes_openprod_id" id="menu_all_note_openprod" parent="menu_main_note_openprod" sequence="20" groups="group_desk_manager"/>
+		
+		
+		<record id="action_note_openprod_id_target_new" model="ir.actions.act_window">
+		    <field name="name">Notes</field>
+		    <field name="res_model">note.openprod</field>
+		    <field name="view_type">form</field>
+		    <field name="view_mode">form</field>
+		    <field name="domain">[]</field>
+		    <field name="target">new</field>
+		</record>
+		
+		
+		
+		<!-- FORM VIEW document Openprod-->
+		<record id='view_form_document_openprod_id' model='ir.ui.view'>
+			<field name="name">view_form_document_openprod_id</field>
+			<field name="model">document.openprod</field>
+			<field name="arch" type="xml">
+				<form string="Documents" version="8.0">
+					<header>
+						<field name="state" widget="statusbar" clickable="True"/>
+						<button name="save_action" string="Save" type="object" class="oe_highlight" attrs="{'invisible': [('button_save_visible', '!=', True)]}" />
+						<field name="button_save_visible" invisible="1" />
+					</header>
+					<group colspan="4" col="9">
+						<group colspan="8" col="6">
+							<group colspan="4" col="6" string="Details">
+								<field name="name"/>
+								<field name="type_id"/>
+								<field name="version"/>
+								<field name="user_id"/>
+								<field name="date"/>
+								<field name="end_date"/>
+								<field name="attachment" filename="fname" />
+								<field name="fname" readonly="1" />
+								<field name="directory_id" />
+                                <field name="confidentiality"/>
+                                <field name="company_id" widget="selection" groups="base.group_multi_company"/>
+								<field name="extension" invisible="1"/>
+								<field name="last_version_id" invisible="1"/>
+							</group>
+							<group colspan="4" col="4" attrs="{'invisible': [('confidentiality', '!=', 'user')]}">
+								<group colspan="2" col="2" string="Authorized users">
+									<field name="user_ids" colspan="2" nolabel="1"/>
+								</group>
+								<group colspan="2" col="2" string="Authorized groups">
+									<field name="group_ids" colspan="2" nolabel="1"/>
+								</group>
+							</group>
+							<group colspan="4" col="4" string="Description">
+								<field name="description" colspan="4" nolabel="1"/>
+							</group>
+							<group colspan="4" col="4" string="Old versions">
+								<field name="version_ids" colspan="4" nolabel="1">
+									<tree>
+										<field name="end_date"/>
+										<field name="version"/>
+										<field name="attachment"/>
+									</tree>
+								</field>
+							</group>
+							<group colspan="4" string="Indexed content">
+								<field name="index_content" />
+							</group>
+						</group>
+						<group colspan="1" col="1" class="op_shortcuts" name="action_document_menu">
+							<button class="oe_inline oe_stat_button" type="action" string="Change version" name="%(base_openprod.action_create_new_document_version)d" icon="fa-sticky-note-o"/>
+							<button class="oe_inline oe_stat_button" type="action" string="To switch" name="%(base_openprod.action_switch_new_document)d" icon="fa-pencil"/>
+							<separator string="Linked objects" colspan="1" name="document_separator"/>
+						</group>
+					</group>	
+				</form>
+			</field>
+		</record>
+		
+		<!-- TREE VIEW document Openprod -->
+		<record id='view_tree_document_openprod_id' model='ir.ui.view'>
+			<field name="name">view_tree_document_openprod_id</field>
+			<field name="model">document.openprod</field>
+			<field name="arch" type="xml">
+				<tree string="Documents" version="8.0">
+					<field name="name" />
+					<field name="version"/>
+					<field name="type_id" />
+					<field name="date" />
+					<field name="attachment" filename="fname" />
+					<field name="fname" invisible="1" />
+					<field name="user_id"/>
+					<field name="state"/>
+					<field name="description" invisible="1"/>
+					<field name="month" invisible="1"/>
+					<field name="year" invisible="1"/>
+				</tree>
+			</field>
+		</record>
+		
+		<!-- SEARCH VIEW document Openprod -->
+		<record id='view_search_document_openprod' model='ir.ui.view'>
+			<field name="name">view_search_document_openprod</field>
+			<field name="model">document.openprod</field>
+			<field name="arch" type="xml">
+				<search version="8.0">
+					<group>
+						<field name="name"/>
+						<field name="description"/>
+						<field name="index_content"/>
+					</group>
+					<newline />
+					<group expand="0" string="Filters">
+						<filter string="Validated" domain="[('state', '=', 'validated')]" name="validated_filter"/>
+						<filter string="Orphans" domain="[('orphans')]" />
+					</group>
+					<newline />
+					<group expand="0" string="Group By...">
+						<filter string="Type" domain="[]" context="{'group_by': 'type_id'}"/>
+						<filter string="Year" domain="[]" context="{'group_by': 'year'}"/>
+						<filter string="Month" domain="[]" context="{'group_by': 'month'}"/>
+					</group>
+				</search>
+			</field>
+		</record>
+		
+		<!-- ACTION My documents Openprod -->
+		<record id="action_document_openprod_id" model="ir.actions.act_window">
+		    <field name="name">My documents</field>
+		    <field name="res_model">document.openprod</field>
+		    <field name="view_type">form</field>
+		    <field name="view_mode">tree,form</field>
+		    <field name="domain">[('user_id', '=', uid)]</field>
+		    <field name="context">{'search_default_validated_filter': 1}</field>
+		    <field name="search_view_id" ref="view_search_document_openprod"/>
+		</record>
+		
+		<!-- ACTION All documents Openprod -->
+		<record id="action_all_document_openprod_id" model="ir.actions.act_window">
+		    <field name="name">All documents</field>
+		    <field name="res_model">document.openprod</field>
+		    <field name="view_type">form</field>
+		    <field name="view_mode">tree,form</field>
+		    <field name="domain">[]</field>
+		    <field name="context">{'search_default_validated_filter': 1}</field>
+		    <field name="search_view_id" ref="view_search_document_openprod"/>
+		</record>
+		
+		<!-- ACTION FORM documents Openprod -->
+		<record model="ir.actions.act_window" id="document_openprod_see_form">
+		    <field name="name">Document</field>
+		    <field name="res_model">document.openprod</field>
+		    <field name="view_type">form</field>
+		    <field name="view_mode">form</field>
+		    <field name="view_id" ref="view_form_document_openprod_id"/>
+		    <field name="target">current</field>
+	  	</record>
+		
+		<menuitem name="Documents" id="menu_main_document_openprod" parent="menu_desk_main" sequence="30" groups="base.group_user" />
+		<menuitem name="My documents" action="action_document_openprod_id" id="menu_document_openprod" parent="menu_main_document_openprod" sequence="10" groups="group_desk_user"/>
+		<menuitem name="All documents" action="action_all_document_openprod_id" id="menu_all_document_openprod" parent="menu_main_document_openprod" sequence="20" groups="group_desk_manager"/>
+		
+		<record id="action_document_openprod_id_target_new" model="ir.actions.act_window">
+		    <field name="name">Documents</field>
+		    <field name="res_model">document.openprod</field>
+		    <field name="view_type">form</field>
+		    <field name="view_mode">form</field>
+		    <field name="domain">[]</field>
+		    <field name="target">new</field>
+		</record>
+		
+		<!-- FORM VIEW document type Openprod-->
+		<record id='view_form_document_type_openprod_id' model='ir.ui.view'>
+			<field name="name">view_form_document_type_openprod_id</field>
+			<field name="model">document.type.openprod</field>
+			<field name="arch" type="xml">
+				<form string="Documents type" version="8.0">
+					<group colspan="4" col="4" string="Document type's name">
+						<field name="name" nolabel="1"/>
+					</group>
+				</form>
+			</field>
+		</record>
+		
+		<!-- TREE VIEW document type Openprod -->
+		<record id='view_tree_document_type_openprod_id' model='ir.ui.view'>
+			<field name="name">view_tree_document_type_openprod_id</field>
+			<field name="model">document.type.openprod</field>
+			<field name="arch" type="xml">
+				<tree string="Documents" version="8.0">
+					<field name="name" />
+				</tree>
+			</field>
+		</record>
+		
+		<!-- SEARCH VIEW document type Openprod -->
+		<record id='view_search_document_type_openprod' model='ir.ui.view'>
+			<field name="name">view_search_document_type_openprod</field>
+			<field name="model">document.type.openprod</field>
+			<field name="arch" type="xml">
+				<search version="8.0">
+					<group>
+						<field name="name"/>
+					</group>
+				</search>
+			</field>
+		</record>
+		
+		
+		<!-- ACTION Documents type Openprod -->
+		<record id="action_document_type_openprod_id" model="ir.actions.act_window">
+		    <field name="name">Documents type</field>
+		    <field name="res_model">document.type.openprod</field>
+		    <field name="view_type">form</field>
+		    <field name="view_mode">tree,form</field>
+		    <field name="search_view_id" ref="view_search_document_type_openprod"/>
+		</record>
+		
+			<menuitem name="Documents type" action="action_document_type_openprod_id" id="menu_document_type_openprod" parent="menu_main_document_openprod" sequence="30" groups="group_desk_manager"/>
+	
+		<!-- DIRECTORY VIEW Directory -->
+		<record id='view_directory_directory' model='ir.ui.view'>
+			<field name="name">directory</field>
+			<field name="model">document.directory</field>
+			<field name="arch" type="xml">
+				<directory string="Directory" version="8.0">
+				</directory>
+			</field>
+		</record>
+
+		<!-- TREE VIEW Directory -->
+		<record id='view_tree_directory' model='ir.ui.view'>
+			<field name="name">directory</field>
+			<field name="model">document.directory</field>
+			<field name="arch" type="xml">
+				<tree string="strings" version="8.0">
+					<field name="full_path" />
+				</tree>
+			</field>
+		</record>
+		
+		<!-- ACTION Directory -->
+		<record id="act_document_directory" model="ir.actions.act_window">
+			<field name="name">Directory</field>
+			<field name="res_model">document.directory</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">directory</field>
+		</record>
+		
+			<menuitem name="Directories" action="act_document_directory" id="menu_document_directory_openprod" parent="menu_main_document_openprod" sequence="30" groups="base.group_user"/>
+	</data>
+</openerp>

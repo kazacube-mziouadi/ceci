@@ -1,0 +1,248 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* customer_performance
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 9.0c\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-12-05 11:00+0000\n"
+"PO-Revision-Date: 2016-12-05 11:00+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: customer_performance
+#: model:ir.model.fields,help:customer_performance.field_customer_performance_analysis_late_day_avg_quantity
+msgid "(sum of late days) / (Number of late delieveries)"
+msgstr "(Somme des jours de retard) / (Nombre de livraison en retard)"
+
+#. module: customer_performance
+#: model:ir.ui.view,arch_db:customer_performance.view_form_customer_performance_analysis
+msgid "Analysis"
+msgstr "Analise"
+
+#. module: customer_performance
+#: model:ir.ui.view,arch_db:customer_performance.view_form_customer_performance_analysis
+msgid "Authorized groups"
+msgstr "Groupes autorisés"
+
+#. module: customer_performance
+#: model:ir.ui.view,arch_db:customer_performance.view_form_customer_performance_analysis
+msgid "Authorized users"
+msgstr "Utilisateurs autotisés"
+
+#. module: customer_performance
+#: model:ir.model,name:customer_performance.model_customer_performance_analysis
+msgid "Auto generated customer's performance analysis for his orders requested in a given time lapse"
+msgstr "Analise de performance client généré automatiquement pour une période donné."
+
+#. module: customer_performance
+#: model:ir.model.fields,field_description:customer_performance.field_customer_performance_analysis_late_day_avg_quantity
+msgid "Average lateness in days"
+msgstr "Retard moyen en jour"
+
+#. module: customer_performance
+#: model:ir.model.fields,field_description:customer_performance.field_customer_performance_analysis_comment_ids
+#: model:ir.ui.view,arch_db:customer_performance.view_form_customer_performance_analysis
+msgid "Comments"
+msgstr "Commentaires"
+
+#. module: customer_performance
+#: model:ir.model.fields,field_description:customer_performance.field_customer_performance_analysis_create_uid
+#: model:ir.model.fields,field_description:customer_performance.field_customer_performance_category_create_uid
+msgid "Created by"
+msgstr "Créé par"
+
+#. module: customer_performance
+#: model:ir.model.fields,field_description:customer_performance.field_customer_performance_analysis_create_date
+#: model:ir.model.fields,field_description:customer_performance.field_customer_performance_category_create_date
+msgid "Created on"
+msgstr "Créé le"
+
+#. module: customer_performance
+#: model:ir.model.fields,field_description:customer_performance.field_customer_performance_analysis_customer_id
+msgid "Customer"
+msgstr "Client"
+
+#. module: customer_performance
+#: model:ir.ui.menu,name:customer_performance.menu_customer_performance
+#: model:ir.ui.view,arch_db:customer_performance.view_form_customer_performance_analysis
+msgid "Customer Performance"
+msgstr "Performance Client"
+
+#. module: customer_performance
+#: model:ir.model.fields,field_description:customer_performance.field_customer_performance_analysis_customer_category_id
+msgid "Customer category"
+msgstr "Catégorie de client"
+
+#. module: customer_performance
+#: model:ir.model.fields,field_description:customer_performance.field_customer_performance_analysis_year_expense
+msgid "Customer expense"
+msgstr "Dépense du client"
+
+#. module: customer_performance
+#: model:ir.model.fields,field_description:customer_performance.field_customer_performance_analysis_customer_grade
+msgid "Customer grade"
+msgstr "Taux de service"
+
+#. module: customer_performance
+#: model:ir.actions.act_window,name:customer_performance.act_customer_performance
+#: model:ir.model.fields,field_description:customer_performance.field_note_openprod_customer_performance_id
+#: model:ir.ui.view,arch_db:customer_performance.view_tree_customer_performance
+msgid "Customer performance"
+msgstr "Performance client"
+
+#. module: customer_performance
+#: model:ir.ui.view,arch_db:customer_performance.view_form_customer_performance_analysis
+msgid "Delay"
+msgstr "Retard"
+
+#. module: customer_performance
+#: model:ir.ui.view,arch_db:customer_performance.view_form_customer_performance_analysis
+msgid "Description"
+msgstr "Description"
+
+#. module: customer_performance
+#: model:ir.ui.view,arch_db:customer_performance.view_form_customer_performance_analysis
+msgid "Details"
+msgstr "Détails"
+
+#. module: customer_performance
+#: model:ir.model.fields,field_description:customer_performance.field_customer_performance_analysis_display_name
+#: model:ir.model.fields,field_description:customer_performance.field_customer_performance_category_display_name
+msgid "Display Name"
+msgstr "Nom"
+
+#. module: customer_performance
+#: model:ir.model.fields,field_description:customer_performance.field_customer_performance_analysis_date_to
+msgid "Ending date"
+msgstr "Date de fin"
+
+#. module: customer_performance
+#: model:ir.model.fields,field_description:customer_performance.field_customer_performance_analysis_customer_exceed_invoice_outstanding
+msgid "Exceed invoice outstanding"
+msgstr "Encours factures dépassées"
+
+#. module: customer_performance
+#: model:ir.model.fields,field_description:customer_performance.field_customer_performance_analysis_id
+#: model:ir.model.fields,field_description:customer_performance.field_customer_performance_category_id
+msgid "ID"
+msgstr "ID"
+
+#. module: customer_performance
+#: model:ir.ui.view,arch_db:customer_performance.view_form_customer_performance_analysis
+msgid "Indicators"
+msgstr "Indicateurs"
+
+#. module: customer_performance
+#: model:ir.model.fields,field_description:customer_performance.field_customer_performance_analysis_customer_invoice_outstanding
+msgid "Invoice outstanding"
+msgstr "Encours factures non payées"
+
+#. module: customer_performance
+#: model:ir.ui.view,arch_db:customer_performance.view_form_customer_performance_analysis
+msgid "Invoices"
+msgstr "Factures d'achat"
+
+#. module: customer_performance
+#: model:ir.model.fields,field_description:customer_performance.field_customer_performance_analysis___last_update
+#: model:ir.model.fields,field_description:customer_performance.field_customer_performance_category___last_update
+msgid "Last Modified on"
+msgstr "Dernière modification le"
+
+#. module: customer_performance
+#: model:ir.model.fields,field_description:customer_performance.field_customer_performance_analysis_write_uid
+#: model:ir.model.fields,field_description:customer_performance.field_customer_performance_category_write_uid
+msgid "Last Updated by"
+msgstr "Dernière MAJ par"
+
+#. module: customer_performance
+#: model:ir.model.fields,field_description:customer_performance.field_customer_performance_analysis_write_date
+#: model:ir.model.fields,field_description:customer_performance.field_customer_performance_category_write_date
+msgid "Last Updated on"
+msgstr "Dernière MAJ le"
+
+#. module: customer_performance
+#: model:ir.ui.view,arch_db:customer_performance.view_form_customer_performance_analysis
+msgid "Late sale lines"
+msgstr "Ligne de vente en retard"
+
+#. module: customer_performance
+#: model:ir.model.fields,field_description:customer_performance.field_customer_performance_category_name
+msgid "Name"
+msgstr "Nom"
+
+#. module: customer_performance
+#: model:ir.ui.view,arch_db:customer_performance.view_form_customer_performance_analysis
+msgid "Non conformity"
+msgstr "Non conformités"
+
+#. module: customer_performance
+#: model:ir.model.fields,field_description:customer_performance.field_customer_performance_analysis_non_conformity_quantity
+msgid "Non conformity number"
+msgstr "Nombre de non conformités"
+
+#. module: customer_performance
+#: model:ir.model,name:customer_performance.model_note_openprod
+msgid "Note Openprod"
+msgstr "Note Openprod"
+
+#. module: customer_performance
+#: model:ir.model.fields,field_description:customer_performance.field_customer_performance_analysis_late_order_line_quantity
+msgid "Number of late delivery"
+msgstr "Nombre de livraison en retard"
+
+#. module: customer_performance
+#: model:ir.model.fields,field_description:customer_performance.field_customer_performance_analysis_sale_order_line_quantity
+msgid "Number of order"
+msgstr "Nombre de commande"
+
+#. module: customer_performance
+#: model:ir.model.fields,field_description:customer_performance.field_customer_performance_analysis_sold_product_quantity
+msgid "Product types sold"
+msgstr "Nombre de produits vendus"
+
+#. module: customer_performance
+#: model:ir.ui.view,arch_db:customer_performance.view_form_customer_performance_analysis
+msgid "Quality"
+msgstr "Qualité"
+
+#. module: customer_performance
+#: model:ir.ui.view,arch_db:customer_performance.view_form_customer_performance_analysis
+msgid "Sale lines"
+msgstr "Lignes de vente"
+
+#. module: customer_performance
+#: model:ir.model.fields,field_description:customer_performance.field_customer_performance_analysis_service_rate
+msgid "Service rate"
+msgstr "Note du service"
+
+#. module: customer_performance
+#: model:ir.model.fields,help:customer_performance.field_customer_performance_analysis_service_rate
+msgid "Service rate = ((1 - number of late delieveries) / number of delieveries ) * 100"
+msgstr "Note du service = ((1 - nombre de livraison en retard) / nombre de livraison ) * 100"
+
+#. module: customer_performance
+#: model:ir.model.fields,field_description:customer_performance.field_customer_performance_analysis_date_from
+msgid "Starting date"
+msgstr "Date de début"
+
+#. module: customer_performance
+#: model:ir.ui.view,arch_db:customer_performance.view_form_customer_performance_analysis
+msgid "Volumetry"
+msgstr "Volumetrie"
+
+#. module: customer_performance
+#: model:ir.model.fields,field_description:customer_performance.field_customer_performance_analysis_year
+msgid "Year"
+msgstr "Année"
+
+#. module: customer_performance
+#: model:ir.model,name:customer_performance.model_customer_performance_category
+msgid "category of customer"
+msgstr "Catégorie de client"
+

@@ -1,0 +1,6 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_calendar_template,calendar.template,model_calendar_template,base.group_user,1,1,1,1
+access_calendar_template_line,calendar.template.line,model_calendar_template_line,base.group_user,1,1,1,1
+access_calendar,calendar,model_calendar,base.group_user,1,1,1,1
+access_calendar_line,calendar.line,model_calendar_line,base.group_user,1,1,1,1
+access_calendar_loading,calendar.loading,model_calendar_loading,base.group_user,1,1,1,1

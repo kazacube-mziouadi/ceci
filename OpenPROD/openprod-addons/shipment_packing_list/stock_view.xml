@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+		<!-- =========== -->
+		<!-- STOCK LABEL -->
+		<!-- =========== -->
+		<!-- FORM VIEW Stock label -->
+		<record id="view_form_printer_label" model="ir.ui.view">
+			<field name="name">view.form.printer.label</field>
+			<field name="model">stock.label</field>
+			<field name="priority" eval="1200" />
+			<field name="inherit_id" ref="stock.view_form_label" />
+			<field name="arch" type="xml">
+				<xpath expr="//notebook" position="before">
+					<group string="Dimentions" colspan="4" col="8" attrs="{'invisible': [('type', '!=', 'um')]}">
+						<field name="gross_weight" colspan="4" />
+						<field name="net_weight" colspan="4" />
+						<field name="length" />
+						<field name="width" />
+						<field name="height" />
+						<field name="volume" />
+					</group>
+					<br />
+				</xpath>
+			</field>
+		</record>
+	</data>
+</openerp>

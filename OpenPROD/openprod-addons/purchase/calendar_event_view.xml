@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+		
+		<record model="ir.ui.view" id="view_form_purchase_calendar_event">
+			<field name="name">view_form_purchase_calendar_event</field>
+			<field name="inherit_id" ref="base_openprod.view_form_calendar_event" />
+			<field name="priority" eval="1400" />
+			<field name="model">calendar.event</field>
+			<field name="arch" type="xml">
+				<group name="group_link_object" position="inside">
+					<field name="purchase_id" attrs="{'invisible': [('link_object','not in',('none', 'purchase'))]}" options="{'no_create': True}"/>
+				</group>
+				<separator name="separator_action_menu" position="after">
+					<button class="oe_inline oe_stat_button" type="action" string="Create purchase" name="%(purchase.action_create_quick_purchase)d" 
+						icon="fa-plus-square" attrs="{'invisible': [('link_object','not in',('none', 'purchase'))]}"/>
+				</separator>
+			</field>
+		</record>
+		
+	</data>
+</openerp>

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+		<record model="ir.ui.view" id="view_form_mrp_replacement_resource">
+			<field name="name">view_form_replacement_resource</field>
+			<field name="model">mrp.replacement.resource</field>
+			<field name="type">form</field>
+			<field name="arch" type="xml">
+				<form string="Resources replacement">
+					<group colspan="4" col="7">
+						<field name="resource_id" required="1" attrs="{'readonly':[('is_valid', '=', True)]}" />
+						<field name="new_resource_id" required="1" attrs="{'readonly':[('is_valid', '=', True)]}" />
+						<field name="validation_date" readonly="1" />
+						<button name="action_validate" string="Validate" type="object" class="oe_inline oe_stat_button" icon="fa-check" attrs="{'invisible':[('is_valid', '=', True)]}"/>
+						<field name="is_valid" invisible="1"/>
+					</group>
+					<field name="line_ids" colspan="4" nolabel="1" domain="[('id','=',False)]">
+						<tree string="Lines">
+		                    <field name="product_id" />
+		                    <field name="routing_id" />
+<!-- 		                    <field name="modif_resource_id" invisible="1" /> -->
+		                    <field name="routing_line_id" />
+		                    <field name="resource_valid_id" />
+		                </tree>
+		                <form string="Lines">
+		                	<group>
+			                    <field name="product_id" readonly="1"/>
+<!-- 			                    <field name="modif_resource_id" invisible="1" /> -->
+			                    <field name="routing_line_id" readonly="1"/>
+			                    <field name="resource_valid_id" readonly="1"/>
+		                    </group>
+		                </form>
+					</field>
+				</form>
+			</field>
+		</record>
+		
+		<record model="ir.ui.view" id="view_tree_mrp_replacement_resource">
+			<field name="name">view_tree_replacement_resource</field>
+			<field name="model">mrp.replacement.resource</field>
+			<field name="type">tree</field>
+			<field name="arch" type="xml">
+				<tree string="Resources replacement">
+					<field name="resource_id" required="1"/>
+					<field name="new_resource_id" required="1"/>
+				</tree>
+			</field>
+		</record>
+		
+		<record id='view_search_mrp_replacement_resource' model='ir.ui.view'>
+			<field name="name">view_search_mrp_replacement_resource</field>
+			<field name="model">mrp.replacement.resource</field>
+			<field name="arch" type="xml">
+				<search version="8.0">
+					<group>
+						<field name="resource_id"/>
+						<field name="new_resource_id" />
+					</group>
+					<newline />
+					<group expand="0" string="Group By...">
+					</group>
+				</search>
+			</field>
+		</record>
+
+		<record model="ir.actions.act_window" id="action_mrp_replacement_resource">
+			<field name="name">Resources replacement</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="res_model">mrp.replacement.resource</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+		
+		<menuitem name="Resources replacement" parent="mrp.menu_mrp_routing" id="menu_mrp_replacement_resource" action="action_mrp_replacement_resource" sequence="30" groups="group_menu_bom_routing"/>
+		
+	</data>
+</openerp>

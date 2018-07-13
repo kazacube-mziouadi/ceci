@@ -1,0 +1,905 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* sav
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 9.0c\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-05-29 08:51+0000\n"
+"PO-Revision-Date: 2017-05-29 08:51+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: sav
+#: model:mail.template,body_html:sav.email_template_for_crm_reclaim
+msgid "\n"
+"<div style=\"font-family: 'Lucica Grande', Ubuntu, Arial, Verdana, sans-serif; font-size: 12px; color: rgb(34, 34, 34); background-color: #FFF; \">\n"
+"\n"
+"    <p>Hello ${object.customer_id.name or ''},</p>\n"
+"</div>"
+msgstr "\n"
+"<div style=\"font-family: 'Lucica Grande', Ubuntu, Arial, Verdana, sans-serif; font-size: 12px; color: rgb(34, 34, 34); background-color: #FFF; \">\n"
+"\n"
+"    <p>Hello ${object.customer_id.name or ''},</p>\n"
+"</div>"
+
+#. module: sav
+#: model:ir.ui.view,arch_db:sav.view_kanban_crm_reclaim
+msgid "<b>Categories : </b>"
+msgstr "<b>Catégories : </b>"
+
+#. module: sav
+#: model:ir.ui.view,arch_db:sav.view_kanban_crm_reclaim
+msgid "<b>Creation : </b>"
+msgstr "<b>Création : </b>"
+
+#. module: sav
+#: model:ir.ui.view,arch_db:sav.view_kanban_crm_reclaim
+msgid "<b>Customer : </b>"
+msgstr "<b>Client : </b>"
+
+#. module: sav
+#: model:ir.ui.view,arch_db:sav.view_kanban_crm_reclaim
+msgid "<b>Limit : </b>"
+msgstr "<b>Limite : </b>"
+
+#. module: sav
+#: model:ir.ui.view,arch_db:sav.view_kanban_crm_reclaim
+msgid "<b>Next action date : </b>"
+msgstr "<b>Date prochaine action: </b>"
+
+#. module: sav
+#: model:ir.ui.view,arch_db:sav.view_kanban_crm_reclaim
+msgid "<b>Responsible : </b>"
+msgstr "<b>Responsable : </b>"
+
+#. module: sav
+#: model:ir.model.fields,field_description:sav.field_crm_reclaim_action_ids
+msgid "Action"
+msgstr "Action"
+
+#. module: sav
+#: model:ir.model.fields,field_description:sav.field_crm_reclaim_nb_actions
+#: model:ir.ui.view,arch_db:sav.view_form_crm_reclaim_id
+#: model:ir.ui.view,arch_db:sav.view_form_intervention_sav_id
+#: model:ir.ui.view,arch_db:sav.view_kanban_crm_reclaim
+msgid "Actions"
+msgstr "Actions"
+
+#. module: sav
+#: model:ir.ui.menu,name:sav.submenu_sav_analisys_id
+#: model:ir.ui.view,arch_db:sav.view_form_intervention_sav_id
+msgid "Analisys"
+msgstr "Analyses"
+
+#. module: sav
+#: code:addons/sav/crm_reclaim.py:77
+#, python-format
+msgid "Base"
+msgstr "Base"
+
+#. module: sav
+#: model:ir.model,name:sav.model_crm_reclaim
+msgid "CRM Reclaim"
+msgstr "CRM réclamation"
+
+#. module: sav
+#: code:addons/sav/calendar_event.py:13
+#: model:ir.actions.act_window,name:sav.act_crm_reclaim_id
+#: model:ir.model.fields,field_description:sav.field_calendar_event_crm_reclaim_id
+#: model:ir.model.fields,field_description:sav.field_crm_reclaim_document_crm_reclaim_id
+#: model:ir.model.fields,field_description:sav.field_crm_reclaim_note_crm_reclaim_id
+#: model:ir.ui.menu,name:sav.menu_crm_reclaim_id
+#: model:ir.ui.view,arch_db:sav.view_form_crm_reclaim_id
+#, python-format
+msgid "CRM reclaim"
+msgstr "CRM réclamation"
+
+#. module: sav
+#: model:ir.actions.act_window,name:sav.act_crm_reclaim_category_id
+#: model:ir.model,name:sav.model_crm_reclaim_category
+#: model:ir.ui.menu,name:sav.menu_crm_reclaim_category_id
+msgid "CRM reclaim category"
+msgstr "CRM reclaim category"
+
+#. module: sav
+#: model:ir.model,name:sav.model_crm_reclaim_cause
+msgid "CRM reclaim cause"
+msgstr "Cause CRM réclamation"
+
+#. module: sav
+#: model:res.groups,name:sav.group_menu_crm_reclaim_config1
+msgid "CRM reclaim configurations"
+msgstr "CRM réclamation configurations"
+
+#. module: sav
+#: model:ir.model,name:sav.model_crm_reclaim_document
+msgid "CRM reclaim document"
+msgstr "Document CRM réclamation"
+
+#. module: sav
+#: model:ir.model,name:sav.model_crm_reclaim_document_type
+msgid "CRM reclaim document type"
+msgstr "Type de document CRM réclamation"
+
+#. module: sav
+#: model:ir.model,name:sav.model_crm_reclaim_note
+msgid "CRM reclaim note"
+msgstr "Note CRM réclamation"
+
+#. module: sav
+#: model:ir.ui.view,arch_db:sav.view_form_state_crm_reclaim
+#: model:ir.ui.view,arch_db:sav.view_tree_state_crm_reclaim
+msgid "CRM reclaim state"
+msgstr "État CRM rélamation"
+
+#. module: sav
+#: model:ir.actions.act_window,name:sav.act_state_crm_reclaim
+msgid "CRM reclaim states"
+msgstr "États CRM rélamation"
+
+#. module: sav
+#: model:res.groups,name:sav.group_menu_crm_reclaim_user1
+msgid "CRM reclaim users"
+msgstr "Utilisateur CRM réclamation"
+
+#. module: sav
+#: model:ir.ui.view,arch_db:sav.view_tree_crm_reclaim_id
+msgid "CRM reclaims"
+msgstr "CRM réclamations"
+
+#. module: sav
+#: code:addons/sav/crm_reclaim.py:70
+#: model:ir.ui.view,arch_db:sav.view_form_intervention_sav_id
+#, python-format
+msgid "Cancel"
+msgstr "Annuler"
+
+#. module: sav
+#: model:ir.model.fields,field_description:sav.field_crm_reclaim_category_ids
+msgid "Categories"
+msgstr "Catégories"
+
+#. module: sav
+#: model:ir.model.fields,field_description:sav.field_crm_reclaim_cause_id
+msgid "Cause"
+msgstr "Cause"
+
+#. module: sav
+#: model:ir.ui.menu,name:sav.menu_sav_cause_intervention_id
+msgid "Cause intervention"
+msgstr "Liste des causes"
+
+#. module: sav
+#: model:ir.model.fields,field_description:sav.field_crm_reclaim_color
+msgid "Color"
+msgstr "Couleur"
+
+#. module: sav
+#: model:ir.ui.view,arch_db:sav.view_form_crm_reclaim_id
+#: model:ir.ui.view,arch_db:sav.view_form_intervention_sav_id
+msgid "Communications"
+msgstr "Communications"
+
+#. module: sav
+#: model:ir.ui.menu,name:sav.submenu_sav_configuration_id
+msgid "Configuration"
+msgstr "Configuration"
+
+#. module: sav
+#: model:ir.ui.view,arch_db:sav.view_form_intervention_sav_id
+msgid "Confirmed date"
+msgstr "Date confirmée"
+
+#. module: sav
+#: model:ir.ui.view,arch_db:sav.view_form_crm_reclaim_id
+msgid "Contact of the relcaim"
+msgstr "Contact de la réclamation"
+
+#. module: sav
+#: model:ir.model.fields,field_description:sav.field_crm_reclaim_contact_ids
+msgid "Contacts"
+msgstr "Contacts"
+
+#. module: sav
+#: model:ir.ui.view,arch_db:sav.view_form_intervention_sav_id
+msgid "Create MO for repair"
+msgstr "Créer OF de réparation"
+
+#. module: sav
+#: model:ir.ui.view,arch_db:sav.view_form_intervention_sav_id
+msgid "Create PM from MOs"
+msgstr "Créer PM à partir des OFs"
+
+#. module: sav
+#: model:ir.model.fields,field_description:sav.field_crm_reclaim_date_create
+msgid "Create date"
+msgstr "Date de création"
+
+#. module: sav
+#: model:ir.ui.view,arch_db:sav.view_form_crm_reclaim_id
+msgid "Create intervention"
+msgstr "Créer intervention"
+
+#. module: sav
+#: model:ir.ui.view,arch_db:sav.view_form_intervention_sav_id
+msgid "Create invoice"
+msgstr "Créer facturation"
+
+#. module: sav
+#: model:ir.ui.menu,name:sav.menu_wiz_create_park_sav
+msgid "Create parks"
+msgstr "Créer parcs"
+
+#. module: sav
+#: model:ir.ui.view,arch_db:sav.view_form_intervention_sav_id
+msgid "Create purchase"
+msgstr "Créer achat"
+
+#. module: sav
+#: model:ir.ui.view,arch_db:sav.view_form_intervention_sav_id
+msgid "Create quotation"
+msgstr "Créer devis"
+
+#. module: sav
+#: model:ir.model.fields,field_description:sav.field_crm_reclaim_category_create_uid
+#: model:ir.model.fields,field_description:sav.field_crm_reclaim_cause_create_uid
+#: model:ir.model.fields,field_description:sav.field_crm_reclaim_create_uid
+#: model:ir.model.fields,field_description:sav.field_crm_reclaim_document_create_uid
+#: model:ir.model.fields,field_description:sav.field_crm_reclaim_document_type_create_uid
+#: model:ir.model.fields,field_description:sav.field_crm_reclaim_note_create_uid
+#: model:ir.model.fields,field_description:sav.field_crm_reclaim_state_create_uid
+msgid "Created by"
+msgstr "Créé par"
+
+#. module: sav
+#: model:ir.model.fields,field_description:sav.field_crm_reclaim_category_create_date
+#: model:ir.model.fields,field_description:sav.field_crm_reclaim_cause_create_date
+#: model:ir.model.fields,field_description:sav.field_crm_reclaim_create_date
+#: model:ir.model.fields,field_description:sav.field_crm_reclaim_document_create_date
+#: model:ir.model.fields,field_description:sav.field_crm_reclaim_document_type_create_date
+#: model:ir.model.fields,field_description:sav.field_crm_reclaim_note_create_date
+#: model:ir.model.fields,field_description:sav.field_crm_reclaim_state_create_date
+msgid "Created on"
+msgstr "Créé le"
+
+#. module: sav
+#: code:addons/sav/crm_reclaim.py:79
+#, python-format
+msgid "Critical"
+msgstr "Critique"
+
+#. module: sav
+#: model:ir.model.fields,field_description:sav.field_crm_reclaim_criticality
+msgid "Criticality"
+msgstr "Criticité"
+
+#. module: sav
+#: model:ir.model.fields,field_description:sav.field_crm_reclaim_customer_id
+msgid "Customer"
+msgstr "Client"
+
+#. module: sav
+#: model:ir.model.fields,field_description:sav.field_crm_reclaim_customer_park_id
+msgid "Customer park"
+msgstr "Customer park"
+
+#. module: sav
+#: model:ir.model.fields,field_description:sav.field_crm_reclaim_document_date
+#: model:ir.model.fields,field_description:sav.field_crm_reclaim_note_date
+msgid "Date"
+msgstr "Date"
+
+#. module: sav
+#: model:ir.ui.view,arch_db:sav.view_form_intervention_sav_id
+msgid "Declare time"
+msgstr "Déclaration des temps"
+
+#. module: sav
+#: model:ir.actions.act_window,name:sav.act_sav_counter_id
+#: model:ir.ui.menu,name:sav.menu_sav_counter_id
+msgid "Definition counters"
+msgstr "Définition des compteurs"
+
+#. module: sav
+#: model:ir.ui.view,arch_db:sav.view_kanban_crm_reclaim
+msgid "Delete"
+msgstr "Supprimer"
+
+#. module: sav
+#: model:ir.model.fields,field_description:sav.field_crm_reclaim_description
+#: model:ir.model.fields,field_description:sav.field_crm_reclaim_note_description
+#: model:ir.model.fields,field_description:sav.field_crm_reclaim_state_description
+#: model:ir.ui.view,arch_db:sav.view_form_crm_reclaim_id
+#: model:ir.ui.view,arch_db:sav.view_form_intervention_sav_id
+#: model:ir.ui.view,arch_db:sav.view_form_state_crm_reclaim
+msgid "Description"
+msgstr "Description"
+
+#. module: sav
+#: model:ir.ui.view,arch_db:sav.view_form_crm_reclaim_id
+msgid "Descriptions"
+msgstr "Descriptions"
+
+#. module: sav
+#: model:ir.ui.view,arch_db:sav.view_form_state_crm_reclaim
+msgid "Details"
+msgstr "Détails"
+
+#. module: sav
+#: model:ir.ui.view,arch_db:sav.view_form_intervention_sav_id
+msgid "Did you create all pieces of maintenance from OF?"
+msgstr "Avez vous créez toutes les pièces de maintenances à partir des OFs?"
+
+#. module: sav
+#: model:ir.model.fields,field_description:sav.field_crm_reclaim_category_display_name
+#: model:ir.model.fields,field_description:sav.field_crm_reclaim_cause_display_name
+#: model:ir.model.fields,field_description:sav.field_crm_reclaim_display_name
+#: model:ir.model.fields,field_description:sav.field_crm_reclaim_document_display_name
+#: model:ir.model.fields,field_description:sav.field_crm_reclaim_document_type_display_name
+#: model:ir.model.fields,field_description:sav.field_crm_reclaim_note_display_name
+#: model:ir.model.fields,field_description:sav.field_crm_reclaim_state_display_name
+msgid "Display Name"
+msgstr "Display Name"
+
+#. module: sav
+#: model:ir.model.fields,field_description:sav.field_crm_reclaim_document_document
+msgid "Document"
+msgstr "Document"
+
+#. module: sav
+#: model:ir.ui.view,arch_db:sav.view_form_crm_reclaim_id
+msgid "Document of the reclaim"
+msgstr "Documents de la réclamation"
+
+#. module: sav
+#: model:ir.model.fields,field_description:sav.field_crm_reclaim_document_ids
+#: model:ir.ui.view,arch_db:sav.view_form_crm_reclaim_id
+msgid "Documents"
+msgstr "Documents"
+
+#. module: sav
+#: code:addons/sav/crm_reclaim.py:69
+#, python-format
+msgid "Done"
+msgstr "Terminé"
+
+#. module: sav
+#: model:ir.ui.view,arch_db:sav.view_kanban_crm_reclaim
+msgid "Edit"
+msgstr "Éditer"
+
+#. module: sav
+#: model:ir.model.fields,field_description:sav.field_crm_reclaim_end_date
+msgid "End date"
+msgstr "Date de fin"
+
+#. module: sav
+#: code:addons/sav/crm_reclaim.py:308
+#, python-format
+msgid "Error"
+msgstr "Erreur"
+
+#. module: sav
+#: sql_constraint:crm.reclaim.state:0
+msgid "Error: There is already an other state with this sequence."
+msgstr "Error: Il y a déjà un autre état avec cette séquence."
+
+#. module: sav
+#: model:ir.model,name:sav.model_calendar_event
+msgid "Event"
+msgstr "Action"
+
+#. module: sav
+#: code:addons/sav/crm_reclaim.py:376
+#, python-format
+msgid "External"
+msgstr "Extern"
+
+#. module: sav
+#: model:ir.ui.view,arch_db:sav.view_form_intervention_sav_id
+msgid "Finish"
+msgstr "Terminée"
+
+#. module: sav
+#: model:ir.model.fields,field_description:sav.field_crm_reclaim_state_fold
+msgid "Folded in kanban view"
+msgstr "Replié dans la vue kanban"
+
+#. module: sav
+#: model:ir.model.fields,field_description:sav.field_crm_reclaim_category_id
+#: model:ir.model.fields,field_description:sav.field_crm_reclaim_cause_id_13466
+#: model:ir.model.fields,field_description:sav.field_crm_reclaim_document_id
+#: model:ir.model.fields,field_description:sav.field_crm_reclaim_document_type_id
+#: model:ir.model.fields,field_description:sav.field_crm_reclaim_id
+#: model:ir.model.fields,field_description:sav.field_crm_reclaim_note_id
+#: model:ir.model.fields,field_description:sav.field_crm_reclaim_state_id_13518
+msgid "ID"
+msgstr "ID"
+
+#. module: sav
+#: model:ir.ui.view,arch_db:sav.view_form_intervention_sav_id
+msgid "Import maintenance operation"
+msgstr "Import maintenance operation"
+
+#. module: sav
+#: model:ir.ui.view,arch_db:sav.view_kanban_crm_reclaim
+msgid "Important Messages"
+msgstr "Messages important"
+
+#. module: sav
+#: model:ir.ui.view,arch_db:sav.view_form_intervention_sav_id
+msgid "Instructions"
+msgstr "Instructions"
+
+#. module: sav
+#: model:ir.ui.view,arch_db:sav.view_form_intervention_sav_id
+msgid "Instructions/Notes"
+msgstr "Instructions/Notes"
+
+#. module: sav
+#: code:addons/sav/crm_reclaim.py:375
+#, python-format
+msgid "Internal"
+msgstr "Intern"
+
+#. module: sav
+#: code:addons/sav/crm_reclaim.py:264
+#: model:ir.model.fields,field_description:sav.field_crm_reclaim_intervention_id
+#: model:ir.model.fields,field_description:sav.field_quick_creation_mo_intervention_id
+#, python-format
+msgid "Intervention"
+msgstr "Intervention"
+
+#. module: sav
+#: model:ir.ui.view,arch_db:sav.view_form_intervention_sav_id
+msgid "Interventions"
+msgstr "Interventions"
+
+#. module: sav
+#: model:ir.ui.view,arch_db:sav.view_form_intervention_sav_id
+msgid "Invoices"
+msgstr "Factures"
+
+#. module: sav
+#: model:ir.ui.view,arch_db:sav.view_form_intervention_sav_id
+msgid "Invoicing"
+msgstr "Facutration"
+
+#. module: sav
+#: model:ir.model.fields,field_description:sav.field_crm_reclaim_state_is_end
+msgid "Is CRM end"
+msgstr "Est un état final"
+
+#. module: sav
+#: model:ir.model.fields,field_description:sav.field_crm_reclaim_state_is_lost_state
+msgid "Is lost state"
+msgstr "État 'perdu'"
+
+#. module: sav
+#: model:ir.model.fields,field_description:sav.field_crm_reclaim_state_is_new_state
+msgid "Is new state"
+msgstr "État 'nouveau'"
+
+#. module: sav
+#: model:ir.model.fields,field_description:sav.field_crm_reclaim_state_is_sale_creation_state
+msgid "Is sale creation state"
+msgstr "État de la création de vente"
+
+#. module: sav
+#: model:ir.model.fields,field_description:sav.field_crm_reclaim_state_is_won_state
+msgid "Is won state"
+msgstr "État 'gagné'"
+
+#. module: sav
+#: model:ir.model.fields,field_description:sav.field_crm_reclaim___last_update
+#: model:ir.model.fields,field_description:sav.field_crm_reclaim_category___last_update
+#: model:ir.model.fields,field_description:sav.field_crm_reclaim_cause___last_update
+#: model:ir.model.fields,field_description:sav.field_crm_reclaim_document___last_update
+#: model:ir.model.fields,field_description:sav.field_crm_reclaim_document_type___last_update
+#: model:ir.model.fields,field_description:sav.field_crm_reclaim_note___last_update
+#: model:ir.model.fields,field_description:sav.field_crm_reclaim_state___last_update
+msgid "Last Modified on"
+msgstr "Dernière modification le"
+
+#. module: sav
+#: model:ir.model.fields,field_description:sav.field_crm_reclaim_category_write_uid
+#: model:ir.model.fields,field_description:sav.field_crm_reclaim_cause_write_uid
+#: model:ir.model.fields,field_description:sav.field_crm_reclaim_document_type_write_uid
+#: model:ir.model.fields,field_description:sav.field_crm_reclaim_document_write_uid
+#: model:ir.model.fields,field_description:sav.field_crm_reclaim_note_write_uid
+#: model:ir.model.fields,field_description:sav.field_crm_reclaim_state_write_uid
+#: model:ir.model.fields,field_description:sav.field_crm_reclaim_write_uid
+msgid "Last Updated by"
+msgstr "Dernière mise à jour par"
+
+#. module: sav
+#: model:ir.model.fields,field_description:sav.field_crm_reclaim_category_write_date
+#: model:ir.model.fields,field_description:sav.field_crm_reclaim_cause_write_date
+#: model:ir.model.fields,field_description:sav.field_crm_reclaim_document_type_write_date
+#: model:ir.model.fields,field_description:sav.field_crm_reclaim_document_write_date
+#: model:ir.model.fields,field_description:sav.field_crm_reclaim_note_write_date
+#: model:ir.model.fields,field_description:sav.field_crm_reclaim_state_write_date
+#: model:ir.model.fields,field_description:sav.field_crm_reclaim_write_date
+msgid "Last Updated on"
+msgstr "Dernière modification le"
+
+#. module: sav
+#: model:ir.ui.menu,name:sav.menu_sav_maintenance_operation_id
+msgid "List model maintenance operation"
+msgstr "Liste des modèles de maintenances"
+
+#. module: sav
+#: model:ir.actions.act_window,name:sav.act_sav_maintenance_operation_id
+msgid "List model maintenance operations"
+msgstr "Liste des modèles d'opérations de maintenances"
+
+#. module: sav
+#: model:ir.ui.view,arch_db:sav.view_form_intervention_sav_id
+msgid "Lists of charges"
+msgstr "Listes des charges"
+
+#. module: sav
+#: model:ir.actions.act_window,name:sav.act_sav_intervention_id
+#: model:ir.actions.act_window,name:sav.act_sav_intervention_id2
+#: model:ir.ui.menu,name:sav.menu_sav_intervention_id
+msgid "Lists of interventions"
+msgstr "Listes de interventions"
+
+#. module: sav
+#: model:crm.reclaim.state,name:sav.crm_reclaim_state_lost
+msgid "Lost"
+msgstr "Perdu"
+
+#. module: sav
+#: model:ir.model.fields,field_description:sav.field_crm_reclaim_mail_ids
+#: model:ir.ui.view,arch_db:sav.view_form_intervention_sav_id
+msgid "Mails"
+msgstr "Mails"
+
+#. module: sav
+#: model:ir.ui.view,arch_db:sav.view_form_crm_reclaim_id
+msgid "Mails of the reclaim"
+msgstr "Mails de la réclamation"
+
+#. module: sav
+#: model:ir.ui.view,arch_db:sav.view_form_intervention_sav_id
+msgid "Manufacturings orders of repair"
+msgstr "OF de réparation"
+
+#. module: sav
+#: model:ir.ui.view,arch_db:sav.view_form_intervention_sav_id
+msgid "Moves pieces"
+msgstr "Mouvements des pièces"
+
+#. module: sav
+#: model:ir.model.fields,field_description:sav.field_crm_reclaim_category_name
+#: model:ir.model.fields,field_description:sav.field_crm_reclaim_cause_name
+#: model:ir.model.fields,field_description:sav.field_crm_reclaim_document_type_name
+#: model:ir.model.fields,field_description:sav.field_crm_reclaim_sequence
+#: model:ir.model.fields,field_description:sav.field_crm_reclaim_state_name
+msgid "Name"
+msgstr "Nom"
+
+#. module: sav
+#: model:crm.reclaim.state,name:sav.crm_reclaim_state_negotiation
+msgid "Negotiation"
+msgstr "Négociation"
+
+#. module: sav
+#: code:addons/sav/crm_reclaim.py:66
+#: model:crm.reclaim.state,name:sav.crm_reclaim_state_new
+#, python-format
+msgid "New"
+msgstr "Nouveau"
+
+#. module: sav
+#: model:ir.model.fields,field_description:sav.field_crm_reclaim_next_action_date
+msgid "Next action date"
+msgstr "Date de la prochaine action"
+
+#. module: sav
+#: model:ir.model.fields,field_description:sav.field_crm_reclaim_next_action_user_id
+msgid "Next action responsible"
+msgstr "Responsable prochaine action"
+
+#. module: sav
+#: code:addons/sav/crm_reclaim.py:308
+#, python-format
+msgid "No move out."
+msgstr "Pas de mouvement sortant."
+
+#. module: sav
+#: code:addons/sav/crm_reclaim.py:78
+#, python-format
+msgid "Normal"
+msgstr "Normal"
+
+#. module: sav
+#: model:ir.ui.view,arch_db:sav.view_form_crm_reclaim_id
+msgid "Note of the relcaim"
+msgstr "Notes de la réclamation"
+
+#. module: sav
+#: model:ir.model.fields,field_description:sav.field_crm_reclaim_note_ids
+#: model:ir.ui.view,arch_db:sav.view_form_crm_reclaim_id
+#: model:ir.ui.view,arch_db:sav.view_form_intervention_sav_id
+msgid "Notes"
+msgstr "Notes"
+
+#. module: sav
+#: model:ir.ui.view,arch_db:sav.view_form_state_crm_reclaim
+msgid "Parameters"
+msgstr "Paramètres"
+
+#. module: sav
+#: model:ir.model,name:sav.model_park
+#: model:ir.model.fields,field_description:sav.field_crm_reclaim_park_id
+msgid "Park"
+msgstr "Parc"
+
+#. module: sav
+#: model:ir.actions.act_window,name:sav.act_sav_park_id
+#: model:ir.ui.menu,name:sav.menu_sav_park_id
+msgid "Parks"
+msgstr "Parcs"
+
+#. module: sav
+#: model:ir.ui.view,arch_db:sav.view_form_intervention_sav_id
+msgid "Pieces of maintenance"
+msgstr "Pièces de maintenance"
+
+#. module: sav
+#: model:ir.ui.view,arch_db:sav.view_form_intervention_sav_id
+msgid "Planning"
+msgstr "Planning"
+
+#. module: sav
+#: model:ir.model.fields,field_description:sav.field_crm_reclaim_processing_date
+msgid "Processing date"
+msgstr "Date limite de traitement"
+
+#. module: sav
+#: model:ir.ui.view,arch_db:sav.view_form_intervention_sav_id
+msgid "Production"
+msgstr "Production"
+
+#. module: sav
+#: code:addons/sav/crm_reclaim.py:68
+#, python-format
+msgid "Progress"
+msgstr "En cours"
+
+#. module: sav
+#: model:crm.reclaim.state,name:sav.crm_reclaim_state_proposition
+msgid "Proposition"
+msgstr "Proposition"
+
+#. module: sav
+#: model:ir.ui.view,arch_db:sav.view_form_intervention_sav_id
+msgid "Qty"
+msgstr "Qté"
+
+#. module: sav
+#: model:crm.reclaim.state,name:sav.crm_reclaim_state_qualification
+msgid "Qualification"
+msgstr "Qualification"
+
+#. module: sav
+#: model:ir.ui.view,arch_db:sav.view_form_intervention_sav_id
+msgid "Quotations"
+msgstr "Devis"
+
+#. module: sav
+#: model:ir.ui.view,arch_db:sav.view_form_intervention_sav_id
+msgid "Request"
+msgstr "Demande"
+
+#. module: sav
+#: model:ir.ui.menu,name:sav.menu_sav_resource_intervention_id
+msgid "Resource intervention"
+msgstr "Planning des ressources"
+
+#. module: sav
+#: model:ir.ui.view,arch_db:sav.view_form_intervention_sav_id
+msgid "Resources"
+msgstr "Ressources"
+
+#. module: sav
+#: model:ir.actions.act_window,name:sav.act_sav_resource_intervention_id
+msgid "Resources interventions"
+msgstr "Ressources interventions"
+
+#. module: sav
+#: model:ir.model.fields,field_description:sav.field_crm_reclaim_responsible_id
+msgid "Responsible"
+msgstr "Responsable"
+
+#. module: sav
+#: code:addons/sav/crm_reclaim.py:297
+#: model:ir.model.fields,field_description:sav.field_crm_reclaim_return_picking_id
+#, python-format
+msgid "Return picking"
+msgstr "Picking de retour"
+
+#. module: sav
+#: model:ir.ui.view,arch_db:sav.view_form_intervention_sav_id
+msgid "Return product"
+msgstr "Retourner produit"
+
+#. module: sav
+#: model:ir.ui.view,arch_db:sav.view_form_crm_reclaim_id
+msgid "Return serial num"
+msgstr "Rtourner le picking"
+
+#. module: sav
+#: model:ir.ui.menu,name:sav.menu_sav_id
+#: model:ir.ui.menu,name:sav.submenu_sav_id
+msgid "SAV"
+msgstr "SAV"
+
+#. module: sav
+#: model:res.groups,name:sav.group_menu_sav_config1
+msgid "SAV configurations"
+msgstr "SAV configuration"
+
+#. module: sav
+#: model:res.groups,name:sav.group_menu_sav_manager1
+msgid "SAV managers"
+msgstr "SAV gestionnaire"
+
+#. module: sav
+#: model:res.groups,name:sav.group_menu_sav_user1
+msgid "SAV users"
+msgstr "SAV utilisateur"
+
+#. module: sav
+#: model:ir.ui.view,arch_db:sav.view_form_intervention_sav_id
+msgid "Sales"
+msgstr "Ventes"
+
+#. module: sav
+#: model:ir.ui.view,arch_db:sav.view_form_intervention_sav_id
+msgid "Sales lines"
+msgstr "Lignes de ventes"
+
+#. module: sav
+#: model:ir.ui.view,arch_db:sav.view_form_intervention_sav_id
+msgid "Select/Create picking"
+msgstr "Sélectionner/créer bon de livraison"
+
+#. module: sav
+#: model:ir.ui.view,arch_db:sav.view_kanban_crm_reclaim
+msgid "Send Email"
+msgstr "Envoyer mail"
+
+#. module: sav
+#: model:ir.ui.view,arch_db:sav.view_form_crm_reclaim_id
+#: model:ir.ui.view,arch_db:sav.view_form_intervention_sav_id
+msgid "Send Mail"
+msgstr "Envoyer mail"
+
+#. module: sav
+#: model:ir.model.fields,field_description:sav.field_crm_reclaim_state_sequence
+msgid "Sequence"
+msgstr "Séquence"
+
+#. module: sav
+#: model:ir.model.fields,field_description:sav.field_crm_reclaim_state_id
+msgid "State"
+msgstr "État"
+
+#. module: sav
+#: model:ir.model.fields,help:sav.field_crm_reclaim_state_is_sale_creation_state
+msgid "State in which the record will pass when a sale order will be created"
+msgstr "État dans lequel l'enregistrement passera lorsque la vente sera créée"
+
+#. module: sav
+#: model:ir.model.fields,help:sav.field_crm_reclaim_state_is_lost_state
+msgid "State in which the record will pass when the CRM is lost"
+msgstr "État dans lequel l'enregistrement passe lorsque l'opportunité est perdue"
+
+#. module: sav
+#: model:ir.model.fields,help:sav.field_crm_reclaim_state_is_won_state
+msgid "State in which the record will pass when the CRM is won"
+msgstr "État dans lequel l'enregistrement passe lorsque l'opportunité est gagnée"
+
+#. module: sav
+#: model:ir.model.fields,help:sav.field_crm_reclaim_state_is_new_state
+msgid "State in which the record will pass when you create a new CRM"
+msgstr "État dans lequel l'enregistrement passe à la création d'une nouvelle opportunité"
+
+#. module: sav
+#: model:ir.ui.menu,name:sav.menu_state_crm_reclaim
+msgid "States"
+msgstr "États"
+
+#. module: sav
+#: model:ir.model,name:sav.model_crm_reclaim_state
+msgid "States for CRM reclaim"
+msgstr "Etats pour CRM réclamation"
+
+#. module: sav
+#: model:ir.model.fields,help:sav.field_crm_reclaim_state_fold
+msgid "This stage is folded in the kanban view whenthere are no records in that stage to display."
+msgstr "Cet état est replié dans la vue kanban lorsqu'il n'y a pas d'enregistrements dans cet état à afficher."
+
+#. module: sav
+#: model:ir.model.fields,help:sav.field_crm_reclaim_state_is_end
+msgid "This stage is the end of the crm process. For example state \"Won\" or \"Lost\""
+msgstr "Cet état est la fin du processus de CRM. Comme par exemple l'état \"Gagné\" ou \"Perdu\""
+
+#. module: sav
+#: model:ir.ui.view,arch_db:sav.view_form_intervention_sav_id
+msgid "Times"
+msgstr "Temps"
+
+#. module: sav
+#: model:ir.ui.view,arch_db:sav.view_form_intervention_sav_id
+msgid "To do"
+msgstr "À faire"
+
+#. module: sav
+#: model:ir.model.fields,field_description:sav.field_crm_reclaim_trunc_description
+msgid "Truncate description"
+msgstr "Description tronquée"
+
+#. module: sav
+#: model:ir.model.fields,field_description:sav.field_crm_reclaim_document_type
+#: model:ir.model.fields,field_description:sav.field_crm_reclaim_note_type
+msgid "Type"
+msgstr "Type"
+
+#. module: sav
+#: model:ir.ui.menu,name:sav.menu_sav_type_failure_intervention_id
+msgid "Type of failure intervention"
+msgstr "Liste des types de panne"
+
+#. module: sav
+#: model:ir.model.fields,field_description:sav.field_crm_reclaim_document_user_id
+#: model:ir.model.fields,field_description:sav.field_crm_reclaim_note_user_id
+msgid "User"
+msgstr "Utilisateur"
+
+#. module: sav
+#: model:ir.ui.view,arch_db:sav.view_form_intervention_sav_id
+msgid "Various"
+msgstr "Divers"
+
+#. module: sav
+#: code:addons/sav/crm_reclaim.py:67
+#, python-format
+msgid "Waiting"
+msgstr "Attente"
+
+#. module: sav
+#: model:ir.ui.view,arch_db:sav.view_form_intervention_sav_id
+msgid "Warning, this will remove the lines that are checked WO MP, and recreate."
+msgstr "Attention, cela va supprimer les lignes qui sont cochées OT PM, et les recréer."
+
+#. module: sav
+#: model:ir.model,name:sav.model_quick_creation_mo
+msgid "Wizard quick creation of MO"
+msgstr "Wizard création rapide d'OF"
+
+#. module: sav
+#: model:crm.reclaim.state,name:sav.crm_reclaim_state_won
+msgid "Won"
+msgstr "Gagné"
+
+#. module: sav
+#: model:mail.template,subject:sav.email_template_for_crm_reclaim
+msgid "etes"
+msgstr "etes"
+
+#. module: sav
+#: model:ir.model.fields,field_description:sav.field_crm_reclaim_document_name
+#: model:ir.model.fields,field_description:sav.field_crm_reclaim_note_subject
+msgid "subject"
+msgstr "Sujet"
+

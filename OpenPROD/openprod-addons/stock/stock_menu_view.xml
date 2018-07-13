@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+		<menuitem name="Supply Chain" id="menu_supply_chain_root" sequence="15" web_icon="base_openprod,static/description/logistic.png" />
+		<menuitem name="Recipt" id="menu_stock_stock_in" parent="menu_supply_chain_root" sequence="10" />
+		<menuitem name="Delivery" id="menu_stock_stock_out" parent="menu_supply_chain_root" sequence="20" />
+		<menuitem name="Stock level" id="menu_stock_stock_level" parent="menu_supply_chain_root" sequence="30" />
+		<menuitem name="Moves" id="menu_stock_move" parent="menu_supply_chain_root" sequence="40"/>
+		<menuitem name="Product storage" id="menu_stock_product_storage" parent="menu_supply_chain_root" sequence="50"/>
+		<menuitem name="Inventory" id="menu_stock_inventory" parent="menu_supply_chain_root" sequence="60" />
+
+		<menuitem name="Stock" id="menu_stock_root" sequence="16" web_icon="base_openprod,static/description/logistic.png" />
+		<menuitem name="Procurement" id="menu_stock_procurement" parent="stock.menu_stock_root" sequence="10" />
+		<menuitem name="Traceability" id="menu_stock_traceability" parent="stock.menu_stock_root" sequence="20" />
+		<menuitem name="Report" id="menu_stock_report" parent="stock.menu_stock_root" sequence="30" />
+		<menuitem name="Valuation PMP" id="valuation" parent="stock.menu_stock_root" sequence="40" />
+		<menuitem name="Valuation of lots" id="valuation_lot" parent="stock.menu_stock_root" sequence="50" />
+		<menuitem name="Synthesis valuation" id="synthesis_valuation" parent="stock.menu_stock_root" sequence="60" />
+		<menuitem name="Configuration" id="menu_stock_configuration" parent="stock.menu_stock_root" sequence="70" />
+
+		<menuitem name="Stock location" action="stock_location.act_stock_location" id="menu_stock_location" parent="stock.menu_stock_configuration" groups="group_menu_stock_config"/>
+		<menuitem name="Stock warehouse" action="stock_location.act_stock_warehouse" id="menu_stock_warehouse" parent="stock.menu_stock_configuration" groups="group_menu_stock_config"/>
+	</data>
+</openerp>

@@ -1,0 +1,732 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+	
+		<!-- === -->
+		<!-- CRM -->
+		<!-- === -->
+		
+		<!-- KANBAN VIEW CRM  -->
+        <record model="ir.ui.view" id="view_kanban_crm_openprod">
+            <field name="name">CRM</field>
+            <field name="model">crm</field>
+            <field name="sequence">10</field>
+            <field name="arch" type="xml">
+                <kanban default_group_by="state_id">
+                    <field name="state_id"/>
+                    <field name="color"/>
+                    <field name="name"/>
+                    <field name="description"/>
+                    <field name="customer_id"/>
+                    <field name="estimated_revenue"/>
+                    <field name="creation_date"/>
+                    <field name="limit_date"/>
+                    <field name="user_event_ids"/>
+                    <field name="success_percent"/>
+                    <field name="nb_actions"/>
+                    <field name="trunc_description"/>
+                    <field name="salesman_id" />
+                    <field name="criticality" />
+                    <field name="concat_category" />
+                    <templates>
+                        <t t-name="kanban-box">
+                        <div t-attf-class="oe_kanban_color_{{kanban_getcolor(record.color.raw_value)}} oe_kanban_global_click" 
+                        		t-attf-style="#{record.criticality.raw_value == 'critical' ? 'border-color:red;border-style: solid;border-width: 1px;' : ''}">
+                                <div class="o_dropdown_kanban dropdown">
+                                    <a class="dropdown-toggle btn" data-toggle="dropdown" href="#" >
+                                        <span class="fa fa-bars fa-lg"/>
+                                    </a>
+                                    <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+                                        <t t-if="widget.editable"><li><a type="edit">Edit</a></li></t>
+                                        <t t-if="widget.deletable"><li><a type="delete">Delete</a></li></t>
+                                        <li><a name="action_send_mail" type="object">Send Email</a></li>
+                                        <li><a type="action" name="%(base_openprod.action_user_action_target_new)d" context="{'reference_generat_auto': True}">Create task</a></li>
+                                        <li><a type="action" name="%(base_openprod.action_note_openprod_id_target_new)d" context="{'reference_generat_auto': True}">Create note</a></li>
+                                    </ul>
+                                </div>
+                                <div class="oe_kanban_content">
+                                    <div>
+                                        <b><field name="name"/></b> ,
+                                        <span>
+	                                        <t t-if="record.trunc_description.raw_value" >
+	                                            <field name="trunc_description"/>
+	                                        </t>
+                                        </span>
+                                    </div>
+                                    <div>
+                                    	<b>Customer : </b>
+                                    	<t t-if="record.customer_id.raw_value">
+                                            <field name="customer_id"/>
+                                        </t>
+                                        <b><t>
+                                            <font color="7C7BAD"><field name="estimated_revenue"/></font>
+                                        </t></b>
+                                        <b><t t-if="record.currency_id.raw_value">
+                                            <font color="7C7BAD"><field name="currency_id"/></font>
+                                        </t></b>
+                                    </div>
+                                    <div>
+                                    	<b>Salesman : </b>
+                                    	<t t-if="record.salesman_id.raw_value">
+                                            <field name="salesman_id" />
+                                        </t>
+                                    </div>
+                                    <div>
+                                    	<b>Creation : </b>
+                                    	<t t-if="record.creation_date.raw_value">
+                                            <field name="creation_date"/>
+                                        </t>
+                                    </div>
+                                    <div>
+                                    	<b>Limit : </b>
+                                    	<t t-if="record.limit_date.raw_value">
+                                            <field name="limit_date"/>
+                                        </t>
+                                    </div>
+                                    <div t-attf-style="#{record.next_action_date.raw_value and record.next_action_date.raw_value lt (new Date())? 'color:red;' : ''}">
+                                    	<b>Next action date : </b>
+                                    	<t t-if="record.next_action_date.raw_value">
+                                            <field name="next_action_date"/>
+                                        </t>
+                                    </div>
+                                    <div>
+                                    	<b>Next action responsible : </b>
+                                    	<t t-if="record.next_action_user_id.raw_value">
+                                            <field name="next_action_user_id"/>
+                                        </t>
+                                    </div>
+                                   	<div class="oe_kanban_partner_categories">
+                                    	<t t-if="record.category_ids.raw_value">
+                                            <field name="category_ids"/>
+                                        </t>
+                                    </div>
+                                    <div class="oe_kanban_footer">
+                                    	<span class='oe_kanban_mail_new' title='Important Messages' t-attf-style="background-color:#8A89BA;padding:3px;color:white;border-style:solid;border-color:grey;border-width:1px;float:left;"><i class='fa fa-comments'/><b> <t t-raw="record.nb_actions.raw_value"/> Actions</b></span>
+                                    	<span t-attf-style="border-style:solid;border-color:grey;border-width:1px;float:right;padding:3px;margin-bottom:6px;margin-top:1px;#{record.success_percent.raw_value > 50.0 ? 'background-color:#33FF99;' : record.success_percent.raw_value &lt; 20.0 ? 'background-color:#FF7878;' : 'background-color:#FF9966;'}">
+                                            <field name="success_percent"/>
+                                            % of success
+                                    	</span>
+                                    </div>
+                                </div>
+                                <div class="oe_clear"></div>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+	
+		<!-- FORM VIEW CRM -->
+		<record id='view_form_crm_openprod' model='ir.ui.view'>
+			<field name="name">view_form_crm_openprod</field>
+			<field name="model">crm</field>
+			<field name="arch" type="xml">
+				<form string="CRM" version="8.0">
+					<header>
+						<field name="state_id" widget="statusbar" clickable="True"/>
+					</header>
+					<group colspan="4" col="9">
+						<group colspan="8" col="6">
+							<div class="oe_title">
+		                        <h1>
+									<field name="name" />
+		                        </h1>
+		                    </div>
+							<group colspan="6" col="6">	
+								<group colspan="2" col="2">
+									<field name="salesman_id" required="1"/>
+									<field name="customer_id" 
+									context="{'default_can_order': True, 'default_is_customer': True, 'default_state':'qualified', 'default_is_company': not b2c_flag}"
+									domain="not b2c_flag and [('can_order', '=', True), ('is_customer', '=', True), ('state', '=', 'qualified'), ('is_company', '=', True)] or [('can_order', '=', True), ('is_company', '=', False)]"/>
+									<field name="origin_id"/>
+									<field name="b2c_flag"/>
+								</group>
+								<group colspan="2" col="2">
+									<field name="criticality" />
+									<label for="estimated_revenue"/>
+									<div>
+										<field name="estimated_revenue" class="oe_inline"/>
+										<field name="currency_id" class="oe_inline"/>
+									</div>
+									<field name="limit_date" />
+								</group>
+								<group colspan="2" col="2">
+									<field name="creation_date" />
+									<field name="success_percent" />
+									<field name="category_ids" widget="many2many_tags"/>
+									<field name="estimated_revenue_avg" invisible="1"/>
+								</group>
+							</group>
+							<group colspan="4" col="4">
+								<notebook colspan="8">
+									<page string="Description and Actions">
+										<group colspan="4" col="4" string="Description">
+											<field name="description" colspan="4" nolabel="1" />
+										</group>
+										<group colspan="4" col="4" string="Actions">
+											<field name="user_event_ids" colspan="4" nolabel="1" context="{'reference_generat_auto': True}">
+												<tree colors="gray:not_display_related and not_display_related==True; red:stop_datetime and (stop_datetime&lt;current_date) and not end_state_related;">
+													<field name="name"/>
+													<field name="state_id"/>
+													<field name="stop_datetime"/>
+													<field name="affected_user_id"/>
+													<field name="duration"/>
+													<field name="state" invisible="1"/>
+													<field name="not_display_related" invisible="1"/>
+													<field name="end_state_related" invisible="1"/>
+												</tree>
+												<form string="Actions" version="8.0">
+													<group colspan="4" col="6">
+														<group colspan="2" col="2">
+															<field name="name" />
+															<field name="start_datetime" on_change="onchange_duration('start', start_datetime, duration)" attrs="{'invisible': [('related_type', '!=', 'plan')]}"/>
+															<field name="stop_datetime" on_change="onchange_duration('stop', stop_datetime, duration)"/>
+														</group>
+														<group colspan="2" col="2">
+															<field name="affected_user_id" />
+															<field name="duration" widget="float_time" on_change="onchange_duration('start', start_datetime, duration)" attrs="{'invisible': [('related_type', '!=', 'plan')]}"/>
+															<field name="alert_period" />
+														</group>
+														<group colspan="2" col="2">
+															<field name="alarm_ids" widget="many2many_tags"/>
+															<field name="type_id" />
+															<field name="state_id" required="1"/>
+															<field name="related_type" invisible="1"/>
+														</group>
+														<group colpsan="6" invisible="1">
+															<field name="state"/>
+															<field name="is_attendee"/>
+								                    		<field name="attendee_status"/>
+								                    		<field name="not_display_related" />
+														</group>
+														<notebook colspan="6">
+							                        		<page string="Details">
+																<group colspan="4" col="4" string="Description">
+																	<field name="description" colspan="4" nolabel="1"/>
+																</group>
+																<group colspan="4" col="4" string="Details">
+																	<field name="user_id" />
+																	<field name="categ_ids"  widget="many2many_tags"/>
+																	<field name="location" />
+																	<group colspan="4" col="8">
+											                          	<button name="remove_seven_days" type="object" string="- 7" icon="gtk-go-back" colspan="1"/>
+																		<button name="remove_one_day" type="object" string="- 1" icon="gtk-go-back" colspan="1"/>
+											                          	<label colspan="4" string=""/>
+											                          	<button name="add_one_day" type="object" string="+ 1" icon="gtk-go-forward" colspan="1"/>
+											                          	<button name="add_seven_days" type="object" string="+ 7" icon="gtk-go-forward" colspan="1"/>
+																	</group>
+																</group>
+																<group colspan="4" col="4" string="Times">
+																	<field name="timetracking_ids" nolabel="1" colspan="4">
+																		<tree>
+																			<field name="name"/>
+																			<field name="activity"/>
+																			<field name="user_id"/>
+																			<field name="start_date"/>
+																			<field name="end_date"/>
+																			<field name="time" widget="float_time" sum="Total"/>
+																		</tree>
+																	</field>
+																</group>
+															</page>
+							                        		<page string="Attendees and invitations" attrs="{'invisible': [('related_type', '!=', 'plan')]}">
+							                        			<group colspan="4" col="4" string="Attendees">
+								                        			<label for="user_ids" string="Attendees" class="oe_edit_only"/>
+											                        <h2>
+											                            <field name="user_ids" widget="many2manyattendee"
+											                                placeholder="Select attendees..."
+											                                context="{'force_email':True}"
+											                                on_change="onchange_user_ids(user_ids)"
+											                                class="oe_inline"/>
+											                        </h2>
+										                        </group>
+										                        <group colspan="4" col="4" string="Invitations">
+								                        			<button name="do_sendmail" type="object" string="Send mail" icon="terp-mail-message-new" class="oe_link"/>
+										                            <field name="attendee_ids" widget="one2many" colspan="4" nolabel="1">
+										                                <tree string="Invitation details" editable="top" create="false" delete="false">
+										                                    <field name="user_id" />
+										                                    <field name="state" />
+										                                    <field name="email" widget="email"/>
+										                                    <button name="do_tentative" states="needsAction,declined,accepted" string="Uncertain" type="object" icon="terp-crm" />
+										                                    <button name="do_accept" string="Accept" states="needsAction,tentative,declined" type="object" icon="gtk-apply"/>
+										                                    <button name="do_decline" string="Decline" states="needsAction,tentative,accepted" type="object" icon="gtk-cancel"/>
+										                                </tree>
+										                            </field>
+										                        </group>
+							                        		</page>
+														</notebook>
+													</group>
+												</form>
+											</field>
+										</group>
+									</page>
+									<page string="Customer's details" attrs="{'invisible': [('customer_id', '!=', False)]}">
+										<group colspan="4" col="6" string="Details">
+											<group colspan="6" col="6">
+												<group colspan="2" col="2">
+													<field name="customer_name" />
+												</group>
+												<group colspan="4" col="2"/>
+											</group>
+											<group colspan="6" col="6">
+												<group colspan="2" col="2">
+													<field name="street" />
+													<field name="street2" />
+													<field name="street3" />
+												</group>
+												<group colspan="2" col="2">
+													<field name="zip" />
+													<field name="city" />
+													<field name="region_id" domain="[('country_id','=',country_id)]"/>
+													<field name="country_id" attrs="{'required': ['|', ('customer_id', '!=', False), ('customer_name', '!=', False)]}"/>
+												</group>
+												<group colspan="2" col="2">
+													<field name="phone" />
+													<field name="email" />
+												</group>
+											</group>
+										</group>
+									</page>
+									<page string="Communications">
+										<group colspan="4" col="4" string="Opportunity contacts">
+											<field name="contact_ids" options="{'no_create': True}" colspan="4" nolabel="1" />
+										</group>
+										<group colspan="4" col="4" string="Emails">
+											<field name="mail_ids" colspan="4" nolabel="1" />
+										</group>
+									</page>
+									<page string="Documentations">
+										<group colspan="4" col="4" string="Notes">
+											<field name="note_ids" colspan="4" nolabel="1" context="{'from_object': True}">
+												<tree>
+													<field name="user_id"/>
+													<field name="type"/>
+													<field name="name"/>
+													<field name="date"/>
+												</tree>
+											</field>
+										</group>
+										<group colspan="4" col="4" string="Attachments">
+											<field name="document_ids" colspan="4" nolabel="1"/>
+										</group>
+									</page>
+									<page string="History">
+										<group colspan="4" col="4">
+											<field name="end_date"/>
+											<group colspan="4" col="4" string="Opportunity history" name="action_history">
+												<field name="log_ids" colspan="4" nolabel="1"/>
+											</group>
+											<group colspan="4" col="4" string="Sales" name="sales">
+												<field name="sale_ids" colspan="4" nolabel="1"/>
+											</group>
+										</group>
+									</page>
+								</notebook>
+							</group>
+						</group>
+						<group colspan="1" col="1" class="op_shortcuts" name="action_crm_menu">
+							<separator string="Actions" colspan="1"/>
+							<button name="action_send_mail" type="object" string="Send Mail" class="oe_inline oe_stat_button" icon="fa-envelope"/>
+							<button type="object" string="Create customer" name="create_new_partner_action" class="oe_inline oe_stat_button" icon="fa-check" 
+								attrs="{'invisible': ['|', ('customer_id', '!=', False), ('customer_name', '=', False)]}"/>
+							<button type="object" string="Create sale" name="create_new_sale" class="oe_inline oe_stat_button" icon="fa-check" 
+								attrs="{'invisible': [('customer_id', '=', False)]}"/>
+						</group>
+					</group>
+				</form>
+			</field>
+		</record>
+		
+		<!-- TREE VIEW CRM -->
+		<record id='view_tree_crm_openprod' model='ir.ui.view'>
+			<field name="name">view_tree_crm_openprod</field>
+			<field name="model">crm</field>
+			<field name="arch" type="xml">
+				<tree string="CRM" version="8.0">
+					<field name="name"/>
+					<field name="customer_id"/>
+					<field name="salesman_id"/>
+					<field name="criticality"/>
+					<field name="creation_date"/>
+					<field name="limit_date"/>
+					<field name="end_date"/>
+					<field name="state_id"/>
+				</tree>
+			</field>
+		</record>
+		
+		
+		<!-- SEARCH VIEW CRM -->
+		<record id='view_search_crm_openprod' model='ir.ui.view'>
+			<field name="name">view_search_crm_openprod</field>
+			<field name="model">crm</field>
+			<field name="arch" type="xml">
+				<search version="8.0">
+					<group>
+						<field name="salesman_id"/>
+						<field name="customer_id"/>
+						<field name="state_id"/>
+						<field name="creation_date"/>
+						<field name="limit_date"/>
+					</group>
+					<group expand="0" string="Filters">
+						<filter string="My opportunities" domain="[('salesman_id', '=', uid)]"/>
+						<filter string="Critical" domain="[('criticality', '=', 'critical')]"/>
+					</group>
+					<newline />
+					<group expand="0" string="Group By...">
+						<filter string="Customer" domain="[]" context="{'group_by': 'customer_id'}"/>
+						<filter string="Salesman" domain="[]" context="{'group_by': 'salesman_id'}"/>
+						<filter string="State" domain="[]" context="{'group_by': 'state_id'}"/>
+					</group>
+				</search>
+			</field>
+		</record>
+		
+		<!-- ACTION CRM -->
+		<record id="act_crm_openprod" model="ir.actions.act_window">
+		    <field name="name">CRM</field>
+		    <field name="res_model">crm</field>
+		    <field name="view_type">form</field>
+		    <field name="view_mode">kanban,tree,form</field>
+		    <field name="domain">[]</field>
+		    <field name="context">{}</field>
+		    <field name="search_view_id" ref="view_search_crm_openprod"/>
+		</record>
+		
+		<record id="act_crm_openprod_kanban" model="ir.actions.act_window.view">
+		    <field name="sequence" eval="10"/>
+		    <field name="view_mode">kanban</field>
+		    <field name="view_id" ref="view_kanban_crm_openprod"/>
+		    <field name="act_window_id" ref="act_crm_openprod"/>
+		</record>
+		
+		<record id="act_crm_openprod_tree" model="ir.actions.act_window.view">
+		    <field name="sequence" eval="20"/>
+		    <field name="view_mode">tree</field>
+		    <field name="view_id" ref="view_tree_crm_openprod"/>
+		    <field name="act_window_id" ref="act_crm_openprod"/>
+		</record>
+		
+		<record model="ir.actions.act_window.view" id="act_crm_openprod_form">
+		    <field name="sequence" eval="30"/>
+		    <field name="view_mode">form</field>
+		    <field name="view_id" ref="view_form_crm_openprod"/>
+		    <field name="act_window_id" ref="act_crm_openprod"/>
+		</record>
+		
+		<record model="ir.actions.act_window" id="act_crm_view_only_form">
+			<field name="name">CRM</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="res_model">crm</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">form</field>
+			<field name="target">current</field>
+		</record>
+		
+		<record model="ir.actions.act_window" id="action_see_all_crm">
+			<field name="name">CRM</field>
+			<field name="res_model">crm</field>
+			<field name="view_type">form</field>
+			<field name="view_id" ref="view_tree_crm_openprod" />
+			<field name="view_mode">tree,form</field>
+			<field name="target">current</field>
+		</record>
+		
+        <menuitem name="CRM" id="menu_crm_openprod" parent="sale.menu_sale_main" sequence="15" />
+		<menuitem name="CRM" id="menu_configuration_crm_openprod" parent="sale.menu_sale_configuration"/>
+		<menuitem name="Opportunities" action="act_crm_openprod" id="menu_opportunities_openprod" parent="menu_crm_openprod" groups="group_menu_crm_user"/>
+		
+		<!-- ================ -->
+		<!-- REVENUE ANALYSIS -->
+		<!-- ================ -->
+		
+		<!-- PIVOT VIEW CRM revenue analysis -->	
+		 <record id="view_crm_revenue_analysis_pivot" model="ir.ui.view">
+	         <field name="name">view_crm_revenue_analysis_pivot</field>
+	         <field name="model">crm</field>
+	         <field name="arch" type="xml">
+	             <pivot string="Revenue analysis">
+	                 <field name="state_id" type="col"/>
+	                 <field name="salesman_id" type="row"/>
+	                 <field name="customer_id" type="row"/>
+	                 <field name="estimated_revenue_avg" type="measure"/>
+	             </pivot>
+	         </field>
+    	</record>
+		
+		<!-- GRAPH VIEW CRM revenue analysis -->	
+		 <record id="view_crm_graph_revenue_analysis" model="ir.ui.view">
+	         <field name="name">view_crm_graph_revenue_analysis_pivot</field>
+	         <field name="model">crm</field>
+	         <field name="arch" type="xml">
+	             <graph string="Revenue analysis">
+	                 <field name="state_id" type="col"/>
+	                 <field name="estimated_revenue_avg" type="measure"/>
+	             </graph>
+	         </field>
+    	</record>
+		
+		<!-- ACTION CRM revenue analysis -->
+		<record id="action_crm_revenue_analysis_pivot" model="ir.actions.act_window">
+		    <field name="name">Revenue analysis</field>
+		    <field name="res_model">crm</field>
+		    <field name="view_type">form</field>
+		    <field name="view_mode">pivot,graph</field>
+		    <field name="domain">[]</field>
+		    <field name="context">{}</field>
+		    <field name="view_id" ref="view_crm_revenue_analysis_pivot" />
+		    <field name="search_view_id" ref="view_search_crm_openprod"/>
+		</record>
+	
+		<menuitem name="Revenue analysis" action="action_crm_revenue_analysis_pivot" id="menu_crm_revenue_analysis" parent="menu_crm_openprod" groups="group_menu_crm_user"/>
+
+		
+		<!-- ================ -->
+		<!-- ACTION ANALYSIS -->
+		<!-- ================ -->
+		
+		<!-- PIVOT VIEW CRM action analysis -->	
+		 <record id="view_crm_action_analysis_pivot" model="ir.ui.view">
+	         <field name="name">view_crm_action_analysis_pivot</field>
+	         <field name="model">calendar.event</field>
+	         <field name="arch" type="xml">
+	             <pivot string="Action analysis">
+	                 <field name="state_id" type="col"/>
+	                 <field name="affected_user_id" type="row"/>
+	             </pivot>
+	         </field>
+    	</record>
+		
+		<!-- GRAPH VIEW CRM action analysis -->	
+		 <record id="view_crm_graph_action_analysis" model="ir.ui.view">
+	         <field name="name">view_crm_graph_action_analysis_pivot</field>
+	         <field name="model">calendar.event</field>
+	         <field name="arch" type="xml">
+	             <graph string="Revenue analysis">
+	                 <field name="state_id" type="col"/>
+	                 <field name="affected_user_id" type="row"/>
+	             </graph>
+	         </field>
+    	</record>
+		
+		<!-- ACTION CRM action analysis -->
+		<record id="action_crm_action_analysis_pivot" model="ir.actions.act_window">
+		    <field name="name">Action analysis</field>
+		    <field name="res_model">calendar.event</field>
+		    <field name="view_type">form</field>
+		    <field name="view_mode">pivot,graph</field>
+		    <field name="domain">[('crm_id', '!=', False)]</field>
+		    <field name="context">{}</field>
+		    <field name="view_id" ref="view_crm_action_analysis_pivot" />
+		    <field name="search_view_id" ref="base_openprod.view_search_calendar_event"/>
+		</record>
+	
+		<menuitem name="Action analysis" action="action_crm_action_analysis_pivot" id="menu_crm_action_analysis" parent="menu_crm_openprod" groups="group_menu_crm_user"/>
+		
+		<!-- ============ -->
+		<!-- CRM CATEGORY -->
+		<!-- ============ -->
+		
+		<!-- FORM VIEW CRM category-->
+		<record id='view_form_category_crm_openprod' model='ir.ui.view'>
+			<field name="name">view_form_category_crm_openprod</field>
+			<field name="model">crm.category</field>
+			<field name="arch" type="xml">
+				<form string="CRM Category" version="8.0">
+					<group colspan="4" col="6">
+						<field name="name" />
+						<field name="parent_id"/>
+					</group>
+					<group colspan="4" col="4" string="Description">
+						<field name="description" colspan="4" nolabel="1"/>
+					</group>
+				</form>
+			</field>
+		</record>
+		
+		<!-- TREE VIEW CRM category-->
+		<record id='view_tree_category_crm_openprod' model='ir.ui.view'>
+			<field name="name">view_tree_category_crm_openprod</field>
+			<field name="model">crm.category</field>
+			<field name="arch" type="xml">
+				<tree string="CRM" version="8.0">
+					<field name="name"/>
+					<field name="parent_id"/>
+				</tree>
+			</field>
+		</record>
+		
+		<!-- SEARCH VIEW CRM category-->
+		<record id='view_search_category_crm_openprod' model='ir.ui.view'>
+			<field name="name">view_search_category_crm_openprod</field>
+			<field name="model">crm.category</field>
+			<field name="arch" type="xml">
+				<search version="8.0">
+					<field name="name"/>
+					<field name="parent_id"/>
+				</search>
+			</field>
+		</record>
+		
+		<!-- ACTION CRM category-->
+		<record id="act_category_crm_openprod" model="ir.actions.act_window">
+		    <field name="name">Categories</field>
+		    <field name="res_model">crm.category</field>
+		    <field name="view_type">form</field>
+		    <field name="view_mode">tree,form</field>
+		    <field name="domain">[]</field>
+		    <field name="context">{}</field>
+		    <field name="search_view_id" ref="view_search_category_crm_openprod"/>
+		</record>
+		
+		<menuitem name="Categories" action="act_category_crm_openprod" id="menu_category_crm_openprod" parent="menu_configuration_crm_openprod" groups="sale.group_menu_sale_config"/>
+		
+		<!-- ======= -->
+		<!-- CRM LOG -->
+		<!-- ======= -->
+		
+		<!-- FORM VIEW CRM log-->
+		<record id='view_form_crm_log_openprod' model='ir.ui.view'>
+			<field name="name">view_form_crm_log_openprod</field>
+			<field name="model">crm.log</field>
+			<field name="arch" type="xml">
+				<form string="CRM State" version="8.0">
+					<group colspan="4" col="4">
+						<field name="state_id"/>
+						<field name="date" />
+						<field name="time"/>
+						<field name="user_id"/>
+					</group>
+				</form>
+			</field>
+		</record>
+		
+		<!-- TREE VIEW CRM log-->
+		<record id='view_tree_crm_log_openprod' model='ir.ui.view'>
+			<field name="name">view_tree_crm_log_openprod</field>
+			<field name="model">crm.log</field>
+			<field name="arch" type="xml">
+				<tree string="CRM log" version="8.0">
+					<field name="state_id"/>
+					<field name="date" />
+					<field name="time"/>
+					<field name="user_id"/>
+				</tree>
+			</field>
+		</record>
+		
+		<!-- PIVOT VIEW CRM log -->	
+		 <record id="view_crm_log_pivot" model="ir.ui.view">
+	         <field name="name">view_crm_log_pivot</field>
+	         <field name="model">crm.log</field>
+	         <field name="arch" type="xml">
+	             <pivot string="Progress">
+	                 <field name="state_id" type="row"/>
+	                 <field name="year" type="col"/>
+	                 <field name="month" type="col"/>
+	                 <field name="time" type="measure"/>
+	             </pivot>
+	         </field>
+    	</record>
+		
+		<!-- GRAPH VIEW CRM log -->	
+		 <record id="view_graph_crm_log" model="ir.ui.view">
+	         <field name="name">view_graph_crm_log_pivot</field>
+	         <field name="model">crm.log</field>
+	         <field name="arch" type="xml">
+	             <graph string="Progress">
+	                 <field name="state_id" type="row"/>
+	                 <field name="year" type="col"/>
+	                 <field name="month" type="col"/>
+	                 <field name="time" type="measure"/>
+	             </graph>
+	         </field>
+    	</record>
+		
+		<!-- ACTION CRM log -->
+		<record id="action_crm_log_pivot" model="ir.actions.act_window">
+		    <field name="name">Opportunities progress</field>
+		    <field name="res_model">crm.log</field>
+		    <field name="view_type">form</field>
+		    <field name="view_mode">graph,pivot</field>
+		    <field name="domain">[]</field>
+		    <field name="context">{}</field>
+		    <field name="view_id" ref="view_crm_log_pivot" />
+		</record>
+	
+		<menuitem name="Opportunities progress" action="action_crm_log_pivot" id="menu_crm_log_analysis" parent="menu_crm_openprod" groups="group_menu_crm_user"/>
+		
+		
+		<!-- ========= -->
+		<!-- CRM STATE -->
+		<!-- ========= -->
+		
+		<!-- FORM VIEW CRM state-->
+		<record id='view_form_state_crm_openprod' model='ir.ui.view'>
+			<field name="name">view_form_state_crm_openprod</field>
+			<field name="model">crm.state</field>
+			<field name="arch" type="xml">
+				<form string="CRM State" version="8.0">
+					<group colspan="4" col="4" string="Details">
+						<field name="name" />
+						<field name="sequence"/>
+					</group>
+					<group colspan="4" col="4" string="Parameters">
+						<group colspan="2" col="2">
+							<field name="fold"/>
+							<field name="is_sale_creation_state"/>
+						</group>
+						<group colspan="2" col="2">
+							<field name="is_new_state"/>
+							<field name="is_won_state"/>
+							<field name="is_lost_state"/>
+							<field name="is_end"/>
+						</group>
+					</group>
+					<group colspan="4" col="4" string="Description">
+						<field name="description" colspan="4" nolabel="1"/>
+					</group>
+				</form>
+			</field>
+		</record>
+		
+		<!-- TREE VIEW CRM state-->
+		<record id='view_tree_state_crm_openprod' model='ir.ui.view'>
+			<field name="name">view_tree_state_crm_openprod</field>
+			<field name="model">crm.state</field>
+			<field name="arch" type="xml">
+				<tree string="CRM state" version="8.0">
+					<field name="sequence"/>
+					<field name="name"/>
+					<field name="fold"/>
+				</tree>
+			</field>
+		</record>
+		
+		<!-- SEARCH VIEW CRM state-->
+		<record id='view_search_state_crm_openprod' model='ir.ui.view'>
+			<field name="name">view_search_state_crm_openprod</field>
+			<field name="model">crm.state</field>
+			<field name="arch" type="xml">
+				<search version="8.0">
+					<field name="name"/>
+				</search>
+			</field>
+		</record>
+		
+		<!-- ACTION CRM state-->
+		<record id="act_state_crm_openprod" model="ir.actions.act_window">
+		    <field name="name">States</field>
+		    <field name="res_model">crm.state</field>
+		    <field name="view_type">form</field>
+		    <field name="view_mode">tree,form</field>
+		    <field name="domain">[]</field>
+		    <field name="context">{}</field>
+		    <field name="search_view_id" ref="view_search_state_crm_openprod"/>
+		</record>
+		
+		<menuitem name="States" action="act_state_crm_openprod" id="menu_state_crm_openprod" parent="menu_configuration_crm_openprod" groups="sale.group_menu_sale_config"/>
+		
+	</data>
+</openerp>

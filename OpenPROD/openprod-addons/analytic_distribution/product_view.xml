@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+		<!-- FORM VIEW Product SALE -->
+		<record id='view_form_product_analytic_sale' model='ir.ui.view'>
+			<field name="name">product</field>
+			<field name="model">product.product</field>
+			<field name="priority" eval="1500" />
+			<field name="inherit_id" ref="sale.view_form_product" />
+			<field name="arch" type="xml">
+				<xpath expr="//group[@name='other_sale_info']" position="inside">
+					<group colspan="2" col="2" string="Analytic">
+						<field name="sale_pad_id" domain="[('sale_ok', '=', True)]" context="{'default_company_id': company_id, 'default_sale_ok': True}" />
+					</group>
+				</xpath>
+			</field>
+		</record>
+
+		<!-- FORM VIEW Product PURCHASE -->
+		<record id='view_form_product_analytic_purchase' model='ir.ui.view'>
+			<field name="name">product</field>
+			<field name="model">product.product</field>
+			<field name="priority" eval="1500" />
+			<field name="inherit_id" ref="purchase.view_form_product" />
+			<field name="arch" type="xml">
+				<xpath expr="//group[@name='other_purchase_infos']" position="inside">
+					<group colspan="1" col="2" string="Analytic">
+						<field name="purchase_pad_id" domain="[('purchase_ok', '=', True)]" context="{'default_company_id': company_id, 'default_purchase_ok': True}" />
+					</group>
+				</xpath>
+			</field>
+		</record>
+		
+		
+		<!-- FORM VIEW Product PURCHASE -->
+        <record id='view_form_product_analytic_mrp' model='ir.ui.view'>
+            <field name="name">product</field>
+            <field name="model">product.product</field>
+            <field name="priority" eval="1500" />
+            <field name="inherit_id" ref="mrp.view_form_product" />
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='prod_family_id']" position="after">
+                    <field name="type_compute_analytic_prod" required="1" />
+                    <field name="prod_pad_id" domain="[('production_ok', '=', True)]" context="{'default_company_id': company_id, 'default_production_ok': True}" />
+                </xpath>
+            </field>
+        </record>
+        
+        
+	</data>
+</openerp>

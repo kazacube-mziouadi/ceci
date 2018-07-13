@@ -1,0 +1,188 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* translator
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 9.0c\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-04-11 13:03+0000\n"
+"PO-Revision-Date: 2016-04-11 13:03+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: translator
+#: model:ir.ui.view,arch_db:translator.translator_form
+msgid "Cancel"
+msgstr "Annuler"
+
+#. module: translator
+#: model:ir.model,name:translator.model_res_company
+msgid "Companies"
+msgstr "Sociétés"
+
+#. module: translator
+#: model:ir.model.fields,field_description:translator.field_translator_translate_wizard_create_uid
+msgid "Created by"
+msgstr "Créé par"
+
+#. module: translator
+#: model:ir.model.fields,field_description:translator.field_translator_translate_wizard_create_date
+msgid "Created on"
+msgstr "Créé le"
+
+#. module: translator
+#: model:ir.model.fields,field_description:translator.field_translator_translate_wizard_display_name
+msgid "Display Name"
+msgstr "Afficher le nom"
+
+#. module: translator
+#: model:ir.model.fields,field_description:translator.field_res_lang_editable_in_interface
+msgid "Editable in interface"
+msgstr "Éditable dans l'interface"
+
+#. module: translator
+#: model:ir.ui.view,arch_db:translator.translator_form
+msgid "Help Text"
+msgstr "Champ d'aide"
+
+#. module: translator
+#: model:ir.model.fields,field_description:translator.field_translator_translate_wizard_help_text
+msgid "Help text"
+msgstr "Texte d'aide"
+
+#. module: translator
+#: model:ir.model.fields,field_description:translator.field_translator_translate_wizard_help_text_id
+msgid "Help text id"
+msgstr "Help text id"
+
+#. module: translator
+#: model:ir.model.fields,field_description:translator.field_translator_translate_wizard_help_text_reference
+msgid "Help text in ref. lang"
+msgstr "Aide dans la langue de référence"
+
+#. module: translator
+#: model:ir.model.fields,field_description:translator.field_translator_translate_wizard_id
+msgid "ID"
+msgstr "Identifiant"
+
+#. module: translator
+#: model:ir.model.fields,field_description:translator.field_translator_translate_wizard_label
+msgid "Label"
+msgstr "Libellé"
+
+#. module: translator
+#: code:addons/translator/controllers/controller.py:13
+#, python-format
+msgid "Label not found"
+msgstr "Libellé non trouvé"
+
+#. module: translator
+#: model:ir.model.fields,help:translator.field_translator_translate_wizard_label
+msgid "Label to translate, where you clicked"
+msgstr "Libellé à traduire (celui qui a été cliqué)"
+
+#. module: translator
+#: model:ir.model.fields,field_description:translator.field_translator_translate_wizard_model
+msgid "Label's model"
+msgstr "Modèle"
+
+#. module: translator
+#: code:addons/translator/controllers/controller.py:27
+#, python-format
+msgid "Lang not editable"
+msgstr "Langue non éditable"
+
+#. module: translator
+#: model:ir.model,name:translator.model_res_lang
+msgid "Languages"
+msgstr "Langues"
+
+#. module: translator
+#: model:ir.model.fields,field_description:translator.field_translator_translate_wizard___last_update
+msgid "Last Modified on"
+msgstr "Dernière modification le"
+
+#. module: translator
+#: model:ir.model.fields,field_description:translator.field_translator_translate_wizard_write_uid
+msgid "Last Updated by"
+msgstr "Dernière mise à jour par"
+
+#. module: translator
+#: model:ir.model.fields,field_description:translator.field_translator_translate_wizard_write_date
+msgid "Last Updated on"
+msgstr "Dernière mise à jour le"
+
+#. module: translator
+#: model:ir.model.fields,field_description:translator.field_translator_translate_wizard_new_value
+msgid "New value"
+msgstr "Nouvelle valeur"
+
+#. module: translator
+#: model:ir.model.fields,field_description:translator.field_res_company_reference_lang_id
+msgid "Reference lang"
+msgstr "Langue de référence"
+
+#. module: translator
+#: model:ir.model.fields,field_description:translator.field_translator_translate_wizard_ref_lang
+msgid "Reference lang."
+msgstr "Langue de référence"
+
+#. module: translator
+#: model:ir.model.fields,help:translator.field_translator_translate_wizard_model
+msgid "Reference model to restricted results,\n"
+"this is used to accurate string to translate"
+msgstr " "
+
+#. module: translator
+#: model:ir.model.fields,field_description:translator.field_translator_translate_wizard_reference_value
+msgid "Reference value"
+msgstr "Valeur de référence"
+
+#. module: translator
+#: model:ir.model.fields,field_description:translator.field_translator_translate_wizard_translation_line_ids
+#: model:ir.ui.view,arch_db:translator.translator_form
+msgid "Selection values"
+msgstr "Valeurs du champ Selection"
+
+#. module: translator
+#: model:ir.model.fields,field_description:translator.field_translator_translate_wizard_source_id
+msgid "Source id"
+msgstr "Source id"
+
+#. module: translator
+#: model:ir.model,name:translator.model_translator_translate_wizard
+msgid "Transient model to translate odoo terms"
+msgstr "Transient model to translate odoo terms"
+
+#. module: translator
+#: model:ir.ui.view,arch_db:translator.translator_form
+#: model:res.groups,name:translator.group_translate
+msgid "Translate"
+msgstr "Traduire"
+
+#. module: translator
+#: model:ir.ui.view,arch_db:translator.translator_form
+msgid "Translate (w/o reload)"
+msgstr "Translate (sans recharger)"
+
+#. module: translator
+#: model:ir.model.fields,field_description:translator.field_translator_translate_wizard_lang
+msgid "Translating lang."
+msgstr "Langue de traduction"
+
+#. module: translator
+#: model:ir.model.fields,help:translator.field_translator_translate_wizard_lang
+msgid "Translating language"
+msgstr "Langue de traduction"
+
+#. module: translator
+#: code:addons/translator/controllers/controller.py:155
+#, python-format
+msgid "Translator"
+msgstr "Traducteur"
+

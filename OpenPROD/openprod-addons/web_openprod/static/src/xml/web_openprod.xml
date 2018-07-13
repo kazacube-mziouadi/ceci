@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<templates>
+		
+		<t t-name="KanbanView.ColumnQuickCreate">
+		</t>
+	
+		<t t-name="WidgetButton">
+			<button type="button" t-attf-class="btn btn-sm oe_button #{widget.node.attrs.class or ''}"
+				t-att-style="widget.node.attrs.style"
+				t-att-tabindex="widget.node.attrs.tabindex"
+				t-att-autofocus="widget.node.attrs.autofocus"
+				t-att-accesskey="widget.node.attrs.accesskey">
+				<t t-if="widget.node.attrs.icon">
+					<img t-if="!widget.fa_icon" t-att-src="widget.node.attrs.icon"/>
+					<div t-if="widget.fa_icon" t-attf-class="fa fa-fw #{widget.node.attrs.icon} o_button_icon"/>
+				</t>
+				<div t-if="widget.string"><t t-esc="widget.string"/></div>
+			</button>
+		</t>
+	<t t-name="FormRenderingGroup">
+		<t t-if="string">
+			<fieldset t-attf-class="op_fieldset">
+				<legend t-attf-class="op_legend">
+					<b>
+						<t t-esc="string"/>
+					</b>
+				</legend>
+				<table border="0" cellpadding="0" cellspacing="0" padding-left="10px" t-attf-class="oe_form_group #{classnames}"/>
+			</fieldset>
+		</t>
+		<t t-if="!string">
+			<t t-if="classnames=='op_shortcuts'">
+				<div t-attf-class="#{classnames}">
+					<table border="0" cellpadding="0" cellspacing="0" padding-left="10px" t-attf-class="oe_form_group"/>
+				</div>
+			</t>
+			<t t-if="classnames!='op_shortcuts'">
+				<table border="0" cellpadding="0" cellspacing="0" t-attf-class="oe_form_group #{classnames}"/>
+			</t>
+		</t>
+	</t>
+	
+	<t t-name="OP_FormRenderingGroupString">
+		<fieldset t-attf-class="op_fieldset">
+			<legend t-attf-class="op_legend">
+				<b>
+					<t t-esc="string"/>
+				</b>
+			</legend>
+			<table border="0" cellpadding="0" cellspacing="0" padding-left="10px" t-attf-class="oe_form_group #{classnames}"/>
+		</fieldset>
+	</t>
+
+
+	<t t-name="FormRenderingGroupShortcuts">
+    	<div t-attf-class="#{classnames}">
+<!-- 			<legend t-attf-class="op_legend"> -->
+<!-- 				<b> -->
+<!-- 					<t t-esc="string"/> -->
+<!-- 				</b> -->
+<!-- 			</legend> -->
+			<table border="0" cellpadding="0" cellspacing="0" padding-left="10px" t-attf-class="oe_form_group"/>
+		</div>
+	</t>
+	
+	
+</templates>

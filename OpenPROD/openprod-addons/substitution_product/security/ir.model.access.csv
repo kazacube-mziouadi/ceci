@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_substitution_product_bom_user,substitution.product.bom,model_substitution_product_bom,base.group_manufacturing_user,1,0,0,0
+access_substitution_product_bom_manager,substitution.product.bom,model_substitution_product_bom,base.group_manufacturing_manager,1,1,1,1
+access_substitution_product_bom_administrator,substitution.product.bom,model_substitution_product_bom,base.group_manufacturing_admin,1,1,1,1

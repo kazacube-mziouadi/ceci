@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+		<!-- FORM VIEW Account invoice -->
+		<record id="account_cust_openprod_invoice_form_fiscal_position" model="ir.ui.view">
+			<field name="name">account_cust_openprod_invoice_form_fiscal_position</field>
+			<field name="model">account.invoice</field>
+			<field name="inherit_id" ref="account_openprod.account_cust_openprod_invoice_form" />
+			<field name="arch" type="xml">
+				<xpath expr="//field[@name='tva_number']" position="after">
+					<field name="related_tax_exemption_id" />
+					<field name="tax_exemption_id" invisible="1" />
+				</xpath>
+				<xpath expr="//field[@name='fiscal_position_id']" position="replace">
+					<field name="related_fiscal_position_id" />
+					<field name="fiscal_position_id" invisible="1" />
+				</xpath>
+				<xpath expr="//field[@name='amount_untaxed']/../.." position="after">
+					<group colspan="4" col="2" name="group_customer_exoneration_invoice" string="Customer with exoneration" attrs="{'invisible': [('customer_with_exoneration', '=', False)]}">
+						<field name="related_customer_with_exoneration" nolabel="1" />
+						<field name="customer_with_exoneration" invisible="1" />
+					</group>
+				</xpath>
+			</field>
+		</record>
+	</data>
+</openerp>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<openerp>
+    <data>
+        <template id="assets_backend" name="web_openprod assets" inherit_id="web.assets_backend">
+            <xpath expr="." position="inside">
+                <script type="text/javascript" src="/web_to_upper/static/src/js/web_to_upper.js"></script>
+            </xpath>
+        </template>
+    </data>
+</openerp>

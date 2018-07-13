@@ -1,0 +1,543 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* resource_timesheet
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 9.0c\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-10-19 09:40+0000\n"
+"PO-Revision-Date: 2016-10-19 09:40+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: resource_timesheet
+#: code:addons/resource_timesheet/resource_timesheet.py:240
+#, python-format
+msgid "Absent"
+msgstr "Absent"
+
+#. module: resource_timesheet
+#: model:ir.model.fields,field_description:resource_timesheet.field_resource_timesheet_actual_attendance_state
+msgid "Actual state"
+msgstr "Statut actuel"
+
+#. module: resource_timesheet
+#: model:ir.ui.view,arch_db:resource_timesheet.view_form_resource_timesheet
+msgid "Add a Line"
+msgstr "Ajouter une ligne"
+
+#. module: resource_timesheet
+#: model:res.groups,name:resource_timesheet.human_resources_responsible
+msgid "Administrator"
+msgstr "Administrateur"
+
+#. module: resource_timesheet
+#: code:addons/resource_timesheet/resource_timesheet.py:232
+#, python-format
+msgid "Approved"
+msgstr "Approuvé"
+
+#. module: resource_timesheet
+#: model:ir.model.fields,field_description:resource_timesheet.field_resource_timesheet_attendance_ids
+#: model:ir.ui.view,arch_db:resource_timesheet.view_form_attendance_list
+#: model:ir.ui.view,arch_db:resource_timesheet.view_form_resource_timesheet
+#: model:ir.ui.view,arch_db:resource_timesheet.view_tree_attendance_list
+msgid "Attendances"
+msgstr "Présences"
+
+#. module: resource_timesheet
+#: model:ir.model.fields,field_description:resource_timesheet.field_resource_timesheet_calendar_id
+msgid "Calendar"
+msgstr "Calendrier"
+
+#. module: resource_timesheet
+#: model:ir.ui.view,arch_db:resource_timesheet.view_form_clock_in_out
+msgid "Cancel"
+msgstr "Annuler"
+
+#. module: resource_timesheet
+#. openerp-web
+#: code:addons/resource_timesheet/static/src/xml/resource_timesheet.xml:11
+#, python-format
+msgid "Cleaning"
+msgstr "Nettoyage"
+
+#. module: resource_timesheet
+#: model:ir.ui.view,arch_db:resource_timesheet.view_form_resource_timesheet
+msgid "Clock in"
+msgstr "Pointer l'entrée"
+
+#. module: resource_timesheet
+#: model:ir.ui.view,arch_db:resource_timesheet.view_form_clock_in_out
+msgid "Clock in and/or out"
+msgstr "Pointer l'entrée et/ou la sortie"
+
+#. module: resource_timesheet
+#: model:ir.actions.act_window,name:resource_timesheet.action_clock_in_out
+#: model:ir.ui.menu,name:resource_timesheet.menu_clock_in_out
+#: model:ir.ui.view,arch_db:resource_timesheet.view_form_clock_in_out
+msgid "Clock in/out"
+msgstr "Pointer entrée/sortie"
+
+#. module: resource_timesheet
+#: model:ir.ui.view,arch_db:resource_timesheet.view_form_resource_timesheet
+msgid "Clock out"
+msgstr "Pointer la sortie"
+
+#. module: resource_timesheet
+#: model:ir.ui.view,arch_db:resource_timesheet.view_form_wizard_create_timetracking_timesheet
+msgid "Close"
+msgstr "Fermer"
+
+#. module: resource_timesheet
+#: model:ir.model.fields,field_description:resource_timesheet.field_resource_timesheet_company_id
+msgid "Company"
+msgstr "Société"
+
+#. module: resource_timesheet
+#: model:ir.ui.view,arch_db:resource_timesheet.view_form_wizard_create_timetracking_timesheet
+msgid "Create"
+msgstr "Créer"
+
+#. module: resource_timesheet
+#: model:ir.model,name:resource_timesheet.model_wizard_create_timetracking
+msgid "Create a timetracking entry, or edit similar entries"
+msgstr "Créer une ligne de temps, ou modifier des temps similaires"
+
+#. module: resource_timesheet
+#: model:ir.model.fields,field_description:resource_timesheet.field_attendance_list_create_uid
+#: model:ir.model.fields,field_description:resource_timesheet.field_clock_in_out_create_uid
+#: model:ir.model.fields,field_description:resource_timesheet.field_resource_timesheet_create_uid
+msgid "Created by"
+msgstr "Créé par"
+
+#. module: resource_timesheet
+#: model:ir.model.fields,field_description:resource_timesheet.field_attendance_list_create_date
+#: model:ir.model.fields,field_description:resource_timesheet.field_clock_in_out_create_date
+#: model:ir.model.fields,field_description:resource_timesheet.field_resource_timesheet_create_date
+msgid "Created on"
+msgstr "Créé le"
+
+#. module: resource_timesheet
+#: model:ir.model.fields,field_description:resource_timesheet.field_attendance_list_date
+msgid "Date"
+msgstr "Date"
+
+#. module: resource_timesheet
+#: model:ir.model.fields,field_description:resource_timesheet.field_resource_timesheet_date_from
+msgid "Date from"
+msgstr "Date de début"
+
+#. module: resource_timesheet
+#: model:ir.model.fields,field_description:resource_timesheet.field_clock_in_out_date_in
+msgid "Date in"
+msgstr "Date d'entrée"
+
+#. module: resource_timesheet
+#: model:ir.model.fields,field_description:resource_timesheet.field_clock_in_out_date_out
+msgid "Date out"
+msgstr "Date de sortie"
+
+#. module: resource_timesheet
+#: model:ir.model.fields,field_description:resource_timesheet.field_resource_timesheet_date_to
+msgid "Date to"
+msgstr "Date de fin"
+
+#. module: resource_timesheet
+#: model:ir.ui.view,arch_db:resource_timesheet.view_form_resource_timesheet
+msgid "Details"
+msgstr "Détails"
+
+#. module: resource_timesheet
+#: model:ir.model.fields,field_description:resource_timesheet.field_resource_timesheet_diff_input_hours
+msgid "Difference attendance/input hours"
+msgstr "Différence heures pointées/saisies"
+
+#. module: resource_timesheet
+#: model:ir.model.fields,field_description:resource_timesheet.field_resource_timesheet_diff_theoritical_hours
+msgid "Difference attendance/theoretical hours"
+msgstr "Différence heures pointées/théoriques"
+
+#. module: resource_timesheet
+#: model:ir.model.fields,field_description:resource_timesheet.field_attendance_list_display_name
+#: model:ir.model.fields,field_description:resource_timesheet.field_clock_in_out_display_name
+#: model:ir.model.fields,field_description:resource_timesheet.field_resource_timesheet_display_name
+msgid "Display Name"
+msgstr "Afficher le nom"
+
+#. module: resource_timesheet
+#: code:addons/resource_timesheet/resource_timesheet.py:408
+#, python-format
+msgid "Error ! You cannot have two attendance line one after the other with the same type"
+msgstr "Erreur ! Vous ne pouvez avoir deux lignes de présence du même type l'une après l'autre"
+
+#. module: resource_timesheet
+#: code:addons/resource_timesheet/resource_timesheet.py:308
+#, python-format
+msgid "Error ! You cannot have two timesheets that overlap for the same resource"
+msgstr "Erreur ! Vous ne pouvez avoir deux feuilles de temps qui se chevauchent pour une même ressource"
+
+#. module: resource_timesheet
+#: code:addons/resource_timesheet/resource_timesheet.py:283
+#: code:addons/resource_timesheet/resource_timesheet.py:396
+#, python-format
+msgid "Error ! Your attendance line must be included in the timesheet dates"
+msgstr "Erreur ! La date de votre ligne de présence doit être inclus dans les dates de la timesheet"
+
+#. module: resource_timesheet
+#: model:ir.ui.view,arch_db:resource_timesheet.view_search_my_timesheet
+msgid "Filters"
+msgstr "Filtres"
+
+#. module: resource_timesheet
+#: model:ir.ui.view,arch_db:resource_timesheet.view_search_resource_timesheet
+msgid "Group By..."
+msgstr "Grouper par..."
+
+#. module: resource_timesheet
+#: model:ir.ui.menu,name:resource_timesheet.menu_hr_main
+msgid "HR"
+msgstr "RH"
+
+#. module: resource_timesheet
+#: model:res.groups,name:resource_timesheet.group_menu_human_resources_analyse
+msgid "HR analysis"
+msgstr "Analyses RH"
+
+#. module: resource_timesheet
+#: model:res.groups,name:resource_timesheet.group_menu_human_resources_config
+msgid "HR configuration"
+msgstr "Configuration RH"
+
+#. module: resource_timesheet
+#: model:res.groups,name:resource_timesheet.group_menu_human_resources_user
+msgid "HR user"
+msgstr "Utilisateur RH"
+
+#. module: resource_timesheet
+#: model:ir.model.fields,field_description:resource_timesheet.field_attendance_list_id
+#: model:ir.model.fields,field_description:resource_timesheet.field_clock_in_out_id
+#: model:ir.model.fields,field_description:resource_timesheet.field_resource_timesheet_id
+msgid "ID"
+msgstr "ID"
+
+#. module: resource_timesheet
+#: code:addons/resource_timesheet/wizard/clock_in_out.py:25
+#, python-format
+msgid "If you have an in and an out date, the out date must be superior to the in date!"
+msgstr "Si vous avez saisi une entrée et une sortie, la date de sortie doit être supérieure à la date de l'entrée!"
+
+#. module: resource_timesheet
+#: code:addons/resource_timesheet/resource_timesheet.py:372
+#, python-format
+msgid "In"
+msgstr "Entrée"
+
+#. module: resource_timesheet
+#: model:ir.model.fields,field_description:resource_timesheet.field_attendance_list___last_update
+#: model:ir.model.fields,field_description:resource_timesheet.field_clock_in_out___last_update
+#: model:ir.model.fields,field_description:resource_timesheet.field_resource_timesheet___last_update
+msgid "Last Modified on"
+msgstr "Dernière modification le"
+
+#. module: resource_timesheet
+#: model:ir.model.fields,field_description:resource_timesheet.field_attendance_list_write_uid
+#: model:ir.model.fields,field_description:resource_timesheet.field_clock_in_out_write_uid
+#: model:ir.model.fields,field_description:resource_timesheet.field_resource_timesheet_write_uid
+msgid "Last Updated by"
+msgstr "Dernière mise à jour par"
+
+#. module: resource_timesheet
+#: model:ir.model.fields,field_description:resource_timesheet.field_attendance_list_write_date
+#: model:ir.model.fields,field_description:resource_timesheet.field_clock_in_out_write_date
+#: model:ir.model.fields,field_description:resource_timesheet.field_resource_timesheet_write_date
+msgid "Last Updated on"
+msgstr "Dernière mise à jour le"
+
+#. module: resource_timesheet
+#: model:ir.model,name:resource_timesheet.model_attendance_list
+msgid "List of attendances for a timesheet"
+msgstr "Liste des présences pour une feuille de temps"
+
+#. module: resource_timesheet
+#: model:res.groups,name:resource_timesheet.human_resources_manager
+msgid "Manager"
+msgstr "Gestionnaire"
+
+#. module: resource_timesheet
+#: model:ir.ui.view,arch_db:resource_timesheet.view_form_wizard_create_timetracking_timesheet
+msgid "Modify lines"
+msgstr "Modifier les lignes"
+
+#. module: resource_timesheet
+#: model:ir.ui.menu,name:resource_timesheet.menu_see_my_timesheet
+msgid "My Timesheet"
+msgstr "Ma Feuille de temps"
+
+#. module: resource_timesheet
+#: model:ir.ui.view,arch_db:resource_timesheet.view_search_my_timesheet
+#: model:ir.ui.view,arch_db:resource_timesheet.view_search_resource_timesheet
+msgid "My timesheet"
+msgstr "Ma Feuille de temps"
+
+#. module: resource_timesheet
+#: code:addons/resource_timesheet/resource_timesheet.py:229
+#, python-format
+msgid "New"
+msgstr "Nouveau"
+
+#. module: resource_timesheet
+#: code:addons/resource_timesheet/resource_timesheet.py:230
+#, python-format
+msgid "Opened"
+msgstr "Ouverte"
+
+#. module: resource_timesheet
+#: code:addons/resource_timesheet/resource_timesheet.py:373
+#, python-format
+msgid "Out"
+msgstr "Sortie"
+
+#. module: resource_timesheet
+#: code:addons/resource_timesheet/resource_timesheet.py:239
+#, python-format
+msgid "Present"
+msgstr "Present"
+
+#. module: resource_timesheet
+#. openerp-web
+#: code:addons/resource_timesheet/static/src/xml/resource_timesheet.xml:10
+#, python-format
+msgid "Production"
+msgstr "Production"
+
+#. module: resource_timesheet
+#: model:ir.model,name:resource_timesheet.model_mrp_resource
+#: model:ir.model.fields,field_description:resource_timesheet.field_resource_timesheet_resource_id
+#: model:ir.ui.view,arch_db:resource_timesheet.view_search_resource_timesheet
+msgid "Resource"
+msgstr "Ressource"
+
+#. module: resource_timesheet
+#: model:ir.model,name:resource_timesheet.model_mrp_resource_category
+msgid "Resource category "
+msgstr "Category ressource"
+
+#. module: resource_timesheet
+#: model:ir.actions.act_window,name:resource_timesheet.act_resource_my_timesheet
+#: model:ir.actions.act_window,name:resource_timesheet.act_resource_timesheet
+#: model:ir.ui.view,arch_db:resource_timesheet.view_tree_resource_timesheet
+msgid "Resource timesheet"
+msgstr "Feuille de temps de ressource"
+
+#. module: resource_timesheet
+#: model:ir.actions.act_window,name:resource_timesheet.action_resource_timesheet_analysis
+msgid "Resource timesheet analysis"
+msgstr "Analyse feuille de temps"
+
+#. module: resource_timesheet
+#: model:ir.ui.view,arch_db:resource_timesheet.view_form_wizard_create_timetracking_timesheet
+msgid "Save existing"
+msgstr "Enregistrer les modifications"
+
+#. module: resource_timesheet
+#: model:ir.model.fields,field_description:resource_timesheet.field_resource_timesheet_search_my_timesheet
+msgid "Search my timesheet"
+msgstr "Rechercher ma feuille de temps"
+
+#. module: resource_timesheet
+#: model:ir.ui.view,arch_db:resource_timesheet.view_form_clock_in_out
+msgid "Select the date"
+msgstr "Sélectionnez la date"
+
+#. module: resource_timesheet
+#. openerp-web
+#: code:addons/resource_timesheet/static/src/xml/resource_timesheet.xml:9
+#, python-format
+msgid "Setting"
+msgstr "Configuration"
+
+#. module: resource_timesheet
+#: model:ir.model.fields,field_description:resource_timesheet.field_resource_timesheet_state
+msgid "State"
+msgstr "État"
+
+#. module: resource_timesheet
+#: model:ir.model,name:resource_timesheet.model_resource_timetracking
+msgid "Suivi des temps"
+msgstr "Suivi des temps"
+
+#. module: resource_timesheet
+#: model:ir.ui.view,arch_db:resource_timesheet.view_form_resource_timesheet
+msgid "Summary"
+msgstr "Résumé"
+
+#. module: resource_timesheet
+#: model:ir.model.fields,field_description:resource_timesheet.field_resource_timesheet_theoretical_attendance_hours
+msgid "Theoretical attendance hours"
+msgstr "Heures de présences théoriques"
+
+#. module: resource_timesheet
+#: code:addons/resource_timesheet/wizard/clock_in_out.py:42
+#, python-format
+msgid "There is no resource linked to your user, please select a resource in your user profile!"
+msgstr "Il n'y a pas de ressource liée à votre utilisateur, merci de sélectionner une ressource dans votre profil utilisateur!"
+
+#. module: resource_timesheet
+#: model:ir.ui.menu,name:resource_timesheet.menu_human_resource_time_analysis
+#: model:ir.ui.menu,name:resource_timesheet.menu_time_analysis
+msgid "Time analysis"
+msgstr "Analyse des temps"
+
+#. module: resource_timesheet
+#: model:ir.model.fields,field_description:resource_timesheet.field_resource_timesheet_resource_timetracking_ids
+msgid "Time lines"
+msgstr "Lignes de temps"
+
+#. module: resource_timesheet
+#: model:ir.ui.menu,name:resource_timesheet.menu_human_resource_time_tracking
+msgid "Time tracking"
+msgstr "Suivi des temps"
+
+#. module: resource_timesheet
+#: model:ir.model.fields,field_description:resource_timesheet.field_attendance_list_timesheet_id
+#: model:ir.ui.view,arch_db:resource_timesheet.view_form_resource_timesheet
+msgid "Timesheet"
+msgstr "Feuille de temps"
+
+#. module: resource_timesheet
+#: model:ir.ui.view,arch_db:resource_timesheet.view_form_resource_timesheet
+msgid "Timesheet Activities"
+msgstr "Activités des feuilles de temps"
+
+#. module: resource_timesheet
+#: model:ir.ui.view,arch_db:resource_timesheet.view_form_resource_timesheet
+msgid "Timesheet Period"
+msgstr "Période de la feuille de temps"
+
+#. module: resource_timesheet
+#: model:ir.ui.menu,name:resource_timesheet.menu_resource_timesheet_analysis
+msgid "Timesheet analyse"
+msgstr "Analyse feuille de temps"
+
+#. module: resource_timesheet
+#: model:ir.ui.view,arch_db:resource_timesheet.view_graph_resource_timesheet
+#: model:ir.ui.view,arch_db:resource_timesheet.view_resource_timesheet_pivot
+msgid "Timesheet analysis"
+msgstr "Analyse feuille de temps"
+
+#. module: resource_timesheet
+#: model:ir.model,name:resource_timesheet.model_resource_timesheet
+msgid "Timesheet for resource"
+msgstr "Feuille de temps pour les ressource"
+
+#. module: resource_timesheet
+#: model:ir.ui.menu,name:resource_timesheet.menu_see_all_timesheet
+msgid "Timesheets"
+msgstr "Feuille de temps"
+
+#. module: resource_timesheet
+#: model:ir.actions.act_window,name:resource_timesheet.act_resource_timetracking_timesheet
+#: model:ir.ui.menu,name:resource_timesheet.menu_timesheet_timetracking
+msgid "Timetracking"
+msgstr "Suivi des temps"
+
+#. module: resource_timesheet
+#: code:addons/resource_timesheet/resource_timesheet.py:340
+#, python-format
+msgid "Timetracking Lines"
+msgstr "Lignes de temps"
+
+#. module: resource_timesheet
+#: model:ir.actions.act_window,name:resource_timesheet.action_resource_timetracking_analysis
+#: model:ir.ui.view,arch_db:resource_timesheet.view_graph_resource_timetracking
+#: model:ir.ui.view,arch_db:resource_timesheet.view_resource_timetracking_pivot
+msgid "Timetracking analysis"
+msgstr "Analyse des temps"
+
+#. module: resource_timesheet
+#: model:ir.ui.view,arch_db:resource_timesheet.view_form_resource_timesheet
+msgid "Timetracking lines"
+msgstr "Lignes de temps"
+
+#. module: resource_timesheet
+#. openerp-web
+#: code:addons/resource_timesheet/static/src/xml/resource_timesheet.xml:23
+#: code:addons/resource_timesheet/static/src/xml/resource_timesheet.xml:42
+#, python-format
+msgid "Total"
+msgstr "Total"
+
+#. module: resource_timesheet
+#: model:ir.model.fields,field_description:resource_timesheet.field_resource_timesheet_total_attendance_hours
+msgid "Total attendance hours"
+msgstr "Total des pointages"
+
+#. module: resource_timesheet
+#: model:ir.model.fields,help:resource_timesheet.field_resource_timesheet_diff_theoritical_hours
+msgid "Total attendance hours - Total theoretical attendance hours"
+msgstr "Total des pointages - Total des heures de présence théoriques"
+
+#. module: resource_timesheet
+#: model:ir.model.fields,field_description:resource_timesheet.field_resource_timesheet_total_input_hours
+msgid "Total input hours"
+msgstr "Total heures saisies"
+
+#. module: resource_timesheet
+#: model:ir.model.fields,help:resource_timesheet.field_resource_timesheet_diff_input_hours
+msgid "Total input hours - total attendance hours"
+msgstr "Total heures saisies - total des pointages"
+
+#. module: resource_timesheet
+#: model:ir.model.fields,field_description:resource_timesheet.field_attendance_list_attendance_type
+msgid "Type"
+msgstr "Type"
+
+#. module: resource_timesheet
+#: model:res.groups,name:resource_timesheet.human_resources_user
+msgid "User"
+msgstr "Utilisateur"
+
+#. module: resource_timesheet
+#: model:ir.model,name:resource_timesheet.model_res_users
+msgid "Users"
+msgstr "Utilisateurs"
+
+#. module: resource_timesheet
+#. openerp-web
+#: code:addons/resource_timesheet/static/src/xml/resource_timesheet.xml:8
+#, python-format
+msgid "Waiting"
+msgstr "En attente"
+
+#. module: resource_timesheet
+#: code:addons/resource_timesheet/resource_timesheet.py:231
+#, python-format
+msgid "Waiting Approval"
+msgstr "En attente d'approbation"
+
+#. module: resource_timesheet
+#: model:ir.model.fields,field_description:resource_timesheet.field_resource_timesheet_week_number
+msgid "Week number"
+msgstr "Numéro de semaine"
+
+#. module: resource_timesheet
+#: model:ir.model,name:resource_timesheet.model_clock_in_out
+msgid "Wizard to clock in and/or out"
+msgstr "Wizard pour pointer l'entrée/la sortie"
+
+#. module: resource_timesheet
+#: model:ir.ui.view,arch_db:resource_timesheet.view_form_clock_in_out
+msgid "or"
+msgstr "ou"
+
+#. module: resource_timesheet
+#: model:ir.ui.view,arch_db:resource_timesheet.view_form_resource_timesheet
+msgid "to"
+msgstr "au"
+

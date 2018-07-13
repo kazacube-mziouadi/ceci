@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <!-- QWeb Reports -->
+<!--         <report  -->
+<!--             id="action_report_print_overdue" -->
+<!--             model="res.partner" -->
+<!--             report_type="qweb-pdf" -->
+<!--             string="Due Payments" -->
+<!--             name="account.report_overdue" -->
+<!--             file="account.report_overdue" -->
+<!--         /> -->
+
+<!--         <report  -->
+<!--             id="action_report_aged_partner_balance" -->
+<!--             model="res.partner" -->
+<!--             string="Aged Partner Balance" -->
+<!--             report_type="qweb-pdf" -->
+<!--             name="account.report_agedpartnerbalance" -->
+<!--             file="account.report_agedpartnerbalance" -->
+<!--             menu="False" -->
+<!--         /> -->
+
+<!--         <report -->
+<!--             id="action_report_partner_ledger" -->
+<!--             model="res.partner" -->
+<!--             string="Partner Ledger" -->
+<!--             report_type="qweb-pdf" -->
+<!--             name="account.report_partnerledger" -->
+<!--             file="account.report_partnerledger" -->
+<!--             menu="False" -->
+<!--         /> -->
+
+<!--         <report -->
+<!--             id="action_report_partner_ledger_other" -->
+<!--             model="res.partner" -->
+<!--             string="Partner Ledger" -->
+<!--             report_type="qweb-pdf" -->
+<!--             name="account.report_partnerledgerother" -->
+<!--             file="account.report_partnerledgerother" -->
+<!--             menu="False" -->
+<!--         /> -->
+
+    </data>
+</openerp>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+
+		<!-- FORM VIEW Times test -->
+		<record id='view_form_times_test' model='ir.ui.view'>
+			<field name="name">view_form_times_test</field>
+			<field name="model">times.test</field>
+			<field name="arch" type="xml">
+				<form string="Times test" version="8.0">
+					<sheet>
+						<group>
+							<field name="name" colspan="4" />
+							<field name="res_ids" />
+							<field name="model" />
+							<field name="function" />
+							<field name="args" colspan="4" />
+							<field name="result" colspan="4" />
+							<field name="time" colspan="4" />
+						</group>
+						<button string="Go" name="go" type="object" class="oe_highlight" />
+					</sheet>
+				</form>
+			</field>
+		</record>
+
+		<!-- TREE VIEW Times test -->
+		<record id='view_tree_times_test' model='ir.ui.view'>
+			<field name="name">view_tree_times_test</field>
+			<field name="model">times.test</field>
+			<field name="arch" type="xml">
+				<tree string="Times tests" version="8.0">
+					<field name="name" />
+					<field name="model" />
+					<field name="function" />
+				</tree>
+			</field>
+		</record>
+
+		<!-- TREE SEARCH Times test -->
+		<record id='view_search_times_test' model='ir.ui.view'>
+			<field name="name">view_tree_times_test</field>
+			<field name="model">times.test</field>
+			<field name="arch" type="xml">
+				<search version="8.0">
+					<field name="model" />
+					<field name="function" />
+				</search>
+			</field>
+		</record>
+
+		<!-- ACTION Times test -->
+		<record id="act_times_test" model="ir.actions.act_window">
+			<field name="name">Times test</field>
+			<field name="res_model">times.test</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+			<field name="domain">[]</field>
+			<field name="context">{}</field>
+			<field name="search_view_id" ref="view_search_times_test" />
+		</record>
+
+		<menuitem name="Times test" action="act_times_test" id="menu_times_test" parent="menu_debug" />
+	</data>
+</openerp>

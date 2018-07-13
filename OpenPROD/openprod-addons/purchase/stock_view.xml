@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+
+		<!-- ========== -->
+		<!-- STOCK MOVE -->
+		<!-- ========== -->
+
+		<!-- FORM VIEW Stock move -->
+		<record id='view_form_move_purchase' model='ir.ui.view'>
+			<field name="name">view_form_move</field>
+			<field name="model">stock.move</field>
+			<field name="priority" eval="1100" />
+			<field name="inherit_id" ref="stock.view_form_move" />
+			<field name="arch" type="xml">
+				<group name="link" position="inside">
+					<field name="purchase_line_id" domain="[('product_id', '=', product_id)]" />
+					<field name="sinfo_id" domain="[('product_id', '=', product_id)]" />
+				</group>
+			</field>
+		</record>
+
+		<!-- ACTION Stock move -->
+		<record model="ir.actions.act_window" id="purchase_stock_move_action">
+			<field name="name">Stock moves</field>
+			<field name="res_model">stock.move</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+			<field name="view_id" ref="stock.view_tree_move" />
+			<field name="target">current</field>
+			<field name="domain">[('purchase_line_id', 'in', context.get('purchase_line_ids', []))]</field>
+		</record>
+
+
+		<!-- ============= -->
+		<!-- STOCK PICKING -->
+		<!-- ============= -->
+
+		<!-- FORM VIEW Stock picking -->
+		<record id='view_form_inherit_stock_picking_in' model='ir.ui.view'>
+			<field name="name">view_form_stock_picking_in</field>
+			<field name="model">stock.picking</field>
+			<field name="priority" eval="1100" />
+			<field name="inherit_id" ref="stock.view_form_stock_picking_in" />
+			<field name="arch" type="xml">
+				<field name="invoice_state" position="after">
+					<field name="purchase_id" readonly="1" />
+				</field>
+			</field>
+		</record>
+
+		<!-- TREE VIEW Stock picking -->
+		<record id='view_tree_picking_purchase' model='ir.ui.view'>
+			<field name="name">view_tree_picking_purchase</field>
+			<field name="model">stock.picking</field>
+			<field name="priority" eval="1100" />
+			<field name="inherit_id" ref="stock.view_tree_stock_picking_in" />
+			<field name="arch" type="xml">
+				<field name="partner_id" position="after">
+					<field name="purchase_id" />
+				</field>
+			</field>
+		</record>
+
+		<!-- TREE SEARCH Stock picking -->
+		<record id='view_search_picking_purchase' model='ir.ui.view'>
+			<field name="name">view_tree_picking_purchase</field>
+			<field name="model">stock.picking</field>
+			<field name="priority" eval="1100" />
+			<field name="inherit_id" ref="stock.view_search_stock_picking_in" />
+			<field name="arch" type="xml">
+				<field name="partner_id" position="after">
+					<field name="purchase_id" />
+				</field>
+			</field>
+		</record>
+
+
+		<!-- ACTION Picking -->
+		<record model="ir.actions.act_window" id="purchase_picking_action">
+			<field name="name">Picking</field>
+			<field name="res_model">stock.picking</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+			<field name="view_id" ref="stock.view_tree_stock_picking_in" />
+			<field name="target">current</field>
+			<field name="domain">[('purchase_id', '=', context.get('purchase_id', False))]</field>
+		</record>
+
+
+
+		<!-- ================= -->
+		<!-- PROCUREMENT ORDER -->
+		<!-- ================= -->
+		<!-- FORM VIEW Procurement order -->
+		<record id='view_form_procurement_order_purchase' model='ir.ui.view'>
+			<field name="name">view_form_procurement_order_purchase</field>
+			<field name="model">procurement.order</field>
+			<field name="priority" eval="1500" />
+			<field name="inherit_id" ref="stock.view_form_procurement_order" />
+			<field name="arch" type="xml">
+				<group name="transfer" position="before">
+					<group string="Purchase" colspan="2" col="2">
+						<field name="pol_id" />
+						<group colspan="2" col="4">
+							<field name="consider_purchase" />
+							<field name="consider_min_multiple" />
+						</group>
+						<group colspan="2" col="1">
+							<center>
+								<button type='action' string="Create PO" name="%(purchase.act_procurement_choose_partner)d" colspan="2" attrs="{'invisible': ['|', ('supply_method', '!=', 'buy'), ('pol_id', '!=', False)]}" />
+								<button type="object" string="Delete PO" name="unlink_po" colspan="2" attrs="{'invisible': [('pol_id', '=', False)]}" />
+							</center>
+						</group>
+					</group>
+				</group>
+			</field>
+		</record>
+
+
+		<!-- TREE VIEW Procurement order -->
+		<record id='view_tree_procurement_order' model='ir.ui.view'>
+			<field name="name">view_tree_procurement_order</field>
+			<field name="model">procurement.order</field>
+			<field name="priority" eval="1500" />
+			<field name="inherit_id" ref="stock.view_tree_procurement_order" />
+			<field name="arch" type="xml">
+				<tree position="inside">
+					<field name="pol_id" />
+					<button type='action' string="Create PO" name="%(purchase.act_procurement_choose_partner)d" colspan="2" attrs="{'invisible': ['|', ('supply_method', '!=', 'buy'), ('pol_id', '!=', False)]}" />
+					<button type="object" string="Delete PO" name="unlink_po" attrs="{'invisible': [('pol_id', '=', False)]}" />
+				</tree>
+			</field>
+		</record>
+
+		<!-- ================ -->
+		<!-- Transfer request -->
+		<!-- ================ -->
+		<!-- FORM VIEW Transfer request -->
+		<record id='view_form_stock_transfer_request_purchase' model='ir.ui.view'>
+			<field name="name">view_form_stock_transfer_request_purchase</field>
+			<field name="model">stock.transfer.request</field>
+			<field name="priority" eval="1500" />
+			<field name="inherit_id" ref="stock.view_form_stock_transfer_request" />
+			<field name="arch" type="xml">
+				<xpath expr="//button[@name='create_transfer_picking_button']" position="after">
+					<button class="oe_inline oe_stat_button" string="Turn into purchase" type="action" name="%(purchase.action_create_quick_purchase)d" icon="fa-cart-plus" 
+					        context="{'default_product_id': product_id, 'default_quantity': uom_qty, 'default_date': need_date}" attrs="{'invisible': [('state', '!=', 'draft')]}" />
+				</xpath>
+			</field>
+		</record>
+	</data>
+</openerp>

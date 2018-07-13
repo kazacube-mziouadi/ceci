@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+    	<!-- FORM VIEW Importation components BoM -->
+		<record id='view_form_importation_component_bom' model='ir.ui.view'>
+			<field name="name">view_form_importation_component_bom</field>
+			<field name="model">importation.component.bom</field>
+			<field name="arch" type="xml">
+				<form string="Importation components BoM" version="8.0">
+					<field name="importation_component_ids" colspan="4" nolabel="1">
+						<tree string="Components" editable="top">
+							<field name="is_import"/>
+							<field name="component_id" domain="[('bom_id','!=',False)]"/>
+							<field name="quantity"/>
+						</tree>
+					</field>
+					<field name="bom_id" invisible="1"/>
+					<footer>
+						<button name="action_importation" string="OK" type="object" class="oe_highlight" />
+						or
+						<button string="Cancel" class="oe_link" special="cancel" />
+					</footer>
+				</form>
+			</field>
+		</record>
+		
+		<!-- ACTION Importation components BoM -->
+		<record id="act_importation_component_bom" model="ir.actions.act_window">
+		    <field name="name">Importation components BoM</field>
+		    <field name="res_model">importation.component.bom</field>
+		    <field name="view_type">form</field>
+		    <field name="view_mode">form</field>
+		    <field name="domain">[]</field>
+		    <field name="target">new</field>
+		</record>
+    </data>
+ </openerp>

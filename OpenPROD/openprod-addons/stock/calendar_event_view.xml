@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+		
+		<record model="ir.ui.view" id="view_form_nonconformity_file_calendar_event">
+			<field name="name">view_form_nonconformity_file_calendar_event</field>
+			<field name="inherit_id" ref="base_openprod.view_form_calendar_event" />
+			<field name="priority" eval="1400" />
+			<field name="model">calendar.event</field>
+			<field name="arch" type="xml">
+				<group name="group_link_object" position="inside">
+					<field name="nonconformity_file_id" attrs="{'invisible': [('link_object','not in',('none', 'nonconformity_file'))]}" options="{'no_create': True}"/>
+				</group>
+			</field>
+		</record>
+		
+	</data>
+</openerp>

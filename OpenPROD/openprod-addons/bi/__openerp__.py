@@ -1,0 +1,26 @@
+# -*- coding: utf-8 -*-
+{
+    'name' : 'BI',
+    'version' : '0.1',
+    'author' : 'Objectif PI',
+    'category' : 'BI',
+    'description' : """ BI """,
+    'website': 'http://objectif-pi.com',
+    'license': 'Open-prod license',
+    'images' : [],
+    'depends' : ['mail'],
+    'data': ['data/mail_template.xml',
+             'data/ir_cron.xml',
+		     'security/ir.model.access.csv',
+             'data/pentaho.xml',
+             'views/menu.xml' ,
+             'views/wizard.xml',
+             'views/configuration.xml',
+             'views/default_dashboard.xml'
+             ],
+    'qweb' : [],
+    'demo': [],
+    'test': [],
+    'installable': True,
+    'auto_install': False,
+}

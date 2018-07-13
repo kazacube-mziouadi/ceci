@@ -1,0 +1,64 @@
+<?xml version='1.0' encoding='utf-8'?>
+<openerp>
+    <data noupdate="1">
+    
+        <!-- Action type -->
+        <record model="action.type" id="incoming_call_type_action">
+            <field name="name">Incoming call</field>
+            <field name="type">do_list</field>
+        </record>
+        
+        <record model="action.type" id="call_reminder_type_action">
+            <field name="name">Call reminder</field>
+            <field name="type">do_list</field>
+        </record>
+        
+        <record model="action.type" id="appointment_type_action">
+            <field name="name">Appointment</field>
+            <field name="type">plan</field>
+        </record>
+        
+        <record model="action.type" id="meeting_type_action">
+            <field name="name">Meeting</field>
+            <field name="type">plan</field>
+        </record>
+        
+        <record model="action.type" id="simple_action_type_action">
+            <field name="name">Simple action</field>
+            <field name="type">do_list</field>
+        </record>
+        
+        <record model="action.type" id="personal_type_action">
+            <field name="name">Personal</field>
+            <field name="type">plan</field>
+        </record>
+        
+        <!-- Action state -->
+        <record model="action.state" id="draft_action_state">
+            <field name="name">Draft</field>
+            <field name="is_default">True</field>
+            <field name="not_display_state">True</field>
+        </record>
+        
+        <record model="action.state" id="to_do_action_state">
+            <field name="name">To do</field>
+            <field name="to_do_state">True</field>
+        </record>
+        
+        <record model="action.state" id="in_progress_action_state">
+            <field name="name">In progress</field>
+        </record>
+        
+        <record model="action.state" id="done_action_state">
+            <field name="name">Done</field>
+            <field name="end_state">True</field>
+        </record>
+        
+        <record model="action.state" id="cancel_action_state">
+            <field name="name">Cancel</field>
+            <field name="not_display_state">True</field>
+            <field name="end_state">True</field>
+        </record>
+        
+    </data>
+</openerp>

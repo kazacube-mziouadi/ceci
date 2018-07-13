@@ -1,0 +1,18 @@
+<template>
+
+<t t-name="DiagramView.buttons">
+	<div t-if="widget.is_action_enabled('create')">
+        <button type="button" class="btn btn-primary btn-sm o_diagram_new_button">
+            New Node
+        </button>
+    </div>
+</t>
+
+<t t-name="DiagramView">
+	<p><span>Filter edges : </span><select id="filter_group" multiple="multiple" /></p>
+	<p><button id="save_position" class="btn btn-primary">Save position</button></p>
+	<div class="o_diagram_header" t-att-id="widget.element_id + '_header'"/>
+    <div class="o_diagram"/>
+</t>
+
+</template>

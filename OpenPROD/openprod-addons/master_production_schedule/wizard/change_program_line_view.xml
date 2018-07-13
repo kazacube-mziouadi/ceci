@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+		
+		<!-- FORM VIEW Change program line -->
+		<record model="ir.ui.view" id="view_form_change_program_line">
+			<field name="name">view_form_change_program_line</field>
+			<field name="model">change.program.line</field>
+			<field name="type">form</field>
+			<field name="arch" type="xml">
+				<form string="Change program line">
+					<group colspan="4" col="4">
+						<field name="product_id" invisible="1"/>
+						<field name="has_customer" invisible="1"/>
+						<field name="line_mid_period" invisible="1"/>
+						<field name="production_schedule_id" invisible="1"/>
+						<field name="period_id" invisible="1"/>
+							<group colspan="4">
+								<h1>
+									Management unit : 
+									<field name="uom_id" class="oe_inline"/>
+								</h1>
+							</group>
+							<field name="qty_firm_order"/>
+							<field name="qty_forecast_order"/>
+							<field name="qty_firm_procurement"/>
+							<field name="qty_forecast_procurement"/>
+							<field name="available_stock_firm"/>
+							<field name="available_stock_firm_forecast"/>
+						<notebook colspan="4">
+							<page string="Procurement">
+								<group colspan="4" col="4" string="Procurement quantity">
+									<field name="appro_quantity"/>
+									<button class="oe_inline oe_stat_button" type="object" string="Add a line" name="create_procurement_line" icon="fa-plus"/>
+								</group>
+								<group colspan="4" col="4" string="Manufacturing order list">
+									<field name="mo_ids" nolabel="1"
+									context="{'new_quantity': appro_quantity, 'product_id': product_id, 'production_schedule_id': production_schedule_id, 'period_id': period_id}">
+										<tree>
+											<button type="object" string="Delete" name="delete_mo_from_program"/>
+											<field name="name"/>
+											<field name="planned_end_date"/>
+											<field name="quantity"/>
+											<field name="customer_id"/>
+											<button type="object" string="Confirm" name="confirm_mo_from_program"/>
+											<button type="object" string="Change quantity" name="change_mo_quantity_from_program" invisible="1"/>
+										</tree>
+									</field>
+								</group>
+							</page>
+							<page string="Order">
+								<group colspan="4" col="6" string="Order quantity">
+									<field name="order_quantity"/>
+									<field name="customer_id" attrs="{'readonly': [('has_customer', '=', True)]}" domain="product_id and[('customerinfo_product_search', '=', product_id),('can_order', '=', True)] or [('id', '=', False)]"/>
+									<button class="oe_inline oe_stat_button" type="object" string="Add a line" name="create_sale_order_line" icon="fa-plus"
+									attrs="{'invisible': [('customer_id', '=', False)]}"/>
+								</group>
+								<group colspan="4" col="4" string="Sale order line list">
+									<field name="sale_line_ids" nolabel="1" 
+									context="{'new_quantity': order_quantity, 'product_id': product_id, 'production_schedule_id': production_schedule_id, 'period_id': period_id}">
+										<tree>
+											<button type="object" string="Delete" name="delete_so_from_program"/>
+											<field name="name"/>
+											<field name="confirmed_departure_date"/>
+											<field name="departure_date"/>
+											<field name="uom_qty"/>
+											<field name="sale_partner_id"/>
+											<button type="object" string="Confirm" name="confirm_so_from_program"/>
+											<button type="object" string="Change quantity" name="change_so_quantity_from_program"/>
+										</tree>
+									</field>
+								</group>
+								<group colspan="4" col="4" string="Consumption list">
+									<field name="stock_move_ids" nolabel="1">
+										<tree>
+											<field name="name"/>
+											<field name="date"/>
+											<field name="uom_qty"/>
+										</tree>
+									</field>
+								</group>
+							</page>
+						</notebook>
+					</group>
+					<footer>
+						<button string="Quit" class="oe_link" special="cancel" />
+					</footer>
+				</form>
+			</field>
+		</record>
+		
+		<!-- ACTION Change program line -->
+		<record model="ir.actions.act_window" id="action_change_program_line">
+			<field name="name">Change program line</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="res_model">change.program.line</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">form</field>
+			<field name="target">new</field>
+		</record>
+		
+	</data>
+</openerp>

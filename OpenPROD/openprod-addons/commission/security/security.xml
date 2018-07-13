@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+<data noupdate="1">
+    <record model="ir.module.category" id="module_category_commission">
+        <field name="name">commission</field>
+        <field name="sequence">15</field>
+    </record>
+    <record id="group_commission_user" model="res.groups">
+        <field name="name">User</field>
+        <field name="category_id" ref="module_category_commission"/>
+    </record>
+    <record id="group_commission_manager" model="res.groups">
+        <field name="name">Manager</field>
+        <field name="category_id" ref="module_category_commission"/>
+        <field name="implied_ids" eval="[(4, ref('group_commission_user'))]"/>
+    </record>
+    <record id="group_commission_admin" model="res.groups">
+        <field name="name">Admin</field>
+        <field name="category_id" ref="module_category_commission"/>
+        <field name="implied_ids" eval="[(4, ref('group_commission_manager'))]"/>
+    </record>
+</data>
+</openerp>

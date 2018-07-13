@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+
+		<!-- Accounting FORM VIEW Partner -->
+		<record id="view_form_general_partner" model="ir.ui.view">
+			<field name="name">view_form_general_partner</field>
+			<field name="inherit_id" ref="partner_openprod.openprod_view_partner_form" />
+			<field name="model">res.partner</field>
+			<field name="arch" type="xml">
+				<xpath expr="//page[@name='transport_partner_page']" position="before">
+					<page string="Accounting" attrs="{'invisible': [('is_company', '=', False)]}" name="accounting_partner_page">
+						<group colspan="4" col="4">
+							<group colspan="2" col="2">
+								<group colspan="2" col="2" string="General" name="group_general">
+									<field name="property_account_payable_id" attrs="{'required': ['|', '&amp;', ('is_company', '=', True), ('is_supplier', '=', True), '&amp;', ('is_company', '=', False), ('parent_id', '=', False)]}" />
+									<field name="property_account_receivable_id" attrs="{'required': ['|', '&amp;', ('is_company', '=', True), ('is_customer', '=', True), '&amp;', ('is_company', '=', False), ('parent_id', '=', False)]}" />
+									<field name="accounting_manager_id" attrs="{'invisible': [('is_company', '=', False)]}" />
+									<field name="siret_number" attrs="{'invisible': [('is_company', '=', False)]}" />
+									<field name="ape_number" attrs="{'invisible': [('is_company', '=', False)]}" />
+								</group>
+								<group colspan="2" col="4" string="TVA numbers" attrs="{'invisible': [('is_company', '=', False)]}">
+									<field name="tva_rate_ids" colspan="4" nolabel="1">
+										<tree>
+											<field name="name" />
+											<field name="country_id" />
+										</tree>
+										<form>
+											<group colspan="4" col="4">
+												<field name="name" />
+												<field name="country_id" />
+											</group>
+										</form>
+									</field>
+								</group>
+								<group colspan="2" col="2" string="Bank information" attrs="{'invisible': [('is_company', '=', False)]}" name="group_bank_info">
+									<field name="bank_ids" nolabel="1">
+										<tree string="Bank information">
+											<field name="acc_number" />
+											<field name="bank_id" />
+											<field name="currency_id" />
+										</tree>
+										<form string="Bank information">
+											<group colspan="4" col="4">
+												<field name="statement_type" />
+												<field name="acc_number" />
+												<field name="currency_id" />
+												<field name="bank_id" />
+											</group>
+										</form>
+									</field>
+								</group>
+							</group>
+							<group colspan="2" col="2" attrs="{'invisible': [('is_company', '=', False)]}">
+								<group colspan="2" col="4" string="Customer invoicing" attrs="{'invisible': [('is_customer', '=', False)]}" name="group_customer_invoicing" >
+									<field name="lock_invoices" />
+									<field name="invoicing_contact_ids" options="{'no_create': True}" widget="many2many_tags" domain="[('contact_in_partner_account', 'in', contact_ids)]" />
+									<field name="group_invoices" />
+									<field name="accounting_communication_method" />
+									<field name="invoices_period" attrs="{'required': [('is_company', '=', True),('group_invoices', '=', True),('is_customer', '=', True)], 'invisible': [('group_invoices', '=', False)]}" />
+									<field name="communication_value" />
+									<field name="invoice_copy" />
+									<field name="invoice_send_address_id" />
+								</group>
+								<group colspan="2" col="4" string="Credit and notation" name="group_credit_and_notation">
+									<field name="credit_limit" attrs="{'invisible': [('is_customer', '=', False)]}" />
+									<field name="block_sale_credit" attrs="{'invisible': [('is_customer', '=', False)]}" />
+									<field name="invoice_outstanding" attrs="{'invisible': [('is_customer', '=', False)]}" />
+									<field name="exceed_invoice_outstanding" attrs="{'invisible': [('is_customer', '=', False)]}" />
+									<field name="rating_ids" nolabel="1" colspan="4">
+										<tree string="Financial notation">
+											<field name="name" />
+											<field name="rating_agency" />
+											<field name="rating" />
+										</tree>
+										<form string="Financial notation">
+											<group colspan="4" col="4">
+												<field name="name" />
+												<field name="rating_agency" />
+												<field name="rating" />
+												<field name="date" />
+												<field name="currency_id" />
+												<field name="recommended_outstandings" />
+											</group>
+										</form>
+									</field>
+								</group>
+							</group>
+							<group colspan="4" col="4" string="Note on sale invoice header">
+								<field name="sale_invoice_note" nolabel="1" colspan="4" />
+							</group>
+						</group>
+					</page>
+				</xpath>
+				<xpath expr="//separator[@name='separator_analysis_menu']" position="after">
+					<button class="oe_inline oe_stat_button" type="object" string="Invoices" name="show_partner_invoice" icon="fa-file-o" />
+					<button class="oe_inline oe_stat_button" type="object" string="Refunds" name="show_partner_refund" icon="fa-file" />
+				</xpath>
+				<xpath expr="//separator[@name='separator_analysis_line']" position="after">
+					<button class="oe_inline oe_stat_button" type="object" string="Invoices" name="show_partner_invoice" icon="fa-file-o" />
+					<button class="oe_inline oe_stat_button" type="object" string="Refunds" name="show_partner_refund" icon="fa-file" />
+				</xpath>
+			</field>
+		</record>
+
+		<!-- ================== -->
+		<!-- FINANCIAL NOTATION -->
+		<!-- ================== -->
+
+		<!-- FORM VIEW financial notation -->
+		<record id='view_partner_financial_notation_form' model='ir.ui.view'>
+			<field name="name">view_partner_financial_notation_form</field>
+			<field name="model">res.partner.financial.notation</field>
+			<field name="priority">5</field>
+			<field name="arch" type="xml">
+				<form string="Financial notation" version="8.0">
+					<group colspan="4" col="4">
+						<field name="name" />
+						<field name="partner_id" />
+						<field name="rating_agency" />
+						<field name="rating" />
+						<field name="date" />
+						<field name="currency_id" />
+						<field name="recommended_outstandings" />
+					</group>
+				</form>
+			</field>
+		</record>
+
+		<!-- TREE VIEW partner -->
+		<record id='view_partner_financial_notation_tree' model='ir.ui.view'>
+			<field name="name">view_partner_financial_notation_tree</field>
+			<field name="model">res.partner.financial.notation</field>
+			<field name="priority">5</field>
+			<field name="arch" type="xml">
+				<tree string="Financial notation" version="8.0">
+					<field name="name" />
+					<field name="partner_id" />
+					<field name="rating_agency" />
+				</tree>
+			</field>
+		</record>
+
+	</data>
+</openerp>

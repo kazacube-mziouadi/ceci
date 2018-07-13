@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+        <!-- FORM VIEW Update Variants Categories -->
+        <record id='view_form_update_variants_categories' model='ir.ui.view'>
+            <field name="name">Update Variants Categories</field>
+            <field name="model">update.variants.categories</field>
+            <field name="arch" type="xml">
+                <form string="Update Categories">
+                    <group col="4" string="Update">
+                        <field name="parent_id" invisible="1" />
+                        <field name="category_in_use_ids" invisible="1" readonly="1" />
+                        <field name="variant_category_id" domain="[('id', 'not in', category_in_use_ids[0][2])]" />
+                        <field name="variant_to_modify_ids" nolabel="1" colspan="4">
+                            <tree editable="bottom" create="false">
+                                <field name="product_id" />
+                                <field name="value_id" />
+                            </tree>
+                        </field>
+                    </group>
+                    <group>
+                        <button string="Update products" class="oe_highlight" type="object" name="update_products" />
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <!-- ACTION Update Variants Categories -->
+        <record id="act_update_variants_categories" model="ir.actions.act_window">
+            <field name="name">Update Variants Categories</field>
+            <field name="res_model">update.variants.categories</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+    </data>
+</openerp>

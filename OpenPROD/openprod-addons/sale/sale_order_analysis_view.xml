@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+		
+
+		<!-- =================== -->
+		<!-- SALE ORDER ANALYSIS -->
+		<!-- =================== -->
+		
+		<!-- KANBAN VIEW Sale order analysis -->
+		<record id="view_kanban_sale_order_analysis" model="ir.ui.view" >
+            <field name="name">view_kanban_sale_order_analysis</field>
+            <field name="model">sale.order.analysis</field>
+            <field name="arch" type="xml">
+                <kanban class="oe_background_grey">
+                    <field name="name"/>
+                    <field name="color"/>
+                    <field name="target"/>
+                    <field name="forecast"/>
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div t-attf-class="oe_kanban_color_#{kanban_getcolor(record.color.raw_value)} oe_kanban_card oe_kanban_global_click oe_kanban_crm_salesteams">
+                                 <div class="o_dropdown_kanban dropdown">
+                                    <a class="dropdown-toggle btn" data-toggle="dropdown" href="#" >
+                                        <span class="fa fa-bars fa-lg"/>
+                                    </a>
+                                    <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+                                        <t t-if="widget.editable"><li><a type="edit">Edit</a></li></t>
+                                        <t t-if="widget.deletable"><li><a type="delete">Delete</a></li></t>
+                                        <li><ul class="oe_kanban_colorpicker" data-field="color"/></li>
+                                    </ul>
+                                </div>
+                                <div class="oe_kanban_content">
+                                    <h4 class="text-center" name="name"><strong><field name="name"/></strong></h4>
+                                    <div class="oe_clear"></div>
+                                    <div class="oe_center">
+                                    	<span>Date from : <field name="date_from"/></span>
+                                    </div>
+                                    <div class="oe_center">
+                                   		<span>Date to : <field name="date_to"/></span>
+                                   	</div>
+                                   	<div class="oe_center">
+                                    	<span>Product family : <field name="family_id"/></span>
+                                    </div>
+                                    <div class="oe_center">
+                                   		<span>Salesperson : <field name="salesperson_id"/></span>
+                                    </div>
+                                </div>
+                                <div class="oe_footer" style="margin-top:4px;">
+                                    <div t-if="record.target.raw_value">
+				                        <field name="sale_amount" widget="gauge" style="width:145px; height: 120px; cursor: pointer;"
+				                            options="{'max_field': 'target'}">Validate sales</field>
+				                        <field name="forecast" widget="gauge" style="width:145px; height: 120px; cursor: pointer;"
+				                            options="{'max_field': 'target', 'on_change': 'onchange_forecast'}">Forecast</field>
+				                    </div>
+                                </div>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+		
+		<!-- FORM VIEW Sale order analysis -->
+		<record id='view_form_sale_order_analysis' model='ir.ui.view'>
+			<field name="name">view_form_sale_order_analysis</field>
+			<field name="model">sale.order.analysis</field>
+			<field name="arch" type="xml">
+				<form string="Sale order" version="8.0">
+					<group>
+						<group colspan="4" col="6" string="Sale analysis">
+							<field name="name"/>
+							<field name="is_active"/>
+							<field name="salesperson_id"/>
+							<field name="date_from"/>
+							<field name="date_to"/>
+							<field name="family_id"/>
+							<group colspan="2" col="2">
+								<field name="forecast"/>
+								<field name="target"/>
+							</group>
+							<group colspan="4" col="2"/>
+						</group>
+						<group colspan="4" col="6" string="Datas">
+							<field name="sale_amount"/>
+						</group>
+					</group>
+				</form>
+			</field>
+		</record>
+		
+		<!-- TREE VIEW Sale order analysis -->
+		<record id='view_tree_sale_order_analysis' model='ir.ui.view'>
+			<field name="name">view_tree_sale_order_analysis</field>
+			<field name="model">sale.order.analysis</field>
+			<field name="arch" type="xml">
+				<tree string="Sale order analysis" version="8.0">
+					<field name="name"/>
+					<field name="date_from"/>
+					<field name="date_to"/>
+					<field name="family_id"/>
+					<field name="salesperson_id"/>
+					<field name="forecast"/>
+					<field name="target"/>
+					<field name="is_active"/>
+					<field name="sale_amount"/>
+				</tree>
+			</field>
+		</record>
+		
+		<!-- SEARCH VIEW Sale order analysis -->
+		<record id='view_search_sale_order_analysis' model='ir.ui.view'>
+			<field name="name">view_search_sale_order_analysis</field>
+			<field name="model">sale.order.analysis</field>
+			<field name="arch" type="xml">
+				<search version="8.0">
+					<field name="name"/>
+					<field name="date_from"/>
+					<field name="date_to"/>
+					<field name="family_id"/>
+					<group expand="0" string="Filters">
+						<filter string="Family" domain="[('family_id', '!=', False)]" />
+						<filter string="Seller" domain="[('salesperson_id', '!=', False)]" />
+						<filter string="Month" domain="[('family_id', '=', False),('salesperson_id', '=', False)]" />
+					</group>
+				</search>
+			</field>
+		</record>
+		
+		<!-- ACTION Sale order analysis -->
+		<record id="action_sale_order_analysis" model="ir.actions.act_window">
+		    <field name="name">Sale order analysis</field>
+		    <field name="res_model">sale.order.analysis</field>
+		    <field name="view_type">form</field>
+		    <field name="view_mode">kanban,tree,form</field>
+		    <field name="domain">[]</field>
+		    <field name="context">{}</field>
+		    <field name="search_view_id" ref="view_search_sale_order_analysis"/>
+		</record>
+		
+		<menuitem name="Sale analysis" action="action_sale_order_analysis" id="menu_sale_order_analysis" parent="menu_sale_analysis" groups="group_menu_sale_user"/>
+		
+		
+		
+		<!-- =========================== -->
+		<!-- SALE ORDER INVOICE ANALYSIS -->
+		<!-- =========================== -->
+		
+		<!-- KANBAN VIEW Sale order invoice analysis -->
+		<record id="view_kanban_sale_order_invoice_analysis" model="ir.ui.view" >
+            <field name="name">view_kanban_sale_order_invoice_analysis</field>
+            <field name="model">sale.order.invoice.analysis</field>
+            <field name="arch" type="xml">
+                <kanban class="oe_background_grey">
+                    <field name="name"/>
+                    <field name="color"/>
+                    <field name="target"/>
+                    <field name="forecast"/>
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div t-attf-class="oe_kanban_color_#{kanban_getcolor(record.color.raw_value)} oe_kanban_card oe_kanban_global_click oe_kanban_crm_salesteams">
+                                <div class="o_dropdown_kanban dropdown">
+                                    <a class="dropdown-toggle btn" data-toggle="dropdown" href="#" >
+                                        <span class="fa fa-bars fa-lg"/>
+                                    </a>
+                                    <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+                                        <t t-if="widget.editable"><li><a type="edit">Edit</a></li></t>
+                                        <t t-if="widget.deletable"><li><a type="delete">Delete</a></li></t>
+                                        <li><ul class="oe_kanban_colorpicker" data-field="color"/></li>
+                                    </ul>
+                                </div>
+                                <div class="oe_kanban_content">
+                                    <h4 class="text-center" name="name"><strong><field name="name"/></strong></h4>
+                                    <div class="oe_clear"></div>
+                                    <div class="oe_center">
+                                    	<span>Date from : <field name="date_from"/></span>
+                                    </div>
+                                    <div class="oe_center">
+                                   		<span>Date to : <field name="date_to"/></span>
+                                   	</div>
+                              	</div>
+                              	<div class="oe_footer" style="margin-top:4px;">
+                                    <div t-if="record.target.raw_value">
+				                        <field name="invoice_amount" widget="gauge" style="width:145px; height: 120px; cursor: pointer;"
+				                            options="{'max_field': 'target'}">Invoiced amount</field>
+				                        <field name="payment_amount" widget="gauge" style="width:145px; height: 120px; cursor: pointer;"
+				                            options="{'max_field': 'target'}">Payments amount</field>
+				                        <field name="forecast" widget="gauge" style="width:145px; height: 120px; cursor: pointer;"
+				                            options="{'max_field': 'target', 'on_change': 'onchange_forecast'}">Forecast</field>
+				                    </div>
+                                </div>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+		
+		<!-- FORM VIEW Sale order invoice analysis -->
+		<record id='view_form_sale_order_invoice_analysis' model='ir.ui.view'>
+			<field name="name">view_form_sale_order_invoice_analysis</field>
+			<field name="model">sale.order.invoice.analysis</field>
+			<field name="arch" type="xml">
+				<form string="Invoice analysis" version="8.0">
+					<group>
+						<group colspan="4" col="6" string="Sale analysis">
+							<group colspan="4" col="4">
+								<field name="name"/>
+								<field name="is_active"/>
+								<field name="date_from"/>
+								<field name="date_to"/>
+								<field name="forecast"/>
+								<field name="target"/>
+								<field name="company_id"/>
+							</group>
+							<group colspan="4" col="2"/>
+						</group>
+						<group colspan="4" col="4" string="Datas">
+							<field name="invoice_amount"/>
+							<field name="payment_amount"/>
+						</group>
+					</group>
+				</form>
+			</field>
+		</record>
+		
+		<!-- TREE VIEW Sale order invoice analysis -->
+		<record id='view_tree_sale_order_invoice_analysis' model='ir.ui.view'>
+			<field name="name">view_tree_sale_order_invoice_analysis</field>
+			<field name="model">sale.order.invoice.analysis</field>
+			<field name="arch" type="xml">
+				<tree string="Invoice analysis" version="8.0">
+					<field name="name"/>
+					<field name="date_from"/>
+					<field name="date_to"/>
+					<field name="forecast"/>
+					<field name="target"/>
+					<field name="is_active"/>
+					<field name="invoice_amount"/>
+					<field name="payment_amount"/>
+				</tree>
+			</field>
+		</record>
+		
+		<!-- SEARCH VIEW Sale order analysis -->
+		<record id='view_search_sale_order_invoice_analysis' model='ir.ui.view'>
+			<field name="name">view_search_sale_order_invoice_analysis</field>
+			<field name="model">sale.order.invoice.analysis</field>
+			<field name="arch" type="xml">
+				<search version="8.0">
+					<field name="name"/>
+					<field name="date_from"/>
+					<field name="date_to"/>
+				</search>
+			</field>
+		</record>
+		
+		<!-- ACTION Sale order analysis -->
+		<record id="action_sale_order_invoice_analysis" model="ir.actions.act_window">
+		    <field name="name">Invoice analysis</field>
+		    <field name="res_model">sale.order.invoice.analysis</field>
+		    <field name="view_type">form</field>
+		    <field name="view_mode">kanban,tree,form</field>
+		    <field name="domain">[]</field>
+		    <field name="context">{}</field>
+		    <field name="search_view_id" ref="view_search_sale_order_invoice_analysis"/>
+		</record>
+		
+		<menuitem name="Invoice analysis" action="action_sale_order_invoice_analysis" id="menu_sale_order_invoice_analysis" parent="menu_sale_analysis" groups="group_menu_sale_user"/>
+		
+	</data>
+</openerp>

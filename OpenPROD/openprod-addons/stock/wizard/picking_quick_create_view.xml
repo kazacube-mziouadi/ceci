@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+		<!-- FORM VIEW Picking quick create -->
+		<record id='view_form_picking_quick_create' model='ir.ui.view'>
+			<field name="name">view_form_picking_quick_create</field>
+			<field name="model">stock.picking.quick.create</field>
+			<field name="arch" type="xml">
+				<form string="Quick create" version="8.0">
+					<field name="type" invisible="1" />
+					<field name="variable" invisible="1" />
+					<group colspan="4" col="4">
+						<field name="product_id" />
+						<field name="warehouse_id" />
+						<field name="partner_id" 
+						domain="type == 'out' and ['|', '&amp;', ('is_company', '=', False), '&amp;', ('can_be_delivered', '=', True), ('parent_id.is_customer', '=', True), '&amp;', ('is_company', '=', True), '|', ('is_supplier', '=', True), '&amp;', ('is_customer', '=', True), ('can_be_delivered', '=', True)]
+						 or ['&amp;', ('is_company', '=', True), '|', ('is_supplier', '=', True), '&amp;', ('is_customer', '=', True), ('can_be_delivered', '=', True)]" 
+						required="context.get('partner_required', False)"/>
+						<field name="date" />
+						<field name="uom_qty" />
+						<field name="uom_id" />
+						<field name="sec_uom_qty" attrs="{'invisible': [('variable', '=', False)]}" />
+						<field name="sec_uom_id" attrs="{'invisible': [('variable', '=', False)]}" />
+						<field name="type" invisible="1"/>
+					</group>
+					<footer>
+						<button name="quick_create" string="OK" type="object" class="oe_highlight" />
+						or
+						<button string="Cancel" class="oe_link" special="cancel" />
+					</footer>
+				</form>
+			</field>
+		</record>
+
+		<!-- ACTION Picking IN quick create -->
+		<record id="act_in_picking_quick_create" model="ir.actions.act_window">
+			<field name="name">Picking quick create</field>
+			<field name="res_model">stock.picking.quick.create</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">form</field>
+			<field name="context">{'default_type': 'in'}</field>
+			<field name="target">new</field>
+		</record>
+		<!-- ACTION Picking OUT quick create -->
+		<record id="act_out_picking_quick_create" model="ir.actions.act_window">
+			<field name="name">Picking quick create</field>
+			<field name="res_model">stock.picking.quick.create</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">form</field>
+			<field name="context">{'default_type': 'out', 'partner_required': True}</field>
+			<field name="target">new</field>
+		</record>
+
+		<menuitem name="Recipt quick create" action="act_in_picking_quick_create" id="menu_in_picking_quick_create" parent="menu_stock_stock_in" sequence="20" groups="group_menu_receipt_order"/>
+		<menuitem name="Delivery quick create" action="act_out_picking_quick_create" id="menu_out_picking_quick_create" parent="menu_stock_stock_out" sequence="20" groups="group_menu_delivery_order" />
+	</data>
+</openerp>

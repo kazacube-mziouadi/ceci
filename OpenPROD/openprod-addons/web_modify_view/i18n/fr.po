@@ -1,0 +1,202 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* web_modify_view
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 9.0c\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-03-13 17:04+0000\n"
+"PO-Revision-Date: 2017-03-13 17:04+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: web_modify_view
+#. openerp-web
+#: code:addons/web_modify_view/static/src/js/web_modify_view.js:89
+#, python-format
+msgid "Add new view"
+msgstr "Ajouter une vue"
+
+#. module: web_modify_view
+#: code:addons/web_modify_view/web_modify_view.py:32
+#, python-format
+msgid "Additional"
+msgstr "Additionelle"
+
+#. module: web_modify_view
+#: model:ir.model.fields,field_description:web_modify_view.field_edit_tree_field_attributes
+msgid "Attributes"
+msgstr "Attributs"
+
+#. module: web_modify_view
+#: model:ir.ui.view,arch_db:web_modify_view.view_form_edit_tree_wizard
+msgid "Cancel"
+msgstr "Annuler"
+
+#. module: web_modify_view
+#: model:ir.model.fields,field_description:web_modify_view.field_edit_tree_field_create_uid
+#: model:ir.model.fields,field_description:web_modify_view.field_edit_tree_wizard_create_uid
+msgid "Created by"
+msgstr "Créé par"
+
+#. module: web_modify_view
+#: model:ir.model.fields,field_description:web_modify_view.field_edit_tree_field_create_date
+#: model:ir.model.fields,field_description:web_modify_view.field_edit_tree_wizard_create_date
+msgid "Created on"
+msgstr "Créé le"
+
+#. module: web_modify_view
+#. openerp-web
+#: code:addons/web_modify_view/static/src/js/web_modify_view.js:104
+#, python-format
+msgid "Delete View"
+msgstr "Supprimer vue"
+
+#. module: web_modify_view
+#: model:ir.model.fields,field_description:web_modify_view.field_edit_tree_field_display_name
+#: model:ir.model.fields,field_description:web_modify_view.field_edit_tree_wizard_display_name
+msgid "Display Name"
+msgstr "Nom affiché"
+
+#. module: web_modify_view
+#: model:ir.ui.view,arch_db:web_modify_view.view_form_edit_tree_wizard
+msgid "Edit tree fields"
+msgstr "Editer les champs"
+
+#. module: web_modify_view
+#: model:ir.actions.act_window,name:web_modify_view.act_edit_tree_view
+#: model:ir.model,name:web_modify_view.model_edit_tree_wizard
+#: model:ir.ui.view,arch_db:web_modify_view.view_form_edit_tree_wizard
+msgid "Edit tree wizard"
+msgstr "Editer vue tree"
+
+#. module: web_modify_view
+#: model:ir.model.fields,field_description:web_modify_view.field_edit_tree_field_field_id
+msgid "Field"
+msgstr "Champ"
+
+#. module: web_modify_view
+#: model:ir.model.fields,field_description:web_modify_view.field_edit_tree_wizard_field_ids
+msgid "Field ids"
+msgstr "Champs"
+
+#. module: web_modify_view
+#: model:ir.model.fields,field_description:web_modify_view.field_edit_tree_wizard_group_ids
+#: model:ir.ui.view,arch_db:web_modify_view.view_form_edit_tree_wizard
+msgid "Groups"
+msgstr "Groupes"
+
+#. module: web_modify_view
+#: model:ir.model.fields,field_description:web_modify_view.field_edit_tree_wizard_hidden_field_ids
+msgid "Hidden field ids"
+msgstr "Hidden field ids"
+
+#. module: web_modify_view
+#: model:ir.model.fields,field_description:web_modify_view.field_edit_tree_field_id
+#: model:ir.model.fields,field_description:web_modify_view.field_edit_tree_wizard_id
+msgid "ID"
+msgstr "ID"
+
+#. module: web_modify_view
+#: model:ir.model.fields,field_description:web_modify_view.field_ir_ui_view_is_override
+msgid "Is override"
+msgstr "Is override"
+
+#. module: web_modify_view
+#: model:ir.model.fields,field_description:web_modify_view.field_edit_tree_field___last_update
+#: model:ir.model.fields,field_description:web_modify_view.field_edit_tree_wizard___last_update
+msgid "Last Modified on"
+msgstr "Dernière modification le"
+
+#. module: web_modify_view
+#: model:ir.model.fields,field_description:web_modify_view.field_edit_tree_field_write_uid
+#: model:ir.model.fields,field_description:web_modify_view.field_edit_tree_wizard_write_uid
+msgid "Last Updated by"
+msgstr "Dernière mise à jour par"
+
+#. module: web_modify_view
+#: model:ir.model.fields,field_description:web_modify_view.field_edit_tree_field_write_date
+#: model:ir.model.fields,field_description:web_modify_view.field_edit_tree_wizard_write_date
+msgid "Last Updated on"
+msgstr "Dernière mise à jour le"
+
+#. module: web_modify_view
+#: model:ir.model.fields,field_description:web_modify_view.field_edit_tree_field_model
+#: model:ir.model.fields,field_description:web_modify_view.field_edit_tree_wizard_model
+msgid "Model"
+msgstr "Modèle"
+
+#. module: web_modify_view
+#. openerp-web
+#: code:addons/web_modify_view/static/src/xml/web_modify_view_template.xml:9
+#, python-format
+msgid "Modify"
+msgstr "Modifier"
+
+#. module: web_modify_view
+#. openerp-web
+#: code:addons/web_modify_view/static/src/xml/web_modify_view_template.xml:6
+#, python-format
+msgid "Modify Current View"
+msgstr "Modifier la vue courante"
+
+#. module: web_modify_view
+#. openerp-web
+#: code:addons/web_modify_view/static/src/js/web_modify_view.js:54
+#, python-format
+msgid "Modify view"
+msgstr "Modifier la vue"
+
+#. module: web_modify_view
+#: model:res.groups,name:web_modify_view.group_view
+msgid "Modify views"
+msgstr "Modifier les vues"
+
+#. module: web_modify_view
+#: model:ir.model.fields,field_description:web_modify_view.field_edit_tree_wizard_name
+msgid "Name"
+msgstr "Name"
+
+#. module: web_modify_view
+#: model:ir.ui.view,arch_db:web_modify_view.view_form_edit_tree_wizard
+msgid "Override"
+msgstr "Surcharger"
+
+#. module: web_modify_view
+#: model:ir.model.fields,field_description:web_modify_view.field_edit_tree_wizard_priority
+msgid "Priority"
+msgstr "Priorité"
+
+#. module: web_modify_view
+#: model:ir.model.fields,field_description:web_modify_view.field_edit_tree_field_sequence
+msgid "Sequence"
+msgstr "Séquence"
+
+#. module: web_modify_view
+#. openerp-web
+#: code:addons/web_modify_view/static/src/js/web_modify_view.js:15
+#, python-format
+msgid "Views"
+msgstr "Vues"
+
+#. module: web_modify_view
+#: model:ir.model.fields,field_description:web_modify_view.field_edit_tree_field_hidden_wizard_id
+#: model:ir.model.fields,field_description:web_modify_view.field_edit_tree_field_wizard_id
+msgid "Wizard"
+msgstr "Assistant"
+
+#. module: web_modify_view
+#: model:ir.model,name:web_modify_view.model_edit_tree_field
+msgid "edit.tree.field"
+msgstr "edit.tree.field"
+
+#. module: web_modify_view
+#: model:ir.model,name:web_modify_view.model_ir_ui_view
+msgid "ir.ui.view"
+msgstr "ir.ui.view"
+

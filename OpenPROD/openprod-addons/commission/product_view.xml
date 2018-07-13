@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+  <data>
+      <!-- FORM VIEW Product -->
+    <record id='view_form_product' model='ir.ui.view'>
+      <field name="name">view_form_product</field>
+      <field name="model">product.product</field>
+      <field name="priority" eval="1400" />
+      <field name="inherit_id" ref="product.view_form_product" />
+      <field name="arch" type="xml">
+        <xpath expr="//field[@name='free_sale']" position="after">
+          <field name="is_not_commissionable" colspan="2" readonly="0" />
+        </xpath>
+      </field>
+    </record>
+  </data>
+</openerp>

@@ -1,0 +1,12 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_standard_offer_user,standard.offer,model_standard_offer,base.group_sale_salesman,1,0,0,0
+access_standard_offer_manager,standard.offer,model_standard_offer,base.group_sale_manager,1,1,0,0
+access_standard_offer_administrator,standard.offer,model_standard_offer,sale.group_sale_responsible,1,1,1,1
+
+access_standard_offer_line_user,standard.offer.line,model_standard_offer_line,base.group_sale_salesman,1,0,0,0
+access_standard_offer_line_manager,standard.offer.line,model_standard_offer_line,base.group_sale_manager,1,1,1,1
+access_standard_offer_line_administrator,standard.offer.line,model_standard_offer_line,sale.group_sale_responsible,1,1,1,1
+
+access_standard_offer_print_line_user,standard.offer.print.line,model_standard_offer_print_line,base.group_sale_salesman,1,0,0,0
+access_standard_offer_print_line_manager,standard.offer.print.line,model_standard_offer_print_line,base.group_sale_manager,1,1,1,1
+access_standard_offer_print_line_administrator,standard.offer.print.line,model_standard_offer_print_line,sale.group_sale_responsible,1,1,1,1

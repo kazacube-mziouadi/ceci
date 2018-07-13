@@ -1,0 +1,882 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<openerp>
+	<data>
+		<template id="template_tracker" name="tracker assets" inherit_id="web.webclient_bootstrap">
+			<xpath expr="//script[last()]" position="after">
+				<link rel="stylesheet" href="/tracker/static/src/css/tracker.css" type="text/css" media="screen" charset="utf-8" />
+			</xpath>
+		</template>
+
+		<menuitem name="Tracker" id="menu_tracker" parent="" web_icon="tracker,static/description/icon.png" />
+
+		<record id="view_form_tracker_issue" model="ir.ui.view">
+			<field name="name">complete_issue_form</field>
+			<field name="model">tracker.issue</field>
+			<field name="priority">2</field>
+			<field name="arch" type="xml">
+				<form>
+					<header>
+						<button name="wkf_open_button" states="draft,canceled" string="Open" type="object" class="oe_highlight" />
+						<button name="wkf_previous_task_button" states="progress" string="Previous task" type="object" class="oe_highlight" />
+						<button name="wkf_next_task_button" states="progress, finished" string="Next task" type="object" class="oe_highlight" />
+						<button name="wkf_close_button" states="draft,progress,finished" string="Cancel" type="object" class="openprod_cancel_button" />
+						<button name="open_quick_form" type="object" class="oe_highlight" string="Quick form" invisible="1" />
+						<field name="state" widget="statusbar" statusbar_visible="draft,progress,finished,canceled" />
+					</header>
+					<group colspan="4" col="9">
+						<group colspan="8" col="6">
+							<group colspan="2">
+								<field name="title" />
+								<field name="deadline" />
+								<field name="expected_time" widget="float_time" />
+								<field name="company_id" widget="selection" groups="base.group_multi_company" />
+								<field name="treatment_order" />
+							</group>
+							<group colspan="2">
+								<field name="sequence" />
+								<field name="current_phase_type" readonly="1" />
+								<field name="current_user_in_charge_id" readonly="1" />
+								<field name="current_task_id" />
+							</group>
+							<group colspan="2">
+								<field name="priority" />
+								<field name="sprint_id" />
+								<field name="tag_ids" widget="many2many_tags" />
+								<field name="category_id" />
+								<field name="resource_id" invisible="1" />
+							</group>
+							<group colspan="6" col="4">
+								<notebook>
+									<page string="Description">
+										<field name="task_ids" colspan="4" nolabel="1">
+											<tree colors="green:state=='finished';blue:state=='progress';grey:state=='draft'" editable="bottom">
+												<field name="sequence" />
+												<field name="title" />
+												<field name="user_in_charge_id" />
+												<field name="phase_type" />
+												<field name="last_update_date" />
+												<field name="state" />
+											</tree>
+											<form>
+												<header>
+													<field name="state" widget="statusbar" />
+												</header>
+												<group colspan="4" col="4">
+													<field name="title" />
+													<field name="sequence" />
+													<field name="user_in_charge_id" />
+													<field name="company_id" />
+													<field name="phase_type" />
+												</group>
+											</form>
+										</field>
+									</page>
+									<page string="Specification">
+										<group string="Attachments" colspan="4">
+											<field name="attachment_ids" colspan="2" readonly="0" nolabel="1" />
+										</group>
+										<group>
+											<field name="applicant_id" groups="tracker.group_tracker_issue_team" />
+										</group>
+										<group string="Description customer">
+											<field name="description_customer" nolabel="1" />
+										</group>
+										<group string="Transcription customer">
+											<field name="transcription_customer" nolabel="1" />
+										</group>
+										<group string="Specification developer">
+											<field name="specification_developer" nolabel="1" />
+										</group>
+									</page>
+									<page string="Development">
+										<group col="4">
+											<field name="developper_id" groups="tracker.group_tracker_issue_team" />
+											<group string="Commits" colspan="4">
+												<field name="commit_ids" context="{'search_default_message': sequence}" nolabel="1">
+													<tree>
+														<field name="revision" />
+														<field name="message" />
+														<field name="username" />
+														<field name="branch_name" />
+														<field name="source_created_datetime" />
+														<field name="url" />
+													</tree>
+													<form>
+														<group colspan="4" col="4">
+															<field name="revision" />
+															<field name="branch_name" />
+															<field name="source" />
+															<field name="username" />
+															<field name="tag" />
+															<field name="message" />
+															<field name="url" />
+														</group>
+													</form>
+												</field>
+											</group>
+											<group string="Verification" colspan="4" col="4" >
+												<field name="is_translation" />
+												<field name="is_security" />
+											</group>
+											<group string="Comment" colspan="4">
+												<field name="development_comment" nolabel="1" />
+											</group>
+										</group>
+									</page>
+									<page string="Test">
+										<group>
+											<field name="is_unvalidate_test" />
+										</group>
+										<group>
+											<field name="tester_id" groups="tracker.group_tracker_issue_team" />
+										</group>
+										<field name="test_ids" colspan="4">
+											<tree>
+												<field name="create_date" colspan="2" readonly="0" />
+												<field name="telltale_id" />
+												<field name="description" />
+												<field name="type_" />
+												<field name="developper_in_charge_id" />
+												<button name="change_to_previous_state" type="object" class="oe_inline" icon="fa-minus-square" attrs="{'invisible': [('state', '=', 'todo')]}" />
+												<field name="state" />
+												<button name="change_to_next_state" type="object" class="oe_inline" icon="fa-plus-square" attrs="{'invisible': [('state', '=', 'done')]}" />
+											</tree>
+											<form>
+												<header>
+													<field name="state" widget="statusbar" />
+												</header>
+												<group colspan="4" col="4">
+													<field name="type_" />
+													<field name="telltale_id" />
+													<field name="developper_in_charge_id" />
+													<group colspan="4" col="4" string="Description">
+														<field name="description" nolabel="1" />
+													</group>
+												</group>
+											</form>
+										</field>
+									</page>
+									<page string="Production">
+										<field name="production_instruction_ids" colspan="4">
+											<tree>
+												<field name="title" />
+												<field name="action_type" />
+												<field name="timing" />
+												<field name="user_in_charge_id" />
+											</tree>
+											<form>
+												<group colspan="4" col="4">
+													<field name="title" />
+													<field name="action_type" />
+													<field name="timing" />
+													<field name="user_in_charge_id" />
+												</group>
+											</form>
+										</field>
+									</page>
+									<page string="Other informations">
+										<group col="4">
+											<group colspan="2" col="2">
+												<field name="write_date" />
+												<field name="duration" widget="float_time" />
+											</group>
+											<group colspan="2" col="2">
+												<field name="complexity" />
+												<field name="create_date" />
+											</group>
+										</group>
+									</page>
+									<page string="Time tracking">
+										<field name="time_tracking_ids" colspan="2" readonly="0" context="{'default_activity': 'production', 'default_resource_id': resource_id, 'default_start_date': datetime.datetime.now(), 'default_name': title, 'default_user_id': uid}">
+											<tree>
+												<field name="name" readonly="0" />
+												<field name="start_date" readonly="0" />
+												<field name="end_date" readonly="0" />
+												<field name="user_id" readonly="0" />
+												<field name="time" readonly="0" sum="Total" />
+											</tree>
+											<form>
+												<header>
+													<field name="state" widget="statusbar" required="1" />
+												</header>
+												<group colspan="4" col="6" string="Timetracking line" name="timetracking_first_group">
+													<group colspan="2" col="2">
+														<field name="name" />
+														<field name="start_date" required="1" />
+														<field name="time" widget="float_time_seconds" required="1" />
+													</group>
+													<group colspan="2" col="2">
+														<field name="activity" readonly="1" />
+														<field name="end_date" />
+														<field name="time_spent" widget="float_time_seconds" />
+													</group>
+													<group colspan="2" col="2">
+														<field name="resource_id" />
+														<field name="user_id" />
+													</group>
+												</group>
+											</form>
+										</field>
+									</page>
+									<page string="Followers">
+										<field name="follower_ids" colspan="4">
+											<tree>
+												<field name="user_id" colspan="2" readonly="0" />
+												<field name="is_following" colspan="2" readonly="0" />
+											</tree>
+											<form>
+												<group colspan="4" col="4">
+													<field name="user_id" colspan="4" readonly="0" />
+													<newline />
+													<field name="is_following" colspan="2" readonly="0" />
+													<field name="is_automatic" colspan="2" readonly="0" />
+												</group>
+											</form>
+										</field>
+										<button name="follow_button" string="Follow" type="object" class="oe_highlight" />
+										<button name="unfollow_button" string="Unfollow" type="object" class="oe_highlight" />
+									</page>
+								</notebook>
+							</group>
+						</group>
+					</group>
+				</form>
+			</field>
+		</record>
+
+
+		<record id='view_tree_issue' model='ir.ui.view'>
+			<field name="name">view_tree_issue</field>
+			<field name="model">tracker.issue</field>
+			<field name="priority">1</field>
+			<field name="arch" type="xml">
+				<tree string="All issues" default_order="sequence asc" colors="red:state=='canceled';green:state=='finished';blue:state=='progress';grey:state=='draft'">
+					<field name="sequence" />
+					<field name="title" />
+					<field name="sprint_id" />
+					<field name="treatment_order" />
+					<field name="current_phase_type" colspan="2" readonly="0" />
+					<field name="current_user_in_charge_id" colspan="2" readonly="0" />
+					<field name="developper_id" colspan="2" readonly="0" />
+					<field name="priority" colspan="2" readonly="0" />
+					<field name="deadline" colspan="2" readonly="0" />
+					<field name="company_id" colspan="2" readonly="0" />
+					<field name="is_unvalidate_test" />
+					<field name="state" invisible="1" />
+				</tree>
+			</field>
+		</record>
+
+		<record model="ir.ui.view" id="view_kanban_issue">
+			<field name="name">view_kanban_issue</field>
+			<field name="model">tracker.issue</field>
+			<field name="arch" type="xml">
+				<kanban default_group_by="sprint_id" edit="false" quick_create="false">
+					<field name="title" />
+					<field name="deadline" />
+					<field name="current_user_in_charge_id" />
+					<field name="priority" />
+					<field name="tag_ids" nolabel="1" />
+					<field name="specification_developer" />
+					<field name="nb_attachment" />
+					<templates>
+						<t t-name="kanban-box" edit="false" quick_create="false">
+							<div t-attf-class="{{ record.background_color.value }} {{ record.border_color.value }} oe_kanban_color oe_kanban_card oe_kanban_global_click oe_kanban_crm_salesteams">
+								<div class="o_dropdown_kanban dropdown">
+									<a class="dropdown-toggle btn" data-toggle="dropdown" href="#">
+										<span class="fa fa-bars fa-lg" />
+									</a>
+								</div>
+								<div class="oe_kanban_content">
+									<h4 class="oe_partner_heading">
+										<a type="open">
+											<field name="title" />
+										</a>
+									</h4>
+									<div>
+										<b>Deadline: </b>
+										<field name="deadline" />
+									</div>
+									<div>
+										<b>Current user in charge: </b>
+										<b>
+											<font color="337AB7">
+												<field name="current_user_in_charge_id" />
+											</font>
+										</b>
+									</div>
+									<div>
+										<b>Tags: </b>
+										<field name="tag_ids" widget="many2many" />
+									</div>
+									<div>
+										<field name="specification_developer" />
+									</div>
+									<div>
+										<b>Expected time: </b>
+										<field name="expected_time" />
+									</div>
+									<div>
+										<b>Category: </b>
+										<field name="category_id" />
+									</div>
+									<div class="oe_kanban_buttons_set oe_kanban_color_border oe_kanban_color_bglight oe_kanban_box_show_onclick">
+										<div class="oe_kanban_left">
+											<b>Treatment order: </b>
+											<a name="decrease_treatment_order" type="object" class="fa fa-minus-square" context="{'treatment_order_modification': True}" attrs="{'invisible':[('treatment_order', '=', 0)]} " />
+											<field name="treatment_order" />
+											<a name="increase_treatment_order" type="object" class="fa fa-plus-square" context="{'treatment_order_modification': True}" />
+										</div>
+									</div>
+									<div>
+										<b>Sprint: </b>
+										<field name="sprint_id" />
+									</div>
+									<div>
+										<field name="background_color" invisible="1" />
+										<field name="border_color" invisible="1" />
+									</div>
+									<div class="oe_kanban_footer">
+										<span class='oe_kanban_mail_new' title='Attachment' t-attf-style="background-color:#8A89BA;padding:3px;color:white;border-style:solid;border-color:grey;border-width:1px;float:left;">
+											<i class='fa fa-comments' />
+											<b>
+												<t t-raw="record.nb_attachment.raw_value" />
+												Attachment
+											</b>
+										</span>
+									</div>
+								</div>
+							</div>
+						</t>
+					</templates>
+				</kanban>
+			</field>
+		</record>
+
+		<record model="ir.ui.view" id="view_kanban_distribution_issue">
+			<field name="name">view_kanban_distribution_issue</field>
+			<field name="model">tracker.issue</field>
+			<field name="arch" type="xml">
+				<kanban default_group_by="current_user_in_charge_id" edit="false" quick_create="false">
+					<field name="title" />
+					<field name="deadline" />
+					<field name="current_user_in_charge_id" />
+					<field name="priority" />
+					<field name="tag_ids" nolabel="1" />
+					<field name="specification_developer" />
+					<field name="nb_attachment" />
+					<templates>
+						<t t-name="kanban-box" edit="false" quick_create="false">
+							<div t-attf-class="{{ record.background_color.value }} {{ record.border_color.value }} oe_kanban_color oe_kanban_card oe_kanban_global_click oe_kanban_crm_salesteams">
+								<div class="o_dropdown_kanban dropdown">
+									<a class="dropdown-toggle btn" data-toggle="dropdown" href="#">
+										<span class="fa fa-bars fa-lg" />
+									</a>
+								</div>
+								<div class="oe_kanban_content">
+									<h4 class="oe_partner_heading">
+										<a type="open">
+											<field name="title" />
+										</a>
+									</h4>
+									<div>
+										<b>Deadline: </b>
+										<field name="deadline" />
+									</div>
+									<div>
+										<b>Current user in charge: </b>
+										<b>
+											<font color="337AB7">
+												<field name="current_user_in_charge_id" />
+											</font>
+										</b>
+									</div>
+									<div>
+										<b>Tags: </b>
+										<t t-if="record.tag_ids">
+											<field name="tag_ids" widget="many2many" />
+										</t>
+									</div>
+									<div>
+										<field name="specification_developer" />
+									</div>
+									<div>
+										<b>Expected time: </b>
+										<field name="expected_time" />
+									</div>
+									<div>
+										<b>Sprint: </b>
+										<field name="sprint_id" />
+									</div>
+									<div class="oe_kanban_buttons_set oe_kanban_color_border oe_kanban_color_bglight oe_kanban_box_show_onclick">
+										<div class="oe_kanban_left">
+											<b>Treatment order: </b>
+											<a name="decrease_treatment_order" type="object" class="fa fa-minus-square" context="{'treatment_order_modification': True}" attrs="{'invisible':[('treatment_order', '=', 0)]} " />
+											<field name="treatment_order" />
+											<a name="increase_treatment_order" type="object" class="fa fa-plus-square" context="{'treatment_order_modification': True}" />
+										</div>
+									</div>
+									<div>
+										<field name="background_color" invisible="1" />
+										<field name="border_color" invisible="1" />
+									</div>
+									<div class="oe_kanban_footer">
+										<span class='oe_kanban_mail_new' title='Attachment' t-attf-style="background-color:#8A89BA;padding:3px;color:white;border-style:solid;border-color:grey;border-width:1px;float:left;">
+											<i class='fa fa-comments' />
+											<b>
+												<t t-raw="record.nb_attachment.raw_value" />
+												Attachment
+											</b>
+										</span>
+									</div>
+								</div>
+							</div>
+						</t>
+					</templates>
+				</kanban>
+			</field>
+		</record>
+
+
+		<!-- ACTION -->
+
+
+		<record id="action_tree_all_issue" model="ir.actions.act_window">
+			<field name="name">Issues</field>
+			<field name="res_model">tracker.issue</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form,kanban</field>
+			<field name="context">{'search_default_filter_my_active_issues':1, 'search_default_filter_not_canceled_or_done_issues':1}</field>
+		</record>
+
+		<record id="act_view_kanban_issue_action_tree_all_issue" model="ir.actions.act_window.view">
+			<field name="sequence" eval="10" />
+			<field name="view_mode">kanban</field>
+			<field name="view_id" ref="view_kanban_issue" />
+			<field name="act_window_id" ref="action_tree_all_issue" />
+		</record>
+
+		<record id="action_kanban_distribution_issue" model="ir.actions.act_window">
+			<field name="name">Issues</field>
+			<field name="res_model">tracker.issue</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form,kanban</field>
+			<field name="context">{'search_default_filter_not_canceled_or_done_issues':1}</field>
+		</record>
+
+		<record id="act_view_kanban_issue_action_kanban_distribution_issue" model="ir.actions.act_window.view">
+			<field name="sequence" eval="10" />
+			<field name="view_mode">kanban</field>
+			<field name="view_id" ref="view_kanban_distribution_issue" />
+			<field name="act_window_id" ref="action_kanban_distribution_issue" />
+		</record>
+
+		<record id="action_form_tracker_issue" model="ir.actions.act_window">
+			<field name="name">New issue</field>
+			<field name="res_model">tracker.issue</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">form</field>
+		</record>
+
+		<!-- SEARCH VIEW ISSUE -->
+		<record id='view_search_issue' model='ir.ui.view'>
+			<field name="name">view_search_issue</field>
+			<field name="model">tracker.issue</field>
+			<field name="arch" type="xml">
+				<search>
+					<field name="title" />
+					<field name="sequence" />
+					<field name="state" />
+					<field name="current_user_in_charge_id" />
+					<field name="progress_write_date" filter_domain="[('progress_write_date','=',self),('state','=', 'progress')]" string="Issue opened during month" />
+					<field name="finished_write_date" filter_domain="[('finished_write_date','=',self),('state','=', 'finished')]" string="Issue finished during month" />
+					<field name="canceled_write_date" filter_domain="[('canceled_write_date','=',self),('state','=', 'canceled')]" string="Issue canceled during month" />
+					<group expand="0" string="Filter">
+						<filter string="My issues" domain="[('current_user_in_charge_id','=', uid)]" name="filter_my_active_issues" />
+						<separator />
+						<filter string="Not canceled or done issues" domain="[('state','not in', ('finished', 'canceled'))]" name="filter_not_canceled_or_done_issues" />
+					</group>
+					<group expand="0" string="Group By">
+						<filter string="State" domain="[]" context="{'group_by': 'state'}" />
+						<filter string="Company" domain="[]" context="{'group_by': 'company_id'}" />
+						<filter string="User in charge" domain="[]" context="{'group_by': 'current_user_in_charge_id'}" />
+						<filter string="Phase type" domain="[]" context="{'group_by': 'current_phase_type'}" />
+					</group>
+				</search>
+			</field>
+		</record>
+
+		<menuitem name="Issues" id="menu_issues" parent="menu_tracker" sequence="10" />
+		<menuitem name="All issues" id="menu_tree_all_issue" action="action_tree_all_issue" parent="menu_issues" sequence="10" />
+		<menuitem name="Distribution issues" id="menu_distribution_issue" action="action_kanban_distribution_issue" parent="menu_issues" sequence="20" />
+
+		<record id="view_form_tracker_task" model="ir.ui.view">
+			<field name="name">Add a task</field>
+			<field name="model">tracker.task.settings</field>
+			<field name="arch" type="xml">
+				<form>
+					<group col="4">
+						<field name="sequence" />
+						<field name="title" />
+						<field name="phase_type" />
+						<field name="user_in_charge_id" />
+						<field name="company_id" />
+					</group>
+				</form>
+			</field>
+		</record>
+
+		<record id="view_tree_tracker_task" model="ir.ui.view">
+			<field name="name">view_tree_tracker_task</field>
+			<field name="model">tracker.task.settings</field>
+			<field name="arch" type="xml">
+				<tree version="8.0" string="All issues">
+					<field name="sequence" />
+					<field name="title" />
+					<field name="phase_type" />
+					<field name="user_in_charge_id" />
+					<field name="company_id" />
+				</tree>
+			</field>
+		</record>
+
+		<record id="action_task_settings" model="ir.actions.act_window">
+			<field name="name">Process</field>
+			<field name="res_model">tracker.task.settings</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+
+		<record id="view_form_user_email_settings" model="ir.ui.view">
+			<field name="name">view_form_user_email_settings</field>
+			<field name="model">tracker.user.email.config</field>
+			<field name="arch" type="xml">
+				<form>
+					<group>
+						<field name="user_email" />
+						<field name="option_email" widget="radio" />
+					</group>
+				</form>
+			</field>
+		</record>
+
+		<record id="view_tree_user_email_settings" model="ir.ui.view">
+			<field name="name">view_tree_user_email_settings</field>
+			<field name="model">tracker.user.email.config</field>
+			<field name="arch" type="xml">
+				<tree version="8.0" string="All email settings">
+					<field name="user_id" />
+					<field name="user_email" colspan="2" readonly="0" />
+				</tree>
+			</field>
+		</record>
+
+
+		<record id="action_email_settings" model="ir.actions.act_window">
+			<field name="name">email_settings</field>
+			<field name="res_model">tracker.user.email.config</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+
+		<record id="action_tracker_email_manager_settings" model="ir.actions.act_window">
+			<field name="name">action_tracker_email_manager_settings</field>
+			<field name="res_model">tracker.email.manager</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+
+		<record id="view_form_tracker_email_manager_settings" model="ir.ui.view">
+			<field name="name">view_form_tracker_email_manager_settings</field>
+			<field name="model">tracker.email.manager</field>
+			<field name="arch" type="xml">
+				<form>
+					<group>
+						<field name="name" colspan="2" readonly="0" />
+						<field name="from_email" colspan="2" readonly="0" />
+						<field name="smtp_user" colspan="2" readonly="0" />
+						<field name="smtp_pwd" colspan="2" readonly="0" />
+						<field name="base_url" colspan="2" readonly="0" />
+						<field name="smtp_url" colspan="2" readonly="0" />
+						<field name="smtp_port" colspan="2" readonly="0" />
+					</group>
+				</form>
+			</field>
+		</record>
+
+		<record id="view_form_tag_settings" model="ir.ui.view">
+			<field name="name">view_form_tag_settings</field>
+			<field name="model">tracker.tag</field>
+			<field name="arch" type="xml">
+				<form>
+					<group>
+						<field name="name" />
+						<field name="color" />
+					</group>
+				</form>
+			</field>
+		</record>
+
+		<record id="view_tree_tag_settings" model="ir.ui.view">
+			<field name="name">view_tree_tag_settings</field>
+			<field name="model">tracker.tag</field>
+			<field name="arch" type="xml">
+				<tree version="8.0" string="All tag settings">
+					<field name="name" />
+					<field name="color" colspan="2" readonly="0" />
+				</tree>
+			</field>
+		</record>
+
+
+		<record id="action_tag_settings" model="ir.actions.act_window">
+			<field name="name">tag_settings</field>
+			<field name="res_model">tracker.tag</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+
+		<menuitem name="Settings" id="menu_settings" parent="menu_tracker" sequence="20" />
+		<menuitem name="Process" id="menu_settings_task" parent="menu_settings" action="action_task_settings" sequence="10" />
+		<menuitem name="My email" id="menu_settings_email" parent="menu_settings" action="action_email_settings" sequence="20" />
+		<menuitem name="Server mail" id="menu_form_tracker_email_manager_settings" parent="menu_settings" action="action_tracker_email_manager_settings" sequence="30" />
+		<menuitem name="Tags" id="menu_form_tracker_email_manager_settings" parent="menu_settings" action="action_tag_settings" sequence="40" />
+
+		<record id="view_tree_deployment" model="ir.ui.view">
+			<field name="name">view_tree_deployment</field>
+			<field name="model">tracker.production.deployment</field>
+			<field name="arch" type="xml">
+				<tree version="8.0" string="All email settings">
+					<field name="title" colspan="2" readonly="0" />
+					<field name="deployment_date" colspan="2" readonly="0" />
+					<field name="user_in_charge_id" colspan="2" readonly="0" />
+					<field name="customer_company_id" colspan="2" readonly="0" />
+					<field name="last_commit" colspan="2" readonly="0" />
+				</tree>
+			</field>
+		</record>
+
+		<record id="view_form_deployment" model="ir.ui.view">
+			<field name="name">view_form_deployment</field>
+			<field name="model">tracker.production.deployment</field>
+			<field name="arch" type="xml">
+				<form>
+					<group col="9" colspan="4">
+						<group col="12" colspan="8">
+							<field name="title" colspan="4" readonly="0" />
+							<field name="user_in_charge_id" colspan="4" readonly="0" />
+							<field name="customer_company_id" colspan="4" readonly="0" />
+							<field name="deployment_date" colspan="4" readonly="0" />
+							<field name="last_commit" colspan="4" readonly="0" />
+							<field name="company_in_charge_id" colspan="4" readonly="0" />
+							<notebook colspan="12">
+								<page string="Commits">
+									<field name="commit_ids" colspan="4">
+										<tree>
+											<field name="revision" />
+											<field name="username" colspan="2" readonly="0" />
+											<field name="message" />
+											<field name="branch_name" />
+											<field name="source_created_datetime" />
+											<field name="url" />
+										</tree>
+									</field>
+								</page>
+								<page string="Automatic issues">
+									<field name="issue_ids" colspan="4" nolabel="1" editable="false" create="false">
+										<tree>
+											<field name="sequence" />
+											<field name="title" />
+											<field name="state" />
+											<field name="current_phase_type" colspan="2" readonly="0" />
+											<field name="current_user_in_charge_id" colspan="2" readonly="0" />
+											<field name="developper_id" colspan="2" readonly="0" />
+											<field name="priority" colspan="2" readonly="0" />
+											<field name="deadline" colspan="2" readonly="0" />
+											<field name="company_id" colspan="2" readonly="0" />
+											<field name="tag_ids" colspan="2" readonly="0" widget="many2many_tags" />
+										</tree>
+									</field>
+								</page>
+								<page string="Manual issues">
+									<field name="manual_issue_ids" colspan="4" nolabel="1">
+										<tree>
+											<field name="sequence" />
+											<field name="title" />
+											<field name="state" />
+											<field name="current_phase_type" colspan="2" readonly="0" />
+											<field name="current_user_in_charge_id" colspan="2" readonly="0" />
+											<field name="developper_id" colspan="2" readonly="0" />
+											<field name="priority" colspan="2" readonly="0" />
+											<field name="deadline" colspan="2" readonly="0" />
+											<field name="company_id" colspan="2" readonly="0" />
+											<field name="tag_ids" colspan="2" readonly="0" widget="many2many_tags" />
+										</tree>
+									</field>
+								</page>
+								<page string="Production">
+									<field name="production_instruction_ids" colspan="4">
+										<tree editable="1">
+											<field name="instruction_id" colspan="2" invisible="1" />
+											<field name="action_type_related" readonly="1" />
+											<field name="title_related" readonly="1" />
+											<field name="timing_related" readonly="1" />
+											<field name="user_in_charge_id_related" readonly="1" />
+											<field name="is_done" colspan="2" readonly="0" />
+										</tree>
+									</field>
+								</page>
+								<page string="Comments">
+									<field name="comments" colspan="4" />
+								</page>
+							</notebook>
+						</group>
+					</group>
+				</form>
+			</field>
+		</record>
+
+		<record id="action_deployment" model="ir.actions.act_window">
+			<field name="name">Deployment</field>
+			<field name="res_model">tracker.production.deployment</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+
+		<menuitem name="Production" id="menu_production" parent="menu_tracker" sequence="30" />
+		<menuitem name="Deployment" id="menu_deployment" parent="menu_production" action="action_deployment" sequence="10" />
+
+		<record id="action_email_manager" model="ir.actions.act_window">
+			<field name="name">SMTP settings</field>
+			<field name="res_model">tracker.email.manager</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+
+		<record id="view_form_email_manager" model="ir.ui.view">
+			<field name="name">view_form_email_manager</field>
+			<field name="model">tracker.email.manager</field>
+			<field name="arch" type="xml">
+				<form create="0">
+					<header>
+						<button name="test_connection" string="Test connection" type="object" class="oe_highlight" />
+					</header>
+					<group>
+						<field name="from_email" colspan="2" readonly="0" />
+						<field name="name" colspan="2" readonly="0" />
+						<field name="base_url" colspan="2" readonly="0" />
+						<field name="smtp_url" colspan="2" readonly="0" />
+						<field name="smtp_port" colspan="2" readonly="0" />
+						<field name="smtp_user" colspan="2" readonly="0" />
+						<field name="smtp_pwd" colspan="2" readonly="0" password="True" />
+					</group>
+				</form>
+			</field>
+		</record>
+		<menuitem name="SMTP settings" id="menu_email_manager" parent="menu_settings" action="action_email_manager" sequence="50" />
+
+		<record id="view_tree_commit" model="ir.ui.view">
+			<field name="name">view_tree_commit</field>
+			<field name="model">tracker.commit</field>
+			<field name="arch" type="xml">
+				<tree version="8.0" string="Commits">
+					<field name="revision" colspan="2" readonly="0" />
+					<field name="username" colspan="2" readonly="0" />
+					<field name="message" colspan="2" readonly="0" />
+					<field name="write_date" colspan="2" readonly="0" />
+					<field name="branch_name" colspan="2" readonly="0" />
+					<field name="tag" colspan="2" readonly="0" />
+					<field name="url" colspan="2" readonly="0" />
+				</tree>
+			</field>
+		</record>
+
+		<record id='view_search_commit' model='ir.ui.view'>
+			<field name="name">view_search_commit</field>
+			<field name="model">tracker.commit</field>
+			<field name="arch" type="xml">
+				<search>
+					<field name="message" filter_domain="[('message', 'ilike', self)]" string="Message like than" />
+					<field name="write_date" filter_domain="[('write_date', '&gt;=', self)]" string="Date greater or equal than" />
+					<field name="write_date" filter_domain="[('write_date', '&lt;=', self)]" string="Date lower or equal than" />
+					<field name="revision" filter_domain="[('revision', '&gt;=', self)]" string="Revision greater or equal than" />
+					<field name="revision" filter_domain="[('revision', '&lt;=', self)]" string="Revision lower or equal than" />
+					<field name="username" />
+					<field name="branch_name" />
+					<field name="tag" />
+				</search>
+			</field>
+		</record>
+
+		<record id="view_form_tracker_sprint" model="ir.ui.view">
+			<field name="name">view_form_tracker_sprint</field>
+			<field name="model">tracker.sprint</field>
+			<field name="arch" type="xml">
+				<form>
+					<group col="4">
+						<field name="name" />
+						<newline />
+						<field name="start_date" />
+						<field name="end_date" />
+						<group colspan="4" col="1" string="Description">
+							<field name="description" nolabel="1" />
+						</group>
+					</group>
+				</form>
+			</field>
+		</record>
+
+		<record id="view_tree_tracker_sprint" model="ir.ui.view">
+			<field name="name">view_tree_tracker_sprint</field>
+			<field name="model">tracker.sprint</field>
+			<field name="arch" type="xml">
+				<tree version="8.0" string="All tag settings">
+					<field name="name" />
+					<field name="start_date" />
+					<field name="end_date" />
+				</tree>
+			</field>
+		</record>
+
+		<record id="action_tracker_sprint" model="ir.actions.act_window">
+			<field name="name">Sprint</field>
+			<field name="res_model">tracker.sprint</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+
+		<menuitem name="Sprint" id="menu_tracker_sprint" parent="menu_settings" action="action_tracker_sprint" sequence="60" />
+
+		<record id="view_form_tracker_issue_category" model="ir.ui.view">
+			<field name="name">view_form_tracker_issue_category</field>
+			<field name="model">tracker.issue.category</field>
+			<field name="arch" type="xml">
+				<form>
+					<group>
+						<field name="name" />
+					</group>
+				</form>
+			</field>
+		</record>
+
+		<record id="view_tree_tracker_issue_category" model="ir.ui.view">
+			<field name="name">view_tree_tracker_issue_category</field>
+			<field name="model">tracker.issue.category</field>
+			<field name="arch" type="xml">
+				<tree version="8.0" string="All tag settings">
+					<field name="name" />
+				</tree>
+			</field>
+		</record>
+
+		<record id="action_tracker_issue_category" model="ir.actions.act_window">
+			<field name="name">Category</field>
+			<field name="res_model">tracker.issue.category</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+
+		<menuitem name="Category" id="menu_tracker_issue_category" parent="menu_settings" action="action_tracker_issue_category" sequence="70" />
+	</data>
+</openerp>

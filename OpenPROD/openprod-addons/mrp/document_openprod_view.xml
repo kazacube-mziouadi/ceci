@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+	
+		<!-- FORM VIEW Document openprod -->
+		<record id='view_form_mrp_document_openprod' model='ir.ui.view'>
+			<field name="name">view_form_mrp_document_openprod</field>
+			<field name="model">document.openprod</field>
+			<field name="priority" eval="1200" />
+			<field name="inherit_id" ref="base_openprod.view_form_document_openprod_id" />
+			<field name="arch" type="xml">
+				<xpath expr="//separator[@name='document_separator']" position="after">
+					<button class="oe_inline oe_stat_button" type="object" string="Routing" name="show_routing_from_document" icon="fa-list-ul" />
+					<button class="oe_inline oe_stat_button" type="object" string="Manufacturing order" name="show_mo_from_document" icon="fa-wrench" />
+					<button class="oe_inline oe_stat_button" type="object" string="Work order" name="show_wo_from_document" icon="fa-tasks" />
+				</xpath>
+			</field>
+		</record>				
+				
+	</data>
+</openerp>

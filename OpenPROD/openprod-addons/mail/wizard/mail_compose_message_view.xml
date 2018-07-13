@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record model="ir.ui.view" id="email_compose_message_wizard_form">
+            <field name="name">mail.compose.message.form</field>
+            <field name="model">mail.compose.message</field>
+            <field name="groups_id" eval="[(4,ref('base.group_user'))]"/>
+            <field name="arch" type="xml">
+                <form string="Compose Email">
+                    <group>
+                        <!-- truly invisible fields for control and options -->
+                        <field name="model" invisible="1"/>
+                        <field name="res_id" invisible="1"/>
+                        <field name="mail_server_id" invisible="1"/>
+                        <field name="active_domain" invisible="1"/>
+
+                        <!-- Various warnings -->
+                        <field name="use_active_domain" invisible="1"/>
+                        <div colspan="2" class="oe_form_box_info oe_text_center"
+                                attrs="{'invisible': [('use_active_domain', '!=', True)]}">
+                            <p>
+                                <strong>All records matching your current search filter will be mailed,
+                                    not only the ids selected in the list view.</strong><br />
+                                If you want to work only with selected ids, please uncheck the
+                                list header checkbox.
+                            </p>
+                            <br/>
+                            <p>
+                                <strong>Moreover, if you want to send a lot of emails, we recommend you to use the mass mailing module</strong>. <br />
+                                Confirming this wizard will probably take a few minutes blocking your browser.</p>
+                        </div>
+                        <!-- visible wizard -->
+                        <field name="email_from" invisible="1"/>
+                        <field name="email_to" widget="multimail" class="verify_mail"/>
+                        <field name="email_cc" widget="multimail" class="verify_mail"/>
+<!--                         <label for="partner_ids" string="Recipients" /> -->
+<!--                         <div> -->
+<!--                             <span attrs="{'invisible':[('model', '=', False)]}">Followers of the document and</span> -->
+<!--                             <field name="partner_ids" widget="many2many_tags_email" placeholder="Add contacts to notify..." -->
+<!--                                 context="{'force_email':True, 'show_email':True}" /> -->
+<!--                         </div> -->
+                        <field name="subject" placeholder="Subject..." required="True"/>
+                        <field name="reply_to" invisible="1"/>
+                    </group>
+                    <field name="body" options="{'style-inline': true}"/>
+                    <group col="4">
+                        <field name="attachment_ids" widget="many2many_binary" string="Attach a file" nolabel="1" colspan="2"/>
+                        <field name="template_id" options="{'no_create': True}" readonly="1"
+                               context="{'default_model': model, 'default_body_html': body, 'default_subject': subject}"/>
+                    </group>
+                    <footer>
+                        <button string="Send" name="send_mail_action" type="object" class="btn-primary" widget="verify_mail"/>
+                        <button string="Cancel" class="btn-default" special="cancel" />
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_email_compose_message_wizard" model="ir.actions.act_window">
+            <field name="name">Compose Email</field>
+            <field name="res_model">mail.compose.message</field>
+            <field name="src_model">mail.compose.message</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+
+    </data>
+</openerp>

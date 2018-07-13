@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+		<record id='view_form_mrp_mo_planning_aligned_mo_id' model='ir.ui.view'>
+            <field name="name">view_form_mrp_manufacturingorder_planning_aligned_mo_id</field>
+            <field name="model">mrp.manufacturingorder</field>
+			<field name="inherit_id" ref="mrp.view_form_mrp_manufacturingorder"/>
+            <field name="priority" eval="1400" />
+			<field name="arch" type="xml">
+                <xpath expr="//button[@name='%(mrp.act_mrp_planning_mo_at_the_latest_id)d']" position="after">
+                    <button type="action" string="Planning aligned" name="%(act_planning_aligned_mo_id)d" 
+                            class="oe_inline oe_stat_button" icon="fa-calendar" 
+                            attrs="{'invisible':['|', ('workorder_ids', '=', []), ('state', 'in', ('cancel', 'done'))]}" />
+                </xpath>
+			</field>
+		</record>
+	</data>
+</openerp>

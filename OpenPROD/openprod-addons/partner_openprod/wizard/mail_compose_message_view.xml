@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+
+	    <record model="ir.ui.view" id="inherit_view_message_form">
+            <field name="name">mail.message.form</field>
+            <field name="model">mail.message</field>
+            <field name="type">form</field>
+            <field name="inherit_id" ref="mail.view_message_form"/>
+            <field name="priority" eval="2000"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='body']" position="after">
+            		<field name="model_template_id"/>
+            		<field name="no_recup" invisible="1" />
+            	</xpath>
+            </field>
+       </record>
+       
+       
+        <record model="ir.ui.view" id="inherit_email_compose_message_wizard_inherit_form">
+            <field name="name">mail.compose.message.form</field>
+            <field name="model">mail.compose.message</field>
+            <field name="type">form</field>
+            <field name="inherit_id" ref="mail.email_compose_message_wizard_form"/>
+            <field name="priority" eval="3000"/>
+            <field name="arch" type="xml">
+	            <xpath expr="//field[@name='body']" position="before">
+                    <field name="model_template_id" invisible="1"/>
+                    <field name="id_active" invisible="1"/>
+	            </xpath>
+            </field>
+       </record>
+       
+       <record model="ir.actions.act_window" id="wizard_send_mail">
+		    <field name="name">Wizard to write and send mail</field>
+		    <field name="res_model">mail.compose.message</field>
+		    <field name="view_type">form</field>
+		    <field name="view_mode">form</field>
+		    <field name="view_id" ref="mail.email_compose_message_wizard_form"/>
+		    <field name="target">new</field>
+	  	</record>
+	  	
+	  	
+
+	  	<record id='view_form_wizard_partner_mass_mail' model='ir.ui.view'>
+            <field name="name">view_form_wizard_partner_mass_mail</field>
+            <field name="model">wizard.partner.mass.mail</field>
+            <field name="arch" type="xml">
+                <form string="Send mass mail" version="8.0">
+                    <group>
+                        <field name="partner_ids" colspan="4" nolabel="1" />
+                    </group>
+                    <footer>
+                        <button name="action_validate" string="OK" type="object" class="oe_highlight" />
+                        or
+                        <button string="Cancel" class="oe_link" special="cancel" />
+                    </footer>
+                </form>
+            </field>
+        </record>
+	  	
+	  	<act_window 
+	  	    name="Send mass mail" 
+	  	    res_model="wizard.partner.mass.mail" 
+	  	    src_model="res.partner" 
+	  	    view_mode="form" 
+	  	    target="new" 
+	  	    key2="client_action_multi" 
+	  	    id="act_wizard_partner_mass_mail" />
+
+    </data>
+</openerp>

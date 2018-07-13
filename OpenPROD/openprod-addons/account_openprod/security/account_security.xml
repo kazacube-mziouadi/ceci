@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<openerp>
+	<data noupdate="1">
+	
+		<!-- Account groups -->
+		<record model="res.groups" id="group_cancel_account_invoice">
+			<field name="name">Cancel invoice</field>
+			<field name="implied_ids" eval="[]"/>
+		</record>
+		
+	</data>
+</openerp>

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+		<!-- ACTION tax exemption -->
+		<record id="fiscal_position_tax_exemption_act" model="ir.actions.act_window">
+			<field name="name">Tax exemption</field>
+			<field name="res_model">tax.exemption</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+
+		<!-- SEARCH tax exemption -->
+		<record id="fiscal_position_tax_exemption_search" model="ir.ui.view">
+			<field name="name">fiscal_position_tax_exemption_search</field>
+			<field name="model">tax.exemption</field>
+			<field name="type">search</field>
+			<field name="priority" eval="2000" />
+			<field name="arch" type="xml">
+				<search>
+					<group colspan="4">
+						<filter name="filter_is_active" string="Is active" icon="gtk-cancel" domain="[('is_active', '=', True)]" />
+					</group>
+					<newline />
+					<group string="Group by ..." colspan="4">
+						<filter string="Partner" icon="gtk-index" domain="[]" context="{'group_by':'partner_id'}" />
+					</group>
+				</search>
+			</field>
+		</record>
+
+		<!-- TREE VIEW tax exemption -->
+		<record id="fiscal_position_tax_exemption_tree" model="ir.ui.view">
+			<field name="name">fiscal_position_tax_exemption_tree</field>
+			<field name="model">tax.exemption</field>
+			<field name="arch" type="xml">
+				<tree string="Action Rule">
+					<field name="partner_id" />
+					<field name="date_start" />
+					<field name="date_end" />
+					<field name="max_amount" />
+					<field name="currency_id" />
+					<field name="fiscal_position_id" />
+				</tree>
+			</field>
+		</record>
+
+		<!-- FORM VIEW tax exemption -->
+		<record id='fiscal_position_tax_exemption_form' model='ir.ui.view'>
+			<field name="name">fiscal_position_tax_exemption_form</field>
+			<field name="model">tax.exemption</field>
+			<field name="arch" type="xml">
+				<form string="Action rule" version="8.0">
+					<group colspan="4" col="4">
+						<field name="date_start" />
+						<field name="date_end" />
+						<field name="partner_id" />
+						<field name="max_amount" />
+						<field name="currency_id" />
+						<field name="fiscal_position_id" />
+						<field name="file" />
+						<group colspan="4" col="2" string="Note printed on invoice">
+							<field name="note_invoice" nolabel="1" />
+						</group>
+                        <group colspan="4" col="2" string="Exception tax printed on invoice">
+                            <field name="exception_tax" nolabel="1" />
+                        </group>
+					</group>
+				</form>
+			</field>
+		</record>
+
+		<!-- MENU tax exemption -->
+		<menuitem name="Tax exemption" id="fiscal_position_tax_exemption_menu" action="fiscal_position_tax_exemption_act" parent="account_openprod.menu_taxes" sequence="40" />
+        <menuitem name="Tax exemption" id="fiscal_position_tax_exemption_menu_sale" action="fiscal_position_tax_exemption_act" parent="sale.menu_sale_customer_contract" sequence="10" />
+
+	</data>
+</openerp>

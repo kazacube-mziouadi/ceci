@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+		<!-- FORM VIEW Quick create project -->
+		<record id='view_form_quick_create_project' model='ir.ui.view'>
+			<field name="name">quick_create_project</field>
+			<field name="model">quick.create.project</field>
+			<field name="arch" type="xml">
+				<form string="Quick create project" version="8.0">
+					<group col="4">
+						<field name="name" />
+						<field name="model_id" />
+						<field name="start_date" colspan="4" />
+<!-- 						<group colspan="2" /> -->
+						<field name="keep_documents" />
+						<field name="keep_resources" />
+						<button string="Create Project" type="object" name="create_project" class="btn btn-primary" />
+						<button special="cancel" string="cancel" />
+					</group>
+				</form>
+			</field>
+		</record>
+		
+		<!-- ACTION Quick create project -->
+		<record id="act_quick_create_project" model="ir.actions.act_window">
+			<field name="name">Quick create project</field>
+			<field name="res_model">quick.create.project</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">form</field>
+			<field name="target">new</field>
+			<field name="context">{'dialog_size':'medium'}</field>
+		</record>
+		
+		<menuitem id="menu_quick_create_project" name="Quick create Project" action="act_quick_create_project" parent="menu_main_phase" groups="group_menu_project_user" />
+	</data>
+</openerp>

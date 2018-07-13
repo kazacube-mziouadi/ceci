@@ -1,0 +1,9 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+                                                        
+access_customer_performance_category_user,customer.performance.category,model_customer_performance_category,base.group_sale_salesman,1,1,1,0
+access_customer_performance_category_manager,customer.performance.category,model_customer_performance_category,base.group_sale_manager,1,1,1,1
+access_customer_performance_category_responsible,customer.performance.category,model_customer_performance_category,sale.group_sale_responsible,1,1,1,1
+
+access_customer_performance_user,customer.performance.analysis,model_customer_performance_analysis,base.group_sale_salesman,1,1,1,1
+access_customer_performance_manager,customer.performance.analysis,model_customer_performance_analysis,base.group_sale_manager,1,1,1,1
+access_customer_performance_category_responsible,customer.performance.analysis,model_customer_performance_analysis,sale.group_sale_responsible,1,1,1,1          

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+		<!-- FORM VIEW Create Variants -->
+		<record id='view_form_create_variants_charact' model='ir.ui.view'>
+			<field name="name">view_form_create_variants_charact</field>
+			<field name="model">create.variants</field>
+			<field name="inherit_id" ref="variants.view_form_create_variants" />
+			<field name="priority" eval="1300" />
+			<field name="arch" type="xml">
+			    <xpath expr="//field[@name='copy_parameters']" position="after">
+                    <field name="copy_characteristics" />
+                </xpath>
+			</field>
+		</record>
+		
+		
+		
+		
+		<record id='view_form_create_variants_charact' model='ir.ui.view'>
+            <field name="name">view_form_create_variants_charact</field>
+            <field name="model">create.variants</field>
+            <field name="inherit_id" ref="variants.view_form_create_variants" />
+            <field name="priority" eval="1300" />
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='copy_parameters']" position="after">
+                    <field name="copy_characteristics" />
+                </xpath>
+            </field>
+        </record>
+
+	</data>
+</openerp>

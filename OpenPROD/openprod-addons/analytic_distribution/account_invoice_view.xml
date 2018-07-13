@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+	
+		<!-- FORM VIEW Account invoice line -->
+		<record id='view_form_account_invoice_line_distribution' model='ir.ui.view'>
+			<field name="name">view_form_account_invoice_line_distribution</field>
+			<field name="model">account.invoice.line</field>
+			<field name="priority" eval="1500" />
+			<field name="inherit_id" ref="account_openprod.view_openprod_invoice_line_form" />
+			<field name="arch" type="xml">
+				<xpath expr="//page[@name='diverse']" position="after">
+					<page string="Analytic">
+						<group colspan="4" col="4" string="Analytic distribution">
+							<field name="distribution_ids" nolabel="1" colspan="4" readonly="1">
+								<tree editable="bottom">
+									<field name="type"/>
+									<field name="value"  attrs="{'required': [('type', '!=', 'garbage')]}"/>
+									<field name="company_id"/>
+									<field name="account_id"/>
+									<field name="total"/>
+									<field name="total_currency"/>
+								</tree>
+							</field>
+						</group>
+						<group colspan="4" col="4" string="Analytic lines">
+							<field name="analytic_line_ids" nolabel="1" colspan="4" readonly="1"/>
+						</group>
+					</page>
+				</xpath>
+			</field>
+		</record>
+		
+		<!-- FORM VIEW Account invoice for customers-->
+		<record id='view_form_customer_account_invoice_distribution' model='ir.ui.view'>
+			<field name="name">view_form_customer_account_invoice_distribution</field>
+			<field name="model">account.invoice</field>
+			<field name="priority" eval="1500" />
+			<field name="inherit_id" ref="account_openprod.account_cust_openprod_invoice_form" />
+			<field name="arch" type="xml">
+				<xpath expr="//field[@name='invoice_line_ids']//form//page[@name='diverse']" position="after">
+					<page string="Analytic">
+						<group colspan="4" col="4" string="Analytic distribution">
+							<field name="distribution_ids" nolabel="1" colspan="4">
+								<tree editable="bottom">
+									<field name="type"/>
+									<field name="value"  attrs="{'required': [('type', '!=', 'garbage')]}"/>
+									<field name="company_id"/>
+									<field name="account_id"/>
+									<field name="total"/>
+									<field name="total_currency"/>
+								</tree>
+							</field>
+						</group>
+						<group colspan="4" col="4" string="Analytic lines">
+							<field name="analytic_line_ids" nolabel="1" colspan="4"/>
+						</group>
+					</page>
+				</xpath>
+			</field>
+		</record>
+		
+		 <record id="account_cust_openprod_invoice_line_form_distribution" model="ir.ui.view">
+            <field name="name">account.customer.openprod.invoice.line.form.distribution</field>
+            <field name="model">account.invoice.line</field>
+		    <field name="inherit_id" ref="account_openprod.account_cust_openprod_invoice_line_form" />
+            <field name="arch" type="xml">
+                <xpath expr="//page[@name='diverse']" position="after">
+                    <page string="Analytic">
+                        <group colspan="4" col="4" string="Analytic distribution">
+                            <field name="distribution_ids" nolabel="1" colspan="4">
+                                <tree editable="bottom">
+                                    <field name="type"/>
+                                    <field name="value"  attrs="{'required': [('type', '!=', 'garbage')]}"/>
+                                    <field name="company_id"/>
+                                    <field name="account_id"/>
+                                    <field name="total"/>
+                                    <field name="total_currency"/>
+                                </tree>
+                            </field>
+                        </group>
+                        <group colspan="4" col="4" string="Analytic lines">
+                            <field name="analytic_line_ids" nolabel="1" colspan="4"/>
+                        </group>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+        
+        
+		<!-- FORM VIEW Account invoice for suppliers-->
+		<record id='view_form_supplier_account_invoice_distribution' model='ir.ui.view'>
+			<field name="name">view_form_supplier_account_invoice_distribution</field>
+			<field name="model">account.invoice</field>
+			<field name="priority" eval="1500" />
+			<field name="inherit_id" ref="account_openprod.account_supp_openprod_invoice_form" />
+			<field name="arch" type="xml">
+				<xpath expr="//field[@name='invoice_line_ids']//form//page[@name='diverse']" position="after">
+					<page string="Analytic">
+						<group colspan="4" col="4" string="Analytic distribution">
+							<field name="distribution_ids" nolabel="1" colspan="4">
+								<tree editable="bottom">
+									<field name="type"/>
+									<field name="value"  attrs="{'required': [('type', '!=', 'garbage')]}"/>
+									<field name="company_id"/>
+									<field name="account_id"/>
+									<field name="total"/>
+									<field name="total_currency"/>
+								</tree>
+							</field>
+						</group>
+						<group colspan="4" col="4" string="Analytic lines">
+							<field name="analytic_line_ids" nolabel="1" colspan="4"/>
+						</group>
+					</page>
+				</xpath>
+			</field>
+		</record>
+		
+		
+		<record id="account_suppl_openprod_invoice_line_form_distribution" model="ir.ui.view">
+            <field name="name">account.suppl.openprod.invoice.line.form.distribution</field>
+            <field name="model">account.invoice.line</field>
+            <field name="inherit_id" ref="account_openprod.account_suppl_openprod_invoice_line_form" />
+            <field name="arch" type="xml">
+                <xpath expr="//page[@name='diverse']" position="after">
+                    <page string="Analytic">
+                        <group colspan="4" col="4" string="Analytic distribution">
+                            <field name="distribution_ids" nolabel="1" colspan="4">
+                                <tree editable="bottom">
+                                    <field name="type"/>
+                                    <field name="value"  attrs="{'required': [('type', '!=', 'garbage')]}"/>
+                                    <field name="company_id"/>
+                                    <field name="account_id"/>
+                                    <field name="total"/>
+                                    <field name="total_currency"/>
+                                </tree>
+                            </field>
+                        </group>
+                        <group colspan="4" col="4" string="Analytic lines">
+                            <field name="analytic_line_ids" nolabel="1" colspan="4"/>
+                        </group>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+	</data>
+</openerp>

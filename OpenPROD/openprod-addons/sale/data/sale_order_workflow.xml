@@ -1,0 +1,1381 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data noupdate="0">
+
+        <!-- Workflow for sale.order -->
+        <record id="wkf_sale_order" model="workflow">
+            <field name="name">sale.order.basic</field>
+            <field name="osv">sale.order</field>
+            <field name="on_create">True</field>
+        </record>
+        
+        <!-- Workflow activity for sale.order -->
+        <record id="act_draft_sale" model="workflow.activity">
+            <field name="wkf_id" ref="wkf_sale_order"/>
+            <field name="name">Draft</field>
+            <field name="kind">function</field>
+            <field name="can_not_be_deleted">True</field>
+            <field name="required">True</field>
+            <field name="sequence" eval="0" />
+            <field name="flow_start">True</field>
+            <field name="action">action_draft_sale()
+            write({'display_state': 'sale_draft'})</field>
+        </record>
+        
+        <record id="act_quotation_send_sale" model="workflow.activity">
+            <field name="wkf_id" ref="wkf_sale_order"/>
+            <field name="name">Quotation send</field>
+            <field name="kind">function</field>
+            <field name="sequence" eval="10" />
+            <field name="action">action_waiting_sale()
+            write({'display_state': 'sale_quotation_send'})</field>
+        </record>
+        
+        <record id="act_rd_send_sale" model="workflow.activity">
+            <field name="wkf_id" ref="wkf_sale_order"/>
+            <field name="name">RD send</field>
+            <field name="kind">function</field>
+            <field name="sequence" eval="20" />
+            <field name="action">action_send_ar()
+            write({'display_state': 'sale_rd_send'})</field>
+        </record>
+        
+        <record id="act_wait_payment_validation" model="workflow.activity">
+            <field name="wkf_id" ref="wkf_sale_order"/>
+            <field name="name">Waiting payment validation</field>
+            <field name="kind">function</field>
+            <field name="sequence" eval="30" />
+            <field name="action">write({'display_state': 'wait_payment_validation'})
+            action_generate_payment()</field>
+        </record>
+        
+        <record id="act_payment_validated" model="workflow.activity">
+            <field name="wkf_id" ref="wkf_sale_order"/>
+            <field name="name">Payment validated</field>
+            <field name="kind">function</field>
+            <field name="sequence" eval="40" />
+            <field name="action">write({'display_state': 'payment_validated'})</field>
+        </record>
+        
+        <record id="act_put_waiting_plan_sale" model="workflow.activity">
+            <field name="wkf_id" ref="wkf_sale_order"/>
+            <field name="name">Put in plan waiting</field>
+            <field name="kind">function</field>
+            <field name="sequence" eval="50" />
+            <field name="action">waiting_delay_button()</field>
+        </record>
+        
+        <record id="act_plan_waiting_sale" model="workflow.activity">
+            <field name="wkf_id" ref="wkf_sale_order"/>
+            <field name="name">Plan waiting</field>
+            <field name="kind">function</field>
+            <field name="sequence" eval="60" />
+            <field name="action">write({'display_state': 'plan_waiting'})
+            wkf_waiting_delay()</field>
+        </record>
+        
+        <record id="act_confirmed_delay_sale" model="workflow.activity">
+            <field name="wkf_id" ref="wkf_sale_order"/>
+            <field name="name">Confirmed delay</field>
+            <field name="kind">function</field>
+            <field name="sequence" eval="70" />
+            <field name="action">write({'display_state': 'confirmed_delay'})
+            wkf_waiting_conf_delay()
+            </field>
+        </record>
+        
+<!--         <record id="act_generate_invoice" model="workflow.activity"> -->
+<!--             <field name="wkf_id" ref="wkf_sale_order"/> -->
+<!--             <field name="name">Generate invoice</field> -->
+<!--             <field name="kind">function</field> -->
+<!--             <field name="can_not_be_deleted">True</field> -->
+<!--             <field name="required">True</field> -->
+<!--             <field name="sequence" eval="80" /> -->
+<!--             <field name="action">not check_paid and generate_invoice()</field> -->
+<!--         </record> -->
+        
+        <record id="act_waiting_invoice_payment" model="workflow.activity">
+            <field name="wkf_id" ref="wkf_sale_order"/>
+            <field name="name">Waiting invoice payment</field>
+            <field name="kind">function</field>
+            <field name="can_not_be_deleted">True</field>
+            <field name="required">True</field>
+            <field name="sequence" eval="90" />
+            <field name="action">write({'display_state': 'wait_invoice_payment'})</field>
+        </record>
+        
+        <record id="act_paid_invoice" model="workflow.activity">
+            <field name="wkf_id" ref="wkf_sale_order"/>
+            <field name="name">Paid invoice</field>
+            <field name="kind">function</field>
+            <field name="can_not_be_deleted">True</field>
+            <field name="required">True</field>
+            <field name="sequence" eval="100" />
+            <field name="action">write({'display_state': 'paid_invoice'})</field>
+        </record>
+        
+        <record id="act_progress_sale" model="workflow.activity">
+            <field name="wkf_id" ref="wkf_sale_order"/>
+            <field name="name">Progress sale</field>
+            <field name="kind">function</field>
+            <field name="can_not_be_deleted">True</field>
+            <field name="required">True</field>
+            <field name="sequence" eval="110" />
+            <field name="action">wkf_progress()</field>
+        </record>
+        
+        <record id="act_confirmed_sale" model="workflow.activity">
+            <field name="wkf_id" ref="wkf_sale_order"/>
+            <field name="name">Confirmed sale</field>
+            <field name="kind">function</field>
+            <field name="can_not_be_deleted">True</field>
+            <field name="required">True</field>
+            <field name="sequence" eval="120" />
+            <field name="action">wkf_progress_state()
+            write({'display_state': 'confirmed_sale'})</field>
+        </record>
+        
+        <record id="act_done_sale" model="workflow.activity">
+            <field name="wkf_id" ref="wkf_sale_order"/>
+            <field name="name">Done</field>
+            <field name="kind">function</field>
+            <field name="can_not_be_deleted">True</field>
+            <field name="required">True</field>
+            <field name="sequence" eval="130" />
+            <field name="flow_stop">True</field>
+            <field name="action">write({'display_state': 'done'})
+            action_done_sale()</field>
+        </record>
+        
+        <record id="act_cancel_sale" model="workflow.activity">
+            <field name="wkf_id" ref="wkf_sale_order"/>
+            <field name="name">Cancel</field>
+            <field name="kind">function</field>
+            <field name="can_not_be_deleted">True</field>
+            <field name="required">True</field>
+            <field name="sequence" eval="140" />
+            <field name="flow_stop">True</field>
+            <field name="action">action_cancel_sale()
+            write({'display_state': 'cancel'})</field>
+        </record>
+        
+        <record id="act_reset_sale" model="workflow.activity">
+            <field name="wkf_id" ref="wkf_sale_order"/>
+            <field name="name">Reset the sale</field>
+            <field name="kind">function</field>
+            <field name="can_not_be_deleted">True</field>
+            <field name="required">True</field>
+            <field name="sequence" eval="150" />
+            <field name="flow_stop">True</field>
+            <field name="action">action_change_sale()</field>
+        </record>
+        
+        <!-- Workflow display state for sale.order -->
+        <record id="display_draft_sale" model="workflow.display.state">
+            <field name="wkf_id" ref="wkf_sale_order"/>
+            <field name="sequence" eval="0" />
+            <field name="label">Draft</field>
+            <field name="name">sale_draft</field>
+            <field name="always_visible" eval="True"/>
+        </record>
+        
+        <record id="display_rd_send_purchase" model="workflow.display.state">
+            <field name="wkf_id" ref="wkf_sale_order"/>
+            <field name="sequence" eval="10" />
+            <field name="label">RD send</field>
+            <field name="name">sale_rd_send</field>
+            <field name="always_visible" eval="False"/>
+        </record>
+        
+        <record id="display_quotation_send_sale" model="workflow.display.state">
+            <field name="wkf_id" ref="wkf_sale_order"/>
+            <field name="sequence" eval="20" />
+            <field name="label">Quotation send</field>
+            <field name="name">sale_quotation_send</field>
+            <field name="always_visible" eval="False"/>
+        </record>
+        
+        <record id="display_wait_payment_validation" model="workflow.display.state">
+            <field name="wkf_id" ref="wkf_sale_order"/>
+            <field name="sequence" eval="30" />
+            <field name="label">Waiting payment validation</field>
+            <field name="name">wait_payment_validation</field>
+            <field name="always_visible" eval="False"/>
+        </record>
+        
+        <record id="display_payment_validated" model="workflow.display.state">
+            <field name="wkf_id" ref="wkf_sale_order"/>
+            <field name="sequence" eval="40" />
+            <field name="label">Payment validated</field>
+            <field name="name">payment_validated</field>
+            <field name="always_visible" eval="False"/>
+        </record>
+        
+        <record id="display_wait_invoice_payment" model="workflow.display.state">
+            <field name="wkf_id" ref="wkf_sale_order"/>
+            <field name="sequence" eval="50" />
+            <field name="label">Waiting invoice payment</field>
+            <field name="name">wait_invoice_payment</field>
+            <field name="always_visible" eval="False"/>
+        </record>
+        
+        <record id="display_wait_paid_invoice" model="workflow.display.state">
+            <field name="wkf_id" ref="wkf_sale_order"/>
+            <field name="sequence" eval="60" />
+            <field name="label">Invoice paid</field>
+            <field name="name">paid_invoice</field>
+            <field name="always_visible" eval="False"/>
+        </record>
+        
+        <record id="display_plan_waiting_sale" model="workflow.display.state">
+            <field name="wkf_id" ref="wkf_sale_order"/>
+            <field name="sequence" eval="70" />
+            <field name="label">Plan waiting</field>
+            <field name="name">plan_waiting</field>
+            <field name="always_visible" eval="False"/>
+        </record>
+        
+        <record id="display_confirmed_delay_sale" model="workflow.display.state">
+            <field name="wkf_id" ref="wkf_sale_order"/>
+            <field name="sequence" eval="80" />
+            <field name="label">Confirmed delay</field>
+            <field name="name">confirmed_delay</field>
+            <field name="always_visible" eval="False"/>
+        </record>
+        
+        <record id="display_confirmed_sale" model="workflow.display.state">
+            <field name="wkf_id" ref="wkf_sale_order"/>
+            <field name="sequence" eval="90" />
+            <field name="label">Confirmed sale</field>
+            <field name="name">confirmed_sale</field>
+            <field name="always_visible" eval="True"/>
+        </record>
+        
+        <record id="display_done_sale" model="workflow.display.state">
+            <field name="wkf_id" ref="wkf_sale_order"/>
+            <field name="sequence" eval="100" />
+            <field name="label">Done</field>
+            <field name="name">done</field>
+            <field name="always_visible" eval="True"/>
+        </record>
+        
+        <record id="display_cancel_sale" model="workflow.display.state">
+            <field name="wkf_id" ref="wkf_sale_order"/>
+            <field name="sequence" eval="110" />
+            <field name="label">Cancel</field>
+            <field name="name">cancel</field>
+            <field name="always_visible" eval="False"/>
+        </record>
+        
+        <!-- Workflow transition for sale.order -->
+        <record id="st1" model="workflow.transition">
+        	<field name="sequence" eval="10" />
+            <field name="act_from" ref="act_draft_sale"/>
+            <field name="act_to" ref="act_confirmed_sale"/>
+            <field name="signal">sale_validate</field>
+            <field name="is_default">True</field>
+            <field name="filter_group_id" ref="base_openprod.wkf_transition_grp_standard_without_mail"/>
+        </record>
+        
+        <record id="st2" model="workflow.transition">
+        	<field name="sequence" eval="20" />
+            <field name="act_from" ref="act_draft_sale"/>
+            <field name="act_to" ref="act_quotation_send_sale"/>
+            <field name="signal">sale_waiting</field>
+            <field name="is_default">True</field>
+            <field name="visible_button">True</field>
+            <field name="button_label">Sent quotation</field>
+            <field name="attrs">[
+            '|', 
+            	'|', 
+           			('quotation_date', '!=', False), 
+           			('sale_communication_method', '=', 'email'),
+            	'&amp;', 
+           			('receipt_demand', '=', True), 
+           			('ar_send_date', '=', False)]</field>
+            <field name="button_context">'send_quotation': True</field>
+            <field name="button_class">openprod_logical_button</field>
+            <field name="filter_group_id" ref="base_openprod.wkf_transition_grp_standard_without_mail"/>
+        </record>
+        
+        <record id="st3" model="workflow.transition">
+        	<field name="sequence" eval="30" />
+            <field name="act_from" ref="act_draft_sale"/>
+            <field name="act_to" ref="act_rd_send_sale"/>
+            <field name="signal">sale_sent_rd</field>
+            <field name="is_default">True</field>
+            <field name="visible_button">True</field>
+            <field name="button_label">Sent RD</field>
+            <field name="attrs">['|',('receipt_demand', '=', False), '|', ('ar_send_date', '!=', False), ('sale_communication_method', '=', 'email')]</field>
+            <field name="button_context">'send_ar': True</field>
+            <field name="filter_group_id" ref="base_openprod.wkf_transition_grp_standard_without_mail"/>
+        </record>
+        
+        <record id="st4" model="workflow.transition">
+        	<field name="sequence" eval="40" />
+            <field name="act_from" ref="act_draft_sale"/>
+            <field name="act_to" ref="act_put_waiting_plan_sale"/>
+            <field name="signal">sale_draft_put_plan_waiting</field>
+            <field name="is_default">True</field>
+            <field name="visible_button">True</field>
+            <field name="button_label">Waiting plan</field>
+            <field name="attrs">[
+            '|', 
+            	'|', 
+            		('delay_confirm', '!=', True), 
+            		('block_sale_payment', '=', True),
+             	'&amp;', 
+           			('receipt_demand', '=', True), 
+           	 		('ar_send_date', '=', False)]</field>
+             <field name="filter_group_id" ref="base_openprod.wkf_transition_grp_standard_without_mail"/>
+        </record>
+        
+        <record id="st5" model="workflow.transition">
+        	<field name="sequence" eval="50" />
+            <field name="act_from" ref="act_draft_sale"/>
+            <field name="act_to" ref="act_plan_waiting_sale"/>
+            <field name="signal">sale_draft_to_confirmed</field>
+            <field name="is_default">True</field>
+            <field name="visible_button">True</field>
+            <field name="button_label">Confirm order</field>
+            <field name="attrs">[
+            '|', 
+                '|', 
+                    '|',
+			            ('delay_confirm', '=', True), 
+			            '&amp;', 
+		                    ('sale_communication_method', '=', 'email'), 
+		                    ('delay_confirmation', '=', True),
+		            '|', 
+		                '&amp;', 
+	                        ('receipt_demand', '=', True), 
+	                        ('ar_send_date', '=', False), 
+		                '&amp;', 
+                            ('check_paid', '=', False), 
+                            ('block_sale_payment', '=', True)]</field>
+			<field name="button_class">openprod_logical_button</field>
+			<field name="filter_group_id" ref="base_openprod.wkf_transition_grp_standard_without_mail"/>
+        </record>
+        
+        <record id="st6" model="workflow.transition">
+        	<field name="sequence" eval="60" />
+            <field name="act_from" ref="act_put_waiting_plan_sale"/>
+            <field name="act_to" ref="act_plan_waiting_sale"/>
+            <field name="is_default">True</field>
+            <field name="filter_group_id" ref="base_openprod.wkf_transition_grp_standard_without_mail"/>
+        </record>
+        
+        <record id="st7" model="workflow.transition">
+        	<field name="sequence" eval="70" />
+            <field name="act_from" ref="act_rd_send_sale"/>
+            <field name="act_to" ref="act_quotation_send_sale"/>
+            <field name="signal">sale_rd_sent_quot</field>
+            <field name="is_default">True</field>
+            <field name="visible_button">True</field>
+            <field name="button_label">Sent quotation</field>
+            <field name="attrs">[
+            '|', 
+            	'|', 
+            		('quotation_date', '!=', False), 
+            		('sale_communication_method', '=', 'email'),
+           		'&amp;',
+           			('receipt_demand', '=', True), 
+           			('ar_send_date', '=', False)]</field>
+            <field name="button_context">'send_quotation': True</field>
+            <field name="button_class">openprod_logical_button</field>
+            <field name="filter_group_id" ref="base_openprod.wkf_transition_grp_standard_without_mail"/>
+        </record>
+        
+        <record id="st8" model="workflow.transition">
+        	<field name="sequence" eval="80" />
+            <field name="act_from" ref="act_quotation_send_sale"/>
+            <field name="act_to" ref="act_plan_waiting_sale"/>
+            <field name="signal">sale_quotation_confirmed</field>
+            <field name="is_default">True</field>
+            <field name="visible_button">True</field>
+            <field name="button_label">Confirm order</field>
+            <field name="attrs">[
+            '|', 
+                '|', 
+                    '|',
+			            ('delay_confirm', '=', True), 
+			            '&amp;', 
+		                    ('sale_communication_method', '=', 'email'), 
+		                    ('delay_confirmation', '=', True),
+		            '|', 
+		                '&amp;', 
+	                        ('receipt_demand', '=', True), 
+	                        ('ar_send_date', '=', False), 
+		                '&amp;', 
+                                ('check_paid', '=', False), 
+                                ('block_sale_payment', '=', True)]</field>
+			<field name="button_class">openprod_logical_button</field>
+			<field name="filter_group_id" ref="base_openprod.wkf_transition_grp_standard_without_mail"/>
+        </record>
+        
+        <record id="st9" model="workflow.transition">
+        	<field name="sequence" eval="90" />
+            <field name="act_from" ref="act_quotation_send_sale"/>
+            <field name="act_to" ref="act_put_waiting_plan_sale"/>
+            <field name="signal">sale_quotation_put_plan_waiting</field>
+            <field name="is_default">True</field>
+            <field name="visible_button">True</field>
+            <field name="button_label">Waiting plan</field>
+            <field name="attrs">[
+            '|', 
+                '|', 
+                    ('delay_confirm', '!=', True), 
+                    '&amp;', 
+                        ('check_paid', '=', False), 
+                        ('block_sale_payment', '=', True),
+                '&amp;', 
+                	('receipt_demand', '=', True), 
+                    ('ar_send_date', '=', False)]</field>
+            <field name="filter_group_id" ref="base_openprod.wkf_transition_grp_standard_without_mail"/>
+        </record>
+        
+        <record id="st10" model="workflow.transition">
+        	<field name="sequence" eval="100" />
+            <field name="act_from" ref="act_plan_waiting_sale"/>
+            <field name="act_to" ref="act_confirmed_delay_sale"/>
+            <field name="is_default">True</field>
+            <field name="signal"></field>
+            <field name="condition">not waiting_delay or not need_delay_validation</field>
+            <field name="filter_group_id" ref="base_openprod.wkf_transition_grp_standard_without_mail"/>
+        </record>
+        
+        <record id="st11" model="workflow.transition">
+        	<field name="sequence" eval="110" />
+            <field name="act_from" ref="act_confirmed_delay_sale"/>
+            <field name="act_to" ref="act_progress_sale"/>
+            <field name="signal">confirmed_delay</field>
+            <field name="is_default">True</field>
+            <field name="visible_button">True</field>
+            <field name="button_label">Confirm delay</field>
+            <field name="button_context">'conf_delay': True</field>
+            <field name="button_class">openprod_logical_button</field>
+            <field name="attrs">['&amp;', ('sale_communication_method', '=', 'email'), ('delay_confirmation', '!=', False)]</field>
+            <field name="filter_group_id" ref="base_openprod.wkf_transition_grp_standard_without_mail"/>
+        </record>
+        
+        <record id="st12" model="workflow.transition">
+        	<field name="sequence" eval="120" />
+            <field name="act_from" ref="act_rd_send_sale"/>
+            <field name="act_to" ref="act_put_waiting_plan_sale"/>
+            <field name="signal">sale_rd_send_plan_waiting</field>
+            <field name="is_default">True</field>
+            <field name="visible_button">True</field>
+            <field name="button_label">Waiting plan</field>
+            <field name="attrs">['|', ('delay_confirm', '!=', True), ('block_sale_payment', '=', True)]</field>
+            <field name="filter_group_id" ref="base_openprod.wkf_transition_grp_standard_without_mail"/>
+        </record>
+        
+        <record id="st13" model="workflow.transition">
+        	<field name="sequence" eval="130" />
+            <field name="act_from" ref="act_rd_send_sale"/>
+            <field name="act_to" ref="act_plan_waiting_sale"/>
+            <field name="signal">sale_quotation_plan_waiting</field>
+            <field name="is_default">True</field>
+            <field name="visible_button">True</field>
+            <field name="button_label">Confirm order</field>
+            <field name="attrs">[
+            '|', 
+                '|', 
+                    '|',
+			            ('delay_confirm', '=', True), 
+			            '&amp;', 
+		                    ('sale_communication_method', '=', 'email'), 
+		                    ('delay_confirmation', '=', True),
+		            '|', 
+		                '&amp;', 
+	                        ('receipt_demand', '=', True), 
+	                        ('ar_send_date', '=', False), 
+		                '&amp;', 
+                                ('check_paid', '=', False), 
+                                ('block_sale_payment', '=', True)]</field>
+			<field name="button_class">openprod_logical_button</field>
+			<field name="filter_group_id" ref="base_openprod.wkf_transition_grp_standard_without_mail"/>
+        </record>
+        
+        <record id="st14" model="workflow.transition">
+        	<field name="sequence" eval="140" />
+            <field name="act_from" ref="act_confirmed_sale"/>
+            <field name="act_to" ref="act_done_sale"/>
+        	<field name="group_id" ref="base.group_erp_manager" />
+            <field name="signal">sale_done</field>
+            <field name="is_default">True</field>
+            <field name="visible_button">True</field>
+            <field name="button_confirm">If you pass the state of the sale to 'done', the delivery orders and the invoices not done will be deleted. Are you sure you want to pass the sale in state 'done'?</field>
+            <field name="button_label">Complete the sale</field>
+            <field name="button_class">openprod_cancel_button</field>
+            <field name="button_specific_sequence" eval="1000" />
+            <field name="attrs"></field>
+            <field name="filter_group_id" ref="base_openprod.wkf_transition_grp_standard_without_mail"/>
+        </record>
+        
+        <record id="st15" model="workflow.transition">
+        	<field name="sequence" eval="150" />
+            <field name="act_from" ref="act_confirmed_sale"/>
+            <field name="act_to" ref="act_cancel_sale"/>
+            <field name="signal">sale_confirmed_cancel</field>
+            <field name="is_default">True</field>
+            <field name="visible_button">True</field>
+            <field name="button_label">Cancel</field>
+            <field name="button_confirm">Are you sure you want to cancel this sale?</field>
+            <field name="button_class">openprod_cancel_button</field>
+            <field name="filter_group_id" ref="base_openprod.wkf_transition_grp_cancel"/>
+        </record>
+        
+        <record id="st16" model="workflow.transition">
+        	<field name="sequence" eval="160" />
+            <field name="act_from" ref="act_rd_send_sale"/>
+            <field name="act_to" ref="act_cancel_sale"/>
+            <field name="signal">sale_rd_cancel</field>
+            <field name="is_default">True</field>
+            <field name="visible_button">True</field>
+            <field name="button_label">Cancel</field>
+            <field name="button_confirm">Are you sure you want to cancel this sale?</field>
+            <field name="button_class">openprod_cancel_button</field>
+            <field name="filter_group_id" ref="base_openprod.wkf_transition_grp_cancel"/>
+        </record>
+        
+        <record id="st17" model="workflow.transition">
+        	<field name="sequence" eval="170" />
+            <field name="act_from" ref="act_quotation_send_sale"/>
+            <field name="act_to" ref="act_cancel_sale"/>
+            <field name="signal">sale_quotation_cancel</field>
+            <field name="is_default">True</field>
+            <field name="visible_button">True</field>
+            <field name="button_label">Cancel</field>
+            <field name="button_confirm">Are you sure you want to cancel this sale?</field>
+            <field name="button_class">openprod_cancel_button</field>
+            <field name="filter_group_id" ref="base_openprod.wkf_transition_grp_cancel"/>
+        </record>
+        
+        <record id="st18" model="workflow.transition">
+        	<field name="sequence" eval="180" />
+            <field name="act_from" ref="act_plan_waiting_sale"/>
+            <field name="act_to" ref="act_cancel_sale"/>
+            <field name="signal">sale_plan_waiting_cancel</field>
+            <field name="is_default">True</field>
+            <field name="visible_button">True</field>
+            <field name="button_label">Cancel</field>
+            <field name="button_confirm">Are you sure you want to cancel this sale?</field>
+            <field name="button_class">openprod_cancel_button</field>
+            <field name="filter_group_id" ref="base_openprod.wkf_transition_grp_cancel"/>
+        </record>
+        
+        <record id="st19" model="workflow.transition">
+        	<field name="sequence" eval="190" />
+            <field name="act_from" ref="act_confirmed_delay_sale"/>
+            <field name="act_to" ref="act_cancel_sale"/>
+            <field name="signal">sale_confirmed_delay_cancel</field>
+            <field name="is_default">True</field>
+            <field name="visible_button">True</field>
+            <field name="button_label">Cancel</field>
+            <field name="button_confirm">Are you sure you want to cancel this sale?</field>
+            <field name="button_class">openprod_cancel_button</field>
+            <field name="filter_group_id" ref="base_openprod.wkf_transition_grp_cancel"/>
+        </record>
+        
+        <record id="st20" model="workflow.transition">
+        	<field name="sequence" eval="200" />
+            <field name="act_from" ref="act_cancel_sale"/>
+            <field name="act_to" ref="act_draft_sale"/>
+            <field name="signal">sale_cancel_draft</field>
+            <field name="is_default">True</field>
+            <field name="visible_button">True</field>
+            <field name="button_label">Put in draft</field>
+            <field name="filter_group_id" ref="base_openprod.wkf_transition_grp_cancel"/>
+        </record>
+        
+        <record id="st21" model="workflow.transition">
+        	<field name="sequence" eval="210" />
+            <field name="act_from" ref="act_confirmed_sale"/>
+            <field name="act_to" ref="act_reset_sale"/>
+            <field name="signal">sale_res_confirm</field>
+            <field name="is_default">True</field>
+            <field name="visible_button">True</field>
+            <field name="button_label">Reset the sale</field>
+            <field name="attrs">[('called_order_ids', '!=', [])]</field>
+            <field name="filter_group_id" ref="base_openprod.wkf_transition_grp_reset"/>
+        </record>
+        
+        <record id="st22" model="workflow.transition">
+        	<field name="sequence" eval="220" />
+            <field name="act_from" ref="act_quotation_send_sale"/>
+            <field name="act_to" ref="act_reset_sale"/>
+            <field name="signal">sale_res_quotation</field>
+            <field name="is_default">True</field>
+            <field name="visible_button">True</field>
+            <field name="button_label">Reset the sale</field>
+            <field name="attrs">[('called_order_ids', '!=', [])]</field>
+            <field name="filter_group_id" ref="base_openprod.wkf_transition_grp_reset"/>
+        </record>
+        
+        <record id="st23" model="workflow.transition">
+        	<field name="sequence" eval="230" />
+            <field name="act_from" ref="act_plan_waiting_sale"/>
+            <field name="act_to" ref="act_reset_sale"/>
+            <field name="signal">sale_res_plan_waiting</field>
+            <field name="is_default">True</field>
+            <field name="visible_button">True</field>
+            <field name="button_label">Reset the sale</field>
+            <field name="attrs">[('called_order_ids', '!=', [])]</field>
+            <field name="filter_group_id" ref="base_openprod.wkf_transition_grp_reset"/>
+        </record>
+        
+        <record id="st24" model="workflow.transition">
+        	<field name="sequence" eval="240" />
+            <field name="act_from" ref="act_confirmed_delay_sale"/>
+            <field name="act_to" ref="act_reset_sale"/>
+            <field name="signal">sale_res_confirmed_delay</field>
+            <field name="is_default">True</field>
+            <field name="visible_button">True</field>
+            <field name="button_label">Reset the sale</field>
+            <field name="attrs">[('called_order_ids', '!=', [])]</field>
+            <field name="filter_group_id" ref="base_openprod.wkf_transition_grp_reset"/>
+        </record>
+        
+        <record id="st25" model="workflow.transition">
+        	<field name="sequence" eval="250" />
+            <field name="act_from" ref="act_reset_sale"/>
+            <field name="act_to" ref="act_draft_sale"/>
+            <field name="is_default">True</field>
+            <field name="filter_group_id" ref="base_openprod.wkf_transition_grp_reset"/>
+        </record>
+        
+        <record id="st26" model="workflow.transition">
+        	<field name="sequence" eval="260" />
+            <field name="act_from" ref="act_progress_sale"/>
+            <field name="act_to" ref="act_confirmed_sale"/>
+            <field name="is_default">True</field>
+            <field name="filter_group_id" ref="base_openprod.wkf_transition_grp_standard_without_mail"/>
+        </record>
+        
+        <record id="st27" model="workflow.transition">
+        	<field name="sequence" eval="270" />
+            <field name="act_from" ref="act_confirmed_delay_sale"/>
+            <field name="act_to" ref="act_progress_sale"/>
+            <field name="signal"></field>
+            <field name="is_default">True</field>
+            <field name="condition">not waiting_delay</field>
+            <field name="filter_group_id" ref="base_openprod.wkf_transition_grp_standard_without_mail"/>
+        </record>
+        
+        <record id="st28" model="workflow.transition">
+        	<field name="sequence" eval="280" />
+            <field name="act_from" ref="act_quotation_send_sale"/>
+            <field name="act_to" ref="act_wait_payment_validation"/>
+            <field name="signal">sale_quotation_wait_payment</field>
+            <field name="is_default">True</field>
+            <field name="visible_button">True</field>
+            <field name="button_label">Generate a payment</field>
+            <field name="attrs">['|', ('check_paid', '=', True), ('need_sale_payment', '=', False)]</field>
+            <field name="filter_group_id" ref="base_openprod.wkf_transition_grp_payment"/>
+            <field name="button_class">openprod_logical_button</field>
+        </record>
+        
+        <record id="st29" model="workflow.transition">
+        	<field name="sequence" eval="290" />
+            <field name="act_from" ref="act_draft_sale"/>
+            <field name="act_to" ref="act_wait_payment_validation"/>
+            <field name="signal">sale_draft_wait_payment</field>
+            <field name="is_default">True</field>
+            <field name="visible_button">True</field>
+            <field name="button_label">Generate a payment</field>
+            <field name="attrs">['|', ('check_paid', '=', True), ('need_sale_payment', '=', False)]</field>
+            <field name="filter_group_id" ref="base_openprod.wkf_transition_grp_payment"/>
+            <field name="button_class">openprod_logical_button</field>
+        </record>
+        
+        <record id="st30" model="workflow.transition">
+        	<field name="sequence" eval="300" />
+            <field name="act_from" ref="act_rd_send_sale"/>
+            <field name="act_to" ref="act_wait_payment_validation"/>
+            <field name="signal">sale_rd_send_wait_payment</field>
+            <field name="is_default">True</field>
+            <field name="visible_button">True</field>
+            <field name="button_label">Generate a payment</field>
+            <field name="attrs">['|', ('check_paid', '=', True), ('need_sale_payment', '=', False)]</field>
+            <field name="filter_group_id" ref="base_openprod.wkf_transition_grp_payment"/>
+            <field name="button_class">openprod_logical_button</field>
+        </record>
+        
+        <record id="st31" model="workflow.transition">
+        	<field name="sequence" eval="310" />
+            <field name="act_from" ref="act_wait_payment_validation"/>
+            <field name="act_to" ref="act_payment_validated"/>
+            <field name="signal"></field>
+            <field name="is_default">True</field>
+            <field name="condition">check_paid</field>
+            <field name="filter_group_id" ref="base_openprod.wkf_transition_grp_payment"/>
+        </record>
+        
+        <record id="st32" model="workflow.transition">
+        	<field name="sequence" eval="320" />
+            <field name="act_from" ref="act_payment_validated"/>
+            <field name="act_to" ref="act_put_waiting_plan_sale"/>
+            <field name="signal">validated_payment_put_plan_waiting</field>
+            <field name="is_default">True</field>
+            <field name="visible_button">True</field>
+            <field name="button_label">Waiting plan</field>
+            <field name="attrs">[
+            '|', 
+          		('delay_confirm', '!=', True),  
+            	'&amp;', 
+            		('receipt_demand', '=', True), 
+            		('ar_send_date', '=', False)]</field>
+            <field name="filter_group_id" ref="base_openprod.wkf_transition_grp_payment"/>
+            <field name="button_class">openprod_logical_button</field>
+        </record>
+        
+        <record id="st33" model="workflow.transition">
+        	<field name="sequence" eval="330" />
+            <field name="act_from" ref="act_payment_validated"/>
+            <field name="act_to" ref="act_plan_waiting_sale"/>
+            <field name="signal">validated_payment_plan_waiting</field>
+            <field name="is_default">True</field>
+            <field name="visible_button">True</field>
+            <field name="button_label">Confirm order</field>
+            <field name="attrs">[
+           	'|', 
+           		'|', 
+           			('state', '=', 'progress'), 
+           			('delay_confirm', '=', True),
+            	'&amp;', 
+            		('sale_communication_method', '=', 'email'), 
+            		('delay_confirmation', '=', True)]</field>
+			<field name="filter_group_id" ref="base_openprod.wkf_transition_grp_payment"/>
+			<field name="button_class">openprod_logical_button</field>
+        </record>
+        
+<!--         <record id="st34" model="workflow.transition"> -->
+<!-- 			Facture après livraison mais paiement avant livraison -->
+<!--         	<field name="sequence" eval="340" /> -->
+<!--             <field name="act_from" ref="act_confirmed_sale"/> -->
+<!--             <field name="act_to" ref="act_wait_payment_validation"/> -->
+<!--             <field name="signal">confirmed_wait_payment</field> -->
+<!--             <field name="is_default">True</field> -->
+<!--             <field name="visible_button">True</field> -->
+<!--             <field name="button_label">Generate a payment</field> -->
+<!--             <field name="attrs">[ -->
+<!--             '|',  -->
+<!--             	('check_paid', '=', True), -->
+<!--             	'|',  -->
+<!--             		('payment_type', '!=', 'before_delivery'),  -->
+<!--             		'&amp;',  -->
+<!--             			('payment_type', '=', 'before_delivery'),  -->
+<!--             			('sale_account_invoiced_on', '!=', 'delivery')]</field> -->
+<!--             <field name="filter_group_id" ref="base_openprod.wkf_transition_grp_payment"/> -->
+<!--             <field name="button_class">openprod_logical_button</field> -->
+<!--         </record> -->
+        
+        <record id="st35" model="workflow.transition">
+        	<field name="sequence" eval="350" />
+            <field name="act_from" ref="act_payment_validated"/>
+            <field name="act_to" ref="act_done_sale"/>
+        	<field name="group_id" ref="base.group_erp_manager" />
+            <field name="signal">payment_validated_sale_done</field>
+            <field name="is_default">True</field>
+            <field name="visible_button">True</field>
+            <field name="button_confirm">If you pass the state of the sale to 'done', the delivery orders and the invoices not done will be deleted. Are you sure you want to pass the sale in state 'done'?</field>
+            <field name="button_label">Complete the sale</field>
+            <field name="button_class">openprod_cancel_button</field>
+            <field name="button_specific_sequence" eval="1000" />
+            <field name="attrs">[('state', '!=', 'progress')]</field>
+            <field name="filter_group_id" ref="base_openprod.wkf_transition_grp_payment"/>
+        </record>
+        
+        <record id="st44" model="workflow.transition">
+        	<field name="sequence" eval="440" />
+            <field name="act_from" ref="act_wait_payment_validation"/>
+            <field name="act_to" ref="act_cancel_sale"/>
+            <field name="signal">sale_wait_payment_cancel</field>
+            <field name="is_default">True</field>
+            <field name="visible_button">True</field>
+            <field name="button_label">Cancel</field>
+            <field name="button_confirm">Are you sure you want to cancel this sale?</field>
+            <field name="button_class">openprod_cancel_button</field>
+            <field name="filter_group_id" ref="base_openprod.wkf_transition_grp_cancel"/>
+        </record>
+        
+<!--         <record id="st45" model="workflow.transition"> -->
+<!--         	<field name="sequence" eval="450" /> -->
+<!--             <field name="act_from" ref="act_draft_sale"/> -->
+<!--             <field name="act_to" ref="act_generate_invoice"/> -->
+<!--             <field name="signal">generate_draft_invoice</field> -->
+<!--             <field name="is_default">True</field> -->
+<!--             <field name="visible_button">True</field> -->
+<!--             <field name="button_label">Generate invoice</field> -->
+<!--             <field name="attrs">['|', '|', ('sale_account_invoice_trigger', '!=', 'manual'), ('show_invoice_button', '=', False), ('type', '=', 'open')]</field> -->
+<!--             <field name="filter_group_id" ref="base_openprod.wkf_transition_grp_manual_invoicing"/> -->
+<!--             <field name="button_class">openprod_logical_button</field> -->
+<!--         </record> -->
+        
+<!--         <record id="st46" model="workflow.transition"> -->
+<!--         	<field name="sequence" eval="460" /> -->
+<!--             <field name="act_from" ref="act_rd_send_sale"/> -->
+<!--             <field name="act_to" ref="act_generate_invoice"/> -->
+<!--             <field name="signal">generate_rd_invoice</field> -->
+<!--             <field name="is_default">True</field> -->
+<!--             <field name="visible_button">True</field> -->
+<!--             <field name="button_label">Generate invoice</field> -->
+<!--             <field name="attrs">['|', '|', ('sale_account_invoice_trigger', '!=', 'manual'), ('show_invoice_button', '=', False), ('type', '=', 'open')]</field> -->
+<!--             <field name="filter_group_id" ref="base_openprod.wkf_transition_grp_manual_invoicing"/> -->
+<!--             <field name="button_class">openprod_logical_button</field> -->
+<!--         </record> -->
+        
+<!--         <record id="st47" model="workflow.transition"> -->
+<!--         	<field name="sequence" eval="470" /> -->
+<!--             <field name="act_from" ref="act_quotation_send_sale"/> -->
+<!--             <field name="act_to" ref="act_generate_invoice"/> -->
+<!--             <field name="signal">generate_quotation_invoice</field> -->
+<!--             <field name="is_default">True</field> -->
+<!--             <field name="visible_button">True</field> -->
+<!--             <field name="button_label">Generate invoice</field> -->
+<!--             <field name="attrs">['|', '|', ('sale_account_invoice_trigger', '!=', 'manual'), ('show_invoice_button', '=', False), ('type', '=', 'open')]</field> -->
+<!--             <field name="filter_group_id" ref="base_openprod.wkf_transition_grp_manual_invoicing"/> -->
+<!--             <field name="button_class">openprod_logical_button</field> -->
+<!--         </record> -->
+        
+<!--         <record id="st48" model="workflow.transition"> -->
+<!--         	<field name="sequence" eval="480" /> -->
+<!--             <field name="act_from" ref="act_confirmed_sale"/> -->
+<!--             <field name="act_to" ref="act_generate_invoice"/> -->
+<!--             <field name="signal">generate_confirmed_invoice</field> -->
+<!--             <field name="is_default">True</field> -->
+<!--             <field name="visible_button">True</field> -->
+<!--             <field name="button_label">Generate invoice</field> -->
+<!--             <field name="attrs">['|', '|', ('sale_account_invoice_trigger', '!=', 'manual'), ('show_invoice_button', '=', False), ('type', '=', 'open')]</field> -->
+<!--             <field name="filter_group_id" ref="base_openprod.wkf_transition_grp_manual_invoicing"/> -->
+<!--             <field name="button_class">openprod_logical_button</field> -->
+<!--         </record> -->
+        
+<!--         <record id="st49" model="workflow.transition"> -->
+<!--         	<field name="sequence" eval="490" /> -->
+<!--             <field name="act_from" ref="act_confirmed_delay_sale"/> -->
+<!--             <field name="act_to" ref="act_generate_invoice"/> -->
+<!--             <field name="signal">generate_confirmed_delay_invoice</field> -->
+<!--             <field name="is_default">True</field> -->
+<!--             <field name="visible_button">True</field> -->
+<!--             <field name="button_label">Generate invoice</field> -->
+<!--             <field name="attrs">['|', '|', ('sale_account_invoice_trigger', '!=', 'manual'), ('show_invoice_button', '=', False), ('type', '=', 'open')]</field> -->
+<!--             <field name="filter_group_id" ref="base_openprod.wkf_transition_grp_manual_invoicing"/> -->
+<!--             <field name="button_class">openprod_logical_button</field> -->
+<!--         </record> -->
+        
+<!--         <record id="st50" model="workflow.transition"> -->
+<!--         	<field name="sequence" eval="500" /> -->
+<!--             <field name="act_from" ref="act_plan_waiting_sale"/> -->
+<!--             <field name="act_to" ref="act_generate_invoice"/> -->
+<!--             <field name="signal">generate_plan_waiting_invoice</field> -->
+<!--             <field name="is_default">True</field> -->
+<!--             <field name="visible_button">True</field> -->
+<!--             <field name="button_label">Generate invoice</field> -->
+<!--             <field name="attrs">['|', '|', ('sale_account_invoice_trigger', '!=', 'manual'), ('show_invoice_button', '=', False), ('type', '=', 'open')]</field> -->
+<!--             <field name="filter_group_id" ref="base_openprod.wkf_transition_grp_manual_invoicing"/> -->
+<!--             <field name="button_class">openprod_logical_button</field> -->
+<!--         </record> -->
+        
+<!--         <record id="st51" model="workflow.transition"> -->
+<!--         	<field name="sequence" eval="510" /> -->
+<!--             <field name="act_from" ref="act_generate_invoice"/> -->
+<!--             <field name="act_to" ref="act_rd_send_sale"/> -->
+<!--             <field name="signal">sale_invoice_sent_rd</field> -->
+<!--             <field name="is_default">True</field> -->
+<!--             <field name="visible_button">True</field> -->
+<!--             <field name="button_label">Sent RD</field> -->
+<!--             <field name="attrs">[ -->
+<!--             '|', -->
+<!--                 ('receipt_demand', '=', False),  -->
+<!--                 '|',  -->
+<!--                     ('ar_send_date', '!=', False),  -->
+<!--                     ('sale_communication_method', '=', 'email')]</field> -->
+<!--             <field name="button_context">'send_ar': True</field> -->
+<!--             <field name="filter_group_id" ref="base_openprod.wkf_transition_grp_manual_invoicing"/> -->
+<!--         </record> -->
+        
+<!--         <record id="st52" model="workflow.transition"> -->
+<!--         	<field name="sequence" eval="520" /> -->
+<!--             <field name="act_from" ref="act_generate_invoice"/> -->
+<!--             <field name="act_to" ref="act_quotation_send_sale"/> -->
+<!--             <field name="signal">sale_invoice_waiting</field> -->
+<!--             <field name="is_default">True</field> -->
+<!--             <field name="visible_button">True</field> -->
+<!--             <field name="button_label">Sent quotation</field> -->
+<!--             <field name="attrs">[ -->
+<!--             '|',  -->
+<!--                 '|',  -->
+<!--                     ('state', '!=', 'draft'), -->
+<!--                     '|',  -->
+<!--                         ('quotation_date', '!=', False),  -->
+<!--                         ('sale_communication_method', '=', 'email'), -->
+<!--                 '&amp;',  -->
+<!--                     ('receipt_demand', '=', True),  -->
+<!--                     ('ar_send_date', '=', False)]</field> -->
+<!--             <field name="button_context">'send_quotation': True</field> -->
+<!--             <field name="button_class">openprod_logical_button</field> -->
+<!--             <field name="filter_group_id" ref="base_openprod.wkf_transition_grp_manual_invoicing"/> -->
+<!--         </record> -->
+        
+<!--         <record id="st53" model="workflow.transition"> -->
+<!--         	<field name="sequence" eval="530" /> -->
+<!--             <field name="act_from" ref="act_generate_invoice"/> -->
+<!--             <field name="act_to" ref="act_plan_waiting_sale"/> -->
+<!--             <field name="signal">sale_generate_to_confirmed</field> -->
+<!--             <field name="is_default">True</field> -->
+<!--             <field name="visible_button">True</field> -->
+<!--             <field name="button_label">Confirm order</field> -->
+<!--             <field name="attrs">[ -->
+<!--             '|',  -->
+<!--                 '|',  -->
+<!--                     '|',  -->
+<!--                         ('state', 'not in', ('draft', 'waiting')), -->
+<!--                         '|',  -->
+<!--                             ('delay_confirm', '=', True),  -->
+<!-- 			                '&amp;',  -->
+<!-- 			                    ('sale_communication_method', '=', 'email'),  -->
+<!-- 			                    ('delay_confirmation', '=', True), -->
+<!-- 			        '|',  -->
+<!-- 			            '&amp;',  -->
+<!-- 			                ('receipt_demand', '=', True),  -->
+<!-- 			                ('ar_send_date', '=', False),  -->
+<!-- 			            '&amp;',  -->
+<!-- 			                '&amp;',  -->
+<!-- 			                    ('check_paid', '=', False),  -->
+<!-- 			                    ('sale_account_invoice_trigger', '!=', 'manual'), -->
+<!-- 			                ('payment_type', '=', 'before_validation'), -->
+<!-- 			    '&amp;',  -->
+<!-- 			        ('check_paid', '=', False),  -->
+<!-- 			        '&amp;',  -->
+<!-- 			            ('payment_type', '=', 'before_validation'),  -->
+<!-- 			            ('sale_account_invoice_trigger', '=', 'manual')]</field> -->
+<!-- 			<field name="button_class">openprod_logical_button</field> -->
+<!-- 			<field name="filter_group_id" ref="base_openprod.wkf_transition_grp_manual_invoicing"/> -->
+<!--         </record> -->
+        
+<!--         <record id="st54" model="workflow.transition"> -->
+<!--         	<field name="sequence" eval="540" /> -->
+<!--             <field name="act_from" ref="act_generate_invoice"/> -->
+<!--             <field name="act_to" ref="act_put_waiting_plan_sale"/> -->
+<!--             <field name="signal">sale_generate_put_plan_waiting</field> -->
+<!--             <field name="is_default">True</field> -->
+<!--             <field name="visible_button">True</field> -->
+<!--             <field name="button_label">Waiting plan</field> -->
+<!--             <field name="attrs">[ -->
+<!--             '|',  -->
+<!--                 '|',  -->
+<!--                     ('state', 'not in', ('draft', 'waiting')), -->
+<!--                     '|',  -->
+<!--                         ('delay_confirm', '!=', True),  -->
+<!--                         '&amp;',  -->
+<!--                             ('payment_type', '=', 'before_validation'),  -->
+<!--                             ('check_paid', '=', False), -->
+<!--                 '&amp;',  -->
+<!--                     ('receipt_demand', '=', True),  -->
+<!--                     ('ar_send_date', '=', False)]</field> -->
+<!--             <field name="filter_group_id" ref="base_openprod.wkf_transition_grp_manual_invoicing"/> -->
+<!--         </record> -->
+        
+<!--         <record id="st55" model="workflow.transition"> -->
+<!--         	<field name="sequence" eval="550" /> -->
+<!--             <field name="act_from" ref="act_generate_invoice"/> -->
+<!--             <field name="act_to" ref="act_confirmed_delay_sale"/> -->
+<!--             <field name="is_default">True</field> -->
+<!--             <field name="signal"></field> -->
+<!--             <field name="condition">delay_confirm and state=='waiting_delay' and (not waiting_delay or not need_delay_validation)</field> -->
+<!--             <field name="filter_group_id" ref="base_openprod.wkf_transition_grp_manual_invoicing"/> -->
+<!--         </record> -->
+        
+<!--         <record id="st56" model="workflow.transition"> -->
+<!--         	<field name="sequence" eval="560" /> -->
+<!--             <field name="act_from" ref="act_generate_invoice"/> -->
+<!--             <field name="act_to" ref="act_cancel_sale"/> -->
+<!--             <field name="signal">sale_generate_invoice_cancel</field> -->
+<!--             <field name="is_default">True</field> -->
+<!--             <field name="visible_button">True</field> -->
+<!--             <field name="button_label">Cancel</field> -->
+<!--             <field name="button_confirm">Are you sure you want to cancel this sale?</field> -->
+<!--             <field name="button_class">openprod_cancel_button</field> -->
+<!--             <field name="filter_group_id" ref="base_openprod.wkf_transition_grp_cancel"/> -->
+<!--         </record> -->
+        
+<!--         <record id="st57" model="workflow.transition"> -->
+<!--         	<field name="sequence" eval="570" /> -->
+<!--             <field name="act_from" ref="act_generate_invoice"/> -->
+<!--             <field name="act_to" ref="act_reset_sale"/> -->
+<!--             <field name="signal">sale_res_generate_invoice</field> -->
+<!--             <field name="is_default">True</field> -->
+<!--             <field name="visible_button">True</field> -->
+<!--             <field name="button_label">Reset the sale</field> -->
+<!--             <field name="attrs">[('called_order_ids', '!=', [])]</field> -->
+<!--             <field name="filter_group_id" ref="base_openprod.wkf_transition_grp_reset"/> -->
+<!--         </record> -->
+        
+<!--         <record id="st58" model="workflow.transition"> -->
+<!--         	<field name="sequence" eval="580" /> -->
+<!--             <field name="act_from" ref="act_generate_invoice"/> -->
+<!--             <field name="act_to" ref="act_done_sale"/> -->
+<!--             <field name="signal">sale_invoice_done</field> -->
+<!--             <field name="is_default">True</field> -->
+<!--             <field name="visible_button">True</field> -->
+<!--             <field name="button_confirm">If you pass the state of the sale to 'done', the delivery orders and the invoices not done will be deleted. Are you sure you want to pass the sale in state 'done'?</field> -->
+<!--             <field name="button_label">Complete the sale</field> -->
+<!--             <field name="attrs">['|', ('state', '!=', 'progress'), '&amp;', ('payment_type', '=', 'before_delivery'), ('sale_account_invoiced_on', '=', 'delivery')]</field> -->
+<!--             <field name="filter_group_id" ref="base_openprod.wkf_transition_grp_manual_invoicing"/> -->
+<!--         </record> -->
+        
+<!--         <record id="st71" model="workflow.transition"> -->
+<!--         	<field name="sequence" eval="710" /> -->
+<!--             <field name="act_from" ref="act_generate_invoice"/> -->
+<!--             <field name="act_to" ref="act_waiting_invoice_payment"/> -->
+<!--             <field name="signal"></field> -->
+<!--             <field name="is_default">True</field> -->
+<!--             <field name="condition">payment_type == 'before_validation' and not check_paid</field> -->
+<!--             <field name="filter_group_id" ref="base_openprod.wkf_transition_grp_manual_invoicing"/> -->
+<!--         </record> -->
+        
+        <record id="st72" model="workflow.transition">
+        	<field name="sequence" eval="720" />
+            <field name="act_from" ref="act_waiting_invoice_payment"/>
+            <field name="act_to" ref="act_paid_invoice"/>
+            <field name="signal"></field>
+            <field name="is_default">True</field>
+            <field name="condition">check_paid</field>
+            <field name="filter_group_id" ref="base_openprod.wkf_transition_grp_manual_invoicing"/>
+        </record>
+        
+<!--         <record id="st73" model="workflow.transition"> -->
+<!--         	<field name="sequence" eval="730" /> -->
+<!--             <field name="act_from" ref="act_paid_invoice"/> -->
+<!--             <field name="act_to" ref="act_generate_invoice"/> -->
+<!--             <field name="signal"></field> -->
+<!--             <field name="is_default">True</field> -->
+<!--             <field name="condition">True</field> -->
+<!--             <field name="filter_group_id" ref="base_openprod.wkf_transition_grp_manual_invoicing"/> -->
+<!--         </record> -->
+        
+        <record id="st74" model="workflow.transition">
+        	<field name="sequence" eval="740" />
+            <field name="act_from" ref="act_waiting_invoice_payment"/>
+            <field name="act_to" ref="act_cancel_sale"/>
+            <field name="signal">sale_waiting_invoice_cancel</field>
+            <field name="is_default">True</field>
+            <field name="visible_button">True</field>
+            <field name="button_label">Cancel</field>
+            <field name="button_confirm">Are you sure you want to cancel this sale?</field>
+            <field name="button_class">openprod_cancel_button</field>
+            <field name="filter_group_id" ref="base_openprod.wkf_transition_grp_cancel"/>
+        </record>
+        
+        <record id="st75" model="workflow.transition">
+        	<field name="sequence" eval="750" />
+            <field name="act_from" ref="act_waiting_invoice_payment"/>
+            <field name="act_to" ref="act_reset_sale"/>
+            <field name="signal">sale_res_waiting_invoice</field>
+            <field name="is_default">True</field>
+            <field name="visible_button">True</field>
+            <field name="button_label">Reset the sale</field>
+            <field name="filter_group_id" ref="base_openprod.wkf_transition_grp_reset"/>
+        </record>
+        
+        <!-- Workflow transition with mail for sale.order -->
+        <record id="st59" model="workflow.transition">
+        	<field name="sequence" eval="590" />
+            <field name="act_from" ref="act_draft_sale"/>
+            <field name="act_to" ref="act_quotation_send_sale"/>
+            <field name="signal">sale_waiting_with_mail</field>
+            <field name="is_default">True</field>
+            <field name="visible_button">True</field>
+            <field name="button_label">Sent quotation</field>
+            <field name="with_mail">True</field>
+            <field name="mail_template_id" ref="email_template_edi_sale_quotation"/>
+            <field name="filter_group_id" ref="base_openprod.wkf_transition_grp_with_mail"/>
+            <field name="attrs">[
+            '|', 
+                '|', 
+                    ('quotation_date', '!=', False), 
+                    ('sale_communication_method', '!=', 'email'),
+                '&amp;', 
+                    ('receipt_demand', '=', True), 
+                    ('ar_send_date', '=', False)]</field>
+            <field name="button_context">'send_quotation': True</field>
+            <field name="button_class">openprod_logical_button</field>
+        </record>
+        
+<!--         <record id="st60" model="workflow.transition"> -->
+<!--         	<field name="sequence" eval="600" /> -->
+<!--             <field name="act_from" ref="act_generate_invoice"/> -->
+<!--             <field name="act_to" ref="act_quotation_send_sale"/> -->
+<!--             <field name="signal">sale_invoice_waiting_with_mail</field> -->
+<!--             <field name="is_default">True</field> -->
+<!--             <field name="visible_button">True</field> -->
+<!--             <field name="button_label">Sent quotation</field> -->
+<!--             <field name="with_mail">True</field> -->
+<!--             <field name="mail_template_id" ref="email_template_edi_sale_quotation"/> -->
+<!--             <field name="filter_group_id" ref="base_openprod.wkf_transition_grp_with_mail"/> -->
+<!--             <field name="attrs">[ -->
+<!--             '|',  -->
+<!--                 '|',  -->
+<!--                     ('state', '!=', 'draft'), -->
+<!--                     '|',  -->
+<!--                         ('quotation_date', '!=', False),  -->
+<!--                         ('sale_communication_method', '!=', 'email'), -->
+<!--                 '&amp;',  -->
+<!--                     ('receipt_demand', '=', True),  -->
+<!--                     ('ar_send_date', '=', False)]</field> -->
+<!--             <field name="button_context">'send_quotation': True</field> -->
+<!--             <field name="button_class">openprod_logical_button</field> -->
+<!--         </record> -->
+        
+        <record id="st61" model="workflow.transition">
+        	<field name="sequence" eval="610" />
+            <field name="act_from" ref="act_draft_sale"/>
+            <field name="act_to" ref="act_rd_send_sale"/>
+            <field name="signal">sale_sent_rd_with_mail</field>
+            <field name="is_default">True</field>
+            <field name="visible_button">True</field>
+            <field name="button_label">Sent RD</field>
+            <field name="with_mail">True</field>
+            <field name="mail_template_id" ref="email_template_edi_sale_ar"/>
+            <field name="filter_group_id" ref="base_openprod.wkf_transition_grp_with_mail"/>
+            <field name="attrs">[
+            '|', 
+            	'|', 
+            		('receipt_demand', '=', False), 
+            		('ar_send_date', '!=', False),
+            	('sale_communication_method', '!=', 'email')]</field>
+            <field name="button_context">'send_ar': True</field>
+        </record>
+        
+<!--         <record id="st62" model="workflow.transition"> -->
+<!--         	<field name="sequence" eval="620" /> -->
+<!--             <field name="act_from" ref="act_generate_invoice"/> -->
+<!--             <field name="act_to" ref="act_rd_send_sale"/> -->
+<!--             <field name="signal">sale_invoice_sent_rd_with_mail</field> -->
+<!--             <field name="is_default">True</field> -->
+<!--             <field name="visible_button">True</field> -->
+<!--             <field name="button_label">Sent RD</field> -->
+<!--             <field name="with_mail">True</field> -->
+<!--             <field name="mail_template_id" ref="email_template_edi_sale_ar"/> -->
+<!--             <field name="filter_group_id" ref="base_openprod.wkf_transition_grp_with_mail"/> -->
+<!--             <field name="attrs">[ -->
+<!--             '|',  -->
+<!--             	'|',  -->
+<!--             		('receipt_demand', '=', False),  -->
+<!--             		('ar_send_date', '!=', False), -->
+<!--             	('sale_communication_method', '!=', 'email')]</field> -->
+<!--             <field name="button_context">'send_ar': True</field> -->
+<!--         </record> -->
+        
+        <record id="st63" model="workflow.transition">
+        	<field name="sequence" eval="630" />
+            <field name="act_from" ref="act_rd_send_sale"/>
+            <field name="act_to" ref="act_quotation_send_sale"/>
+            <field name="signal">sale_rd_sent_quot_with_mail</field>
+            <field name="is_default">True</field>
+            <field name="visible_button">True</field>
+            <field name="button_label">Sent quotation</field>
+            <field name="with_mail">True</field>
+            <field name="mail_template_id" ref="email_template_edi_sale_quotation"/>
+            <field name="filter_group_id" ref="base_openprod.wkf_transition_grp_with_mail"/>
+            <field name="attrs">[
+            '|', 
+            	'|', 
+            		('quotation_date', '!=', False), 
+            		('sale_communication_method', '!=', 'email'),
+            	'&amp;',
+            		('receipt_demand', '=', True), 
+            		('ar_send_date', '=', False), ]</field>
+            <field name="button_context">'send_quotation': True</field>
+            <field name="button_class">openprod_logical_button</field>
+        </record>
+        
+        <record id="st64" model="workflow.transition">
+        	<field name="sequence" eval="640" />
+            <field name="act_from" ref="act_confirmed_delay_sale"/>
+            <field name="act_to" ref="act_progress_sale"/>
+            <field name="signal">confirmed_delay_with_mail</field>
+            <field name="is_default">True</field>
+            <field name="visible_button">True</field>
+            <field name="button_label">Confirm delay</field>
+            <field name="with_mail">True</field>
+            <field name="mail_template_id" ref="email_template_edi_sale_confirm"/>
+            <field name="filter_group_id" ref="base_openprod.wkf_transition_grp_with_mail"/>
+            <field name="attrs">['|', ('sale_communication_method', '!=', 'email'), ('delay_confirmation', '=', False)]</field>
+        </record>
+        
+        <record id="st65" model="workflow.transition">
+        	<field name="sequence" eval="650" />
+            <field name="act_from" ref="act_draft_sale"/>
+            <field name="act_to" ref="act_plan_waiting_sale"/>
+            <field name="signal">sale_draft_to_confirmed_with_mail</field>
+            <field name="is_default">True</field>
+            <field name="visible_button">True</field>
+            <field name="button_label">Confirm order</field>
+            <field name="with_mail">True</field>
+            <field name="mail_template_id" ref="email_template_edi_sale_confirm"/>
+            <field name="filter_group_id" ref="base_openprod.wkf_transition_grp_with_mail"/>
+            <field name="attrs">[
+            '|', 
+                '|', 
+                    '|',
+			            ('delay_confirm', '=', True), 
+			            '|', 
+			                ('sale_communication_method', '!=', 'email'), 
+			                ('delay_confirmation', '=', False),
+		            '|', 
+		                '&amp;', 
+	                        ('receipt_demand', '=', True), 
+	                        ('ar_send_date', '=', False), 
+		                '&amp;', 
+                            ('check_paid', '=', False), 
+                            ('block_sale_payment', '=', True)]</field>
+			<field name="button_class">openprod_logical_button</field>
+        </record>
+        
+        <record id="st66" model="workflow.transition">
+        	<field name="sequence" eval="660" />
+            <field name="act_from" ref="act_quotation_send_sale"/>
+            <field name="act_to" ref="act_plan_waiting_sale"/>
+            <field name="signal">sale_quotation_confirmed_with_mail</field>
+            <field name="is_default">True</field>
+            <field name="visible_button">True</field>
+            <field name="button_label">Confirm order</field>
+            <field name="with_mail">True</field>
+            <field name="mail_template_id" ref="email_template_edi_sale_confirm"/>
+            <field name="filter_group_id" ref="base_openprod.wkf_transition_grp_with_mail"/>
+            <field name="attrs">[
+            '|', 
+                '|', 
+                    '|',
+			            ('delay_confirm', '=', True), 
+			            '|', 
+			                ('sale_communication_method', '!=', 'email'), 
+			                ('delay_confirmation', '=', False),
+		            '|', 
+		                '&amp;', 
+	                        ('receipt_demand', '=', True), 
+	                        ('ar_send_date', '=', False), 
+		                '&amp;', 
+                            ('check_paid', '=', False), 
+                            ('block_sale_payment', '=', True)]</field>
+			<field name="button_class">openprod_logical_button</field>
+        </record>
+        
+        <record id="st67" model="workflow.transition">
+        	<field name="sequence" eval="680" />
+            <field name="act_from" ref="act_rd_send_sale"/>
+            <field name="act_to" ref="act_plan_waiting_sale"/>
+            <field name="signal">sale_quotation_plan_waiting_with_mail</field>
+            <field name="is_default">True</field>
+            <field name="visible_button">True</field>
+            <field name="button_label">Confirm order</field>
+            <field name="with_mail">True</field>
+            <field name="mail_template_id" ref="email_template_edi_sale_confirm"/>
+            <field name="filter_group_id" ref="base_openprod.wkf_transition_grp_with_mail"/>
+            <field name="attrs">[
+            '|', 
+                '|', 
+                    '|',
+			            ('delay_confirm', '=', True), 
+			            '|', 
+			                ('sale_communication_method', '!=', 'email'), 
+			                ('delay_confirmation', '=', False),
+		            '|', 
+		                '&amp;', 
+	                        ('receipt_demand', '=', True), 
+	                        ('ar_send_date', '=', False), 
+		                '&amp;', 
+                            ('check_paid', '=', False), 
+                            ('block_sale_payment', '=', True)]</field>
+			<field name="button_class">openprod_logical_button</field>
+        </record>
+        
+        <record id="st69" model="workflow.transition">
+        	<field name="sequence" eval="690" />
+            <field name="act_from" ref="act_payment_validated"/>
+            <field name="act_to" ref="act_plan_waiting_sale"/>
+            <field name="signal">validated_payment_plan_waiting_with_mail</field>
+            <field name="is_default">True</field>
+            <field name="visible_button">True</field>
+            <field name="button_label">Confirm order</field>
+            <field name="with_mail">True</field>
+            <field name="mail_template_id" ref="email_template_edi_sale_confirm"/>
+            <field name="filter_group_id" ref="base_openprod.wkf_transition_grp_with_mail"/>
+            <field name="attrs">[
+            '|', 
+            	'|', 
+            		('state', '=', 'progress'), 
+            		('delay_confirm', '=', True),
+            	'|', 
+            		('sale_communication_method', '!=', 'email'), 
+            		('delay_confirmation', '=', False)]</field>
+			<field name="button_class">openprod_logical_button</field>
+        </record>
+        <record id="st80" model="workflow.transition">
+        	<field name="sequence" eval="800" />
+            <field name="act_from" ref="act_payment_validated"/>
+            <field name="act_to" ref="act_reset_sale"/>
+            <field name="signal">payment_validated_reset</field>
+            <field name="is_default">True</field>
+            <field name="visible_button">True</field>
+            <field name="button_label">Reset the sale</field>
+            <field name="attrs">[('called_order_ids', '!=', [])]</field>
+            <field name="button_confirm">Are you sure you want to reset this sale?</field>
+            <field name="filter_group_id" ref="base_openprod.wkf_transition_grp_reset"/>
+        </record>
+        <record id="st81" model="workflow.transition">
+        	<field name="sequence" eval="810" />
+            <field name="act_from" ref="act_wait_payment_validation"/>
+            <field name="act_to" ref="act_reset_sale"/>
+            <field name="signal">wait_payment_reset</field>
+            <field name="is_default">True</field>
+            <field name="visible_button">True</field>
+            <field name="button_label">Reset the sale</field>
+            <field name="attrs">[('called_order_ids', '!=', [])]</field>
+            <field name="button_confirm">Are you sure you want to reset this sale?</field>
+            <field name="filter_group_id" ref="base_openprod.wkf_transition_grp_reset"/>
+        </record>
+        
+<!--         <record id="st70" model="workflow.transition"> -->
+<!--         	<field name="sequence" eval="700" /> -->
+<!--             <field name="act_from" ref="act_generate_invoice"/> -->
+<!--             <field name="act_to" ref="act_plan_waiting_sale"/> -->
+<!--             <field name="signal">sale_invoice_to_confirmed_with_mail</field> -->
+<!--             <field name="is_default">True</field> -->
+<!--             <field name="visible_button">True</field> -->
+<!--             <field name="button_label">Confirm order</field> -->
+<!--             <field name="with_mail">True</field> -->
+<!--             <field name="mail_template_id" ref="email_template_edi_sale_confirm"/> -->
+<!--             <field name="filter_group_id" ref="base_openprod.wkf_transition_grp_with_mail"/> -->
+<!--             <field name="attrs">[ -->
+<!--             '|',  -->
+<!--                 '|',  -->
+<!--                     '|',  -->
+<!--                         '|', -->
+<!-- 			                ('delay_confirm', '=', True),  -->
+<!-- 			                ('state', 'not in', ('draft', 'waiting')), -->
+<!-- 			            '|',  -->
+<!-- 			                ('sale_communication_method', '!=', 'email'),  -->
+<!-- 			                ('delay_confirmation', '=', False), -->
+<!-- 			        '|',  -->
+<!-- 			            '&amp;',  -->
+<!-- 			            	('receipt_demand', '=', True),  -->
+<!-- 			            	('ar_send_date', '=', False),  -->
+<!-- 			            '&amp;',  -->
+<!-- 			            	'&amp;',  -->
+<!-- 			                	('check_paid', '=', False),  -->
+<!-- 			                	('sale_account_invoice_trigger', '!=', 'manual'), -->
+<!-- 			            	('payment_type', '=', 'before_validation'), -->
+<!-- 			    '&amp;',  -->
+<!-- 			    	('check_paid', '=', False),  -->
+<!-- 			    	'&amp;', -->
+<!-- 			        	('payment_type', '=', 'before_validation'),  -->
+<!-- 			        	('sale_account_invoice_trigger', '=', 'manual')]</field> -->
+<!-- 			<field name="button_class">openprod_logical_button</field> -->
+<!--         </record> -->
+
+    </data>
+</openerp>

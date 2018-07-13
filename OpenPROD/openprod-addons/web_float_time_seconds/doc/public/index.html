@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <title>Float time seconds</title>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, target-densitydpi=160dpi, initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+  <link rel="stylesheet" media="all" href="docco.css" />
+</head>
+<body>
+  <div id="container">
+    <div id="background"></div>
+    
+    <ul class="sections">
+        
+        
+        
+        <li id="section-1">
+            <div class="annotation">
+              
+              <div class="pilwrap for-h1">
+                <a class="pilcrow" href="#section-1">&#182;</a>
+              </div>
+              <h1>Float time seconds</h1>
+
+            </div>
+            
+        </li>
+        
+        
+        <li id="section-2">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-2">&#182;</a>
+              </div>
+              <p>Etant donné que <code>formats.js</code> ne permet pas de surcharger les différents types de widgets
+nous allons donc <em>monkey patcher</em> les deux fonctions de <em>parsing</em> et <em>formatting</em>.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>openerp.web_float_time_seconds = <span class="keyword">function</span>(instance) {</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-3">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-3">&#182;</a>
+              </div>
+              <p>Voici donc notre nouveau type de widget qui sera donc à utiliser avec l&#39;attribut <code>@widget</code>
+d&#39;un tag field comme ceci:</p>
+<pre><code class="lang-xml">&lt;field name=&quot;duration&quot; widget=&quot;float_time_seconds&quot;/&gt;</code></pre>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>    <span class="keyword">var</span> new_type = <span class="string">'float_time_seconds'</span>;</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-4">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-4">&#182;</a>
+              </div>
+              <p>Nous gardons une référence des anciennes fonctions que nous allons substituer.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>    <span class="keyword">var</span> old_format_value = instance.web.format_value;
+    <span class="keyword">var</span> old_parse_value = instance.web.parse_value;</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-5">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-5">&#182;</a>
+              </div>
+              <p>Nous redéfinissons la foncton de <em>formatting</em></p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>    instance.web.format_value = <span class="function"><span class="keyword">function</span> <span class="params">(value, descriptor, value_if_empty)</span> {</span></pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-6">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-6">&#182;</a>
+              </div>
+              <p>Ici nous appelons la fonction d&#39;origine.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>        value = old_format_value.apply(instance.web, arguments);</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-7">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-7">&#182;</a>
+              </div>
+              <p>Nous vérifions ici si l&#39;attribut <code>@widget</code> correspond à notre nouveau type.
+Le contenu de cette condition est en gros un copier/coller du <strong>case</strong> <code>float_time</code>
+de <code>formats.js</code> légèrement adapté pour afficher les secondes.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>        <span class="keyword">if</span> (descriptor.widget == new_type || descriptor.type == new_type) {
+            <span class="keyword">var</span> pattern = <span class="string">'%02d:%02d:%02d'</span>;
+            <span class="keyword">if</span> (value &lt; <span class="number">0</span>) {
+                value = Math.abs(value);
+                pattern = <span class="string">'-'</span> + pattern;
+            }
+            <span class="keyword">var</span> sec = Math.round((value % <span class="number">1</span>) * <span class="number">3600</span>);
+            <span class="keyword">var</span> minutes = Math.floor(sec / <span class="number">60</span>);
+            <span class="keyword">var</span> seconds = sec % <span class="number">60</span>;
+            <span class="keyword">var</span> formatted = _.str.sprintf(pattern,
+                    Math.floor(value),
+                    minutes,
+                    seconds);</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-8">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-8">&#182;</a>
+              </div>
+              <p>Nous retournous notre valeur formattée avec les secondes.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>            <span class="keyword">return</span> formatted;
+        }</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-9">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-9">&#182;</a>
+              </div>
+              <p>Pour les autres types de widgets, nous retournons la valeur calculée par la
+fonction d&#39;origine afin de ne pas altérer son comportement.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>        <span class="keyword">return</span> value;
+    };</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-10">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-10">&#182;</a>
+              </div>
+              <p>Nous redéfinissons la foncton de <em>parsing</em></p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>    instance.web.parse_value = <span class="function"><span class="keyword">function</span> <span class="params">(value, descriptor, value_if_empty)</span> {</span></pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-11">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-11">&#182;</a>
+              </div>
+              <p>Ici nous appelons la fonction d&#39;origine.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>        value = old_parse_value.apply(instance.web, arguments);</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-12">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-12">&#182;</a>
+              </div>
+              <p>Même principe que précédemment: le contenu de cette condition est également
+un copier/coller du <strong>case</strong> <code>float_time</code> de <code>formats.js</code> légèrement adapté
+pour prendre en compte les secondes.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>        <span class="keyword">if</span> (descriptor.widget == new_type || descriptor.type == new_type) {
+            <span class="keyword">var</span> factor = <span class="number">1</span>;
+            <span class="keyword">if</span> (value[<span class="number">0</span>] === <span class="string">'-'</span>) {
+                value = value.slice(<span class="number">1</span>);
+                factor = -<span class="number">1</span>;
+            }
+            <span class="keyword">var</span> float_time_seconds = value.split(<span class="string">":"</span>);
+            <span class="keyword">if</span> (float_time_seconds.length != <span class="number">3</span>)
+                <span class="keyword">return</span> factor * instance.web.parse_value(value, {type: <span class="string">"float"</span>});
+            <span class="keyword">var</span> hours = instance.web.parse_value(float_time_seconds[<span class="number">0</span>], {type: <span class="string">"integer"</span>});
+            <span class="keyword">var</span> minutes = instance.web.parse_value(float_time_seconds[<span class="number">1</span>], {type: <span class="string">"integer"</span>});
+            <span class="keyword">var</span> seconds = instance.web.parse_value(float_time_seconds[<span class="number">2</span>], {type: <span class="string">"integer"</span>});
+            <span class="keyword">var</span> parsed = factor * (hours + (minutes / <span class="number">60</span>) + (seconds / <span class="number">3600</span>));</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-13">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-13">&#182;</a>
+              </div>
+              <p>Retour de la valeur calculée</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>            <span class="keyword">return</span> parsed;
+        }</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-14">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-14">&#182;</a>
+              </div>
+              <p>Retourn de la valeur calculée par la fonction d&#39;origine afin de ne pas
+altérer son comportement.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>        <span class="keyword">return</span> value;
+    };</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-15">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-15">&#182;</a>
+              </div>
+              <p>Enfin nous ajoutons une entrée dans la registy de la vue form afin d&#39;enregistrer notre
+nouveau type de widget. Celui-ci pointera vers <code>openerp.web.form.FieldFloat</code> à l&#39;instar
+du widget <code>float_time</code>.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>    instance.web.form.widgets.add(new_type, <span class="string">'openerp.web.form.FieldFloat'</span>);
+
+};</pre></div></div>
+            
+        </li>
+        
+    </ul>
+  </div>
+</body>
+</html>

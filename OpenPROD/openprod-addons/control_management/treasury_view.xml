@@ -1,0 +1,527 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+	
+		<!-- ======== -->
+		<!-- TREASURY -->
+		<!-- ======== -->
+		
+		<!-- FORM VIEW TREASURY -->
+		<record id='view_form_treasury_openprod' model='ir.ui.view'>
+			<field name="name">view_form_treasury_openprod</field>
+			<field name="model">treasury</field>
+			<field name="arch" type="xml">
+				<form string="Treasury" version="8.0">
+					<group colspan="4" col="4">
+						<field name="name" />
+						<field name="year"/>
+						<field name="date_from"/>
+						<field name="initial_balance"/>
+						<field name="manager_id" />
+					</group>
+					<notebook colspan="4">
+						<page string="Treasury">
+							<group colspan="4" col="6" string="Payments list">
+								<field name="payment_list_ids" nolabel="1" colspan="6"/>
+								<group colspan="4" col="8">
+									<label colspan="6" string=""/>
+									<button name="compute_payment_list" string="Compute payments" type="object"/>
+								</group>
+							</group>
+							<group colspan="4" col="6" string="Sales and purchases list">
+								<field name="sale_purchase_list_ids" nolabel="1" colspan="6"/>
+								<group colspan="4" col="8">
+									<label colspan="6" string=""/>
+									<button name="compute_sale_purchase_list" string="Compute sales and purchases amount" type="object"/>
+								</group>
+							</group>
+							<group colspan="4" col="4" string="Manual list">
+								<field name="manual_treasury_list_ids" nolabel="1" colspan="4" context="{'not_treasury': True}"/>
+							</group>
+							<group colspan="4" col="6" string="Summary">
+								<field name="summary_list_ids" nolabel="1" colspan="6"/>
+								<group colspan="4" col="8">
+									<label colspan="6" string=""/>
+									<button name="compute_summary" string="Compute summary" type="object"/>
+								</group>
+							</group>
+						</page>
+						<page string="Budget">
+							<group colspan="4" col="4" string="Budget manual list">
+								<field name="manual_budget_list_ids" nolabel="1" colspan="4"/>
+							</group>
+							<group colspan="4" col="6" string="Summary">
+								<field name="budget_summary_ids" nolabel="1" colspan="6"/>
+								<group colspan="4" col="8">
+									<label colspan="6" string=""/>
+									<button name="compute_budget_summary" string="Compute summary" type="object"/>
+								</group>
+							</group>
+						</page>
+					</notebook>
+				</form>
+			</field>
+		</record>
+		
+		<!-- TREE VIEW TREASURY -->
+		<record id='view_tree_treasury_openprod' model='ir.ui.view'>
+			<field name="name">view_tree_treasury_openprod</field>
+			<field name="model">treasury</field>
+			<field name="arch" type="xml">
+				<tree string="CRM" version="8.0">
+					<field name="name" />
+					<field name="year"/>
+					<field name="manager_id" />
+				</tree>
+			</field>
+		</record>
+		
+		
+		<!-- SEARCH VIEW TREASURY -->
+		<record id='view_search_treasury_openprod' model='ir.ui.view'>
+			<field name="name">view_search_treasury_openprod</field>
+			<field name="model">treasury</field>
+			<field name="arch" type="xml">
+				<search version="8.0">
+					<group>
+						<field name="name" />
+						<field name="year"/>
+						<field name="manager_id" />
+					</group>
+					<newline />
+					<group expand="0" string="Group By...">
+						<filter string="Year" domain="[]" context="{'group_by': 'year'}"/>
+						<filter string="Manager" domain="[]" context="{'group_by': 'manager_id'}"/>
+					</group>
+				</search>
+			</field>
+		</record>
+		
+		<!-- ACTION TREASURY -->
+		<record id="act_treasury_openprod" model="ir.actions.act_window">
+		    <field name="name">Treasury</field>
+		    <field name="res_model">treasury</field>
+		    <field name="view_type">form</field>
+		    <field name="view_mode">tree,form</field>
+		    <field name="domain">[]</field>
+		    <field name="context">{}</field>
+		    <field name="search_view_id" ref="view_search_treasury_openprod"/>
+		</record>
+		
+		<menuitem name="Treasury management" id="menu_main_treasury_openprod" parent="control_management_main_menu"/>
+		<menuitem name="Treasury" action="act_treasury_openprod" id="menu_treasury_openprod" parent="menu_main_treasury_openprod" sequence="10"/>
+		
+		<!-- ================ -->
+		<!-- PAYMENT TREASURY -->
+		<!-- ================ -->
+		
+		<!-- FORM VIEW PAYMENT TREASURY -->
+		<record id='view_form_payment_treasury_openprod' model='ir.ui.view'>
+			<field name="name">view_form_payment_treasury_openprod</field>
+			<field name="model">payment.treasury</field>
+			<field name="arch" type="xml">
+				<form string="Payment treasury" version="8.0">
+					<group colspan="4" col="4">
+						<field name="name" />
+						<field name="type"/>
+					</group>
+					<group colspan="4" col="6" string="Month values">
+						<group colspan="2" col="2">
+							<field name="month1"/>
+							<field name="month2"/>
+							<field name="month3"/>
+							<field name="month4"/>
+						</group>
+						<group colspan="2" col="2">
+							<field name="month5"/>
+							<field name="month6"/>
+							<field name="month7"/>
+							<field name="month8"/>
+						</group>
+						<group colspan="2" col="2">
+							<field name="month9"/>
+							<field name="month10"/>
+							<field name="month11"/>
+							<field name="month12"/>
+						</group>
+					</group>
+				</form>
+			</field>
+		</record>
+		
+		<!-- TREE VIEW PAYMENT TREASURY -->
+		<record id='view_tree_payment_treasury_openprod' model='ir.ui.view'>
+			<field name="name">view_tree_payment_treasury_openprod</field>
+			<field name="model">payment.treasury</field>
+			<field name="arch" type="xml">
+				<tree string="Payment" version="8.0">
+					<field name="sequence"/>
+					<field name="name" />
+					<field name="type" />
+					<field name="month1"/>
+					<field name="month2"/>
+					<field name="month3"/>
+					<field name="month4"/>
+					<field name="month5"/>
+					<field name="month6"/>
+					<field name="month7"/>
+					<field name="month8"/>
+					<field name="month9"/>
+					<field name="month10"/>
+					<field name="month11"/>
+					<field name="month12"/>
+				</tree>
+			</field>
+		</record>
+		
+		<!-- ================ -->
+		<!-- PAYMENT TREASURY -->
+		<!-- ================ -->
+		
+		<!-- FORM VIEW SALE PURCHASE TREASURY -->
+		<record id='view_form_sale_purchase_treasury_openprod' model='ir.ui.view'>
+			<field name="name">view_form_sale_purchase_treasury_openprod</field>
+			<field name="model">sale.purchase.treasury</field>
+			<field name="arch" type="xml">
+				<form string="Sale and purchase treasury" version="8.0">
+					<group colspan="4" col="4">
+						<field name="name" />
+						<field name="type"/>
+					</group>
+					<group colspan="4" col="6" string="Month values">
+						<group colspan="2" col="2">
+							<field name="month1"/>
+							<field name="month2"/>
+							<field name="month3"/>
+							<field name="month4"/>
+						</group>
+						<group colspan="2" col="2">
+							<field name="month5"/>
+							<field name="month6"/>
+							<field name="month7"/>
+							<field name="month8"/>
+						</group>
+						<group colspan="2" col="2">
+							<field name="month9"/>
+							<field name="month10"/>
+							<field name="month11"/>
+							<field name="month12"/>
+						</group>
+					</group>
+				</form>
+			</field>
+		</record>
+		
+		<!-- TREE VIEW SALE PURCHASE TREASURY -->
+		<record id='view_tree_sale_purchase_treasury_openprod' model='ir.ui.view'>
+			<field name="name">view_tree_sale_purchase_treasury_openprod</field>
+			<field name="model">sale.purchase.treasury</field>
+			<field name="arch" type="xml">
+				<tree string="Sale and purchase treasury" version="8.0">
+					<field name="sequence"/>
+					<field name="name" />
+					<field name="type" />
+					<field name="month1"/>
+					<field name="month2"/>
+					<field name="month3"/>
+					<field name="month4"/>
+					<field name="month5"/>
+					<field name="month6"/>
+					<field name="month7"/>
+					<field name="month8"/>
+					<field name="month9"/>
+					<field name="month10"/>
+					<field name="month11"/>
+					<field name="month12"/>
+				</tree>
+			</field>
+		</record>
+		
+		<!-- ================ -->
+		<!-- MANUAL TREASURY -->
+		<!-- ================ -->
+		
+		<!-- FORM VIEW MANUAL TREASURY -->
+		<record id='view_form_manual_treasury_openprod' model='ir.ui.view'>
+			<field name="name">view_form_manual_treasury_openprod</field>
+			<field name="model">manual.treasury</field>
+			<field name="arch" type="xml">
+				<form string="Manual treasury" version="8.0">
+					<group colspan="4" col="6">
+						<field name="sequence" />
+						<field name="name" />
+						<field name="type"/>
+					</group>
+					<group colspan="4" col="6" string="Month values">
+						<group colspan="2" col="2">
+							<field name="month1"/>
+							<field name="month2"/>
+							<field name="month3"/>
+							<field name="month4"/>
+						</group>
+						<group colspan="2" col="2">
+							<field name="month5"/>
+							<field name="month6"/>
+							<field name="month7"/>
+							<field name="month8"/>
+						</group>
+						<group colspan="2" col="2">
+							<field name="month9"/>
+							<field name="month10"/>
+							<field name="month11"/>
+							<field name="month12"/>
+						</group>
+					</group>
+				</form>
+			</field>
+		</record>
+		
+		<!-- TREE VIEW MANUAL TREASURY -->
+		<record id='view_tree_manual_treasury_openprod' model='ir.ui.view'>
+			<field name="name">view_tree_manual_treasury_openprod</field>
+			<field name="model">manual.treasury</field>
+			<field name="arch" type="xml">
+				<tree string="Manual treasury" version="8.0">
+					<field name="treasury_id" invisible="context.get('not_treasury', False)"/>
+					<field name="sequence"/>
+					<field name="name" />
+					<field name="type" />
+					<field name="month1"/>
+					<field name="month2"/>
+					<field name="month3"/>
+					<field name="month4"/>
+					<field name="month5"/>
+					<field name="month6"/>
+					<field name="month7"/>
+					<field name="month8"/>
+					<field name="month9"/>
+					<field name="month10"/>
+					<field name="month11"/>
+					<field name="month12"/>
+				</tree>
+			</field>
+		</record>
+		
+		<!-- SEARCH VIEW MANUAL TREASURY -->
+		<record id='view_search_manual_treasury_openprod' model='ir.ui.view'>
+			<field name="name">view_search_manual_treasury_openprod</field>
+			<field name="model">manual.treasury</field>
+			<field name="arch" type="xml">
+				<search version="8.0">
+					<group>
+						<field name="type" />
+					</group>
+					<newline />
+					<group expand="0" string="Group By...">
+						<filter string="Treasury" domain="[]" context="{'group_by': 'treasury_id'}"/>
+						<filter string="Type" domain="[]" context="{'group_by': 'type'}"/>
+					</group>
+				</search>
+			</field>
+		</record>
+		
+		<!-- ACTION MANUAL TREASURY -->
+		<record id="act_manual_treasury_openprod" model="ir.actions.act_window">
+		    <field name="name">Manual lines</field>
+		    <field name="res_model">manual.treasury</field>
+		    <field name="view_type">form</field>
+		    <field name="view_mode">tree,form</field>
+		    <field name="domain">[]</field>
+		    <field name="context">{}</field>
+		    <field name="search_view_id" ref="view_search_manual_treasury_openprod"/>
+		</record>
+		
+		<menuitem name="Manual lines" action="act_manual_treasury_openprod" id="menu_manual_treasury_openprod" parent="menu_main_treasury_openprod" sequence="20"/>
+		
+		<!-- ====================== -->
+		<!-- MANUAL BUDGET TREASURY -->
+		<!-- ====================== -->
+		
+		<!-- FORM VIEW MANUAL BUDGET TREASURY -->
+		<record id='view_form_manual_budget_treasury_openprod' model='ir.ui.view'>
+			<field name="name">view_form_manual_budget_treasury_openprod</field>
+			<field name="model">manual.budget.treasury</field>
+			<field name="arch" type="xml">
+				<form string="Manual budget treasury" version="8.0">
+					<group colspan="4" col="6">
+						<field name="sequence" />
+						<field name="name" />
+						<field name="type"/>
+					</group>
+					<group colspan="4" col="6" string="Month values">
+						<group colspan="2" col="2">
+							<field name="month1"/>
+							<field name="month2"/>
+							<field name="month3"/>
+							<field name="month4"/>
+						</group>
+						<group colspan="2" col="2">
+							<field name="month5"/>
+							<field name="month6"/>
+							<field name="month7"/>
+							<field name="month8"/>
+						</group>
+						<group colspan="2" col="2">
+							<field name="month9"/>
+							<field name="month10"/>
+							<field name="month11"/>
+							<field name="month12"/>
+						</group>
+					</group>
+				</form>
+			</field>
+		</record>
+		
+		<!-- TREE VIEW MANUAL BUDGET TREASURY -->
+		<record id='view_tree_manual_budget_treasury_openprod' model='ir.ui.view'>
+			<field name="name">view_tree_manual_budget_treasury_openprod</field>
+			<field name="model">manual.budget.treasury</field>
+			<field name="arch" type="xml">
+				<tree string="Manual treasury" version="8.0">
+					<field name="sequence"/>
+					<field name="name" />
+					<field name="type" />
+					<field name="month1"/>
+					<field name="month2"/>
+					<field name="month3"/>
+					<field name="month4"/>
+					<field name="month5"/>
+					<field name="month6"/>
+					<field name="month7"/>
+					<field name="month8"/>
+					<field name="month9"/>
+					<field name="month10"/>
+					<field name="month11"/>
+					<field name="month12"/>
+				</tree>
+			</field>
+		</record>
+		
+		<!-- ================ -->
+		<!-- TREASURY SUMMARY -->
+		<!-- ================ -->
+		
+		<!-- FORM VIEW TREASURY SUMMARY -->
+		<record id='view_form_treasury_summary_openprod' model='ir.ui.view'>
+			<field name="name">view_form_treasury_summary_openprod</field>
+			<field name="model">treasury.summary</field>
+			<field name="arch" type="xml">
+				<form string="Summary" version="8.0">
+					<group colspan="4" col="4">
+						<field name="name" />
+						<field name="type"/>
+					</group>
+					<group colspan="4" col="6" string="Month values">
+						<group colspan="2" col="2">
+							<field name="month1"/>
+							<field name="month2"/>
+							<field name="month3"/>
+							<field name="month4"/>
+						</group>
+						<group colspan="2" col="2">
+							<field name="month5"/>
+							<field name="month6"/>
+							<field name="month7"/>
+							<field name="month8"/>
+						</group>
+						<group colspan="2" col="2">
+							<field name="month9"/>
+							<field name="month10"/>
+							<field name="month11"/>
+							<field name="month12"/>
+						</group>
+					</group>
+				</form>
+			</field>
+		</record>
+		
+		<!-- TREE VIEW TREASURY SUMMARY -->
+		<record id='view_tree_treasury_summary_openprod' model='ir.ui.view'>
+			<field name="name">view_tree_treasury_summary_openprod</field>
+			<field name="model">treasury.summary</field>
+			<field name="arch" type="xml">
+				<tree string="Summary" version="8.0">
+					<field name="sequence"/>
+					<field name="name" />
+					<field name="type" />
+					<field name="month1"/>
+					<field name="month2"/>
+					<field name="month3"/>
+					<field name="month4"/>
+					<field name="month5"/>
+					<field name="month6"/>
+					<field name="month7"/>
+					<field name="month8"/>
+					<field name="month9"/>
+					<field name="month10"/>
+					<field name="month11"/>
+					<field name="month12"/>
+				</tree>
+			</field>
+		</record>
+		
+		<!-- ======================= -->
+		<!-- BUDGET TREASURY SUMMARY -->
+		<!-- ======================= -->
+		
+		<!-- FORM VIEW BUDGET TREASURY SUMMARY -->
+		<record id='view_form_budget_treasury_summary_openprod' model='ir.ui.view'>
+			<field name="name">view_form_budget_treasury_summary_openprod</field>
+			<field name="model">budget.treasury.summary</field>
+			<field name="arch" type="xml">
+				<form string="Summary" version="8.0">
+					<group colspan="4" col="4">
+						<field name="name" />
+						<field name="type"/>
+					</group>
+					<group colspan="4" col="6" string="Month values">
+						<group colspan="2" col="2">
+							<field name="month1"/>
+							<field name="month2"/>
+							<field name="month3"/>
+							<field name="month4"/>
+						</group>
+						<group colspan="2" col="2">
+							<field name="month5"/>
+							<field name="month6"/>
+							<field name="month7"/>
+							<field name="month8"/>
+						</group>
+						<group colspan="2" col="2">
+							<field name="month9"/>
+							<field name="month10"/>
+							<field name="month11"/>
+							<field name="month12"/>
+						</group>
+					</group>
+				</form>
+			</field>
+		</record>
+		
+		<!-- TREE VIEW BUDGET TREASURY SUMMARY -->
+		<record id='view_tree_budget_treasury_summary_openprod' model='ir.ui.view'>
+			<field name="name">view_tree_budget_treasury_summary_openprod</field>
+			<field name="model">budget.treasury.summary</field>
+			<field name="arch" type="xml">
+				<tree string="Summary" version="8.0">
+					<field name="sequence"/>
+					<field name="name" />
+					<field name="type" />
+					<field name="month1"/>
+					<field name="month2"/>
+					<field name="month3"/>
+					<field name="month4"/>
+					<field name="month5"/>
+					<field name="month6"/>
+					<field name="month7"/>
+					<field name="month8"/>
+					<field name="month9"/>
+					<field name="month10"/>
+					<field name="month11"/>
+					<field name="month12"/>
+				</tree>
+			</field>
+		</record>
+		
+	</data>
+</openerp>

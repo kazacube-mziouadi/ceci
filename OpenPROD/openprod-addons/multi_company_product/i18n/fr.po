@@ -1,0 +1,101 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* multi_company_product
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 9.0c\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-05-30 08:17+0000\n"
+"PO-Revision-Date: 2017-05-30 08:17+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: multi_company_product
+#: code:addons/multi_company_product/product.py:21
+#: code:addons/multi_company_product/product.py:62
+#, python-format
+msgid "Buy"
+msgstr "Acheté"
+
+#. module: multi_company_product
+#: model:ir.model.fields,field_description:multi_company_product.field_multi_company_product_supply_method_company_id
+msgid "Company"
+msgstr "Société"
+
+#. module: multi_company_product
+#: model:ir.model.fields,field_description:multi_company_product.field_multi_company_product_supply_method_create_uid
+msgid "Created by"
+msgstr "Créé par"
+
+#. module: multi_company_product
+#: model:ir.model.fields,field_description:multi_company_product.field_multi_company_product_supply_method_create_date
+msgid "Created on"
+msgstr "Créé le"
+
+#. module: multi_company_product
+#: model:ir.model.fields,field_description:multi_company_product.field_multi_company_product_supply_method_display_name
+msgid "Display Name"
+msgstr "Display Name"
+
+#. module: multi_company_product
+#: code:addons/multi_company_product/product.py:45
+#, python-format
+msgid "Error"
+msgstr "Erreur"
+
+#. module: multi_company_product
+#: model:ir.model.fields,field_description:multi_company_product.field_multi_company_product_supply_method_id
+msgid "ID"
+msgstr "ID"
+
+#. module: multi_company_product
+#: model:ir.model.fields,field_description:multi_company_product.field_multi_company_product_supply_method___last_update
+msgid "Last Modified on"
+msgstr "Dernière modification le"
+
+#. module: multi_company_product
+#: model:ir.model.fields,field_description:multi_company_product.field_multi_company_product_supply_method_write_uid
+msgid "Last Updated by"
+msgstr "Dernière mise à jour le"
+
+#. module: multi_company_product
+#: model:ir.model.fields,field_description:multi_company_product.field_multi_company_product_supply_method_write_date
+msgid "Last Updated on"
+msgstr "Dernière mise à jour par"
+
+#. module: multi_company_product
+#: model:ir.model,name:multi_company_product.model_multi_company_product_supply_method
+msgid "Multi company partner supply method"
+msgstr "Multi company partner supply method"
+
+#. module: multi_company_product
+#: code:addons/multi_company_product/product.py:22
+#: code:addons/multi_company_product/product.py:63
+#, python-format
+msgid "Produce"
+msgstr "Produire"
+
+#. module: multi_company_product
+#: model:ir.model,name:multi_company_product.model_product_product
+#: model:ir.model.fields,field_description:multi_company_product.field_multi_company_product_supply_method_product_id
+msgid "Product"
+msgstr "Produit"
+
+#. module: multi_company_product
+#: model:ir.model.fields,field_description:multi_company_product.field_multi_company_product_supply_method_supply_method
+#: model:ir.model.fields,field_description:multi_company_product.field_product_product_mcpsm_ids
+#: model:ir.ui.view,arch_db:multi_company_product.view_form_product_account_mulit_company_product
+msgid "Supply method"
+msgstr "Méthode de fourniture"
+
+#. module: multi_company_product
+#: code:addons/multi_company_product/product.py:45
+#, python-format
+msgid "You need a default supply method for this company '% s' in this product '%s'."
+msgstr "Vous avez besoin d'une méthode de fourniture par défaut pour cette société '% s' dans le produit '%s'."
+

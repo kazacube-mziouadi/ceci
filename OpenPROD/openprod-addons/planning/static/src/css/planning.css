@@ -1,0 +1,118 @@
+html,body {
+	margin: 0px;
+	padding: 0px;
+	height: 100%;
+	overflow: hidden;
+	background-color: #f0eeee;
+}
+
+.marked {
+	background-color: #f0eeee;
+}
+.dhx_matrix_scell {
+	font-size:18px;
+	background-color: #FFF;
+	font-weight: bold;
+	color:#595761;
+
+}
+
+.dhx_cal_navline {
+	font-size:48px;
+    font-weight: bold;
+}
+
+.dhx_cal_header {
+	background-color: #FFF;}
+
+
+.dhx_matrix_scell .capacity {
+	height:25px;
+	color: white;
+}
+
+.capacity_red {
+	background-color: red;
+}
+
+.capacity_orange {
+	background-color: orange;
+}
+
+.capacity_green {
+	background-color: green;
+}
+
+div.alert_next {
+	outline: 3px solid red;
+}
+
+.alert_client {
+	outline: 3px solid black;
+}
+
+span.alert_date {
+	background-color: red;
+}
+
+#popup_workorder {
+	width: 90%;
+	height: 90%;
+	display: none;
+	position: absolute;
+	z-index: 10001;
+}
+
+#popup_workorder iframe {
+	width: 100%;
+	height: 100%;
+}
+
+#close_popup_workorder {
+	position: absolute;
+	top: 70px;
+	right: 50px;
+}
+
+#popup_calendar {
+	display: none;
+	position: absolute;
+	z-index: 10001;
+}
+
+#planning_container {
+	height: calc(100% - 120px);
+}
+
+#planning_header {
+	height: 110px;
+	margin-top: 10px;
+  
+	
+}
+
+#scheduler {
+	width:100%;
+	height:100%;
+	background-color: #f0eeee;
+}
+
+.event_green {
+	background-color: green;
+}
+
+.event_yellow {
+	background-color: orange;
+}
+
+.event_orange {
+    background-color: #fc4f00;
+}
+
+canvas#arrows {
+	position: absolute;
+	top: 0;
+	left: 0;
+	pointer-events: none;
+	z-index:1;
+}

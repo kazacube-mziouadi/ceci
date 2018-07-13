@@ -1,0 +1,8 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_mrp_simulation_user,mrp.simulation,model_mrp_simulation,base.group_manufacturing_user,1,0,0,0
+access_mrp_simulation_manager,mrp.simulation,model_mrp_simulation,base.group_manufacturing_manager,1,1,1,1
+access_mrp_simulation_administrator,mrp.simulation,model_mrp_simulation,base.group_manufacturing_admin,1,1,1,1
+
+access_mrp_simulation_line_user,mrp.simulation.line,model_mrp_simulation_line,base.group_manufacturing_user,1,0,0,0
+access_mrp_simulation_line_manager,mrp.simulation.line,model_mrp_simulation_line,base.group_manufacturing_manager,1,1,1,1
+access_mrp_simulation_line_administrator,mrp.simulation.line,model_mrp_simulation_line,base.group_manufacturing_admin,1,1,1,1

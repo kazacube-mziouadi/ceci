@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+    
+        <record model="ir.ui.view" id="view_form_sale_order_line_stagger">
+            <field name="name">sale.order.line.form.inherit</field>
+            <field name="inherit_id" ref="sale.view_form_sale_order_line"/>
+            <field name="priority" eval="1400" />
+            <field name="model">sale.order.line</field>
+            <field name="arch" type="xml">
+                <xpath expr="//separator[@name='separator_modif_menu']" position="after">
+                	<button class="oe_inline oe_stat_button" type="action" string="Stagger delivery" name="%(action_stagger_sale_delivery)d" 
+                	icon="fa-calendar" attrs="{'invisible': [('sale_state', '!=', 'draft')]}"/>
+                </xpath>
+            </field>
+        </record>
+        
+        
+        <record id='view_form_sale_order_stagger' model='ir.ui.view'>
+			<field name="name">view_form_sale_order_stagger</field>
+			<field name="model">sale.order</field>
+			<field name="inherit_id" ref="sale.view_form_sale_order"/>
+			<field name="priority" eval="1400" />
+			<field name="arch" type="xml">
+        		<xpath expr="//field[@name='order_line_ids']//tree//field[@name='total_price']" position="after">
+                	<button name="%(action_stagger_sale_delivery)d" string="Stagger delivery" type="action" 
+                	icon="terp-calendar" attrs="{'invisible': [('sale_state', '!=', 'draft')]}" />
+                </xpath>
+        		<xpath expr="//field[@name='order_line_ids']//form//separator[@name='separator_modif_menu']" position="after">
+                	<button class="oe_inline oe_stat_button" type="action" string="Stagger delivery" name="%(action_stagger_sale_delivery)d" 
+                	icon="fa-calendar" attrs="{'invisible': [('sale_state', '!=', 'draft')]}"/>
+                </xpath>
+        	</field>
+        </record>	
+        
+        
+    </data>
+</openerp>

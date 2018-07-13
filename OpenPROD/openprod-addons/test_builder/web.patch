@@ -1,0 +1,311 @@
+Index: web/__openerp__.py
+===================================================================
+--- web/__openerp__.py	(revision 24)
++++ web/__openerp__.py	(working copy)
+@@ -51,7 +51,8 @@
+         "static/src/js/view_list.js",
+         "static/src/js/view_list_editable.js",
+         "static/src/js/view_tree.js",
+-        "static/src/js/view_editor.js"
++        "static/src/js/view_editor.js",
++        "static/src/js/test_id.js"
+     ],
+     'css' : [
+         "static/lib/jquery.superfish/css/superfish.css",
+Index: web/static/src/js/search.js
+===================================================================
+--- web/static/src/js/search.js	(revision 24)
++++ web/static/src/js/search.js	(working copy)
+@@ -202,6 +202,7 @@
+         var self = this;
+         var select = this.$element.find(".oe_search-view-filters-management");
+         var val = select.val();
++        window.search_select_val = select.find('option:selected').attr('test_id');
+         switch(val) {
+         case 'advanced_filter':
+             this.extended_search.on_activate();
+Index: web/static/src/js/test_id.js
+===================================================================
+--- web/static/src/js/test_id.js	(revision 0)
++++ web/static/src/js/test_id.js	(revision 0)
+@@ -0,0 +1,57 @@
++(function() {
++
++var altKey = false;
++
++$('[test_id]').live('mouseup', function(ev){
++	if (ev.altKey) {
++		copyTextToClipboard(this.getAttribute('test_id'));
++	}
++});
++
++$('select[test_id]').live('mousedown', function(ev){
++	if (ev.altKey) {
++		copyTextToClipboard(this.getAttribute('test_id'));
++	}
++});
++
++$('select[test_id]').live('change', function(ev){
++	if (altKey) {
++		copyTextToClipboard(window.search_select_val);
++	}
++});
++
++
++
++// le mouseup/mousedown/click n'a pas l'air d'être intercepté de manière fiable/cohérente entre les navigateurs. change est intercepté d'abord par openerp qui reset la valeur
++// firefox ferme le select dès qu'on appuie sur alt, utiliser chrome
++$(window).keydown(function(ev) {
++	altKey = ev.altKey;
++});
++
++})();
++
++
++function copyTextToClipboard(text) {
++	var textArea = document.createElement("textarea");
++	textArea.style.position = 'fixed';
++	textArea.style.top = 0;
++	textArea.style.left = 0;
++	textArea.style.width = '2em';
++	textArea.style.height = '2em';
++	textArea.style.padding = 0;
++	textArea.style.border = 'none';
++	textArea.style.outline = 'none';
++	textArea.style.boxShadow = 'none';
++	textArea.style.background = 'transparent';
++	textArea.value = text;
++	document.body.appendChild(textArea);
++	textArea.select();
++
++	try {
++		var successful = document.execCommand('copy');
++	} catch (err) {
++		alert(text);
++	}
++
++	document.body.removeChild(textArea);
++}
+Index: web/static/src/js/view_form.js
+===================================================================
+--- web/static/src/js/view_form.js	(revision 24)
++++ web/static/src/js/view_form.js	(working copy)
+@@ -1299,14 +1299,14 @@
+                         {text: _t("Cancel"), click: function() {
+                                 def.resolve();
+                                 $(this).dialog("close");
+-                            }
++                            }, test_id: "dialog_confirm_ok",
+                         },
+                         {text: _t("Ok"), click: function() {
+                                 self.on_confirmed().then(function() {
+                                     def.resolve();
+                                 });
+                                 $(this).dialog("close");
+-                            }
++                            }, test_id: "dialog_confirm_close",
+                         }
+                     ]
+                 });
+Index: web/static/src/xml/base.xml
+===================================================================
+--- web/static/src/xml/base.xml	(revision 24)
++++ web/static/src/xml/base.xml	(working copy)
+@@ -375,8 +375,8 @@
+ <t t-name="Menu">
+     <table align="center">
+     <tr>
+-        <td t-foreach="widget.data.data.children" t-as="menu">
+-            <a href="#" t-att-data-menu="menu.id">
++	    <td t-foreach="widget.data.data.children" t-as="menu">
++            <a href="#" t-att-data-menu="menu.id" t-att="{'test_id':'menu_'+id}">
+                 <t t-esc="menu.name"/>
+             </a>
+         </td>
+@@ -401,7 +401,7 @@
+     <a href="#" t-att-id="menu.children.length ? 'menu_' + menu.id : undefined"
+         t-att-class="classname + (menu.children.length ? ' submenu' : ' leaf') + (menu_first and level == 1 ? ' opened' : '')"
+         t-att-data-menu="menu.children.length ? undefined : menu.id">
+-        <span t-attf-style="padding-left: #{(level - 2) * 20}px"> <t t-esc="menu.name"/></span>
++        <span t-attf-style="padding-left: #{(level - 2) * 20}px" t-att="{'test_id':'menu_'+menu.id}"> <t t-esc="menu.name"/></span>
+     </a>
+     <div t-attf-class="oe_secondary_submenu" t-if="menu.children.length" t-att-style="menu_first and level == 1 ? undefined : 'display: none'">
+         <t t-foreach="menu.children" t-as="menu">
+@@ -529,7 +529,7 @@
+ </t>
+ <t t-name="Sidebar.section.items">
+     <li t-foreach="items" t-as="item" t-att-class="item.classname">
+-        <a t-if="item.action" class="oe_sidebar_action_a" t-att-id="item.element_id" t-att-title="item.title" href="#" t-att-data-action-id="item.action.id">
++        <a t-if="item.action" class="oe_sidebar_action_a" t-att-id="item.element_id" t-att-title="item.title" href="#" t-att-data-action-id="item.action.id" t-att = "{'test_id':'sidebar_'+item.action.id}">
+             <t t-esc="item.label"/>
+         </a>
+         <a t-if="!item.action" class="oe_sidebar_action_a" t-att-id="item.element_id" t-att-title="item.title" href="#">
+@@ -628,7 +628,7 @@
+                     <tr>
+                         <td t-if="!no_leaf and options.action_buttons !== false" class="oe-actions">
+                             <button type="button" class="oe_button oe-list-add"
+-                                    t-if="options.addable">
++                                t-if="options.addable" t-att="{'test_id':widget_parent.model + '_create_list'}">
+                                 <t t-esc="options.addable"/>
+                             </button>
+                             <button type="button" class="oe_button oe-list-delete"
+@@ -699,6 +699,7 @@
+     <t t-call="ListView.row">
+         <t t-set="record" t-value="records.at(index)"/>
+         <t t-set="row_parity" t-value="index_parity"/>
++        <t t-set="test_id" t-value="view.model.replace('.', '_') + '__' + index" />
+     </t>
+ </t>
+ <tr t-name="ListView.row" t-att-class="row_parity"
+@@ -742,8 +743,8 @@
+ <t t-name="FormView">
+     <div class="oe_form_header">
+         <div class="oe_form_buttons" t-if="widget.options.action_buttons !== false">
+-            <button type="button" class="oe_button oe_form_button_save">Save</button>
+-            <button type="button" class="oe_button oe_form_button_cancel">Cancel</button>
++            <button type="button" class="oe_button oe_form_button_save" t-att="{'test_id':'save'}">Save</button>
++            <button type="button" class="oe_button oe_form_button_cancel" t-att="{'test_id':'cancel'}">Cancel</button>
+         </div>
+         <div class="oe_form_pager" t-if="widget.options.pager !== false">
+             <t t-call="ViewPager">
+@@ -760,10 +761,10 @@
+ </t>
+ <t t-name="PageView" t-extend="FormView">
+     <t t-jquery=".oe_form_buttons" t-operation="inner">
+-        <button type="button" class="oe_button oe_form_button_edit">Edit</button>
+-        <button type="button" class="oe_button oe_form_button_create">Create</button>
+-        <button type="button" class="oe_button oe_form_button_duplicate">Duplicate</button>
+-        <button type="button" class="oe_button oe_form_button_delete">Delete</button>
++        <button type="button" class="oe_button oe_form_button_edit" t-att="{'test_id':'edit'}">Edit</button>
++        <button type="button" class="oe_button oe_form_button_create" t-att="{'test_id':'create_form'}">Create</button>
++        <button type="button" class="oe_button oe_form_button_duplicate" t-att="{'test_id':'duplicate'}">Duplicate</button>
++        <button type="button" class="oe_button oe_form_button_delete" t-att="{'test_id':'delete'}">Delete</button>
+     </t>
+ </t>
+ <t t-name="FormView.sidebar.attachments">
+@@ -894,7 +895,7 @@
+ <t t-name="WidgetNotebook">
+     <ul>
+         <li t-foreach="widget.pages" t-as="page">
+-            <a href="#">
++		<a href="#" t-att="{'test_id':widget.view.model+'.'+page.element_name}">
+                 <t t-esc="page.string"/>
+             </a>
+         </li>
+@@ -1006,6 +1007,7 @@
+         t-att-maxlength="widget.field.size"
+         t-attf-class="field_#{widget.type} #{_(['integer', 'float', 'float_time']).contains(widget.type) ? 'oe-number' : ''}"
+         style="width: 100%"
++	t-att="{'test_id':widget.view.model+'.'+widget.name}"
+     /><img class="oe_field_translate oe_input_icon" t-if="widget.field.translate" t-att-src='_s + "/web/static/src/img/icons/terp-translate.png"' width="16" height="16" border="0"/>
+ </t>
+ <t t-name="FieldChar.readonly">
+@@ -1053,15 +1055,19 @@
+         t-att-id="widget.element_id"
+         t-att-maxlength="widget.field.size"
+         t-attf-class="field_#{widget.type}"
++        t-att="{'test_id':widget.view.model+'.'+widget.name}"
+         style="width: 100%"
+     ></textarea><img class="oe_field_translate oe_input_icon" t-if="widget.field.translate" t-att-src='_s + "/web/static/src/img/icons/terp-translate.png"' width="16" height="16" border="0"/>
+ </t>
+ <t t-name="web.datetimepicker">
+-    <div class="oe_datepicker_root">
++    <div class="oe_datepicker_root"
++	    t-att-id="widget.element_id">
+         <input type="text" size="1" class="oe_datepicker_container" disabled="disabled" style="display: none;"/>
+         <input type="text" size="1" style="width: 100%"
+             t-att-name="widget.name"
+             t-attf-class="oe_datepicker_master field_#{widget.type_of_date}"
++	    t-att-id="widget.element_id"
++	    t-att = "{'test_id':widget.widget_parent.view.model+'.'+widget.widget_parent.name}"
+         /><img class="oe_input_icon oe_datepicker_trigger" t-att-src='_s + "/web/static/src/img/ui/field_calendar.png"'
+              title="Select date" width="16" height="16" border="0"/>
+     </div>
+@@ -1130,6 +1136,7 @@
+     <input type="checkbox"
+         t-att-name="widget.name"
+         t-att-id="widget.element_id"
++	    t-att = "{'test_id':widget.widget_parent.model+'.'+widget.name}"
+         t-attf-class="field_#{widget.type}"/>
+ </t>
+ <t t-name="FieldProgressBar">
+@@ -1237,7 +1244,8 @@
+     </table>
+ </t>
+ <t t-name="WidgetButton">
+-    <button type="button" class="oe_button">
++    <button type="button" class="oe_button"
++	    t-att = "{'test_id':widget.widget_parent.model+'.'+widget.node.attrs.name}">
+         <img t-if="widget.node.attrs.icon" t-att-src="_s + '/web/static/src/img/icons/' + widget.node.attrs.icon + '.png'" width="16" height="16"/>
+         <span t-if="widget.string"><t t-esc="widget.string"/></span>
+     </button>
+@@ -1278,9 +1286,9 @@
+     <form class="oe_forms">
+         <t t-call="SearchView.render_lines"/>
+         <div class="oe_search-view-buttons">
+-            <button class="oe_button">Search</button>
+-            <button class="oe_button" type="reset">Clear</button>
+-            <select class="oe_search-view-filters-management">
++            <button class="oe_button" t-att="{'test_id':'list_search_search'}">Search</button>
++            <button class="oe_button" t-att="{'test_id':'list_search_clear'}" type="reset">Clear</button>
++            <select class="oe_search-view-filters-management" t-att="{'test_id':'list_search_list'}">
+             </select>
+         </div>
+     </form>
+@@ -1290,17 +1298,18 @@
+     <optgroup label="-- Filters --">
+         <t t-foreach="filters" t-as="filter">
+             <option t-attf-value="get:#{filter_index}"
+-                    t-att-disabled="filter.disabled and 'disabled'"
++		    t-att-disabled="filter.disabled and 'disabled'"
++		    t-att="{'test_id':'list_search_filter_'+filter_index}"
+                     t-att-title="filter.disabled and disabled_filter_message">
+                 <t t-esc="filter.name"/>
+             </option>
+         </t>
+     </optgroup>
+     <optgroup label="-- Actions --">
+-        <option value="advanced_filter">Add Advanced Filter</option>
+-        <option value="save_filter">Save Filter</option>
+-        <option value="add_to_dashboard">Add to Dashboard</option>
+-        <option value="manage_filters">Manage Filters</option>
++        <option value="advanced_filter" t-att="{'test_id':'list_search_advanced_filters'}">Add Advanced Filter</option>
++        <option value="save_filter" t-att="{'test_id':'list_search_save_filter'}">Save Filter</option>
++        <option value="add_to_dashboard" t-att="{'test_id':'list_search_add_to_dashboard'}">Add to Dashboard</option>
++        <option value="manage_filters" t-att="{'test_id':'list_search_manage_filters'}">Manage Filters</option>
+     </optgroup>
+ </t>
+ <t t-name="SearchView.managed-filters.add">
+@@ -1335,6 +1344,7 @@
+         t-att-title="attrs.help"
+         t-att-class="classes.join(' ')"
+         t-att-style="style"
++	t-att="{'test_id':'filter_'+attrs.name}"
+         t-att-autofocus="attrs.default_focus === '1' ? 'autofocus' : undefined">
+     <img t-att-src="_s + '/web/static/src/img/icons/' + (attrs.icon || 'gtk-home') + '.png'" width="16" height="16"/>
+     <br t-if="attrs.string"/>
+@@ -1355,7 +1365,8 @@
+     <div t-att-style="style">
+         <input type="text" size="15" t-att-name="attrs.name"
+                t-att-autofocus="attrs.default_focus === '1' ? 'autofocus' : undefined"
+-               t-att-id="element_id"
++	       t-att-id="element_id"
++	       t-att="{'test_id':'search_'+attrs.name}"
+                t-att-value="defaults[attrs.name] || ''"/>
+         <t t-if="filters.length" t-raw="filters.render(defaults)"/>
+     </div>
+@@ -1506,11 +1517,11 @@
+ </t>
+ <t t-name="SelectCreatePopup.form.buttons">
+     <t t-if="widget.options.disable_multiple_selection">
+-        <button type="button" class="oe_button oe_selectcreatepopup-form-save">Save</button>
++	    <button type="button" class="oe_button oe_selectcreatepopup-form-save" t-att="{'test_id':'popup_save'}">Save</button>
+     </t>
+     <t t-if="! widget.options.disable_multiple_selection">
+-        <button type="button" class="oe_button oe_selectcreatepopup-form-save-new">Save &amp; New</button>
+-        <button type="button" class="oe_button oe_selectcreatepopup-form-save">Save &amp; Close</button>
++        <button type="button" class="oe_button oe_selectcreatepopup-form-save-new" t-att="{'test_id':'popup_save-new'}">Save &amp; New</button>
++        <button type="button" class="oe_button oe_selectcreatepopup-form-save" t-att="{'test_id':'popup_save'}">Save &amp; Close</button>
+     </t>
+     <button type="button" class="oe_button oe_selectcreatepopup-form-close">Cancel</button>
+ </t>

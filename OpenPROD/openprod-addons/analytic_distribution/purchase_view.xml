@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+	
+		<!-- FORM VIEW Purchase order line -->
+		<record id='view_form_purchase_order_line_distribution' model='ir.ui.view'>
+			<field name="name">view_form_purchase_order_line_distribution</field>
+			<field name="model">purchase.order.line</field>
+			<field name="priority" eval="1500" />
+			<field name="inherit_id" ref="purchase.view_form_purchase_order_line" />
+			<field name="arch" type="xml">
+				<xpath expr="//page[@name='additional_information']" position="after">
+					<page string="Analytic">
+						<field name="analytic_distribution_ids" nolabel="1" colspan="4" readonly="1">
+						<tree editable="bottom">
+								<field name="type"/>
+								<field name="value"  attrs="{'required': [('type', '!=', 'garbage')]}"/>
+								<field name="company_id"/>
+								<field name="account_id"/>
+								<field name="total"/>
+								<field name="total_currency"/>
+							</tree>
+						</field>
+					</page>
+				</xpath>
+			</field>
+		</record>
+		
+		<!-- FORM VIEW Purchase order -->
+		<record id='view_form_purchase_order_distribution' model='ir.ui.view'>
+			<field name="name">view_form_purchase_order_distribution</field>
+			<field name="model">purchase.order</field>
+			<field name="priority" eval="1500" />
+			<field name="inherit_id" ref="purchase.view_form_purchase_order" />
+			<field name="arch" type="xml">
+				<xpath expr="//field[@name='purchase_order_line_ids']//form//page[@name='additional_information']" position="after">
+					<page string="Analytic">
+						<field name="analytic_distribution_ids" nolabel="1" colspan="4">
+						<tree editable="bottom">
+								<field name="type"/>
+								<field name="value"  attrs="{'required': [('type', '!=', 'garbage')]}"/>
+								<field name="company_id"/>
+								<field name="account_id"/>
+								<field name="total"/>
+								<field name="total_currency"/>
+							</tree>
+						</field>
+					</page>
+				</xpath>
+			</field>
+		</record>
+		
+	</data>
+</openerp>

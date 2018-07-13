@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+	
+		<record model="ir.ui.view" id="view_form_inherit_switch_partner_openprod_document">
+			<field name="name">view_form_inherit_switch_partner_openprod_document</field>
+			<field name="model">switch.document.wizard</field>
+			<field name="inherit_id" ref="base_openprod.view_form_switch_openprod_document" />
+			<field name="arch" type="xml">
+				<xpath expr="//group[@name='new_version_group']" position="after">
+					<group colspan="4" col="4" string="Select the partners to switch">
+						<field name="partner_ids" colspan="4" nolabel="1"/>
+					</group>
+				</xpath>
+			</field>
+		</record>
+
+	</data>
+</openerp>

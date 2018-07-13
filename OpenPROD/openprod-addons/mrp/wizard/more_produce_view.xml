@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+	
+		<record model="ir.ui.view" id="view_form_more_produce">
+			<field name="name">view_form_more_produce</field>
+			<field name="model">more.produce</field>
+			<field name="type">form</field>
+			<field name="arch" type="xml">
+				<form string="More produce">
+					<group colspan="4" col="4">
+						<field name="qty"/>
+						<field name="uom_id"/>
+						<field name="wo_id" invisible="1" />
+					</group>
+					<group colspan="4" col="4" string="Raw material" >
+						<field name="line_rm_ids" nolabel="1" colspan="4" context="{'default_type': 'rm'}" >
+						    <tree string="Line RM" editable="top" >
+						        <field name="product_id" attrs="{'readonly': [('no_modif', '=', True)]}" />
+						        <field name="qty"/>
+						        <field name="uom_id" attrs="{'readonly': [('no_modif', '=', True)]}"  domain="[('category_id', '=', uom_categ_id), ('management_unit', '=', True)]" />
+						        <field name="type" invisible="1" />
+						        <field name="move_id" invisible="1" />
+						        <field name="no_modif" invisible="1" />
+						        <field name="uom_categ_id" invisible="1" />
+						    </tree>
+						</field>
+					</group>
+					<group colspan="4" col="4" string="Final product" >
+						<field name="line_fp_ids" nolabel="1" colspan="4" context="{'default_type': 'fp'}" >
+						    <tree string="Line FP" editable="top" >
+                                <field name="product_id" attrs="{'readonly': [('no_modif', '=', True)]}" />
+                                <field name="qty"/>
+                                <field name="uom_id" attrs="{'readonly': [('no_modif', '=', True)]}" domain="[('category_id', '=', uom_categ_id), ('management_unit', '=', True)]" />
+                                <field name="type" invisible="1" />
+                                <field name="move_id" invisible="1" />
+                                <field name="no_modif" invisible="1" />
+                                <field name="uom_categ_id" invisible="1" />
+                            </tree>
+                        </field>
+					</group>
+					<footer>
+						<button name="validate" string="Validate" type="object" class="oe_highlight" />
+                        or
+						<button string="Close" class="oe_highlight" special="cancel" />
+					</footer>
+				</form>
+			</field>
+		</record>
+
+		<record model="ir.actions.act_window" id="action_more_produce">
+			<field name="name">More produce</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="res_model">more.produce</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">form</field>
+			<field name="target">new</field>
+		</record>
+		
+	</data>
+</openerp>

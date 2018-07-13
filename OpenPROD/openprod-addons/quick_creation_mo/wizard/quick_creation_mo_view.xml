@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+		<!-- FORM VIEW quick_creation_mo -->
+		<record id='view_form_quick_creation_mo_id' model='ir.ui.view'>
+			<field name="name">view_form_quick_creation_mo_id</field>
+			<field name="model">quick.creation.mo</field>
+			<field name="arch" type="xml">
+				<form string="Quick creation of MO" version="8.0">
+					<group colspan="4" col="4">
+						<group colspan="2" col="2">
+							<field name="product_id" domain="[('produce_ok', '=', True)]" />
+							<field name="routing_id" />
+							<field name="warehouse_id" />
+							<field name="categ_uom_id" invisible="1" />
+						</group>
+						<group colspan="2" col="2">
+							<label for="qty" />
+							<div>
+								<field name="qty" class="oe_inline" />
+								<field name="uom_id" domain="[('category_id', '=', categ_uom_id)]" class="oe_inline" />
+							</div>
+							<field name="requested_date" />
+						</group>
+					</group>
+					<group colspan="4" col="4">
+						<group colspan="2" col="2" string="Consomation">
+							<separator colspan="2" string="Labels" />
+							<field name="label_rm_ids" colspan="2" nolabel="1" domain="[('is_active', '=', True), ('state', '=', 'available'), 
+							                                                            ('warehouse_id', '=', warehouse_id)]">
+								<tree string="Labels" editable="bottom">
+									<field name="name" />
+									<field name="product_id" />
+									<field name="uom_qty" />
+									<field name="uom_id" />
+									<field name="lot_id" />
+									<field name="location_id" />
+									<field name="state" />
+								</tree>
+							</field>
+							<separator colspan="2" string="Products" />
+							<field name="product_rm_ids" colspan="2" nolabel="1" context="{'default_is_rm': True}">
+								<tree string="Raw material" editable="bottom">
+									<field name="product_id" />
+									<field name="qty" />
+									<field name="uom_id" domain="[('categ_uom_id', '=', categ_uom_id)]" />
+									<field name="categ_uom_id" invisible="1" />
+									<field name="is_rm" invisible="1" />
+								</tree>
+							</field>
+						</group>
+						<group colspan="2" col="2" string="Production">
+							<separator colspan="2" string="Labels" />
+							<field name="label_fp_ids" colspan="2" nolabel="1" domain="[('state', 'not in', ('reserved', 'quarantine', 'control')), 
+							                                                            ('warehouse_id', '=', warehouse_id)]">
+								<tree string="Labels" editable="bottom">
+									<field name="name" />
+									<field name="product_id" />
+									<field name="uom_qty" />
+									<field name="uom_id" />
+									<field name="lot_id" />
+									<field name="location_id" />
+									<field name="state" />
+								</tree>
+							</field>
+							<separator colspan="2" string="Products" />
+							<field name="product_fp_ids" colspan="2" nolabel="1" context="{'default_is_rm': False}">
+								<tree string="Product finals" editable="bottom">
+									<field name="product_id" />
+									<field name="qty" />
+									<field name="uom_id" domain="[('category_id', '=', categ_uom_id)]" />
+									<field name="categ_uom_id" invisible="1" />
+									<field name="is_rm" invisible="1" />
+								</tree>
+							</field>
+						</group>
+					</group>
+					<footer>
+						<button name="action_validation" string="OK" type="object" class="oe_highlight" />
+						or
+						<button string="Cancel" class="oe_link" special="cancel" />
+					</footer>
+				</form>
+			</field>
+		</record>
+
+		<!-- ACTION quick_creation_mo -->
+		<record id="act_quick_creation_mo_id" model="ir.actions.act_window">
+			<field name="name">Quick creation of MO</field>
+			<field name="res_model">quick.creation.mo</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">form</field>
+			<field name="domain">[]</field>
+			<field name="context">{'dialog_size':'large'}</field>
+			<field name="target">new</field>
+		</record>
+
+
+		<menuitem name="Quick creation of MO" action="act_quick_creation_mo_id" id="menu_quick_creation_mo_id" parent="mrp.menu_production_manufacturing" />
+
+	</data>
+</openerp>

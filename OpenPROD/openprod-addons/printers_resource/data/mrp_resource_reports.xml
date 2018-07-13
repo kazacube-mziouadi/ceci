@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data noupdate="1">
+
+        <record id="report_mrp_resource_barcode" model="printers.report">
+			<field model="ir.model" name="model_id" search="[('model', '=', 'mrp.resource')]"/>
+            <field name="printer_type_id" eval="ref('printers.type_laser')"/>
+            <field name="description">Resource barcode</field>
+            <field name="active_report">True</field>
+        </record>
+
+    </data>
+</openerp>

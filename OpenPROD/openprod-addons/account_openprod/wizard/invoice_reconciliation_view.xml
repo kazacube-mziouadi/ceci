@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+	
+		<record model="ir.ui.view" id="view_form_invoice_reconciliation_wizard">
+			<field name="name">view_form_invoice_reconciliation_wizard</field>
+			<field name="model">invoice.reconciliation.wizard</field>
+			<field name="type">form</field>
+			<field name="arch" type="xml">
+				<form string="Invoice reconcialiation">
+					<field name="invoice_id" invisible="True"/>
+					<field name="currency_id" invisible="1"/>
+					<field name="company_currency_id" invisible="1"/>
+					<field name="same_currency" invisible="1"/>
+					<field name="total_reconcile_amount" invisible="1"/>
+					<field name="total_payment_amount" invisible="1"/>
+					<field name="invoice_type" invisible="1"/>
+					<field name="full_reconcile" invisible="1"/>
+					<field name="no_complete_reconcile" invisible="1"/>
+					<group colspan="4" col="6" string="Payment resume">
+						<field name="partner_id"/>
+						<field name="residual_amount" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+						<field name="residual_company_amount" widget="monetary" options="{'currency_field': 'company_currency_id'}" attrs="{'invisible': [('same_currency', '=', True)]}"/>
+					</group>
+					<group colspan="4" col="4" string="Credits" attrs="{'invisible': [('invoice_type', 'not in', ['out_invoice', 'in_refund'])]}">
+						<field name="credit_ids" colspan="4" nolabel="1">
+							<tree editable="bottom" create="false">
+								<field name="is_partial"/>
+								<field name="account_move_id"/>
+								<field name="name"/>
+								<field name="account_id"/>
+								<field name="date"/>
+								<field name="move_amount"/>
+								<field name="currency_id"/>
+								<field name="invoice_amount"/>
+								<field name="invoice_currency_id"/>
+								<field name="amount_to_reconcile" invisible="1" />
+								<field name="amount_to_reconcile_inv_curr" attrs="{'readonly': [('is_partial', '=', True)]}" sum="Total" />
+							</tree>
+							<form>
+								<field name="currency_id" invisible="1"/>
+								<field name="invoice_currency_id" invisible="1"/>
+								<group colspan="4" col="6" string="Credit details">
+									<field name="is_partial" invisible="1"/>
+									<field name="account_move_id"/>
+									<field name="name"/>
+									<field name="date"/>
+									<field name="account_id"/>
+									<field name="move_amount" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+									<field name="invoice_amount" widget="monetary" options="{'currency_field': 'invoice_currency_id'}"/>
+	                                <field name="amount_to_reconcile" invisible="1" />
+	                                <field name="amount_to_reconcile_inv_curr" attrs="{'readonly': [('is_partial', '=', True)]}"/>
+								</group>
+							</form>
+						</field>
+					</group>
+					<group colspan="4" col="4" string="Debits" attrs="{'invisible': [('invoice_type', 'not in', ['in_invoice', 'out_refund'])]}">
+						<field name="debit_ids" colspan="4" nolabel="1">
+							<tree editable="bottom" create="false">
+								<field name="is_partial"/>
+								<field name="account_move_id"/>
+								<field name="name"/>
+								<field name="account_id"/>
+								<field name="date"/>
+								<field name="move_amount"/>
+								<field name="currency_id"/>
+								<field name="invoice_amount"/>
+								<field name="invoice_currency_id"/>
+                                <field name="amount_to_reconcile" invisible="1" />
+                                <field name="amount_to_reconcile_inv_curr" attrs="{'readonly': [('is_partial', '=', True)]}" sum="Total" />
+							</tree>
+							<form>
+								<field name="currency_id" invisible="1"/>
+								<field name="invoice_currency_id" invisible="1"/>
+								<group colspan="4" col="6" string="Debit details">
+									<field name="account_move_id"/>
+									<field name="name"/>
+									<field name="date"/>
+									<field name="account_id"/>
+									<field name="move_amount" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+									<field name="invoice_amount" widget="monetary" options="{'currency_field': 'invoice_currency_id'}"/>
+									<field name="is_partial"/>
+                                    <field name="amount_to_reconcile" invisible="1" />
+                                    <field name="amount_to_reconcile_inv_curr" attrs="{'readonly': [('is_partial', '=', True)]}"/>
+								</group>
+							</form>
+						</field>
+					</group>
+					<footer>
+                        <button name="create_reconciliation" string="Reconcile" type="object" class="oe_highlight" attrs="{'invisible': [('no_complete_reconcile', '!=', True), ('full_reconcile', '!=', True)]}" />
+                        <button name="create_reconciliation" string="Partial reconcile" type="object" class="oe_highlight" attrs="{'invisible': ['|', ('no_complete_reconcile', '=', True), ('full_reconcile', '=', True)]}" />
+                        <label string='or' style="padding-left:10px;padding-right:10px;" attrs="{'invisible': [('full_reconcile', '=', True)]}"/>
+						<button name="create_reconciliation_with_adjust" string="Reconcile with adjustment" type="object" class="oe_highlight" attrs="{'invisible': [('full_reconcile', '=', True)]}"/>
+						<label string='or' style="padding-left:10px;padding-right:10px;"/>
+						<button string="Cancel" class="oe_link" special="cancel" />
+					</footer>
+				</form>
+			</field>
+		</record>
+
+		<record model="ir.actions.act_window" id="action_invoice_reconciliation_wizard">
+			<field name="name">Reconcile an invoice</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="res_model">invoice.reconciliation.wizard</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">form</field>
+			<field name="target">new</field>
+		</record>
+		
+		<!-- FORM VIEW Account move line reconcile -->
+		<record id="inherit_view_account_move_line_reconcile_full" model="ir.ui.view">
+			<field name="name">inherit_view_account_move_line_reconcile_full</field>
+			<field name="model">account.move.line.reconcile</field>
+			<field name="priority">1500</field>
+			<field name="inherit_id" ref="account.view_account_move_line_reconcile_full" />
+			<field name="arch" type="xml">
+				<xpath expr="//footer" position="replace">
+					<footer>
+						<button name="create_reconciliation" string="Reconcile" type="object" class="oe_highlight" attrs="{'invisible': [('writeoff', '&gt;', 0)]}" />
+						<button name="create_reconciliation" string="Partial reconcile" type="object" class="oe_highlight" attrs="{'invisible': [('writeoff', '&lt;=', 0)]}" />
+						<label string='or' style="padding-left:10px;padding-right:10px;" attrs="{'invisible': [('writeoff', '=', 0)]}" />
+						<button name="create_reconciliation_with_adjust" string="Reconcile with adjustment" type="object" class="oe_highlight" attrs="{'invisible': [('writeoff', '=', 0)]}" />
+						<label string='or' style="padding-left:10px;padding-right:10px;"/>
+						<button string="Cancel" class="oe_link" special="cancel" />
+					</footer>
+				</xpath>
+			</field>
+		</record>
+
+	</data>
+</openerp>

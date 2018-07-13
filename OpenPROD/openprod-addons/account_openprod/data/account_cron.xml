@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data noupdate="1">
+	
+		<record id="ir_cron_merge_group_invoices" model="ir.cron">
+			<field name="name">Group invoices</field>
+			<field name="interval_number">1</field>
+			<field name="interval_type">days</field>
+			<field name="numbercall">-1</field>
+			<field name="doall" eval="False" />
+			<field name="active" eval="True" />
+			<field name="model">account.invoice</field>
+			<field name="function">cron_do_merge</field>
+			<field name="args">()</field>
+		</record>
+
+	</data>
+</openerp>

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+	
+		<!-- FORM VIEW Merge purchases -->
+		<record id='view_form_merge_purchases' model='ir.ui.view'>
+			<field name="name">view_form_merge_purchases</field>
+			<field name="model">merge.purchase</field>
+			<field name="arch" type="xml">
+				<form string="Merge purchases" version="8.0">
+					<sheet>
+						<center>
+							<h1>Caution!</h1>
+						</center>
+						    <p>Orders will only be merged if:<br />
+						     - Purchase Orders are in draft<br />
+						     - Purchase Orders belong to the same partner<br />
+						     - Purchase Orders have same stock location, currency and accounting settings</p>
+						    <p>Lines will only be merged if:<br />
+						     - Order lines are exactly the same except for the quantity, the date and the unit</p>
+							<br />
+						    <p>During the merge, the system will compute the lines quantity with the need quantity<br />
+						       For example, two lines with a quantity of 200 each and a need quantity of 100 each <br />
+						       will be merged in a line with a quantity of 200, and not 400 because the total quantity <br />
+						       of need is 200 </p>
+						    <p>If there is different requested dates in the lines, the system take the minimum of all these dates to fill the new line</p>
+							<br />
+							<br />
+							<br />
+							<center>
+								<button name="merge" string="Merge the selected purchases" type="object" class="oe_highlight" />
+								or
+								<button string="Cancel" class="oe_link" special="cancel" />
+							</center>
+					</sheet>
+				</form>
+			</field>
+		</record>
+
+		<!-- ACTION Merge purchases -->
+		<act_window name="Merge purchases" res_model="merge.purchase" src_model="purchase.order" view_mode="form" target="new" key2="client_action_multi" id="act_merge_purchases" />
+		
+		<!-- FORM VIEW Merge purchases lines -->
+		<record id='view_form_merge_purchases_lines' model='ir.ui.view'>
+			<field name="name">view_form_merge_purchases_lines</field>
+			<field name="model">merge.purchase.line</field>
+			<field name="arch" type="xml">
+				<form string="Merge purchases lines" version="8.0">
+					<sheet>
+						<center>
+							<h1>Caution!</h1>
+						</center>
+						    <p>These lines will only be merged if:<br />
+						     - Their purchase Orders are in draft<br />
+						     - Their purchase Orders belong to the same partner<br />
+						     - Their purchase Orders have same stock location, currency and accounting settings<br />
+						     - they are exactly the same except for the quantity and unit</p>
+							<br />
+							<br />
+							<br />
+							<br />
+							<center>
+								<button name="merge" string="Merge the selected lines" type="object" class="oe_highlight" />
+								or
+								<button string="Cancel" class="oe_link" special="cancel" />
+							</center>
+					</sheet>
+				</form>
+			</field>
+		</record>
+
+		<!-- ACTION Merge purchase lines -->
+		<act_window name="Merge purchases lines" res_model="merge.purchase.line" src_model="purchase.order.line" view_mode="form" target="new" key2="client_action_multi" id="act_merge_purchases_lines" />
+
+	</data>
+</openerp>

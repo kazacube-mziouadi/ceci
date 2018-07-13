@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+
+		<!-- FORM VIEW Product category -->
+		<record id="view_form_product_category_sale_purchase_inherit"
+			model="ir.ui.view">
+			<field name="name">view_form_product_category_sale_purchase_inherit
+			</field>
+			<field name="model">product.category</field>
+			<field name="inherit_id" ref="stock.view_form_product_category_inherit" />
+			<field name="arch" type="xml">
+				<xpath
+					expr="//field[@name='plan_control_ids']//form//field[@name='pdf_file']"
+					position="attributes">
+					<attribute name="attrs">{'invisible': [('type', 'not in',
+						('pdf_receipt', 'pdf_delivery', 'pdf_purchase_mail',
+						'pdf_sale_mail'))], 'required': [('type', 'in',
+						('pdf_receipt',
+						'pdf_delivery', 'pdf_purchase_mail',
+						'pdf_sale_mail'))]}
+					</attribute>
+				</xpath>
+			</field>
+		</record>
+
+		<!-- FORM VIEW Product -->
+		<record id='view_form_product_sale_purchase' model='ir.ui.view'>
+			<field name="name">view_form_product_sale_purchase</field>
+			<field name="model">product.product</field>
+			<field name="priority" eval="1000" />
+			<field name="inherit_id" ref="stock.view_form_product" />
+			<field name="arch" type="xml">
+				<xpath
+					expr="//field[@name='plan_control_ids']//form//field[@name='pdf_file']"
+					position="attributes">
+					<attribute name="attrs">{'invisible': [('type', 'not in',
+						('pdf_receipt', 'pdf_delivery', 'pdf_purchase_mail',
+						'pdf_sale_mail'))], 'required': [('type', 'in',
+						('pdf_receipt',
+						'pdf_delivery', 'pdf_purchase_mail',
+						'pdf_sale_mail'))]}
+					</attribute>
+				</xpath>
+			</field>
+		</record>
+
+	</data>
+</openerp>

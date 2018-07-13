@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+		<!-- FORM VIEW Warehouse stock level -->
+		<record id='view_form_warehouse_stock_level_form' model='ir.ui.view'>
+			<field name="name">warehouse_stock_level_form</field>
+			<field name="model">show.warehouse.stock.level</field>
+			<field name="arch" type="xml">
+				<form string="Warehouse stock level" version="8.0">
+					<field name="product_id" invisible="1" />
+					<field name="line_ids" colspan="4" nolabel="1" readonly="1">
+						<tree>
+							<field name="warehouse_id" />
+							<field name="available_stock" />
+							<field name="virtual_stock" />
+						</tree>
+						<form>
+							<field name="warehouse_id" />
+							<field name="available_stock" />
+							<field name="virtual_stock" />
+						</form>
+					</field>
+				</form>
+			</field>
+		</record>
+	</data>
+</openerp>

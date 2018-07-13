@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+	
+		<!-- ==================== -->
+		<!-- SUPPLIER PERFORMANCE -->
+		<!-- ==================== -->
+		
+		<!-- FORM VIEW Supplier performance -->
+		<record id='view_form_supplier_performance' model='ir.ui.view'>
+			<field name="name">view_form_supplier_performance</field>
+			<field name="model">supplier.performance</field>
+			<field name="arch" type="xml">
+				<form string="Supplier performance analysis" version="8.0">
+					<group colspan="4" col="9">
+						<group colspan="8" col="4">
+							<group colspan="4" col="4">	
+								<group colspan="2" col="2">
+									<field name="supplier_id"/>
+									<field name="year" noformat="1"/>
+									<field name="cat_supplier_id"/>
+								</group>	
+								<group colspan="2" col="2">
+									<field name="date_from"/>
+									<field name="date_to"/>
+									<field name="supplier_grade"/>
+								</group>	
+							</group>
+							<group colspan="4" col="4">
+								<notebook colspan="4">
+									<page string="Indicators">
+										<group colspan="4" col="4">
+											<group colspan="2" col="2">
+												<group colspan="2" col="2" string="Volumetry">
+													<field name="year_revenue"/>
+													<field name="purchase_line_qty"/>
+													<field name="purchased_product_qty"/>
+												</group>
+												<group colspan="2" col="2" string="Delay">
+													<field name="service_rate"/>
+													<field name="late_line_qty"/>
+													<field name="late_day_avg_qty"/>
+												</group>
+												<group colspan="2" col="2" string="Quality">
+													<field name="non_conformity_qty"/>
+												</group>
+											</group>
+											<group colspan="2" col="2" string="Comments">
+												<field name="comment_ids" colspan="2" nolabel="1">
+													<tree>
+														<field name="date"/>
+														<field name="type"/>
+														<field name="description"/>
+													</tree>
+													<form>
+														<group colspan="4" col="4" string="Details">
+															<group colspan="2" col="2">
+																<field name="name" />
+																<field name="type" />
+																<field name="date" />
+															</group>
+															<group colspan="2" col="2" name="note_groupe">
+																<field name="user_id" />
+																<field name="confidentiality" />
+															</group>
+														</group>
+														<group colspan="4" col="4" attrs="{'invisible': [('confidentiality', '!=', 'user')]}">
+															<group colspan="2" col="2" string="Authorized users">
+																<field name="user_ids" colspan="2" nolabel="1"/>
+															</group>
+															<group colspan="2" col="2" string="Authorized groups">
+																<field name="group_ids" colspan="2" nolabel="1"/>
+															</group>
+														</group>						
+														<group colspan="4" col="4" string="Description">
+															<field name="description" colspan="4" nolabel="1"/>
+														</group>
+													</form>
+												</field>
+											</group>
+										</group>
+									</page>
+								</notebook>
+							</group>
+						</group>
+						<group colspan="1" col="1" class="op_shortcuts" name="supp_perf_action_menu">
+							<separator string="Analysis" colspan="1" name="separator_analysis_menu"/>
+							<button class="oe_inline oe_stat_button" type="object" string="Purchase lines" name="show_purchase_line" icon="fa-list-ul" context="{'search_late_line': False}"/>
+							<button class="oe_inline oe_stat_button" type="object" string="Late purchase lines" name="show_late_purchase_line" icon="fa-calendar-times-o" context="{'search_late_line': True}"/>
+							<button class="oe_inline oe_stat_button" type="object" string="Non conformity" name="show_non_conformity_line" icon="fa-exclamation-circle"/>
+						</group>
+					</group>
+				</form>
+			</field>
+		</record>
+		
+		<!-- TREE VIEW Supplier performance -->
+		<record id='view_tree_supplier_performance' model='ir.ui.view'>
+			<field name="name">view_tree_supplier_performance</field>
+			<field name="model">supplier.performance</field>
+			<field name="arch" type="xml">
+				<tree string="Supplier performance" version="8.0">
+					<field name="supplier_id"/>
+					<field name="date_from"/>
+					<field name="date_to"/>
+					<field name="year"/>
+					<field name="supplier_grade"/>
+				</tree>
+			</field>
+		</record>
+		
+		<!-- SEARCH VIEW Supplier performance -->
+		<record id='view_search_supplier_performance' model='ir.ui.view'>
+			<field name="name">view_search_supplier_performance</field>
+			<field name="model">supplier.performance</field>
+			<field name="arch" type="xml">
+				<search version="8.0">
+					<group>
+						<field name="supplier_id"/>
+						<field name="date_from"/>
+						<field name="date_to"/>
+					</group>
+					<newline />
+					<group expand="0" string="Group By...">
+						<filter string="Year" domain="[]" context="{'group_by': 'year'}"/>
+					</group>
+				</search>
+			</field>
+		</record>
+		
+		<!-- ACTION Supplier performance -->
+		<record id="act_supplier_performance" model="ir.actions.act_window">
+		    <field name="name">Supplier performance</field>
+		    <field name="res_model">supplier.performance</field>
+		    <field name="view_type">form</field>
+		    <field name="view_mode">tree,form</field>
+		    <field name="domain">[]</field>
+		    <field name="context">{}</field>
+		    <field name="search_view_id" ref="view_search_supplier_performance"/>
+		</record>
+		
+		<menuitem name="Supplier perfomance" action="act_supplier_performance" id="menu_supplier_performance" parent="purchase.menu_purchase_analysis" groups="purchase.group_menu_purchase_user"/>
+		
+		<!-- ============= -->
+		<!-- NOTE OPENPROD -->
+		<!-- ============= -->
+		
+		<!-- FORM VIEW note openprod -->
+		<record id="view_form_supp_performance_note_openprod_inherit" model="ir.ui.view">
+			<field name="name">view_form_supp_performance_note_openprod_inherit</field>
+			<field name="inherit_id" ref="base_openprod.view_form_note_openprod_id" />
+			<field name="model">note.openprod</field>
+			<field name="arch" type="xml">
+				<xpath expr="//group[@name='note_groupe']" position="inside">
+					<field name="supplier_performance_id" invisible="context.get('from_object', False)"/>
+				</xpath>
+			</field>
+		</record>
+		
+	</data>
+</openerp>

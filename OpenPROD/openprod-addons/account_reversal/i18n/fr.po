@@ -1,0 +1,184 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* account_reversal
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 9.0c\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-05-24 08:51+0000\n"
+"PO-Revision-Date: 2017-05-24 08:51+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: account_reversal
+#: model:ir.model,name:account_reversal.model_account_move
+msgid "Account Entry"
+msgstr "Entrée de compte"
+
+#. module: account_reversal
+#: model:ir.ui.view,arch_db:account_reversal.view_account_move_reverse
+msgid "Cancel"
+msgstr "Annulé"
+
+#. module: account_reversal
+#: model:ir.model.fields,help:account_reversal.field_account_move_to_be_reversed
+msgid "Check this box if your entry has to be reversed at the end of period."
+msgstr "Cocher la case si votre entrée doit être inversée à la fin de la période."
+
+#. module: account_reversal
+#: model:ir.ui.view,arch_db:account_reversal.view_account_move_reverse
+msgid "Create reversal journal entries"
+msgstr "Créer les entrées du journal inversé"
+
+#. module: account_reversal
+#: model:ir.model,name:account_reversal.model_account_move_reverse
+msgid "Create reversal of account moves"
+msgstr "Créer les entrées des mouvements du compte"
+
+#. module: account_reversal
+#: model:ir.model.fields,field_description:account_reversal.field_account_move_reverse_create_uid
+msgid "Created by"
+msgstr "Créé par"
+
+#. module: account_reversal
+#: model:ir.model.fields,field_description:account_reversal.field_account_move_reverse_create_date
+msgid "Created on"
+msgstr "Créé le"
+
+#. module: account_reversal
+#: model:ir.model.fields,field_description:account_reversal.field_account_move_reverse_display_name
+msgid "Display Name"
+msgstr "Afficher Nom"
+
+#. module: account_reversal
+#: model:ir.model.fields,help:account_reversal.field_account_move_reverse_date
+msgid "Enter the date of the reversal account entries. By default, OpenERP proposes the first day of the period following the period of the move to reverse."
+msgstr "Entrer la date de l'inversement des entrées du compte. Par défaut, OpenERP propose le premier jour de la période qui suit la période du mouvement à inverser."
+
+#. module: account_reversal
+#: model:ir.model.fields,field_description:account_reversal.field_account_move_reverse_move_prefix
+msgid "Entries ref. prefix"
+msgstr "Prefix ref. entrées"
+
+#. module: account_reversal
+#: model:ir.model.fields,field_description:account_reversal.field_account_move_reverse_id
+msgid "ID"
+msgstr "ID"
+
+#. module: account_reversal
+#: model:ir.model.fields,help:account_reversal.field_account_move_reverse_period_id
+msgid "If empty, take the period of the date."
+msgstr "Si c'est vide, prendre la période de la date."
+
+#. module: account_reversal
+#: model:ir.model.fields,help:account_reversal.field_account_move_reverse_journal_id
+msgid "If empty, uses the journal of the journal entry to be reversed."
+msgstr "Si c'est vide, utiliser le journal du journal d'entrée à inverser."
+
+#. module: account_reversal
+#: model:ir.model.fields,field_description:account_reversal.field_account_move_reverse_move_line_prefix
+msgid "Items name prefix"
+msgstr "Prefix nom elements"
+
+#. module: account_reversal
+#: model:ir.actions.act_window,name:account_reversal.action_move_to_be_reversed
+#: model:ir.ui.menu,name:account_reversal.menu_move_to_be_reversed
+#: model:ir.ui.view,arch_db:account_reversal.view_account_move_reversal_filter
+msgid "Journal Entries to be Reversed"
+msgstr "Journal d'Entrées à inverser"
+
+#. module: account_reversal
+#: model:ir.model.fields,field_description:account_reversal.field_account_move_reverse___last_update
+msgid "Last Modified on"
+msgstr "Derniére Modification le"
+
+#. module: account_reversal
+#: model:ir.model.fields,field_description:account_reversal.field_account_move_reverse_write_uid
+msgid "Last Updated by"
+msgstr "Derniére Mise à Jour par"
+
+#. module: account_reversal
+#: model:ir.model.fields,field_description:account_reversal.field_account_move_reverse_write_date
+msgid "Last Updated on"
+msgstr "Derniére Mise à Jour le"
+
+#. module: account_reversal
+#: model:ir.model.fields,help:account_reversal.field_account_move_reverse_move_prefix
+msgid "Prefix that will be added to the 'Ref' of the journal entry to be reversed to create the 'Ref' of the reversal journal entry (no space added after the prefix)."
+msgstr "Le prefix qui va être ajouté à la 'Ref' du journal d'entrée à inverser pour créer la 'Ref' du journal d'entrée inverse (pas d'espace ajouté aprés le prefix)."
+
+#. module: account_reversal
+#: model:ir.model.fields,help:account_reversal.field_account_move_reverse_move_line_prefix
+msgid "Prefix that will be added to the name of the journal item to be reversed to create the name of the reversal journal item (a space is added after the prefix)."
+msgstr "Le prefix qui va être ajouté au nom du journal d'élément à inverser pour créer le nom du journal d'élément inverse (un espace est ajouté aprés le prefix)."
+
+#. module: account_reversal
+#: model:ir.model.fields,field_description:account_reversal.field_account_move_reverse_reconcile
+msgid "Reconcile"
+msgstr "Se concilier"
+
+#. module: account_reversal
+#: model:ir.model.fields,field_description:account_reversal.field_account_move_reverse_date
+msgid "Reversal date"
+msgstr "Date d'inversement"
+
+#. module: account_reversal
+#: code:addons/account_reversal/wizard/account_move_reverse.py:56
+#, python-format
+msgid "Reversal Entries"
+msgstr "Entrées Inversées"
+
+#. module: account_reversal
+#: model:ir.model.fields,field_description:account_reversal.field_account_move_reversal_id
+msgid "Reversal Entry"
+msgstr "Entrée Inversée"
+
+#. module: account_reversal
+#: model:ir.model.fields,field_description:account_reversal.field_account_move_reverse_journal_id
+msgid "Reversal journal"
+msgstr "Journal inversé"
+
+#. module: account_reversal
+#: model:ir.model.fields,field_description:account_reversal.field_account_move_reverse_period_id
+msgid "Reversal period"
+msgstr "Période d'inversement"
+
+#. module: account_reversal
+#: model:ir.actions.act_window,name:account_reversal.act_account_move_reverse
+#: model:ir.ui.view,arch_db:account_reversal.view_account_move_reverse
+msgid "Reverse entries"
+msgstr "Entrées inversées"
+
+#. module: account_reversal
+#: model:ir.ui.view,arch_db:account_reversal.view_account_move_reverse
+msgid "This will create reversal for all selected entries whether checked 'to be reversed' or not."
+msgstr "Ceci va créer des inversements pour toutes les entrées sélectionnées qu'elles soient 'à inverser' ou non."
+
+#. module: account_reversal
+#: model:ir.model.fields,field_description:account_reversal.field_account_move_to_be_reversed
+#: model:ir.ui.view,arch_db:account_reversal.view_account_move_reversal_filter
+msgid "To be reversed"
+msgstr "A inverser"
+
+#. module: account_reversal
+#: code:addons/account_reversal/account_reversal.py:53
+#, python-format
+msgid "Wrong company Journal is %s but we have %s"
+msgstr "Erreur le journal de l'entreprise est %s mais vous avez %s"
+
+#. module: account_reversal
+#: code:addons/account_reversal/account_reversal.py:57
+#, python-format
+msgid "Wrong company Period is %s but we have %s"
+msgstr "Erreur la période de l'entreprise est %s mais vous avez %s"
+
+#. module: account_reversal
+#: model:ir.ui.view,arch_db:account_reversal.view_account_move_reverse
+msgid "or"
+msgstr "ou"
+

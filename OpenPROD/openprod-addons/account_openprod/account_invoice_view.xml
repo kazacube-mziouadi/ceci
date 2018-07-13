@@ -1,0 +1,1141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+
+		<record id="account.invoice_form" model="ir.ui.view">
+			<field name="priority" eval="3" />
+		</record>
+
+		<!-- ================ -->
+		<!-- CUSTOMER INVOICE -->
+		<!-- ================ -->
+
+		<!-- FORM VIEW Customer account invoice -->
+		<record id="account_cust_openprod_invoice_form" model="ir.ui.view">
+			<field name="name">account.customer.openprod.invoice.form</field>
+			<field name="model">account.invoice</field>
+			<field name="priority">1</field>
+			<field name="arch" type="xml">
+				<form string="Customer invoice" version="8.0">
+					<header>
+						<button name="action_invoice_sent" type="object" string="Send by Email" attrs="{'invisible':['|',('sent','=',True), ('state', '!=', 'open')]}" class="oe_highlight" groups="base.group_user" />
+						<button name="action_invoice_sent" type="object" string="Send by Email" attrs="{'invisible':['|',('sent','=',False), ('state', '!=', 'open')]}" groups="base.group_user" />
+						<button name="invoice_open" states="draft" string="Validate" class="oe_highlight" groups="base.group_user" />
+						<button name="invoice_open" states="proforma2" string="Validate" groups="base.group_user" />
+						<button name="invoice_pay_customer" type="object" string="Register Payment" attrs="{'invisible': ['|', ('state','!=','open')]}" class="oe_highlight" groups="base.group_user" context="{'default_partner_id':partner_id}" />
+						<button name="invoice_proforma2" states="draft" string="PRO-FORMA" groups="account.group_proforma_invoices" />
+						<button name="invoice_cancel" states="draft,proforma2,open" string="Cancel Invoice" groups="account_openprod.group_cancel_account_invoice" />
+						<button name="action_cancel_draft" states="cancel" string="Reset to Draft" type="object" groups="base.group_user" />
+						<button name='%(account.action_account_state_open)d' type='action' string='Re-Open' groups="account.group_account_invoice" attrs="{'invisible':['|', ('state','&lt;&gt;','paid'), ('reconciled', '=', True)]}" help="This button only appears when the state of the invoice is 'paid' (showing that it has been fully reconciled) and auto-computed boolean 'reconciled' is False (depicting that it's not the case anymore). In other words, the invoice has been dereconciled and it does not fit anymore the 'paid' state. You should press this button to re-open it and let it continue its normal process after having resolved the eventual exceptions it may have created." />
+						<field name="state" widget="statusbar" nolabel="1" statusbar_visible="draft,open,paid" statusbar_colors='{"proforma":"blue","proforma2":"blue"}' />
+					</header>
+					<group colspan="4" col="9">
+						<group colspan="8" col="4">
+							<div class="oe_title">
+								<h1>
+									<label string="Pro Forma Invoice" attrs="{'invisible': [('state','not in',('proforma','proforma2'))]}" />
+									<label string="Refund" attrs="{'invisible': ['|',('state','in',('draft','proforma','proforma2')), ('type','&lt;&gt;','out_refund')]}" />
+									<label string="Draft Invoice" attrs="{'invisible': ['|',('state','not in',('draft',)), ('type','&lt;&gt;','out_invoice')]}" />
+									<label string="Draft Refund" attrs="{'invisible': ['|',('state','not in',('draft',)), ('type','&lt;&gt;','out_refund')]}" />
+									<field name="number" readonly="1" class="oe_inline" attrs="{'invisible': [('state','in',('draft',))]}" />
+								</h1>
+							</div>
+							<group colspan="4" col="6">
+								<group colspan="2" col="2">
+									<field string="Customer" name="partner_id" context="{'search_default_customer':1, 'show_address': 1, 'default_is_company': True, 'default_is_customer': True}" options='{"always_reload": True}' />
+									<field name="lang_id" />
+									<field name="fiscal_position_id" options="{'no_create': True}" domain="[('line_system_domain', '=', [invoice_line_ids, fiscal_position_id])]" />
+									<field name="currency_id" options="{'no_create': True, 'no_open': True}" class="oe_inline" domain="is_readonly_currency and [('id', '=', 0)] or []" />
+									<field name="date_invoice" />
+									<field name="type" invisible="1" />
+									<field name="is_readonly_currency" invisible="1" />
+									<field name="company_currency_id" invisible="1" />
+								</group>
+								<group colspan="2" col="2">
+									<field name="name" />
+									<field name="external_reference" />
+									<field name="period_id" domain="[('state', '=', 'draft'), ('company_id', '=', company_id)]" groups="account.group_account_manager" string="Accounting Period" placeholder="force period" />
+									<field name="origin" />
+								</group>
+								<group colspan="2" col="2">
+									<field name="journal_id" groups="account.group_account_user" on_change="onchange_journal_id(journal_id)" options="{'no_create': True}" />
+									<field domain="[('type','=', 'receivable')]" name="account_id" groups="account.group_account_user" />
+									<field name="company_id" widget="selection" groups="base.group_multi_company" />
+									<field name="partner_order_id" />
+									<field name="delivery_partner_id" />
+								</group>
+							</group>
+							<field name="sent" invisible="1" />
+							<field name="has_payments" invisible="1" />
+							<field name="see_inv_term_line" invisible="1" />
+							<notebook colspan="4">
+								<page string="Invoice Lines">
+									<group colspan="4" col="4">
+										<group colspan="4" col="4" string="Invoice lines">
+											<field name="invoice_line_ids" nolabel="1" widget="one2many_list" context="{'type': type, 'default_company_id': company_id}" colspan="4">
+												<tree string="Invoice Lines">
+													<field name="sequence" widget="handle" />
+													<field name="product_id" />
+													<field name="name" />
+													<field name="company_id" invisible="1" />
+													<field name="account_id" groups="account.group_account_user" domain="[('company_id', '=', parent.company_id), ('journal_id', '=', parent.journal_id), ('type', '=', 'other')]" />
+													<field name="account_analytic_id" groups="analytic.group_analytic_accounting" domain="[('type','!=','view'), ('company_id', '=', parent.company_id), ('state','not in',('close','cancelled'))]" />
+													<field name="quantity" />
+													<field name="uos_id" groups="product.group_uom" on_change="uos_id_change(product_id, uos_id, quantity, name, parent.type, parent.partner_id, parent.fiscal_position_id, price_unit, parent.currency_id, parent.company_id, context)" />
+													<field name="price_unit" widget="monetary" options="{'currency_field': 'currency_id'}" />
+													<field name="discount" groups="sale.group_discount_per_so_line" />
+													<field name="invoice_line_tax_ids" widget="many2many_tags" context="{'type':parent.type}" domain="[('parent_id','=',False),('company_id', '=', parent.company_id)]" />
+													<field name="currency_id" invisible="1" />
+													<field name="price_subtotal" widget="monetary" options="{'currency_field': 'currency_id'}" />
+												</tree>
+												<form string="Invoice Line">
+													<notebook colspan="4">
+														<page string="General">
+															<group colspan="4" col="4">
+																<group colspan="2" col="4" string="Product">
+																	<field name="product_id" required="1" />
+																	<group colspan="2" name="invisible_fields">
+																		<field name="factor" invisible="1" />
+																		<field name="divisor" invisible="1" />
+																		<field name="dual_unit" invisible="1" />
+																		<field name="dual_unit_type" invisible="1" />
+																		<field name="sec_uom_category_id" invisible="1" />
+																		<field name="uom_category_id" invisible="1" />
+																		<field name="uoi_category_id" invisible="1" />
+																		<field name="total_price_currency" invisible="1" />
+																		<field name="currency_rate" invisible="1" />
+																	</group>
+																	<field name="sec_uom_qty" groups="base.group_dual_unit" />
+																	<field name="sec_uom_id" domain="[('category_id', '=', sec_uom_category_id), ('management_unit', '=', True)]" groups="base.group_dual_unit" />
+																	<field name="uom_qty" />
+																	<field name="uom_id" domain="[('category_id', '=', uom_category_id), ('management_unit', '=', True)]" />
+																	<field name="quantity" groups="base.group_uoi" />
+																	<field name="uoi_id" domain="[('category_id', '=', uoi_category_id), ('price_unit', '=', True)]" groups="base.group_uoi" />
+																	<field name="price_unit" />
+																	<field name="invoice_line_tax_ids" widget="many2many_tags" />
+																</group>
+																<group colspan="2" col="2" string="Description and progress">
+																	<field name="name" />
+																	<field name="customer_product_name" />
+																	<field name="customer_product_code" />
+																	<field name="company_id" />
+																</group>
+															</group>
+														</page>
+														<page string="Diverse" name="diverse">
+															<group colspan="4" col="4">
+																<group colspan="2" col="2">
+																	<group colspan="2" col="2" name="divers1" string="Linked documents" />
+																	<group colspan="2" col="2" string="Account">
+																		<field name="account_id" />
+																	</group>
+																	<group colspan="2" col="2" string="Correction">
+																		<field name="correction_amount" />
+																	</group>
+																</group>
+																<group colspan="2" col="2" string="Notes">
+																	<label for="note_invoice_header" />
+																	<field name="note_invoice_header" colspan="2" nolabel="1" />
+																	<label for="note_invoice_intern" />
+																	<field name="note_invoice_intern" colspan="2" nolabel="1" />
+																</group>
+															</group>
+														</page>
+													</notebook>
+												</form>
+											</field>
+										</group>
+										<group colspan="2" col="2" string="Taxes">
+											<field name="tax_line_ids" nolabel="1" colspan="2">
+												<tree editable="bottom" string="Taxes">
+													<field name="name" />
+													<field name="tax_id" invisible="1" />
+													<field name="account_analytic_id" invisible="1" />
+													<field name="sequence" invisible="1" />
+													<field name="manual" invisible="1" />
+													<field name="account_id" groups="account.group_account_invoice" />
+													<field name="amount" />
+													<field name="base_code_id" invisible="1" />
+													<field name="currency_id" invisible="1" />
+													<field name="tax_on_payment" invisible="1" />
+													<field name="account_payment_id" invisible="1" />
+												</tree>
+											</field>
+										</group>
+										<group colspan="1" col="2">
+											<group colspan="2" col="2" string="Payment" attrs="{'invisible': ['|',('residual', '=', 0), ('available_amount', '=', 0)]}">
+												<group colspan="2" />
+												<group class="oe_right" colspan="2">
+													<field name="available_amount" widget="monetary" options="{'currency_field': 'company_currency_id'}" />
+													<field name="convert_amount" widget="monetary" options="{'currency_field': 'company_currency_id'}" attrs="{'invisible': [('convert_amount', '=', 0)]}" />
+												</group>
+												<group colspan="2">
+													<button name='%(action_invoice_reconciliation_wizard)d' type='action' string='Reconcile' groups="account.group_account_invoice" class="oe_right" />
+												</group>
+											</group>
+										</group>
+										<group colspan="1" col="2" string="Total">
+											<group colspan="2" />
+											<group class="oe_subtotal_footer oe_right" colspan="2">
+												<field name="amount_untaxed" widget="monetary" options="{'currency_field': 'currency_id'}" />
+												<field name="amount_tax" widget="monetary" options="{'currency_field': 'currency_id'}" />
+												<field name="amount_total" class="oe_subtotal_footer_separator" widget="monetary" options="{'currency_field': 'currency_id'}" />
+												<field name="residual" groups="account.group_account_user" widget="monetary" options="{'currency_field': 'currency_id'}" />
+												<field name="reconciled" invisible="1" />
+											</group>
+											<button name="unreconcile_invoice" string="Unreconcile" type="object" confirm="Are you sure to unreconcile this record ?" attrs="{'invisible': [('has_payments', '=', False)]}" />
+										</group>
+									</group>
+								</page>
+								<page string="Address">
+									<group colspan="4" col="4">
+										<group colspan="2" col="2">
+											<group colspan="2" col="4" string="Principal address">
+												<field name="address_id" />
+												<label string="" colspan="2" />
+												<field name="corporate_name" colspan="4" />
+												<field name="street" />
+												<field name="zip" />
+												<field name="street2" />
+												<field name="city" />
+												<field name="street3" />
+												<field name="region_id" domain="[('country_id','=',country_id)]" />
+												<label string="" colspan="2" />
+												<field name="country_id" attrs="{'required': [('address_id','!=',False)]}" />
+											</group>
+											<group colspan="2" col="4" string="Customer invoicing">
+												<group colspan="2" col="2">
+													<field name="accounting_manager_id" />
+													<field name="lock_invoice" />
+													<field name="group_invoices" />
+													<field name="invoice_send_address_id" />
+													<field name="invoices_period" attrs="{'invisible': [('group_invoices','=',False)], 'required': [('group_invoices','!=',False)]}" />
+												</group>
+												<group colspan="2" col="2">
+													<field name="contact_ids" options="{'no_create': True}" widget="many2many_tags" domain="[('invoice_contact_in_partner_account', '=', partner_id)]" />
+													<field name="communication_method" />
+													<field name="communication_value" />
+												</group>
+											</group>
+										</group>
+										<group colspan="2" col="2">
+											<group colspan="2" col="2" string="Legal information">
+												<field name="declaration_deb" />
+												<field name="tva_number" />
+												<field name="print_packaging_list" />
+												<field name="delivery_country_id" />
+											</group>
+											<group colspan="2" col="2" string="Notes">
+												<separator colspan="2" string="Note on the printed invoice's header" />
+												<field name="note_invoice_header" nolabel="1" />
+												<separator colspan="2" string="Note on the internal invoice's header" />
+												<field name="note_invoice_intern" nolabel="1" />
+											</group>
+										</group>
+									</group>
+								</page>
+								<page string="Payments">
+									<group colspan="4" col="6" string="Payment process management">
+										<field name="payment_term_id" class="oe_inline" required="1" />
+										<field name="payment_method_id" />
+										<field name="paid_by_id" />
+										<field name="date_due" />
+										<field name="partner_bank_id" domain="[('partner_id', '=', paid_by_id)]" />
+										<field name="move_id" groups="account.group_account_user" />
+										<field name="discount_management" />
+										<field name="max_delay" attrs="{'invisible': [('discount_management','=',False)], 'required': [('discount_management','!=',False)]}" />
+										<field name="discount_value" attrs="{'invisible': [('discount_management','=',False)], 'required': [('discount_management','!=',False)]}" />
+										<separator colspan="6" string="Payments list" />
+										<field name="payment_ids" colspan="6" nolabel="1">
+											<tree string="Payments">
+												<field name="date" />
+												<field name="move_id" />
+												<field name="ref" />
+												<field name="name" />
+												<field name="journal_id" groups="base.group_user" />
+												<field name="debit" />
+												<field name="credit" />
+												<field name="amount_currency" groups="base.group_multi_currency" />
+												<field name="currency_id" groups="base.group_multi_currency" />
+											</tree>
+										</field>
+										<separator colspan="6" string="Disbursement" />
+										<field name="disbursement_move_id" />
+										<separator colspan="6" string="Payment terms" attrs="{'invisible': [('see_inv_term_line','=',False)]}" />
+										<field name="inv_term_line_ids" colspan="6" nolabel="1" attrs="{'invisible': [('see_inv_term_line','=',False)]}">
+											<tree string="Payment terms">
+												<field name="due_date" />
+												<field name="amount" />
+												<field name="remaining_amount" />
+											</tree>
+											<form>
+												<group colspan="4" col="6">
+													<field name="due_date" />
+													<field name="amount" />
+													<field name="remaining_amount" />
+												</group>
+											</form>
+										</field>
+									</group>
+								</page>
+								<page string="Emails">
+									<group colspan="4" col="4" string="Emails">
+										<field name="reminder_date" />
+										<field name="reminder_nb" />
+										<field name="mail_ids" colspan="4" nolabel="1" />
+									</group>
+								</page>
+							</notebook>
+						</group>
+						<group colspan="1" col="1" class="op_shortcuts" name="customer_account_action_menu">
+							<separator string="Actions" colspan="1" name="separator_action_menu" attrs="{'invisible': [('state', 'not in', ('draft', 'open', 'proforma2', 'paid'))]}" />
+							<button name="action_send_mail_reminder" type="object" string="Reminder" class="oe_inline oe_stat_button" icon="fa-envelope" />
+							<button name="%(account.action_account_invoice_refund)d" type='action' string='Refund Invoice' states='open,proforma2,paid' groups="base.group_user" class="oe_inline oe_stat_button" icon="fa-file-o" />
+							<button class="oe_inline oe_stat_button" type="action" string="Change account system" name="%(action_invoice_change_account_system)d" icon="fa-usd" attrs="{'invisible': [('state', '!=', 'draft')]}" />
+							<button name="button_reset_taxes" states="draft,proforma2" string="Update taxes" class="oe_inline oe_stat_button" icon="fa-calculator" type="object" help="Recompute taxes and total" />
+						</group>
+					</group>
+				</form>
+			</field>
+		</record>
+
+		<record id="account.action_invoice_tree1_view2" model="ir.actions.act_window.view">
+			<field eval="2" name="sequence" />
+			<field name="view_mode">form</field>
+			<field name="view_id" ref="account_cust_openprod_invoice_form" />
+			<field name="act_window_id" ref="account.action_invoice_tree1" />
+		</record>
+
+		<record id="account.action_invoice_tree_view2" model="ir.actions.act_window.view">
+			<field eval="2" name="sequence" />
+			<field name="view_mode">form</field>
+			<field name="view_id" ref="account_cust_openprod_invoice_form" />
+			<field name="act_window_id" ref="account.action_invoice_tree" />
+		</record>
+
+		<record id="account.action_invoice_tree3_view2" model="ir.actions.act_window.view">
+			<field eval="2" name="sequence" />
+			<field name="view_mode">form</field>
+			<field name="view_id" ref="account_cust_openprod_invoice_form" />
+			<field name="act_window_id" ref="account.action_invoice_tree3" />
+		</record>
+
+		<record id="account.action_invoice_refund_out_tree_form" model="ir.actions.act_window.view">
+			<field eval="2" name="sequence" />
+			<field name="view_mode">form</field>
+			<field name="view_id" ref="account_cust_openprod_invoice_form" />
+			<field name="act_window_id" ref="account.action_invoice_refund_out_tree" />
+		</record>
+
+		<record id="account.action_invoice_tree1" model="ir.actions.act_window">
+			<field name="domain">[('type','=','out_invoice')]</field>
+		</record>
+
+		<!-- ACTION Customers refunds -->
+		<record id="action_customer_refund" model="ir.actions.act_window">
+			<field name="name">Customer Refunds</field>
+			<field name="res_model">account.invoice</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form,calendar,graph</field>
+			<field eval="False" name="view_id" />
+			<field name="domain">[('type','=','out_refund')]</field>
+			<field name="context">{'default_type':'out_refund', 'type':'out_refund', 'journal_type': 'sale_refund'}</field>
+			<field name="search_view_id" ref="account.view_account_invoice_filter" />
+		</record>
+
+		<record id="action_customer_refund_tree" model="ir.actions.act_window.view">
+			<field eval="1" name="sequence" />
+			<field name="view_mode">tree</field>
+			<field name="view_id" ref="account.invoice_tree" />
+			<field name="act_window_id" ref="action_customer_refund" />
+		</record>
+
+		<record id="action_customer_refund_form" model="ir.actions.act_window.view">
+			<field eval="2" name="sequence" />
+			<field name="view_mode">form</field>
+			<field name="view_id" ref="account_cust_openprod_invoice_form" />
+			<field name="act_window_id" ref="action_customer_refund" />
+		</record>
+
+		<menuitem action="action_customer_refund" id="menu_action_customer_refund" parent="account.menu_finance_receivables" groups="account.group_menu_customer_account" />
+
+
+		<record id="account_cust_openprod_invoice_line_form" model="ir.ui.view">
+			<field name="name">account.customer.openprod.invoice.line.form</field>
+			<field name="model">account.invoice.line</field>
+			<field name="priority">1000</field>
+			<field name="arch" type="xml">
+				<form string="Customer invoice line">
+					<group colspan="4" col="4" attrs="{'readonly': [('product_id', '!=', False)]}">
+						<notebook colspan="4">
+							<page string="General">
+								<group colspan="4" col="4">
+									<group colspan="2" col="4" string="Product">
+										<field name="product_id" required="1" />
+										<group colspan="2" name="invisible_fields">
+											<field name="factor" invisible="1" />
+											<field name="divisor" invisible="1" />
+											<field name="sec_uom_category_id" invisible="1" />
+											<field name="uom_category_id" invisible="1" />
+											<field name="uoi_category_id" invisible="1" />
+											<field name="total_price_currency" invisible="1" />
+											<field name="currency_rate" invisible="1" />
+										</group>
+										<field name="sec_uom_qty" groups="base.group_dual_unit" />
+										<field name="sec_uom_id" domain="[('category_id', '=', sec_uom_category_id), ('management_unit', '=', True)]" groups="base.group_dual_unit" />
+										<field name="uom_qty" />
+										<field name="uom_id" domain="[('category_id', '=', uom_category_id), ('management_unit', '=', True)]" />
+										<field name="quantity" groups="base.group_uoi" />
+										<field name="uoi_id" domain="[('category_id', '=', uoi_category_id), ('price_unit', '=', True)]" groups="base.group_uoi" />
+										<field name="price_unit" />
+										<field name="invoice_line_tax_ids" widget="many2many_tags" />
+									</group>
+									<group colspan="2" col="2" string="Description and progress">
+										<field name="name" />
+										<field name="customer_product_name" />
+										<field name="customer_product_code" />
+										<field name="company_id" />
+									</group>
+								</group>
+							</page>
+							<page string="Diverse" name="diverse">
+								<group colspan="4" col="4">
+									<group colspan="2" col="2">
+										<group colspan="2" col="2" name="divers1" string="Linked documents" />
+										<group colspan="2" col="2" string="Account">
+											<field name="account_id" />
+										</group>
+										<group colspan="2" col="2" string="Correction">
+											<field name="correction_amount" />
+										</group>
+									</group>
+									<group colspan="2" col="2" string="Notes">
+										<label for="note_invoice_header" />
+										<field name="note_invoice_header" colspan="2" nolabel="1" />
+										<label for="note_invoice_intern" />
+										<field name="note_invoice_intern" colspan="2" nolabel="1" />
+									</group>
+								</group>
+							</page>
+						</notebook>
+					</group>
+				</form>
+			</field>
+		</record>
+
+
+		<record id="account_cust_openprod_invoice_line_tree" model="ir.ui.view">
+			<field name="name">account.customer.openprod.invoice.line.tree</field>
+			<field name="model">account.invoice.line</field>
+			<field name="priority">1000</field>
+			<field name="arch" type="xml">
+				<tree string="Customer invoice line">
+					<field name="sequence" widget="handle" />
+					<field name="partner_id" string="Customer" />
+					<field name="name" />
+					<field name="product_id" />
+					<field name="date_invoice" />
+					<field name="period_id" />
+					<field name="account_id" groups="account.group_account_user" domain="[('company_id', '=', parent.company_id), ('journal_id', '=', parent.journal_id), ('type', '=', 'other')]" />
+					<field name="account_analytic_id" groups="analytic.group_analytic_accounting" domain="[('type','!=','view'), ('company_id', '=', parent.company_id), ('state','not in',('close','cancelled'))]" />
+					<field name="quantity" />
+					<field name="uos_id" groups="product.group_uom" on_change="uos_id_change(product_id, uos_id, quantity, name, parent.type, parent.partner_id, parent.fiscal_position_id, price_unit, parent.currency_id, parent.company_id, context)" />
+					<field name="price_unit" widget="monetary" options="{'currency_field': 'currency_id'}" />
+					<field name="discount" groups="sale.group_discount_per_so_line" />
+					<field name="currency_id" invisible="1" />
+					<field name="price_subtotal" widget="monetary" options="{'currency_field': 'currency_id'}" />
+					<field name="state" />
+					<field name="company_id" />
+				</tree>
+			</field>
+		</record>
+
+
+		<record id="view_account_invoice_line_filter" model="ir.ui.view">
+			<field name="name">account.invoice.line.select</field>
+			<field name="model">account.invoice.line</field>
+			<field name="arch" type="xml">
+				<search string="Search Invoice">
+					<field name="partner_id" operator="child_of" />
+					<field name="period_id" string="Period" />
+					<field name="product_id" />
+					<field name="state" />
+					<group expand="0" string="Group By">
+						<filter name="group_by_state" string="Status" context="{'group_by':'state'}" />
+						<filter name="group_by_partner_id" string="Partner" context="{'group_by':'partner_id'}" />
+						<separator />
+						<filter name="group_by_period_id" string="Period" context="{'group_by':'period_id'}" />
+						<filter name="group_by_date_invoice" string="Month" context="{'group_by':'date_invoice'}" />
+						<separator />
+						<filter name="group_by_product_id" string="Product" context="{'group_by':'product_id'}" />
+					</group>
+				</search>
+			</field>
+		</record>
+
+
+		<record model="ir.actions.act_window" id="customer_line_invoice_action">
+			<field name="name">Customer invoices lines</field>
+			<field name="res_model">account.invoice.line</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+			<field name="target">current</field>
+			<field name="domain">[('type', 'in', ('out_invoice', 'out_refund'))]</field>
+			<field name="search_view_id" ref="view_account_invoice_line_filter" />
+		</record>
+
+		<record id="action_customer_line_invoice_tree" model="ir.actions.act_window.view">
+			<field eval="1" name="sequence" />
+			<field name="view_mode">tree</field>
+			<field name="view_id" ref="account_cust_openprod_invoice_line_tree" />
+			<field name="act_window_id" ref="customer_line_invoice_action" />
+		</record>
+
+		<record id="action_customer_line_invoice_form" model="ir.actions.act_window.view">
+			<field eval="2" name="sequence" />
+			<field name="view_mode">form</field>
+			<field name="view_id" ref="account_cust_openprod_invoice_line_form" />
+			<field name="act_window_id" ref="customer_line_invoice_action" />
+		</record>
+
+		<menuitem string="Customer line invoice" action="customer_line_invoice_action" id="menu_customer_line_invoice_action" parent="account.menu_finance_receivables" groups="account.group_menu_customer_account" />
+
+
+		<!-- SEARCH VIEW account invoice -->
+		<record id="view_account_openprod_invoice_filter" model="ir.ui.view">
+			<field name="name">view_account_openprod_invoice_filter</field>
+			<field name="inherit_id" ref="account.view_account_invoice_filter" />
+			<field name="model">account.invoice</field>
+			<field name="arch" type="xml">
+				<xpath expr="//filter[@name='draft']" position="after">
+					<filter name="due_date" string="Due date exceeded" domain="[('date_due','&lt;=',(datetime.date.today().strftime('%%Y-%%m-%%d'))), ('state', 'not in', ['paid','cancel'])]" />
+				</xpath>
+			</field>
+		</record>
+
+		<!-- ================ -->
+		<!-- SUPPLIER INVOICE -->
+		<!-- ================ -->
+
+		<!-- FORM VIEW Supplier account invoice -->
+		<record id="account_supp_openprod_invoice_form" model="ir.ui.view">
+			<field name="name">account.supplier.openprod.invoice.form</field>
+			<field name="model">account.invoice</field>
+			<field name="priority">2</field>
+			<field name="arch" type="xml">
+				<form string="Supplier invoice" version="8.0">
+					<header>
+						<button name="invoice_open" states="draft,proforma2" string="Validate" class="oe_highlight" groups="account.group_account_invoice" />
+						<button name="invoice_pay_customer" type="object" string="Pay" states="open" class="oe_highlight" groups="base.group_user" context="{'default_partner_id':partner_id}" />
+						<button name="invoice_cancel" states="draft,proforma2,open" string="Cancel Invoice" groups="account_openprod.group_cancel_account_invoice" />
+						<button name="action_cancel_draft" states="cancel" string="Set to Draft" type="object" groups="account.group_account_invoice" />
+						<button name='%(account.action_account_state_open)d' type='action' string='Re-Open' groups="account.group_account_invoice" attrs="{'invisible':['|', ('state','&lt;&gt;','paid'), ('reconciled', '=', True)]}" help="This button only appears when the state of the invoice is 'paid' (showing that it has been fully reconciled) and auto-computed boolean 'reconciled' is False (depicting that it's not the case anymore). In other words, the invoice has been dereconciled and it does not fit anymore the 'paid' state. You should press this button to re-open it and let it continue its normal process after having resolved the eventual exceptions it may have created." />
+						<field name="state" widget="statusbar" nolabel="1" statusbar_visible="draft,open,paid" statusbar_colors='{"proforma":"blue","proforma2":"blue"}' />
+					</header>
+					<group colspan="4" col="9">
+						<group colspan="8" col="4">
+							<div class="oe_title">
+								<h1>
+									<label string="Pro Forma Invoice" attrs="{'invisible': [('state','not in',('proforma','proforma2'))]}" />
+									<label string="Refund" attrs="{'invisible': ['|',('state','in',('draft','proforma','proforma2')), ('type','&lt;&gt;','in_refund')]}" />
+									<label string="Draft Invoice" attrs="{'invisible': ['|',('state','not in',('draft',)), ('type','&lt;&gt;','in_invoice')]}" />
+									<label string="Draft Refund" attrs="{'invisible': ['|',('state','not in',('draft',)), ('type','&lt;&gt;','in_refund')]}" />
+									<field name="number" readonly="1" class="oe_inline" attrs="{'invisible': [('state','in',('draft',))]}" />
+								</h1>
+							</div>
+							<group colspan="4" col="6">
+								<group colspan="2" col="2">
+									<field string="Supplier" name="partner_id" context="{'search_default_supplier':1, 'show_address': 1, 'default_is_company': True, 'default_is_supplier': True}" options='{"always_reload": True}' />
+									<field name="lang_id" />
+									<field name="fiscal_position_id" options="{'no_create': True}" domain="[('line_system_domain', '=', [invoice_line_ids, fiscal_position_id])]" />
+									<field name="currency_id" class="oe_inline" attrs="{'readonly': [('is_readonly_currency', '=', True)]}" />
+									<field name="date_invoice" />
+									<field name="type" invisible="1" />
+                                    <field name="is_readonly_currency" invisible="1" />
+								</group>
+								<group colspan="2" col="2">
+									<field name="name" />
+									<field name="external_reference" />
+									<field name="period_id" domain="[('state', '=', 'draft'), ('company_id', '=', company_id)]" groups="account.group_account_manager" string="Accounting Period" placeholder="force period" />
+									<field name="origin" />
+								</group>
+								<group colspan="2" col="2">
+									<field name="journal_id" groups="account.group_account_user" on_change="onchange_journal_id(journal_id)" options="{'no_create': True}" />
+									<field domain="[('type','=', 'payable')]" name="account_id" groups="account.group_account_user" />
+									<field name="company_id" widget="selection" groups="base.group_multi_company" />
+									<field string="Supplier who sell" name="partner_order_id" />
+									<field string="Supplier who deliver" name="delivery_partner_id" />
+								</group>
+							</group>
+							<field name="has_payments" invisible="1" />
+							<field name="see_inv_term_line" invisible="1" />
+							<notebook colspan="4">
+								<page string="Invoice Lines">
+									<group colspan="4" col="4">
+										<group colspan="4" col="4" string="Invoice lines">
+											<field name="invoice_line_ids" nolabel="1" widget="one2many_list" context="{'type': type, 'default_company_id': company_id}" colspan="4">
+												<tree string="Invoice Lines">
+													<field name="sequence" widget="handle" />
+													<field name="product_id" />
+													<field name="name" />
+													<field name="company_id" invisible="1" />
+													<field name="account_id" groups="account.group_account_user" domain="[('company_id', '=', parent.company_id), ('journal_id', '=', parent.journal_id), ('type', '=', 'other')]" />
+													<field name="account_analytic_id" groups="analytic.group_analytic_accounting" domain="[('type','!=','view'), ('company_id', '=', parent.company_id), ('state','not in',('close','cancelled'))]" />
+													<field name="quantity" />
+													<field name="uos_id" groups="product.group_uom" on_change="uos_id_change(product_id, uos_id, quantity, name, parent.type, parent.partner_id, parent.fiscal_position_id, price_unit, parent.currency_id, parent.company_id, context)" />
+													<field name="price_unit" widget="monetary" options="{'currency_field': 'currency_id'}" />
+													<field name="discount" groups="sale.group_discount_per_so_line" />
+													<field name="invoice_line_tax_ids" widget="many2many_tags" context="{'type':parent.type}" domain="[('parent_id','=',False),('company_id', '=', parent.company_id)]" />
+													<field name="currency_id" invisible="1" />
+													<field name="price_subtotal" widget="monetary" options="{'currency_field': 'currency_id'}" />
+												</tree>
+												<form string="Invoice Line">
+													<notebook colspan="4">
+														<page string="General">
+															<group colspan="4" col="4">
+																<group colspan="2" col="4" string="Product">
+																	<field name="product_id" required="1" />
+																	<group colspan="2" name="invisible_fields">
+																		<field name="factor" invisible="1" />
+																		<field name="divisor" invisible="1" />
+																		<field name="dual_unit" invisible="1" />
+																		<field name="dual_unit_type" invisible="1" />
+																		<field name="sec_uom_category_id" invisible="1" />
+																		<field name="uom_category_id" invisible="1" />
+																		<field name="uoi_category_id" invisible="1" />
+																		<field name="total_price_currency" invisible="1" />
+																		<field name="currency_rate" invisible="1" />
+																	</group>
+																	<field name="sec_uom_qty" groups="base.group_dual_unit" />
+																	<field name="sec_uom_id" domain="[('category_id', '=', sec_uom_category_id), ('management_unit', '=', True)]" groups="base.group_dual_unit" />
+																	<field name="uom_qty" />
+																	<field name="uom_id" domain="[('category_id', '=', uom_category_id), ('management_unit', '=', True)]" />
+																	<field name="quantity" groups="base.group_uoi" />
+																	<field name="uoi_id" domain="[('category_id', '=', uoi_category_id), ('price_unit', '=', True)]" groups="base.group_uoi" />
+																	<field name="price_unit" />
+																	<field name="invoice_line_tax_ids" widget="many2many_tags" />
+																</group>
+																<group colspan="2" col="2" string="Description and progress">
+																	<field name="name" />
+																	<label for="customer_product_name" string="Supplier product name" />
+																	<field name="customer_product_name" nolabel="1" />
+																	<label for="customer_product_code" string="Supplier product code" />
+																	<field name="customer_product_code" nolabel="1" />
+																	<field name="company_id" />
+																</group>
+															</group>
+														</page>
+														<page string="Diverse" name="diverse">
+															<group colspan="4" col="4">
+																<group colspan="2" col="2">
+																	<group colspan="2" col="2" name="divers1" string="Linked documents" />
+																	<group colspan="2" col="2" string="Account">
+																		<field name="account_id" />
+																	</group>
+																	<group colspan="2" col="2" string="Correction">
+																		<field name="correction_amount" />
+																	</group>
+																</group>
+																<group colspan="2" col="2" string="Notes">
+																	<label for="note_invoice_header" />
+																	<field name="note_invoice_header" colspan="2" nolabel="1" />
+																	<label for="note_invoice_intern" />
+																	<field name="note_invoice_intern" colspan="2" nolabel="1" />
+																</group>
+															</group>
+														</page>
+													</notebook>
+												</form>
+											</field>
+										</group>
+										<group colspan="2" col="2" string="Taxes">
+											<separator colspan="2" />
+											<field name="tax_line_ids" nolabel="1" colspan="2">
+												<tree editable="bottom" string="Taxes">
+													<field name="name" />
+													<field name="tax_id" invisible="1" />
+													<field name="account_analytic_id" invisible="1" />
+													<field name="sequence" invisible="1" />
+													<field name="manual" invisible="1" />
+													<field name="account_id" groups="account.group_account_invoice" />
+													<field name="amount" />
+													<field name="base_code_id" invisible="1" />
+													<field name="currency_id" invisible="1" />
+												</tree>
+											</field>
+										</group>
+										<group colspan="1" col="2">
+											<group colspan="1" col="2" string="Payment" attrs="{'invisible': ['|',('residual', '=', 0), ('available_amount', '=', 0)]}">
+												<group colspan="2" />
+												<group class="oe_right" colspan="2">
+													<field name="available_amount" widget="monetary" options="{'currency_field': 'currency_id'}" />
+													<field name="convert_amount" widget="monetary" options="{'currency_field': 'currency_id'}" attrs="{'invisible': [('convert_amount', '=', 0)]}" />
+												</group>
+												<group colspan="2">
+													<button name='%(action_invoice_reconciliation_wizard)d' type='action' string='Reconcile' groups="account.group_account_invoice" class="oe_right" />
+												</group>
+											</group>
+										</group>
+										<group colspan="1" col="2" string="Total">
+											<group colspan="2" />
+											<group class="oe_subtotal_footer oe_right" colspan="2">
+												<field name="amount_untaxed" widget="monetary" options="{'currency_field': 'currency_id'}" />
+												<field name="amount_tax" widget="monetary" options="{'currency_field': 'currency_id'}" />
+												<field name="amount_total" class="oe_subtotal_footer_separator" widget="monetary" options="{'currency_field': 'currency_id'}" />
+												<field name="residual" groups="account.group_account_user" widget="monetary" options="{'currency_field': 'currency_id'}" />
+												<field name="reconciled" invisible="1" />
+											</group>
+											<button name="unreconcile_invoice" string="Unreconcile" type="object" confirm="Are you sure to unreconcile this record ?" attrs="{'invisible': [('has_payments', '=', False)]}" />
+										</group>
+									</group>
+								</page>
+								<page string="Address">
+									<group colspan="4" col="4">
+										<group colspan="2" col="2">
+											<group colspan="2" col="4" string="Principal address">
+												<field name="address_id" />
+												<label string="" colspan="2" />
+												<field name="corporate_name" colspan="4" />
+												<field name="street" />
+												<field name="street2" />
+												<field name="street3" />
+												<field name="zip" />
+												<field name="city" />
+												<field name="region_id" domain="[('country_id','=',country_id)]" />
+												<field name="country_id" />
+											</group>
+											<group colspan="2" col="4" string="Supplier invoicing">
+												<group colspan="2" col="2">
+													<field name="accounting_manager_id" />
+													<field name="lock_invoice" />
+												</group>
+											</group>
+										</group>
+										<group colspan="2" col="2">
+											<group colspan="2" col="2" string="Legal information">
+												<field name="declaration_deb" />
+												<field name="tva_number" />
+											</group>
+											<group colspan="2" col="2" string="Notes">
+												<separator colspan="2" string="Note on the printed invoice's header" />
+												<field name="note_invoice_header" nolabel="1" />
+												<separator colspan="2" string="Note on the internal invoice's header" />
+												<field name="note_invoice_intern" nolabel="1" />
+											</group>
+										</group>
+									</group>
+								</page>
+								<page string="Payments">
+									<group colspan="4" col="6" string="Payment process management">
+										<field name="payment_term_id" class="oe_inline" required="1" />
+										<field name="payment_method_id" />
+										<field string="Supplier to pay" name="paid_by_id" />
+										<field name="date_due" />
+										<field name="partner_bank_id" />
+										<field name="move_id" groups="account.group_account_user" />
+										<field name="discount_management" />
+										<field name="max_delay" attrs="{'invisible': [('discount_management','=',False)], 'required': [('discount_management','!=',False)]}" />
+										<field name="discount_value" attrs="{'invisible': [('discount_management','=',False)], 'required': [('discount_management','!=',False)]}" />
+										<separator colspan="6" string="Payments list" />
+										<field name="payment_ids" colspan="6" nolabel="1">
+											<tree string="Payments">
+												<field name="date" />
+												<field name="move_id" />
+												<field name="ref" />
+												<field name="name" />
+												<field name="journal_id" groups="base.group_user" />
+												<field name="debit" />
+												<field name="credit" />
+												<field name="amount_currency" groups="base.group_multi_currency" />
+												<field name="currency_id" groups="base.group_multi_currency" />
+											</tree>
+										</field>
+										<separator colspan="6" string="Payment terms" attrs="{'invisible': [('see_inv_term_line','=',False)]}" />
+										<field name="inv_term_line_ids" colspan="6" nolabel="1" attrs="{'invisible': [('see_inv_term_line','=',False)]}">
+											<tree string="Payment terms">
+												<field name="due_date" />
+												<field name="amount" />
+												<field name="remaining_amount" />
+											</tree>
+											<form>
+												<group colspan="4" col="6">
+													<field name="due_date" />
+													<field name="amount" />
+													<field name="remaining_amount" />
+												</group>
+											</form>
+										</field>
+									</group>
+								</page>
+								<page string="Emails">
+									<group colspan="4" col="4" string="Emails">
+										<field name="reminder_date" />
+										<field name="reminder_nb" />
+										<field name="mail_ids" colspan="4" nolabel="1" />
+									</group>
+								</page>
+							</notebook>
+						</group>
+						<group colspan="1" col="1" class="op_shortcuts" name="supplier_account_action_menu">
+							<separator string="Actions" colspan="1" name="separator_action_menu" attrs="{'invisible': [('state', 'not in', ('draft', 'open', 'paid'))]}" />
+							<button name="action_send_mail_reminder" type="object" string="Reminder" class="oe_inline oe_stat_button" icon="fa-envelope" />
+							<button name="%(account.action_account_invoice_refund)d" type='action' string='Ask Refund' states='open,paid' groups="account.group_account_invoice" class="oe_inline oe_stat_button" icon="fa-file-o" />
+							<button class="oe_inline oe_stat_button" type="action" string="Change account system" name="%(action_invoice_change_account_system)d" icon="fa-usd" attrs="{'invisible': [('state', '!=', 'draft')]}" />
+						</group>
+					</group>
+				</form>
+			</field>
+		</record>
+
+		<!-- ACTION Suppliers refunds -->
+		<record id="action_supplier_refund" model="ir.actions.act_window">
+			<field name="name">Supplier Refunds</field>
+			<field name="res_model">account.invoice</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form,calendar,graph</field>
+			<field eval="False" name="view_id" />
+			<field name="domain">[('type','=','in_refund')]</field>
+			<field name="context">{'default_type': 'in_refund', 'type': 'in_refund', 'journal_type': 'purchase_refund'}</field>
+			<field name="search_view_id" ref="account.view_account_invoice_filter" />
+		</record>
+
+		<record id="action_supplier_refund_tree" model="ir.actions.act_window.view">
+			<field eval="1" name="sequence" />
+			<field name="view_mode">tree</field>
+			<field name="view_id" ref="account.invoice_tree" />
+			<field name="act_window_id" ref="action_supplier_refund" />
+		</record>
+
+		<record id="action_supplier_refund_form" model="ir.actions.act_window.view">
+			<field eval="2" name="sequence" />
+			<field name="view_mode">form</field>
+			<field name="view_id" ref="account_supp_openprod_invoice_form" />
+			<field name="act_window_id" ref="action_supplier_refund" />
+		</record>
+
+		<menuitem action="action_supplier_refund" id="menu_action_supplier_refund" parent="account.menu_finance_payables" groups="account.group_menu_supplier_account" />
+
+
+		<record id="account_suppl_openprod_invoice_line_form" model="ir.ui.view">
+			<field name="name">account.suppl.openprod.invoice.line.form</field>
+			<field name="model">account.invoice.line</field>
+			<field name="priority">1000</field>
+			<field name="arch" type="xml">
+				<form string="Supplier invoice line" version="8.0">
+					<group colspan="4" col="4">
+						<notebook colspan="4" readonly="1">
+							<page string="General">
+								<group colspan="4" col="4">
+									<group colspan="2" col="4" string="Product">
+										<field name="product_id" required="1" />
+										<group colspan="2" name="invisible_fields">
+											<field name="factor" invisible="1" />
+											<field name="divisor" invisible="1" />
+											<field name="sec_uom_category_id" invisible="1" />
+											<field name="uom_category_id" invisible="1" />
+											<field name="uoi_category_id" invisible="1" />
+											<field name="total_price_currency" invisible="1" />
+											<field name="currency_rate" invisible="1" />
+										</group>
+										<field name="sec_uom_qty" groups="base.group_dual_unit" />
+										<field name="sec_uom_id" domain="[('category_id', '=', sec_uom_category_id), ('management_unit', '=', True)]" groups="base.group_dual_unit" />
+										<field name="uom_qty" />
+										<field name="uom_id" domain="[('category_id', '=', uom_category_id), ('management_unit', '=', True)]" />
+										<field name="quantity" groups="base.group_uoi" />
+										<field name="uoi_id" domain="[('category_id', '=', uoi_category_id), ('price_unit', '=', True)]" groups="base.group_uoi" />
+										<field name="price_unit" />
+										<field name="invoice_line_tax_ids" widget="many2many_tags" />
+									</group>
+									<group colspan="2" col="2" string="Description and progress">
+										<field name="name" />
+										<label for="customer_product_name" string="Supplier product name" />
+										<field name="customer_product_name" nolabel="1" />
+										<label for="customer_product_code" string="Supplier product code" />
+										<field name="customer_product_code" nolabel="1" />
+										<field name="company_id" />
+									</group>
+								</group>
+							</page>
+							<page string="Diverse" name="diverse">
+								<group colspan="4" col="4">
+									<group colspan="2" col="2">
+										<group colspan="2" col="2" name="divers1" string="Linked documents" />
+										<group colspan="2" col="2" string="Account">
+											<field name="account_id" />
+										</group>
+										<group colspan="2" col="2" string="Correction">
+											<field name="correction_amount" />
+										</group>
+									</group>
+									<group colspan="2" col="2" string="Notes">
+										<label for="note_invoice_header" />
+										<field name="note_invoice_header" colspan="2" nolabel="1" />
+										<label for="note_invoice_intern" />
+										<field name="note_invoice_intern" colspan="2" nolabel="1" />
+									</group>
+								</group>
+							</page>
+						</notebook>
+					</group>
+				</form>
+			</field>
+		</record>
+
+
+		<record id="account_suppl_openprod_invoice_line_tree" model="ir.ui.view">
+			<field name="name">account.supplier.openprod.invoice.line.tree</field>
+			<field name="model">account.invoice.line</field>
+			<field name="priority">1000</field>
+			<field name="arch" type="xml">
+				<tree string="Supplier invoice line" version="8.0">
+					<field name="sequence" widget="handle" />
+					<field name="partner_id" string="Supplier" />
+					<field name="name" />
+					<field name="product_id" />
+					<field name="date_invoice" />
+					<field name="period_id" />
+					<field name="account_id" groups="account.group_account_user" domain="[('company_id', '=', parent.company_id), ('journal_id', '=', parent.journal_id), ('type', '=', 'other')]" />
+					<field name="account_analytic_id" groups="analytic.group_analytic_accounting" domain="[('type','!=','view'), ('company_id', '=', parent.company_id), ('state','not in',('close','cancelled'))]" />
+					<field name="quantity" />
+					<field name="uos_id" groups="product.group_uom" on_change="uos_id_change(product_id, uos_id, quantity, name, parent.type, parent.partner_id, parent.fiscal_position_id, price_unit, parent.currency_id, parent.company_id, context)" />
+					<field name="currency_id" invisible="1" />
+					<field name="price_unit" widget="monetary" options="{'currency_field': 'currency_id'}" />
+					<field name="price_subtotal" widget="monetary" options="{'currency_field': 'currency_id'}" />
+					<field name="state" />
+					<field name="company_id" />
+				</tree>
+			</field>
+		</record>
+
+
+		<record model="ir.actions.act_window" id="supplier_line_invoice_action">
+			<field name="name">Supplier invoices lines</field>
+			<field name="res_model">account.invoice.line</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+			<field name="target">current</field>
+			<field name="domain">[('type', 'in', ('in_invoice', 'in_refund'))]</field>
+			<field name="search_view_id" ref="view_account_invoice_line_filter" />
+		</record>
+
+		<record id="action_supplier_line_invoice_tree" model="ir.actions.act_window.view">
+			<field eval="1" name="sequence" />
+			<field name="view_mode">tree</field>
+			<field name="view_id" ref="account_suppl_openprod_invoice_line_tree" />
+			<field name="act_window_id" ref="supplier_line_invoice_action" />
+		</record>
+
+		<record id="action_supplier_line_invoice_form" model="ir.actions.act_window.view">
+			<field eval="2" name="sequence" />
+			<field name="view_mode">form</field>
+			<field name="view_id" ref="account_suppl_openprod_invoice_line_form" />
+			<field name="act_window_id" ref="supplier_line_invoice_action" />
+		</record>
+
+		<menuitem string="Supplier line invoice" action="supplier_line_invoice_action" id="menu_supplier_line_invoice_action" parent="account.menu_finance_payables" groups="account.group_menu_supplier_account" />
+
+
+
+		<record id="account.action_invoice_tree2" model="ir.actions.act_window">
+			<field name="domain">[('type','=','in_invoice')]</field>
+		</record>
+
+
+		<record id="action_invoice_tree2_view1" model="ir.actions.act_window.view">
+			<field eval="1" name="sequence" />
+			<field name="view_mode">tree</field>
+			<field name="view_id" ref="account.invoice_tree" />
+			<field name="act_window_id" ref="account.action_invoice_tree2" />
+		</record>
+
+		<record id="action_invoice_tree2_view2" model="ir.actions.act_window.view">
+			<field eval="2" name="sequence" />
+			<field name="view_mode">form</field>
+			<field name="view_id" ref="account_supp_openprod_invoice_form" />
+			<field name="act_window_id" ref="account.action_invoice_tree2" />
+		</record>
+
+
+		<!-- ============ -->
+		<!-- INVOICE LINE -->
+		<!-- ============ -->
+
+		<record id="view_openprod_invoice_line_form" model="ir.ui.view">
+			<field name="name">account.openprod.invoice.line.form</field>
+			<field name="model">account.invoice.line</field>
+			<field name="priority">1</field>
+			<field name="arch" type="xml">
+				<form string="Invoice Line">
+					<notebook colspan="4">
+						<page string="General">
+							<group colspan="4" col="4">
+								<group colspan="2" col="4" string="Product">
+									<field name="product_id" domain="[('sale_ok', '=', True), ('state', 'in', ['dev','lifeserie','endlife'])]" required="1" />
+									<group colspan="2" name="invisible_fields">
+										<field name="factor" invisible="1" />
+										<field name="divisor" invisible="1" />
+										<field name="sec_uom_category_id" invisible="1" />
+										<field name="uom_category_id" invisible="1" />
+										<field name="uoi_category_id" invisible="1" />
+									</group>
+									<field name="sec_uom_qty" groups="base.group_dual_unit" />
+									<field name="sec_uom_id" domain="[('category_id', '=', sec_uom_category_id), ('management_unit', '=', True)]" groups="base.group_dual_unit" />
+									<field name="uom_qty" />
+									<field name="uom_id" domain="[('category_id', '=', uom_category_id), ('management_unit', '=', True)]" />
+									<field name="quantity" groups="base.group_uoi" />
+									<field name="uoi_id" domain="[('category_id', '=', uoi_category_id), ('price_unit', '=', True)]" groups="base.group_uoi" />
+									<field name="price_unit" />
+									<field name="invoice_line_tax_ids" widget="many2many_tags" />
+								</group>
+								<group colspan="2" col="2" string="Description and progress">
+									<field name="name" />
+									<field name="customer_product_name" />
+									<field name="customer_product_code" />
+								</group>
+							</group>
+						</page>
+						<page string="Diverse" name="diverse">
+							<group colspan="4" col="4">
+								<group colspan="2" col="2">
+									<group colspan="2" col="2" name="divers1" string="Linked documents" />
+									<group colspan="2" col="2" string="Account">
+										<field name="account_id" />
+									</group>
+									<group colspan="2" col="2" string="Correction">
+										<field name="correction_amount" />
+									</group>
+								</group>
+								<group colspan="2" col="2" string="Notes">
+									<label for="note_invoice_header" />
+									<field name="note_invoice_header" colspan="2" nolabel="1" />
+									<label for="note_invoice_intern" />
+									<field name="note_invoice_intern" colspan="2" nolabel="1" />
+								</group>
+							</group>
+						</page>
+					</notebook>
+				</form>
+			</field>
+		</record>
+
+		<!-- ============== -->
+		<!-- INVOICE ACTION -->
+		<!-- ============== -->
+
+		<!-- ACTION See partner's invoices -->
+		<record model="ir.actions.act_window" id="action_see_all_invoices">
+			<field name="name">Invoices</field>
+			<field name="res_model">account.invoice</field>
+			<field name="view_type">form</field>
+			<field name="view_id" ref="account.invoice_tree" />
+			<field name="view_mode">tree,form</field>
+			<field name="target">current</field>
+			<field name="domain">[('type', 'in', context.get('type', [])),
+				'|', ('partner_id', '=', context.get('partner_id', False)), ('partner_order_id', '=', context.get('partner_id', False))]
+			</field>
+		</record>
+
+		<!-- ACTION See one invoice -->
+		<record model="ir.actions.act_window" id="action_see_one_invoice">
+			<field name="name">Invoice</field>
+			<field name="res_model">account.invoice</field>
+			<field name="view_type">form</field>
+			<field name="view_id" ref="account_cust_openprod_invoice_form" />
+			<field name="target">current</field>
+		</record>
+
+
+		<!-- =============== -->
+		<!-- Analyse INVOICE -->
+		<!-- =============== -->
+
+		<!-- Analyse de factures -->
+		<record id="view_account_invoice_pivot" model="ir.ui.view">
+			<field name="name">view_account_invoice_pivot</field>
+			<field name="model">account.invoice</field>
+			<field name="arch" type="xml">
+				<pivot string="Account invoice analysis">
+					<field name="partner_id" type="row" />
+					<field name="year" type="col" />
+					<field name="month" type="col" />
+					<field name="week_number" type="col" />
+					<field name="amount_untaxed_signed" type="measure" />
+				</pivot>
+			</field>
+		</record>
+
+
+		<record id="action_account_invoice_pivot_customer" model="ir.actions.act_window">
+			<field name="name">Account invoice analysis</field>
+			<field name="res_model">account.invoice</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">pivot</field>
+			<field name="domain">[('type', 'in', ('out_invoice', 'out_refund'))]</field>
+			<field name="context">{}</field>
+			<field name="view_id" ref="view_account_invoice_pivot" />
+		</record>
+
+
+		<menuitem string="Account invoice analysis" action="action_account_invoice_pivot_customer" id="menu_account_invoice_pivot_customer" parent="account.menu_finance_receivables" />
+
+
+		<record id="action_account_invoice_pivot_supplier" model="ir.actions.act_window">
+			<field name="name">Account invoice analysis</field>
+			<field name="res_model">account.invoice</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">pivot</field>
+			<field name="domain">[('type', 'in', ('in_invoice', 'in_refund'))]</field>
+			<field name="context">{}</field>
+			<field name="view_id" ref="view_account_invoice_pivot" />
+		</record>
+
+
+		<menuitem string="Account invoice analysis" action="action_account_invoice_pivot_supplier" id="menu_account_invoice_pivot_supplier" parent="account.menu_finance_payables" />
+
+
+		<!-- Analyse ligne de factures -->
+		<record id="view_account_invoice_line_pivot" model="ir.ui.view">
+			<field name="name">view_account_invoice_line_pivot</field>
+			<field name="model">account.invoice.line</field>
+			<field name="arch" type="xml">
+				<pivot string="Account invoice line analysis">
+					<field name="product_id" type="row" />
+					<field name="year" type="col" />
+					<field name="month" type="col" />
+					<field name="week_number" type="col" />
+					<field name="total_price_currency" type="measure" />
+				</pivot>
+			</field>
+		</record>
+
+
+		<record id="action_account_invoice_line_pivot_customer" model="ir.actions.act_window">
+			<field name="name">Account invoice line analysis</field>
+			<field name="res_model">account.invoice.line</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">pivot</field>
+			<field name="domain">[('type', 'in', ('out_invoice', 'out_refund'))]</field>
+			<field name="context">{}</field>
+			<field name="view_id" ref="view_account_invoice_line_pivot" />
+		</record>
+
+
+		<menuitem string="Account invoice line analysis" action="action_account_invoice_line_pivot_customer" id="menu_account_invoice_line_pivot_customer" parent="account.menu_finance_receivables" />
+
+
+		<record id="action_account_invoice_line_pivot_supplier" model="ir.actions.act_window">
+			<field name="name">Account invoice line analysis</field>
+			<field name="res_model">account.invoice.line</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">pivot</field>
+			<field name="domain">[('type', 'in', ('in_invoice', 'in_refund'))]</field>
+			<field name="context">{}</field>
+			<field name="view_id" ref="view_account_invoice_line_pivot" />
+		</record>
+
+
+		<menuitem string="Account invoice line analysis" action="action_account_invoice_line_pivot_supplier" id="menu_account_invoice_line_pivot_supplier" parent="account.menu_finance_payables" />
+
+
+	</data>
+</openerp>

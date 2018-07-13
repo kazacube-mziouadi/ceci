@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+		<record model="ir.ui.view" id="volume_calculate_form_view">
+			<field name="name">view.form.volume.calculate</field>
+			<field name="model">shipment.call.volume.calculate</field>
+			<field name="arch" type="xml">
+				<form string="Volume Calculate">
+					<group colspan="4" col="4">
+						<center>
+							<table>
+								<tr>
+									<th>
+										<center>Nb (CM)</center>
+									</th>
+									<th>
+										<center>Length (CM)</center>
+									</th>
+									<th>
+										<center>Width (CM)</center>
+									</th>
+									<th>
+										<center>Height (CM)</center>
+									</th>
+									<th>
+										<center>Volume (M3)</center>
+									</th>
+								</tr>
+								<tr>
+									<td>
+										<field name="nb_1" />
+									</td>
+									<td>
+										<field name="length_1" />
+									</td>
+									<td>
+										<field name="width_1" />
+									</td>
+									<td>
+										<field name="height_1" />
+									</td>
+									<td>
+										<field name="volume_1" />
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<field name="nb_2" />
+									</td>
+									<td>
+										<field name="length_2" />
+									</td>
+									<td>
+										<field name="width_2" />
+									</td>
+									<td>
+										<field name="height_2" />
+									</td>
+									<td>
+										<field name="volume_2" />
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<field name="nb_3" />
+									</td>
+									<td>
+										<field name="length_3" />
+									</td>
+									<td>
+										<field name="width_3" />
+									</td>
+									<td>
+										<field name="height_3" />
+									</td>
+									<td>
+										<field name="volume_3" />
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<field name="nb_4" />
+									</td>
+									<td>
+										<field name="length_4" />
+									</td>
+									<td>
+										<field name="width_4" />
+									</td>
+									<td>
+										<field name="height_4" />
+									</td>
+									<td>
+										<field name="volume_4" />
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<field name="nb_5" />
+									</td>
+									<td>
+										<field name="length_5" />
+									</td>
+									<td>
+										<field name="width_5" />
+									</td>
+									<td>
+										<field name="height_5" />
+									</td>
+									<td>
+										<field name="volume_5" />
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<field name="nb_6" />
+									</td>
+									<td>
+										<field name="length_6" />
+									</td>
+									<td>
+										<field name="width_6" />
+									</td>
+									<td>
+										<field name="height_6" />
+									</td>
+									<td>
+										<field name="volume_6" />
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<field name="nb_7" />
+									</td>
+									<td>
+										<field name="length_7" />
+									</td>
+									<td>
+										<field name="width_7" />
+									</td>
+									<td>
+										<field name="height_7" />
+									</td>
+									<td>
+										<field name="volume_7" />
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<field name="nb_8" />
+									</td>
+									<td>
+										<field name="length_8" />
+									</td>
+									<td>
+										<field name="width_8" />
+									</td>
+									<td>
+										<field name="height_8" />
+									</td>
+									<td>
+										<field name="volume_8" />
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<field name="nb_9" />
+									</td>
+									<td>
+										<field name="length_9" />
+									</td>
+									<td>
+										<field name="width_9" />
+									</td>
+									<td>
+										<field name="height_9" />
+									</td>
+									<td>
+										<field name="volume_9" />
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<field name="nb_10" />
+									</td>
+									<td>
+										<field name="length_10" />
+									</td>
+									<td>
+										<field name="width_10" />
+									</td>
+									<td>
+										<field name="height_10" />
+									</td>
+									<td>
+										<field name="volume_10" />
+									</td>
+								</tr>
+								<tr>
+									<td>
+									</td>
+									<td>
+									</td>
+									<td>
+									</td>
+									<td>
+									</td>
+									<td>
+										<field name="total_volume" />
+									</td>
+								</tr>
+							</table>
+						</center>
+					</group>
+					                   <footer>
+                        <button name="validate" string="OK" type="object" class="oe_highlight" />
+                        or
+                        <button string="Cancel" class="oe_link" special="cancel" />
+                    </footer>
+				</form>
+			</field>
+		</record>
+		<record model="ir.actions.act_window" id="action_volume_calculate">
+			<field name="name">Volume calculate</field>
+			<field name="res_model">shipment.call.volume.calculate</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">form</field>
+			<field name="target">new</field>
+		</record>
+
+	</data>
+</openerp>

@@ -1,0 +1,371 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+
+		<!-- ======= -->
+		<!-- SYNCHRO -->
+		<!-- ======= -->
+		<!-- FORM -->
+		<record model="ir.ui.view" id="db_synchro_synchro_form">
+			<field name="name">db.synchro.synchro.form</field>
+			<field name="model">db.synchro.synchro</field>
+			<field name="priority" eval="1010" />
+			<field name="arch" type="xml">
+				<form string="Synchronization">
+					<group colspan="4" col="4">
+						<field name="model_id" on_change="onchange_model_id()" />
+						<field name="name" />
+						<field name="category_id" />
+						<field name="sequence" />
+					</group>
+					<notebook colspan="4">
+						<page string="Description">
+							<group colspan="4" col="4">
+								<group string="Fields to update" colspan="4" col="4">
+									<field name="field_ids" colspan="4" nolabel="1" domain="[('model_id', '=', model_id)]" />
+								</group>
+								<group string="Constants fields" colspan="2" col="2">
+									<field name="constant_field_ids" colspan="2" nolabel="1" domain="[('model_id', '=', model_id)]">
+										<tree string="Constant fields">
+											<field name="field_id" />
+											<field name="value_tree" />
+										</tree>
+										<form string="Constant field">
+											<group>
+												<field name="field_type" invisible="1" />
+												<field name="field_id" colspan="4" on_change="onchange_field_id(field_id)" domain="[('ttype', 'in', ('many2one', 'integer', 'reference', 'text', 'date', 'datetime', 'boolean', 'char', 'float', 'selection')), ('id', 'in', [y for y in [x[-1] for x in parent.field_ids if x[0] not in [0,2]][0] if [x[-1] for x in parent.field_ids if x[0] not in [0,2]]])]" />
+												<field name="value_char" colspan="4" attrs="{'invisible': [('field_type', 'not in', ('char', 'selection'))]}" />
+												<field name="value_integer" colspan="4" attrs="{'invisible': [('field_type', 'not in', ('integer', 'many2one'))]}" />
+												<field name="value_float" colspan="4" attrs="{'invisible': [('field_type', 'not in', ('float'))]}" />
+												<field name="value_text" colspan="4" attrs="{'invisible': [('field_type', 'not in', ('text'))]}" />
+												<field name="value_boolean" colspan="4" attrs="{'invisible': [('field_type', 'not in', ('boolean'))]}" />
+												<field name="value_date" colspan="4" attrs="{'invisible': [('field_type', 'not in', ('date'))]}" />
+												<field name="value_datetime" colspan="4" attrs="{'invisible': [('field_type', 'not in', ('datetime'))]}" />
+											</group>
+										</form>
+									</field>
+								</group>
+								<group string="Fields to exclude (creation)" colspan="2" col="2">
+									<field name="exclude_field_ids" colspan="2" nolabel="1" domain="[('model_id', '=', model_id)]" />
+								</group>
+							</group>
+							<group string="Domain" colspan="4" col="4">
+								<field name="domain" colspan="4" on_change="onchange_domain(domain, sub_domain, sub_domain2, sub_domain3)" />
+								<field name="is_sub_domain" invisible="1" />
+								<group colspan="4" col="4" attrs="{'invisible':[('is_sub_domain', '!=', True)]}">
+									<separator string="Sub domain" colspan="4" />
+									<field name="sub_domain_model_id" colspan="4" />
+									<field name="sub_domain_field_id" colspan="4" domain="[('model_id', '=', sub_domain_model_id)]" />
+									<field name="sub_domain" colspan="4" nolabel="1" on_change="onchange_domain(domain, sub_domain, sub_domain2, sub_domain3)" />
+								</group>
+							</group>
+							<field name="is_sub_domain2" invisible="1" />
+							<group colspan="4" col="4" attrs="{'invisible':[('is_sub_domain2', '!=', True)]}">
+								<separator string="Sub domain 2" colspan="4" />
+								<field name="sub_domain2_model_id" colspan="4" />
+								<field name="sub_domain2_field_id" colspan="4" domain="[('model_id', '=', sub_domain2_model_id)]" />
+								<field name="sub_domain2" colspan="4" nolabel="1" on_change="onchange_domain(domain, sub_domain, sub_domain2, sub_domain3)" />
+							</group>
+							<field name="is_sub_domain3" invisible="1" />
+							<group colspan="4" col="4" attrs="{'invisible':[('is_sub_domain3', '!=', True)]}">
+								<separator string="Sub domain 3" colspan="4" />
+								<field name="sub_domain3_model_id" colspan="4" />
+								<field name="sub_domain3_field_id" colspan="4" domain="[('model_id', '=', sub_domain3_model_id)]" />
+								<field name="sub_domain3" colspan="4" nolabel="1" on_change="onchange_domain(domain, sub_domain, sub_domain2, sub_domain3)" />
+							</group>
+							<group colspan="4" col="4" string="Vizualisation">
+								<button string="Vizualisation" name="records_vizualisation_button" type="object" icon="fa-eye" class="oe_inline oe_stat_button" />
+								<field name="record_ids" colspan="4" nolabel="1" readonly="1">
+									<tree>
+										<field name="record_id" />
+										<field name="name" />
+										<field name="state" />
+									</tree>
+								</field>
+							</group>
+						</page>
+						<page string="Convert">
+							<group colspan="4" col="4">
+								<field name="conversion_mode" on_change="onchange_conversion_mode(conversion_mode)" />
+								<group colspan="2" col="4">
+									<field name="is_create" attrs="{'invisible':[('conversion_mode', '=', 'xml_id')]}" />
+									<field name="create_src_link" />
+								</group>
+								<group colspan="4" col="4" attrs="{'invisible':[('conversion_mode', '!=', 'domain')], 'required':[('conversion_mode', '=', 'domain')]}">
+									<group string="Domain" colspan="4">
+										<field name="sync_domain" colspan="4" nolabel="1" />
+									</group>
+								</group>
+								<group colspan="4" col="4" string="Fields conversions">
+									<field name="sync_m2o_ids" colspan="4" nolabel="1" context="{'default_model_id': model_id}">
+										<tree string="Fields conversions">
+											<field name="model_id" invisible="1" />
+											<field name="field_id" domain="[('model_id', '=', model_id), ('ttype', '=', 'many2one')]" />
+											<field name="conversion_mode" />
+											<field name="domain" />
+											<field name="note" />
+										</tree>
+										<form string="Fields conversions">
+											<group>
+												<field name="model_id" invisible="1" />
+												<field name="field_id" on_change="onchange_field_id(field_id)" domain="[('model_id', '=', model_id), ('ttype', 'in', ('many2one', 'many2many','integer', 'reference', 'text'))]" /> <!-- domain="[('id', 'in', context.get('field_ids'))]" -->
+												<field name="field_type" invisible="1" />
+												<field name="conversion_mode" />
+												<field name="relation" attrs="{'invisible': [('field_type', '!=', 'integer')], 'required': [('field_type', '=', 'integer')]}" />
+												<group colspan="4" col="4" attrs="{'invisible': [('conversion_mode', '!=', 'domain')]}">
+													<group string="Domain" colspan="4">
+														<field name="domain" colspan="4" nolabel="1" />
+													</group>
+												</group>
+												<group colspan="4" col="4" attrs="{'invisible': [('field_type', '!=', 'many2many')]}">
+													<group string="M2M Domain" colspan="4">
+														<field name="m2m_domain" colspan="4" nolabel="1" />
+													</group>
+												</group>
+												<group string="Note" colspan="4">
+													<field name="note" nolabel="1" colspan="4" />
+												</group>
+											</group>
+										</form>
+									</field>
+								</group>
+								<group colspan="4" col="4">
+								</group>
+							</group>
+						</page>
+						<page string="Synchronization">
+							<group colspan="4" col="4">
+								<field name="bypass_errors" />
+								<newline />
+								<group colspan="4" col="4" string="Bases">
+									<field name="base_line_ids" colspan="4" nolabel="1">
+										<tree editable="bottom" string="Bases">
+											<field name="base_id" />
+											<button string="Synchronization" name="start_synchro_button" type="object" icon="fa-play" class="oe_inline oe_stat_button" />
+										</tree>
+									</field>
+								</group>
+								<button string="Start synchronization" name="start_synchro_button" type="object" icon="fa-play" class="oe_inline oe_stat_button" colspan="4" />
+								<group colspan="4" col="4" string="History">
+									<field name="history_ids" colspan="4" nolabel="1">
+										<tree string="History">
+											<field name="start_date" />
+											<field name="end_date" />
+											<field name="state" />
+											<field name="base_id" />
+											<field name="nb_record_ok" />
+											<field name="nb_record_ko" />
+											<field name="msg" />
+										</tree>
+										<form string="History">
+											<group>
+												<field name="start_date" />
+												<field name="end_date" />
+												<field name="base_id" />
+												<field name="nb_record_ok" />
+												<field name="nb_record_ko" />
+												<field name="state" />
+												<separator string="Error" colspan="4" />
+												<field name="msg" nolabel="1" colspan="4" />
+											</group>
+										</form>
+									</field>
+								</group>
+							</group>
+						</page>
+						<page string="Planification">
+							<group colspan="4" col="4">
+								<field name="start_after_db_update" />
+							</group>
+						</page>
+					</notebook>
+				</form>
+			</field>
+		</record>
+
+		<!-- TREE -->
+		<record model="ir.ui.view" id="db_synchro_synchro_tree">
+			<field name="name">db.synchro.synchro.tree</field>
+			<field name="model">db.synchro.synchro</field>
+			<field name="priority" eval="1010" />
+			<field name="arch" type="xml">
+				<tree string="Synchronizations">
+					<field name="sequence" />
+					<field name="name" />
+					<field name="model_id" />
+					<field name="category_id" />
+				</tree>
+			</field>
+		</record>
+
+		<!-- SEARCH -->
+		<record model="ir.ui.view" id="db_synchro_synchro_search">
+			<field name="name">db.synchro.synchro.search</field>
+			<field name="model">db.synchro.synchro</field>
+			<field name="priority" eval="1010" />
+			<field name="arch" type="xml">
+				<search>
+					<field name="category_id" />
+					<field name="name" />
+					<field name="model_id" />
+					<field name="start_after_db_update" />
+					<newline />
+					<group expand='0' string='Group by...' groups="base.group_extended">
+						<filter string='Category' icon="gtk-select-color" domain="[]" context="{'group_by' : 'category_id'}" />
+						<filter string='Model' icon="gtk-harddisk" domain="[]" context="{'group_by' : 'model_id'}" />
+					</group>
+				</search>
+			</field>
+		</record>
+
+		<!-- ACTION -->
+		<record model="ir.actions.act_window" id="db_synchro_synchro_action">
+			<field name="name">Synchronizations</field>
+			<field name="res_model">db.synchro.synchro</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+
+		<!-- MENU -->
+		<menuitem id="db_synchro_synchro_menu" name="Synchronizations" parent="db_connection.menu_other_db" action="db_synchro_synchro_action" sequence="5" />
+
+
+		<!-- ======== -->
+		<!-- CATEGORY -->
+		<!-- ======== -->
+		<!-- FORM -->
+		<record model="ir.ui.view" id="db_synchro_category_form">
+			<field name="name">db.synchro.category.form</field>
+			<field name="model">db.synchro.category</field>
+			<field name="priority" eval="1010" />
+			<field name="arch" type="xml">
+				<form string="Category">
+					<sheet>
+						<center>
+							<label class="oe_edit_only" for="name" string="Name" />
+							<h1>
+								<field name="name" class="oe_inline" colspan="4" />
+							</h1>
+						</center>
+						<separator string="Description" colspan="4" />
+						<field name="description" colspan="4" nolabel="1" />
+					</sheet>
+				</form>
+			</field>
+		</record>
+
+		<!-- TREE -->
+		<record model="ir.ui.view" id="db_synchro_category_tree">
+			<field name="name">db.synchro.category.tree</field>
+			<field name="model">db.synchro.category</field>
+			<field name="priority" eval="1010" />
+			<field name="arch" type="xml">
+				<tree string="Categories">
+					<field name="name" />
+					<field name="description" />
+				</tree>
+			</field>
+		</record>
+
+		<!-- SEARCH -->
+		<record model="ir.ui.view" id="db_synchro_category_search">
+			<field name="name">db.synchro.category.search</field>
+			<field name="model">db.synchro.category</field>
+			<field name="priority" eval="1010" />
+			<field name="arch" type="xml">
+				<search>
+					<field name="name" />
+				</search>
+			</field>
+		</record>
+
+		<!-- ACTION -->
+		<record model="ir.actions.act_window" id="db_synchro_category_action">
+			<field name="name">Categories</field>
+			<field name="res_model">db.synchro.category</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+
+		<!-- MENU -->
+		<menuitem id="db_synchro_category_menu" name="Categories" parent="db_connection.menu_other_db" action="db_synchro_category_action" sequence="10" />
+
+
+
+		<!-- ========= -->
+		<!-- LAUNCHING -->
+		<!-- ========= -->
+		<!-- FORM -->
+		<record model="ir.ui.view" id="db_synchro_launching_form">
+			<field name="name">db.synchro.launching.form</field>
+			<field name="model">db.synchro.launching</field>
+			<field name="priority" eval="1010" />
+			<field name="arch" type="xml">
+				<form string="Launching">
+					<group colspan="4" col="4">
+						<field name="date" colspan="4" />
+						<group colspan="4" col="4" string="Configuration">
+							<group string="Synchronizations" colspan="4">
+								<field name="synchro_ids" colspan="4" nolabel="1" />
+							</group>
+							<group string="Bases" colspan="4">
+								<field name="base_ids" colspan="4" nolabel="1" />
+							</group>
+						</group>
+						<group colspan="4" col="4" string="Execution">
+							<field name="last_base_id" />
+							<field name="last_synchro_id" />
+							<field name="last_date" />
+							<field name="state" />
+							<button string="Run from the beginning" name="run" type="object" icon="fa-undo" class="oe_inline oe_stat_button" />
+							<label string="" />
+							<button string="Continue" name="resume" type="object" icon="fa-step-forward" class="oe_inline oe_stat_button" />
+							<group string="Log" colspan="4">
+								<field name="log" colspan="4" nolabel="1" />
+							</group>
+						</group>
+					</group>
+				</form>
+			</field>
+		</record>
+
+		<!-- TREE -->
+		<record model="ir.ui.view" id="db_synchro_launching_tree">
+			<field name="name">db.synchro.launching.tree</field>
+			<field name="model">db.synchro.launching</field>
+			<field name="priority" eval="1010" />
+			<field name="arch" type="xml">
+				<tree string="Launching">
+					<field name="date" />
+					<field name="state" />
+				</tree>
+			</field>
+		</record>
+
+		<!-- SEARCH -->
+		<record model="ir.ui.view" id="db_synchro_launching_search">
+			<field name="name">db.synchro.launching.search</field>
+			<field name="model">db.synchro.launching</field>
+			<field name="priority" eval="1010" />
+			<field name="arch" type="xml">
+				<search>
+					<field name="date" />
+					<field name="state" />
+				</search>
+			</field>
+		</record>
+
+		<!-- ACTION -->
+		<record model="ir.actions.act_window" id="db_synchro_launching_action">
+			<field name="name">Launching</field>
+			<field name="res_model">db.synchro.launching</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+
+		<!-- MENU -->
+		<menuitem id="db_synchro_launching_menu" name="Launching" parent="db_connection.menu_other_db" action="db_synchro_launching_action" sequence="10" />
+
+	</data>
+</openerp>
+		

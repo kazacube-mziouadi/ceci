@@ -1,0 +1,2129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+	    <menuitem name="Perf" id="menu_perf" sequence="900"/>
+		<!-- ========= -->
+        <!-- perf_char -->
+        <!-- ========= -->
+        <!-- FORM VIEW perf_char -->
+        <record id='view_form_perf_char' model='ir.ui.view'>
+            <field name="name">view_form_perf_char</field>
+            <field name="model">perf.char</field>
+            <field name="arch" type="xml">
+                <form string="Perf Char" version="8.0">
+                    <group colspan="4" col="4">
+                        <field name="name1" colspan="2" nolabel="0"/>
+                        <field name="name2" colspan="2" nolabel="0"/>
+                        <field name="name3" colspan="2" nolabel="0"/>
+                        <field name="name4" colspan="2" nolabel="0"/>
+                        <field name="name5" colspan="2" nolabel="0"/>
+                        <field name="name6" colspan="2" nolabel="0"/>
+                        <field name="name7" colspan="2" nolabel="0"/>
+                        <field name="name8" colspan="2" nolabel="0"/>
+                        <field name="name9" colspan="2" nolabel="0"/>
+                        <field name="name10" colspan="2" nolabel="0"/>
+                        <field name="name11" colspan="2" nolabel="0"/>
+                        <field name="name12" colspan="2" nolabel="0"/>
+                        <field name="name13" colspan="2" nolabel="0"/>
+                        <field name="name14" colspan="2" nolabel="0"/>
+                        <field name="name15" colspan="2" nolabel="0"/>
+                        <field name="name16" colspan="2" nolabel="0"/>
+                        <field name="name17" colspan="2" nolabel="0"/>
+                        <field name="name18" colspan="2" nolabel="0"/>
+                        <field name="name19" colspan="2" nolabel="0"/>
+                        <field name="name20" colspan="2" nolabel="0"/>
+                        <field name="name21" colspan="2" nolabel="0"/>
+                        <field name="name22" colspan="2" nolabel="0"/>
+                        <field name="name23" colspan="2" nolabel="0"/>
+                        <field name="name24" colspan="2" nolabel="0"/>
+                        <field name="name25" colspan="2" nolabel="0"/>
+                        <field name="name26" colspan="2" nolabel="0"/>
+                        <field name="name27" colspan="2" nolabel="0"/>
+                        <field name="name28" colspan="2" nolabel="0"/>
+                        <field name="name29" colspan="2" nolabel="0"/>
+                        <field name="name30" colspan="2" nolabel="0"/>
+                        <field name="name31" colspan="2" nolabel="0"/>
+                        <field name="name32" colspan="2" nolabel="0"/>
+                        <field name="name33" colspan="2" nolabel="0"/>
+                        <field name="name34" colspan="2" nolabel="0"/>
+                        <field name="name35" colspan="2" nolabel="0"/>
+                        <field name="name36" colspan="2" nolabel="0"/>
+                        <field name="name37" colspan="2" nolabel="0"/>
+                        <field name="name38" colspan="2" nolabel="0"/>
+                        <field name="name39" colspan="2" nolabel="0"/>
+                        <field name="name40" colspan="2" nolabel="0"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <!-- TREE VIEW Product Packaging -->
+        <record id='view_tree_perf_char' model='ir.ui.view'>
+            <field name="name">view_tree_perf_char</field>
+            <field name="model">perf.char</field>
+            <field name="arch" type="xml">
+                <tree string="Perf Char" version="8.0">
+                    <field name="name1" />
+                    <field name="name2" />
+                    <field name="name3" />
+                    <field name="name4" />
+                    <field name="name5" />
+                    <field name="name6" />
+                    <field name="name7" />
+                    <field name="name8" />
+                    <field name="name9" />
+                    <field name="name10" />
+                    <field name="name11" />
+                    <field name="name12" />
+                    <field name="name13" />
+                    <field name="name14" />
+                    <field name="name15" />
+                    <field name="name16" />
+                    <field name="name17" />
+                    <field name="name18" />
+                    <field name="name19" />
+                    <field name="name20" />
+                    <field name="name21" />
+                    <field name="name22" />
+                    <field name="name23" />
+                    <field name="name24" />
+                    <field name="name25" />
+                    <field name="name26" />
+                    <field name="name27" />
+                    <field name="name28" />
+                    <field name="name29" />
+                    <field name="name30" />
+                    <field name="name31" />
+                    <field name="name32" />
+                    <field name="name33" />
+                    <field name="name34" />
+                    <field name="name35" />
+                    <field name="name36" />
+                    <field name="name37" />
+                    <field name="name38" />
+                    <field name="name39" />
+                    <field name="name40" />
+                </tree>
+            </field>
+        </record>
+
+        <!-- ACTION Product Packaging -->
+        <record id="act_perf_char" model="ir.actions.act_window">
+            <field name="name">Perf Char</field>
+            <field name="res_model">perf.char</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[]</field>
+            <field name="context">{}</field>
+        </record>
+
+        <menuitem name="Perf Char" action="act_perf_char" id="menu_perf_char" parent="menu_perf" />
+        
+        
+        <!-- ========= -->
+        <!-- perf_float -->
+        <!-- ========= -->
+        <!-- FORM VIEW perf_float -->
+        <record id='view_form_perf_float' model='ir.ui.view'>
+            <field name="name">view_form_perf_float</field>
+            <field name="model">perf.float</field>
+            <field name="arch" type="xml">
+                <form string="Perf Float" version="8.0">
+                    <group colspan="4" col="4">
+                        <field name="name1" colspan="2" nolabel="0"/>
+                        <field name="name2" colspan="2" nolabel="0"/>
+                        <field name="name3" colspan="2" nolabel="0"/>
+                        <field name="name4" colspan="2" nolabel="0"/>
+                        <field name="name5" colspan="2" nolabel="0"/>
+                        <field name="name6" colspan="2" nolabel="0"/>
+                        <field name="name7" colspan="2" nolabel="0"/>
+                        <field name="name8" colspan="2" nolabel="0"/>
+                        <field name="name9" colspan="2" nolabel="0"/>
+                        <field name="name10" colspan="2" nolabel="0"/>
+                        <field name="name11" colspan="2" nolabel="0"/>
+                        <field name="name12" colspan="2" nolabel="0"/>
+                        <field name="name13" colspan="2" nolabel="0"/>
+                        <field name="name14" colspan="2" nolabel="0"/>
+                        <field name="name15" colspan="2" nolabel="0"/>
+                        <field name="name16" colspan="2" nolabel="0"/>
+                        <field name="name17" colspan="2" nolabel="0"/>
+                        <field name="name18" colspan="2" nolabel="0"/>
+                        <field name="name19" colspan="2" nolabel="0"/>
+                        <field name="name20" colspan="2" nolabel="0"/>
+                        <field name="name21" colspan="2" nolabel="0"/>
+                        <field name="name22" colspan="2" nolabel="0"/>
+                        <field name="name23" colspan="2" nolabel="0"/>
+                        <field name="name24" colspan="2" nolabel="0"/>
+                        <field name="name25" colspan="2" nolabel="0"/>
+                        <field name="name26" colspan="2" nolabel="0"/>
+                        <field name="name27" colspan="2" nolabel="0"/>
+                        <field name="name28" colspan="2" nolabel="0"/>
+                        <field name="name29" colspan="2" nolabel="0"/>
+                        <field name="name30" colspan="2" nolabel="0"/>
+                        <field name="name31" colspan="2" nolabel="0"/>
+                        <field name="name32" colspan="2" nolabel="0"/>
+                        <field name="name33" colspan="2" nolabel="0"/>
+                        <field name="name34" colspan="2" nolabel="0"/>
+                        <field name="name35" colspan="2" nolabel="0"/>
+                        <field name="name36" colspan="2" nolabel="0"/>
+                        <field name="name37" colspan="2" nolabel="0"/>
+                        <field name="name38" colspan="2" nolabel="0"/>
+                        <field name="name39" colspan="2" nolabel="0"/>
+                        <field name="name40" colspan="2" nolabel="0"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <!-- TREE VIEW Product Packaging -->
+        <record id='view_tree_perf_float' model='ir.ui.view'>
+            <field name="name">view_tree_perf_float</field>
+            <field name="model">perf.float</field>
+            <field name="arch" type="xml">
+                <tree string="Perf Float" version="8.0">
+                    <field name="name1" />
+                    <field name="name2" />
+                    <field name="name3" />
+                    <field name="name4" />
+                    <field name="name5" />
+                    <field name="name6" />
+                    <field name="name7" />
+                    <field name="name8" />
+                    <field name="name9" />
+                    <field name="name10" />
+                    <field name="name11" />
+                    <field name="name12" />
+                    <field name="name13" />
+                    <field name="name14" />
+                    <field name="name15" />
+                    <field name="name16" />
+                    <field name="name17" />
+                    <field name="name18" />
+                    <field name="name19" />
+                    <field name="name20" />
+                    <field name="name21" />
+                    <field name="name22" />
+                    <field name="name23" />
+                    <field name="name24" />
+                    <field name="name25" />
+                    <field name="name26" />
+                    <field name="name27" />
+                    <field name="name28" />
+                    <field name="name29" />
+                    <field name="name30" />
+                    <field name="name31" />
+                    <field name="name32" />
+                    <field name="name33" />
+                    <field name="name34" />
+                    <field name="name35" />
+                    <field name="name36" />
+                    <field name="name37" />
+                    <field name="name38" />
+                    <field name="name39" />
+                    <field name="name40" />
+                </tree>
+            </field>
+        </record>
+
+        <!-- ACTION Product Packaging -->
+        <record id="act_perf_float" model="ir.actions.act_window">
+            <field name="name">Perf Float</field>
+            <field name="res_model">perf.float</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[]</field>
+            <field name="context">{}</field>
+        </record>
+
+        <menuitem name="Perf Float" action="act_perf_float" id="menu_perf_float" parent="menu_perf" />
+        
+        <!-- ========= -->
+        <!-- perf_integer -->
+        <!-- ========= -->
+        <!-- FORM VIEW perf_integer -->
+        <record id='view_form_perf_integer' model='ir.ui.view'>
+            <field name="name">view_form_perf_integer</field>
+            <field name="model">perf.integer</field>
+            <field name="arch" type="xml">
+                <form string="Perf Integer" version="8.0">
+                    <group colspan="4" col="4">
+                        <field name="name1" colspan="2" nolabel="0"/>
+                        <field name="name2" colspan="2" nolabel="0"/>
+                        <field name="name3" colspan="2" nolabel="0"/>
+                        <field name="name4" colspan="2" nolabel="0"/>
+                        <field name="name5" colspan="2" nolabel="0"/>
+                        <field name="name6" colspan="2" nolabel="0"/>
+                        <field name="name7" colspan="2" nolabel="0"/>
+                        <field name="name8" colspan="2" nolabel="0"/>
+                        <field name="name9" colspan="2" nolabel="0"/>
+                        <field name="name10" colspan="2" nolabel="0"/>
+                        <field name="name11" colspan="2" nolabel="0"/>
+                        <field name="name12" colspan="2" nolabel="0"/>
+                        <field name="name13" colspan="2" nolabel="0"/>
+                        <field name="name14" colspan="2" nolabel="0"/>
+                        <field name="name15" colspan="2" nolabel="0"/>
+                        <field name="name16" colspan="2" nolabel="0"/>
+                        <field name="name17" colspan="2" nolabel="0"/>
+                        <field name="name18" colspan="2" nolabel="0"/>
+                        <field name="name19" colspan="2" nolabel="0"/>
+                        <field name="name20" colspan="2" nolabel="0"/>
+                        <field name="name21" colspan="2" nolabel="0"/>
+                        <field name="name22" colspan="2" nolabel="0"/>
+                        <field name="name23" colspan="2" nolabel="0"/>
+                        <field name="name24" colspan="2" nolabel="0"/>
+                        <field name="name25" colspan="2" nolabel="0"/>
+                        <field name="name26" colspan="2" nolabel="0"/>
+                        <field name="name27" colspan="2" nolabel="0"/>
+                        <field name="name28" colspan="2" nolabel="0"/>
+                        <field name="name29" colspan="2" nolabel="0"/>
+                        <field name="name30" colspan="2" nolabel="0"/>
+                        <field name="name31" colspan="2" nolabel="0"/>
+                        <field name="name32" colspan="2" nolabel="0"/>
+                        <field name="name33" colspan="2" nolabel="0"/>
+                        <field name="name34" colspan="2" nolabel="0"/>
+                        <field name="name35" colspan="2" nolabel="0"/>
+                        <field name="name36" colspan="2" nolabel="0"/>
+                        <field name="name37" colspan="2" nolabel="0"/>
+                        <field name="name38" colspan="2" nolabel="0"/>
+                        <field name="name39" colspan="2" nolabel="0"/>
+                        <field name="name40" colspan="2" nolabel="0"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <!-- TREE VIEW Product Packaging -->
+        <record id='view_tree_perf_integer' model='ir.ui.view'>
+            <field name="name">view_tree_perf_integer</field>
+            <field name="model">perf.integer</field>
+            <field name="arch" type="xml">
+                <tree string="Perf Integer" version="8.0">
+                    <field name="name1" />
+                    <field name="name2" />
+                    <field name="name3" />
+                    <field name="name4" />
+                    <field name="name5" />
+                    <field name="name6" />
+                    <field name="name7" />
+                    <field name="name8" />
+                    <field name="name9" />
+                    <field name="name10" />
+                    <field name="name11" />
+                    <field name="name12" />
+                    <field name="name13" />
+                    <field name="name14" />
+                    <field name="name15" />
+                    <field name="name16" />
+                    <field name="name17" />
+                    <field name="name18" />
+                    <field name="name19" />
+                    <field name="name20" />
+                    <field name="name21" />
+                    <field name="name22" />
+                    <field name="name23" />
+                    <field name="name24" />
+                    <field name="name25" />
+                    <field name="name26" />
+                    <field name="name27" />
+                    <field name="name28" />
+                    <field name="name29" />
+                    <field name="name30" />
+                    <field name="name31" />
+                    <field name="name32" />
+                    <field name="name33" />
+                    <field name="name34" />
+                    <field name="name35" />
+                    <field name="name36" />
+                    <field name="name37" />
+                    <field name="name38" />
+                    <field name="name39" />
+                    <field name="name40" />
+                </tree>
+            </field>
+        </record>
+
+        <!-- ACTION Product Packaging -->
+        <record id="act_perf_integer" model="ir.actions.act_window">
+            <field name="name">Perf Integer</field>
+            <field name="res_model">perf.integer</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[]</field>
+            <field name="context">{}</field>
+        </record>
+
+        <menuitem name="Perf Integer" action="act_perf_integer" id="menu_perf_integer" parent="menu_perf" />
+        
+        <!-- ========= -->
+        <!-- perf_date -->
+        <!-- ========= -->
+        <!-- FORM VIEW perf_date -->
+        <record id='view_form_perf_date' model='ir.ui.view'>
+            <field name="name">view_form_perf_date</field>
+            <field name="model">perf.date</field>
+            <field name="arch" type="xml">
+                <form string="Perf Date" version="8.0">
+                    <group colspan="4" col="4">
+                        <field name="name1" colspan="2" nolabel="0"/>
+                        <field name="name2" colspan="2" nolabel="0"/>
+                        <field name="name3" colspan="2" nolabel="0"/>
+                        <field name="name4" colspan="2" nolabel="0"/>
+                        <field name="name5" colspan="2" nolabel="0"/>
+                        <field name="name6" colspan="2" nolabel="0"/>
+                        <field name="name7" colspan="2" nolabel="0"/>
+                        <field name="name8" colspan="2" nolabel="0"/>
+                        <field name="name9" colspan="2" nolabel="0"/>
+                        <field name="name10" colspan="2" nolabel="0"/>
+                        <field name="name11" colspan="2" nolabel="0"/>
+                        <field name="name12" colspan="2" nolabel="0"/>
+                        <field name="name13" colspan="2" nolabel="0"/>
+                        <field name="name14" colspan="2" nolabel="0"/>
+                        <field name="name15" colspan="2" nolabel="0"/>
+                        <field name="name16" colspan="2" nolabel="0"/>
+                        <field name="name17" colspan="2" nolabel="0"/>
+                        <field name="name18" colspan="2" nolabel="0"/>
+                        <field name="name19" colspan="2" nolabel="0"/>
+                        <field name="name20" colspan="2" nolabel="0"/>
+                        <field name="name21" colspan="2" nolabel="0"/>
+                        <field name="name22" colspan="2" nolabel="0"/>
+                        <field name="name23" colspan="2" nolabel="0"/>
+                        <field name="name24" colspan="2" nolabel="0"/>
+                        <field name="name25" colspan="2" nolabel="0"/>
+                        <field name="name26" colspan="2" nolabel="0"/>
+                        <field name="name27" colspan="2" nolabel="0"/>
+                        <field name="name28" colspan="2" nolabel="0"/>
+                        <field name="name29" colspan="2" nolabel="0"/>
+                        <field name="name30" colspan="2" nolabel="0"/>
+                        <field name="name31" colspan="2" nolabel="0"/>
+                        <field name="name32" colspan="2" nolabel="0"/>
+                        <field name="name33" colspan="2" nolabel="0"/>
+                        <field name="name34" colspan="2" nolabel="0"/>
+                        <field name="name35" colspan="2" nolabel="0"/>
+                        <field name="name36" colspan="2" nolabel="0"/>
+                        <field name="name37" colspan="2" nolabel="0"/>
+                        <field name="name38" colspan="2" nolabel="0"/>
+                        <field name="name39" colspan="2" nolabel="0"/>
+                        <field name="name40" colspan="2" nolabel="0"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <!-- TREE VIEW Product Packaging -->
+        <record id='view_tree_perf_date' model='ir.ui.view'>
+            <field name="name">view_tree_perf_date</field>
+            <field name="model">perf.date</field>
+            <field name="arch" type="xml">
+                <tree string="Perf Date" version="8.0">
+                    <field name="name1" />
+                    <field name="name2" />
+                    <field name="name3" />
+                    <field name="name4" />
+                    <field name="name5" />
+                    <field name="name6" />
+                    <field name="name7" />
+                    <field name="name8" />
+                    <field name="name9" />
+                    <field name="name10" />
+                    <field name="name11" />
+                    <field name="name12" />
+                    <field name="name13" />
+                    <field name="name14" />
+                    <field name="name15" />
+                    <field name="name16" />
+                    <field name="name17" />
+                    <field name="name18" />
+                    <field name="name19" />
+                    <field name="name20" />
+                    <field name="name21" />
+                    <field name="name22" />
+                    <field name="name23" />
+                    <field name="name24" />
+                    <field name="name25" />
+                    <field name="name26" />
+                    <field name="name27" />
+                    <field name="name28" />
+                    <field name="name29" />
+                    <field name="name30" />
+                    <field name="name31" />
+                    <field name="name32" />
+                    <field name="name33" />
+                    <field name="name34" />
+                    <field name="name35" />
+                    <field name="name36" />
+                    <field name="name37" />
+                    <field name="name38" />
+                    <field name="name39" />
+                    <field name="name40" />
+                </tree>
+            </field>
+        </record>
+
+        <!-- ACTION Product Packaging -->
+        <record id="act_perf_date" model="ir.actions.act_window">
+            <field name="name">Perf Date</field>
+            <field name="res_model">perf.date</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[]</field>
+            <field name="context">{}</field>
+        </record>
+
+        <menuitem name="Perf Date" action="act_perf_date" id="menu_perf_date" parent="menu_perf" />
+        
+        <!-- ========= -->
+        <!-- perf_datetime -->
+        <!-- ========= -->
+        <!-- FORM VIEW perf_datetime -->
+        <record id='view_form_perf_datetime' model='ir.ui.view'>
+            <field name="name">view_form_perf_datetime</field>
+            <field name="model">perf.datetime</field>
+            <field name="arch" type="xml">
+                <form string="Perf Datetime" version="8.0">
+                    <group colspan="4" col="4">
+                        <field name="name1" colspan="2" nolabel="0"/>
+                        <field name="name2" colspan="2" nolabel="0"/>
+                        <field name="name3" colspan="2" nolabel="0"/>
+                        <field name="name4" colspan="2" nolabel="0"/>
+                        <field name="name5" colspan="2" nolabel="0"/>
+                        <field name="name6" colspan="2" nolabel="0"/>
+                        <field name="name7" colspan="2" nolabel="0"/>
+                        <field name="name8" colspan="2" nolabel="0"/>
+                        <field name="name9" colspan="2" nolabel="0"/>
+                        <field name="name10" colspan="2" nolabel="0"/>
+                        <field name="name11" colspan="2" nolabel="0"/>
+                        <field name="name12" colspan="2" nolabel="0"/>
+                        <field name="name13" colspan="2" nolabel="0"/>
+                        <field name="name14" colspan="2" nolabel="0"/>
+                        <field name="name15" colspan="2" nolabel="0"/>
+                        <field name="name16" colspan="2" nolabel="0"/>
+                        <field name="name17" colspan="2" nolabel="0"/>
+                        <field name="name18" colspan="2" nolabel="0"/>
+                        <field name="name19" colspan="2" nolabel="0"/>
+                        <field name="name20" colspan="2" nolabel="0"/>
+                        <field name="name21" colspan="2" nolabel="0"/>
+                        <field name="name22" colspan="2" nolabel="0"/>
+                        <field name="name23" colspan="2" nolabel="0"/>
+                        <field name="name24" colspan="2" nolabel="0"/>
+                        <field name="name25" colspan="2" nolabel="0"/>
+                        <field name="name26" colspan="2" nolabel="0"/>
+                        <field name="name27" colspan="2" nolabel="0"/>
+                        <field name="name28" colspan="2" nolabel="0"/>
+                        <field name="name29" colspan="2" nolabel="0"/>
+                        <field name="name30" colspan="2" nolabel="0"/>
+                        <field name="name31" colspan="2" nolabel="0"/>
+                        <field name="name32" colspan="2" nolabel="0"/>
+                        <field name="name33" colspan="2" nolabel="0"/>
+                        <field name="name34" colspan="2" nolabel="0"/>
+                        <field name="name35" colspan="2" nolabel="0"/>
+                        <field name="name36" colspan="2" nolabel="0"/>
+                        <field name="name37" colspan="2" nolabel="0"/>
+                        <field name="name38" colspan="2" nolabel="0"/>
+                        <field name="name39" colspan="2" nolabel="0"/>
+                        <field name="name40" colspan="2" nolabel="0"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <!-- TREE VIEW Product Packaging -->
+        <record id='view_tree_perf_datetime' model='ir.ui.view'>
+            <field name="name">view_tree_perf_datetime</field>
+            <field name="model">perf.datetime</field>
+            <field name="arch" type="xml">
+                <tree string="Perf Datetime" version="8.0">
+                    <field name="name1" />
+                    <field name="name2" />
+                    <field name="name3" />
+                    <field name="name4" />
+                    <field name="name5" />
+                    <field name="name6" />
+                    <field name="name7" />
+                    <field name="name8" />
+                    <field name="name9" />
+                    <field name="name10" />
+                    <field name="name11" />
+                    <field name="name12" />
+                    <field name="name13" />
+                    <field name="name14" />
+                    <field name="name15" />
+                    <field name="name16" />
+                    <field name="name17" />
+                    <field name="name18" />
+                    <field name="name19" />
+                    <field name="name20" />
+                    <field name="name21" />
+                    <field name="name22" />
+                    <field name="name23" />
+                    <field name="name24" />
+                    <field name="name25" />
+                    <field name="name26" />
+                    <field name="name27" />
+                    <field name="name28" />
+                    <field name="name29" />
+                    <field name="name30" />
+                    <field name="name31" />
+                    <field name="name32" />
+                    <field name="name33" />
+                    <field name="name34" />
+                    <field name="name35" />
+                    <field name="name36" />
+                    <field name="name37" />
+                    <field name="name38" />
+                    <field name="name39" />
+                    <field name="name40" />
+                </tree>
+            </field>
+        </record>
+
+        <!-- ACTION Product Packaging -->
+        <record id="act_perf_datetime" model="ir.actions.act_window">
+            <field name="name">Perf Datetime</field>
+            <field name="res_model">perf.datetime</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[]</field>
+            <field name="context">{}</field>
+        </record>
+
+        <menuitem name="Perf Datetime" action="act_perf_datetime" id="menu_perf_datetime" parent="menu_perf" />
+        
+        <!-- ========= -->
+        <!-- perf_many2one -->
+        <!-- ========= -->
+        <!-- FORM VIEW perf_many2one -->
+        <record id='view_form_perf_many2one' model='ir.ui.view'>
+            <field name="name">view_form_perf_many2one</field>
+            <field name="model">perf.many2one</field>
+            <field name="arch" type="xml">
+                <form string="Perf Many2one" version="8.0">
+                    <group colspan="4" col="4">
+                        <field name="name1" colspan="2" nolabel="0"/>
+                        <field name="name2" colspan="2" nolabel="0"/>
+                        <field name="name3" colspan="2" nolabel="0"/>
+                        <field name="name4" colspan="2" nolabel="0"/>
+                        <field name="name5" colspan="2" nolabel="0"/>
+                        <field name="name6" colspan="2" nolabel="0"/>
+                        <field name="name7" colspan="2" nolabel="0"/>
+                        <field name="name8" colspan="2" nolabel="0"/>
+                        <field name="name9" colspan="2" nolabel="0"/>
+                        <field name="name10" colspan="2" nolabel="0"/>
+                        <field name="name11" colspan="2" nolabel="0"/>
+                        <field name="name12" colspan="2" nolabel="0"/>
+                        <field name="name13" colspan="2" nolabel="0"/>
+                        <field name="name14" colspan="2" nolabel="0"/>
+                        <field name="name15" colspan="2" nolabel="0"/>
+                        <field name="name16" colspan="2" nolabel="0"/>
+                        <field name="name17" colspan="2" nolabel="0"/>
+                        <field name="name18" colspan="2" nolabel="0"/>
+                        <field name="name19" colspan="2" nolabel="0"/>
+                        <field name="name20" colspan="2" nolabel="0"/>
+                        <field name="name21" colspan="2" nolabel="0"/>
+                        <field name="name22" colspan="2" nolabel="0"/>
+                        <field name="name23" colspan="2" nolabel="0"/>
+                        <field name="name24" colspan="2" nolabel="0"/>
+                        <field name="name25" colspan="2" nolabel="0"/>
+                        <field name="name26" colspan="2" nolabel="0"/>
+                        <field name="name27" colspan="2" nolabel="0"/>
+                        <field name="name28" colspan="2" nolabel="0"/>
+                        <field name="name29" colspan="2" nolabel="0"/>
+                        <field name="name30" colspan="2" nolabel="0"/>
+                        <field name="name31" colspan="2" nolabel="0"/>
+                        <field name="name32" colspan="2" nolabel="0"/>
+                        <field name="name33" colspan="2" nolabel="0"/>
+                        <field name="name34" colspan="2" nolabel="0"/>
+                        <field name="name35" colspan="2" nolabel="0"/>
+                        <field name="name36" colspan="2" nolabel="0"/>
+                        <field name="name37" colspan="2" nolabel="0"/>
+                        <field name="name38" colspan="2" nolabel="0"/>
+                        <field name="name39" colspan="2" nolabel="0"/>
+                        <field name="name40" colspan="2" nolabel="0"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <!-- TREE VIEW Product Packaging -->
+        <record id='view_tree_perf_many2one' model='ir.ui.view'>
+            <field name="name">view_tree_perf_many2one</field>
+            <field name="model">perf.many2one</field>
+            <field name="arch" type="xml">
+                <tree string="Perf Many2one" version="8.0">
+                    <field name="name1" />
+                    <field name="name2" />
+                    <field name="name3" />
+                    <field name="name4" />
+                    <field name="name5" />
+                    <field name="name6" />
+                    <field name="name7" />
+                    <field name="name8" />
+                    <field name="name9" />
+                    <field name="name10" />
+                    <field name="name11" />
+                    <field name="name12" />
+                    <field name="name13" />
+                    <field name="name14" />
+                    <field name="name15" />
+                    <field name="name16" />
+                    <field name="name17" />
+                    <field name="name18" />
+                    <field name="name19" />
+                    <field name="name20" />
+                    <field name="name21" />
+                    <field name="name22" />
+                    <field name="name23" />
+                    <field name="name24" />
+                    <field name="name25" />
+                    <field name="name26" />
+                    <field name="name27" />
+                    <field name="name28" />
+                    <field name="name29" />
+                    <field name="name30" />
+                    <field name="name31" />
+                    <field name="name32" />
+                    <field name="name33" />
+                    <field name="name34" />
+                    <field name="name35" />
+                    <field name="name36" />
+                    <field name="name37" />
+                    <field name="name38" />
+                    <field name="name39" />
+                    <field name="name40" />
+                </tree>
+            </field>
+        </record>
+
+        <!-- ACTION Product Packaging -->
+        <record id="act_perf_many2one" model="ir.actions.act_window">
+            <field name="name">Perf Many2one</field>
+            <field name="res_model">perf.many2one</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[]</field>
+            <field name="context">{}</field>
+        </record>
+
+        <menuitem name="Perf Many2one" action="act_perf_many2one" id="menu_perf_many2one" parent="menu_perf" />
+        
+        <!-- ========= -->
+        <!-- perf_one2many -->
+        <!-- ========= -->
+        <!-- FORM VIEW perf_one2many -->
+        <record id='view_form_perf_one2many' model='ir.ui.view'>
+            <field name="name">view_form_perf_one2many</field>
+            <field name="model">perf.one2many</field>
+            <field name="arch" type="xml">
+                <form string="Perf One2many" version="8.0">
+                    <group colspan="4" col="4">
+                        <field name="name1" colspan="4" nolabel="1"/>
+                        <field name="name2" colspan="4" nolabel="1"/>
+                        <field name="name3" colspan="4" nolabel="1"/>
+                        <field name="name4" colspan="4" nolabel="1"/>
+                        <field name="name5" colspan="4" nolabel="1"/>
+                        <field name="name6" colspan="4" nolabel="1"/>
+                        <field name="name7" colspan="4" nolabel="1"/>
+                        <field name="name8" colspan="4" nolabel="1"/>
+                        <field name="name9" colspan="4" nolabel="1"/>
+                        <field name="name10" colspan="4" nolabel="1"/>
+                        <field name="name11" colspan="4" nolabel="1"/>
+                        <field name="name12" colspan="4" nolabel="1"/>
+                        <field name="name13" colspan="4" nolabel="1"/>
+                        <field name="name14" colspan="4" nolabel="1"/>
+                        <field name="name15" colspan="4" nolabel="1"/>
+                        <field name="name16" colspan="4" nolabel="1"/>
+                        <field name="name17" colspan="4" nolabel="1"/>
+                        <field name="name18" colspan="4" nolabel="1"/>
+                        <field name="name19" colspan="4" nolabel="1"/>
+                        <field name="name20" colspan="4" nolabel="1"/>
+                        <field name="name21" colspan="4" nolabel="1"/>
+                        <field name="name22" colspan="4" nolabel="1"/>
+                        <field name="name23" colspan="4" nolabel="1"/>
+                        <field name="name24" colspan="4" nolabel="1"/>
+                        <field name="name25" colspan="4" nolabel="1"/>
+                        <field name="name26" colspan="4" nolabel="1"/>
+                        <field name="name27" colspan="4" nolabel="1"/>
+                        <field name="name28" colspan="4" nolabel="1"/>
+                        <field name="name29" colspan="4" nolabel="1"/>
+                        <field name="name30" colspan="4" nolabel="1"/>
+                        <field name="name31" colspan="4" nolabel="1"/>
+                        <field name="name32" colspan="4" nolabel="1"/>
+                        <field name="name33" colspan="4" nolabel="1"/>
+                        <field name="name34" colspan="4" nolabel="1"/>
+                        <field name="name35" colspan="4" nolabel="1"/>
+                        <field name="name36" colspan="4" nolabel="1"/>
+                        <field name="name37" colspan="4" nolabel="1"/>
+                        <field name="name38" colspan="4" nolabel="1"/>
+                        <field name="name39" colspan="4" nolabel="1"/>
+                        <field name="name40" colspan="4" nolabel="1"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <!-- TREE VIEW Product Packaging -->
+        <record id='view_tree_perf_one2many' model='ir.ui.view'>
+            <field name="name">view_tree_perf_one2many</field>
+            <field name="model">perf.one2many</field>
+            <field name="arch" type="xml">
+                <tree string="Perf One2many" version="8.0">
+                    <field name="name1" />
+                    <field name="name2" />
+                    <field name="name3" />
+                    <field name="name4" />
+                    <field name="name5" />
+                    <field name="name6" />
+                    <field name="name7" />
+                    <field name="name8" />
+                    <field name="name9" />
+                    <field name="name10" />
+                    <field name="name11" />
+                    <field name="name12" />
+                    <field name="name13" />
+                    <field name="name14" />
+                    <field name="name15" />
+                    <field name="name16" />
+                    <field name="name17" />
+                    <field name="name18" />
+                    <field name="name19" />
+                    <field name="name20" />
+                    <field name="name21" />
+                    <field name="name22" />
+                    <field name="name23" />
+                    <field name="name24" />
+                    <field name="name25" />
+                    <field name="name26" />
+                    <field name="name27" />
+                    <field name="name28" />
+                    <field name="name29" />
+                    <field name="name30" />
+                    <field name="name31" />
+                    <field name="name32" />
+                    <field name="name33" />
+                    <field name="name34" />
+                    <field name="name35" />
+                    <field name="name36" />
+                    <field name="name37" />
+                    <field name="name38" />
+                    <field name="name39" />
+                    <field name="name40" />
+                </tree>
+            </field>
+        </record>
+
+        <!-- ACTION Product Packaging -->
+        <record id="act_perf_one2many" model="ir.actions.act_window">
+            <field name="name">Perf One2many</field>
+            <field name="res_model">perf.one2many</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[]</field>
+            <field name="context">{}</field>
+        </record>
+
+        <menuitem name="Perf One2many" action="act_perf_one2many" id="menu_perf_one2many" parent="menu_perf" />
+        
+        
+        <!-- ========= -->
+        <!-- perf_text -->
+        <!-- ========= -->
+        <!-- FORM VIEW perf_text -->
+        <record id='view_form_perf_text' model='ir.ui.view'>
+            <field name="name">view_form_perf_text</field>
+            <field name="model">perf.text</field>
+            <field name="arch" type="xml">
+                <form string="Perf Text" version="8.0">
+                    <group colspan="4" col="4">
+                        <field name="name1" colspan="2" nolabel="0"/>
+                        <field name="name2" colspan="2" nolabel="0"/>
+                        <field name="name3" colspan="2" nolabel="0"/>
+                        <field name="name4" colspan="2" nolabel="0"/>
+                        <field name="name5" colspan="2" nolabel="0"/>
+                        <field name="name6" colspan="2" nolabel="0"/>
+                        <field name="name7" colspan="2" nolabel="0"/>
+                        <field name="name8" colspan="2" nolabel="0"/>
+                        <field name="name9" colspan="2" nolabel="0"/>
+                        <field name="name10" colspan="2" nolabel="0"/>
+                        <field name="name11" colspan="2" nolabel="0"/>
+                        <field name="name12" colspan="2" nolabel="0"/>
+                        <field name="name13" colspan="2" nolabel="0"/>
+                        <field name="name14" colspan="2" nolabel="0"/>
+                        <field name="name15" colspan="2" nolabel="0"/>
+                        <field name="name16" colspan="2" nolabel="0"/>
+                        <field name="name17" colspan="2" nolabel="0"/>
+                        <field name="name18" colspan="2" nolabel="0"/>
+                        <field name="name19" colspan="2" nolabel="0"/>
+                        <field name="name20" colspan="2" nolabel="0"/>
+                        <field name="name21" colspan="2" nolabel="0"/>
+                        <field name="name22" colspan="2" nolabel="0"/>
+                        <field name="name23" colspan="2" nolabel="0"/>
+                        <field name="name24" colspan="2" nolabel="0"/>
+                        <field name="name25" colspan="2" nolabel="0"/>
+                        <field name="name26" colspan="2" nolabel="0"/>
+                        <field name="name27" colspan="2" nolabel="0"/>
+                        <field name="name28" colspan="2" nolabel="0"/>
+                        <field name="name29" colspan="2" nolabel="0"/>
+                        <field name="name30" colspan="2" nolabel="0"/>
+                        <field name="name31" colspan="2" nolabel="0"/>
+                        <field name="name32" colspan="2" nolabel="0"/>
+                        <field name="name33" colspan="2" nolabel="0"/>
+                        <field name="name34" colspan="2" nolabel="0"/>
+                        <field name="name35" colspan="2" nolabel="0"/>
+                        <field name="name36" colspan="2" nolabel="0"/>
+                        <field name="name37" colspan="2" nolabel="0"/>
+                        <field name="name38" colspan="2" nolabel="0"/>
+                        <field name="name39" colspan="2" nolabel="0"/>
+                        <field name="name40" colspan="2" nolabel="0"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <!-- TREE VIEW Product Packaging -->
+        <record id='view_tree_perf_text' model='ir.ui.view'>
+            <field name="name">view_tree_perf_text</field>
+            <field name="model">perf.text</field>
+            <field name="arch" type="xml">
+                <tree string="Perf Text" version="8.0">
+                    <field name="name1" />
+                    <field name="name2" />
+                    <field name="name3" />
+                    <field name="name4" />
+                    <field name="name5" />
+                    <field name="name6" />
+                    <field name="name7" />
+                    <field name="name8" />
+                    <field name="name9" />
+                    <field name="name10" />
+                    <field name="name11" />
+                    <field name="name12" />
+                    <field name="name13" />
+                    <field name="name14" />
+                    <field name="name15" />
+                    <field name="name16" />
+                    <field name="name17" />
+                    <field name="name18" />
+                    <field name="name19" />
+                    <field name="name20" />
+                    <field name="name21" />
+                    <field name="name22" />
+                    <field name="name23" />
+                    <field name="name24" />
+                    <field name="name25" />
+                    <field name="name26" />
+                    <field name="name27" />
+                    <field name="name28" />
+                    <field name="name29" />
+                    <field name="name30" />
+                    <field name="name31" />
+                    <field name="name32" />
+                    <field name="name33" />
+                    <field name="name34" />
+                    <field name="name35" />
+                    <field name="name36" />
+                    <field name="name37" />
+                    <field name="name38" />
+                    <field name="name39" />
+                    <field name="name40" />
+                </tree>
+            </field>
+        </record>
+
+        <!-- ACTION Product Packaging -->
+        <record id="act_perf_text" model="ir.actions.act_window">
+            <field name="name">Perf Text</field>
+            <field name="res_model">perf.text</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[]</field>
+            <field name="context">{}</field>
+        </record>
+
+        <menuitem name="Perf Text" action="act_perf_text" id="menu_perf_text" parent="menu_perf" />
+        
+        
+        <!-- ========= -->
+        <!-- perf_selection -->
+        <!-- ========= -->
+        <!-- FORM VIEW perf_selection -->
+        <record id='view_form_perf_selection' model='ir.ui.view'>
+            <field name="name">view_form_perf_selection</field>
+            <field name="model">perf.selection</field>
+            <field name="arch" type="xml">
+                <form string="Perf Selection" version="8.0">
+                    <group colspan="4" col="4">
+                        <field name="name1" colspan="2" nolabel="0"/>
+                        <field name="name2" colspan="2" nolabel="0"/>
+                        <field name="name3" colspan="2" nolabel="0"/>
+                        <field name="name4" colspan="2" nolabel="0"/>
+                        <field name="name5" colspan="2" nolabel="0"/>
+                        <field name="name6" colspan="2" nolabel="0"/>
+                        <field name="name7" colspan="2" nolabel="0"/>
+                        <field name="name8" colspan="2" nolabel="0"/>
+                        <field name="name9" colspan="2" nolabel="0"/>
+                        <field name="name10" colspan="2" nolabel="0"/>
+                        <field name="name11" colspan="2" nolabel="0"/>
+                        <field name="name12" colspan="2" nolabel="0"/>
+                        <field name="name13" colspan="2" nolabel="0"/>
+                        <field name="name14" colspan="2" nolabel="0"/>
+                        <field name="name15" colspan="2" nolabel="0"/>
+                        <field name="name16" colspan="2" nolabel="0"/>
+                        <field name="name17" colspan="2" nolabel="0"/>
+                        <field name="name18" colspan="2" nolabel="0"/>
+                        <field name="name19" colspan="2" nolabel="0"/>
+                        <field name="name20" colspan="2" nolabel="0"/>
+                        <field name="name21" colspan="2" nolabel="0"/>
+                        <field name="name22" colspan="2" nolabel="0"/>
+                        <field name="name23" colspan="2" nolabel="0"/>
+                        <field name="name24" colspan="2" nolabel="0"/>
+                        <field name="name25" colspan="2" nolabel="0"/>
+                        <field name="name26" colspan="2" nolabel="0"/>
+                        <field name="name27" colspan="2" nolabel="0"/>
+                        <field name="name28" colspan="2" nolabel="0"/>
+                        <field name="name29" colspan="2" nolabel="0"/>
+                        <field name="name30" colspan="2" nolabel="0"/>
+                        <field name="name31" colspan="2" nolabel="0"/>
+                        <field name="name32" colspan="2" nolabel="0"/>
+                        <field name="name33" colspan="2" nolabel="0"/>
+                        <field name="name34" colspan="2" nolabel="0"/>
+                        <field name="name35" colspan="2" nolabel="0"/>
+                        <field name="name36" colspan="2" nolabel="0"/>
+                        <field name="name37" colspan="2" nolabel="0"/>
+                        <field name="name38" colspan="2" nolabel="0"/>
+                        <field name="name39" colspan="2" nolabel="0"/>
+                        <field name="name40" colspan="2" nolabel="0"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <!-- TREE VIEW Product Packaging -->
+        <record id='view_tree_perf_selection' model='ir.ui.view'>
+            <field name="name">view_tree_perf_selection</field>
+            <field name="model">perf.selection</field>
+            <field name="arch" type="xml">
+                <tree string="Perf Selection" version="8.0">
+                    <field name="name1" />
+                    <field name="name2" />
+                    <field name="name3" />
+                    <field name="name4" />
+                    <field name="name5" />
+                    <field name="name6" />
+                    <field name="name7" />
+                    <field name="name8" />
+                    <field name="name9" />
+                    <field name="name10" />
+                    <field name="name11" />
+                    <field name="name12" />
+                    <field name="name13" />
+                    <field name="name14" />
+                    <field name="name15" />
+                    <field name="name16" />
+                    <field name="name17" />
+                    <field name="name18" />
+                    <field name="name19" />
+                    <field name="name20" />
+                    <field name="name21" />
+                    <field name="name22" />
+                    <field name="name23" />
+                    <field name="name24" />
+                    <field name="name25" />
+                    <field name="name26" />
+                    <field name="name27" />
+                    <field name="name28" />
+                    <field name="name29" />
+                    <field name="name30" />
+                    <field name="name31" />
+                    <field name="name32" />
+                    <field name="name33" />
+                    <field name="name34" />
+                    <field name="name35" />
+                    <field name="name36" />
+                    <field name="name37" />
+                    <field name="name38" />
+                    <field name="name39" />
+                    <field name="name40" />
+                </tree>
+            </field>
+        </record>
+
+        <!-- ACTION Product Packaging -->
+        <record id="act_perf_selection" model="ir.actions.act_window">
+            <field name="name">Perf Selection</field>
+            <field name="res_model">perf.selection</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[]</field>
+            <field name="context">{}</field>
+        </record>
+
+        <menuitem name="Perf Selection" action="act_perf_selection" id="menu_perf_selection" parent="menu_perf" />
+        
+        
+        <!-- ========= -->
+        <!-- perf_many2many -->
+        <!-- ========= -->
+        <!-- FORM VIEW perf_many2many -->
+        <record id='view_form_perf_many2many' model='ir.ui.view'>
+            <field name="name">view_form_perf_many2many</field>
+            <field name="model">perf.many2many</field>
+            <field name="arch" type="xml">
+                <form string="Perf Many2many" version="8.0">
+                    <group colspan="4" col="4">
+                        <field name="name1" colspan="4" nolabel="1"/>
+                        <field name="name2" colspan="4" nolabel="1"/>
+                        <field name="name3" colspan="4" nolabel="1"/>
+                        <field name="name4" colspan="4" nolabel="1"/>
+                        <field name="name5" colspan="4" nolabel="1"/>
+                        <field name="name6" colspan="4" nolabel="1"/>
+                        <field name="name7" colspan="4" nolabel="1"/>
+                        <field name="name8" colspan="4" nolabel="1"/>
+                        <field name="name9" colspan="4" nolabel="1"/>
+                        <field name="name10" colspan="4" nolabel="1"/>
+                        <field name="name11" colspan="4" nolabel="1"/>
+                        <field name="name12" colspan="4" nolabel="1"/>
+                        <field name="name13" colspan="4" nolabel="1"/>
+                        <field name="name14" colspan="4" nolabel="1"/>
+                        <field name="name15" colspan="4" nolabel="1"/>
+                        <field name="name16" colspan="4" nolabel="1"/>
+                        <field name="name17" colspan="4" nolabel="1"/>
+                        <field name="name18" colspan="4" nolabel="1"/>
+                        <field name="name19" colspan="4" nolabel="1"/>
+                        <field name="name20" colspan="4" nolabel="1"/>
+                        <field name="name21" colspan="4" nolabel="1"/>
+                        <field name="name22" colspan="4" nolabel="1"/>
+                        <field name="name23" colspan="4" nolabel="1"/>
+                        <field name="name24" colspan="4" nolabel="1"/>
+                        <field name="name25" colspan="4" nolabel="1"/>
+                        <field name="name26" colspan="4" nolabel="1"/>
+                        <field name="name27" colspan="4" nolabel="1"/>
+                        <field name="name28" colspan="4" nolabel="1"/>
+                        <field name="name29" colspan="4" nolabel="1"/>
+                        <field name="name30" colspan="4" nolabel="1"/>
+                        <field name="name31" colspan="4" nolabel="1"/>
+                        <field name="name32" colspan="4" nolabel="1"/>
+                        <field name="name33" colspan="4" nolabel="1"/>
+                        <field name="name34" colspan="4" nolabel="1"/>
+                        <field name="name35" colspan="4" nolabel="1"/>
+                        <field name="name36" colspan="4" nolabel="1"/>
+                        <field name="name37" colspan="4" nolabel="1"/>
+                        <field name="name38" colspan="4" nolabel="1"/>
+                        <field name="name39" colspan="4" nolabel="1"/>
+                        <field name="name40" colspan="4" nolabel="1"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <!-- TREE VIEW Product Packaging -->
+        <record id='view_tree_perf_many2many' model='ir.ui.view'>
+            <field name="name">view_tree_perf_many2many</field>
+            <field name="model">perf.many2many</field>
+            <field name="arch" type="xml">
+                <tree string="Perf Many2many" version="8.0">
+                    <field name="name1" />
+                    <field name="name2" />
+                    <field name="name3" />
+                    <field name="name4" />
+                    <field name="name5" />
+                    <field name="name6" />
+                    <field name="name7" />
+                    <field name="name8" />
+                    <field name="name9" />
+                    <field name="name10" />
+                    <field name="name11" />
+                    <field name="name12" />
+                    <field name="name13" />
+                    <field name="name14" />
+                    <field name="name15" />
+                    <field name="name16" />
+                    <field name="name17" />
+                    <field name="name18" />
+                    <field name="name19" />
+                    <field name="name20" />
+                    <field name="name21" />
+                    <field name="name22" />
+                    <field name="name23" />
+                    <field name="name24" />
+                    <field name="name25" />
+                    <field name="name26" />
+                    <field name="name27" />
+                    <field name="name28" />
+                    <field name="name29" />
+                    <field name="name30" />
+                    <field name="name31" />
+                    <field name="name32" />
+                    <field name="name33" />
+                    <field name="name34" />
+                    <field name="name35" />
+                    <field name="name36" />
+                    <field name="name37" />
+                    <field name="name38" />
+                    <field name="name39" />
+                    <field name="name40" />
+                </tree>
+            </field>
+        </record>
+
+        <!-- ACTION Product Packaging -->
+        <record id="act_perf_many2many" model="ir.actions.act_window">
+            <field name="name">Perf Many2many</field>
+            <field name="res_model">perf.many2many</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[]</field>
+            <field name="context">{}</field>
+        </record>
+
+        <menuitem name="Perf Many2many" action="act_perf_many2many" id="menu_perf_many2many" parent="menu_perf" />
+        
+        
+        <!-- ========= -->
+        <!-- perf_float float_time -->
+        <!-- ========= -->
+        <!-- FORM VIEW perf_float -->
+        <record id='view_form_perf_float_widget_float_time' model='ir.ui.view'>
+            <field name="name">view_form_perf_float_widget_float_time</field>
+            <field name="model">perf.float</field>
+            <field name="arch" type="xml">
+                <form string="Perf Float float_time" version="8.0">
+                    <group colspan="4" col="4">
+                        <field name="name1" widget="float_time"/>
+                        <field name="name2" widget="float_time"/>
+                        <field name="name3" widget="float_time"/>
+                        <field name="name4" widget="float_time"/>
+                        <field name="name5" widget="float_time"/>
+                        <field name="name6" widget="float_time"/>
+                        <field name="name7" widget="float_time"/>
+                        <field name="name8" widget="float_time"/>
+                        <field name="name9" widget="float_time"/>
+                        <field name="name10" widget="float_time"/>
+                        <field name="name11" widget="float_time"/>
+                        <field name="name12" widget="float_time"/>
+                        <field name="name13" widget="float_time"/>
+                        <field name="name14" widget="float_time"/>
+                        <field name="name15" widget="float_time"/>
+                        <field name="name16" widget="float_time"/>
+                        <field name="name17" widget="float_time"/>
+                        <field name="name18" widget="float_time"/>
+                        <field name="name19" widget="float_time"/>
+                        <field name="name20" widget="float_time"/>
+                        <field name="name21" widget="float_time"/>
+                        <field name="name22" widget="float_time"/>
+                        <field name="name23" widget="float_time"/>
+                        <field name="name24" widget="float_time"/>
+                        <field name="name25" widget="float_time"/>
+                        <field name="name26" widget="float_time"/>
+                        <field name="name27" widget="float_time"/>
+                        <field name="name28" widget="float_time"/>
+                        <field name="name29" widget="float_time"/>
+                        <field name="name30" widget="float_time"/>
+                        <field name="name31" widget="float_time"/>
+                        <field name="name32" widget="float_time"/>
+                        <field name="name33" widget="float_time"/>
+                        <field name="name34" widget="float_time"/>
+                        <field name="name35" widget="float_time"/>
+                        <field name="name36" widget="float_time"/>
+                        <field name="name37" widget="float_time"/>
+                        <field name="name38" widget="float_time"/>
+                        <field name="name39" widget="float_time"/>
+                        <field name="name40" widget="float_time"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <!-- TREE VIEW Product Packaging -->
+        <record id='view_tree_perf_float_widget_float_time' model='ir.ui.view'>
+            <field name="name">view_tree_perf_float_widget_float_time</field>
+            <field name="model">perf.float</field>
+            <field name="arch" type="xml">
+                <tree string="Perf Float float_time" version="8.0">
+                    <field name="name1" widget="float_time" />
+                    <field name="name2" widget="float_time" />
+                    <field name="name3" widget="float_time" />
+                    <field name="name4" widget="float_time" />
+                    <field name="name5" widget="float_time" />
+                    <field name="name6" widget="float_time" />
+                    <field name="name7" widget="float_time" />
+                    <field name="name8" widget="float_time" />
+                    <field name="name9" widget="float_time" />
+                    <field name="name10" widget="float_time" />
+                    <field name="name11" widget="float_time" />
+                    <field name="name12" widget="float_time" />
+                    <field name="name13" widget="float_time" />
+                    <field name="name14" widget="float_time" />
+                    <field name="name15" widget="float_time" />
+                    <field name="name16" widget="float_time" />
+                    <field name="name17" widget="float_time" />
+                    <field name="name18" widget="float_time" />
+                    <field name="name19" widget="float_time" />
+                    <field name="name20" widget="float_time" />
+                    <field name="name21" widget="float_time" />
+                    <field name="name22" widget="float_time" />
+                    <field name="name23" widget="float_time" />
+                    <field name="name24" widget="float_time" />
+                    <field name="name25" widget="float_time" />
+                    <field name="name26" widget="float_time" />
+                    <field name="name27" widget="float_time" />
+                    <field name="name28" widget="float_time" />
+                    <field name="name29" widget="float_time" />
+                    <field name="name30" widget="float_time" />
+                    <field name="name31" widget="float_time" />
+                    <field name="name32" widget="float_time" />
+                    <field name="name33" widget="float_time" />
+                    <field name="name34" widget="float_time" />
+                    <field name="name35" widget="float_time" />
+                    <field name="name36" widget="float_time" />
+                    <field name="name37" widget="float_time" />
+                    <field name="name38" widget="float_time" />
+                    <field name="name39" widget="float_time" />
+                    <field name="name40" widget="float_time" />
+                </tree>
+            </field>
+        </record>
+
+        <!-- ACTION Product Packaging -->
+        <record id="act_perf_float_widget_float_time" model="ir.actions.act_window">
+            <field name="name">Perf Float float_time</field>
+            <field name="res_model">perf.float</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[]</field>
+            <field name="context">{}</field>
+        </record>
+        
+        <record id="act_perf_float_widget_float_time_tree" model="ir.actions.act_window.view">
+            <field name="sequence" eval="10"/>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="view_tree_perf_float_widget_float_time"/>
+            <field name="act_window_id" ref="act_perf_float_widget_float_time"/>
+        </record>
+        
+        <record model="ir.actions.act_window.view" id="act_perf_float_widget_float_time_form">
+            <field name="sequence" eval="20"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_form_perf_float_widget_float_time"/>
+            <field name="act_window_id" ref="act_perf_float_widget_float_time"/>
+        </record>
+        
+        
+        <menuitem name="Perf Float float_time" action="act_perf_float_widget_float_time" id="menu_perf_float_widget_float_time" 
+                  parent="menu_perf" />
+        
+        
+        
+        <!-- ========= -->
+        <!-- perf_float float_time_seconds -->
+        <!-- ========= -->
+        <!-- FORM VIEW perf_float -->
+        <record id='view_form_perf_float_widget_float_time_seconds' model='ir.ui.view'>
+            <field name="name">view_form_perf_float_widget_float_time_seconds</field>
+            <field name="model">perf.float</field>
+            <field name="arch" type="xml">
+                <form string="Perf Float float_time_seconds" version="8.0">
+                    <group colspan="4" col="4">
+                        <field name="name1" widget="float_time_seconds"/>
+                        <field name="name2" widget="float_time_seconds"/>
+                        <field name="name3" widget="float_time_seconds"/>
+                        <field name="name4" widget="float_time_seconds"/>
+                        <field name="name5" widget="float_time_seconds"/>
+                        <field name="name6" widget="float_time_seconds"/>
+                        <field name="name7" widget="float_time_seconds"/>
+                        <field name="name8" widget="float_time_seconds"/>
+                        <field name="name9" widget="float_time_seconds"/>
+                        <field name="name10" widget="float_time_seconds"/>
+                        <field name="name11" widget="float_time_seconds"/>
+                        <field name="name12" widget="float_time_seconds"/>
+                        <field name="name13" widget="float_time_seconds"/>
+                        <field name="name14" widget="float_time_seconds"/>
+                        <field name="name15" widget="float_time_seconds"/>
+                        <field name="name16" widget="float_time_seconds"/>
+                        <field name="name17" widget="float_time_seconds"/>
+                        <field name="name18" widget="float_time_seconds"/>
+                        <field name="name19" widget="float_time_seconds"/>
+                        <field name="name20" widget="float_time_seconds"/>
+                        <field name="name21" widget="float_time_seconds"/>
+                        <field name="name22" widget="float_time_seconds"/>
+                        <field name="name23" widget="float_time_seconds"/>
+                        <field name="name24" widget="float_time_seconds"/>
+                        <field name="name25" widget="float_time_seconds"/>
+                        <field name="name26" widget="float_time_seconds"/>
+                        <field name="name27" widget="float_time_seconds"/>
+                        <field name="name28" widget="float_time_seconds"/>
+                        <field name="name29" widget="float_time_seconds"/>
+                        <field name="name30" widget="float_time_seconds"/>
+                        <field name="name31" widget="float_time_seconds"/>
+                        <field name="name32" widget="float_time_seconds"/>
+                        <field name="name33" widget="float_time_seconds"/>
+                        <field name="name34" widget="float_time_seconds"/>
+                        <field name="name35" widget="float_time_seconds"/>
+                        <field name="name36" widget="float_time_seconds"/>
+                        <field name="name37" widget="float_time_seconds"/>
+                        <field name="name38" widget="float_time_seconds"/>
+                        <field name="name39" widget="float_time_seconds"/>
+                        <field name="name40" widget="float_time_seconds"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <!-- TREE VIEW Product Packaging -->
+        <record id='view_tree_perf_float_widget_float_time_seconds' model='ir.ui.view'>
+            <field name="name">view_tree_perf_float_widget_float_time_seconds</field>
+            <field name="model">perf.float</field>
+            <field name="arch" type="xml">
+                <tree string="Perf Float float_time_seconds" version="8.0">
+                    <field name="name1" widget="float_time_seconds" />
+                    <field name="name2" widget="float_time_seconds" />
+                    <field name="name3" widget="float_time_seconds" />
+                    <field name="name4" widget="float_time_seconds" />
+                    <field name="name5" widget="float_time_seconds" />
+                    <field name="name6" widget="float_time_seconds" />
+                    <field name="name7" widget="float_time_seconds" />
+                    <field name="name8" widget="float_time_seconds" />
+                    <field name="name9" widget="float_time_seconds" />
+                    <field name="name10" widget="float_time_seconds" />
+                    <field name="name11" widget="float_time_seconds" />
+                    <field name="name12" widget="float_time_seconds" />
+                    <field name="name13" widget="float_time_seconds" />
+                    <field name="name14" widget="float_time_seconds" />
+                    <field name="name15" widget="float_time_seconds" />
+                    <field name="name16" widget="float_time_seconds" />
+                    <field name="name17" widget="float_time_seconds" />
+                    <field name="name18" widget="float_time_seconds" />
+                    <field name="name19" widget="float_time_seconds" />
+                    <field name="name20" widget="float_time_seconds" />
+                    <field name="name21" widget="float_time_seconds" />
+                    <field name="name22" widget="float_time_seconds" />
+                    <field name="name23" widget="float_time_seconds" />
+                    <field name="name24" widget="float_time_seconds" />
+                    <field name="name25" widget="float_time_seconds" />
+                    <field name="name26" widget="float_time_seconds" />
+                    <field name="name27" widget="float_time_seconds" />
+                    <field name="name28" widget="float_time_seconds" />
+                    <field name="name29" widget="float_time_seconds" />
+                    <field name="name30" widget="float_time_seconds" />
+                    <field name="name31" widget="float_time_seconds" />
+                    <field name="name32" widget="float_time_seconds" />
+                    <field name="name33" widget="float_time_seconds" />
+                    <field name="name34" widget="float_time_seconds" />
+                    <field name="name35" widget="float_time_seconds" />
+                    <field name="name36" widget="float_time_seconds" />
+                    <field name="name37" widget="float_time_seconds" />
+                    <field name="name38" widget="float_time_seconds" />
+                    <field name="name39" widget="float_time_seconds" />
+                    <field name="name40" widget="float_time_seconds" />
+                </tree>
+            </field>
+        </record>
+
+        <!-- ACTION Product Packaging -->
+        <record id="act_perf_float_widget_float_time_seconds" model="ir.actions.act_window">
+            <field name="name">Perf Float float_time_seconds</field>
+            <field name="res_model">perf.float</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[]</field>
+            <field name="context">{}</field>
+        </record>
+        
+        <record id="act_perf_float_widget_float_time_seconds_tree" model="ir.actions.act_window.view">
+            <field name="sequence" eval="10"/>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="view_tree_perf_float_widget_float_time_seconds"/>
+            <field name="act_window_id" ref="act_perf_float_widget_float_time_seconds"/>
+        </record>
+        
+        <record model="ir.actions.act_window.view" id="act_perf_float_widget_float_time_secondst_form">
+            <field name="sequence" eval="20"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_form_perf_float_widget_float_time_seconds"/>
+            <field name="act_window_id" ref="act_perf_float_widget_float_time_seconds"/>
+        </record>
+
+        <menuitem name="Perf Float float_time_seconds" action="act_perf_float_widget_float_time_seconds" id="menu_perf_float_widget_float_time_seconds" 
+                  parent="menu_perf" />
+        
+        
+        <!-- ========= -->
+        <!-- perf_selection progressbar -->
+        <!-- ========= -->
+        <!-- FORM VIEW perf_selection -->
+        <record id='view_form_perf_selection_widget_progressbar' model='ir.ui.view'>
+            <field name="name">view_form_perf_selection_widget_progressbar</field>
+            <field name="model">perf.float</field>
+            <field name="arch" type="xml">
+                <form string="Perf Selection progressbar" version="8.0">
+                    <group colspan="4" col="4">
+                        <field name="name1" widget="progressbar"/>
+                        <field name="name2" widget="progressbar"/>
+                        <field name="name3" widget="progressbar"/>
+                        <field name="name4" widget="progressbar"/>
+                        <field name="name5" widget="progressbar"/>
+                        <field name="name6" widget="progressbar"/>
+                        <field name="name7" widget="progressbar"/>
+                        <field name="name8" widget="progressbar"/>
+                        <field name="name9" widget="progressbar"/>
+                        <field name="name10" widget="progressbar"/>
+                        <field name="name11" widget="progressbar"/>
+                        <field name="name12" widget="progressbar"/>
+                        <field name="name13" widget="progressbar"/>
+                        <field name="name14" widget="progressbar"/>
+                        <field name="name15" widget="progressbar"/>
+                        <field name="name16" widget="progressbar"/>
+                        <field name="name17" widget="progressbar"/>
+                        <field name="name18" widget="progressbar"/>
+                        <field name="name19" widget="progressbar"/>
+                        <field name="name20" widget="progressbar"/>
+                        <field name="name21" widget="progressbar"/>
+                        <field name="name22" widget="progressbar"/>
+                        <field name="name23" widget="progressbar"/>
+                        <field name="name24" widget="progressbar"/>
+                        <field name="name25" widget="progressbar"/>
+                        <field name="name26" widget="progressbar"/>
+                        <field name="name27" widget="progressbar"/>
+                        <field name="name28" widget="progressbar"/>
+                        <field name="name29" widget="progressbar"/>
+                        <field name="name30" widget="progressbar"/>
+                        <field name="name31" widget="progressbar"/>
+                        <field name="name32" widget="progressbar"/>
+                        <field name="name33" widget="progressbar"/>
+                        <field name="name34" widget="progressbar"/>
+                        <field name="name35" widget="progressbar"/>
+                        <field name="name36" widget="progressbar"/>
+                        <field name="name37" widget="progressbar"/>
+                        <field name="name38" widget="progressbar"/>
+                        <field name="name39" widget="progressbar"/>
+                        <field name="name40" widget="progressbar"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <!-- TREE VIEW Product Packaging -->
+        <record id='view_tree_perf_selection_widget_progressbar' model='ir.ui.view'>
+            <field name="name">view_tree_perf_selection_widget_progressbar</field>
+            <field name="model">perf.float</field>
+            <field name="arch" type="xml">
+                <tree string="Perf Selection progressbar" version="8.0">
+                    <field name="name1" widget="progressbar" />
+                    <field name="name2" widget="progressbar" />
+                    <field name="name3" widget="progressbar" />
+                    <field name="name4" widget="progressbar" />
+                    <field name="name5" widget="progressbar" />
+                    <field name="name6" widget="progressbar" />
+                    <field name="name7" widget="progressbar" />
+                    <field name="name8" widget="progressbar" />
+                    <field name="name9" widget="progressbar" />
+                    <field name="name10" widget="progressbar" />
+                    <field name="name11" widget="progressbar" />
+                    <field name="name12" widget="progressbar" />
+                    <field name="name13" widget="progressbar" />
+                    <field name="name14" widget="progressbar" />
+                    <field name="name15" widget="progressbar" />
+                    <field name="name16" widget="progressbar" />
+                    <field name="name17" widget="progressbar" />
+                    <field name="name18" widget="progressbar" />
+                    <field name="name19" widget="progressbar" />
+                    <field name="name20" widget="progressbar" />
+                    <field name="name21" widget="progressbar" />
+                    <field name="name22" widget="progressbar" />
+                    <field name="name23" widget="progressbar" />
+                    <field name="name24" widget="progressbar" />
+                    <field name="name25" widget="progressbar" />
+                    <field name="name26" widget="progressbar" />
+                    <field name="name27" widget="progressbar" />
+                    <field name="name28" widget="progressbar" />
+                    <field name="name29" widget="progressbar" />
+                    <field name="name30" widget="progressbar" />
+                    <field name="name31" widget="progressbar" />
+                    <field name="name32" widget="progressbar" />
+                    <field name="name33" widget="progressbar" />
+                    <field name="name34" widget="progressbar" />
+                    <field name="name35" widget="progressbar" />
+                    <field name="name36" widget="progressbar" />
+                    <field name="name37" widget="progressbar" />
+                    <field name="name38" widget="progressbar" />
+                    <field name="name39" widget="progressbar" />
+                    <field name="name40" widget="progressbar" />
+                </tree>
+            </field>
+        </record>
+
+        <!-- ACTION Product Packaging -->
+        <record id="act_perf_selection_widget_progressbar" model="ir.actions.act_window">
+            <field name="name">Perf Selection progressbar</field>
+            <field name="res_model">perf.float</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[]</field>
+            <field name="context">{}</field>
+        </record>
+        
+        <record id="act_perf_selection_widget_progressbar_tree" model="ir.actions.act_window.view">
+            <field name="sequence" eval="10"/>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="view_tree_perf_selection_widget_progressbar"/>
+            <field name="act_window_id" ref="act_perf_selection_widget_progressbar"/>
+        </record>
+        
+        <record model="ir.actions.act_window.view" id="act_perf_selection_widget_progressbar_form">
+            <field name="sequence" eval="20"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_form_perf_selection_widget_progressbar"/>
+            <field name="act_window_id" ref="act_perf_selection_widget_progressbar"/>
+        </record>
+
+        <menuitem name="Perf Selection progressbar" action="act_perf_selection_widget_progressbar" id="menu_perf_selection_widget_progressbar" parent="menu_perf" />
+                  
+                  
+        
+        <!-- ========= -->
+        <!-- perf_text html -->
+        <!-- ========= -->
+        <!-- FORM VIEW perf_text -->
+        <record id='view_form_perf_text_widget_html' model='ir.ui.view'>
+            <field name="name">view_form_perf_text_widget_html</field>
+            <field name="model">perf.html</field>
+            <field name="arch" type="xml">
+                <form string="Perf Text html" version="8.0">
+                    <group colspan="4" col="4">
+                        <field name="name1" />
+                        <field name="name2" />
+                        <field name="name3" />
+                        <field name="name4" />
+                        <field name="name5" />
+                        <field name="name6" />
+                        <field name="name7" />
+                        <field name="name8" />
+                        <field name="name9" />
+                        <field name="name10" />
+                        <field name="name11" />
+                        <field name="name12" />
+                        <field name="name13" />
+                        <field name="name14" />
+                        <field name="name15" />
+                        <field name="name16" />
+                        <field name="name17" />
+                        <field name="name18" />
+                        <field name="name19" />
+                        <field name="name20" />
+                        <field name="name21" />
+                        <field name="name22" />
+                        <field name="name23" />
+                        <field name="name24" />
+                        <field name="name25" />
+                        <field name="name26" />
+                        <field name="name27" />
+                        <field name="name28" />
+                        <field name="name29" />
+                        <field name="name30" />
+                        <field name="name31" />
+                        <field name="name32" />
+                        <field name="name33" />
+                        <field name="name34" />
+                        <field name="name35" />
+                        <field name="name36" />
+                        <field name="name37" />
+                        <field name="name38" />
+                        <field name="name39" />
+                        <field name="name40" />
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <!-- TREE VIEW Product Packaging -->
+        <record id='view_tree_perf_text_widget_html' model='ir.ui.view'>
+            <field name="name">view_tree_perf_text_widget_html</field>
+            <field name="model">perf.html</field>
+            <field name="arch" type="xml">
+                <tree string="Perf Text html" version="8.0">
+                    <field name="name1"  />
+                    <field name="name2"  />
+                    <field name="name3"  />
+                    <field name="name4"  />
+                    <field name="name5"  />
+                    <field name="name6"  />
+                    <field name="name7"  />
+                    <field name="name8"  />
+                    <field name="name9"  />
+                    <field name="name10"  />
+                    <field name="name11"  />
+                    <field name="name12"  />
+                    <field name="name13"  />
+                    <field name="name14"  />
+                    <field name="name15"  />
+                    <field name="name16"  />
+                    <field name="name17"  />
+                    <field name="name18"  />
+                    <field name="name19"  />
+                    <field name="name20"  />
+                    <field name="name21"  />
+                    <field name="name22"  />
+                    <field name="name23"  />
+                    <field name="name24"  />
+                    <field name="name25"  />
+                    <field name="name26"  />
+                    <field name="name27"  />
+                    <field name="name28"  />
+                    <field name="name29"  />
+                    <field name="name30"  />
+                    <field name="name31"  />
+                    <field name="name32"  />
+                    <field name="name33"  />
+                    <field name="name34"  />
+                    <field name="name35"  />
+                    <field name="name36"  />
+                    <field name="name37"  />
+                    <field name="name38"  />
+                    <field name="name39"  />
+                    <field name="name40"  />
+                </tree>
+            </field>
+        </record>
+
+        <!-- ACTION Product Packaging -->
+        <record id="act_perf_text_widget_html" model="ir.actions.act_window">
+            <field name="name">Perf Text html</field>
+            <field name="res_model">perf.html</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[]</field>
+            <field name="context">{}</field>
+        </record>
+
+        <menuitem name="Perf Text html" action="act_perf_text_widget_html" id="menu_perf_text_widget_html" 
+                  parent="menu_perf" />
+                  
+        
+        
+        <!-- ========= -->
+        <!-- perf_text _group -->
+        <!-- ========= -->
+        <!-- FORM VIEW perf_text -->
+        <record id='view_form_perf_text_group' model='ir.ui.view'>
+            <field name="name">view_form_perf_text_group</field>
+            <field name="model">perf.text</field>
+            <field name="arch" type="xml">
+                <form string="Perf Text" version="8.0">
+                    <group colspan="4" col="4">
+                         <group colspan="4" col="4" string="name1">
+                            <field name="name1" colspan="2" nolabel="0"/>
+                        </group>
+                         <group colspan="4" col="4" string="name2">
+                        <field name="name2" colspan="2" nolabel="0"/>
+                        </group>
+                         <group colspan="4" col="4" string="name3">
+                        <field name="name3" colspan="2" nolabel="0"/>
+                        </group>
+                         <group colspan="4" col="4" string="name4">
+                        <field name="name4" colspan="2" nolabel="0"/>
+                        </group>
+                         <group colspan="4" col="4" string="name5">
+                        <field name="name5" colspan="2" nolabel="0"/>
+                        </group>
+                         <group colspan="4" col="4" string="name6">
+                        <field name="name6" colspan="2" nolabel="0"/>
+                        </group>
+                         <group colspan="4" col="4" string="name7">
+                        <field name="name7" colspan="2" nolabel="0"/>
+                        </group>
+                         <group colspan="4" col="4" string="name8">
+                        <field name="name8" colspan="2" nolabel="0"/>
+                        </group>
+                         <group colspan="4" col="4" string="name9">
+                        <field name="name9" colspan="2" nolabel="0"/>
+                        </group>
+                         <group colspan="4" col="4" string="name10">
+                        <field name="name10" colspan="2" nolabel="0"/>
+                        </group>
+                         <group colspan="4" col="4" string="name11">
+                        <field name="name11" colspan="2" nolabel="0"/>
+                        </group>
+                         <group colspan="4" col="4" string="name12">
+                        <field name="name12" colspan="2" nolabel="0"/>
+                        </group>
+                         <group colspan="4" col="4" string="name13">
+                        <field name="name13" colspan="2" nolabel="0"/>
+                        </group>
+                         <group colspan="4" col="4" string="name14">
+                        <field name="name14" colspan="2" nolabel="0"/>
+                        </group>
+                         <group colspan="4" col="4" string="name15">
+                        <field name="name15" colspan="2" nolabel="0"/>
+                        </group>
+                         <group colspan="4" col="4" string="name16">
+                        <field name="name16" colspan="2" nolabel="0"/>
+                        </group>
+                         <group colspan="4" col="4" string="name17">
+                        <field name="name17" colspan="2" nolabel="0"/>
+                        </group>
+                         <group colspan="4" col="4" string="name18">
+                        <field name="name18" colspan="2" nolabel="0"/>
+                        </group>
+                         <group colspan="4" col="4" string="name19">
+                        <field name="name19" colspan="2" nolabel="0"/>
+                        </group>
+                         <group colspan="4" col="4" string="name20">
+                        <field name="name20" colspan="2" nolabel="0"/>
+                        </group>
+                         <group colspan="4" col="4" string="name21">
+                        <field name="name21" colspan="2" nolabel="0"/>
+                        </group>
+                         <group colspan="4" col="4" string="name22">
+                        <field name="name22" colspan="2" nolabel="0"/>
+                        </group>
+                         <group colspan="4" col="4" string="name23">
+                        <field name="name23" colspan="2" nolabel="0"/>
+                        </group>
+                         <group colspan="4" col="4" string="name24">
+                        <field name="name24" colspan="2" nolabel="0"/>
+                        </group>
+                         <group colspan="4" col="4" string="name25">
+                        <field name="name25" colspan="2" nolabel="0"/>
+                        </group>
+                         <group colspan="4" col="4" string="name26">
+                        <field name="name26" colspan="2" nolabel="0"/>
+                        </group>
+                         <group colspan="4" col="4" string="name27">
+                        <field name="name27" colspan="2" nolabel="0"/>
+                        </group>
+                         <group colspan="4" col="4" string="name28">
+                        <field name="name28" colspan="2" nolabel="0"/>
+                        </group>
+                         <group colspan="4" col="4" string="name29">
+                        <field name="name29" colspan="2" nolabel="0"/>
+                        </group>
+                         <group colspan="4" col="4" string="name30">
+                        <field name="name30" colspan="2" nolabel="0"/>
+                        </group>
+                         <group colspan="4" col="4" string="name31">
+                        <field name="name31" colspan="2" nolabel="0"/>
+                        </group>
+                         <group colspan="4" col="4" string="name32">
+                        <field name="name32" colspan="2" nolabel="0"/>
+                        </group>
+                         <group colspan="4" col="4" string="name33">
+                        <field name="name33" colspan="2" nolabel="0"/>
+                        </group>
+                         <group colspan="4" col="4" string="name34">
+                        <field name="name34" colspan="2" nolabel="0"/>
+                        </group>
+                         <group colspan="4" col="4" string="name35">
+                        <field name="name35" colspan="2" nolabel="0"/>
+                        </group>
+                         <group colspan="4" col="4" string="name36">
+                        <field name="name36" colspan="2" nolabel="0"/>
+                        </group>
+                         <group colspan="4" col="4" string="name37">
+                        <field name="name37" colspan="2" nolabel="0"/>
+                        </group>
+                         <group colspan="4" col="4" string="name38">
+                        <field name="name38" colspan="2" nolabel="0"/>
+                        </group>
+                         <group colspan="4" col="4" string="name39">
+                        <field name="name39" colspan="2" nolabel="0"/>
+                        </group>
+                         <group colspan="4" col="4" string="name40">
+                        <field name="name40" colspan="2" nolabel="0"/>
+                        </group>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <!-- TREE VIEW Product Packaging -->
+        <record id='view_tree_perf_text_group' model='ir.ui.view'>
+            <field name="name">view_tree_perf_text_group</field>
+            <field name="model">perf.text</field>
+            <field name="arch" type="xml">
+                <tree string="Perf Text" version="8.0">
+                    <field name="name1" />
+                    <field name="name2" />
+                    <field name="name3" />
+                    <field name="name4" />
+                    <field name="name5" />
+                    <field name="name6" />
+                    <field name="name7" />
+                    <field name="name8" />
+                    <field name="name9" />
+                    <field name="name10" />
+                    <field name="name11" />
+                    <field name="name12" />
+                    <field name="name13" />
+                    <field name="name14" />
+                    <field name="name15" />
+                    <field name="name16" />
+                    <field name="name17" />
+                    <field name="name18" />
+                    <field name="name19" />
+                    <field name="name20" />
+                    <field name="name21" />
+                    <field name="name22" />
+                    <field name="name23" />
+                    <field name="name24" />
+                    <field name="name25" />
+                    <field name="name26" />
+                    <field name="name27" />
+                    <field name="name28" />
+                    <field name="name29" />
+                    <field name="name30" />
+                    <field name="name31" />
+                    <field name="name32" />
+                    <field name="name33" />
+                    <field name="name34" />
+                    <field name="name35" />
+                    <field name="name36" />
+                    <field name="name37" />
+                    <field name="name38" />
+                    <field name="name39" />
+                    <field name="name40" />
+                </tree>
+            </field>
+        </record>
+
+        <!-- ACTION Product Packaging -->
+        <record id="act_perf_text_group" model="ir.actions.act_window">
+            <field name="name">Perf Text group</field>
+            <field name="res_model">perf.text</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[]</field>
+            <field name="context">{}</field>
+        </record>
+        
+        <record id="act_perf_text_group_tree" model="ir.actions.act_window.view">
+            <field name="sequence" eval="10"/>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="view_tree_perf_text_group"/>
+            <field name="act_window_id" ref="act_perf_text_group"/>
+        </record>
+        
+        <record model="ir.actions.act_window.view" id="act_perf_text_group_form">
+            <field name="sequence" eval="20"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_form_perf_text_group"/>
+            <field name="act_window_id" ref="act_perf_text_group"/>
+        </record>
+
+        <menuitem name="Perf Text group" action="act_perf_text_group" id="menu_perf_text_group" parent="menu_perf" />
+        
+        
+        
+        <!-- ========= -->
+        <!-- perf_text page -->
+        <!-- ========= -->
+        <!-- FORM VIEW perf_text -->
+        <record id='view_form_perf_text_page' model='ir.ui.view'>
+            <field name="name">view_form_perf_text_page</field>
+            <field name="model">perf.text</field>
+            <field name="arch" type="xml">
+                <form string="Perf Text" version="8.0">
+                    <group colspan="4" col="4">
+                        <notebook colspan="6">
+                        <page string="name1">
+                        <field name="name1" colspan="2" nolabel="0"/>
+                        </page>
+                        <page string="name2">
+                        <field name="name2" colspan="2" nolabel="0"/>
+                        </page>
+                        <page string="name3">
+                        <field name="name3" colspan="2" nolabel="0"/>
+                        </page>
+                        <page string="name4">
+                        <field name="name4" colspan="2" nolabel="0"/>
+                        </page>
+                        <page string="name5">
+                        <field name="name5" colspan="2" nolabel="0"/>
+                        </page>
+                        <page string="name6">
+                        <field name="name6" colspan="2" nolabel="0"/>
+                        </page>
+                        <page string="name7">
+                        <field name="name7" colspan="2" nolabel="0"/>
+                        </page>
+                        <page string="name8">
+                        <field name="name8" colspan="2" nolabel="0"/>
+                        </page>
+                        <page string="name9">
+                        <field name="name9" colspan="2" nolabel="0"/>
+                        </page>
+                        <page string="name10">
+                        <field name="name10" colspan="2" nolabel="0"/>
+                        </page>
+                        <page string="name10">
+                        <field name="name11" colspan="2" nolabel="0"/>
+                        </page>
+                        <page string="name12">
+                        <field name="name12" colspan="2" nolabel="0"/>
+                        </page>
+                        <page string="name13">
+                        <field name="name13" colspan="2" nolabel="0"/>
+                        </page>
+                        <page string="name14">
+                        <field name="name14" colspan="2" nolabel="0"/>
+                        </page>
+                        <page string="name15">
+                        <field name="name15" colspan="2" nolabel="0"/>
+                        </page>
+                        <page string="name16">
+                        <field name="name16" colspan="2" nolabel="0"/>
+                        </page>
+                        <page string="name17">
+                        <field name="name17" colspan="2" nolabel="0"/>
+                        </page>
+                        <page string="name18">
+                        <field name="name18" colspan="2" nolabel="0"/>
+                        </page>
+                        <page string="name19">
+                        <field name="name19" colspan="2" nolabel="0"/>
+                        </page>
+                        <page string="name20">
+                        <field name="name20" colspan="2" nolabel="0"/>
+                        </page>
+                        <page string="name21">
+                        <field name="name21" colspan="2" nolabel="0"/>
+                        </page>
+                        <page string="name22">
+                        <field name="name22" colspan="2" nolabel="0"/>
+                        </page>
+                        <page string="name23">
+                        <field name="name23" colspan="2" nolabel="0"/>
+                        </page>
+                        <page string="name24">
+                        <field name="name24" colspan="2" nolabel="0"/>
+                        </page>
+                        <page string="name25">
+                        <field name="name25" colspan="2" nolabel="0"/>
+                        </page>
+                        <page string="name26">
+                        <field name="name26" colspan="2" nolabel="0"/>
+                        </page>
+                        <page string="name27">
+                        <field name="name27" colspan="2" nolabel="0"/>
+                        </page>
+                        <page string="name28">
+                        <field name="name28" colspan="2" nolabel="0"/>
+                        </page>
+                        <page string="name29">
+                        <field name="name29" colspan="2" nolabel="0"/>
+                        </page>
+                        <page string="name30">
+                        <field name="name30" colspan="2" nolabel="0"/>
+                        </page>
+                        <page string="name31">
+                        <field name="name31" colspan="2" nolabel="0"/>
+                        </page>
+                        <page string="name32">
+                        <field name="name32" colspan="2" nolabel="0"/>
+                        </page>
+                        <page string="name33">
+                        <field name="name33" colspan="2" nolabel="0"/>
+                        </page>
+                        <page string="name34">
+                        <field name="name34" colspan="2" nolabel="0"/>
+                        </page>
+                        <page string="name35">
+                        <field name="name35" colspan="2" nolabel="0"/>
+                        </page>
+                        <page string="name36">
+                        <field name="name36" colspan="2" nolabel="0"/>
+                        </page>
+                        <page string="name37">
+                        <field name="name37" colspan="2" nolabel="0"/>
+                        </page>
+                        <page string="name38">
+                        <field name="name38" colspan="2" nolabel="0"/>
+                        </page>
+                        <page string="name39">
+                        <field name="name39" colspan="2" nolabel="0"/>
+                        </page>
+                        <page string="name40">
+                        <field name="name40" colspan="2" nolabel="0"/>
+                        </page>
+                        </notebook>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <!-- TREE VIEW Product Packaging -->
+        <record id='view_tree_perf_text_page' model='ir.ui.view'>
+            <field name="name">view_tree_perf_text_page</field>
+            <field name="model">perf.text</field>
+            <field name="arch" type="xml">
+                <tree string="Perf Text" version="8.0">
+                    <field name="name1" />
+                    <field name="name2" />
+                    <field name="name3" />
+                    <field name="name4" />
+                    <field name="name5" />
+                    <field name="name6" />
+                    <field name="name7" />
+                    <field name="name8" />
+                    <field name="name9" />
+                    <field name="name10" />
+                    <field name="name11" />
+                    <field name="name12" />
+                    <field name="name13" />
+                    <field name="name14" />
+                    <field name="name15" />
+                    <field name="name16" />
+                    <field name="name17" />
+                    <field name="name18" />
+                    <field name="name19" />
+                    <field name="name20" />
+                    <field name="name21" />
+                    <field name="name22" />
+                    <field name="name23" />
+                    <field name="name24" />
+                    <field name="name25" />
+                    <field name="name26" />
+                    <field name="name27" />
+                    <field name="name28" />
+                    <field name="name29" />
+                    <field name="name30" />
+                    <field name="name31" />
+                    <field name="name32" />
+                    <field name="name33" />
+                    <field name="name34" />
+                    <field name="name35" />
+                    <field name="name36" />
+                    <field name="name37" />
+                    <field name="name38" />
+                    <field name="name39" />
+                    <field name="name40" />
+                </tree>
+            </field>
+        </record>
+
+        <!-- ACTION Product Packaging -->
+        <record id="act_perf_text_page" model="ir.actions.act_window">
+            <field name="name">Perf Text page</field>
+            <field name="res_model">perf.text</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[]</field>
+            <field name="context">{}</field>
+        </record>
+        
+        <record id="act_perf_text_page_tree" model="ir.actions.act_window.view">
+            <field name="sequence" eval="10"/>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="view_tree_perf_text_page"/>
+            <field name="act_window_id" ref="act_perf_text_page"/>
+        </record>
+        
+        <record model="ir.actions.act_window.view" id="act_perf_text_page_form">
+            <field name="sequence" eval="20"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_form_perf_text_page"/>
+            <field name="act_window_id" ref="act_perf_text_page"/>
+        </record>
+
+        <menuitem name="Perf Text page" action="act_perf_text_page" id="menu_perf_text_page" parent="menu_perf" />
+        
+        		
+	</data>
+</openerp>

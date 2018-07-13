@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+		<record id="view_form_wiz_intervention_quotation" model="ir.ui.view">
+            <field name="name">view_form_wiz_intervention_quotation</field>
+            <field name="model">wiz.intervention.quotation</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Create quotation of intervention" version="8.0">
+                    <group colspan="4" col="4" >
+	                    <field name="customer_id" readonly="1" />
+	                    <field name="date" required="1" />
+	                    <field name="intervention_id" invisible="1" />
+	                    <group colspan="4" col="4" string="Lines" >
+		                    <field name="line_ids" nolabel="1" colspan="4" >
+		                        <tree string="Lines" editable="bottom" >
+		                            <field name="product_id" required="1" domain="[('sale_ok', '=', True), ('state', 'in', ['dev','lifeserie','endlife']), '|', 
+		                                                                           ('sale_product_customerinfo', '=', parent.customer_id), ('free_sale', '=', True)]" />
+		                            <field name="description" required="1" />
+		                            <field name="qty" required="1" />
+		                            <field name="price" required="1" />
+		                            <field name="uom_id" required="1" />
+		                            <field name="currency_id" required="1" />
+		                            <field name="uom_category_id" invisible="1" />
+		                        </tree>
+		                    </field>
+		                </group>
+		                <group colspan="4" col="4" string="Product not ordered" >
+                            <field name="no_order_line_ids" nolabel="1" colspan="4" readonly="1" >
+                                <tree string="Product not ordered" editable="bottom" >
+                                    <field name="product_id"  />
+                                    <field name="description" />
+                                </tree>
+                            </field>
+                        </group>
+                    </group>
+                    <footer>
+                        <button name="action_validation" string="OK" type="object" class="oe_highlight" />
+                        or
+                        <button string="Cancel" class="oe_link" special="cancel" />
+                    </footer>
+                </form>
+            </field>
+        </record>
+         
+         <record model="ir.actions.act_window" id="act_wiz_intervention_quotation">
+            <field name="name">Create quotation of intervention</field>
+            <field name="res_model">wiz.intervention.quotation</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+        
+	</data>
+</openerp>

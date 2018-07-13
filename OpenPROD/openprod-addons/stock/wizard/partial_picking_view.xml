@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+		<!-- FORM VIEW Partial picking -->
+		<record id='view_form_partial_picking' model='ir.ui.view'>
+			<field name="name">partial_picking</field>
+			<field name="model">stock.partial.picking</field>
+			<field name="arch" type="xml">
+				<form string="Partial picking" version="8.0">
+					<field name="line_ids" >
+						<tree string="Lines" editable="bottom"  create="false" >
+							<field name="product_id" />
+							<field name="is_partial" invisible="1" />
+							<field name="track_label" invisible="1"/>
+							<field name="uom_qty" attrs="{'readonly': [('track_label', '=', True), ('move_type', 'in', ('in', 'out'))]}" />
+							<field name="uom_id" readonly="1" />
+							<field name="sec_uom_qty" attrs="{'readonly': [('track_label', '=', True), ('move_type', 'in', ('in', 'out'))]}" />
+							<field name="sec_uom_id" readonly="1" />
+							<field name="uoi_qty" invisible="1" />
+							<field name="uoi_id" invisible="1" />
+							<field name="order_qty" readonly="1" />
+							<field name="manage_scrap" />
+							<field name="is_variable_double_unit" invisible="1" />
+							<field name="move_id" invisible="1" />
+							<field name="move_type" invisible="1" />
+						</tree>
+					</field>
+					<footer>
+						<button name="do_partial" string="OK" type="object" class="oe_highlight" />
+						or
+						<button string="Cancel" class="oe_link" special="cancel" />
+					</footer>
+				</form>
+			</field>
+		</record>
+		<!-- ACTION Partial picking -->
+		<record id="act_partial_picking" model="ir.actions.act_window">
+			<field name="name">Partial picking</field>
+			<field name="res_model">stock.partial.picking</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">form</field>
+			<field name="target">new</field>
+		</record>
+	</data>
+</openerp>

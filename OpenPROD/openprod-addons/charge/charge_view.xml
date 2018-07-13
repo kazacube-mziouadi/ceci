@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+
+		<record id="view_graph_charge_categ_resource" model="ir.ui.view">
+			<field name="name">Charge per category</field>
+			<field name="model">mrp.resource.category</field>
+			<field name="arch" type="xml">
+				<chart string="Charge per resource category" type="stacked" action="/charge/per_resource_category">
+					<column name="start_date" type="row" />
+					<column name="resource_category_id" type="row" />
+					<column name="capacity" type="measure" color="#BBB" />
+					<column name="loading" type="measure" />
+				</chart>
+			</field>
+		</record>
+
+		<record id='view_search_charge_categ_resource' model='ir.ui.view'>
+			<field name="name">view_search_charge_categ_resource</field>
+			<field name="model">mrp.resource.category</field>
+			<field name="arch" type="xml">
+				<search version="8.0">
+					<field name="name" />
+				</search>
+			</field>
+		</record>
+
+		<record id="act_charge_categ_resource" model="ir.actions.act_window">
+			<field name="name">Charge per category</field>
+			<field name="res_model">mrp.resource.category</field>
+			<field name="view_mode">chart</field>
+			<field name="view_id" ref="view_graph_charge_categ_resource" />
+			<field name="search_view_id" ref="view_search_charge_categ_resource" />
+		</record>
+
+
+
+		<record id="view_graph_charge_resource" model="ir.ui.view">
+			<field name="name">Charge per resource</field>
+			<field name="model">mrp.resource</field>
+			<field name="arch" type="xml">
+				<chart string="Charge per resource" type="stacked" action="/charge/per_resource">
+					<column name="start_date" type="row" />
+					<column name="resource_id" type="row" />
+					<column name="capacity" type="measure" color="#BBB" />
+					<column name="loading" type="measure" />
+				</chart>
+			</field>
+		</record>
+
+		<record id='view_search_charge_resource' model='ir.ui.view'>
+			<field name="name">view_search_charge_resource</field>
+			<field name="model">mrp.resource</field>
+			<field name="arch" type="xml">
+				<search version="8.0">
+					<field name="category_resource_ids" />
+					<field name="name" />
+				</search>
+			</field>
+		</record>
+
+		<record id="act_charge_resource" model="ir.actions.act_window">
+			<field name="name">Charge per resource</field>
+			<field name="res_model">mrp.resource</field>
+			<field name="view_mode">chart</field>
+			<field name="view_id" ref="view_graph_charge_resource" />
+			<field name="search_view_id" ref="view_search_charge_resource" />
+		</record>
+
+		<menuitem id="menu_charge" name="Charge" parent="mrp.menu_production_main" sequence="20"/>
+		<menuitem id="menu_charge_categories" name="Categories" action="act_charge_categ_resource" parent="menu_charge"
+			sequence="20" groups="mrp.group_menu_manuf_plan"/>
+		<menuitem id="menu_charge_resource" name="Resources" action="act_charge_resource" parent="menu_charge"
+			sequence="10" groups="mrp.group_menu_manuf_plan"/>
+
+	</data>
+</openerp>

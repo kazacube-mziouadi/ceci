@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+		<!-- FORM VIEW Standard Offer -->
+		<record id='view_form_standard_offer' model='ir.ui.view'>
+			<field name="name">standard_offer</field>
+			<field name="model">standard.offer</field>
+			<field name="arch" type="xml">
+				<form string="Standard Tariff" version="8.0">
+					<header>
+						<button string="Draft" states="sent,applicable,obsolete" type="object" name="to_draft" />
+						<button string="Sent" states="draft" type="object" name="to_sent" />
+						<button string="Applicable" states="sent" type="object" name="to_applicable" />
+						<button string="Obsolete" states="sent,applicable" type="object" name="to_obsolete" />
+						<field name="state" readonly="1" widget="statusbar" />
+					</header>
+					<group>
+						<div clas="oe_title">
+							<h1>
+								<field name="name" readonly="1" />
+							</h1>
+						</div>
+					</group>
+					<group colspan="4" col="6">
+					    <group col="2" colspan="2">
+						    <field name="start_date" />
+						    <field name="customer_id" attrs="{'invisible': [('type', '!=', 'customer')], 'required':[('type', '=', 'customer')]}"
+                                domain="[('is_customer', '=', True), ('can_order', '=', True)]" />
+                            <field name="category_id" attrs="{'invisible': [('type', '!=', 'standard')], 'required':[('type', '=', 'standard')]}" />
+                            <field name="family_id" attrs="{'invisible': [('type', '!=', 'family')], 'required':[('type', '=', 'family')]}" />
+						</group>
+						<group col="2" colspan="2">
+						    <field name="end_date" />
+<!-- 						    <field name="currency_id" attrs="{'invisible': [('type', '!=', 'standard')]}" /> -->
+<!--                             <field name="currency_manual_id" attrs="{'invisible': [('type', 'not in', ('customer', 'family'))], 'required': [('type', 'in', ('customer', 'family')), ('state', '=', 'draft')], 'readonly': [('state', '!=', 'draft')]}" /> -->
+                                <field name="currency_id"  />
+                        </group>
+						<group col="2" colspan="2">
+						    <field name="type" />
+						</group>
+					</group>
+					<notebook>
+						<page string="Discount">
+							<group string="Discount">
+								<field name="rule_ids" nolabel="1">
+									<tree editable="bottom">
+										<field name="type" />
+										<field name="product_id" attrs="{'required': [('type', '=', 'product')], 'readonly': [('type', '!=', 'product')]}"
+											domain="parent.customer_id and [('sale_ok', '=', True), '|', ('sale_product_customerinfo', '=', parent.customer_id), ('free_sale', '=', True)] or [('sale_ok', '=', True), ('sale_family_id', '=?', parent.category_id)]"
+											context="{'default_sale_ok':True,'default_sale_family_id':parent.category_id}" />
+										<field name="category_id" attrs="{'required': [('type', '=', 'category')], 'readonly': [('type', '!=', 'category')]}"
+											domain="[('id', '=?', parent.category_id)]" />
+										<field name="quantity" />
+										<field name="uos_id" readonly="1" />
+										<field name="discount_type" />
+										<field name="mode" />
+										<field name="value" />
+										<field name="uoi_id" readonly="1" />
+										<field name="state" />
+										<field name="offer_id" invisible="1" />
+									</tree>
+								</field>
+							</group>
+						</page>
+						<page string="Infos">
+							<group colspan="4" col="4" string="Infos">
+								<field name="create_date" readonly="1" />
+								<field name="create_uid" readonly="1" />
+								<field name="sending_date" readonly="1" />
+								<field name="sending_uid" readonly="1" />
+								<field name="application_date" readonly="1" />
+								<field name="application_uid" readonly="1" />
+								<field name="obsolescence_date" readonly="1" />
+								<field name="obsolescence_uid" readonly="1" />
+							</group>
+						</page>
+						<page string="Print" attrs="{'invisible': [('type', '=', 'standard')]}">
+							<group string="Print" colspan="4" col="1">
+								<field name="print_line_ids" nolabel="1">
+									<tree create="false" edit="false">
+										<field name="product_id" />
+										<field name="uoi_id" />
+										<field name="uos_id" />
+										<field name="qty_1" />
+										<field name="price_1" />
+										<field name="qty_2" />
+										<field name="price_2" />
+										<field name="qty_3" />
+										<field name="price_3" />
+										<field name="qty_4" />
+										<field name="price_4" />
+									</tree>
+								</field>
+								<footer>
+									<button string="Delete lines" type="object" name="delete_print_lines" confirm="Delete all lines?" />
+									<button string="Import lines" type="object" name="import_all_print_lines" confirm="Import all lines?" />
+									<button string="Import category" type="action" name="%(act_category_import)d" context="{'default_offer_id': id, }" />
+									<button string="Import product" type="action" name="%(act_product_import)d" context="{'default_offer_id': id, }" />
+								</footer>
+							</group>
+						</page>
+						<page string="Communication">
+							<group colspan="4" col="4" string="Mail">
+								<field name="mail_ids" nolabel="1" colspan="4" />
+								<button name="action_send_mail" type="object" string="Send Mail" />
+							</group>
+							<group string="Comment">
+								<field name="comment" colspan="4" nolabel="1" />
+							</group>
+						</page>
+					</notebook>
+				</form>
+			</field>
+		</record>
+
+		<!-- TREE VIEW Standard Offer -->
+		<record id='view_tree_standard_offer' model='ir.ui.view'>
+			<field name="name">standard_offer</field>
+			<field name="model">standard.offer</field>
+			<field name="arch" type="xml">
+				<tree string="Standard Tariffs" version="8.0">
+					<field name="name" />
+					<field name="type" />
+					<field name="customer_id" />
+					<field name="category_id" />
+					<field name="start_date" />
+					<field name="end_date" />
+					<field name="state" />
+				</tree>
+			</field>
+		</record>
+
+		<!-- SEARCH VIEW string -->
+		<record id='view_search_offer' model='ir.ui.view'>
+			<field name="name">standard_offer</field>
+			<field name="model">standard.offer</field>
+			<field name="arch" type="xml">
+				<search>
+					<group expand="0" string="Filters">
+						<filter string="Customer" domain="[('type', '=', 'customer')]" />
+						<filter string="Standard" domain="[('type', '=', 'standard')]" />
+						<filter string="Family" domain="[('type', '=', 'family')]" />
+						<filter string="Active" domain="[('state', '=', 'applicable')]" />
+						<filter string="Not active" domain="[('state', '!=', 'applicable')]" />
+					</group>
+					<group expand="0" string="Group by...">
+						<filter string="State" context="{'group_by' : 'state'}" />
+					</group>
+					<field name="name" />
+					<field name="customer_id" />
+					<field name="category_id" />
+				</search>
+			</field>
+		</record>
+
+		<!-- ACTION Standard Offer -->
+		<record id="act_standard_offer" model="ir.actions.act_window">
+			<field name="name">Standard Tariff</field>
+			<field name="res_model">standard.offer</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+			<field name="domain">[]</field>
+			<field name="context">{}</field>
+		</record>
+
+		<!-- FORM VIEW Standard Offer Print Line -->
+		<record id='view_form_standard_offer_print_line' model='ir.ui.view'>
+			<field name="name">standard_offer_print_line</field>
+			<field name="model">standard.offer.print.line</field>
+			<field name="arch" type="xml">
+				<form string="Standard Tariff Print Line" version="8.0">
+					<group col="4">
+						<field name="product_id" />
+						<field name="uoi_id" />
+						<field name="uos_id" />
+						<group colspan="2"></group>
+						<field name="qty_1" />
+						<field name="price_1" />
+						<field name="qty_2" />
+						<field name="price_2" />
+						<field name="qty_3" />
+						<field name="price_3" />
+						<field name="qty_4" />
+						<field name="price_4" />
+					</group>
+				</form>
+			</field>
+		</record>
+
+		<menuitem id="menu_standard_offer" name="Standard Tariff" action="act_standard_offer" parent="sale.menu_sale_price_standard"
+			groups="sale.group_menu_sale_user" />
+
+		<!-- TREE VIEW Standard Offer Line -->
+		<record id='view_tree_standard_offer_line' model='ir.ui.view'>
+			<field name="name">standard_offer_line</field>
+			<field name="model">standard.offer.line</field>
+			<field name="arch" type="xml">
+				<tree string="Standard Tariffs Line" version="8.0">
+					<field name="offer_id" />
+					<field name="type" />
+					<field name="product_id" />
+					<field name="category_id" />
+					<field name="customer_id" />
+					<field name="quantity" />
+					<field name="uos_id" />
+					<field name="discount_type" />
+					<field name="mode" />
+					<field name="value" />
+					<field name="uoi_id" />
+					<field name="state" />
+				</tree>
+			</field>
+		</record>
+
+		<!-- SEARCH VIEW Standard Offer Line -->
+		<record id='view_search_offer_line' model='ir.ui.view'>
+			<field name="name">standard_offer_line</field>
+			<field name="model">standard.offer.line</field>
+			<field name="arch" type="xml">
+				<search>
+					<group expand="0" string="Filters">
+						<filter string="Customer" domain="[('offer_id.type', '=', 'customer')]" />
+						<filter string="Standard" domain="[('offer_id.type', '=', 'standard')]" />
+						<filter string="Family" domain="[('offer_id.type', '=', 'family')]" />
+						<filter string="Active" name="active" domain="[('offer_id.state', '=', 'applicable')]" />
+						<filter string="Draft" domain="[('state', 'in', ['draft', 'sent'])]" />
+						<filter string="Obsolete" domain="[('offer_id.state', '=', 'obsolete')]" />
+					</group>
+					<group expand="0" string="Group by...">
+						<filter string="Category" context="{'group_by' : 'category_id'}" />
+						<filter string="Product" context="{'group_by' : 'product_id'}" />
+					</group>
+					<field name="category_id" />
+					<field name="product_id" />
+					<field name="customer_id" />
+				</search>
+			</field>
+		</record>
+
+		<!-- ACTION Standard Offer Line -->
+		<record id="act_standard_offer_line" model="ir.actions.act_window">
+			<field name="name">Standard Tariff Line</field>
+			<field name="res_model">standard.offer.line</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree</field>
+			<field name="domain">[]</field>
+			<field name="context">{'search_default_active':1}</field>
+		</record>
+
+		<menuitem id="menu_standard_offer_line" name="Standard Tariff Line" action="act_standard_offer_line" parent="sale.menu_sale_price_standard"
+			groups="sale.group_menu_sale_user" />
+
+	</data>
+</openerp>

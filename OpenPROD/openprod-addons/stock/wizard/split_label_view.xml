@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+		<!-- FORM VIEW Split label choice -->
+		<record id='view_form_split_label_choice_wizard' model='ir.ui.view'>
+			<field name="name">view_form_split_label_choice_wizard</field>
+			<field name="model">split.label.choice.wizard</field>
+			<field name="arch" type="xml">
+				<form string="Split label" version="8.0">
+					<group colspan="4" col="4">
+						<group colspan="2" col="2" string="Classic split">
+							<center>
+								<field name="classic_split" nolabel="1" colspan="2" />
+								<img src="/stock/static/src/img/classic_split.png" />
+							</center>
+						</group>
+						<group colspan="2" col="2" string="Equal split">
+							<center>
+								<field name="equal_split" nolabel="1" colspan="2" />
+								<img src="/stock/static/src/img/equal_split.png" />
+							</center>
+						</group>
+					</group>
+					<footer>
+						<button name="validate_choice" string="OK" type="object" class="oe_highlight" />
+						or
+						<button string="Cancel" class="oe_link" special="cancel" />
+					</footer>
+				</form>
+			</field>
+		</record>
+		<!-- ACTION Split label choice -->
+		<act_window name="Split label" res_model="split.label.choice.wizard" src_model="stock.label" view_mode="form" target="new" key2="client_action_multi" id="act_stock_split_label_choice" />
+
+
+		<!-- FORM VIEW Split label -->
+		<record id='view_form_split_label_wizard' model='ir.ui.view'>
+			<field name="name">view_form_split_label_wizard</field>
+			<field name="model">split.label.wizard</field>
+			<field name="arch" type="xml">
+				<form string="Split label" version="8.0">
+					<field name="is_variable_double_unit" invisible="1" />
+					<group colspan="4" col="4">
+						<field name="remaining_qty" />
+						<field name="uom_id" />
+						<field name="sec_remaining_qty" attrs="{'invisible': [('is_variable_double_unit', '!=', True)]}" />
+						<field name="sec_uom_id" />
+					</group>
+					<footer>
+						<button name="split_label" string="OK" type="object" class="oe_highlight" />
+						or
+						<button string="Cancel" class="oe_link" special="cancel" />
+					</footer>
+				</form>
+			</field>
+		</record>
+		<!-- ACTION Split label -->
+		<record id="act_stock_split_label" model="ir.actions.act_window">
+			<field name="name">Classic split</field>
+			<field name="res_model">split.label.wizard</field>
+			<field name="view_type">form</field>
+			<field name="target">new</field>
+			<field name="view_mode">form</field>
+		</record>
+
+
+		<!-- FORM VIEW Equal split label -->
+		<record id='view_form_equal_split_label_wizard' model='ir.ui.view'>
+			<field name="name">view_form_equal_split_label_wizard</field>
+			<field name="model">equal.split.label.wizard</field>
+			<field name="arch" type="xml">
+				<form string="Split label" version="8.0">
+					<field name="is_variable_double_unit" invisible="1" />
+					<group colspan="4" col="4">
+						<field name="number" />
+					</group>
+					<footer>
+						<button name="equal_split_label" string="OK" type="object" class="oe_highlight" />
+						or
+						<button string="Cancel" class="oe_link" special="cancel" />
+					</footer>
+				</form>
+			</field>
+		</record>
+		<!-- ACTION Equal split label -->
+		<record id="act_stock_equal_split_label" model="ir.actions.act_window">
+			<field name="name">Equal split label</field>
+			<field name="res_model">equal.split.label.wizard</field>
+			<field name="view_type">form</field>
+			<field name="target">new</field>
+			<field name="view_mode">form</field>
+		</record>
+	</data>
+</openerp>

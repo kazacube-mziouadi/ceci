@@ -1,0 +1,131 @@
+<?xml version="1.0"?>
+<openerp>
+	<data>
+		<record model="ir.ui.view" id="view_form_verif_putinprod_report">
+			<field name="name">view.from.verif.putinprod.report</field>
+			<field name="model">verif.putinprod.report</field>
+			<field name="type">form</field>
+			<field name="arch" type="xml">
+				<form string="Verification put in production report">
+					<header>
+						<field name="state" widget="statusbar" />
+					</header>
+					<group col="9">
+						<group colspan="8" col="6">
+							<field name="name" required="1" />
+							<field name="printer" />
+							<field name="printer_id" attrs="{'required':[('printer', '=', True)]}" />
+							<field name="date" />
+							<field name="code_rev" />
+							<field name="jasper_rev" />
+							<group colspan="6" string="Lines">
+								<field name="line_ids" colspan="4" nolabel="1" />
+							</group>
+						</group>
+						<group class="op_shortcuts" name="action_menu" col="1">
+							<separator string="Actions" colspan="1" name="action_separator" widget="to_upper" />
+							<button name="action_impression" string="Impression Report" type="object" icon="fa-print" class="oe_inline oe_stat_button" attrs="{'invisible':[('state', 'not in', ('declared', 'progress'))]}" />
+							<button name="action_reset" string="Reset" type="object" class="oe_inline oe_stat_button" icon="fa-times-circle" />
+						</group>
+					</group>
+				</form>
+			</field>
+		</record>
+
+		<record model="ir.ui.view" id="view_tree_verif_putinprod_report">
+			<field name="name">view.tree.verif.putinprod.report</field>
+			<field name="model">verif.putinprod.report</field>
+			<field name="type">tree</field>
+			<field name="arch" type="xml">
+				<tree string="Verification put in production report">
+					<field name="name" />
+					<field name="date" />
+					<field name="state" />
+					<field name="code_rev" />
+					<field name="jasper_rev" />
+				</tree>
+			</field>
+		</record>
+
+		<record model="ir.actions.act_window" id="action_verif_putinprod_report">
+			<field name="name">Verification put in production report</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="res_model">verif.putinprod.report</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+
+		<menuitem id="menu_verif_putinprod_report" parent="jasper_server.menu_jasper" sequence="40" action="action_verif_putinprod_report" />
+
+		<record model="ir.ui.view" id="view_form_verif_putinprod_report_line">
+			<field name="name">view.from.verif.putinprod.report.line</field>
+			<field name="model">verif.putinprod.report.line</field>
+			<field name="type">form</field>
+			<field name="arch" type="xml">
+				<form string="Line">
+					<header>
+						<field name="state" widget="statusbar" />
+					</header>
+					<group col="9">
+						<group colspan="8" col="4">
+							<field name="name" required="1" />
+							<field name="jasper_id" />
+							<newline />
+							<group colspan="2" col="2" string="Record selection">
+								<field name="recording_type" colspan="2" />
+								<field name="limit" attrs="{'invisible': [('recording_type', '!=', 'domain')]}" colspan="2" />
+							</group>
+                            <group colspan="2" col="2" string="Selection">
+                                <field name="recording_id" attrs="{'invisible': [('recording_type', '!=', 'id')], 'required': [('recording_type', '=', 'id')]}" colspan="2" />
+                                <field name="recording_domain" attrs="{'invisible': [('recording_type', '!=', 'domain')], 'required': [('recording_type', '=', 'domain')]}" colspan="4" nolabel="1" />
+                            </group>
+							<field name="report_init" filename="report_init_name" />
+							<field name="report_final" filename="report_final_name" />
+							<group colspan="4" col="6">
+								<field name="report_init_name" invisible="1" />
+								<field name="report_final_name" invisible="1" />
+							</group>
+						</group>
+						<group class="op_shortcuts" name="action_menu" col="1">
+							<separator string="Actions" colspan="1" name="action_separator" widget="to_upper" />
+							<button name="only_print_line" string="Only Print" type="object" icon="fa-print" class="oe_inline oe_stat_button" />
+							<button name="action_test_get_ids" string="Verif domain" type="object" icon="fa-print" class="oe_inline oe_stat_button" attrs="{'invisible': [('recording_type', '=', 'id')]}" />
+							<button name="action_validation" string="Validation" type="object" icon="fa-check" class="oe_inline oe_stat_button" attrs="{'invisible':[('state','not in',('printed_after'))]}" />
+						</group>
+                        <field name="verif_id" invisible="1" />
+					</group>
+				</form>
+			</field>
+		</record>
+
+		<record model="ir.ui.view" id="view_tree_verif_putinprod_report_line">
+			<field name="name">view.tree.verif.putinprod.report.line</field>
+			<field name="model">verif.putinprod.report.line</field>
+			<field name="type">tree</field>
+			<field name="arch" type="xml">
+				<tree string="Lines">
+					<field name="verif_id" invisible="1" />
+					<field name="name" />
+					<field name="state" />
+					<button name="action_validation" string="Validation" type="object" icon="gtk-ok" states="printed_after" />
+					<field name="jasper_id" />
+					<field name="recording_type" />
+					<field name="recording_id" />
+					<field name="recording_domain" />
+					<button name="action_impression_line" string="Impression Report" type="object" icon="gtk-ok" />
+				</tree>
+			</field>
+		</record>
+
+		<record model="ir.actions.act_window" id="action_verif_putinprod_report_line">
+			<field name="name">Verification report Line</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="res_model">verif.putinprod.report.line</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+
+		<menuitem id="menu_verif_putinprod_report_line" parent="jasper_server.menu_jasper" sequence="50" action="action_verif_putinprod_report_line" />
+
+	</data>
+</openerp>

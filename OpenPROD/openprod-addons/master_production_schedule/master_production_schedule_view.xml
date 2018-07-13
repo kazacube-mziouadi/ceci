@@ -1,0 +1,641 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+		
+		<menuitem name="Master production schedule" id="menu_master_production_schedule_main" parent="mrp.menu_production_main" sequence="15"/>
+		<menuitem name="Listing" id="menu_listing_forecast_data" parent="menu_master_production_schedule_main" sequence="30"/>
+		<menuitem name="Analysis" id="menu_analysis_forecast_data" parent="menu_master_production_schedule_main" sequence="40"/>
+
+		<!-- ========================== -->
+		<!-- MASTER PRODUCTION SCHEDULE -->
+		<!-- ========================== -->
+		
+		<!-- FORM VIEW Master production schedule -->
+		<record id='view_form_master_production_schedule' model='ir.ui.view'>
+			<field name="name">view_form_master_production_schedule</field>
+			<field name="model">master.production.schedule</field>
+			<field name="arch" type="xml">
+				<form string="Program" version="8.0">
+					<header>
+						<button name="program_validate" string="Validate" type="object" attrs="{'invisible': [('state', '!=', 'draft')]}" class="openprod_logical_button"/>
+						<button name="program_obsolete" string="Obsolete" type="object" attrs="{'invisible': [('state', '!=', 'validate')]}" class="openprod_cancel_button"/>
+						<button name="program_draft" string="Put in draft" type="object" attrs="{'invisible': [('state', '!=', 'obsolete')]}" class="openprod_logical_button"/>
+						<field name="state" widget="statusbar"/>
+					</header>
+					<group colspan="4" col="9">
+						<group colspan="8">
+							<group colspan="4" col="6">
+								<field name="name" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+								<field name="start_date" attrs="{'readonly': ['|', ('state', '!=', 'draft'), ('line_ids', '!=', [])]}"/>
+								<field name="openprod_create_date" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+								<field name="customer_id" attrs="{'readonly': ['|', ('state', '!=', 'draft'), ('line_ids', '!=', [])]}"/>
+							</group>
+							<notebook colspan="4">
+								<page string="Lines">
+									<group colspan="4" col="4" string="Lines">
+										<field name="line_ids" colspan="4" nolabel="1" readonly="1">
+											<tree string="Program line">
+												<field name="product_id"/>
+												<field name="uom_id"/>
+												<field name="start_date"/>
+												<field name="qty_firm_order"/>
+												<field name="qty_firm_procurement"/>
+												<field name="available_stock_firm" colors="#FF8C69:available_stock_firm&lt;0;#CCCCCC:available_stock_firm==0;#77BD7B:available_stock_firm&gt;0;"/>
+												<field name="qty_forecast_order"/>
+												<button class="oe_inline oe_stat_button" type="action" string="Change" name="%(action_change_program_line)d" icon="fa-pencil-square-o"
+													attrs="{'invisible': [('sale_ok', '!=', True)]}"/>
+												<field name="qty_forecast_procurement"/>
+												<button class="oe_inline oe_stat_button" type="action" string="Change" name="%(action_change_program_line)d" icon="fa-pencil-square-o"
+												 	attrs="{'invisible': [('produce_ok', '!=', True)]}"/>
+												<field name="available_stock_firm_forecast" colors="#FF8C69:available_stock_firm_forecast&lt;0; #CCCCCC:available_stock_firm_forecast==0;#77BD7B:available_stock_firm_forecast&gt;0;"/>
+												<field name="period_sequence" invisible="1"/>
+												<field name="produce_ok" invisible="1"/>
+												<field name="sale_ok" invisible="1"/>
+											</tree>
+											<form string="Program line" version="8.0">
+												<header>
+													<field name="state" widget="statusbar"/>
+												</header>
+												<group colspan="4" col="4">
+													<group colspan="4" col="6">
+														<field name="period_sequence"/>
+														<field name="product_id"/>
+														<field name="uom_id"/>
+														<field name="category_id"/>
+														<field name="customer_id"/>
+													</group>
+													<group colspan="4" col="6" string="Period">
+														<field name="start_date"/>
+														<field name="end_date"/>
+														<field name="period_type"/>
+														<field name="year"/>
+														<field name="month"/>
+														<field name="week"/>
+														<field name="period_id"/>
+													</group>
+													<group colspan="4" col="6" string="Detail">
+														<group colspan="2" col="2">
+															<field name="qty_firm_order"/>
+															<field name="firm_qty_order_amount"/>
+															<field name="qty_forecast_procurement"/>
+															<field name="forecast_procurement_amount"/>
+														</group>
+														<group colspan="2" col="2">
+															<field name="qty_forecast_order"/>
+															<field name="forecast_qty_order_amount"/>
+															<field name="available_stock_firm"/>
+															<field name="available_stock_firm_forecast"/>
+														</group>
+														<group colspan="2" col="2">
+															<field name="qty_firm_procurement"/>
+															<field name="firm_procurement_amount"/>
+														</group>
+													</group>
+												</group>
+											</form>
+										</field>
+										<div class="oe_right oe_button_box">
+											<button type="object" string="Delete all lines" name="delete_all_lines" attrs="{'invisible': ['|', ('line_ids', '=', []), ('state', '!=', 'draft')]}"
+											class="openprod_cancel_button"/>
+										</div>
+									</group>
+								</page>
+								<page string="Period">
+									<group colspan="4" col="6" string="Select the period">
+										<field name="period_type"/>
+										<field name="period_nb"/>
+										<button class="oe_inline oe_stat_button" type="object" string="Create periods" name="generate_schedule_period_line" icon="fa-sign-in" 
+										attrs="{'invisible': ['|', ('period_type', '=', False), '|', ('period_nb', '&lt;=', 0), ('state', '!=', 'draft')]}"/>
+									</group>
+									<group colspan="4" col="4" string="Periods">
+										<field name="period_ids" colspan="4" nolabel="1" readonly="1"/>
+										<div class="oe_right oe_button_box">
+											<button type="object" string="Delete all periods" name="delete_all_periods" class="openprod_cancel_button"
+											attrs="{'invisible': ['|', ('period_ids', '=', []), '|', ('state', '!=', 'draft'), ('line_ids', '!=', [])]}"/>
+										</div>
+									</group>
+								</page>
+								<page string="Settings">
+									<group colspan="4" col="4" string="Products list">
+										<field name="product_ids" colspan="4" nolabel="1" attrs="{'readonly': ['|', ('line_ids', '!=', []), ('state', '!=', 'draft')]}"/>
+									</group>
+								</page>
+							</notebook>
+						</group>
+						<group colspan="1" col="1" class="op_shortcuts" name="master_production_shortcuts">
+							<separator string="Lines" colspan="1"/>
+							<button class="oe_inline oe_stat_button" type="object" string="Import lines" name="import_program_lines" icon="fa-sign-in" attrs="{'invisible': [('state', '!=', 'draft')]}"/>
+							<button class="oe_inline oe_stat_button" type="object" string="Display lines" name="show_program_lines" icon="fa-bars" />
+							<button class="oe_inline oe_stat_button" type="object" string="Update line values" name="compute_all" icon="fa-refresh" />
+						</group>
+					</group>
+				</form>
+			</field>
+		</record>
+		
+		<!-- TREE VIEW Master production schedule -->
+		<record id='view_tree_master_production_schedule' model='ir.ui.view'>
+			<field name="name">view_tree_master_production_schedule</field>
+			<field name="model">master.production.schedule</field>
+			<field name="arch" type="xml">
+				<tree string="Program" version="8.0">
+					<field name="name"/>
+					<field name="start_date"/>
+					<field name="customer_id"/>
+					<field name="line_ids"/>
+					<field name="state"/>
+				</tree>
+			</field>
+		</record>
+		
+		<!-- SEARCH VIEW Master production schedule -->
+		<record id='view_search_master_production_schedule' model='ir.ui.view'>
+			<field name="name">view_search_master_production_schedule</field>
+			<field name="model">master.production.schedule</field>
+			<field name="arch" type="xml">
+				<search version="8.0">
+					<field name="name"/>
+					<field name="start_date"/>
+					<field name="customer_id"/>
+					<field name="state"/>
+					<group expand="0" string="Group by...">
+						<filter string="customer_id" icon="terp-partner" context="{'group_by' : 'customer_id'}" />
+						<filter string="State" icon="terp-partner" context="{'group_by' : 'state'}" />
+					</group>
+				</search>
+			</field>
+		</record>
+		
+		<!-- ACTION Master production schedule -->
+		<record id="action_master_production_schedule" model="ir.actions.act_window">
+		    <field name="name">Program</field>
+		    <field name="res_model">master.production.schedule</field>
+		    <field name="view_type">form</field>
+		    <field name="view_mode">tree,form</field>
+		    <field name="domain">[]</field>
+		    <field name="search_view_id" ref="view_search_master_production_schedule"/>
+		</record>
+		
+		<!-- ACTION Master production schedule form -->
+		<record model="ir.actions.act_window" id="master_production_schedule_see_form">
+		    <field name="name">Program</field>
+		    <field name="res_model">master.production.schedule</field>
+		    <field name="view_type">form</field>
+		    <field name="view_mode">form</field>
+		    <field name="view_id" ref="view_form_master_production_schedule"/>
+		    <field name="target">current</field>
+	  	</record>
+	  	
+		<menuitem name="Program" action="action_master_production_schedule" id="menu_master_production_schedule" parent="menu_master_production_schedule_main" sequence="10"/>
+		
+		
+		<!-- =============================== -->
+		<!-- MASTER PRODUCTION SCHEDULE LINE -->
+		<!-- =============================== -->
+		
+		<!-- FORM VIEW Master production schedule line -->
+		<record id='view_form_master_production_schedule_line' model='ir.ui.view'>
+			<field name="name">view_form_master_production_schedule_line</field>
+			<field name="model">master.production.schedule.line</field>
+			<field name="arch" type="xml">
+				<form string="Program line" version="8.0">
+					<header>
+						<field name="state" widget="statusbar"/>
+					</header>
+					<group colspan="4" col="4">
+						<group colspan="4" col="6">
+							<field name="period_sequence" readonly="1"/>
+							<field name="product_id" readonly="1"/>
+							<field name="uom_id" readonly="1"/>
+							<field name="category_id" readonly="1"/>
+							<field name="master_production_id" readonly="1"/>
+							<field name="customer_id" readonly="1"/>
+						</group>
+						<group colspan="4" col="6" string="Period">
+							<field name="start_date" readonly="1"/>
+							<field name="end_date" readonly="1"/>
+							<field name="period_type" readonly="1"/>
+							<field name="year" readonly="1"/>
+							<field name="month" readonly="1"/>
+							<field name="week" readonly="1"/>
+							<field name="period_id" readonly="1"/>
+						</group>
+						<group colspan="4" col="6" string="Detail">
+							<group colspan="2" col="2">
+								<field name="qty_firm_order" readonly="1"/>
+								<field name="firm_qty_order_amount" readonly="1"/>
+								<field name="qty_forecast_procurement" readonly="1"/>
+								<field name="forecast_procurement_amount" readonly="1"/>
+							</group>
+							<group colspan="2" col="2">
+								<field name="qty_forecast_order" readonly="1"/>
+								<field name="forecast_qty_order_amount" readonly="1"/>
+								<field name="available_stock_firm" readonly="1"/>
+								<field name="available_stock_firm_forecast" readonly="1"/>
+							</group>
+							<group colspan="2" col="2">
+								<field name="qty_firm_procurement" readonly="1"/>
+								<field name="firm_procurement_amount" readonly="1"/>
+							</group>
+						</group>
+					</group>
+				</form>
+			</field>
+		</record>
+		
+		<!-- TREE VIEW Master production schedule line -->
+		<record id='view_tree_master_production_schedule_line' model='ir.ui.view'>
+			<field name="name">view_tree_master_production_schedule_line</field>
+			<field name="model">master.production.schedule.line</field>
+			<field name="arch" type="xml">
+				<tree string="Program line" version="8.0">
+					<field name="product_id"/>
+					<field name="uom_id"/>
+					<field name="period_id"/>
+					<field name="start_date"/>
+					<field name="qty_firm_order"/>
+					<field name="qty_firm_procurement"/>
+					<field name="available_stock_firm" colors="#FF8C69:available_stock_firm&lt;0;#CCCCCC:available_stock_firm==0;#77BD7B:available_stock_firm&gt;0;"/>
+					<field name="qty_forecast_order"/>
+					<button class="oe_inline oe_stat_button" type="action" string="Change" name="%(action_change_program_line)d" icon="fa-pencil-square-o" context="{'from_tree_view': True}"
+					attrs="{'invisible': ['|', ('produce_ok', '!=', True), ('sale_ok', '!=', True)]}"/>
+					<field name="qty_forecast_procurement"/>
+					<button class="oe_inline oe_stat_button" type="action" string="Change" name="%(action_change_program_line)d" icon="fa-pencil-square-o" context="{'from_tree_view': True}"
+					attrs="{'invisible': ['|', ('produce_ok', '!=', True), ('sale_ok', '!=', True)]}"/>
+					<field name="available_stock_firm_forecast" colors="#FF8C69:available_stock_firm_forecast&lt;0; #CCCCCC:available_stock_firm_forecast==0;#77BD7B:available_stock_firm_forecast&gt;0;"/>
+					<field name="customer_id"/>
+					<field name="state" invisible="1"/>
+					<field name="period_type" invisible="1"/>
+					<field name="category_id" invisible="1"/>
+					<field name="master_production_id" invisible="1"/>
+					<field name="period_sequence" invisible="1"/>
+					<field name="end_date" invisible="1"/>
+					<field name="year" invisible="1"/>
+					<field name="month" invisible="1"/>
+					<field name="week" invisible="1"/>
+					<field name="produce_ok" invisible="1"/>
+					<field name="sale_ok" invisible="1"/>
+				</tree>
+			</field>
+		</record>
+		
+		<!-- SEARCH VIEW Master production schedule line -->
+		<record id='view_search_master_production_schedule_line' model='ir.ui.view'>
+			<field name="name">view_search_master_production_schedule_line</field>
+			<field name="model">master.production.schedule.line</field>
+			<field name="arch" type="xml">
+				<search version="8.0">
+					<field name="customer_id"/>
+					<field name="category_id"/>
+					<field name="master_production_id"/>
+					<field name="product_id"/>
+					<group expand="0" string="Filters">
+						<filter string="Validate" domain="[('state', '=', 'validate')]" name='validate'/>
+					</group>
+					<group expand="0" string="Group by...">
+						<filter string="Product" icon="terp-partner" context="{'group_by' : 'product_id'}" />
+						<filter string="Category" icon="terp-partner" context="{'group_by' : 'category_id'}" />
+						<filter string="Period" icon="terp-partner" context="{'group_by' : 'period_id'}" />
+						<filter string="Year" icon="terp-partner" context="{'group_by' : 'year'}" />
+						<filter string="Month" icon="terp-partner" context="{'group_by' : 'month'}" />
+						<filter string="Week" icon="terp-partner" context="{'group_by' : 'week'}" />
+						<filter string="Customer" icon="terp-partner" context="{'group_by' : 'customer_id'}" />
+						<filter string="Program" icon="terp-partner" context="{'group_by' : 'master_production_id'}" />
+					</group>
+				</search>
+			</field>
+		</record>
+		
+		<!-- ACTION Master production schedule line -->
+		<record id="action_master_production_schedule_line" model="ir.actions.act_window">
+		    <field name="name">Program line</field>
+		    <field name="res_model">master.production.schedule.line</field>
+		    <field name="view_type">form</field>
+		    <field name="view_mode">tree,form</field>
+		    <field name="context">{'search_default_validate': 1}</field>
+		    <field name="search_view_id" ref="view_search_master_production_schedule_line"/>
+		</record>
+		
+		<!-- ACTION Master production schedule line -->
+		<record model="ir.actions.act_window" id="master_production_schedule_line_see_tree">
+		    <field name="name">Program line</field>
+		    <field name="res_model">master.production.schedule.line</field>
+		    <field name="view_type">form</field>
+		    <field name="view_mode">tree,form</field>
+		    <field name="view_id" ref="view_tree_master_production_schedule_line"/>
+		    <field name="target">current</field>
+	  	</record>
+		
+		<menuitem name="Program line" action="action_master_production_schedule_line" id="menu__master_production_schedule_line" parent="menu_master_production_schedule_main" sequence="20"/>
+		
+		<!-- PIVOT VIEW Master production schedule line -->	
+		<record id="view_master_production_schedule_line_pivot" model="ir.ui.view">
+			<field name="name">view_master_production_schedule_line_pivot</field>
+			<field name="model">master.production.schedule.line</field>
+			<field name="arch" type="xml">
+				<pivot string="Program line analysis">
+					<field name="category_id" type="row"/>
+					<field name="product_id" type="row"/>
+					<field name="year" type="col"/>
+					<field name="month" type="col"/>     
+					<field name="week" type="col"/>            
+					<field name="qty_forecast_order" type="measure"/>
+					<field name="qty_forecast_procurement" type="measure"/>
+					<field name="available_stock_firm_forecast" type="measure"/>
+				</pivot>
+			</field>
+		</record>
+		
+		<!-- GRAPH VIEW Master production schedule line -->	
+		<record id="view_master_production_schedule_line_graph" model="ir.ui.view">
+			<field name="name">view_master_production_schedule_line_graph</field>
+			<field name="model">master.production.schedule.line</field>
+			<field name="arch" type="xml">
+				<graph string="Program line analysis">
+					<field name="category_id" type="row"/>
+					<field name="product_id" type="row"/>
+					<field name="year" type="col"/>
+					<field name="month" type="col"/>     
+					<field name="week" type="col"/>            
+					<field name="qty_forecast_order" type="measure"/>
+					<field name="qty_forecast_procurement" type="measure"/>
+					<field name="available_stock_firm_forecast" type="measure"/>
+				</graph>
+			</field>
+		</record>
+				
+		<!-- ACTION Master production schedule line pivot,graph -->	
+		<record id="action_master_production_schedule_line_analysis" model="ir.actions.act_window">
+			<field name="name">Forecast analysis</field>
+			<field name="res_model">master.production.schedule.line</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">pivot,graph</field>
+			<field name="domain">[('state', '=', 'validate')]</field>
+			<field name="context">{}</field>
+			<field name="view_id" ref="view_master_production_schedule_line_pivot" />
+			<field name="search_view_id" ref="view_search_master_production_schedule_line"/>
+		</record>
+		
+		<record id="act_master_production_schedule_line_analysis_pivot" model="ir.actions.act_window.view">
+			<field name="sequence" eval="10" />
+			<field name="view_mode">pivot</field>
+			<field name="view_id" ref="view_master_production_schedule_line_pivot" />
+			<field name="act_window_id" ref="action_master_production_schedule_line_analysis" />
+		</record>
+
+		<record id="act_master_production_schedule_line_analysis_graph" model="ir.actions.act_window.view">
+			<field name="sequence" eval="20" />
+			<field name="view_mode">graph</field>
+			<field name="view_id" ref="view_master_production_schedule_line_graph" />
+			<field name="act_window_id" ref="action_master_production_schedule_line_analysis" />
+		</record>
+		
+		<menuitem name="Forecast analysis" action="action_master_production_schedule_line_analysis" id="menu_master_production_schedule_line_analysis" parent="menu_analysis_forecast_data" sequence="10"/>
+		
+		
+		<!-- PIVOT VIEW Master production schedule line financial -->	
+		<record id="view_financial_master_production_schedule_line_pivot" model="ir.ui.view">
+			<field name="name">view_financial_master_production_schedule_line_pivot</field>
+			<field name="model">master.production.schedule.line</field>
+			<field name="arch" type="xml">
+				<pivot string="Financial program analysis">
+					<field name="category_id" type="row"/>
+					<field name="product_id" type="row"/>
+					<field name="year" type="col"/>
+					<field name="month" type="col"/>     
+					<field name="week" type="col"/>            
+					<field name="forecast_qty_order_amount" type="measure"/>
+					<field name="forecast_procurement_amount" type="measure"/>
+				</pivot>
+			</field>
+		</record>
+		
+		<!-- GRAPH VIEW Master production schedule line financial -->
+		<record id="view_financial_master_production_schedule_line_graph" model="ir.ui.view">
+			<field name="name">view_financial_master_production_schedule_line_graph</field>
+			<field name="model">master.production.schedule.line</field>
+			<field name="arch" type="xml">
+				<graph string="Program line analysis">
+					<field name="category_id" type="row"/>
+					<field name="product_id" type="row"/>
+					<field name="year" type="col"/>
+					<field name="month" type="col"/>     
+					<field name="week" type="col"/>            
+					<field name="forecast_qty_order_amount" type="measure"/>
+					<field name="forecast_procurement_amount" type="measure"/>
+				</graph>
+			</field>
+		</record>
+				
+		<!-- ACTION Master production schedule line pivot,graph -->
+		<record id="action_financial_master_production_schedule_line_analysis" model="ir.actions.act_window">
+			<field name="name">Financial forecast analysis</field>
+			<field name="res_model">master.production.schedule.line</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">pivot,graph</field>
+			<field name="domain">[('state', '=', 'validate')]</field>
+			<field name="context">{}</field>
+			<field name="view_id" ref="view_financial_master_production_schedule_line_pivot" />
+		</record>
+		
+		<record id="act_financial_master_production_schedule_line_analysis_pivot" model="ir.actions.act_window.view">
+			<field name="sequence" eval="30" />
+			<field name="view_mode">pivot</field>
+			<field name="view_id" ref="view_financial_master_production_schedule_line_pivot" />
+			<field name="act_window_id" ref="action_financial_master_production_schedule_line_analysis" />
+		</record>
+
+		<record id="act_financial_master_production_schedule_line_graph" model="ir.actions.act_window.view">
+			<field name="sequence" eval="40" />
+			<field name="view_mode">graph</field>
+			<field name="view_id" ref="view_financial_master_production_schedule_line_graph" />
+			<field name="act_window_id" ref="action_financial_master_production_schedule_line_analysis" />
+		</record>
+		
+		<menuitem name="Financial forecast analysis" action="action_financial_master_production_schedule_line_analysis" id="menu_financial_master_production_schedule_line_analysis" parent="menu_analysis_forecast_data" sequence="20"/>
+		
+		<!-- ======================== -->
+		<!-- MASTER PRODUCTION PERIOD -->
+		<!-- ======================== -->
+		
+		<!-- FORM VIEW Master production period -->
+		<record id='view_form_master_production_period' model='ir.ui.view'>
+			<field name="name">view_form_master_production_period</field>
+			<field name="model">master.production.period</field>
+			<field name="arch" type="xml">
+				<form string="Program period" version="8.0">
+					<group colspan="4" col="6">
+						<group colspan="2" col="2">
+							<field name="sequence"/>
+							<field name="start_date"/>
+						</group>
+						<group colspan="2" col="2">
+							<field name="name"/>
+							<field name="end_date"/>
+						</group>
+						<group colspan="2" col="2">
+							<field name="period_type"/>
+						</group>
+					</group>
+				</form>
+			</field>
+		</record>
+		
+		<!-- TREE VIEW Master production period -->
+		<record id='view_tree_master_production_period' model='ir.ui.view'>
+			<field name="name">view_tree_master_production_period</field>
+			<field name="model">master.production.period</field>
+			<field name="arch" type="xml">
+				<tree string="Program period" version="8.0">
+					<field name="sequence"/>
+					<field name="name"/>
+					<field name="start_date"/>
+					<field name="end_date"/>
+					<field name="period_type"/>
+				</tree>
+			</field>
+		</record>
+		
+		
+		<!-- ========== -->
+		<!-- STOCK MOVE -->
+		<!-- ========== -->
+		
+		<!-- ACTION Forecast stock move -->
+		<record id="action_forecast_stock_move_for_schedule" model="ir.actions.act_window">
+		    <field name="name">Forecast raw material</field>
+		    <field name="res_model">stock.move</field>
+		    <field name="view_type">form</field>
+		    <field name="view_mode">tree,form</field>
+		    <field name="domain">[('supply_method', '=', 'buy'), ('is_forecast', '=', True)]</field>
+		    <field name="search_view_id" ref="stock.view_search_move"/>
+		</record>
+		
+		<menuitem name="Forecast raw material" action="action_forecast_stock_move_for_schedule" id="menu_forecast_raw_material" parent="menu_listing_forecast_data" sequence="30"/>
+		
+		<!-- PIVOT VIEW Forecast stock move -->	
+		<record id="view_forecast_stock_move_pivot" model="ir.ui.view">
+			<field name="name">view_forecast_stock_move_pivot</field>
+			<field name="model">stock.move</field>
+			<field name="arch" type="xml">
+				<pivot string="Program loading analysis">
+					<field name="product_category_id" type="row"/>
+					<field name="product_id" type="row"/>
+					<field name="year" type="col"/>
+					<field name="month" type="col"/>     
+					<field name="week" type="col"/>            
+					<field name="uom_qty" type="measure"/>
+				</pivot>
+			</field>
+		</record>
+		
+		<!-- GRAPH VIEW Forecast stock move -->	
+		<record id="view_forecast_stock_move_graph" model="ir.ui.view">
+			<field name="name">view_forecast_stock_move_graph</field>
+			<field name="model">stock.move</field>
+			<field name="arch" type="xml">
+				<graph string="Program loading analysis">
+					<field name="product_category_id" type="row"/>
+					<field name="product_id" type="row"/>
+					<field name="year" type="col"/>
+					<field name="month" type="col"/>     
+					<field name="week" type="col"/>            
+					<field name="uom_qty" type="measure"/>
+				</graph>
+			</field>
+		</record>
+				
+		<!-- ACTION Forecast stock move pivot,graph -->	
+		<record id="action_forecast_stock_move_analysis" model="ir.actions.act_window">
+			<field name="name">Forecast raw material analysis</field>
+			<field name="res_model">stock.move</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">pivot,graph</field>
+			<field name="domain">[('supply_method', '=', 'buy'), ('is_forecast', '=', True)]</field>
+			<field name="context">{}</field>
+			<field name="view_id" ref="view_forecast_stock_move_pivot" />
+			<field name="search_view_id" ref="stock.view_search_move"/>
+		</record>
+		
+		<menuitem name="Forecast RM analysis" action="action_forecast_stock_move_analysis" id="menu_forecast_stock_move_analysis" parent="menu_analysis_forecast_data" sequence="30"/>
+		
+		<!-- ====================== -->
+		<!-- MRP MANUFACTURINGORDER -->
+		<!-- ====================== -->
+		
+		<!-- ACTION Forecast manufacturing order -->
+		<record id="action_forecast_mo_for_schedule" model="ir.actions.act_window">
+		    <field name="name">Forecast MO</field>
+		    <field name="res_model">mrp.manufacturingorder</field>
+		    <field name="view_type">form</field>
+		    <field name="view_mode">tree,form</field>
+		    <field name="domain">[('is_forecast', '=', True)]</field>
+		    <field name="search_view_id" ref="mrp.view_search_mrp_manufacturingorder"/>
+		</record>
+		
+		<menuitem name="Forecast MO" action="action_forecast_mo_for_schedule" id="menu_forecast_manufacturing_order" parent="menu_listing_forecast_data" sequence="40"/>
+		
+		<!-- ================ -->
+		<!-- CALENDAR LOADING -->
+		<!-- ================ -->
+		
+		<!-- ACTION Forecast loading -->
+		<record id="action_forecast_loading_for_schedule" model="ir.actions.act_window">
+		    <field name="name">Forecast loading</field>
+		    <field name="res_model">calendar.loading</field>
+		    <field name="view_type">form</field>
+		    <field name="view_mode">tree,form</field>
+		    <field name="domain">[('is_forecast', '=', True)]</field>
+		    <field name="search_view_id" ref="calendar.view_search_calendar_loading_id"/>
+		</record>
+		
+		<menuitem name="Forecast loading" action="action_forecast_loading_for_schedule" id="menu_forecast_loading" parent="menu_listing_forecast_data" sequence="50"/>
+		
+		<!-- PIVOT VIEW Forecast loading -->	
+		<record id="view_forecast_loading_pivot" model="ir.ui.view">
+			<field name="name">view_forecast_loading_pivot</field>
+			<field name="model">calendar.loading</field>
+			<field name="arch" type="xml">
+				<pivot string="Program loading analysis">
+					<field name="resource_category_id" type="row"/>
+					<field name="resource_id" type="row"/>
+					<field name="year" type="col"/>
+					<field name="month" type="col"/>     
+					<field name="week_number" type="col"/>            
+					<field name="loading" type="measure"/>
+				</pivot>
+			</field>
+		</record>
+		
+		<!-- GRAPH VIEW Forecast loading -->	
+		<record id="view_forecast_loading_graph" model="ir.ui.view">
+			<field name="name">view_forecast_loading_graph</field>
+			<field name="model">calendar.loading</field>
+			<field name="arch" type="xml">
+				<graph string="Program loading analysis">
+					<field name="resource_category_id" type="row"/>
+					<field name="resource_id" type="row"/>
+					<field name="year" type="col"/>
+					<field name="month" type="col"/>     
+					<field name="week_number" type="col"/>            
+					<field name="loading" type="measure"/>
+				</graph>
+			</field>
+		</record>
+				
+		<!-- ACTION Forecast loading pivot,graph -->	
+		<record id="action_forecast_loading_analysis" model="ir.actions.act_window">
+			<field name="name">Program loading analysis</field>
+			<field name="res_model">calendar.loading</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">pivot,graph</field>
+			<field name="domain">[('is_forecast', '=', True)]</field>
+			<field name="context">{}</field>
+			<field name="view_id" ref="view_forecast_loading_pivot" />
+			<field name="search_view_id" ref="mrp.view_search_calendar_loading_id_mrp"/>
+		</record>
+		
+		<menuitem name="Program loading analysis" action="action_forecast_loading_analysis" id="menu_forecast_loading_analysis" parent="menu_analysis_forecast_data" sequence="40"/>
+		
+	</data>
+</openerp>

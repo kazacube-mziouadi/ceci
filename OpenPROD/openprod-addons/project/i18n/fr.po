@@ -1,0 +1,570 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* project
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 9.0c\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-12-12 15:06+0000\n"
+"PO-Revision-Date: 2016-12-12 15:06+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: project
+#: model:ir.ui.view,arch_db:project.view_form_project_phase
+msgid "Actions"
+msgstr "Actions"
+
+#. module: project
+#: model:res.groups,name:project.project_responsible
+msgid "Administrator"
+msgstr "Administrateur"
+
+#. module: project
+#: model:ir.model.fields,field_description:project.field_quick_create_project_attach_to_affair_id
+msgid "Attach to affair"
+msgstr "Attacher à l'affaire"
+
+#. module: project
+#: model:ir.ui.view,arch_db:project.view_form_create_task
+msgid "Cancel"
+msgstr "Annuler"
+
+#. module: project
+#. openerp-web
+#: code:addons/project/static/src/js/gantt.js:135
+#: code:addons/project/static/src/js/gantt.js:249
+#: model:ir.model.fields,field_description:project.field_project_phase_charge
+#, python-format
+msgid "Charge"
+msgstr "Charge"
+
+#. module: project
+#: model:ir.model.fields,field_description:project.field_project_phase_child_ids
+msgid "Childs"
+msgstr "Phases enfant"
+
+#. module: project
+#. openerp-web
+#: code:addons/project/static/src/js/gantt.js:239
+#: code:addons/project/static/src/js/gantt.js:361
+#, python-format
+msgid "Close"
+msgstr "Fermer"
+
+#. module: project
+#. openerp-web
+#: code:addons/project/static/src/js/gantt.js:352
+#: model:ir.ui.view,arch_db:project.view_form_create_task
+#, python-format
+msgid "Create"
+msgstr "Créer"
+
+#. module: project
+#: model:ir.ui.view,arch_db:project.view_form_quick_create_project
+msgid "Create Project"
+msgstr "Créer Projet"
+
+#. module: project
+#: model:ir.model,name:project.model_wizard_create_timetracking
+msgid "Create a timetracking entry, or edit similar entries"
+msgstr "Créer une ligne de temps, ou modifier les temps similaires"
+
+#. module: project
+#: model:ir.actions.act_window,name:project.act_create_task_wizard
+#: model:ir.ui.view,arch_db:project.view_form_create_task
+#: model:ir.ui.view,arch_db:project.view_form_mrp_manufacturingorder
+msgid "Create task"
+msgstr "Créer une tâche"
+
+#. module: project
+#: model:ir.model,name:project.model_create_task_wizard
+msgid "Create task from affair wizard"
+msgstr "Créer une tâche depuis une affaire"
+
+#. module: project
+#: model:ir.model.fields,field_description:project.field_create_task_wizard_create_uid
+#: model:ir.model.fields,field_description:project.field_project_phase_create_uid
+#: model:ir.model.fields,field_description:project.field_quick_create_project_create_uid
+msgid "Created by"
+msgstr "Créé par"
+
+#. module: project
+#: model:ir.model.fields,field_description:project.field_create_task_wizard_create_date
+#: model:ir.model.fields,field_description:project.field_project_phase_create_date
+#: model:ir.model.fields,field_description:project.field_quick_create_project_create_date
+msgid "Created on"
+msgstr "Créé le"
+
+#. module: project
+#. openerp-web
+#: code:addons/project/static/src/js/gantt.js:375
+#, python-format
+msgid "Days"
+msgstr "Jours"
+
+#. module: project
+#: model:ir.ui.view,arch_db:project.view_form_project_phase
+msgid "Declare time"
+msgstr "Déclarer les temps"
+
+#. module: project
+#. openerp-web
+#: code:addons/project/static/src/js/gantt.js:227
+#, python-format
+msgid "Delete"
+msgstr "Supprimer"
+
+#. module: project
+#: model:ir.model.fields,field_description:project.field_project_phase_description
+#: model:ir.ui.view,arch_db:project.view_form_project_phase
+msgid "Description"
+msgstr "Description"
+
+#. module: project
+#: model:ir.model.fields,field_description:project.field_create_task_wizard_display_name
+#: model:ir.model.fields,field_description:project.field_project_phase_display_name
+#: model:ir.model.fields,field_description:project.field_quick_create_project_display_name
+msgid "Display Name"
+msgstr "Nom affiché"
+
+#. module: project
+#: model:ir.model.fields,field_description:project.field_project_phase_phase_document_ids
+#: model:ir.ui.view,arch_db:project.view_form_project_phase
+msgid "Documents"
+msgstr "Documents"
+
+#. module: project
+#: model:ir.model,name:project.model_document_openprod
+msgid "Documents Openprod"
+msgstr "Documents Openprod"
+
+#. module: project
+#: code:addons/project/project.py:37
+#: model:ir.ui.view,arch_db:project.view_search_project_phase
+#: model:workflow.display.state,label:project.project_display_state_done
+#: model:workflow.transition,button_label:project.project_progress_to_done
+#, python-format
+msgid "Done"
+msgstr "Terminé"
+
+#. module: project
+#: code:addons/project/project.py:35
+#: model:workflow.display.state,label:project.project_display_state_draft
+#, python-format
+msgid "Draft"
+msgstr "Brouillon"
+
+#. module: project
+#. openerp-web
+#: code:addons/project/static/src/js/gantt.js:125
+#: model:ir.model.fields,field_description:project.field_project_phase_duration
+#, python-format
+msgid "Duration"
+msgstr "Durée"
+
+#. module: project
+#: model:ir.model.fields,field_description:project.field_project_phase_end_date
+msgid "End date"
+msgstr "Date de fin"
+
+#. module: project
+#: code:addons/project/project.py:105
+#, python-format
+msgid "Error ! You cannot create recursive phases."
+msgstr "Erreur ! Vous ne pouvez pas créer de phases récursives."
+
+#. module: project
+#: model:ir.model,name:project.model_calendar_event
+msgid "Event"
+msgstr "Événement"
+
+#. module: project
+#: model:ir.model.fields,field_description:project.field_create_task_wizard_event_id
+msgid "Event id"
+msgstr "Action"
+
+#. module: project
+#: model:ir.model.fields,field_description:project.field_project_phase_event_ids
+msgid "Event ids"
+msgstr "Actions"
+
+#. module: project
+#: model:ir.ui.view,arch_db:project.view_search_project_phase
+msgid "Filters"
+msgstr "Filtres"
+
+#. module: project
+#: model:ir.model.fields,field_description:project.field_project_phase_fullfiled
+msgid "Fullfilled"
+msgstr "Réalisé"
+
+#. module: project
+#: model:ir.ui.view,arch_db:project.view_search_project_phase
+msgid "Group By..."
+msgstr "Grouper par..."
+
+#. module: project
+#: model:ir.ui.view,arch_db:project.view_search_project_phase
+msgid "Has MO"
+msgstr "OF"
+
+#. module: project
+#: model:ir.ui.view,arch_db:project.view_search_project_phase
+msgid "Has WO"
+msgstr "OT"
+
+#. module: project
+#: model:ir.ui.view,arch_db:project.view_search_project_phase
+msgid "Has event"
+msgstr "Action"
+
+#. module: project
+#: model:ir.model.fields,field_description:project.field_create_task_wizard_id
+#: model:ir.model.fields,field_description:project.field_project_phase_id
+#: model:ir.model.fields,field_description:project.field_quick_create_project_id
+msgid "ID"
+msgstr "ID"
+
+#. module: project
+#: code:addons/project/project.py:36
+#, python-format
+msgid "In progress"
+msgstr "En cours"
+
+#. module: project
+#: code:addons/project/project.py:118
+#, python-format
+msgid "Invalid task : No child and no start date"
+msgstr "Tâche invalide: Pas d'enfant ni de date de départ"
+
+#. module: project
+#: model:ir.model.fields,field_description:project.field_project_phase_is_model
+msgid "Is Model"
+msgstr "Est Modèle"
+
+#. module: project
+#: model:ir.model.fields,field_description:project.field_quick_create_project_keep_documents
+msgid "Keep Documents"
+msgstr "Garder les Documents"
+
+#. module: project
+#: model:ir.model.fields,field_description:project.field_quick_create_project_keep_resources
+msgid "Keep Resources"
+msgstr "Keep Resources"
+
+#. module: project
+#: model:ir.model.fields,field_description:project.field_create_task_wizard___last_update
+#: model:ir.model.fields,field_description:project.field_project_phase___last_update
+#: model:ir.model.fields,field_description:project.field_quick_create_project___last_update
+msgid "Last Modified on"
+msgstr "Dernière modification le"
+
+#. module: project
+#: model:ir.model.fields,field_description:project.field_create_task_wizard_write_uid
+#: model:ir.model.fields,field_description:project.field_project_phase_write_uid
+#: model:ir.model.fields,field_description:project.field_quick_create_project_write_uid
+msgid "Last Updated by"
+msgstr "Dernière mise à jour par"
+
+#. module: project
+#: model:ir.model.fields,field_description:project.field_create_task_wizard_write_date
+#: model:ir.model.fields,field_description:project.field_project_phase_write_date
+#: model:ir.model.fields,field_description:project.field_quick_create_project_write_date
+msgid "Last Updated on"
+msgstr "Dernière mise à jour le"
+
+#. module: project
+#: model:ir.ui.view,arch_db:project.view_form_project_phase
+msgid "Link"
+msgstr "Lien"
+
+#. module: project
+#: model:res.groups,name:project.project_manager
+msgid "Manager"
+msgstr "Gestionnaire"
+
+#. module: project
+#: model:ir.model,name:project.model_mrp_manufacturingorder
+msgid "Manufacturing order"
+msgstr "Ordre de fabrication"
+
+#. module: project
+#: model:ir.model.fields,field_description:project.field_create_task_wizard_mo_id
+msgid "Mo id"
+msgstr "OF"
+
+#. module: project
+#: model:ir.model.fields,field_description:project.field_project_phase_mo_ids
+msgid "Mo ids"
+msgstr "OFs"
+
+#. module: project
+#: model:ir.model.fields,field_description:project.field_quick_create_project_model_id
+msgid "Model Project"
+msgstr "Projet Modèle"
+
+#. module: project
+#. openerp-web
+#: code:addons/project/static/src/js/gantt.js:377
+#, python-format
+msgid "Months"
+msgstr "Mois"
+
+#. module: project
+#: model:ir.model.fields,field_description:project.field_project_phase_name
+#: model:ir.model.fields,field_description:project.field_project_phase_name_level
+#: model:ir.model.fields,field_description:project.field_quick_create_project_name
+msgid "Name"
+msgstr "Nom"
+
+#. module: project
+#: model:ir.ui.view,arch_db:project.view_form_create_task
+msgid "New task"
+msgstr "Nouvelle tâche"
+
+#. module: project
+#: model:ir.model.fields,field_description:project.field_project_phase_next_ids
+msgid "Next"
+msgstr "Suivant"
+
+#. module: project
+#: model:ir.ui.view,arch_db:project.view_search_project_phase
+msgid "No model"
+msgstr "Sauf modèles"
+
+#. module: project
+#: model:ir.ui.view,arch_db:project.view_search_project_phase
+msgid "Not done"
+msgstr "Pas fini"
+
+#. module: project
+#: model:ir.ui.view,arch_db:project.view_search_project_phase
+msgid "Only models"
+msgstr "Modèles seulement"
+
+#. module: project
+#: model:ir.model.fields,field_description:project.field_project_phase_parent_left
+msgid "Parent left"
+msgstr "Parent left"
+
+#. module: project
+#: model:ir.model.fields,field_description:project.field_project_phase_parent_right
+msgid "Parent right"
+msgstr "Parent right"
+
+#. module: project
+#: model:ir.model.fields,field_description:project.field_create_task_wizard_phase_id
+#: model:ir.model.fields,field_description:project.field_project_phase_parent_id
+msgid "Parent task"
+msgstr "Tâche parente"
+
+#. module: project
+#: model:ir.model.fields,field_description:project.field_resource_timetracking_phase_id
+#: model:ir.model.fields,field_description:project.field_wizard_create_timetracking_phase_id
+msgid "Phase"
+msgstr "Phase"
+
+#. module: project
+#: model:ir.ui.view,arch_db:project.view_form_project_phase
+msgid "Planification"
+msgstr "Planification"
+
+#. module: project
+#: model:ir.model.fields,field_description:project.field_project_phase_manual_progress
+#: model:ir.model.fields,field_description:project.field_project_phase_progress
+#: model:workflow.display.state,label:project.project_display_state_progress
+#: model:workflow.transition,button_label:project.project_draft_to_progress
+msgid "Progress"
+msgstr "En cours"
+
+#. module: project
+#: model:ir.module.category,name:project.module_project
+msgid "Project"
+msgstr "Projet"
+
+#. module: project
+#: model:ir.ui.view,arch_db:project.view_tree_project_phase
+msgid "Project Phases"
+msgstr "Phases"
+
+#. module: project
+#: model:res.groups,name:project.group_menu_project_config
+msgid "Project configuration"
+msgstr "Menu configuration projets"
+
+#. module: project
+#: model:res.groups,name:project.group_menu_project_manager
+msgid "Project manager"
+msgstr "Manager projets"
+
+#. module: project
+#: model:ir.model,name:project.model_project_phase
+msgid "Project phase"
+msgstr "Phase"
+
+#. module: project
+#: model:res.groups,name:project.group_menu_project_user
+msgid "Project user"
+msgstr "Utilisateurs projets"
+
+#. module: project
+#: code:addons/project/wizard/wizard_create_timetracking.py:13
+#, python-format
+msgid "Project's phase"
+msgstr "Phase de projet"
+
+#. module: project
+#: model:ir.actions.act_window,name:project.act_project_phase
+#: model:ir.ui.menu,name:project.menu_main_phase
+#: model:ir.ui.menu,name:project.menu_phase
+#: model:ir.ui.menu,name:project.menu_tasks
+#: model:ir.ui.view,arch_db:project.view_form_project_openprod
+msgid "Projects"
+msgstr "Projets"
+
+#. module: project
+#: model:ir.model.fields,field_description:project.field_create_task_wizard_propagate
+msgid "Propagate"
+msgstr "Propager"
+
+#. module: project
+#: model:ir.ui.menu,name:project.menu_quick_create_project
+msgid "Quick create Project"
+msgstr "Création rapide de projet"
+
+#. module: project
+#: model:ir.actions.act_window,name:project.act_quick_create_project
+#: model:ir.ui.view,arch_db:project.view_form_quick_create_project
+msgid "Quick create project"
+msgstr "Création rapide de projet"
+
+#. module: project
+#: model:ir.model,name:project.model_quick_create_project
+msgid "Quick create wizard for projects"
+msgstr "Wizard de création rapide de projets"
+
+#. module: project
+#. openerp-web
+#: code:addons/project/static/src/js/gantt.js:130
+#: model:ir.model.fields,field_description:project.field_create_task_wizard_resource_id
+#: model:ir.model.fields,field_description:project.field_project_phase_resource_id
+#: model:ir.ui.view,arch_db:project.view_search_project_phase
+#, python-format
+msgid "Resource"
+msgstr "Ressource"
+
+#. module: project
+#. openerp-web
+#: code:addons/project/static/src/js/gantt.js:215
+#, python-format
+msgid "Save"
+msgstr "Enregistrer"
+
+#. module: project
+#. openerp-web
+#: code:addons/project/static/src/js/gantt.js:140
+#: model:ir.model.fields,field_description:project.field_project_phase_sequence
+#, python-format
+msgid "Sequence"
+msgstr "Séquence"
+
+#. module: project
+#: model:ir.model.fields,field_description:project.field_quick_create_project_start_date
+msgid "Start Date"
+msgstr "Date de début"
+
+#. module: project
+#: model:ir.model.fields,field_description:project.field_project_phase_start_date
+msgid "Start date"
+msgstr "Date de début"
+
+#. module: project
+#: model:ir.model.fields,field_description:project.field_project_phase_display_state
+#: model:ir.model.fields,field_description:project.field_project_phase_state
+msgid "State"
+msgstr "État"
+
+#. module: project
+#: model:ir.model,name:project.model_resource_timetracking
+msgid "Suivi des temps"
+msgstr "Suivi des temps"
+
+#. module: project
+#. openerp-web
+#: code:addons/project/static/src/js/gantt.js:120
+#, python-format
+msgid "Task"
+msgstr "Tâche"
+
+#. module: project
+#: model:ir.model.fields,field_description:project.field_calendar_event_task_id
+#: model:ir.model.fields,field_description:project.field_mrp_manufacturingorder_task_id
+#: model:ir.model.fields,field_description:project.field_mrp_workorder_task_id
+msgid "Task id"
+msgstr "Tâche"
+
+#. module: project
+#: model:ir.ui.view,arch_db:project.view_tree_project_phase
+msgid "Total charge"
+msgstr "Charge totale"
+
+#. module: project
+#: model:ir.model.fields,field_description:project.field_project_phase_user_id
+#: model:ir.ui.view,arch_db:project.view_search_project_phase
+#: model:res.groups,name:project.project_user
+msgid "User"
+msgstr "Utilisateur"
+
+#. module: project
+#. openerp-web
+#: code:addons/project/static/src/js/gantt.js:376
+#, python-format
+msgid "Weeks"
+msgstr "Semaines"
+
+#. module: project
+#: model:ir.model.fields,field_description:project.field_project_phase_wkf_instance_ids
+msgid "Wkf instance ids"
+msgstr "Wkf instance ids"
+
+#. module: project
+#: model:ir.model.fields,field_description:project.field_project_phase_wkf_progress_instance
+msgid "Wkf progress instance"
+msgstr "Wkf progress instance"
+
+#. module: project
+#: model:ir.model.fields,field_description:project.field_project_phase_wo_ids
+msgid "Wo ids"
+msgstr "OTs"
+
+#. module: project
+#: model:ir.model.fields,field_description:project.field_project_phase_wkf_id
+msgid "Workflow"
+msgstr "Workflow"
+
+#. module: project
+#: model:ir.model,name:project.model_mrp_workorder
+msgid "Workorder"
+msgstr "Ordre de travail"
+
+#. module: project
+#: model:ir.ui.view,arch_db:project.view_form_quick_create_project
+msgid "cancel"
+msgstr "Annuler"
+
+#. module: project
+#: model:ir.ui.view,arch_db:project.view_form_create_task
+msgid "or"
+msgstr "ou"
+
+#. module: project
+#: model:ir.ui.view,arch_db:project.view_form_project_phase
+msgid "project phase"
+msgstr "Phase"
+

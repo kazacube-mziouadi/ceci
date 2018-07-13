@@ -1,0 +1,2916 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* account_openprod
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 9.0c\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-06-09 13:43+0000\n"
+"PO-Revision-Date: 2017-06-09 13:43+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: account_openprod
+#: model:mail.template,body_html:account_openprod.email_template_edi_invoice_reminder
+msgid "\n"
+"            <div style=\"font-family: 'Lucida Grande', Ubuntu, Arial, Verdana, sans-serif; font-size: 12px; color: rgb(34, 34, 34); background-color: #FFF; \">\n"
+"                <p>Hello ${object.partner_id.name},</p>\n"
+"            </div>"
+msgstr "\n"
+"            <div style=\"font-family: 'Lucida Grande', Ubuntu, Arial, Verdana, sans-serif; font-size: 12px; color: rgb(34, 34, 34); background-color: #FFF; \">\n"
+"                <p>Bonjour ${object.partner_id.name},</p>\n"
+"            </div>"
+
+#. module: account_openprod
+#: model:mail.template,subject:account_openprod.email_template_edi_invoice_reminder
+msgid "${object.company_id.name} Reminder invoice (Ref ${object.number or 'n/a'})"
+msgstr "${object.company_id.name} Relance de facture (Ref ${object.number or 'n/a'})"
+
+#. module: account_openprod
+#: code:addons/account_openprod/product.py:31
+#: model:ir.model.fields,field_description:account_openprod.field_product_product_pourcent_sale_price
+#, python-format
+msgid "% Sale price"
+msgstr "% du prix de vente"
+
+#. module: account_openprod
+#: code:addons/account_openprod/account.py:743
+#, python-format
+msgid "%s adjustment"
+msgstr "%s ajustement"
+
+#. module: account_openprod
+#: code:addons/account_openprod/account.py:959
+#: code:addons/account_openprod/account.py:971
+#, python-format
+msgid "%s partner adjustment"
+msgstr "%s ajustement partenaire"
+
+#. module: account_openprod
+#: model:ir.model.fields,field_description:account_openprod.field_res_partner_ape_number
+msgid "APE number"
+msgstr "Numéro APE"
+
+#. module: account_openprod
+#: model:ir.model,name:account_openprod.model_account_account
+#: model:ir.model.fields,field_description:account_openprod.field_account_vat_return_line_account_id
+#: model:ir.model.fields,field_description:account_openprod.field_invoice_reconciliation_credit_line_account_id
+#: model:ir.model.fields,field_description:account_openprod.field_invoice_reconciliation_debit_line_account_id
+#: model:ir.ui.view,arch_db:account_openprod.account_cust_openprod_invoice_form
+#: model:ir.ui.view,arch_db:account_openprod.account_cust_openprod_invoice_line_form
+#: model:ir.ui.view,arch_db:account_openprod.account_supp_openprod_invoice_form
+#: model:ir.ui.view,arch_db:account_openprod.account_suppl_openprod_invoice_line_form
+#: model:ir.ui.view,arch_db:account_openprod.view_openprod_invoice_line_form
+msgid "Account"
+msgstr "Compte"
+
+#. module: account_openprod
+#: model:ir.model,name:account_openprod.model_account_move
+msgid "Account Entry"
+msgstr "Pièce comptable"
+
+#. module: account_openprod
+#: model:ir.model,name:account_openprod.model_account_move_reconcile
+msgid "Account Reconciliation"
+msgstr "Lettrage de compte"
+
+#. module: account_openprod
+#: model:ir.model,name:account_openprod.model_account_vat_return
+msgid "Account VAT return"
+msgstr "Déclaration de TVA"
+
+#. module: account_openprod
+#: model:ir.model,name:account_openprod.model_account_vat_return_line
+msgid "Account VAT return line"
+msgstr "Ligne de déclaration de TVA"
+
+#. module: account_openprod
+#: model:ir.model,name:account_openprod.model_account_vat_return_template
+msgid "Account VAT return template"
+msgstr "Modèle de déclaration de TVA"
+
+#. module: account_openprod
+#: model:ir.actions.act_window,name:account_openprod.action_account_invoice_pivot_customer
+#: model:ir.actions.act_window,name:account_openprod.action_account_invoice_pivot_supplier
+#: model:ir.ui.menu,name:account_openprod.menu_account_invoice_pivot_customer
+#: model:ir.ui.menu,name:account_openprod.menu_account_invoice_pivot_supplier
+#: model:ir.ui.view,arch_db:account_openprod.view_account_invoice_pivot
+msgid "Account invoice analysis"
+msgstr "Analyse des factures"
+
+#. module: account_openprod
+#: model:ir.actions.act_window,name:account_openprod.action_account_invoice_line_pivot_customer
+#: model:ir.actions.act_window,name:account_openprod.action_account_invoice_line_pivot_supplier
+#: model:ir.ui.menu,name:account_openprod.menu_account_invoice_line_pivot_customer
+#: model:ir.ui.menu,name:account_openprod.menu_account_invoice_line_pivot_supplier
+#: model:ir.ui.view,arch_db:account_openprod.view_account_invoice_line_pivot
+msgid "Account invoice line analysis"
+msgstr "Analyse des lignes des factures"
+
+#. module: account_openprod
+#: model:ir.model.fields,field_description:account_openprod.field_invoice_reconciliation_credit_line_account_move_id
+#: model:ir.model.fields,field_description:account_openprod.field_invoice_reconciliation_debit_line_account_move_id
+msgid "Account move"
+msgstr "Écriture comptable"
+
+#. module: account_openprod
+#: model:ir.model,name:account_openprod.model_account_move_line_reconcile
+msgid "Account move line reconcile"
+msgstr "Lettrage de lignes d'écritures"
+
+#. module: account_openprod
+#: model:ir.model,name:account_openprod.model_account_move_line_reconcile_writeoff
+msgid "Account move line reconcile (writeoff)"
+msgstr "Ligne d'écriture lettrée (écriture d'écart)"
+
+#. module: account_openprod
+#: model:ir.model.fields,field_description:account_openprod.field_invoice_change_account_system_invoice_account_system_id
+msgid "Account system"
+msgstr "Position fiscale"
+
+#. module: account_openprod
+#: model:ir.ui.view,arch_db:account_openprod.view_form_general_partner
+#: model:ir.ui.view,arch_db:account_openprod.view_form_product_account
+msgid "Accounting"
+msgstr "Comptabilité"
+
+#. module: account_openprod
+#: model:ir.ui.view,arch_db:account_openprod.account_cust_openprod_invoice_form
+#: model:ir.ui.view,arch_db:account_openprod.account_supp_openprod_invoice_form
+msgid "Accounting Period"
+msgstr "Période comptable"
+
+#. module: account_openprod
+#: model:ir.model,name:account_openprod.model_account_voucher
+msgid "Accounting Voucher"
+msgstr "Justificatif comptable"
+
+#. module: account_openprod
+#: model:ir.ui.view,arch_db:account_openprod.view_form_product_account
+msgid "Accounting account"
+msgstr "Compte comptable"
+
+#. module: account_openprod
+#: model:ir.model.fields,field_description:account_openprod.field_account_invoice_accounting_manager_id
+#: model:ir.model.fields,field_description:account_openprod.field_res_partner_accounting_manager_id
+msgid "Accounting manager"
+msgstr "Responsable"
+
+#. module: account_openprod
+#: model:ir.ui.view,arch_db:account_openprod.account_cust_openprod_invoice_form
+#: model:ir.ui.view,arch_db:account_openprod.account_supp_openprod_invoice_form
+#: model:ir.ui.view,arch_db:account_openprod.view_form_account_vat_return
+msgid "Actions"
+msgstr "Actions"
+
+#. module: account_openprod
+#: model:ir.model.fields,field_description:account_openprod.field_account_invoicing_method_active
+msgid "Active"
+msgstr "Actif"
+
+#. module: account_openprod
+#: model:ir.model.fields,help:account_openprod.field_res_company_us_accounting
+msgid "Added to take in count US and Canada report demands"
+msgstr "Ajouté pour prendre en compte les demandes de rapport US et canadien"
+
+#. module: account_openprod
+#: model:ir.model.fields,field_description:account_openprod.field_account_invoice_address_id
+#: model:ir.ui.view,arch_db:account_openprod.account_cust_openprod_invoice_form
+#: model:ir.ui.view,arch_db:account_openprod.account_supp_openprod_invoice_form
+msgid "Address"
+msgstr "Adresse"
+
+#. module: account_openprod
+#: model:ir.ui.view,arch_db:account_openprod.view_form_invoicing_method
+msgid "Advanced payment"
+msgstr "Paiement anticipé"
+
+#. module: account_openprod
+#: model:ir.ui.view,arch_db:account_openprod.view_form_invoicing_method
+msgid "Advanced payments"
+msgstr "Paiements anticipés"
+
+#. module: account_openprod
+#: code:addons/account_openprod/account.py:117
+#, python-format
+msgid "After invoicing"
+msgstr "Après facturation"
+
+#. module: account_openprod
+#: code:addons/account_openprod/wizard/print_balance_general_ledger.py:29
+#, python-format
+msgid "All partners"
+msgstr "Tous les partenaires"
+
+#. module: account_openprod
+#: model:ir.model.fields,field_description:account_openprod.field_account_vat_return_line_amount
+#: model:ir.model.fields,field_description:account_openprod.field_account_vat_return_payment_amount
+#: model:ir.model.fields,field_description:account_openprod.field_invoice_payment_term_line_amount
+#: model:ir.model.fields,field_description:account_openprod.field_invoice_reconciliation_credit_line_move_amount
+#: model:ir.model.fields,field_description:account_openprod.field_invoice_reconciliation_debit_line_move_amount
+msgid "Amount"
+msgstr "Montant"
+
+#. module: account_openprod
+#: model:ir.model.fields,field_description:account_openprod.field_account_invoicing_method_line_value_amount
+msgid "Amount To Pay"
+msgstr "Montant à payer"
+
+#. module: account_openprod
+#: model:ir.model.fields,field_description:account_openprod.field_invoice_reconciliation_credit_line_invoice_amount
+#: model:ir.model.fields,field_description:account_openprod.field_invoice_reconciliation_debit_line_invoice_amount
+msgid "Amount in invoice currency"
+msgstr "Montant en devise facture"
+
+#. module: account_openprod
+#: model:ir.model.fields,field_description:account_openprod.field_account_invoicing_method_payment_line_value_amount
+msgid "Amount to pay"
+msgstr "Montant à payer"
+
+#. module: account_openprod
+#: model:ir.model.fields,field_description:account_openprod.field_invoice_reconciliation_credit_line_amount_to_reconcile
+#: model:ir.model.fields,field_description:account_openprod.field_invoice_reconciliation_debit_line_amount_to_reconcile
+msgid "Amount to reconcile"
+msgstr "Montant à lettrer"
+
+#. module: account_openprod
+#: model:ir.model.fields,field_description:account_openprod.field_invoice_reconciliation_credit_line_amount_to_reconcile_inv_curr
+#: model:ir.model.fields,field_description:account_openprod.field_invoice_reconciliation_debit_line_amount_to_reconcile_inv_curr
+msgid "Amount to reconcile (invoice currency)"
+msgstr "Montant à lettrer (devise facture)"
+
+#. module: account_openprod
+#: model:ir.ui.view,arch_db:account_openprod.view_form_inherit_account_account
+msgid "Analysis"
+msgstr "Analyses"
+
+#. module: account_openprod
+#: model:ir.model.fields,field_description:account_openprod.field_account_invoice_anticipated
+#: model:ir.model.fields,field_description:account_openprod.field_account_invoice_auto_anticipated
+msgid "Anticipated invoice"
+msgstr "Facture anticipée"
+
+#. module: account_openprod
+#: model:ir.model.fields,field_description:account_openprod.field_account_invoice_line_auto_anticipated_line_id
+msgid "Anticipated invoice line"
+msgstr "Ligne de facture anticipée"
+
+#. module: account_openprod
+#: code:addons/account_openprod/account_invoice.py:339
+#: code:addons/account_openprod/account_invoice.py:1310
+#, python-format
+msgid "April"
+msgstr "Avril"
+
+#. module: account_openprod
+#: model:ir.ui.view,arch_db:account_openprod.account_cust_openprod_invoice_form
+#: model:ir.ui.view,arch_db:account_openprod.account_supp_openprod_invoice_form
+#: model:ir.ui.view,arch_db:account_openprod.inherit_view_vendor_payment_form
+#: model:ir.ui.view,arch_db:account_openprod.inherit_view_vendor_receipt_form
+msgid "Are you sure to unreconcile this record ?"
+msgstr "Êtes-vous sûre de vouloir délettrer cet enregistrement ?"
+
+#. module: account_openprod
+#: model:ir.ui.view,arch_db:account_openprod.account_supp_openprod_invoice_form
+msgid "Ask Refund"
+msgstr "Demander un avoir"
+
+#. module: account_openprod
+#: code:addons/account_openprod/wizard/print_balance_sheet.py:20
+#, python-format
+msgid "Asset"
+msgstr "Actif"
+
+#. module: account_openprod
+#: code:addons/account_openprod/account_invoice.py:343
+#: code:addons/account_openprod/account_invoice.py:1314
+#, python-format
+msgid "August"
+msgstr "Août"
+
+#. module: account_openprod
+#: model:ir.model.fields,field_description:account_openprod.field_account_invoice_available_amount
+msgid "Available amount for this partner"
+msgstr "Montant disponible pour ce partenaire"
+
+#. module: account_openprod
+#: code:addons/account_openprod/res_partner.py:14
+#, python-format
+msgid "BIC/Swift"
+msgstr "BIC/Swift"
+
+#. module: account_openprod
+#: code:addons/account_openprod/wizard/print_balance_general_ledger.py:22
+#, python-format
+msgid "Balance"
+msgstr "Balance"
+
+#. module: account_openprod
+#: model:ir.ui.menu,name:account_openprod.menu_print_balance_ledger
+msgid "Balance / General ledger"
+msgstr "Balance / Grand livre"
+
+#. module: account_openprod
+#: model:ir.ui.menu,name:account_openprod.menu_print_balance_sheet
+msgid "Balance sheet"
+msgstr "Bilan"
+
+#. module: account_openprod
+#: model:ir.model.fields,field_description:account_openprod.field_print_balance_sheet_balance_type
+msgid "Balance type"
+msgstr "Type balance"
+
+#. module: account_openprod
+#: model:ir.model,name:account_openprod.model_res_partner_bank
+msgid "Bank Accounts"
+msgstr "Comptes bancaires"
+
+#. module: account_openprod
+#: model:ir.ui.view,arch_db:account_openprod.view_form_general_partner
+msgid "Bank information"
+msgstr "Informations bancaires"
+
+#. module: account_openprod
+#: model:account.payment.term,name:account_openprod.account_payment_term_delivery
+#: model:account.payment.term,note:account_openprod.account_payment_term_delivery
+#: code:addons/account_openprod/account.py:116
+#: code:addons/account_openprod/account.py:274
+#, python-format
+msgid "Before delivery"
+msgstr "Avant livraison"
+
+#. module: account_openprod
+#: model:ir.model.fields,field_description:account_openprod.field_res_partner_block_sale_credit
+msgid "Block the sale when credit is exceeded"
+msgstr "Bloquer la commande lorsque la limite de crédit est atteinte"
+
+#. module: account_openprod
+#: model:ir.model.fields,field_description:account_openprod.field_account_config_settings_us_accounting
+#: model:ir.model.fields,field_description:account_openprod.field_res_company_us_accounting
+msgid "Canada accounting"
+msgstr "Comptabilité canada"
+
+#. module: account_openprod
+#: model:ir.ui.view,arch_db:account_openprod.inherit_view_account_move_line_reconcile_full
+#: model:ir.ui.view,arch_db:account_openprod.view_form_invoice_change_account_system
+#: model:ir.ui.view,arch_db:account_openprod.view_form_invoice_reconciliation_wizard
+#: model:ir.ui.view,arch_db:account_openprod.view_form_merge_invoices
+#: model:ir.ui.view,arch_db:account_openprod.view_form_pay_more_invoice_wiz
+#: model:ir.ui.view,arch_db:account_openprod.view_form_print_balance_general_ledger
+#: model:ir.ui.view,arch_db:account_openprod.view_form_print_balance_sheet
+msgid "Cancel"
+msgstr "Annuler"
+
+#. module: account_openprod
+#: model:ir.ui.view,arch_db:account_openprod.account_cust_openprod_invoice_form
+#: model:ir.ui.view,arch_db:account_openprod.account_supp_openprod_invoice_form
+msgid "Cancel Invoice"
+msgstr "Annuler la facture"
+
+#. module: account_openprod
+#: model:res.groups,name:account_openprod.group_cancel_account_invoice
+msgid "Cancel invoice"
+msgstr "Annuler les factures"
+
+#. module: account_openprod
+#: model:ir.ui.view,arch_db:account_openprod.view_form_account_vat_return
+msgid "Cancel payment"
+msgstr "Annuler le paiement"
+
+#. module: account_openprod
+#: model:ir.ui.view,arch_db:account_openprod.view_form_account_vat_return
+msgid "Cancel validation"
+msgstr "Annuler la validation"
+
+#. module: account_openprod
+#: model:ir.ui.view,arch_db:account_openprod.inherit_view_vendor_payment_form
+#: model:ir.ui.view,arch_db:account_openprod.inherit_view_vendor_receipt_form
+msgid "Cancel voucher"
+msgstr "Annuler le paiement"
+
+#. module: account_openprod
+#: code:addons/account_openprod/account_invoice.py:1299
+#, python-format
+msgid "Cancelled"
+msgstr "Annulée"
+
+#. module: account_openprod
+#: model:ir.ui.view,arch_db:account_openprod.view_form_merge_invoices
+msgid "Caution!"
+msgstr "Attention!"
+
+#. module: account_openprod
+#: model:ir.actions.act_window,name:account_openprod.action_invoice_change_account_system
+#: model:ir.ui.view,arch_db:account_openprod.account_cust_openprod_invoice_form
+#: model:ir.ui.view,arch_db:account_openprod.account_supp_openprod_invoice_form
+msgid "Change account system"
+msgstr "Changer position fiscale"
+
+#. module: account_openprod
+#: model:ir.ui.view,arch_db:account_openprod.view_form_invoice_change_account_system
+msgid "Change the account system"
+msgstr "Changer la position fiscale"
+
+#. module: account_openprod
+#: model:ir.model.fields,help:account_openprod.field_account_invoice_line_dual_unit
+msgid "Check if you want manage a dual unit for this product"
+msgstr "Check if you want manage a dual unit for this product"
+
+#. module: account_openprod
+#: model:ir.model.fields,help:account_openprod.field_account_journal_is_default
+msgid "Check if you want this journal for automatic payments"
+msgstr "À cocher si vous souhaitez ce journal pour les paiements automatiques"
+
+#. module: account_openprod
+#: model:ir.model.fields,help:account_openprod.field_account_move_line_is_adjustment
+msgid "Checked if the account move line is an adjustment"
+msgstr "Cochée si l'écriture comptable est un ajustement"
+
+#. module: account_openprod
+#: model:ir.model.fields,help:account_openprod.field_account_payment_term_line_term_type
+msgid "Choose the type of the computation. If invoice date=05/10, number of days=45 and day of month=-1:\n"
+"If you choose 'Day in the month + day number', then the due date is 30/11.\n"
+"If you choose 'Day number + day in the month', then the due date is 15/12."
+msgstr "Sélectionnez le type de calcul. Si la date de facture est le 05/10, que le nombre de jours est de 45 et que le jour dans le mois est -1:\n"
+"Si vous choisissez 'Jour dans le mois + nombre de jours', la date d'échéance sera le 30/11.\n"
+"Si vous choisissez 'Nombre de jours + jour dans le mois', la date d'échéance sera le 15/12."
+
+#. module: account_openprod
+#: model:ir.model.fields,help:account_openprod.field_account_invoicing_method_payment_line_payment_type
+#: model:ir.model.fields,help:account_openprod.field_account_payment_term_payment_type
+msgid "Choose the type of the payment.On the order will block the order before the payment validation and before delivery will block the delivery before the payment validation."
+msgstr "Choisissez le type de paiement. 'À la commande' bloquera la commande avant son paiement et 'Avant livraison' bloquera la livraison avant le paiement de la commande."
+
+#. module: account_openprod
+#: model:ir.model.fields,field_description:account_openprod.field_account_invoice_city
+msgid "City"
+msgstr "Ville"
+
+#. module: account_openprod
+#: model:ir.model.fields,field_description:account_openprod.field_account_invoice_communication_method
+#: model:ir.model.fields,field_description:account_openprod.field_res_partner_accounting_communication_method
+msgid "Communication method"
+msgstr "Mode de communication"
+
+#. module: account_openprod
+#: model:ir.model.fields,field_description:account_openprod.field_account_invoice_communication_value
+#: model:ir.model.fields,field_description:account_openprod.field_res_partner_communication_value
+msgid "Communication value"
+msgstr "Valeur de communication"
+
+#. module: account_openprod
+#: model:ir.model,name:account_openprod.model_res_company
+msgid "Companies"
+msgstr "Sociétés"
+
+#. module: account_openprod
+#: model:ir.model.fields,field_description:account_openprod.field_account_vat_return_company_id
+msgid "Company"
+msgstr "Société"
+
+#. module: account_openprod
+#: model:ir.model.fields,field_description:account_openprod.field_invoice_reconciliation_wizard_company_currency_id
+msgid "Company currency"
+msgstr "Devise de la société"
+
+#. module: account_openprod
+#: model:ir.ui.view,arch_db:account_openprod.view_form_account_vat_return
+#: model:ir.ui.view,arch_db:account_openprod.view_form_payment_term
+msgid "Compute"
+msgstr "Calculer"
+
+#. module: account_openprod
+#: model:ir.model.fields,field_description:account_openprod.field_account_payment_term_line_term_type
+msgid "Compute type"
+msgstr "Type de calcul"
+
+#. module: account_openprod
+#: model:ir.model.fields,field_description:account_openprod.field_account_invoice_contact_id
+msgid "Contact"
+msgstr "Contact"
+
+#. module: account_openprod
+#: model:ir.model.fields,field_description:account_openprod.field_account_invoice_contact_ids
+msgid "Contacts"
+msgstr "Contacts"
+
+#. module: account_openprod
+#: model:ir.model.fields,field_description:account_openprod.field_account_invoice_corporate_name
+msgid "Corporate name"
+msgstr "Dénomination sociale"
+
+#. module: account_openprod
+#: model:ir.ui.view,arch_db:account_openprod.account_cust_openprod_invoice_form
+#: model:ir.ui.view,arch_db:account_openprod.account_cust_openprod_invoice_line_form
+#: model:ir.ui.view,arch_db:account_openprod.account_supp_openprod_invoice_form
+#: model:ir.ui.view,arch_db:account_openprod.account_suppl_openprod_invoice_line_form
+#: model:ir.ui.view,arch_db:account_openprod.view_openprod_invoice_line_form
+msgid "Correction"
+msgstr "Correction"
+
+#. module: account_openprod
+#: model:ir.model.fields,field_description:account_openprod.field_account_invoice_country_id
+#: model:ir.model.fields,field_description:account_openprod.field_country_tva_country_id
+msgid "Country"
+msgstr "Pays"
+
+#. module: account_openprod
+#: model:ir.model.fields,field_description:account_openprod.field_account_invoicing_method_create_uid
+#: model:ir.model.fields,field_description:account_openprod.field_account_invoicing_method_line_create_uid
+#: model:ir.model.fields,field_description:account_openprod.field_account_invoicing_method_payment_line_create_uid
+#: model:ir.model.fields,field_description:account_openprod.field_account_vat_return_create_uid
+#: model:ir.model.fields,field_description:account_openprod.field_account_vat_return_line_create_uid
+#: model:ir.model.fields,field_description:account_openprod.field_account_vat_return_template_create_uid
+#: model:ir.model.fields,field_description:account_openprod.field_country_tva_create_uid
+#: model:ir.model.fields,field_description:account_openprod.field_invoice_change_account_system_create_uid
+#: model:ir.model.fields,field_description:account_openprod.field_invoice_payment_term_line_create_uid
+#: model:ir.model.fields,field_description:account_openprod.field_invoice_reconciliation_credit_line_create_uid
+#: model:ir.model.fields,field_description:account_openprod.field_invoice_reconciliation_debit_line_create_uid
+#: model:ir.model.fields,field_description:account_openprod.field_invoice_reconciliation_wizard_create_uid
+#: model:ir.model.fields,field_description:account_openprod.field_merge_invoice_create_uid
+#: model:ir.model.fields,field_description:account_openprod.field_pay_more_invoice_wiz_create_uid
+#: model:ir.model.fields,field_description:account_openprod.field_payment_method_create_uid
+#: model:ir.model.fields,field_description:account_openprod.field_print_balance_general_ledger_create_uid
+#: model:ir.model.fields,field_description:account_openprod.field_print_balance_sheet_create_uid
+#: model:ir.model.fields,field_description:account_openprod.field_res_partner_financial_notation_create_uid
+msgid "Created by"
+msgstr "Créé par"
+
+#. module: account_openprod
+#: model:ir.model.fields,field_description:account_openprod.field_account_invoicing_method_create_date
+#: model:ir.model.fields,field_description:account_openprod.field_account_invoicing_method_line_create_date
+#: model:ir.model.fields,field_description:account_openprod.field_account_invoicing_method_payment_line_create_date
+#: model:ir.model.fields,field_description:account_openprod.field_account_vat_return_create_date
+#: model:ir.model.fields,field_description:account_openprod.field_account_vat_return_line_create_date
+#: model:ir.model.fields,field_description:account_openprod.field_account_vat_return_template_create_date
+#: model:ir.model.fields,field_description:account_openprod.field_country_tva_create_date
+#: model:ir.model.fields,field_description:account_openprod.field_invoice_change_account_system_create_date
+#: model:ir.model.fields,field_description:account_openprod.field_invoice_payment_term_line_create_date
+#: model:ir.model.fields,field_description:account_openprod.field_invoice_reconciliation_credit_line_create_date
+#: model:ir.model.fields,field_description:account_openprod.field_invoice_reconciliation_debit_line_create_date
+#: model:ir.model.fields,field_description:account_openprod.field_invoice_reconciliation_wizard_create_date
+#: model:ir.model.fields,field_description:account_openprod.field_merge_invoice_create_date
+#: model:ir.model.fields,field_description:account_openprod.field_pay_more_invoice_wiz_create_date
+#: model:ir.model.fields,field_description:account_openprod.field_payment_method_create_date
+#: model:ir.model.fields,field_description:account_openprod.field_print_balance_general_ledger_create_date
+#: model:ir.model.fields,field_description:account_openprod.field_print_balance_sheet_create_date
+#: model:ir.model.fields,field_description:account_openprod.field_res_partner_financial_notation_create_date
+msgid "Created on"
+msgstr "Créé le"
+
+#. module: account_openprod
+#: model:ir.model.fields,field_description:account_openprod.field_account_vat_return_credit
+msgid "Credit"
+msgstr "Crédit"
+
+#. module: account_openprod
+#: model:ir.model.fields,field_description:account_openprod.field_account_vat_return_credit_vat_account_ids
+#: model:ir.model.fields,field_description:account_openprod.field_account_vat_return_template_credit_vat_account_ids
+msgid "Credit VAT accounts"
+msgstr "Comptes au crédit"
+
+#. module: account_openprod
+#: model:ir.ui.view,arch_db:account_openprod.view_form_account_vat_return
+#: model:ir.ui.view,arch_db:account_openprod.view_form_account_vat_return_template
+msgid "Credit account (Output tax)"
+msgstr "Compte de crédit (TVA collectée)"
+
+#. module: account_openprod
+#: model:ir.ui.view,arch_db:account_openprod.view_form_general_partner
+msgid "Credit and notation"
+msgstr "Crédit et notation"
+
+#. module: account_openprod
+#: model:ir.ui.view,arch_db:account_openprod.view_form_invoice_reconciliation_wizard
+msgid "Credit details"
+msgstr "Détails du crédit"
+
+#. module: account_openprod
+#: model:ir.model,name:account_openprod.model_invoice_reconciliation_credit_line
+msgid "Credit lines to reconcile payments from an invoice"
+msgstr "Lignes de crédit pour lettrer les paiements depuis une facture"
+
+#. module: account_openprod
+#: model:ir.model.fields,field_description:account_openprod.field_invoice_reconciliation_wizard_credit_ids
+#: model:ir.ui.view,arch_db:account_openprod.view_form_invoice_reconciliation_wizard
+msgid "Credits"
+msgstr "Crédits"
+
+#. module: account_openprod
+#: model:ir.model.fields,field_description:account_openprod.field_invoice_reconciliation_credit_line_currency_id
+#: model:ir.model.fields,field_description:account_openprod.field_invoice_reconciliation_debit_line_currency_id
+#: model:ir.model.fields,field_description:account_openprod.field_res_partner_financial_notation_currency_id
+msgid "Currency"
+msgstr "Devise"
+
+#. module: account_openprod
+#: model:ir.model.fields,field_description:account_openprod.field_account_invoice_line_currency_rate
+msgid "Currency rate"
+msgstr "Taux de devise"
+
+#. module: account_openprod
+#: model:ir.model.fields,field_description:account_openprod.field_print_balance_general_ledger_is_customer
+#: model:ir.ui.view,arch_db:account_openprod.account_cust_openprod_invoice_form
+#: model:ir.ui.view,arch_db:account_openprod.account_cust_openprod_invoice_line_tree
+msgid "Customer"
+msgstr "Client"
+
+#. module: account_openprod
+#: code:addons/account_openprod/account_invoice.py:1284
+#: code:addons/account_openprod/wizard/invoice_reconciliation.py:71
+#, python-format
+msgid "Customer Invoice"
+msgstr "Facture client"
+
+#. module: account_openprod
+#: code:addons/account_openprod/account_invoice.py:1286
+#: code:addons/account_openprod/wizard/invoice_reconciliation.py:73
+#, python-format
+msgid "Customer Refund"
+msgstr "Avoir client"
+
+#. module: account_openprod
+#: model:ir.actions.act_window,name:account_openprod.action_customer_refund
+#: model:ir.ui.menu,name:account_openprod.menu_action_customer_refund
+msgid "Customer Refunds"
+msgstr "Avoirs clients"
+
+#. module: account_openprod
+#: model:ir.ui.view,arch_db:account_openprod.account_cust_openprod_invoice_form
+msgid "Customer invoice"
+msgstr "Facture client"
+
+#. module: account_openprod
+#: model:ir.ui.view,arch_db:account_openprod.account_cust_openprod_invoice_line_form
+#: model:ir.ui.view,arch_db:account_openprod.account_cust_openprod_invoice_line_tree
+msgid "Customer invoice line"
+msgstr "Ligne de facture client"
+
+#. module: account_openprod
+#: model:ir.actions.act_window,name:account_openprod.customer_line_invoice_action
+#: model:ir.ui.menu,name:account_openprod.menu_customer_line_invoice_action
+msgid "Customer invoices lines"
+msgstr "Lignes de factures clients"
+
+#. module: account_openprod
+#: model:ir.ui.view,arch_db:account_openprod.account_cust_openprod_invoice_form
+#: model:ir.ui.view,arch_db:account_openprod.view_form_general_partner
+msgid "Customer invoicing"
+msgstr "Facturation client"
+
+#. module: account_openprod
+#: model:ir.model.fields,field_description:account_openprod.field_account_invoice_partner_order_id
+msgid "Customer of the order"
+msgstr "Client de la commande"
+
+#. module: account_openprod
+#: model:ir.model.fields,field_description:account_openprod.field_account_invoice_line_customer_product_code
+msgid "Customer product code"
+msgstr "Code produit du client"
+
+#. module: account_openprod
+#: model:ir.model.fields,field_description:account_openprod.field_account_invoice_line_customer_product_name
+msgid "Customer product name"
+msgstr "Nom produit du client"
+
+#. module: account_openprod
+#: model:ir.model.fields,field_description:account_openprod.field_account_invoice_declaration_deb
+msgid "DEB declaration"
+msgstr "Déclaration de la DEB"
+
+#. module: account_openprod
+#: model:ir.model.fields,field_description:account_openprod.field_invoice_reconciliation_credit_line_date
+#: model:ir.model.fields,field_description:account_openprod.field_invoice_reconciliation_debit_line_date
+#: model:ir.model.fields,field_description:account_openprod.field_res_partner_financial_notation_date
+msgid "Date"
+msgstr "Date"
+
+#. module: account_openprod
+#: code:addons/account_openprod/account.py:236
+#, python-format
+msgid "Day in the month + day number"
+msgstr "Jour dans le mois + nombre de jours"
+
+#. module: account_openprod
+#: code:addons/account_openprod/account.py:237
+#, python-format
+msgid "Day number + day in the month"
+msgstr "Nombre de jours + jour dans le mois"
+
+#. module: account_openprod
+#: code:addons/account_openprod/account.py:234
+#, python-format
+msgid "Day number + end of month + day in the month"
+msgstr "Nombre de jours + fin de mois + jour dans le mois"
+
+#. module: account_openprod
+#: model:ir.model.fields,field_description:account_openprod.field_account_vat_return_debit
+msgid "Debit"
+msgstr "Débit"
+
+#. module: account_openprod
+#: model:ir.model.fields,field_description:account_openprod.field_account_vat_return_debit_vat_account_ids
+#: model:ir.model.fields,field_description:account_openprod.field_account_vat_return_template_debit_vat_account_ids
+msgid "Debit VAT accounts"
+msgstr "Comptes débit"
+
+#. module: account_openprod
+#: model:ir.ui.view,arch_db:account_openprod.view_form_account_vat_return
+#: model:ir.ui.view,arch_db:account_openprod.view_form_account_vat_return_template
+msgid "Debit account (Input tax)"
+msgstr "Compte de débit (TVA déductible)"
+
+#. module: account_openprod
+#: model:ir.ui.view,arch_db:account_openprod.view_form_invoice_reconciliation_wizard
+msgid "Debit details"
+msgstr "Détails du débit"
+
+#. module: account_openprod
+#: model:ir.model,name:account_openprod.model_invoice_reconciliation_debit_line
+msgid "Debit lines to reconcile payments from an invoice"
+msgstr "Lignes de débit pour lettrer les paiements depuis une facture"
+
+#. module: account_openprod
+#: model:ir.model.fields,field_description:account_openprod.field_invoice_reconciliation_wizard_debit_ids
+#: model:ir.ui.view,arch_db:account_openprod.view_form_invoice_reconciliation_wizard
+msgid "Debits"
+msgstr "Débits"
+
+#. module: account_openprod
+#: code:addons/account_openprod/account_invoice.py:347
+#: code:addons/account_openprod/account_invoice.py:1318
+#, python-format
+msgid "December"
+msgstr "Décembre"
+
+#. module: account_openprod
+#: model:ir.model.fields,field_description:account_openprod.field_account_invoice_delivery_country_id
+msgid "Delivered country"
+msgstr "Pays de livraison"
+
+#. module: account_openprod
+#: model:ir.model.fields,field_description:account_openprod.field_account_invoice_delivery_partner_id
+msgid "Delivered customer"
+msgstr "Client livré"
+
+#. module: account_openprod
+#: code:addons/account_openprod/account.py:337
+#, python-format
+msgid "Delivered quantities"
+msgstr "Quantités livrées"
+
+#. module: account_openprod
+#: model:ir.ui.view,arch_db:account_openprod.view_form_invoicing_method
+msgid "Description"
+msgstr "Description"
+
+#. module: account_openprod
+#: model:ir.ui.view,arch_db:account_openprod.account_cust_openprod_invoice_form
+#: model:ir.ui.view,arch_db:account_openprod.account_cust_openprod_invoice_line_form
+#: model:ir.ui.view,arch_db:account_openprod.account_supp_openprod_invoice_form
+#: model:ir.ui.view,arch_db:account_openprod.account_suppl_openprod_invoice_line_form
+#: model:ir.ui.view,arch_db:account_openprod.view_openprod_invoice_line_form
+msgid "Description and progress"
+msgstr "Description et avancement"
+
+#. module: account_openprod
+#: model:ir.ui.view,arch_db:account_openprod.account_cust_openprod_invoice_form
+msgid "Disbursement"
+msgstr "Décaissement"
+
+#. module: account_openprod
+#: model:ir.model.fields,field_description:account_openprod.field_account_invoice_disbursement_move_id
+msgid "Disbursement move"
+msgstr "Mouvement de décaissement"
+
+#. module: account_openprod
+#: model:ir.model.fields,field_description:account_openprod.field_account_invoice_discount_management
+msgid "Discount management"
+msgstr "Gestion de l'escompte"
+
+#. module: account_openprod
+#: model:ir.model.fields,field_description:account_openprod.field_account_invoice_discount_value
+msgid "Discount value"
+msgstr "Valeur de l'escompte"
+
+#. module: account_openprod
+#: model:ir.model.fields,field_description:account_openprod.field_account_invoicing_method_display_name
+#: model:ir.model.fields,field_description:account_openprod.field_account_invoicing_method_line_display_name
+#: model:ir.model.fields,field_description:account_openprod.field_account_invoicing_method_payment_line_display_name
+#: model:ir.model.fields,field_description:account_openprod.field_account_vat_return_display_name
+#: model:ir.model.fields,field_description:account_openprod.field_account_vat_return_line_display_name
+#: model:ir.model.fields,field_description:account_openprod.field_account_vat_return_template_display_name
+#: model:ir.model.fields,field_description:account_openprod.field_country_tva_display_name
+#: model:ir.model.fields,field_description:account_openprod.field_invoice_change_account_system_display_name
+#: model:ir.model.fields,field_description:account_openprod.field_invoice_payment_term_line_display_name
+#: model:ir.model.fields,field_description:account_openprod.field_invoice_reconciliation_credit_line_display_name
+#: model:ir.model.fields,field_description:account_openprod.field_invoice_reconciliation_debit_line_display_name
+#: model:ir.model.fields,field_description:account_openprod.field_invoice_reconciliation_wizard_display_name
+#: model:ir.model.fields,field_description:account_openprod.field_merge_invoice_display_name
+#: model:ir.model.fields,field_description:account_openprod.field_pay_more_invoice_wiz_display_name
+#: model:ir.model.fields,field_description:account_openprod.field_payment_method_display_name
+#: model:ir.model.fields,field_description:account_openprod.field_print_balance_general_ledger_display_name
+#: model:ir.model.fields,field_description:account_openprod.field_print_balance_sheet_display_name
+#: model:ir.model.fields,field_description:account_openprod.field_res_partner_financial_notation_display_name
+msgid "Display Name"
+msgstr "Afficher le nom"
+
+#. module: account_openprod
+#: model:ir.ui.view,arch_db:account_openprod.account_cust_openprod_invoice_form
+#: model:ir.ui.view,arch_db:account_openprod.account_cust_openprod_invoice_line_form
+#: model:ir.ui.view,arch_db:account_openprod.account_supp_openprod_invoice_form
+#: model:ir.ui.view,arch_db:account_openprod.account_suppl_openprod_invoice_line_form
+#: model:ir.ui.view,arch_db:account_openprod.view_openprod_invoice_line_form
+msgid "Diverse"
+msgstr "Divers"
+
+#. module: account_openprod
+#: model:ir.model.fields,field_description:account_openprod.field_account_invoice_line_divisor
+msgid "Divisor"
+msgstr "Diviseur"
+
+#. module: account_openprod
+#: code:addons/account_openprod/account_invoice.py:1294
+#, python-format
+msgid "Draft"
+msgstr "Brouillon"
+
+#. module: account_openprod
+#: model:ir.ui.view,arch_db:account_openprod.account_cust_openprod_invoice_form
+#: model:ir.ui.view,arch_db:account_openprod.account_supp_openprod_invoice_form
+msgid "Draft Invoice"
+msgstr "Facture en brouillon"
+
+#. module: account_openprod
+#: model:ir.ui.view,arch_db:account_openprod.account_cust_openprod_invoice_form
+#: model:ir.ui.view,arch_db:account_openprod.account_supp_openprod_invoice_form
+msgid "Draft Refund"
+msgstr "Avoir brouillon"
+
+#. module: account_openprod
+#: model:ir.model.fields,field_description:account_openprod.field_account_vat_return_draft_purchase_amount
+msgid "Draft purchase invoice amount"
+msgstr "Montant des factures d'achat brouillon"
+
+#. module: account_openprod
+#: model:ir.model.fields,field_description:account_openprod.field_account_vat_return_draft_sale_amount
+msgid "Draft sale invoice amount"
+msgstr "Montant des factures de vente brouillon"
+
+#. module: account_openprod
+#: model:ir.model.fields,field_description:account_openprod.field_account_invoice_line_dual_unit
+msgid "Dual unit"
+msgstr "Double unité"
+
+#. module: account_openprod
+#: model:ir.model.fields,field_description:account_openprod.field_account_invoice_line_dual_unit_type
+msgid "Dual unit type"
+msgstr "Type de double unité"
+
+#. module: account_openprod
+#: model:ir.model.fields,field_description:account_openprod.field_invoice_payment_term_line_due_date
+msgid "Due date"
+msgstr "Date d'échéance"
+
+#. module: account_openprod
+#: model:ir.ui.view,arch_db:account_openprod.view_account_openprod_invoice_filter
+msgid "Due date exceeded"
+msgstr "Date d'échéance dépassée"
+
+#. module: account_openprod
+#: code:addons/account_openprod/account_invoice.py:73
+#: code:addons/account_openprod/res_partner.py:70
+#, python-format
+msgid "Email"
+msgstr "Email"
+
+#. module: account_openprod
+#: model:ir.ui.view,arch_db:account_openprod.account_cust_openprod_invoice_form
+#: model:ir.ui.view,arch_db:account_openprod.account_supp_openprod_invoice_form
+msgid "Emails"
+msgstr "Mails"
+
+#. module: account_openprod
+#: model:ir.model.fields,field_description:account_openprod.field_print_balance_general_ledger_end_account_id
+msgid "End account"
+msgstr "Compte de fin"
+
+#. module: account_openprod
+#: model:ir.model.fields,field_description:account_openprod.field_account_vat_return_end_date
+#: model:ir.model.fields,field_description:account_openprod.field_print_balance_general_ledger_end_date
+#: model:ir.model.fields,field_description:account_openprod.field_print_balance_sheet_end_date
+msgid "End date"
+msgstr "Date de fin"
+
+#. module: account_openprod
+#: code:addons/account_openprod/account_invoice.py:81
+#: code:addons/account_openprod/res_partner.py:64
+#, python-format
+msgid "End of month"
+msgstr "Fin du mois"
+
+#. module: account_openprod
+#: code:addons/account_openprod/account.py:235
+#, python-format
+msgid "End of month + day number + day in the month"
+msgstr "Fin de mois + nombre de jours + jour dans le mois"
+
+#. module: account_openprod
+#: code:addons/account_openprod/account_invoice.py:80
+#: code:addons/account_openprod/res_partner.py:63
+#, python-format
+msgid "End of week"
+msgstr "Fin de la semaine"
+
+#. module: account_openprod
+#: model:ir.model.fields,field_description:account_openprod.field_product_product_enhanced_price
+msgid "Enhanced price"
+msgstr "Prix valorisé"
+
+#. module: account_openprod
+#: code:addons/account_openprod/account.py:1257
+#: code:addons/account_openprod/account_invoice.py:1020
+#: code:addons/account_openprod/product.py:105
+#: code:addons/account_openprod/product.py:117
+#: code:addons/account_openprod/wizard/merge_invoice.py:25
+#: code:addons/account_openprod/wizard/merge_invoice.py:28
+#: code:addons/account_openprod/wizard/pay_more_invoice_wiz.py:50
+#: code:addons/account_openprod/wizard/pay_more_invoice_wiz.py:53
+#: code:addons/account_openprod/wizard/pay_more_invoice_wiz.py:56
+#: code:addons/account_openprod/wizard/print_balance_general_ledger.py:101
+#: code:addons/account_openprod/wizard/print_balance_general_ledger.py:108
+#: code:addons/account_openprod/wizard/print_balance_general_ledger.py:118
+#: code:addons/account_openprod/wizard/print_balance_general_ledger.py:162
+#: code:addons/account_openprod/wizard/print_balance_general_ledger.py:172
+#: code:addons/account_openprod/wizard/print_balance_general_ledger.py:200
+#: code:addons/account_openprod/wizard/print_balance_general_ledger.py:225
+#: code:addons/account_openprod/wizard/print_balance_sheet.py:68
+#: code:addons/account_openprod/wizard/print_balance_sheet.py:100
+#, python-format
+msgid "Error"
+msgstr "Erreur"
+
+#. module: account_openprod
+#: code:addons/account_openprod/account.py:358
+#, python-format
+msgid "Error! Impossible to invoice on delivered quantities if the invoice trigger is not on delivery."
+msgstr "Erreur! Impossible de facturer sur quantités livrées si le déclanchement de la facture ne se fait pas sur livraison."
+
+#. module: account_openprod
+#: code:addons/account_openprod/account.py:255
+#: code:addons/account_openprod/account.py:258
+#: code:addons/account_openprod/account.py:301
+#: code:addons/account_openprod/account.py:304
+#: code:addons/account_openprod/account.py:375
+#: code:addons/account_openprod/account.py:378
+#, python-format
+msgid "Error! The percentage must be between 0 and 1."
+msgstr "Erreur! Le pourcentage doit être compris entre 0 et 1."
+
+#. module: account_openprod
+#: sql_constraint:country.tva:0
+msgid "Error: You can't have more than one tax number by country."
+msgstr "Erreur: Vous ne pouvez pas avoir plus d'un numéro de taxe par pays."
+
+#. module: account_openprod
+#: model:ir.model.fields,field_description:account_openprod.field_res_partner_exceed_invoice_outstanding
+msgid "Exceed invoice outstanding"
+msgstr "Encours factures dépassées"
+
+#. module: account_openprod
+#: model:ir.model.fields,field_description:account_openprod.field_print_balance_sheet_exclude_journal_ids
+msgid "Excluding journals"
+msgstr "Journaux exclus"
+
+#. module: account_openprod
+#: model:ir.model.fields,field_description:account_openprod.field_product_product_property_account_expense_id
+msgid "Expense Account"
+msgstr "Compte de dépenses"
+
+#. module: account_openprod
+#: model:ir.model.fields,field_description:account_openprod.field_account_invoice_external_reference
+msgid "External reference"
+msgstr "Référence externe"
+
+#. module: account_openprod
+#: model:ir.model.fields,field_description:account_openprod.field_account_invoice_line_factor
+msgid "Factor"
+msgstr "Facteur"
+
+#. module: account_openprod
+#: code:addons/account_openprod/account_invoice.py:71
+#, python-format
+msgid "Fax"
+msgstr "Fax"
+
+#. module: account_openprod
+#: code:addons/account_openprod/account_invoice.py:337
+#: code:addons/account_openprod/account_invoice.py:1308
+#, python-format
+msgid "February"
+msgstr "Février"
+
+#. module: account_openprod
+#: model:ir.model,name:account_openprod.model_res_partner_financial_notation
+#: model:ir.ui.view,arch_db:account_openprod.view_form_general_partner
+#: model:ir.ui.view,arch_db:account_openprod.view_partner_financial_notation_form
+#: model:ir.ui.view,arch_db:account_openprod.view_partner_financial_notation_tree
+msgid "Financial notation"
+msgstr "Notation financière"
+
+#. module: account_openprod
+#: model:ir.model,name:account_openprod.model_account_fiscal_position
+msgid "Fiscal Position"
+msgstr "Position fiscal"
+
+#. module: account_openprod
+#: model:ir.model.fields,field_description:account_openprod.field_print_balance_general_ledger_fiscal_year_id
+#: model:ir.model.fields,field_description:account_openprod.field_print_balance_sheet_fiscal_year_id
+msgid "Fiscal year"
+msgstr "Année fiscale"
+
+#. module: account_openprod
+#: selection:account.invoice.line,dual_unit_type:0
+msgid "Fixed"
+msgstr "Fixe"
+
+#. module: account_openprod
+#: code:addons/account_openprod/account.py:280
+#, python-format
+msgid "Fixed amount"
+msgstr "Montant fixe"
+
+#. module: account_openprod
+#: model:ir.model.fields,help:account_openprod.field_res_company_rml_invoice_footer
+msgid "Footer text displayed at the bottom of invoice reports."
+msgstr "Footer text displayed at the bottom of invoice reports."
+
+#. module: account_openprod
+#: model:ir.model.fields,help:account_openprod.field_account_invoicing_method_line_value_amount
+#: model:ir.model.fields,help:account_openprod.field_account_invoicing_method_payment_line_value_amount
+msgid "For percent enter a ratio between 0-1."
+msgstr "Pour être en pourcentage, saisir une valeur entre 0 et 1."
+
+#. module: account_openprod
+#: model:ir.model.fields,field_description:account_openprod.field_account_invoice_line_period_id
+msgid "Force Period"
+msgstr "Force Period"
+
+#. module: account_openprod
+#: model:ir.model.fields,field_description:account_openprod.field_account_invoicing_method_line_payment_term_id
+msgid "Forced payment term"
+msgstr "Condition de paiement"
+
+#. module: account_openprod
+#: model:ir.model.fields,field_description:account_openprod.field_invoice_reconciliation_wizard_full_reconcile
+msgid "Full reconcile"
+msgstr "Lettrage complet"
+
+#. module: account_openprod
+#: model:ir.ui.view,arch_db:account_openprod.account_cust_openprod_invoice_form
+#: model:ir.ui.view,arch_db:account_openprod.account_cust_openprod_invoice_line_form
+#: model:ir.ui.view,arch_db:account_openprod.account_supp_openprod_invoice_form
+#: model:ir.ui.view,arch_db:account_openprod.account_suppl_openprod_invoice_line_form
+#: model:ir.ui.view,arch_db:account_openprod.view_form_general_partner
+#: model:ir.ui.view,arch_db:account_openprod.view_openprod_invoice_line_form
+msgid "General"
+msgstr "Général"
+
+#. module: account_openprod
+#: code:addons/account_openprod/wizard/print_balance_general_ledger.py:20
+#, python-format
+msgid "General ledger"
+msgstr "Grand livre"
+
+#. module: account_openprod
+#: model:ir.ui.view,arch_db:account_openprod.view_account_invoice_line_filter
+msgid "Group By"
+msgstr "Grouper par"
+
+#. module: account_openprod
+#: model:ir.model.fields,field_description:account_openprod.field_account_invoice_group_invoices
+#: model:ir.model.fields,field_description:account_openprod.field_res_partner_group_invoices
+msgid "Group invoices"
+msgstr "Grouper les factures"
+
+#. module: account_openprod
+#: model:ir.model.fields,field_description:account_openprod.field_account_invoice_has_payments
+msgid "Has payments"
+msgstr "A des paiements"
+
+#. module: account_openprod
+#: code:addons/account_openprod/res_partner.py:13
+#, python-format
+msgid "IBAN"
+msgstr "IBAN"
+
+#. module: account_openprod
+#: model:ir.model.fields,field_description:account_openprod.field_account_invoicing_method_id
+#: model:ir.model.fields,field_description:account_openprod.field_account_invoicing_method_line_id
+#: model:ir.model.fields,field_description:account_openprod.field_account_invoicing_method_payment_line_id
+#: model:ir.model.fields,field_description:account_openprod.field_account_vat_return_id
+#: model:ir.model.fields,field_description:account_openprod.field_account_vat_return_line_id
+#: model:ir.model.fields,field_description:account_openprod.field_account_vat_return_template_id
+#: model:ir.model.fields,field_description:account_openprod.field_country_tva_id
+#: model:ir.model.fields,field_description:account_openprod.field_invoice_change_account_system_id
+#: model:ir.model.fields,field_description:account_openprod.field_invoice_payment_term_line_id
+#: model:ir.model.fields,field_description:account_openprod.field_invoice_reconciliation_credit_line_id
+#: model:ir.model.fields,field_description:account_openprod.field_invoice_reconciliation_debit_line_id
+#: model:ir.model.fields,field_description:account_openprod.field_invoice_reconciliation_wizard_id
+#: model:ir.model.fields,field_description:account_openprod.field_merge_invoice_id
+#: model:ir.model.fields,field_description:account_openprod.field_pay_more_invoice_wiz_id
+#: model:ir.model.fields,field_description:account_openprod.field_payment_method_id
+#: model:ir.model.fields,field_description:account_openprod.field_print_balance_general_ledger_id
+#: model:ir.model.fields,field_description:account_openprod.field_print_balance_sheet_id
+#: model:ir.model.fields,field_description:account_openprod.field_res_partner_financial_notation_id
+msgid "ID"
+msgstr "ID"
+
+#. module: account_openprod
+#: model:ir.model.fields,help:account_openprod.field_account_invoice_print_packaging_list
+msgid "If this field is checked, the packaging list will be printed on reports"
+msgstr "Si ce champ est coché, la liste de colisage sera imprimée sur les rapports"
+
+#. module: account_openprod
+#: code:addons/account_openprod/account.py:400
+#, python-format
+msgid "Impossible to have a balance before delivery with an invoicing method line on delivery"
+msgstr "Impossible d'avoir une balance avant livraison avec une ligne de méthode de facturation sur livraison"
+
+#. module: account_openprod
+#: code:addons/account_openprod/account.py:1409
+#, python-format
+msgid "Impossible to have twice the same account"
+msgstr "Impossible d'avoir deux fois le même compte"
+
+#. module: account_openprod
+#: model:ir.model.fields,field_description:account_openprod.field_product_product_property_account_income_id
+msgid "Income Account"
+msgstr "Compte de revenus"
+
+#. module: account_openprod
+#: model:ir.ui.view,arch_db:account_openprod.view_form_account_vat_return
+#: model:ir.ui.view,arch_db:account_openprod.view_form_account_vat_return_template
+msgid "Income and expense account"
+msgstr "Compte de revenu et dépense"
+
+#. module: account_openprod
+#: model:ir.model.fields,field_description:account_openprod.field_product_product_inventory_valuation
+msgid "Inventory valuation"
+msgstr "Valorisation de l'inventaire"
+
+#. module: account_openprod
+#: model:ir.actions.act_window,name:account_openprod.action_see_one_invoice
+#: model:ir.model,name:account_openprod.model_account_invoice
+#: model:ir.model.fields,field_description:account_openprod.field_account_voucher_invoice_id
+#: model:ir.model.fields,field_description:account_openprod.field_invoice_change_account_system_invoice_id
+#: model:ir.model.fields,field_description:account_openprod.field_invoice_payment_term_line_invoice_id
+#: model:ir.model.fields,field_description:account_openprod.field_invoice_reconciliation_wizard_invoice_id
+#: model:ir.model.fields,field_description:account_openprod.field_pay_more_invoice_wiz_invoice_ids
+msgid "Invoice"
+msgstr "Facture"
+
+#. module: account_openprod
+#: model:ir.model.fields,field_description:account_openprod.field_account_invoice_line_date_invoice
+msgid "Invoice Date"
+msgstr "Date de facture"
+
+#. module: account_openprod
+#: model:ir.model,name:account_openprod.model_account_invoice_line
+#: model:ir.ui.view,arch_db:account_openprod.account_cust_openprod_invoice_form
+#: model:ir.ui.view,arch_db:account_openprod.account_supp_openprod_invoice_form
+#: model:ir.ui.view,arch_db:account_openprod.view_openprod_invoice_line_form
+msgid "Invoice Line"
+msgstr "Ligne de facuration"
+
+#. module: account_openprod
+#: model:ir.ui.view,arch_db:account_openprod.account_cust_openprod_invoice_form
+#: model:ir.ui.view,arch_db:account_openprod.account_supp_openprod_invoice_form
+msgid "Invoice Lines"
+msgstr "Lignes de facture"
+
+#. module: account_openprod
+#: model:ir.model,name:account_openprod.model_account_invoice_tax
+msgid "Invoice Tax"
+msgstr "Taxe de facture"
+
+#. module: account_openprod
+#: model:ir.model.fields,field_description:account_openprod.field_res_partner_invoice_copy
+msgid "Invoice copy"
+msgstr "Copie de la facture"
+
+#. module: account_openprod
+#: model:ir.model.fields,field_description:account_openprod.field_invoice_reconciliation_credit_line_invoice_currency_id
+#: model:ir.model.fields,field_description:account_openprod.field_invoice_reconciliation_debit_line_invoice_currency_id
+#: model:ir.model.fields,field_description:account_openprod.field_invoice_reconciliation_wizard_currency_id
+msgid "Invoice currency"
+msgstr "Devise de la facture"
+
+#. module: account_openprod
+#: model:ir.model.fields,field_description:account_openprod.field_account_payment_term_invoice_date
+msgid "Invoice date"
+msgstr "Date de facture"
+
+#. module: account_openprod
+#: model:ir.model.fields,field_description:account_openprod.field_account_payment_term_invoice_date_due
+msgid "Invoice date due"
+msgstr "Date d'échéance de facture"
+
+#. module: account_openprod
+#: model:ir.model.fields,field_description:account_openprod.field_res_company_rml_invoice_footer
+msgid "Invoice footer"
+msgstr "Pied de page facture"
+
+#. module: account_openprod
+#: model:ir.model.fields,field_description:account_openprod.field_resource_timetracking_invoice_line_id
+msgid "Invoice line"
+msgstr "Ligne de facutre"
+
+#. module: account_openprod
+#: model:ir.ui.view,arch_db:account_openprod.account_cust_openprod_invoice_form
+#: model:ir.ui.view,arch_db:account_openprod.account_supp_openprod_invoice_form
+msgid "Invoice lines"
+msgstr "Lignes de facture"
+
+#. module: account_openprod
+#: model:ir.model.fields,field_description:account_openprod.field_account_invoice_inv_term_line_ids
+msgid "Invoice payment term lines"
+msgstr "Lignes des conditions de paiement pour factures"
+
+#. module: account_openprod
+#: model:ir.ui.view,arch_db:account_openprod.view_form_invoice_reconciliation_wizard
+msgid "Invoice reconcialiation"
+msgstr "Lettrage de la facture"
+
+#. module: account_openprod
+#: model:ir.model.fields,field_description:account_openprod.field_account_invoice_invoice_send_address_id
+#: model:ir.model.fields,field_description:account_openprod.field_res_partner_invoice_send_address_id
+msgid "Invoice send address"
+msgstr "Adresse d'envoi de la facture"
+
+#. module: account_openprod
+#: model:ir.model.fields,field_description:account_openprod.field_account_invoice_tax_account_payment_id
+#: model:ir.model.fields,field_description:account_openprod.field_account_tax_account_payment_id
+#: model:ir.model.fields,field_description:account_openprod.field_account_tax_template_account_payment_id
+msgid "Invoice tax account (On payment)"
+msgstr "Compte de taxe à récupérer (Sur paiement)"
+
+#. module: account_openprod
+#: model:ir.model.fields,field_description:account_openprod.field_invoice_reconciliation_wizard_invoice_type
+msgid "Invoice type"
+msgstr "Type de facture"
+
+#. module: account_openprod
+#: model:ir.model.fields,field_description:account_openprod.field_account_invoicing_method_line_account_invoiced_on
+msgid "Invoiced on"
+msgstr "Facturé sur"
+
+#. module: account_openprod
+#: model:ir.actions.act_window,name:account_openprod.action_see_all_invoices
+#: model:ir.ui.view,arch_db:account_openprod.view_form_general_partner
+msgid "Invoices"
+msgstr "Factures"
+
+#. module: account_openprod
+#: model:ir.model.fields,field_description:account_openprod.field_account_invoice_invoices_period
+#: model:ir.model.fields,field_description:account_openprod.field_res_partner_invoices_period
+msgid "Invoices period"
+msgstr "Période"
+
+#. module: account_openprod
+#: model:ir.ui.view,arch_db:account_openprod.view_form_merge_invoices
+msgid "Invoices will only be merged if:<br/>\n"
+"						     - They are in draft<br/>\n"
+"						     - They are identical<br/>"
+msgstr "Les factures ne seront mergées que si:<br/>\n"
+"						     - Elles sont en brouillon<br/>\n"
+"						     - Elles sont identiques<br/>"
+
+#. module: account_openprod
+#: model:ir.model.fields,field_description:account_openprod.field_account_invoicing_method_line_ids
+#: model:ir.ui.view,arch_db:account_openprod.view_form_inherit_config_settings
+#: model:ir.ui.view,arch_db:account_openprod.view_form_invoicing_method
+msgid "Invoicing"
+msgstr "Facturation"
+
+#. module: account_openprod
+#: model:ir.model.fields,field_description:account_openprod.field_res_partner_invoicing_contact_id
+msgid "Invoicing contact"
+msgstr "Contact de facturation"
+
+#. module: account_openprod
+#: model:ir.model.fields,field_description:account_openprod.field_res_partner_invoicing_contact_ids
+msgid "Invoicing contacts"
+msgstr "Contacts de facturation"
+
+#. module: account_openprod
+#: model:ir.actions.act_window,name:account_openprod.act_invoicing_method
+#: model:ir.model.fields,field_description:account_openprod.field_account_invoicing_method_line_invoicing_method_id
+#: model:ir.model.fields,field_description:account_openprod.field_account_invoicing_method_payment_line_invoicing_method_id
+#: model:ir.ui.menu,name:account_openprod.menu_invoicing_method
+#: model:ir.ui.view,arch_db:account_openprod.view_tree_invoicing_method
+msgid "Invoicing method"
+msgstr "Méthode de facturation"
+
+#. module: account_openprod
+#: model:ir.ui.view,arch_db:account_openprod.view_form_invoicing_method
+msgid "Invoicing method line"
+msgstr "Ligne de méthode de facturation"
+
+#. module: account_openprod
+#: model:ir.ui.view,arch_db:account_openprod.view_form_invoicing_method
+msgid "Invoicing method lines"
+msgstr "Lignes de méthode de facturation"
+
+#. module: account_openprod
+#: sql_constraint:account.invoicing.method:0
+msgid "Invoicing method name already exists"
+msgstr "Une méthode de facturation porte déjà le même nom"
+
+#. module: account_openprod
+#: model:ir.model.fields,field_description:account_openprod.field_account_invoice_invoice_trigger
+#: model:ir.model.fields,field_description:account_openprod.field_account_invoicing_method_line_invoice_trigger
+msgid "Invoicing method trigger"
+msgstr "Méthode de déclenchement de facturation"
+
+#. module: account_openprod
+#: model:ir.model.fields,field_description:account_openprod.field_account_move_line_is_adjustment
+msgid "Is adjustment"
+msgstr "Est un ajustement"
+
+#. module: account_openprod
+#: model:ir.model.fields,field_description:account_openprod.field_account_invoicing_method_payment_line_is_blocking
+msgid "Is blocking"
+msgstr "Bloquant"
+
+#. module: account_openprod
+#: model:ir.model.fields,field_description:account_openprod.field_account_journal_is_default
+msgid "Is default"
+msgstr "Par défaut"
+
+#. module: account_openprod
+#: code:addons/account_openprod/account_invoice.py:336
+#: code:addons/account_openprod/account_invoice.py:1307
+#, python-format
+msgid "January"
+msgstr "Janvier"
+
+#. module: account_openprod
+#: model:ir.model,name:account_openprod.model_account_journal
+#: model:ir.model.fields,field_description:account_openprod.field_account_vat_return_payment_journal_id
+#: model:ir.model.fields,field_description:account_openprod.field_account_vat_return_validation_journal_id
+msgid "Journal"
+msgstr "Journal"
+
+#. module: account_openprod
+#: model:ir.model,name:account_openprod.model_account_move_line
+msgid "Journal Items"
+msgstr "Écritures comptables"
+
+#. module: account_openprod
+#: model:ir.model.fields,field_description:account_openprod.field_print_balance_general_ledger_include_journal_ids
+msgid "Journals"
+msgstr "Journaux"
+
+#. module: account_openprod
+#: model:ir.ui.view,arch_db:account_openprod.view_form_print_balance_general_ledger
+msgid "Journals list"
+msgstr "Liste des journaux"
+
+#. module: account_openprod
+#: model:ir.ui.view,arch_db:account_openprod.view_form_print_balance_sheet
+msgid "Journals list to exclude of the balance"
+msgstr "Liste des journaux à exclure de la balance"
+
+#. module: account_openprod
+#: code:addons/account_openprod/account_invoice.py:342
+#: code:addons/account_openprod/account_invoice.py:1313
+#, python-format
+msgid "July"
+msgstr "Juillet"
+
+#. module: account_openprod
+#: code:addons/account_openprod/account_invoice.py:341
+#: code:addons/account_openprod/account_invoice.py:1312
+#, python-format
+msgid "June"
+msgstr "Juin"
+
+#. module: account_openprod
+#: model:ir.model.fields,field_description:account_openprod.field_account_invoice_lang_id
+msgid "Langue"
+msgstr "Langue"
+
+#. module: account_openprod
+#: model:ir.model.fields,field_description:account_openprod.field_account_invoicing_method___last_update
+#: model:ir.model.fields,field_description:account_openprod.field_account_invoicing_method_line___last_update
+#: model:ir.model.fields,field_description:account_openprod.field_account_invoicing_method_payment_line___last_update
+#: model:ir.model.fields,field_description:account_openprod.field_account_vat_return___last_update
+#: model:ir.model.fields,field_description:account_openprod.field_account_vat_return_line___last_update
+#: model:ir.model.fields,field_description:account_openprod.field_account_vat_return_template___last_update
+#: model:ir.model.fields,field_description:account_openprod.field_country_tva___last_update
+#: model:ir.model.fields,field_description:account_openprod.field_invoice_change_account_system___last_update
+#: model:ir.model.fields,field_description:account_openprod.field_invoice_payment_term_line___last_update
+#: model:ir.model.fields,field_description:account_openprod.field_invoice_reconciliation_credit_line___last_update
+#: model:ir.model.fields,field_description:account_openprod.field_invoice_reconciliation_debit_line___last_update
+#: model:ir.model.fields,field_description:account_openprod.field_invoice_reconciliation_wizard___last_update
+#: model:ir.model.fields,field_description:account_openprod.field_merge_invoice___last_update
+#: model:ir.model.fields,field_description:account_openprod.field_pay_more_invoice_wiz___last_update
+#: model:ir.model.fields,field_description:account_openprod.field_payment_method___last_update
+#: model:ir.model.fields,field_description:account_openprod.field_print_balance_general_ledger___last_update
+#: model:ir.model.fields,field_description:account_openprod.field_print_balance_sheet___last_update
+#: model:ir.model.fields,field_description:account_openprod.field_res_partner_financial_notation___last_update
+msgid "Last Modified on"
+msgstr "Dernière modification le"
+
+#. module: account_openprod
+#: model:ir.model.fields,field_description:account_openprod.field_account_invoicing_method_line_write_uid
+#: model:ir.model.fields,field_description:account_openprod.field_account_invoicing_method_payment_line_write_uid
+#: model:ir.model.fields,field_description:account_openprod.field_account_invoicing_method_write_uid
+#: model:ir.model.fields,field_description:account_openprod.field_account_vat_return_line_write_uid
+#: model:ir.model.fields,field_description:account_openprod.field_account_vat_return_template_write_uid
+#: model:ir.model.fields,field_description:account_openprod.field_account_vat_return_write_uid
+#: model:ir.model.fields,field_description:account_openprod.field_country_tva_write_uid
+#: model:ir.model.fields,field_description:account_openprod.field_invoice_change_account_system_write_uid
+#: model:ir.model.fields,field_description:account_openprod.field_invoice_payment_term_line_write_uid
+#: model:ir.model.fields,field_description:account_openprod.field_invoice_reconciliation_credit_line_write_uid
+#: model:ir.model.fields,field_description:account_openprod.field_invoice_reconciliation_debit_line_write_uid
+#: model:ir.model.fields,field_description:account_openprod.field_invoice_reconciliation_wizard_write_uid
+#: model:ir.model.fields,field_description:account_openprod.field_merge_invoice_write_uid
+#: model:ir.model.fields,field_description:account_openprod.field_pay_more_invoice_wiz_write_uid
+#: model:ir.model.fields,field_description:account_openprod.field_payment_method_write_uid
+#: model:ir.model.fields,field_description:account_openprod.field_print_balance_general_ledger_write_uid
+#: model:ir.model.fields,field_description:account_openprod.field_print_balance_sheet_write_uid
+#: model:ir.model.fields,field_description:account_openprod.field_res_partner_financial_notation_write_uid
+msgid "Last Updated by"
+msgstr "Dernière mise à jour par"
+
+#. module: account_openprod
+#: model:ir.model.fields,field_description:account_openprod.field_account_invoicing_method_line_write_date
+#: model:ir.model.fields,field_description:account_openprod.field_account_invoicing_method_payment_line_write_date
+#: model:ir.model.fields,field_description:account_openprod.field_account_invoicing_method_write_date
+#: model:ir.model.fields,field_description:account_openprod.field_account_vat_return_line_write_date
+#: model:ir.model.fields,field_description:account_openprod.field_account_vat_return_template_write_date
+#: model:ir.model.fields,field_description:account_openprod.field_account_vat_return_write_date
+#: model:ir.model.fields,field_description:account_openprod.field_country_tva_write_date
+#: model:ir.model.fields,field_description:account_openprod.field_invoice_change_account_system_write_date
+#: model:ir.model.fields,field_description:account_openprod.field_invoice_payment_term_line_write_date
+#: model:ir.model.fields,field_description:account_openprod.field_invoice_reconciliation_credit_line_write_date
+#: model:ir.model.fields,field_description:account_openprod.field_invoice_reconciliation_debit_line_write_date
+#: model:ir.model.fields,field_description:account_openprod.field_invoice_reconciliation_wizard_write_date
+#: model:ir.model.fields,field_description:account_openprod.field_merge_invoice_write_date
+#: model:ir.model.fields,field_description:account_openprod.field_pay_more_invoice_wiz_write_date
+#: model:ir.model.fields,field_description:account_openprod.field_payment_method_write_date
+#: model:ir.model.fields,field_description:account_openprod.field_print_balance_general_ledger_write_date
+#: model:ir.model.fields,field_description:account_openprod.field_print_balance_sheet_write_date
+#: model:ir.model.fields,field_description:account_openprod.field_res_partner_financial_notation_write_date
+msgid "Last Updated on"
+msgstr "Dernière mise à jour le"
+
+#. module: account_openprod
+#: model:ir.ui.view,arch_db:account_openprod.account_cust_openprod_invoice_form
+#: model:ir.ui.view,arch_db:account_openprod.account_supp_openprod_invoice_form
+msgid "Legal information"
+msgstr "Informations légales"
+
+#. module: account_openprod
+#: model:ir.model.fields,field_description:account_openprod.field_print_balance_general_ledger_is_letter
+msgid "Letter"
+msgstr "Lettré"
+
+#. module: account_openprod
+#: code:addons/account_openprod/wizard/print_balance_sheet.py:21
+#, python-format
+msgid "Liability"
+msgstr "Passif"
+
+#. module: account_openprod
+#: model:ir.ui.view,arch_db:account_openprod.account_cust_openprod_invoice_form
+#: model:ir.ui.view,arch_db:account_openprod.account_cust_openprod_invoice_line_form
+#: model:ir.ui.view,arch_db:account_openprod.account_supp_openprod_invoice_form
+#: model:ir.ui.view,arch_db:account_openprod.account_suppl_openprod_invoice_line_form
+#: model:ir.ui.view,arch_db:account_openprod.view_openprod_invoice_line_form
+msgid "Linked documents"
+msgstr "Documents liés"
+
+#. module: account_openprod
+#: model:ir.model.fields,field_description:account_openprod.field_account_invoice_lock_invoice
+msgid "Lock invoice"
+msgstr "Bloquer la facture"
+
+#. module: account_openprod
+#: model:ir.model.fields,field_description:account_openprod.field_res_partner_lock_invoices
+msgid "Lock invoices"
+msgstr "Bloquer les factures"
+
+#. module: account_openprod
+#: code:addons/account_openprod/product.py:12
+#, python-format
+msgid "Lot"
+msgstr "Lot"
+
+#. module: account_openprod
+#: model:ir.model.fields,field_description:account_openprod.field_account_invoice_mail_ids
+msgid "Mails"
+msgstr "Mails"
+
+#. module: account_openprod
+#: code:addons/account_openprod/account_invoice.py:716
+#, python-format
+msgid "Management unit quantity and second unit quantity are inconsistent"
+msgstr "La quantité en unité de gestion et la quantité en seconde unité sont incohérentes"
+
+#. module: account_openprod
+#: code:addons/account_openprod/product.py:30
+#: code:addons/account_openprod/res_partner.py:72
+#, python-format
+msgid "Manual"
+msgstr "Manuel"
+
+#. module: account_openprod
+#: code:addons/account_openprod/account_invoice.py:338
+#: code:addons/account_openprod/account_invoice.py:1309
+#, python-format
+msgid "March"
+msgstr "Mars"
+
+#. module: account_openprod
+#: model:ir.model.fields,field_description:account_openprod.field_account_invoice_max_delay
+msgid "Max delay for application (in days)"
+msgstr "Délai maximum d'application (en jours)"
+
+#. module: account_openprod
+#: code:addons/account_openprod/account_invoice.py:340
+#: code:addons/account_openprod/account_invoice.py:1311
+#, python-format
+msgid "May"
+msgstr "Mai"
+
+#. module: account_openprod
+#: model:ir.model.fields,field_description:account_openprod.field_account_invoice_line_uom_id
+msgid "Measure unity"
+msgstr "Unité de mesure"
+
+#. module: account_openprod
+#: model:ir.actions.act_window,name:account_openprod.act_merge_invoices
+#: model:ir.model,name:account_openprod.model_merge_invoice
+#: model:ir.ui.view,arch_db:account_openprod.view_form_merge_invoices
+msgid "Merge invoices"
+msgstr "Grouper les factures"
+
+#. module: account_openprod
+#: model:ir.ui.view,arch_db:account_openprod.view_form_merge_invoices
+msgid "Merge the selected invoices"
+msgstr "Grouper les factures sélectionnées"
+
+#. module: account_openprod
+#: model:ir.model,name:account_openprod.model_invoice_change_account_system
+msgid "Modification of the account system"
+msgstr "Modification de la position fiscale"
+
+#. module: account_openprod
+#: model:ir.model.fields,field_description:account_openprod.field_account_invoice_line_month
+#: model:ir.model.fields,field_description:account_openprod.field_account_invoice_month
+#: model:ir.ui.view,arch_db:account_openprod.view_account_invoice_line_filter
+msgid "Month"
+msgstr "Mois"
+
+#. module: account_openprod
+#: model:ir.model.fields,field_description:account_openprod.field_account_vat_return_line_move_line_ids
+msgid "Move lines"
+msgstr "Lignes"
+
+#. module: account_openprod
+#: model:ir.model.fields,field_description:account_openprod.field_account_invoicing_method_name
+#: model:ir.model.fields,field_description:account_openprod.field_account_vat_return_name
+#: model:ir.model.fields,field_description:account_openprod.field_account_vat_return_template_name
+#: model:ir.model.fields,field_description:account_openprod.field_country_tva_name
+#: model:ir.model.fields,field_description:account_openprod.field_invoice_reconciliation_credit_line_name
+#: model:ir.model.fields,field_description:account_openprod.field_invoice_reconciliation_debit_line_name
+#: model:ir.model.fields,field_description:account_openprod.field_payment_method_name
+#: model:ir.model.fields,field_description:account_openprod.field_res_partner_financial_notation_name
+msgid "Name"
+msgstr "Nom"
+
+#. module: account_openprod
+#: model:ir.model.fields,field_description:account_openprod.field_res_partner_no_exceed_invoice_outstanding
+msgid "No exceed invoice outstanding"
+msgstr "Dont factures non payées ET non échues (TTC)"
+
+#. module: account_openprod
+#: model:ir.model.fields,field_description:account_openprod.field_print_balance_general_ledger_is_no_letter
+msgid "No letter"
+msgstr "Non lettré"
+
+#. module: account_openprod
+#: model:ir.model.fields,field_description:account_openprod.field_invoice_reconciliation_wizard_no_complete_reconcile
+msgid "No reconcile"
+msgstr "Pas de lettrage"
+
+#. module: account_openprod
+#: model:ir.model.fields,field_description:account_openprod.field_res_partner_invoice_outstanding
+msgid "Not paid invoice outstanding"
+msgstr "Encours factures non payées"
+
+#. module: account_openprod
+#: model:ir.model.fields,field_description:account_openprod.field_account_invoicing_method_note
+msgid "Note"
+msgstr "Note"
+
+#. module: account_openprod
+#: model:ir.model.fields,field_description:account_openprod.field_res_partner_sale_invoice_note
+#: model:ir.ui.view,arch_db:account_openprod.view_form_general_partner
+msgid "Note on sale invoice header"
+msgstr "Note sur la facture"
+
+#. module: account_openprod
+#: model:ir.model.fields,field_description:account_openprod.field_account_invoice_note_invoice_intern
+#: model:ir.ui.view,arch_db:account_openprod.account_cust_openprod_invoice_form
+#: model:ir.ui.view,arch_db:account_openprod.account_supp_openprod_invoice_form
+msgid "Note on the internal invoice's header"
+msgstr "Note sur l'entête interne de la facture"
+
+#. module: account_openprod
+#: model:ir.model.fields,field_description:account_openprod.field_account_invoice_line_note_invoice_intern
+msgid "Note on the internal invoice's line"
+msgstr "Note imprimée sur la ligne interne de la facture"
+
+#. module: account_openprod
+#: model:ir.model.fields,field_description:account_openprod.field_account_invoice_note_invoice_header
+#: model:ir.ui.view,arch_db:account_openprod.account_cust_openprod_invoice_form
+#: model:ir.ui.view,arch_db:account_openprod.account_supp_openprod_invoice_form
+msgid "Note on the printed invoice's header"
+msgstr "Note imprimée sur l'entête de la facture"
+
+#. module: account_openprod
+#: model:ir.model.fields,field_description:account_openprod.field_account_invoice_line_note_invoice_header
+msgid "Note on the printed invoice's line"
+msgstr "Note imprimée sur la ligne de la facture"
+
+#. module: account_openprod
+#: model:ir.model.fields,field_description:account_openprod.field_product_product_description_invoice
+#: model:ir.ui.view,arch_db:account_openprod.view_form_product_account
+msgid "Note printed on demand invoice"
+msgstr "Note imprimée sur la facture"
+
+#. module: account_openprod
+#: model:ir.ui.view,arch_db:account_openprod.account_cust_openprod_invoice_form
+#: model:ir.ui.view,arch_db:account_openprod.account_cust_openprod_invoice_line_form
+#: model:ir.ui.view,arch_db:account_openprod.account_supp_openprod_invoice_form
+#: model:ir.ui.view,arch_db:account_openprod.account_suppl_openprod_invoice_line_form
+#: model:ir.ui.view,arch_db:account_openprod.view_openprod_invoice_line_form
+msgid "Notes"
+msgstr "Notes"
+
+#. module: account_openprod
+#: code:addons/account_openprod/account_invoice.py:346
+#: code:addons/account_openprod/account_invoice.py:1317
+#, python-format
+msgid "November"
+msgstr "Novembre"
+
+#. module: account_openprod
+#: code:addons/account_openprod/account_invoice.py:345
+#: code:addons/account_openprod/account_invoice.py:1316
+#, python-format
+msgid "October"
+msgstr "Octobre"
+
+#. module: account_openprod
+#: code:addons/account_openprod/account.py:328
+#: code:addons/account_openprod/account_invoice.py:89
+#, python-format
+msgid "On demand"
+msgstr "À la demande"
+
+#. module: account_openprod
+#: code:addons/account_openprod/account.py:115
+#: code:addons/account_openprod/account.py:273
+#: code:addons/account_openprod/account.py:329
+#: code:addons/account_openprod/account_invoice.py:90
+#, python-format
+msgid "On the order"
+msgstr "À la commande"
+
+#. module: account_openprod
+#: code:addons/account_openprod/account.py:70
+#, python-format
+msgid "Only administrators can change the settings"
+msgstr "Seuls les administrateurs peuvent changer les paramètres"
+
+#. module: account_openprod
+#: code:addons/account_openprod/account_invoice.py:1297
+#, python-format
+msgid "Open"
+msgstr "Ouverte"
+
+#. module: account_openprod
+#: code:addons/account_openprod/account.py:336
+#, python-format
+msgid "Ordered quantities"
+msgstr "Quantités commandées"
+
+#. module: account_openprod
+#: model:ir.model.fields,field_description:account_openprod.field_account_invoice_line_uom_qty
+msgid "Ordered quantity in measure unit"
+msgstr "Quantité commandée en unité de mesure"
+
+#. module: account_openprod
+#: model:ir.model.fields,field_description:account_openprod.field_account_move_line_reconcile_origin_id
+msgid "Origin reconcile"
+msgstr "Lettrage d'origine"
+
+#. module: account_openprod
+#: model:ir.ui.view,arch_db:account_openprod.account_cust_openprod_invoice_form
+msgid "PRO-FORMA"
+msgstr "PRO-FORMA"
+
+#. module: account_openprod
+#: code:addons/account_openprod/account_invoice.py:1298
+#, python-format
+msgid "Paid"
+msgstr "Payée"
+
+#. module: account_openprod
+#: model:ir.model.fields,field_description:account_openprod.field_account_invoice_paid_by_id
+msgid "Paid by"
+msgstr "Payé par"
+
+#. module: account_openprod
+#: model:ir.model.fields,field_description:account_openprod.field_invoice_reconciliation_credit_line_is_partial
+#: model:ir.model.fields,field_description:account_openprod.field_invoice_reconciliation_debit_line_is_partial
+msgid "Partial payment"
+msgstr "Paiement partiel"
+
+#. module: account_openprod
+#: model:ir.ui.view,arch_db:account_openprod.inherit_view_account_move_line_reconcile_full
+#: model:ir.ui.view,arch_db:account_openprod.view_form_invoice_reconciliation_wizard
+msgid "Partial reconcile"
+msgstr "Lettrage partiel"
+
+#. module: account_openprod
+#: model:ir.model,name:account_openprod.model_res_partner
+#: model:ir.model.fields,field_description:account_openprod.field_account_vat_return_partner_id
+#: model:ir.model.fields,field_description:account_openprod.field_country_tva_partner_id
+#: model:ir.model.fields,field_description:account_openprod.field_res_partner_financial_notation_partner_id
+#: model:ir.ui.view,arch_db:account_openprod.view_account_invoice_line_filter
+msgid "Partner"
+msgstr "Partenaire"
+
+#. module: account_openprod
+#: code:addons/account_openprod/wizard/print_balance_general_ledger.py:23
+#, python-format
+msgid "Partner balance"
+msgstr "Balance des tiers"
+
+#. module: account_openprod
+#: code:addons/account_openprod/wizard/print_balance_general_ledger.py:21
+#, python-format
+msgid "Partner general ledger"
+msgstr "Grand livre des tiers"
+
+#. module: account_openprod
+#: code:addons/account_openprod/wizard/print_balance_general_ledger.py:30
+#, python-format
+msgid "Partner'list"
+msgstr "Liste de partenaire"
+
+#. module: account_openprod
+#: model:ir.model.fields,field_description:account_openprod.field_print_balance_general_ledger_ledger_partner_ids
+msgid "Partners"
+msgstr "Partenaires"
+
+#. module: account_openprod
+#: model:ir.ui.view,arch_db:account_openprod.view_form_print_balance_general_ledger
+msgid "Partners list"
+msgstr "Liste de partenaires"
+
+#. module: account_openprod
+#: model:ir.ui.view,arch_db:account_openprod.account_supp_openprod_invoice_form
+msgid "Pay"
+msgstr "Payer"
+
+#. module: account_openprod
+#: code:addons/account_openprod/account_invoice.py:865
+#, python-format
+msgid "Pay Invoice"
+msgstr "Payer facture"
+
+#. module: account_openprod
+#: model:ir.model,name:account_openprod.model_pay_more_invoice_wiz
+msgid "Pay more invoices"
+msgstr "Payer plusieurs factures"
+
+#. module: account_openprod
+#: model:ir.actions.act_window,name:account_openprod.act_pay_more_invoice_wiz
+msgid "Pay multi invoices"
+msgstr "Payer plusieurs factures"
+
+#. module: account_openprod
+#: model:ir.model.fields,field_description:account_openprod.field_invoice_reconciliation_wizard_partner_id
+msgid "Payer partner"
+msgstr "Partenaire payeur"
+
+#. module: account_openprod
+#: model:ir.model.fields,field_description:account_openprod.field_account_vat_return_payment_id
+#: model:ir.ui.view,arch_db:account_openprod.account_cust_openprod_invoice_form
+#: model:ir.ui.view,arch_db:account_openprod.account_supp_openprod_invoice_form
+#: model:ir.ui.view,arch_db:account_openprod.view_form_account_vat_return
+msgid "Payment"
+msgstr "Paiement"
+
+#. module: account_openprod
+#: model:ir.model,name:account_openprod.model_account_payment_term
+msgid "Payment Term"
+msgstr "Conditions de paiement"
+
+#. module: account_openprod
+#: model:ir.model,name:account_openprod.model_account_payment_term_line
+msgid "Payment Term Line"
+msgstr "Détail des conditions de règlement"
+
+#. module: account_openprod
+#: model:ir.model.fields,field_description:account_openprod.field_account_vat_return_payment_move_id
+msgid "Payment account move"
+msgstr "Mouvement du paiement"
+
+#. module: account_openprod
+#: model:ir.model.fields,field_description:account_openprod.field_account_vat_return_payment_date
+msgid "Payment date"
+msgstr "Date de l'écriture"
+
+#. module: account_openprod
+#: model:ir.model,name:account_openprod.model_payment_method
+#: model:ir.model.fields,field_description:account_openprod.field_account_invoice_payment_method_id
+msgid "Payment method"
+msgstr "Mode de paiement"
+
+#. module: account_openprod
+#: model:ir.ui.view,arch_db:account_openprod.account_cust_openprod_invoice_form
+#: model:ir.ui.view,arch_db:account_openprod.account_supp_openprod_invoice_form
+msgid "Payment process management"
+msgstr "Gestion du processus de paiement"
+
+#. module: account_openprod
+#: model:ir.ui.view,arch_db:account_openprod.view_form_invoice_reconciliation_wizard
+msgid "Payment resume"
+msgstr "Résumé du paiement"
+
+#. module: account_openprod
+#: model:ir.model.fields,help:account_openprod.field_account_invoicing_method_line_payment_term_id
+msgid "Payment term for the invoice generated by this line (if field is empty, the invoice will have the order payment term)"
+msgstr "Condition de paiement pour la facture généré par cette ligne (si le champ est vide, la facture aura la condition de paiement de la commande)"
+
+#. module: account_openprod
+#: model:ir.model,name:account_openprod.model_invoice_payment_term_line
+msgid "Payment term lines for invoice"
+msgstr "Lignes des conditions de paiement pour factures"
+
+#. module: account_openprod
+#: model:ir.ui.view,arch_db:account_openprod.account_cust_openprod_invoice_form
+#: model:ir.ui.view,arch_db:account_openprod.account_supp_openprod_invoice_form
+msgid "Payment terms"
+msgstr "Conditions de réglement"
+
+#. module: account_openprod
+#: model:ir.ui.view,arch_db:account_openprod.account_cust_openprod_invoice_form
+#: model:ir.ui.view,arch_db:account_openprod.account_supp_openprod_invoice_form
+msgid "Payments"
+msgstr "Règlements"
+
+#. module: account_openprod
+#: model:ir.ui.view,arch_db:account_openprod.account_cust_openprod_invoice_form
+#: model:ir.ui.view,arch_db:account_openprod.account_supp_openprod_invoice_form
+msgid "Payments list"
+msgstr "Liste des paiements"
+
+#. module: account_openprod
+#: code:addons/account_openprod/account.py:279
+#, python-format
+msgid "Percent"
+msgstr "Pourcent"
+
+#. module: account_openprod
+#: model:ir.model.fields,field_description:account_openprod.field_account_vat_return_period_id
+#: model:ir.ui.view,arch_db:account_openprod.view_account_invoice_line_filter
+msgid "Period"
+msgstr "Période"
+
+#. module: account_openprod
+#: model:ir.ui.view,arch_db:account_openprod.view_form_product_account
+msgid "Price"
+msgstr "Prix"
+
+#. module: account_openprod
+#: model:ir.model.fields,field_description:account_openprod.field_product_product_price_theo_manual
+msgid "Price theo manual"
+msgstr "Prix théorique manuel"
+
+#. module: account_openprod
+#: code:addons/account_openprod/account_invoice.py:670
+#, python-format
+msgid "Price unit quantity and second unit quantity are inconsistent"
+msgstr "La quantité en unité de prix et la quantité en seconde unité sont incohérentes"
+
+#. module: account_openprod
+#: model:ir.model.fields,field_description:account_openprod.field_account_invoice_line_uoi_id
+msgid "Price unity"
+msgstr "Unité de prix"
+
+#. module: account_openprod
+#: model:ir.ui.view,arch_db:account_openprod.account_cust_openprod_invoice_form
+#: model:ir.ui.view,arch_db:account_openprod.account_supp_openprod_invoice_form
+msgid "Principal address"
+msgstr "Adresse principale"
+
+#. module: account_openprod
+#: model:ir.ui.view,arch_db:account_openprod.view_form_print_balance_general_ledger
+#: model:ir.ui.view,arch_db:account_openprod.view_form_print_balance_sheet
+msgid "Print"
+msgstr "Imprimer"
+
+#. module: account_openprod
+#: model:ir.actions.act_window,name:account_openprod.action_print_balance_general_ledger
+#: model:ir.ui.view,arch_db:account_openprod.view_form_print_balance_general_ledger
+msgid "Print balance or general ledger"
+msgstr "Imprimer la balance ou le grand livre"
+
+#. module: account_openprod
+#: model:ir.actions.act_window,name:account_openprod.action_print_balance_sheet
+#: model:ir.ui.view,arch_db:account_openprod.view_form_print_balance_sheet
+msgid "Print balance sheet"
+msgstr "Imprimer le bilan"
+
+#. module: account_openprod
+#: model:ir.model.fields,field_description:account_openprod.field_account_config_settings_print_delivered_address
+#: model:ir.model.fields,field_description:account_openprod.field_res_company_print_delivered_address
+msgid "Print delivered address on invoices"
+msgstr "Imprimer l'adresse de livraison sur les factures"
+
+#. module: account_openprod
+#: model:ir.model.fields,field_description:account_openprod.field_account_invoice_print_packaging_list
+msgid "Print packaging list"
+msgstr "Imprimer liste de colisage"
+
+#. module: account_openprod
+#: code:addons/account_openprod/account_invoice.py:72
+#: code:addons/account_openprod/res_partner.py:71
+#, python-format
+msgid "Printer"
+msgstr "Imprimante"
+
+#. module: account_openprod
+#: model:ir.ui.view,arch_db:account_openprod.account_cust_openprod_invoice_form
+#: model:ir.ui.view,arch_db:account_openprod.account_supp_openprod_invoice_form
+msgid "Pro Forma Invoice"
+msgstr "Facture pro-forma"
+
+#. module: account_openprod
+#: code:addons/account_openprod/account_invoice.py:1295
+#: code:addons/account_openprod/account_invoice.py:1296
+#, python-format
+msgid "Pro-forma"
+msgstr "Pro-forma"
+
+#. module: account_openprod
+#: model:ir.model,name:account_openprod.model_product_product
+#: model:ir.model.fields,field_description:account_openprod.field_account_invoicing_method_line_product_id
+#: model:ir.ui.view,arch_db:account_openprod.account_cust_openprod_invoice_form
+#: model:ir.ui.view,arch_db:account_openprod.account_cust_openprod_invoice_line_form
+#: model:ir.ui.view,arch_db:account_openprod.account_supp_openprod_invoice_form
+#: model:ir.ui.view,arch_db:account_openprod.account_suppl_openprod_invoice_line_form
+#: model:ir.ui.view,arch_db:account_openprod.view_account_invoice_line_filter
+#: model:ir.ui.view,arch_db:account_openprod.view_openprod_invoice_line_form
+msgid "Product"
+msgstr "Produit"
+
+#. module: account_openprod
+#: code:addons/account_openprod/wizard/print_balance_sheet.py:22
+#, python-format
+msgid "Profit and loss"
+msgstr "Compte de résultat"
+
+#. module: account_openprod
+#: model:ir.model.fields,field_description:account_openprod.field_product_product_purchase_taxes_ids
+msgid "Purchase Taxes"
+msgstr "Taxes d'achat"
+
+#. module: account_openprod
+#: model:ir.ui.view,arch_db:account_openprod.view_form_account_vat_return
+#: model:ir.ui.view,arch_db:account_openprod.view_form_account_vat_return_template
+msgid "Purchase account"
+msgstr "Compte d'achat"
+
+#. module: account_openprod
+#: model:ir.model.fields,field_description:account_openprod.field_account_vat_return_purchase_account_ids
+#: model:ir.model.fields,field_description:account_openprod.field_account_vat_return_template_purchase_account_ids
+msgid "Purchase accounts"
+msgstr "Comptes d'achat"
+
+#. module: account_openprod
+#: model:ir.ui.view,arch_db:account_openprod.view_form_product_account
+msgid "Purchase taxes"
+msgstr "Taxes d'achats"
+
+#. module: account_openprod
+#: model:ir.model.fields,field_description:account_openprod.field_account_invoice_line_sec_uom_qty
+msgid "Quantity in sale unity"
+msgstr "Quantité en unité de vente"
+
+#. module: account_openprod
+#: model:ir.model.fields,field_description:account_openprod.field_res_partner_financial_notation_rating
+msgid "Rating"
+msgstr "Notation"
+
+#. module: account_openprod
+#: model:ir.model.fields,field_description:account_openprod.field_res_partner_financial_notation_rating_agency
+msgid "Rating agency"
+msgstr "Agence de notation"
+
+#. module: account_openprod
+#: model:ir.model.fields,field_description:account_openprod.field_res_partner_rating_ids
+msgid "Ratings"
+msgstr "Notations"
+
+#. module: account_openprod
+#: model:ir.ui.view,arch_db:account_openprod.account_cust_openprod_invoice_form
+#: model:ir.ui.view,arch_db:account_openprod.account_supp_openprod_invoice_form
+msgid "Re-Open"
+msgstr "Rouvrir"
+
+#. module: account_openprod
+#: code:addons/account_openprod/product.py:20
+#: code:addons/account_openprod/product.py:28
+#, python-format
+msgid "Real"
+msgstr "Réel"
+
+#. module: account_openprod
+#: model:ir.model.fields,field_description:account_openprod.field_res_partner_financial_notation_recommended_outstandings
+msgid "Recommended outstandings"
+msgstr "Encours recommandés"
+
+#. module: account_openprod
+#: model:ir.ui.view,arch_db:account_openprod.account_cust_openprod_invoice_form
+msgid "Recompute taxes and total"
+msgstr "Recompute taxes and total"
+
+#. module: account_openprod
+#: model:ir.actions.act_window,name:account_openprod.reconcile_entries_action
+#: model:ir.ui.view,arch_db:account_openprod.account_cust_openprod_invoice_form
+#: model:ir.ui.view,arch_db:account_openprod.account_supp_openprod_invoice_form
+#: model:ir.ui.view,arch_db:account_openprod.inherit_view_account_move_line_reconcile_full
+#: model:ir.ui.view,arch_db:account_openprod.view_form_invoice_reconciliation_wizard
+msgid "Reconcile"
+msgstr "Lettrer"
+
+#. module: account_openprod
+#: model:ir.actions.act_window,name:account_openprod.action_invoice_reconciliation_wizard
+msgid "Reconcile an invoice"
+msgstr "Lettrer une facture"
+
+#. module: account_openprod
+#: model:ir.ui.view,arch_db:account_openprod.inherit_view_account_move_line_reconcile_full
+#: model:ir.ui.view,arch_db:account_openprod.view_form_invoice_reconciliation_wizard
+msgid "Reconcile with adjustment"
+msgstr "Lettrer avec ajustement"
+
+#. module: account_openprod
+#: model:ir.model.fields,field_description:account_openprod.field_invoice_reconciliation_credit_line_invoice_reconciliation_id
+#: model:ir.model.fields,field_description:account_openprod.field_invoice_reconciliation_debit_line_invoice_reconciliation_id
+msgid "Reconciliation wizard"
+msgstr "Wizard de lettrage"
+
+#. module: account_openprod
+#: model:ir.ui.view,arch_db:account_openprod.account_cust_openprod_invoice_form
+#: model:ir.ui.view,arch_db:account_openprod.account_supp_openprod_invoice_form
+msgid "Refund"
+msgstr "Avoir"
+
+#. module: account_openprod
+#: model:ir.ui.view,arch_db:account_openprod.account_cust_openprod_invoice_form
+msgid "Refund Invoice"
+msgstr "Avoir"
+
+#. module: account_openprod
+#: model:ir.model.fields,field_description:account_openprod.field_account_tax_refund_account_payment_id
+#: model:ir.model.fields,field_description:account_openprod.field_account_tax_template_refund_account_payment_id
+msgid "Refund Tax Account (On payment)"
+msgstr "Compte de taxe pour avoirs (Sur paiement)"
+
+#. module: account_openprod
+#: model:ir.ui.view,arch_db:account_openprod.view_form_general_partner
+msgid "Refunds"
+msgstr "Avoirs"
+
+#. module: account_openprod
+#: model:ir.model.fields,field_description:account_openprod.field_account_invoice_region_id
+msgid "Region"
+msgstr "Région"
+
+#. module: account_openprod
+#: model:ir.ui.view,arch_db:account_openprod.account_cust_openprod_invoice_form
+msgid "Register Payment"
+msgstr "Enregistrer un paiement"
+
+#. module: account_openprod
+#: model:ir.model.fields,field_description:account_openprod.field_invoice_payment_term_line_remaining_amount
+msgid "Remaining amount"
+msgstr "Montant restant"
+
+#. module: account_openprod
+#: model:ir.ui.view,arch_db:account_openprod.account_cust_openprod_invoice_form
+#: model:ir.ui.view,arch_db:account_openprod.account_supp_openprod_invoice_form
+msgid "Reminder"
+msgstr "Relance"
+
+#. module: account_openprod
+#: model:ir.model.fields,field_description:account_openprod.field_account_invoice_reminder_date
+msgid "Reminder date"
+msgstr "Date de la dernière relance"
+
+#. module: account_openprod
+#: model:ir.model.fields,field_description:account_openprod.field_account_invoice_reminder_nb
+msgid "Reminder number"
+msgstr "Nombre de relance"
+
+#. module: account_openprod
+#: model:ir.model.fields,field_description:account_openprod.field_print_balance_general_ledger_ledger_partner_print
+#: model:ir.model.fields,field_description:account_openprod.field_print_balance_general_ledger_report_type
+msgid "Report type"
+msgstr "Type de rapport"
+
+#. module: account_openprod
+#: model:ir.ui.view,arch_db:account_openprod.account_cust_openprod_invoice_form
+msgid "Reset to Draft"
+msgstr "Remettre en brouillon"
+
+#. module: account_openprod
+#: model:ir.model.fields,field_description:account_openprod.field_invoice_reconciliation_wizard_residual_amount
+msgid "Residual amount"
+msgstr "Montant restant dû"
+
+#. module: account_openprod
+#: model:ir.model.fields,field_description:account_openprod.field_invoice_reconciliation_wizard_residual_company_amount
+msgid "Residual amount (in company currency)"
+msgstr "Montant restant (dans la devise de la société)"
+
+#. module: account_openprod
+#: model:ir.model.fields,field_description:account_openprod.field_account_invoice_convert_amount
+msgid "Residual amount in company currency"
+msgstr "Montant restant (dans la devise de la société)"
+
+#. module: account_openprod
+#: model:ir.model.fields,field_description:account_openprod.field_account_vat_return_template_id_9357
+msgid "Return template"
+msgstr "Retourner modèle"
+
+#. module: account_openprod
+#: model:ir.ui.view,arch_db:account_openprod.view_form_account_vat_return
+#: model:ir.ui.view,arch_db:account_openprod.view_form_account_vat_return_template
+msgid "Sale account"
+msgstr "Compte de vente"
+
+#. module: account_openprod
+#: model:ir.model.fields,field_description:account_openprod.field_account_vat_return_sale_account_ids
+#: model:ir.model.fields,field_description:account_openprod.field_account_vat_return_template_sale_account_ids
+msgid "Sale accounts"
+msgstr "Comptes de vente"
+
+#. module: account_openprod
+#: model:ir.model.fields,field_description:account_openprod.field_account_invoice_line_sec_uom_id
+msgid "Sale unity"
+msgstr "Unité de vente"
+
+#. module: account_openprod
+#: model:ir.model.fields,field_description:account_openprod.field_product_product_sale_taxes_ids
+msgid "Sales Taxes"
+msgstr "Taxes des ventes"
+
+#. module: account_openprod
+#: model:ir.ui.view,arch_db:account_openprod.view_form_product_account
+msgid "Sales taxes"
+msgstr "Taxes des ventes"
+
+#. module: account_openprod
+#: model:ir.model.fields,field_description:account_openprod.field_invoice_reconciliation_wizard_same_currency
+msgid "Same currency"
+msgstr "Même devise"
+
+#. module: account_openprod
+#: model:ir.ui.view,arch_db:account_openprod.view_account_invoice_line_filter
+msgid "Search Invoice"
+msgstr "Rechercher factures"
+
+#. module: account_openprod
+#: model:ir.model.fields,field_description:account_openprod.field_account_invoice_line_sec_uom_category_id
+msgid "Second uom category"
+msgstr "Catégorie de la seconde udm"
+
+#. module: account_openprod
+#: model:ir.ui.view,arch_db:account_openprod.view_form_inherit_account_account
+msgid "See entries"
+msgstr "Voir les écritures"
+
+#. module: account_openprod
+#: model:ir.model.fields,field_description:account_openprod.field_account_invoice_see_inv_term_line
+msgid "See invoice payment term lines"
+msgstr "Voir les lignes des conditions de réglement"
+
+#. module: account_openprod
+#: model:ir.ui.view,arch_db:account_openprod.view_form_inherit_account_account
+msgid "See unreconcile entries"
+msgstr "Voir écritures non lettrées"
+
+#. module: account_openprod
+#: model:ir.model.fields,help:account_openprod.field_account_invoicing_method_line_value
+msgid "Select here the kind of valuation related to this payment term line. Note that you should have your last line with the type 'Balance' to ensure that the whole amount will be threated."
+msgstr "Sélectionnez ici le type de valorisation relative à cette ligne de condition de paiement. Notez que vous devriez avoir votre dernière ligne de type 'Balance' pour vous assurer que l'ensemble des montants seront traités."
+
+#. module: account_openprod
+#: model:ir.ui.view,arch_db:account_openprod.account_cust_openprod_invoice_form
+msgid "Send by Email"
+msgstr "Envoyer par email"
+
+#. module: account_openprod
+#: code:addons/account_openprod/account_invoice.py:344
+#: code:addons/account_openprod/account_invoice.py:1315
+#, python-format
+msgid "September"
+msgstr "Septembre"
+
+#. module: account_openprod
+#: model:ir.model.fields,field_description:account_openprod.field_account_invoicing_method_line_sequence
+#: model:ir.model.fields,field_description:account_openprod.field_invoice_payment_term_line_sequence
+msgid "Sequence"
+msgstr "Séquence"
+
+#. module: account_openprod
+#: model:ir.model.fields,help:account_openprod.field_account_invoice_tax_account_payment_id
+msgid "Set the account that will be set by default on invoice tax lines for invoices. Leave empty to use the expense account."
+msgstr "Définir le compte utilisé par défaut  sur les lignes de taxe des factures. Laisser vide pour utiliser le compte de dépense."
+
+#. module: account_openprod
+#: model:ir.model.fields,help:account_openprod.field_account_tax_account_payment_id
+#: model:ir.model.fields,help:account_openprod.field_account_tax_refund_account_payment_id
+#: model:ir.model.fields,help:account_openprod.field_account_tax_template_account_payment_id
+#: model:ir.model.fields,help:account_openprod.field_account_tax_template_refund_account_payment_id
+msgid "Set the account that will be set by default on invoice tax lines for refunds. Leave empty to use the expense account."
+msgstr "Indiquez le compte qui sera indiqué par défaut sur les lignes de facturation des taxes pour les avoirs. Laissez vide pour utiliser le compte de dépense."
+
+#. module: account_openprod
+#: model:ir.ui.view,arch_db:account_openprod.account_supp_openprod_invoice_form
+msgid "Set to Draft"
+msgstr "Mettre à l'état \"Brouillon\""
+
+#. module: account_openprod
+#: model:ir.ui.view,arch_db:account_openprod.view_form_payment_term
+msgid "Simulation"
+msgstr "Simulation"
+
+#. module: account_openprod
+#: model:ir.model.fields,field_description:account_openprod.field_res_partner_siret_number
+msgid "Siret number"
+msgstr "Numéro de siret"
+
+#. module: account_openprod
+#: code:addons/account_openprod/account.py:864
+#, python-format
+msgid "Some adjustment account move line have been reconciled (partially or totally) with other account move line. Please, delete this reconciles first"
+msgstr "Certaines écritures comptables d'ajustement ont été léttrées (partiellement ou totalement) avec d'autre écritures comptables. Merci de d'abord supprimer ces lettrages"
+
+#. module: account_openprod
+#: model:ir.model.fields,field_description:account_openprod.field_print_balance_general_ledger_start_account_id
+msgid "Start account"
+msgstr "Compte de début"
+
+#. module: account_openprod
+#: model:ir.model.fields,field_description:account_openprod.field_account_vat_return_start_date
+#: model:ir.model.fields,field_description:account_openprod.field_print_balance_general_ledger_start_date
+#: model:ir.model.fields,field_description:account_openprod.field_print_balance_sheet_start_date
+msgid "Start date"
+msgstr "Date de début"
+
+#. module: account_openprod
+#: model:ir.model.fields,field_description:account_openprod.field_account_vat_return_state
+msgid "State"
+msgstr "État"
+
+#. module: account_openprod
+#: model:ir.model.fields,field_description:account_openprod.field_res_partner_bank_statement_type
+msgid "Statement type"
+msgstr "Type de relevé"
+
+#. module: account_openprod
+#: model:ir.model.fields,field_description:account_openprod.field_account_invoice_line_state
+#: model:ir.ui.view,arch_db:account_openprod.view_account_invoice_line_filter
+msgid "Status"
+msgstr "État"
+
+#. module: account_openprod
+#: model:ir.model.fields,field_description:account_openprod.field_account_invoice_street
+msgid "Street"
+msgstr "Rue"
+
+#. module: account_openprod
+#: model:ir.model.fields,field_description:account_openprod.field_account_invoice_street2
+msgid "Street 2"
+msgstr "Rue 2"
+
+#. module: account_openprod
+#: model:ir.model.fields,field_description:account_openprod.field_account_invoice_street3
+msgid "Street 3"
+msgstr "Rue 3"
+
+#. module: account_openprod
+#: model:ir.model,name:account_openprod.model_resource_timetracking
+msgid "Suivi des temps"
+msgstr "Suivi des temps"
+
+#. module: account_openprod
+#: model:ir.model.fields,field_description:account_openprod.field_print_balance_general_ledger_is_supplier
+#: model:ir.ui.view,arch_db:account_openprod.account_supp_openprod_invoice_form
+#: model:ir.ui.view,arch_db:account_openprod.account_suppl_openprod_invoice_line_tree
+msgid "Supplier"
+msgstr "Fournisseur"
+
+#. module: account_openprod
+#: code:addons/account_openprod/account_invoice.py:1285
+#: code:addons/account_openprod/wizard/invoice_reconciliation.py:72
+#, python-format
+msgid "Supplier Invoice"
+msgstr "Facture fournisseur"
+
+#. module: account_openprod
+#: code:addons/account_openprod/account_invoice.py:1287
+#: code:addons/account_openprod/wizard/invoice_reconciliation.py:74
+#, python-format
+msgid "Supplier Refund"
+msgstr "Avoir fournisseur"
+
+#. module: account_openprod
+#: model:ir.actions.act_window,name:account_openprod.action_supplier_refund
+#: model:ir.ui.menu,name:account_openprod.menu_action_supplier_refund
+msgid "Supplier Refunds"
+msgstr "Avoirs fournisseurs"
+
+#. module: account_openprod
+#: model:ir.ui.view,arch_db:account_openprod.account_supp_openprod_invoice_form
+msgid "Supplier invoice"
+msgstr "Facture fournisseur"
+
+#. module: account_openprod
+#: model:ir.ui.view,arch_db:account_openprod.account_suppl_openprod_invoice_line_form
+#: model:ir.ui.view,arch_db:account_openprod.account_suppl_openprod_invoice_line_tree
+msgid "Supplier invoice line"
+msgstr "Ligne de facture fournisseur"
+
+#. module: account_openprod
+#: model:ir.actions.act_window,name:account_openprod.supplier_line_invoice_action
+#: model:ir.ui.menu,name:account_openprod.menu_supplier_line_invoice_action
+msgid "Supplier invoices lines"
+msgstr "Lignes de factures fournisseurs"
+
+#. module: account_openprod
+#: model:ir.ui.view,arch_db:account_openprod.account_supp_openprod_invoice_form
+msgid "Supplier invoicing"
+msgstr "Facturation fournisseur"
+
+#. module: account_openprod
+#: model:ir.ui.view,arch_db:account_openprod.account_supp_openprod_invoice_form
+#: model:ir.ui.view,arch_db:account_openprod.account_suppl_openprod_invoice_line_form
+msgid "Supplier product code"
+msgstr "Code produit du fournisseur"
+
+#. module: account_openprod
+#: model:ir.ui.view,arch_db:account_openprod.account_supp_openprod_invoice_form
+#: model:ir.ui.view,arch_db:account_openprod.account_suppl_openprod_invoice_line_form
+msgid "Supplier product name"
+msgstr "Nom du produit du fournisseur"
+
+#. module: account_openprod
+#: model:ir.ui.view,arch_db:account_openprod.account_supp_openprod_invoice_form
+msgid "Supplier to pay"
+msgstr "Fournisseur à payer"
+
+#. module: account_openprod
+#: model:ir.ui.view,arch_db:account_openprod.account_supp_openprod_invoice_form
+msgid "Supplier who deliver"
+msgstr "Fournisseur livreur"
+
+#. module: account_openprod
+#: model:ir.ui.view,arch_db:account_openprod.account_supp_openprod_invoice_form
+msgid "Supplier who sell"
+msgstr "Fournisseur vendeur"
+
+#. module: account_openprod
+#: model:ir.model.fields,field_description:account_openprod.field_account_invoice_tva_number
+msgid "TVA number"
+msgstr "Numéro TVA "
+
+#. module: account_openprod
+#: model:ir.ui.view,arch_db:account_openprod.view_form_general_partner
+msgid "TVA numbers"
+msgstr "Numéros de TVA"
+
+#. module: account_openprod
+#: model:ir.model,name:account_openprod.model_country_tva
+#: model:ir.model.fields,field_description:account_openprod.field_res_partner_tva_rate_ids
+msgid "TVA rates"
+msgstr "Taux de TVA"
+
+#. module: account_openprod
+#: model:ir.model,name:account_openprod.model_account_tax
+msgid "Tax"
+msgstr "Taxe"
+
+#. module: account_openprod
+#: model:ir.model.fields,field_description:account_openprod.field_account_invoice_tax_amount_20
+msgid "Tax (20%)"
+msgstr "Taxe (20%)"
+
+#. module: account_openprod
+#: model:ir.ui.view,arch_db:account_openprod.view_form_account_vat_return
+#: model:ir.ui.view,arch_db:account_openprod.view_form_account_vat_return_template
+msgid "Tax account"
+msgstr "Compte de TVA"
+
+#. module: account_openprod
+#: model:ir.model.fields,field_description:account_openprod.field_account_invoice_tax_tax_on_payment
+#: model:ir.model.fields,field_description:account_openprod.field_account_tax_tax_on_payment
+#: model:ir.model.fields,field_description:account_openprod.field_account_tax_template_tax_on_payment
+msgid "Tax on payment"
+msgstr "Taxe sur paiement"
+
+#. module: account_openprod
+#: model:ir.ui.menu,name:account_openprod.menu_taxes
+#: model:ir.ui.view,arch_db:account_openprod.account_cust_openprod_invoice_form
+#: model:ir.ui.view,arch_db:account_openprod.account_supp_openprod_invoice_form
+msgid "Taxes"
+msgstr "Taxes"
+
+#. module: account_openprod
+#: model:ir.model,name:account_openprod.model_account_fiscal_position_template
+msgid "Template for Fiscal Position"
+msgstr "Modèle de position fiscale"
+
+#. module: account_openprod
+#: model:ir.model,name:account_openprod.model_account_tax_template
+msgid "Templates for Taxes"
+msgstr "Modèles de taxes"
+
+#. module: account_openprod
+#: model:ir.model.fields,field_description:account_openprod.field_account_invoicing_method_payment_line_ids
+msgid "Terms"
+msgstr "Délais"
+
+#. module: account_openprod
+#: code:addons/account_openprod/wizard/invoice_reconciliation.py:417
+#: code:addons/account_openprod/wizard/invoice_reconciliation.py:469
+#: sql_constraint:invoice.reconciliation.credit.line:0
+#: sql_constraint:invoice.reconciliation.debit.line:0
+#, python-format
+msgid "The amount to reconcile must be inferior to the available amount of the account move"
+msgstr "Le montant à lettrer doit être inférieur au montant disponible de l'écriture comptable"
+
+#. module: account_openprod
+#: code:addons/account_openprod/wizard/print_balance_general_ledger.py:225
+#: code:addons/account_openprod/wizard/print_balance_sheet.py:100
+#, python-format
+msgid "The end date must be superior to the start date!"
+msgstr "La date de fin doit être supérieure à la date de début!"
+
+#. module: account_openprod
+#: code:addons/account_openprod/wizard/pay_more_invoice_wiz.py:56
+#, python-format
+msgid "The invoices must be in the open state."
+msgstr "Les factures doivent être à l'état ouverte."
+
+#. module: account_openprod
+#: code:addons/account_openprod/wizard/pay_more_invoice_wiz.py:53
+#, python-format
+msgid "The pay by must be the same."
+msgstr "Le payé par doit être le même."
+
+#. module: account_openprod
+#: model:ir.model.fields,help:account_openprod.field_account_invoicing_method_line_sequence
+msgid "The sequence field is used to order the payment term lines from the lowest sequences to the higher ones"
+msgstr "Le champ séquence est utilisé pour ordonner les lignes de conditions de paiement de la plus basse à la plus haute"
+
+#. module: account_openprod
+#: code:addons/account_openprod/account.py:1257
+#, python-format
+msgid "The tax %s is used in a product. Please delete the tax reference in the product before delete it"
+msgstr "La taxe %s est utilisée dans un produit. Merci de supprimer la référence à cette taxe dans le produit avant de la supprimer."
+
+#. module: account_openprod
+#: code:addons/account_openprod/wizard/pay_more_invoice_wiz.py:50
+#, python-format
+msgid "The type must be the same."
+msgstr "le type doit être le même."
+
+#. module: account_openprod
+#: code:addons/account_openprod/product.py:105
+#: code:addons/account_openprod/product.py:117
+#, python-format
+msgid "The valuation type can not be 'lot' if the product is not track label"
+msgstr "Le type de valorisation ne peut pas être au 'lot' si le produit n'est pas suivi par étiquette"
+
+#. module: account_openprod
+#: code:addons/account_openprod/product.py:21
+#: code:addons/account_openprod/product.py:29
+#, python-format
+msgid "Theoretical"
+msgstr "Théorique"
+
+#. module: account_openprod
+#: model:ir.model.fields,field_description:account_openprod.field_account_vat_return_theorical_amount
+msgid "Theorical amount"
+msgstr "Montant théorique"
+
+#. module: account_openprod
+#: code:addons/account_openprod/wizard/print_balance_general_ledger.py:108
+#, python-format
+msgid "There is no accouting period for this dates and this fiscal year!"
+msgstr "Il n'y a pas de période comptable pour ces dates et cette année fiscale!"
+
+#. module: account_openprod
+#: code:addons/account_openprod/wizard/print_balance_sheet.py:68
+#, python-format
+msgid "There is no accouting period for this dates!"
+msgstr "Il n'y a pas de périodes comptables pour ces dates!"
+
+#. module: account_openprod
+#: code:addons/account_openprod/wizard/print_balance_general_ledger.py:162
+#: code:addons/account_openprod/wizard/print_balance_general_ledger.py:200
+#, python-format
+msgid "There is no partner with account move line for this information!"
+msgstr "Il n'y a pas de partenaires avec des écritures comptables pour ces informations!"
+
+#. module: account_openprod
+#: model:ir.model.fields,help:account_openprod.field_product_product_property_account_expense_id
+msgid "This account will be used for invoices instead of the default one to value expenses for the current product."
+msgstr "Ce compte sera utilisé pour les factures au lieu de celui par défaut pour valoriser les dépenses pour l'article actuel."
+
+#. module: account_openprod
+#: model:ir.model.fields,help:account_openprod.field_product_product_property_account_income_id
+msgid "This account will be used for invoices instead of the default one to value sales for the current product."
+msgstr "Ce compte sera utilisé pour les factures au lieu de celui par défaut pour valoriser les ventes pour l'article actuel."
+
+#. module: account_openprod
+#: model:ir.ui.view,arch_db:account_openprod.account_cust_openprod_invoice_form
+#: model:ir.ui.view,arch_db:account_openprod.account_supp_openprod_invoice_form
+msgid "This button only appears when the state of the invoice is 'paid' (showing that it has been fully reconciled) and auto-computed boolean 'reconciled' is False (depicting that it's not the case anymore). In other words, the invoice has been dereconciled and it does not fit anymore the 'paid' state. You should press this button to re-open it and let it continue its normal process after having resolved the eventual exceptions it may have created."
+msgstr "Ce bouton n'apparaît que lorsque l'état de la facture est «payé» (montrant qu'elle a été pleinement lettrée) et que la case lettrée est décochée. En d'autres termes, la facture a été dé lettrée et elle n'est plus dans l'état «payé». Vous devez appuyer sur ce bouton pour la rouvrir et les laisser continuer son processus normal après avoir résolu les éventuelles dérogations qu'elle peut avoir créées."
+
+#. module: account_openprod
+#: code:addons/account_openprod/account.py:327
+#: code:addons/account_openprod/account_invoice.py:88
+#, python-format
+msgid "To the delivery"
+msgstr "A la livraison"
+
+#. module: account_openprod
+#: model:ir.ui.view,arch_db:account_openprod.account_cust_openprod_invoice_form
+#: model:ir.ui.view,arch_db:account_openprod.account_supp_openprod_invoice_form
+#: model:ir.ui.view,arch_db:account_openprod.view_form_account_vat_return
+#: model:ir.ui.view,arch_db:account_openprod.view_form_invoice_reconciliation_wizard
+msgid "Total"
+msgstr "Total"
+
+#. module: account_openprod
+#: model:ir.model.fields,field_description:account_openprod.field_invoice_reconciliation_wizard_total_payment_amount
+msgid "Total payment amount"
+msgstr "Total montant paiement"
+
+#. module: account_openprod
+#: model:ir.model.fields,field_description:account_openprod.field_account_invoice_line_total_price_currency
+msgid "Total price currency company"
+msgstr "Prix total devise société"
+
+#. module: account_openprod
+#: model:ir.model.fields,field_description:account_openprod.field_invoice_reconciliation_wizard_total_reconcile_amount
+msgid "Total reconcile payment"
+msgstr "Total paiement lettré"
+
+#. module: account_openprod
+#: model:ir.model.fields,field_description:account_openprod.field_account_invoice_line_type
+#: model:ir.model.fields,field_description:account_openprod.field_account_invoicing_method_payment_line_payment_type
+#: model:ir.model.fields,field_description:account_openprod.field_account_payment_term_payment_type
+#: model:ir.model.fields,field_description:account_openprod.field_account_vat_return_line_line_type
+msgid "Type"
+msgstr "Type"
+
+#. module: account_openprod
+#: model:ir.model.fields,field_description:account_openprod.field_product_product_type_valuation_production
+msgid "Type valuation production"
+msgstr "Type valorisation de production"
+
+#. module: account_openprod
+#: model:ir.model.fields,field_description:account_openprod.field_product_product_type_valuation_purchase
+msgid "Type valuation purchase"
+msgstr "Type valorisation d'achat"
+
+#. module: account_openprod
+#: code:addons/account_openprod/account_voucher.py:200
+#, python-format
+msgid "Unable to manually cancel a payment linked to a VAT return."
+msgstr "Impossible d'annuler manuelement un paiement lié à une déclaration de TVA."
+
+#. module: account_openprod
+#: code:addons/account_openprod/account.py:535
+#, python-format
+msgid "Unable to manually cancel an account move linked to a voucher."
+msgstr "Impossible d'annuler manuelement une écriture comptable liée à un paiement."
+
+#. module: account_openprod
+#: code:addons/account_openprod/account.py:539
+#, python-format
+msgid "Unable to manually cancel an account move linked to an invoice."
+msgstr "Impossible d'annuler manuelement une écriture comptable liée à une facture."
+
+#. module: account_openprod
+#: model:ir.ui.view,arch_db:account_openprod.account_cust_openprod_invoice_form
+#: model:ir.ui.view,arch_db:account_openprod.account_supp_openprod_invoice_form
+#: model:ir.ui.view,arch_db:account_openprod.inherit_view_vendor_payment_form
+#: model:ir.ui.view,arch_db:account_openprod.inherit_view_vendor_receipt_form
+msgid "Unreconcile"
+msgstr "Annuler le rapprochement"
+
+#. module: account_openprod
+#: model:ir.model.fields,field_description:account_openprod.field_account_invoice_line_uoi_category_id
+msgid "Uoi category"
+msgstr "Catégorie d'Udf"
+
+#. module: account_openprod
+#: model:ir.model.fields,field_description:account_openprod.field_account_invoice_line_uom_category_id
+msgid "Uom category"
+msgstr "Catégorie d'Udm"
+
+#. module: account_openprod
+#: model:ir.ui.view,arch_db:account_openprod.account_cust_openprod_invoice_form
+msgid "Update taxes"
+msgstr "MAJ taxes"
+
+#. module: account_openprod
+#: model:ir.actions.act_window,name:account_openprod.act_account_vat_return
+#: model:ir.model.fields,field_description:account_openprod.field_account_vat_return_line_vat_return_id
+#: model:ir.ui.menu,name:account_openprod.menu_account_vat_return
+#: model:ir.ui.view,arch_db:account_openprod.view_form_account_vat_return
+msgid "VAT return"
+msgstr "Déclaration de TVA"
+
+#. module: account_openprod
+#: model:ir.actions.act_window,name:account_openprod.act_account_vat_return_template
+#: model:ir.ui.menu,name:account_openprod.menu_account_vat_return_template
+#: model:ir.ui.view,arch_db:account_openprod.view_form_account_vat_return_template
+msgid "VAT return template"
+msgstr "Modèle déclaration de TVA"
+
+#. module: account_openprod
+#: model:ir.ui.view,arch_db:account_openprod.view_tree_account_vat_return_template
+msgid "VAT return templates"
+msgstr "Modèles déclaration de TVA"
+
+#. module: account_openprod
+#: model:ir.ui.view,arch_db:account_openprod.view_tree_account_vat_return
+msgid "VAT returns"
+msgstr "Déclaration de TVA"
+
+#. module: account_openprod
+#: model:ir.model.fields,field_description:account_openprod.field_account_vat_return_waiting_vat_account_ids
+msgid "VAT waiting"
+msgstr "TVA en attente"
+
+#. module: account_openprod
+#: model:ir.ui.view,arch_db:account_openprod.account_cust_openprod_invoice_form
+#: model:ir.ui.view,arch_db:account_openprod.account_supp_openprod_invoice_form
+#: model:ir.ui.view,arch_db:account_openprod.view_form_account_vat_return
+#: model:ir.ui.view,arch_db:account_openprod.view_form_pay_more_invoice_wiz
+msgid "Validate"
+msgstr "Valider"
+
+#. module: account_openprod
+#: model:ir.ui.view,arch_db:account_openprod.view_form_account_vat_return
+msgid "Validation"
+msgstr "Validation"
+
+#. module: account_openprod
+#: model:ir.model.fields,field_description:account_openprod.field_account_vat_return_validation_move_id
+msgid "Validation account move"
+msgstr "Pièce comptable de validation"
+
+#. module: account_openprod
+#: model:ir.model.fields,field_description:account_openprod.field_account_vat_return_validation_date
+msgid "Validation date"
+msgstr "Date de l'écriture"
+
+#. module: account_openprod
+#: model:ir.model.fields,field_description:account_openprod.field_account_invoicing_method_line_value
+msgid "Valuation"
+msgstr "Calcul"
+
+#. module: account_openprod
+#: model:ir.model.fields,field_description:account_openprod.field_account_invoicing_method_payment_line_value
+msgid "Value"
+msgstr "Valeur"
+
+#. module: account_openprod
+#: selection:account.invoice.line,dual_unit_type:0
+msgid "Variable"
+msgstr "Variable"
+
+#. module: account_openprod
+#: model:ir.model.fields,field_description:account_openprod.field_account_vat_return_template_waiting_vat_account_ids
+msgid "Waiting VAT accounts"
+msgstr "Comptes de TVA en attente"
+
+#. module: account_openprod
+#: model:ir.ui.view,arch_db:account_openprod.view_form_account_vat_return
+#: model:ir.ui.view,arch_db:account_openprod.view_form_account_vat_return_template
+msgid "Waiting tax account"
+msgstr "Compte de TVA en attente"
+
+#. module: account_openprod
+#: code:addons/account_openprod/account.py:255
+#: code:addons/account_openprod/account.py:258
+#: code:addons/account_openprod/account.py:301
+#: code:addons/account_openprod/account.py:304
+#: code:addons/account_openprod/account.py:375
+#: code:addons/account_openprod/account.py:378
+#: code:addons/account_openprod/account_invoice.py:1430
+#: code:addons/account_openprod/account_invoice.py:1464
+#: code:addons/account_openprod/account_invoice.py:1495
+#: code:addons/account_openprod/wizard/invoice_reconciliation.py:417
+#: code:addons/account_openprod/wizard/invoice_reconciliation.py:469
+#, python-format
+msgid "Warning"
+msgstr "Attention"
+
+#. module: account_openprod
+#: model:ir.model.fields,field_description:account_openprod.field_account_invoice_line_week_number
+#: model:ir.model.fields,field_description:account_openprod.field_account_invoice_week_number
+msgid "Week number"
+msgstr "Numéro de semaine"
+
+#. module: account_openprod
+#: code:addons/account_openprod/product.py:13
+#, python-format
+msgid "Weighted average price"
+msgstr "Prix moyen pondéré"
+
+#. module: account_openprod
+#: code:addons/account_openprod/account_invoice.py:335
+#: code:addons/account_openprod/account_invoice.py:1306
+#, python-format
+msgid "Without month"
+msgstr "Pas de mois"
+
+#. module: account_openprod
+#: model:ir.model,name:account_openprod.model_print_balance_sheet
+msgid "Wizard to print balance sheet"
+msgstr "Wizard pour imprimer le bilan"
+
+#. module: account_openprod
+#: model:ir.model,name:account_openprod.model_print_balance_general_ledger
+msgid "Wizard to print trial balance and general ledger"
+msgstr "Wizard pour imprimer la balance et le grand livre"
+
+#. module: account_openprod
+#: model:ir.model,name:account_openprod.model_invoice_reconciliation_wizard
+msgid "Wizard to reconcile payments from an invoice"
+msgstr "Wizard pour réconcilier les paiements depuis une facture"
+
+#. module: account_openprod
+#: model:ir.model.fields,field_description:account_openprod.field_account_invoice_line_year
+#: model:ir.model.fields,field_description:account_openprod.field_account_invoice_year
+msgid "Year"
+msgstr "Année"
+
+#. module: account_openprod
+#: constraint:account.move.reconcile:0
+msgid "You can only reconcile journal items with the same partner."
+msgstr "Vous ne pouvez léttrer des écritures comptables que si elles ont le même partenaire (compte auxiliaire)"
+
+#. module: account_openprod
+#: code:addons/account_openprod/wizard/merge_invoice.py:25
+#, python-format
+msgid "You can't merge a non-draft invoice (%s)!"
+msgstr "Vous ne pouvez grouper une facture non brouillon (%s)!"
+
+#. module: account_openprod
+#: code:addons/account_openprod/account_invoice.py:1020
+#, python-format
+msgid "You can't validate a locked invoice"
+msgstr "Vous ne pouvez pas valider une facture bloquée"
+
+#. module: account_openprod
+#: code:addons/account_openprod/wizard/print_balance_general_ledger.py:101
+#, python-format
+msgid "You must choose at least one journal to print the report!"
+msgstr "Vous devez choisir au moins un journal pour imprimer le rapport!"
+
+#. module: account_openprod
+#: code:addons/account_openprod/wizard/print_balance_general_ledger.py:118
+#: code:addons/account_openprod/wizard/print_balance_general_ledger.py:172
+#, python-format
+msgid "You must choose at least one partner to print the report!"
+msgstr "Vous devez choisir au moins un partenaire pour imprimer le rapport!"
+
+#. module: account_openprod
+#: code:addons/account_openprod/account_invoice.py:1430
+#, python-format
+msgid "You must first select a partner!"
+msgstr "Vous devez d'abord sélectionner un partenaire"
+
+#. module: account_openprod
+#: code:addons/account_openprod/account_invoice.py:1464
+#: code:addons/account_openprod/account_invoice.py:1495
+#, python-format
+msgid "You must have Management unit and Sale unit"
+msgstr "Vous devez avoir une unité de mesure et une unité de vente"
+
+#. module: account_openprod
+#: code:addons/account_openprod/account.py:396
+#, python-format
+msgid "You must to have one and only one balance line"
+msgstr "Vous devez avoir une et seulement une ligne de balance"
+
+#. module: account_openprod
+#: code:addons/account_openprod/wizard/merge_invoice.py:28
+#, python-format
+msgid "You need more than one invoice to make a merge!"
+msgstr "Vous avez besoin de plus d'une facture pour faire un groupement!"
+
+#. module: account_openprod
+#: model:ir.model.fields,field_description:account_openprod.field_account_invoice_zip
+msgid "Zip"
+msgstr "Code postal"
+
+#. module: account_openprod
+#: model:ir.model,name:account_openprod.model_account_config_settings
+msgid "account.config.settings"
+msgstr "account.config.settings"
+
+#. module: account_openprod
+#: model:ir.model,name:account_openprod.model_account_invoicing_method
+msgid "account.invoicing.method"
+msgstr "account.invoicing.method"
+
+#. module: account_openprod
+#: model:ir.model,name:account_openprod.model_account_invoicing_method_line
+msgid "account.invoicing.method.line"
+msgstr "account.invoicing.method.line"
+
+#. module: account_openprod
+#: model:ir.model,name:account_openprod.model_account_invoicing_method_payment_line
+msgid "account.invoicing.method.payment.line"
+msgstr "account.invoicing.method.payment.line"
+
+#. module: account_openprod
+#: model:ir.ui.view,arch_db:account_openprod.view_form_pay_more_invoice_wiz
+msgid "account_voucher_multi_wiz"
+msgstr "account_voucher_multi_wiz"
+
+#. module: account_openprod
+#: model:ir.ui.view,arch_db:account_openprod.account_cust_openprod_invoice_form
+#: model:ir.ui.view,arch_db:account_openprod.account_supp_openprod_invoice_form
+msgid "force period"
+msgstr "Forcer la période"
+
+#. module: account_openprod
+#: model:ir.ui.view,arch_db:account_openprod.inherit_view_account_move_line_reconcile_full
+#: model:ir.ui.view,arch_db:account_openprod.view_form_invoice_change_account_system
+#: model:ir.ui.view,arch_db:account_openprod.view_form_invoice_reconciliation_wizard
+#: model:ir.ui.view,arch_db:account_openprod.view_form_merge_invoices
+#: model:ir.ui.view,arch_db:account_openprod.view_form_pay_more_invoice_wiz
+#: model:ir.ui.view,arch_db:account_openprod.view_form_print_balance_general_ledger
+#: model:ir.ui.view,arch_db:account_openprod.view_form_print_balance_sheet
+msgid "or"
+msgstr "ou"
+
+#. module: account_openprod
+#: model:ir.model.fields,help:account_openprod.field_res_partner_invoice_copy
+msgid "res_partner.invoice_copy.help"
+msgstr "res_partner.invoice_copy.help"
+
+#. module: account_openprod
+#: model:ir.model.fields,help:account_openprod.field_res_partner_invoice_send_address_id
+msgid "res_partner.invoice_send_address_id.help"
+msgstr "res_partner.invoice_send_address_id.help"
+
+#. module: account_openprod
+#: model:ir.model.fields,field_description:account_openprod.field_pay_more_invoice_wiz_name
+msgid "string"
+msgstr "string"
+
+#. module: account_openprod
+#: model:ir.model,name:account_openprod.model_wizard_multi_charts_accounts
+msgid "wizard.multi.charts.accounts"
+msgstr "wizard.multi.charts.accounts"
+

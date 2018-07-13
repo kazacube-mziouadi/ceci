@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data noupdate="1">
+
+		<!-- Casual leave -->
+		<record model="resource.holiday.type" id="holiday_legal_leave_type">
+			<field name="name" eval="'Legal Leaves '+time.strftime('%Y')" />
+			<field name="limit" eval="False" />
+			<field name="duration" eval="1" />
+		</record>
+
+		<!-- Sick leave -->
+		<record model="resource.holiday.type" id="holiday_sick_leave_type">
+			<field name="name">Sick Leaves</field>
+			<field name="limit" eval="True" />
+			<field name="duration" eval="1" />
+			<field name="allow_override" eval="True"/>
+		</record>
+
+		<!-- Compensatory Days -->
+		<record model="resource.holiday.type" id="holiday_compensatory_leave_type">
+			<field name="name">Compensatory Days</field>
+			<field name="limit" eval="False" />
+			<field name="duration" eval="1" />
+		</record>
+
+		<!--Unpaid Leave -->
+		<record model="resource.holiday.type" id="holiday_unpaid_leave_type">
+			<field name="name">Unpaid</field>
+			<field name="limit" eval="True" />
+			<field name="duration" eval="1" />
+			<field name="allow_override" eval="True"/>
+		</record>
+
+	</data>
+</openerp>

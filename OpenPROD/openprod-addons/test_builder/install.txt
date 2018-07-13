@@ -1,0 +1,4 @@
+création vm: install chrom(e|ium), chromedriver, ajouts dans path, install JRE, dl selenium-server, lancement selenium-server
+creation target + target_db (name = nom de la bdd)
+ajout des parametres test_builder.(vm_url => http://192.168.122.16:4444/wd/hub|default_lang => en_GB|default_target_db_id => 1)
+appliquer patch web => patch -p0 < web.patch depuis openerp-addons-web

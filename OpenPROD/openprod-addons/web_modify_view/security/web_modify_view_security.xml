@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data noupdate="1">
+
+		<!-- ====== -->
+		<!-- GROUPS -->
+		<!-- ====== -->
+		<record id="web_modify_view.group_view" model="res.groups">
+			<field name="name">Modify views</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_configuration'))]"/>
+		</record>
+
+	</data>
+</openerp>

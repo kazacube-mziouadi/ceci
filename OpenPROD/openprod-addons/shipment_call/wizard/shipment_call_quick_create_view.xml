@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+		<!-- FORM VIEW Picking quick create -->
+		<record id='view_form_shipment_call_quick_create' model='ir.ui.view'>
+			<field name="name">view_form_shipment_call_quick_create</field>
+			<field name="model">stock.shipment.call.quick.create</field>
+			<field name="arch" type="xml">
+				<form string="Quick create" version="8.0">
+					<group colspan="4" col="4">
+						<field name="product_id" colspan="2" />
+						<field name="partner_id" domain="[('is_company', '=', True)]" colspan="2" />
+						<field name="uom_qty" />
+						<field name="uom_id" readonly="1" />
+						<field name="sec_uom_qty" attrs="{'invisible': [('variable', '=', False)]}" />
+						<field name="sec_uom_id" attrs="{'invisible': [('variable', '=', False)]}" readonly="1" />
+						<field name="date" />
+						<group colspan="4" col="4" string="Note">
+							<field name="note" colspan="4" nolabel="1" />
+						</group>
+					</group>
+					<field name="variable" invisible="1" />
+					<footer>
+						<button name="quick_create" string="OK" type="object" class="oe_highlight" />
+						or
+						<button string="Cancel" class="oe_link" special="cancel" />
+					</footer>
+				</form>
+			</field>
+		</record>
+
+		<!-- ACTION shipment callIN quick create -->
+		<record id="act_in_shipment_call_quick_create" model="ir.actions.act_window">
+			<field name="name">Shipment call create</field>
+			<field name="res_model">stock.shipment.call.quick.create</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">form</field>
+			<field name="target">new</field>
+		</record>
+		<!-- ACTION shipment_call OUT quick create -->
+		<record id="act_shipment_call_quick_create" model="ir.actions.act_window">
+			<field name="name">Shipment call quick create</field>
+			<field name="res_model">stock.shipment.call.quick.create</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">form</field>
+			<field name="target">new</field>
+		</record>
+
+		<menuitem name="Shipment call quick create" action="act_shipment_call_quick_create" id="menu_shipment_call_quick_create" parent="stock.menu_stock_stock_in" sequence="100" groups="stock.group_menu_receipt_order" />
+	</data>
+</openerp>

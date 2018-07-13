@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+	
+		<record model="ir.ui.view" id="view_form_switch_openprod_document">
+			<field name="name">view_form_switch_openprod_document</field>
+			<field name="model">switch.document.wizard</field>
+			<field name="type">form</field>
+			<field name="arch" type="xml">
+				<form string="New version">
+					<group colspan="4" col="4">
+						<group colspan="4" col="4" string="Enter the new version" name="new_version_group">
+							<field name="version"/>
+						</group>
+					</group>
+					<footer>
+						<button name="switch_document_version" string="Switch the document" type="object" class="oe_highlight"/>
+						or
+						<button string="Close" class="oe_highlight" special="cancel" />
+					</footer>
+				</form>
+			</field>
+		</record>
+
+		<record model="ir.actions.act_window" id="action_switch_new_document">
+			<field name="name">New version</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="res_model">switch.document.wizard</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">form</field>
+			<field name="target">new</field>
+		</record>
+		
+		
+	</data>
+</openerp>

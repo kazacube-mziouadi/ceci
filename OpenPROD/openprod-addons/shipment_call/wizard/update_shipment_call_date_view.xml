@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+		<!-- FORM VIEW update_shipment_call_date_wizard -->
+		<record id='view_form_update_shipment_call_date_wizard' model='ir.ui.view'>
+			<field name="name">Update shipment call date</field>
+			<field name="model">update.shipment.call.date.wizard</field>
+			<field name="arch" type="xml">
+				<form string="Change date" version="8.0">
+					<group colspan="4" col="4">
+						<field name="shipment_call_id" invisible="1" />
+						<newline />
+						<field name="date" colspan="4" />
+					</group>
+					<footer>
+						<button name="change_date" string="OK" type="object" class="oe_highlight" />
+						or
+						<button string="Cancel" class="oe_link" special="cancel" />
+					</footer>
+				</form>
+			</field>
+		</record>
+		<!-- ACTION update_shipment_call_date_wizard -->
+		<record id="act_update_shipment_call_date_wizard" model="ir.actions.act_window">
+			<field name="name">Update shipment call date</field>
+			<field name="res_model">update.shipment.call.date.wizard</field>
+			<field name="view_mode">form</field>
+			<field name="view_type">form</field>
+			<field name="target">new</field>
+		</record>
+	</data>
+</openerp>

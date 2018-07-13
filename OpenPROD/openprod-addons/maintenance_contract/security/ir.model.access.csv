@@ -1,0 +1,13 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_maintenance_contract_user,maintenance.contract,model_maintenance_contract,maintenance_contract_user,1,0,0,0
+access_maintenance_contract_manager,maintenance.contract,model_maintenance_contract,maintenance_contract_manager,1,1,1,0
+access_maintenance_contract_administrator,maintenance.contract,model_maintenance_contract,maintenance_contract_responsible,1,1,1,1
+
+
+access_maintenance_contract_line_user,maintenance.contract.line,model_maintenance_contract_line,maintenance_contract_user,1,0,0,0
+access_maintenance_contract_line_manager,maintenance.contract.line,model_maintenance_contract_line,maintenance_contract_manager,1,1,1,0
+access_maintenance_contract_line_administrator,maintenance.contract.line,model_maintenance_contract_line,maintenance_contract_responsible,1,1,1,1
+
+
+
+

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+        <record model="ir.ui.view" id="view_form_res_partner_sav">
+            <field name="name">view_form_res_partner_sav</field>
+            <field name="inherit_id" ref="sale.view_form_partner_sale" />
+            <field name="priority" eval="1500" />
+            <field name="model">res.partner</field>
+            <field name="arch" type="xml"> 
+                <xpath expr="//group[@name='sale_communication_method']" position="before">
+                    <group colspan="2" col="2" string="Guarantee" name="group_guarantee" >
+						<field name="guarantee"/>
+						<field name="guarantee_unity_id"/>
+                    </group>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</openerp>

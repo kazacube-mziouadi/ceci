@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+
+		<!-- ACTION Product valuation wizard -->
+		<record id="act_product_valuation" model="ir.actions.act_window">
+			<field name="name">Product valuation wizard</field>
+			<field name="res_model">product.valuation.wizard</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">form</field>
+			<field name="target">new</field>
+		</record>
+		
+		<!-- FORM VIEW Product Valuation -->
+		<record id='view_form_product_valuation' model='ir.ui.view'>
+			<field name="name">product_valuation</field>
+			<field name="model">product.valuation.wizard</field>
+			<field name="arch" type="xml">
+				<form string="Product Valuation" version="8.0">
+				    <label string="If the month precedes the calculation will be done until the current month" />
+					<group coslpan="4" col="2" >
+                        <group coslpan="2" col="2" >
+    						<field name="product_id" domain="[('is_int', '!=', True), ('type', '=', 'stockable')]" />
+	       					<field name="month" />
+							<field name="warehouse_id" domain="[('company_id', '=', company_id)]" />
+						</group>
+						<group coslpan="2" col="2" >
+			     			<field name="company_id" />
+				    		<field name="year" />
+				    	</group>
+					</group>
+					<footer>
+						<button name="calculate" string="Calculate" type="object" class="oe_highlight" />
+						<button string="Cancel" class="oe_link" special="cancel" />
+					</footer>
+				</form>
+			</field>
+		</record>
+
+
+
+		<!-- ACTION All Products valuation wizard -->
+		<record id="act_all_products_valuation" model="ir.actions.act_window">
+			<field name="name">Product valuation wizard</field>
+			<field name="res_model">all.products.valuation.wizard</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">form</field>
+			<field name="target">new</field>
+		</record>
+		
+		<!-- FORM VIEW Product Valuation -->
+		<record id='view_form_all_products_valuation' model='ir.ui.view'>
+			<field name="name">all_products_valuation</field>
+			<field name="model">all.products.valuation.wizard</field>
+			<field name="arch" type="xml">
+				<form string="Product Valuation" version="8.0">
+				    <label string="If the month precedes the calculation will be done until the current month" />
+					<group coslpan="4" col="2" >
+                        <group coslpan="2" col="2" >
+					       <field name="company_id" />
+							<field name="month" />
+					    </group>
+					    <group coslpan="2" col="2" >
+					       <field name="warehouse_id" domain="[('company_id', '=', company_id)]" />
+						  <field name="year" />
+						</group>
+					</group>
+					<footer>
+						<button name="calculate" string="Calculate" type="object" class="oe_highlight" />
+						<button string="Cancel" class="oe_link" special="cancel" />
+					</footer>
+				</form>
+			</field>
+		</record>
+		
+		
+		
+		<!-- ACTION All Products valuation wizard -->
+        <record id="act_wizard_limit_modif_move" model="ir.actions.act_window">
+            <field name="name">Wizard change the deadline for changing movements</field>
+            <field name="res_model">wizard.limit.modif.move</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+        
+        <!-- FORM VIEW Product Valuation -->
+        <record id='view_form_wizard_limit_modif_move' model='ir.ui.view'>
+            <field name="name">view_form_wizard_limit_modif_move</field>
+            <field name="model">wizard.limit.modif.move</field>
+            <field name="arch" type="xml">
+                <form string="Wizard change the deadline for changing movements" version="8.0">
+                    <group>
+                        <field name="date" />
+                    </group>
+                    <footer>
+                        <button name="validate" string="Validate" type="object" class="oe_highlight" />
+                        <button string="Cancel" class="oe_link" special="cancel" />
+                    </footer>
+                </form>
+            </field>
+        </record>
+        
+        
+        
+        <!-- FORM VIEW Product Valuation lot -->
+        <record id='view_form_product_valuation_lot' model='ir.ui.view'>
+            <field name="name">view_form_product_valuation_lot</field>
+            <field name="model">product.valuation.lot.wizard</field>
+            <field name="arch" type="xml">
+                <form string="Product Valuation lot" version="8.0">
+                    <label string="If the month precedes the calculation will be done until the current month" />
+                    <group coslpan="4" col="2" >
+                        <group coslpan="2" col="2" >
+	                        <field name="product_id"  domain="[('is_int', '!=', True), ('type', '=', 'stockable'), ('track_label', '=', True)]" />
+	                        <field name="month" />
+	                        <field name="warehouse_id" domain="[('company_id', '=', company_id)]" />
+                        </group>
+                        <group coslpan="2" col="2" >
+                            <field name="company_id" />
+                            <field name="year" />
+                        </group>
+                    </group>
+                    <footer>
+                        <button name="calculate" string="Calculate" type="object" class="oe_highlight" />
+                        <button string="Cancel" class="oe_link" special="cancel" />
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+
+        <!-- ACTION Product valuation lot wizard -->
+        <record id="act_product_valuation_lot" model="ir.actions.act_window">
+            <field name="name">Product valuation lot wizard</field>
+            <field name="res_model">product.valuation.lot.wizard</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+        
+        
+
+        <!-- FORM VIEW ALL Product Valuation lot -->
+        <record id='view_form_all_products_valuation_lot' model='ir.ui.view'>
+            <field name="name">view_form_all_products_valuation_lot</field>
+            <field name="model">all.products.valuation.lot.wizard</field>
+            <field name="arch" type="xml">
+                <form string="Product Valuation lot" version="8.0">
+                    <label string="If the month precedes the calculation will be done until the current month" />
+                    <group coslpan="4" col="2" >
+                        <group coslpan="2" col="2" >
+                            <field name="month" />
+                            <field name="company_id" />
+                        </group>
+                        <group coslpan="2" col="2" >
+                            <field name="year" />
+                            <field name="warehouse_id" domain="[('company_id', '=', company_id)]" />
+                        </group>
+                    </group>
+                    <footer>
+                        <button name="calculate" string="Calculate" type="object" class="oe_highlight" />
+                        <button string="Cancel" class="oe_link" special="cancel" />
+                    </footer>
+                </form>
+            </field>
+        </record>
+        
+        
+        <!-- ACTION All Products valuation lot wizard -->
+        <record id="act_all_products_valuation_lot" model="ir.actions.act_window">
+            <field name="name">Product valuation lot wizard</field>
+            <field name="res_model">all.products.valuation.lot.wizard</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+        
+        
+	</data>
+</openerp>

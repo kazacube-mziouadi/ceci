@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+    
+        <record model="ir.ui.view" id="view_form_sale_order_line_multi_company">
+            <field name="name">view_form_sale_order_line_multi_company</field>
+            <field name="inherit_id" ref="sale.view_form_sale_order_line"/>
+            <field name="priority" eval="3400" />
+            <field name="model">sale.order.line</field>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='net_weight']" position="after">
+                    <field name="company_id" />
+                </xpath>
+            </field>
+        </record>
+        
+        
+        <record model="ir.ui.view" id="view_form_sale_order_multi_company">
+            <field name="name">view_form_sale_order_multi_company</field>
+            <field name="inherit_id" ref="sale.view_form_sale_order"/>
+            <field name="priority" eval="3400" />
+            <field name="model">sale.order</field>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='order_line_ids']//form//field[@name='net_weight']" position="after">
+                    <field name="company_id" />
+                </xpath>
+                <xpath expr="//field[@name='order_line_ids']//form//field[@name='taxes_ids']" position="attributes">
+                    <atribute name="domain">[('type_tax_use', '!=', 'purchase'), ('company_id', '=', comapny_id)]</atribute>
+                </xpath>
+            </field>
+        </record>
+        
+        
+        <!-- TREE VIEW Sale order line -->
+        <record id='view_tree_sale_order_line_multi_company' model='ir.ui.view'>
+            <field name="name">view_tree_sale_order_line_multi_company</field>
+            <field name="model">sale.order.line</field>
+            <field name="inherit_id" ref="sale.view_tree_sale_order_line"/>
+            <field name="priority" eval="3400" />
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='total_price']" position="after">
+                    <field name="company_id" />
+                </xpath>
+            </field>
+        </record>
+        
+        
+    </data>
+</openerp>

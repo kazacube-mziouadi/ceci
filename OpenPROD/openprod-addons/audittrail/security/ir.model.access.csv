@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_audittrail_rule,audittrail.rule,model_audittrail_rule,base.group_user,1,1,1,1
+access_audittrail_line,audittrail.line,model_audittrail_line,base.group_user,1,1,1,1
+access_audittrail_value,audittrail.value,model_audittrail_value,base.group_user,1,1,1,1

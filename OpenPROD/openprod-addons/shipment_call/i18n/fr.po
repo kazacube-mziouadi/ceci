@@ -1,0 +1,918 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* shipment_call
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 9.0c\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-05-10 12:34+0000\n"
+"PO-Revision-Date: 2017-05-10 12:34+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: shipment_call
+#: model:ir.ui.view,arch_db:shipment_call.view_form_shipment_call
+msgid "Actions"
+msgstr "Actions"
+
+#. module: shipment_call
+#: model:ir.ui.view,arch_db:shipment_call.view_form_stock_picking_in
+#: model:ir.ui.view,arch_db:shipment_call.view_tree_stock_picking_in
+msgid "Add to request for removal"
+msgstr "Ajouter à une demande d'enlèvement"
+
+#. module: shipment_call
+#: model:ir.model.fields,field_description:shipment_call.field_shipment_call_address_id
+#: model:ir.model.fields,field_description:shipment_call.field_shipment_call_forwarding_agent_address_id
+msgid "Address"
+msgstr "Adresse"
+
+#. module: shipment_call
+#: model:ir.ui.view,arch_db:shipment_call.view_form_shipment_call
+msgid "Addresses"
+msgstr "Adresses"
+
+#. module: shipment_call
+#: code:addons/shipment_call/shipment_call.py:54
+#: model:ir.ui.view,arch_db:shipment_call.view_form_shipment_call
+#, python-format
+msgid "Called"
+msgstr "Appelée"
+
+#. module: shipment_call
+#: model:ir.ui.view,arch_db:shipment_call.view_form_shipment_call
+#: model:ir.ui.view,arch_db:shipment_call.view_form_shipment_call_quick_create
+#: model:ir.ui.view,arch_db:shipment_call.view_form_update_shipment_call_date_wizard
+#: model:ir.ui.view,arch_db:shipment_call.volume_calculate_form_view
+msgid "Cancel"
+msgstr "Annuler"
+
+#. module: shipment_call
+#: code:addons/shipment_call/shipment_call.py:57
+#, python-format
+msgid "Canceled"
+msgstr "Annulée"
+
+#. module: shipment_call
+#: model:ir.model.fields,field_description:shipment_call.field_shipment_call_carrier_processing_id
+#: model:ir.ui.view,arch_db:shipment_call.view_form_shipment_call
+msgid "Carrier processing"
+msgstr "Traitement transporteur"
+
+#. module: shipment_call
+#: model:ir.ui.view,arch_db:shipment_call.view_form_update_shipment_call_date_wizard
+msgid "Change date"
+msgstr "Changer la date"
+
+#. module: shipment_call
+#: model:ir.model.fields,field_description:shipment_call.field_shipment_call_city
+#: model:ir.model.fields,field_description:shipment_call.field_shipment_call_forwarding_agent_city
+msgid "City"
+msgstr "Ville"
+
+#. module: shipment_call
+#: model:ir.model.fields,field_description:shipment_call.field_shipment_call_transporter_comments
+msgid "Comments for the transporter"
+msgstr "Commentaire pour transporteur"
+
+#. module: shipment_call
+#: model:ir.model.fields,field_description:shipment_call.field_shipment_call_shipment_comments
+msgid "Comments on request for removal"
+msgstr "Commentaire sur demande d'enlèvement"
+
+#. module: shipment_call
+#: model:ir.model.fields,field_description:shipment_call.field_shipment_call_country_id
+#: model:ir.model.fields,field_description:shipment_call.field_shipment_call_forwarding_agent_country_id
+msgid "Country"
+msgstr "Pays"
+
+#. module: shipment_call
+#: model:ir.model.fields,field_description:shipment_call.field_shipment_call_create_uid
+#: model:ir.model.fields,field_description:shipment_call.field_shipment_call_volume_calculate_create_uid
+#: model:ir.model.fields,field_description:shipment_call.field_stock_shipment_call_quick_create_create_uid
+#: model:ir.model.fields,field_description:shipment_call.field_update_shipment_call_date_wizard_create_uid
+msgid "Created by"
+msgstr "Créé par"
+
+#. module: shipment_call
+#: model:ir.model.fields,field_description:shipment_call.field_shipment_call_create_date
+#: model:ir.model.fields,field_description:shipment_call.field_shipment_call_volume_calculate_create_date
+#: model:ir.model.fields,field_description:shipment_call.field_stock_shipment_call_quick_create_create_date
+#: model:ir.model.fields,field_description:shipment_call.field_update_shipment_call_date_wizard_create_date
+msgid "Created on"
+msgstr "Créé le"
+
+#. module: shipment_call
+#: model:ir.ui.view,arch_db:shipment_call.view_form_shipment_call
+msgid "Sender address"
+msgstr "Adresse expéditeur"
+
+#. module: shipment_call
+#: model:ir.model.fields,field_description:shipment_call.field_stock_shipment_call_quick_create_date
+msgid "Date"
+msgstr "Date"
+
+#. module: shipment_call
+#: model:ir.ui.view,arch_db:shipment_call.view_form_shipment_call
+msgid "Dates"
+msgstr "Dates"
+
+#. module: shipment_call
+#: model:ir.model.fields,field_description:shipment_call.field_shipment_call_delay
+msgid "Delay"
+msgstr "Délai"
+
+#. module: shipment_call
+#: model:ir.model.fields,field_description:shipment_call.field_shipment_call_desired_arrival_date
+msgid "Desired arrival"
+msgstr "Arrivée souhaitée"
+
+#. module: shipment_call
+#: model:ir.model.fields,field_description:shipment_call.field_shipment_call_desired_departure_date
+msgid "Desired departure"
+msgstr "Départ souhaité"
+
+#. module: shipment_call
+#: model:ir.model.fields,field_description:shipment_call.field_shipment_call_display_name
+#: model:ir.model.fields,field_description:shipment_call.field_shipment_call_volume_calculate_display_name
+#: model:ir.model.fields,field_description:shipment_call.field_stock_shipment_call_quick_create_display_name
+#: model:ir.model.fields,field_description:shipment_call.field_update_shipment_call_date_wizard_display_name
+msgid "Display Name"
+msgstr "Nom"
+
+#. module: shipment_call
+#: code:addons/shipment_call/shipment_call.py:56
+#: code:addons/shipment_call/shipment_call.py:65
+#: model:ir.ui.view,arch_db:shipment_call.view_form_shipment_call
+#, python-format
+msgid "Done"
+msgstr "Terminée"
+
+#. module: shipment_call
+#: code:addons/shipment_call/shipment_call.py:52
+#: code:addons/shipment_call/shipment_call.py:64
+#: model:ir.ui.view,arch_db:shipment_call.view_form_shipment_call
+#, python-format
+msgid "Draft"
+msgstr "Brouillon"
+
+#. module: shipment_call
+#: model:ir.ui.view,arch_db:shipment_call.view_form_shipment_call
+msgid "EDI"
+msgstr "EDI"
+
+#. module: shipment_call
+#: model:ir.model,name:shipment_call.model_mail_template
+msgid "Email Templates"
+msgstr "Modèles de courriel"
+
+#. module: shipment_call
+#: model:ir.model.fields,field_description:shipment_call.field_shipment_call_carrier_processing_end_date
+msgid "End date"
+msgstr "Date de fin"
+
+#. module: shipment_call
+#: code:addons/shipment_call/shipment_call.py:66
+#: code:addons/shipment_call/stock.py:88
+#, python-format
+msgid "Error"
+msgstr "Erreur"
+
+#. module: shipment_call
+#: model:ir.model.fields,field_description:shipment_call.field_shipment_call_forecast_arrival_date
+msgid "Forecast arrival"
+msgstr "Arrivée prévue"
+
+#. module: shipment_call
+#: model:ir.model.fields,field_description:shipment_call.field_shipment_call_forecast_departure_date
+msgid "Forecast departure"
+msgstr "Départ prévu"
+
+#. module: shipment_call
+#: model:ir.model.fields,field_description:shipment_call.field_shipment_call_forwarding_agent_id
+msgid "Forwarding agent"
+msgstr "Transitaire"
+
+#. module: shipment_call
+#: model:ir.ui.view,arch_db:shipment_call.view_form_shipment_call
+msgid "Forwarding agent address"
+msgstr "Adresse transitaire"
+
+#. module: shipment_call
+#: model:ir.model.fields,field_description:shipment_call.field_shipment_call_grand_export_invoiced
+msgid "Grand export invoiced"
+msgstr "Facture grand export"
+
+#. module: shipment_call
+#: model:ir.model.fields,field_description:shipment_call.field_shipment_call_height
+msgid "Height"
+msgstr "Hauteur"
+
+#. module: shipment_call
+#: model:ir.ui.view,arch_db:shipment_call.volume_calculate_form_view
+msgid "Height (CM)"
+msgstr "Hauteur (CM)"
+
+#. module: shipment_call
+#: model:ir.model.fields,field_description:shipment_call.field_shipment_call_volume_calculate_height_1
+msgid "Height 1 (CM)"
+msgstr "Hauteur 1 (CM)"
+
+#. module: shipment_call
+#: model:ir.model.fields,field_description:shipment_call.field_shipment_call_volume_calculate_height_10
+msgid "Height 10 (CM)"
+msgstr "Hauteur 10 (CM)"
+
+#. module: shipment_call
+#: model:ir.model.fields,field_description:shipment_call.field_shipment_call_volume_calculate_height_2
+msgid "Height 2 (CM)"
+msgstr "Hauteur 2 (CM)"
+
+#. module: shipment_call
+#: model:ir.model.fields,field_description:shipment_call.field_shipment_call_volume_calculate_height_3
+msgid "Height 3 (CM)"
+msgstr "Hauteur 3 (CM)"
+
+#. module: shipment_call
+#: model:ir.model.fields,field_description:shipment_call.field_shipment_call_volume_calculate_height_4
+msgid "Height 4 (CM)"
+msgstr "Hauteur 4 (CM)"
+
+#. module: shipment_call
+#: model:ir.model.fields,field_description:shipment_call.field_shipment_call_volume_calculate_height_5
+msgid "Height 5 (CM)"
+msgstr "Hauteur 5 (CM)"
+
+#. module: shipment_call
+#: model:ir.model.fields,field_description:shipment_call.field_shipment_call_volume_calculate_height_6
+msgid "Height 6 (CM)"
+msgstr "Hauteur 6 (CM)"
+
+#. module: shipment_call
+#: model:ir.model.fields,field_description:shipment_call.field_shipment_call_volume_calculate_height_7
+msgid "Height 7 (CM)"
+msgstr "Hauteur 7 (CM)"
+
+#. module: shipment_call
+#: model:ir.model.fields,field_description:shipment_call.field_shipment_call_volume_calculate_height_8
+msgid "Height 8 (CM)"
+msgstr "Hauteur 8 (CM)"
+
+#. module: shipment_call
+#: model:ir.model.fields,field_description:shipment_call.field_shipment_call_volume_calculate_height_9
+msgid "Height 9 (CM)"
+msgstr "Hauteur 9 (CM)"
+
+#. module: shipment_call
+#: model:ir.model.fields,field_description:shipment_call.field_shipment_call_id
+#: model:ir.model.fields,field_description:shipment_call.field_shipment_call_volume_calculate_id
+#: model:ir.model.fields,field_description:shipment_call.field_stock_shipment_call_quick_create_id
+#: model:ir.model.fields,field_description:shipment_call.field_update_shipment_call_date_wizard_id
+msgid "ID"
+msgstr "ID"
+
+#. module: shipment_call
+#: model:ir.model.fields,field_description:shipment_call.field_shipment_call_incoterm_id
+msgid "Incoterm"
+msgstr "Incoterm"
+
+#. module: shipment_call
+#: model:ir.model.fields,help:shipment_call.field_shipment_call_incoterm_id
+msgid "Incoterm which stands for 'International Commercial terms' implies its a series of purchases terms which are used in the commercial transaction."
+msgstr "Incoterm signifie 'International Commercial Terms'. Cela implique une série de conditions générales de vente qui sont utilisées dans la transaction commerciale."
+
+#. module: shipment_call
+#: model:ir.model.fields,field_description:shipment_call.field_shipment_call_insurance_value
+msgid "Insurance value"
+msgstr "Valeur assurance"
+
+#. module: shipment_call
+#: model:ir.model.fields,field_description:shipment_call.field_shipment_call___last_update
+#: model:ir.model.fields,field_description:shipment_call.field_shipment_call_volume_calculate___last_update
+#: model:ir.model.fields,field_description:shipment_call.field_stock_shipment_call_quick_create___last_update
+#: model:ir.model.fields,field_description:shipment_call.field_update_shipment_call_date_wizard___last_update
+msgid "Last Modified on"
+msgstr "Dernière modification le"
+
+#. module: shipment_call
+#: model:ir.model.fields,field_description:shipment_call.field_shipment_call_volume_calculate_write_uid
+#: model:ir.model.fields,field_description:shipment_call.field_shipment_call_write_uid
+#: model:ir.model.fields,field_description:shipment_call.field_stock_shipment_call_quick_create_write_uid
+#: model:ir.model.fields,field_description:shipment_call.field_update_shipment_call_date_wizard_write_uid
+msgid "Last Updated by"
+msgstr "Mis à jour par"
+
+#. module: shipment_call
+#: model:ir.model.fields,field_description:shipment_call.field_shipment_call_volume_calculate_write_date
+#: model:ir.model.fields,field_description:shipment_call.field_shipment_call_write_date
+#: model:ir.model.fields,field_description:shipment_call.field_stock_shipment_call_quick_create_write_date
+#: model:ir.model.fields,field_description:shipment_call.field_update_shipment_call_date_wizard_write_date
+msgid "Last Updated on"
+msgstr "Mis à jour le"
+
+#. module: shipment_call
+#: model:ir.model.fields,field_description:shipment_call.field_shipment_call_length
+msgid "Length"
+msgstr "Longueur"
+
+#. module: shipment_call
+#: model:ir.ui.view,arch_db:shipment_call.volume_calculate_form_view
+msgid "Length (CM)"
+msgstr "Longueur (CM)"
+
+#. module: shipment_call
+#: model:ir.model.fields,field_description:shipment_call.field_shipment_call_volume_calculate_length_1
+msgid "Length 1 (CM)"
+msgstr "Longueur 1 (CM)"
+
+#. module: shipment_call
+#: model:ir.model.fields,field_description:shipment_call.field_shipment_call_volume_calculate_length_10
+msgid "Length 10 (CM)"
+msgstr "Longueur 10 (CM)"
+
+#. module: shipment_call
+#: model:ir.model.fields,field_description:shipment_call.field_shipment_call_volume_calculate_length_2
+msgid "Length 2 (CM)"
+msgstr "Longueur 2 (CM)"
+
+#. module: shipment_call
+#: model:ir.model.fields,field_description:shipment_call.field_shipment_call_volume_calculate_length_3
+msgid "Length 3 (CM)"
+msgstr "Longueur 3 (CM)"
+
+#. module: shipment_call
+#: model:ir.model.fields,field_description:shipment_call.field_shipment_call_volume_calculate_length_4
+msgid "Length 4 (CM)"
+msgstr "Longueur 4 (CM)"
+
+#. module: shipment_call
+#: model:ir.model.fields,field_description:shipment_call.field_shipment_call_volume_calculate_length_5
+msgid "Length 5 (CM)"
+msgstr "Longueur 5 (CM)"
+
+#. module: shipment_call
+#: model:ir.model.fields,field_description:shipment_call.field_shipment_call_volume_calculate_length_6
+msgid "Length 6 (CM)"
+msgstr "Longueur 6 (CM)"
+
+#. module: shipment_call
+#: model:ir.model.fields,field_description:shipment_call.field_shipment_call_volume_calculate_length_7
+msgid "Length 7 (CM)"
+msgstr "Longueur 7 (CM)"
+
+#. module: shipment_call
+#: model:ir.model.fields,field_description:shipment_call.field_shipment_call_volume_calculate_length_8
+msgid "Length 8 (CM)"
+msgstr "Longueur 8 (CM)"
+
+#. module: shipment_call
+#: model:ir.model.fields,field_description:shipment_call.field_shipment_call_volume_calculate_length_9
+msgid "Length 9 (CM)"
+msgstr "Longueur 9 (CM)"
+
+#. module: shipment_call
+#: model:ir.model.fields,field_description:shipment_call.field_shipment_call_mail_ids
+msgid "Mails"
+msgstr "Courriels"
+
+#. module: shipment_call
+#: model:ir.model.fields,field_description:shipment_call.field_shipment_call_address_name
+#: model:ir.model.fields,field_description:shipment_call.field_shipment_call_forwarding_agent_address_name
+#: model:ir.model.fields,field_description:shipment_call.field_shipment_call_name
+msgid "Name"
+msgstr "Nom"
+
+#. module: shipment_call
+#: model:ir.ui.view,arch_db:shipment_call.volume_calculate_form_view
+msgid "Nb (CM)"
+msgstr "Nb (CM)"
+
+#. module: shipment_call
+#: model:ir.model.fields,field_description:shipment_call.field_shipment_call_volume_calculate_nb_1
+msgid "Nb 1"
+msgstr "Nb 1"
+
+#. module: shipment_call
+#: model:ir.model.fields,field_description:shipment_call.field_shipment_call_volume_calculate_nb_10
+msgid "Nb 10"
+msgstr "Nb 10"
+
+#. module: shipment_call
+#: model:ir.model.fields,field_description:shipment_call.field_shipment_call_volume_calculate_nb_2
+msgid "Nb 2"
+msgstr "Nb 2"
+
+#. module: shipment_call
+#: model:ir.model.fields,field_description:shipment_call.field_shipment_call_volume_calculate_nb_3
+msgid "Nb 3"
+msgstr "Nb 3"
+
+#. module: shipment_call
+#: model:ir.model.fields,field_description:shipment_call.field_shipment_call_volume_calculate_nb_4
+msgid "Nb 4"
+msgstr "Nb 4"
+
+#. module: shipment_call
+#: model:ir.model.fields,field_description:shipment_call.field_shipment_call_volume_calculate_nb_5
+msgid "Nb 5"
+msgstr "Nb 5"
+
+#. module: shipment_call
+#: model:ir.model.fields,field_description:shipment_call.field_shipment_call_volume_calculate_nb_6
+msgid "Nb 6"
+msgstr "Nb 6"
+
+#. module: shipment_call
+#: model:ir.model.fields,field_description:shipment_call.field_shipment_call_volume_calculate_nb_7
+msgid "Nb 7"
+msgstr "Nb 7"
+
+#. module: shipment_call
+#: model:ir.model.fields,field_description:shipment_call.field_shipment_call_volume_calculate_nb_8
+msgid "Nb 8"
+msgstr "Nb 8"
+
+#. module: shipment_call
+#: model:ir.model.fields,field_description:shipment_call.field_shipment_call_volume_calculate_nb_9
+msgid "Nb 9"
+msgstr "Nb 9"
+
+#. module: shipment_call
+#: model:ir.model.fields,field_description:shipment_call.field_update_shipment_call_date_wizard_date
+msgid "New date"
+msgstr "Nouvelle date"
+
+#. module: shipment_call
+#: model:ir.model.fields,field_description:shipment_call.field_stock_shipment_call_quick_create_note
+#: model:ir.ui.view,arch_db:shipment_call.view_form_shipment_call_quick_create
+msgid "Note"
+msgstr "Note"
+
+#. module: shipment_call
+#: model:ir.model.fields,field_description:shipment_call.field_shipment_call_label_number
+msgid "Number of Labels"
+msgstr "Nombre d'étiquettes"
+
+#. module: shipment_call
+#: model:ir.model.fields,field_description:shipment_call.field_shipment_call_package_number
+msgid "Number of packages"
+msgstr "Nombre de colis"
+
+#. module: shipment_call
+#: model:ir.model.fields,field_description:shipment_call.field_shipment_call_pallet_number
+msgid "Number of pallet"
+msgstr "Nombre de palettes"
+
+#. module: shipment_call
+#: model:ir.ui.view,arch_db:shipment_call.view_form_shipment_call_quick_create
+#: model:ir.ui.view,arch_db:shipment_call.view_form_update_shipment_call_date_wizard
+#: model:ir.ui.view,arch_db:shipment_call.volume_calculate_form_view
+msgid "OK"
+msgstr "OK"
+
+#. module: shipment_call
+#: code:addons/shipment_call/shipment_call.py:90
+#, python-format
+msgid "Only one transporter can be selected"
+msgstr "Un transporteur seulement peut être selectionné"
+
+#. module: shipment_call
+#: model:ir.model.fields,field_description:shipment_call.field_shipment_call_pallet_type_id
+msgid "Pallet type"
+msgstr "Type de palette"
+
+#. module: shipment_call
+#: model:ir.model,name:shipment_call.model_res_partner
+#: model:ir.model.fields,field_description:shipment_call.field_shipment_call_partner_id
+#: model:ir.model.fields,field_description:shipment_call.field_stock_shipment_call_quick_create_partner_id
+msgid "Partner"
+msgstr "Partenaire"
+
+#. module: shipment_call
+#: model:ir.model.fields,field_description:shipment_call.field_shipment_call_picking_ids
+msgid "Picking"
+msgstr "Picking"
+
+#. module: shipment_call
+#: model:ir.ui.view,arch_db:shipment_call.view_form_shipment_call
+msgid "Price quote/deadline"
+msgstr "Demande de prix/délai"
+
+#. module: shipment_call
+#: model:ir.model.fields,field_description:shipment_call.field_stock_shipment_call_quick_create_product_id
+msgid "Product"
+msgstr "Produit"
+
+#. module: shipment_call
+#: model:ir.model.fields,field_description:shipment_call.field_stock_shipment_call_quick_create_uom_qty
+msgid "Quantity"
+msgstr "Quantité"
+
+#. module: shipment_call
+#: model:ir.ui.view,arch_db:shipment_call.view_form_shipment_call_quick_create
+msgid "Quick create"
+msgstr "Création rapide"
+
+#. module: shipment_call
+#: model:ir.model.fields,field_description:shipment_call.field_shipment_call_real_arrival_date
+msgid "Real arrival"
+msgstr "Arrivée réelle"
+
+#. module: shipment_call
+#: model:ir.model.fields,field_description:shipment_call.field_shipment_call_real_departure_date
+msgid "Real departure date"
+msgstr "Départ réel"
+
+#. module: shipment_call
+#: model:ir.ui.view,arch_db:shipment_call.view_form_shipment_call
+msgid "Receipt orders"
+msgstr "Bons de réception"
+
+#. module: shipment_call
+#: model:ir.model.fields,field_description:shipment_call.field_shipment_call_forwarding_agent_region_id
+#: model:ir.model.fields,field_description:shipment_call.field_shipment_call_region_id
+msgid "Region"
+msgstr "Région"
+
+#. module: shipment_call
+#: model:ir.ui.view,arch_db:shipment_call.view_form_shipment_call
+msgid "Remove"
+msgstr "Enlever"
+
+#. module: shipment_call
+#: model:ir.ui.view,arch_db:shipment_call.view_form_shipment_call
+msgid "Reopen"
+msgstr "Réouvrir"
+
+#. module: shipment_call
+#: model:ir.actions.act_window,name:shipment_call.act_shipment_call
+#: model:ir.model,name:shipment_call.model_shipment_call
+#: model:ir.model.fields,field_description:shipment_call.field_shipment_carrier_shipment_call_id
+#: model:ir.model.fields,field_description:shipment_call.field_stock_picking_shipment_call_id
+#: model:ir.model.fields,field_description:shipment_call.field_update_shipment_call_date_wizard_shipment_call_id
+#: model:ir.ui.menu,name:shipment_call.menu_shipment_call
+#: model:ir.ui.view,arch_db:shipment_call.view_form_shipment_call
+msgid "Request for removal"
+msgstr "Demande d'enlèvement"
+
+#. module: shipment_call
+#: model:ir.ui.view,arch_db:shipment_call.view_tree_shipment_call
+msgid "Requests for removal"
+msgstr "Demandes d'enlèvement"
+
+#. module: shipment_call
+#: model:ir.ui.view,arch_db:shipment_call.view_form_shipment_call
+msgid "Resend"
+msgstr "Réenvoyer"
+
+#. module: shipment_call
+#: model:ir.model.fields,field_description:shipment_call.field_shipment_call_arrival_date
+msgid "Scheduled arrival date"
+msgstr "Arrivée prévue"
+
+#. module: shipment_call
+#: model:ir.model.fields,field_description:shipment_call.field_shipment_call_departure_date
+msgid "Scheduled departure date"
+msgstr "Départ prévu"
+
+#. module: shipment_call
+#: model:ir.model.fields,field_description:shipment_call.field_stock_shipment_call_quick_create_sec_uom_qty
+msgid "Second UoM qty"
+msgstr "Qté (sec. UdM)"
+
+#. module: shipment_call
+#: model:ir.model.fields,field_description:shipment_call.field_stock_shipment_call_quick_create_sec_uom_id
+msgid "Second unit of measure"
+msgstr "Second UdM"
+
+#. module: shipment_call
+#: model:ir.ui.view,arch_db:shipment_call.view_form_shipment_call
+msgid "Select"
+msgstr "Sélectionner"
+
+#. module: shipment_call
+#: model:ir.model.fields,field_description:shipment_call.field_shipment_call_selected_transporter_id
+msgid "Selected carrier"
+msgstr "Transporteur sélectionné"
+
+#. module: shipment_call
+#: model:ir.ui.view,arch_db:shipment_call.view_form_shipment_call
+msgid "Send Mail"
+msgstr "Envoyer un mail"
+
+#. module: shipment_call
+#: model:ir.ui.view,arch_db:shipment_call.view_form_shipment_call
+msgid "Send to"
+msgstr "Envoyer"
+
+#. module: shipment_call
+#: code:addons/shipment_call/shipment_call.py:53
+#, python-format
+msgid "Send to sender"
+msgstr "Envoyée à l'expéditeur"
+
+#. module: shipment_call
+#: model:ir.model.fields,field_description:shipment_call.field_shipment_call_volume_calculate_shipment_call_id
+msgid "Shipment"
+msgstr "Expédition"
+
+#. module: shipment_call
+#: model:ir.actions.act_window,name:shipment_call.act_in_shipment_call_quick_create
+msgid "Shipment call create"
+msgstr "Création bon d'enlèvement"
+
+#. module: shipment_call
+#: model:ir.actions.act_window,name:shipment_call.act_shipment_call_quick_create
+#: model:ir.model,name:shipment_call.model_stock_shipment_call_quick_create
+#: model:ir.ui.menu,name:shipment_call.menu_shipment_call_quick_create
+msgid "Shipment call quick create"
+msgstr "Création bon d'enlèvement"
+
+#. module: shipment_call
+#: code:addons/shipment_call/mail_template.py:18
+#: model:ir.model,name:shipment_call.model_shipment_carrier
+#, python-format
+msgid "Shipment carrier"
+msgstr "Transporteur"
+
+#. module: shipment_call
+#: model:ir.model.fields,field_description:shipment_call.field_shipment_call_carrier_processing_start_date
+msgid "Start date"
+msgstr "Date de début"
+
+#. module: shipment_call
+#: model:ir.model.fields,field_description:shipment_call.field_shipment_call_carrier_processing_state
+#: model:ir.model.fields,field_description:shipment_call.field_shipment_call_state
+#: model:ir.model.fields,field_description:shipment_call.field_stock_picking_shipment_call_state_related
+msgid "State"
+msgstr "État"
+
+#. module: shipment_call
+#: model:ir.model,name:shipment_call.model_stock_picking
+msgid "Stock picking"
+msgstr "Stock picking"
+
+#. module: shipment_call
+#: model:ir.model.fields,field_description:shipment_call.field_shipment_call_forwarding_agent_street
+#: model:ir.model.fields,field_description:shipment_call.field_shipment_call_street
+msgid "Street"
+msgstr "Rue"
+
+#. module: shipment_call
+#: model:ir.model.fields,field_description:shipment_call.field_shipment_call_forwarding_agent_street2
+#: model:ir.model.fields,field_description:shipment_call.field_shipment_call_street2
+msgid "Street 2"
+msgstr "Rue 2"
+
+#. module: shipment_call
+#: model:ir.model.fields,field_description:shipment_call.field_shipment_call_forwarding_agent_street3
+#: model:ir.model.fields,field_description:shipment_call.field_shipment_call_street3
+msgid "Street 3"
+msgstr "Rue 3"
+
+#. module: shipment_call
+#: model:ir.ui.view,arch_db:shipment_call.view_form_shipment_call
+msgid "Synthesis"
+msgstr "Synthèse"
+
+#. module: shipment_call
+#: model:ir.model.fields,field_description:shipment_call.field_shipment_call_volume_calculate_total_volume
+msgid "Total volume"
+msgstr "Volume total"
+
+#. module: shipment_call
+#: model:ir.ui.view,arch_db:shipment_call.view_form_shipment_call
+msgid "Transport"
+msgstr "Transport"
+
+#. module: shipment_call
+#: model:ir.model.fields,field_description:shipment_call.field_shipment_call_transport_cost
+msgid "Transport cost"
+msgstr "Coût transport"
+
+#. module: shipment_call
+#: model:ir.ui.view,arch_db:shipment_call.view_form_shipment_call
+msgid "Transporter"
+msgstr "Transporteur"
+
+#. module: shipment_call
+#: model:ir.model.fields,field_description:shipment_call.field_shipment_call_transporter_contact_id
+msgid "Transporter contact"
+msgstr "Contact transporteur"
+
+#. module: shipment_call
+#: model:ir.model.fields,field_description:shipment_call.field_shipment_call_carrier_ids
+msgid "Transporter lines"
+msgstr "Lignes transporteur"
+
+#. module: shipment_call
+#: model:ir.model.fields,field_description:shipment_call.field_stock_shipment_call_quick_create_uom_id
+msgid "Unit of measure"
+msgstr "UdM"
+
+#. module: shipment_call
+#: model:ir.ui.view,arch_db:shipment_call.view_form_shipment_call
+msgid "Unselect"
+msgstr "Déselectionner"
+
+#. module: shipment_call
+#: model:ir.model,name:shipment_call.model_update_shipment_call_date_wizard
+msgid "Update shipment call date"
+msgstr "Mise à jour de la date"
+
+#. module: shipment_call
+#: model:ir.ui.view,arch_db:shipment_call.view_form_shipment_call
+msgid "Validated"
+msgstr "Valider envoyeur"
+
+#. module: shipment_call
+#: code:addons/shipment_call/shipment_call.py:55
+#, python-format
+msgid "Validated by sender"
+msgstr "Validée par l'envoyeur"
+
+#. module: shipment_call
+#: model:ir.model.fields,field_description:shipment_call.field_stock_shipment_call_quick_create_variable
+msgid "Variable"
+msgstr "Variable"
+
+#. module: shipment_call
+#: model:ir.model.fields,field_description:shipment_call.field_shipment_call_volume
+msgid "Volume"
+msgstr "Volume"
+
+#. module: shipment_call
+#: model:ir.ui.view,arch_db:shipment_call.volume_calculate_form_view
+msgid "Volume (M3)"
+msgstr "Volume (M3)"
+
+#. module: shipment_call
+#: model:ir.model.fields,field_description:shipment_call.field_shipment_call_volume_calculate_volume_1
+msgid "Volume 1 (M3)"
+msgstr "Volume 1 (M3)"
+
+#. module: shipment_call
+#: model:ir.model.fields,field_description:shipment_call.field_shipment_call_volume_calculate_volume_10
+msgid "Volume 10 (M3)"
+msgstr "Volume 10 (M3)"
+
+#. module: shipment_call
+#: model:ir.model.fields,field_description:shipment_call.field_shipment_call_volume_calculate_volume_2
+msgid "Volume 2 (M3)"
+msgstr "Volume 2 (M3)"
+
+#. module: shipment_call
+#: model:ir.model.fields,field_description:shipment_call.field_shipment_call_volume_calculate_volume_3
+msgid "Volume 3 (M3)"
+msgstr "Volume 3 (M3)"
+
+#. module: shipment_call
+#: model:ir.model.fields,field_description:shipment_call.field_shipment_call_volume_calculate_volume_4
+msgid "Volume 4 (M3)"
+msgstr "Volume 4 (M3)"
+
+#. module: shipment_call
+#: model:ir.model.fields,field_description:shipment_call.field_shipment_call_volume_calculate_volume_5
+msgid "Volume 5 (M3)"
+msgstr "Volume 5 (M3)"
+
+#. module: shipment_call
+#: model:ir.model.fields,field_description:shipment_call.field_shipment_call_volume_calculate_volume_6
+msgid "Volume 6 (M3)"
+msgstr "Volume 6 (M3)"
+
+#. module: shipment_call
+#: model:ir.model.fields,field_description:shipment_call.field_shipment_call_volume_calculate_volume_7
+msgid "Volume 7 (M3)"
+msgstr "Volume 7 (M3)"
+
+#. module: shipment_call
+#: model:ir.model.fields,field_description:shipment_call.field_shipment_call_volume_calculate_volume_8
+msgid "Volume 8 (M3)"
+msgstr "Volume 8 (M3)"
+
+#. module: shipment_call
+#: model:ir.model.fields,field_description:shipment_call.field_shipment_call_volume_calculate_volume_9
+msgid "Volume 9 (M3)"
+msgstr "Volume 9 (M3)"
+
+#. module: shipment_call
+#: model:ir.ui.view,arch_db:shipment_call.volume_calculate_form_view
+msgid "Volume Calculate"
+msgstr "Calcul volume"
+
+#. module: shipment_call
+#: model:ir.actions.act_window,name:shipment_call.action_volume_calculate
+msgid "Volume calculate"
+msgstr "Calcul volume"
+
+#. module: shipment_call
+#: model:ir.model.fields,field_description:shipment_call.field_stock_shipment_call_quick_create_warehouse_id
+msgid "Warehouse"
+msgstr "Entrpôt"
+
+#. module: shipment_call
+#: model:ir.model.fields,field_description:shipment_call.field_shipment_call_weight
+msgid "Weight"
+msgstr "Poids"
+
+#. module: shipment_call
+#: model:ir.model.fields,field_description:shipment_call.field_shipment_call_width
+msgid "Width"
+msgstr "Largeur"
+
+#. module: shipment_call
+#: model:ir.ui.view,arch_db:shipment_call.volume_calculate_form_view
+msgid "Width (CM)"
+msgstr "Largeur (CM)"
+
+#. module: shipment_call
+#: model:ir.model.fields,field_description:shipment_call.field_shipment_call_volume_calculate_width_1
+msgid "Width 1 (CM)"
+msgstr "Largeur 1 (CM)"
+
+#. module: shipment_call
+#: model:ir.model.fields,field_description:shipment_call.field_shipment_call_volume_calculate_width_10
+msgid "Width 10 (CM)"
+msgstr "Largeur 10 (CM)"
+
+#. module: shipment_call
+#: model:ir.model.fields,field_description:shipment_call.field_shipment_call_volume_calculate_width_2
+msgid "Width 2 (CM)"
+msgstr "Largeur 2 (CM)"
+
+#. module: shipment_call
+#: model:ir.model.fields,field_description:shipment_call.field_shipment_call_volume_calculate_width_3
+msgid "Width 3 (CM)"
+msgstr "Largeur 3 (CM)"
+
+#. module: shipment_call
+#: model:ir.model.fields,field_description:shipment_call.field_shipment_call_volume_calculate_width_4
+msgid "Width 4 (CM)"
+msgstr "Largeur 4 (CM)"
+
+#. module: shipment_call
+#: model:ir.model.fields,field_description:shipment_call.field_shipment_call_volume_calculate_width_5
+msgid "Width 5 (CM)"
+msgstr "Largeur 5 (CM)"
+
+#. module: shipment_call
+#: model:ir.model.fields,field_description:shipment_call.field_shipment_call_volume_calculate_width_6
+msgid "Width 6 (CM)"
+msgstr "Largeur 6 (CM)"
+
+#. module: shipment_call
+#: model:ir.model.fields,field_description:shipment_call.field_shipment_call_volume_calculate_width_7
+msgid "Width 7 (CM)"
+msgstr "Largeur 7 (CM)"
+
+#. module: shipment_call
+#: model:ir.model.fields,field_description:shipment_call.field_shipment_call_volume_calculate_width_8
+msgid "Width 8 (CM)"
+msgstr "Largeur 8 (CM)"
+
+#. module: shipment_call
+#: model:ir.model.fields,field_description:shipment_call.field_shipment_call_volume_calculate_width_9
+msgid "Width 9 (CM)"
+msgstr "Largeur 9 (CM)"
+
+#. module: shipment_call
+#: code:addons/shipment_call/stock.py:88
+#, python-format
+msgid "You can't modify a request for removal not in state draft"
+msgstr "Vous ne pouvez pas modifier une demande d'enlèvement qui n'est pas en brouillon"
+
+#. module: shipment_call
+#: code:addons/shipment_call/shipment_call.py:355
+#, python-format
+msgid "You must select exactly one carrier !"
+msgstr "Vous devez sélectionner exactement un transporteur!"
+
+#. module: shipment_call
+#: model:ir.model.fields,field_description:shipment_call.field_shipment_call_forwarding_agent_zip
+#: model:ir.model.fields,field_description:shipment_call.field_shipment_call_zip
+msgid "Zip"
+msgstr "Code postal"
+
+#. module: shipment_call
+#: model:ir.ui.view,arch_db:shipment_call.view_form_shipment_call_quick_create
+#: model:ir.ui.view,arch_db:shipment_call.view_form_update_shipment_call_date_wizard
+#: model:ir.ui.view,arch_db:shipment_call.volume_calculate_form_view
+msgid "or"
+msgstr "ou"
+
+#. module: shipment_call
+#: model:ir.model,name:shipment_call.model_shipment_call_volume_calculate
+msgid "shipment.call.volume.calculate"
+msgstr "shipment.call.volume.calculate"
+
+#. module: shipment_call
+#: model:ir.actions.act_window,name:shipment_call.act_update_shipment_call_date_wizard
+msgid "update_shipment_call_date_wizard"
+msgstr "update_shipment_call_date_wizard"
+

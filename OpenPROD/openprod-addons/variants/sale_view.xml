@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+
+		<record model="ir.ui.view" id="view_form_sale_order_line_mrp">
+			<field name="name">sale.order.line.form.inherit</field>
+			<field name="inherit_id" ref="mrp.view_form_sale_order_line_mrp" />
+			<field name="priority" eval="1400" />
+			<field name="model">sale.order.line</field>
+			<field name="arch" type="xml">
+				<xpath expr="//field[@name='option_lines_ids']/.." position="after">
+					<group colspan="2" string="Variant values">
+						<field name="variant_category_value_ids" nolabel="1" readonly="1" />
+					</group>
+				</xpath>
+				<xpath expr="//separator[@name='separator_action_menu']" position="after">
+					<button class="oe_inline oe_stat_button" string="Configure" type="action" name="%(act_fill_questionnaire)d"
+						icon="fa-gears" context="{'default_sale_order_line_id':active_id}" />
+				</xpath>
+			</field>
+		</record>
+
+		<record model="ir.ui.view" id="view_form_sale_order_mrp">
+			<field name="name">sale.order.form.inherit</field>
+			<field name="inherit_id" ref="mrp.view_form_sale_order_mrp" />
+			<field name="priority" eval="1400" />
+			<field name="model">sale.order</field>
+			<field name="arch" type="xml">
+				<xpath expr="//field[@name='order_line_ids']//field[@name='option_lines_ids']/.." position="after">
+					<group colspan="2" string="Variant values">
+						<field name="variant_category_value_ids" nolabel="1" />
+					</group>
+				</xpath>
+				<xpath expr="//separator[@name='separator_action_menu']" position="after">
+					<button class="oe_inline oe_stat_button" string="Configure" type="action" name="%(act_fill_questionnaire)d"
+						icon="fa-gears" context="{'default_sale_order_line_id':active_id}" />
+				</xpath>
+			</field>
+		</record>
+
+	</data>
+</openerp>

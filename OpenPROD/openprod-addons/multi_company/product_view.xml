@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+		<!-- ======= -->
+		<!-- ACCOUNTING -->
+		<!-- ======= -->
+		<!-- FORM VIEW PRODUCT -->
+		<record id="view_form_product_account_mulit_company" model="ir.ui.view">
+			<field name="name">view_form_product_account_mulit_company</field>
+			<field name="model">product.product</field>
+			<field name="priority">2500</field>
+			<field name="inherit_id" ref="account_openprod.view_form_product_account" />
+			<field name="arch" type="xml">
+				<xpath expr="//field[@name='property_account_income_id']" position="replace">
+				    <separator string="Income Account" colspan="4"/>
+				    <field name="property_account_income_id" /> 
+                    <field name="mcpai_ids" nolabel="1" colspan="4">
+                         <tree string="Account incomme" editable="bottom">
+                             <field name="company_id" />
+                             <field name="account_id" domain="[('company_id', '=', company_id), ('type',  '!=', 'view')]" />
+                         </tree>
+                     </field>
+				</xpath>
+				<xpath expr="//field[@name='property_account_expense_id']" position="replace">
+				    <separator string="Expense Account" colspan="4"/>
+                    <field name="property_account_expense_id" /> 
+                    <field name="mcpae_ids" nolabel="1" colspan="4">
+                         <tree string="Account expense" editable="bottom">
+                             <field name="company_id" />
+                             <field name="account_id" domain="[('company_id', '=', company_id), ('type',  '!=', 'view')]" />
+                         </tree>
+                     </field>
+                </xpath>
+			</field>
+		</record>
+		
+		
+		<record id='view_form_product' model='ir.ui.view'>
+            <field name="name">product</field>
+            <field name="model">product.product</field>
+            <field name="priority" eval="1000" />
+            <field name="inherit_id" ref="stock.view_form_product" />
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='orderpoint_ids']/tree//field[@name='end_date']" position="after">
+                    <field name="company_id" />
+                </xpath>
+                <xpath expr="//field[@name='orderpoint_ids']/form//field[@name='uom_id']" position="after">
+                    <field name="company_id" required="True" />
+                </xpath>
+            </field>
+        </record>
+        
+        
+        
+	</data>
+</openerp>

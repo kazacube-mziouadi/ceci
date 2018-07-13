@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+        <record id="view_form_mrp_workorder" model="ir.ui.view">
+            <field name="name">view_form_mrp_workorder</field>
+            <field name="inherit_id" ref="mrp.view_form_mrp_workorder" />
+            <field name="model">mrp.workorder</field>
+            <field name="arch" type="xml">
+                <xpath expr="//group[@name='group_various_plan']" position="after">
+                    <group string="Sandbox">
+                        <field name="sandbox_first_resource_id" readonly="1" />
+                        <field name="sandbox_planned_start_date" readonly="1" />
+                        <field name="sandbox_planned_end_date" readonly="1" />
+                        <field name="asynchronous" readonly="1" />
+                    </group>
+                </xpath>
+            </field>
+        </record>
+
+
+        <record id="view_search_mrp_workorder" model="ir.ui.view">
+            <field name="name">view_search_mrp_workorder</field>
+            <field name="inherit_id" ref="mrp.view_search_mrp_workorder" />
+            <field name="model">mrp.workorder</field>
+            <field name="arch" type="xml">
+                <xpath expr="//filter[@name='is_subc_no_regul']" position="after">
+                    <filter name="is_asynchronous" string="Is asynchronous" domain="[('asynchronous', '=', True)]" />
+                </xpath>
+            </field>
+        </record>
+
+
+        <act_window 
+                name="Reset Sandbox" 
+                res_model="sandbox.wizard_reset" 
+                src_model="mrp.workorder" 
+                view_mode="form" 
+                target="new" 
+                key2="client_action_multi" 
+                id="act_reset_sandbox"
+                context="{'default_wo_ids': context['active_ids'] }" />
+
+        <record model="ir.ui.view" id="wizard_sandbox_reset">
+            <field name="name">wizard.form</field>
+            <field name="model">sandbox.wizard_reset</field>
+            <field name="arch" type="xml">
+                <form string="Reset sandbox">
+                    <p>Reset sandbox ?</p>
+                    <footer>
+                        <button name="reset" type="object"
+                                string="Reset" class="oe_highlight"/>
+                        or
+                        <button special="cancel" string="Cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <act_window 
+                name="Validate Sandbox" 
+                res_model="sandbox.wizard_validate" 
+                src_model="mrp.workorder" 
+                view_mode="form" 
+                target="new" 
+                key2="client_action_multi" 
+                id="act_validate_sandbox"
+                context="{'default_wo_ids': context['active_ids'] }" />
+
+        <record model="ir.ui.view" id="wizard_sandbox_validate">
+            <field name="name">wizard.form</field>
+            <field name="model">sandbox.wizard_validate</field>
+            <field name="arch" type="xml">
+                <form string="Validate sandbox">
+                    <p>Validate sandbox ?</p>
+                    <footer>
+                        <button name="validate" type="object"
+                                string="Validate" class="oe_highlight"/>
+                        or
+                        <button special="cancel" string="Cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+
+	</data>
+</openerp>

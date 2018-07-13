@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<scenario>
+  <reference_res_id>23305494-54c8-11e6-850e-d4bed96ca9a7</reference_res_id>
+  <model_id>stock.label</model_id>
+  <create_date>2016-07-28 13:35:24</create_date>
+  <name>Close Label</name>
+  <sequence>20</sequence>
+  <notes/>
+  <__last_update>2016-07-28 15:09:11</__last_update>
+  <company_id>Pi-Technologie</company_id>
+  <write_uid>[1, 'Administrator']</write_uid>
+  <parent_id/>
+  <shared_custom>False</shared_custom>
+  <ack_code>ACK</ack_code>
+  <write_date>2016-07-28 15:09:11</write_date>
+  <warehouse_ids>Warehouse</warehouse_ids>
+  <active>True</active>
+  <display_name>Close Label</display_name>
+  <type>scenario</type>
+  <create_uid>[1, 'Administrator']</create_uid>
+  <hardware_ids>[1]</hardware_ids>
+  <Step __last_update="2016-08-01 08:33:24" create_date="2016-07-28 15:37:43" create_uid="[1, 'Administrator']" display_name="Confirmation" name="Confirmation" no_back="False" reference_res_id="39f245b4-54d9-11e6-bd8a-d4bed96ca9a7" step_back="False" step_start="False" step_stop="False" write_date="2016-08-01 08:33:24" write_uid="[1, 'Administrator']"/>
+  <Step __last_update="2016-08-01 08:33:50" create_date="2016-07-28 15:09:11" create_uid="[1, 'Administrator']" display_name="Start" name="Start" no_back="False" reference_res_id="3d216976-54d5-11e6-a1b9-d4bed96ca9a7" step_back="False" step_start="True" step_stop="False" write_date="2016-08-01 08:33:50" write_uid="[1, 'Administrator']"/>
+  <Step __last_update="2016-07-29 13:06:46" create_date="2016-07-29 13:06:46" create_uid="[1, 'Administrator']" display_name="End" name="End" no_back="False" reference_res_id="4ddd7bd4-558d-11e6-b241-d4bed96ca9a7" step_back="False" step_start="False" step_stop="True" write_date="2016-07-29 13:06:46" write_uid="[1, 'Administrator']"/>
+  <Step __last_update="2016-08-01 08:31:55" create_date="2016-08-01 08:12:33" create_uid="[1, 'Administrator']" display_name="missing_label" name="missing_label" no_back="False" reference_res_id="b314b100-57bf-11e6-a2de-247703b3adb4" step_back="False" step_start="False" step_stop="False" write_date="2016-08-01 08:31:55" write_uid="[1, 'Administrator']"/>
+  <Transition __last_update="2016-08-01 08:30:28" condition="message != terminal.scenario_id.ack_code" create_date="2016-08-01 08:30:28" create_uid="[1, 'Administrator']" display_name="not ack'ed" from_id="b314b100-57bf-11e6-a2de-247703b3adb4" name="not ack'ed" reference_res_id="33911812-57c2-11e6-9e00-247703b3adb4" sequence="0" to_id="b314b100-57bf-11e6-a2de-247703b3adb4" tracer="" transition_type="scanner" write_date="2016-08-01 08:30:28" write_uid="[1, 'Administrator']"/>
+  <Transition __last_update="2016-08-01 08:20:15" condition="True" create_date="2016-07-28 15:38:52" create_uid="[1, 'Administrator']" display_name="Label scanné" from_id="3d216976-54d5-11e6-a1b9-d4bed96ca9a7" name="Label scanné" reference_res_id="62f24b6c-54d9-11e6-9b0d-d4bed96ca9a7" sequence="20" to_id="39f245b4-54d9-11e6-bd8a-d4bed96ca9a7" tracer="" transition_type="scanner" write_date="2016-08-01 08:20:15" write_uid="[1, 'Administrator']"/>
+  <Transition __last_update="2016-08-01 08:18:26" condition="True" create_date="2016-08-01 08:17:35" create_uid="[1, 'Administrator']" display_name="ack'ed" from_id="b314b100-57bf-11e6-a2de-247703b3adb4" name="ack'ed" reference_res_id="67291500-57c0-11e6-adf8-247703b3adb4" sequence="10" to_id="3d216976-54d5-11e6-a1b9-d4bed96ca9a7" tracer="" transition_type="scanner" write_date="2016-08-01 08:18:26" write_uid="[1, 'Administrator']"/>
+  <Transition __last_update="2016-07-29 13:13:44" condition="message == '0'" create_date="2016-07-29 13:07:43" create_uid="[1, 'Administrator']" display_name="quit" from_id="3d216976-54d5-11e6-a1b9-d4bed96ca9a7" name="quit" reference_res_id="6fd14fae-558d-11e6-8944-d4bed96ca9a7" sequence="0" to_id="4ddd7bd4-558d-11e6-b241-d4bed96ca9a7" tracer="" transition_type="scanner" write_date="2016-07-29 13:13:44" write_uid="[1, 'Administrator']"/>
+  <Transition __last_update="2016-08-01 08:31:13" condition="True" create_date="2016-07-28 15:40:09" create_uid="[1, 'Administrator']" display_name="Validée" from_id="39f245b4-54d9-11e6-bd8a-d4bed96ca9a7" name="Validée" reference_res_id="908b3f48-54d9-11e6-b820-d4bed96ca9a7" sequence="0" to_id="3d216976-54d5-11e6-a1b9-d4bed96ca9a7" tracer="" transition_type="scanner" write_date="2016-08-01 08:31:13" write_uid="[1, 'Administrator']"/>
+  <Transition __last_update="2016-08-01 08:20:03" condition="model.search_count(cr, uid, [('id', '=', int(message))]) == 0" create_date="2016-08-01 08:12:51" create_uid="[1, 'Administrator']" display_name="missing_label" from_id="3d216976-54d5-11e6-a1b9-d4bed96ca9a7" name="missing_label" reference_res_id="bdb908b8-57bf-11e6-a8ac-247703b3adb4" sequence="10" to_id="b314b100-57bf-11e6-a2de-247703b3adb4" tracer="" transition_type="scanner" write_date="2016-08-01 08:20:03" write_uid="[1, 'Administrator']"/>
+</scenario>

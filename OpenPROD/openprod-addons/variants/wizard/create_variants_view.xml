@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+		<!-- FORM VIEW Create Variants -->
+		<record id='view_form_create_variants' model='ir.ui.view'>
+			<field name="name">create_variants</field>
+			<field name="model">create.variants</field>
+			<field name="arch" type="xml">
+				<form string="Create Variants" version="8.0">
+					<field name="model_id" invisible="1" />
+					<group col="8">
+						<group string="Categories" colspan="4" col="4">
+							<field name="variant_category_ids" readonly="1" nolabel="1" />
+						</group>
+						<group string="Values" colspan="4" col="4">
+							<field name="value_ids" domain="[('variant_category_id.id', 'in', variant_category_ids)]" nolabel="1">
+								<tree>
+									<field name="variant_category_id" />
+									<field name="value" />
+								</tree>
+							</field>
+						</group>
+					</group>
+					<button class="oe_inline oe_stat_button" string="Generate variants" type="object" name="generate_variants" icon="fa-list-ul" />
+					<group string="Variants">
+						<field name="variant_ids" nolabel="1">
+							<tree editable="bottom">
+								<field name="name" />
+								<field name="code" />
+								<field name="name_add" required="1" />
+								<field name="code_add" required="1" />
+								<field name="value_ids" widget="many2many_tags" />
+							</tree>
+						</field>
+					</group>
+					<group col="4" string="Copy">
+						<field name="copy_customer_ref" />
+						<field name="copy_supplier_ref" />
+						<field name="copy_stock_rule" />
+						<field name="copy_plan_ctrl" />
+						<field name="copy_internal_plans" />
+						<field name="copy_quality_control" />
+						<field name="copy_attributes" />
+						<field name="copy_parameters" />
+					</group>
+					<button class="oe_inline oe_stat_button" string="Generate products" type="object" name="generate_products" icon="fa-list-ul" />
+				</form>
+			</field>
+		</record>
+
+		<!-- ACTION Create Variants -->
+		<record id="act_create_variants" model="ir.actions.act_window">
+			<field name="name">Create Variants</field>
+			<field name="res_model">create.variants</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">form</field>
+			<field name="target">new</field>
+		</record>
+	</data>
+</openerp>

@@ -1,0 +1,319 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* bi
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 9.0c\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-05-09 06:55+0000\n"
+"PO-Revision-Date: 2017-05-09 06:55+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: bi
+#: model:mail.template,body_html:bi.bi_path_error
+msgid "\n"
+"					<div><p>An error occured during the BI update data process, Invalid path for Pentaho instalation directory, fix it in BI -> Configuration</p>           \n"
+"					</div>\n"
+"					\n"
+"				"
+msgstr "\n"
+"					<div><p>An error occured during the BI update data process, Invalid path for Pentaho instalation directory, fix it in BI -> Configuration</p>           \n"
+"					</div>\n"
+"					\n"
+"				"
+
+#. module: bi
+#: model:mail.template,body_html:bi.bi_bash_error
+msgid "\n"
+"					<div><p>An error occured during the BI update data process, an error occured in updateBDD.sh</p>           \n"
+"					</div>\n"
+"					\n"
+"				"
+msgstr "\n"
+"					<div><p>An error occured during the BI update data process, an error occured in updateBDD.sh</p>           \n"
+"					</div>\n"
+"					\n"
+"				"
+
+#. module: bi
+#: model:mail.template,body_html:bi.bi_java_error
+msgid "\n"
+"					<div><p>An error occured during the BI update data process, java oracle 1.8 needs to be installed, execute the scipr check_java.sh</p>           \n"
+"					</div>\n"
+"					\n"
+"				"
+msgstr "\n"
+"					<div><p>An error occured during the BI update data process, java oracle 1.8 needs to be installed, execute the scipr check_java.sh</p>           \n"
+"					</div>\n"
+"					\n"
+"				"
+
+#. module: bi
+#: model:mail.template,body_html:bi.bi_config_error
+msgid "\n"
+"					<div><p>An error occured during the BI update data process, no configuration file, execute again instalationBDD.sh</p>           \n"
+"					</div>\n"
+"					\n"
+"				"
+msgstr "\n"
+"					<div><p>An error occured during the BI update data process, no configuration file, execute again instalationBDD.sh</p>           \n"
+"					</div>\n"
+"					\n"
+"				"
+
+#. module: bi
+#: model:mail.template,body_html:bi.bi_etl_error
+msgid "\n"
+"					<div><p>An error occured during the BI update data process, see etl.log for more detail.</p>           \n"
+"					</div>\n"
+"					\n"
+"				"
+msgstr "\n"
+"					<div><p>An error occured during the BI update data process, see etl.log for more detail.</p>           \n"
+"					</div>\n"
+"					\n"
+"				"
+
+#. module: bi
+#: model:ir.ui.view,arch_db:bi.wizard_form_view
+msgid "Add Dashboard"
+msgstr "Ajouter un tableau de botrd"
+
+#. module: bi
+#: model:ir.ui.menu,name:bi.wizard_bi_menu
+msgid "Add dashboard"
+msgstr "Ajouter un tableau de botrd"
+
+#. module: bi
+#: model:ir.ui.menu,name:bi.main_bi_menu
+msgid "BI"
+msgstr "BI"
+
+#. module: bi
+#: model:ir.model.fields,field_description:bi.field_bi_server_base_location
+msgid "Base location"
+msgstr "Base location"
+
+#. module: bi
+#: model:ir.model.fields,field_description:bi.field_bi_server_bi_instalation_dir
+msgid "Bi instalation dir"
+msgstr "Dossier d'instalation du module BI"
+
+#. module: bi
+#: model:ir.ui.menu,name:bi.bi_menu
+msgid "Business Inteligence"
+msgstr "Business Inteligence"
+
+#. module: bi
+#: model:ir.ui.view,arch_db:bi.wizard_form_view
+msgid "Cancel"
+msgstr "Annuler"
+
+#. module: bi
+#: model:ir.ui.menu,name:bi.configuration_pentaho_menu
+#: model:ir.ui.view,arch_db:bi.view_configuration_form
+#: model:ir.ui.view,arch_db:bi.view_configuration_tree
+msgid "Configuration"
+msgstr "Configuration"
+
+#. module: bi
+#: model:ir.actions.act_window,name:bi.configuration_pentaho_action
+msgid "Configurations"
+msgstr "Configurations"
+
+#. module: bi
+#: model:ir.model.fields,field_description:bi.field_bi_dashboard_create_uid
+#: model:ir.model.fields,field_description:bi.field_bi_roles_create_uid
+#: model:ir.model.fields,field_description:bi.field_bi_server_create_uid
+#: model:ir.model.fields,field_description:bi.field_bi_wizard_create_uid
+msgid "Created by"
+msgstr "Crée par"
+
+#. module: bi
+#: model:ir.model.fields,field_description:bi.field_bi_dashboard_create_date
+#: model:ir.model.fields,field_description:bi.field_bi_roles_create_date
+#: model:ir.model.fields,field_description:bi.field_bi_server_create_date
+#: model:ir.model.fields,field_description:bi.field_bi_wizard_create_date
+msgid "Created on"
+msgstr "Crée le"
+
+#. module: bi
+#: model:ir.model.fields,field_description:bi.field_bi_dashboard_dashboard_address
+msgid "Dashboard address"
+msgstr "Adresse du tableau de bord"
+
+#. module: bi
+#: model:ir.model.fields,field_description:bi.field_bi_wizard_dashboard_adress
+msgid "Dashboard adress"
+msgstr "Adresse du tableau de bord"
+
+#. module: bi
+#: model:ir.model.fields,field_description:bi.field_bi_wizard_dashboard_name
+msgid "Dashboard name"
+msgstr "Nom du tableau de bord"
+
+#. module: bi
+#: model:ir.ui.view,arch_db:bi.view_configuration_form
+#: model:ir.ui.view,arch_db:bi.view_configuration_tree
+msgid "Database name"
+msgstr "Nom de la base de donnée"
+
+#. module: bi
+#: model:ir.model.fields,field_description:bi.field_bi_server_db_name
+msgid "Db name"
+msgstr "Nom de la base de donnée"
+
+#. module: bi
+#: model:ir.model.fields,field_description:bi.field_bi_dashboard_display_name
+#: model:ir.model.fields,field_description:bi.field_bi_roles_display_name
+#: model:ir.model.fields,field_description:bi.field_bi_server_display_name
+#: model:ir.model.fields,field_description:bi.field_bi_wizard_display_name
+msgid "Display Name"
+msgstr "Nom d'affichage"
+
+#. module: bi
+#: model:mail.template,subject:bi.bi_etl_error
+msgid "ERROR BI data update"
+msgstr "ERROR BI data update"
+
+#. module: bi
+#: model:ir.ui.menu,name:bi.pentaho_force_de_vente
+msgid "Force de vente"
+msgstr "Force de vente"
+
+#. module: bi
+#: model:ir.model.fields,field_description:bi.field_bi_dashboard_id
+#: model:ir.model.fields,field_description:bi.field_bi_roles_id
+#: model:ir.model.fields,field_description:bi.field_bi_server_id
+#: model:ir.model.fields,field_description:bi.field_bi_wizard_id
+msgid "ID"
+msgstr "ID"
+
+#. module: bi
+#: model:ir.model.fields,field_description:bi.field_bi_dashboard___last_update
+#: model:ir.model.fields,field_description:bi.field_bi_roles___last_update
+#: model:ir.model.fields,field_description:bi.field_bi_server___last_update
+#: model:ir.model.fields,field_description:bi.field_bi_wizard___last_update
+msgid "Last Modified on"
+msgstr "Dernière modification le"
+
+#. module: bi
+#: model:ir.model.fields,field_description:bi.field_bi_dashboard_write_uid
+#: model:ir.model.fields,field_description:bi.field_bi_roles_write_uid
+#: model:ir.model.fields,field_description:bi.field_bi_server_write_uid
+#: model:ir.model.fields,field_description:bi.field_bi_wizard_write_uid
+msgid "Last Updated by"
+msgstr "Dernièr emodification par"
+
+#. module: bi
+#: model:ir.model.fields,field_description:bi.field_bi_dashboard_write_date
+#: model:ir.model.fields,field_description:bi.field_bi_roles_write_date
+#: model:ir.model.fields,field_description:bi.field_bi_server_write_date
+#: model:ir.model.fields,field_description:bi.field_bi_wizard_write_date
+msgid "Last Updated on"
+msgstr "Dernière mise à jour le"
+
+#. module: bi
+#: model:ir.model.fields,field_description:bi.field_bi_dashboard_name
+#: model:ir.model.fields,field_description:bi.field_bi_roles_name
+#: model:ir.model.fields,field_description:bi.field_bi_server_name
+msgid "Name"
+msgstr "Nom"
+
+#. module: bi
+#: model:ir.model.fields,field_description:bi.field_res_users_password_pentaho
+msgid "Password pentaho"
+msgstr "Mot de passe pentaho"
+
+#. module: bi
+#: model:ir.actions.act_url,name:bi.connexion_pentaho
+#: model:ir.ui.menu,name:bi.connexion_menu
+msgid "Pentaho User Console"
+msgstr "Console utilisateur"
+
+#. module: bi
+#: model:ir.actions.act_window,name:bi.pentaho_action_force_de_vente
+msgid "Pentaho action force de vente"
+msgstr "Pentaho action force de vente"
+
+#. module: bi
+#: model:ir.actions.act_window,name:bi.pentaho_action_performance_de_vente
+msgid "Pentaho action performance de vente"
+msgstr "Pentaho action performance de vente"
+
+#. module: bi
+#: model:ir.ui.view,arch_db:bi.view_configuration_form
+#: model:ir.ui.view,arch_db:bi.view_configuration_tree
+msgid "Pentaho instalation directory"
+msgstr "Dossier d'instalation pentaho"
+
+#. module: bi
+#: model:ir.model.fields,field_description:bi.field_bi_server_pentaho_server_address
+msgid "Pentaho server address"
+msgstr "Adresse du serveur pentaho"
+
+#. module: bi
+#: model:ir.ui.view,arch_db:bi.view_configuration_form
+#: model:ir.ui.view,arch_db:bi.view_configuration_tree
+msgid "Pentaho server adress"
+msgstr "Adresse du serveur pentaho"
+
+#. module: bi
+#: model:ir.ui.menu,name:bi.pentaho_performance_de_vente
+msgid "Performance de vente"
+msgstr "Performance de vente"
+
+#. module: bi
+#: model:ir.ui.view,arch_db:bi.wizard_form_view
+msgid "Save"
+msgstr "Sauvegarder"
+
+#. module: bi
+#: model:ir.actions.act_window,name:bi.launch_bi_wizard
+msgid "Time declaration"
+msgstr "Declaration du temps"
+
+#. module: bi
+#: model:ir.model,name:bi.model_res_users
+msgid "Users"
+msgstr "Utilisateurs"
+
+#. module: bi
+#: model:mail.template,subject:bi.bi_bash_error
+#: model:mail.template,subject:bi.bi_config_error
+#: model:mail.template,subject:bi.bi_java_error
+#: model:mail.template,subject:bi.bi_path_error
+msgid "[ERROR] BI data update"
+msgstr "[ERROR] BI data update"
+
+#. module: bi
+#: model:ir.model,name:bi.model_bi_dashboard
+msgid "bi.dashboard"
+msgstr "bi.dashboard"
+
+#. module: bi
+#: model:ir.model,name:bi.model_bi_roles
+msgid "bi.roles"
+msgstr "bi.roles"
+
+#. module: bi
+#: model:ir.model,name:bi.model_bi_server
+msgid "bi.server"
+msgstr "bi.server"
+
+#. module: bi
+#: model:ir.model,name:bi.model_bi_wizard
+msgid "bi.wizard"
+msgstr "bi.wizard"
+
+#. module: bi
+#: model:ir.ui.view,arch_db:bi.wizard_form_view
+msgid "or"
+msgstr "ou"
+

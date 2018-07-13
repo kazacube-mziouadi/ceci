@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+	
+		<!-- FORM VIEW MRP resource -->
+		<record id="view_form_printer_mrp_resource" model="ir.ui.view">
+            <field name="name">view_form_printer_mrp_resource</field>
+            <field name="model">mrp.resource</field>
+            <field name="inherit_id" ref="base_openprod.view_form_mrp_resource"/>
+            <field name="arch" type="xml">
+            	<xpath expr="//separator[@name='separator_action_menu']" position="after">
+                    <button name="print_mrp_resource" string="Print barcode" type="object" class="oe_inline oe_stat_button" icon="fa-print"/>
+                </xpath>
+            </field>
+        </record>
+
+	</data>
+</openerp>

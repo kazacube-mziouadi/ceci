@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+		<!-- FORM VIEW PRODUCT -->
+		<record id="view_form_product_customs" model="ir.ui.view">
+			<field name="name">view_form_product_customs</field>
+			<field name="model">product.product</field>
+			<field name="priority">1500</field>
+			<field name="inherit_id" ref="account_openprod.view_form_product_account" />
+			<field name="arch" type="xml">
+				<xpath expr="//group[@name='product_account']" position="inside">
+					<group string="Legal" colspan="4" col="4" attrs="{'invisible': [('sale_ok', '=', False)]}">
+						<field name="customs_code" />
+						<field name="is_customs_price" />
+						<field name="customs_price" attrs="{'invisible': [('is_customs_price', '!=', True)], 'required': [('is_customs_price', '=', True)]}" />
+						<field name="customs_currency_id" attrs="{'invisible': [('is_customs_price', '!=', True)], 'required': [('is_customs_price', '=', True)]}" /> <!-- attrs="{'required': ['|', ('customs_stat_nb', '!=', False), '&amp;', ('customs_price', '!=', 0), ('customs_price', '!=', False)]}" /> -->
+						<field name="customs_unit_id" domain="uom_id and [('category_id', '=', uom_category_id)] or [('id', '=', False)]" attrs="{'invisible': [('is_customs_price', '!=', True)], 'required': [('is_customs_price', '=', True)]}" />  <!-- attrs="{'required': ['|', ('customs_stat_nb', '!=', False), '&amp;', ('customs_price', '!=', 0), ('customs_price', '!=', False)]}" /> -->
+						<field name="customs_stat_nb" noformat="1" attrs="{'invisible': [('is_customs_price', '!=', True)]}" />
+					</group>
+				</xpath>
+			</field>
+		</record>
+	</data>
+</openerp>

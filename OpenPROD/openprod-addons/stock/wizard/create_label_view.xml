@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+		<!-- FORM VIEW Create label -->
+		<record id='view_form_create_label_wizard' model='ir.ui.view'>
+			<field name="name">view_form_create_label_wizard</field>
+			<field name="model">create.label.wizard</field>
+			<field name="arch" type="xml">
+				<form string="Create label" version="8.0">
+					<field name="move_id" invisible="1" />
+					<field name="product_id" invisible="1" />
+					<field name="is_manual_expiry_date" invisible="1" />
+					<field name="is_variable_double_unit" invisible="1" />
+					<group colspan="4" col="6" string="Quantities">
+				        <field name="move_product_id" />
+				        <field name="move_uom_qty" />
+				        <field name="move_uom_id" />
+						<field name="number_of_label" default_focus="1"/>
+						<label for="uom_qty" />
+						<div>
+							<field name="uom_qty" class="oe_inline" />
+							<field name="uom_id" class="oe_inline" readonly="1" />
+						</div>
+						<field name="total_qty" />
+						<newline />
+						<group colspan="2" attrs="{'invisible': [('is_variable_double_unit', '!=', True)]}" />
+						<label for="sec_uom_qty" attrs="{'invisible': [('is_variable_double_unit', '!=', True)]}" />
+						<div attrs="{'invisible': [('is_variable_double_unit', '!=', True)]}">
+							<field name="sec_uom_qty" class="oe_inline" />
+							<field name="sec_uom_id" class="oe_inline" readonly="1" />
+						</div>
+						<field name="sec_total_qty" attrs="{'invisible': [('is_variable_double_unit', '!=', True)]}"/>
+						<group colspan="2" col="2">
+                            <field name="new_auto_lot" />
+                        </group>
+                        <group colspan="4" col="2">
+                            <field name="lot_id" attrs="{'required': [('new_auto_lot', '=', False)], 'invisible': [('new_auto_lot', '=', True)]}" domain="[('product_id', '=', product_id)]" />
+                            <field name="supplier_lot_number" attrs="{'invisible': [('new_auto_lot', '=', False)]}" />
+                        </group>
+					</group>
+					<group colspan="4" col="4" string="Label" invisible="1" >
+						<field name="label_template_id" colspan="4" />
+					</group>
+					<group colspan="4" col="7" string="Label UM" groups="stock.group_display_um" >
+                        <group colspan="1" col="2">
+                            <field name="new_auto_um" />
+                        </group>
+                        <group colspan="6" col="6">
+                            <field name="label_um_number" attrs="{'invisible': [('new_auto_um', '=', False)]}" colspan="2" />
+                            <field name="label_template_um_id" domain="[('type', '=', 'um')]" attrs="{'invisible': [('new_auto_um', '=', False)], 'required': [('new_auto_um', '=', True)]}" colspan="2" />
+                            <field name="label_um_id" attrs="{'invisible': [('new_auto_um', '=', True)]}" colspan="2" domain="[('type', '=', 'um')]" />
+                        </group>
+                    </group>
+					<group colspan="4" col="4" string="Expiry dates" attrs="{'invisible': [('is_manual_expiry_date', '=', False)]}">
+						<field name="expiry_date" attrs="{'required': [('is_manual_expiry_date', '=', True)]}" />
+						<field name="removal_date" />
+					</group>
+					<group colspan="4" col="4" string="Visualization">
+						<button name="visualization" string="Visualization" type="object" class="oe_highlight" />
+						<button name="remove" string="Remove lines" type="object" class="oe_highlight" />
+						<field name="line_ids" nolabel="1" colspan="4">
+							<tree editable="bottom">
+								<field name="is_variable_double_unit" invisible="1" />
+								<field name="label_id" domain="[('product_id', '=', product_id), ('is_active', '=', False)]" required="1" />
+								<field name="uom_qty" sum="Total" />
+								<field name="uom_id" readonly="1" />
+								<field name="product_id" invisible="1" />
+								<field name="sec_uom_qty" groups="base.group_variable_dual_unit" attrs="{'readonly': [('is_variable_double_unit', '!=', True)]}" />
+								<field name="sec_uom_id" readonly="1" groups="base.group_variable_dual_unit" attrs="{'readonly': [('is_variable_double_unit', '!=', True)]}" />
+								<field name="label_name" />
+								<field name="generate_label_in_advance" invisible="1" />
+								<button class="oe_inline oe_stat_button" type="object" string="Print" name="print_label" icon="fa-print" attrs="{'invisible': [('generate_label_in_advance', '!=', True)]}" />
+							</tree>
+						</field>
+					</group>
+					<footer>
+						<button name="create_label" string="OK" type="object" class="oe_highlight" />
+						or
+						<button string="Cancel" class="oe_link" special="cancel" />
+					</footer>
+				</form>
+			</field>
+		</record>
+
+		<!-- ACTION Create label -->
+		<record id="act_create_label_wizard" model="ir.actions.act_window">
+			<field name="name">Create label</field>
+			<field name="res_model">create.label.wizard</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">form</field>
+			<field name="target">new</field>
+		</record>
+
+		<!-- FORM VIEW Create attribute label -->
+		<record id='view_form_create_attribute_label' model='ir.ui.view'>
+			<field name="name">view_form_create_attribute_label</field>
+			<field name="model">create.label.attribute.wizard</field>
+			<field name="arch" type="xml">
+				<form string="Create attributes" version="8.0">
+					<group colspan="4" col="4">
+						<group colspan="1" col="1" string="Attributes">
+							<group colspan="1" col="2" name="attributes" >
+								<field name="move_label_id" invisible="1" />
+								<field name="label_id" invisible="1" />
+								<field name="move_id" invisible="1" />
+								<field name="create_label_id" invisible="1" />
+								<field name="wo_declaration_id" invisible="1" />
+								<field name="all_attr" invisible="1" />
+								<field name="all_unique_attr" invisible="1" />
+								<field name="all_ro_attr" invisible="1" />
+								<field name="all_compute_attr" invisible="1" />
+							</group>
+							<group colspan="1" col="2">
+								<button name="validate_attributes" string="Apply to all labels" type="object" class="oe_highlight" colspan="2" attrs="{'invisible': [('label_id', '!=', False)]}" />
+							</group>
+						</group>
+						<group colspan="3" col="2" string="Labels" attrs="{'invisible': [('label_id', '!=', False)]}">
+							<!--<field name="line_ids"  nolabel="1" colspan="2" attrs="{'invisible': [('wo_declaration_id', '=', False)]}">
+								<tree string="">
+									<field name="uc_label_id" invisible="1" />
+									<field name="product_id" />
+									<field name="uom_qty" />
+									<field name="uom_id" />
+									<button name="change_attributes" string="change attributes" type="object" />
+								</tree>
+								<form string="Label">
+									<group>
+										<field name="uc_label_id" invisible="1" />
+										<field name="product_id" />
+										<field name="uom_qty" />
+										<field name="uom_id" />
+										<field name="attribute_ids" nolabel="1" colspan="4">
+											<tree>
+													<field name="product_id" invisible="1" />
+													<field name="label_uom_qty" invisible="1" />
+													<field name="label_uom_id" invisible="1" />
+													<field name="name" />
+													<field name="value" />
+											</tree>
+											<form>
+												<group>
+													<field name="product_id" invisible="1" />
+													<field name="label_uom_qty" invisible="1" />
+													<field name="label_uom_id" invisible="1" />
+													<field name="name" />
+													<field name="value" />
+												</group>
+											</form>
+										</field>
+									</group>
+								</form>
+							</field> -->
+							<!--  attrs="{'invisible': [('create_label_id', '=', False)]}">  -->
+							<field name="line_ids" nolabel="1" colspan="2"> 
+								<tree string="">
+									<field name="uc_label_id" invisible="1" />
+									<field name="product_id" />
+									<field name="uom_qty" />
+									<field name="uom_id" />
+									<button name="change_attributes" string="change attributes" type="object" />
+								</tree>
+								<form string="Label">
+									<group>
+										<field name="uc_label_id" invisible="1" />
+										<field name="product_id" />
+										<field name="uom_qty" />
+										<field name="uom_id" />
+										<field name="attribute_ids" nolabel="1" colspan="4" readonly="1" >
+											<tree>
+													<field name="product_id" invisible="1" />
+													<field name="label_uom_qty" invisible="1" />
+													<field name="label_uom_id" invisible="1" />
+													<field name="name" />
+													<field name="value" />
+											</tree>
+											<form>
+												<group>
+													<field name="product_id" invisible="1" />
+													<field name="label_uom_qty" invisible="1" />
+													<field name="label_uom_id" invisible="1" />
+													<field name="name" />
+													<field name="value" />
+												</group>
+											</form>
+										</field>
+									</group>
+								</form>
+							</field>
+						</group>
+						<footer>
+							<button name="create_label" string="OK" type="object" class="oe_highlight" attrs="{'invisible': [('label_id', '!=', False)]}" />
+							<button name="create_label_unit" string="OK" type="object" class="oe_highlight" attrs="{'invisible': [('label_id', '=', False)]}" />
+							<button name="return_wo_declaration" string="Return declaration produce" type="object" class="oe_highlight" attrs="{'invisible': [('wo_declaration_id', '=', False)]}" />
+							or
+							<button name="cancel" string="Cancel" type="object" class="oe_link" attrs="{'invisible': [('label_id', '!=', False)]}" />
+							<button special="cancel" string="Cancel" class="oe_link" attrs="{'invisible': [('label_id', '=', False)]}" />
+						</footer>
+					</group>
+				</form>
+			</field>
+		</record>
+
+		<!-- ACTION Create attribute label -->
+		<record id="act_create_attribute_label" model="ir.actions.act_window">
+			<field name="name">Create attribute label</field>
+			<field name="res_model">create.label.attribute.wizard</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">form</field>
+		</record>
+
+
+        <record id='view_form_create_label_um_wizard' model='ir.ui.view'>
+            <field name="name">view_form_create_label_um_wizard</field>
+            <field name="model">create.label.um.wizard</field>
+            <field name="arch" type="xml">
+                <form string="Create label" version="8.0">
+                    <group colspan="4" col="4" >
+	                    <field name="name" />
+                        <field name="label_template_id" />
+                    </group>
+                    <footer>
+                        <button name="validate" string="Ok" type="object" class="oe_highlight"/>
+                        or
+                        <button special="cancel" string="Cancel" class="oe_link" />
+                    </footer>
+                </form>
+            </field>
+        </record>
+        
+        <record id="act_create_label_um_wizard" model="ir.actions.act_window">
+            <field name="name">Create label UM</field>
+            <field name="res_model">create.label.um.wizard</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+        
+        <menuitem name="Create label UM" action="act_create_label_um_wizard" id="menu_create_label_um_wizard" 
+                  parent="menu_stock_product_storage" groups="group_menu_stock_analyse" />
+        
+        
+	</data>
+</openerp>

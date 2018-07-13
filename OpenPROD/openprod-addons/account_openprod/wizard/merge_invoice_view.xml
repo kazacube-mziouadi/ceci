@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+	
+		<!-- FORM VIEW Merge invoices -->
+		<record id='view_form_merge_invoices' model='ir.ui.view'>
+			<field name="name">view_form_merge_invoices</field>
+			<field name="model">merge.invoice</field>
+			<field name="arch" type="xml">
+				<form string="Merge invoices" version="8.0">
+					<sheet>
+						<center>
+							<h1>Caution!</h1>
+						</center>
+						    <p>Invoices will only be merged if:<br />
+						     - They are in draft<br />
+						     - They are identical<br />
+							</p>
+							<br />
+							<br />
+							<br />
+							<br />
+							<center>
+								<button name="merge" string="Merge the selected invoices" type="object" class="oe_highlight" />
+								or
+								<button string="Cancel" class="oe_link" special="cancel" />
+							</center>
+					</sheet>
+				</form>
+			</field>
+		</record>
+
+		<!-- ACTION Merge invoices -->
+		<act_window name="Merge invoices" res_model="merge.invoice" src_model="account.invoice" view_mode="form" target="new" key2="client_action_multi" id="act_merge_invoices" />
+        
+
+	</data>
+</openerp>

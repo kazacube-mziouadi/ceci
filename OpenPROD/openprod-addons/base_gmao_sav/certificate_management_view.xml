@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+
+        <!-- FORM VIEW Certificate template -->
+        <record id='view_form_certificate_template_id_gmao_sav' model='ir.ui.view'>
+            <field name="name">view_form_certificate_template_id_gmao_sav</field>
+            <field name="model">certificate.template</field>
+            <field name="priority" eval="1300" />
+            <field name="inherit_id" ref="sale_purchase.view_form_certificate_template_id" />
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='line_application_ids']/tree/field[@name='ref_supplier_id']" position="after">
+                    <field name="park_id" column_invisible="[('type', '!=', 'park')]" 
+                           attrs="{'required': [('type', '=', 'park')]}" domain="[('domain_certificate_management', 'not in', parent.list_ids_text), ('type', '=', 'external')]" />
+                    <field name="equipment_id" column_invisible="[('type', '!=', 'equipment')]" 
+                           attrs="{'required': [('type', '=', 'equipment')]}" domain="[('domain_certificate_management', 'not in', parent.list_ids_text), ('type', '=', 'intern')]" />
+                </xpath>
+                <xpath expr="//field[@name='line_ids']/tree/field[@name='ref_supplier_id']" position="after">
+                    <field name="park_id" column_invisible="[('type', '!=', 'park')]" 
+                           attrs="{'required': [('type', '=', 'park')]}" domain="[('domain_certificate_management', 'in', parent.list_ids_text), ('type', '=', 'external')]" />
+                    <field name="equipment_id" column_invisible="[('type', '!=', 'equipment')]" 
+                           attrs="{'required': [('type', '=', 'equipment')]}" domain="[('domain_certificate_management', 'in', parent.list_ids_text), ('type', '=', 'intern')]" />
+                </xpath>
+            </field>
+        </record>
+        
+
+        
+        <!-- TREE VIEW Application of certificates -->
+        <record id='view_tree_certificate_line_application_id_gmao_sav' model='ir.ui.view'>
+            <field name="name">view_tree_certificate_line_application_id</field>
+            <field name="model">certificate.line.application</field>
+            <field name="priority" eval="1300" />
+            <field name="inherit_id" ref="sale_purchase.view_tree_certificate_line_application_id" />
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='ref_supplier_id']" position="after">
+                    <field name="park_id" invisible="not context.get('act_park', False)" />
+                    <field name="equipment_id" invisible="not context.get('act_equipment', False)" />
+                </xpath>
+            </field>
+        </record>
+        
+        
+        
+        <!-- SEARCH VIEW Application of certificates -->
+        <record id='view_search_certificate_line_application_id_gmao_sav' model='ir.ui.view'>
+            <field name="name">view_search_certificate_line_application_id</field>
+            <field name="model">certificate.line.application</field>
+            <field name="priority" eval="1300" />
+            <field name="inherit_id" ref="sale_purchase.view_search_certificate_line_application_id" />
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='ref_supplier_id']" position="after">
+                    <field name="park_id" invisible="not context.get('act_park', False)" />
+                    <field name="equipment_id" invisible="not context.get('act_equipment', False)" />
+                </xpath>
+            </field>
+        </record>
+        
+        
+        
+        <!-- ACTION Application of certificates -->
+        <record id="act_certificate_line_application_park_id" model="ir.actions.act_window">
+            <field name="name">Application of certificates parks</field>
+            <field name="res_model">certificate.line.application</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree</field>
+            <field name="domain">[('type', '=', 'park')]</field>
+            <field name="context">{'act_park': True}</field>
+            <field name="search_view_id" ref="sale_purchase.view_search_certificate_line_application_id"/>
+        </record>
+        
+        
+        
+        <record id="act_certificate_line_application_park_id_tree" model="ir.actions.act_window.view">
+            <field name="sequence" eval="10"/>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="sale_purchase.view_tree_certificate_line_application_id"/>
+            <field name="act_window_id" ref="act_certificate_line_application_park_id"/>
+        </record>
+        
+        
+        
+        <!-- ACTION Application of certificates -->
+        <record id="act_certificate_line_application_equipment_id" model="ir.actions.act_window">
+            <field name="name">Application of certificates equipments</field>
+            <field name="res_model">certificate.line.application</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree</field>
+            <field name="domain">[('type', '=', 'equipment')]</field>
+            <field name="context">{'act_equipment': True}</field>
+            <field name="search_view_id" ref="sale_purchase.view_search_certificate_line_application_id"/>
+        </record>
+        
+        
+        
+        <record id="act_certificate_line_application_equipment_id_tree" model="ir.actions.act_window.view">
+            <field name="sequence" eval="10"/>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="sale_purchase.view_tree_certificate_line_application_id"/>
+            <field name="act_window_id" ref="act_certificate_line_application_equipment_id"/>
+        </record>
+        
+        
+        
+        <menuitem name="Application park" action="act_certificate_line_application_park_id" id="menu_certificate_line_application_park_id" sequence="70" parent="sale_purchase.menu_quality_certificate_id" />
+        <menuitem name="Application equipment" action="act_certificate_line_application_equipment_id" id="menu_certificate_line_application_equipment_id" sequence="70" parent="sale_purchase.menu_quality_certificate_id" />
+        
+        
+    </data>
+</openerp>

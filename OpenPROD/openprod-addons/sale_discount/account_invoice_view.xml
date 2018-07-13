@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+        <record model="ir.ui.view" id="view_account_cust_openprod_invoice_form_sale_discount">
+            <field name="name">view_account_cust_openprod_invoice_form_sale_discount</field>
+            <field name="inherit_id" ref="account_openprod.account_cust_openprod_invoice_form" />
+            <field name="priority" eval="1500" />
+            <field name="model">account.invoice</field>
+            <field name="arch" type="xml"> 
+                <xpath expr="//field[@name='invoice_line_ids']//form//field[@name='price_unit']" position="after">
+                    <field name="price_unit_without_discount" />
+                </xpath>
+                <xpath expr="//field[@name='invoice_line_ids']//page[@name='diverse']" position="before">
+                    <page string="Discount" attrs="{'invisible': [('price_unit_without_discount', '&lt;', 0)]}" >
+	                    <group colspan="4" col="4" string="">
+	                        <field name="is_print_discount" colspan="2" />
+	                        <group colspan="4" col="4" string="Fixed discount">
+		                        <field name="fixed_discount" colspan="2" />
+		                        <field name="fixed_discount_ids" colspan="4" nolabel="1" >
+		                           <tree string="Fixed discount" editable="bottom">
+	                                   <field name="sequence" />
+	                                   <field name="descriptive" />
+	                                   <field name="amount" />
+		                           </tree>
+		                        </field>
+		                    </group>
+		                    <group colspan="4" col="4" string="Variable discount">
+		                        <field name="variable_discount" colspan="2" />
+		                        <field name="variable_discount_ids" colspan="4" nolabel="1" >
+	                               <tree string="Variable discount" editable="bottom">
+	                                   <field name="sequence" />
+	                                   <field name="descriptive" />
+	                                   <field name="amount" />
+	                                   <field name="type" />
+	                               </tree>
+	                            </field>
+	                        </group>
+	                    </group>
+	                </page>  
+                </xpath>
+                <xpath expr="//separator[@name='separator_action_menu']" position="after">
+                    <button class="oe_inline oe_stat_button" type="action" string="Discount" name="%(action_ai_discount_wizard)d" icon="fa-pencil" 
+                            attrs="{'invisible': ['|', '|', ('state', '!=', 'draft'), ('type', '!=', 'out_invoice'), ('invoice_line_ids', '=', [])]}"/>
+                </xpath>
+            </field>
+        </record>
+        
+        
+         <record id="account_cust_openprod_invoice_line_form_sale_discount" model="ir.ui.view">
+            <field name="name">account.customer.openprod.invoice.line.form.sale.discount</field>
+            <field name="model">account.invoice.line</field>
+            <field name="inherit_id" ref="account_openprod.account_cust_openprod_invoice_line_form" />
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='price_unit']" position="after">
+                    <field name="price_unit_without_discount" />
+                </xpath>
+                <xpath expr="//page[@name='diverse']" position="before">
+                    <page string="Discount" attrs="{'invisible': [('price_unit_without_discount', '&lt;', 0)]}" >
+                        <group colspan="4" col="4" string="">
+                            <field name="is_print_discount" colspan="2" />
+                            <group colspan="4" col="4" string="Fixed discount">
+                                <field name="fixed_discount" colspan="2" />
+                                <field name="fixed_discount_ids" colspan="4" nolabel="1" >
+                                   <tree string="Fixed discount" editable="bottom">
+                                       <field name="sequence" />
+                                       <field name="descriptive" />
+                                       <field name="amount" />
+                                   </tree>
+                                </field>
+                            </group>
+                            <group colspan="4" col="4" string="Variable discount">
+                                <field name="variable_discount" colspan="2" />
+                                <field name="variable_discount_ids" colspan="4" nolabel="1" >
+                                   <tree string="Variable discount" editable="bottom">
+                                       <field name="sequence" />
+                                       <field name="descriptive" />
+                                       <field name="amount" />
+                                       <field name="type" />
+                                   </tree>
+                                </field>
+                            </group>
+                        </group>
+                    </page>  
+                </xpath>
+            </field>
+         </record>
+        
+        <record id="view_account_supp_openprod_invoice_form_sale_discount" model="ir.ui.view">
+            <field name="name">view_account_supp_openprod_invoice_form_sale_discount</field>
+            <field name="model">account.invoice</field>
+            <field name="inherit_id" ref="account_openprod.account_supp_openprod_invoice_form" />
+            <field name="priority" eval="1500" />
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='invoice_line_ids']//form//field[@name='price_unit']" position="after">
+                    <field name="price_unit_without_discount" string="Price unit" />
+                </xpath>
+                <xpath expr="//field[@name='invoice_line_ids']//form//field[@name='price_unit']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+            </field>
+        </record>
+        
+        
+        <record id="account_suppl_openprod_invoice_line_form_sale_discount" model="ir.ui.view">
+            <field name="name">account.suppl.openprod.invoice.line.form.sale.discount</field>
+            <field name="model">account.invoice.line</field>
+            <field name="inherit_id" ref="account_openprod.account_suppl_openprod_invoice_line_form" />
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='price_unit']" position="after">
+                    <field name="price_unit_without_discount" string="Price unit" />
+                </xpath>
+                <xpath expr="//field[@name='price_unit']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+            </field>
+        </record>
+        
+        
+        
+        
+    </data>
+</openerp>

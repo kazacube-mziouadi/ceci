@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+		
+		<record model="ir.ui.view" id="view_form_mrp_resource_stock_location">
+			<field name="name">view_form_mrp_resource_stock_location</field>
+			<field name="inherit_id" ref="base_openprod.view_form_mrp_resource" />
+			<field name="model">mrp.resource</field>
+			<field name="arch" type="xml">
+				<field name="type" position="before">
+					<field name="location_id" domain="[('usage', 'in', ('customer', 'supplier', 'internal'))]" />
+				</field>
+			</field>
+		</record>
+		
+		<record model="ir.ui.view" id="view_tree_mrp_resource_stock_location">
+			<field name="name">view_tree_mrp_resource_stock_location</field>
+			<field name="inherit_id" ref="base_openprod.view_tree_mrp_resource" />
+			<field name="model">mrp.resource</field>
+			<field name="arch" type="xml">
+				<field name="company_id" position="before">
+					<field name="location_id" domain="[('usage', 'in', ('customer', 'supplier', 'internal'))]" />
+				</field>
+			</field>
+		</record>
+		
+	</data>
+</openerp>

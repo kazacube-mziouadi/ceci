@@ -1,0 +1,198 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* quick_creation_mo
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 9.0c\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-03-09 13:52+0000\n"
+"PO-Revision-Date: 2017-03-09 13:52+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: quick_creation_mo
+#: model:ir.ui.view,arch_db:quick_creation_mo.view_form_quick_creation_mo_id
+msgid "Cancel"
+msgstr "Annuler"
+
+#. module: quick_creation_mo
+#: model:ir.ui.view,arch_db:quick_creation_mo.view_form_quick_creation_mo_id
+msgid "Consomation"
+msgstr "Consomation"
+
+#. module: quick_creation_mo
+#: model:ir.model.fields,field_description:quick_creation_mo.field_quick_creation_mo_create_uid
+#: model:ir.model.fields,field_description:quick_creation_mo.field_quick_creation_mo_product_create_uid
+msgid "Created by"
+msgstr "Créer par"
+
+#. module: quick_creation_mo
+#: model:ir.model.fields,field_description:quick_creation_mo.field_quick_creation_mo_create_date
+#: model:ir.model.fields,field_description:quick_creation_mo.field_quick_creation_mo_product_create_date
+msgid "Created on"
+msgstr "Créer le"
+
+#. module: quick_creation_mo
+#: model:ir.model.fields,field_description:quick_creation_mo.field_quick_creation_mo_display_name
+#: model:ir.model.fields,field_description:quick_creation_mo.field_quick_creation_mo_product_display_name
+msgid "Display Name"
+msgstr "Display Name"
+
+#. module: quick_creation_mo
+#: code:addons/quick_creation_mo/wizard/quick_creation_mo.py:85
+#: code:addons/quick_creation_mo/wizard/quick_creation_mo.py:101
+#, python-format
+msgid "Error"
+msgstr "Erreur"
+
+#. module: quick_creation_mo
+#: model:ir.model.fields,field_description:quick_creation_mo.field_quick_creation_mo_product_fp_ids
+msgid "Final product"
+msgstr "Produit final"
+
+#. module: quick_creation_mo
+#: model:ir.model.fields,field_description:quick_creation_mo.field_quick_creation_mo_id
+#: model:ir.model.fields,field_description:quick_creation_mo.field_quick_creation_mo_product_id_11494
+msgid "ID"
+msgstr "ID"
+
+#. module: quick_creation_mo
+#: model:ir.model.fields,field_description:quick_creation_mo.field_quick_creation_mo_label_fp_ids
+#: model:ir.model.fields,field_description:quick_creation_mo.field_quick_creation_mo_label_rm_ids
+#: model:ir.ui.view,arch_db:quick_creation_mo.view_form_quick_creation_mo_id
+msgid "Labels"
+msgstr "Étiquettes"
+
+#. module: quick_creation_mo
+#: model:ir.model.fields,field_description:quick_creation_mo.field_quick_creation_mo___last_update
+#: model:ir.model.fields,field_description:quick_creation_mo.field_quick_creation_mo_product___last_update
+msgid "Last Modified on"
+msgstr "Dernière modification le"
+
+#. module: quick_creation_mo
+#: model:ir.model.fields,field_description:quick_creation_mo.field_quick_creation_mo_product_write_uid
+#: model:ir.model.fields,field_description:quick_creation_mo.field_quick_creation_mo_write_uid
+msgid "Last Updated by"
+msgstr "Dernière modification par"
+
+#. module: quick_creation_mo
+#: model:ir.model.fields,field_description:quick_creation_mo.field_quick_creation_mo_product_write_date
+#: model:ir.model.fields,field_description:quick_creation_mo.field_quick_creation_mo_write_date
+msgid "Last Updated on"
+msgstr "Dernière mise à jour le"
+
+#. module: quick_creation_mo
+#: code:addons/quick_creation_mo/wizard/quick_creation_mo.py:114
+#, python-format
+msgid "Manufacturing order"
+msgstr "Ordre de fabrication"
+
+#. module: quick_creation_mo
+#: model:ir.ui.view,arch_db:quick_creation_mo.view_form_quick_creation_mo_id
+msgid "OK"
+msgstr "OK"
+
+#. module: quick_creation_mo
+#: model:ir.model.fields,field_description:quick_creation_mo.field_quick_creation_mo_product_id
+#: model:ir.model.fields,field_description:quick_creation_mo.field_quick_creation_mo_product_product_id
+msgid "Product"
+msgstr "Produit"
+
+#. module: quick_creation_mo
+#: model:ir.ui.view,arch_db:quick_creation_mo.view_form_quick_creation_mo_id
+msgid "Product finals"
+msgstr "Produit Finis"
+
+#. module: quick_creation_mo
+#: model:ir.ui.view,arch_db:quick_creation_mo.view_form_quick_creation_mo_id
+msgid "Production"
+msgstr "Production"
+
+#. module: quick_creation_mo
+#: model:ir.ui.view,arch_db:quick_creation_mo.view_form_quick_creation_mo_id
+msgid "Products"
+msgstr "Produits"
+
+#. module: quick_creation_mo
+#: model:ir.model.fields,field_description:quick_creation_mo.field_quick_creation_mo_product_qcm_id
+msgid "QCM"
+msgstr "QCM"
+
+#. module: quick_creation_mo
+#: model:ir.model.fields,field_description:quick_creation_mo.field_quick_creation_mo_product_qty
+#: model:ir.model.fields,field_description:quick_creation_mo.field_quick_creation_mo_qty
+msgid "Qty"
+msgstr "Qté"
+
+#. module: quick_creation_mo
+#: model:ir.actions.act_window,name:quick_creation_mo.act_quick_creation_mo_id
+#: model:ir.ui.menu,name:quick_creation_mo.menu_quick_creation_mo_id
+#: model:ir.ui.view,arch_db:quick_creation_mo.view_form_quick_creation_mo_id
+msgid "Quick creation of MO"
+msgstr "Creation rapide d'OF"
+
+#. module: quick_creation_mo
+#: model:ir.model.fields,field_description:quick_creation_mo.field_quick_creation_mo_product_is_rm
+msgid "RM"
+msgstr "MP"
+
+#. module: quick_creation_mo
+#: model:ir.model.fields,field_description:quick_creation_mo.field_quick_creation_mo_product_rm_ids
+#: model:ir.ui.view,arch_db:quick_creation_mo.view_form_quick_creation_mo_id
+msgid "Raw material"
+msgstr "Matière première"
+
+#. module: quick_creation_mo
+#: model:ir.model.fields,field_description:quick_creation_mo.field_quick_creation_mo_requested_date
+msgid "Requested date"
+msgstr "Date demandée"
+
+#. module: quick_creation_mo
+#: model:ir.model.fields,field_description:quick_creation_mo.field_quick_creation_mo_routing_id
+msgid "Routing"
+msgstr "Gamme"
+
+#. module: quick_creation_mo
+#: code:addons/quick_creation_mo/wizard/quick_creation_mo.py:85
+#: code:addons/quick_creation_mo/wizard/quick_creation_mo.py:101
+#, python-format
+msgid "UC label %s is already assign."
+msgstr "L'étiquette %s est déjà affectée."
+
+#. module: quick_creation_mo
+#: model:ir.model.fields,field_description:quick_creation_mo.field_quick_creation_mo_product_uom_id
+#: model:ir.model.fields,field_description:quick_creation_mo.field_quick_creation_mo_uom_id
+msgid "UoM"
+msgstr "UdM"
+
+#. module: quick_creation_mo
+#: model:ir.model.fields,field_description:quick_creation_mo.field_quick_creation_mo_categ_uom_id
+#: model:ir.model.fields,field_description:quick_creation_mo.field_quick_creation_mo_product_categ_uom_id
+msgid "UoM categ"
+msgstr "UoM categ"
+
+#. module: quick_creation_mo
+#: model:ir.model.fields,field_description:quick_creation_mo.field_quick_creation_mo_warehouse_id
+msgid "Warehouse"
+msgstr "Entrepôt"
+
+#. module: quick_creation_mo
+#: model:ir.model,name:quick_creation_mo.model_quick_creation_mo
+msgid "Wizard quick creation of MO"
+msgstr "Wizard création rapide d'OF"
+
+#. module: quick_creation_mo
+#: model:ir.model,name:quick_creation_mo.model_quick_creation_mo_product
+msgid "Wizard quick creation of MO product"
+msgstr "Wizard quick creation of MO product"
+
+#. module: quick_creation_mo
+#: model:ir.ui.view,arch_db:quick_creation_mo.view_form_quick_creation_mo_id
+msgid "or"
+msgstr "ou"
+

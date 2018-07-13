@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+		
+		<record model="ir.ui.view" id="view_form_crm_calendar_event">
+			<field name="name">view_form_crm_calendar_event</field>
+			<field name="inherit_id" ref="base_openprod.view_form_calendar_event" />
+			<field name="priority" eval="1400" />
+			<field name="model">calendar.event</field>
+			<field name="arch" type="xml">
+				<group name="group_link_object" position="inside">
+					<field name="crm_id" attrs="{'invisible': [('link_object','not in',('none', 'crm'))]}" options="{'no_create': True}"/>
+				</group>
+				<separator name="separator_action_menu" position="after">
+					<button type="object" string="Create opportunity" name="create_new_opportunity" class="oe_inline oe_stat_button" 
+						icon="fa-check" attrs="{'invisible': [('link_object','not in',('none', 'crm'))]}"/>
+				</separator>
+			</field>
+		</record>
+		
+	</data>
+</openerp>

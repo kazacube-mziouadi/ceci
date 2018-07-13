@@ -1,0 +1,202 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* schedule
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 9.0c\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-03-13 08:18+0000\n"
+"PO-Revision-Date: 2017-03-13 08:18+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: schedule
+#: model:ir.model.fields,field_description:schedule.field_schedule_planning_mo_create_uid
+msgid "Created by"
+msgstr "Créer par"
+
+#. module: schedule
+#: model:ir.model.fields,field_description:schedule.field_schedule_planning_mo_create_date
+msgid "Created on"
+msgstr "Créer le"
+
+#. module: schedule
+#: model:ir.ui.view,arch_db:schedule.view_search_schedule_planning_mo_id
+#: model:ir.ui.view,arch_db:schedule.view_search_schedule_planning_mo_wo_id
+msgid "Current month"
+msgstr "Mois courrant"
+
+#. module: schedule
+#: model:ir.ui.view,arch_db:schedule.view_search_schedule_planning_mo_id
+#: model:ir.ui.view,arch_db:schedule.view_search_schedule_planning_mo_wo_id
+msgid "Current week"
+msgstr "Semaine courrante"
+
+#. module: schedule
+#: model:ir.model.fields,field_description:schedule.field_schedule_planning_mo_date
+msgid "Date"
+msgstr "Date"
+
+#. module: schedule
+#: model:ir.model.fields,field_description:schedule.field_schedule_planning_mo_display_name
+msgid "Display Name"
+msgstr "Display Name"
+
+#. module: schedule
+#: model:ir.ui.view,arch_db:schedule.view_search_schedule_planning_mo_id
+#: model:ir.ui.view,arch_db:schedule.view_search_schedule_planning_mo_wo_id
+msgid "Filters"
+msgstr "Filtres"
+
+#. module: schedule
+#: model:ir.ui.view,arch_db:schedule.view_search_schedule_planning_mo_id
+#: model:ir.ui.view,arch_db:schedule.view_search_schedule_planning_mo_wo_id
+msgid "Group By..."
+msgstr "Grouper par..."
+
+#. module: schedule
+#: model:ir.model.fields,field_description:schedule.field_schedule_planning_mo_id
+msgid "ID"
+msgstr "ID"
+
+#. module: schedule
+#: model:ir.model.fields,field_description:schedule.field_schedule_planning_mo_is_month
+msgid "Is month"
+msgstr "Is month"
+
+#. module: schedule
+#: model:ir.model.fields,field_description:schedule.field_schedule_planning_mo_is_today
+msgid "Is today"
+msgstr "Is today"
+
+#. module: schedule
+#: model:ir.model.fields,field_description:schedule.field_schedule_planning_mo_is_tomorrow
+msgid "Is tomorrow"
+msgstr "Is tomorrow"
+
+#. module: schedule
+#: model:ir.model.fields,field_description:schedule.field_schedule_planning_mo_is_week
+msgid "Is week"
+msgstr "Is week"
+
+#. module: schedule
+#: model:ir.model.fields,field_description:schedule.field_schedule_planning_mo___last_update
+msgid "Last Modified on"
+msgstr "Dernière modification le"
+
+#. module: schedule
+#: model:ir.model.fields,field_description:schedule.field_schedule_planning_mo_write_uid
+msgid "Last Updated by"
+msgstr "Dernière modification par"
+
+#. module: schedule
+#: model:ir.model.fields,field_description:schedule.field_schedule_planning_mo_write_date
+msgid "Last Updated on"
+msgstr "Dernière mise à jour le"
+
+#. module: schedule
+#: model:ir.model.fields,field_description:schedule.field_schedule_planning_mo_mo_id
+msgid "MO"
+msgstr "OF"
+
+#. module: schedule
+#: model:ir.model,name:schedule.model_mrp_manufacturingorder
+msgid "Manufacturing order"
+msgstr "Ordre de fabrication"
+
+#. module: schedule
+#: model:ir.model.fields,field_description:schedule.field_schedule_planning_mo_parent_id
+msgid "Parent"
+msgstr "Parent"
+
+#. module: schedule
+#: model:ir.ui.view,arch_db:schedule.view_tree_schedule_planning_mo_wo_id
+msgid "Print the work order"
+msgstr "Imprimer l'OT"
+
+#. module: schedule
+#: model:ir.ui.view,arch_db:schedule.view_tree_schedule_planning_mo_id
+msgid "Print the works orders"
+msgstr "Imprimer les OTs"
+
+#. module: schedule
+#: model:ir.ui.view,arch_db:schedule.view_search_schedule_planning_mo_id
+#: model:ir.ui.view,arch_db:schedule.view_search_schedule_planning_mo_wo_id
+msgid "Product"
+msgstr "Produit"
+
+#. module: schedule
+#: model:ir.model.fields,field_description:schedule.field_schedule_planning_mo_product_id
+msgid "Product final"
+msgstr "Produit final"
+
+#. module: schedule
+#: model:ir.model.fields,field_description:schedule.field_schedule_planning_mo_qty
+msgid "Qty"
+msgstr "Qté"
+
+#. module: schedule
+#: model:ir.model.fields,field_description:schedule.field_mrp_workorder_spm_ids
+msgid "Schedule plannif"
+msgstr "Échéancier de planification"
+
+#. module: schedule
+#: model:ir.model.fields,field_description:schedule.field_mrp_manufacturingorder_spm_ids
+#: model:ir.ui.view,arch_db:schedule.view_form_mrp_manufacturingorder_multi_company
+#: model:ir.ui.view,arch_db:schedule.view_form_mrp_workorder_multi_company
+msgid "Schedule planning"
+msgstr "Échéancier de planification"
+
+#. module: schedule
+#: model:ir.actions.act_window,name:schedule.act_schedule_planning_mo_id
+#: model:ir.model,name:schedule.model_schedule_planning_mo
+#: model:ir.ui.menu,name:schedule.menu_schedule_planning_mo_id
+#: model:ir.ui.view,arch_db:schedule.view_tree_schedule_planning_mo_id
+msgid "Schedule planning MO"
+msgstr "OF échéancier de planification"
+
+#. module: schedule
+#: model:ir.actions.act_window,name:schedule.act_schedule_planning_mo_wo_id
+#: model:ir.ui.menu,name:schedule.menu_schedule_planning_mo_wo_id
+#: model:ir.ui.view,arch_db:schedule.view_tree_schedule_planning_mo_wo_id
+msgid "Schedule planning WO"
+msgstr "OT échéancier de planification"
+
+#. module: schedule
+#: model:ir.model.fields,field_description:schedule.field_schedule_planning_mo_time
+msgid "Time"
+msgstr "Temps"
+
+#. module: schedule
+#: model:ir.ui.view,arch_db:schedule.view_search_schedule_planning_mo_id
+#: model:ir.ui.view,arch_db:schedule.view_search_schedule_planning_mo_wo_id
+msgid "Today"
+msgstr "Aujourd'hui"
+
+#. module: schedule
+#: model:ir.ui.view,arch_db:schedule.view_search_schedule_planning_mo_id
+#: model:ir.ui.view,arch_db:schedule.view_search_schedule_planning_mo_wo_id
+msgid "Tomorrow"
+msgstr "Demain"
+
+#. module: schedule
+#: model:ir.model.fields,field_description:schedule.field_schedule_planning_mo_wo_id
+msgid "WO"
+msgstr "OT"
+
+#. module: schedule
+#: model:ir.model,name:schedule.model_print_mo
+#: model:ir.model,name:schedule.model_print_wo
+msgid "Wizard which allow to print work orders with plans"
+msgstr "Wizard qui permet d'imprimer les ordres de travail avec leur plans"
+
+#. module: schedule
+#: model:ir.model,name:schedule.model_mrp_workorder
+msgid "Workorder"
+msgstr "Ordre de travail"
+

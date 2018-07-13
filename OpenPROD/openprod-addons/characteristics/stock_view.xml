@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+		<!-- =========== -->
+		<!-- STOCK LABEL -->
+		<!-- =========== -->
+
+		<!-- FORM VIEW Stock label -->
+		<record id="view_form_printer_label" model="ir.ui.view">
+			<field name="name">view.form.printer.label</field>
+			<field name="model">stock.label</field>
+			<field name="inherit_id" ref="stock.view_form_label" />
+			<field name="priority" eval="1500" />
+			<field name="arch" type="xml">
+				<xpath expr="//notebook" position="inside">
+					<page string="Characteristics">
+						<group colspan="4" col="4" string="Characteristics">
+							<field name="characteristics_ids" nolabel="1">
+								<tree editable="bottom">
+									<field name="characteristic_type_id" />
+									<field name="value" context="{'default_type_id': characteristic_type_id}" domain="[('type_id', '=', characteristic_type_id)]" />
+									<field name="uom_id" domain="[('category_id', '=', parent_uom_category_id)]" attrs="{'invisible':[('characteristic_format', '!=', 'numerical')]}" />
+									<field name="parent_uom_id" invisible="1" string="Parent UoM" />
+									<field name="is_created" invisible="1" />
+									<field name="parent_uom_category_id" invisible="1" />
+									<field name="characteristic_format" invisible="1" />
+								</tree>
+							</field>
+						</group>
+					</page>
+				</xpath>
+			</field>
+		</record>
+	</data>
+</openerp>

@@ -1,0 +1,5 @@
+import res_partner
+import wizard
+import mail_template
+import res_company
+import document_openprod

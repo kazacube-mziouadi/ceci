@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<openerp>
+  <data>
+  <!-- FORM VIEW Sale Res partner -->
+    <record id="account_cust_openprod_invoice_form" model="ir.ui.view">
+      <field name="name">account_cust_openprod_invoice_form</field>
+      <field name="inherit_id" ref="account_openprod.account_cust_openprod_invoice_form" />
+      <field name="model">account.invoice</field>
+      <field name="priority" eval="2000" />
+      <field name="arch" type="xml">
+        <xpath expr="//page[@name='diverse']/group[1]" position="inside">
+          <group string="Commissions" colspan="2" col="4">
+            <field name="commission_ids" nolabel="1">
+              <tree>
+                <field name="agent_id" readonly="0" />
+                <field name="commission_rule_set_id" readonly="0" />
+                <field name="total" readonly="0" />
+                <field name="payment_id" readonly="0" />
+                <field name="invoice_currency_id" invisible="1" />
+              </tree>
+            </field>
+          </group>
+        </xpath>
+      </field>
+    </record>
+  </data>
+</openerp>

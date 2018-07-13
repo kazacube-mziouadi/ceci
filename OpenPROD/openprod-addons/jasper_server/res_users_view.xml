@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+        
+        <record id="view_res_users_jasper_form" model="ir.ui.view">
+            <field name="name">view_res_users_jasper_form</field>
+            <field name="model">res.users</field>
+            <field name="priority" eval="40"/>
+            <field name="inherit_id" ref="base.view_users_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//group[@name='messaging']" position="before">
+                	<group colspan="2" col="2" string="Report signature">
+	                    <field name="binary_signature"/>
+	                    <field name="report_signature"/>
+                	</group>
+                </xpath>
+            </field>
+        </record>
+        
+    </data>
+</openerp>

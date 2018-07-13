@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+        ##############################################################################
+        #
+        #    printers module for OpenERP, Allow to manage printers un OpenERP
+        #    Copyright (C) 2015 Objectif-PI ([http://www.objectif-pi.com]).
+		#       Damien CRIER [damien.crier@objectif-pi.com]
+        #
+        #    This file is a part of printers
+        #
+        #    printers is free software: you can redistribute it and/or modify
+        #    it under the terms of the GNU Affero General Public License as published by
+        #    the Free Software Foundation, either version 3 of the License, or
+        #    (at your option) any later version.
+        #
+        #    printers is distributed in the hope that it will be useful,
+        #    but WITHOUT ANY WARRANTY; without even the implied warranty of
+        #    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+        #    GNU Affero General Public License for more details.
+        #
+        #    You should have received a copy of the GNU Affero General Public License
+        #    along with this program.  If not, see [http://www.gnu.org/licenses/].
+        #
+        ##############################################################################
+
+        ###
+        # USERS
+        ###
+        <record id="view_res_users_form_modif_printer_all_form" model="ir.ui.view">
+            <field name="name">res.users.form.modif_all - Printer</field>
+            <field name="model">res.users</field>
+            <field name="priority" eval="20"/>
+            <field name="inherit_id" ref="view_res_users_form_modif_printer_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='context_printer_id']" position="after">
+                    <field name="context_printer_medium_id"/>
+					<field name="context_printer_small_id"/>
+					<field name="context_printer_4_id" />
+					<field name="context_printer_5_id" />
+                </xpath>
+            </field>
+        </record>
+        
+        <record id="res_users_printers_form" model="ir.ui.view">
+			<field name="name">res.users.printers.form</field>
+			<field name="model">res.users</field>
+			<field name="type">form</field>
+			<field name="priority" eval="500" />
+			<field name="inherit_id" ref="base.view_users_form" />
+			<field name="arch" type="xml">
+				<xpath expr="//notebook" position="inside">
+					<page name="printers" string="Printers">
+						<group colspan="4">
+							<field name="context_printer_id" />
+							<field name="context_printer_medium_id" />
+							<field name="context_printer_small_id" />
+							<field name="context_printer_4_id" />
+							<field name="context_printer_5_id" />
+						</group>
+					</page>
+				</xpath>
+			</field>
+		</record>
+		
+		###
+		# PRINTERS.REPORT
+		###
+		<!-- <record model="ir.ui.view" id="printers_report_form">
+			<field name="name">printers.report.form</field>
+			<field name="model">printers.report</field>
+			<field name="type">form</field>
+			<field name="priority" eval="10" />
+			<field name="arch" type="xml">
+				<form string="Report">
+					<field name="report_id" />
+					<field name="description" />
+					<field name="active_report" />
+				</form>
+			</field>
+		</record> -->
+
+		<record model="ir.ui.view" id="printers_report_tree">
+			<field name="name">printers.report.tree</field>
+			<field name="model">printers.report</field>
+			<field name="type">tree</field>
+			<field name="priority" eval="10" />
+			<field name="arch" type="xml">
+				<tree string="Reports" editable="bottom">
+				    <field name="jasper_id" />
+					<field name="report_id" />
+					<field name="model_id" />
+					<field name="printer_type_id" />
+					<field name="description" />
+					<field name="active_report" />
+				</tree>
+			</field>
+		</record>
+	
+		<record model="ir.actions.act_window" id="printers_report_action">
+			<field name="name">Reports</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="res_model">printers.report</field>
+			<field name="view_mode">tree,form</field>
+			<field name="view_type">form</field>
+		</record>
+	
+		<menuitem id="printers_report_menu" name="Reports" parent="printers.menu_admin_printing" action="printers_report_action" sequence="100" />
+		
+		
+    </data>
+</openerp>

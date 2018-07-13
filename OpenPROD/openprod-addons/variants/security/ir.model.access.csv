@@ -1,0 +1,9 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_variant_category,variant.category,model_variant_category,base.group_user,1,1,1,1
+access_variant_category_value,variant.category.value,model_variant_category_value,base.group_user,1,1,1,1
+access_variants_questionnaire,variants.questionnaire,model_variants_questionnaire,base.group_user,1,1,1,1
+access_variants_question,variants.question,model_variants_question,base.group_user,1,1,1,1
+access_variants_incompatibility,variants.incompatibility,model_variants_incompatibility,base.group_user,1,1,1,1
+access_option_incompatibility,option.incompatibility,model_option_incompatibility,base.group_user,1,1,1,1
+access_dimension_value,access_dimension_value,model_dimension_value,base.group_user,1,1,1,1
+access_fill_questionnaire,fill.questionnaire,model_fill_questionnaire,base.group_user,1,1,1,1

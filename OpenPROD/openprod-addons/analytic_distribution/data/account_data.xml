@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<openerp>
+    <data noupdate="1">
+    	<record id="analytic_journal_mo_produce" model="account.analytic.journal">
+            <field name="code">PRO</field>
+            <field name="name">Produce</field>
+            <field name="type">manufacturing</field>
+        </record>
+        <record id="analytic_journal_rm" model="account.analytic.journal">
+            <field name="code">RM</field>
+            <field name="name">Raw material</field>
+            <field name="type">manufacturing</field>
+        </record>
+        <record id="analytic_journal_subcontracting" model="account.analytic.journal">
+            <field name="code">SUB</field>
+            <field name="name">Subcontracting</field>
+            <field name="type">manufacturing</field>
+        </record>
+    </data>
+</openerp>

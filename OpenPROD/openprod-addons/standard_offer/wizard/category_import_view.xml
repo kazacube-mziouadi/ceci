@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+		<!-- FORM VIEW Category Import -->
+		<record id='view_form_category_import' model='ir.ui.view'>
+			<field name="name">category_import</field>
+			<field name="model">category.import</field>
+			<field name="arch" type="xml">
+				<form string="Category Import" version="8.0">
+					<group>
+						<field name="offer_id" invisible="1" />
+						<field name="category_id" />
+					</group>
+					<footer>
+						<button name="import_category" string="Import Category" type="object" class="oe_highlight" />
+						<button string="Cancel" class="oe_link" special="cancel" />
+					</footer>
+				</form>
+			</field>
+		</record>
+
+		<!-- ACTION Category Import -->
+		<record id="act_category_import" model="ir.actions.act_window">
+			<field name="name">Category Import</field>
+			<field name="res_model">category.import</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">form</field>
+			<field name="target">new</field>
+		</record>
+	</data>
+</openerp>

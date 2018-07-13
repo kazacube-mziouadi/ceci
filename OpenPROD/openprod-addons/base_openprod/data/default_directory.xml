@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data noupdate="1">
+		<record model="document.directory" id="default_document_directory">
+			<field name="name">Root</field>
+		</record>
+	</data>
+</openerp>

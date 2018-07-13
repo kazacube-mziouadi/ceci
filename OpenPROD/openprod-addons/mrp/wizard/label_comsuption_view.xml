@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <!-- LABEL CONSUMPTION FORM -->
+        <record model="ir.ui.view" id="label_consumption_view_form">
+            <field name="name">label.consumption.view.form</field>
+            <field name="model">label.consumption</field>
+            <field name="priority" eval="1010" />
+            <field name="arch" type="xml">
+                <form string="Label consumption WO">
+                    <group colspan="4" col="4">
+                        <field name="wo_id" colspan="2"/>
+                        <field name="quantity" colspan="2"/>
+                        <field name="uc_label_ids" nolabel="1" colspan="4" domain="[('state', '=', 'available')]" />
+                    </group>
+                    <footer>
+                        <button name="do_consumption" string="OK" type="object" class="oe_highlight" />
+                        or
+                        <button string="Cancel" class="oe_link" special="cancel" />
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <!-- LABEL CONSUMPTION ACTION -->
+        <record model="ir.actions.act_window" id="label_consumption_action">
+            <field name="name">Label consumption WO</field>
+            <field name="res_model">label.consumption</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+        
+        
+        
+         <!-- LABEL CONSUMPTION FORM -->
+        <record model="ir.ui.view" id="label_consumption_grouped_view_form">
+            <field name="name">label.consumption.grouped.view.form</field>
+            <field name="model">label.consumption.grouped</field>
+            <field name="priority" eval="1010" />
+            <field name="arch" type="xml">
+                <form string="Label consumption grouped WO">
+                    <group colspan="4" col="4">
+                        <field name="group_wo_id" colspan="2"/>
+                        <field name="quantity" colspan="2"/>
+                        <field name="uc_label_ids" nolabel="1" colspan="4" domain="[('state', '=', 'available')]" />
+                    </group>
+                    <footer>
+                        <button name="do_consumption_grouped" string="OK" type="object" class="oe_highlight" />
+                        or
+                        <button string="Cancel" class="oe_link" special="cancel" />
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <!-- LABEL CONSUMPTION ACTION -->
+        <record model="ir.actions.act_window" id="label_consumption_grouped_action">
+            <field name="name">Label consumption grouped WO</field>
+            <field name="res_model">label.consumption.grouped</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+        
+
+    </data>
+</openerp>

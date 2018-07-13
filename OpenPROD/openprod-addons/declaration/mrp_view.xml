@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+		<record id="view_form_mrp_workorder" model="ir.ui.view">
+			<field name="name">view_form_mrp_workorder</field>
+			<field name="inherit_id" ref="mrp.view_form_mrp_workorder" />
+			<field name="model">mrp.workorder</field>
+			<field name="arch" type="xml">
+				<xpath expr="//field[@name='is_subcontracting']" position="after">
+					<field name="declared_time_tablet" widget="float_time_seconds" readonly="1" />
+				</xpath>
+                <xpath expr="//field[@name='note_manufacturing']" position="after">
+                    <label for="note_manufacturing" string="Note from declaration"/>
+                    <field name="declaration_note" nolabel="1" colspan="4" />
+                </xpath>
+                <xpath expr="//field[@name='declare_tablet_product']" position="after">
+                    <field name="declare_tablet_cons" attrs="{'invisible': [('group_wo_id', '!=', False)]}" />
+                </xpath>
+			</field>
+		</record>
+	</data>
+</openerp>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+		<record id="view_form_wiz_create_park" model="ir.ui.view">
+            <field name="name">view_form_wiz_create_park</field>
+            <field name="model">wiz.create.park</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Create parks" version="8.0">
+                    <group colspan="4" col="4" >
+                        <group colspan="2" col="2" >
+                            <field name="is_equipment" coslpan="2" />
+                        </group>
+                        <group colspan="2" col="2" >
+                            <field name="type" coslpan="2" invisible="1" />
+                        </group>
+                        <field name="label_ids" nolabel="1" colspan="4" domain="[('domain_label_create_park', '=', False)]" />
+                    </group>
+                    <footer>
+                        <button name="action_validation" string="OK" type="object" class="oe_highlight" />
+                        or
+                        <button string="Cancel" class="oe_link" special="cancel" />
+                    </footer>
+                </form>
+            </field>
+        </record>
+         
+        <record model="ir.actions.act_window" id="act_wiz_create_park_sav">
+           <field name="name">Create parks</field>
+           <field name="res_model">wiz.create.park</field>
+           <field name="view_type">form</field>
+           <field name="view_mode">form</field>
+           <field name="target">new</field>
+           <field name="context">{'default_type': 'external'}</field>
+       </record>
+       
+       <record model="ir.actions.act_window" id="act_wiz_create_park_gmao">
+            <field name="name">Create parks</field>
+            <field name="res_model">wiz.create.park</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+            <field name="context">{'default_type': 'intern'}</field>
+        </record>
+        
+	</data>
+</openerp>

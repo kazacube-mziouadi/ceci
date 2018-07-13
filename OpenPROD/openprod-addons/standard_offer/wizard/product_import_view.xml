@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+		<!-- FORM VIEW Product Import -->
+		<record id='view_form_product_import' model='ir.ui.view'>
+			<field name="name">product_import</field>
+			<field name="model">product.import</field>
+			<field name="arch" type="xml">
+				<form string="Product Import" version="8.0">
+					<group>
+						<field name="offer_id" invisible="1" />
+						<field name="product_id" domain="[('sale_ok', '=', True)]" />
+					</group>
+					<footer>
+						<button name="import_product" string="Import Product" type="object" class="oe_highlight" />
+						<button string="Cancel" class="oe_link" special="cancel" />
+					</footer>
+				</form>
+			</field>
+		</record>
+
+		<!-- ACTION Product Import -->
+		<record id="act_product_import" model="ir.actions.act_window">
+			<field name="name">Product Import</field>
+			<field name="res_model">product.import</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">form</field>
+			<field name="target">new</field>
+		</record>
+	</data>
+</openerp>

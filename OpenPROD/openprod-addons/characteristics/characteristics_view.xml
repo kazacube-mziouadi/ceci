@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+		<!-- FORM VIEW Search characteristics -->
+		<record id='view_form_search_characteristics' model='ir.ui.view'>
+			<field name="name">search_characteristics</field>
+			<field name="model">search.characteristics</field>
+			<field name="arch" type="xml">
+				<form string="Search characteristics" version="8.0">
+					<field name="result_count" />
+				</form>
+			</field>
+		</record>
+
+		<!-- FORM VIEW Search characteristics select category -->
+		<record id='view_form_characteristics_select_category' model='ir.ui.view'>
+			<field name="name">characteristics_select_category</field>
+			<field name="model">search.characteristics.select.category</field>
+			<field name="arch" type="xml">
+				<form string="Search characteristics select category" version="8.0">
+					<group>
+						<field name="category_id" />
+						<button type="object" name="validate" class="btn btn-primary" string="Validate" />
+					</group>
+				</form>
+			</field>
+		</record>
+
+
+		<!-- FORM VIEW search_select_characteristic_category -->
+		<record id='view_form_search_select_characteristic_category' model='ir.ui.view'>
+			<field name="name">view_form_search_select_characteristic_category</field>
+			<field name="model">search.select.characteristic.category</field>
+			<field name="arch" type="xml">
+				<form string="Search characteristics select category" version="8.0">
+					<group>
+						<field name="characteristic_category_ids" colspan="4" nolabel="1" />
+						<button type="object" name="validate" class="btn btn-primary" string="Validate" />
+					</group>
+				</form>
+			</field>
+		</record>
+
+		<!-- ACTION Related Categories -->
+		<record id="act_related_categories" model="ir.actions.act_window">
+			<field name="name">Related Categories</field>
+			<field name="res_model">product.category</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+			<field name="domain">[('characteristic_category_ids.type_id', '=', active_id)]</field>
+		</record>
+
+		<!-- ACTION Related Products -->
+		<record id="act_related_products" model="ir.actions.act_window">
+			<field name="name">Related Products</field>
+			<field name="res_model">product.product</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+			<field name="domain">[('characteristics_ids.characteristic_type_id', '=', active_id)]</field>
+		</record>
+
+		<!-- FORM VIEW Characteristic Type -->
+		<record id='view_form_characteristic_type' model='ir.ui.view'>
+			<field name="name">Characteristic Type</field>
+			<field name="model">characteristic.type</field>
+			<field name="arch" type="xml">
+				<form string="Characteristic Type" version="8.0">
+					<group col="9">
+						<group colspan="8" col="4">
+							<field name="name" colspan="4" />
+							<field name="format" colspan="2" />
+							<field name="active" colspan="2" />
+							<field name="uom_id" attrs="{'invisible': [('format', '!=', 'numerical')]}" colspan="4" />
+							<group string="Values" colspan="4">
+								<field name="value_ids" nolabel="1">
+									<tree editable="bottom">
+										<field name="name" />
+									</tree>
+								</field>
+							</group>
+						</group>
+						<group colspan="1" col="1" class="op_shortcuts" name="action_menu">
+							<separator string="Analysis" colspan="1" name="separator_analysis_menu" />
+							<button class="oe_inline oe_stat_button" type="action" string="Categories" name="%(act_related_categories)d"
+								icon="fa-comments-o" />
+							<button class="oe_inline oe_stat_button" type="action" string="Products" name="%(act_related_products)d"
+								icon="fa-comments-o" />
+						</group>
+					</group>
+				</form>
+			</field>
+		</record>
+
+		<!-- TREE VIEW Characteristic Type -->
+		<record id='view_tree_characteristic_type' model='ir.ui.view'>
+			<field name="name">characteristic_type</field>
+			<field name="model">characteristic.type</field>
+			<field name="arch" type="xml">
+				<tree string="Characteristic Types" version="8.0">
+					<field name="name" />
+					<field name="format" />
+				</tree>
+			</field>
+		</record>
+		
+
+		<!-- SEARCH VIEW Characteristic Type -->
+		<record id='view_search_characteristic_type' model='ir.ui.view'>
+			<field name="name">view_search_characteristic_type</field>
+			<field name="model">characteristic.type</field>
+			<field name="arch" type="xml">
+				<search version="8.0">
+					<field name="format" />
+					<field name="name" />
+					<filter string="Format" name="filter_format" context="{'group_by':'format'}" />
+				</search>
+			</field>
+		</record>
+
+		<!-- ACTION Characteristic type -->
+		<record id="act_characteristic_type" model="ir.actions.act_window">
+			<field name="name">Characteristic type</field>
+			<field name="res_model">characteristic.type</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+
+		<!-- FORM VIEW Characteristic value -->
+		<record id='view_form_characteristic_value' model='ir.ui.view'>
+			<field name="name">characteristic_value</field>
+			<field name="model">characteristic.value</field>
+			<field name="arch" type="xml">
+				<form string="Characteristic value" version="8.0">
+					<group>
+						<field name="name" />
+					</group>
+					<field name="type_id" invisible="1" />
+				</form>
+			</field>
+		</record>
+
+		<!-- ACTION Search characteristics -->
+		<record id="act_search_characteristics" model="ir.actions.act_window">
+			<field name="name">Search characteristics</field>
+			<field name="res_model">search.characteristics.select.category</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">form</field>
+			<field name="context">{'dialog_size':'small'}</field>
+			<field name="target">new</field>
+		</record>
+
+		<act_window name="Search characteristics" res_model="search.characteristics.select.category" src_model="product.product"
+			view_mode="form" target="new" key2="client_action_multi" id="act_search_characteristics_bar" context="{'sidebar_without_id':True}" />
+		<act_window name="Search characteristics" res_model="search.select.characteristic.category" src_model="stock.label"
+			view_mode="form" target="new" key2="client_action_multi" id="act_search_characteristics_label" context="{'sidebar_without_id':True}" />
+
+		<menuitem id="menu_search_characteristics" name="Search product" action="act_search_characteristics" parent="product.menu_product_main"
+			groups="product.group_menu_product_user" />
+		<menuitem id="menu_characteristic_type" name="Characteristic Type" action="act_characteristic_type" parent="product.menu_product_conf"
+			groups="product.group_menu_product_user" sequence="4" />
+	</data>
+</openerp>

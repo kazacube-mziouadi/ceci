@@ -1,0 +1,308 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+		<record id='view_form_mrp_ftpr' model='ir.ui.view'>
+			<field name="name">view_form_mrp_ftpr</field>
+			<field name="model">mrp.ftpr</field>
+			<field name="arch" type="xml">
+				<form string="BoM" version="8.0">
+					<header>
+						<button name="wkf_draft" states="obsolete" string="Draft" type="object" class="oe_highlight" />
+						<button name="wkf_active" states="draft" string="Active" type="object" class="oe_highlight" />
+						<button name="wkf_obsolete" states="draft,active" string="Obsolete" type="object" class="oe_highlight" />
+						<field name="state" widget="statusbar" statusbar_visible="draft, active, obsolete" />
+					</header>
+					<group colspan="4" col="9">
+						<group colspan="8">
+							<group colspan="8" col="8" attrs="{'readonly': [('state', '!=', 'draft')]}">
+								<group colspan="4" col="4">
+									<field name="product_id" domain="[('produce_ok','=',True)]" colspan="4" attrs="{'invisible': [('type', '=', 'family')], 'required': [('type', '!=', 'family')]}" />
+									<field name="prod_family_id" colspan="4" attrs="{'invisible': [('type', '!=', 'family')], 'required': [('type', '=', 'family')]}" />
+									<field name="name" colspan="4" />
+									<field name="type" colspan="4" />
+									<field name="name_ftpr" colspan="4" invisible="1" />
+								</group>
+								<group colspan="4" col="4">
+									<group colspan="2" col="2">
+										<field name="quantity" />
+										<field name="start_date" />
+										<field name="price_qty" />
+										<field name="routing_id" readonly="1" />
+									</group>
+									<group colspan="2" col="2">
+										<field name="uom_id" domain="[('category_id','=',uom_category_id)]" />
+										<field name="stop_date" attrs="{'readonly': [('state', '=', 'obsolete')]}" />
+										<field name="production_cost_price" />
+										<field name="uom_category_id" invisible="1" />
+									</group>
+								</group>
+							</group>
+							<notebook colspan="8">
+								<page string="Components" attrs="{'readonly': [('state', '!=', 'draft')]}" name="page_ftpr_components" >
+									<field name="bom_ids" nolabel="1" colspan="8">
+										<tree string="Components" colors="red:qty_component_compute==0;">
+											<field name="sequence" invisible="1" />
+											<field name="name" invisible="1" />
+											<field name="product_id" required="1" />
+											<field name="quantity" />
+											<field name="uom_category_id" invisible="1" />
+											<field name="uom_id" domain="[('category_id', '=', uom_category_id)]" />
+											<field name="round" />
+											<field name="efficiency" />
+											<field name="option_id" groups="mrp.mrp_options" />
+											<field name="property_ids" widget="many2many_tags" groups="product.purchase_properties" domain="[('sinfo_property_product', 'in', product_id)]" />
+											<field name="type_component" />
+											<field name="formula_component" readonly="1" />
+											<button name="action_return_formula_component" string="Save" type="object" icon="terp-tools" />
+											<field name="qty_component_compute" />
+											<field name="price_unit" />
+											<field name="is_valid_priceunit" invisible="1" />
+											<field name="price_total_component" sum="price_total_component" />
+										</tree>
+										<form string="BoM" version="8.0">
+											<group colspan="4" col="6">
+												<group colspan="2" col="2">
+													<field name="product_id" required="1" />
+													<field name="type_component" />
+													<field name="option_id" groups="mrp.mrp_options" />
+													<field name="qty_component_compute" invisible="1" />
+													<field name="price_unit" invisible="1" />
+												</group>
+												<group colspan="2" col="2">
+													<field name="quantity" />
+													<field name="round" />
+													<field name="property_ids" widget="many2many_tags" groups="product.purchase_properties" domain="[('sinfo_property_product', 'in', product_id)]" />
+												</group>
+												<group colspan="2" col="2">
+													<field name="uom_id" domain="[('category_id','=',uom_category_id)]" />
+													<field name="efficiency" />
+												</group>
+											</group>
+											<group colspan="4" col="4">
+												<group colspan="4" col="4" string="Formula qty" name="group_formula_component">
+													<field name="formula_component" readonly="1" nolabel="1" colspan="3" />
+													<button name="action_return_formula_component" string="Open formula" type="object" class="oe_inline oe_stat_button" icon="fa-check" colspan="1" />
+												</group>
+											</group>
+											<group colspan="4" col="4" string="Cost history" name="group_component_cost_history">
+												<field name="component_cost_history_ids" readonly="1" colspan="4" nolabel="1">
+													<tree string="Cost history" editable="bottom" create="false">
+														<field name="date" />
+														<field name="currency_id" />
+														<field name="price_qty" />
+														<field name="price" />
+														<field name="user_id" />
+													</tree>
+												</field>
+											</group>
+											<field name="uom_category_id" invisible="1" />
+										</form>
+									</field>
+									<field name="consumed_component_ids" nolabel="1" colspan="8" invisible="1" />
+								</page>
+								<page string="Revision" attrs="{'readonly': [('state', '!=', 'draft')]}" name="page_ftpr_revision" >
+									<field name="revison_ids" nolabel="1" colspan="8" />
+								</page>
+								<page string="Informations" autofocus="toutsaufautofocus" attrs="{'readonly': [('state', '!=', 'draft')]}" name="page_informations" >
+									<group colspan="4" col="4" string="Model" name="group_model" >
+										<field name="is_model" string="Is model" attrs="{'invisible': [('template_id', '!=', False)]}" />
+										<field name="template_id" attrs="{'invisible': [('is_model', '!=', False)],'readonly': [('bom_ids', '!=', [])]}" domain="[('is_model','=',True)]" context="{'default_is_model': True}" />
+									</group>
+									<group colspan="8" string="Infomations" >
+										<group colspan="8" col="6">
+											<group colspan="2" col="2">
+												<field name="company_id" />
+												<field name="round" />
+											</group>
+											<group colspan="2" col="2">
+												<field name="option_id" groups="mrp.mrp_options" />
+												<field name="efficiency" />
+											</group>
+											<group colspan="2" col="2">
+												<field name="active" />
+												<field name="property_ids" widget="many2many_tags" groups="product.purchase_properties" domain="[('sinfo_property_product', 'in', product_id)]" />
+											</group>
+										</group>
+										<label for="note_mo" string="Note on wo" />
+										<field name="note_mo" nolabel="1" colspan="4" />
+									</group>
+								</page>
+								<page string="Declension" attrs="{'invisible': [('is_model', '!=', True)]}" name="page_ftpr_declension" >
+									<field name="template_ids" nolabel="1" colspan="8" readonly="1" attrs="{'readonly': [('state', '!=', 'draft')]}" />
+								</page>
+								<page string="Routing line" attrs="{'readonly': [('state', '!=', 'draft')]}" name="page_ftpr_routing_line" >
+									<field name="routing_line_ids" nolabel="1" colspan="8" context="{'default_routing_state': 'draft'}">
+										<tree sting="Lines" >
+											<field name="sequence" />
+											<field name="name" />
+											<field name="first_category_id" invisible="1" />
+											<field name="first_resource_id" />
+											<button name="button_add_resource_valid" icon="fa-plus-circle" type="object" string="Add resource valid" />
+											<field name="preparation_time" widget="float_time_seconds" sum="sum_preparation_time" />
+											<field name="production_time" widget="float_time_seconds" sum="sum_production_time" />
+											<field name="cleaning_time" widget="float_time_seconds" sum="sum_cleaning_time" />
+											<field name="total_time_unit" widget="float_time_seconds" sum="sum_total_time" />
+											<field name="option_id" groups="mrp.mrp_options" />
+											<field name="total_cost" />
+										</tree>
+									</field>
+									<field name="routing_ids" nolabel="1" colspan="8" invisible="1" />
+								</page>
+								<page string="Operations consumed">
+									<group colspan="4" col="4" attrs="{'readonly':[('state', '!=', 'draft')]}">
+										<field name="operation_consumed_ids" nolabel="1" colspan="4">
+											<tree string="Components" editable="bottom">
+												<field name="operation_id" domain="[('routing_id','=',parent.routing_id),('id','!=',operation_consumed_id)]" options="{'no_create': True}" required="1" />
+												<field name="operation_consumed_id" domain="[('routing_id','=',parent.routing_id),('id','!=',operation_id)]" options="{'no_create': True}" required="1" />
+											</tree>
+										</field>
+									</group>
+								</page>
+								<page string="Subporduct" attrs="{'readonly': [('state', '!=', 'draft')]}" name="page_ftpr_subproduct" >
+									<field name="subproduct_ids" nolabel="1" colspan="8">
+										<tree string="Components" editable="bottom">
+											<field name="sequence" />
+											<field name="product_id" />
+											<field name="quantity" />
+											<field name="uom_category_id" invisible="1" />
+											<field name="uom_id" domain="[('category_id','=',uom_category_id)]" />
+											<field name="type" />
+											<field name="bom_id" invisible="1" />
+											<field name="round" />
+											<field name="efficiency" />
+											<field name="option_id" groups="mrp.mrp_options" />
+											<field name="price_unit" />
+											<field name="is_valid_priceunit" />
+											<field name="price_total" />
+										</tree>
+									</field>
+								</page>
+								<page string="Cost" attrs="{'readonly': [('state', '!=', 'draft')]}" name="page_cost" >
+									<group colspan="8" col="6" string="Cost">
+										<group colspan="2" col="2">
+											<field name="component_total_price" readonly="1" />
+											<field name="price_unit" readonly="1" />
+											<field name="routing_first_price" readonly="1" />
+											<field name="total_efficiency" readonly="1" />
+										</group>
+										<group colspan="2" col="2">
+											<field name="price_last_date" readonly="1" />
+											<field name="routing_first_efficiency" readonly="1" />
+										</group>
+										<group colspan="2" col="2">
+											<field name="is_subtract_price_subproduct" />
+										</group>
+									</group>
+									<group colspan="8" col="4" string="Cost history" >
+										<group colspan="4" col="4">
+											<field name="bom_cost_history_ids" readonly="1" colspan="4" nolabel="1">
+												<tree string="Cost history" editable="bottom" create="false">
+													<field name="date" />
+													<field name="currency_id" />
+													<field name="price_qty" />
+													<field name="price" />
+													<field name="routing_first_price" />
+													<field name="production_cost_price" />
+													<field name="user_id" />
+												</tree>
+											</field>
+										</group>
+									</group>
+								</page>
+								<!-- <page string="Child component complete"> -->
+								<!-- <field name="child_complete_ids" /> -->
+								<!-- <field name="child_structure_ids" invisible="1"/> -->
+								<!-- </page> -->
+							</notebook>
+						</group>
+						<group colspan="1" col="1" class="op_shortcuts" name="group_button_all" >
+							<separator colspan="1" string="Actions" name="separator_actions_menu" />
+							<button name="action_compute_price" states="draft,active,obsolete" string="Compute price" type="object" class="oe_inline oe_stat_button" icon="fa-check" />
+                            <button name="%(act_duplicate_ftpr)d" string="Duplicate FTPR" type="action" class="oe_inline oe_stat_button" icon="fa-files-o" />
+							<button name="%(act_importation_routing_line_ftpr)d" string="Importation routing line" type="action" class="oe_inline oe_stat_button" icon="fa-check" attrs="{'invisible':[('state', '!=', 'draft')]}" />
+						</group>
+					</group>
+				</form>
+			</field>
+		</record>
+
+		<!-- TREE VIEW Bom -->
+		<record id='view_tree_mrp_ftpr' model='ir.ui.view'>
+			<field name="name">view_tree_mrp_ftpr</field>
+			<field name="model">mrp.ftpr</field>
+			<field name="priority">1</field>
+			<field name="arch" type="xml">
+				<tree string="BoMs" version="8.0">
+					<field name="product_id" />
+					<field name="ftpr_bom_id" />
+					<field name="routing_id" />
+					<field name="quantity" />
+					<field name="uom_id" />
+					<field name="type" />
+					<field name="start_date" />
+					<field name="stop_date" />
+					<field name="production_cost_price" />
+					<field name="routing_first_id" />
+					<field name="state" />
+				</tree>
+			</field>
+		</record>
+
+
+
+		<!-- SEARCH VIEW Bom -->
+		<record id='view_search_mrp_ftpr' model='ir.ui.view'>
+			<field name="name">view_search_mrp_ftpr</field>
+			<field name="model">mrp.ftpr</field>
+			<field name="arch" type="xml">
+				<search version="8.0">
+					<group>
+						<field name="product_id" />
+						<field name="ftpr_bom_id" />
+						<field name="routing_id" />
+						<field name="start_date" />
+						<field name="stop_date" />
+						<field name="state" />
+						<field name="routing_first_id" />
+						<group string="Filters" name="group_filters" >
+	                    </group>
+					</group>
+					<newline />
+					<group expand="0" string="Group By...">
+						<filter string="Product" icon="terp-partner" context="{'group_by' : 'product_id'}" />
+						<separator orientation="vertical" />
+						<filter string="State" icon="terp-partner" context="{'group_by' : 'state'}" />
+						<separator orientation="vertical" />
+						<filter string="Routing first" icon="terp-partner" context="{'group_by' : 'routing_first_id'}" />
+					</group>
+				</search>
+			</field>
+		</record>
+
+		<!-- ACTION Bom -->
+		<record id="act_mrp_ftpr" model="ir.actions.act_window">
+			<field name="name">FTPR</field>
+			<field name="res_model">mrp.ftpr</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+			<field name="context">{}</field>
+			<field name="search_view_id" ref="view_search_mrp_ftpr" />
+		</record>
+
+		<record id="act_mrp_ftpr_tree" model="ir.actions.act_window.view">
+			<field name="sequence" eval="10" />
+			<field name="view_mode">tree</field>
+			<field name="view_id" ref="view_tree_mrp_ftpr" />
+			<field name="act_window_id" ref="act_mrp_ftpr" />
+		</record>
+
+		<record model="ir.actions.act_window.view" id="act_mrp_ftpr_form">
+			<field name="sequence" eval="20" />
+			<field name="view_mode">form</field>
+			<field name="view_id" ref="view_form_mrp_ftpr" />
+			<field name="act_window_id" ref="act_mrp_ftpr" />
+		</record>
+
+		<menuitem name="FTPR" action="act_mrp_ftpr" id="menu_mrp_ftpr" parent="product.menu_product_main" groups="mrp.group_menu_bom_routing" />
+	</data>
+</openerp>

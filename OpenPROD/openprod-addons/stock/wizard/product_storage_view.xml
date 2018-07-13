@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+		<!-- FORM VIEW Product storage -->
+		<record id='view_form_stock_product_storage' model='ir.ui.view'>
+			<field name="name">view_form_stock_product_storage</field>
+			<field name="model">stock.product.storage</field>
+			<field name="arch" type="xml">
+				<form string="Product storage" version="8.0">
+					<field name="move_type" invisible="1" />
+					<field name="track_label" invisible="1" />
+					<group colspan="4" col="4">
+						<field name="product_id" colspan="4" domain="[('type', '=', 'stockable')]" />
+						<field name="uom_qty" attrs="{'invisible': [('track_label', '=', True)]}" />
+						<field name="uom_id" attrs="{'invisible': [('track_label', '=', True)]}" />
+						<field name="location_id" domain="[('usage', '!=', 'view')]" />
+						<field name="location_dest_id" domain="[('usage', '!=', 'view')]" />
+						<field name="label_ids" attrs="{'invisible': [('track_label', '=', False)]}" 
+						       nolabel="1" colspan="4" domain="[('product_id', '=', product_id), ('state', '=', 'available'), ('location_id', '=', location_id)]"/>
+					</group>
+					<footer>
+						<button name="validate" string="OK" type="object" class="oe_highlight" />
+						or
+						<button string="Cancel" class="oe_link" special="cancel" />
+					</footer>
+				</form>
+			</field>
+		</record>
+
+		<!-- ACTION Product storage IN -->
+		<record id="act_stock_product_storage_in" model="ir.actions.act_window">
+			<field name="name">Product storage</field>
+			<field name="res_model">stock.product.storage</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">form</field>
+			<field name="target">new</field>
+			<field name="context">{'default_move_type': 'in'}</field>
+		</record>
+		
+		<!-- ACTION Product storage OUT -->
+		<record id="act_stock_product_storage_out" model="ir.actions.act_window">
+			<field name="name">Product storage</field>
+			<field name="res_model">stock.product.storage</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">form</field>
+			<field name="target">new</field>
+			<field name="context">{'default_move_type': 'out'}</field>
+		</record>
+
+		<menuitem name="Product storage (IN)" action="act_stock_product_storage_in" id="menu_stock_product_storage_in" parent="menu_stock_product_storage" groups="group_menu_stock_analyse"/>
+		<menuitem name="Product storage (OUT)" action="act_stock_product_storage_out" id="menu_stock_product_storage_out" parent="menu_stock_product_storage" groups="group_menu_stock_analyse"/>
+	</data>
+</openerp>

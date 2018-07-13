@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+	
+		<!-- FORM VIEW CRM -->
+		<record model="ir.ui.view" id="view_form_inherit_crm_link_openprod">
+			<field name="name">view_form_inherit_crm_link_openprod</field>
+			<field name="inherit_id" ref="crm_openprod.view_form_crm_openprod" />
+			<field name="priority" eval="1400" />
+			<field name="model">crm</field>
+			<field name="arch" type="xml">
+				<xpath expr="//group[@name='action_crm_menu']" position="inside">
+					<button type="object" string="Create offer" name="create_new_offer" class="oe_inline oe_stat_button" icon="fa-plus-square"/>
+				</xpath>
+				<xpath expr="//group[@name='action_history']" position="after">
+					<group colspan="4" col="4" string="Offers history">
+						<field name="specific_offer_ids" colspan="4" nolabel="1"/>
+					</group>
+				</xpath>
+			</field>
+		</record>
+				
+		<!-- FORM VIEW CRM state-->
+		<record id='view_form_state_crm_openprod_inherit' model='ir.ui.view'>
+			<field name="name">view_form_state_crm_openprod_inherit</field>
+			<field name="inherit_id" ref="crm_openprod.view_form_state_crm_openprod" />
+			<field name="model">crm.state</field>
+			<field name="arch" type="xml">
+				<field name="is_sale_creation_state" position="after">
+					<label colspan="4" string=""/>
+					<field name="is_offer_creation_state"/>
+				</field>
+			</field>
+		</record>
+		
+		<!-- FORM VIEW Specific offer -->
+		<record model="ir.ui.view" id="view_form_inherit_specific_offer">
+			<field name="name">view_form_inherit_specific_offer</field>
+			<field name="inherit_id" ref="specific_offer.view_form_specific_offer" />
+			<field name="priority" eval="1400" />
+			<field name="model">specific.offer</field>
+			<field name="arch" type="xml">
+				<xpath expr="//group[@name='specific_technical_data']" position="after">
+					<group colspan="2" col="4" string="Affairs" name="affair_group_offer">
+						<field name="affair_id"/>
+						<button type="object" string="Create affair" name="create_affair_from_offer" class="oe_inline oe_stat_button" icon="fa-plus-square"/>
+					</group>
+				</xpath>
+			</field>
+		</record>
+	
+	</data>
+</openerp>
+	

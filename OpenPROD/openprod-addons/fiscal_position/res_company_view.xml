@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+		<!-- FORM VIEW Company -->
+		<record id="view_res_company_form_fiscal_position" model="ir.ui.view">
+            <field name="name">view_res_company_form_fiscal_position</field>
+            <field name="model">res.company</field>
+            <field name="inherit_id" ref="base.view_company_form"/>
+            <field name="arch" type="xml">
+            	<xpath expr="//field[@name='vat_check_vies']" position="after">
+                    <field name="country_fiscal_position"/>
+                    <field name="free_exchange_area_fiscal_position"/>
+                    <field name="free_exchange_area_service_fiscal_position"/>
+                    <field name="high_export_fiscal_position"/>
+                    <field name="high_export_service_fiscal_position"/>
+                </xpath>
+            </field>
+        </record>
+	</data>
+</openerp>

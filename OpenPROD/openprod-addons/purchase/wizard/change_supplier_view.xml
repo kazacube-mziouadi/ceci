@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+	
+		<record model="ir.ui.view" id="view_form_change_purchase_supplier">
+			<field name="name">view_form_change_purchase_supplier</field>
+			<field name="model">change.purchase.supplier</field>
+			<field name="type">form</field>
+			<field name="arch" type="xml">
+				<form string="Supplier modification">
+					<group colspan="4" col="4">
+						<group colspan="4" col="6">
+							<group colspan="2" col="2">
+								<field name="purchase_id"/>
+								<field name="product_id"/>
+								<field name="supplier_id"/>
+							</group>
+							<group colspan="2" col="2">
+								<field name="need_date"/>
+								<field name="need_qty"/>
+								<field name="actual_qty"/>
+							</group>
+							<group colspan="2" col="2">
+								<field name="origin"/>
+								<field name="uom_id"/>
+								<field name="free_purchase" invisible="1"/>
+							</group>
+						</group>
+						<group colspan="4" col="4" string="Available suppliers" attrs="{'invisible': [('free_purchase', '=', True)]}">
+							<field name="supplierinfo_ids" nolabel="1" colspan="4" >
+								<tree>
+									<field name="partner_id"/>
+									<field name="supp_product_name"/>
+									<field name="supp_product_code"/>
+									<field name="first_price"/>
+									<field name="currency_id"/>
+									<field name="uop_id"/>
+									<field name="multiple_qty"/>
+									<field name="min_qty"/>
+									<field name="delivery_delay"/>
+									<field name="state"/>
+								</tree>
+							</field>
+						</group>
+						<field name="property_ids" widget="many2many_tags" attrs="{'invisible': [('free_purchase', '=', True)]}" domain="[('purchase', '=', True)]" />
+						<field name="new_supplierinfo_id" 
+						       attrs="{'invisible': [('free_purchase', '=', True)], 'required': [('free_purchase', '=', False)]}" 
+							   domain="[('supplierinfo_in_supplierinfo_ids', 'in', supplierinfo_ids), ('supplierinfo_in_property_ids', 'in', [supplierinfo_ids, property_ids])]"/>
+						<field name="new_supplier_id" attrs="{'invisible': [('free_purchase', '=', False)], 'required': [('free_purchase', '=', True)]}" />
+					</group>
+					<footer>
+						<button name="action_change_purchase_supplier" string="Change supplier" type="object" class="oe_highlight" />
+						or
+						<button string="Cancel" class="oe_link" special="cancel" />
+					</footer>
+				</form>
+			</field>
+		</record>
+
+		<record model="ir.actions.act_window" id="action_change_supplier">
+			<field name="name">Change the supplier</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="res_model">change.purchase.supplier</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">form</field>
+			<field name="target">new</field>
+		</record>
+		
+	</data>
+</openerp>

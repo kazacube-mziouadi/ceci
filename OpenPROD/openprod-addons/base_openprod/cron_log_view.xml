@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+
+		<!-- TREE VIEW Cron log -->
+		<record id='view_tree_cron_log' model='ir.ui.view'>
+			<field name="name">view_tree_cron_log</field>
+			<field name="model">ir.cron.log</field>
+			<field name="arch" type="xml">
+				<tree string="Cron logs" version="8.0" default_order="start_date desc" create="false" edit="false">
+					<field name="name" />
+					<field name="start_date" />
+					<field name="end_date" />
+					<field name="error" />
+				</tree>
+			</field>
+		</record>
+
+		<!-- FORM VIEW Cron log -->
+		<record id='view_form_cron_log' model='ir.ui.view'>
+			<field name="name">view_form_cron_log</field>
+			<field name="model">ir.cron.log</field>
+			<field name="arch" type="xml">
+				<form string="Cron log" version="8.0">
+					<group>
+						<field name="name" />
+						<newline />
+						<field name="start_date" />
+						<field name="end_date" />
+						<separator colspan="4" string="Error" />
+						<field name="error" nolabel="1" colspan="4" />
+					</group>
+				</form>
+			</field>
+		</record>
+
+		<!-- SEARCH VIEW Cron log -->
+		<record id='view_search_cron_log' model='ir.ui.view'>
+			<field name="name">view_search_cron_log</field>
+			<field name="model">ir.cron.log</field>
+			<field name="arch" type="xml">
+				<search version="8.0">
+					<field name="name" />
+				</search>
+			</field>
+		</record>
+
+		<!-- ACTION Cron log -->
+		<record id="act_cron_log" model="ir.actions.act_window">
+			<field name="name">Cron log</field>
+			<field name="res_model">ir.cron.log</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+			<field name="search_view_id" ref="view_search_cron_log" />
+		</record>
+
+		<menuitem name="Cron log" action="act_cron_log" id="menu_cron_log" parent="base.menu_automation" />
+
+		<record id="ir_cron_view" model="ir.ui.view">
+			<field name="model">ir.cron</field>
+			<field name="inherit_id" ref="base.ir_cron_view" />
+			<field name="arch" type="xml">
+				<xpath expr="//button[@name='method_direct_trigger']" position="replace">
+					<button string="Run Manually" type="object" name="run_manually" />
+				</xpath>
+				<xpath expr="//group[@name='group_interval']" position="replace">
+				    <group col="4" coslpan="4" name="group_interval">
+				        <group col="6" coslpan="4" >
+	                        <field name="is_more_details" coslpan="2" />
+	                        <field name="interval_number" attrs="{'invisible': [('is_more_details', '=', True)]}"/>
+	                        <field name="interval_type" attrs="{'invisible': [('is_more_details', '=', True)]}"/>
+	                    </group>
+	                    <group col="6" colspan="4" attrs="{'invisible': [('is_more_details', '!=', True)]}" >
+	                       <group col="6" colspan="6">
+	                           <field name="is_last_month"/>
+	                           <field name="last_month"  attrs="{'invisible': [('is_last_month', '!=', True)]}"/>
+	                       </group>
+	                       <group col="6" colspan="6">
+	                           <field name="monday"/>
+	                           <field name="tuesday"/>
+	                           <field name="wednesday"/>
+	                           <field name="thursday"/>
+	                           <field name="friday"/>
+	                           <field name="saturday"/>
+	                           <field name="sunday"/>
+	                       </group>
+	                    </group>
+                    </group>
+				</xpath>
+			</field>
+		</record>
+	</data>
+</openerp>

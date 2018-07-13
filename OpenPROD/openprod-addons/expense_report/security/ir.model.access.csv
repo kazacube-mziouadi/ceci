@@ -1,0 +1,13 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_expense_report_user,expense.report,model_expense_report,expense_report_user,1,0,0,0
+access_expense_report_manager,expense.report,model_expense_report,expense_report_manager,1,1,1,0
+access_expense_report_administrator,expense.report,model_expense_report,expense_report_responsible,1,1,1,1
+
+access_expense_report_line_user,expense.report.line,model_expense_report_line,expense_report_user,1,0,0,0
+access_expense_report_line_manager,expense.report.line,model_expense_report_line,expense_report_manager,1,1,1,0
+access_expense_report_line_administrator,expense.report.line,model_expense_report_line,expense_report_responsible,1,1,1,1
+
+access_expense_report_tax_user,expense.report.tax,model_expense_report_tax,expense_report_user,1,0,0,0
+access_expense_report_tax_manager,expense.report.tax,model_expense_report_tax,expense_report_manager,1,1,1,0
+access_expense_report_tax_administrator,expense.report.tax,model_expense_report_tax,expense_report_responsible,1,1,1,1
+

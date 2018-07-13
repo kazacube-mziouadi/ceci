@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+		<!-- FORM VIEW Reopen picking -->
+		<record id='view_form_change_move_label_qty' model='ir.ui.view'>
+			<field name="name">Change quantities</field>
+			<field name="model">stock.change.move.label.qty</field>
+			<field name="arch" type="xml">
+				<form string="Change quantities" version="8.0">
+					<group>
+						<field name="is_variable_double_unit" invisible="1" />
+						<field name="move_label_ids" nolabel="1" colspan="4" context="{'default_is_variable_double_unit': is_variable_double_unit}" options="{'no_create': True, 'deletable': False}">
+							<tree string="Labels" editable="bottom">
+								<field name="is_variable_double_unit" invisible="1" />
+								<field name="label_id" readonly="1" />
+								<field name="uom_qty" sum="Total" />
+								<field name="uom_id" readonly="1" />
+								<field name="sec_uom_qty" sum="Total" attrs="{'readonly': [('is_variable_double_unit', '!=', True)]}" />
+								<field name="sec_uom_id" readonly="1" />
+							</tree>
+						</field>
+					</group>
+					<footer>
+						<button name="validate_qtys" string="OK" type="object" class="oe_highlight" />
+						or
+						<button string="Cancel" class="oe_link" special="cancel" />
+					</footer>
+				</form>
+			</field>
+		</record>
+
+		<!-- ACTION Reopen picking -->
+		<record id="act_change_move_label_qty" model="ir.actions.act_window">
+			<field name="name">Change quantities</field>
+			<field name="res_model">stock.change.move.label.qty</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">form</field>
+			<field name="target">new</field>
+		</record>
+	</data>
+</openerp>

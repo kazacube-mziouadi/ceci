@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+		<!-- FORM -->
+		<record id='view_ir_config_form_note' model='ir.ui.view'>
+			<field name="name">view_ir_config_form_note</field>
+			<field name="model">ir.config_parameter</field>
+			<field name="priority" eval="1000" />
+			<field name="inherit_id" ref="base.view_ir_config_form" />
+			<field name="arch" type="xml">
+				<xpath expr="//field[last()]" position="after">
+					<field name="note" />
+				</xpath>
+			</field>
+		</record>
+		
+		<!-- TREE -->
+		<record id='view_ir_config_list_note' model='ir.ui.view'>
+			<field name="name">view_ir_config_form_note</field>
+			<field name="model">ir.config_parameter</field>
+			<field name="priority" eval="1000" />
+			<field name="inherit_id" ref="base.view_ir_config_list" />
+			<field name="arch" type="xml">
+				<xpath expr="//field[last()]" position="after">
+					<field name="note" />
+				</xpath>
+			</field>
+		</record>
+	</data>
+</openerp>

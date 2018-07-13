@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+
+		<!-- ========= -->
+		<!-- WORKORDER -->
+		<!-- ========= -->
+
+		<!-- FORM VIEW Workorder -->
+		<record id='view_form_mrp_workorder_affair' model='ir.ui.view'>
+			<field name="name">view_form_mrp_workorder_affair</field>
+			<field name="inherit_id" ref="mrp.view_form_mrp_workorder" />
+			<field name="priority" eval="1400" />
+			<field name="model">mrp.workorder</field>
+			<field name="arch" type="xml">
+				<field name="is_forecast" position="before">
+					<field name="affair_id" />
+				</field>
+			</field>
+		</record>
+
+		<!-- SEARCH VIEW Workorder -->
+		<record id='view_search_mrp_workorder_affair' model='ir.ui.view'>
+			<field name="name">view_search_mrp_workorder_affair</field>
+			<field name="inherit_id" ref="mrp.view_search_mrp_workorder" />
+			<field name="priority" eval="1400" />
+			<field name="model">mrp.workorder</field>
+			<field name="arch" type="xml">
+				<xpath expr="//field[last()]" position="after">
+					<field name="affair_id" />
+				</xpath>
+				<xpath expr="//filter[@name='mrp_filter_product']" position="after">
+					<separator orientation="vertical" />
+					<filter string="Affair" context="{'group_by': 'affair_id'}" />
+				</xpath>
+			</field>
+		</record>
+
+
+		<!-- ================== -->
+		<!-- MANUFACTURINGORDER -->
+		<!-- ================== -->
+
+		<!-- FORM VIEW Manufacturing -->
+		<record id='view_form_mrp_manufacturingorder_affair' model='ir.ui.view'>
+			<field name="name">view_form_mrp_manufacturingorder_affair</field>
+			<field name="inherit_id" ref="mrp.view_form_mrp_manufacturingorder" />
+			<field name="priority" eval="1400" />
+			<field name="model">mrp.manufacturingorder</field>
+			<field name="arch" type="xml">
+				<xpath expr="//label[@for='note_planned']" position="before">
+					<group colspan="4" col="4">
+						<field name="affair_id" colspan="4" />
+					</group>
+				</xpath>
+			</field>
+		</record>
+
+		<!-- SEARCH VIEW Manufacturing -->
+		<record id='view_search_mrp_manufacturingorder_affair' model='ir.ui.view'>
+			<field name="name">view_search_mrp_manufacturingorder</field>
+			<field name="inherit_id" ref="mrp.view_search_mrp_manufacturingorder" />
+			<field name="priority" eval="1400" />
+			<field name="model">mrp.manufacturingorder</field>
+			<field name="arch" type="xml">
+				<xpath expr="//field[last()]" position="after">
+					<field name="affair_id" />
+				</xpath>
+			</field>
+		</record>
+	</data>
+</openerp>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+	
+		<record model="ir.ui.view" id="view_form_create_new_document_version">
+			<field name="name">view_form_create_new_document_version</field>
+			<field name="model">new.document.version.wizard</field>
+			<field name="type">form</field>
+			<field name="arch" type="xml">
+				<form string="New version">
+					<group colspan="4" col="4">
+						<group colspan="4" col="6" string="Enter the new version">
+							<field name="version"/>
+						</group>
+					</group>
+					<footer>
+						<button name="create_new_version" string="Create new version" type="object" class="oe_highlight"/>
+						or
+						<button string="Close" class="oe_highlight" special="cancel" />
+					</footer>
+				</form>
+			</field>
+		</record>
+
+		<record model="ir.actions.act_window" id="action_create_new_document_version">
+			<field name="name">New version</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="res_model">new.document.version.wizard</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">form</field>
+			<field name="target">new</field>
+		</record>
+		
+		
+	</data>
+</openerp>

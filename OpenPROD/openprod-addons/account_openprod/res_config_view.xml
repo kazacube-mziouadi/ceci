@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+
+		<!-- FORM VIEW Account config settings -->
+		<record id="view_form_inherit_config_settings" model="ir.ui.view">
+			<field name="name">view_form_inherit_config_settings</field>
+			<field name="model">account.config.settings</field>
+			<field name="inherit_id" ref="account.view_account_config_settings" />
+			<field name="arch" type="xml">
+				<field name="has_fiscal_year" position="after">
+					<separator string="Invoicing"/>
+					<group>
+                        <label for="id" string="Invoicing"/>
+                        <div name="account_config">
+                            <div>
+								<field name="print_delivered_address"/>
+                                <label for="print_delivered_address"/>
+							</div>
+                            <div>
+								<field name="us_accounting"/>
+                                <label for="us_accounting"/>
+							</div>
+						</div>
+					</group>
+				</field>
+			</field>
+		</record>
+
+	</data>
+</openerp>

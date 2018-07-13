@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+		<!-- FORM VIEW mrp_planning_mo_at_earlier -->
+		<record id='view_form_mrp_planning_mo_at_earlier_id' model='ir.ui.view'>
+			<field name="name">view_form_mrp_planning_mo_at_earlier_id</field>
+			<field name="model">mrp.planning.mo.at.earlier</field>
+			<field name="arch" type="xml">
+				<form string="ManufacturingOrder Planning at earlier">
+					<group colspan="4" col="4">
+						<field name="date" />
+						<field name="is_sublevel" attrs="{'invisible': [('is_from_simulation', '=', True)]}" />
+						<group colspan="2" col="4" string="Manufacturing" attrs="{'invisible': [('is_sublevel', '=', True)]}">
+							<field name="is_procur_level_manufact" />
+							<field name="is_product_sublevel_manufact" />
+							<field name="is_delay_rm" />
+						</group>
+						<group colspan="2" col="6" string="Purchase" attrs="{'invisible': ['|', ('is_sublevel', '=', True), ('is_from_simulation', '=', True)]}">
+							<field name="is_procur_level_purchase" />
+							<field name="is_procur_sublevel_purchase" />
+							<field name="automatic_purchase" />
+						</group>
+						<field name="mo_id" invisible="1" />
+                        <field name="is_from_simulation" invisible="1" />
+					</group>
+					<footer>
+						<button name="button_plannification_mo_at_earlier" string="OK" type="object" class="oe_highlight" />
+						or
+						<button string="Cancel" class="oe_link" special="cancel" />
+					</footer>
+				</form>
+			</field>
+		</record>
+
+
+		<!-- ACTION mrp_planning_mo_at_earlier -->
+		<record id="act_mrp_planning_mo_at_earlier_id" model="ir.actions.act_window">
+			<field name="name">ManufacturingOrder Planning at earlier</field>
+			<field name="res_model">mrp.planning.mo.at.earlier</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">form</field>
+			<field name="domain">[]</field>
+			<field name="target">new</field>
+			<field name="context">{}</field>
+		</record>
+
+
+
+		<!-- FORM VIEW mrp_planning_mo_at_the_latest -->
+		<record id='view_form_mrp_planning_mo_at_the_latest_id' model='ir.ui.view'>
+			<field name="name">view_form_mrp_planning_mo_at_the_latest_id</field>
+			<field name="model">mrp.planning.mo.at.the.latest</field>
+			<field name="arch" type="xml">
+				<form string="ManufacturingOrder Planning at the latest">
+					<group colspan="4" col="4">
+						<field name="date" />
+                        <field name="is_sublevel" attrs="{'invisible': [('is_from_simulation', '=', True)]}" />
+						<group colspan="2" col="4" string="Manufacturing" attrs="{'invisible': [('is_sublevel', '=', True)]}">
+							<field name="is_procur_level_manufact" />
+							<field name="is_product_sublevel_manufact" />
+						</group>
+                        <group colspan="2" col="6" string="Purchase" attrs="{'invisible': ['|', ('is_sublevel', '=', True), ('is_from_simulation', '=', True)]}">
+							<field name="is_procur_level_purchase" />
+							<field name="is_procur_sublevel_purchase" />
+							<field name="automatic_purchase" />
+						</group>
+						<field name="mo_id" invisible="1" />
+						<field name="is_from_simulation" invisible="1" />
+					</group>
+					<footer>
+						<button name="button_plannification_mo_at_the_latest" string="OK" type="object" class="oe_highlight" />
+						or
+						<button string="Cancel" class="oe_link" special="cancel" />
+					</footer>
+				</form>
+			</field>
+		</record>
+
+
+		<!-- ACTION mrp_planning_mo_at_earlier -->
+		<record id="act_mrp_planning_mo_at_the_latest_id" model="ir.actions.act_window">
+			<field name="name">ManufacturingOrder Planning at the latest</field>
+			<field name="res_model">mrp.planning.mo.at.the.latest</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">form</field>
+			<field name="domain">[]</field>
+			<field name="target">new</field>
+			<field name="context">{}</field>
+		</record>
+
+
+
+		<!-- FORM VIEW mrp_planning_mo_done -->
+		<record id='view_form_mrp_planning_mo_done' model='ir.ui.view'>
+			<field name="name">view_form_mrp_planning_mo_done_id</field>
+			<field name="model">mrp.planning.mo.done</field>
+			<field name="arch" type="xml">
+				<form string="ManufacturingOrder Planning Done">
+					<group colspan="4" col="4">
+						<field name="is_sublevel" />
+						<field name="automatic_purchase" groups="base.group_manufacturing_admin" />
+						<field name="mo_id" invisible="1" />
+					</group>
+					<footer>
+						<button name="button_plannification_mo_done" string="OK" type="object" class="oe_highlight" />
+						or
+						<button string="Cancel" class="oe_link" special="cancel" />
+					</footer>
+				</form>
+			</field>
+		</record>
+
+
+		<!-- ACTION mrp_planning_mo_done -->
+		<record id="act_mrp_planning_mo_done_id" model="ir.actions.act_window">
+			<field name="name">ManufacturingOrder Planning Done</field>
+			<field name="res_model">mrp.planning.mo.done</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">form</field>
+			<field name="domain">[]</field>
+			<field name="target">new</field>
+			<field name="context">{}</field>
+		</record>
+
+
+
+		<!-- FORM VIEW mrp_planning_wo_done -->
+		<record id='view_form_mrp_planning_wo_done' model='ir.ui.view'>
+			<field name="name">view_form_mrp_planning_wo_done_id</field>
+			<field name="model">mrp.planning.wo.done</field>
+			<field name="arch" type="xml">
+				<form string="Workorder Planning Done">
+					<group colspan="4" col="4">
+						<field name="automatic_purchase" groups="base.group_manufacturing_admin" />
+						<field name="wo_id" invisible="1" />
+					</group>
+					<footer>
+						<button name="button_plannification_wo_done" string="OK" type="object" class="oe_highlight" />
+						or
+						<button string="Cancel" class="oe_link" special="cancel" />
+					</footer>
+				</form>
+			</field>
+		</record>
+
+
+		<!-- ACTION mrp_planning_wo_done -->
+		<record id="act_mrp_planning_wo_done_id" model="ir.actions.act_window">
+			<field name="name">Workorder Planning Done</field>
+			<field name="res_model">mrp.planning.wo.done</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">form</field>
+			<field name="domain">[]</field>
+			<field name="target">new</field>
+			<field name="context">{}</field>
+		</record>
+
+	</data>
+</openerp>

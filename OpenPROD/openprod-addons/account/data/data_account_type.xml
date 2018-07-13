@@ -1,0 +1,1310 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data noupdate="0">
+    
+    	<!-- =========== -->
+        <!-- BILAN ACTIF -->
+        <!-- =========== -->
+    	
+    	<record model="account.account.type" id="data_account_type_unpaid_sub_capital">
+          <field name="name">Unpaid subscribed capital</field>
+          <field name="report_type">asset</field>
+          <field name="type">normal</field>
+          <field name="bold_report" eval="True"/>
+          <field name="report_level">second</field>
+          <field name="sequence">0</field>
+        </record>
+    	
+    	<!-- ACTIF IMMOBILISE -->
+    	<record model="account.account.type" id="data_account_type_fixed_asset">
+          <field name="name">Fixed asset</field>
+          <field name="report_type">asset</field>
+          <field name="type">aggregation</field>
+          <field name="bold_report" eval="True"/>
+          <field name="report_level">first</field>
+          <field name="sequence">2</field>
+        </record>
+    	
+	    	<record model="account.account.type" id="data_account_type_intangible_asset">
+	          <field name="name">Intangible asset</field>
+	          <field name="report_type">asset</field>
+	          <field name="type">aggregation</field>
+	          <field name="parent_id" ref="data_account_type_fixed_asset"/>
+	          <field name="bold_report" eval="True"/>
+          	  <field name="report_level">second</field>
+          	  <field name="sequence">4</field>
+	        </record>
+    	
+		    	<record model="account.account.type" id="data_account_type_start_up_costs">
+		          <field name="name">Start-up costs</field>
+		          <field name="report_type">asset</field>
+		          <field name="type">normal</field>
+		          <field name="parent_id" ref="data_account_type_intangible_asset"/>
+		          <field name="report_level">third</field>
+		          <field name="sequence">6</field>
+		        </record>
+		    	
+		    	<record model="account.account.type" id="data_account_type_rd_costs">
+		          <field name="name">Research and development costs</field>
+		          <field name="report_type">asset</field>
+		          <field name="type">normal</field>
+		          <field name="parent_id" ref="data_account_type_intangible_asset"/>
+		          <field name="report_level">third</field>
+		          <field name="sequence">8</field>
+		        </record>
+		    	
+		    	<record model="account.account.type" id="data_account_type_concessions_patents">
+		          <field name="name">Concessions, patents, licences, brands, process, softs, rights and similar values</field>
+		          <field name="report_type">asset</field>
+		          <field name="type">normal</field>
+		          <field name="parent_id" ref="data_account_type_intangible_asset"/>
+		          <field name="report_level">third</field>
+		          <field name="sequence">10</field>
+		        </record>
+		    	
+		    	<record model="account.account.type" id="data_account_type_business_goodwill">
+		          <field name="name">Business goodwill</field>
+		          <field name="report_type">asset</field>
+		          <field name="type">normal</field>
+		          <field name="parent_id" ref="data_account_type_intangible_asset"/>
+		          <field name="report_level">third</field>
+		          <field name="sequence">12</field>
+		        </record>
+		    	
+		    	<record model="account.account.type" id="data_account_type_intangible_asset_others">
+		          <field name="name">Others</field>
+		          <field name="report_type">asset</field>
+		          <field name="type">normal</field>
+		          <field name="parent_id" ref="data_account_type_intangible_asset"/>
+		          <field name="report_level">third</field>
+		          <field name="sequence">14</field>
+		        </record>
+		    	
+		    	<record model="account.account.type" id="data_account_type_intangible_asset_in_progress">
+		          <field name="name">Intangible asset in progress</field>
+		          <field name="report_type">asset</field>
+		          <field name="type">normal</field>
+		          <field name="parent_id" ref="data_account_type_intangible_asset"/>
+		          <field name="report_level">third</field>
+		          <field name="sequence">16</field>
+		        </record>
+		        
+		        <record model="account.account.type" id="data_account_type_intangible_asset_advance_and_deposit">
+		          <field name="name">Advance and deposit</field>
+		          <field name="report_type">asset</field>
+		          <field name="type">normal</field>
+		          <field name="parent_id" ref="data_account_type_intangible_asset"/>
+		          <field name="report_level">third</field>
+		          <field name="sequence">18</field>
+		        </record>
+		        
+	        <record model="account.account.type" id="data_account_type_tangible_asset">
+	          <field name="name">Tangible asset</field>
+	          <field name="report_type">asset</field>
+	          <field name="type">aggregation</field>
+	          <field name="parent_id" ref="data_account_type_fixed_asset"/>
+	          <field name="bold_report" eval="True"/>
+          	  <field name="report_level">second</field>
+          	  <field name="sequence">20</field>
+	        </record>
+	        	
+	        	<record model="account.account.type" id="data_account_type_lands">
+		          <field name="name">Lands</field>
+		          <field name="report_type">asset</field>
+		          <field name="type">normal</field>
+		          <field name="parent_id" ref="data_account_type_tangible_asset"/>
+		          <field name="report_level">third</field>
+		          <field name="sequence">22</field>
+		        </record>
+	        	
+	        	<record model="account.account.type" id="data_account_type_buildings">
+		          <field name="name">Buildings</field>
+		          <field name="report_type">asset</field>
+		          <field name="type">normal</field>
+		          <field name="parent_id" ref="data_account_type_tangible_asset"/>
+		          <field name="report_level">third</field>
+		          <field name="sequence">24</field>
+		        </record>
+	        	
+	        	<record model="account.account.type" id="data_account_type_installations">
+		          <field name="name">Technical installations, materials and industrial tools</field>
+		          <field name="report_type">asset</field>
+		          <field name="type">normal</field>
+		          <field name="parent_id" ref="data_account_type_tangible_asset"/>
+		          <field name="report_level">third</field>
+		          <field name="sequence">26</field>
+		        </record>
+		        
+		        <record model="account.account.type" id="data_account_type_tangible_asset_others">
+		          <field name="name">Others</field>
+		          <field name="report_type">asset</field>
+		          <field name="type">normal</field>
+		          <field name="parent_id" ref="data_account_type_tangible_asset"/>
+		          <field name="report_level">third</field>
+		          <field name="sequence">28</field>
+		        </record>
+		        
+		        <record model="account.account.type" id="data_account_type_tangible_asset_in_progress">
+		          <field name="name">Tangible asset in progress</field>
+		          <field name="report_type">asset</field>
+		          <field name="type">normal</field>
+		          <field name="parent_id" ref="data_account_type_tangible_asset"/>
+		          <field name="report_level">third</field>
+		          <field name="sequence">30</field>
+		        </record>
+		        
+		        <record model="account.account.type" id="data_account_type_tangible_asset_advance_and_deposit">
+		          <field name="name">Advance and deposit</field>
+		          <field name="report_type">asset</field>
+		          <field name="type">normal</field>
+		          <field name="parent_id" ref="data_account_type_tangible_asset"/>
+		          <field name="report_level">third</field>
+		          <field name="sequence">32</field>
+		        </record>
+		        
+	        <record model="account.account.type" id="data_account_type_financial_asset">
+	          <field name="name">Financial asset</field>
+	          <field name="report_type">asset</field>
+	          <field name="type">aggregation</field>
+	          <field name="parent_id" ref="data_account_type_fixed_asset"/>
+	          <field name="bold_report" eval="True"/>
+          	  <field name="report_level">second</field>
+          	  <field name="sequence">34</field>
+	        </record>
+	        
+	        	<record model="account.account.type" id="data_account_type_profit_sharing">
+		          <field name="name">Profit sharing</field>
+		          <field name="report_type">asset</field>
+		          <field name="type">normal</field>
+		          <field name="parent_id" ref="data_account_type_financial_asset"/>
+		          <field name="report_level">third</field>
+		          <field name="sequence">36</field>
+		        </record>
+	        
+	        	<record model="account.account.type" id="data_account_type_profit_sharing_debt">
+		          <field name="name">Debt attached to profit sharing</field>
+		          <field name="report_type">asset</field>
+		          <field name="type">normal</field>
+		          <field name="parent_id" ref="data_account_type_financial_asset"/>
+		          <field name="report_level">third</field>
+		          <field name="sequence">38</field>
+		        </record>
+	        
+	        	<record model="account.account.type" id="data_account_type_portfolio_securities">
+		          <field name="name">Long-term securities of portfolio activity</field>
+		          <field name="report_type">asset</field>
+		          <field name="type">normal</field>
+		          <field name="parent_id" ref="data_account_type_financial_asset"/>
+		          <field name="report_level">third</field>
+		          <field name="sequence">40</field>
+		        </record>
+	        
+	        	<record model="account.account.type" id="data_account_type_other_intangible_asset">
+		            <field name="name">Other intangible asset</field>
+		          	<field name="report_type">asset</field>
+		          	<field name="type">normal</field>
+		          	<field name="parent_id" ref="data_account_type_financial_asset"/>
+		          	<field name="report_level">third</field>
+		          	<field name="sequence">42</field>
+		        </record>
+	        
+	        	<record model="account.account.type" id="data_account_type_loans">
+		            <field name="name">Loans</field>
+		          	<field name="report_type">asset</field>
+		          	<field name="type">normal</field>
+		          	<field name="parent_id" ref="data_account_type_financial_asset"/>
+		          	<field name="report_level">third</field>
+		          	<field name="sequence">44</field>
+		        </record>
+		        
+		        <record model="account.account.type" id="data_account_type_financial_asset_others">
+		          	<field name="name">Others</field>
+		          	<field name="report_type">asset</field>
+		          	<field name="type">normal</field>
+		          	<field name="parent_id" ref="data_account_type_financial_asset"/>
+		          	<field name="report_level">third</field>
+		          	<field name="sequence">46</field>
+		        </record>
+        
+        <!-- ACTIF CIRCULANT -->
+    	<record model="account.account.type" id="data_account_type_current_asset">
+        	<field name="name">Current asset</field>
+          	<field name="report_type">asset</field>
+          	<field name="type">aggregation</field>
+          	<field name="report_level">first</field>
+          	<field name="bold_report" eval="True"/>
+          	<field name="sequence">48</field>
+        </record>
+        	
+        	<record model="account.account.type" id="data_account_type_stocks_outstandings">
+	          <field name="name">Stocks and outstandings</field>
+	          <field name="report_type">asset</field>
+	          <field name="type">aggregation</field>
+	          <field name="parent_id" ref="data_account_type_current_asset"/>
+	          <field name="bold_report" eval="True"/>
+          	  <field name="report_level">second</field>
+          	  <field name="sequence">50</field>
+	        </record>
+	        	
+	        	<record model="account.account.type" id="data_account_type_raw_material">
+		          	<field name="name">Raw materials and other provisions</field>
+		          	<field name="report_type">asset</field>
+		          	<field name="type">normal</field>
+		          	<field name="parent_id" ref="data_account_type_stocks_outstandings"/>
+		          	<field name="report_level">third</field>
+		          	<field name="sequence">52</field>
+		        </record>
+	        	
+	        	<record model="account.account.type" id="data_account_type_in_process_production">
+		          	<field name="name">In-process production [goods and services]</field>
+		          	<field name="report_type">asset</field>
+		          	<field name="type">normal</field>
+		          	<field name="parent_id" ref="data_account_type_stocks_outstandings"/>
+		          	<field name="report_level">third</field>
+		          	<field name="sequence">54</field>
+		        </record>
+	        	
+	        	<record model="account.account.type" id="data_account_type_inter_finished_products">
+		          	<field name="name">Intermediate and finished products</field>
+		          	<field name="report_type">asset</field>
+		          	<field name="type">normal</field>
+		          	<field name="parent_id" ref="data_account_type_stocks_outstandings"/>
+		          	<field name="report_level">third</field>
+		          	<field name="sequence">56</field>
+		        </record>
+	        	
+	        	<record model="account.account.type" id="data_account_type_merchandises">
+		          	<field name="name">Merchandises</field>
+		          	<field name="report_type">asset</field>
+		          	<field name="type">normal</field>
+		          	<field name="parent_id" ref="data_account_type_stocks_outstandings"/>
+		          	<field name="report_level">third</field>
+		          	<field name="sequence">58</field>
+		        </record>
+		    
+		    <record model="account.account.type" id="data_account_type_advances_on_order">
+		          <field name="name">Advances and deposits paid on orders</field>
+		          <field name="report_type">asset</field>
+		          <field name="type">normal</field>
+		          <field name="parent_id" ref="data_account_type_current_asset"/>
+		          <field name="bold_report" eval="True"/>
+          	  	  <field name="report_level">second</field>
+          	  	  <field name="sequence">60</field>
+	        </record>
+		    
+		    <record model="account.account.type" id="data_account_type_operating_receivables">
+		          <field name="name">Operating receivables</field>
+		          <field name="report_type">asset</field>
+		          <field name="type">aggregation</field>
+		          <field name="parent_id" ref="data_account_type_current_asset"/>
+		          <field name="bold_report" eval="True"/>
+          	  	  <field name="report_level">second</field>
+          	  	  <field name="sequence">62</field>
+	        </record>
+	        	
+	        	<record model="account.account.type" id="data_account_type_customer_receivables">
+		          	<field name="name">Customers receivables and related accounts</field>
+		          	<field name="report_type">asset</field>
+		          	<field name="type">normal</field>
+		          	<field name="parent_id" ref="data_account_type_operating_receivables"/>
+		          	<field name="report_level">third</field>
+		          	<field name="sequence">64</field>
+		        </record>
+	        	
+	        	<record model="account.account.type" id="data_account_type_receivables_other">
+		          	<field name="name">Other</field>
+		          	<field name="report_type">asset</field>
+		          	<field name="type">normal</field>
+		          	<field name="parent_id" ref="data_account_type_operating_receivables"/>
+		          	<field name="report_level">third</field>
+		          	<field name="sequence">66</field>
+		        </record>
+	        	
+	        	<record model="account.account.type" id="data_account_type_sub_capital_not_paid">
+		          	<field name="name">Subscribed capital called but not paid</field>
+		          	<field name="report_type">asset</field>
+		          	<field name="type">normal</field>
+		          	<field name="parent_id" ref="data_account_type_operating_receivables"/>
+		          	<field name="report_level">third</field>
+		          	<field name="sequence">68</field>
+		        </record>
+		    
+		    <record model="account.account.type" id="data_account_type_invest_transferable_security">
+		          <field name="name">Transferable security investment</field>
+		          <field name="report_type">asset</field>
+		          <field name="type">aggregation</field>
+		          <field name="parent_id" ref="data_account_type_current_asset"/>
+		          <field name="bold_report" eval="True"/>
+          	  	  <field name="report_level">second</field>
+          	  	  <field name="sequence">70</field>
+	        </record>
+	        	
+	        	<record model="account.account.type" id="data_account_type_own_shares">
+		          	<field name="name">Own shares</field>
+		          	<field name="report_type">asset</field>
+		          	<field name="type">normal</field>
+		          	<field name="parent_id" ref="data_account_type_invest_transferable_security"/>
+		          	<field name="report_level">third</field>
+		          	<field name="sequence">72</field>
+		        </record>
+	        	
+	        	<record model="account.account.type" id="data_account_type_other_securities">
+		          	<field name="name">Other securities</field>
+		          	<field name="report_type">asset</field>
+		          	<field name="type">normal</field>
+		          	<field name="parent_id" ref="data_account_type_invest_transferable_security"/>
+		          	<field name="report_level">third</field>
+		          	<field name="sequence">74</field>
+		        </record>
+		    
+		    <record model="account.account.type" id="data_account_type_treasury_investment">
+		          <field name="name">Treasury investment</field>
+		          <field name="report_type">asset</field>
+		          <field name="type">normal</field>
+		          <field name="parent_id" ref="data_account_type_current_asset"/>
+		          <field name="bold_report" eval="True"/>
+          	  	  <field name="report_level">second</field>
+          	  	  <field name="sequence">76</field>
+	        </record>
+		    
+		    <record model="account.account.type" id="data_account_type_cash_flow">
+		          <field name="name">Cash flow</field>
+		          <field name="report_type">asset</field>
+		          <field name="type">normal</field>
+		          <field name="parent_id" ref="data_account_type_current_asset"/>
+		          <field name="bold_report" eval="True"/>
+          	  	  <field name="report_level">second</field>
+          	  	  <field name="sequence">78</field>
+	        </record>
+		    
+		    <record model="account.account.type" id="data_account_type_prepayments">
+		          <field name="name">Prepayments</field>
+		          <field name="report_type">asset</field>
+		          <field name="type">normal</field>
+		          <field name="parent_id" ref="data_account_type_current_asset"/>
+		          <field name="bold_report" eval="True"/>
+          	  	  <field name="report_level">second</field>
+          	  	  <field name="sequence">80</field>
+	        </record>
+	    
+	    <!-- REGULARISATION -->
+    	<record model="account.account.type" id="data_account_type_adjustment">
+        	<field name="name">Adjustment</field>
+          	<field name="report_type">asset</field>
+          	<field name="type">aggregation</field>
+            <field name="bold_report" eval="True"/>
+          	<field name="report_level">first</field>
+          	<field name="sequence">82</field>
+        </record>
+		    
+		    <record model="account.account.type" id="data_account_type_deferred_charges">
+		          <field name="name">Deferred charges on several years</field>
+		          <field name="report_type">asset</field>
+		          <field name="type">normal</field>
+		          <field name="parent_id" ref="data_account_type_adjustment"/>
+		          <field name="bold_report" eval="True"/>
+          	  	  <field name="report_level">second</field>
+          	  	  <field name="sequence">84</field>
+	        </record>
+		    
+		    <record model="account.account.type" id="data_account_type_loan_redemption_premiums">
+		          <field name="name">Loan redemption premiums</field>
+		          <field name="report_type">asset</field>
+		          <field name="type">normal</field>
+		          <field name="parent_id" ref="data_account_type_adjustment"/>
+		          <field name="bold_report" eval="True"/>
+          	  	  <field name="report_level">second</field>
+          	  	  <field name="sequence">86</field>
+	        </record>
+		    
+		    <record model="account.account.type" id="data_account_type_assets_conversion_rate">
+		          <field name="name">Assets conversion rate adjustment</field>
+		          <field name="report_type">asset</field>
+		          <field name="type">normal</field>
+		          <field name="parent_id" ref="data_account_type_adjustment"/>
+		          <field name="bold_report" eval="True"/>
+          	  	  <field name="report_level">second</field>
+          	  	  <field name="sequence">88</field>
+	        </record>
+	    
+	    <!-- ============ -->
+        <!-- BILAN PASSIF -->
+        <!-- ============ -->
+	   
+	    <!-- CAPITAUX PROPRES -->
+    	<record model="account.account.type" id="data_account_type_equity">
+          <field name="name">Equity</field>
+          <field name="report_type">liability</field>
+          <field name="type">aggregation</field>
+          <field name="bold_report" eval="True"/>
+          <field name="report_level">first</field>
+          <field name="sequence">90</field>
+        </record>
+        	
+        	<record model="account.account.type" id="data_account_type_capital_which_paid">
+		          <field name="name">Capital [which paid]</field>
+		          <field name="report_type">liability</field>
+		          <field name="type">normal</field>
+		          <field name="parent_id" ref="data_account_type_equity"/>
+		          <field name="bold_report" eval="True"/>
+          	  	  <field name="report_level">second</field>
+          	  	  <field name="sequence">92</field>
+	        </record>
+        	
+        	<record model="account.account.type" id="data_account_type_premiums_share">
+		          <field name="name">Premiums on share, merger, contribution</field>
+		          <field name="report_type">liability</field>
+		          <field name="type">normal</field>
+		          <field name="parent_id" ref="data_account_type_equity"/>
+		          <field name="bold_report" eval="True"/>
+          	  	  <field name="report_level">second</field>
+          	  	  <field name="sequence">94</field>
+	        </record>
+        	
+        	<record model="account.account.type" id="data_account_type_revaluation_difference">
+		          <field name="name">Revaluation difference</field>
+		          <field name="report_type">liability</field>
+		          <field name="type">normal</field>
+		          <field name="parent_id" ref="data_account_type_equity"/>
+		          <field name="bold_report" eval="True"/>
+          	  	  <field name="report_level">second</field>
+          	  	  <field name="sequence">96</field>
+	        </record>
+        	
+        	<record model="account.account.type" id="data_account_type_equivalence_difference">
+		          <field name="name">Equivalence difference</field>
+		          <field name="report_type">liability</field>
+		          <field name="type">normal</field>
+		          <field name="parent_id" ref="data_account_type_equity"/>
+		          <field name="bold_report" eval="True"/>
+          	  	  <field name="report_level">second</field>
+          	  	  <field name="sequence">98</field>
+	        </record>
+        	
+        	<record model="account.account.type" id="data_account_type_reserves">
+		          <field name="name">Reserves</field>
+		          <field name="report_type">liability</field>
+		          <field name="type">aggregation</field>
+		          <field name="parent_id" ref="data_account_type_equity"/>
+		          <field name="bold_report" eval="True"/>
+          	  	  <field name="report_level">second</field>
+          	  	  <field name="sequence">100</field>
+	        </record>
+        	
+	        	<record model="account.account.type" id="data_account_type_legal_reserve">
+			          <field name="name">Legal reserve</field>
+			          <field name="report_type">liability</field>
+			          <field name="type">normal</field>
+			          <field name="parent_id" ref="data_account_type_reserves"/>
+			          <field name="report_level">third</field>
+			          <field name="sequence">1</field>
+		        </record>
+        	
+	        	<record model="account.account.type" id="data_account_type_statutory_contractuel_reserves">
+			          <field name="name">Statutory or contractual reserves</field>
+			          <field name="report_type">liability</field>
+			          <field name="type">normal</field>
+			          <field name="parent_id" ref="data_account_type_reserves"/>
+			          <field name="report_level">third</field>
+			          <field name="sequence">102</field>
+		        </record>
+        	
+	        	<record model="account.account.type" id="data_account_type_regulative_reserves">
+			          <field name="name">Regulative reserves</field>
+			          <field name="report_type">liability</field>
+			          <field name="type">normal</field>
+			          <field name="parent_id" ref="data_account_type_reserves"/>
+			          <field name="report_level">third</field>
+			          <field name="sequence">104</field>
+		        </record>
+        	
+	        	<record model="account.account.type" id="data_account_type_others_reserves">
+			          <field name="name">Others</field>
+			          <field name="report_type">liability</field>
+			          <field name="type">normal</field>
+			          <field name="parent_id" ref="data_account_type_reserves"/>
+			          <field name="report_level">third</field>
+			          <field name="sequence">106</field>
+		        </record>
+        	
+        	<record model="account.account.type" id="data_account_type_carried_forward">
+		          <field name="name">Carried forward</field>
+		          <field name="report_type">liability</field>
+		          <field name="type">normal</field>
+		          <field name="parent_id" ref="data_account_type_equity"/>
+		          <field name="bold_report" eval="True"/>
+          	  	  <field name="report_level">second</field>
+          	  	  <field name="sequence">108</field>
+	        </record>
+        	
+        	<record model="account.account.type" id="data_account_type_earnings_of_the_year">
+		          <field name="name">Earnings of the year (profit or loss)</field>
+		          <field name="report_type">liability</field>
+		          <field name="type">normal</field>
+		          <field name="parent_id" ref="data_account_type_equity"/>
+		          <field name="bold_report" eval="True"/>
+          	  	  <field name="report_level">second</field>
+          	  	  <field name="sequence">110</field>
+	        </record>
+        	
+        	<record model="account.account.type" id="data_account_type_investment_subsidies">
+		          <field name="name">Investment subsidies</field>
+		          <field name="report_type">liability</field>
+		          <field name="type">normal</field>
+		          <field name="parent_id" ref="data_account_type_equity"/>
+		          <field name="bold_report" eval="True"/>
+          	  	  <field name="report_level">second</field>
+          	  	  <field name="sequence">112</field>
+	        </record>
+        	
+        	<record model="account.account.type" id="data_account_type_controlled_provisions">
+		          <field name="name">Controlled provisions</field>
+		          <field name="report_type">liability</field>
+		          <field name="type">normal</field>
+		          <field name="parent_id" ref="data_account_type_equity"/>
+		          <field name="bold_report" eval="True"/>
+          	  	  <field name="report_level">second</field>
+          	  	  <field name="sequence">114</field>
+	        </record>
+        
+        <!-- PROVISIONS -->
+    	<record model="account.account.type" id="data_account_type_provisions">
+          <field name="name">Provisions</field>
+          <field name="report_type">liability</field>
+          <field name="type">aggregation</field>
+          <field name="bold_report" eval="True"/>
+          <field name="report_level">first</field>
+          <field name="sequence">116</field>
+        </record>
+        	
+        	<record model="account.account.type" id="data_account_type_liabilities_provisions">
+		          <field name="name">Liabilities provisions</field>
+		          <field name="report_type">liability</field>
+		          <field name="type">normal</field>
+		          <field name="parent_id" ref="data_account_type_provisions"/>
+		          <field name="bold_report" eval="True"/>
+          	  	  <field name="report_level">second</field>
+          	  	  <field name="sequence">118</field>
+	        </record>
+        	
+        	<record model="account.account.type" id="data_account_type_charges_provisions">
+		          <field name="name">Charges provisions</field>
+		          <field name="report_type">liability</field>
+		          <field name="type">normal</field>
+		          <field name="parent_id" ref="data_account_type_provisions"/>
+		          <field name="bold_report" eval="True"/>
+          	  	  <field name="report_level">second</field>
+          	  	  <field name="sequence">120</field>
+	        </record>
+	     
+	     <!-- DEBTS -->
+    	<record model="account.account.type" id="data_account_type_debts">
+          <field name="name">Debts</field>
+          <field name="report_type">liability</field>
+          <field name="type">aggregation</field>
+          <field name="bold_report" eval="True"/>
+          <field name="report_level">first</field>
+          <field name="sequence">122</field>
+        </record>
+		   
+        	<record model="account.account.type" id="data_account_type_financial_debts">
+		          <field name="name">Financial debts</field>
+		          <field name="report_type">liability</field>
+		          <field name="type">aggregation</field>
+		          <field name="parent_id" ref="data_account_type_debts"/>
+		          <field name="bold_report" eval="True"/>
+          	  	  <field name="report_level">second</field>
+          	  	  <field name="sequence">124</field>
+	        </record>
+		   
+	        	<record model="account.account.type" id="data_account_type_convertible_bond_loans">
+			          <field name="name">Convertible bond loans</field>
+			          <field name="report_type">liability</field>
+			          <field name="type">normal</field>
+			          <field name="parent_id" ref="data_account_type_financial_debts"/>
+			          <field name="report_level">third</field>
+			          <field name="sequence">126</field>
+		        </record>
+		   
+	        	<record model="account.account.type" id="data_account_type_other_bond_loans">
+			          <field name="name">Others bond loans</field>
+			          <field name="report_type">liability</field>
+			          <field name="type">normal</field>
+			          <field name="parent_id" ref="data_account_type_financial_debts"/>
+			          <field name="report_level">third</field>
+			          <field name="sequence">128</field>
+		        </record>
+		   
+	        	<record model="account.account.type" id="data_account_type_credit_institutions_loans_debts">
+			          <field name="name">Loans and debts beside credit institutions</field>
+			          <field name="report_type">liability</field>
+			          <field name="type">normal</field>
+			          <field name="parent_id" ref="data_account_type_financial_debts"/>
+			          <field name="report_level">third</field>
+			          <field name="sequence">130</field>
+		        </record>
+		   
+	        	<record model="account.account.type" id="data_account_type_diverses_loans_debts">
+			          <field name="name">Diverses financial loans and debts</field>
+			          <field name="report_type">liability</field>
+			          <field name="type">normal</field>
+			          <field name="parent_id" ref="data_account_type_financial_debts"/>
+			          <field name="report_level">third</field>
+			          <field name="sequence">132</field>
+		        </record>
+    	
+        	<record model="account.account.type" id="data_account_type_received_advances_deposits">
+		          <field name="name">Advances and deposits received on progress orders</field>
+		          <field name="report_type">liability</field>
+		          <field name="type">normal</field>
+		          <field name="parent_id" ref="data_account_type_debts"/>
+		          <field name="bold_report" eval="True"/>
+          	  	  <field name="report_level">second</field>
+          	  	  <field name="sequence">134</field>
+	        </record>
+    	
+        	<record model="account.account.type" id="data_account_type_exploitation_debts">
+		          <field name="name">Exploitation debts</field>
+		          <field name="report_type">liability</field>
+		          <field name="type">aggregation</field>
+		          <field name="parent_id" ref="data_account_type_debts"/>
+		          <field name="bold_report" eval="True"/>
+          	  	  <field name="report_level">second</field>
+          	  	  <field name="sequence">136</field>
+	        </record>
+		   
+	        	<record model="account.account.type" id="data_account_type_supplier_debts">
+			          <field name="name">Supplier debts and other receivable accounts</field>
+			          <field name="report_type">liability</field>
+			          <field name="type">normal</field>
+			          <field name="parent_id" ref="data_account_type_exploitation_debts"/>
+			          <field name="report_level">third</field>
+			          <field name="sequence">138</field>
+		        </record>
+		   
+	        	<record model="account.account.type" id="data_account_type_tax_social_debts">
+			          <field name="name">Tax and social debts</field>
+			          <field name="report_type">liability</field>
+			          <field name="type">normal</field>
+			          <field name="parent_id" ref="data_account_type_exploitation_debts"/>
+			          <field name="report_level">third</field>
+			          <field name="sequence">140</field>
+		        </record>
+		        
+	        	<record model="account.account.type" id="data_account_type_others_exploitation_debts">
+			          <field name="name">Others</field>
+			          <field name="report_type">liability</field>
+			          <field name="type">normal</field>
+			          <field name="parent_id" ref="data_account_type_exploitation_debts"/>
+			          <field name="report_level">third</field>
+			          <field name="sequence">142</field>
+		        </record>
+	        
+        	<record model="account.account.type" id="data_account_type_diverses_debts">
+		          <field name="name">Diverses debts</field>
+		          <field name="report_type">liability</field>
+		          <field name="type">aggregation</field>
+		          <field name="parent_id" ref="data_account_type_debts"/>
+		          <field name="bold_report" eval="True"/>
+          	  	  <field name="report_level">second</field>
+          	  	  <field name="sequence">144</field>
+	        </record>
+		        
+	        	<record model="account.account.type" id="data_account_type_debts_capital_assets">
+			          <field name="name">Debts on capital assets and related payables</field>
+			          <field name="report_type">liability</field>
+			          <field name="type">normal</field>
+			          <field name="parent_id" ref="data_account_type_diverses_debts"/>
+			          <field name="report_level">third</field>
+			          <field name="sequence">146</field>
+		        </record>
+		        
+	        	<record model="account.account.type" id="data_account_type_fiscal_debts">
+			          <field name="name">Fiscal debts (income taxes)</field>
+			          <field name="report_type">liability</field>
+			          <field name="type">normal</field>
+			          <field name="parent_id" ref="data_account_type_diverses_debts"/>
+			          <field name="report_level">third</field>
+			          <field name="sequence">148</field>
+		        </record>
+		        
+	        	<record model="account.account.type" id="data_account_type_others_diverses_debts">
+			          <field name="name">Others</field>
+			          <field name="report_type">liability</field>
+			          <field name="type">normal</field>
+			          <field name="parent_id" ref="data_account_type_diverses_debts"/>
+			          <field name="report_level">third</field>
+			          <field name="sequence">150</field>
+		        </record>
+	        
+        	<record model="account.account.type" id="data_account_type_liability_treasury_investment">
+		          <field name="name">Treasury investment</field>
+		          <field name="report_type">liability</field>
+		          <field name="type">normal</field>
+		          <field name="parent_id" ref="data_account_type_debts"/>
+		          <field name="bold_report" eval="True"/>
+          	  	  <field name="report_level">second</field>
+          	  	  <field name="sequence">152</field>
+	        </record>
+	        
+        	<record model="account.account.type" id="data_account_type_unearned_income">
+		          <field name="name">Unearned income</field>
+		          <field name="report_type">liability</field>
+		          <field name="type">normal</field>
+		          <field name="parent_id" ref="data_account_type_debts"/>
+		          <field name="bold_report" eval="True"/>
+          	  	  <field name="report_level">second</field>
+          	  	  <field name="sequence">154</field>
+	        </record>
+        
+        <record model="account.account.type" id="data_account_type_liabilitys_conversion_rate">
+	          <field name="name">Liabilities conversion rate adjustment</field>
+	          <field name="report_type">liability</field>
+	          <field name="type">normal</field>
+	          <field name="bold_report" eval="True"/>
+          	  <field name="report_level">second</field>
+          	  <field name="sequence">156</field>
+        </record>
+        
+        <!-- ================== -->
+        <!-- COMPTE DE RESULTAT -->
+        <!-- ================== -->
+        
+        <!-- RESULTAT D'EXPLOITATION (GROUPE 1 & 2) -->
+        <record model="account.account.type" id="data_account_type_operating_revenues">
+	          <field name="name">Operating revenues</field>
+	          <field name="report_type">income</field>
+	          <field name="type">aggregation</field>
+	          <field name="bold_report" eval="True"/>
+          	  <field name="report_level">second</field>
+          	  <field name="sequence">158</field>
+	          <field name="profit_loss_group">group_1</field>
+        </record>
+        
+        	<record model="account.account.type" id="data_account_type_merchandises_sales">
+		          <field name="name">Merchandises sales</field>
+		          <field name="report_type">income</field>
+		          <field name="type">normal</field>
+		          <field name="parent_id" ref="data_account_type_operating_revenues"/>
+		          <field name="report_level">third</field>
+		          <field name="sequence">160</field>
+		          <field name="profit_loss_group">group_1</field>
+	        </record>
+        
+        	<record model="account.account.type" id="data_account_type_sold_production">
+		          <field name="name">Sold production [goods and services]</field>
+		          <field name="report_type">income</field>
+		          <field name="type">normal</field>
+		          <field name="parent_id" ref="data_account_type_operating_revenues"/>
+		          <field name="report_level">third</field>
+		          <field name="sequence">162</field>
+		          <field name="profit_loss_group">group_1</field>
+	        </record>
+        
+	        	<record model="account.account.type" id="data_account_type_subtotal_a">
+			          <field name="name">Subtotal A - Net turnover amount</field>
+			          <field name="report_type">income</field>
+			          <field name="type">normal</field>
+			          <field name="parent_id" ref="data_account_type_operating_revenues"/>
+			          <field name="bold_report" eval="True"/>
+       	  			  <field name="report_level">fourth</field>
+       	  			  <field name="sequence">164</field>
+			          <field name="profit_loss_group">group_1</field>
+		        </record>
+        
+	        	<record model="account.account.type" id="data_account_type_subtotal_exportation">
+			          <field name="name">Which exportation</field>
+			          <field name="report_type">income</field>
+			          <field name="type">normal</field>
+			          <field name="parent_id" ref="data_account_type_operating_revenues"/>
+       	  			  <field name="report_level">fourth</field>
+       	  			  <field name="sequence">166</field>
+			          <field name="profit_loss_group">group_1</field>
+		        </record>
+        
+        	<record model="account.account.type" id="data_account_type_stocked_production">
+		          <field name="name">Stocked production</field>
+		          <field name="report_type">income</field>
+		          <field name="type">normal</field>
+		          <field name="parent_id" ref="data_account_type_operating_revenues"/>
+		          <field name="report_level">third</field>
+		          <field name="sequence">168</field>
+		          <field name="profit_loss_group">group_1</field>
+	        </record>
+        
+        	<record model="account.account.type" id="data_account_type_asset_production">
+		          <field name="name">Asset production</field>
+		          <field name="report_type">income</field>
+		          <field name="type">normal</field>
+		          <field name="parent_id" ref="data_account_type_operating_revenues"/>
+		          <field name="report_level">third</field>
+		          <field name="sequence">170</field>
+		          <field name="profit_loss_group">group_1</field>
+	        </record>
+        
+        	<record model="account.account.type" id="data_account_type_operating_subsidies">
+		          <field name="name">Operating subsidies</field>
+		          <field name="report_type">income</field>
+		          <field name="type">normal</field>
+		          <field name="parent_id" ref="data_account_type_operating_revenues"/>
+		          <field name="report_level">third</field>
+		          <field name="sequence">172</field>
+		          <field name="profit_loss_group">group_1</field>
+	        </record>
+        
+        	<record model="account.account.type" id="data_account_type_provisions_writeback">
+		          <field name="name">Writeback of provisions (and amortization) and transfers of costs </field>
+		          <field name="report_type">income</field>
+		          <field name="type">normal</field>
+		          <field name="parent_id" ref="data_account_type_operating_revenues"/>
+		          <field name="report_level">third</field>
+		          <field name="sequence">174</field>
+		          <field name="profit_loss_group">group_1</field>
+	        </record>
+        
+        	<record model="account.account.type" id="data_account_type_operating_revenues_others">
+		          <field name="name">Others incomes</field>
+		          <field name="report_type">income</field>
+		          <field name="type">normal</field>
+		          <field name="parent_id" ref="data_account_type_operating_revenues"/>
+		          <field name="report_level">third</field>
+		          <field name="sequence">176</field>
+		          <field name="profit_loss_group">group_1</field>
+	        </record>
+	       
+	    <record model="account.account.type" id="data_account_type_operating_expenses">
+	          <field name="name">Operating expenses</field>
+	          <field name="report_type">expense</field>
+	          <field name="type">aggregation</field>
+	          <field name="bold_report" eval="True"/>
+          	  <field name="report_level">second</field>
+          	  <field name="sequence">178</field>
+	          <field name="profit_loss_group">group_2</field>
+        </record>
+        	
+        	<record model="account.account.type" id="data_account_type_merchandises_purchases">
+		          <field name="name">Merchandises purchases</field>
+		          <field name="report_type">expense</field>
+		          <field name="type">normal</field>
+		          <field name="parent_id" ref="data_account_type_operating_expenses"/>
+		          <field name="report_level">third</field>
+		          <field name="sequence">180</field>
+		          <field name="profit_loss_group">group_2</field>
+	        </record>
+	        
+        	<record model="account.account.type" id="data_account_type_inventories_change">
+		          <field name="name">Inventories change</field>
+		          <field name="report_type">expense</field>
+		          <field name="type">normal</field>
+		          <field name="parent_id" ref="data_account_type_operating_expenses"/>
+  	  			  <field name="report_level">fourth</field>
+  	  			  <field name="sequence">182</field>
+		          <field name="profit_loss_group">group_2</field>
+	        </record>
+	        
+        	<record model="account.account.type" id="data_account_type_raw_material_purchases">
+		          <field name="name">Raw materials purchases and other provisions</field>
+		          <field name="report_type">expense</field>
+		          <field name="type">normal</field>
+		          <field name="parent_id" ref="data_account_type_operating_expenses"/>
+		          <field name="report_level">third</field>
+		          <field name="sequence">184</field>
+		          <field name="profit_loss_group">group_2</field>
+	        </record>
+	        
+        	<record model="account.account.type" id="data_account_type_provisions_inventories_change">
+		          <field name="name">Inventories change</field>
+		          <field name="report_type">expense</field>
+		          <field name="type">normal</field>
+		          <field name="parent_id" ref="data_account_type_operating_expenses"/>
+   	  			  <field name="report_level">fourth</field>
+   	  			  <field name="sequence">186</field>
+		          <field name="profit_loss_group">group_2</field>
+	        </record>
+	        
+        	<record model="account.account.type" id="data_account_type_others_purchases">
+		          <field name="name">Others purchases and external expenses</field>
+		          <field name="report_type">expense</field>
+		          <field name="type">normal</field>
+		          <field name="parent_id" ref="data_account_type_operating_expenses"/>
+		          <field name="report_level">third</field>
+		          <field name="sequence">188</field>
+		          <field name="profit_loss_group">group_2</field>
+	        </record>
+	        
+        	<record model="account.account.type" id="data_account_type_taxes_and_related_payments">
+		          <field name="name">Taxes and related payments</field>
+		          <field name="report_type">expense</field>
+		          <field name="type">normal</field>
+		          <field name="parent_id" ref="data_account_type_operating_expenses"/>
+		          <field name="report_level">third</field>
+		          <field name="sequence">190</field>
+		          <field name="profit_loss_group">group_2</field>
+	        </record>
+	        
+        	<record model="account.account.type" id="data_account_type_salary_and_wages">
+		          <field name="name">Salary and wages</field>
+		          <field name="report_type">expense</field>
+		          <field name="type">normal</field>
+		          <field name="parent_id" ref="data_account_type_operating_expenses"/>
+		          <field name="report_level">third</field>
+		          <field name="sequence">192</field>
+		          <field name="profit_loss_group">group_2</field>
+	        </record>
+	        
+        	<record model="account.account.type" id="data_account_type_sociales_expenses">
+		          <field name="name">Sociales expenses</field>
+		          <field name="report_type">expense</field>
+		          <field name="type">normal</field>
+		          <field name="parent_id" ref="data_account_type_operating_expenses"/>
+		          <field name="report_level">third</field>
+		          <field name="sequence">194</field>
+		          <field name="profit_loss_group">group_2</field>
+	        </record>
+	        
+        	<record model="account.account.type" id="data_account_type_depreciation_charge">
+		          <field name="name">Depreciation charges</field>
+		          <field name="report_type">expense</field>
+		          <field name="type">aggregation</field>
+		          <field name="parent_id" ref="data_account_type_operating_expenses"/>
+		          <field name="report_level">third</field>
+		          <field name="sequence">196</field>
+		          <field name="profit_loss_group">group_2</field>
+	        </record>
+	        
+	        	<record model="account.account.type" id="data_account_type_fixed_assets_charges">
+			          <field name="name">On fixed assets : depreciation charges</field>
+			          <field name="report_type">expense</field>
+			          <field name="type">normal</field>
+			          <field name="parent_id" ref="data_account_type_depreciation_charge"/>
+       	  			  <field name="report_level">fourth</field>
+       	  			  <field name="sequence">198</field>
+			          <field name="profit_loss_group">group_2</field>
+		        </record>
+	        
+	        	<record model="account.account.type" id="data_account_type_fixed_assets_impairments">
+			          <field name="name">On fixed assets : depreciation impairments</field>
+			          <field name="report_type">expense</field>
+			          <field name="type">normal</field>
+			          <field name="parent_id" ref="data_account_type_depreciation_charge"/>
+       	  			  <field name="report_level">fourth</field>
+       	  			  <field name="sequence">200</field>
+			          <field name="profit_loss_group">group_2</field>
+		        </record>
+	        
+	        	<record model="account.account.type" id="data_account_type_current_asset_impairments">
+			          <field name="name">On current asset : depreciation impairments</field>
+			          <field name="report_type">expense</field>
+			          <field name="type">normal</field>
+			          <field name="parent_id" ref="data_account_type_depreciation_charge"/>
+       	  			  <field name="report_level">fourth</field>
+       	  			  <field name="sequence">202</field>
+			          <field name="profit_loss_group">group_2</field>
+		        </record>
+	        
+        	<record model="account.account.type" id="data_account_type_depreciation_provision">
+		          <field name="name">Provision depreciation</field>
+		          <field name="report_type">expense</field>
+		          <field name="type">normal</field>
+		          <field name="parent_id" ref="data_account_type_operating_expenses"/>
+		          <field name="report_level">third</field>
+		          <field name="sequence">204</field>
+		          <field name="profit_loss_group">group_2</field>
+	        </record>
+	        
+        	<record model="account.account.type" id="data_account_type_others_expenses">
+		          <field name="name">Other expenses</field>
+		          <field name="report_type">expense</field>
+		          <field name="type">normal</field>
+		          <field name="parent_id" ref="data_account_type_operating_expenses"/>
+		          <field name="report_level">third</field>
+		          <field name="sequence">206</field>
+		          <field name="profit_loss_group">group_2</field>
+	        </record>
+	        
+        	<record model="account.account.type" id="data_account_type_including">
+		          <field name="name">Including</field>
+		          <field name="report_type">expense</field>
+		          <field name="type">aggregation</field>
+		          <field name="report_level">second</field>
+		          <field name="sequence">208</field>
+		          <field name="profit_loss_group">no_group</field>
+	        </record>
+		        
+	        	<record model="account.account.type" id="data_account_type_transferable_royalty">
+			          <field name="name">Transferable lease royalty</field>
+			          <field name="report_type">expense</field>
+			          <field name="type">normal</field>
+			          <field name="parent_id" ref="data_account_type_including"/>
+			          <field name="report_level">third</field>
+			          <field name="sequence">210</field>
+			          <field name="profit_loss_group">no_group</field>
+		        </record>
+		        
+	        	<record model="account.account.type" id="data_account_type_property_royalty">
+			          <field name="name">Property lease royalty</field>
+			          <field name="report_type">expense</field>
+			          <field name="type">normal</field>
+			          <field name="parent_id" ref="data_account_type_including"/>
+			          <field name="report_level">third</field>
+			          <field name="sequence">212</field>
+			          <field name="profit_loss_group">no_group</field>
+		        </record>
+		        
+		        <!-- RESULTAT COURANT (GROUPE 3 & 4) -->
+		        <record model="account.account.type" id="data_account_type_earning_share_common">
+			          <field name="name">Share earning on operations made in common</field>
+			          <field name="report_type">income</field>
+			          <field name="type">aggregation</field>
+			          <field name="bold_report" eval="True"/>
+          	  		  <field name="report_level">second</field>
+          	  		  <field name="sequence">216</field>
+			          <field name="profit_loss_group">group_3</field>
+		        </record>
+	        
+			        <record model="account.account.type" id="data_account_type_transfered_gain_or_loss">
+				          <field name="name">Transfered gain or loss</field>
+				          <field name="report_type">income</field>
+				          <field name="type">normal</field>
+				          <field name="parent_id" ref="data_account_type_earning_share_common"/>
+				          <field name="report_level">third</field>
+				          <field name="sequence">218</field>
+				          <field name="profit_loss_group">group_3</field>
+			        </record>
+	        
+			        <record model="account.account.type" id="data_account_type_transfered_loss_or_gain">
+				          <field name="name">Transfered loses or gains</field>
+				          <field name="report_type">expense</field>
+				          <field name="type">normal</field>
+				          <field name="parent_id" ref="data_account_type_earning_share_common"/>
+				          <field name="report_level">third</field>
+				          <field name="sequence">220</field>
+				          <field name="profit_loss_group">group_4</field>
+			        </record>
+	        
+		        <!-- RESULTAT FINANCIER (GROUPE 5 & 6) -->
+		        <record model="account.account.type" id="data_account_type_financial_incomes">
+			          <field name="name">Financial incomes</field>
+			          <field name="report_type">income</field>
+			          <field name="type">aggregation</field>
+			          <field name="bold_report" eval="True"/>
+          	  		  <field name="report_level">second</field>
+          	  		  <field name="sequence">222</field>
+			          <field name="profit_loss_group">group_5</field>
+		        </record>
+	        
+			        <record model="account.account.type" id="data_account_type_income_profit_sharing">
+				          <field name="name">Profit sharing</field>
+				          <field name="report_type">income</field>
+				          <field name="type">normal</field>
+				          <field name="parent_id" ref="data_account_type_financial_incomes"/>
+				          <field name="report_level">third</field>
+				          <field name="sequence">224</field>
+				          <field name="profit_loss_group">group_5</field>
+			        </record>
+	        
+			        <record model="account.account.type" id="data_account_type_others_transferable_values">
+				          <field name="name">Others transferable values and fixed asset debts</field>
+				          <field name="report_type">income</field>
+				          <field name="type">normal</field>
+				          <field name="parent_id" ref="data_account_type_financial_incomes"/>
+				          <field name="report_level">third</field>
+				          <field name="sequence">226</field>
+				          <field name="profit_loss_group">group_5</field>
+			        </record>
+	        
+			        <record model="account.account.type" id="data_account_type_others_interest_and_incomes">
+				          <field name="name">Others interest and related incomes</field>
+				          <field name="report_type">income</field>
+				          <field name="type">normal</field>
+				          <field name="parent_id" ref="data_account_type_financial_incomes"/>
+				          <field name="report_level">third</field>
+				          <field name="sequence">228</field>
+				          <field name="profit_loss_group">group_5</field>
+			        </record>
+	        
+			        <record model="account.account.type" id="data_account_type_writeback_on_provisions">
+				          <field name="name">Writeback on provisions and transfers of costs</field>
+				          <field name="report_type">income</field>
+				          <field name="type">normal</field>
+				          <field name="parent_id" ref="data_account_type_financial_incomes"/>
+				          <field name="report_level">third</field>
+				          <field name="sequence">230</field>
+				          <field name="profit_loss_group">group_5</field>
+			        </record>
+	        
+			        <record model="account.account.type" id="data_account_type_positive_adjustment_rate">
+				          <field name="name">Positive adjustments rate</field>
+				          <field name="report_type">income</field>
+				          <field name="type">normal</field>
+				          <field name="parent_id" ref="data_account_type_financial_incomes"/>
+				          <field name="report_level">third</field>
+				          <field name="sequence">232</field>
+				          <field name="profit_loss_group">group_5</field>
+			        </record>
+	        
+			        <record model="account.account.type" id="data_account_type_net_investment_asset_value">
+				          <field name="name">Net incomes on investment fixed asset</field>
+				          <field name="report_type">income</field>
+				          <field name="type">normal</field>
+				          <field name="parent_id" ref="data_account_type_financial_incomes"/>
+				          <field name="report_level">third</field>
+				          <field name="sequence">234</field>
+				          <field name="profit_loss_group">group_5</field>
+			        </record>
+	        
+		        <record model="account.account.type" id="data_account_financial_expenses">
+			          <field name="name">Financial expenses</field>
+			          <field name="report_type">expense</field>
+			          <field name="type">aggregation</field>
+			          <field name="bold_report" eval="True"/>
+          	  		  <field name="report_level">second</field>
+          	  		  <field name="sequence">236</field>
+			          <field name="profit_loss_group">group_6</field>
+		        </record>
+		        
+		        	<record model="account.account.type" id="data_account_type_financial_depreciation_charge">
+				          <field name="name">Depreciation charges</field>
+				          <field name="report_type">expense</field>
+				          <field name="type">normal</field>
+				          <field name="parent_id" ref="data_account_financial_expenses"/>
+				          <field name="report_level">third</field>
+				          <field name="sequence">238</field>
+				          <field name="profit_loss_group">group_6</field>
+			        </record>
+		        
+		        	<record model="account.account.type" id="data_account_type_interest_related_expenses">
+				          <field name="name">Interest and related expenses</field>
+				          <field name="report_type">expense</field>
+				          <field name="type">normal</field>
+				          <field name="parent_id" ref="data_account_financial_expenses"/>
+				          <field name="report_level">third</field>
+				          <field name="sequence">240</field>
+				          <field name="profit_loss_group">group_6</field>
+			        </record>
+			        
+			        <record model="account.account.type" id="data_account_type_negative_adjustment_rate">
+				          <field name="name">Negative adjustments rate</field>
+				          <field name="report_type">expense</field>
+				          <field name="type">normal</field>
+				          <field name="parent_id" ref="data_account_financial_expenses"/>
+				          <field name="report_level">third</field>
+				          <field name="sequence">242</field>
+				          <field name="profit_loss_group">group_6</field>
+			        </record>
+	        
+			        <record model="account.account.type" id="data_account_type_net_asset_value">
+				          <field name="name">Net expenses on investment fixed asset</field>
+				          <field name="report_type">expense</field>
+				          <field name="type">normal</field>
+				          <field name="parent_id" ref="data_account_financial_expenses"/>
+				          <field name="report_level">third</field>
+				          <field name="sequence">244</field>
+				          <field name="profit_loss_group">group_6</field>
+			        </record>
+			        
+			        <!-- RESULTAT EXCEPTIONNEL (GROUPE 7 & 8) -->
+			        <record model="account.account.type" id="data_account_type_extraordinary_income">
+				          <field name="name">Extraordinary income</field>
+				          <field name="report_type">income</field>
+				          <field name="type">aggregation</field>
+				          <field name="bold_report" eval="True"/>
+          	  			  <field name="report_level">second</field>
+          	  			  <field name="sequence">250</field>
+				          <field name="profit_loss_group">group_7</field>
+			        </record>
+	        
+				        <record model="account.account.type" id="data_account_type_management_operations">
+					          <field name="name">Management operations</field>
+					          <field name="report_type">income</field>
+					          <field name="type">normal</field>
+					          <field name="parent_id" ref="data_account_type_extraordinary_income"/>
+					          <field name="report_level">third</field>
+					          <field name="sequence">252</field>
+					          <field name="profit_loss_group">group_7</field>
+				        </record>
+	        
+				        <record model="account.account.type" id="data_account_type_capital_operations">
+					          <field name="name">Capital operations</field>
+					          <field name="report_type">income</field>
+					          <field name="type">normal</field>
+					          <field name="parent_id" ref="data_account_type_extraordinary_income"/>
+					          <field name="report_level">third</field>
+					          <field name="sequence">254</field>
+					          <field name="profit_loss_group">group_7</field>
+				        </record>
+				        
+				        <record model="account.account.type" id="data_account_type_current_earning_provisions_writeback">
+					          <field name="name">Writeback of provisions and transfers of costs </field>
+					          <field name="report_type">income</field>
+					          <field name="type">normal</field>
+					          <field name="parent_id" ref="data_account_type_extraordinary_income"/>
+					          <field name="report_level">third</field>
+					          <field name="sequence">256</field>
+					          <field name="profit_loss_group">group_7</field>
+				        </record>
+				    
+				    <record model="account.account.type" id="data_account_type_extraordinary_expenses">
+				          <field name="name">Extraordinary expenses</field>
+				          <field name="report_type">expense</field>
+				          <field name="type">aggregation</field>
+				          <field name="bold_report" eval="True"/>
+          	  			  <field name="report_level">second</field>
+          	  			  <field name="sequence">258</field>
+				          <field name="profit_loss_group">group_8</field>
+			        </record>
+			        
+			        	<record model="account.account.type" id="data_account_type_expenses_management_operations">
+					          <field name="name">Management operations</field>
+					          <field name="report_type">expense</field>
+					          <field name="type">normal</field>
+					          <field name="parent_id" ref="data_account_type_extraordinary_expenses"/>
+					          <field name="report_level">third</field>
+					          <field name="sequence">260</field>
+					          <field name="profit_loss_group">group_8</field>
+				        </record>
+	        
+				        <record model="account.account.type" id="data_account_type_expenses_capital_operations">
+					          <field name="name">Capital operations</field>
+					          <field name="report_type">expense</field>
+					          <field name="type">normal</field>
+					          <field name="parent_id" ref="data_account_type_extraordinary_expenses"/>
+					          <field name="report_level">third</field>
+					          <field name="sequence">262</field>
+					          <field name="profit_loss_group">group_8</field>
+				        </record>
+				        
+			        	<record model="account.account.type" id="data_account_type_extraordinary_depreciation_charge">
+					          <field name="name">Depreciation charges</field>
+					          <field name="report_type">expense</field>
+					          <field name="type">normal</field>
+					          <field name="parent_id" ref="data_account_type_extraordinary_expenses"/>
+					          <field name="report_level">third</field>
+					          <field name="sequence">264</field>
+					          <field name="profit_loss_group">group_8</field>
+				        </record>
+		        
+	       			<!-- GROUPE 9 & 10 -->
+		        	<record model="account.account.type" id="data_account_type_employee_profit_sharing">
+				          <field name="name">Employee profit-sharing</field>
+				          <field name="report_type">expense</field>
+				          <field name="type">normal</field>
+				          <field name="bold_report" eval="True"/>
+          	  			  <field name="report_level">second</field>
+          	  			  <field name="sequence">268</field>
+				          <field name="profit_loss_group">group_9</field>
+			        </record>
+	        
+		        	<record model="account.account.type" id="data_account_type_employee_profit_taxes">
+				          <field name="name">Profit taxes</field>
+				          <field name="report_type">expense</field>
+				          <field name="type">normal</field>
+				          <field name="bold_report" eval="True"/>
+          	  			  <field name="report_level">second</field>
+          	  			  <field name="sequence">270</field>
+				          <field name="profit_loss_group">group_10</field>
+			        </record>
+		        
+    </data>
+</openerp>
+

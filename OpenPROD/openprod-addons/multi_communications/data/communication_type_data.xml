@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<openerp>
+    <data noupdate="0">
+        
+        <record model="multi.communication.type" id="phone_type">
+            <field name="name">Phone</field>
+            <field name="type">phone</field>
+        </record>
+        
+        <record model="multi.communication.type" id="mobile_type">
+            <field name="name">Mobile</field>
+            <field name="type">mobile</field>
+        </record>
+        
+        <record model="multi.communication.type" id="email_type">
+            <field name="name">Email</field>
+            <field name="type">email</field>
+        </record>
+        
+        <record model="multi.communication.type" id="fax_type">
+            <field name="name">Fax</field>
+            <field name="type">fax</field>
+        </record>
+        
+        <record model="multi.communication.type" id="webp_type">
+            <field name="name">Web Portable</field>
+            <field name="type">webp</field>
+        </record>
+        
+    </data>
+</openerp>

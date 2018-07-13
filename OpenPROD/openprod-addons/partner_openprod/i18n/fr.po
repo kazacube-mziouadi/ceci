@@ -1,0 +1,973 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* partner_openprod
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 9.0c\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-06-21 09:38+0000\n"
+"PO-Revision-Date: 2017-06-21 09:38+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: partner_openprod
+#: model:mail.template,body_html:partner_openprod.email_template_edi_partner_mail_free
+msgid "\n"
+"<div style=\"font-family: 'Lucica Grande', Ubuntu, Arial, Verdana, sans-serif; font-size: 12px; color: rgb(34, 34, 34); background-color: #FFF; \">\n"
+"	\n"
+"	<p>Dear ,</p>\n"
+"</div>\n"
+"            "
+msgstr "\n"
+"<div style=\"font-family: 'Lucica Grande', Ubuntu, Arial, Verdana, sans-serif; font-size: 12px; color: rgb(34, 34, 34); background-color: #FFF; \">\n"
+"	\n"
+"	<p>Dear ,</p>\n"
+"</div>\n"
+"            "
+
+#. module: partner_openprod
+#: model:mail.template,body_html:partner_openprod.email_template_edi_partner_mail_free_mass
+msgid "\n"
+"<div style=\"font-family: 'Lucica Grande', Ubuntu, Arial, Verdana, sans-serif; font-size: 12px; color: rgb(34, 34, 34); background-color: #FFF; \">\n"
+"    \n"
+"    <p>Dear ,</p>\n"
+"</div>\n"
+"            "
+msgstr "\n"
+"<div style=\"font-family: 'Lucica Grande', Ubuntu, Arial, Verdana, sans-serif; font-size: 12px; color: rgb(34, 34, 34); background-color: #FFF; \">\n"
+"    \n"
+"    <p>Dear ,</p>\n"
+"</div>\n"
+"            "
+
+#. module: partner_openprod
+#: model:mail.template,subject:partner_openprod.email_template_edi_partner_mail_free
+#: model:mail.template,subject:partner_openprod.email_template_edi_partner_mail_free_mass
+msgid "${object.name}"
+msgstr "${object.name}"
+
+#. module: partner_openprod
+#: code:addons/partner_openprod/res_partner.py:881
+#: code:addons/partner_openprod/res_partner.py:882
+#, python-format
+msgid "(copy) %s"
+msgstr "(copie) %s"
+
+#. module: partner_openprod
+#: model:ir.model.fields,field_description:partner_openprod.field_res_company_title_shortcut
+msgid "Abbreviation"
+msgstr "Abréviation"
+
+#. module: partner_openprod
+#: model:ir.ui.view,arch_db:partner_openprod.openprod_view_partner_form
+msgid "Actions"
+msgstr "Actions"
+
+#. module: partner_openprod
+#: model:ir.model.fields,field_description:partner_openprod.field_mail_compose_message_id_active
+msgid "Active ID"
+msgstr "Active ID"
+
+#. module: partner_openprod
+#: model:ir.ui.view,arch_db:partner_openprod.openprod_view_all_partners_search
+#: model:ir.ui.view,arch_db:partner_openprod.openprod_view_partner_customer_search
+#: model:ir.ui.view,arch_db:partner_openprod.openprod_view_partner_supplier_search
+msgid "Active partner"
+msgstr "Partenaires actifs"
+
+#. module: partner_openprod
+#: model:ir.actions.act_window,name:partner_openprod.act_partner_address
+#: model:ir.model.fields,field_description:partner_openprod.field_res_partner_address_id
+#: model:ir.ui.menu,name:partner_openprod.menu_open_partner_address
+#: model:ir.ui.view,arch_db:partner_openprod.openprod_view_address_form
+#: model:ir.ui.view,arch_db:partner_openprod.openprod_view_partner_form
+msgid "Address"
+msgstr "Adresse"
+
+#. module: partner_openprod
+#: model:ir.ui.view,arch_db:partner_openprod.openprod_country_form
+msgid "Address format..."
+msgstr "Format d'adresse..."
+
+#. module: partner_openprod
+#: model:ir.model.fields,field_description:partner_openprod.field_res_partner_address_name
+msgid "Address name"
+msgstr "Nom de l'adresse"
+
+#. module: partner_openprod
+#: model:ir.model.fields,field_description:partner_openprod.field_address_address_note
+#: model:ir.model.fields,field_description:partner_openprod.field_res_partner_address_note
+msgid "Address note"
+msgstr "Note sur l'adresse"
+
+#. module: partner_openprod
+#: model:ir.model,name:partner_openprod.model_address
+msgid "Address object"
+msgstr "L'objet des adresses"
+
+#. module: partner_openprod
+#: model:res.groups,name:partner_openprod.partner_manager
+msgid "Administrator"
+msgstr "Administrateur"
+
+#. module: partner_openprod
+#: model:ir.actions.act_window,name:partner_openprod.act_all_reset_workflow_partner
+msgid "All reset workflow"
+msgstr "Réinitiliser tous les flux de travail"
+
+#. module: partner_openprod
+#: model:ir.ui.view,arch_db:partner_openprod.openprod_view_partner_form
+msgid "Analysis"
+msgstr "Analyses"
+
+#. module: partner_openprod
+#: model:ir.model.fields,field_description:partner_openprod.field_res_partner_attn
+msgid "Attn"
+msgstr "Nom suite"
+
+#. module: partner_openprod
+#: model:ir.model.fields,field_description:partner_openprod.field_res_partner_calendar_id
+msgid "Calendar"
+msgstr "Calendrier"
+
+#. module: partner_openprod
+#: model:ir.ui.view,arch_db:partner_openprod.view_form_wizard_partner_mass_mail
+msgid "Cancel"
+msgstr "Annuler"
+
+#. module: partner_openprod
+#: model:ir.actions.act_window,name:partner_openprod.act_partner_category
+#: model:ir.model.fields,field_description:partner_openprod.field_res_partner_category_ids
+msgid "Categories"
+msgstr "Catégories"
+
+#. module: partner_openprod
+#: model:ir.ui.view,arch_db:partner_openprod.view_partner_category_form
+msgid "Category details"
+msgstr "Détails de la catégorie"
+
+#. module: partner_openprod
+#: model:ir.model.fields,field_description:partner_openprod.field_address_city
+msgid "City"
+msgstr "Ville"
+
+#. module: partner_openprod
+#: model:ir.actions.act_window,name:partner_openprod.act_partner_title
+#: model:ir.model.fields,field_description:partner_openprod.field_res_partner_civility_id
+#: model:ir.ui.menu,name:partner_openprod.menu_open_partner_title
+msgid "Civility"
+msgstr "Civilité"
+
+#. module: partner_openprod
+#: model:ir.model.fields,field_description:partner_openprod.field_partner_stat_family_code
+#: model:ir.model.fields,field_description:partner_openprod.field_res_region_code
+msgid "Code"
+msgstr "Code"
+
+#. module: partner_openprod
+#: model:ir.ui.view,arch_db:partner_openprod.openprod_view_partner_form
+msgid "Communication"
+msgstr "Communication"
+
+#. module: partner_openprod
+#: model:ir.model,name:partner_openprod.model_res_company
+msgid "Companies"
+msgstr "Sociétés"
+
+#. module: partner_openprod
+#: model:ir.ui.menu,name:partner_openprod.menu_partner_configuration
+msgid "Configuration"
+msgstr "Configuration"
+
+#. module: partner_openprod
+#: code:addons/partner_openprod/mail_template.py:15
+#, python-format
+msgid "Confirmation"
+msgstr "Confirmation"
+
+#. module: partner_openprod
+#: model:ir.ui.menu,name:partner_openprod.menu_open_partner_contact
+msgid "Contact"
+msgstr "Contact"
+
+#. module: partner_openprod
+#: model:ir.actions.act_window,name:partner_openprod.act_partner_contact
+#: model:ir.ui.view,arch_db:partner_openprod.openprod_view_address_tree
+#: model:ir.ui.view,arch_db:partner_openprod.openprod_view_partner_contact_tree
+#: model:ir.ui.view,arch_db:partner_openprod.openprod_view_partner_form
+msgid "Contacts"
+msgstr "Contacts"
+
+#. module: partner_openprod
+#: model:ir.ui.view,arch_db:partner_openprod.openprod_view_partner_form
+msgid "Contacts and notes"
+msgstr "Contacts et notes"
+
+#. module: partner_openprod
+#: model:ir.model.fields,field_description:partner_openprod.field_res_partner_corporate_name
+msgid "Corporate name"
+msgstr "Dénomination sociale"
+
+#. module: partner_openprod
+#: model:ir.actions.act_window,name:partner_openprod.act_partner_country
+#: model:ir.ui.menu,name:partner_openprod.menu_open_partner_countries
+msgid "Countries"
+msgstr "Pays"
+
+#. module: partner_openprod
+#: model:ir.model.fields,field_description:partner_openprod.field_address_country_id
+#: model:ir.model.fields,field_description:partner_openprod.field_res_region_country_id
+#: model:ir.ui.view,arch_db:partner_openprod.openprod_country_form
+#: model:ir.ui.view,arch_db:partner_openprod.openprod_view_all_partners_search
+#: model:ir.ui.view,arch_db:partner_openprod.openprod_view_partner_country_tree
+#: model:ir.ui.view,arch_db:partner_openprod.openprod_view_partner_customer_search
+#: model:ir.ui.view,arch_db:partner_openprod.openprod_view_partner_supplier_search
+msgid "Country"
+msgstr "Pays"
+
+#. module: partner_openprod
+#: model:ir.ui.view,arch_db:partner_openprod.view_openprod_country_group_form
+msgid "Country Group"
+msgstr "Groupe de pays"
+
+#. module: partner_openprod
+#: model:ir.ui.view,arch_db:partner_openprod.openprod_country_form
+msgid "Country details"
+msgstr "Détails du pays"
+
+#. module: partner_openprod
+#: model:ir.ui.menu,name:partner_openprod.menu_open_partner_country_groups
+msgid "Country groups"
+msgstr "Groupes de pays"
+
+#. module: partner_openprod
+#: model:ir.model.fields,field_description:partner_openprod.field_address_create_uid
+#: model:ir.model.fields,field_description:partner_openprod.field_contact_function_create_uid
+#: model:ir.model.fields,field_description:partner_openprod.field_partner_stat_family_create_uid
+#: model:ir.model.fields,field_description:partner_openprod.field_res_company_title_create_uid
+#: model:ir.model.fields,field_description:partner_openprod.field_res_region_create_uid
+#: model:ir.model.fields,field_description:partner_openprod.field_wizard_partner_mass_mail_create_uid
+msgid "Created by"
+msgstr "Créé par"
+
+#. module: partner_openprod
+#: model:ir.model.fields,field_description:partner_openprod.field_address_create_date
+#: model:ir.model.fields,field_description:partner_openprod.field_contact_function_create_date
+#: model:ir.model.fields,field_description:partner_openprod.field_partner_stat_family_create_date
+#: model:ir.model.fields,field_description:partner_openprod.field_res_company_title_create_date
+#: model:ir.model.fields,field_description:partner_openprod.field_res_region_create_date
+#: model:ir.model.fields,field_description:partner_openprod.field_wizard_partner_mass_mail_create_date
+msgid "Created on"
+msgstr "Créé le"
+
+#. module: partner_openprod
+#: model:ir.model.fields,field_description:partner_openprod.field_res_partner_currency_id
+#: model:ir.ui.view,arch_db:partner_openprod.view_search_partner_country
+msgid "Currency"
+msgstr "Devise"
+
+#. module: partner_openprod
+#: model:ir.ui.menu,name:partner_openprod.menu_open_partner_customer
+msgid "Customer"
+msgstr "Client"
+
+#. module: partner_openprod
+#: model:ir.model.fields,field_description:partner_openprod.field_res_partner_category_is_customer
+msgid "Customer category"
+msgstr "Catégorie de client"
+
+#. module: partner_openprod
+#: model:res.groups,name:partner_openprod.group_menu_partner_customer
+msgid "Customer menu"
+msgstr "Menu client"
+
+#. module: partner_openprod
+#: model:ir.actions.act_window,name:partner_openprod.act_partner_customer
+msgid "Customers"
+msgstr "Clients"
+
+#. module: partner_openprod
+#: model:ir.ui.view,arch_db:partner_openprod.contact_kanban_view
+#: model:ir.ui.view,arch_db:partner_openprod.partner_kanban_view
+msgid "Delete"
+msgstr "Supprimer"
+
+#. module: partner_openprod
+#: model:ir.ui.view,arch_db:partner_openprod.openprod_view_address_form
+msgid "Details"
+msgstr "Détails"
+
+#. module: partner_openprod
+#: model:ir.model.fields,field_description:partner_openprod.field_address_display_name
+#: model:ir.model.fields,field_description:partner_openprod.field_contact_function_display_name
+#: model:ir.model.fields,field_description:partner_openprod.field_partner_stat_family_display_name
+#: model:ir.model.fields,field_description:partner_openprod.field_res_company_title_display_name
+#: model:ir.model.fields,field_description:partner_openprod.field_res_region_display_name
+#: model:ir.model.fields,field_description:partner_openprod.field_wizard_partner_mass_mail_display_name
+msgid "Display Name"
+msgstr "Nom affiché"
+
+#. module: partner_openprod
+#: model:ir.model.fields,field_description:partner_openprod.field_res_partner_partner_doc_ids
+#: model:ir.ui.view,arch_db:partner_openprod.openprod_view_partner_form
+msgid "Documents"
+msgstr "Documents"
+
+#. module: partner_openprod
+#: model:ir.model,name:partner_openprod.model_document_openprod
+msgid "Documents Openprod"
+msgstr "Documents Openprod"
+
+#. module: partner_openprod
+#: model:ir.model.fields,field_description:partner_openprod.field_mail_template_edi_select
+msgid "Edi select"
+msgstr "Sélection EDI"
+
+#. module: partner_openprod
+#: model:ir.ui.view,arch_db:partner_openprod.contact_kanban_view
+#: model:ir.ui.view,arch_db:partner_openprod.partner_kanban_view
+msgid "Edit"
+msgstr "Modifier"
+
+#. module: partner_openprod
+#: model:ir.model,name:partner_openprod.model_mail_template
+msgid "Email Templates"
+msgstr "Modèles de courriels"
+
+#. module: partner_openprod
+#: model:ir.model,name:partner_openprod.model_mail_compose_message
+msgid "Email composition wizard"
+msgstr "Assistant de composition de courriel"
+
+#. module: partner_openprod
+#: code:addons/partner_openprod/mail_template.py:14
+#, python-format
+msgid "Envoie AR"
+msgstr "Envoie AR"
+
+#. module: partner_openprod
+#: code:addons/partner_openprod/res_partner.py:143
+#: code:addons/partner_openprod/res_partner.py:676
+#: code:addons/partner_openprod/res_partner.py:681
+#: code:addons/partner_openprod/res_partner.py:691
+#: code:addons/partner_openprod/res_partner.py:866
+#, python-format
+msgid "Error"
+msgstr "Erreur"
+
+#. module: partner_openprod
+#: code:addons/partner_openprod/res_partner.py:474
+#, python-format
+msgid "Error ! You cannot choose categories which is not for customer (%s)"
+msgstr "Error ! You cannot choose categories which is not for customer (%s)"
+
+#. module: partner_openprod
+#: code:addons/partner_openprod/res_partner.py:469
+#, python-format
+msgid "Error ! You cannot choose categories which is not for customer or supplier (%s)"
+msgstr "Error ! You cannot choose categories which is not for customer or supplier (%s)"
+
+#. module: partner_openprod
+#: code:addons/partner_openprod/res_partner.py:479
+#, python-format
+msgid "Error ! You cannot choose categories which is not for supplier (%s)"
+msgstr "Error ! You cannot choose categories which is not for supplier (%s)"
+
+#. module: partner_openprod
+#: model:ir.ui.view,arch_db:partner_openprod.view_form_res_partner_stat_family
+msgid "Family details"
+msgstr "Détails de la famille"
+
+#. module: partner_openprod
+#: model:ir.ui.view,arch_db:partner_openprod.openprod_view_all_partners_search
+#: model:ir.ui.view,arch_db:partner_openprod.openprod_view_partner_customer_search
+#: model:ir.ui.view,arch_db:partner_openprod.openprod_view_partner_supplier_search
+msgid "Filters"
+msgstr "Filtres"
+
+#. module: partner_openprod
+#: model:ir.model.fields,field_description:partner_openprod.field_res_partner_first_name
+msgid "First name"
+msgstr "Prénom"
+
+#. module: partner_openprod
+#: model:ir.model.fields,field_description:partner_openprod.field_res_partner_function_id
+msgid "Function"
+msgstr "Fonction"
+
+#. module: partner_openprod
+#: model:ir.ui.view,arch_db:partner_openprod.openprod_view_all_partners_search
+#: model:ir.ui.view,arch_db:partner_openprod.openprod_view_partner_customer_search
+#: model:ir.ui.view,arch_db:partner_openprod.openprod_view_partner_supplier_search
+#: model:ir.ui.view,arch_db:partner_openprod.openprod_view_search_partner_category
+#: model:ir.ui.view,arch_db:partner_openprod.view_search_partner_country
+msgid "Group By"
+msgstr "Regrouper par"
+
+#. module: partner_openprod
+#: model:ir.ui.view,arch_db:partner_openprod.view_openprod_country_group_form
+msgid "Group name"
+msgstr "Nom de groupe"
+
+#. module: partner_openprod
+#: model:ir.model.fields,field_description:partner_openprod.field_address_id
+#: model:ir.model.fields,field_description:partner_openprod.field_contact_function_id
+#: model:ir.model.fields,field_description:partner_openprod.field_partner_stat_family_id
+#: model:ir.model.fields,field_description:partner_openprod.field_res_company_title_id
+#: model:ir.model.fields,field_description:partner_openprod.field_res_region_id
+#: model:ir.model.fields,field_description:partner_openprod.field_wizard_partner_mass_mail_id
+msgid "ID"
+msgstr "ID"
+
+#. module: partner_openprod
+#: code:addons/partner_openprod/res_partner.py:676
+#, python-format
+msgid "If the contact use the address of the company, you need a parent company"
+msgstr "Si le contact utiliser l'adresse de l'entreprise, vous avez besoin d'une société parent"
+
+#. module: partner_openprod
+#: code:addons/partner_openprod/res_partner.py:450
+#, python-format
+msgid "If the partner is a transporter, he must be a supplier too"
+msgstr "Si le partenaire est un transporteur, il doit également être fournisseur"
+
+#. module: partner_openprod
+#: model:ir.model.fields,field_description:partner_openprod.field_res_partner_internal_note
+#: model:ir.ui.view,arch_db:partner_openprod.openprod_view_partner_form
+msgid "Internal notes"
+msgstr "Notes internes"
+
+#. module: partner_openprod
+#: model:ir.model.fields,field_description:partner_openprod.field_res_partner_is_group
+msgid "Is a holding"
+msgstr "Est une holding"
+
+#. module: partner_openprod
+#: model:ir.model.fields,field_description:partner_openprod.field_address___last_update
+#: model:ir.model.fields,field_description:partner_openprod.field_contact_function___last_update
+#: model:ir.model.fields,field_description:partner_openprod.field_partner_stat_family___last_update
+#: model:ir.model.fields,field_description:partner_openprod.field_res_company_title___last_update
+#: model:ir.model.fields,field_description:partner_openprod.field_res_region___last_update
+#: model:ir.model.fields,field_description:partner_openprod.field_wizard_partner_mass_mail___last_update
+msgid "Last Modified on"
+msgstr "Dernière modification le"
+
+#. module: partner_openprod
+#: model:ir.model.fields,field_description:partner_openprod.field_address_write_uid
+#: model:ir.model.fields,field_description:partner_openprod.field_contact_function_write_uid
+#: model:ir.model.fields,field_description:partner_openprod.field_partner_stat_family_write_uid
+#: model:ir.model.fields,field_description:partner_openprod.field_res_company_title_write_uid
+#: model:ir.model.fields,field_description:partner_openprod.field_res_region_write_uid
+#: model:ir.model.fields,field_description:partner_openprod.field_wizard_partner_mass_mail_write_uid
+msgid "Last Updated by"
+msgstr "Dernière mise à jour par"
+
+#. module: partner_openprod
+#: model:ir.model.fields,field_description:partner_openprod.field_address_write_date
+#: model:ir.model.fields,field_description:partner_openprod.field_contact_function_write_date
+#: model:ir.model.fields,field_description:partner_openprod.field_partner_stat_family_write_date
+#: model:ir.model.fields,field_description:partner_openprod.field_res_company_title_write_date
+#: model:ir.model.fields,field_description:partner_openprod.field_res_region_write_date
+#: model:ir.model.fields,field_description:partner_openprod.field_wizard_partner_mass_mail_write_date
+msgid "Last Updated on"
+msgstr "Dernière mise à jour le"
+
+#. module: partner_openprod
+#: model:ir.ui.menu,name:partner_openprod.menu_partner_location
+msgid "Location"
+msgstr "Localisation"
+
+#. module: partner_openprod
+#: code:addons/partner_openprod/mail_template.py:18
+#, python-format
+msgid "Mass partner"
+msgstr "Mass partner"
+
+#. module: partner_openprod
+#: model:ir.model,name:partner_openprod.model_mail_message
+msgid "Message"
+msgstr "Message"
+
+#. module: partner_openprod
+#: model:ir.model.fields,field_description:partner_openprod.field_mail_compose_message_model_template_id
+#: model:ir.model.fields,field_description:partner_openprod.field_mail_message_model_template_id
+msgid "Model Mail"
+msgstr "Modèle de mail"
+
+#. module: partner_openprod
+#: model:ir.model.fields,field_description:partner_openprod.field_address_name
+#: model:ir.model.fields,field_description:partner_openprod.field_contact_function_name
+#: model:ir.model.fields,field_description:partner_openprod.field_partner_stat_family_name
+#: model:ir.model.fields,field_description:partner_openprod.field_res_region_name
+#: model:ir.model.fields,field_description:partner_openprod.field_wizard_partner_mass_mail_name
+msgid "Name"
+msgstr "Nom"
+
+#. module: partner_openprod
+#: model:ir.model.fields,field_description:partner_openprod.field_mail_message_no_recup
+msgid "No recup"
+msgstr "Non récup"
+
+#. module: partner_openprod
+#: model:ir.ui.view,arch_db:partner_openprod.openprod_view_address_form
+msgid "Note"
+msgstr "Note"
+
+#. module: partner_openprod
+#: model:ir.ui.view,arch_db:partner_openprod.openprod_view_partner_form
+msgid "Note on address"
+msgstr "Note sur adresse"
+
+#. module: partner_openprod
+#: model:ir.ui.view,arch_db:partner_openprod.view_form_wizard_partner_mass_mail
+msgid "OK"
+msgstr "OK"
+
+#. module: partner_openprod
+#: model:ir.ui.view,arch_db:partner_openprod.openprod_view_search_partner_category
+msgid "Parent"
+msgstr "Parent"
+
+#. module: partner_openprod
+#: model:ir.model.fields,field_description:partner_openprod.field_res_partner_parent_company_id
+msgid "Parent company"
+msgstr "Société mère"
+
+#. module: partner_openprod
+#: model:ir.actions.act_window,name:partner_openprod.action_see_all_partners
+#: model:ir.actions.act_window,name:partner_openprod.partner_openprod_see_form
+#: model:ir.model,name:partner_openprod.model_res_partner
+#: model:ir.model.fields,field_description:partner_openprod.field_address_partner_address_id
+#: model:ir.ui.menu,name:partner_openprod.menu_partner_main
+msgid "Partner"
+msgstr "Partenaire"
+
+#. module: partner_openprod
+#: model:ir.model,name:partner_openprod.model_res_partner_category
+msgid "Partner Tags"
+msgstr "Étiquettes du partenaire"
+
+#. module: partner_openprod
+#: model:ir.ui.menu,name:partner_openprod.menu_open_partner_category
+msgid "Partner categories"
+msgstr "Catégories de partenaire"
+
+#. module: partner_openprod
+#: model:ir.ui.menu,name:partner_openprod.menu_partner_categories
+msgid "Partner's categories"
+msgstr "Catégories des partenaires"
+
+#. module: partner_openprod
+#: code:addons/partner_openprod/res_partner.py:433
+#, python-format
+msgid "Partner's reference must be unique"
+msgstr "La référence du partenaire doit être unique"
+
+#. module: partner_openprod
+#: model:ir.ui.view,arch_db:partner_openprod.view_form_res_partner_stat_family
+#: model:ir.ui.view,arch_db:partner_openprod.view_tree_res_partner_stat_family
+msgid "Partner's stat family"
+msgstr "Famille de stat des partenaires"
+
+#. module: partner_openprod
+#: model:ir.actions.act_window,name:partner_openprod.act_all_partners
+#: model:ir.model.fields,field_description:partner_openprod.field_switch_document_wizard_partner_ids
+#: model:ir.ui.menu,name:partner_openprod.menu_open_all_partners
+#: model:ir.ui.menu,name:partner_openprod.menu_partner
+#: model:ir.ui.view,arch_db:partner_openprod.openprod_view_partner_form
+#: model:ir.ui.view,arch_db:partner_openprod.openprod_view_partner_tree
+#: model:ir.ui.view,arch_db:partner_openprod.view_form_partner_document_openprod
+msgid "Partners"
+msgstr "Partenaires"
+
+#. module: partner_openprod
+#: model:res.groups,name:partner_openprod.group_menu_partner_manager
+msgid "Partners manager"
+msgstr "Manager des partenaires"
+
+#. module: partner_openprod
+#: model:ir.model.fields,field_description:partner_openprod.field_wizard_partner_mass_mail_partner_ids
+msgid "Patner"
+msgstr "Patenaire"
+
+#. module: partner_openprod
+#: code:addons/partner_openprod/res_partner.py:251
+#: model:workflow.display.state,label:partner_openprod.partner_display_state_prospect
+#: model:workflow.transition,button_label:partner_openprod.partner_stopped_to_draft
+#, python-format
+msgid "Prospect"
+msgstr "Prospect"
+
+#. module: partner_openprod
+#: model:ir.ui.view,arch_db:partner_openprod.openprod_view_all_partners_search
+#: model:ir.ui.view,arch_db:partner_openprod.openprod_view_partner_customer_search
+#: model:ir.ui.view,arch_db:partner_openprod.openprod_view_partner_supplier_search
+msgid "Prospect partner"
+msgstr "Partenaire prospect"
+
+#. module: partner_openprod
+#: code:addons/partner_openprod/res_partner.py:252
+#: model:workflow.display.state,label:partner_openprod.partner_display_state_qualified
+#: model:workflow.transition,button_label:partner_openprod.partner_prospect_to_qualified
+#, python-format
+msgid "Qualified"
+msgstr "Qualifié"
+
+#. module: partner_openprod
+#: code:addons/partner_openprod/mail_template.py:16
+#, python-format
+msgid "Quotation"
+msgstr "Quotation"
+
+#. module: partner_openprod
+#: model:ir.model.fields,field_description:partner_openprod.field_res_partner_reference
+msgid "Reference"
+msgstr "Référence"
+
+#. module: partner_openprod
+#: model:ir.actions.act_window,name:partner_openprod.act_res_region_id
+#: model:ir.model.fields,field_description:partner_openprod.field_address_region_id
+#: model:ir.model.fields,field_description:partner_openprod.field_res_partner_region_id
+#: model:ir.ui.view,arch_db:partner_openprod.openprod_view_all_partners_search
+#: model:ir.ui.view,arch_db:partner_openprod.openprod_view_partner_customer_search
+#: model:ir.ui.view,arch_db:partner_openprod.openprod_view_partner_supplier_search
+#: model:ir.ui.view,arch_db:partner_openprod.view_form_res_region_id
+msgid "Region"
+msgstr "Région"
+
+#. module: partner_openprod
+#: model:ir.ui.view,arch_db:partner_openprod.view_tree_res_region_id
+msgid "Regions"
+msgstr "Régions"
+
+#. module: partner_openprod
+#: code:addons/partner_openprod/mail_template.py:17
+#, python-format
+msgid "Reminder"
+msgstr "Reminder"
+
+#. module: partner_openprod
+#: model:ir.ui.view,arch_db:partner_openprod.view_form_inherit_switch_partner_openprod_document
+msgid "Select the partners to switch"
+msgstr "Sélectionnez les partenaires à basculer"
+
+#. module: partner_openprod
+#: model:ir.ui.view,arch_db:partner_openprod.openprod_view_partner_form
+msgid "Send mail"
+msgstr "Envoyer mail"
+
+#. module: partner_openprod
+#: model:ir.actions.act_window,name:partner_openprod.act_wizard_partner_mass_mail
+#: model:ir.ui.view,arch_db:partner_openprod.view_form_wizard_partner_mass_mail
+msgid "Send mass mail"
+msgstr "Envoye de mail en masse"
+
+#. module: partner_openprod
+#: model:ir.model,name:partner_openprod.model_partner_stat_family
+msgid "Stat family"
+msgstr "Famille de stat"
+
+#. module: partner_openprod
+#: model:ir.model.fields,field_description:partner_openprod.field_res_partner_display_state
+#: model:ir.model.fields,field_description:partner_openprod.field_res_partner_state
+#: model:ir.ui.view,arch_db:partner_openprod.openprod_view_all_partners_search
+#: model:ir.ui.view,arch_db:partner_openprod.openprod_view_partner_customer_search
+#: model:ir.ui.view,arch_db:partner_openprod.openprod_view_partner_supplier_search
+msgid "State"
+msgstr "État"
+
+#. module: partner_openprod
+#: code:addons/partner_openprod/res_partner.py:447
+#, python-format
+msgid "State is required for companies"
+msgstr "L'état est requis pour les sociétés"
+
+#. module: partner_openprod
+#: code:addons/partner_openprod/res_partner.py:253
+#: model:workflow.display.state,label:partner_openprod.partner_display_state_stopped
+#: model:workflow.transition,button_label:partner_openprod.partner_prospect_to_stopped
+#: model:workflow.transition,button_label:partner_openprod.partner_prospect_to_stopped_company
+#: model:workflow.transition,button_label:partner_openprod.partner_qualified_to_stopped
+#: model:workflow.transition,button_label:partner_openprod.partner_qualified_to_stopped_company
+#, python-format
+msgid "Stopped"
+msgstr "Arrêté"
+
+#. module: partner_openprod
+#: model:ir.ui.view,arch_db:partner_openprod.openprod_view_all_partners_search
+#: model:ir.ui.view,arch_db:partner_openprod.openprod_view_partner_customer_search
+#: model:ir.ui.view,arch_db:partner_openprod.openprod_view_partner_supplier_search
+msgid "Stopped partner"
+msgstr "Partenaire arrêté"
+
+#. module: partner_openprod
+#: model:ir.model.fields,field_description:partner_openprod.field_address_street
+msgid "Street"
+msgstr "Rue"
+
+#. module: partner_openprod
+#: model:ir.model.fields,field_description:partner_openprod.field_address_street2
+msgid "Street 2"
+msgstr "Rue 2"
+
+#. module: partner_openprod
+#: model:ir.model.fields,field_description:partner_openprod.field_address_street3
+#: model:ir.model.fields,field_description:partner_openprod.field_res_partner_street3
+msgid "Street 3"
+msgstr "Rue 3"
+
+#. module: partner_openprod
+#: model:ir.ui.menu,name:partner_openprod.menu_open_partner_supplier
+msgid "Supplier"
+msgstr "Fournisseur"
+
+#. module: partner_openprod
+#: model:ir.model.fields,field_description:partner_openprod.field_res_partner_category_is_supplier
+msgid "Supplier category"
+msgstr "Catégorie de fournisseur"
+
+#. module: partner_openprod
+#: model:res.groups,name:partner_openprod.group_menu_partner_supplier
+msgid "Supplier menu"
+msgstr "Menu fournisseur"
+
+#. module: partner_openprod
+#: model:ir.actions.act_window,name:partner_openprod.act_partner_supplier
+msgid "Suppliers"
+msgstr "Fournisseurs"
+
+#. module: partner_openprod
+#: model:ir.model.fields,help:partner_openprod.field_res_partner_calendar_id
+msgid "The calendar specify the work days, holidays... of the partner. It's used in most of date calculation"
+msgstr "Le calendrier spécifie les jours ouvrés, les vacances, etc.. du partenaire. Il est utilisé dans la plupart des calculs de date"
+
+#. module: partner_openprod
+#: model:ir.model,name:partner_openprod.model_contact_function
+msgid "The class for the contact's functions"
+msgstr "Classe pour les fonctions des contacts"
+
+#. module: partner_openprod
+#: code:addons/partner_openprod/res_partner.py:681
+#, python-format
+msgid "The field %s is required to create a partner"
+msgstr "The field %s is required to create a partner"
+
+#. module: partner_openprod
+#: sql_constraint:contact.function:0
+msgid "The function name must be unique!"
+msgstr "Le nom de la fonction doit être unique!"
+
+#. module: partner_openprod
+#: sql_constraint:res.partner.category:0
+msgid "The partner category name must be unique!"
+msgstr "Le nom de la catégorie de partenaire doit être unique!"
+
+#. module: partner_openprod
+#: sql_constraint:res.company.title:0
+#: sql_constraint:res.partner.title:0
+msgid "The partner title name must be unique!"
+msgstr "Le nom du titre du partenaire doit être unique!"
+
+#. module: partner_openprod
+#: model:ir.model,name:partner_openprod.model_res_region
+msgid "The region object for address"
+msgstr "The region object for address"
+
+#. module: partner_openprod
+#: code:addons/partner_openprod/wizard/mail_compose_message.py:95
+#, python-format
+msgid "There is no mail template for %s. Please create a mail model in the configuration menu."
+msgstr "Il n'y a pas de modèle de mail pour %s. Merci de créer un modèle de mail dans le menu de configuration."
+
+#. module: partner_openprod
+#: model:ir.actions.act_window,name:partner_openprod.act_partner_company_title
+#: model:ir.model.fields,field_description:partner_openprod.field_res_company_title_name
+#: model:ir.model.fields,field_description:partner_openprod.field_res_partner_title_id_4257
+#: model:ir.ui.view,arch_db:partner_openprod.openprod_view_partner_company_title_form
+#: model:ir.ui.view,arch_db:partner_openprod.openprod_view_partner_company_title_tree
+msgid "Title"
+msgstr "Forme juridique"
+
+#. module: partner_openprod
+#: model:ir.ui.menu,name:partner_openprod.menu_open_partner_company_title
+msgid "Titles"
+msgstr "Formes juridiques"
+
+#. module: partner_openprod
+#: model:ir.ui.view,arch_db:partner_openprod.openprod_view_partner_form
+msgid "Transport"
+msgstr "Transport"
+
+#. module: partner_openprod
+#: model:ir.model.fields,field_description:partner_openprod.field_res_company_transport_calendar_id
+msgid "Transport calendar"
+msgstr "Transport calendar"
+
+#. module: partner_openprod
+#: model:ir.model.fields,field_description:partner_openprod.field_res_partner_transp_code
+msgid "Transport code"
+msgstr "Code de transport"
+
+#. module: partner_openprod
+#: model:ir.model.fields,field_description:partner_openprod.field_res_partner_is_transporter
+msgid "Transporter"
+msgstr "Transporteur"
+
+#. module: partner_openprod
+#: model:ir.model.fields,field_description:partner_openprod.field_res_partner_transp_contact_id
+msgid "Transporter contact"
+msgstr "Contact du transporteur"
+
+#. module: partner_openprod
+#: model:ir.model.fields,field_description:partner_openprod.field_res_partner_company_address
+msgid "Use company address"
+msgstr "Utiliser l'adresse de la société"
+
+#. module: partner_openprod
+#: model:res.groups,name:partner_openprod.partner_user
+msgid "User"
+msgstr "Utilisateur"
+
+#. module: partner_openprod
+#: model:workflow.transition,button_confirm:partner_openprod.partner_prospect_to_stopped_company
+#: model:workflow.transition,button_confirm:partner_openprod.partner_qualified_to_stopped_company
+msgid "WARNING this will put referencing obsolete products"
+msgstr "ATTENTION cela va mettre les référencements produits obsolètes"
+
+#. module: partner_openprod
+#: model:ir.model,name:partner_openprod.model_switch_document_wizard
+msgid "Wizard to switch the openprod document"
+msgstr "Wizard pour basculer les documents openprod"
+
+#. module: partner_openprod
+#: model:ir.actions.act_window,name:partner_openprod.wizard_send_mail
+msgid "Wizard to write and send mail"
+msgstr "Wizard pour écrire et envoyer un mail"
+
+#. module: partner_openprod
+#: model:ir.model.fields,field_description:partner_openprod.field_res_partner_wkf_instance_ids
+msgid "Wkf instance ids"
+msgstr "Ids des instances de wkf"
+
+#. module: partner_openprod
+#: model:ir.model.fields,field_description:partner_openprod.field_res_partner_wkf_progress_instance
+msgid "Wkf progress instance"
+msgstr "Instance en cours"
+
+#. module: partner_openprod
+#: model:ir.model.fields,field_description:partner_openprod.field_res_partner_wkf_id
+msgid "Workflow"
+msgstr "Flux de travail"
+
+#. module: partner_openprod
+#: code:addons/partner_openprod/res_partner.py:866
+#, python-format
+msgid "You can not delete this partner (%s) because it is linked to a company"
+msgstr "You can not delete this partner (%s) because it is linked to a company"
+
+#. module: partner_openprod
+#: code:addons/partner_openprod/res_partner.py:752
+#, python-format
+msgid "You can't clear out the company of a contact if this contact was linked to a company"
+msgstr "Vous ne pouvez vider la société d'un contact si ce contact était lié à une société"
+
+#. module: partner_openprod
+#: code:addons/partner_openprod/res_partner.py:127
+#, python-format
+msgid "You can't copy an address"
+msgstr "Vous ne pouvez copier une adresse"
+
+#. module: partner_openprod
+#: code:addons/partner_openprod/res_partner.py:143
+#, python-format
+msgid "You can't delete an address used by a partner"
+msgstr "Vous ne pouvez supprimer une adresse utilisée par le partenaire"
+
+#. module: partner_openprod
+#: code:addons/partner_openprod/res_partner.py:453
+#, python-format
+msgid "You can't have a company which is neither a supplier nor a customer"
+msgstr "Vous ne pouvez avoir une société qui n'est ni un fournisseur ni un client"
+
+#. module: partner_openprod
+#: code:addons/partner_openprod/res_partner.py:771
+#, python-format
+msgid "You must select a country for your partner"
+msgstr "Vous devez sélectionner un pays pour votre partenaire"
+
+#. module: partner_openprod
+#: code:addons/partner_openprod/res_partner.py:691
+#, python-format
+msgid "You need an adress for your partner"
+msgstr "You need an adress for your partner"
+
+#. module: partner_openprod
+#: model:ir.model.fields,field_description:partner_openprod.field_address_zip
+msgid "Zip"
+msgstr "Code postal"
+
+#. module: partner_openprod
+#: model:ir.ui.view,arch_db:partner_openprod.view_form_wizard_partner_mass_mail
+msgid "or"
+msgstr "ou"
+
+#. module: partner_openprod
+#: model:ir.model,name:partner_openprod.model_res_company_title
+msgid "res.company.title"
+msgstr "res.company.title"
+
+#. module: partner_openprod
+#: model:ir.model,name:partner_openprod.model_res_partner_title
+msgid "res.partner.title"
+msgstr "res.partner.title"
+
+#. module: partner_openprod
+#: model:ir.model.fields,help:partner_openprod.field_res_partner_attn
+msgid "res_partner.attn.help"
+msgstr "res_partner.attn.help"
+
+#. module: partner_openprod
+#: model:ir.model.fields,help:partner_openprod.field_res_partner_currency_id
+msgid "res_partner.currency_id.help"
+msgstr "res_partner.currency_id.help"
+
+#. module: partner_openprod
+#: model:ir.model.fields,help:partner_openprod.field_res_partner_function_id
+msgid "res_partner.function_id.help"
+msgstr "res_partner.function_id.help"
+
+#. module: partner_openprod
+#: model:ir.model.fields,help:partner_openprod.field_res_partner_is_group
+msgid "res_partner.is_group.help"
+msgstr "res_partner.is_group.help"
+
+#. module: partner_openprod
+#: model:ir.model.fields,help:partner_openprod.field_res_partner_is_transporter
+msgid "res_partner.is_transporter.help"
+msgstr "res_partner.is_transporter.help"
+
+#. module: partner_openprod
+#: model:ir.model.fields,help:partner_openprod.field_res_partner_parent_company_id
+msgid "res_partner.parent_company_id.help"
+msgstr "res_partner.parent_company_id.help"
+
+#. module: partner_openprod
+#: model:ir.model.fields,help:partner_openprod.field_res_partner_reference
+msgid "res_partner.reference.help"
+msgstr "res_partner.reference.help"
+
+#. module: partner_openprod
+#: model:ir.model.fields,help:partner_openprod.field_res_partner_region_id
+msgid "res_partner.region_id.help"
+msgstr "res_partner.region_id.help"
+
+#. module: partner_openprod
+#: model:ir.model,name:partner_openprod.model_wizard_partner_mass_mail
+msgid "wizard.partner.mass.mail"
+msgstr "wizard.partner.mass.mail"
+

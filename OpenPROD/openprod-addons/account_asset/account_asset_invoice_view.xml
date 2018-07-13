@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+
+        <record model="ir.ui.view" id="view_invoice_asset_category">
+            <field name="name">account.invoice.supplier.form</field>
+            <field name="model">account.invoice</field>
+            <field name="inherit_id" ref="account_openprod.account_supp_openprod_invoice_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='invoice_line_ids']/tree//field[@name='quantity']" position="before">
+                    <field name="asset_category_id"/>
+                </xpath>
+                <xpath expr="//field[@name='invoice_line_ids']/form//field[@name='account_id']" position="after">
+                    <field name="asset_category_id"/>
+                </xpath>
+            </field>
+        </record>
+        
+        
+        <record id="account_suppl_openprod_invoice_line_asset_tree" model="ir.ui.view">
+            <field name="name">account.supplier.openprod.invoice.asset.line.tree</field>
+            <field name="model">account.invoice.line</field>
+            <field name="inherit_id" ref="account_openprod.account_suppl_openprod_invoice_line_tree"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='quantity']" position="before">
+                    <field name="asset_category_id"/>
+                </xpath>
+                
+            </field>
+        </record>
+        
+        
+        <record id="account_suppl_openprod_invoice_line_form" model="ir.ui.view">
+            <field name="name">account.suppl.openprod.invoice.line.form</field>
+            <field name="model">account.invoice.line</field>
+            <field name="inherit_id" ref="account_openprod.account_suppl_openprod_invoice_line_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='account_id']" position="after">
+                    <field name="asset_category_id"/>
+                </xpath>
+            </field>
+        </record>
+        
+        
+    </data>
+</openerp>

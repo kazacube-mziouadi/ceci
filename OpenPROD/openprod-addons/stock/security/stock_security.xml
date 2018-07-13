@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data noupdate="1">
+		<!-- ===== -->
+		<!-- RULES -->
+		<!-- ===== -->
+		<record id="account_stock_move_rule" model="ir.rule">
+			<field name="name">Stock move</field>
+			<field name="model_id" ref="model_stock_move" />
+			<field name="global" eval="True" />
+			<field name="domain_force">['|',('company_id','=',False),('company_id','child_of',[user.company_id.id])]</field>
+		</record>
+
+		<record id="account_stock_picking_rule" model="ir.rule">
+			<field name="name">Stock picking</field>
+			<field name="model_id" ref="model_stock_picking" />
+			<field name="global" eval="True" />
+			<field name="domain_force">['|',('company_id','=',False),('company_id','child_of',[user.company_id.id])]</field>
+		</record>
+		
+		<!-- Groupes de menu -->
+		<record id="group_menu_receipt_order" model="res.groups">
+            <field name="name">Receipt order menu</field>
+            <field name="category_id" ref="base_openprod.module_menu_category"/>
+        </record>
+        
+		<record id="group_menu_delivery_order" model="res.groups">
+            <field name="name">Delivery order menu</field>
+            <field name="category_id" ref="base_openprod.module_menu_category"/>
+        </record>
+        
+		<record id="group_menu_inventory" model="res.groups">
+            <field name="name">Inventory menu</field>
+            <field name="category_id" ref="base_openprod.module_menu_category"/>
+        </record>
+        
+		<record id="group_menu_procurement" model="res.groups">
+            <field name="name">Procurement menu</field>
+            <field name="category_id" ref="base_openprod.module_menu_category"/>
+        </record>
+        
+		<record model="res.groups" id="group_change_label_qty">
+			<field name="name">Change label quantity</field>
+		</record>
+		
+        <record id="group_menu_stock_analyse" model="res.groups">
+            <field name="name">Stock analyse menu</field>
+            <field name="category_id" ref="base_openprod.module_menu_category"/>
+            <field name="implied_ids" eval="[(4, ref('group_menu_receipt_order')),(4, ref('group_menu_delivery_order'))]"/>
+        </record>
+
+        <record id="group_menu_stock_config" model="res.groups">
+            <field name="name">Stock configuration</field>
+            <field name="category_id" ref="base_openprod.module_menu_category"/>
+            <field name="implied_ids" eval="[(4, ref('group_menu_stock_analyse')),(4, ref('group_menu_procurement')),(4, ref('group_menu_inventory'))]"/>
+        </record>
+        
+        <record model="res.groups" id="group_display_um">
+            <field name="name">Display UM</field>
+        </record>
+
+	</data>
+</openerp>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+		<record id="view_form_specific_offer" model="ir.ui.view">
+			<field name="name">view_form_specific_offer</field>
+			<field name="inherit_id" ref="specific_offer.view_form_specific_offer" />
+			<field name="model">specific.offer</field>
+			<field name="arch" type="xml">
+				<xpath expr="//field[@name='description']/.." position="after">
+					<group string="Variant values" colspan="1">
+						<field name="variant_value_ids" nolabel="1" />
+					</group>
+				</xpath>
+				<xpath expr="//field[@name='option_ids']/.." position="after">
+					<group string="Parameters" colspan="1" groups="product.product_parameters">
+						<field name="parameter_ids" nolabel="1">
+							<tree editable="top" string="Parameters">
+								<field name="type_param_id" />
+								<field name="value" />
+								<field name="price_unit" />
+								<field name="name" invisible="1" />
+							</tree>
+						</field>
+					</group>
+				</xpath>
+				<xpath expr="//button[@name='create_new_sale']" position="after">
+					<button class="oe_inline oe_stat_button" string="Configure" type="action" name="%(variants.act_fill_questionnaire)d"
+						icon="fa-gears" context="{'default_specific_offer_id':active_id}" />
+				</xpath>
+			</field>
+		</record>
+	</data>
+</openerp>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <!-- FORM VIEW PRODUCT -->
+    <record id="view_form_product_account" model="ir.ui.view">
+        <field name="name">view.form.product.account</field>
+        <field name="model">product.product</field>
+        <field name="priority">1500</field>
+        <field name="inherit_id" ref="characteristics.view_form_product_account"/>
+        <field name="arch" type="xml">
+            <xpath
+                expr="//field[@name='characteristics_ids']/tree/field[@name='uom_id']" position="attributes">
+                <attribute name="attrs">{'invisible':[('characteristic_format', '!=', 'numerical')], 'readonly':[('variant_value_id', '!=', False)]}</attribute>
+            </xpath>
+            <xpath
+                expr="//field[@name='characteristics_ids']/tree/field[@name='value']" position="attributes">
+                <attribute name="attrs">{'readonly': [('variant_value_id', '!=', False)]}</attribute>
+            </xpath>
+            <xpath
+                expr="//field[@name='characteristics_ids']/tree/button[@name='delete']" position="attributes">
+                <attribute name="attrs">{'invisible': [('variant_value_id', '!=', False)]}</attribute>
+            </xpath>
+            <xpath
+                expr="//field[@name='characteristics_ids']/tree/field[@name='characteristic_type_id']" position="attributes">
+                <attribute name="domain">[('comes_from', '=', False)]</attribute>
+            </xpath>
+            <xpath
+                expr="//field[@name='characteristics_ids']/tree/field[@name='value']" position="after">
+                <field name="variant_value_id" invisible="1" />
+            </xpath>
+        </field>
+    </record>
+    
+      
+    
+    
+    <!-- FORM VIEW Characteristic Type -->
+    <record id='view_form_characteristic_type' model='ir.ui.view'>
+        <field name="name">view_form_characteristic_type_vairant</field>
+        <field name="model">characteristic.type</field>
+        <field name="priority">1500</field>
+        <field name="inherit_id" ref="characteristics.view_form_characteristic_type"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='uom_id']" position="after">
+                <field name="comes_from" readonly="1" />
+            </xpath>
+        </field>
+    </record>
+
+    <!-- TREE VIEW Characteristic Type -->
+    <record id='view_tree_characteristic_type' model='ir.ui.view'>
+        <field name="name">view_tree_characteristic_type_variant</field>
+        <field name="model">characteristic.type</field>
+        <field name="priority">1500</field>
+        <field name="inherit_id" ref="characteristics.view_tree_characteristic_type"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='format']" position="after">
+                <field name="comes_from" readonly="1" />
+            </xpath>
+        </field>
+    </record>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</openerp>

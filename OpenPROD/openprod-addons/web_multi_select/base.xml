@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template_select_multi" xml:space="preserve">
+
+<th t-extend="ListSearchHeader">
+    <t t-jquery=".select_search_bar" t-operation="replace">
+         <select type="selection" t-if="column.type == 'selection' &amp;&amp; column.searchable == true" t-attf-data-colname="{{column.name}}" multiple="multiple" t-attf-class="search_bar_select">
+                    <t t-foreach="column.selection" t-as="sel">
+                        <option t-attf-value="{{ sel[0] }}"><t t-esc="sel[1]" /></option>
+                    </t>
+         </select>
+    </t>
+</th>
+
+
+
+</templates>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+		<!-- === -->
+		<!-- WKF -->
+		<!-- === -->
+
+		<!-- FORM VIEW WKF -->
+		<record id="view_workflow_reinitialisation_form" model="ir.ui.view">
+			<field name="name">workflow.form</field>
+			<field name="model">workflow</field>
+            <field name="priority" eval="3200" />
+            <field name="inherit_id" ref="base.view_workflow_form" />
+			<field name="arch" type="xml">
+				<xpath expr="//button[@name='new_version']" position="after">
+					<button name="reinitialise_all_records" string="Reinitialise all records" type="object" class="oe_inline oe_stat_button" icon="fa-exclamation" confirm="BE CAREFUL: All records of this workflow object will be reinitialised with this workflow" />
+				</xpath>
+			</field>
+		</record>
+	</data>
+</openerp>

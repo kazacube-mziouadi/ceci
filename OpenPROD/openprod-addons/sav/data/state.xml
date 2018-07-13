@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data noupdate="1">
+
+        <!-- States for CRM -->
+        <record forcecreate="False" id="crm_reclaim_state_new" model="crm.reclaim.state">
+            <field name="name">New</field>
+            <field name="sequence">1</field>
+            <field name="is_new_state">True</field>
+        </record>
+        
+        <record forcecreate="False" id="crm_reclaim_state_qualification" model="crm.reclaim.state">
+            <field name="name">Qualification</field>
+            <field name="sequence">10</field>
+        </record>
+        
+        <record forcecreate="False" id="crm_reclaim_state_proposition" model="crm.reclaim.state">
+            <field name="name">Proposition</field>
+            <field name="sequence">20</field>
+        </record>
+        
+        <record forcecreate="False" id="crm_reclaim_state_negotiation" model="crm.reclaim.state">
+            <field name="name">Negotiation</field>
+            <field name="sequence">30</field>
+        </record>
+        
+        <record forcecreate="False" id="crm_reclaim_state_won" model="crm.reclaim.state">
+            <field name="name">Won</field>
+            <field name="sequence">40</field>
+            <field name="is_end">True</field>
+            <field name="is_won_state">True</field>
+        </record>
+        
+        <record forcecreate="False" id="crm_reclaim_state_lost" model="crm.reclaim.state">
+            <field name="name">Lost</field>
+            <field name="sequence">50</field>
+            <field name="is_end">True</field>
+            <field name="is_lost_state">True</field>
+        </record>
+        
+    </data>
+</openerp>

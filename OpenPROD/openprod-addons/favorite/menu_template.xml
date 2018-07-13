@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+     <!-- Ajout d'un atribut avec l'id du filtre pour les menus-->
+     <template id="favorite_menu_link" inherit_id="web.menu_link">
+            <xpath expr="//a" position="attributes">
+                <attribute name="t-att-data-filter-id">menu['filter_id'] or ''</attribute>
+            </xpath>
+      </template>
+
+</data>
+</openerp>
+ 
+

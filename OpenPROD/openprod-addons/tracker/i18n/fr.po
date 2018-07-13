@@ -1,0 +1,1589 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* tracker
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 9.0c\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-07-11 16:00+0000\n"
+"PO-Revision-Date: 2017-07-11 16:00+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: tracker
+#: code:addons/tracker/tracker.py:1096
+#, python-format
+msgid "\n"
+"<html>\n"
+"  <head></head>\n"
+"  <body>\n"
+"    <p>Hello,<br>\n"
+"       The issue ({0}) \"{1}\" has been updated<br>\n"
+"       Here is the <a href=\"{2}\">link</a> to see it.\n"
+"    </p>\n"
+"  </body>\n"
+"</html>\n"
+""
+msgstr "\n"
+"<html>\n"
+"  <head></head>\n"
+"  <body>\n"
+"    <p>Bonjour,<br>\n"
+"       Le ticket ({0}) \"{1}\" a été mis à jour<br>\n"
+"       Voilà le <a href=\"{2}\">lien</a> pour le voir.\n"
+"    </p>\n"
+"  </body>\n"
+"</html>\n"
+""
+
+#. module: tracker
+#: code:addons/tracker/tracker.py:554
+#, python-format
+msgid "%s\n"
+"- The security should be done"
+msgstr "%s\n"
+"- La sécurité doit être faite"
+
+#. module: tracker
+#: code:addons/tracker/tracker.py:548
+#, python-format
+msgid "%s\n"
+"- The tickets should have commit"
+msgstr "%s\n"
+"- Le ticket doit avoir un commit"
+
+#. module: tracker
+#: code:addons/tracker/tracker.py:551
+#, python-format
+msgid "%s\n"
+"- The translation should be done"
+msgstr "%s\n"
+"- La traduction doit être faite"
+
+#. module: tracker
+#: code:addons/tracker/tracker.py:88
+#: selection:tracker.production.instruction,timing:0
+#, python-format
+msgid "1-Before production"
+msgstr "1-Avant la mis en production"
+
+#. module: tracker
+#: code:addons/tracker/tracker.py:89
+#: selection:tracker.production.instruction,timing:0
+#, python-format
+msgid "2-Updates Module"
+msgstr "2-Mis à jour modules"
+
+#. module: tracker
+#: code:addons/tracker/tracker.py:90
+#: selection:tracker.production.instruction,timing:0
+#, python-format
+msgid "3-During production"
+msgstr "3-Pendant la mise en production"
+
+#. module: tracker
+#: code:addons/tracker/tracker.py:91
+#: selection:tracker.production.instruction,timing:0
+#, python-format
+msgid "4-After production"
+msgstr "4-Après les mise en production"
+
+#. module: tracker
+#: model:ir.ui.view,arch_db:tracker.view_kanban_issue
+msgid "<b>Category: </b>"
+msgstr "<b>Catégorie: </b>"
+
+#. module: tracker
+#: model:ir.ui.view,arch_db:tracker.view_kanban_distribution_issue
+#: model:ir.ui.view,arch_db:tracker.view_kanban_issue
+msgid "<b>Current user in charge: </b>"
+msgstr "<b>Utilisateur courant en charge: </b>"
+
+#. module: tracker
+#: model:ir.ui.view,arch_db:tracker.view_kanban_distribution_issue
+#: model:ir.ui.view,arch_db:tracker.view_kanban_issue
+msgid "<b>Deadline: </b>"
+msgstr "<b>Date limite: </b>"
+
+#. module: tracker
+#: model:ir.ui.view,arch_db:tracker.view_kanban_distribution_issue
+#: model:ir.ui.view,arch_db:tracker.view_kanban_issue
+msgid "<b>Expected time: </b>"
+msgstr "<b>Temps prévu: </b>"
+
+#. module: tracker
+#: model:ir.ui.view,arch_db:tracker.view_kanban_distribution_issue
+#: model:ir.ui.view,arch_db:tracker.view_kanban_issue
+msgid "<b>Sprint: </b>"
+msgstr "<b>Sprint: </b>"
+
+#. module: tracker
+#: model:ir.ui.view,arch_db:tracker.view_kanban_distribution_issue
+#: model:ir.ui.view,arch_db:tracker.view_kanban_issue
+msgid "<b>Tags: </b>"
+msgstr "<b>Etiquettes: </b>"
+
+#. module: tracker
+#: model:ir.ui.view,arch_db:tracker.view_kanban_distribution_issue
+#: model:ir.ui.view,arch_db:tracker.view_kanban_issue
+msgid "<b>Treatment order: </b>"
+msgstr "<b>Ordre de traitement: </b>"
+
+#. module: tracker
+#: model:ir.model.fields,field_description:tracker.field_tracker_deployment_instruction_action_type_related
+#: model:ir.model.fields,field_description:tracker.field_tracker_production_instruction_action_type
+msgid "Action type"
+msgstr "Type d'action"
+
+#. module: tracker
+#: model:res.groups,name:tracker.group_tracker_admin
+msgid "Admin"
+msgstr "Admin"
+
+#. module: tracker
+#: model:ir.ui.view,arch_db:tracker.view_tree_deployment
+#: model:ir.ui.view,arch_db:tracker.view_tree_user_email_settings
+msgid "All email settings"
+msgstr "Tous les paramètres d'email"
+
+#. module: tracker
+#: model:ir.ui.menu,name:tracker.menu_tree_all_issue
+#: model:ir.ui.view,arch_db:tracker.view_tree_issue
+#: model:ir.ui.view,arch_db:tracker.view_tree_tracker_task
+msgid "All issues"
+msgstr "Tous les tickets"
+
+#. module: tracker
+#: model:ir.ui.view,arch_db:tracker.view_tree_tag_settings
+#: model:ir.ui.view,arch_db:tracker.view_tree_tracker_issue_category
+#: model:ir.ui.view,arch_db:tracker.view_tree_tracker_sprint
+msgid "All tag settings"
+msgstr "Tous les paramètres de tag"
+
+#. module: tracker
+#: model:ir.model.fields,field_description:tracker.field_tracker_issue_applicant_id
+msgid "Applicant"
+msgstr "Demandeur"
+
+#. module: tracker
+#: model:ir.model.fields,field_description:tracker.field_tracker_issue_nb_attachment
+#: model:ir.ui.view,arch_db:tracker.view_kanban_distribution_issue
+#: model:ir.ui.view,arch_db:tracker.view_kanban_issue
+msgid "Attachment"
+msgstr "Piéce jointe"
+
+#. module: tracker
+#: model:ir.model.fields,field_description:tracker.field_tracker_issue_attachment_ids
+#: model:ir.ui.view,arch_db:tracker.view_form_tracker_issue
+msgid "Attachments"
+msgstr "Pièces jointes"
+
+#. module: tracker
+#: model:ir.ui.view,arch_db:tracker.view_form_deployment
+msgid "Automatic issues"
+msgstr "Tickets automatiques"
+
+#. module: tracker
+#: model:ir.model.fields,field_description:tracker.field_tracker_issue_background_color
+msgid "Background color"
+msgstr "Couleur de fond"
+
+#. module: tracker
+#: model:ir.model.fields,field_description:tracker.field_tracker_email_manager_base_url
+msgid "Base url"
+msgstr "Url de base"
+
+#. module: tracker
+#: model:ir.model.fields,field_description:tracker.field_tracker_issue_border_color
+msgid "Border color"
+msgstr "Couleur de bordure"
+
+#. module: tracker
+#: model:ir.model.fields,field_description:tracker.field_tracker_commit_branch_name
+msgid "Branch name"
+msgstr "Nom de la branch"
+
+#. module: tracker
+#: code:addons/tracker/tracker.py:112
+#: selection:tracker.issue.test,type_:0
+#, python-format
+msgid "Bug"
+msgstr "Bug"
+
+#. module: tracker
+#: model:ir.ui.view,arch_db:tracker.view_form_tracker_issue
+msgid "Cancel"
+msgstr "Annuler"
+
+#. module: tracker
+#: code:addons/tracker/tracker.py:34
+#: code:addons/tracker/tracker.py:45
+#: selection:tracker.issue,state:0
+#: selection:tracker.task,state:0
+#, python-format
+msgid "Canceled"
+msgstr "Annulé"
+
+#. module: tracker
+#: model:ir.model.fields,field_description:tracker.field_tracker_issue_canceled_write_date
+msgid "Canceled write date"
+msgstr "Date d'annulation"
+
+#. module: tracker
+#: model:ir.actions.act_window,name:tracker.action_tracker_issue_category
+#: model:ir.model.fields,field_description:tracker.field_tracker_issue_category_id
+#: model:ir.ui.menu,name:tracker.menu_tracker_issue_category
+msgid "Category"
+msgstr "Catégorie"
+
+#. module: tracker
+#: model:ir.model.fields,field_description:tracker.field_tracker_tag_color
+msgid "Color"
+msgstr "Couleur"
+
+#. module: tracker
+#: model:ir.model.fields,field_description:tracker.field_tracker_issue_development_comment
+#: model:ir.ui.view,arch_db:tracker.view_form_tracker_issue
+msgid "Comment"
+msgstr "Commentaire"
+
+#. module: tracker
+#: model:ir.model.fields,field_description:tracker.field_tracker_production_deployment_comments
+#: model:ir.ui.view,arch_db:tracker.view_form_deployment
+msgid "Comments"
+msgstr "Commentaires"
+
+#. module: tracker
+#: model:ir.model.fields,field_description:tracker.field_tracker_issue_commit_ids
+#: model:ir.model.fields,field_description:tracker.field_tracker_production_deployment_commit_ids
+msgid "Commit ids"
+msgstr "Commit ids"
+
+#. module: tracker
+#: model:ir.ui.view,arch_db:tracker.view_form_deployment
+#: model:ir.ui.view,arch_db:tracker.view_form_tracker_issue
+#: model:ir.ui.view,arch_db:tracker.view_tree_commit
+msgid "Commits"
+msgstr "Commits"
+
+#. module: tracker
+#: model:ir.model.fields,field_description:tracker.field_tracker_issue_company_id
+#: model:ir.model.fields,field_description:tracker.field_tracker_task_company_id
+#: model:ir.model.fields,field_description:tracker.field_tracker_task_settings_company_id
+#: model:ir.ui.view,arch_db:tracker.view_search_issue
+msgid "Company"
+msgstr "Entreprise"
+
+#. module: tracker
+#: model:ir.model.fields,field_description:tracker.field_tracker_production_deployment_company_in_charge_id
+msgid "Company in charge"
+msgstr "Entreprise responsable"
+
+#. module: tracker
+#: model:ir.model.fields,field_description:tracker.field_tracker_issue_complexity
+msgid "Complexity"
+msgstr "Complexité"
+
+#. module: tracker
+#: model:ir.model,name:tracker.model_wizard_create_timetracking
+msgid "Create a timetracking entry, or edit similar entries"
+msgstr "Créer une entrée de suivi de temps, ou éditer des entrées équivalentes"
+
+#. module: tracker
+#: model:ir.model.fields,field_description:tracker.field_tracker_commit_source_created_datetime
+msgid "Created at"
+msgstr "Créé à"
+
+#. module: tracker
+#: model:ir.model.fields,field_description:tracker.field_tracker_commit_create_uid
+#: model:ir.model.fields,field_description:tracker.field_tracker_deployment_instruction_create_uid
+#: model:ir.model.fields,field_description:tracker.field_tracker_email_manager_create_uid
+#: model:ir.model.fields,field_description:tracker.field_tracker_follower_create_uid
+#: model:ir.model.fields,field_description:tracker.field_tracker_issue_category_create_uid
+#: model:ir.model.fields,field_description:tracker.field_tracker_issue_create_uid
+#: model:ir.model.fields,field_description:tracker.field_tracker_issue_test_create_uid
+#: model:ir.model.fields,field_description:tracker.field_tracker_production_deployment_create_uid
+#: model:ir.model.fields,field_description:tracker.field_tracker_production_instruction_create_uid
+#: model:ir.model.fields,field_description:tracker.field_tracker_sprint_create_uid
+#: model:ir.model.fields,field_description:tracker.field_tracker_tag_create_uid
+#: model:ir.model.fields,field_description:tracker.field_tracker_task_config_create_uid
+#: model:ir.model.fields,field_description:tracker.field_tracker_task_create_uid
+#: model:ir.model.fields,field_description:tracker.field_tracker_task_settings_create_uid
+#: model:ir.model.fields,field_description:tracker.field_tracker_user_email_config_create_uid
+msgid "Created by"
+msgstr "Créé par"
+
+#. module: tracker
+#: model:ir.model.fields,field_description:tracker.field_tracker_commit_create_date
+#: model:ir.model.fields,field_description:tracker.field_tracker_deployment_instruction_create_date
+#: model:ir.model.fields,field_description:tracker.field_tracker_email_manager_create_date
+#: model:ir.model.fields,field_description:tracker.field_tracker_follower_create_date
+#: model:ir.model.fields,field_description:tracker.field_tracker_issue_category_create_date
+#: model:ir.model.fields,field_description:tracker.field_tracker_issue_create_date
+#: model:ir.model.fields,field_description:tracker.field_tracker_issue_test_create_date
+#: model:ir.model.fields,field_description:tracker.field_tracker_production_deployment_create_date
+#: model:ir.model.fields,field_description:tracker.field_tracker_production_instruction_create_date
+#: model:ir.model.fields,field_description:tracker.field_tracker_sprint_create_date
+#: model:ir.model.fields,field_description:tracker.field_tracker_tag_create_date
+#: model:ir.model.fields,field_description:tracker.field_tracker_task_config_create_date
+#: model:ir.model.fields,field_description:tracker.field_tracker_task_create_date
+#: model:ir.model.fields,field_description:tracker.field_tracker_task_settings_create_date
+#: model:ir.model.fields,field_description:tracker.field_tracker_user_email_config_create_date
+msgid "Created on"
+msgstr "Créé le"
+
+#. module: tracker
+#: code:addons/tracker/tracker.py:54
+#: selection:tracker.issue,priority:0
+#, python-format
+msgid "Critical"
+msgstr "Critique"
+
+#. module: tracker
+#: model:ir.model.fields,field_description:tracker.field_tracker_issue_current_phase_type
+msgid "Current phase type"
+msgstr "Type de phase en cours"
+
+#. module: tracker
+#: model:ir.model.fields,field_description:tracker.field_tracker_issue_current_task_id
+msgid "Current task"
+msgstr "Tâche en cours"
+
+#. module: tracker
+#: model:ir.model.fields,field_description:tracker.field_tracker_issue_current_user_in_charge_id
+msgid "Current user in charge"
+msgstr "Responsable en cours"
+
+#. module: tracker
+#: model:ir.model.fields,field_description:tracker.field_tracker_production_deployment_customer_company_id
+msgid "Customer's compane"
+msgstr "Entreprise"
+
+#. module: tracker
+#: model:ir.ui.view,arch_db:tracker.view_search_commit
+msgid "Date greater or equal than"
+msgstr "Date supérieur ou égale à"
+
+#. module: tracker
+#: model:ir.ui.view,arch_db:tracker.view_search_commit
+msgid "Date lower or equal than"
+msgstr "Date inférieur ou égale à"
+
+#. module: tracker
+#: model:ir.model.fields,field_description:tracker.field_tracker_issue_deadline
+msgid "Deadline"
+msgstr "Date limite"
+
+#. module: tracker
+#: code:addons/tracker/tracker.py:23
+#: model:ir.actions.act_window,name:tracker.action_deployment
+#: model:ir.ui.menu,name:tracker.menu_deployment
+#: selection:tracker.issue,current_phase_type:0
+#: selection:tracker.task,phase_type:0
+#: selection:tracker.task.settings,phase_type:0
+#, python-format
+msgid "Deployment"
+msgstr "Déploiement"
+
+#. module: tracker
+#: model:ir.model.fields,field_description:tracker.field_tracker_production_deployment_deployment_date
+msgid "Deployment date"
+msgstr "Date de déploiement"
+
+#. module: tracker
+#: model:ir.model.fields,field_description:tracker.field_tracker_deployment_instruction_deployment_id
+msgid "Deployment id"
+msgstr "ID déploiement"
+
+#. module: tracker
+#: model:ir.model.fields,field_description:tracker.field_tracker_issue_test_description
+#: model:ir.model.fields,field_description:tracker.field_tracker_sprint_description
+#: model:ir.ui.view,arch_db:tracker.view_form_tracker_issue
+#: model:ir.ui.view,arch_db:tracker.view_form_tracker_sprint
+msgid "Description"
+msgstr "Description"
+
+#. module: tracker
+#: model:ir.model.fields,field_description:tracker.field_tracker_issue_description_customer
+#: model:ir.ui.view,arch_db:tracker.view_form_tracker_issue
+msgid "Description customer"
+msgstr "Description client"
+
+#. module: tracker
+#: code:addons/tracker/tracker.py:21
+#: model:ir.ui.view,arch_db:tracker.view_form_tracker_issue
+#: selection:tracker.issue,current_phase_type:0
+#: selection:tracker.task,phase_type:0
+#: selection:tracker.task.settings,phase_type:0
+#, python-format
+msgid "Development"
+msgstr "Développement"
+
+#. module: tracker
+#: model:ir.model.fields,field_description:tracker.field_tracker_issue_developper_id
+msgid "Developper"
+msgstr "Developpeur"
+
+#. module: tracker
+#: model:ir.model.fields,field_description:tracker.field_tracker_issue_test_developper_in_charge_id
+msgid "Developper in charge"
+msgstr "Developpeur responsable"
+
+#. module: tracker
+#: model:ir.model.fields,field_description:tracker.field_tracker_commit_display_name
+#: model:ir.model.fields,field_description:tracker.field_tracker_deployment_instruction_display_name
+#: model:ir.model.fields,field_description:tracker.field_tracker_email_manager_display_name
+#: model:ir.model.fields,field_description:tracker.field_tracker_follower_display_name
+#: model:ir.model.fields,field_description:tracker.field_tracker_issue_category_display_name
+#: model:ir.model.fields,field_description:tracker.field_tracker_issue_display_name
+#: model:ir.model.fields,field_description:tracker.field_tracker_issue_test_display_name
+#: model:ir.model.fields,field_description:tracker.field_tracker_production_deployment_display_name
+#: model:ir.model.fields,field_description:tracker.field_tracker_production_instruction_display_name
+#: model:ir.model.fields,field_description:tracker.field_tracker_sprint_display_name
+#: model:ir.model.fields,field_description:tracker.field_tracker_tag_display_name
+#: model:ir.model.fields,field_description:tracker.field_tracker_task_config_display_name
+#: model:ir.model.fields,field_description:tracker.field_tracker_task_display_name
+#: model:ir.model.fields,field_description:tracker.field_tracker_task_settings_display_name
+#: model:ir.model.fields,field_description:tracker.field_tracker_user_email_config_display_name
+msgid "Display Name"
+msgstr "Afficher Nom"
+
+#. module: tracker
+#: model:ir.ui.menu,name:tracker.menu_distribution_issue
+msgid "Distribution issues"
+msgstr "Répartition des tickets"
+
+#. module: tracker
+#: code:addons/tracker/tracker.py:124
+#: selection:tracker.issue.test,state:0
+#, python-format
+msgid "Done"
+msgstr "Fini"
+
+#. module: tracker
+#: code:addons/tracker/tracker.py:31
+#: code:addons/tracker/tracker.py:42
+#: selection:tracker.issue,state:0
+#: selection:tracker.task,state:0
+#, python-format
+msgid "Draft"
+msgstr "Brouillon"
+
+#. module: tracker
+#: model:ir.model.fields,field_description:tracker.field_tracker_issue_draft_write_date
+msgid "Draft write date"
+msgstr "Date de brouillon"
+
+#. module: tracker
+#: model:ir.model.fields,field_description:tracker.field_tracker_issue_duration
+msgid "Duration"
+msgstr "Durée"
+
+#. module: tracker
+#: model:ir.model.fields,field_description:tracker.field_tracker_user_email_config_user_email
+msgid "Email"
+msgstr "Email"
+
+#. module: tracker
+#: model:ir.model.fields,field_description:tracker.field_tracker_sprint_end_date
+msgid "End date"
+msgstr "Date de fin"
+
+#. module: tracker
+#: model:ir.model.fields,field_description:tracker.field_tracker_issue_expected_time
+msgid "Expected time"
+msgstr "Temps prévue"
+
+#. module: tracker
+#: model:ir.ui.view,arch_db:tracker.view_search_issue
+msgid "Filter"
+msgstr "Filtrer"
+
+#. module: tracker
+#: code:addons/tracker/tracker.py:33
+#: code:addons/tracker/tracker.py:44
+#: selection:tracker.issue,state:0
+#: selection:tracker.task,state:0
+#, python-format
+msgid "Finished"
+msgstr "Terminé"
+
+#. module: tracker
+#: model:ir.model.fields,field_description:tracker.field_tracker_issue_finished_write_date
+msgid "Finished write date"
+msgstr "Date de fin"
+
+#. module: tracker
+#: model:ir.ui.view,arch_db:tracker.view_form_tracker_issue
+msgid "Follow"
+msgstr "S'abonner"
+
+#. module: tracker
+#: model:ir.model.fields,field_description:tracker.field_tracker_issue_follower_ids
+#: model:ir.ui.view,arch_db:tracker.view_form_tracker_issue
+msgid "Followers"
+msgstr "Abonnés"
+
+#. module: tracker
+#: code:addons/tracker/tracker.py:100
+#: selection:tracker.user.email.config,option_email:0
+#, python-format
+msgid "For all issues (not implemented yet)"
+msgstr "Pour tous les tickets (par encore implémenté)"
+
+#. module: tracker
+#: code:addons/tracker/tracker.py:102
+#: selection:tracker.user.email.config,option_email:0
+#, python-format
+msgid "For all issues in a state where I am assigned"
+msgstr "Pour tous les tickets au moment où je suis assigné"
+
+#. module: tracker
+#: code:addons/tracker/tracker.py:101
+#: selection:tracker.user.email.config,option_email:0
+#, python-format
+msgid "For all issues where I am assigned"
+msgstr "Pour tous les tickets où je suis assigné"
+
+#. module: tracker
+#: model:ir.model.fields,field_description:tracker.field_tracker_email_manager_from_email
+msgid "From email"
+msgstr "De"
+
+#. module: tracker
+#: model:ir.ui.view,arch_db:tracker.view_search_issue
+msgid "Group By"
+msgstr "Groupé par"
+
+#. module: tracker
+#: code:addons/tracker/tracker.py:1079
+#, python-format
+msgid "Hello,\n"
+" The issue ({0}) \"{1}\"\" has been updated\n"
+" Here is the link: {2}"
+msgstr "Bonjour,\n"
+" Le ticket ({0}) \"{1}\" a été mis à jour\n"
+" Voici le lien: {2}"
+
+#. module: tracker
+#: code:addons/tracker/tracker.py:55
+#: code:addons/tracker/tracker.py:78
+#: selection:tracker.issue,complexity:0
+#: selection:tracker.issue,priority:0
+#, python-format
+msgid "High"
+msgstr "Haute"
+
+#. module: tracker
+#: model:ir.model.fields,field_description:tracker.field_tracker_commit_id
+#: model:ir.model.fields,field_description:tracker.field_tracker_deployment_instruction_id
+#: model:ir.model.fields,field_description:tracker.field_tracker_email_manager_id
+#: model:ir.model.fields,field_description:tracker.field_tracker_follower_id
+#: model:ir.model.fields,field_description:tracker.field_tracker_issue_category_id_2273
+#: model:ir.model.fields,field_description:tracker.field_tracker_issue_id
+#: model:ir.model.fields,field_description:tracker.field_tracker_issue_test_id
+#: model:ir.model.fields,field_description:tracker.field_tracker_production_deployment_id
+#: model:ir.model.fields,field_description:tracker.field_tracker_production_instruction_id
+#: model:ir.model.fields,field_description:tracker.field_tracker_sprint_id
+#: model:ir.model.fields,field_description:tracker.field_tracker_tag_id
+#: model:ir.model.fields,field_description:tracker.field_tracker_task_config_id
+#: model:ir.model.fields,field_description:tracker.field_tracker_task_id
+#: model:ir.model.fields,field_description:tracker.field_tracker_task_settings_id
+#: model:ir.model.fields,field_description:tracker.field_tracker_user_email_config_id
+msgid "ID"
+msgstr "ID"
+
+#. module: tracker
+#: code:addons/tracker/tracker.py:111
+#: selection:tracker.issue.test,type_:0
+#, python-format
+msgid "Insctruction"
+msgstr "Instruction"
+
+#. module: tracker
+#: code:addons/tracker/tracker.py:69
+#: selection:tracker.production.instruction,action_type:0
+#, python-format
+msgid "Installation"
+msgstr "Installation"
+
+#. module: tracker
+#: model:ir.model.fields,field_description:tracker.field_tracker_deployment_instruction_instruction_id
+msgid "Instruction id"
+msgstr "Instruction id"
+
+#. module: tracker
+#: model:ir.model.fields,field_description:tracker.field_tracker_deployment_instruction_is_automatic
+#: model:ir.model.fields,field_description:tracker.field_tracker_follower_is_automatic
+msgid "Is automatic"
+msgstr "Est automatique"
+
+#. module: tracker
+#: model:ir.model.fields,field_description:tracker.field_tracker_deployment_instruction_is_done
+msgid "Is done"
+msgstr "Est fini"
+
+#. module: tracker
+#: model:ir.model.fields,field_description:tracker.field_tracker_follower_is_following
+msgid "Is following"
+msgstr "Est abonné"
+
+#. module: tracker
+#: code:addons/tracker/tracker.py:149
+#, python-format
+msgid "Is not possible to duplicate an issue, please create a new one."
+msgstr "Il n'est pas possible de dupliquer un ticket, merci d'en créer un nouveau."
+
+#. module: tracker
+#: model:ir.model.fields,field_description:tracker.field_tracker_issue_is_security
+msgid "Is security"
+msgstr "Sécurité faite"
+
+#. module: tracker
+#: model:ir.model.fields,field_description:tracker.field_tracker_issue_is_translation
+msgid "Is translation"
+msgstr "Traduction faite"
+
+#. module: tracker
+#: code:addons/tracker/wizard/wizard_create_timetracking.py:103
+#: model:ir.model.fields,field_description:tracker.field_resource_timetracking_issue_id
+#: model:ir.model.fields,field_description:tracker.field_tracker_follower_issue_id
+#: model:ir.model.fields,field_description:tracker.field_tracker_production_instruction_issue_id
+#: model:ir.model.fields,field_description:tracker.field_tracker_task_issue_id
+#: model:ir.model.fields,field_description:tracker.field_wizard_create_timetracking_issue_id
+#, python-format
+msgid "Issue"
+msgstr "Ticket"
+
+#. module: tracker
+#: code:addons/tracker/tracker.py:1035
+#, python-format
+msgid "Issue ({}) updated"
+msgstr "Ticket ({}) mis à jour"
+
+#. module: tracker
+#: model:ir.ui.view,arch_db:tracker.view_search_issue
+msgid "Issue canceled during month"
+msgstr "Ticket annulé pendant le mois"
+
+#. module: tracker
+#: model:ir.ui.view,arch_db:tracker.view_search_issue
+msgid "Issue finished during month"
+msgstr "Ticket terminé pendant le mois"
+
+#. module: tracker
+#: model:ir.model.fields,field_description:tracker.field_tracker_issue_test_issue_id
+msgid "Issue id"
+msgstr "Ticket id"
+
+#. module: tracker
+#: model:ir.model.fields,field_description:tracker.field_tracker_commit_issue_ids
+#: model:ir.model.fields,field_description:tracker.field_tracker_production_deployment_issue_ids
+msgid "Issue ids"
+msgstr "Ticket ids"
+
+#. module: tracker
+#: model:ir.ui.view,arch_db:tracker.view_search_issue
+msgid "Issue opened during month"
+msgstr "Ticket ouvert pendant le mois"
+
+#. module: tracker
+#: model:ir.actions.act_window,name:tracker.action_kanban_distribution_issue
+#: model:ir.actions.act_window,name:tracker.action_tree_all_issue
+#: model:ir.model.fields,field_description:tracker.field_tracker_sprint_issue_ids
+#: model:ir.ui.menu,name:tracker.menu_issues
+msgid "Issues"
+msgstr "Tickets"
+
+#. module: tracker
+#: model:ir.model.fields,field_description:tracker.field_tracker_commit___last_update
+#: model:ir.model.fields,field_description:tracker.field_tracker_deployment_instruction___last_update
+#: model:ir.model.fields,field_description:tracker.field_tracker_email_manager___last_update
+#: model:ir.model.fields,field_description:tracker.field_tracker_follower___last_update
+#: model:ir.model.fields,field_description:tracker.field_tracker_issue___last_update
+#: model:ir.model.fields,field_description:tracker.field_tracker_issue_category___last_update
+#: model:ir.model.fields,field_description:tracker.field_tracker_issue_test___last_update
+#: model:ir.model.fields,field_description:tracker.field_tracker_production_deployment___last_update
+#: model:ir.model.fields,field_description:tracker.field_tracker_production_instruction___last_update
+#: model:ir.model.fields,field_description:tracker.field_tracker_sprint___last_update
+#: model:ir.model.fields,field_description:tracker.field_tracker_tag___last_update
+#: model:ir.model.fields,field_description:tracker.field_tracker_task___last_update
+#: model:ir.model.fields,field_description:tracker.field_tracker_task_config___last_update
+#: model:ir.model.fields,field_description:tracker.field_tracker_task_settings___last_update
+#: model:ir.model.fields,field_description:tracker.field_tracker_user_email_config___last_update
+msgid "Last Modified on"
+msgstr "Dernière modification le"
+
+#. module: tracker
+#: model:ir.model.fields,field_description:tracker.field_tracker_commit_write_uid
+#: model:ir.model.fields,field_description:tracker.field_tracker_deployment_instruction_write_uid
+#: model:ir.model.fields,field_description:tracker.field_tracker_email_manager_write_uid
+#: model:ir.model.fields,field_description:tracker.field_tracker_follower_write_uid
+#: model:ir.model.fields,field_description:tracker.field_tracker_issue_category_write_uid
+#: model:ir.model.fields,field_description:tracker.field_tracker_issue_test_write_uid
+#: model:ir.model.fields,field_description:tracker.field_tracker_issue_write_uid
+#: model:ir.model.fields,field_description:tracker.field_tracker_production_deployment_write_uid
+#: model:ir.model.fields,field_description:tracker.field_tracker_production_instruction_write_uid
+#: model:ir.model.fields,field_description:tracker.field_tracker_sprint_write_uid
+#: model:ir.model.fields,field_description:tracker.field_tracker_tag_write_uid
+#: model:ir.model.fields,field_description:tracker.field_tracker_task_config_write_uid
+#: model:ir.model.fields,field_description:tracker.field_tracker_task_settings_write_uid
+#: model:ir.model.fields,field_description:tracker.field_tracker_task_write_uid
+#: model:ir.model.fields,field_description:tracker.field_tracker_user_email_config_write_uid
+msgid "Last Updated by"
+msgstr "Dernière MAJ par"
+
+#. module: tracker
+#: model:ir.model.fields,field_description:tracker.field_tracker_commit_write_date
+#: model:ir.model.fields,field_description:tracker.field_tracker_deployment_instruction_write_date
+#: model:ir.model.fields,field_description:tracker.field_tracker_email_manager_write_date
+#: model:ir.model.fields,field_description:tracker.field_tracker_follower_write_date
+#: model:ir.model.fields,field_description:tracker.field_tracker_issue_category_write_date
+#: model:ir.model.fields,field_description:tracker.field_tracker_issue_test_write_date
+#: model:ir.model.fields,field_description:tracker.field_tracker_issue_write_date
+#: model:ir.model.fields,field_description:tracker.field_tracker_production_deployment_write_date
+#: model:ir.model.fields,field_description:tracker.field_tracker_production_instruction_write_date
+#: model:ir.model.fields,field_description:tracker.field_tracker_sprint_write_date
+#: model:ir.model.fields,field_description:tracker.field_tracker_tag_write_date
+#: model:ir.model.fields,field_description:tracker.field_tracker_task_config_write_date
+#: model:ir.model.fields,field_description:tracker.field_tracker_task_settings_write_date
+#: model:ir.model.fields,field_description:tracker.field_tracker_task_write_date
+#: model:ir.model.fields,field_description:tracker.field_tracker_user_email_config_write_date
+msgid "Last Updated on"
+msgstr "Dernière MAJ le"
+
+#. module: tracker
+#: model:ir.model.fields,field_description:tracker.field_tracker_production_deployment_last_commit
+msgid "Last commit"
+msgstr "Dernier commit"
+
+#. module: tracker
+#: model:ir.model.fields,field_description:tracker.field_tracker_task_last_update_date
+msgid "Last update on"
+msgstr "Derniére mise à jour le"
+
+#. module: tracker
+#: code:addons/tracker/tracker.py:57
+#: code:addons/tracker/tracker.py:80
+#: selection:tracker.issue,complexity:0
+#: selection:tracker.issue,priority:0
+#, python-format
+msgid "Low"
+msgstr "Basse"
+
+#. module: tracker
+#: code:addons/tracker/tracker.py:67
+#: selection:tracker.production.instruction,action_type:0
+#, python-format
+msgid "Mail"
+msgstr "Mail"
+
+#. module: tracker
+#: model:res.groups,name:tracker.group_tracker_manager
+msgid "Manager"
+msgstr "Manager"
+
+#. module: tracker
+#: model:ir.model.fields,field_description:tracker.field_tracker_production_deployment_manual_issue_ids
+msgid "Manual issue ids"
+msgstr "Ticket manuel"
+
+#. module: tracker
+#: model:ir.ui.view,arch_db:tracker.view_form_deployment
+msgid "Manual issues"
+msgstr "Tickets manuels"
+
+#. module: tracker
+#: code:addons/tracker/tracker.py:56
+#: code:addons/tracker/tracker.py:79
+#: selection:tracker.issue,complexity:0
+#: selection:tracker.issue,priority:0
+#, python-format
+msgid "Medium"
+msgstr "Moyenne"
+
+#. module: tracker
+#: model:ir.model.fields,field_description:tracker.field_tracker_commit_message
+msgid "Message"
+msgstr "Message"
+
+#. module: tracker
+#: model:ir.ui.view,arch_db:tracker.view_search_commit
+msgid "Message like than"
+msgstr "Message like than"
+
+#. module: tracker
+#: code:addons/tracker/tracker.py:58
+#: selection:tracker.issue,priority:0
+#, python-format
+msgid "Minor"
+msgstr "Mineur"
+
+#. module: tracker
+#: model:ir.ui.menu,name:tracker.menu_settings_email
+msgid "My email"
+msgstr "Mon email"
+
+#. module: tracker
+#: model:ir.ui.view,arch_db:tracker.view_search_issue
+msgid "My issues"
+msgstr "My issues"
+
+#. module: tracker
+#: model:ir.model.fields,field_description:tracker.field_tracker_issue_category_name
+#: model:ir.model.fields,field_description:tracker.field_tracker_sprint_name
+#: model:ir.model.fields,field_description:tracker.field_tracker_tag_name
+msgid "Name"
+msgstr "Nom"
+
+#. module: tracker
+#: sql_constraint:tracker.email.manager:0
+msgid "Name must be unique"
+msgstr "Nom doit être unique"
+
+#. module: tracker
+#: code:addons/tracker/tracker.py:99
+#: selection:tracker.user.email.config,option_email:0
+#, python-format
+msgid "Never"
+msgstr "Jamais"
+
+#. module: tracker
+#: model:ir.actions.act_window,name:tracker.action_form_tracker_issue
+msgid "New issue"
+msgstr "Nouveau ticket"
+
+#. module: tracker
+#: model:ir.ui.view,arch_db:tracker.view_form_tracker_issue
+msgid "Next task"
+msgstr "Tâche suivante"
+
+#. module: tracker
+#: model:ir.ui.view,arch_db:tracker.view_search_issue
+msgid "Not canceled or done issues"
+msgstr "Pas de tickets annulés ou terminés"
+
+#. module: tracker
+#: model:ir.model.fields,help:tracker.field_resource_timetracking_issue_id
+#: model:ir.model.fields,help:tracker.field_tracker_commit___last_update
+#: model:ir.model.fields,help:tracker.field_tracker_commit_branch_name
+#: model:ir.model.fields,help:tracker.field_tracker_commit_create_date
+#: model:ir.model.fields,help:tracker.field_tracker_commit_create_uid
+#: model:ir.model.fields,help:tracker.field_tracker_commit_display_name
+#: model:ir.model.fields,help:tracker.field_tracker_commit_id
+#: model:ir.model.fields,help:tracker.field_tracker_commit_issue_ids
+#: model:ir.model.fields,help:tracker.field_tracker_commit_message
+#: model:ir.model.fields,help:tracker.field_tracker_commit_revision
+#: model:ir.model.fields,help:tracker.field_tracker_commit_source
+#: model:ir.model.fields,help:tracker.field_tracker_commit_source_created_datetime
+#: model:ir.model.fields,help:tracker.field_tracker_commit_tag
+#: model:ir.model.fields,help:tracker.field_tracker_commit_url
+#: model:ir.model.fields,help:tracker.field_tracker_commit_username
+#: model:ir.model.fields,help:tracker.field_tracker_commit_write_date
+#: model:ir.model.fields,help:tracker.field_tracker_commit_write_uid
+#: model:ir.model.fields,help:tracker.field_tracker_deployment_instruction___last_update
+#: model:ir.model.fields,help:tracker.field_tracker_deployment_instruction_action_type_related
+#: model:ir.model.fields,help:tracker.field_tracker_deployment_instruction_create_date
+#: model:ir.model.fields,help:tracker.field_tracker_deployment_instruction_create_uid
+#: model:ir.model.fields,help:tracker.field_tracker_deployment_instruction_deployment_id
+#: model:ir.model.fields,help:tracker.field_tracker_deployment_instruction_display_name
+#: model:ir.model.fields,help:tracker.field_tracker_deployment_instruction_id
+#: model:ir.model.fields,help:tracker.field_tracker_deployment_instruction_instruction_id
+#: model:ir.model.fields,help:tracker.field_tracker_deployment_instruction_is_automatic
+#: model:ir.model.fields,help:tracker.field_tracker_deployment_instruction_is_done
+#: model:ir.model.fields,help:tracker.field_tracker_deployment_instruction_timing_related
+#: model:ir.model.fields,help:tracker.field_tracker_deployment_instruction_title_related
+#: model:ir.model.fields,help:tracker.field_tracker_deployment_instruction_user_in_charge_id_related
+#: model:ir.model.fields,help:tracker.field_tracker_deployment_instruction_write_date
+#: model:ir.model.fields,help:tracker.field_tracker_deployment_instruction_write_uid
+#: model:ir.model.fields,help:tracker.field_tracker_email_manager___last_update
+#: model:ir.model.fields,help:tracker.field_tracker_email_manager_base_url
+#: model:ir.model.fields,help:tracker.field_tracker_email_manager_create_date
+#: model:ir.model.fields,help:tracker.field_tracker_email_manager_create_uid
+#: model:ir.model.fields,help:tracker.field_tracker_email_manager_display_name
+#: model:ir.model.fields,help:tracker.field_tracker_email_manager_from_email
+#: model:ir.model.fields,help:tracker.field_tracker_email_manager_id
+#: model:ir.model.fields,help:tracker.field_tracker_email_manager_name
+#: model:ir.model.fields,help:tracker.field_tracker_email_manager_smtp_port
+#: model:ir.model.fields,help:tracker.field_tracker_email_manager_smtp_pwd
+#: model:ir.model.fields,help:tracker.field_tracker_email_manager_smtp_url
+#: model:ir.model.fields,help:tracker.field_tracker_email_manager_smtp_user
+#: model:ir.model.fields,help:tracker.field_tracker_email_manager_write_date
+#: model:ir.model.fields,help:tracker.field_tracker_email_manager_write_uid
+#: model:ir.model.fields,help:tracker.field_tracker_follower___last_update
+#: model:ir.model.fields,help:tracker.field_tracker_follower_create_date
+#: model:ir.model.fields,help:tracker.field_tracker_follower_create_uid
+#: model:ir.model.fields,help:tracker.field_tracker_follower_display_name
+#: model:ir.model.fields,help:tracker.field_tracker_follower_id
+#: model:ir.model.fields,help:tracker.field_tracker_follower_is_automatic
+#: model:ir.model.fields,help:tracker.field_tracker_follower_is_following
+#: model:ir.model.fields,help:tracker.field_tracker_follower_issue_id
+#: model:ir.model.fields,help:tracker.field_tracker_follower_user_id
+#: model:ir.model.fields,help:tracker.field_tracker_follower_write_date
+#: model:ir.model.fields,help:tracker.field_tracker_follower_write_uid
+#: model:ir.model.fields,help:tracker.field_tracker_issue___last_update
+#: model:ir.model.fields,help:tracker.field_tracker_issue_applicant_id
+#: model:ir.model.fields,help:tracker.field_tracker_issue_attachment_ids
+#: model:ir.model.fields,help:tracker.field_tracker_issue_background_color
+#: model:ir.model.fields,help:tracker.field_tracker_issue_border_color
+#: model:ir.model.fields,help:tracker.field_tracker_issue_canceled_write_date
+#: model:ir.model.fields,help:tracker.field_tracker_issue_category___last_update
+#: model:ir.model.fields,help:tracker.field_tracker_issue_category_create_date
+#: model:ir.model.fields,help:tracker.field_tracker_issue_category_create_uid
+#: model:ir.model.fields,help:tracker.field_tracker_issue_category_display_name
+#: model:ir.model.fields,help:tracker.field_tracker_issue_category_id
+#: model:ir.model.fields,help:tracker.field_tracker_issue_category_id_2273
+#: model:ir.model.fields,help:tracker.field_tracker_issue_category_name
+#: model:ir.model.fields,help:tracker.field_tracker_issue_category_write_date
+#: model:ir.model.fields,help:tracker.field_tracker_issue_category_write_uid
+#: model:ir.model.fields,help:tracker.field_tracker_issue_commit_ids
+#: model:ir.model.fields,help:tracker.field_tracker_issue_company_id
+#: model:ir.model.fields,help:tracker.field_tracker_issue_complexity
+#: model:ir.model.fields,help:tracker.field_tracker_issue_create_date
+#: model:ir.model.fields,help:tracker.field_tracker_issue_create_uid
+#: model:ir.model.fields,help:tracker.field_tracker_issue_current_phase_type
+#: model:ir.model.fields,help:tracker.field_tracker_issue_current_task_id
+#: model:ir.model.fields,help:tracker.field_tracker_issue_current_user_in_charge_id
+#: model:ir.model.fields,help:tracker.field_tracker_issue_deadline
+#: model:ir.model.fields,help:tracker.field_tracker_issue_description_customer
+#: model:ir.model.fields,help:tracker.field_tracker_issue_development_comment
+#: model:ir.model.fields,help:tracker.field_tracker_issue_developper_id
+#: model:ir.model.fields,help:tracker.field_tracker_issue_display_name
+#: model:ir.model.fields,help:tracker.field_tracker_issue_draft_write_date
+#: model:ir.model.fields,help:tracker.field_tracker_issue_duration
+#: model:ir.model.fields,help:tracker.field_tracker_issue_expected_time
+#: model:ir.model.fields,help:tracker.field_tracker_issue_finished_write_date
+#: model:ir.model.fields,help:tracker.field_tracker_issue_follower_ids
+#: model:ir.model.fields,help:tracker.field_tracker_issue_id
+#: model:ir.model.fields,help:tracker.field_tracker_issue_is_security
+#: model:ir.model.fields,help:tracker.field_tracker_issue_is_translation
+#: model:ir.model.fields,help:tracker.field_tracker_issue_is_unvalidate_test
+#: model:ir.model.fields,help:tracker.field_tracker_issue_nb_attachment
+#: model:ir.model.fields,help:tracker.field_tracker_issue_priority
+#: model:ir.model.fields,help:tracker.field_tracker_issue_production_instruction_ids
+#: model:ir.model.fields,help:tracker.field_tracker_issue_progress_write_date
+#: model:ir.model.fields,help:tracker.field_tracker_issue_resource_id
+#: model:ir.model.fields,help:tracker.field_tracker_issue_sequence
+#: model:ir.model.fields,help:tracker.field_tracker_issue_specification_developer
+#: model:ir.model.fields,help:tracker.field_tracker_issue_sprint_id
+#: model:ir.model.fields,help:tracker.field_tracker_issue_state
+#: model:ir.model.fields,help:tracker.field_tracker_issue_tag_ids
+#: model:ir.model.fields,help:tracker.field_tracker_issue_task_ids
+#: model:ir.model.fields,help:tracker.field_tracker_issue_test___last_update
+#: model:ir.model.fields,help:tracker.field_tracker_issue_test_create_date
+#: model:ir.model.fields,help:tracker.field_tracker_issue_test_create_uid
+#: model:ir.model.fields,help:tracker.field_tracker_issue_test_description
+#: model:ir.model.fields,help:tracker.field_tracker_issue_test_developper_in_charge_id
+#: model:ir.model.fields,help:tracker.field_tracker_issue_test_display_name
+#: model:ir.model.fields,help:tracker.field_tracker_issue_test_id
+#: model:ir.model.fields,help:tracker.field_tracker_issue_test_ids
+#: model:ir.model.fields,help:tracker.field_tracker_issue_test_issue_id
+#: model:ir.model.fields,help:tracker.field_tracker_issue_test_state
+#: model:ir.model.fields,help:tracker.field_tracker_issue_test_telltale_id
+#: model:ir.model.fields,help:tracker.field_tracker_issue_test_type_
+#: model:ir.model.fields,help:tracker.field_tracker_issue_test_write_date
+#: model:ir.model.fields,help:tracker.field_tracker_issue_test_write_uid
+#: model:ir.model.fields,help:tracker.field_tracker_issue_tester_id
+#: model:ir.model.fields,help:tracker.field_tracker_issue_time_tracking_ids
+#: model:ir.model.fields,help:tracker.field_tracker_issue_title
+#: model:ir.model.fields,help:tracker.field_tracker_issue_transcription_customer
+#: model:ir.model.fields,help:tracker.field_tracker_issue_treatment_order
+#: model:ir.model.fields,help:tracker.field_tracker_issue_write_date
+#: model:ir.model.fields,help:tracker.field_tracker_issue_write_uid
+#: model:ir.model.fields,help:tracker.field_tracker_production_deployment___last_update
+#: model:ir.model.fields,help:tracker.field_tracker_production_deployment_comments
+#: model:ir.model.fields,help:tracker.field_tracker_production_deployment_commit_ids
+#: model:ir.model.fields,help:tracker.field_tracker_production_deployment_company_in_charge_id
+#: model:ir.model.fields,help:tracker.field_tracker_production_deployment_create_date
+#: model:ir.model.fields,help:tracker.field_tracker_production_deployment_create_uid
+#: model:ir.model.fields,help:tracker.field_tracker_production_deployment_customer_company_id
+#: model:ir.model.fields,help:tracker.field_tracker_production_deployment_deployment_date
+#: model:ir.model.fields,help:tracker.field_tracker_production_deployment_display_name
+#: model:ir.model.fields,help:tracker.field_tracker_production_deployment_id
+#: model:ir.model.fields,help:tracker.field_tracker_production_deployment_issue_ids
+#: model:ir.model.fields,help:tracker.field_tracker_production_deployment_last_commit
+#: model:ir.model.fields,help:tracker.field_tracker_production_deployment_manual_issue_ids
+#: model:ir.model.fields,help:tracker.field_tracker_production_deployment_old_issue_ids
+#: model:ir.model.fields,help:tracker.field_tracker_production_deployment_production_instruction_ids
+#: model:ir.model.fields,help:tracker.field_tracker_production_deployment_title
+#: model:ir.model.fields,help:tracker.field_tracker_production_deployment_user_in_charge_id
+#: model:ir.model.fields,help:tracker.field_tracker_production_deployment_write_date
+#: model:ir.model.fields,help:tracker.field_tracker_production_deployment_write_uid
+#: model:ir.model.fields,help:tracker.field_tracker_production_instruction___last_update
+#: model:ir.model.fields,help:tracker.field_tracker_production_instruction_action_type
+#: model:ir.model.fields,help:tracker.field_tracker_production_instruction_company_ids
+#: model:ir.model.fields,help:tracker.field_tracker_production_instruction_create_date
+#: model:ir.model.fields,help:tracker.field_tracker_production_instruction_create_uid
+#: model:ir.model.fields,help:tracker.field_tracker_production_instruction_display_name
+#: model:ir.model.fields,help:tracker.field_tracker_production_instruction_id
+#: model:ir.model.fields,help:tracker.field_tracker_production_instruction_issue_id
+#: model:ir.model.fields,help:tracker.field_tracker_production_instruction_timing
+#: model:ir.model.fields,help:tracker.field_tracker_production_instruction_title
+#: model:ir.model.fields,help:tracker.field_tracker_production_instruction_user_in_charge_id
+#: model:ir.model.fields,help:tracker.field_tracker_production_instruction_write_date
+#: model:ir.model.fields,help:tracker.field_tracker_production_instruction_write_uid
+#: model:ir.model.fields,help:tracker.field_tracker_sprint___last_update
+#: model:ir.model.fields,help:tracker.field_tracker_sprint_create_date
+#: model:ir.model.fields,help:tracker.field_tracker_sprint_create_uid
+#: model:ir.model.fields,help:tracker.field_tracker_sprint_description
+#: model:ir.model.fields,help:tracker.field_tracker_sprint_display_name
+#: model:ir.model.fields,help:tracker.field_tracker_sprint_end_date
+#: model:ir.model.fields,help:tracker.field_tracker_sprint_id
+#: model:ir.model.fields,help:tracker.field_tracker_sprint_issue_ids
+#: model:ir.model.fields,help:tracker.field_tracker_sprint_name
+#: model:ir.model.fields,help:tracker.field_tracker_sprint_start_date
+#: model:ir.model.fields,help:tracker.field_tracker_sprint_write_date
+#: model:ir.model.fields,help:tracker.field_tracker_sprint_write_uid
+#: model:ir.model.fields,help:tracker.field_tracker_tag___last_update
+#: model:ir.model.fields,help:tracker.field_tracker_tag_color
+#: model:ir.model.fields,help:tracker.field_tracker_tag_create_date
+#: model:ir.model.fields,help:tracker.field_tracker_tag_create_uid
+#: model:ir.model.fields,help:tracker.field_tracker_tag_display_name
+#: model:ir.model.fields,help:tracker.field_tracker_tag_id
+#: model:ir.model.fields,help:tracker.field_tracker_tag_name
+#: model:ir.model.fields,help:tracker.field_tracker_tag_write_date
+#: model:ir.model.fields,help:tracker.field_tracker_tag_write_uid
+#: model:ir.model.fields,help:tracker.field_tracker_task___last_update
+#: model:ir.model.fields,help:tracker.field_tracker_task_company_id
+#: model:ir.model.fields,help:tracker.field_tracker_task_config___last_update
+#: model:ir.model.fields,help:tracker.field_tracker_task_config_create_date
+#: model:ir.model.fields,help:tracker.field_tracker_task_config_create_uid
+#: model:ir.model.fields,help:tracker.field_tracker_task_config_display_name
+#: model:ir.model.fields,help:tracker.field_tracker_task_config_id
+#: model:ir.model.fields,help:tracker.field_tracker_task_config_write_date
+#: model:ir.model.fields,help:tracker.field_tracker_task_config_write_uid
+#: model:ir.model.fields,help:tracker.field_tracker_task_create_date
+#: model:ir.model.fields,help:tracker.field_tracker_task_create_uid
+#: model:ir.model.fields,help:tracker.field_tracker_task_display_name
+#: model:ir.model.fields,help:tracker.field_tracker_task_id
+#: model:ir.model.fields,help:tracker.field_tracker_task_issue_id
+#: model:ir.model.fields,help:tracker.field_tracker_task_last_update_date
+#: model:ir.model.fields,help:tracker.field_tracker_task_phase_type
+#: model:ir.model.fields,help:tracker.field_tracker_task_sequence
+#: model:ir.model.fields,help:tracker.field_tracker_task_settings___last_update
+#: model:ir.model.fields,help:tracker.field_tracker_task_settings_company_id
+#: model:ir.model.fields,help:tracker.field_tracker_task_settings_create_date
+#: model:ir.model.fields,help:tracker.field_tracker_task_settings_create_uid
+#: model:ir.model.fields,help:tracker.field_tracker_task_settings_display_name
+#: model:ir.model.fields,help:tracker.field_tracker_task_settings_id
+#: model:ir.model.fields,help:tracker.field_tracker_task_settings_phase_type
+#: model:ir.model.fields,help:tracker.field_tracker_task_settings_sequence
+#: model:ir.model.fields,help:tracker.field_tracker_task_settings_title
+#: model:ir.model.fields,help:tracker.field_tracker_task_settings_user_in_charge_id
+#: model:ir.model.fields,help:tracker.field_tracker_task_settings_write_date
+#: model:ir.model.fields,help:tracker.field_tracker_task_settings_write_uid
+#: model:ir.model.fields,help:tracker.field_tracker_task_state
+#: model:ir.model.fields,help:tracker.field_tracker_task_title
+#: model:ir.model.fields,help:tracker.field_tracker_task_user_in_charge_id
+#: model:ir.model.fields,help:tracker.field_tracker_task_write_date
+#: model:ir.model.fields,help:tracker.field_tracker_task_write_uid
+#: model:ir.model.fields,help:tracker.field_tracker_user_email_config___last_update
+#: model:ir.model.fields,help:tracker.field_tracker_user_email_config_create_date
+#: model:ir.model.fields,help:tracker.field_tracker_user_email_config_create_uid
+#: model:ir.model.fields,help:tracker.field_tracker_user_email_config_display_name
+#: model:ir.model.fields,help:tracker.field_tracker_user_email_config_id
+#: model:ir.model.fields,help:tracker.field_tracker_user_email_config_option_email
+#: model:ir.model.fields,help:tracker.field_tracker_user_email_config_user_email
+#: model:ir.model.fields,help:tracker.field_tracker_user_email_config_user_id
+#: model:ir.model.fields,help:tracker.field_tracker_user_email_config_write_date
+#: model:ir.model.fields,help:tracker.field_tracker_user_email_config_write_uid
+#: model:ir.model.fields,help:tracker.field_wizard_create_timetracking_issue_id
+msgid "Not defined"
+msgstr "Not defined"
+
+#. module: tracker
+#: code:addons/tracker/tracker.py:113
+#: selection:tracker.issue.test,type_:0
+#, python-format
+msgid "Note"
+msgstr "Note"
+
+#. module: tracker
+#: model:ir.model.fields,field_description:tracker.field_tracker_production_deployment_old_issue_ids
+msgid "Old issue ids"
+msgstr "Ids des anciens tickets"
+
+#. module: tracker
+#: model:ir.ui.view,arch_db:tracker.view_form_tracker_issue
+msgid "Open"
+msgstr "Ouvrir"
+
+#. module: tracker
+#: model:ir.model.fields,field_description:tracker.field_tracker_user_email_config_option_email
+msgid "Option email"
+msgstr "Option email"
+
+#. module: tracker
+#: model:ir.ui.view,arch_db:tracker.view_form_tracker_issue
+msgid "Other informations"
+msgstr "Autres informations"
+
+#. module: tracker
+#: model:ir.model.fields,field_description:tracker.field_tracker_task_phase_type
+#: model:ir.model.fields,field_description:tracker.field_tracker_task_settings_phase_type
+#: model:ir.ui.view,arch_db:tracker.view_search_issue
+msgid "Phase type"
+msgstr "Type de phase"
+
+#. module: tracker
+#: model:ir.ui.view,arch_db:tracker.view_form_tracker_issue
+msgid "Previous task"
+msgstr "Tâche précédente"
+
+#. module: tracker
+#: model:ir.model.fields,field_description:tracker.field_tracker_issue_priority
+msgid "Priority"
+msgstr "Priorité"
+
+#. module: tracker
+#: model:ir.actions.act_window,name:tracker.action_task_settings
+#: model:ir.ui.menu,name:tracker.menu_settings_task
+msgid "Process"
+msgstr "Processus"
+
+#. module: tracker
+#: model:ir.ui.menu,name:tracker.menu_production
+#: model:ir.ui.view,arch_db:tracker.view_form_deployment
+#: model:ir.ui.view,arch_db:tracker.view_form_tracker_issue
+msgid "Production"
+msgstr "Production"
+
+#. module: tracker
+#: model:ir.model.fields,field_description:tracker.field_tracker_issue_production_instruction_ids
+#: model:ir.model.fields,field_description:tracker.field_tracker_production_deployment_production_instruction_ids
+msgid "Production instruction ids"
+msgstr "Instruction de mis en production"
+
+#. module: tracker
+#: model:ir.model.fields,field_description:tracker.field_tracker_issue_progress_write_date
+msgid "Progress write date"
+msgstr "Date de progression"
+
+#. module: tracker
+#: model:ir.ui.view,arch_db:tracker.view_form_tracker_issue
+msgid "Quick form"
+msgstr "Formulaire rapide"
+
+#. module: tracker
+#: model:ir.model.fields,field_description:tracker.field_tracker_commit_revision
+msgid "Revision"
+msgstr "Numéro de commit"
+
+#. module: tracker
+#: model:ir.ui.view,arch_db:tracker.view_search_commit
+msgid "Revision greater or equal than"
+msgstr "Numéro de commit supérieur ou égale à"
+
+#. module: tracker
+#: model:ir.ui.view,arch_db:tracker.view_search_commit
+msgid "Revision lower or equal than"
+msgstr "Numéro de commit inférieur ou égale à"
+
+#. module: tracker
+#: sql_constraint:tracker.commit:0
+msgid "Revision number must be unique"
+msgstr "Numéro de commit doit être unique"
+
+#. module: tracker
+#: model:ir.actions.act_window,name:tracker.action_email_manager
+#: model:ir.ui.menu,name:tracker.menu_email_manager
+msgid "SMTP settings"
+msgstr "Configuration SMTP"
+
+#. module: tracker
+#: code:addons/tracker/tracker.py:68
+#: selection:tracker.production.instruction,action_type:0
+#, python-format
+msgid "SQL"
+msgstr "SQL"
+
+#. module: tracker
+#: model:ir.model.fields,field_description:tracker.field_tracker_issue_sequence
+#: model:ir.model.fields,field_description:tracker.field_tracker_task_sequence
+#: model:ir.model.fields,field_description:tracker.field_tracker_task_settings_sequence
+msgid "Sequence"
+msgstr "Séquence"
+
+#. module: tracker
+#: sql_constraint:tracker.task.settings:0
+msgid "Sequence must be unique for a given company"
+msgstr "Séquence doit être unique pour une company"
+
+#. module: tracker
+#: sql_constraint:tracker.task:0
+msgid "Sequence must be unique for a given issue"
+msgstr "Séquence doit être unique pour un ticket"
+
+#. module: tracker
+#: code:addons/tracker/tracker.py:70
+#: selection:tracker.production.instruction,action_type:0
+#, python-format
+msgid "Setting"
+msgstr "Paramètre"
+
+#. module: tracker
+#: model:ir.ui.menu,name:tracker.menu_settings
+msgid "Settings"
+msgstr "Paramètres"
+
+#. module: tracker
+#: model:ir.model.fields,field_description:tracker.field_tracker_email_manager_smtp_port
+msgid "Smtp port"
+msgstr "Port SMTP"
+
+#. module: tracker
+#: model:ir.model.fields,field_description:tracker.field_tracker_email_manager_smtp_pwd
+msgid "Smtp pwd"
+msgstr "Mot de passe SMTP"
+
+#. module: tracker
+#: model:ir.model.fields,field_description:tracker.field_tracker_email_manager_smtp_url
+msgid "Smtp url"
+msgstr "URL SMTP"
+
+#. module: tracker
+#: model:ir.model.fields,field_description:tracker.field_tracker_email_manager_smtp_user
+msgid "Smtp user"
+msgstr "Utilisateur SMTP"
+
+#. module: tracker
+#: model:ir.model.fields,field_description:tracker.field_tracker_commit_source
+msgid "Source"
+msgstr "Source"
+
+#. module: tracker
+#: code:addons/tracker/tracker.py:20
+#: model:ir.ui.view,arch_db:tracker.view_form_tracker_issue
+#: selection:tracker.issue,current_phase_type:0
+#: selection:tracker.task,phase_type:0
+#: selection:tracker.task.settings,phase_type:0
+#, python-format
+msgid "Specification"
+msgstr "Spécification"
+
+#. module: tracker
+#: model:ir.model.fields,field_description:tracker.field_tracker_issue_specification_developer
+#: model:ir.ui.view,arch_db:tracker.view_form_tracker_issue
+msgid "Specification developer"
+msgstr "Spécification développeur"
+
+#. module: tracker
+#: model:ir.actions.act_window,name:tracker.action_tracker_sprint
+#: model:ir.model.fields,field_description:tracker.field_tracker_issue_sprint_id
+#: model:ir.ui.menu,name:tracker.menu_tracker_sprint
+msgid "Sprint"
+msgstr "Sprint"
+
+#. module: tracker
+#: model:ir.model.fields,field_description:tracker.field_tracker_sprint_start_date
+msgid "Start date"
+msgstr "Date de début"
+
+#. module: tracker
+#: model:ir.model.fields,field_description:tracker.field_tracker_issue_state
+#: model:ir.model.fields,field_description:tracker.field_tracker_issue_test_state
+#: model:ir.model.fields,field_description:tracker.field_tracker_task_state
+#: model:ir.ui.view,arch_db:tracker.view_search_issue
+msgid "State"
+msgstr "Etat"
+
+#. module: tracker
+#: model:ir.model,name:tracker.model_resource_timetracking
+msgid "Suivi des temps"
+msgstr "Suivi des temps"
+
+#. module: tracker
+#: model:ir.model.fields,field_description:tracker.field_tracker_commit_tag
+msgid "Tag"
+msgstr "Tag"
+
+#. module: tracker
+#: model:ir.model.fields,field_description:tracker.field_tracker_issue_tag_ids
+#: model:ir.ui.menu,name:tracker.menu_form_tracker_email_manager_settings
+msgid "Tags"
+msgstr "Tags"
+
+#. module: tracker
+#: model:ir.model.fields,field_description:tracker.field_tracker_issue_task_ids
+msgid "Tasks"
+msgstr "Processus"
+
+#. module: tracker
+#: model:ir.model.fields,field_description:tracker.field_tracker_issue_test_telltale_id
+msgid "Telltale"
+msgstr "Rapporteur"
+
+#. module: tracker
+#: code:addons/tracker/tracker.py:22
+#: code:addons/tracker/tracker.py:71
+#: model:ir.ui.view,arch_db:tracker.view_form_tracker_issue
+#: selection:tracker.issue,current_phase_type:0
+#: selection:tracker.production.instruction,action_type:0
+#: selection:tracker.task,phase_type:0
+#: selection:tracker.task.settings,phase_type:0
+#, python-format
+msgid "Test"
+msgstr "Test"
+
+#. module: tracker
+#: model:ir.ui.view,arch_db:tracker.view_form_email_manager
+msgid "Test connection"
+msgstr "Test connection"
+
+#. module: tracker
+#: model:ir.model.fields,field_description:tracker.field_tracker_issue_test_ids
+msgid "Test ids"
+msgstr "Test ids"
+
+#. module: tracker
+#: model:ir.model.fields,field_description:tracker.field_tracker_issue_tester_id
+msgid "Tester"
+msgstr "Tester"
+
+#. module: tracker
+#: code:addons/tracker/tracker.py:581
+#, python-format
+msgid "The tickets should have test report to unvalidate a test phase"
+msgstr "Les tickets doivent avoir un test pour valider une phase test"
+
+#. module: tracker
+#: model:ir.model.fields,field_description:tracker.field_tracker_issue_time_tracking_ids
+#: model:ir.ui.view,arch_db:tracker.view_form_tracker_issue
+msgid "Time tracking"
+msgstr "Suivi des temps"
+
+#. module: tracker
+#: model:ir.ui.view,arch_db:tracker.view_form_tracker_issue
+msgid "Timetracking line"
+msgstr "Ligne de suivi des temps"
+
+#. module: tracker
+#: model:ir.model.fields,field_description:tracker.field_tracker_deployment_instruction_timing_related
+#: model:ir.model.fields,field_description:tracker.field_tracker_production_instruction_timing
+msgid "Timing"
+msgstr "Quand"
+
+#. module: tracker
+#: model:ir.model.fields,field_description:tracker.field_tracker_deployment_instruction_title_related
+#: model:ir.model.fields,field_description:tracker.field_tracker_issue_title
+#: model:ir.model.fields,field_description:tracker.field_tracker_production_deployment_title
+#: model:ir.model.fields,field_description:tracker.field_tracker_production_instruction_title
+#: model:ir.model.fields,field_description:tracker.field_tracker_task_settings_title
+#: model:ir.model.fields,field_description:tracker.field_tracker_task_title
+msgid "Title"
+msgstr "Titre"
+
+#. module: tracker
+#: code:addons/tracker/tracker.py:123
+#: selection:tracker.issue.test,state:0
+#, python-format
+msgid "To test"
+msgstr "A tester"
+
+#. module: tracker
+#: code:addons/tracker/tracker.py:557
+#, python-format
+msgid "To validate a developmet phase:%s"
+msgstr "To validate a developmet phase:%s"
+
+#. module: tracker
+#: code:addons/tracker/tracker.py:122
+#: selection:tracker.issue.test,state:0
+#, python-format
+msgid "Todo"
+msgstr "A faire"
+
+#. module: tracker
+#: model:ir.ui.view,arch_db:tracker.view_form_tracker_issue
+msgid "Total"
+msgstr "Total"
+
+#. module: tracker
+#: model:ir.module.category,name:tracker.module_category_tracker
+#: model:ir.ui.menu,name:tracker.menu_tracker
+msgid "Tracker"
+msgstr "Gestionnaire de ticket"
+
+#. module: tracker
+#: model:ir.model.fields,field_description:tracker.field_tracker_issue_transcription_customer
+#: model:ir.ui.view,arch_db:tracker.view_form_tracker_issue
+msgid "Transcription customer"
+msgstr "Transcription client"
+
+#. module: tracker
+#: model:ir.model.fields,field_description:tracker.field_tracker_issue_treatment_order
+msgid "Treatment order"
+msgstr "Ordre de traitement"
+
+#. module: tracker
+#: model:ir.model.fields,field_description:tracker.field_tracker_issue_test_type_
+msgid "Type "
+msgstr "Type "
+
+#. module: tracker
+#: model:ir.ui.view,arch_db:tracker.view_form_tracker_issue
+msgid "Unfollow"
+msgstr "Se désabonner"
+
+#. module: tracker
+#: model:ir.model.fields,field_description:tracker.field_tracker_email_manager_name
+msgid "Unique name"
+msgstr "Nom unique"
+
+#. module: tracker
+#: model:ir.model.fields,field_description:tracker.field_tracker_issue_is_unvalidate_test
+msgid "Unvalidate test"
+msgstr "Test HS"
+
+#. module: tracker
+#: model:ir.model.fields,field_description:tracker.field_tracker_commit_url
+msgid "Url"
+msgstr "Url"
+
+#. module: tracker
+#: model:ir.model.fields,field_description:tracker.field_tracker_commit_username
+#: model:ir.model.fields,field_description:tracker.field_tracker_follower_user_id
+#: model:res.groups,name:tracker.group_tracker_user
+msgid "User"
+msgstr "Utilisateur"
+
+#. module: tracker
+#: model:ir.model.fields,field_description:tracker.field_tracker_user_email_config_user_id
+msgid "User id"
+msgstr "ID utilisateur"
+
+#. module: tracker
+#: model:ir.model.fields,field_description:tracker.field_tracker_deployment_instruction_user_in_charge_id_related
+#: model:ir.model.fields,field_description:tracker.field_tracker_production_deployment_user_in_charge_id
+#: model:ir.model.fields,field_description:tracker.field_tracker_production_instruction_user_in_charge_id
+#: model:ir.model.fields,field_description:tracker.field_tracker_task_settings_user_in_charge_id
+#: model:ir.model.fields,field_description:tracker.field_tracker_task_user_in_charge_id
+#: model:ir.ui.view,arch_db:tracker.view_search_issue
+msgid "User in charge"
+msgstr "Responsable"
+
+#. module: tracker
+#: model:ir.model.fields,field_description:tracker.field_tracker_issue_resource_id
+msgid "User resource"
+msgstr "Ressource de l'utilisateur"
+
+#. module: tracker
+#: model:ir.ui.view,arch_db:tracker.view_form_tracker_issue
+msgid "Verification"
+msgstr "Vérification"
+
+#. module: tracker
+#: code:addons/tracker/tracker.py:32
+#: code:addons/tracker/tracker.py:43
+#: selection:tracker.issue,state:0
+#: selection:tracker.task,state:0
+#, python-format
+msgid "Work in progress"
+msgstr "Travail en cours"
+
+#. module: tracker
+#: code:addons/tracker/tracker.py:734
+#, python-format
+msgid "You can't delete record with state not canceled."
+msgstr "Vous ne pouvez pas supprimer un enregistrement avec un état non annulé"
+
+#. module: tracker
+#: model:ir.actions.act_window,name:tracker.action_tracker_email_manager_settings
+msgid "action_tracker_email_manager_settings"
+msgstr "action_tracker_email_manager_settings"
+
+#. module: tracker
+#: model:ir.model.fields,field_description:tracker.field_tracker_production_instruction_company_ids
+msgid "company"
+msgstr "entreprise"
+
+#. module: tracker
+#: model:ir.actions.act_window,name:tracker.action_email_settings
+msgid "email_settings"
+msgstr "email_settings"
+
+#. module: tracker
+#: model:ir.actions.act_window,name:tracker.action_tag_settings
+msgid "tag_settings"
+msgstr "tag_settings"
+
+#. module: tracker
+#: model:ir.model,name:tracker.model_tracker_commit
+msgid "tracker.commit"
+msgstr "tracker.commit"
+
+#. module: tracker
+#: model:ir.model,name:tracker.model_tracker_deployment_instruction
+msgid "tracker.deployment.instruction"
+msgstr "tracker.deployment.instruction"
+
+#. module: tracker
+#: model:ir.model,name:tracker.model_tracker_email_manager
+msgid "tracker.email.manager"
+msgstr "tracker.email.manager"
+
+#. module: tracker
+#: model:ir.model,name:tracker.model_tracker_follower
+msgid "tracker.follower"
+msgstr "tracker.follower"
+
+#. module: tracker
+#: model:ir.model,name:tracker.model_tracker_issue
+msgid "tracker.issue"
+msgstr "tracker.issue"
+
+#. module: tracker
+#: model:ir.model,name:tracker.model_tracker_issue_category
+msgid "tracker.issue.category"
+msgstr "tracker.issue.category"
+
+#. module: tracker
+#: model:ir.model,name:tracker.model_tracker_issue_test
+msgid "tracker.issue.test"
+msgstr "tracker.issue.test"
+
+#. module: tracker
+#: model:ir.model,name:tracker.model_tracker_production_deployment
+msgid "tracker.production.deployment"
+msgstr "tracker.production.deployment"
+
+#. module: tracker
+#: model:ir.model,name:tracker.model_tracker_production_instruction
+msgid "tracker.production.instruction"
+msgstr "tracker.production.instruction"
+
+#. module: tracker
+#: model:ir.model,name:tracker.model_tracker_sprint
+msgid "tracker.sprint"
+msgstr "tracker.sprint"
+
+#. module: tracker
+#: model:ir.model,name:tracker.model_tracker_tag
+msgid "tracker.tag"
+msgstr "tracker.tag"
+
+#. module: tracker
+#: model:ir.model,name:tracker.model_tracker_task
+msgid "tracker.task"
+msgstr "tracker.task"
+
+#. module: tracker
+#: model:ir.model,name:tracker.model_tracker_task_config
+msgid "tracker.task.config"
+msgstr "tracker.task.config"
+
+#. module: tracker
+#: model:ir.model,name:tracker.model_tracker_task_settings
+msgid "tracker.task.settings"
+msgstr "tracker.task.settings"
+
+#. module: tracker
+#: model:ir.model,name:tracker.model_tracker_user_email_config
+msgid "tracker.user.email.config"
+msgstr "tracker.user.email.config"
+

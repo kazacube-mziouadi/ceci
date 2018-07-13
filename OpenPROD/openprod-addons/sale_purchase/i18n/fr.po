@@ -1,0 +1,1195 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* sale_purchase
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 9.0c\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-07-13 12:12+0000\n"
+"PO-Revision-Date: 2017-07-13 12:12+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: sale_purchase
+#: model:ir.ui.view,arch_db:sale_purchase.view_form_certificate_template_id
+msgid "Actions"
+msgstr "Actions"
+
+#. module: sale_purchase
+#: code:addons/sale_purchase/certificate_management.py:99
+#: model:ir.actions.act_window,name:sale_purchase.action_wiz_add_certificate_application
+#: model:ir.ui.view,arch_db:sale_purchase.view_form_certificate_template_id
+#: model:ir.ui.view,arch_db:sale_purchase.view_form_wiz_add_certificate_application
+#, python-format
+msgid "Add certificate application"
+msgstr "Ajouter des applications de certificats"
+
+#. module: sale_purchase
+#: model:ir.ui.menu,name:sale_purchase.menu_certificate_line_application_customer_id
+msgid "Application customer"
+msgstr "Application client"
+
+#. module: sale_purchase
+#: model:ir.ui.view,arch_db:sale_purchase.view_form_certificate_template_id
+msgid "Application list"
+msgstr "Listes applications"
+
+#. module: sale_purchase
+#: model:ir.ui.view,arch_db:sale_purchase.view_form_certificate_template_id
+#: model:ir.ui.view,arch_db:sale_purchase.view_tree_certificate_line_application_id
+msgid "Application of certificates"
+msgstr "Applications des certificats"
+
+#. module: sale_purchase
+#: model:ir.actions.act_window,name:sale_purchase.act_certificate_line_application_customer_id
+msgid "Application of certificates customers"
+msgstr "Applications des certificats clients"
+
+#. module: sale_purchase
+#: model:ir.actions.act_window,name:sale_purchase.act_certificate_line_application_ref_customer_id
+msgid "Application of certificates ref. customers"
+msgstr "Applications des certificats réf. clients"
+
+#. module: sale_purchase
+#: model:ir.actions.act_window,name:sale_purchase.act_certificate_line_application_ref_supplier_id
+msgid "Application of certificates ref. suppliers"
+msgstr "Applications des certificats réf. fournisseurs"
+
+#. module: sale_purchase
+#: model:ir.actions.act_window,name:sale_purchase.act_certificate_line_application_resource_id
+msgid "Application of certificates resources"
+msgstr "Applications des certificats ressources"
+
+#. module: sale_purchase
+#: model:ir.actions.act_window,name:sale_purchase.act_certificate_line_application_supplier_id
+msgid "Application of certificates suppliers"
+msgstr "Applications des certificats fournisseurs"
+
+#. module: sale_purchase
+#: model:ir.ui.menu,name:sale_purchase.menu_certificate_line_application_ref_customer_id
+msgid "Application ref customer"
+msgstr "Application réf. client"
+
+#. module: sale_purchase
+#: model:ir.ui.menu,name:sale_purchase.menu_certificate_line_application_ref_supplier_id
+msgid "Application ref supplier"
+msgstr "Application réf. fournisseur"
+
+#. module: sale_purchase
+#: model:ir.ui.menu,name:sale_purchase.menu_certificate_line_application_resource_id
+msgid "Application resource"
+msgstr "Application ressource"
+
+#. module: sale_purchase
+#: model:ir.ui.menu,name:sale_purchase.menu_certificate_line_application_supplier_id
+msgid "Application supplier"
+msgstr "Application fournisseur"
+
+#. module: sale_purchase
+#: code:addons/sale_purchase/wizard/display_reservation.py:412
+#, python-format
+msgid "April"
+msgstr "Avril"
+
+#. module: sale_purchase
+#: code:addons/sale_purchase/wizard/display_reservation.py:416
+#, python-format
+msgid "August"
+msgstr "Août"
+
+#. module: sale_purchase
+#: code:addons/sale_purchase/certificate_management.py:31
+#: code:addons/sale_purchase/certificate_management.py:135
+#: code:addons/sale_purchase/certificate_management.py:311
+#: code:addons/sale_purchase/wizard/display_reservation.py:34
+#: code:addons/sale_purchase/wizard/display_reservation.py:80
+#: model:ir.ui.view,arch_db:sale_purchase.view_form_wiz_add_certificate_application
+#: model:ir.ui.view,arch_db:sale_purchase.view_form_wizard_compute_taxes
+#, python-format
+msgid "Cancel"
+msgstr "Annuler"
+
+#. module: sale_purchase
+#: model:ir.ui.view,arch_db:sale_purchase.view_search_certificate_line_application_id
+msgid "Certificate expired in a month"
+msgstr "Certificat expiré dans un mois"
+
+#. module: sale_purchase
+#: model:ir.model,name:sale_purchase.model_certificate_line
+msgid "Certificate line"
+msgstr "Lignes des certificats"
+
+#. module: sale_purchase
+#: model:ir.model,name:sale_purchase.model_certificate_line_application
+msgid "Certificate line application"
+msgstr "Ligne d'application des certificats"
+
+#. module: sale_purchase
+#: model:ir.ui.view,arch_db:sale_purchase.view_form_certificate_template_id
+msgid "Certificate list"
+msgstr "Listes des certificats"
+
+#. module: sale_purchase
+#: model:ir.actions.act_window,name:sale_purchase.act_certificate_template_id
+#: model:ir.model,name:sale_purchase.model_certificate_template
+#: model:ir.model.fields,field_description:sale_purchase.field_certificate_line_application_certicate_template_id
+#: model:ir.model.fields,field_description:sale_purchase.field_certificate_line_certicate_template_id
+#: model:ir.model.fields,field_description:sale_purchase.field_wiz_add_certificate_application_certicate_template_id
+#: model:ir.ui.menu,name:sale_purchase.menu_certificate_template_id
+#: model:ir.ui.view,arch_db:sale_purchase.view_form_certificate_template_id
+msgid "Certificate template"
+msgstr "Modèle de certificat"
+
+#. module: sale_purchase
+#: model:ir.ui.view,arch_db:sale_purchase.view_tree_certificate_template_id
+msgid "Certificate templates"
+msgstr "Modèles des certificats"
+
+#. module: sale_purchase
+#: model:ir.ui.menu,name:sale_purchase.menu_quality_certificate_id
+#: model:ir.ui.view,arch_db:sale_purchase.view_form_certificate_template_id
+msgid "Certificates"
+msgstr "Certificats"
+
+#. module: sale_purchase
+#: model:ir.model.fields,help:sale_purchase.field_wizard_compute_taxes_compute_all
+msgid "Check this field to compute all records"
+msgstr "Cochez ce champ pour recalculer tous les enregistrements"
+
+#. module: sale_purchase
+#: model:ir.model.fields,field_description:sale_purchase.field_certificate_line_application_name
+#: model:ir.model.fields,field_description:sale_purchase.field_certificate_line_name
+msgid "Comment"
+msgstr "Commentaire"
+
+#. module: sale_purchase
+#: model:ir.model.fields,field_description:sale_purchase.field_wizard_compute_taxes_compute_all
+msgid "Compute all"
+msgstr "Tout calculer"
+
+#. module: sale_purchase
+#: model:ir.ui.view,arch_db:sale_purchase.view_form_wizard_compute_taxes
+msgid "Compute orders taxes lines"
+msgstr "Calculer les lignes de taxes des commandes"
+
+#. module: sale_purchase
+#: model:ir.actions.act_window,name:sale_purchase.act_compute_po_taxes
+#: model:ir.actions.act_window,name:sale_purchase.act_compute_so_taxes
+#: model:ir.ui.view,arch_db:sale_purchase.view_form_wizard_compute_taxes
+msgid "Compute taxes"
+msgstr "Calculer les taxes"
+
+#. module: sale_purchase
+#: model:ir.ui.view,arch_db:sale_purchase.view_form_display_reservation
+msgid "Consommation"
+msgstr "Consommation"
+
+#. module: sale_purchase
+#: code:addons/sale_purchase/certificate_management.py:290
+#, python-format
+msgid "Covered"
+msgstr "Couvert"
+
+#. module: sale_purchase
+#: model:ir.model.fields,field_description:sale_purchase.field_certificate_line_application_create_uid
+#: model:ir.model.fields,field_description:sale_purchase.field_certificate_line_create_uid
+#: model:ir.model.fields,field_description:sale_purchase.field_certificate_template_create_uid
+#: model:ir.model.fields,field_description:sale_purchase.field_display_reservation_create_uid
+#: model:ir.model.fields,field_description:sale_purchase.field_display_reservation_month_line_create_uid
+#: model:ir.model.fields,field_description:sale_purchase.field_display_reservation_week_line_create_uid
+#: model:ir.model.fields,field_description:sale_purchase.field_stock_move_reserve_create_uid
+#: model:ir.model.fields,field_description:sale_purchase.field_wiz_add_certificate_application_create_uid
+#: model:ir.model.fields,field_description:sale_purchase.field_wizard_compute_taxes_create_uid
+#: model:ir.model.fields,field_description:sale_purchase.field_wizard_price_create_uid
+#: model:ir.model.fields,field_description:sale_purchase.field_wizard_price_line_purchase_create_uid
+#: model:ir.model.fields,field_description:sale_purchase.field_wizard_price_line_sale_create_uid
+msgid "Created by"
+msgstr "Créé par"
+
+#. module: sale_purchase
+#: model:ir.model.fields,field_description:sale_purchase.field_certificate_line_application_create_date
+#: model:ir.model.fields,field_description:sale_purchase.field_certificate_line_create_date
+#: model:ir.model.fields,field_description:sale_purchase.field_certificate_template_create_date
+#: model:ir.model.fields,field_description:sale_purchase.field_display_reservation_create_date
+#: model:ir.model.fields,field_description:sale_purchase.field_display_reservation_month_line_create_date
+#: model:ir.model.fields,field_description:sale_purchase.field_display_reservation_week_line_create_date
+#: model:ir.model.fields,field_description:sale_purchase.field_stock_move_reserve_create_date
+#: model:ir.model.fields,field_description:sale_purchase.field_wiz_add_certificate_application_create_date
+#: model:ir.model.fields,field_description:sale_purchase.field_wizard_compute_taxes_create_date
+#: model:ir.model.fields,field_description:sale_purchase.field_wizard_price_create_date
+#: model:ir.model.fields,field_description:sale_purchase.field_wizard_price_line_purchase_create_date
+#: model:ir.model.fields,field_description:sale_purchase.field_wizard_price_line_sale_create_date
+msgid "Created on"
+msgstr "Créé le"
+
+#. module: sale_purchase
+#: model:ir.model.fields,field_description:sale_purchase.field_wizard_price_line_sale_cusinfo_id
+msgid "Cusinfo"
+msgstr "Cusinfo"
+
+#. module: sale_purchase
+#: code:addons/sale_purchase/certificate_management.py:19
+#: code:addons/sale_purchase/certificate_management.py:123
+#: code:addons/sale_purchase/certificate_management.py:299
+#: code:addons/sale_purchase/wizard/wiz_add_certificate_application.py:18
+#: model:ir.model.fields,field_description:sale_purchase.field_certificate_line_application_customer_id
+#: model:ir.model.fields,field_description:sale_purchase.field_certificate_line_customer_id
+#, python-format
+msgid "Customer"
+msgstr "Client"
+
+#. module: sale_purchase
+#: model:ir.model.fields,field_description:sale_purchase.field_wiz_add_certificate_application_customer_ids
+msgid "Customers"
+msgstr "Clients"
+
+#. module: sale_purchase
+#: model:ir.model.fields,field_description:sale_purchase.field_stock_move_reserve_date
+#: model:ir.model.fields,field_description:sale_purchase.field_stock_reserve_report_date
+#: model:ir.model.fields,field_description:sale_purchase.field_wizard_price_date
+msgid "Date"
+msgstr "Date"
+
+#. module: sale_purchase
+#: model:ir.model.fields,field_description:sale_purchase.field_wizard_price_line_purchase_date_start
+#: model:ir.model.fields,field_description:sale_purchase.field_wizard_price_line_sale_date_start
+msgid "Date start"
+msgstr "Date de début"
+
+#. module: sale_purchase
+#: model:ir.model.fields,field_description:sale_purchase.field_wizard_price_line_purchase_date_stop
+#: model:ir.model.fields,field_description:sale_purchase.field_wizard_price_line_sale_date_stop
+msgid "Date stop"
+msgstr "Date de fin"
+
+#. module: sale_purchase
+#: code:addons/sale_purchase/wizard/display_reservation.py:420
+#, python-format
+msgid "December"
+msgstr "Décembre"
+
+#. module: sale_purchase
+#: model:ir.model.fields,field_description:sale_purchase.field_certificate_line_application_display_name
+#: model:ir.model.fields,field_description:sale_purchase.field_certificate_line_display_name
+#: model:ir.model.fields,field_description:sale_purchase.field_certificate_template_display_name
+#: model:ir.model.fields,field_description:sale_purchase.field_display_reservation_display_name
+#: model:ir.model.fields,field_description:sale_purchase.field_display_reservation_month_line_display_name
+#: model:ir.model.fields,field_description:sale_purchase.field_display_reservation_week_line_display_name
+#: model:ir.model.fields,field_description:sale_purchase.field_stock_move_reserve_display_name
+#: model:ir.model.fields,field_description:sale_purchase.field_stock_reserve_report_display_name
+#: model:ir.model.fields,field_description:sale_purchase.field_wiz_add_certificate_application_display_name
+#: model:ir.model.fields,field_description:sale_purchase.field_wizard_compute_taxes_display_name
+#: model:ir.model.fields,field_description:sale_purchase.field_wizard_price_display_name
+#: model:ir.model.fields,field_description:sale_purchase.field_wizard_price_line_purchase_display_name
+#: model:ir.model.fields,field_description:sale_purchase.field_wizard_price_line_sale_display_name
+msgid "Display Name"
+msgstr "Nom affiché"
+
+#. module: sale_purchase
+#: model:ir.actions.act_window,name:sale_purchase.action_display_reservation
+#: model:ir.model.fields,field_description:sale_purchase.field_display_reservation_display_reservation
+#: model:ir.model.fields,field_description:sale_purchase.field_display_reservation_month_line_display_reservation_id
+#: model:ir.model.fields,field_description:sale_purchase.field_display_reservation_week_line_display_reservation_id
+msgid "Display reservation"
+msgstr "Visualisation des réservations"
+
+#. module: sale_purchase
+#: model:ir.ui.view,arch_db:sale_purchase.view_reservation_product
+#: model:ir.ui.view,arch_db:sale_purchase.view_reservation_purchase_order
+#: model:ir.ui.view,arch_db:sale_purchase.view_reservation_purchase_order_line
+#: model:ir.ui.view,arch_db:sale_purchase.view_reservation_sale_order
+#: model:ir.ui.view,arch_db:sale_purchase.view_reservation_sale_order_line
+msgid "Display reservations"
+msgstr "Afficher les réservations"
+
+#. module: sale_purchase
+#: model:ir.ui.view,arch_db:sale_purchase.view_form_display_reservation
+msgid "Display the reservations"
+msgstr "Afficher les réservations"
+
+#. module: sale_purchase
+#: model:ir.model.fields,field_description:sale_purchase.field_certificate_line_document_id
+msgid "Document"
+msgstr "Document"
+
+#. module: sale_purchase
+#: code:addons/sale_purchase/wizard/display_reservation.py:33
+#: code:addons/sale_purchase/wizard/display_reservation.py:79
+#, python-format
+msgid "Done"
+msgstr "Terminé"
+
+#. module: sale_purchase
+#: code:addons/sale_purchase/certificate_management.py:29
+#: code:addons/sale_purchase/certificate_management.py:133
+#: code:addons/sale_purchase/certificate_management.py:309
+#: code:addons/sale_purchase/wizard/display_reservation.py:31
+#: code:addons/sale_purchase/wizard/display_reservation.py:77
+#, python-format
+msgid "Draft"
+msgstr "Brouillon"
+
+#. module: sale_purchase
+#: code:addons/sale_purchase/wizard/display_reservation.py:70
+#, python-format
+msgid "EXTERNAL"
+msgstr "EXTERNE"
+
+#. module: sale_purchase
+#: code:addons/sale_purchase/account_invoice.py:194
+#: code:addons/sale_purchase/stock.py:221
+#, python-format
+msgid "Error"
+msgstr "Erreur"
+
+#. module: sale_purchase
+#: model:ir.ui.view,arch_db:sale_purchase.view_search_certificate_line_application_id
+msgid "Expired certificate"
+msgstr "Certificat expiré"
+
+#. module: sale_purchase
+#: model:ir.model.fields,field_description:sale_purchase.field_certificate_line_application_expiry_date
+msgid "Expiry date"
+msgstr "Date d'expiration"
+
+#. module: sale_purchase
+#: code:addons/sale_purchase/wizard/display_reservation.py:410
+#, python-format
+msgid "February"
+msgstr "Février"
+
+#. module: sale_purchase
+#: model:ir.ui.view,arch_db:sale_purchase.view_search_certificate_line_application_id
+msgid "Filters"
+msgstr "Filtres"
+
+#. module: sale_purchase
+#: model:ir.model.fields,field_description:sale_purchase.field_display_reservation_forecast_stock_move_ids
+msgid "Forecast stock moves"
+msgstr "Mouvements de stock prévi."
+
+#. module: sale_purchase
+#: model:ir.model.fields,field_description:sale_purchase.field_wizard_price_line_purchase_free_purchase
+msgid "Free purchase"
+msgstr "Achat libre"
+
+#. module: sale_purchase
+#: model:ir.model.fields,field_description:sale_purchase.field_wizard_price_line_sale_free_sale
+msgid "Free sale"
+msgstr "Vente libre"
+
+#. module: sale_purchase
+#: model:ir.model.fields,field_description:sale_purchase.field_display_reservation_from_default
+msgid "From default"
+msgstr "Par défaut"
+
+#. module: sale_purchase
+#: model:ir.model.fields,field_description:sale_purchase.field_display_reservation_graph_stock_move_ids
+msgid "Graph stock move ids"
+msgstr "Ids mouvements graph des stock"
+
+#. module: sale_purchase
+#: model:ir.ui.view,arch_db:sale_purchase.view_search_certificate_line_application_id
+#: model:ir.ui.view,arch_db:sale_purchase.view_search_certificate_template_id
+msgid "Group by..."
+msgstr "Grouper par..."
+
+#. module: sale_purchase
+#: model:ir.model.fields,field_description:sale_purchase.field_certificate_line_application_id
+#: model:ir.model.fields,field_description:sale_purchase.field_certificate_line_id
+#: model:ir.model.fields,field_description:sale_purchase.field_certificate_template_id
+#: model:ir.model.fields,field_description:sale_purchase.field_display_reservation_id
+#: model:ir.model.fields,field_description:sale_purchase.field_display_reservation_month_line_id
+#: model:ir.model.fields,field_description:sale_purchase.field_display_reservation_week_line_id
+#: model:ir.model.fields,field_description:sale_purchase.field_stock_move_reserve_id
+#: model:ir.model.fields,field_description:sale_purchase.field_stock_reserve_report_id
+#: model:ir.model.fields,field_description:sale_purchase.field_wiz_add_certificate_application_id
+#: model:ir.model.fields,field_description:sale_purchase.field_wizard_compute_taxes_id
+#: model:ir.model.fields,field_description:sale_purchase.field_wizard_price_id
+#: model:ir.model.fields,field_description:sale_purchase.field_wizard_price_line_purchase_id
+#: model:ir.model.fields,field_description:sale_purchase.field_wizard_price_line_sale_id
+msgid "ID"
+msgstr "ID"
+
+#. module: sale_purchase
+#: code:addons/sale_purchase/wizard/display_reservation.py:23
+#: code:addons/sale_purchase/wizard/display_reservation.py:67
+#, python-format
+msgid "IN"
+msgstr "ENTRANT"
+
+#. module: sale_purchase
+#: code:addons/sale_purchase/wizard/display_reservation.py:69
+#, python-format
+msgid "INTERNAL"
+msgstr "INTERNE"
+
+#. module: sale_purchase
+#: model:ir.model,name:sale_purchase.model_account_invoice
+msgid "Invoice"
+msgstr "Facture"
+
+#. module: sale_purchase
+#: model:ir.model,name:sale_purchase.model_account_invoice_line
+msgid "Invoice Line"
+msgstr "Ligne de facuration"
+
+#. module: sale_purchase
+#: code:addons/sale_purchase/wizard/display_reservation.py:409
+#, python-format
+msgid "January"
+msgstr "Janvier"
+
+#. module: sale_purchase
+#: code:addons/sale_purchase/wizard/display_reservation.py:415
+#, python-format
+msgid "July"
+msgstr "Juillet"
+
+#. module: sale_purchase
+#: code:addons/sale_purchase/wizard/display_reservation.py:414
+#, python-format
+msgid "June"
+msgstr "Juin"
+
+#. module: sale_purchase
+#: model:ir.model.fields,field_description:sale_purchase.field_certificate_line___last_update
+#: model:ir.model.fields,field_description:sale_purchase.field_certificate_line_application___last_update
+#: model:ir.model.fields,field_description:sale_purchase.field_certificate_template___last_update
+#: model:ir.model.fields,field_description:sale_purchase.field_display_reservation___last_update
+#: model:ir.model.fields,field_description:sale_purchase.field_display_reservation_month_line___last_update
+#: model:ir.model.fields,field_description:sale_purchase.field_display_reservation_week_line___last_update
+#: model:ir.model.fields,field_description:sale_purchase.field_stock_move_reserve___last_update
+#: model:ir.model.fields,field_description:sale_purchase.field_stock_reserve_report___last_update
+#: model:ir.model.fields,field_description:sale_purchase.field_wiz_add_certificate_application___last_update
+#: model:ir.model.fields,field_description:sale_purchase.field_wizard_compute_taxes___last_update
+#: model:ir.model.fields,field_description:sale_purchase.field_wizard_price___last_update
+#: model:ir.model.fields,field_description:sale_purchase.field_wizard_price_line_purchase___last_update
+#: model:ir.model.fields,field_description:sale_purchase.field_wizard_price_line_sale___last_update
+msgid "Last Modified on"
+msgstr "Dernière modification le"
+
+#. module: sale_purchase
+#: model:ir.model.fields,field_description:sale_purchase.field_certificate_line_application_write_uid
+#: model:ir.model.fields,field_description:sale_purchase.field_certificate_line_write_uid
+#: model:ir.model.fields,field_description:sale_purchase.field_certificate_template_write_uid
+#: model:ir.model.fields,field_description:sale_purchase.field_display_reservation_month_line_write_uid
+#: model:ir.model.fields,field_description:sale_purchase.field_display_reservation_week_line_write_uid
+#: model:ir.model.fields,field_description:sale_purchase.field_display_reservation_write_uid
+#: model:ir.model.fields,field_description:sale_purchase.field_stock_move_reserve_write_uid
+#: model:ir.model.fields,field_description:sale_purchase.field_wiz_add_certificate_application_write_uid
+#: model:ir.model.fields,field_description:sale_purchase.field_wizard_compute_taxes_write_uid
+#: model:ir.model.fields,field_description:sale_purchase.field_wizard_price_line_purchase_write_uid
+#: model:ir.model.fields,field_description:sale_purchase.field_wizard_price_line_sale_write_uid
+#: model:ir.model.fields,field_description:sale_purchase.field_wizard_price_write_uid
+msgid "Last Updated by"
+msgstr "Mise à jour par"
+
+#. module: sale_purchase
+#: model:ir.model.fields,field_description:sale_purchase.field_certificate_line_application_write_date
+#: model:ir.model.fields,field_description:sale_purchase.field_certificate_line_write_date
+#: model:ir.model.fields,field_description:sale_purchase.field_certificate_template_write_date
+#: model:ir.model.fields,field_description:sale_purchase.field_display_reservation_month_line_write_date
+#: model:ir.model.fields,field_description:sale_purchase.field_display_reservation_week_line_write_date
+#: model:ir.model.fields,field_description:sale_purchase.field_display_reservation_write_date
+#: model:ir.model.fields,field_description:sale_purchase.field_stock_move_reserve_write_date
+#: model:ir.model.fields,field_description:sale_purchase.field_wiz_add_certificate_application_write_date
+#: model:ir.model.fields,field_description:sale_purchase.field_wizard_compute_taxes_write_date
+#: model:ir.model.fields,field_description:sale_purchase.field_wizard_price_line_purchase_write_date
+#: model:ir.model.fields,field_description:sale_purchase.field_wizard_price_line_sale_write_date
+#: model:ir.model.fields,field_description:sale_purchase.field_wizard_price_write_date
+msgid "Last Updated on"
+msgstr "Mise à jour le"
+
+#. module: sale_purchase
+#: model:ir.model.fields,field_description:sale_purchase.field_certificate_template_line_ids
+#: model:ir.ui.view,arch_db:sale_purchase.view_form_wizard_price
+msgid "Lines"
+msgstr "Lignes"
+
+#. module: sale_purchase
+#: model:ir.model.fields,field_description:sale_purchase.field_wizard_price_line_purchase_ids
+msgid "Lines Purchase"
+msgstr "Lignes d'achat"
+
+#. module: sale_purchase
+#: model:ir.model.fields,field_description:sale_purchase.field_wizard_price_line_sale_ids
+msgid "Lines Sale"
+msgstr "Lignes de vente"
+
+#. module: sale_purchase
+#: model:ir.model.fields,field_description:sale_purchase.field_certificate_template_line_application_ids
+msgid "Lines application"
+msgstr "Lignes d'applications"
+
+#. module: sale_purchase
+#: model:ir.model.fields,field_description:sale_purchase.field_certificate_line_application_list_ids_text
+#: model:ir.model.fields,field_description:sale_purchase.field_certificate_line_list_ids_text
+#: model:ir.model.fields,field_description:sale_purchase.field_certificate_template_list_ids_text
+#: model:ir.model.fields,field_description:sale_purchase.field_wiz_add_certificate_application_list_ids_text
+msgid "List ids text"
+msgstr "List ids text"
+
+#. module: sale_purchase
+#: code:addons/sale_purchase/wizard/display_reservation.py:411
+#, python-format
+msgid "March"
+msgstr "Mars"
+
+#. module: sale_purchase
+#: code:addons/sale_purchase/wizard/display_reservation.py:413
+#, python-format
+msgid "May"
+msgstr "Mai"
+
+#. module: sale_purchase
+#: model:ir.model,name:sale_purchase.model_mail_message
+msgid "Message"
+msgstr "Message"
+
+#. module: sale_purchase
+#: model:ir.model.fields,field_description:sale_purchase.field_wizard_compute_taxes_model
+msgid "Model"
+msgstr "Modèle"
+
+#. module: sale_purchase
+#: model:ir.model.fields,field_description:sale_purchase.field_display_reservation_month_line_month
+msgid "Month"
+msgstr "Mois"
+
+#. module: sale_purchase
+#: model:ir.model.fields,field_description:sale_purchase.field_display_reservation_month_move_ids
+msgid "Month moves"
+msgstr "Mois des mouvements"
+
+#. module: sale_purchase
+#: model:ir.ui.view,arch_db:sale_purchase.view_form_display_reservation
+msgid "Months"
+msgstr "Mois"
+
+#. module: sale_purchase
+#: model:ir.model.fields,field_description:sale_purchase.field_certificate_template_name
+msgid "Name"
+msgstr "Nom"
+
+#. module: sale_purchase
+#: code:addons/sale_purchase/certificate_management.py:291
+#, python-format
+msgid "Not covered"
+msgstr "Non couvert"
+
+#. module: sale_purchase
+#: model:ir.model.fields,help:sale_purchase.field_certificate_line___last_update
+#: model:ir.model.fields,help:sale_purchase.field_certificate_line_application___last_update
+#: model:ir.model.fields,help:sale_purchase.field_certificate_line_application_certicate_template_id
+#: model:ir.model.fields,help:sale_purchase.field_certificate_line_application_create_date
+#: model:ir.model.fields,help:sale_purchase.field_certificate_line_application_create_uid
+#: model:ir.model.fields,help:sale_purchase.field_certificate_line_application_customer_id
+#: model:ir.model.fields,help:sale_purchase.field_certificate_line_application_display_name
+#: model:ir.model.fields,help:sale_purchase.field_certificate_line_application_expiry_date
+#: model:ir.model.fields,help:sale_purchase.field_certificate_line_application_id
+#: model:ir.model.fields,help:sale_purchase.field_certificate_line_application_list_ids_text
+#: model:ir.model.fields,help:sale_purchase.field_certificate_line_application_name
+#: model:ir.model.fields,help:sale_purchase.field_certificate_line_application_ref_customer_id
+#: model:ir.model.fields,help:sale_purchase.field_certificate_line_application_ref_supplier_id
+#: model:ir.model.fields,help:sale_purchase.field_certificate_line_application_resource_id
+#: model:ir.model.fields,help:sale_purchase.field_certificate_line_application_state
+#: model:ir.model.fields,help:sale_purchase.field_certificate_line_application_status
+#: model:ir.model.fields,help:sale_purchase.field_certificate_line_application_supplier_id
+#: model:ir.model.fields,help:sale_purchase.field_certificate_line_application_type
+#: model:ir.model.fields,help:sale_purchase.field_certificate_line_application_write_date
+#: model:ir.model.fields,help:sale_purchase.field_certificate_line_application_write_uid
+#: model:ir.model.fields,help:sale_purchase.field_certificate_line_certicate_template_id
+#: model:ir.model.fields,help:sale_purchase.field_certificate_line_create_date
+#: model:ir.model.fields,help:sale_purchase.field_certificate_line_create_uid
+#: model:ir.model.fields,help:sale_purchase.field_certificate_line_customer_id
+#: model:ir.model.fields,help:sale_purchase.field_certificate_line_display_name
+#: model:ir.model.fields,help:sale_purchase.field_certificate_line_document_id
+#: model:ir.model.fields,help:sale_purchase.field_certificate_line_id
+#: model:ir.model.fields,help:sale_purchase.field_certificate_line_list_ids_text
+#: model:ir.model.fields,help:sale_purchase.field_certificate_line_name
+#: model:ir.model.fields,help:sale_purchase.field_certificate_line_ref_customer_id
+#: model:ir.model.fields,help:sale_purchase.field_certificate_line_ref_supplier_id
+#: model:ir.model.fields,help:sale_purchase.field_certificate_line_resource_id
+#: model:ir.model.fields,help:sale_purchase.field_certificate_line_state
+#: model:ir.model.fields,help:sale_purchase.field_certificate_line_stop_date
+#: model:ir.model.fields,help:sale_purchase.field_certificate_line_supplier_id
+#: model:ir.model.fields,help:sale_purchase.field_certificate_line_type
+#: model:ir.model.fields,help:sale_purchase.field_certificate_line_write_date
+#: model:ir.model.fields,help:sale_purchase.field_certificate_line_write_uid
+#: model:ir.model.fields,help:sale_purchase.field_certificate_template___last_update
+#: model:ir.model.fields,help:sale_purchase.field_certificate_template_create_date
+#: model:ir.model.fields,help:sale_purchase.field_certificate_template_create_uid
+#: model:ir.model.fields,help:sale_purchase.field_certificate_template_display_name
+#: model:ir.model.fields,help:sale_purchase.field_certificate_template_id
+#: model:ir.model.fields,help:sale_purchase.field_certificate_template_line_application_ids
+#: model:ir.model.fields,help:sale_purchase.field_certificate_template_line_ids
+#: model:ir.model.fields,help:sale_purchase.field_certificate_template_list_ids_text
+#: model:ir.model.fields,help:sale_purchase.field_certificate_template_name
+#: model:ir.model.fields,help:sale_purchase.field_certificate_template_state
+#: model:ir.model.fields,help:sale_purchase.field_certificate_template_type
+#: model:ir.model.fields,help:sale_purchase.field_certificate_template_type_text
+#: model:ir.model.fields,help:sale_purchase.field_certificate_template_validity_days
+#: model:ir.model.fields,help:sale_purchase.field_certificate_template_write_date
+#: model:ir.model.fields,help:sale_purchase.field_certificate_template_write_uid
+#: model:ir.model.fields,help:sale_purchase.field_display_reservation___last_update
+#: model:ir.model.fields,help:sale_purchase.field_display_reservation_create_date
+#: model:ir.model.fields,help:sale_purchase.field_display_reservation_create_uid
+#: model:ir.model.fields,help:sale_purchase.field_display_reservation_display_name
+#: model:ir.model.fields,help:sale_purchase.field_display_reservation_display_reservation
+#: model:ir.model.fields,help:sale_purchase.field_display_reservation_forecast_stock_move_ids
+#: model:ir.model.fields,help:sale_purchase.field_display_reservation_from_default
+#: model:ir.model.fields,help:sale_purchase.field_display_reservation_graph_stock_move_ids
+#: model:ir.model.fields,help:sale_purchase.field_display_reservation_id
+#: model:ir.model.fields,help:sale_purchase.field_display_reservation_month_line___last_update
+#: model:ir.model.fields,help:sale_purchase.field_display_reservation_month_line_create_date
+#: model:ir.model.fields,help:sale_purchase.field_display_reservation_month_line_create_uid
+#: model:ir.model.fields,help:sale_purchase.field_display_reservation_month_line_display_name
+#: model:ir.model.fields,help:sale_purchase.field_display_reservation_month_line_display_reservation_id
+#: model:ir.model.fields,help:sale_purchase.field_display_reservation_month_line_id
+#: model:ir.model.fields,help:sale_purchase.field_display_reservation_month_line_month
+#: model:ir.model.fields,help:sale_purchase.field_display_reservation_month_line_qty
+#: model:ir.model.fields,help:sale_purchase.field_display_reservation_month_line_write_date
+#: model:ir.model.fields,help:sale_purchase.field_display_reservation_month_line_write_uid
+#: model:ir.model.fields,help:sale_purchase.field_display_reservation_month_line_year
+#: model:ir.model.fields,help:sale_purchase.field_display_reservation_month_move_ids
+#: model:ir.model.fields,help:sale_purchase.field_display_reservation_product_id
+#: model:ir.model.fields,help:sale_purchase.field_display_reservation_stock
+#: model:ir.model.fields,help:sale_purchase.field_display_reservation_stock_move_ids
+#: model:ir.model.fields,help:sale_purchase.field_display_reservation_virtual_stock
+#: model:ir.model.fields,help:sale_purchase.field_display_reservation_week_line___last_update
+#: model:ir.model.fields,help:sale_purchase.field_display_reservation_week_line_create_date
+#: model:ir.model.fields,help:sale_purchase.field_display_reservation_week_line_create_uid
+#: model:ir.model.fields,help:sale_purchase.field_display_reservation_week_line_display_name
+#: model:ir.model.fields,help:sale_purchase.field_display_reservation_week_line_display_reservation_id
+#: model:ir.model.fields,help:sale_purchase.field_display_reservation_week_line_id
+#: model:ir.model.fields,help:sale_purchase.field_display_reservation_week_line_qty
+#: model:ir.model.fields,help:sale_purchase.field_display_reservation_week_line_week
+#: model:ir.model.fields,help:sale_purchase.field_display_reservation_week_line_write_date
+#: model:ir.model.fields,help:sale_purchase.field_display_reservation_week_line_write_uid
+#: model:ir.model.fields,help:sale_purchase.field_display_reservation_week_line_year
+#: model:ir.model.fields,help:sale_purchase.field_display_reservation_week_move_ids
+#: model:ir.model.fields,help:sale_purchase.field_display_reservation_write_date
+#: model:ir.model.fields,help:sale_purchase.field_display_reservation_write_uid
+#: model:ir.model.fields,help:sale_purchase.field_stock_move_reserve___last_update
+#: model:ir.model.fields,help:sale_purchase.field_stock_move_reserve_create_date
+#: model:ir.model.fields,help:sale_purchase.field_stock_move_reserve_create_uid
+#: model:ir.model.fields,help:sale_purchase.field_stock_move_reserve_date
+#: model:ir.model.fields,help:sale_purchase.field_stock_move_reserve_display_name
+#: model:ir.model.fields,help:sale_purchase.field_stock_move_reserve_id
+#: model:ir.model.fields,help:sale_purchase.field_stock_move_reserve_product_id
+#: model:ir.model.fields,help:sale_purchase.field_stock_move_reserve_purchase_order_id
+#: model:ir.model.fields,help:sale_purchase.field_stock_move_reserve_qty
+#: model:ir.model.fields,help:sale_purchase.field_stock_move_reserve_qty_in_stock
+#: model:ir.model.fields,help:sale_purchase.field_stock_move_reserve_sale_order_id
+#: model:ir.model.fields,help:sale_purchase.field_stock_move_reserve_state
+#: model:ir.model.fields,help:sale_purchase.field_stock_move_reserve_type
+#: model:ir.model.fields,help:sale_purchase.field_stock_move_reserve_uom_id
+#: model:ir.model.fields,help:sale_purchase.field_stock_move_reserve_write_date
+#: model:ir.model.fields,help:sale_purchase.field_stock_move_reserve_write_uid
+#: model:ir.model.fields,help:sale_purchase.field_stock_reserve_report___last_update
+#: model:ir.model.fields,help:sale_purchase.field_stock_reserve_report_date
+#: model:ir.model.fields,help:sale_purchase.field_stock_reserve_report_display_name
+#: model:ir.model.fields,help:sale_purchase.field_stock_reserve_report_id
+#: model:ir.model.fields,help:sale_purchase.field_stock_reserve_report_product_id
+#: model:ir.model.fields,help:sale_purchase.field_stock_reserve_report_purchase_order_id
+#: model:ir.model.fields,help:sale_purchase.field_stock_reserve_report_qty
+#: model:ir.model.fields,help:sale_purchase.field_stock_reserve_report_qty_in_stock
+#: model:ir.model.fields,help:sale_purchase.field_stock_reserve_report_sale_order_id
+#: model:ir.model.fields,help:sale_purchase.field_stock_reserve_report_state
+#: model:ir.model.fields,help:sale_purchase.field_stock_reserve_report_type
+#: model:ir.model.fields,help:sale_purchase.field_stock_reserve_report_uom_id
+#: model:ir.model.fields,help:sale_purchase.field_wiz_add_certificate_application___last_update
+#: model:ir.model.fields,help:sale_purchase.field_wiz_add_certificate_application_certicate_template_id
+#: model:ir.model.fields,help:sale_purchase.field_wiz_add_certificate_application_create_date
+#: model:ir.model.fields,help:sale_purchase.field_wiz_add_certificate_application_create_uid
+#: model:ir.model.fields,help:sale_purchase.field_wiz_add_certificate_application_customer_ids
+#: model:ir.model.fields,help:sale_purchase.field_wiz_add_certificate_application_display_name
+#: model:ir.model.fields,help:sale_purchase.field_wiz_add_certificate_application_id
+#: model:ir.model.fields,help:sale_purchase.field_wiz_add_certificate_application_list_ids_text
+#: model:ir.model.fields,help:sale_purchase.field_wiz_add_certificate_application_ref_customer_ids
+#: model:ir.model.fields,help:sale_purchase.field_wiz_add_certificate_application_ref_supplier_ids
+#: model:ir.model.fields,help:sale_purchase.field_wiz_add_certificate_application_resource_ids
+#: model:ir.model.fields,help:sale_purchase.field_wiz_add_certificate_application_supplier_ids
+#: model:ir.model.fields,help:sale_purchase.field_wiz_add_certificate_application_type
+#: model:ir.model.fields,help:sale_purchase.field_wiz_add_certificate_application_write_date
+#: model:ir.model.fields,help:sale_purchase.field_wiz_add_certificate_application_write_uid
+#: model:ir.model.fields,help:sale_purchase.field_wizard_compute_taxes___last_update
+#: model:ir.model.fields,help:sale_purchase.field_wizard_compute_taxes_create_date
+#: model:ir.model.fields,help:sale_purchase.field_wizard_compute_taxes_create_uid
+#: model:ir.model.fields,help:sale_purchase.field_wizard_compute_taxes_display_name
+#: model:ir.model.fields,help:sale_purchase.field_wizard_compute_taxes_id
+#: model:ir.model.fields,help:sale_purchase.field_wizard_compute_taxes_model
+#: model:ir.model.fields,help:sale_purchase.field_wizard_compute_taxes_po_ids
+#: model:ir.model.fields,help:sale_purchase.field_wizard_compute_taxes_so_ids
+#: model:ir.model.fields,help:sale_purchase.field_wizard_compute_taxes_write_date
+#: model:ir.model.fields,help:sale_purchase.field_wizard_compute_taxes_write_uid
+#: model:ir.model.fields,help:sale_purchase.field_wizard_price___last_update
+#: model:ir.model.fields,help:sale_purchase.field_wizard_price_create_date
+#: model:ir.model.fields,help:sale_purchase.field_wizard_price_create_uid
+#: model:ir.model.fields,help:sale_purchase.field_wizard_price_date
+#: model:ir.model.fields,help:sale_purchase.field_wizard_price_display_name
+#: model:ir.model.fields,help:sale_purchase.field_wizard_price_id
+#: model:ir.model.fields,help:sale_purchase.field_wizard_price_line_purchase___last_update
+#: model:ir.model.fields,help:sale_purchase.field_wizard_price_line_purchase_create_date
+#: model:ir.model.fields,help:sale_purchase.field_wizard_price_line_purchase_create_uid
+#: model:ir.model.fields,help:sale_purchase.field_wizard_price_line_purchase_date_start
+#: model:ir.model.fields,help:sale_purchase.field_wizard_price_line_purchase_date_stop
+#: model:ir.model.fields,help:sale_purchase.field_wizard_price_line_purchase_display_name
+#: model:ir.model.fields,help:sale_purchase.field_wizard_price_line_purchase_free_purchase
+#: model:ir.model.fields,help:sale_purchase.field_wizard_price_line_purchase_id
+#: model:ir.model.fields,help:sale_purchase.field_wizard_price_line_purchase_ids
+#: model:ir.model.fields,help:sale_purchase.field_wizard_price_line_purchase_min_qty
+#: model:ir.model.fields,help:sale_purchase.field_wizard_price_line_purchase_price
+#: model:ir.model.fields,help:sale_purchase.field_wizard_price_line_purchase_suppinfo_id
+#: model:ir.model.fields,help:sale_purchase.field_wizard_price_line_purchase_uoi_id
+#: model:ir.model.fields,help:sale_purchase.field_wizard_price_line_purchase_wizard_price_id
+#: model:ir.model.fields,help:sale_purchase.field_wizard_price_line_purchase_write_date
+#: model:ir.model.fields,help:sale_purchase.field_wizard_price_line_purchase_write_uid
+#: model:ir.model.fields,help:sale_purchase.field_wizard_price_line_sale___last_update
+#: model:ir.model.fields,help:sale_purchase.field_wizard_price_line_sale_create_date
+#: model:ir.model.fields,help:sale_purchase.field_wizard_price_line_sale_create_uid
+#: model:ir.model.fields,help:sale_purchase.field_wizard_price_line_sale_cusinfo_id
+#: model:ir.model.fields,help:sale_purchase.field_wizard_price_line_sale_date_start
+#: model:ir.model.fields,help:sale_purchase.field_wizard_price_line_sale_date_stop
+#: model:ir.model.fields,help:sale_purchase.field_wizard_price_line_sale_display_name
+#: model:ir.model.fields,help:sale_purchase.field_wizard_price_line_sale_free_sale
+#: model:ir.model.fields,help:sale_purchase.field_wizard_price_line_sale_id
+#: model:ir.model.fields,help:sale_purchase.field_wizard_price_line_sale_ids
+#: model:ir.model.fields,help:sale_purchase.field_wizard_price_line_sale_min_qty
+#: model:ir.model.fields,help:sale_purchase.field_wizard_price_line_sale_price
+#: model:ir.model.fields,help:sale_purchase.field_wizard_price_line_sale_product_id
+#: model:ir.model.fields,help:sale_purchase.field_wizard_price_line_sale_uoi_id
+#: model:ir.model.fields,help:sale_purchase.field_wizard_price_line_sale_wizard_price_id
+#: model:ir.model.fields,help:sale_purchase.field_wizard_price_line_sale_write_date
+#: model:ir.model.fields,help:sale_purchase.field_wizard_price_line_sale_write_uid
+#: model:ir.model.fields,help:sale_purchase.field_wizard_price_partner_id
+#: model:ir.model.fields,help:sale_purchase.field_wizard_price_product_id
+#: model:ir.model.fields,help:sale_purchase.field_wizard_price_property_ids
+#: model:ir.model.fields,help:sale_purchase.field_wizard_price_qty
+#: model:ir.model.fields,help:sale_purchase.field_wizard_price_sec_uom_id
+#: model:ir.model.fields,help:sale_purchase.field_wizard_price_type
+#: model:ir.model.fields,help:sale_purchase.field_wizard_price_write_date
+#: model:ir.model.fields,help:sale_purchase.field_wizard_price_write_uid
+msgid "Not defined"
+msgstr "Non défini"
+
+#. module: sale_purchase
+#: code:addons/sale_purchase/wizard/display_reservation.py:419
+#, python-format
+msgid "November"
+msgstr "Novembre"
+
+#. module: sale_purchase
+#: code:addons/sale_purchase/wizard/display_reservation.py:24
+#: code:addons/sale_purchase/wizard/display_reservation.py:68
+#, python-format
+msgid "OUT"
+msgstr "SORTANT"
+
+#. module: sale_purchase
+#: code:addons/sale_purchase/wizard/display_reservation.py:418
+#, python-format
+msgid "October"
+msgstr "Octobre"
+
+#. module: sale_purchase
+#: model:ir.ui.view,arch_db:sale_purchase.view_form_wizard_compute_taxes
+msgid "Ok"
+msgstr "Ok"
+
+#. module: sale_purchase
+#: model:ir.ui.view,arch_db:sale_purchase.view_form_wizard_compute_taxes
+msgid "Order taxes compute"
+msgstr "Calcul des taxes de commandes"
+
+#. module: sale_purchase
+#: model:ir.model,name:sale_purchase.model_res_partner
+#: model:ir.model.fields,field_description:sale_purchase.field_wizard_price_partner_id
+msgid "Partner"
+msgstr "Partenaire"
+
+#. module: sale_purchase
+#: model:ir.model.fields,field_description:sale_purchase.field_wizard_price_line_purchase_price
+#: model:ir.model.fields,field_description:sale_purchase.field_wizard_price_line_sale_price
+msgid "Price"
+msgstr "Prix"
+
+#. module: sale_purchase
+#: model:ir.model.fields,field_description:sale_purchase.field_display_reservation_product_id
+#: model:ir.model.fields,field_description:sale_purchase.field_stock_move_reserve_product_id
+#: model:ir.model.fields,field_description:sale_purchase.field_stock_reserve_report_product_id
+#: model:ir.model.fields,field_description:sale_purchase.field_wizard_price_line_sale_product_id
+#: model:ir.model.fields,field_description:sale_purchase.field_wizard_price_product_id
+msgid "Product"
+msgstr "Article"
+
+#. module: sale_purchase
+#: model:ir.model,name:sale_purchase.model_product_customerinfo
+msgid "Product customerinfo"
+msgstr "Produit réf client"
+
+#. module: sale_purchase
+#: model:ir.model,name:sale_purchase.model_product_supplierinfo
+msgid "Product supplierinfo"
+msgstr "Produit réf fournisseur"
+
+#. module: sale_purchase
+#: model:ir.model.fields,field_description:sale_purchase.field_wizard_price_property_ids
+msgid "Properties"
+msgstr "Propriétés"
+
+#. module: sale_purchase
+#: code:addons/sale_purchase/wizard/wizard_price_purchase.py:21
+#, python-format
+msgid "Purchase"
+msgstr "Achat"
+
+#. module: sale_purchase
+#: code:addons/sale_purchase/stock.py:511
+#, python-format
+msgid "Purchase mail (PDF)"
+msgstr "Mail d'achat (PDF)"
+
+#. module: sale_purchase
+#: model:ir.model,name:sale_purchase.model_purchase_order
+#: model:ir.model.fields,field_description:sale_purchase.field_stock_move_reserve_purchase_order_id
+#: model:ir.model.fields,field_description:sale_purchase.field_stock_reserve_report_purchase_order_id
+msgid "Purchase order"
+msgstr "Commande d'achat"
+
+#. module: sale_purchase
+#: model:ir.model.fields,field_description:sale_purchase.field_wizard_compute_taxes_po_ids
+msgid "Purchase orders"
+msgstr "Achats"
+
+#. module: sale_purchase
+#: model:ir.model.fields,field_description:sale_purchase.field_display_reservation_month_line_qty
+#: model:ir.model.fields,field_description:sale_purchase.field_display_reservation_week_line_qty
+#: model:ir.model.fields,field_description:sale_purchase.field_stock_move_reserve_qty
+#: model:ir.model.fields,field_description:sale_purchase.field_stock_reserve_report_qty
+#: model:ir.model.fields,field_description:sale_purchase.field_wizard_price_line_purchase_min_qty
+#: model:ir.model.fields,field_description:sale_purchase.field_wizard_price_line_sale_min_qty
+#: model:ir.model.fields,field_description:sale_purchase.field_wizard_price_qty
+msgid "Quantity"
+msgstr "Quantité"
+
+#. module: sale_purchase
+#: model:ir.model.fields,field_description:sale_purchase.field_stock_move_reserve_qty_in_stock
+#: model:ir.model.fields,field_description:sale_purchase.field_stock_reserve_report_qty_in_stock
+msgid "Quantity in stock"
+msgstr "Quantité en stock"
+
+#. module: sale_purchase
+#: model:ir.ui.view,arch_db:sale_purchase.view_form_display_reservation
+msgid "Quit"
+msgstr "Quitter"
+
+#. module: sale_purchase
+#: code:addons/sale_purchase/certificate_management.py:20
+#: code:addons/sale_purchase/certificate_management.py:124
+#: code:addons/sale_purchase/certificate_management.py:300
+#: code:addons/sale_purchase/wizard/wiz_add_certificate_application.py:19
+#: model:ir.model.fields,field_description:sale_purchase.field_certificate_line_application_ref_customer_id
+#: model:ir.model.fields,field_description:sale_purchase.field_certificate_line_ref_customer_id
+#, python-format
+msgid "Ref customer"
+msgstr "Réf client"
+
+#. module: sale_purchase
+#: model:ir.model.fields,field_description:sale_purchase.field_wiz_add_certificate_application_ref_customer_ids
+#: model:ir.model.fields,field_description:sale_purchase.field_wiz_add_certificate_application_ref_supplier_ids
+msgid "Ref customers"
+msgstr "Réf clients"
+
+#. module: sale_purchase
+#: code:addons/sale_purchase/certificate_management.py:22
+#: code:addons/sale_purchase/certificate_management.py:126
+#: code:addons/sale_purchase/certificate_management.py:302
+#: code:addons/sale_purchase/wizard/wiz_add_certificate_application.py:21
+#: model:ir.model.fields,field_description:sale_purchase.field_certificate_line_application_ref_supplier_id
+#: model:ir.model.fields,field_description:sale_purchase.field_certificate_line_ref_supplier_id
+#, python-format
+msgid "Ref supplier"
+msgstr "Réf fournisseur"
+
+#. module: sale_purchase
+#: model:ir.ui.view,arch_db:sale_purchase.view_form_display_reservation
+msgid "Reservations display"
+msgstr "Visualisation des réservations"
+
+#. module: sale_purchase
+#: code:addons/sale_purchase/certificate_management.py:18
+#: code:addons/sale_purchase/certificate_management.py:122
+#: code:addons/sale_purchase/certificate_management.py:298
+#: code:addons/sale_purchase/wizard/wiz_add_certificate_application.py:17
+#: model:ir.model,name:sale_purchase.model_mrp_resource
+#: model:ir.model.fields,field_description:sale_purchase.field_certificate_line_application_resource_id
+#: model:ir.model.fields,field_description:sale_purchase.field_certificate_line_resource_id
+#, python-format
+msgid "Resource"
+msgstr "Ressource"
+
+#. module: sale_purchase
+#: model:ir.model.fields,field_description:sale_purchase.field_wiz_add_certificate_application_resource_ids
+msgid "Resources"
+msgstr "Ressources"
+
+#. module: sale_purchase
+#: code:addons/sale_purchase/wizard/wizard_price_purchase.py:20
+#, python-format
+msgid "Sale"
+msgstr "Vente"
+
+#. module: sale_purchase
+#: code:addons/sale_purchase/stock.py:512
+#, python-format
+msgid "Sale mail (PDF)"
+msgstr "Mail de vente (PDF)"
+
+#. module: sale_purchase
+#: model:ir.model,name:sale_purchase.model_sale_order
+msgid "Sale module"
+msgstr "Module de vente"
+
+#. module: sale_purchase
+#: model:ir.model.fields,field_description:sale_purchase.field_stock_move_reserve_sale_order_id
+#: model:ir.model.fields,field_description:sale_purchase.field_stock_reserve_report_sale_order_id
+msgid "Sale order"
+msgstr "Commande de vente"
+
+#. module: sale_purchase
+#: model:ir.model.fields,field_description:sale_purchase.field_wizard_compute_taxes_so_ids
+msgid "Sale orders"
+msgstr "Ventes"
+
+#. module: sale_purchase
+#: code:addons/sale_purchase/wizard/display_reservation.py:417
+#, python-format
+msgid "September"
+msgstr "Septembre"
+
+#. module: sale_purchase
+#: model:ir.model.fields,field_description:sale_purchase.field_certificate_line_application_state
+#: model:ir.model.fields,field_description:sale_purchase.field_certificate_line_state
+#: model:ir.model.fields,field_description:sale_purchase.field_certificate_template_state
+#: model:ir.model.fields,field_description:sale_purchase.field_stock_move_reserve_state
+#: model:ir.model.fields,field_description:sale_purchase.field_stock_reserve_report_state
+#: model:ir.ui.view,arch_db:sale_purchase.view_search_certificate_line_application_id
+#: model:ir.ui.view,arch_db:sale_purchase.view_search_certificate_template_id
+msgid "State"
+msgstr "État"
+
+#. module: sale_purchase
+#: model:ir.model.fields,field_description:sale_purchase.field_certificate_line_application_status
+msgid "Status"
+msgstr "Statut"
+
+#. module: sale_purchase
+#: model:ir.model.fields,field_description:sale_purchase.field_display_reservation_stock
+msgid "Stock"
+msgstr "Stock"
+
+#. module: sale_purchase
+#: model:ir.model.fields,field_description:sale_purchase.field_display_reservation_stock_move_ids
+#: model:ir.ui.view,arch_db:sale_purchase.view_form_display_reservation
+msgid "Stock moves"
+msgstr "Mouvements de stock"
+
+#. module: sale_purchase
+#: model:ir.model,name:sale_purchase.model_stock_move_reserve
+#: model:ir.model,name:sale_purchase.model_stock_reserve_report
+msgid "Stock outgoing report"
+msgstr "Rapport stock sortant"
+
+#. module: sale_purchase
+#: model:ir.model,name:sale_purchase.model_stock_picking
+msgid "Stock picking"
+msgstr "Picking"
+
+#. module: sale_purchase
+#: model:ir.model,name:sale_purchase.model_stock_quality_control
+msgid "Stock quality control"
+msgstr "Stock quality control"
+
+#. module: sale_purchase
+#: model:ir.ui.view,arch_db:sale_purchase.view_form_display_reservation
+msgid "Stocks view"
+msgstr "Vue des stocks"
+
+#. module: sale_purchase
+#: model:ir.model.fields,field_description:sale_purchase.field_certificate_line_stop_date
+msgid "Stop date"
+msgstr "Date de fin"
+
+#. module: sale_purchase
+#: model:ir.model.fields,field_description:sale_purchase.field_wizard_price_line_purchase_suppinfo_id
+msgid "Suppinfo"
+msgstr "Suppinfo"
+
+#. module: sale_purchase
+#: code:addons/sale_purchase/certificate_management.py:21
+#: code:addons/sale_purchase/certificate_management.py:125
+#: code:addons/sale_purchase/certificate_management.py:301
+#: code:addons/sale_purchase/wizard/wiz_add_certificate_application.py:20
+#: model:ir.model.fields,field_description:sale_purchase.field_certificate_line_application_supplier_id
+#: model:ir.model.fields,field_description:sale_purchase.field_certificate_line_supplier_id
+#: model:ir.model.fields,field_description:sale_purchase.field_wiz_add_certificate_application_supplier_ids
+#, python-format
+msgid "Supplier"
+msgstr "Fournisseur"
+
+#. module: sale_purchase
+#: code:addons/sale_purchase/stock.py:221
+#, python-format
+msgid "The partner is not billable."
+msgstr "Le partenaire n'est pas facturable."
+
+#. module: sale_purchase
+#: model:ir.model.fields,field_description:sale_purchase.field_certificate_line_application_type
+#: model:ir.model.fields,field_description:sale_purchase.field_certificate_line_type
+#: model:ir.model.fields,field_description:sale_purchase.field_certificate_template_type
+#: model:ir.model.fields,field_description:sale_purchase.field_stock_move_reserve_type
+#: model:ir.model.fields,field_description:sale_purchase.field_stock_reserve_report_type
+#: model:ir.model.fields,field_description:sale_purchase.field_wiz_add_certificate_application_type
+#: model:ir.model.fields,field_description:sale_purchase.field_wizard_price_type
+#: model:ir.ui.view,arch_db:sale_purchase.view_search_certificate_template_id
+msgid "Type"
+msgstr "Type"
+
+#. module: sale_purchase
+#: model:ir.model.fields,field_description:sale_purchase.field_wizard_price_line_purchase_uoi_id
+#: model:ir.model.fields,field_description:sale_purchase.field_wizard_price_line_sale_uoi_id
+msgid "UoI"
+msgstr "Unité de prix"
+
+#. module: sale_purchase
+#: model:ir.model.fields,field_description:sale_purchase.field_stock_move_reserve_uom_id
+#: model:ir.model.fields,field_description:sale_purchase.field_stock_reserve_report_uom_id
+#: model:ir.model.fields,field_description:sale_purchase.field_wizard_price_sec_uom_id
+msgid "UoM"
+msgstr "UdM"
+
+#. module: sale_purchase
+#: code:addons/sale_purchase/certificate_management.py:30
+#: code:addons/sale_purchase/certificate_management.py:134
+#: code:addons/sale_purchase/certificate_management.py:310
+#: model:ir.ui.view,arch_db:sale_purchase.view_form_wiz_add_certificate_application
+#, python-format
+msgid "Validate"
+msgstr "Valider"
+
+#. module: sale_purchase
+#: model:ir.model.fields,field_description:sale_purchase.field_certificate_template_validity_days
+msgid "Validity in days"
+msgstr "Durée de validités en jour"
+
+#. module: sale_purchase
+#: model:ir.ui.view,arch_db:sale_purchase.view_form_display_reservation
+msgid "View Name"
+msgstr "Nom de la vue"
+
+#. module: sale_purchase
+#: model:ir.model.fields,field_description:sale_purchase.field_display_reservation_virtual_stock
+msgid "Virtual stock"
+msgstr "Stock virtuel"
+
+#. module: sale_purchase
+#: code:addons/sale_purchase/wizard/display_reservation.py:32
+#: code:addons/sale_purchase/wizard/display_reservation.py:78
+#, python-format
+msgid "Waiting"
+msgstr "En attente"
+
+#. module: sale_purchase
+#: model:ir.model.fields,field_description:sale_purchase.field_display_reservation_week_line_week
+msgid "Week"
+msgstr "Semaines"
+
+#. module: sale_purchase
+#: model:ir.model.fields,field_description:sale_purchase.field_display_reservation_week_move_ids
+msgid "Week moves"
+msgstr "Semaine des mouvements"
+
+#. module: sale_purchase
+#: model:ir.ui.view,arch_db:sale_purchase.view_form_display_reservation
+msgid "Weeks"
+msgstr "Semaines"
+
+#. module: sale_purchase
+#: model:ir.model,name:sale_purchase.model_wiz_add_certificate_application
+msgid "Wiz add certificate application"
+msgstr "Wiz d'ajout des applications de certificats"
+
+#. module: sale_purchase
+#: model:ir.model,name:sale_purchase.model_wizard_price
+msgid "Wizard Price"
+msgstr "Wizard de tarif"
+
+#. module: sale_purchase
+#: model:ir.model,name:sale_purchase.model_wizard_compute_taxes
+msgid "Wizard compute taxes"
+msgstr "Wizard de calcul de taxes"
+
+#. module: sale_purchase
+#: model:ir.actions.act_window,name:sale_purchase.action_wizard_price
+#: model:ir.model.fields,field_description:sale_purchase.field_wizard_price_line_purchase_wizard_price_id
+#: model:ir.model.fields,field_description:sale_purchase.field_wizard_price_line_sale_wizard_price_id
+#: model:ir.ui.menu,name:sale_purchase.menu_purchase_wizard_price
+#: model:ir.ui.view,arch_db:sale_purchase.view_form_wizard_price
+msgid "Wizard price"
+msgstr "Wizard de tarif"
+
+#. module: sale_purchase
+#: model:ir.model,name:sale_purchase.model_wizard_price_line_purchase
+msgid "Wizard price line purchase"
+msgstr "Wizard prix ligne d'achat"
+
+#. module: sale_purchase
+#: model:ir.model,name:sale_purchase.model_wizard_price_line_sale
+msgid "Wizard price line sale"
+msgstr "Wizard prix ligne de vente"
+
+#. module: sale_purchase
+#: model:ir.model,name:sale_purchase.model_display_reservation
+msgid "Wizard to show reservations for the selected product"
+msgstr "Wizard pour montrer les réservations pour le produit sélectionné"
+
+#. module: sale_purchase
+#: model:ir.model,name:sale_purchase.model_display_reservation_month_line
+msgid "Wizard to show reservations for the selected product for months"
+msgstr "Wizard pour montrer les réservations pour le produit sélectionné pour les mois."
+
+#. module: sale_purchase
+#: model:ir.model,name:sale_purchase.model_display_reservation_week_line
+msgid "Wizard to show reservations for the selected product for weeks"
+msgstr "Wizard pour montrer les réservations pour le produit sélectionné pour les semaines"
+
+#. module: sale_purchase
+#: model:ir.model.fields,field_description:sale_purchase.field_display_reservation_month_line_year
+#: model:ir.model.fields,field_description:sale_purchase.field_display_reservation_week_line_year
+msgid "Year"
+msgstr "Année"
+
+#. module: sale_purchase
+#: code:addons/sale_purchase/account_invoice.py:194
+#, python-format
+msgid "You have an other invoice line for this sale or this purchase whith different taxes.When you have many anticipated invoice lines for a sale or a purchase, all the lines must have the same taxes."
+msgstr "Vous avez une autre ligne de facture pour cette vente ou cet achat avec des taxes différentes. Lorsque vous avez plusieurs lignes de factures anticipées pour une vente ou un achat, toutes les lignes doivent avoit les mêmes taxes."
+
+#. module: sale_purchase
+#: model:ir.ui.view,arch_db:sale_purchase.view_form_wiz_add_certificate_application
+#: model:ir.ui.view,arch_db:sale_purchase.view_form_wizard_compute_taxes
+msgid "or"
+msgstr "ou"
+
+#. module: sale_purchase
+#: model:ir.model.fields,field_description:sale_purchase.field_certificate_template_type_text
+msgid "type_text"
+msgstr "type_text"
+

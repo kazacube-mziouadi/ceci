@@ -1,0 +1,1082 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+
+		<menuitem name="Partner" id="menu_partner_main" sequence="5" web_icon="base_openprod,static/description/partner.png" />
+		<menuitem name="Partners" id="menu_partner" parent="menu_partner_main" />
+		<menuitem name="Configuration" id="menu_partner_configuration" parent="menu_partner_main" />
+		<menuitem name="Partner's categories" id="menu_partner_categories" parent="menu_partner_configuration" />
+		<menuitem name="Location" id="menu_partner_location" parent="menu_partner_configuration" />
+
+		<!-- ======== -->
+		<!-- CIVILITY -->
+		<!-- ======== -->
+
+		<!-- SEARCH VIEW Partner civility -->
+		<record id='view_search_partner_title' model='ir.ui.view'>
+			<field name="name">view_search_partner_title</field>
+			<field name="model">res.partner.title</field>
+			<field name="arch" type="xml">
+				<search version="8.0">
+					<field name="name" />
+					<field name="shortcut" />
+				</search>
+			</field>
+		</record>
+
+		<!-- ACTION Partner civility -->
+		<record id="act_partner_title" model="ir.actions.act_window">
+			<field name="name">Civility</field>
+			<field name="res_model">res.partner.title</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+			<field name="domain">[]</field>
+			<field name="context">{}</field>
+			<field name="search_view_id" ref="view_search_partner_title" />
+		</record>
+
+		<menuitem name="Civility" action="act_partner_title" id="menu_open_partner_title" parent="menu_partner_configuration" groups="group_menu_partner_manager" />
+
+
+		<!-- ===== -->
+		<!-- TITLE -->
+		<!-- ===== -->
+
+		<!-- TREE VIEW Partner company title -->
+		<record id='openprod_view_partner_company_title_tree' model='ir.ui.view'>
+			<field name="name">openprod_view_partner_country_tree</field>
+			<field name="model">res.company.title</field>
+			<field name="arch" type="xml">
+				<tree string="Title" version="8.0">
+					<field name="name" />
+					<field name="shortcut" />
+				</tree>
+			</field>
+		</record>
+
+		<!-- FORM VIEW Partner company title -->
+		<record id="openprod_view_partner_company_title_form" model="ir.ui.view">
+			<field name="name">openprod_view_partner_company_title_form</field>
+			<field name="model">res.company.title</field>
+			<field name="arch" type="xml">
+				<form string="Title">
+					<group colspan="4" col="4">
+						<field name="name" />
+						<field name="shortcut" />
+					</group>
+				</form>
+			</field>
+		</record>
+
+		<!-- SEARCH VIEW Partner company title -->
+		<record id='view_search_partner_company_title' model='ir.ui.view'>
+			<field name="name">view_search_partner_company_title</field>
+			<field name="model">res.company.title</field>
+			<field name="arch" type="xml">
+				<search version="8.0">
+					<field name="name" />
+					<field name="shortcut" />
+				</search>
+			</field>
+		</record>
+
+		<!-- ACTION Partner title -->
+		<record id="act_partner_company_title" model="ir.actions.act_window">
+			<field name="name">Title</field>
+			<field name="res_model">res.company.title</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+			<field name="domain">[]</field>
+			<field name="context">{}</field>
+			<field name="search_view_id" ref="view_search_partner_company_title" />
+		</record>
+
+		<menuitem name="Titles" action="act_partner_company_title" id="menu_open_partner_company_title" parent="menu_partner_configuration" groups="group_menu_partner_manager" />
+
+		<!-- ======= -->
+		<!-- COUNTRY -->
+		<!-- ======= -->
+
+		<!-- SEARCH VIEW Partner location -->
+		<record id='view_search_partner_country' model='ir.ui.view'>
+			<field name="name">view_search_partner_country</field>
+			<field name="model">res.country</field>
+			<field name="arch" type="xml">
+				<search version="8.0">
+					<field name="name" />
+					<field name="code" />
+					<field name="currency_id" />
+					<group expand="0" string="Group By">
+						<filter string="Currency" domain="[]" context="{'group_by': 'currency_id'}" />
+					</group>
+				</search>
+			</field>
+		</record>
+
+		<!-- TREE VIEW Partner location -->
+		<record id='openprod_view_partner_country_tree' model='ir.ui.view'>
+			<field name="name">openprod_view_partner_country_tree</field>
+			<field name="model">res.country</field>
+			<field name="arch" type="xml">
+				<tree string="Country" version="8.0">
+					<field name="name" />
+					<field name="code" />
+					<field name="currency_id" />
+				</tree>
+			</field>
+		</record>
+
+		<!-- ACTION Partner location -->
+		<record id="act_partner_country" model="ir.actions.act_window">
+			<field name="name">Countries</field>
+			<field name="res_model">res.country</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+			<field name="domain">[]</field>
+			<field name="context">{}</field>
+			<field name="search_view_id" ref="view_search_partner_country" />
+		</record>
+
+		<!-- FORM VIEW Country group -->
+		<record id="view_openprod_country_group_form" model="ir.ui.view">
+			<field name="name">res.openprod.country.group.form</field>
+			<field name="model">res.country.group</field>
+			<field name="priority">10</field>
+			<field name="arch" type="xml">
+				<form string="Country Group">
+					<div class="oe_title">
+						<label for="name" string="Group name" class="oe_edit_only" />
+						<h1>
+							<field name="name" />
+						</h1>
+					</div>
+					<group name="country_group">
+						<field name="country_ids" nolabel="1" />
+					</group>
+				</form>
+			</field>
+		</record>
+
+		<record id="openprod_country_form" model="ir.ui.view">
+			<field name="name">openprod_country_form</field>
+			<field name="model">res.country</field>
+			<field name="priority">2</field>
+			<field name="arch" type="xml">
+				<form string="Country">
+					<group>
+						<group col="10">
+							<group colspan="1" col="1">
+								<field name="image" widget="image" class="oe_avatar" nolabel="1" />
+							</group>
+							<group colspan="3" col="2">
+								<field name="name" />
+								<label colspan="2" string="" />
+							</group>
+							<group colspan="3" col="2">
+								<field name="currency_id" />
+								<label colspan="2" string="" />
+							</group>
+							<group colspan="3" col="2">
+								<field name="code" />
+								<label colspan="2" string="" />
+							</group>
+						</group>
+						<group colspan="4" col="4" string="Country details">
+							<field name="address_format" groups="base.group_no_one" placeholder="Address format..." />
+							<field name="phone_code" />
+						</group>
+					</group>
+					<label for="state_ids" invisible="1" />
+					<field name="state_ids" invisible="1">
+						<tree editable="bottom">
+							<field name="name" />
+							<field name="code" />
+						</tree>
+					</field>
+				</form>
+			</field>
+		</record>
+
+		<menuitem name="Countries" action="act_partner_country" id="menu_open_partner_countries" parent="menu_partner_location" groups="group_menu_partner_manager" />
+		<menuitem name="Country groups" action="base.action_country_group" id="menu_open_partner_country_groups" parent="menu_partner_location" groups="group_menu_partner_manager" />
+
+		<!-- =================== -->
+		<!-- PARTNER STAT FAMILY -->
+		<!-- =================== -->
+
+		<!-- FORM VIEW Partner stat family -->
+		<record id='view_form_res_partner_stat_family' model='ir.ui.view'>
+			<field name="name">view_form_res_partner_stat_family</field>
+			<field name="model">partner.stat.family</field>
+			<field name="arch" type="xml">
+				<form string="Partner's stat family" version="8.0">
+					<group colspan="4" col="4" string="Family details">
+						<group colspan="2" col="2">
+							<field name="name" />
+						</group>
+						<group colspan="2" col="2" >
+							<field name="code" />
+					    </group>
+					</group>
+				</form>
+			</field>
+		</record>
+		
+		
+		<record id='view_tree_res_partner_stat_family' model='ir.ui.view'>
+            <field name="name">view_tree_res_partner_stat_family</field>
+            <field name="model">partner.stat.family</field>
+            <field name="arch" type="xml">
+                <tree string="Partner's stat family" version="8.0">
+                    <field name="name" />
+                    <field name="code" />
+                </tree>
+            </field>
+        </record>
+        
+
+		<!-- SEARCH VIEW Partner stat family -->
+		<record id='openprod_view_search_partner_stat_family' model='ir.ui.view'>
+			<field name="name">openprod_view_search_partner_stat_family</field>
+			<field name="model">partner.stat.family</field>
+			<field name="arch" type="xml">
+				<search version="8.0">
+					<field name="name" />
+				</search>
+			</field>
+		</record>
+
+		<!-- ================ -->
+		<!-- PARTNER CATEGORY -->
+		<!-- ================ -->
+
+		<record id="view_partner_category_form" model="ir.ui.view">
+			<field name="name">view_partner_category_form</field>
+			<field name="inherit_id" ref="base.view_partner_category_form" />
+			<field name="model">res.partner.category</field>
+			<field name="arch" type="xml">
+				<xpath expr="//group[@name='category_group']" position="replace">
+					<group colspan="4" col="4" string="Category details">
+						<group colspan="2" col="2">
+							<field name="name" />
+							<field name="parent_id" />
+						</group>
+						<group colspan="2" col="2">
+							<field name="active" />
+							<field name="is_customer" />
+							<field name="is_supplier" />
+						</group>
+					</group>
+				</xpath>
+			</field>
+		</record>
+
+		<!-- SEARCH VIEW Partner category -->
+		<record id='openprod_view_search_partner_category' model='ir.ui.view'>
+			<field name="name">openprod_view_search_partner_category</field>
+			<field name="model">res.partner.category</field>
+			<field name="arch" type="xml">
+				<search version="8.0">
+					<field name="name" />
+					<field name="parent_id" />
+					<group expand="0" string="Group By">
+						<filter string="Parent" domain="[]" context="{'group_by': 'parent_id'}" />
+					</group>
+				</search>
+			</field>
+		</record>
+
+		<!-- ACTION Partner category -->
+		<record id="act_partner_category" model="ir.actions.act_window">
+			<field name="name">Categories</field>
+			<field name="res_model">res.partner.category</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+			<field name="domain">[]</field>
+			<field name="context">{}</field>
+			<field name="search_view_id" ref="openprod_view_search_partner_category" />
+		</record>
+
+		<menuitem name="Partner categories" action="act_partner_category" id="menu_open_partner_category" parent="menu_partner_categories" groups="group_menu_partner_manager" />
+
+		<!-- ====== -->
+		<!-- PARTNER -->
+		<!-- ====== -->
+
+		<!-- FORM VIEW string -->
+		<record id='openprod_view_partner_form' model='ir.ui.view'>
+			<field name="name">openprod_view_partner_form</field>
+			<field name="model">res.partner</field>
+			<field name="priority">1</field>
+			<field name="arch" type="xml">
+				<form string="Partners" version="8.0">
+					<header>
+						<field name="state" widget="statusbar" clickable="False" attrs="{'invisible': [('is_company', '=', False)]}" />
+					</header>
+					<group colspan="4" col="9">
+						<group colspan="8">
+							<group colspan="4" col="10">
+								<group colspan="1" col="1">
+									<field name="image" nolabel="1" widget="image" class="oe_avatar oe_left" />
+								</group>
+								<group colspan="3" col="2">
+									<field name="name" />
+									<field name="first_name" attrs="{'invisible': [('is_company', '=', True)]}" />
+									<field name="is_company" invisible="1" />
+									<field name="reference" attrs="{'invisible': [('is_company', '=', False)]}" />
+									<field name="civility_id" attrs="{'invisible': [('is_company', '=', True)]}" />
+									<field name="title_id" attrs="{'invisible': [('is_company', '=', False)]}" />
+									<field name="parent_company_id" attrs="{'invisible': ['|', ('is_group', '=', True),('is_company', '=', False)]}" context="{'default_is_company':True}" />
+								</group>
+								<group colspan="3" col="2">
+									<field name="calendar_id" attrs="{'required': [('is_company', '=', True)], 'invisible': [('is_company', '=', False)]}" />
+									<field name="currency_id" attrs="{'required': [('is_company', '=', True)],'invisible': [('is_company', '=', False)]}" />
+									<field name="category_ids" widget="many2many_tags" context="{'default_is_customer':is_customer, 'default_is_supplier':is_supplier}" attrs="{'invisible': [('is_company', '=', False)]}" domain="(is_customer and is_supplier and ['|',('is_customer', '=', True), ('is_supplier', '=', True)]) or (is_customer and [('is_customer', '=', True)]) or (is_supplier and [('is_supplier', '=', True)]) or [('id', '=', False)]" />
+									<field name="lang" />
+									<field name="function_id" attrs="{'invisible': [('is_company', '=', True)]}" />
+								</group>
+								<group colspan="3" col="2">
+									<group colspan="2" col="2" attrs="{'invisible': [('is_company', '=', True)]}">
+										<field name="parent_id" domain="[('is_company', '=', True)]" invisible="context.get('no_parent', False)" attrs="{'required': [('company_address', '=', True)]}" context="{'default_is_company':True}" />
+										<field name="company_address" />
+									</group>
+									<field name="is_supplier" attrs="{'invisible': [('is_company', '=', False)]}" />
+									<field name="is_customer" attrs="{'invisible': [('is_company', '=', False)]}" />
+									<field name="is_transporter" attrs="{'invisible': [('is_company', '=', False)]}" />
+									<field name="is_group" attrs="{'invisible': [('is_company', '=', False)]}" />
+								</group>
+							</group>
+							<notebook colspan="4">
+								<page string="Address">
+									<group colspan="4" col="4">
+										<group colspan="2" col="4" string="Address" name="address_group">
+											<field name="address_id" invisible="1" />
+											<group colspan="4" col="4" name="related_address">
+												<group colspan="4" invisible="1">
+													<field name="address_name" />
+												</group>
+												<group colspan="2" col="2">
+													<field name="street" attrs="{'readonly': [('is_company', '=', False),('company_address', '=', True)]}" />
+													<field name="street2" attrs="{'readonly': [('is_company', '=', False),('company_address', '=', True)]}" />
+													<field name="street3" attrs="{'readonly': [('is_company', '=', False),('company_address', '=', True)]}" />
+													<field name="country_id" attrs="{'readonly': [('is_company', '=', False),('company_address', '=', True)], 'required': [('company_address', '=', False)]}" />
+												</group>
+												<group colspan="2" col="2">
+													<field name="zip" attrs="{'readonly': [('is_company', '=', False),('company_address', '=', True)]}" />
+													<field name="city" attrs="{'readonly': [('is_company', '=', False),('company_address', '=', True)]}" />
+													<field name="region_id" attrs="{'readonly': [('is_company', '=', False),('company_address', '=', True)]}" domain="[('country_id','=',country_id)]" />
+												</group>
+												<separator string="Note on address" colspan="4" name="separator_note_address" />
+												<field name="address_note" colspan="4" nolabel="1" attrs="{'readonly': [('is_company', '=', False),('company_address', '=', True)]}" />
+											</group>
+										</group>
+										<group colspan="2" col="2" string="Communication">
+											<field name="corporate_name" attrs="{'invisible': [('is_company', '=', False)], 'required': [('is_company', '=', True)]}" />
+											<field name="website" />
+											<field name="phone" />
+											<field name="mobile" />
+											<field name="email" />
+											<field name="fax" />
+										</group>
+									</group>
+								</page>
+								<page string="Contacts and notes" name="contacts_notes_page" attrs="{'invisible': [('is_company', '=', False)]}">
+									<group colspan="4" col="4" string="Contacts">
+										<field name="contact_ids" nolabel="1" colspan="4" context="{'default_is_company': False, 'default_is_customer': False, 'default_is_supplier': False, 'default_address_id': address_id, 'no_parent': True, 'default_company_address': True, 'partner_view': True, 'default_lang':lang, 'default_parent_id':id, 'default_country_id': country_id}">
+											<tree>
+												<field name="name" />
+												<field name="first_name" />
+												<field name="email" />
+												<button class="oe_inline oe_stat_button" type="object" string="Send mail" name="send_mail_free" icon="fa-envelope" />
+												<field name="phone" />
+												<field name="mobile" />
+												<field name="function_id" />
+											</tree>
+											<form string="Partners" version="8.0">
+												<group colspan="4" col="9">
+													<group colspan="8">
+														<group colspan="4" col="10">
+															<group colspan="1" col="1">
+																<field name="image" nolabel="1" widget="image" class="oe_avatar oe_left" />
+															</group>
+															<group colspan="3" col="2">
+																<field name="name" />
+																<field name="first_name" />
+																<field name="is_company" invisible="1" />
+																<field name="civility_id" />
+															</group>
+															<group colspan="3" col="2">
+																<field name="lang" />
+																<field name="function_id" />
+															</group>
+															<group colspan="3" col="2">
+																<group colspan="2" col="2" attrs="{'invisible': [('is_company', '=', True)]}">
+																	<field name="company_address" />
+																</group>
+																<field name="is_supplier" attrs="{'invisible': [('is_company', '=', False)]}" />
+																<field name="is_customer" attrs="{'invisible': [('is_company', '=', False)]}" />
+																<field name="is_transporter" attrs="{'invisible': [('is_company', '=', False)]}" />
+																<field name="is_group" attrs="{'invisible': [('is_company', '=', False)]}" />
+															</group>
+														</group>
+														<notebook colspan="4">
+															<page string="Address" name="contact_address">
+																<group colspan="4" col="4">
+																	<group colspan="2" col="4" string="Address" name="address_group">
+																		<field name="address_id" invisible="1" />
+																		<group colspan="4" col="4" name="related_address">
+																			<group colspan="4" invisible="1">
+																				<field name="address_name" />
+																			</group>
+																			<field name="street" attrs="{'readonly': [('company_address', '=', True)]}" />
+																			<field name="zip" attrs="{'readonly': [('company_address', '=', True)]}" />
+																			<field name="street2" attrs="{'readonly': [('company_address', '=', True)]}" />
+																			<field name="city" attrs="{'readonly': [('company_address', '=', True)]}" />
+																			<field name="street3" attrs="{'readonly': [('company_address', '=', True)]}" />
+																			<field name="region_id" attrs="{'readonly': [('company_address', '=', True)]}" domain="[('country_id','=',country_id)]" />
+																			<label colspan="2" string="" />
+																			<field name="country_id" attrs="{'readonly': [('company_address', '=', True)], 'required': [('company_address', '=', False)]}" />
+																			<separator string="Note on address" colspan="4" name="separator_note_address" />
+																			<field name="address_note" colspan="4" nolabel="1" attrs="{'readonly': [('company_address', '=', True)]}" />
+																		</group>
+																	</group>
+																	<group colspan="2" col="2" string="Communication">
+																		<field name="phone" />
+																		<field name="mobile" />
+																		<field name="email" />
+																		<field name="fax" />
+																	</group>
+																</group>
+															</page>
+														</notebook>
+													</group>
+													<group colspan="1" col="1" class="op_shortcuts" name="right_contact_menu">
+													    <separator string="Actions" colspan="1" name="separator_actions_menu"/>
+													    <button class="oe_inline oe_stat_button" type="object" string="Send mail" 
+                                                        name="send_mail_free" icon="fa-envelope" />
+														<separator colspan="1" string="Analysis" name="separator_analysis_line" />
+													</group>
+												</group>
+											</form>
+										</field>
+									</group>
+									<group colspan="4" col="4" string="Internal notes" name="group_internal_notes" >
+										<field name="internal_note" colspan="4" nolabel="1" />
+									</group>
+									<group colspan="4" col="4" string="Documents" name="group_documents" >
+										<field name="partner_doc_ids" colspan="4" nolabel="1" />
+									</group>
+								</page>
+								<page string="Transport" attrs="{'invisible': [('is_company', '=', False)]}" name="transport_partner_page">
+									<group colspan="4" col="4">
+										<group colspan="2" col="4" name="sale_transp_contact" >
+										</group>
+										<group colspan="2" col="4" name="purchase_transp_contact">
+										
+										</group>
+									</group>
+								</page>
+							</notebook>
+						</group>
+						<group colspan="1" col="1" class="op_shortcuts" name="right_partner_menu">
+						    <separator string="Actions" colspan="1" name="separator_actions_menu"/>
+						    <button class="oe_inline oe_stat_button" type="object" string="Send mail" 
+                             name="send_mail_free" icon="fa-envelope" />
+							<separator colspan="1" string="Analysis" name="separator_analysis_menu" />
+						</group>
+					</group>
+				</form>
+			</field>
+		</record>
+
+		<!-- TREE VIEW partner -->
+		<record id='openprod_view_partner_tree' model='ir.ui.view'>
+			<field name="name">openprod_view_partner_tree</field>
+			<field name="model">res.partner</field>
+			<field name="priority">7</field>
+			<field name="arch" type="xml">
+				<tree string="Partners" version="8.0">
+					<field name="name" />
+					<field name="reference" />
+					<field name="city" />
+					<field name="zip" />
+					<field name="country_id" />
+					<field name="state" />
+					<field name="region_id" invisible="1" />
+				</tree>
+			</field>
+		</record>
+
+
+		<!-- KANBAN VIEW Partner -->
+		<record model="ir.ui.view" id="partner_kanban_view">
+			<field name="name">partner.kanban.view</field>
+			<field name="model">res.partner</field>
+			<field name="priority">8</field>
+			<field name="arch" type="xml">
+				<kanban default_group_by="state">
+					<field name="name" />
+					<field name="first_name" />
+					<field name="color" />
+					<field name="email" />
+					<field name="parent_id" />
+					<field name="is_company" />
+					<field name="phone" />
+					<field name="street" />
+					<field name="street2" />
+					<field name="zip" />
+					<field name="city" />
+					<field name="region_id" domain="[('country_id','=',country_id)]" />
+					<field name="country_id" />
+					<field name="mobile" />
+					<field name="state" />
+					<field name="image" />
+					<templates>
+						<t t-name="kanban-box">
+							<div t-attf-class="oe_kanban_color_#{kanban_getcolor(record.color.raw_value)} oe_kanban_card oe_kanban_global_click oe_kanban_crm_salesteams">
+								<a type="open">
+									<t>
+										<img t-att-src="kanban_image('res.partner', 'image', record.id.value)" class="oe_kanban_image" />
+									</t>
+								</a>
+								<div class="o_dropdown_kanban dropdown">
+									<a class="dropdown-toggle btn" data-toggle="dropdown" href="#">
+										<span class="fa fa-bars fa-lg" />
+									</a>
+									<ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+										<t t-if="widget.editable">
+											<li>
+												<a type="edit">Edit</a>
+											</li>
+										</t>
+										<t t-if="widget.deletable">
+											<li>
+												<a type="delete">Delete</a>
+											</li>
+										</t>
+										<li>
+											<ul class="oe_kanban_colorpicker" data-field="color" />
+										</li>
+									</ul>
+								</div>
+								<div class="oe_kanban_details">
+									<h4 class="oe_partner_heading">
+										<a type="open">
+											<field name="name" />
+											<field name="first_name" />
+										</a>
+									</h4>
+									<div class="oe_kanban_partner_categories" />
+									<div class="oe_kanban_partner_links" />
+									<ul>
+										<li>
+											<field name="parent_id" />
+										</li>
+										<li t-if="record.street.raw_value">
+											<field name="street" />
+										</li>
+										<li t-if="record.street2.raw_value">
+											<field name="street2" />
+										</li>
+										<li t-if="record.zip.raw_value and !record.city.raw_value">
+											<field name="zip" />
+										</li>
+										<li t-if="!record.zip.raw_value and record.city.raw_value">
+											<field name="city" />
+										</li>
+										<li t-if="record.zip.raw_value and record.city.raw_value">
+											<field name="zip" />
+											,
+											<field name="city" />
+										</li>
+										<li t-if="record.region_id.raw_value and record.country_id.raw_value">
+											<field name="region_id" />
+											,
+											<field name="country_id" />
+										</li>
+										<li t-if="!record.region_id.raw_value and record.country_id.raw_value">
+											<field name="country_id" />
+										</li>
+										<li t-if="record.phone.raw_value">
+											<field name="phone" />
+										</li>
+										<li t-if="record.email.raw_value">
+											<a t-attf-href="mailto:#{record.email.raw_value}">
+												<field name="email" />
+											</a>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</t>
+					</templates>
+				</kanban>
+			</field>
+		</record>
+
+
+		<!-- SEARCH VIEW Customer -->
+		<record id='openprod_view_partner_customer_search' model='ir.ui.view'>
+			<field name="name">openprod_view_partner_customer_search</field>
+			<field name="model">res.partner</field>
+			<field name="arch" type="xml">
+				<search version="8.0">
+					<field name="name" />
+					<field name="reference" />
+					<field name="category_ids" />
+					<field name="country_id" />
+					<field name="state" />
+					<group expand="0" string="Filters">
+						<filter string="Prospect partner" domain="[('state', '=', 'prospect')]" />
+						<filter string="Active partner" domain="[('state', '=', 'qualified')]" />
+						<filter string="Stopped partner" name="filter_state_stop" domain="[('state', '=', 'stopped')]" />
+					</group>
+					<group expand="0" string="Group By">
+						<filter string="Region" domain="[]" context="{'group_by': 'region_id'}" name="partner_region" />
+						<filter string="Country" domain="[]" context="{'group_by': 'country_id'}" name="partner_country" />
+						<filter string="State" domain="[]" context="{'group_by': 'state'}" name="partner_state" />
+					</group>
+				</search>
+			</field>
+		</record>
+
+		<!-- SEARCH VIEW Supplier -->
+		<record id='openprod_view_partner_supplier_search' model='ir.ui.view'>
+			<field name="name">openprod_view_partner_supplier_search</field>
+			<field name="model">res.partner</field>
+			<field name="arch" type="xml">
+				<search version="8.0">
+					<field name="name" />
+					<field name="reference" />
+					<field name="zip" />
+					<field name="city" />
+					<field name="region_id" />
+					<field name="country_id" />
+					<field name="state" />
+					<group expand="0" string="Filters">
+						<filter string="Prospect partner" domain="[('state', '=', 'prospect')]" />
+						<filter string="Active partner" domain="[('state', '=', 'qualified')]" />
+						<filter string="Stopped partner" name="filter_state_stop" domain="[('state', '=', 'stopped')]" />
+					</group>
+					<group expand="0" string="Group By">
+						<filter string="Region" domain="[]" context="{'group_by': 'region_id'}" name="partner_region" />
+						<filter string="Country" domain="[]" context="{'group_by': 'country_id'}" name="partner_country" />
+						<filter string="State" domain="[]" context="{'group_by': 'state'}" name="partner_state" />
+					</group>
+				</search>
+			</field>
+		</record>
+
+		<!-- SEARCH VIEW Partner -->
+		<record id='openprod_view_all_partners_search' model='ir.ui.view'>
+			<field name="name">openprod_view_all_partners_search</field>
+			<field name="model">res.partner</field>
+			<field name="arch" type="xml">
+				<search version="8.0">
+					<field name="name" />
+					<field name="reference" />
+					<field name="zip" />
+					<field name="city" />
+					<field name="region_id" />
+					<field name="country_id" />
+					<field name="state" />
+					<group expand="0" string="Filters">
+						<filter string="Prospect partner" domain="[('state', '=', 'prospect')]" />
+						<filter string="Active partner" domain="[('state', '=', 'qualified')]" />
+						<filter string="Stopped partner" name="filter_state_stop" domain="[('state', '=', 'stopped')]" />
+					</group>
+					<group expand="0" string="Group By">
+						<filter string="Region" domain="[]" context="{'group_by': 'region_id'}" name="partner_region" />
+						<filter string="Country" domain="[]" context="{'group_by': 'country_id'}" name="partner_country" />
+						<filter string="State" domain="[]" context="{'group_by': 'state'}" name="partner_state" />
+					</group>
+				</search>
+			</field>
+		</record>
+
+		<!-- ACTION Customer -->
+		<record id="act_partner_customer" model="ir.actions.act_window">
+			<field name="name">Customers</field>
+			<field name="res_model">res.partner</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+			<field name="domain">[('is_customer', '=', True), ('is_company', '=', True)]</field>
+			<field name="context">{'default_is_customer': True, 'default_is_company': True}</field>
+			<field name="search_view_id" ref="openprod_view_partner_customer_search" />
+		</record>
+
+		<menuitem name="Customer" action="act_partner_customer" id="menu_open_partner_customer" parent="menu_partner" sequence="1" groups="group_menu_partner_customer" />
+
+		<!-- ACTION Supplier -->
+		<record id="act_partner_supplier" model="ir.actions.act_window">
+			<field name="name">Suppliers</field>
+			<field name="res_model">res.partner</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+			<field name="domain">[('is_supplier', '=', True), ('is_company', '=', True)]</field>
+			<field name="context">{'default_is_supplier': True, 'default_is_company': True}</field>
+			<field name="search_view_id" ref="openprod_view_partner_supplier_search" />
+		</record>
+
+		<menuitem name="Supplier" action="act_partner_supplier" id="menu_open_partner_supplier" parent="menu_partner" sequence="2" groups="group_menu_partner_supplier" />
+
+		<!-- ACTION Partner -->
+		<record id="act_all_partners" model="ir.actions.act_window">
+			<field name="name">Partners</field>
+			<field name="res_model">res.partner</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+			<field name="domain">[('is_company', '=', True)]</field>
+			<field name="context">{'default_is_company': True}</field>
+			<field name="search_view_id" ref="openprod_view_all_partners_search" />
+		</record>
+
+		<menuitem name="Partners" action="act_all_partners" id="menu_open_all_partners" parent="menu_partner" sequence="4" groups="group_menu_partner_supplier,group_menu_partner_customer" />
+
+		<!-- SEARCH VIEW Contact -->
+		<record id='openprod_view_partner_contact_search' model='ir.ui.view'>
+			<field name="name">openprod_view_partner_contact_search</field>
+			<field name="model">res.partner</field>
+			<field name="arch" type="xml">
+				<search version="8.0">
+					<field name="name" />
+					<field name="first_name" />
+					<field name="email" />
+					<field name="parent_id" />
+				</search>
+			</field>
+		</record>
+
+		<!-- TREE VIEW partner contact -->
+		<record id='openprod_view_partner_contact_tree' model='ir.ui.view'>
+			<field name="name">openprod_view_partner_contact_tree</field>
+			<field name="model">res.partner</field>
+			<field name="priority">10</field>
+			<field name="arch" type="xml">
+				<tree string="Contacts" version="8.0">
+					<field name="name" />
+					<field name="first_name" />
+					<field name="email" />
+					<field name="phone" />
+					<field name="mobile" />
+					<field name="parent_id" />
+					<field name="state" invisible="1" />
+				</tree>
+			</field>
+		</record>
+
+		<!-- KANBAN VIEW Contact -->
+		<record model="ir.ui.view" id="contact_kanban_view">
+			<field name="name">contact.kanban.view</field>
+			<field name="model">res.partner</field>
+			<field name="priority">70</field>
+			<field name="arch" type="xml">
+				<kanban>
+					<field name="name" />
+					<field name="first_name" />
+					<field name="color" />
+					<field name="email" />
+					<field name="parent_id" />
+					<field name="is_company" />
+					<field name="phone" />
+					<field name="street" />
+					<field name="street2" />
+					<field name="zip" />
+					<field name="city" />
+					<field name="region_id" domain="[('country_id','=',country_id)]" />
+					<field name="country_id" />
+					<field name="mobile" />
+					<field name="state" />
+					<field name="image" />
+					<templates>
+						<t t-name="kanban-box">
+							<div t-attf-class="oe_kanban_color_#{kanban_getcolor(record.color.raw_value)} oe_kanban_card oe_kanban_global_click oe_kanban_crm_salesteams">
+								<a type="open">
+									<t>
+										<img t-att-src="kanban_image('res.partner', 'image', record.id.value)" class="oe_kanban_image" />
+									</t>
+								</a>
+								<div class="o_dropdown_kanban dropdown">
+									<a class="dropdown-toggle btn" data-toggle="dropdown" href="#">
+										<span class="fa fa-bars fa-lg" />
+									</a>
+									<ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+										<t t-if="widget.editable">
+											<li>
+												<a type="edit">Edit</a>
+											</li>
+										</t>
+										<t t-if="widget.deletable">
+											<li>
+												<a type="delete">Delete</a>
+											</li>
+										</t>
+										<li>
+											<ul class="oe_kanban_colorpicker" data-field="color" />
+										</li>
+									</ul>
+								</div>
+								<div class="oe_kanban_details">
+									<h4 class="oe_partner_heading">
+										<a type="open">
+											<field name="name" />
+											<field name="first_name" />
+										</a>
+									</h4>
+									<div class="oe_kanban_partner_categories" />
+									<div class="oe_kanban_partner_links" />
+									<ul>
+										<li>
+											<field name="parent_id" />
+										</li>
+										<li t-if="record.street.raw_value">
+											<field name="street" />
+										</li>
+										<li t-if="record.street2.raw_value">
+											<field name="street2" />
+										</li>
+										<li t-if="record.zip.raw_value and !record.city.raw_value">
+											<field name="zip" />
+										</li>
+										<li t-if="!record.zip.raw_value and record.city.raw_value">
+											<field name="city" />
+										</li>
+										<li t-if="record.zip.raw_value and record.city.raw_value">
+											<field name="zip" />
+											,
+											<field name="city" />
+										</li>
+										<li t-if="record.region_id.raw_value and record.country_id.raw_value">
+											<field name="region_id" />
+											,
+											<field name="country_id" />
+										</li>
+										<li t-if="!record.region_id.raw_value and record.country_id.raw_value">
+											<field name="country_id" />
+										</li>
+										<li t-if="record.phone.raw_value">
+											<field name="phone" />
+										</li>
+										<li t-if="record.email.raw_value">
+											<a t-attf-href="mailto:#{record.email.raw_value}">
+												<field name="email" />
+											</a>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</t>
+					</templates>
+				</kanban>
+			</field>
+		</record>
+
+		<!-- ACTION Contact -->
+		<record id="act_partner_contact" model="ir.actions.act_window">
+			<field name="name">Contacts</field>
+			<field name="res_model">res.partner</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+			<field name="domain">[('is_company', '=', False)]</field>
+			<field name="context">{'default_company_address': True, 'default_is_company': False, 'default_is_supplier': False, 'default_is_customer': False, 'view_contact': True}</field>
+			<field name="search_view_id" ref="openprod_view_partner_contact_search" />
+		</record>
+
+		<!-- ACTION TREE partner contact -->
+		<record id="act_view_partner_contact_tree" model="ir.actions.act_window.view">
+			<field name="sequence" eval="2" />
+			<field name="view_mode">tree</field>
+			<field name="view_id" ref="openprod_view_partner_contact_tree" />
+			<field name="act_window_id" ref="act_partner_contact" />
+		</record>
+
+		<!-- ACTION FORM partner contact -->
+		<record id="act_view_partner_contact_form" model="ir.actions.act_window.view">
+			<field name="sequence" eval="4" />
+			<field name="view_mode">form</field>
+			<field name="view_id" ref="openprod_view_partner_form" />
+			<field name="act_window_id" ref="act_partner_contact" />
+		</record>
+
+		<!-- ACTION KANBAN partner contact -->
+<!-- 		<record id="action_kanban_contact" model="ir.actions.act_window.view"> -->
+<!-- 			<field eval="10" name="sequence" /> -->
+<!-- 			<field name="view_mode">kanban</field> -->
+<!-- 			<field name="view_id" ref="contact_kanban_view" /> -->
+<!-- 			<field name="act_window_id" ref="act_partner_contact" /> -->
+<!-- 		</record> -->
+
+
+		<!-- ACTION FORM partner -->
+		<record model="ir.actions.act_window" id="partner_openprod_see_form">
+			<field name="name">Partner</field>
+			<field name="res_model">res.partner</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">form</field>
+			<field name="view_id" ref="openprod_view_partner_form" />
+			<field name="target">current</field>
+		</record>
+
+		<!-- ACTION TREE all partners -->
+		<record model="ir.actions.act_window" id="action_see_all_partners">
+			<field name="name">Partner</field>
+			<field name="res_model">res.partner</field>
+			<field name="view_type">form</field>
+			<field name="view_id" ref="openprod_view_partner_tree" />
+			<field name="view_mode">tree,form</field>
+			<field name="target">current</field>
+		</record>
+
+		<menuitem name="Contact" action="act_partner_contact" id="menu_open_partner_contact" parent="menu_partner" sequence="3" groups="group_menu_partner_supplier,group_menu_partner_customer" />
+
+		<!-- TREE VIEW address -->
+		<record id="openprod_view_address_tree" model="ir.ui.view">
+			<field name="name">openprod_view_address_tree</field>
+			<field name="model">address</field>
+			<field name="arch" type="xml">
+				<tree string="Contacts" version="8.0">
+					<field name="name" />
+					<field name="street" />
+					<field name="street2" />
+					<field name="street3" />
+					<field name="zip" />
+					<field name="city" />
+					<field name="region_id" />
+					<field name="country_id" />
+				</tree>
+			</field>
+		</record>
+
+		<!-- FORM VIEW address -->
+		<record id='openprod_view_address_form' model='ir.ui.view'>
+			<field name="name">openprod_view_address_form</field>
+			<field name="model">address</field>
+			<field name="priority">7</field>
+			<field name="arch" type="xml">
+				<form string="Address" version="8.0">
+					<group colspan="4" col="4">
+						<group colspan="4" col="4" string="Details">
+							<group colspan="2" col="2">
+								<field name="name" readonly="1" />
+								<field name="street" readonly="1" />
+								<field name="street2" readonly="1" />
+								<field name="street3" readonly="1" />
+							</group>
+							<group colspan="2" col="2">
+								<field name="zip" readonly="1" />
+								<field name="city" readonly="1" />
+								<field name="region_id" domain="[('country_id','=',country_id)]" readonly="1" />
+								<field name="country_id" readonly="1" />
+							</group>
+						</group>
+						<group colspan="4" col="4" string="Note">
+							<field name="address_note" colspan="4" nolabel="1" readonly="1" />
+						</group>
+					</group>
+				</form>
+			</field>
+		</record>
+
+		<!-- SEARCH VIEW Address -->
+		<record id='openprod_view_partner_address_search' model='ir.ui.view'>
+			<field name="name">openprod_view_partner_address_search</field>
+			<field name="model">address</field>
+			<field name="arch" type="xml">
+				<search version="8.0">
+					<field name="name" />
+					<field name="street" />
+					<field name="street2" />
+					<field name="street3" />
+					<field name="zip" />
+					<field name="city" />
+					<field name="region_id" />
+					<field name="country_id" />
+				</search>
+			</field>
+		</record>
+
+		<!-- ACTION Address -->
+		<record id="act_partner_address" model="ir.actions.act_window">
+			<field name="name">Address</field>
+			<field name="res_model">address</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+			<field name="domain">[]</field>
+			<field name="context">{}</field>
+		</record>
+
+		<menuitem name="Address" action="act_partner_address" id="menu_open_partner_address" parent="menu_partner" sequence="5" groups="group_menu_partner_supplier,group_menu_partner_customer" />
+        
+        
+        <!-- FORM VIEW Region -->
+		<record id='view_form_res_region_id' model='ir.ui.view'>
+			<field name="name">view_form_res_region_id</field>
+			<field name="model">res.region</field>
+			<field name="arch" type="xml">
+				<form string="Region" version="8.0">
+				    <group colspan="4" col="4">
+				        <field name="code" />
+				        <field name="name" />
+				        <field name="country_id" />
+				    </group>
+				</form>
+			</field>
+		</record>
+		
+		<!-- TREE VIEW Region -->
+		<record id='view_tree_res_region_id' model='ir.ui.view'>
+			<field name="name">view_tree_res_region_id</field>
+			<field name="model">res.region</field>
+			<field name="arch" type="xml">
+				<tree string="Regions" version="8.0">
+				    <field name="code" />
+                        <field name="name" />
+                        <field name="country_id" />
+				</tree>
+			</field>
+		</record>
+		
+		<!-- SEARCH VIEW Region -->
+		<record id='view_search_res_region_id' model='ir.ui.view'>
+			<field name="name">view_search_res_region_id</field>
+			<field name="model">res.region</field>
+			<field name="arch" type="xml">
+				<search version="8.0">
+				    <field name="code" />
+                        <field name="name" />
+                        <field name="country_id" />
+				</search>
+			</field>
+		</record>
+		
+		<!-- ACTION Region -->
+		<record id="act_res_region_id" model="ir.actions.act_window">
+		    <field name="name">Region</field>
+		    <field name="res_model">res.region</field>
+		    <field name="view_type">form</field>
+		    <field name="view_mode">tree,form</field>
+		    <field name="domain">[]</field>
+		    <field name="context">{}</field>
+		    <field name="search_view_id" ref="view_search_res_region_id"/>
+		</record>
+		
+		<record id="act_res_region_id_tree" model="ir.actions.act_window.view">
+		    <field name="sequence" eval="10"/>
+		    <field name="view_mode">tree</field>
+		    <field name="view_id" ref="view_tree_res_region_id"/>
+		    <field name="act_window_id" ref="act_res_region_id"/>
+		</record>
+		
+		<record model="ir.actions.act_window.view" id="act_res_region_id_form">
+		    <field name="sequence" eval="20"/>
+		    <field name="view_mode">form</field>
+		    <field name="view_id" ref="view_form_res_region_id"/>
+		    <field name="act_window_id" ref="act_res_region_id"/>
+</record>
+
+        
+        
+        
+        
+	</data>
+</openerp>

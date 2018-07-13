@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+		<record id="act_sandbox" model="ir.actions.act_url">
+			<field name="name">Sandbox</field>
+			<field name="url">/sandbox/static/src/index.html</field>
+		</record>
+		<menuitem id="menu_wo_sandbox" name="Work Orders Sandbox" action="act_sandbox" parent="mrp.menu_production_planning" groups="mrp.group_menu_manuf_plan"/>
+	</data>
+</openerp>

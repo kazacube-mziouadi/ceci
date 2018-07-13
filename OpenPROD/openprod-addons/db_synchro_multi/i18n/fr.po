@@ -1,0 +1,736 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* db_synchro_multi
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 9.0c\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-06-02 15:21+0000\n"
+"PO-Revision-Date: 2017-06-02 15:21+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: db_synchro_multi
+#: code:addons/db_synchro_multi/db_synchro_multi.py:317
+#: code:addons/db_synchro_multi/db_synchro_multi.py:331
+#, python-format
+msgid "%s is not a field"
+msgstr "%s n'est pas un champ"
+
+#. module: db_synchro_multi
+#: model:ir.model.fields,field_description:db_synchro_multi.field_db_synchro_src_id_base_id
+#: model:ir.model.fields,field_description:db_synchro_multi.field_db_synchro_synchro_base_line_base_id
+#: model:ir.model.fields,field_description:db_synchro_multi.field_db_synchro_synchro_history_base_id
+msgid "Base"
+msgstr "Base"
+
+#. module: db_synchro_multi
+#: model:ir.model.fields,field_description:db_synchro_multi.field_db_synchro_launching_base_ids
+#: model:ir.model.fields,field_description:db_synchro_multi.field_db_synchro_synchro_base_line_ids
+#: model:ir.ui.view,arch_db:db_synchro_multi.db_synchro_launching_form
+#: model:ir.ui.view,arch_db:db_synchro_multi.db_synchro_synchro_form
+msgid "Bases"
+msgstr "Bases"
+
+#. module: db_synchro_multi
+#: model:ir.model.fields,field_description:db_synchro_multi.field_db_synchro_synchro_bypass_errors
+msgid "Bypass errors"
+msgstr "Passer les erreurs"
+
+#. module: db_synchro_multi
+#: model:ir.actions.act_window,name:db_synchro_multi.db_synchro_category_action
+#: model:ir.ui.menu,name:db_synchro_multi.db_synchro_category_menu
+#: model:ir.ui.view,arch_db:db_synchro_multi.db_synchro_category_tree
+msgid "Categories"
+msgstr "Catégories"
+
+#. module: db_synchro_multi
+#: model:ir.model.fields,field_description:db_synchro_multi.field_db_synchro_synchro_category_id
+#: model:ir.ui.view,arch_db:db_synchro_multi.db_synchro_category_form
+#: model:ir.ui.view,arch_db:db_synchro_multi.db_synchro_synchro_search
+msgid "Category"
+msgstr "Catégorie"
+
+#. module: db_synchro_multi
+#: model:ir.ui.view,arch_db:db_synchro_multi.db_synchro_launching_form
+msgid "Configuration"
+msgstr "Configuration"
+
+#. module: db_synchro_multi
+#: model:ir.ui.view,arch_db:db_synchro_multi.db_synchro_synchro_form
+msgid "Constant field"
+msgstr "Constante"
+
+#. module: db_synchro_multi
+#: model:ir.ui.view,arch_db:db_synchro_multi.db_synchro_synchro_form
+msgid "Constant fields"
+msgstr "Constantes"
+
+#. module: db_synchro_multi
+#: model:ir.model.fields,field_description:db_synchro_multi.field_db_synchro_constant_fields_value_boolean
+#: model:ir.model.fields,field_description:db_synchro_multi.field_db_synchro_constant_fields_value_char
+#: model:ir.model.fields,field_description:db_synchro_multi.field_db_synchro_constant_fields_value_date
+#: model:ir.model.fields,field_description:db_synchro_multi.field_db_synchro_constant_fields_value_datetime
+#: model:ir.model.fields,field_description:db_synchro_multi.field_db_synchro_constant_fields_value_float
+#: model:ir.model.fields,field_description:db_synchro_multi.field_db_synchro_constant_fields_value_integer
+#: model:ir.model.fields,field_description:db_synchro_multi.field_db_synchro_constant_fields_value_text
+#: model:ir.model.fields,field_description:db_synchro_multi.field_db_synchro_constant_fields_value_tree
+msgid "Constant value"
+msgstr "Valeur constante"
+
+#. module: db_synchro_multi
+#: model:ir.model.fields,field_description:db_synchro_multi.field_db_synchro_synchro_constant_field_ids
+msgid "Constants"
+msgstr "Constantes"
+
+#. module: db_synchro_multi
+#: model:ir.ui.view,arch_db:db_synchro_multi.db_synchro_synchro_form
+msgid "Constants fields"
+msgstr "Constantes"
+
+#. module: db_synchro_multi
+#: model:ir.ui.view,arch_db:db_synchro_multi.db_synchro_launching_form
+msgid "Continue"
+msgstr "Continuer"
+
+#. module: db_synchro_multi
+#: model:ir.model.fields,field_description:db_synchro_multi.field_db_synchro_synchro_conversion_mode
+#: model:ir.model.fields,field_description:db_synchro_multi.field_db_synchro_synchro_m2o_conversion_mode
+msgid "Conversion mode"
+msgstr "Mode de conversion"
+
+#. module: db_synchro_multi
+#: model:ir.ui.view,arch_db:db_synchro_multi.db_synchro_synchro_form
+msgid "Convert"
+msgstr "Conversion"
+
+#. module: db_synchro_multi
+#: model:ir.model.fields,field_description:db_synchro_multi.field_db_synchro_synchro_create_src_link
+msgid "Create SRC link"
+msgstr "Créer liens ID sources"
+
+#. module: db_synchro_multi
+#: model:ir.model.fields,field_description:db_synchro_multi.field_db_synchro_launching_date
+msgid "Create date"
+msgstr "Date de création"
+
+#. module: db_synchro_multi
+#: model:ir.model.fields,field_description:db_synchro_multi.field_db_synchro_synchro_is_create
+msgid "Create if not found"
+msgstr "Créer si non trouvé"
+
+#. module: db_synchro_multi
+#: model:ir.model.fields,field_description:db_synchro_multi.field_db_synchro_category_create_uid
+#: model:ir.model.fields,field_description:db_synchro_multi.field_db_synchro_constant_fields_create_uid
+#: model:ir.model.fields,field_description:db_synchro_multi.field_db_synchro_launching_create_uid
+#: model:ir.model.fields,field_description:db_synchro_multi.field_db_synchro_src_id_create_uid
+#: model:ir.model.fields,field_description:db_synchro_multi.field_db_synchro_synchro_base_line_create_uid
+#: model:ir.model.fields,field_description:db_synchro_multi.field_db_synchro_synchro_create_uid
+#: model:ir.model.fields,field_description:db_synchro_multi.field_db_synchro_synchro_history_create_uid
+#: model:ir.model.fields,field_description:db_synchro_multi.field_db_synchro_synchro_m2o_create_uid
+#: model:ir.model.fields,field_description:db_synchro_multi.field_db_synchro_synchro_record_create_uid
+msgid "Created by"
+msgstr "Created by"
+
+#. module: db_synchro_multi
+#: model:ir.model.fields,field_description:db_synchro_multi.field_db_synchro_category_create_date
+#: model:ir.model.fields,field_description:db_synchro_multi.field_db_synchro_constant_fields_create_date
+#: model:ir.model.fields,field_description:db_synchro_multi.field_db_synchro_launching_create_date
+#: model:ir.model.fields,field_description:db_synchro_multi.field_db_synchro_src_id_create_date
+#: model:ir.model.fields,field_description:db_synchro_multi.field_db_synchro_synchro_base_line_create_date
+#: model:ir.model.fields,field_description:db_synchro_multi.field_db_synchro_synchro_create_date
+#: model:ir.model.fields,field_description:db_synchro_multi.field_db_synchro_synchro_history_create_date
+#: model:ir.model.fields,field_description:db_synchro_multi.field_db_synchro_synchro_m2o_create_date
+#: model:ir.model.fields,field_description:db_synchro_multi.field_db_synchro_synchro_record_create_date
+msgid "Created on"
+msgstr "Created on"
+
+#. module: db_synchro_multi
+#: model:ir.model.fields,field_description:db_synchro_multi.field_db_synchro_category_description
+#: model:ir.model.fields,field_description:db_synchro_multi.field_db_synchro_synchro_name
+#: model:ir.ui.view,arch_db:db_synchro_multi.db_synchro_category_form
+#: model:ir.ui.view,arch_db:db_synchro_multi.db_synchro_synchro_form
+msgid "Description"
+msgstr "Description"
+
+#. module: db_synchro_multi
+#: model:ir.model.fields,field_description:db_synchro_multi.field_db_synchro_src_id_dest_id
+msgid "Destination ID"
+msgstr "Destination ID"
+
+#. module: db_synchro_multi
+#: model:ir.model.fields,field_description:db_synchro_multi.field_db_synchro_category_display_name
+#: model:ir.model.fields,field_description:db_synchro_multi.field_db_synchro_constant_fields_display_name
+#: model:ir.model.fields,field_description:db_synchro_multi.field_db_synchro_launching_display_name
+#: model:ir.model.fields,field_description:db_synchro_multi.field_db_synchro_src_id_display_name
+#: model:ir.model.fields,field_description:db_synchro_multi.field_db_synchro_synchro_base_line_display_name
+#: model:ir.model.fields,field_description:db_synchro_multi.field_db_synchro_synchro_display_name
+#: model:ir.model.fields,field_description:db_synchro_multi.field_db_synchro_synchro_history_display_name
+#: model:ir.model.fields,field_description:db_synchro_multi.field_db_synchro_synchro_m2o_display_name
+#: model:ir.model.fields,field_description:db_synchro_multi.field_db_synchro_synchro_record_display_name
+msgid "Display Name"
+msgstr "Display Name"
+
+#. module: db_synchro_multi
+#: selection:db.synchro.synchro,conversion_mode:0
+#: selection:db.synchro.synchro.m2o,conversion_mode:0
+#: model:ir.model.fields,field_description:db_synchro_multi.field_db_synchro_synchro_domain
+#: model:ir.model.fields,field_description:db_synchro_multi.field_db_synchro_synchro_m2o_domain
+#: model:ir.model.fields,field_description:db_synchro_multi.field_db_synchro_synchro_sync_domain
+#: model:ir.ui.view,arch_db:db_synchro_multi.db_synchro_synchro_form
+msgid "Domain"
+msgstr "Domaine"
+
+#. module: db_synchro_multi
+#: code:addons/db_synchro_multi/db_synchro_multi.py:325
+#, python-format
+msgid "Domain cannot contain relation field (%s)"
+msgstr "Un domaine ne peut pas contenir de champs relationnels (%s)"
+
+#. module: db_synchro_multi
+#: selection:db.synchro.launching,state:0
+#: selection:db.synchro.synchro.history,state:0
+msgid "Done"
+msgstr "Terminé"
+
+#. module: db_synchro_multi
+#: model:ir.model.fields,field_description:db_synchro_multi.field_db_synchro_synchro_history_end_date
+msgid "End date"
+msgstr "Date de fin"
+
+#. module: db_synchro_multi
+#: code:addons/db_synchro_multi/db_synchro_multi.py:317
+#: code:addons/db_synchro_multi/db_synchro_multi.py:325
+#: code:addons/db_synchro_multi/db_synchro_multi.py:331
+#: code:addons/db_synchro_multi/db_synchro_multi.py:355
+#: code:addons/db_synchro_multi/db_synchro_multi.py:580
+#: code:addons/db_synchro_multi/db_synchro_multi.py:593
+#: code:addons/db_synchro_multi/db_synchro_multi.py:985
+#: selection:db.synchro.launching,state:0
+#: selection:db.synchro.synchro.history,state:0
+#: model:ir.ui.view,arch_db:db_synchro_multi.db_synchro_synchro_form
+#, python-format
+msgid "Error"
+msgstr "Erreur"
+
+#. module: db_synchro_multi
+#: model:ir.model.fields,field_description:db_synchro_multi.field_db_synchro_synchro_exclude_field_ids
+msgid "Exclude fields"
+msgstr "Champs exclus"
+
+#. module: db_synchro_multi
+#: model:ir.ui.view,arch_db:db_synchro_multi.db_synchro_launching_form
+msgid "Execution"
+msgstr "Exécution"
+
+#. module: db_synchro_multi
+#: model:ir.model.fields,field_description:db_synchro_multi.field_db_synchro_constant_fields_field_id
+#: model:ir.model.fields,field_description:db_synchro_multi.field_db_synchro_synchro_m2o_field_id
+msgid "Field"
+msgstr "Champ"
+
+#. module: db_synchro_multi
+#: sql_constraint:db.synchro.synchro:0
+msgid "Field \"Sequence\" must be unique"
+msgstr "Le champ \"Séquence\" doît être unique"
+
+#. module: db_synchro_multi
+#: model:ir.model.fields,field_description:db_synchro_multi.field_db_synchro_constant_fields_field_type
+#: model:ir.model.fields,field_description:db_synchro_multi.field_db_synchro_synchro_m2o_field_type
+msgid "Field Type"
+msgstr "Type de champ"
+
+#. module: db_synchro_multi
+#: model:ir.model.fields,field_description:db_synchro_multi.field_db_synchro_synchro_field_ids
+msgid "Fields"
+msgstr "Champs"
+
+#. module: db_synchro_multi
+#: model:ir.ui.view,arch_db:db_synchro_multi.db_synchro_synchro_form
+msgid "Fields conversions"
+msgstr "Conversions de champs"
+
+#. module: db_synchro_multi
+#: model:ir.ui.view,arch_db:db_synchro_multi.db_synchro_synchro_form
+msgid "Fields to exclude (creation)"
+msgstr "Champs à exclure (création)"
+
+#. module: db_synchro_multi
+#: model:ir.ui.view,arch_db:db_synchro_multi.db_synchro_synchro_form
+msgid "Fields to update"
+msgstr "Champs à mettre à jour (Si pb mandatory field à la création, l'ajouter ici)"
+
+#. module: db_synchro_multi
+#: model:ir.ui.view,arch_db:db_synchro_multi.db_synchro_synchro_search
+msgid "Group by..."
+msgstr "Grouper par..."
+
+#. module: db_synchro_multi
+#: model:ir.model.fields,field_description:db_synchro_multi.field_db_synchro_synchro_history_ids
+#: model:ir.ui.view,arch_db:db_synchro_multi.db_synchro_synchro_form
+msgid "History"
+msgstr "Historique"
+
+#. module: db_synchro_multi
+#: selection:db.synchro.synchro,conversion_mode:0
+#: selection:db.synchro.synchro.m2o,conversion_mode:0
+#: model:ir.model.fields,field_description:db_synchro_multi.field_db_synchro_category_id
+#: model:ir.model.fields,field_description:db_synchro_multi.field_db_synchro_constant_fields_id
+#: model:ir.model.fields,field_description:db_synchro_multi.field_db_synchro_launching_id
+#: model:ir.model.fields,field_description:db_synchro_multi.field_db_synchro_src_id_id
+#: model:ir.model.fields,field_description:db_synchro_multi.field_db_synchro_synchro_base_line_id
+#: model:ir.model.fields,field_description:db_synchro_multi.field_db_synchro_synchro_history_id
+#: model:ir.model.fields,field_description:db_synchro_multi.field_db_synchro_synchro_id
+#: model:ir.model.fields,field_description:db_synchro_multi.field_db_synchro_synchro_m2o_id
+#: model:ir.model.fields,field_description:db_synchro_multi.field_db_synchro_synchro_record_id
+msgid "ID"
+msgstr "ID"
+
+#. module: db_synchro_multi
+#: model:ir.model.fields,field_description:db_synchro_multi.field_db_synchro_category___last_update
+#: model:ir.model.fields,field_description:db_synchro_multi.field_db_synchro_constant_fields___last_update
+#: model:ir.model.fields,field_description:db_synchro_multi.field_db_synchro_launching___last_update
+#: model:ir.model.fields,field_description:db_synchro_multi.field_db_synchro_src_id___last_update
+#: model:ir.model.fields,field_description:db_synchro_multi.field_db_synchro_synchro___last_update
+#: model:ir.model.fields,field_description:db_synchro_multi.field_db_synchro_synchro_base_line___last_update
+#: model:ir.model.fields,field_description:db_synchro_multi.field_db_synchro_synchro_history___last_update
+#: model:ir.model.fields,field_description:db_synchro_multi.field_db_synchro_synchro_m2o___last_update
+#: model:ir.model.fields,field_description:db_synchro_multi.field_db_synchro_synchro_record___last_update
+msgid "Last Modified on"
+msgstr "Last Modified on"
+
+#. module: db_synchro_multi
+#: model:ir.model.fields,field_description:db_synchro_multi.field_db_synchro_category_write_uid
+#: model:ir.model.fields,field_description:db_synchro_multi.field_db_synchro_constant_fields_write_uid
+#: model:ir.model.fields,field_description:db_synchro_multi.field_db_synchro_launching_write_uid
+#: model:ir.model.fields,field_description:db_synchro_multi.field_db_synchro_src_id_write_uid
+#: model:ir.model.fields,field_description:db_synchro_multi.field_db_synchro_synchro_base_line_write_uid
+#: model:ir.model.fields,field_description:db_synchro_multi.field_db_synchro_synchro_history_write_uid
+#: model:ir.model.fields,field_description:db_synchro_multi.field_db_synchro_synchro_m2o_write_uid
+#: model:ir.model.fields,field_description:db_synchro_multi.field_db_synchro_synchro_record_write_uid
+#: model:ir.model.fields,field_description:db_synchro_multi.field_db_synchro_synchro_write_uid
+msgid "Last Updated by"
+msgstr "Last Updated by"
+
+#. module: db_synchro_multi
+#: model:ir.model.fields,field_description:db_synchro_multi.field_db_synchro_category_write_date
+#: model:ir.model.fields,field_description:db_synchro_multi.field_db_synchro_constant_fields_write_date
+#: model:ir.model.fields,field_description:db_synchro_multi.field_db_synchro_launching_write_date
+#: model:ir.model.fields,field_description:db_synchro_multi.field_db_synchro_src_id_write_date
+#: model:ir.model.fields,field_description:db_synchro_multi.field_db_synchro_synchro_base_line_write_date
+#: model:ir.model.fields,field_description:db_synchro_multi.field_db_synchro_synchro_history_write_date
+#: model:ir.model.fields,field_description:db_synchro_multi.field_db_synchro_synchro_m2o_write_date
+#: model:ir.model.fields,field_description:db_synchro_multi.field_db_synchro_synchro_record_write_date
+#: model:ir.model.fields,field_description:db_synchro_multi.field_db_synchro_synchro_write_date
+msgid "Last Updated on"
+msgstr "Last Updated on"
+
+#. module: db_synchro_multi
+#: model:ir.model.fields,field_description:db_synchro_multi.field_db_synchro_launching_last_base_id
+msgid "Last base"
+msgstr "Dernière base"
+
+#. module: db_synchro_multi
+#: model:ir.model.fields,field_description:db_synchro_multi.field_db_synchro_launching_last_date
+msgid "Last execution date"
+msgstr "Dernière date d'execution"
+
+#. module: db_synchro_multi
+#: model:ir.model.fields,field_description:db_synchro_multi.field_db_synchro_launching_last_synchro_id
+msgid "Last synchronization"
+msgstr "Dernière synchronisation"
+
+#. module: db_synchro_multi
+#: model:ir.actions.act_window,name:db_synchro_multi.db_synchro_launching_action
+#: model:ir.ui.menu,name:db_synchro_multi.db_synchro_launching_menu
+#: model:ir.ui.view,arch_db:db_synchro_multi.db_synchro_launching_form
+#: model:ir.ui.view,arch_db:db_synchro_multi.db_synchro_launching_tree
+msgid "Launching"
+msgstr "Lancement"
+
+#. module: db_synchro_multi
+#: model:ir.model.fields,field_description:db_synchro_multi.field_db_synchro_launching_log
+#: model:ir.ui.view,arch_db:db_synchro_multi.db_synchro_launching_form
+msgid "Log"
+msgstr "Log"
+
+#. module: db_synchro_multi
+#: model:ir.model.fields,field_description:db_synchro_multi.field_db_synchro_synchro_m2o_m2m_domain
+#: model:ir.ui.view,arch_db:db_synchro_multi.db_synchro_synchro_form
+msgid "M2M Domain"
+msgstr "Domaine M2M"
+
+#. module: db_synchro_multi
+#: model:ir.model.fields,field_description:db_synchro_multi.field_db_synchro_synchro_sync_m2o_ids
+msgid "M2O"
+msgstr "M2O"
+
+#. module: db_synchro_multi
+#: model:ir.model.fields,field_description:db_synchro_multi.field_db_synchro_synchro_history_msg
+msgid "Message"
+msgstr "Message"
+
+#. module: db_synchro_multi
+#: model:ir.model.fields,field_description:db_synchro_multi.field_db_synchro_src_id_model
+#: model:ir.model.fields,field_description:db_synchro_multi.field_db_synchro_synchro_m2o_model_id
+#: model:ir.ui.view,arch_db:db_synchro_multi.db_synchro_synchro_search
+msgid "Model"
+msgstr "Modèle"
+
+#. module: db_synchro_multi
+#: model:ir.model.fields,field_description:db_synchro_multi.field_db_synchro_synchro_m2o_relation
+msgid "Model name"
+msgstr "Nom du modèle"
+
+#. module: db_synchro_multi
+#: model:ir.model.fields,field_description:db_synchro_multi.field_db_synchro_category_name
+#: model:ir.model.fields,field_description:db_synchro_multi.field_db_synchro_synchro_record_name
+#: model:ir.ui.view,arch_db:db_synchro_multi.db_synchro_category_form
+msgid "Name"
+msgstr "Nom"
+
+#. module: db_synchro_multi
+#: selection:db.synchro.launching,state:0
+#: selection:db.synchro.synchro.history,state:0
+msgid "New"
+msgstr "Nouveau"
+
+#. module: db_synchro_multi
+#: model:ir.model.fields,field_description:db_synchro_multi.field_db_synchro_synchro_m2o_note
+#: model:ir.ui.view,arch_db:db_synchro_multi.db_synchro_synchro_form
+msgid "Note"
+msgstr "Note"
+
+#. module: db_synchro_multi
+#: model:ir.model.fields,field_description:db_synchro_multi.field_db_synchro_synchro_history_nb_record_ko
+msgid "Number of records KO"
+msgstr "Nb d'enregistrements KO"
+
+#. module: db_synchro_multi
+#: model:ir.model.fields,field_description:db_synchro_multi.field_db_synchro_synchro_history_nb_record_ok
+msgid "Number of records OK"
+msgstr "Nb d'enregistrements OK"
+
+#. module: db_synchro_multi
+#: model:ir.model.fields,field_description:db_synchro_multi.field_db_synchro_synchro_model_id
+msgid "Object"
+msgstr "Objet"
+
+#. module: db_synchro_multi
+#: model:ir.ui.view,arch_db:db_synchro_multi.db_synchro_synchro_form
+msgid "Planification"
+msgstr "Planification"
+
+#. module: db_synchro_multi
+#: model:ir.model.fields,field_description:db_synchro_multi.field_db_synchro_synchro_record_record_id
+msgid "Record id"
+msgstr "Id enregistrement"
+
+#. module: db_synchro_multi
+#: model:ir.model.fields,field_description:db_synchro_multi.field_db_synchro_synchro_record_ids
+msgid "Records"
+msgstr "Enregistrements"
+
+#. module: db_synchro_multi
+#: code:addons/db_synchro_multi/db_synchro_multi.py:580
+#, python-format
+msgid "Relation field \"%s\" Havn't result for base \"%s\" (record id: %d)"
+msgstr "Le champ relationnel \"%s\" n'a pas de résultat pour la base \"%s\" (id enregistrement: %d)"
+
+#. module: db_synchro_multi
+#: code:addons/db_synchro_multi/db_synchro_multi.py:593
+#, python-format
+msgid "Relation field \"%s\" is not referenced in \"Fields conversions\" for base \"%s\" (record id: %d)"
+msgstr "Le champ relationnel \"%s\" n'est pas référencé dans \"Conversions de champs\" pour la base \"%s\" (id enregistremenet: %d)"
+
+#. module: db_synchro_multi
+#: model:ir.ui.view,arch_db:db_synchro_multi.db_synchro_launching_form
+msgid "Run from the beginning"
+msgstr "Lancer depuis le début"
+
+#. module: db_synchro_multi
+#: model:ir.model.fields,field_description:db_synchro_multi.field_db_synchro_synchro_sequence
+msgid "Sequence"
+msgstr "Séquence"
+
+#. module: db_synchro_multi
+#: selection:db.synchro.synchro,conversion_mode:0
+#: selection:db.synchro.synchro.m2o,conversion_mode:0
+#: model:ir.model.fields,field_description:db_synchro_multi.field_db_synchro_src_id_src_id
+msgid "Source ID"
+msgstr "ID Source"
+
+#. module: db_synchro_multi
+#: model:ir.model.fields,help:db_synchro_multi.field_db_synchro_synchro_m2o_domain
+#: model:ir.model.fields,help:db_synchro_multi.field_db_synchro_synchro_sync_domain
+msgid "Specifying search criteria to select records in a database compared to another database\n"
+"[('db1_field_name', 'operator', 'db2_field_name'), ...]\n"
+"\n"
+"Operators:\n"
+"  =  !=   >  <  >=  <=  like  ilike  in  not in\n"
+"\n"
+"Logical operators / Prefix operators:\n"
+"  | (OR)  & (AND) \n"
+"\n"
+"Example:\n"
+"db1_field_A = db2_field_A\n"
+"[('field_A', '=', 'field_A')]"
+msgstr "Critère de recherche pour sélectionner des enregistrements dans une base de données comparée à une autre\n"
+"[('bdd1_nom_champ', 'operateur', 'bdd2_nom_champ'), ...]\n"
+"\n"
+"Operateurs:\n"
+"  =  !=   >  <  >=  <=  like  ilike  in  not in\n"
+"\n"
+"Operateurs logiques:\n"
+"  | (OU)  & (ET) \n"
+"\n"
+"Exemple:\n"
+"bdd1_champ_A = bdd2_champ_A\n"
+"[('champ_A', '=', 'champ_A')]"
+
+#. module: db_synchro_multi
+#: model:ir.model.fields,help:db_synchro_multi.field_db_synchro_synchro_m2o_m2m_domain
+msgid "Specifying search criteria to select records in a many2many field\n"
+"[('db1_field_name', 'operator', 'value'), ...]\n"
+"\n"
+"Operators:\n"
+"  =  !=   >  <  >=  <=  like  ilike  in  not in\n"
+"\n"
+"Logical operators / Prefix operators:\n"
+"  | (OR)  & (AND) \n"
+"\n"
+"Example:\n"
+"db1_field_A = foo\n"
+"[('field_A', '=', 'foo')]"
+msgstr "Specifying search criteria to select records in a many2many field\n"
+"[('db1_field_name', 'operator', 'value'), ...]\n"
+"\n"
+"Operators:\n"
+"  =  !=   >  <  >=  <=  like  ilike  in  not in\n"
+"\n"
+"Logical operators / Prefix operators:\n"
+"  | (OR)  & (AND) \n"
+"\n"
+"Example:\n"
+"db1_field_A = foo\n"
+"[('field_A', '=', 'foo')]"
+
+#. module: db_synchro_multi
+#: model:ir.model.fields,help:db_synchro_multi.field_db_synchro_synchro_domain
+msgid "Specifying search criteria to select records in a table\n"
+"[('field_name', 'operator', 'value'), ...]\n"
+"\n"
+"Operators:\n"
+"  =  !=   >  <  >=  <=  like  ilike  in  not in\n"
+"\n"
+"Logical operators / Prefix operators:\n"
+"  | (OR)  & (AND) \n"
+"\n"
+"Keywords:\n"
+" - \"%domain\": keyword will be replace by the result of another domain\n"
+" - \"%2domain\": keyword will be replace by the result of another domain\n"
+" - \"%3domain\": keyword will be replace by the result of another domain\n"
+" - \"%xml_id\": keyword will be replace by all ids who have an XML ID\n"
+" - \"%user_id\": keyword will be replace by the user id\n"
+" - \"%company_id\": keyword will be replace by the company's user id\n"
+" - \"%last_sync_date\": keyword will be replace by the last history synchronisation date for this database BE CAREFUL: date is a char, so you have to frame it with quotes\n"
+"\n"
+"Example:\n"
+"field_A is true OR field_B contains(case sensitive) bbb OR field_C contains (case insensitive) 'ccc'\n"
+"['|', '|', ('field_A', '=', True), ('field_B', 'like', 'bbb'), ('field_C', 'ilike', 'ccc')]\n"
+"\n"
+"NB:\n"
+"By default, inactive records are sought after."
+msgstr "Critère de recherche pour sélectionner des enregistrements dans une base de données comparée à une autre\n"
+"[('nom_champ', 'operateur', 'valeur'), ...]\n"
+"\n"
+"Operateurs:\n"
+"  =  !=   >  <  >=  <=  like  ilike  in  not in\n"
+"\n"
+"Operateurs logiques:\n"
+"  | (OU)  & (ET) \n"
+"\n"
+"Mots clés:\n"
+" - \"%domain\": Le mot clé sera remplacé par le résultat d'un autre domaine\n"
+" - \"%2domain\": Le mot clé sera remplacé par le résultat d'un autre domaine\n"
+" - \"%3domain\": Le mot clé sera remplacé par le résultat d'un autre domaine\n"
+" - \"%xml_id\": Le mot clé sera remplacé par les ids de tous les enregistrements qui ont un XML ID\n"
+" - \"%user_id\": Le mot clé sera remplacé par l'id de l'utilisateur\n"
+" - \"%company_id\": Le mot clé sera remplacé par l'id de la société de l'utilisateur\n"
+" - \"%last_sync_date\": Le mot clé sera remplacé par la date de la dernière historique de synchronisation pour la base de données ATTENTION: la date est un char, elle doit donc être encadrée par des quotes\n"
+"\n"
+"Exemple:\n"
+"champ_A est vrai OU champ_B contiens(sensible à la casse) bbb OU champ_C contiens(insensible à la casse) 'ccc'\n"
+"['|', '|', ('champ_A', '=', True), ('champ_B', 'like', 'bbb'), ('champ_C', 'ilike', 'ccc')]\n"
+"\n"
+"NB:\n"
+"Par défaut, les enregistrements inactifs sont recherchés."
+
+#. module: db_synchro_multi
+#: model:ir.model.fields,field_description:db_synchro_multi.field_db_synchro_synchro_start_after_db_update
+msgid "Start after DB update"
+msgstr "Lancer après MAJ bdd"
+
+#. module: db_synchro_multi
+#: model:ir.model.fields,field_description:db_synchro_multi.field_db_synchro_synchro_history_start_date
+msgid "Start date"
+msgstr "Date de début"
+
+#. module: db_synchro_multi
+#: model:ir.ui.view,arch_db:db_synchro_multi.db_synchro_synchro_form
+msgid "Start synchronization"
+msgstr "Lancer la synchronisation"
+
+#. module: db_synchro_multi
+#: model:ir.model.fields,field_description:db_synchro_multi.field_db_synchro_launching_state
+#: model:ir.model.fields,field_description:db_synchro_multi.field_db_synchro_synchro_history_state
+#: model:ir.model.fields,field_description:db_synchro_multi.field_db_synchro_synchro_record_state
+msgid "State"
+msgstr "État"
+
+#. module: db_synchro_multi
+#: model:ir.model.fields,field_description:db_synchro_multi.field_db_synchro_synchro_is_sub_domain
+#: model:ir.model.fields,field_description:db_synchro_multi.field_db_synchro_synchro_sub_domain
+#: model:ir.ui.view,arch_db:db_synchro_multi.db_synchro_synchro_form
+msgid "Sub domain"
+msgstr "Sous domaine"
+
+#. module: db_synchro_multi
+#: model:ir.model.fields,field_description:db_synchro_multi.field_db_synchro_synchro_is_sub_domain2
+#: model:ir.model.fields,field_description:db_synchro_multi.field_db_synchro_synchro_sub_domain2
+#: model:ir.ui.view,arch_db:db_synchro_multi.db_synchro_synchro_form
+msgid "Sub domain 2"
+msgstr "Sous domaine 2"
+
+#. module: db_synchro_multi
+#: model:ir.model.fields,field_description:db_synchro_multi.field_db_synchro_synchro_sub_domain2_field_id
+msgid "Sub domain 2 field"
+msgstr "Champ sous domaine 2"
+
+#. module: db_synchro_multi
+#: model:ir.model.fields,field_description:db_synchro_multi.field_db_synchro_synchro_sub_domain2_model_id
+msgid "Sub domain 2 object"
+msgstr "Objet sous domaine 2"
+
+#. module: db_synchro_multi
+#: model:ir.model.fields,field_description:db_synchro_multi.field_db_synchro_synchro_is_sub_domain3
+#: model:ir.model.fields,field_description:db_synchro_multi.field_db_synchro_synchro_sub_domain3
+#: model:ir.ui.view,arch_db:db_synchro_multi.db_synchro_synchro_form
+msgid "Sub domain 3"
+msgstr "Sous domaine 3"
+
+#. module: db_synchro_multi
+#: model:ir.model.fields,field_description:db_synchro_multi.field_db_synchro_synchro_sub_domain3_field_id
+msgid "Sub domain 3 field"
+msgstr "Champ sous domaine 3"
+
+#. module: db_synchro_multi
+#: model:ir.model.fields,field_description:db_synchro_multi.field_db_synchro_synchro_sub_domain3_model_id
+msgid "Sub domain 3 object"
+msgstr "Objet sous domaine 3"
+
+#. module: db_synchro_multi
+#: model:ir.model.fields,field_description:db_synchro_multi.field_db_synchro_synchro_sub_domain_field_id
+msgid "Sub domain field"
+msgstr "Champ sous domaine (id si vide)"
+
+#. module: db_synchro_multi
+#: model:ir.model.fields,field_description:db_synchro_multi.field_db_synchro_synchro_sub_domain_model_id
+msgid "Sub domain object"
+msgstr "Objet sous domaine"
+
+#. module: db_synchro_multi
+#: model:ir.model.fields,field_description:db_synchro_multi.field_db_synchro_constant_fields_synchro_id
+#: model:ir.model.fields,field_description:db_synchro_multi.field_db_synchro_synchro_base_line_synchro_id
+#: model:ir.model.fields,field_description:db_synchro_multi.field_db_synchro_synchro_history_synchro_id
+#: model:ir.model.fields,field_description:db_synchro_multi.field_db_synchro_synchro_m2o_synchro_id
+#: model:ir.model.fields,field_description:db_synchro_multi.field_db_synchro_synchro_record_synchro_id
+msgid "Synchro"
+msgstr "Synchro"
+
+#. module: db_synchro_multi
+#: model:ir.ui.view,arch_db:db_synchro_multi.db_synchro_synchro_form
+msgid "Synchronization"
+msgstr "Synchronisation"
+
+#. module: db_synchro_multi
+#: model:ir.actions.act_window,name:db_synchro_multi.db_synchro_synchro_action
+#: model:ir.model.fields,field_description:db_synchro_multi.field_db_synchro_launching_synchro_ids
+#: model:ir.ui.menu,name:db_synchro_multi.db_synchro_synchro_menu
+#: model:ir.ui.view,arch_db:db_synchro_multi.db_synchro_launching_form
+#: model:ir.ui.view,arch_db:db_synchro_multi.db_synchro_synchro_tree
+msgid "Synchronizations"
+msgstr "Synchronisations"
+
+#. module: db_synchro_multi
+#: sql_constraint:db.synchro.src.id:0
+msgid "The fields group \"Source ID, Model, Base\" must be unique"
+msgstr "Le groupe de champs \"ID Source, Modèle, Base\" doit être unique"
+
+#. module: db_synchro_multi
+#: model:ir.ui.view,arch_db:db_synchro_multi.db_synchro_synchro_form
+msgid "Vizualisation"
+msgstr "Visualisation"
+
+#. module: db_synchro_multi
+#: selection:db.synchro.synchro,conversion_mode:0
+#: selection:db.synchro.synchro.m2o,conversion_mode:0
+msgid "XML ID"
+msgstr "XML ID"
+
+#. module: db_synchro_multi
+#: code:addons/db_synchro_multi/db_synchro_multi.py:355
+#, python-format
+msgid "XML id not found (model: %s, id: %d)"
+msgstr "XML id non trouvé (modèle: %s, id: %d)"
+
+#. module: db_synchro_multi
+#: model:ir.model,name:db_synchro_multi.model_db_synchro_category
+msgid "db.synchro.category"
+msgstr "db.synchro.category"
+
+#. module: db_synchro_multi
+#: model:ir.model,name:db_synchro_multi.model_db_synchro_constant_fields
+msgid "db.synchro.constant.fields"
+msgstr "db.synchro.constant.fields"
+
+#. module: db_synchro_multi
+#: model:ir.model,name:db_synchro_multi.model_db_synchro_launching
+msgid "db.synchro.launching"
+msgstr "db.synchro.launching"
+
+#. module: db_synchro_multi
+#: model:ir.model,name:db_synchro_multi.model_db_synchro_src_id
+msgid "db.synchro.src.id"
+msgstr "db.synchro.src.id"
+
+#. module: db_synchro_multi
+#: model:ir.model,name:db_synchro_multi.model_db_synchro_synchro
+msgid "db.synchro.synchro"
+msgstr "db.synchro.synchro"
+
+#. module: db_synchro_multi
+#: model:ir.model,name:db_synchro_multi.model_db_synchro_synchro_base_line
+msgid "db.synchro.synchro.base.line"
+msgstr "db.synchro.synchro.base.line"
+
+#. module: db_synchro_multi
+#: model:ir.model,name:db_synchro_multi.model_db_synchro_synchro_history
+msgid "db.synchro.synchro.history"
+msgstr "db.synchro.synchro.history"
+
+#. module: db_synchro_multi
+#: model:ir.model,name:db_synchro_multi.model_db_synchro_synchro_m2o
+msgid "db.synchro.synchro.m2o"
+msgstr "db.synchro.synchro.m2o"
+
+#. module: db_synchro_multi
+#: model:ir.model,name:db_synchro_multi.model_db_synchro_synchro_record
+msgid "db.synchro.synchro.record"
+msgstr "db.synchro.synchro.record"
+

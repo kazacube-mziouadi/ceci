@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+    
+        <record model="ir.ui.view" id="view_tree_purchase_order_line_substitution_product">
+            <field name="name">view_tree_purchase_order_line_substitution_product</field>
+            <field name="model">purchase.order.line</field>
+            <field name="inherit_id" ref="purchase.view_tree_purchase_order_line"/>
+            <field name="priority" eval="2400" />
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='product_id']" position="before">
+                    <field name="is_substitution" invisible="1" />
+                    <button name="%(act_wizard_substitution_product)d" string="Modification product with substitution product" 
+                            type="action" icon="gtk-dnd-multiple" attrs="{'invisible':['|', ('purchase_state', '!=', 'draft'), ('is_substitution', '!=', True)]}" />
+                </xpath>
+            </field>
+        </record>
+        
+        
+        <record id='view_form_purchase_order_substitution_product' model='ir.ui.view'>
+			<field name="name">view_form_purchase_order_substitution_product</field>
+			<field name="model">purchase.order</field>
+			<field name="inherit_id" ref="purchase.view_form_purchase_order"/>
+			<field name="priority" eval="2400" />
+			<field name="arch" type="xml">
+        		<xpath expr="//field[@name='purchase_order_line_ids']//tree//field[@name='product_id']" position="before">
+        		    <field name="is_substitution" invisible="1" />
+                    <button name="%(act_wizard_substitution_product)d" string="Modification product with substitution product" 
+                            type="action" icon="gtk-dnd-multiple" attrs="{'invisible':['|', ('purchase_state', '!=', 'draft'), ('is_substitution', '!=', True)]}" />
+                </xpath>
+                <xpath expr="//field[@name='purchase_order_line_ids']//form" position="inside">
+                	<field name="is_substitution" invisible="1" />
+                </xpath>
+        	</field>
+        </record>	
+        
+        
+    </data>
+</openerp>

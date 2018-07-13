@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+    
+        <record model="ir.ui.view" id="view_form_ai_discount_wizard">
+            <field name="name">view_form_ai_discount_wizard</field>
+            <field name="model">ai.discount.wizard</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Invoice discount">
+                    <group>
+                        <group colspan="4" col="8" >
+                            <field name="product_id"/>
+                            <field name="type"/>
+                            <field name="value"/>
+                            <field name="section_id"/>
+                            <field name="invoice_id" invisible="1"/>
+                            <field name="partner_id" invisible="1"/>
+                            <field name="sec_uom_qty" invisible="1"/>
+                        </group>
+                        <footer>
+                            <button name="create_sale_line" string="Validate" type="object" class="oe_highlight" />
+                            or
+                            <button string="Cancel" class="oe_link" special="cancel" />
+                        </footer>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="action_ai_discount_wizard">
+            <field name="name">Invoice discount</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">ai.discount.wizard</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+
+    </data>
+</openerp>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+
+        <record model="ir.ui.view" id="inherit_mail_template_form">
+            <field name="name">inherit.mail.template.form</field>
+            <field name="model">mail.template</field>
+            <field name="type">form</field>
+            <field name="inherit_id" ref="mail.email_template_form"/>
+            <field name="priority" eval="2000"/>
+            <field name="arch" type="xml">
+            	<xpath expr="//field[@name='user_signature']" position="after">
+            		<field name="edi_select"/>
+            	</xpath>
+            </field>
+       </record>
+       
+
+   </data>
+</openerp>

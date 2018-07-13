@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+    	
+    	<!-- ============================ -->
+		<!-- 	mrp_change_resource_wo    -->
+		<!-- ============================ -->
+    	
+    	<!-- FORM VIEW mrp_change_resource_wo -->
+		<record id='view_form_mrp_change_resource_wo_id' model='ir.ui.view'>
+			<field name="name">view_form_mrp_change_resource_wo_id</field>
+			<field name="model">mrp.change.resource.wo</field>
+			<field name="arch" type="xml">
+				<form string="Change Resource In WO" version="8.0">
+					<field name="wo_id" invisible="1" />
+					<field name="wo_resource_id" invisible="1" />
+					<field name="resource_category_id" invisible="1" />
+					<field name="rl_resource_category_id" invisible="1" />
+					<field name="resource_id" domain="[('change_resource','in',rl_resource_category_id)]"/>
+					<footer>
+						<button name="action_change_res" string="OK" type="object" class="oe_highlight" />
+						or
+						<button string="Cancel" class="oe_link" special="cancel" />
+					</footer>
+				</form>
+			</field>
+		</record>
+		
+		
+		<!-- ACTION mrp_change_resource_wo -->
+		<record id="act_mrp_change_resource_wo_id" model="ir.actions.act_window">
+		    <field name="name">Change Resource In WO</field>
+		    <field name="res_model">mrp.change.resource.wo</field>
+		    <field name="view_type">form</field>
+		    <field name="view_mode">form</field>
+			<field name="context">{'dialog_size':'small'}</field>
+		    <field name="target">new</field>
+		</record>
+		
+		
+		<!-- ========================= -->
+		<!-- 	mrp_add_resource_wo    -->
+		<!-- ========================= -->
+		
+		<!-- FORM VIEW mrp_add_resource_wo -->
+		<record id='view_form_mrp_add_resource_wo_id' model='ir.ui.view'>
+			<field name="name">view_form_mrp_add_resource_wo_id</field>
+			<field name="model">mrp.add.resource.wo</field>
+			<field name="arch" type="xml">
+				<form string="Add Resource In WO" version="8.0">
+					<field name="wo_id" invisible="1" />
+					<field name="wo_resource_id" invisible="1" />
+					<field name="resource_category_id" invisible="1" />
+					<field name="rl_resource_category_id" invisible="1" />
+					<group colspan="4" col="4">
+						<field name="resource_id" domain="[('category_resource_ids','=',resource_category_id)]"/>
+						<field name="spreading_routing" />
+					</group>
+					<footer>
+						<button name="action_add_res" string="OK" type="object" class="oe_highlight" />
+						or
+						<button string="Cancel" class="oe_link" special="cancel" />
+					</footer>
+				</form>
+			</field>
+		</record>
+		
+		
+		<!-- ACTION mrp_add_resource_wo -->
+		<record id="act_mrp_add_resource_wo_id" model="ir.actions.act_window">
+		    <field name="name">Add Resource In WO</field>
+		    <field name="res_model">mrp.add.resource.wo</field>
+		    <field name="view_type">form</field>
+		    <field name="view_mode">form</field>
+		    <field name="target">new</field>
+		</record>
+		
+    </data>
+</openerp>

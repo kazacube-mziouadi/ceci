@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+		<!-- FORM VIEW Covers compute wizard -->
+		<record id='view_form_covers_compute_wizard' model='ir.ui.view'>
+			<field name="name">view_form_covers_compute_wizard</field>
+			<field name="model">covers.compute.wizard</field>
+			<field name="arch" type="xml">
+				<form string="Covers compute wizard" version="8.0">
+					<field name="product_ids" domain="[('have_waiting_move', '=', True)]"/>
+					<footer>
+						<button name="covers_compute" string="OK" type="object" class="oe_highlight" />
+						or
+						<button string="Cancel" class="oe_link" special="cancel" />
+					</footer>
+				</form>
+			</field>
+		</record>
+
+		<!-- ACTION Covers compute wizard -->
+		<record id="act_covers_compute_wizard" model="ir.actions.act_window">
+			<field name="name">Covers compute wizard</field>
+			<field name="res_model">covers.compute.wizard</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">form</field>
+			<field name="target">new</field>
+		</record>
+
+		<menuitem name="Covers compute wizard" action="act_covers_compute_wizard" id="menu_covers_compute_wizard" parent="menu_stock_configuration" sequence="100" groups="group_menu_stock_analyse"/>
+	</data>
+</openerp>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+		<!-- FORM VIEW mrp_add_operation -->
+		<record id='view_form_mrp_add_operation_id' model='ir.ui.view'>
+			<field name="name">view_form_mrp_add_operation_id</field>
+			<field name="model">mrp.add.operation</field>
+			<field name="arch" type="xml">
+				<form string="Add Operation" version="8.0">
+					<group colspan="4" col="4">
+						<field name="wo_id" invisible="1" />
+						<field name="last_wo" invisible="1" />
+						<group colspan="4" col="8" string="Serie" >	
+							<field name="solution1" nolabel="1" attrs="{'invisible': [('last_wo', '=', True)]}" />					
+							<img src="/mrp/static/src/img/solution1_operation.png" colspan="3" attrs="{'invisible': [('last_wo', '=', True)]}" />
+							<field name="solution2" nolabel="1" attrs="{'invisible': [('last_wo', '!=', True)]}" />
+							<img src="/mrp/static/src/img/solution2_operation.png" colspan="3" attrs="{'invisible': [('last_wo', '!=', True)]}" />
+						</group>
+						<group colspan="4" col="8" string="Parallel" attrs="{'invisible': [('last_wo', '=', True)]}">	
+							<field name="solution3" nolabel="1" attrs="{'invisible': [('last_wo', '=', True)]}" />
+							<img src="/mrp/static/src/img/solution3_operation.png" colspan="3" attrs="{'invisible': [('last_wo', '=', True)]}" />
+							<!-- <field name="solution4" nolabel="1" attrs="{'invisible': [('last_wo', '=', True)]}" />
+							<img src="/mrp/static/src/img/solution4_operation.png" colspan="3" attrs="{'invisible': [('last_wo', '=', True)]}" /> -->
+						</group>
+						<field name="routing_id" />
+						<field name="routing_line_ids" nolabel="1" colspan="4" />
+					</group>
+					<footer>
+						<button name="button_validation" string="OK" type="object" class="oe_highlight" />
+						or
+						<button string="Cancel" class="oe_link" special="cancel" />
+					</footer>
+				</form>
+			</field>
+		</record>
+		
+		
+		<!-- ACTION mrp_add_operation -->
+		<record model="ir.actions.act_window" id="act_mrp_add_operation_id">
+			<field name="name">Add Operation</field>
+			<field name="res_model">mrp.add.operation</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">form</field>
+			<field name="target">new</field>
+		</record>
+
+	</data>
+</openerp>

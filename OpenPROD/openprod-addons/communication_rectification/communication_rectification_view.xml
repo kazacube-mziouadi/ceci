@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+	
+		<!-- COMMUNICATION RECTIFICATION FORM -->
+		<record model="ir.ui.view" id="communication_rectification_view_form">
+			<field name="name">communication.rectification.view.form</field>
+			<field name="model">communication.rectification</field>
+			<field name="type">form</field>
+			<field name="priority" eval="1010" />
+			<field name="arch" type="xml">
+				<form string="Communication rectification">
+					<button name="go" type="object" string="Write"/>
+				</form>
+			</field>
+		</record>
+
+		<!-- COMMUNICATION RECTIFICATION ACTION -->
+		<record model="ir.actions.act_window" id="communication_rectification_action">
+			<field name="name">Communication rectification</field>
+			<field name="res_model">communication.rectification</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">form</field>
+			<field name="target">new</field>
+		</record>
+		
+		<!-- COMMUNICATION RECTIFICATION MENU -->
+		<menuitem id="communication_rectification_menu" action="communication_rectification_action" string="Communication rectification"/>
+		
+	</data>
+</openerp>

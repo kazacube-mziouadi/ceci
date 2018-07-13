@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_data_insert,data.insert,model_data_insert,base.group_user,1,1,1,1
+access_data_test,data.test,model_data_test,base.group_user,1,1,1,1
+access_times_test,times.test,model_times_test,base.group_user,1,1,1,1

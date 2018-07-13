@@ -1,0 +1,175 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* favorite
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 9.0c\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-06-27 09:11+0000\n"
+"PO-Revision-Date: 2017-06-27 09:11+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: favorite
+#: model:ir.ui.menu,name:favorite.my_favorites_config
+msgid "Configuration of my favorites"
+msgstr "Configuration de mes favoris"
+
+#. module: favorite
+#: model:ir.model.fields,field_description:favorite.field_favorite_create_uid
+msgid "Created by"
+msgstr "Crée par"
+
+#. module: favorite
+#: model:ir.model.fields,field_description:favorite.field_favorite_create_date
+msgid "Created on"
+msgstr "Crée le"
+
+#. module: favorite
+#: model:ir.model.fields,field_description:favorite.field_favorite_display_name
+msgid "Display Name"
+msgstr "Display Name"
+
+#. module: favorite
+#. openerp-web
+#: code:addons/favorite/static/src/js/search_menu.js:52
+#: code:addons/favorite/static/src/js/search_menu.js:59
+#, python-format
+msgid "Error"
+msgstr "Erreur"
+
+#. module: favorite
+#: model:ir.actions.act_window,name:favorite.list_favorite_action
+#: model:ir.model.fields,field_description:favorite.field_ir_filters_favorite
+#: model:ir.ui.menu,name:favorite.main_favorite_menu
+msgid "Favorite"
+msgstr "Favorite"
+
+#. module: favorite
+#: model:ir.model.fields,field_description:favorite.field_favorite_filter
+msgid "Favorite filter"
+msgstr "Filtre des favoris"
+
+#. module: favorite
+#. openerp-web
+#: code:addons/favorite/static/src/js/search_menu.js:52
+#, python-format
+msgid "Favorite name is required."
+msgstr "Donnez un nom au favoris"
+
+#. module: favorite
+#: model:ir.model.fields,field_description:favorite.field_ir_ui_menu_filter_id
+msgid "Filter id"
+msgstr "Filter id"
+
+#. module: favorite
+#. openerp-web
+#: code:addons/favorite/static/src/js/search_menu.js:59
+#, python-format
+msgid "Filter with same name already exists. Favorites and filters can't have the same name"
+msgstr "Un filtre avec le nom existe déjà. Les filtres et les favoris ne peuvent pas avoir le même nom"
+
+#. module: favorite
+#: model:ir.model,name:favorite.model_ir_filters
+msgid "Filters"
+msgstr "Filters"
+
+#. module: favorite
+#: model:ir.model.fields,field_description:favorite.field_favorite_id
+msgid "ID"
+msgstr "ID"
+
+#. module: favorite
+#: model:ir.model.fields,field_description:favorite.field_favorite___last_update
+msgid "Last Modified on"
+msgstr "Dernière modification le"
+
+#. module: favorite
+#: model:ir.model.fields,field_description:favorite.field_favorite_write_uid
+msgid "Last Updated by"
+msgstr "Dernière mise-à-jour par"
+
+#. module: favorite
+#: model:ir.model.fields,field_description:favorite.field_favorite_write_date
+msgid "Last Updated on"
+msgstr "Dernière mise-à-jour le"
+
+#. module: favorite
+#: model:ir.model.fields,field_description:favorite.field_favorite_menu
+msgid "Menu"
+msgstr "Menu"
+
+#. module: favorite
+#: model:ir.ui.menu,name:favorite.my_favorites
+msgid "My Favorites"
+msgstr "Mes favoris"
+
+#. module: favorite
+#: model:ir.model.fields,field_description:favorite.field_favorite_name
+msgid "Name"
+msgstr "Name"
+
+#. module: favorite
+#: model:ir.model.fields,field_description:favorite.field_favorite_user
+msgid "User"
+msgstr "User"
+
+#. module: favorite
+#: model:ir.model.fields,field_description:favorite.field_ir_ui_menu_user_id
+msgid "User id"
+msgstr "User id"
+
+#. module: favorite
+#. openerp-web
+#: code:addons/favorite/static/src/js/favorite.js:69
+#, python-format
+msgid "Your favorite has been deleted"
+msgstr "Votre favoris a été supprimé"
+
+#. module: favorite
+#. openerp-web
+#: code:addons/favorite/static/src/js/search_menu.js:99
+#, python-format
+msgid "Your filter has been added to the favorite"
+msgstr "Votre filtre a été ajouté à vos favoris"
+
+#. module: favorite
+#: model:ir.model,name:favorite.model_favorite
+msgid "favorite"
+msgstr "favorite"
+
+#. module: favorite
+#: model:ir.model,name:favorite.model_ir_ui_menu
+msgid "ir.ui.menu"
+msgstr "ir.ui.menu"
+
+#. module: favorite
+#: model:ir.ui.view,arch_db:favorite.list_favorite_view
+msgid "list-favorite"
+msgstr "list-favorite"
+
+#. module: favorite
+#. openerp-web
+#: code:addons/favorite/static/src/xml/favorite_template.xml:14
+#, python-format
+msgid "List of my favorites"
+msgstr "Liste des mes favoris"
+
+#. module: favorite
+#. openerp-web
+#: code:addons/favorite/static/src/xml/favorite_template.xml:6
+#, python-format
+msgid "Add to favorite"
+msgstr "Ajouter aux favoris"
+
+#. module: favorite
+#. openerp-web
+#: code:addons/favorite/static/src/xml/favorite_template.xml:8
+#, python-format
+msgid "Add to my favorite"
+msgstr "Ajouter à mes favoris"

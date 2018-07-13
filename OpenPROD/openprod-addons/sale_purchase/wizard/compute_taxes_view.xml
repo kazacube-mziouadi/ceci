@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+
+		<!-- FORM VIEW Compute taxes -->
+		<record id='view_form_wizard_compute_taxes' model='ir.ui.view'>
+			<field name="name">view_form_wizard_compute_taxes</field>
+			<field name="model">wizard.compute.taxes</field>
+			<field name="arch" type="xml">
+				<form string="Compute taxes" version="8.0">
+					<center>
+						<h1>Order taxes compute</h1>
+					</center>
+					<p>
+					   Compute orders taxes lines
+					</p>
+					<field name="po_ids" invisible="1" />
+					<field name="so_ids" invisible="1" />
+					<group>
+					   <field name="compute_all" />
+					</group>
+					<footer>
+						<button name="compute_taxes" string="Ok" type="object" class="oe_highlight" />
+						or
+						<button string="Cancel" class="oe_link" special="cancel" />
+					</footer>
+				</form>
+			</field>
+		</record>
+
+		<!-- ACTION Compute taxes -->
+		<act_window name="Compute taxes" res_model="wizard.compute.taxes" src_model="purchase.order" view_mode="form" target="new" key2="client_action_multi" id="act_compute_po_taxes" context="{'sidebar_without_id':True}" />
+		<!-- ACTION Compute taxes -->
+		<act_window name="Compute taxes" res_model="wizard.compute.taxes" src_model="sale.order" view_mode="form" target="new" key2="client_action_multi" id="act_compute_so_taxes" context="{'sidebar_without_id':True}" />
+	</data>
+</openerp>

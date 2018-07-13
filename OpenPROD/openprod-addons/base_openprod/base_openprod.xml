@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<openerp>
+    <data>
+		    
+        <template id="assets_backend" name="base_openprod assets" inherit_id="web.assets_backend">
+            <xpath expr="." position="inside">
+                <script type="text/javascript" src="/base_openprod/static/lib/dhtmlxtreegrid-max.js"></script>
+                <script type="text/javascript" src="/base_openprod/static/src/js/document_openprod.js"></script>
+                <link rel="stylesheet" href="/base_openprod/static/lib/dhtmlxtreegrid.css"/>
+            </xpath>
+        </template>
+        
+    </data>
+</openerp>

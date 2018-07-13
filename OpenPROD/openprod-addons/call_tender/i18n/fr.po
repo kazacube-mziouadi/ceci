@@ -1,0 +1,641 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* call_tender
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 9.0c\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-08-02 12:56+0000\n"
+"PO-Revision-Date: 2016-08-02 12:56+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: call_tender
+#: model:mail.template,body_html:call_tender.email_template_send_call_tender
+msgid "\n"
+"<div style=\"font-family: 'Lucica Grande', Ubuntu, Arial, Verdana, sans-serif; font-size: 12px; color: rgb(34, 34, 34); background-color: #FFF; \">\n"
+"	\n"
+"	<p>Dear ${object.supplier_id.name},</p>\n"
+"    <p>Can you send us a cotation for this product list? </p>\n"
+"    \n"
+"    <br/>\n"
+"    <p>If you have any question, do not hesitate to contact us.</p>\n"
+"    <p>Thank you</p>  \n"
+"\n"
+"    </div>\n"
+"</div>\n"
+"            "
+msgstr "\n"
+"<div style=\"font-family: 'Lucica Grande', Ubuntu, Arial, Verdana, sans-serif; font-size: 12px; color: rgb(34, 34, 34); background-color: #FFF; \">\n"
+"	\n"
+"	<p>Bonjour ${object.supplier_id.name},</p>\n"
+"    <p>Pourriez-vous nous envoyer une cotation pour cette liste de produits? </p>\n"
+"    \n"
+"    <br/>\n"
+"    <p>Si vous avez la moindre question, n'hésitez pas à nous contacter.</p>\n"
+"    <p>Merci</p>  \n"
+"\n"
+"    </div>\n"
+"</div>\n"
+"            "
+
+#. module: call_tender
+#: model:ir.ui.view,arch_db:call_tender.view_form_call_for_tender
+msgid "Analysis"
+msgstr "Analyses"
+
+#. module: call_tender
+#: model:ir.model.fields,field_description:call_tender.field_tender_answer_anomaly
+#: model:ir.ui.view,arch_db:call_tender.view_search_tender_answer
+msgid "Anomaly"
+msgstr "Anomalie"
+
+#. module: call_tender
+#: model:ir.model.fields,field_description:call_tender.field_call_tender_answer_date
+msgid "Answer date"
+msgstr "Date de réponse"
+
+#. module: call_tender
+#: model:ir.actions.act_window,name:call_tender.act_tender_answer
+#: model:ir.model.fields,field_description:call_tender.field_call_tender_answer_ids
+#: model:ir.ui.menu,name:call_tender.menu_answer_call_for_tender
+#: model:ir.ui.view,arch_db:call_tender.view_form_call_for_tender
+msgid "Answers"
+msgstr "Réponses"
+
+#. module: call_tender
+#: model:ir.model,name:call_tender.model_tender_answer
+msgid "Answers for calls for tender"
+msgstr "Réponses d'appels d'offre"
+
+#. module: call_tender
+#: model:ir.actions.act_window,name:call_tender.act_call_for_tender
+#: model:ir.model.fields,field_description:call_tender.field_generate_answer_call_tender_id
+#: model:ir.model.fields,field_description:call_tender.field_product_call_tender_tender_id
+#: model:ir.model.fields,field_description:call_tender.field_select_products_wizard_call_tender_id
+#: model:ir.model.fields,field_description:call_tender.field_supplier_call_tender_tender_id
+#: model:ir.model.fields,field_description:call_tender.field_tender_answer_tender_id
+#: model:ir.ui.menu,name:call_tender.menu_call_for_tender
+#: model:ir.ui.menu,name:call_tender.menu_main_call_for_tender
+#: model:ir.ui.view,arch_db:call_tender.view_form_call_for_tender
+#: model:ir.ui.view,arch_db:call_tender.view_search_tender_answer
+#: model:ir.ui.view,arch_db:call_tender.view_tree_call_for_tender
+msgid "Call for tender"
+msgstr "Appel d'offre"
+
+#. module: call_tender
+#: model:mail.template,subject:call_tender.email_template_send_call_tender
+msgid "Call for tender ${object.name}"
+msgstr "Appel d'offre ${object.name}"
+
+#. module: call_tender
+#: model:ir.model,name:call_tender.model_call_tender
+msgid "Calls for tender"
+msgstr "Appels d'offre"
+
+#. module: call_tender
+#: model:ir.ui.view,arch_db:call_tender.view_form_generate_answer_for_call_tender
+#: model:ir.ui.view,arch_db:call_tender.view_form_select_products_for_call_tender
+msgid "Cancel"
+msgstr "Annuler"
+
+#. module: call_tender
+#: model:ir.model.fields,field_description:call_tender.field_product_call_tender_comment
+#: model:ir.model.fields,field_description:call_tender.field_supplier_call_tender_comment
+#: model:ir.model.fields,field_description:call_tender.field_tender_answer_comment
+#: model:ir.ui.view,arch_db:call_tender.view_form_product_call_tender
+#: model:ir.ui.view,arch_db:call_tender.view_form_supplier_call_tender
+#: model:ir.ui.view,arch_db:call_tender.view_form_tender_answer
+msgid "Comment"
+msgstr "Commentaire"
+
+#. module: call_tender
+#: model:ir.model.fields,field_description:call_tender.field_call_tender_company_id
+msgid "Company"
+msgstr "Société"
+
+#. module: call_tender
+#: model:ir.ui.view,arch_db:call_tender.view_form_select_products_for_call_tender
+msgid "Create product lines"
+msgstr "Créer les lignes de produit"
+
+#. module: call_tender
+#: model:ir.model.fields,field_description:call_tender.field_call_tender_create_uid
+#: model:ir.model.fields,field_description:call_tender.field_generate_answer_create_uid
+#: model:ir.model.fields,field_description:call_tender.field_generate_answer_quantity_create_uid
+#: model:ir.model.fields,field_description:call_tender.field_product_call_tender_create_uid
+#: model:ir.model.fields,field_description:call_tender.field_select_products_wizard_create_uid
+#: model:ir.model.fields,field_description:call_tender.field_supplier_call_tender_create_uid
+#: model:ir.model.fields,field_description:call_tender.field_tender_answer_create_uid
+msgid "Created by"
+msgstr "Créé par"
+
+#. module: call_tender
+#: model:ir.model.fields,field_description:call_tender.field_call_tender_create_date
+#: model:ir.model.fields,field_description:call_tender.field_generate_answer_create_date
+#: model:ir.model.fields,field_description:call_tender.field_generate_answer_quantity_create_date
+#: model:ir.model.fields,field_description:call_tender.field_product_call_tender_create_date
+#: model:ir.model.fields,field_description:call_tender.field_select_products_wizard_create_date
+#: model:ir.model.fields,field_description:call_tender.field_supplier_call_tender_create_date
+#: model:ir.model.fields,field_description:call_tender.field_tender_answer_create_date
+msgid "Created on"
+msgstr "Créé le"
+
+#. module: call_tender
+#: model:ir.model.fields,field_description:call_tender.field_call_tender_currency_id
+#: model:ir.model.fields,field_description:call_tender.field_tender_answer_currency_id
+msgid "Currency"
+msgstr "Devise"
+
+#. module: call_tender
+#: model:ir.model.fields,field_description:call_tender.field_generate_answer_date_from
+#: model:ir.model.fields,field_description:call_tender.field_tender_answer_date_from
+msgid "Date from"
+msgstr "Date de début"
+
+#. module: call_tender
+#: model:ir.model.fields,field_description:call_tender.field_generate_answer_date_to
+#: model:ir.model.fields,field_description:call_tender.field_tender_answer_date_to
+msgid "Date to"
+msgstr "Date de fin"
+
+#. module: call_tender
+#: model:ir.model.fields,field_description:call_tender.field_call_tender_delivery_delay
+#: model:ir.model.fields,field_description:call_tender.field_tender_answer_delivery_delay
+msgid "Delivery delay"
+msgstr "Délai de livraison"
+
+#. module: call_tender
+#: model:ir.ui.view,arch_db:call_tender.view_form_tender_answer
+msgid "Details"
+msgstr "Détails"
+
+#. module: call_tender
+#: model:ir.model.fields,field_description:call_tender.field_call_tender_display_name
+#: model:ir.model.fields,field_description:call_tender.field_generate_answer_display_name
+#: model:ir.model.fields,field_description:call_tender.field_generate_answer_quantity_display_name
+#: model:ir.model.fields,field_description:call_tender.field_product_call_tender_display_name
+#: model:ir.model.fields,field_description:call_tender.field_select_products_wizard_display_name
+#: model:ir.model.fields,field_description:call_tender.field_supplier_call_tender_display_name
+#: model:ir.model.fields,field_description:call_tender.field_tender_answer_display_name
+msgid "Display Name"
+msgstr "Afficher le nom"
+
+#. module: call_tender
+#: model:ir.model.fields,field_description:call_tender.field_call_tender_divisor
+#: model:ir.model.fields,field_description:call_tender.field_tender_answer_divisor
+msgid "Divisor"
+msgstr "Diviseur"
+
+#. module: call_tender
+#: code:addons/call_tender/call_tender.py:464
+#, python-format
+msgid "Done"
+msgstr "Terminé"
+
+#. module: call_tender
+#: code:addons/call_tender/call_tender.py:20
+#: code:addons/call_tender/call_tender.py:381
+#: code:addons/call_tender/call_tender.py:462
+#: model:ir.ui.view,arch_db:call_tender.view_search_call_for_tender
+#, python-format
+msgid "Draft"
+msgstr "Brouillon"
+
+#. module: call_tender
+#: model:ir.model,name:call_tender.model_mail_compose_message
+msgid "Email composition wizard"
+msgstr "Wizard d'écriture de mail"
+
+#. module: call_tender
+#: code:addons/call_tender/call_tender.py:231
+#: code:addons/call_tender/call_tender.py:423
+#: code:addons/call_tender/wizard/generate_answer.py:133
+#, python-format
+msgid "Error"
+msgstr "Erreur"
+
+#. module: call_tender
+#: model:ir.model.fields,help:call_tender.field_call_tender_min_qty
+#: model:ir.model.fields,help:call_tender.field_call_tender_multiple_qty
+#: model:ir.model.fields,help:call_tender.field_tender_answer_min_qty
+#: model:ir.model.fields,help:call_tender.field_tender_answer_multiple_qty
+msgid "Expressed in purchase quantity"
+msgstr "Exprimé en quantité d'achat"
+
+#. module: call_tender
+#: model:ir.model.fields,help:call_tender.field_call_tender_delivery_delay
+#: model:ir.model.fields,help:call_tender.field_tender_answer_delivery_delay
+msgid "Expressed in working day"
+msgstr "Exprimé en jour ouvré"
+
+#. module: call_tender
+#: model:ir.model.fields,field_description:call_tender.field_call_tender_factor
+#: model:ir.model.fields,field_description:call_tender.field_tender_answer_factor
+msgid "Factor"
+msgstr "Facteur"
+
+#. module: call_tender
+#: model:ir.ui.view,arch_db:call_tender.view_search_call_for_tender
+#: model:ir.ui.view,arch_db:call_tender.view_search_tender_answer
+msgid "Filters"
+msgstr "Filtres"
+
+#. module: call_tender
+#: code:addons/call_tender/call_tender.py:231
+#, python-format
+msgid "For a same supplier, product and properties, referencing values (multiple qty, qty min....) must be the same."
+msgstr "Pour les mêmes fournisseurs, produits et propriétés, les valeurs de référencement (qté multiple, qté minimum...) doivent être identiques"
+
+#. module: call_tender
+#: model:ir.model.fields,field_description:call_tender.field_generate_answer_quantity_generate_answer_id
+msgid "Generate answer"
+msgstr "Générer les réponses"
+
+#. module: call_tender
+#: model:ir.actions.act_window,name:call_tender.action_generate_answer_for_call_tender
+#: model:ir.ui.view,arch_db:call_tender.view_form_call_for_tender
+#: model:ir.ui.view,arch_db:call_tender.view_form_generate_answer_for_call_tender
+msgid "Generate answers"
+msgstr "Générer les réponses"
+
+#. module: call_tender
+#: model:ir.ui.view,arch_db:call_tender.view_form_generate_answer_for_call_tender
+msgid "Generate the answers"
+msgstr "Générer les réponses"
+
+#. module: call_tender
+#: model:ir.ui.view,arch_db:call_tender.view_search_call_for_tender
+#: model:ir.ui.view,arch_db:call_tender.view_search_tender_answer
+msgid "Group By..."
+msgstr "Grouper par..."
+
+#. module: call_tender
+#: model:ir.model.fields,field_description:call_tender.field_call_tender_id
+#: model:ir.model.fields,field_description:call_tender.field_generate_answer_id
+#: model:ir.model.fields,field_description:call_tender.field_generate_answer_quantity_id
+#: model:ir.model.fields,field_description:call_tender.field_product_call_tender_id
+#: model:ir.model.fields,field_description:call_tender.field_select_products_wizard_id
+#: model:ir.model.fields,field_description:call_tender.field_supplier_call_tender_id
+#: model:ir.model.fields,field_description:call_tender.field_tender_answer_id
+msgid "ID"
+msgstr "ID"
+
+#. module: call_tender
+#: model:ir.model.fields,help:call_tender.field_tender_answer_anomaly
+msgid "If True, this field indicate that the value of one of the referencing fields (multiple qty, min qty, ... is not the same in the supplier referencing of the supplier, the product and the properties of the line"
+msgstr "Si vrai, ce champ indique que la valeur de l'un des champs de référencement (qté multiple, qté minimum,..) n'est pas la même que celle du référencement fournisseur du fournisseur, du produit et des propriétés de la ligne"
+
+#. module: call_tender
+#: model:ir.ui.view,arch_db:call_tender.view_form_call_for_tender
+msgid "If there is no existing referencing for the selected supplier and currency,              the system will create a new referencing using this values"
+msgstr "S'il n'y a pas de référencement existant pour le fournisseur et la devise sélectionné,             le système créera un nouveau référencement en utilisant ces valeurs"
+
+#. module: call_tender
+#: model:ir.ui.view,arch_db:call_tender.view_form_call_for_tender
+msgid "Import products"
+msgstr "Importer produits"
+
+#. module: call_tender
+#: model:ir.model.fields,field_description:call_tender.field_call_tender_internal_note
+#: model:ir.ui.view,arch_db:call_tender.view_form_call_for_tender
+msgid "Internal note"
+msgstr "Note interne"
+
+#. module: call_tender
+#: model:ir.model.fields,field_description:call_tender.field_call_tender___last_update
+#: model:ir.model.fields,field_description:call_tender.field_generate_answer___last_update
+#: model:ir.model.fields,field_description:call_tender.field_generate_answer_quantity___last_update
+#: model:ir.model.fields,field_description:call_tender.field_product_call_tender___last_update
+#: model:ir.model.fields,field_description:call_tender.field_select_products_wizard___last_update
+#: model:ir.model.fields,field_description:call_tender.field_supplier_call_tender___last_update
+#: model:ir.model.fields,field_description:call_tender.field_tender_answer___last_update
+msgid "Last Modified on"
+msgstr "Dernière modification le"
+
+#. module: call_tender
+#: model:ir.model.fields,field_description:call_tender.field_call_tender_write_uid
+#: model:ir.model.fields,field_description:call_tender.field_generate_answer_quantity_write_uid
+#: model:ir.model.fields,field_description:call_tender.field_generate_answer_write_uid
+#: model:ir.model.fields,field_description:call_tender.field_product_call_tender_write_uid
+#: model:ir.model.fields,field_description:call_tender.field_select_products_wizard_write_uid
+#: model:ir.model.fields,field_description:call_tender.field_supplier_call_tender_write_uid
+#: model:ir.model.fields,field_description:call_tender.field_tender_answer_write_uid
+msgid "Last Updated by"
+msgstr "Dernière mise à jour par"
+
+#. module: call_tender
+#: model:ir.model.fields,field_description:call_tender.field_call_tender_write_date
+#: model:ir.model.fields,field_description:call_tender.field_generate_answer_quantity_write_date
+#: model:ir.model.fields,field_description:call_tender.field_generate_answer_write_date
+#: model:ir.model.fields,field_description:call_tender.field_product_call_tender_write_date
+#: model:ir.model.fields,field_description:call_tender.field_select_products_wizard_write_date
+#: model:ir.model.fields,field_description:call_tender.field_supplier_call_tender_write_date
+#: model:ir.model.fields,field_description:call_tender.field_tender_answer_write_date
+msgid "Last Updated on"
+msgstr "Dernière mise à jour le"
+
+#. module: call_tender
+#: model:ir.model.fields,field_description:call_tender.field_call_tender_manager_id
+msgid "Manager"
+msgstr "Responsable"
+
+#. module: call_tender
+#: model:ir.model.fields,field_description:call_tender.field_call_tender_min_qty
+#: model:ir.model.fields,field_description:call_tender.field_tender_answer_min_qty
+msgid "Min qty"
+msgstr "Quantité minimum"
+
+#. module: call_tender
+#: model:ir.model.fields,field_description:call_tender.field_call_tender_multiple_qty
+#: model:ir.model.fields,field_description:call_tender.field_tender_answer_multiple_qty
+msgid "Multiple qty"
+msgstr "Quantité multiple"
+
+#. module: call_tender
+#: model:ir.model.fields,field_description:call_tender.field_call_tender_name
+msgid "Name"
+msgstr "Nom"
+
+#. module: call_tender
+#: model:ir.ui.view,arch_db:call_tender.view_form_call_for_tender
+msgid "Notes"
+msgstr "Notes"
+
+#. module: call_tender
+#: model:ir.model,name:call_tender.model_res_partner
+msgid "Partner"
+msgstr "Partenaire"
+
+#. module: call_tender
+#: model:ir.model.fields,field_description:call_tender.field_tender_answer_price
+msgid "Price"
+msgstr "Prix"
+
+#. module: call_tender
+#: model:ir.ui.view,arch_db:call_tender.view_form_call_for_tender
+msgid "Print call"
+msgstr "Imprimer l'appel"
+
+#. module: call_tender
+#: model:ir.model.fields,field_description:call_tender.field_call_tender_printed_note
+#: model:ir.ui.view,arch_db:call_tender.view_form_call_for_tender
+msgid "Printed note"
+msgstr "Note imprimée"
+
+#. module: call_tender
+#: model:ir.model,name:call_tender.model_product_product
+#: model:ir.model.fields,field_description:call_tender.field_product_call_tender_product_id
+#: model:ir.model.fields,field_description:call_tender.field_tender_answer_product_id
+#: model:ir.ui.view,arch_db:call_tender.view_search_tender_answer
+msgid "Product"
+msgstr "Produit"
+
+#. module: call_tender
+#: model:ir.ui.view,arch_db:call_tender.view_form_product_call_tender
+#: model:ir.ui.view,arch_db:call_tender.view_tree_product_call_tender
+msgid "Product call tender"
+msgstr "Produit d'appel d'offre"
+
+#. module: call_tender
+#: model:ir.model,name:call_tender.model_product_call_tender
+msgid "Product list for calls tender"
+msgstr "Liste de produits pour les appels d'offre"
+
+#. module: call_tender
+#: model:ir.model.fields,field_description:call_tender.field_call_tender_product_ids
+#: model:ir.model.fields,field_description:call_tender.field_generate_answer_product_ids
+#: model:ir.model.fields,field_description:call_tender.field_select_products_wizard_product_ids
+#: model:ir.ui.view,arch_db:call_tender.view_form_call_for_tender
+msgid "Products"
+msgstr "Produits"
+
+#. module: call_tender
+#: model:ir.ui.view,arch_db:call_tender.view_form_generate_answer_for_call_tender
+#: model:ir.ui.view,arch_db:call_tender.view_form_select_products_for_call_tender
+msgid "Products list"
+msgstr "Liste de produits"
+
+#. module: call_tender
+#: code:addons/call_tender/call_tender.py:463
+#: model:ir.ui.view,arch_db:call_tender.view_search_call_for_tender
+#, python-format
+msgid "Progress"
+msgstr "En cours"
+
+#. module: call_tender
+#: model:ir.model.fields,field_description:call_tender.field_tender_answer_property_ids
+msgid "Properties"
+msgstr "Propriétés"
+
+#. module: call_tender
+#: model:ir.model.fields,field_description:call_tender.field_generate_answer_quantity_ids
+#: model:ir.ui.view,arch_db:call_tender.view_form_generate_answer_for_call_tender
+msgid "Quantities"
+msgstr "Quantités"
+
+#. module: call_tender
+#: model:ir.model.fields,field_description:call_tender.field_generate_answer_quantity_quantity
+#: model:ir.model.fields,field_description:call_tender.field_tender_answer_quantity
+#: model:ir.ui.view,arch_db:call_tender.view_form_generate_answer_for_call_tender
+msgid "Quantity"
+msgstr "Quantité"
+
+#. module: call_tender
+#: model:ir.model,name:call_tender.model_generate_answer_quantity
+msgid "Quantity for answer generation"
+msgstr "Quantité pour la génération de réponse"
+
+#. module: call_tender
+#: code:addons/call_tender/call_tender.py:383
+#, python-format
+msgid "Received"
+msgstr "Reçu"
+
+#. module: call_tender
+#: model:ir.ui.view,arch_db:call_tender.view_form_call_for_tender
+msgid "Referencing values"
+msgstr "Valeurs du référencement"
+
+#. module: call_tender
+#: model:ir.model.fields,field_description:call_tender.field_call_tender_request_date
+msgid "Request date"
+msgstr "Date de demande"
+
+#. module: call_tender
+#: model:ir.actions.act_window,name:call_tender.action_select_products_for_call_tender
+msgid "Select products"
+msgstr "Sélectionner les produits"
+
+#. module: call_tender
+#: model:ir.ui.view,arch_db:call_tender.view_form_select_products_for_call_tender
+msgid "Select the products"
+msgstr "Sélectionner les produits"
+
+#. module: call_tender
+#: model:ir.ui.view,arch_db:call_tender.view_form_call_for_tender
+msgid "Send mail"
+msgstr "Envoyer mail"
+
+#. module: call_tender
+#: code:addons/call_tender/call_tender.py:382
+#, python-format
+msgid "Sent"
+msgstr "Envoyé"
+
+#. module: call_tender
+#: model:ir.model.fields,field_description:call_tender.field_product_call_tender_sequence
+msgid "Sequence"
+msgstr "Séquence"
+
+#. module: call_tender
+#: model:ir.model.fields,field_description:call_tender.field_call_tender_state
+#: model:ir.model.fields,field_description:call_tender.field_supplier_call_tender_state
+#: model:ir.model.fields,field_description:call_tender.field_tender_answer_state
+#: model:ir.ui.view,arch_db:call_tender.view_search_call_for_tender
+#: model:ir.ui.view,arch_db:call_tender.view_search_tender_answer
+msgid "State"
+msgstr "État"
+
+#. module: call_tender
+#: model:ir.model.fields,field_description:call_tender.field_supplier_call_tender_supplier_id
+#: model:ir.model.fields,field_description:call_tender.field_tender_answer_supplier_id
+#: model:ir.ui.view,arch_db:call_tender.view_search_tender_answer
+msgid "Supplier"
+msgstr "Fournisseur"
+
+#. module: call_tender
+#: model:ir.ui.view,arch_db:call_tender.view_form_supplier_call_tender
+#: model:ir.ui.view,arch_db:call_tender.view_tree_supplier_call_tender
+msgid "Supplier call tender"
+msgstr "Fournisseur appel d'offre"
+
+#. module: call_tender
+#: model:ir.model,name:call_tender.model_supplier_call_tender
+msgid "Supplier list for calls tender"
+msgstr "Liste de fournisseurs pour les appels d'offre"
+
+#. module: call_tender
+#: model:ir.model.fields,field_description:call_tender.field_call_tender_supplier_ids
+#: model:ir.model.fields,field_description:call_tender.field_generate_answer_supplier_ids
+#: model:ir.ui.view,arch_db:call_tender.view_form_call_for_tender
+msgid "Suppliers"
+msgstr "Fournisseurs"
+
+#. module: call_tender
+#: model:ir.ui.view,arch_db:call_tender.view_form_generate_answer_for_call_tender
+msgid "Suppliers list"
+msgstr "Liste de fournisseur"
+
+#. module: call_tender
+#: model:ir.ui.view,arch_db:call_tender.view_form_tender_answer
+#: model:ir.ui.view,arch_db:call_tender.view_tree_tender_answer
+msgid "Tender answer"
+msgstr "Réponse d'appel d'offre"
+
+#. module: call_tender
+#: model:ir.ui.view,arch_db:call_tender.view_form_call_for_tender
+msgid "The factor and divisor are only used if the product is in fix dual unit"
+msgstr "Le facteur et le diviseur ne sont utilisés que si le produit est en double unité fixe"
+
+#. module: call_tender
+#: code:addons/call_tender/call_tender.py:423
+#, python-format
+msgid "There is no report declared for call for tender. You need a report with the report unit 'purchase_call_tender'"
+msgstr "Il n'y a pas de rapport déclaré pour l'appel d'offre. Vous devez déclarer un rapport ayant pour unité de rapport 'purchase_call_tender'"
+
+#. module: call_tender
+#: model:ir.ui.view,arch_db:call_tender.view_form_tender_answer
+msgid "This action will update all the line with the same call for tender, supplier, product and properties. Do you want to continue?"
+msgstr "Cette action va mettre à jour toutes les lignes ayant le même appel d'offre, le même fournisseur, le même produit et les même propriétés. Souhaitez-vous continuer?"
+
+#. module: call_tender
+#: model:ir.ui.view,arch_db:call_tender.view_search_tender_answer
+msgid "To update"
+msgstr "À mettre à jour"
+
+#. module: call_tender
+#: model:ir.model.fields,help:call_tender.field_call_tender_uoi_id
+#: model:ir.model.fields,help:call_tender.field_tender_answer_uoi_id
+msgid "Unit of Invoice"
+msgstr "Unité de facturation"
+
+#. module: call_tender
+#: model:ir.model.fields,help:call_tender.field_call_tender_uop_id
+#: model:ir.model.fields,help:call_tender.field_tender_answer_uop_id
+msgid "Unit of Purchase"
+msgstr "Unité d'achat"
+
+#. module: call_tender
+#: model:ir.model.fields,field_description:call_tender.field_call_tender_uoi_id
+#: model:ir.model.fields,field_description:call_tender.field_tender_answer_uoi_id
+msgid "UoI"
+msgstr "Unité de prix"
+
+#. module: call_tender
+#: model:ir.model.fields,field_description:call_tender.field_call_tender_uop_id
+#: model:ir.model.fields,field_description:call_tender.field_tender_answer_uop_id
+msgid "UoP"
+msgstr "Unité d'achat"
+
+#. module: call_tender
+#: model:ir.model.fields,field_description:call_tender.field_call_tender_uop_category_id
+#: model:ir.model.fields,field_description:call_tender.field_tender_answer_uop_category_id
+msgid "UoP category"
+msgstr "Catégorie UdA"
+
+#. module: call_tender
+#: model:ir.ui.view,arch_db:call_tender.view_form_call_for_tender
+msgid "Update all the referencing"
+msgstr "Mettre à jour tous les référencements"
+
+#. module: call_tender
+#: model:ir.ui.view,arch_db:call_tender.view_form_call_for_tender
+#: model:ir.ui.view,arch_db:call_tender.view_form_tender_answer
+msgid "Update the referencing"
+msgstr "Mettre à jour référentiel"
+
+#. module: call_tender
+#: code:addons/call_tender/call_tender.py:21
+#: model:ir.ui.view,arch_db:call_tender.view_search_tender_answer
+#, python-format
+msgid "Updated"
+msgstr "Mis à jour"
+
+#. module: call_tender
+#: model:ir.model,name:call_tender.model_select_products_wizard
+msgid "Wizard to select products in the call for tender"
+msgstr "Wizard pour sélectionner les produits dans l'appel d'offre"
+
+#. module: call_tender
+#: model:ir.model,name:call_tender.model_generate_answer
+msgid "Wizard which enable to create call for tender answers quickly"
+msgstr "Wizard qui permet de créer des réponses d'appel d'offre rapidement"
+
+#. module: call_tender
+#: sql_constraint:product.call.tender:0
+msgid "You can't have two products lines with the same product!"
+msgstr "Vous ne pouvez avoir deux lignes de produits appelés avec le même produit!"
+
+#. module: call_tender
+#: sql_constraint:supplier.call.tender:0
+msgid "You can't have two suppliers lines with the same supplier!"
+msgstr "Vous ne pouvez avoir deux lignes de fournisseur avec le même fournisseur!"
+
+#. module: call_tender
+#: code:addons/call_tender/wizard/generate_answer.py:133
+#, python-format
+msgid "You must choose a currency, an unit of purchase and an unit of invoice in the call for tender to create new referencing"
+msgstr "Vous devez sélectionner une devise, une unité d'achat et une unité de prix dans l'appel d'offre pour créer un nouveau référencement"
+
+#. module: call_tender
+#: model:ir.ui.view,arch_db:call_tender.view_form_generate_answer_for_call_tender
+#: model:ir.ui.view,arch_db:call_tender.view_form_select_products_for_call_tender
+msgid "or"
+msgstr "ou"
+

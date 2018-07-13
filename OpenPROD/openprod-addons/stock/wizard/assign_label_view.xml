@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+		<!-- FORM VIEW Assign label -->
+		<record id='view_form_assign_label_wizard' model='ir.ui.view'>
+			<field name="name">view_form_assign_label_wizard</field>
+			<field name="model">assign.label.wizard</field>
+			<field name="arch" type="xml">
+				<form string="Assign label" version="8.0">
+					<field name="move_id" invisible="1" />
+					<field name="warehouse_id" invisible="1" />
+					<field name="product_id" invisible="1" />
+					<field name="label_ids" colspan="4" nolabel="1" domain="[('product_id', '=', product_id), ('is_active', '=', True), ('state', '=', 'available'), ('warehouse_id', '=', warehouse_id)]" />
+					<footer>
+						<button name="assign_label" string="OK" type="object" class="oe_highlight" />
+						or
+						<button string="Cancel" class="oe_link" special="cancel" />
+					</footer>
+				</form>
+			</field>
+		</record>
+
+		<!-- ACTION Assign label -->
+		<record id="act_assign_label_wizard" model="ir.actions.act_window">
+			<field name="name">Assign label</field>
+			<field name="res_model">assign.label.wizard</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">form</field>
+			<field name="target">new</field>
+		</record>
+
+
+		<!-- FORM VIEW Assign inactive label -->
+		<record id='view_form_assign_inactive_label_wizard' model='ir.ui.view'>
+			<field name="name">view_form_assign_label_wizard</field>
+			<field name="model">assign.label.wizard</field>
+            <field name="priority">100</field>
+			<field name="arch" type="xml">
+				<form string="Assign label" version="8.0">
+					<field name="move_id" invisible="1" />
+					<field name="warehouse_id" invisible="1" />
+					<field name="product_id" invisible="1" />
+					<field name="label_ids" colspan="4" nolabel="1" domain="[('product_id', '=', product_id), ('is_active', '=', False), ('state', '=', 'inactive')]" />
+					<footer>
+						<button name="assign_label" string="OK" type="object" class="oe_highlight" />
+						or
+						<button string="Cancel" class="oe_link" special="cancel" />
+					</footer>
+				</form>
+			</field>
+		</record>
+
+		<!-- ACTION Assign inactive label -->
+		<record id="act_assign_inactive_label_wizard" model="ir.actions.act_window">
+			<field name="name">Assign label</field>
+			<field name="res_model">assign.label.wizard</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">form</field>
+			<field name="target">new</field>
+		</record>
+
+		<!-- ACTION FORM name -->
+		<record id="act_assign_inactive_label_wizard_form" model="ir.actions.act_window.view">
+			<field name="sequence" eval="20" />
+			<field name="view_mode">form</field>
+			<field name="view_id" ref="view_form_assign_inactive_label_wizard" />
+			<field name="act_window_id" ref="act_assign_inactive_label_wizard" />
+		</record>
+
+		<!-- FORM VIEW Add move label -->
+		<record id='view_form_add_move_label_wizard' model='ir.ui.view'>
+			<field name="name">view_form_add_move_label_wizard</field>
+			<field name="model">add.move.label.wizard</field>
+			<field name="arch" type="xml">
+				<form string="Add move label" version="8.0">
+					<field name="move_id" invisible="1" />
+					<field name="warehouse_id" invisible="1" />
+					<field name="product_id" invisible="1" />
+					<field name="is_declared_pf" invisible="1" />
+					<field name="label_ids" colspan="4" nolabel="1" domain="is_declared_pf and [('product_id', '=', product_id),
+                                                                             ('state', 'not in', ('reserved', 'quarantine', 'control')), ('warehouse_id', '=', warehouse_id)] or 
+                                                                             [('product_id', '=', product_id), ('is_active', '=', True), 
+					                                                         ('state', '=', 'available'), ('warehouse_id', '=', warehouse_id)]" />
+					<footer>
+						<button name="add_move_label" string="OK" type="object" class="oe_highlight" />
+						or
+						<button string="Cancel" class="oe_link" special="cancel" />
+					</footer>
+				</form>
+			</field>
+		</record>
+
+		<!-- ACTION Add move label -->
+		<record id="act_add_move_label_wizard" model="ir.actions.act_window">
+			<field name="name">Add move label</field>
+			<field name="res_model">add.move.label.wizard</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">form</field>
+			<field name="target">new</field>
+		</record>
+		
+		
+		
+		<!-- FORM VIEW Add move label -->
+        <record id='view_form_assing_um_label_wizard' model='ir.ui.view'>
+            <field name="name">view_form_assing_um_label_wizard</field>
+            <field name="model">assing.um.label.wizard</field>
+            <field name="arch" type="xml">
+                <form string="Assign UM label" version="8.0">
+                    <field name="label_ids" invisible="1" />
+                    <field name="um_label_id" domain="[('type', '=', 'um')]" />
+                    <footer>
+                        <button name="assing_um_label" string="OK" type="object" class="oe_highlight" />
+                        or
+                        <button string="Cancel" class="oe_link" special="cancel" />
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <!-- ACTION Add move label -->
+        <record id="act_assing_um_label_wizard" model="ir.actions.act_window">
+            <field name="name">Assign UM label</field>
+            <field name="res_model">assing.um.label.wizard</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+        
+        
+        <act_window 
+            name="Assign UM label" 
+            res_model="assing.um.label.wizard" 
+            src_model="stock.label" 
+            view_mode="form" 
+            target="new" 
+            key2="client_action_multi" 
+            id="act_ucs_assing_um_label_wizard" 
+        />
+        
+        
+        <!-- FORM VIEW Add move label -->
+        <record id='view_form_assing_uc_label_wizard' model='ir.ui.view'>
+            <field name="name">view_form_assing_uc_label_wizard</field>
+            <field name="model">assing.uc.label.wizard</field>
+            <field name="arch" type="xml">
+                <form string="Assign UC label" version="8.0">
+                    <field name="um_label_id" invisible="1" />
+                    <field name="label_ids" nolabel="1" colspan="4" domain="[('id', '!=', um_label_id)]" />
+                    <footer>
+                        <button name="assing_uc_label" string="OK" type="object" class="oe_highlight" />
+                        or
+                        <button string="Cancel" class="oe_link" special="cancel" />
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <!-- ACTION Add move label -->
+        <record id="act_assing_uc_label_wizard" model="ir.actions.act_window">
+            <field name="name">Assign UC label</field>
+            <field name="res_model">assing.uc.label.wizard</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+	</data>
+</openerp>

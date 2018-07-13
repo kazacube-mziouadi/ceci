@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+
+		<!-- FORM VIEW Partner -->
+		<record id="view_form_general_partner_multi_company" model="ir.ui.view">
+			<field name="name">view_form_general_partner_multi_company</field>
+			<field name="inherit_id" ref="account_openprod.view_form_general_partner" />
+			<field name="model">res.partner</field>
+			<field name="arch" type="xml">
+				<xpath expr="//group[@name='group_credit_and_notation']"
+					position="before">
+					<group colspan="2" col="4" string="Accounts"
+						name="group_account_multi_company">
+						<separator string="Account payable" colspan="4"
+							attrs="{'invisible': [('is_supplier', '!=', True)]}" />
+						<field name="mcpap_ids" nolabel="1" colspan="4"
+							attrs="{'invisible': [('is_supplier', '!=', True)]}">
+							<tree string="Account payable" editable="bottom">
+								<field name="company_id" />
+								<field name="account_id"
+									domain="[('type', '=', 'payable'), ('company_id', '=', company_id)]" />
+							</tree>
+						</field>
+						<separator string="Account receivable" colspan="4"
+							attrs="{'invisible': [('is_customer', '!=', True)]}" />
+						<field name="mcpar_ids" nolabel="1" colspan="4"
+							attrs="{'invisible': [('is_customer', '!=', True)]}">
+							<tree string="Account receivable" editable="bottom">
+								<field name="company_id" />
+								<field name="account_id"
+									domain="[('type', '=', 'receivable'), ('company_id', '=', company_id)]" />
+							</tree>
+						</field>
+					</group>
+				</xpath>
+				
+				<xpath expr="//field[@name='property_account_payable_id']"
+					position="replace">
+					<field name="property_account_payable_id" />
+				</xpath>
+				
+				<xpath expr="//field[@name='property_account_receivable_id']"
+					position="replace">
+					<field name="property_account_receivable_id" />
+				</xpath>
+				
+			</field>
+		</record>
+		
+		
+		
+		<record id="view_form_partner_purchase_multi_company" model="ir.ui.view">
+			<field name="name">view_form_general_partner_multi_company</field>
+			<field name="inherit_id" ref="purchase.view_form_partner_purchase" />
+			<field name="model">res.partner</field>
+			<field name="arch" type="xml">
+				<xpath expr="//field[@name='supplier_account_position_id']"
+					position="replace">
+					<field name="supplier_account_position_id" />
+				</xpath>
+				
+				<xpath expr="//group[@name='purchase_paiement_process']"
+                    position="after">
+                    <group colspan="2" col="4" string="Fiscals postions"
+                        name="group_fiscal_position_supplier_multi_company">
+                        <field name="mcpfpp_ids" nolabel="1" colspan="4"
+                            attrs="{'invisible': [('is_supplier', '!=', True)]}">
+                            <tree string="Fiscal position supplier" editable="bottom">
+                                <field name="company_id" />
+                                <field name="account_position_id" domain="[('company_id', '=', company_id)]" required="1" />
+                            </tree>
+                        </field>
+                    </group>
+                </xpath>
+			</field>
+		</record>
+		
+		
+		<record id="view_form_partner_sale_multi_company" model="ir.ui.view">
+            <field name="name">view_form_general_partner_multi_company</field>
+            <field name="inherit_id" ref="sale.view_form_partner_sale" />
+            <field name="model">res.partner</field>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='property_account_position_id']"
+                    position="replace">
+                    <field name="property_account_position_id" />
+                </xpath>
+                
+                <xpath expr="//group[@name='paiement_process']"
+                    position="after">
+                    <group colspan="2" col="4" string="Fiscals postions"
+                        name="group_fiscal_position_customer_multi_company">
+                        <field name="mcpfps_ids" nolabel="1" colspan="4"
+                            attrs="{'invisible': [('is_customer', '!=', True)]}">
+                            <tree string="Fiscal position customer" editable="bottom">
+                                <field name="company_id" />
+                                <field name="account_position_id" domain="[('company_id', '=', company_id)]" required="1" />
+                            </tree>
+                        </field>
+                    </group>
+                </xpath>
+                
+            </field>
+        </record>
+	</data>
+</openerp>

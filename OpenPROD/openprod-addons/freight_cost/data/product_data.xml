@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<openerp>
+    <data noupdate="1">
+    	<!-- Product.product  -->
+        <record model="product.product" id="int_product_transport">
+            <field name="name">Transport</field>
+            <field name="code">trs[VT]</field>
+            <field name="type">service</field>
+            <field name="produce_ok">False</field>
+            <field name="sale_ok">True</field>
+            <field name="purchase_ok">True</field>
+            <field name="manage_service_receipt">False</field>
+            <field name="manage_service_delivery">False</field>
+            <field name="state">lifeserie</field>
+            <field name="supply_method">buy</field>
+            <field name="trigger_supply">without_stock</field>
+            <field name="cost_method">manual</field>
+            <field name="is_no_unlink">True</field>
+            <field name="free_purchase">True</field>
+            <field name="uom_id" ref="product.product_uom_unit"/>
+            <field name="uop_id" ref="product.product_uom_unit"/>
+            <field name="purchase_uoi_id" ref="product.product_uom_unit"/>
+            <field name="free_sale">True</field>
+            <field name="uos_id" ref="product.product_uom_unit"/>
+            <field name="sale_uoi_id" ref="product.product_uom_unit"/>
+            <field name="categ_id" ref="product.all_product_category"/>
+        </record>
+    </data>
+</openerp>

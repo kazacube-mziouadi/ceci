@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+	   <!-- FORM VIEW Import -->
+		<record id='view_form_compute_stored_fields_import' model='ir.ui.view'>
+			<field name="name">compute_stored_fields_import</field>
+			<field name="model">compute.stored.fields.import</field>
+			<field name="arch" type="xml">
+				<form string="Import" version="8.0">
+					<p>
+						Create lines for new models without overwrite existing lines
+					</p>
+					<footer>
+						<button name="import_models" string="OK" type="object" class="oe_highlight" />
+						or
+						<button string="Cancel" class="oe_link" special="cancel" />
+					</footer>
+				</form>
+			</field>
+		</record>
+        <act_window 
+            name="Import models" 
+            res_model="compute.stored.fields.import" 
+            src_model="compute.stored.fields" 
+            view_mode="form" target="new" 
+            key2="client_action_multi" 
+            id="act_stored_fields_import" 
+            context="{'sidebar_without_id': True, 'dialog_size': 'small'}" />
+	</data>
+</openerp>

@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+	
+		<!-- FORM VIEW Invoice lines -->
+		<record id='view_form_sale_invoice_line' model='ir.ui.view'>
+			<field name="name">view.form.sale.invoice.line</field>
+			<field name="model">account.invoice.line</field>
+			<field name="priority" eval="1200"/>
+			<field name="inherit_id" ref="account_openprod.view_openprod_invoice_line_form"/>
+			<field name="arch" type="xml">
+				<xpath expr="//field[@name='name']" position="after">
+					<field name="section_id" readonly="1"/>
+				</xpath>
+				<xpath expr="//group[@name='divers1']" position="inside">
+					<field name="sale_order_line_id" readonly="1"/>
+				</xpath>
+			</field>
+		</record>
+		
+		<!-- FORM VIEW Customer invoice -->
+		<record id='account_customer_openprod_invoice_inherit_form' model='ir.ui.view'>
+			<field name="name">view.form.inherit.customer.invoice</field>
+			<field name="model">account.invoice</field>
+			<field name="priority" eval="1200"/>
+			<field name="inherit_id" ref="account_openprod.account_cust_openprod_invoice_form"/>
+			<field name="arch" type="xml">
+				<xpath expr="//field[@name='delivery_partner_id']" position="attributes">
+					<attribute name="domain">[('can_be_delivered', '=', True), '|', ('delivered_customer_in_order_list', '=', partner_order_id), ('id', 'in', [partner_id, partner_order_id])]</attribute> 
+				</xpath>
+				<xpath expr="//field[@name='partner_order_id']" position="attributes">
+					<attribute name="domain">[('can_order', '=', True), '|', ('order_customer_in_invoiced_list', '=', partner_id), ('id', '=', partner_id)]</attribute> 
+				</xpath>
+				<xpath expr="//field[@name='invoice_line_ids']//form//field[@name='name']" position="after">
+					<field name="section_id"/>
+				</xpath>
+				<xpath expr="//field[@name='invoice_line_ids']//form//group[@name='divers1']" position="inside">
+					<field name="sale_order_line_id"/>
+				</xpath>
+				<xpath expr="//field[@name='invoice_line_ids']//form//field[@name='product_id']" position="attributes">
+					<attribute name="domain">parent.partner_order_id and [('sale_ok', '=', True), ('state', 'in', ['dev','lifeserie','endlife']), '|', ('sale_product_customerinfo', '=', parent.partner_order_id), ('free_sale', '=', True)] or [('id', '=', False)]</attribute>
+				</xpath>
+				<xpath expr="//field[@name='partner_id']" position="attributes">
+					<attribute name="domain">[('cust_can_be_charged', '=', [invoice_line_ids, partner_id])]</attribute>
+				</xpath>
+				<xpath expr="//field[@name='paid_by_id']" position="attributes">
+					<attribute name="domain">[('can_paid', '=', True), '|', ('paid_customer_in_order_list', '=', partner_order_id), ('id', '=', partner_id)]</attribute>
+				</xpath>
+			</field>
+		</record>
+		
+		
+		<record id="account_cust_openprod_invoice_line_form_sale" model="ir.ui.view">
+            <field name="name">account.customer.openprod.invoice.line.form.sale</field>
+            <field name="model">account.invoice.line</field>
+            <field name="inherit_id" ref="account_openprod.account_cust_openprod_invoice_line_form" />
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='name']" position="after">
+                    <field name="section_id"/>
+                </xpath>
+                <xpath expr="//group[@name='divers1']" position="inside">
+                    <field name="sale_order_line_id"/>
+                </xpath>
+                <xpath expr="//field[@name='product_id']" position="attributes">
+                    <attribute name="domain">parent.partner_order_id and [('sale_ok', '=', True), ('state', 'in', ['dev','lifeserie','endlife']), '|', ('sale_product_customerinfo', '=', parent.partner_order_id), ('free_sale', '=', True)] or [('id', '=', False)]</attribute>
+                </xpath>
+            </field>
+        </record>
+		
+		<!-- ACTION Account invoice for sales -->
+		<record model="ir.actions.act_window" id="sale_invoice_action">
+		    <field name="name">Invoices</field>
+		    <field name="res_model">account.invoice</field>
+		    <field name="view_type">form</field>
+		    <field name="view_mode">tree,form</field>
+		    <field name="target">current</field>
+		    <field name="domain">[('id', 'in', context.get('invoice_ids', []))]</field>
+	  	</record>
+	  	
+	  	<!-- ACTION Form view invoice for sales -->
+	  	<record id="action_tree_invoice_for_sale" model="ir.actions.act_window.view">
+            <field eval="1" name="sequence"/>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="account.invoice_tree"/>
+            <field name="act_window_id" ref="sale_invoice_action"/>
+        </record>
+        
+	  	<!-- ACTION Form view invoice for sales -->
+	  	<record id="action_form_invoice_for_sale" model="ir.actions.act_window.view">
+            <field eval="2" name="sequence"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="account_openprod.account_cust_openprod_invoice_form"/>
+            <field name="act_window_id" ref="sale_invoice_action"/>
+        </record>
+	  	
+	  	<!-- ACTION Account invoice line for sales lines -->
+	  	<record model="ir.actions.act_window" id="sale_line_invoice_action">
+		    <field name="name">Invoices lines</field>
+		    <field name="res_model">account.invoice.line</field>
+		    <field name="view_type">form</field>
+		    <field name="view_mode">tree,form</field>
+		    <field name="view_id" ref="account.view_invoice_line_tree"/>
+		    <field name="target">current</field>
+		    <field name="domain">[('id', 'in', context.get('invoice_ids', []))]</field>
+	  	</record>
+	  	
+	  	<record id="view_sale_tax_tree" model="ir.ui.view">
+            <field name="name">account.sale.tax.tree</field>
+            <field name="model">account.sale.tax</field>
+            <field name="arch" type="xml">
+                <tree string="Manual Sale Taxes">
+                    <field name="sequence"/>
+                    <field name="manual"/>
+                    <field name="name"/>
+                    <field name="account_id" groups="base.group_account_user"/>
+                    <field name="amount"/>
+                    <field name="currency_id" invisible="1"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_sale_tax_form" model="ir.ui.view">
+            <field name="name">account.sale.tax.form</field>
+            <field name="model">account.sale.tax</field>
+            <field name="arch" type="xml">
+                <form string="Manual Sale Taxes">
+                    <group col="4">
+                        <field name="name"/>
+                        <field name="sequence"/>
+                        <field name="account_id" groups="account.group_account_user"/>
+                        <field name="account_analytic_id" domain="[('company_id', '=', parent.company_id)]" groups="analytic.group_analytic_accounting"/>
+                        <field name="manual"/>
+                        <field name="amount"/>
+                        <field name="currency_id" invisible="1"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+		
+	</data>
+</openerp>

@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+	
+		<record model="ir.ui.view" id="view_form_compute_real_cost_mo">
+			<field name="name">view_form_compute_real_cost_mo</field>
+			<field name="model">compute.real.cost.mo</field>
+			<field name="type">form</field>
+			<field name="arch" type="xml">
+				<form string="Compute real cost MO">
+					<group colspan="4" col="4">
+						<field name="mo_ids" colspan="4" nolabel="1" />
+					</group>
+					<footer>
+						<button name="action_compute_cost" string="Compute cost" type="object" class="oe_highlight" />
+						or
+						<button string="Cancel" class="oe_link" special="cancel" />
+					</footer>
+				</form>
+			</field>
+		</record>
+		
+		<act_window name="Compute real cost" res_model="compute.real.cost.mo" 
+		            src_model="mrp.manufacturingorder" view_mode="form" target="new" 
+		            key2="client_action_multi" id="act_compute_real_cost_mo" />
+		
+		
+		
+		
+		<record model="ir.ui.view" id="view_form_compute_theo_cost_mo">
+            <field name="name">view_form_compute_theo_cost_mo</field>
+            <field name="model">compute.theo.cost.mo</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Compute theo cost MO">
+                    <group colspan="4" col="4">
+                        <field name="mo_ids" colspan="4" nolabel="1" />
+                    </group>
+                    <footer>
+                        <button name="action_compute_cost" string="Compute cost" type="object" class="oe_highlight" />
+                        or
+                        <button string="Cancel" class="oe_link" special="cancel" />
+                    </footer>
+                </form>
+            </field>
+        </record>
+        
+        <act_window name="Compute theo cost" res_model="compute.theo.cost.mo" 
+                    src_model="mrp.manufacturingorder" view_mode="form" target="new" 
+                    key2="client_action_multi" id="act_compute_theo_cost_mo" />
+
+
+
+		<record model="ir.ui.view" id="view_form_compute_bom_cost">
+            <field name="name">view_form_compute_bom_cost</field>
+            <field name="model">compute.bom.cost</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Compute bom cost">
+                    <group colspan="4" col="4">
+                        <field name="all" colspan="2" />
+                        <field name="bom_ids" colspan="4" nolabel="1" />
+                    </group>
+                    <footer>
+                        <button name="action_compute_cost" string="Compute cost" type="object" class="oe_highlight" />
+                        or
+                        <button string="Cancel" class="oe_link" special="cancel" />
+                    </footer>
+                </form>
+            </field>
+        </record>
+        
+        <act_window name="Compute bom cost" res_model="compute.bom.cost" 
+                    src_model="mrp.bom" view_mode="form" target="new" 
+                    key2="client_action_multi" id="act_compute_bom_cost" />
+                    
+                    
+                    
+        <record model="ir.ui.view" id="view_form_compute_routing_cost">
+            <field name="name">view_form_compute_routing_cost</field>
+            <field name="model">compute.routing.cost</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Compute routing cost">
+                    <group colspan="4" col="4">
+                        <field name="all" colspan="2" />
+                        <field name="routing_ids" colspan="4" nolabel="1" />
+                    </group>
+                    <footer>
+                        <button name="action_compute_cost" string="Compute cost" type="object" class="oe_highlight" />
+                        or
+                        <button string="Cancel" class="oe_link" special="cancel" />
+                    </footer>
+                </form>
+            </field>
+        </record>
+        
+        <act_window name="Compute routing cost" res_model="compute.routing.cost" 
+                    src_model="mrp.routing" view_mode="form" target="new" 
+                    key2="client_action_multi" id="act_compute_routing_cost" />
+                    
+                    
+                    
+        <record model="ir.ui.view" id="view_form_compute_generate_op_cons">
+            <field name="name">view_form_compute_generate_op_cons</field>
+            <field name="model">compute.generate.op.cons</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Generate operation consumed">
+                    <group colspan="4" col="4">
+                        <field name="all" colspan="2" />
+                        <field name="routing_ids" colspan="4" nolabel="1" />
+                    </group>
+                    <footer>
+                        <button name="action_generate_op_cons" string="Ok" type="object" class="oe_highlight" />
+                        or
+                        <button string="Cancel" class="oe_link" special="cancel" />
+                    </footer>
+                </form>
+            </field>
+        </record>
+        
+        <act_window name="Generate operation consumed" res_model="compute.generate.op.cons" 
+                    src_model="mrp.routing" view_mode="form" target="new" 
+                    key2="client_action_multi" id="act_compute_generate_op_cons" />
+	</data>
+</openerp>

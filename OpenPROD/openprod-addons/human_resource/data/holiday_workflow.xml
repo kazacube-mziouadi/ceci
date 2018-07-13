@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data noupdate="0">
+
+		<!-- ================ -->
+        <!-- RESOURCE HOLIDAY -->
+		<!-- ================ -->
+
+		<!-- WORKFLOW -->
+		<record id="wkf_resource_holiday" model="workflow">
+			<field name="name">resource_holiday</field>
+			<field name="osv">resource.holiday</field>
+			<field name="on_create">True</field>
+		</record>
+
+
+		<!-- DISPLAY STATE -->
+		<record id="resource_holiday_draft" model="workflow.display.state">
+			<field name="wkf_id" ref="wkf_resource_holiday" />
+			<field name="sequence" eval="0" />
+			<field name="label">Draft</field>
+			<field name="name">draft</field>
+			<field name="always_visible" eval="True" />
+		</record>
+		<record id="resource_holiday_to_approved" model="workflow.display.state">
+			<field name="wkf_id" ref="wkf_resource_holiday" />
+			<field name="sequence" eval="10" />
+			<field name="label">To approved</field>
+			<field name="name">to_approved</field>
+			<field name="always_visible" eval="True" />
+		</record>
+		<record id="resource_holiday_confirmed" model="workflow.display.state">
+			<field name="wkf_id" ref="wkf_resource_holiday" />
+			<field name="sequence" eval="30" />
+			<field name="label">Confirmed</field>
+			<field name="name">confirmed</field>
+			<field name="always_visible" eval="True" />
+		</record>
+		<record id="resource_holiday_cancelled" model="workflow.display.state">
+			<field name="wkf_id" ref="wkf_resource_holiday" />
+			<field name="sequence" eval="30" />
+			<field name="label">Cancelled</field>
+			<field name="name">cancelled</field>
+			<field name="always_visible" eval="False" />
+		</record>
+
+
+		<!-- ACTIVITY -->
+		<!-- Draft -->
+		<record id="holiday_act_draft" model="workflow.activity">
+			<field name="wkf_id" ref="wkf_resource_holiday" />
+			<field name="name">Draft</field>
+			<field name="kind">function</field>
+			<field name="can_not_be_deleted">False</field>
+			<field name="required">False</field>
+			<field name="sequence" eval="10" />
+			<field name="flow_start" eval="True"/>
+			<field name="flow_stop" eval="False"/>
+			<field name="action">write({'display_state': 'draft'})
+			put_in_draft_resource_holiday()</field>
+		</record>
+		<!-- To approved -->
+		<record id="holiday_act_to_approved" model="workflow.activity">
+			<field name="wkf_id" ref="wkf_resource_holiday" />
+			<field name="name">To approved</field>
+			<field name="kind">function</field>
+			<field name="can_not_be_deleted">False</field>
+			<field name="required">False</field>
+			<field name="sequence" eval="20" />
+			<field name="flow_start" eval="False"/>
+			<field name="flow_stop" eval="False"/>
+			<field name="action">write({'display_state': 'to_approved'})
+			resource_holiday_to_approve()</field>
+		</record>
+		<!-- Confirmed -->
+		<record id="holiday_act_confirmed" model="workflow.activity">
+			<field name="wkf_id" ref="wkf_resource_holiday" />
+			<field name="name">Confirmed</field>
+			<field name="kind">function</field>
+			<field name="can_not_be_deleted">False</field>
+			<field name="required">False</field>
+			<field name="sequence" eval="30" />
+			<field name="flow_start" eval="False"/>
+			<field name="flow_stop" eval="True"/>
+			<field name="action">write({'display_state': 'confirmed'})
+			confirm_resource_holiday()</field>
+		</record>
+		<!-- Cancelled -->
+		<record id="holiday_act_cancelled" model="workflow.activity">
+			<field name="wkf_id" ref="wkf_resource_holiday" />
+			<field name="name">Cancelled</field>
+			<field name="kind">function</field>
+			<field name="can_not_be_deleted">False</field>
+			<field name="required">False</field>
+			<field name="sequence" eval="30" />
+			<field name="flow_start" eval="False"/>
+			<field name="flow_stop" eval="True"/>
+			<field name="action">write({'display_state': 'cancelled'})
+			cancel_resource_holiday()</field>
+		</record>
+
+
+		<!-- TRANSITION -->
+		<!-- Draft to To approved -->
+		<record id="holiday_draft_to_to_approved" model="workflow.transition">
+			<field name="sequence" eval="10" />
+			<field name="act_from" ref="holiday_act_draft" />
+			<field name="act_to" ref="holiday_act_to_approved" />
+			<field name="signal">to_approved</field>
+			<field name="is_default">True</field>
+			<field name="visible_button">True</field>
+			<field name="button_label">To approved</field>
+			<field name="button_class">openprod_logical_button</field>
+		</record>
+		<!-- To approved to Confirmed -->
+		<record id="holiday_to_approved_to_confirmed" model="workflow.transition">
+			<field name="sequence" eval="20" />
+			<field name="act_from" ref="holiday_act_to_approved" />
+			<field name="act_to" ref="holiday_act_confirmed" />
+			<field name="signal">confirmed</field>
+			<field name="is_default">True</field>
+			<field name="visible_button">True</field>
+			<field name="button_label">Confirm</field>
+			<field name="button_class">openprod_logical_button</field>
+		</record>
+		<!-- Confirmed to Cancelled -->
+        <record id="holiday_confirmed_to_cancelled" model="workflow.transition">
+            <field name="sequence" eval="30" />
+            <field name="act_from" ref="holiday_act_confirmed" />
+            <field name="act_to" ref="holiday_act_cancelled" />
+            <field name="signal">confirmed_cancelled</field>
+            <field name="is_default">True</field>
+            <field name="visible_button">True</field>
+            <field name="button_label">Cancel</field>
+            <field name="button_class">openprod_cancel_button</field>
+        </record>
+		<!-- To approved to Cancelled -->
+        <record id="holiday_to_approved_to_cancelled" model="workflow.transition">
+            <field name="sequence" eval="40" />
+            <field name="act_from" ref="holiday_act_to_approved" />
+            <field name="act_to" ref="holiday_act_cancelled" />
+            <field name="signal">to_approved_cancelled</field>
+            <field name="is_default">True</field>
+            <field name="visible_button">True</field>
+            <field name="button_label">Cancel</field>
+            <field name="button_class">openprod_cancel_button</field>
+        </record>
+        <!-- Cancel to Draft -->
+        <record id="holiday_cancelled_to_draft" model="workflow.transition">
+            <field name="sequence" eval="50" />
+            <field name="act_from" ref="holiday_act_cancelled" />
+            <field name="act_to" ref="holiday_act_draft" />
+            <field name="signal">cancelled_draft</field>
+            <field name="is_default">True</field>
+            <field name="visible_button">True</field>
+            <field name="button_label">Put in draft</field>
+        </record>
+
+		<!-- ======================= -->
+        <!-- RESOURCE HOLIDAY GIVING -->
+		<!-- ======================= -->
+		
+		<!-- WORKFLOW -->
+		<record id="wkf_resource_holiday_giving" model="workflow">
+			<field name="name">resource_holiday_giving</field>
+			<field name="osv">resource.holiday.giving</field>
+			<field name="on_create">True</field>
+		</record>
+
+
+		<!-- DISPLAY STATE -->
+		<record id="resource_holiday_giving_draft" model="workflow.display.state">
+			<field name="wkf_id" ref="wkf_resource_holiday_giving" />
+			<field name="sequence" eval="0" />
+			<field name="label">Draft</field>
+			<field name="name">draft</field>
+			<field name="always_visible" eval="True" />
+		</record>
+		<record id="resource_holiday_giving_to_approved" model="workflow.display.state">
+			<field name="wkf_id" ref="wkf_resource_holiday_giving" />
+			<field name="sequence" eval="10" />
+			<field name="label">To approved</field>
+			<field name="name">to_approved</field>
+			<field name="always_visible" eval="True" />
+		</record>
+		<record id="resource_holiday_giving_confirmed" model="workflow.display.state">
+			<field name="wkf_id" ref="wkf_resource_holiday_giving" />
+			<field name="sequence" eval="30" />
+			<field name="label">Confirmed</field>
+			<field name="name">confirmed</field>
+			<field name="always_visible" eval="True" />
+		</record>
+		<record id="resource_holiday_giving_cancelled" model="workflow.display.state">
+			<field name="wkf_id" ref="wkf_resource_holiday_giving" />
+			<field name="sequence" eval="40" />
+			<field name="label">Cancelled</field>
+			<field name="name">cancelled</field>
+			<field name="always_visible" eval="False" />
+		</record>
+
+
+		<!-- ACTIVITY -->
+		<!-- Draft -->
+		<record id="holiday_giving_act_draft" model="workflow.activity">
+			<field name="wkf_id" ref="wkf_resource_holiday_giving" />
+			<field name="name">Draft</field>
+			<field name="kind">function</field>
+			<field name="can_not_be_deleted">False</field>
+			<field name="required">False</field>
+			<field name="sequence" eval="10" />
+			<field name="flow_start" eval="True"/>
+			<field name="flow_stop" eval="False"/>
+			<field name="action">write({'display_state': 'draft'})
+			put_in_draft_holiday_giving()</field>
+		</record>
+		<!-- To approved -->
+		<record id="holiday_giving_act_to_approved" model="workflow.activity">
+			<field name="wkf_id" ref="wkf_resource_holiday_giving" />
+			<field name="name">To approved</field>
+			<field name="kind">function</field>
+			<field name="can_not_be_deleted">False</field>
+			<field name="required">False</field>
+			<field name="sequence" eval="20" />
+			<field name="flow_start" eval="False"/>
+			<field name="flow_stop" eval="False"/>
+			<field name="action">write({'display_state': 'to_approved'})
+			holiday_giving_to_approve()</field>
+		</record>
+		<!-- Confirmed -->
+		<record id="holiday_giving_act_confirmed" model="workflow.activity">
+			<field name="wkf_id" ref="wkf_resource_holiday_giving" />
+			<field name="name">Confirmed</field>
+			<field name="kind">function</field>
+			<field name="can_not_be_deleted">False</field>
+			<field name="required">False</field>
+			<field name="sequence" eval="30" />
+			<field name="flow_start" eval="False"/>
+			<field name="flow_stop" eval="True"/>
+			<field name="action">write({'display_state': 'confirmed'})
+			confirm_holiday_giving()</field>
+		</record>
+		<!-- Cancelled -->
+		<record id="holiday_giving_act_cancelled" model="workflow.activity">
+			<field name="wkf_id" ref="wkf_resource_holiday_giving" />
+			<field name="name">Cancelled</field>
+			<field name="kind">function</field>
+			<field name="can_not_be_deleted">False</field>
+			<field name="required">False</field>
+			<field name="sequence" eval="40" />
+			<field name="flow_start" eval="False"/>
+			<field name="flow_stop" eval="True"/>
+			<field name="action">write({'display_state': 'cancelled'})
+			cancel_holiday_giving()</field>
+		</record>
+
+
+		<!-- TRANSITION -->
+		<!-- Draft to To approved -->
+		<record id="holiday_giving_draft_to_to_approved" model="workflow.transition">
+			<field name="sequence" eval="10" />
+			<field name="act_from" ref="holiday_giving_act_draft" />
+			<field name="act_to" ref="holiday_giving_act_to_approved" />
+			<field name="signal">to_approved</field>
+			<field name="is_default">True</field>
+			<field name="visible_button">True</field>
+			<field name="button_label">To approved</field>
+			<field name="button_class">openprod_logical_button</field>
+		</record>
+		<!-- To approved to Confirmed -->
+		<record id="holiday_giving_to_approved_to_confirmed" model="workflow.transition">
+			<field name="sequence" eval="20" />
+			<field name="act_from" ref="holiday_giving_act_to_approved" />
+			<field name="act_to" ref="holiday_giving_act_confirmed" />
+			<field name="signal">confirmed</field>
+			<field name="is_default">True</field>
+			<field name="visible_button">True</field>
+			<field name="button_label">Confirm</field>
+			<field name="button_class">openprod_logical_button</field>
+		</record>
+		<!-- Confirmed to Cancelled -->
+        <record id="holiday_giving_confirmed_to_cancelled" model="workflow.transition">
+            <field name="sequence" eval="30" />
+            <field name="act_from" ref="holiday_giving_act_confirmed" />
+            <field name="act_to" ref="holiday_giving_act_cancelled" />
+            <field name="signal">confirmed_cancelled</field>
+            <field name="is_default">True</field>
+            <field name="visible_button">True</field>
+            <field name="button_label">Cancel</field>
+            <field name="button_class">openprod_cancel_button</field>
+        </record>
+		<!-- To approved to Cancelled -->
+        <record id="holiday_giving_to_approved_to_cancelled" model="workflow.transition">
+            <field name="sequence" eval="40" />
+            <field name="act_from" ref="holiday_giving_act_to_approved" />
+            <field name="act_to" ref="holiday_giving_act_cancelled" />
+            <field name="signal">to_approved_cancelled</field>
+            <field name="is_default">True</field>
+            <field name="visible_button">True</field>
+            <field name="button_label">Cancel</field>
+            <field name="button_class">openprod_cancel_button</field>
+        </record>
+        <!-- Cancel to Draft -->
+        <record id="holiday_giving_cancelled_to_draft" model="workflow.transition">
+            <field name="sequence" eval="50" />
+            <field name="act_from" ref="holiday_giving_act_cancelled" />
+            <field name="act_to" ref="holiday_giving_act_draft" />
+            <field name="signal">cancelled_draft</field>
+            <field name="is_default">True</field>
+            <field name="visible_button">True</field>
+            <field name="button_label">Put in draft</field>
+        </record>
+		
+        
+	</data>
+</openerp>

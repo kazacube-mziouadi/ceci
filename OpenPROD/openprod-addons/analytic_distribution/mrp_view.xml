@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+
+		<!-- ======================== -->
+		<!-- ManufacturingOrder -->
+		<!-- ======================== -->
+
+
+		<!-- FORM VIEW Manufacturing -->
+		<record id='view_form_mrp_manufacturingorder_analytic_distribution' model='ir.ui.view'>
+			<field name="name">view_form_mrp_manufacturingorder_analytic_distribution</field>
+			<field name="model">mrp.manufacturingorder</field>
+			<field name="inherit_id" ref="mrp.view_form_mrp_manufacturingorder" />
+			<field name="priority" eval="3500" />
+			<field name="arch" type="xml">
+                <xpath expr="//group[@name='cost_mo_group']" position="after">
+                    <group colspan="4" col="4">
+						<group colspan="2" col="4" string="Analytic distribution" >
+							<field name="type_compute_analytic_prod" required="1" colspan="3" />
+							<button name="create_analytic_journal_items" string="Create analytics lines" type="object" />
+							<group colspan="4" col="4" >
+								<field name="analytic_distribution_ids" coslpan="4" nolabel="1" >
+									<tree editable="bottom">
+										<field name="type"/>
+										<field name="value"  attrs="{'required': [('type', '!=', 'garbage')]}"/>
+										<field name="company_id" />
+										<field name="account_id" />
+										<field name="total" />
+									</tree>
+								</field>
+							</group>
+						</group>
+						<group colspan="2" col="4" string="Analytic lines" >
+							<group colspan="4" col="4" >
+					            <field name="analytic_line_ids" coslpan="4" nolabel="1" editable="bottom" readonly="1" />
+							</group>
+						</group>
+                    </group>
+                </xpath>
+			</field>
+		</record>
+	</data>
+</openerp>

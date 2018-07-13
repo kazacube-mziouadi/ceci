@@ -1,0 +1,599 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* analytic_distribution
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 9.0c\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-03-10 15:11+0000\n"
+"PO-Revision-Date: 2017-03-10 15:11+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: analytic_distribution
+#: model:ir.model.fields,field_description:analytic_distribution.field_analytic_distribution_account_id
+#: model:ir.model.fields,field_description:analytic_distribution.field_purchase_sale_analytic_distribution_account_id
+msgid "Account"
+msgstr "Compte"
+
+#. module: analytic_distribution
+#: model:ir.model.fields,field_description:analytic_distribution.field_account_analytic_line_amount_invoice
+msgid "Amount (from the invoice)"
+msgstr "Montant (de la facture)"
+
+#. module: analytic_distribution
+#: model:ir.ui.view,arch_db:analytic_distribution.view_form_inherit_account_analytic_line
+msgid "Amount (in company currency)"
+msgstr "Montant (dans la devise de la société)"
+
+#. module: analytic_distribution
+#: model:ir.ui.view,arch_db:analytic_distribution.account_cust_openprod_invoice_line_form_distribution
+#: model:ir.ui.view,arch_db:analytic_distribution.account_suppl_openprod_invoice_line_form_distribution
+#: model:ir.ui.view,arch_db:analytic_distribution.view_form_account_invoice_line_distribution
+#: model:ir.ui.view,arch_db:analytic_distribution.view_form_customer_account_invoice_distribution
+#: model:ir.ui.view,arch_db:analytic_distribution.view_form_product_analytic_distribution
+#: model:ir.ui.view,arch_db:analytic_distribution.view_form_product_analytic_purchase
+#: model:ir.ui.view,arch_db:analytic_distribution.view_form_product_analytic_sale
+#: model:ir.ui.view,arch_db:analytic_distribution.view_form_purchase_order_distribution
+#: model:ir.ui.view,arch_db:analytic_distribution.view_form_purchase_order_line_distribution
+#: model:ir.ui.view,arch_db:analytic_distribution.view_form_sale_order_distribution
+#: model:ir.ui.view,arch_db:analytic_distribution.view_form_sale_order_line_distribution
+#: model:ir.ui.view,arch_db:analytic_distribution.view_form_supplier_account_invoice_distribution
+msgid "Analytic"
+msgstr "Analytique"
+
+#. module: analytic_distribution
+#: model:ir.model,name:analytic_distribution.model_account_analytic_account
+msgid "Analytic Account"
+msgstr "Compte analytique"
+
+#. module: analytic_distribution
+#: model:ir.model,name:analytic_distribution.model_account_analytic_journal
+msgid "Analytic Journal"
+msgstr "Journal analytique"
+
+#. module: analytic_distribution
+#: model:ir.model,name:analytic_distribution.model_account_analytic_line
+msgid "Analytic Line"
+msgstr "Ligne analytique"
+
+#. module: analytic_distribution
+#: code:addons/analytic_distribution/wizard/wizard_create_timetracking.py:13
+#: model:ir.model,name:analytic_distribution.model_analytic_distribution
+#: model:ir.model.fields,field_description:analytic_distribution.field_account_invoice_line_distribution_ids
+#: model:ir.model.fields,field_description:analytic_distribution.field_mrp_manufacturingorder_analytic_distribution_ids
+#: model:ir.model.fields,field_description:analytic_distribution.field_product_product_prod_pad_id
+#: model:ir.model.fields,field_description:analytic_distribution.field_product_product_purchase_pad_id
+#: model:ir.model.fields,field_description:analytic_distribution.field_product_product_sale_pad_id
+#: model:ir.model.fields,field_description:analytic_distribution.field_purchase_order_line_analytic_distribution_ids
+#: model:ir.model.fields,field_description:analytic_distribution.field_resource_timetracking_analytic_distribution_id
+#: model:ir.model.fields,field_description:analytic_distribution.field_sale_order_line_analytic_distribution_ids
+#: model:ir.model.fields,field_description:analytic_distribution.field_wizard_analytic_distrib_timetracking_analytic_distribution_id
+#: model:ir.model.fields,field_description:analytic_distribution.field_wizard_create_timetracking_analytic_distribution_id
+#: model:ir.ui.menu,name:analytic_distribution.menu_product_analytic_distribution
+#: model:ir.ui.view,arch_db:analytic_distribution.account_cust_openprod_invoice_line_form_distribution
+#: model:ir.ui.view,arch_db:analytic_distribution.account_suppl_openprod_invoice_line_form_distribution
+#: model:ir.ui.view,arch_db:analytic_distribution.view_form_account_invoice_line_distribution
+#: model:ir.ui.view,arch_db:analytic_distribution.view_form_customer_account_invoice_distribution
+#: model:ir.ui.view,arch_db:analytic_distribution.view_form_mrp_manufacturingorder_analytic_distribution
+#: model:ir.ui.view,arch_db:analytic_distribution.view_form_supplier_account_invoice_distribution
+#: model:ir.ui.view,arch_db:analytic_distribution.view_tree_purchase_sale_analytic_distribution
+#, python-format
+msgid "Analytic distribution"
+msgstr "Distribution analytique"
+
+#. module: analytic_distribution
+#: model:ir.model.fields,field_description:analytic_distribution.field_account_invoice_line_analytic_line_ids
+#: model:ir.model.fields,field_description:analytic_distribution.field_mrp_manufacturingorder_analytic_line_ids
+#: model:ir.model.fields,field_description:analytic_distribution.field_resource_timetracking_analytic_line_ids
+#: model:ir.ui.view,arch_db:analytic_distribution.account_cust_openprod_invoice_line_form_distribution
+#: model:ir.ui.view,arch_db:analytic_distribution.account_suppl_openprod_invoice_line_form_distribution
+#: model:ir.ui.view,arch_db:analytic_distribution.analytic_view_form_resource_timetracking
+#: model:ir.ui.view,arch_db:analytic_distribution.view_form_account_invoice_line_distribution
+#: model:ir.ui.view,arch_db:analytic_distribution.view_form_customer_account_invoice_distribution
+#: model:ir.ui.view,arch_db:analytic_distribution.view_form_mrp_manufacturingorder_analytic_distribution
+#: model:ir.ui.view,arch_db:analytic_distribution.view_form_supplier_account_invoice_distribution
+msgid "Analytic lines"
+msgstr "Lignes analytiques"
+
+#. module: analytic_distribution
+#: model:ir.ui.view,arch_db:analytic_distribution.stock_config_settings_account_analytic
+msgid "Analytic produce"
+msgstr "Analytique de production"
+
+#. module: analytic_distribution
+#: model:ir.actions.act_window,name:analytic_distribution.act_assign_analytic_timetracking
+#: model:ir.ui.view,arch_db:analytic_distribution.view_form_wizard_analytic_distrib_timetracking
+msgid "Assign analytic distribution"
+msgstr "Assigner distribution analytique"
+
+#. module: analytic_distribution
+#: model:ir.ui.view,arch_db:analytic_distribution.view_form_wizard_analytic_distrib_timetracking
+msgid "Assign analytic distribution on time lines"
+msgstr "Assigner distribution analytique sur lignes de temps"
+
+#. module: analytic_distribution
+#: model:ir.model.fields,field_description:analytic_distribution.field_product_analytic_distribution_production_ok
+msgid "Authorize production"
+msgstr "Autoriser la production"
+
+#. module: analytic_distribution
+#: model:ir.model.fields,field_description:analytic_distribution.field_product_analytic_distribution_purchase_ok
+msgid "Authorize purchase"
+msgstr "Autoriser l'achat"
+
+#. module: analytic_distribution
+#: model:ir.model.fields,field_description:analytic_distribution.field_product_analytic_distribution_sale_ok
+msgid "Authorize sale"
+msgstr "Autoriser la vente"
+
+#. module: analytic_distribution
+#: model:ir.ui.view,arch_db:analytic_distribution.view_form_wizard_analytic_distrib_timetracking
+#: model:ir.ui.view,arch_db:analytic_distribution.view_form_wizard_delete_analytic_line_timetracking
+msgid "Cancel"
+msgstr "Annuler"
+
+#. module: analytic_distribution
+#: model:ir.model.fields,field_description:analytic_distribution.field_account_config_settings_check_analytic_amount
+#: model:ir.model.fields,field_description:analytic_distribution.field_res_company_check_analytic_amount
+msgid "Check analytic amount"
+msgstr "Vérifier le montant analytique"
+
+#. module: analytic_distribution
+#: model:ir.model.fields,field_description:analytic_distribution.field_purchase_config_settings_check_analytic_total
+msgid "Check analytic total"
+msgstr "Vérifier le total analytique"
+
+#. module: analytic_distribution
+#: model:ir.model.fields,help:analytic_distribution.field_purchase_config_settings_check_analytic_total
+msgid "Check the total ex-Tax with the analytic total of the purchase on the validation"
+msgstr "Vérifie le total HT avec le montant total de l'analytique de l'achat à la validation de celui-ci"
+
+#. module: analytic_distribution
+#: model:ir.model.fields,help:analytic_distribution.field_account_config_settings_check_analytic_amount
+#: model:ir.model.fields,help:analytic_distribution.field_res_company_check_analytic_amount
+msgid "Check this field if you want to check if the total analytic amount is equal to the total without taxes of the invoice when you validate an invoice"
+msgstr "Cochez ce champ si vous souhaitez vérifier si le total du montant des lignes analytiques est égal au total HT de la facture lorsque la facture est validée"
+
+#. module: analytic_distribution
+#: model:ir.model.fields,help:analytic_distribution.field_account_journal_is_timetracking_journal
+msgid "Check this field to use this journal for analytic distribution on time lines"
+msgstr "Cochez ce champ pour utiliser ce journal pour la distribution analytique dans les lignes de temps"
+
+#. module: analytic_distribution
+#: model:ir.model,name:analytic_distribution.model_res_company
+msgid "Companies"
+msgstr "Sociétés"
+
+#. module: analytic_distribution
+#: model:ir.model.fields,field_description:analytic_distribution.field_product_analytic_distribution_company_id
+#: model:ir.model.fields,field_description:analytic_distribution.field_purchase_sale_analytic_distribution_company_id
+msgid "Company"
+msgstr "Société"
+
+#. module: analytic_distribution
+#: model:ir.model,name:analytic_distribution.model_wizard_create_timetracking
+msgid "Create a timetracking entry, or edit similar entries"
+msgstr "Create a timetracking entry, or edit similar entries"
+
+#. module: analytic_distribution
+#: model:ir.ui.view,arch_db:analytic_distribution.view_form_mrp_manufacturingorder_analytic_distribution
+msgid "Create analytics lines"
+msgstr "Créer lignes analytiques"
+
+#. module: analytic_distribution
+#: model:ir.model.fields,field_description:analytic_distribution.field_analytic_distribution_create_uid
+#: model:ir.model.fields,field_description:analytic_distribution.field_product_analytic_distribution_create_uid
+#: model:ir.model.fields,field_description:analytic_distribution.field_purchase_sale_analytic_distribution_create_uid
+#: model:ir.model.fields,field_description:analytic_distribution.field_wizard_analytic_distrib_timetracking_create_uid
+#: model:ir.model.fields,field_description:analytic_distribution.field_wizard_delete_analytic_line_timetracking_create_uid
+msgid "Created by"
+msgstr "Créé par"
+
+#. module: analytic_distribution
+#: model:ir.model.fields,field_description:analytic_distribution.field_analytic_distribution_create_date
+#: model:ir.model.fields,field_description:analytic_distribution.field_product_analytic_distribution_create_date
+#: model:ir.model.fields,field_description:analytic_distribution.field_purchase_sale_analytic_distribution_create_date
+#: model:ir.model.fields,field_description:analytic_distribution.field_wizard_analytic_distrib_timetracking_create_date
+#: model:ir.model.fields,field_description:analytic_distribution.field_wizard_delete_analytic_line_timetracking_create_date
+msgid "Created on"
+msgstr "Créé le"
+
+#. module: analytic_distribution
+#: model:ir.actions.act_window,name:analytic_distribution.act_delete_analytic_lines
+#: model:ir.ui.view,arch_db:analytic_distribution.view_form_wizard_delete_analytic_line_timetracking
+msgid "Delete analytic lines"
+msgstr "Supprimer lignes analytiques"
+
+#. module: analytic_distribution
+#: model:ir.model.fields,field_description:analytic_distribution.field_analytic_distribution_display_name
+#: model:ir.model.fields,field_description:analytic_distribution.field_product_analytic_distribution_display_name
+#: model:ir.model.fields,field_description:analytic_distribution.field_purchase_sale_analytic_distribution_display_name
+#: model:ir.model.fields,field_description:analytic_distribution.field_wizard_analytic_distrib_timetracking_display_name
+#: model:ir.model.fields,field_description:analytic_distribution.field_wizard_delete_analytic_line_timetracking_display_name
+msgid "Display Name"
+msgstr "Nom affiché"
+
+#. module: analytic_distribution
+#: model:ir.model.fields,field_description:analytic_distribution.field_product_analytic_distribution_distribution_ids
+msgid "Distribution"
+msgstr "Distribution"
+
+#. module: analytic_distribution
+#: code:addons/analytic_distribution/mrp.py:91
+#: code:addons/analytic_distribution/mrp.py:97
+#: code:addons/analytic_distribution/mrp.py:148
+#: model:ir.ui.view,arch_db:analytic_distribution.view_form_wizard_analytic_distrib_timetracking
+#, python-format
+msgid "Error"
+msgstr "Erreur"
+
+#. module: analytic_distribution
+#: code:addons/analytic_distribution/analytic_distribution.py:18
+#: code:addons/analytic_distribution/analytic_distribution.py:67
+#, python-format
+msgid "Fixed"
+msgstr "Fixe"
+
+#. module: analytic_distribution
+#: code:addons/analytic_distribution/analytic_distribution.py:21
+#: code:addons/analytic_distribution/analytic_distribution.py:70
+#, python-format
+msgid "Garbage collector"
+msgstr "Ramasse miettes"
+
+#. module: analytic_distribution
+#: model:ir.model.fields,field_description:analytic_distribution.field_analytic_distribution_id
+#: model:ir.model.fields,field_description:analytic_distribution.field_product_analytic_distribution_id
+#: model:ir.model.fields,field_description:analytic_distribution.field_purchase_sale_analytic_distribution_id
+#: model:ir.model.fields,field_description:analytic_distribution.field_wizard_analytic_distrib_timetracking_id
+#: model:ir.model.fields,field_description:analytic_distribution.field_wizard_delete_analytic_line_timetracking_id
+msgid "ID"
+msgstr "ID"
+
+#. module: analytic_distribution
+#: code:addons/analytic_distribution/account_invoice.py:83
+#, python-format
+msgid "Impossible to join proportional line with another type than garbage collector"
+msgstr "Impossible de joindre une ligne de type proportionnelle avec une ligne dont le type est différent de ramasse miettes"
+
+#. module: analytic_distribution
+#: model:ir.model,name:analytic_distribution.model_account_invoice
+msgid "Invoice"
+msgstr "Facture"
+
+#. module: analytic_distribution
+#: model:ir.model,name:analytic_distribution.model_account_invoice_line
+msgid "Invoice Line"
+msgstr "Ligne de facuration"
+
+#. module: analytic_distribution
+#: model:ir.model.fields,field_description:analytic_distribution.field_account_analytic_line_invoice_line_id
+#: model:ir.model.fields,field_description:analytic_distribution.field_purchase_sale_analytic_distribution_invoice_line_id
+msgid "Invoice line"
+msgstr "Ligne de facture"
+
+#. module: analytic_distribution
+#: model:ir.model.fields,field_description:analytic_distribution.field_account_analytic_line_invoice_line_account_id
+msgid "Invoice line account"
+msgstr "Compte ligne facture"
+
+#. module: analytic_distribution
+#: model:ir.model,name:analytic_distribution.model_account_journal
+msgid "Journal"
+msgstr "Journal"
+
+#. module: analytic_distribution
+#: model:ir.model.fields,field_description:analytic_distribution.field_analytic_distribution___last_update
+#: model:ir.model.fields,field_description:analytic_distribution.field_product_analytic_distribution___last_update
+#: model:ir.model.fields,field_description:analytic_distribution.field_purchase_sale_analytic_distribution___last_update
+#: model:ir.model.fields,field_description:analytic_distribution.field_wizard_analytic_distrib_timetracking___last_update
+#: model:ir.model.fields,field_description:analytic_distribution.field_wizard_delete_analytic_line_timetracking___last_update
+msgid "Last Modified on"
+msgstr "Dernière modification le"
+
+#. module: analytic_distribution
+#: model:ir.model.fields,field_description:analytic_distribution.field_analytic_distribution_write_uid
+#: model:ir.model.fields,field_description:analytic_distribution.field_product_analytic_distribution_write_uid
+#: model:ir.model.fields,field_description:analytic_distribution.field_purchase_sale_analytic_distribution_write_uid
+#: model:ir.model.fields,field_description:analytic_distribution.field_wizard_analytic_distrib_timetracking_write_uid
+#: model:ir.model.fields,field_description:analytic_distribution.field_wizard_delete_analytic_line_timetracking_write_uid
+msgid "Last Updated by"
+msgstr "Dernière mise à jour par"
+
+#. module: analytic_distribution
+#: model:ir.model.fields,field_description:analytic_distribution.field_analytic_distribution_write_date
+#: model:ir.model.fields,field_description:analytic_distribution.field_product_analytic_distribution_write_date
+#: model:ir.model.fields,field_description:analytic_distribution.field_purchase_sale_analytic_distribution_write_date
+#: model:ir.model.fields,field_description:analytic_distribution.field_wizard_analytic_distrib_timetracking_write_date
+#: model:ir.model.fields,field_description:analytic_distribution.field_wizard_delete_analytic_line_timetracking_write_date
+msgid "Last Updated on"
+msgstr "Mis à jour le"
+
+#. module: analytic_distribution
+#: model:ir.model.fields,field_description:analytic_distribution.field_account_analytic_line_mo_id
+#: model:ir.model.fields,field_description:analytic_distribution.field_purchase_sale_analytic_distribution_analytic_mo_id
+msgid "MO"
+msgstr "OF"
+
+#. module: analytic_distribution
+#: code:addons/analytic_distribution/account_analytic.py:19
+#, python-format
+msgid "Manufacturing"
+msgstr "Offre de fabrication"
+
+#. module: analytic_distribution
+#: model:ir.model,name:analytic_distribution.model_mrp_manufacturingorder
+msgid "Manufacturing order"
+msgstr "Offre de fabrication"
+
+#. module: analytic_distribution
+#: model:ir.model.fields,field_description:analytic_distribution.field_product_analytic_distribution_name
+#: model:ir.model.fields,field_description:analytic_distribution.field_wizard_delete_analytic_line_timetracking_name
+msgid "Name"
+msgstr "Nom"
+
+#. module: analytic_distribution
+#: model:ir.model.fields,field_description:analytic_distribution.field_product_analytic_distribution_note
+#: model:ir.ui.view,arch_db:analytic_distribution.view_form_product_analytic_distribution
+msgid "Note"
+msgstr "Note"
+
+#. module: analytic_distribution
+#: model:ir.model.fields,field_description:analytic_distribution.field_analytic_distribution_pad_id
+msgid "PAD"
+msgstr "PAD"
+
+#. module: analytic_distribution
+#: code:addons/analytic_distribution/analytic_distribution.py:19
+#: code:addons/analytic_distribution/analytic_distribution.py:68
+#, python-format
+msgid "Percentage"
+msgstr "Pourcentage"
+
+#. module: analytic_distribution
+#: code:addons/analytic_distribution/mrp.py:97
+#, python-format
+msgid "Please fill in the basic parameters the analytical journal of production, raw materials and subcontracting"
+msgstr "Veuillez remplir les paramètres de base du journal analytique pour la production, les matières premières et la sous-traitance"
+
+#. module: analytic_distribution
+#: code:addons/analytic_distribution/mrp.py:91
+#, python-format
+msgid "Please fill in the expense account field in the product sheet (%s)"
+msgstr "Veuillez remplir le champ du compte de dépense de la fiche produit (%s)"
+
+#. module: analytic_distribution
+#: model:ir.model.fields,field_description:analytic_distribution.field_account_analytic_line_price_unit
+msgid "Price unit"
+msgstr "Prix unitaire"
+
+#. module: analytic_distribution
+#: model:ir.model.fields,field_description:analytic_distribution.field_stock_config_settings_prod_anal_journal_id
+msgid "Produce analytic journal"
+msgstr "Journal analytique de production"
+
+#. module: analytic_distribution
+#: code:addons/analytic_distribution/mrp.py:100
+#, python-format
+msgid "Produce cost %s"
+msgstr "Coût de production %s"
+
+#. module: analytic_distribution
+#: model:ir.model,name:analytic_distribution.model_product_product
+#: model:ir.model.fields,field_description:analytic_distribution.field_wizard_analytic_distrib_timetracking_product_id
+msgid "Product"
+msgstr "Produit"
+
+#. module: analytic_distribution
+#: model:ir.actions.act_window,name:analytic_distribution.action_product_analytic_distribution
+#: model:ir.model,name:analytic_distribution.model_product_analytic_distribution
+#: model:ir.ui.view,arch_db:analytic_distribution.view_form_product_analytic_distribution
+msgid "Product analytic distribution"
+msgstr "Distribution analytique du produit"
+
+#. module: analytic_distribution
+#: model:ir.ui.view,arch_db:analytic_distribution.view_tree_product_analytic_distribution
+msgid "Product distribution"
+msgstr "Distribution du produit"
+
+#. module: analytic_distribution
+#: code:addons/analytic_distribution/analytic_distribution.py:20
+#: code:addons/analytic_distribution/analytic_distribution.py:69
+#: model:ir.model.fields,field_description:analytic_distribution.field_analytic_distribution_is_proportional
+#, python-format
+msgid "Proportional"
+msgstr "Proportionnel"
+
+#. module: analytic_distribution
+#: model:ir.model,name:analytic_distribution.model_purchase_order
+msgid "Purchase order"
+msgstr "Achat"
+
+#. module: analytic_distribution
+#: model:ir.model,name:analytic_distribution.model_purchase_order_line
+#: model:ir.model.fields,field_description:analytic_distribution.field_purchase_sale_analytic_distribution_analytic_purchase_order_line_id
+msgid "Purchase order line"
+msgstr "Ligne de commande d'achat"
+
+#. module: analytic_distribution
+#: model:ir.model.fields,field_description:analytic_distribution.field_stock_config_settings_rm_anal_journal_id
+msgid "RM analytic journal"
+msgstr "Journal analytique de matière première"
+
+#. module: analytic_distribution
+#: code:addons/analytic_distribution/mrp.py:101
+#, python-format
+msgid "Raw material cost %s"
+msgstr "Coût des matières premières %s"
+
+#. module: analytic_distribution
+#: code:addons/analytic_distribution/mrp.py:21
+#: code:addons/analytic_distribution/product.py:13
+#, python-format
+msgid "Real"
+msgstr "Réel"
+
+#. module: analytic_distribution
+#: model:ir.model,name:analytic_distribution.model_purchase_sale_analytic_distribution
+msgid "Sale analytic distribution"
+msgstr "Distribution analytique de la vente"
+
+#. module: analytic_distribution
+#: model:ir.model,name:analytic_distribution.model_sale_order_line
+#: model:ir.model.fields,field_description:analytic_distribution.field_purchase_sale_analytic_distribution_analytic_sale_order_line_id
+msgid "Sale order line"
+msgstr "Ligne de commande de vente"
+
+#. module: analytic_distribution
+#: model:ir.ui.view,arch_db:analytic_distribution.view_form_wizard_analytic_distrib_timetracking
+msgid "Select an analytic distribution"
+msgstr "Sélectionnez une distribution analytique"
+
+#. module: analytic_distribution
+#: model:ir.model.fields,field_description:analytic_distribution.field_wizard_analytic_distrib_timetracking_show_warning
+msgid "Show warning"
+msgstr "Montrer l'avertissement"
+
+#. module: analytic_distribution
+#: model:ir.model.fields,field_description:analytic_distribution.field_stock_config_settings_sub_anal_journal_id
+msgid "Sub. analytic journal"
+msgstr "Journal analytique de sous-traitance"
+
+#. module: analytic_distribution
+#: code:addons/analytic_distribution/mrp.py:102
+#, python-format
+msgid "Subcontracting cost %s"
+msgstr "Coût de sous-traintance %s"
+
+#. module: analytic_distribution
+#: model:ir.model,name:analytic_distribution.model_resource_timetracking
+msgid "Suivi des temps"
+msgstr "Suivi des temps"
+
+#. module: analytic_distribution
+#: code:addons/analytic_distribution/mrp.py:148
+#, python-format
+msgid "The amount of the analytic lines are not equal to the total of the manufacturing order"
+msgstr "Le montant des lignes analytiques n'est pas égal au total de l'OF"
+
+#. module: analytic_distribution
+#: code:addons/analytic_distribution/account_invoice.py:155
+#, python-format
+msgid "The amount of the analytic lines are not equal to the total without taxes of the invoice"
+msgstr "Le montant des lignes analytiques n'est pas égal au total HT de la facture"
+
+#. module: analytic_distribution
+#: code:addons/analytic_distribution/purchase.py:91
+#, python-format
+msgid "The amount of the analytic lines are not equal to the total without taxes of the purchase %s"
+msgstr "Le montant des lignes analytiques n'est pas égal au total HT de l'achat %s"
+
+#. module: analytic_distribution
+#: model:ir.model.fields,help:analytic_distribution.field_wizard_analytic_distrib_timetracking_product_id
+msgid "The analytic line will take the expense account of this product"
+msgstr "Les lignes analytiques prendront le compte de dépense de ce produit"
+
+#. module: analytic_distribution
+#: model:ir.model.fields,help:analytic_distribution.field_account_analytic_line_invoice_line_account_id
+msgid "The income or expense account related to the selected product."
+msgstr "Le compte de revenu ou de dépense lié au produit sélectionné."
+
+#. module: analytic_distribution
+#: code:addons/analytic_distribution/resource_timetracking.py:60
+#, python-format
+msgid "The selected product must have an expense account"
+msgstr "Le produit sélectionné doit avoir un compte de dépense"
+
+#. module: analytic_distribution
+#: code:addons/analytic_distribution/mrp.py:20
+#: code:addons/analytic_distribution/product.py:12
+#, python-format
+msgid "Theoretical"
+msgstr "Théorique"
+
+#. module: analytic_distribution
+#: code:addons/analytic_distribution/resource_timetracking.py:57
+#, python-format
+msgid "There is no journal for timetracking, you must check the field 'Timetracking journal' in a journal"
+msgstr "Il n'y a pas de journal pour les lignes de suivi des temps, vous devez cocher le champ 'Journal de suivi des temps' dans un journal"
+
+#. module: analytic_distribution
+#: model:ir.ui.view,arch_db:analytic_distribution.view_form_wizard_delete_analytic_line_timetracking
+msgid "This action will delete all the analytic lines linked to the selected timetracking lines. Are you sure you want to delete all this lines?"
+msgstr "Cette action va supprimer toutes les lignes analytiques liées aux lignes de suivi des temps sélectionnées. Êtes-vous sûr de vouloir supprimer ces lignes?"
+
+#. module: analytic_distribution
+#: model:ir.model.fields,field_description:analytic_distribution.field_account_analytic_line_timetracking_id
+msgid "Timetracking"
+msgstr "Ligne de temps"
+
+#. module: analytic_distribution
+#: model:ir.model.fields,field_description:analytic_distribution.field_account_journal_is_timetracking_journal
+msgid "Timetracking journal"
+msgstr "Journal de suivi des temps"
+
+#. module: analytic_distribution
+#: model:ir.model.fields,field_description:analytic_distribution.field_purchase_sale_analytic_distribution_total
+msgid "Total"
+msgstr "Total"
+
+#. module: analytic_distribution
+#: model:ir.model.fields,field_description:analytic_distribution.field_purchase_sale_analytic_distribution_total_currency
+msgid "Total (in company currency)"
+msgstr "Total (dans la devise société)"
+
+#. module: analytic_distribution
+#: model:ir.model.fields,field_description:analytic_distribution.field_analytic_distribution_type
+#: model:ir.model.fields,field_description:analytic_distribution.field_purchase_sale_analytic_distribution_type
+msgid "Type"
+msgstr "Type"
+
+#. module: analytic_distribution
+#: model:ir.model.fields,field_description:analytic_distribution.field_mrp_manufacturingorder_type_compute_analytic_prod
+#: model:ir.model.fields,field_description:analytic_distribution.field_product_product_type_compute_analytic_prod
+msgid "Type compute"
+msgstr "Type de calcul"
+
+#. module: analytic_distribution
+#: model:ir.model.fields,field_description:analytic_distribution.field_analytic_distribution_value
+#: model:ir.model.fields,field_description:analytic_distribution.field_purchase_sale_analytic_distribution_value
+msgid "Value"
+msgstr "Valeur"
+
+#. module: analytic_distribution
+#: model:ir.ui.view,arch_db:analytic_distribution.view_form_wizard_delete_analytic_line_timetracking
+msgid "Warning"
+msgstr "Attention"
+
+#. module: analytic_distribution
+#: model:ir.model,name:analytic_distribution.model_wizard_analytic_distrib_timetracking
+#: model:ir.model,name:analytic_distribution.model_wizard_delete_analytic_line_timetracking
+msgid "Wizard which allow to assign analytic distribution to time lines"
+msgstr "Wizard qui permet d'assigner une distribution analytique à des lignes de temps"
+
+#. module: analytic_distribution
+#: model:ir.ui.view,arch_db:analytic_distribution.view_form_wizard_analytic_distrib_timetracking
+msgid "You can't choose an analytic distribution for the selected lines because there is already analytic lines linked to some of them"
+msgstr "Vous ne pouvez sélectionner une distribution analytique pour les lignes sélectionnées car il y a déjà des lignes analytiques liées à certaines d'entre elles"
+
+#. module: analytic_distribution
+#: model:ir.model,name:analytic_distribution.model_account_config_settings
+msgid "account.config.settings"
+msgstr "account.config.settings"
+
+#. module: analytic_distribution
+#: model:ir.model,name:analytic_distribution.model_purchase_config_settings
+msgid "purchase.config.settings"
+msgstr "purchase.config.settings"
+
+#. module: analytic_distribution
+#: model:ir.model,name:analytic_distribution.model_stock_config_settings
+msgid "stock.config.settings"
+msgstr "stock.config.settings"
+

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+
+		<!-- FORM VIEW Stock picking in -->
+		<record id='view_form_stock_picking_in_storage' model='ir.ui.view'>
+			<field name="name">view_form_stock_picking_in_storage</field>
+			<field name="model">stock.picking</field>
+			<field name="priority" eval="1000" />
+			<field name="inherit_id" ref="stock.view_form_stock_picking_in" />
+			<field name="arch" type="xml">
+				<xpath expr="//field[@name='move_ids']//tree//field[@name='color_priority_need']" position="after">
+					<field name="is_stored" invisible="1"/>
+					<button name="%(stock.act_stock_product_storage_in)d" type="action" string="Store" icon="STOCK_SAVE_AS"
+						attrs="{'invisible': ['|', ('is_stored', '=', True), ('state', '!=', 'done')]}" />
+				</xpath>
+			</field>
+		</record>
+		
+        <record id='view_form_move_storage' model='ir.ui.view'>
+            <field name="name">view_form_stock_move_storage</field>
+            <field name="model">stock.move</field>
+            <field name="priority" eval="3000" />
+            <field name="inherit_id" ref="stock.view_form_move" />
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='date_expected']" position="after">
+                    <field name="is_stored" invisible="1" />
+                </xpath>
+            </field>
+        </record>
+	</data>
+</openerp>
+

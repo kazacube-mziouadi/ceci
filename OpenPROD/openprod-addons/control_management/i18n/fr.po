@@ -1,0 +1,688 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* control_management
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 9.0c\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-01-16 09:14+0000\n"
+"PO-Revision-Date: 2017-01-16 09:14+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: control_management
+#: model:ir.ui.view,arch_db:control_management.openprod_search_view_account_analytic_line
+msgid "Account"
+msgstr "Compte"
+
+#. module: control_management
+#: code:addons/control_management/treasury.py:370
+#, python-format
+msgid "Accumulation balance"
+msgstr "Bilan cumulé"
+
+#. module: control_management
+#: code:addons/control_management/treasury.py:205
+#, python-format
+msgid "Accumulation balance sheet"
+msgstr "Bilan cumulé"
+
+#. module: control_management
+#: model:ir.model.fields,field_description:control_management.field_account_analytic_account_amount
+msgid "Amount"
+msgstr "Montant"
+
+#. module: control_management
+#: model:ir.ui.menu,name:control_management.analytic_analyse_main_menu
+msgid "Analyse"
+msgstr "Analyse"
+
+#. module: control_management
+#: model:ir.ui.menu,name:control_management.analytic_main_menu
+msgid "Analytic"
+msgstr "Analytique"
+
+#. module: control_management
+#: model:ir.model,name:control_management.model_account_analytic_account
+msgid "Analytic Account"
+msgstr "Compte analytique"
+
+#. module: control_management
+#: model:ir.actions.act_window,name:control_management.openprod_analytic_entries_action
+#: model:ir.ui.view,arch_db:control_management.view_openprod_account_analytic_line_tree
+msgid "Analytic Entries"
+msgstr "Écritures analytiques"
+
+#. module: control_management
+#: model:ir.ui.view,arch_db:control_management.view_account_analytic_line_pivot
+#: model:ir.ui.view,arch_db:control_management.view_graph_account_analytic_line
+msgid "Analytic Entries Analysis"
+msgstr "Analyse des écritures analytiques"
+
+#. module: control_management
+#: model:ir.model,name:control_management.model_account_analytic_line
+msgid "Analytic Line"
+msgstr "Ligne analytique"
+
+#. module: control_management
+#: model:ir.actions.act_window,name:control_management.openprod_analytic_account_action
+#: model:ir.ui.menu,name:control_management.analytic_account_menu
+#: model:ir.ui.view,arch_db:control_management.view_openprod_account_analytic_account_tree
+msgid "Analytic account"
+msgstr "Compte analytique"
+
+#. module: control_management
+#: model:ir.actions.act_window,name:control_management.action_analytic_account_pivot_analysis
+#: model:ir.ui.menu,name:control_management.analytic_account_analyse_menu
+msgid "Analytic account analyse"
+msgstr "Analyse des comptes analytiques"
+
+#. module: control_management
+#: model:ir.ui.view,arch_db:control_management.view_account_analytic_account_pivot
+#: model:ir.ui.view,arch_db:control_management.view_graph_account_analytic_account
+msgid "Analytic account analysis"
+msgstr "Analyse des comptes analytiques"
+
+#. module: control_management
+#: model:ir.actions.act_window,name:control_management.action_control_analytic_distribution
+#: model:ir.ui.menu,name:control_management.control_analytic_distribution_menu
+msgid "Analytic distribution"
+msgstr "Distribution analytique"
+
+#. module: control_management
+#: model:ir.ui.menu,name:control_management.analytic_entries_menu
+msgid "Analytic entries"
+msgstr "Écritures analytiques"
+
+#. module: control_management
+#: model:ir.actions.act_window,name:control_management.action_analytic_line_pivot_analysis_product
+#: model:ir.ui.menu,name:control_management.analytic_analyse_menu
+msgid "Analytic entries analyse"
+msgstr "Analyse des écritures analytiques"
+
+#. module: control_management
+#: model:ir.actions.act_window,name:control_management.action_control_analytic_journal
+msgid "Analytic journal"
+msgstr "Journal analytique"
+
+#. module: control_management
+#: model:ir.ui.menu,name:control_management.analytic_journal_menu
+msgid "Analytic journals"
+msgstr "Journaux analytiques"
+
+#. module: control_management
+#: model:ir.model.fields,field_description:control_management.field_account_analytic_account_analytic_line_ids
+msgid "Analytic lines"
+msgstr "Lignes analytiques"
+
+#. module: control_management
+#: code:addons/control_management/treasury.py:32
+#: code:addons/control_management/treasury.py:178
+#: code:addons/control_management/treasury.py:204
+#: code:addons/control_management/treasury.py:365
+#: code:addons/control_management/treasury.py:475
+#: code:addons/control_management/treasury.py:727
+#: code:addons/control_management/treasury.py:748
+#: code:addons/control_management/treasury.py:880
+#, python-format
+msgid "Balance sheet"
+msgstr "Bilan"
+
+#. module: control_management
+#: model:ir.model.fields,field_description:control_management.field_account_analytic_account_budget
+#: model:ir.ui.view,arch_db:control_management.view_form_treasury_openprod
+msgid "Budget"
+msgstr "Budget"
+
+#. module: control_management
+#: code:addons/control_management/treasury.py:433
+#, python-format
+msgid "Budget Expense"
+msgstr "Dépense de budget"
+
+#. module: control_management
+#: code:addons/control_management/treasury.py:432
+#, python-format
+msgid "Budget Revenue"
+msgstr "Recette de budget"
+
+#. module: control_management
+#: code:addons/control_management/treasury.py:33
+#: code:addons/control_management/treasury.py:183
+#, python-format
+msgid "Budget balance sheet"
+msgstr "Bilan du budget"
+
+#. module: control_management
+#: model:ir.model.fields,field_description:control_management.field_treasury_manual_budget_list_ids
+msgid "Budget list"
+msgstr "Liste de budget"
+
+#. module: control_management
+#: model:ir.ui.view,arch_db:control_management.view_form_treasury_openprod
+msgid "Budget manual list"
+msgstr "Liste manuelle de budget"
+
+#. module: control_management
+#: model:ir.model.fields,field_description:control_management.field_treasury_budget_summary_ids
+msgid "Budget summary list"
+msgstr "Liste de synthèse de budget"
+
+#. module: control_management
+#: model:ir.model,name:control_management.model_budget_treasury_summary
+msgid "Budget treasury summary"
+msgstr "Liste de synthèse du budget de la trésorerie"
+
+#. module: control_management
+#: model:ir.ui.view,arch_db:control_management.view_tree_treasury_openprod
+msgid "CRM"
+msgstr "CRM"
+
+#. module: control_management
+#: model:ir.ui.view,arch_db:control_management.view_form_treasury_openprod
+msgid "Compute payments"
+msgstr "Calculer les paiements"
+
+#. module: control_management
+#: model:ir.ui.view,arch_db:control_management.view_form_treasury_openprod
+msgid "Compute sales and purchases amount"
+msgstr "Calculer le montant des ventes et achats"
+
+#. module: control_management
+#: model:ir.ui.view,arch_db:control_management.view_form_treasury_openprod
+msgid "Compute summary"
+msgstr "Calculer la synthèse"
+
+#. module: control_management
+#: model:ir.ui.menu,name:control_management.control_management_main_menu
+msgid "Control management"
+msgstr "Gestion de contrôle"
+
+#. module: control_management
+#: model:ir.model.fields,field_description:control_management.field_budget_treasury_summary_create_uid
+#: model:ir.model.fields,field_description:control_management.field_manual_budget_treasury_create_uid
+#: model:ir.model.fields,field_description:control_management.field_manual_treasury_create_uid
+#: model:ir.model.fields,field_description:control_management.field_payment_treasury_create_uid
+#: model:ir.model.fields,field_description:control_management.field_sale_purchase_treasury_create_uid
+#: model:ir.model.fields,field_description:control_management.field_treasury_create_uid
+#: model:ir.model.fields,field_description:control_management.field_treasury_summary_create_uid
+msgid "Created by"
+msgstr "Créé par"
+
+#. module: control_management
+#: model:ir.model.fields,field_description:control_management.field_budget_treasury_summary_create_date
+#: model:ir.model.fields,field_description:control_management.field_manual_budget_treasury_create_date
+#: model:ir.model.fields,field_description:control_management.field_manual_treasury_create_date
+#: model:ir.model.fields,field_description:control_management.field_payment_treasury_create_date
+#: model:ir.model.fields,field_description:control_management.field_sale_purchase_treasury_create_date
+#: model:ir.model.fields,field_description:control_management.field_treasury_create_date
+#: model:ir.model.fields,field_description:control_management.field_treasury_summary_create_date
+msgid "Created on"
+msgstr "Créé le"
+
+#. module: control_management
+#: model:ir.model.fields,field_description:control_management.field_treasury_date_from
+msgid "Date from"
+msgstr "Date de début"
+
+#. module: control_management
+#: model:ir.model.fields,field_description:control_management.field_budget_treasury_summary_display_name
+#: model:ir.model.fields,field_description:control_management.field_manual_budget_treasury_display_name
+#: model:ir.model.fields,field_description:control_management.field_manual_treasury_display_name
+#: model:ir.model.fields,field_description:control_management.field_payment_treasury_display_name
+#: model:ir.model.fields,field_description:control_management.field_sale_purchase_treasury_display_name
+#: model:ir.model.fields,field_description:control_management.field_treasury_display_name
+#: model:ir.model.fields,field_description:control_management.field_treasury_summary_display_name
+msgid "Display Name"
+msgstr "Afficher le nom"
+
+#. module: control_management
+#: sql_constraint:budget.treasury.summary:0
+#: sql_constraint:manual.budget.treasury:0
+#: sql_constraint:manual.treasury:0
+#: sql_constraint:payment.treasury:0
+#: sql_constraint:sale.purchase.treasury:0
+#: sql_constraint:treasury.summary:0
+msgid "Error: You can't have two lines with the same type."
+msgstr "Erreur: Vous ne pouvez avoir deux lignes avec le même type."
+
+#. module: control_management
+#: code:addons/control_management/treasury.py:203
+#: code:addons/control_management/treasury.py:391
+#: code:addons/control_management/treasury.py:474
+#: code:addons/control_management/treasury.py:747
+#, python-format
+msgid "Expense"
+msgstr "Dépense"
+
+#. module: control_management
+#: code:addons/control_management/treasury.py:360
+#: code:addons/control_management/treasury.py:722
+#: code:addons/control_management/treasury.py:875
+#, python-format
+msgid "Expenses"
+msgstr "Dépense"
+
+#. module: control_management
+#: model:ir.ui.view,arch_db:control_management.openprod_search_view_account_analytic_line
+msgid "Group By"
+msgstr "Group par"
+
+#. module: control_management
+#: model:ir.ui.view,arch_db:control_management.view_search_manual_treasury_openprod
+#: model:ir.ui.view,arch_db:control_management.view_search_treasury_openprod
+msgid "Group By..."
+msgstr "Grouper par..."
+
+#. module: control_management
+#: model:ir.model.fields,field_description:control_management.field_budget_treasury_summary_id
+#: model:ir.model.fields,field_description:control_management.field_manual_budget_treasury_id
+#: model:ir.model.fields,field_description:control_management.field_manual_treasury_id
+#: model:ir.model.fields,field_description:control_management.field_payment_treasury_id
+#: model:ir.model.fields,field_description:control_management.field_sale_purchase_treasury_id
+#: model:ir.model.fields,field_description:control_management.field_treasury_id
+#: model:ir.model.fields,field_description:control_management.field_treasury_summary_id
+msgid "ID"
+msgstr "ID"
+
+#. module: control_management
+#: model:ir.model.fields,field_description:control_management.field_treasury_initial_balance
+msgid "Initial balance"
+msgstr "Solde initial"
+
+#. module: control_management
+#: model:ir.ui.view,arch_db:control_management.openprod_search_view_account_analytic_line
+msgid "Journal"
+msgstr "Journal"
+
+#. module: control_management
+#: model:ir.model.fields,field_description:control_management.field_budget_treasury_summary___last_update
+#: model:ir.model.fields,field_description:control_management.field_manual_budget_treasury___last_update
+#: model:ir.model.fields,field_description:control_management.field_manual_treasury___last_update
+#: model:ir.model.fields,field_description:control_management.field_payment_treasury___last_update
+#: model:ir.model.fields,field_description:control_management.field_sale_purchase_treasury___last_update
+#: model:ir.model.fields,field_description:control_management.field_treasury___last_update
+#: model:ir.model.fields,field_description:control_management.field_treasury_summary___last_update
+msgid "Last Modified on"
+msgstr "Dernière modification le"
+
+#. module: control_management
+#: model:ir.model.fields,field_description:control_management.field_budget_treasury_summary_write_uid
+#: model:ir.model.fields,field_description:control_management.field_manual_budget_treasury_write_uid
+#: model:ir.model.fields,field_description:control_management.field_manual_treasury_write_uid
+#: model:ir.model.fields,field_description:control_management.field_payment_treasury_write_uid
+#: model:ir.model.fields,field_description:control_management.field_sale_purchase_treasury_write_uid
+#: model:ir.model.fields,field_description:control_management.field_treasury_summary_write_uid
+#: model:ir.model.fields,field_description:control_management.field_treasury_write_uid
+msgid "Last Updated by"
+msgstr "Dernière mise à jour par"
+
+#. module: control_management
+#: model:ir.model.fields,field_description:control_management.field_budget_treasury_summary_write_date
+#: model:ir.model.fields,field_description:control_management.field_manual_budget_treasury_write_date
+#: model:ir.model.fields,field_description:control_management.field_manual_treasury_write_date
+#: model:ir.model.fields,field_description:control_management.field_payment_treasury_write_date
+#: model:ir.model.fields,field_description:control_management.field_sale_purchase_treasury_write_date
+#: model:ir.model.fields,field_description:control_management.field_treasury_summary_write_date
+#: model:ir.model.fields,field_description:control_management.field_treasury_write_date
+msgid "Last Updated on"
+msgstr "Dernière mise à jour le"
+
+#. module: control_management
+#: model:ir.model.fields,field_description:control_management.field_treasury_manager_id
+#: model:ir.ui.view,arch_db:control_management.view_search_treasury_openprod
+msgid "Manager"
+msgstr "Responsable"
+
+#. module: control_management
+#: model:ir.ui.view,arch_db:control_management.view_form_manual_budget_treasury_openprod
+msgid "Manual budget treasury"
+msgstr "Budget de la trésorerie manuel"
+
+#. module: control_management
+#: model:ir.model,name:control_management.model_manual_budget_treasury
+msgid "Manual expenses and revenue for budget"
+msgstr "Dépenses et revenus manuels pour le budget"
+
+#. module: control_management
+#: model:ir.model,name:control_management.model_manual_treasury
+msgid "Manual expenses and revenue for treasury"
+msgstr "Dépenses et recettes manuelles pour la trésorerie"
+
+#. module: control_management
+#: model:ir.actions.act_window,name:control_management.act_manual_treasury_openprod
+#: model:ir.ui.menu,name:control_management.menu_manual_treasury_openprod
+msgid "Manual lines"
+msgstr "Lignes manuelles"
+
+#. module: control_management
+#: model:ir.model.fields,field_description:control_management.field_treasury_manual_treasury_list_ids
+#: model:ir.ui.view,arch_db:control_management.view_form_treasury_openprod
+msgid "Manual list"
+msgstr "Liste manuelle"
+
+#. module: control_management
+#: model:ir.ui.view,arch_db:control_management.view_form_manual_treasury_openprod
+#: model:ir.ui.view,arch_db:control_management.view_tree_manual_budget_treasury_openprod
+#: model:ir.ui.view,arch_db:control_management.view_tree_manual_treasury_openprod
+msgid "Manual treasury"
+msgstr "Trésorerie manuelle"
+
+#. module: control_management
+#: model:ir.model.fields,field_description:control_management.field_budget_treasury_summary_month1
+#: model:ir.model.fields,field_description:control_management.field_manual_budget_treasury_month1
+#: model:ir.model.fields,field_description:control_management.field_manual_treasury_month1
+#: model:ir.model.fields,field_description:control_management.field_payment_treasury_month1
+#: model:ir.model.fields,field_description:control_management.field_sale_purchase_treasury_month1
+#: model:ir.model.fields,field_description:control_management.field_treasury_summary_month1
+msgid "Month 1"
+msgstr "Mois 1"
+
+#. module: control_management
+#: model:ir.model.fields,field_description:control_management.field_budget_treasury_summary_month10
+#: model:ir.model.fields,field_description:control_management.field_manual_budget_treasury_month10
+#: model:ir.model.fields,field_description:control_management.field_manual_treasury_month10
+#: model:ir.model.fields,field_description:control_management.field_payment_treasury_month10
+#: model:ir.model.fields,field_description:control_management.field_sale_purchase_treasury_month10
+#: model:ir.model.fields,field_description:control_management.field_treasury_summary_month10
+msgid "Month 10"
+msgstr "Mois 10"
+
+#. module: control_management
+#: model:ir.model.fields,field_description:control_management.field_budget_treasury_summary_month11
+#: model:ir.model.fields,field_description:control_management.field_manual_budget_treasury_month11
+#: model:ir.model.fields,field_description:control_management.field_manual_treasury_month11
+#: model:ir.model.fields,field_description:control_management.field_payment_treasury_month11
+#: model:ir.model.fields,field_description:control_management.field_sale_purchase_treasury_month11
+#: model:ir.model.fields,field_description:control_management.field_treasury_summary_month11
+msgid "Month 11"
+msgstr "Mois 11"
+
+#. module: control_management
+#: model:ir.model.fields,field_description:control_management.field_budget_treasury_summary_month12
+#: model:ir.model.fields,field_description:control_management.field_manual_budget_treasury_month12
+#: model:ir.model.fields,field_description:control_management.field_manual_treasury_month12
+#: model:ir.model.fields,field_description:control_management.field_payment_treasury_month12
+#: model:ir.model.fields,field_description:control_management.field_sale_purchase_treasury_month12
+#: model:ir.model.fields,field_description:control_management.field_treasury_summary_month12
+msgid "Month 12"
+msgstr "Mois 12"
+
+#. module: control_management
+#: model:ir.model.fields,field_description:control_management.field_budget_treasury_summary_month2
+#: model:ir.model.fields,field_description:control_management.field_manual_budget_treasury_month2
+#: model:ir.model.fields,field_description:control_management.field_manual_treasury_month2
+#: model:ir.model.fields,field_description:control_management.field_payment_treasury_month2
+#: model:ir.model.fields,field_description:control_management.field_sale_purchase_treasury_month2
+#: model:ir.model.fields,field_description:control_management.field_treasury_summary_month2
+msgid "Month 2"
+msgstr "Mois 2"
+
+#. module: control_management
+#: model:ir.model.fields,field_description:control_management.field_budget_treasury_summary_month3
+#: model:ir.model.fields,field_description:control_management.field_manual_budget_treasury_month3
+#: model:ir.model.fields,field_description:control_management.field_manual_treasury_month3
+#: model:ir.model.fields,field_description:control_management.field_payment_treasury_month3
+#: model:ir.model.fields,field_description:control_management.field_sale_purchase_treasury_month3
+#: model:ir.model.fields,field_description:control_management.field_treasury_summary_month3
+msgid "Month 3"
+msgstr "Mois 3"
+
+#. module: control_management
+#: model:ir.model.fields,field_description:control_management.field_budget_treasury_summary_month4
+#: model:ir.model.fields,field_description:control_management.field_manual_budget_treasury_month4
+#: model:ir.model.fields,field_description:control_management.field_manual_treasury_month4
+#: model:ir.model.fields,field_description:control_management.field_payment_treasury_month4
+#: model:ir.model.fields,field_description:control_management.field_sale_purchase_treasury_month4
+#: model:ir.model.fields,field_description:control_management.field_treasury_summary_month4
+msgid "Month 4"
+msgstr "Mois 4"
+
+#. module: control_management
+#: model:ir.model.fields,field_description:control_management.field_budget_treasury_summary_month5
+#: model:ir.model.fields,field_description:control_management.field_manual_budget_treasury_month5
+#: model:ir.model.fields,field_description:control_management.field_manual_treasury_month5
+#: model:ir.model.fields,field_description:control_management.field_payment_treasury_month5
+#: model:ir.model.fields,field_description:control_management.field_sale_purchase_treasury_month5
+#: model:ir.model.fields,field_description:control_management.field_treasury_summary_month5
+msgid "Month 5"
+msgstr "Mois 5"
+
+#. module: control_management
+#: model:ir.model.fields,field_description:control_management.field_budget_treasury_summary_month6
+#: model:ir.model.fields,field_description:control_management.field_manual_budget_treasury_month6
+#: model:ir.model.fields,field_description:control_management.field_manual_treasury_month6
+#: model:ir.model.fields,field_description:control_management.field_payment_treasury_month6
+#: model:ir.model.fields,field_description:control_management.field_sale_purchase_treasury_month6
+#: model:ir.model.fields,field_description:control_management.field_treasury_summary_month6
+msgid "Month 6"
+msgstr "Mois 6"
+
+#. module: control_management
+#: model:ir.model.fields,field_description:control_management.field_budget_treasury_summary_month7
+#: model:ir.model.fields,field_description:control_management.field_manual_budget_treasury_month7
+#: model:ir.model.fields,field_description:control_management.field_manual_treasury_month7
+#: model:ir.model.fields,field_description:control_management.field_payment_treasury_month7
+#: model:ir.model.fields,field_description:control_management.field_sale_purchase_treasury_month7
+#: model:ir.model.fields,field_description:control_management.field_treasury_summary_month7
+msgid "Month 7"
+msgstr "Mois 7"
+
+#. module: control_management
+#: model:ir.model.fields,field_description:control_management.field_budget_treasury_summary_month8
+#: model:ir.model.fields,field_description:control_management.field_manual_budget_treasury_month8
+#: model:ir.model.fields,field_description:control_management.field_manual_treasury_month8
+#: model:ir.model.fields,field_description:control_management.field_payment_treasury_month8
+#: model:ir.model.fields,field_description:control_management.field_sale_purchase_treasury_month8
+#: model:ir.model.fields,field_description:control_management.field_treasury_summary_month8
+msgid "Month 8"
+msgstr "Mois 8"
+
+#. module: control_management
+#: model:ir.model.fields,field_description:control_management.field_budget_treasury_summary_month9
+#: model:ir.model.fields,field_description:control_management.field_manual_budget_treasury_month9
+#: model:ir.model.fields,field_description:control_management.field_manual_treasury_month9
+#: model:ir.model.fields,field_description:control_management.field_payment_treasury_month9
+#: model:ir.model.fields,field_description:control_management.field_sale_purchase_treasury_month9
+#: model:ir.model.fields,field_description:control_management.field_treasury_summary_month9
+msgid "Month 9"
+msgstr "Mois 9"
+
+#. module: control_management
+#: model:ir.ui.view,arch_db:control_management.view_form_budget_treasury_summary_openprod
+#: model:ir.ui.view,arch_db:control_management.view_form_manual_budget_treasury_openprod
+#: model:ir.ui.view,arch_db:control_management.view_form_manual_treasury_openprod
+#: model:ir.ui.view,arch_db:control_management.view_form_payment_treasury_openprod
+#: model:ir.ui.view,arch_db:control_management.view_form_sale_purchase_treasury_openprod
+#: model:ir.ui.view,arch_db:control_management.view_form_treasury_summary_openprod
+msgid "Month values"
+msgstr "Valeurs des mois"
+
+#. module: control_management
+#: model:ir.model.fields,field_description:control_management.field_budget_treasury_summary_name
+#: model:ir.model.fields,field_description:control_management.field_manual_budget_treasury_name
+#: model:ir.model.fields,field_description:control_management.field_manual_treasury_name
+#: model:ir.model.fields,field_description:control_management.field_payment_treasury_name
+#: model:ir.model.fields,field_description:control_management.field_sale_purchase_treasury_name
+#: model:ir.model.fields,field_description:control_management.field_treasury_name
+#: model:ir.model.fields,field_description:control_management.field_treasury_summary_name
+msgid "Name"
+msgstr "Nom"
+
+#. module: control_management
+#: model:ir.ui.view,arch_db:control_management.view_tree_payment_treasury_openprod
+msgid "Payment"
+msgstr "Paiement"
+
+#. module: control_management
+#: model:ir.model.fields,field_description:control_management.field_treasury_payment_list_ids
+msgid "Payment list"
+msgstr "Liste de paiements"
+
+#. module: control_management
+#: model:ir.ui.view,arch_db:control_management.view_form_payment_treasury_openprod
+msgid "Payment treasury"
+msgstr "Paiement de trésorerie"
+
+#. module: control_management
+#: model:ir.ui.view,arch_db:control_management.view_form_treasury_openprod
+msgid "Payments list"
+msgstr "Liste de paiement"
+
+#. module: control_management
+#: model:ir.model.fields,field_description:control_management.field_account_analytic_line_period_id
+#: model:ir.ui.view,arch_db:control_management.openprod_search_view_account_analytic_line
+msgid "Period"
+msgstr "Période"
+
+#. module: control_management
+#: model:ir.actions.act_window,name:control_management.action_purchase_purchase_sale_analytic_distribution
+#: model:ir.ui.menu,name:control_management.purchase_purchase_sale_analytic_distribution_menu
+#: model:ir.ui.view,arch_db:control_management.view_purchase_purchase_sale_analytic_distribution_pivot
+msgid "Purchase analytic distribution"
+msgstr "Achat : Distribution analytique"
+
+#. module: control_management
+#: code:addons/control_management/treasury.py:202
+#: code:addons/control_management/treasury.py:355
+#: code:addons/control_management/treasury.py:390
+#: code:addons/control_management/treasury.py:473
+#: code:addons/control_management/treasury.py:717
+#: code:addons/control_management/treasury.py:746
+#: code:addons/control_management/treasury.py:870
+#, python-format
+msgid "Revenue"
+msgstr "Recette"
+
+#. module: control_management
+#: model:ir.actions.act_window,name:control_management.action_sale_purchase_sale_analytic_distribution
+#: model:ir.ui.menu,name:control_management.sale_purchase_sale_analytic_distribution_menu
+#: model:ir.ui.view,arch_db:control_management.view_purchase_graph_purchase_sale_analytic_distribution
+#: model:ir.ui.view,arch_db:control_management.view_sale_graph_purchase_sale_analytic_distribution
+#: model:ir.ui.view,arch_db:control_management.view_sale_purchase_sale_analytic_distribution_pivot
+msgid "Sale analytic distribution"
+msgstr "Vente : Distribution analytique"
+
+#. module: control_management
+#: model:ir.ui.view,arch_db:control_management.view_form_sale_purchase_treasury_openprod
+#: model:ir.ui.view,arch_db:control_management.view_tree_sale_purchase_treasury_openprod
+msgid "Sale and purchase treasury"
+msgstr "Trésorerie: Vente et achat"
+
+#. module: control_management
+#: model:ir.model,name:control_management.model_sale_purchase_treasury
+msgid "Sales and purchases in progress for the treasury"
+msgstr "Ventes et achats en cours pour la trésorerie"
+
+#. module: control_management
+#: model:ir.model.fields,field_description:control_management.field_treasury_sale_purchase_list_ids
+#: model:ir.ui.view,arch_db:control_management.view_form_treasury_openprod
+msgid "Sales and purchases list"
+msgstr "Liste de ventes et d'achats"
+
+#. module: control_management
+#: model:ir.model.fields,field_description:control_management.field_budget_treasury_summary_sequence
+#: model:ir.model.fields,field_description:control_management.field_manual_budget_treasury_sequence
+#: model:ir.model.fields,field_description:control_management.field_manual_treasury_sequence
+#: model:ir.model.fields,field_description:control_management.field_payment_treasury_sequence
+#: model:ir.model.fields,field_description:control_management.field_sale_purchase_treasury_sequence
+#: model:ir.model.fields,field_description:control_management.field_treasury_summary_sequence
+msgid "Sequence"
+msgstr "Séquence"
+
+#. module: control_management
+#: model:ir.ui.view,arch_db:control_management.view_form_budget_treasury_summary_openprod
+#: model:ir.ui.view,arch_db:control_management.view_form_treasury_openprod
+#: model:ir.ui.view,arch_db:control_management.view_form_treasury_summary_openprod
+#: model:ir.ui.view,arch_db:control_management.view_tree_budget_treasury_summary_openprod
+#: model:ir.ui.view,arch_db:control_management.view_tree_treasury_summary_openprod
+msgid "Summary"
+msgstr "Synthèse"
+
+#. module: control_management
+#: model:ir.model.fields,field_description:control_management.field_treasury_summary_list_ids
+msgid "Summary list"
+msgstr "Liste de synthèse"
+
+#. module: control_management
+#: model:ir.model.fields,help:control_management.field_treasury_date_from
+msgid "The start date for treasury calculation. The system start his calcucation from the month of this date"
+msgstr "Date de début pour le caclul de la trésorerie. Le système commence son calcul à partir du début du mois de cette date"
+
+#. module: control_management
+#: model:ir.model.fields,help:control_management.field_treasury_initial_balance
+msgid "This is the start amount for the line \"Accumulation balance sheet\" of the treasury summary"
+msgstr "C'est le montant de départ pour la ligne \"Cumul du solde\" de la synthèse de la trésorerie"
+
+#. module: control_management
+#: model:ir.ui.view,arch_db:control_management.openprod_search_view_account_analytic_line
+msgid "This year"
+msgstr "Cette année"
+
+#. module: control_management
+#: model:ir.model.fields,help:control_management.field_treasury_sale_purchase_list_ids
+msgid "To compute the revenue's amounts, we take the amount of all sales in state 'progress' and we remove the sum of all the amounts paid for this sales. To find this sales, we take the requested date to which we add the paiement delay. \n"
+"To compute the expense's amounts, we take the amount of all purchases in state 'progress' and we remove the sum of all the amounts paid for this purchases. To find this purchases, we take the requested date to which we add the paiement delay. "
+msgstr "Le montant des revenus correspond à la somme des montants des ventes dont l'état est 'En cours' et auquel on retire le montant payé pour ces ventes. La date prise en compte pour rechercher les ventes est la date demandée à laquelle est ajoutée le délai de paiement. \n"
+"To compute the expense's amounts, we take the amount of all purchases in state 'progress' and we remove the sum of all the amounts paid for this purchases. To find this purchases, we take the requested date to which we add the paiement delay. "
+
+#. module: control_management
+#: model:ir.ui.view,arch_db:control_management.view_openprod_account_analytic_line_tree
+msgid "Total"
+msgstr "Total"
+
+#. module: control_management
+#: model:ir.actions.act_window,name:control_management.act_treasury_openprod
+#: model:ir.model,name:control_management.model_payment_treasury
+#: model:ir.model,name:control_management.model_treasury
+#: model:ir.model.fields,field_description:control_management.field_budget_treasury_summary_treasury_id
+#: model:ir.model.fields,field_description:control_management.field_manual_budget_treasury_treasury_id
+#: model:ir.model.fields,field_description:control_management.field_manual_treasury_treasury_id
+#: model:ir.model.fields,field_description:control_management.field_payment_treasury_treasury_id
+#: model:ir.model.fields,field_description:control_management.field_sale_purchase_treasury_treasury_id
+#: model:ir.model.fields,field_description:control_management.field_treasury_summary_treasury_id
+#: model:ir.ui.menu,name:control_management.menu_treasury_openprod
+#: model:ir.ui.view,arch_db:control_management.view_form_treasury_openprod
+#: model:ir.ui.view,arch_db:control_management.view_search_manual_treasury_openprod
+msgid "Treasury"
+msgstr "Trésorerie"
+
+#. module: control_management
+#: model:ir.ui.menu,name:control_management.menu_main_treasury_openprod
+msgid "Treasury management"
+msgstr "Gestion de trésorerie"
+
+#. module: control_management
+#: model:ir.model,name:control_management.model_treasury_summary
+msgid "Treasury summary"
+msgstr "Synthèse de trésorerie"
+
+#. module: control_management
+#: model:ir.model.fields,field_description:control_management.field_budget_treasury_summary_type
+#: model:ir.model.fields,field_description:control_management.field_manual_budget_treasury_type
+#: model:ir.model.fields,field_description:control_management.field_manual_treasury_type
+#: model:ir.model.fields,field_description:control_management.field_payment_treasury_type
+#: model:ir.model.fields,field_description:control_management.field_sale_purchase_treasury_type
+#: model:ir.model.fields,field_description:control_management.field_treasury_summary_type
+#: model:ir.ui.view,arch_db:control_management.view_search_manual_treasury_openprod
+msgid "Type"
+msgstr "Type"
+
+#. module: control_management
+#: model:ir.ui.view,arch_db:control_management.openprod_search_view_account_analytic_line
+msgid "User"
+msgstr "Utilisateur"
+
+#. module: control_management
+#: model:ir.model.fields,field_description:control_management.field_account_analytic_line_year
+#: model:ir.model.fields,field_description:control_management.field_treasury_year
+#: model:ir.ui.view,arch_db:control_management.openprod_search_view_account_analytic_line
+#: model:ir.ui.view,arch_db:control_management.view_search_treasury_openprod
+msgid "Year"
+msgstr "Année"
+

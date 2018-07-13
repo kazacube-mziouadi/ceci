@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data noupdate="1">
+
+        <record id="report_work_order" model="printers.report">
+			<field model="ir.model" name="model_id" search="[('model', '=', 'mrp.workorder')]"/>
+            <field name="printer_type_id" eval="ref('printers.type_laser')"/>
+            <field name="description">Work order</field>
+            <field name="active_report">True</field>
+        </record>
+        
+    </data>
+</openerp>

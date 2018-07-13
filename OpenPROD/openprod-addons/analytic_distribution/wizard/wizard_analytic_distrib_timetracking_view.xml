@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+	
+		<record model="ir.ui.view" id="view_form_wizard_analytic_distrib_timetracking">
+			<field name="name">view_form_wizard_analytic_distrib_timetracking</field>
+			<field name="model">wizard.analytic.distrib.timetracking</field>
+			<field name="type">form</field>
+			<field name="arch" type="xml">
+				<form string="Assign analytic distribution on time lines">
+					<field name="show_warning" invisible="1"/>
+					<group colspan="4" col="4" string="Error" attrs="{'invisible': [('show_warning', '=', False)]}">
+						<label string="You can't choose an analytic distribution for the selected lines because there is already analytic lines linked to some of them"/>
+					</group>
+					<group colspan="4" col="4" string="Select an analytic distribution" attrs="{'invisible': [('show_warning', '=', True)]}">
+						<field name="analytic_distribution_id" attrs="{'required': [('show_warning', '=', False)]}"/>
+						<field name="product_id" attrs="{'required': [('show_warning', '=', False)]}"/>
+					</group>
+					<footer>
+						<button name="create_analytic_lines" string="Assign analytic distribution" type="object" class="oe_highlight" attrs="{'invisible': [('show_warning', '=', True)]}"/>
+						<button string="Cancel" class="oe_link" special="cancel" />
+					</footer>
+				</form>
+			</field>
+		</record>
+		
+		<act_window 
+		name="Assign analytic distribution" 
+		res_model="wizard.analytic.distrib.timetracking" 
+		src_model="resource.timetracking" 
+		view_mode="form" 
+		target="new" 
+		key2="client_action_multi" 
+		id="act_assign_analytic_timetracking" />
+		
+	
+		<record model="ir.ui.view" id="view_form_wizard_delete_analytic_line_timetracking">
+			<field name="name">view_form_wizard_delete_analytic_line_timetracking</field>
+			<field name="model">wizard.delete.analytic.line.timetracking</field>
+			<field name="type">form</field>
+			<field name="arch" type="xml">
+				<form string="Delete analytic lines">
+					<group colspan="4" col="4" string="Warning">
+						<label string="This action will delete all the analytic lines linked to the selected timetracking lines. Are you sure you want to delete all this lines?"/>
+					</group>
+					<footer>
+						<button name="delete_analytic_lines" string="Delete analytic lines" type="object" class="oe_highlight"/>
+						<button string="Cancel" class="oe_link" special="cancel" />
+					</footer>
+				</form>
+			</field>
+		</record>
+		
+		<act_window 
+		name="Delete analytic lines" 
+		res_model="wizard.delete.analytic.line.timetracking" 
+		src_model="resource.timetracking" 
+		view_mode="form" 
+		target="new" 
+		key2="client_action_multi" 
+		id="act_delete_analytic_lines" />
+		
+	</data>
+</openerp>

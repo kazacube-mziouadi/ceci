@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+		<record id="view_form_wiz_mo_repair" model="ir.ui.view">
+            <field name="name">view_form_wiz_mo_repair</field>
+            <field name="model">wiz.mo.repair</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Manufacturing order for repair" version="8.0">
+                    <group colspan="4" col="4" >
+	                    <group colspan="4" col="6" >
+		                    <field name="origin_num_serie_id" domain="origin_product_id and [('product_id', '=', origin_product_id)] 
+		                                                                                or []" />
+		                    <field name="product_id" />
+		                    <field name="repair_date" />
+		                    <field name="repair_type" />
+		                    <field name="routing_id" />
+		                    <field name="return_date" />
+		                    <field name="qty_label" />
+		                    <field name="quantity" />
+		                    <field name="uom_id" />
+		                    <field name="is_new_num_serie" />
+		                    <field name="origin_product_id" invisible="1" />
+		                    <field name="intervention_id" invisible="1" />
+		                </group>
+	                    <notebook colspan="4">
+	                        <page string="Analisys">
+	                            <group colspan="4" col="4" string="Description" >
+	                               <field name="cause" nolabel="1" colspan="4" />
+		                        </group>
+		                        <group colspan="4" col="4" string="List of subset has disassembles" attrs="{'invisible': [('repair_type', '!=', 'repair_subset')]}"  >
+		                            <button name="action_select_label" string="Select label" class="oe_inline oe_stat_button"
+                                            type="object" icon="fa-check" colspan="2" />
+                                    <field name="wmrl_ids" nolabel="1" colspan="4" >
+		                                <tree editable="bottom" string="Labels">
+                                            <field name="label_id" />
+                                            <field name="uom_qty" />
+                                        </tree>
+                                    </field>
+		                        </group>
+	                        </page>
+	                        <page string="List of operations">
+	                           <group colspan="4" col="4" string="List of operations" >
+		                           <field name="disassembly_rl_id" attrs="{'required': [('repair_type', '=', 'repair_subset')], 'invisible': [('repair_type', '!=', 'repair_subset')]}" 
+		                                  domain="routing_id and [('domain_operation_mo_repair', 'in', (all_operation_ids, use_operation_ids))] or [('id', '=', False)]" />
+		                           <field name="mo_repair_ope_ids" nolabel="1" colspan="4" >
+		                                <tree string="List of operations" editable="bottom" >
+		                                    <field name="sequence" required="1" />
+		                                    <field name="rl_id" required="1" 
+		                                           domain="parent.routing_id and [('domain_operation_mo_repair', 'in', (parent.all_operation_ids, parent.use_operation_ids))] or [('id', '=', False)]"/>
+		                                </tree>
+		                            </field>
+		                           <field name="assembly_rl_id" attrs="{'required': [('repair_type', '=', 'repair_subset')], 'invisible': [('repair_type', '!=', 'repair_subset')]}" 
+		                                  domain="routing_id and [('domain_operation_mo_repair', 'in', (all_operation_ids, use_operation_ids))] or [('id', '=', False)]" />
+		                                  
+		                          <field name="all_operation_ids" colspan="4" nolabel="1" invisible="1" />
+		                          <field name="use_operation_ids" colspan="4" nolabel="1" invisible="1" />
+		                       </group>
+	                        </page>
+	                    </notebook>
+                    </group>
+                    <footer>
+                        <button name="action_validation" string="OK" type="object" class="oe_highlight" />
+                        or
+                        <button string="Cancel" class="oe_link" special="cancel" />
+                    </footer>
+                </form>
+            </field>
+        </record>
+         
+        <record model="ir.actions.act_window" id="act_wiz_mo_repair2">
+            <field name="name">Manufacturing order for repair</field>
+            <field name="res_model">wiz.mo.repair</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+        
+        
+        
+        <record id="view_form_wiz_mo_repair_select_label" model="ir.ui.view">
+            <field name="name">view_form_wiz_mo_repair_select_label</field>
+            <field name="model">wiz.mo.repair.select.label</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Select labels" version="8.0">
+                    <group colspan="4" col="4" string="List labels" >
+                        <field name="label_ids" nolabel="1" colspan="4" />
+                        <field name="wiz_mo_repair_id" invisible="1" colspan="4" />
+                    </group>
+                    <footer>
+                        <button name="action_validation" string="OK" type="object" class="oe_highlight" />
+                        or
+                        <button string="Cancel" class="oe_link" special="cancel" />
+                    </footer>
+                </form>
+            </field>
+        </record>
+        
+	</data>
+</openerp>

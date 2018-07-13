@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+		<record id="view_form_add_operation_in_park" model="ir.ui.view">
+            <field name="name">view_form_add_operation_in_park</field>
+            <field name="model">add.operation.in.park</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Add operation in park" version="8.0">
+                    <field name="park_id" invisible="1" />
+                    <field name="maintenance_operation_ids" colspan="4" nolabel="1" domain="[('domain_maintenance_operation', 'in', all_operation_ids)]" />
+                    <field name="all_operation_ids" invisible="1" />
+                    <footer>
+                        <button name="action_validation" string="OK" type="object" class="oe_highlight" />
+                        or
+                        <button string="Cancel" class="oe_link" special="cancel" />
+                    </footer>
+                </form>
+            </field>
+        </record>
+         
+         <record model="ir.actions.act_window" id="act_add_operation_in_park">
+            <field name="name">Add operation in park</field>
+            <field name="res_model">add.operation.in.park</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+        
+        
+        <record id="view_form_add_park_in_operation" model="ir.ui.view">
+            <field name="name">view_form_add_park_in_operation</field>
+            <field name="model">add.park.in.operation</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Add park in operation" version="8.0">
+                    <field name="maintenance_operation_id" invisible="1" />
+                    <field name="park_ids" colspan="4" nolabel="1" domain="[('domain_park', 'in', all_park_ids)]" />
+                    <field name="all_park_ids" invisible="1" />
+                    <footer>
+                        <button name="action_validation" string="OK" type="object" class="oe_highlight" />
+                        or
+                        <button string="Cancel" class="oe_link" special="cancel" />
+                    </footer>
+                </form>
+            </field>
+        </record>
+         
+         <record model="ir.actions.act_window" id="act_add_park_in_operation">
+            <field name="name">Add park in operation</field>
+            <field name="res_model">add.park.in.operation</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+	</data>
+</openerp>

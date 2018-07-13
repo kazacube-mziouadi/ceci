@@ -1,0 +1,4685 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* sale
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 9.0c\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-07-13 12:10+0000\n"
+"PO-Revision-Date: 2017-07-13 12:10+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: sale
+#: model:mail.template,body_html:sale.email_template_edi_sale_quotation
+msgid "\n"
+"<div style=\"font-family: 'Lucica Grande', Ubuntu, Arial, Verdana, sans-serif; font-size: 12px; color: rgb(34, 34, 34); background-color: #FFF; \">\n"
+"	\n"
+"	<p>Dear ${object.sale_contact_id.firstname or object.partner_id.firstname or ''} ${object.sale_contact_id.name or object.partner_id.name or ''},</p>\n"
+"    \n"
+"     <p>Here is your order confirmation for the sale ${object.reference or object.name or ''}</p>\n"
+"     <p>If you have any question, do not hesitate to contact us.</p>\n"
+"     <p>Thank you for choosing ${object.company_id.name}!</p>\n"
+"\n"
+"    </div>\n"
+"</div>\n"
+"            "
+msgstr "\n"
+"<div style=\"font-family: 'Lucica Grande', Ubuntu, Arial, Verdana, sans-serif; font-size: 12px; color: rgb(34, 34, 34); background-color: #FFF; \">\n"
+"	\n"
+"	<p>Dear ${object.sale_contact_id.firstname or object.partner_id.firstname or ''} ${object.sale_contact_id.name or object.partner_id.name or ''},</p>\n"
+"    \n"
+"     <p>Here is your order confirmation for the sale ${object.reference or object.name or ''}</p>\n"
+"     <p>If you have any question, do not hesitate to contact us.</p>\n"
+"     <p>Thank you for choosing ${object.company_id.name}!</p>\n"
+"\n"
+"    </div>\n"
+"</div>\n"
+"            "
+
+#. module: sale
+#: model:mail.template,body_html:sale.email_template_edi_sale_confirm
+msgid "\n"
+"<div style=\"font-family: 'Lucica Grande', Ubuntu, Arial, Verdana, sans-serif; font-size: 12px; color: rgb(34, 34, 34); background-color: #FFF; \">\n"
+"\n"
+"    <p>Dear ${object.sale_contact_id.firstname or object.partner_id.firstname or ''} ${object.sale_contact_id.name or object.partner_id.name or ''},</p>\n"
+"    \n"
+"     <p>We have well received your order N°  ${object.reference or object.name}  and we thank you for it.</p>  \n"
+"     <p>Should you need further information , please let us know.</p>\n"
+"     <p>Best regards,</p>\n"
+"     <p>${object.company_id.name}</p>\n"
+"\n"
+"    </div>\n"
+"</div>\n"
+"            "
+msgstr "\n"
+"<div style=\"font-family: 'Lucica Grande', Ubuntu, Arial, Verdana, sans-serif; font-size: 12px; color: rgb(34, 34, 34); background-color: #FFF; \">\n"
+"\n"
+"    <p>Dear ${object.sale_contact_id.firstname or object.partner_id.firstname or ''} ${object.sale_contact_id.name or object.partner_id.name or ''},</p>\n"
+"    \n"
+"     <p>We have well received your order N°  ${object.reference or object.name}  and we thank you for it.</p>  \n"
+"     <p>Should you need further information , please let us know.</p>\n"
+"     <p>Best regards,</p>\n"
+"     <p>${object.company_id.name}</p>\n"
+"\n"
+"    </div>\n"
+"</div>\n"
+"            "
+
+#. module: sale
+#: model:mail.template,body_html:sale.email_template_edi_sale_ar
+msgid "\n"
+"<div style=\"font-family: 'Lucica Grande', Ubuntu, Arial, Verdana, sans-serif; font-size: 12px; color: rgb(34, 34, 34); background-color: #FFF; \">\n"
+"\n"
+"    <p>Dear ${object.sale_contact_id.firstname or object.partner_id.firstname or ''} ${object.sale_contact_id.name or object.partner_id.name or ''},</p>\n"
+"    \n"
+"     <p>We have well received your order N° ${object.reference or object.name} and we thank you</p>  \n"
+"     <p>We will confirm you the date of shipment as soon as possible.</p>  \n"
+"     <p>Best regards,</p>\n"
+"     <p>${object.company_id.name}</p>\n"
+"\n"
+"    </div>\n"
+"</div>\n"
+"\n"
+"            "
+msgstr "\n"
+"<div style=\"font-family: 'Lucica Grande', Ubuntu, Arial, Verdana, sans-serif; font-size: 12px; color: rgb(34, 34, 34); background-color: #FFF; \">\n"
+"\n"
+"    <p>Dear ${object.sale_contact_id.firstname or object.partner_id.firstname or ''} ${object.sale_contact_id.name or object.partner_id.name or ''},</p>\n"
+"    \n"
+"     <p>We have well received your order N° ${object.reference or object.name} and we thank you</p>  \n"
+"     <p>We will confirm you the date of shipment as soon as possible.</p>  \n"
+"     <p>Best regards,</p>\n"
+"     <p>${object.company_id.name}</p>\n"
+"\n"
+"    </div>\n"
+"</div>\n"
+"\n"
+"            "
+
+#. module: sale
+#: code:addons/sale/res_partner.py:92
+#: code:addons/sale/sale.py:1444
+#: code:addons/sale/wizard/change_sale_wizard.py:20
+#, python-format
+msgid "< Threshold"
+msgstr "< Seuil"
+
+#. module: sale
+#: model:ir.ui.view,arch_db:sale.view_form_product
+msgid "<strong>Legend:</strong><br/>\n"
+"															<font color=\"red\">- Red: timed out price</font><br/>\n"
+"															<font color=\"green\">- Green: future price</font><br/>\n"
+"															- Black: active price <br/>"
+msgstr "<strong>Légende:</strong><br/>\n"
+"															<font color=\"red\">- Rouge: prix dépassé</font><br/>\n"
+"															<font color=\"green\">- Vert: prix futur</font><br/>\n"
+"															- Noir: prix actif <br/>"
+
+#. module: sale
+#: model:ir.ui.view,arch_db:sale.view_form_product_customerinfo
+msgid "<strong>Legend:</strong><br/>\n"
+"										<font color=\"red\">- Red: timed out price</font><br/>\n"
+"										<font color=\"green\">- Green: future price</font><br/>\n"
+"										- Black: active price <br/>"
+msgstr "<strong>Légende:</strong><br/>\n"
+"										<font color=\"red\">- Rouge: prix dépassé</font><br/>\n"
+"										<font color=\"green\">- Vert: prix futur</font><br/>\n"
+"										- Noir: prix actif <br/>"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_sale_order_line_sale_order_manager_id
+msgid "ADV"
+msgstr "ADV"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_sale_order_ar_send_date
+msgid "AR send date"
+msgstr "Date d'envoi AR"
+
+#. module: sale
+#: model:ir.model,name:sale.model_account_move_reconcile
+msgid "Account Reconciliation"
+msgstr "Lettrage de compte"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_change_account_system_sale_account_system_id
+#: model:ir.model.fields,field_description:sale.field_change_delivery_address_sale_account_system_id
+#: model:ir.model.fields,field_description:sale.field_sale_order_sale_account_system_id
+msgid "Account system"
+msgstr "Position fiscale"
+
+#. module: sale
+#: model:ir.ui.view,arch_db:sale.view_form_sale_order
+msgid "Accounting"
+msgstr "Comptabilité"
+
+#. module: sale
+#: model:ir.model,name:sale.model_account_voucher
+msgid "Accounting Voucher"
+msgstr "Justificatif comptable"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_res_partner_receipt_demand
+msgid "Acknowledgement or receipt demand"
+msgstr "Demande un accusé de réception"
+
+#. module: sale
+#: code:addons/sale/sale.py:3410
+#, python-format
+msgid "Action for a sale"
+msgstr "Action pour une vente"
+
+#. module: sale
+#: code:addons/sale/sale.py:3409
+#, python-format
+msgid "Action for sale %s"
+msgstr "Action pour la vente %s"
+
+#. module: sale
+#: model:ir.ui.view,arch_db:sale.view_form_sale_order
+#: model:ir.ui.view,arch_db:sale.view_form_sale_order_line
+msgid "Actions"
+msgstr "Actions"
+
+#. module: sale
+#: code:addons/sale/product.py:678
+#: model:ir.model.fields,field_description:sale.field_sale_order_analysis_is_active
+#: model:ir.model.fields,field_description:sale.field_sale_order_invoice_analysis_is_active
+#: model:ir.ui.view,arch_db:sale.view_search_product_customerinfo
+#, python-format
+msgid "Active"
+msgstr "Actif"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_sale_order_line_section_pagebreak
+msgid "Add pagebreak"
+msgstr "Ajouter un saut de page"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_sale_order_line_section_separator
+msgid "Add separator"
+msgstr "Ajouter un séparateur"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_sale_order_line_section_subtotal
+msgid "Add subtotal"
+msgstr "Ajouter un sous-total"
+
+#. module: sale
+#: model:ir.ui.view,arch_db:sale.view_form_sale_order
+#: model:ir.ui.view,arch_db:sale.view_form_sale_order_line
+msgid "Additional information"
+msgstr "Informations supplémentaires"
+
+#. module: sale
+#: model:ir.ui.view,arch_db:sale.view_form_sale_order
+msgid "Address"
+msgstr "Adresse"
+
+#. module: sale
+#: model:ir.model,name:sale.model_address
+msgid "Address object"
+msgstr "L'objet des adresses"
+
+#. module: sale
+#: model:res.groups,name:sale.group_sale_responsible
+msgid "Administrator"
+msgstr "Administrateur"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_sale_order_advanced_amount
+msgid "Advanced invoice amount"
+msgstr "Montant facture anticipée"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_sale_order_advanced_amount_without_tax
+msgid "Advanced invoice amount without taxes"
+msgstr "Montant HT facture anticipée"
+
+#. module: sale
+#: code:addons/sale/sale.py:1346
+#, python-format
+msgid "After invoicing"
+msgstr "Après facturation"
+
+#. module: sale
+#: code:addons/sale/account_invoice.py:40
+#: code:addons/sale/sale.py:438
+#, python-format
+msgid "All lines must be of the same type!"
+msgstr "Toutes les lignes de remises doivent être du même type!"
+
+#. module: sale
+#: model:ir.ui.view,arch_db:sale.view_form_change_accounting_info
+msgid "All the sale values will be replaced by the value in the wizard. The invoiced partner and partner who pay chosen in the wizard must have the         same payment type, invoice trigger and invoiced quantity than the sale."
+msgstr "Toutes les valeurs de la vente seront remplacées par les valeurs du wizard. Les partenaires payeurs et facturés sélectionnés dans le wizard doivent avoir         le même type de paiement, la même méthode de déclenchement de la facture et la même quantité facturée que la vente."
+
+#. module: sale
+#: model:ir.model.fields,help:sale.field_product_customerinfo_dual_unit
+msgid "Allow to manage specific unit for customer or supplier"
+msgstr "Autoriser à gérer une unité spécifique pour client ou fournisseur"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_res_partner_generate_sale_rest
+#: model:ir.model.fields,field_description:sale.field_sale_order_allowed_rest
+msgid "Allowed rest"
+msgstr "Autoriser les reliquats"
+
+#. module: sale
+#: code:addons/sale/res_partner.py:91
+#: code:addons/sale/sale.py:1443
+#: code:addons/sale/wizard/change_sale_wizard.py:19
+#, python-format
+msgid "Always"
+msgstr "Toujours"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_account_sale_tax_amount
+#: model:ir.model.fields,field_description:sale.field_sale_order_line_fixed_discount_amount
+msgid "Amount"
+msgstr "Montant"
+
+#. module: sale
+#: model:ir.ui.view,arch_db:sale.view_form_sale_order
+msgid "Amount analyse (Ex-Tax)"
+msgstr "Analyse montant (HT)"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_sale_order_amount_ex_taxes
+msgid "Amount excluding taxes"
+msgstr "Montant HT"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_sale_anticipated_invoice_amount_with_tax
+msgid "Amount with taxes"
+msgstr "Montant TTC"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_sale_anticipated_invoice_amount_without_tax
+msgid "Amount without taxes"
+msgstr "Montant HT"
+
+#. module: sale
+#: model:ir.ui.menu,name:sale.menu_sale_analysis
+#: model:ir.ui.view,arch_db:sale.view_form_sale_order
+#: model:ir.ui.view,arch_db:sale.view_form_sale_order_line
+msgid "Analysis"
+msgstr "Analyse"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_account_sale_tax_account_analytic_id
+msgid "Analytic account"
+msgstr "Compte analytique"
+
+#. module: sale
+#: model:ir.ui.view,arch_db:sale.view_form_sale_anticipated_invoice
+#: model:ir.ui.view,arch_db:sale.view_form_sale_order
+msgid "Anticipated invoice"
+msgstr "Facture anticipée"
+
+#. module: sale
+#: code:addons/sale/sale.py:143
+#: code:addons/sale/sale.py:1468
+#, python-format
+msgid "April"
+msgstr "Avril"
+
+#. module: sale
+#: model:workflow.transition,button_confirm:sale.st15
+#: model:workflow.transition,button_confirm:sale.st16
+#: model:workflow.transition,button_confirm:sale.st17
+#: model:workflow.transition,button_confirm:sale.st18
+#: model:workflow.transition,button_confirm:sale.st19
+#: model:workflow.transition,button_confirm:sale.st44
+#: model:workflow.transition,button_confirm:sale.st74
+msgid "Are you sure you want to cancel this sale?"
+msgstr "Êtes-vous sûre de vouloir annuler cette vente?"
+
+#. module: sale
+#: model:workflow.transition,button_confirm:sale.st80
+#: model:workflow.transition,button_confirm:sale.st81
+msgid "Are you sure you want to reset this sale?"
+msgstr "Êtes vous certain de vouloir réinitialiser cette vente??"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_sale_order_line_arrival_date
+msgid "Arrival date"
+msgstr "Date d'arrivée"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_sale_common_attribute_product_common_attribute_id
+msgid "Attribute"
+msgstr "Attribut"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_sale_order_line_product_attribute_ids
+#: model:ir.ui.view,arch_db:sale.view_form_sale_order
+#: model:ir.ui.view,arch_db:sale.view_form_sale_order_line
+msgid "Attributes"
+msgstr "Attributs"
+
+#. module: sale
+#: code:addons/sale/sale.py:147
+#: code:addons/sale/sale.py:1472
+#, python-format
+msgid "August"
+msgstr "Août"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_res_partner_can_be_charged
+msgid "Authorized to be charged"
+msgstr "Autorisé à être facturé"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_res_partner_can_be_delivered
+msgid "Authorized to be delivered"
+msgstr "Autorisé à être livré"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_res_partner_can_paid
+msgid "Authorized to paid"
+msgstr "Autorisé à payer"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_res_partner_can_order
+msgid "Authorized to place an order"
+msgstr "Autorisé à commander"
+
+#. module: sale
+#: code:addons/sale/sale.py:127
+#: code:addons/sale/sale.py:1453
+#, python-format
+msgid "Awaiting delay"
+msgstr "Attente délai"
+
+#. module: sale
+#: code:addons/sale/sale.py:1345
+#, python-format
+msgid "Before delivery"
+msgstr "Avant livraison"
+
+#. module: sale
+#: model:ir.model.fields,help:sale.field_product_product_sale_remainder_percentage
+msgid "Below this value, during a shipment, the system don't create rest. For example, if we send 98% of the order and we have a 5% remainder, we don't create a rest."
+msgstr "En-dessous de cette valeur, lors d'une expédition, le système ne génère pas de reliquat. Par exemple, si on expédie 98 % de la commande et que l'on a une tolérance à 5 %, on ne génère pas de reliquat"
+
+#. module: sale
+#: model:ir.ui.view,arch_db:sale.view_search_sale_order_line
+msgid "Black"
+msgstr "Noir"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_sale_order_block_picking
+msgid "Block delivery"
+msgstr "Bloquer la livraison"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_sale_order_block_picking_payment
+msgid "Block picking payment"
+msgstr "L'absence de paiement bloque le picking"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_sale_order_block_sale_payment
+msgid "Block sale payment"
+msgstr "L'absence de paiement bloque la vente"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_sale_order_line_calendar_date
+msgid "Calendar date"
+msgstr "Date Calendrier"
+
+#. module: sale
+#: code:addons/sale/sale.py:1318
+#, python-format
+msgid "Called"
+msgstr "Appelée"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_sale_order_called_order_ids
+#: model:ir.ui.view,arch_db:sale.view_form_sale_order
+msgid "Called orders"
+msgstr "Commandes appelées"
+
+#. module: sale
+#: model:ir.ui.view,arch_db:sale.view_form_change_account_system
+#: model:ir.ui.view,arch_db:sale.view_form_change_accounting_info
+#: model:ir.ui.view,arch_db:sale.view_form_change_delivery_address
+#: model:ir.ui.view,arch_db:sale.view_form_change_line_information
+#: model:ir.ui.view,arch_db:sale.view_form_change_note
+#: model:ir.ui.view,arch_db:sale.view_form_create_quick_sale
+#: model:ir.ui.view,arch_db:sale.view_form_generate_sale_called_order
+#: model:ir.ui.view,arch_db:sale.view_form_replacement_date
+#: model:ir.ui.view,arch_db:sale.view_form_sale_anticipated_invoice
+#: model:workflow.display.state,label:sale.display_cancel_sale
+#: model:workflow.transition,button_label:sale.st15
+#: model:workflow.transition,button_label:sale.st16
+#: model:workflow.transition,button_label:sale.st17
+#: model:workflow.transition,button_label:sale.st18
+#: model:workflow.transition,button_label:sale.st19
+#: model:workflow.transition,button_label:sale.st44
+#: model:workflow.transition,button_label:sale.st74
+msgid "Cancel"
+msgstr "Annuler"
+
+#. module: sale
+#: code:addons/sale/sale.py:132
+#: code:addons/sale/sale.py:1457
+#, python-format
+msgid "Cancelled"
+msgstr "Annulée"
+
+#. module: sale
+#: model:ir.model.fields,help:sale.field_res_partner_sale_delivery_delay
+msgid "Carrier delay (in working days)"
+msgstr "Délai du transporteur (en jours ouvrés)"
+
+#. module: sale
+#: code:addons/sale/sale.py:3888
+#, python-format
+msgid "Cascade"
+msgstr "Cascade"
+
+#. module: sale
+#: model:ir.ui.view,arch_db:sale.view_form_change_accounting_info
+msgid "Caution"
+msgstr "Attention"
+
+#. module: sale
+#: model:ir.actions.act_window,name:sale.action_change_account_system
+#: model:ir.ui.view,arch_db:sale.view_form_sale_order
+msgid "Change account system"
+msgstr "Changer la position fiscale"
+
+#. module: sale
+#: model:ir.ui.view,arch_db:sale.view_form_change_accounting_info
+#: model:ir.ui.view,arch_db:sale.view_form_sale_order
+msgid "Change accounting information"
+msgstr "Changer les informations comptables"
+
+#. module: sale
+#: model:ir.actions.act_window,name:sale.action_change_accounting_info
+msgid "Change accounting informations"
+msgstr "Changer les informations comptables"
+
+#. module: sale
+#: model:ir.actions.act_window,name:sale.action_change_delivery_address
+msgid "Change delivery address"
+msgstr "Changer l'adresse de livraison"
+
+#. module: sale
+#: model:ir.ui.view,arch_db:sale.view_form_sale_order
+#: model:ir.ui.view,arch_db:sale.view_form_sale_order_line
+msgid "Change informations"
+msgstr "Changer les informations"
+
+#. module: sale
+#: model:ir.actions.act_window,name:sale.action_change_note
+#: model:ir.ui.view,arch_db:sale.view_form_change_note
+#: model:ir.ui.view,arch_db:sale.view_form_sale_order
+msgid "Change notes"
+msgstr "Changer les notes"
+
+#. module: sale
+#: model:ir.ui.view,arch_db:sale.view_form_change_line_information
+msgid "Change sale line information"
+msgstr "Changer les informations des lignes de vente"
+
+#. module: sale
+#: model:ir.actions.act_window,name:sale.action_change_sale_line_info
+msgid "Change sale line informations"
+msgstr "Changer les informations des lignes de vente"
+
+#. module: sale
+#: model:ir.ui.view,arch_db:sale.view_form_change_account_system
+msgid "Change the account system"
+msgstr "Changer la position fiscale"
+
+#. module: sale
+#: model:ir.ui.view,arch_db:sale.view_form_change_accounting_info
+msgid "Change the accounting information"
+msgstr "Changer les informations comptables"
+
+#. module: sale
+#: model:ir.ui.view,arch_db:sale.view_form_sale_order
+msgid "Change the date"
+msgstr "Modifier la date"
+
+#. module: sale
+#: model:ir.ui.view,arch_db:sale.view_form_change_delivery_address
+msgid "Change the delivery address"
+msgstr "Changer l'adresse de livraison"
+
+#. module: sale
+#: model:ir.ui.view,arch_db:sale.view_form_change_line_information
+msgid "Change the information of the sale line"
+msgstr "Changer les informations de la ligne de vente"
+
+#. module: sale
+#: model:ir.ui.view,arch_db:sale.view_form_change_note
+msgid "Change the note"
+msgstr "Changer les notes"
+
+#. module: sale
+#: model:ir.ui.view,arch_db:sale.view_form_change_delivery_address
+#: model:ir.ui.view,arch_db:sale.view_form_sale_order
+msgid "Change transport information"
+msgstr "Changer les informations de transport"
+
+#. module: sale
+#: model:ir.model.fields,help:sale.field_sale_order_block_picking
+msgid "Check if you want to block manually the picking. You will have to unlock manually the picking."
+msgstr "Cochez si vous souhaitez bloquer manuellement la réception. Vous devrez ensuite débloquer manuellement la réception. "
+
+#. module: sale
+#: model:ir.model.fields,help:sale.field_sale_order_payment_type
+msgid "Choose the type of the payment.On the order will block the order before the payment validation and before delivery will block the delivery before the payment validation."
+msgstr "Choisissez le type de paiement. 'À la commande' bloquera la commande avant son paiement et 'Avant livraison' bloquera la livraison avant le paiement de la commande."
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_change_delivery_address_delivered_city
+#: model:ir.model.fields,field_description:sale.field_sale_order_delivered_city
+msgid "City"
+msgstr "Ville"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_sale_order_analysis_color
+#: model:ir.model.fields,field_description:sale.field_sale_order_invoice_analysis_color
+msgid "Color"
+msgstr "Couleur"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_sale_order_line_sale_line_color
+msgid "Color priority"
+msgstr "Couleur de priorité"
+
+#. module: sale
+#: model:ir.model.fields,help:sale.field_sale_order_allowed_rest
+#: model:ir.model.fields,help:sale.field_sale_order_partial_delivery
+msgid "Comes from the customer who orders"
+msgstr "Provient du client qui a commandé"
+
+#. module: sale
+#: model:ir.model.fields,help:sale.field_change_accounting_information_discount
+#: model:ir.model.fields,help:sale.field_change_accounting_information_payment_id
+#: model:ir.model.fields,help:sale.field_change_accounting_information_payment_term_id
+#: model:ir.model.fields,help:sale.field_sale_order_discount
+#: model:ir.model.fields,help:sale.field_sale_order_invoicing_method_id
+#: model:ir.model.fields,help:sale.field_sale_order_payment_id
+#: model:ir.model.fields,help:sale.field_sale_order_payment_term_id
+msgid "Comes from the customer who pays the order"
+msgstr "Provient du client qui paie la commande"
+
+#. module: sale
+#: model:ir.model.fields,help:sale.field_sale_order_sale_account_system_id
+msgid "Comes from the delivered customer"
+msgstr "Provient du client livré"
+
+#. module: sale
+#: model:ir.model.fields,help:sale.field_change_accounting_information_group_invoices
+#: model:ir.model.fields,help:sale.field_change_accounting_information_locked_invoice
+#: model:ir.model.fields,help:sale.field_sale_order_group_invoices
+#: model:ir.model.fields,help:sale.field_sale_order_locked_invoice
+#: model:ir.model.fields,help:sale.field_sale_order_sale_account_invoice_trigger
+msgid "Comes from the invoiced customer"
+msgstr "Provient du client facturé"
+
+#. module: sale
+#: model:ir.ui.menu,name:sale.menu_commission
+msgid "Commission"
+msgstr "Commission"
+
+#. module: sale
+#: model:ir.ui.view,arch_db:sale.view_form_sale_order
+msgid "Communication"
+msgstr "Communication"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_res_partner_sale_communication_method
+#: model:ir.model.fields,field_description:sale.field_sale_order_sale_communication_method
+#: model:ir.ui.view,arch_db:sale.view_form_partner_sale
+msgid "Communication method"
+msgstr "Mode de communication"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_res_partner_sale_communication_value
+#: model:ir.model.fields,field_description:sale.field_sale_order_accounting_communication_value
+#: model:ir.model.fields,field_description:sale.field_sale_order_sale_communication_value
+msgid "Communication value"
+msgstr "Valeur de communication"
+
+#. module: sale
+#: model:ir.model,name:sale.model_res_company
+msgid "Companies"
+msgstr "Sociétés"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_account_sale_tax_company_id
+#: model:ir.model.fields,field_description:sale.field_product_customerinfo_company_id
+#: model:ir.model.fields,field_description:sale.field_sale_order_company_id
+#: model:ir.model.fields,field_description:sale.field_sale_order_invoice_analysis_company_id
+#: model:ir.model.fields,field_description:sale.field_sale_order_line_company_id
+msgid "Company"
+msgstr "Société"
+
+#. module: sale
+#: model:workflow.transition,button_label:sale.st14
+#: model:workflow.transition,button_label:sale.st35
+msgid "Complete the sale"
+msgstr "Terminer la vente"
+
+#. module: sale
+#: model:ir.ui.view,arch_db:sale.view_form_sale_order
+#: model:ir.ui.view,arch_db:sale.view_form_sale_order_line
+msgid "Compute quantities"
+msgstr "Calcul quantités"
+
+#. module: sale
+#: model:ir.ui.menu,name:sale.menu_sale_configuration
+msgid "Configuration"
+msgstr "Configuration"
+
+#. module: sale
+#: model:workflow.transition,button_label:sale.st11
+#: model:workflow.transition,button_label:sale.st64
+msgid "Confirm delay"
+msgstr "Confirmer le délai"
+
+#. module: sale
+#: model:workflow.transition,button_label:sale.st13
+#: model:workflow.transition,button_label:sale.st33
+#: model:workflow.transition,button_label:sale.st5
+#: model:workflow.transition,button_label:sale.st65
+#: model:workflow.transition,button_label:sale.st66
+#: model:workflow.transition,button_label:sale.st67
+#: model:workflow.transition,button_label:sale.st69
+#: model:workflow.transition,button_label:sale.st8
+msgid "Confirm order"
+msgstr "Confirmer la commande"
+
+#. module: sale
+#: model:ir.ui.view,arch_db:sale.view_form_sale_order
+#: model:ir.ui.view,arch_db:sale.view_form_sale_order_line
+msgid "Confirmation"
+msgstr "Confirmation"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_sale_order_confirmation_date
+msgid "Confirmation date"
+msgstr "Date de confirmation"
+
+#. module: sale
+#: model:ir.ui.view,arch_db:sale.view_form_sale_order
+msgid "Confirmation of receipt"
+msgstr "Accusé de réception commande"
+
+#. module: sale
+#: model:ir.ui.view,arch_db:sale.view_tree_sale_order_line
+msgid "Confirmed date"
+msgstr "Date confirmée"
+
+#. module: sale
+#: model:workflow.display.state,label:sale.display_confirmed_delay_sale
+msgid "Confirmed delay"
+msgstr "Délai confirmé"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_change_line_information_confirmed_departure_date
+#: model:ir.model.fields,field_description:sale.field_sale_order_line_confirmed_departure_date
+msgid "Confirmed departure date (after planning)"
+msgstr "Date de départ confirmée (après planification)"
+
+#. module: sale
+#: model:workflow.display.state,label:sale.display_confirmed_sale
+msgid "Confirmed sale"
+msgstr "Vente confirmée"
+
+#. module: sale
+#: model:ir.ui.menu,name:sale.menu_sale_consignement_stock
+msgid "Consignement stock"
+msgstr "Stock de consignation"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_res_partner_sale_contact_id
+#: model:ir.model.fields,field_description:sale.field_res_partner_sale_delivery_contact_id
+#: model:ir.model.fields,field_description:sale.field_sale_order_accounting_contact_id
+#: model:ir.model.fields,field_description:sale.field_sale_order_delivered_contact_id
+#: model:ir.model.fields,field_description:sale.field_sale_order_sale_contact_id
+msgid "Contact"
+msgstr "Contact"
+
+#. module: sale
+#: model:ir.ui.view,arch_db:sale.view_form_partner_sale
+msgid "Contact management"
+msgstr "Gestion des contacts"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_res_partner_sale_contact_ids
+#: model:ir.model.fields,field_description:sale.field_sale_order_accounting_contact_ids
+#: model:ir.model.fields,field_description:sale.field_sale_order_sale_contact_ids
+msgid "Contacts"
+msgstr "Contacts"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_change_product_uom_copy_customer_ref
+msgid "Copy customer reference"
+msgstr "Copier la référence client"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_change_delivery_address_delivered_country_id
+#: model:ir.model.fields,field_description:sale.field_sale_order_delivered_country_id
+msgid "Country"
+msgstr "Pays"
+
+#. module: sale
+#: model:ir.actions.act_window,name:sale.action_create_sale_anticipated_invoice
+msgid "Create an anticipated invoice"
+msgstr "Créer une facture anticipée"
+
+#. module: sale
+#: model:ir.ui.view,arch_db:sale.view_form_sale_anticipated_invoice
+#: model:ir.ui.view,arch_db:sale.view_form_sale_order
+msgid "Create anticipated invoice"
+msgstr "Créer une facture anticipée"
+
+#. module: sale
+#: model:ir.actions.act_window,name:sale.action_create_quick_sale
+#: model:ir.ui.menu,name:sale.menu_create_quick_sale
+#: model:ir.ui.view,arch_db:sale.view_form_create_quick_sale
+msgid "Create quick sale"
+msgstr "Créer une vente rapide"
+
+#. module: sale
+#: model:ir.ui.view,arch_db:sale.view_form_create_quick_sale
+#: model:ir.ui.view,arch_db:sale.view_form_sale_calendar_event
+msgid "Create sale"
+msgstr "Créer une vente"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_account_sale_tax_create_uid
+#: model:ir.model.fields,field_description:sale.field_called_sale_order_line_create_uid
+#: model:ir.model.fields,field_description:sale.field_change_account_system_create_uid
+#: model:ir.model.fields,field_description:sale.field_change_accounting_information_create_uid
+#: model:ir.model.fields,field_description:sale.field_change_delivery_address_create_uid
+#: model:ir.model.fields,field_description:sale.field_change_line_information_create_uid
+#: model:ir.model.fields,field_description:sale.field_change_note_create_uid
+#: model:ir.model.fields,field_description:sale.field_create_quick_sale_create_uid
+#: model:ir.model.fields,field_description:sale.field_generate_called_sale_order_create_uid
+#: model:ir.model.fields,field_description:sale.field_pricelist_customerinfo_create_uid
+#: model:ir.model.fields,field_description:sale.field_product_customerinfo_create_uid
+#: model:ir.model.fields,field_description:sale.field_replacement_date_create_uid
+#: model:ir.model.fields,field_description:sale.field_res_partner_type_create_uid
+#: model:ir.model.fields,field_description:sale.field_sale_anticipated_invoice_create_uid
+#: model:ir.model.fields,field_description:sale.field_sale_common_attribute_create_uid
+#: model:ir.model.fields,field_description:sale.field_sale_family_create_uid
+#: model:ir.model.fields,field_description:sale.field_sale_order_analysis_create_uid
+#: model:ir.model.fields,field_description:sale.field_sale_order_create_uid
+#: model:ir.model.fields,field_description:sale.field_sale_order_invoice_analysis_create_uid
+#: model:ir.model.fields,field_description:sale.field_sale_order_line_create_uid
+#: model:ir.model.fields,field_description:sale.field_sale_order_line_fixed_discount_create_uid
+#: model:ir.model.fields,field_description:sale.field_sale_order_line_section_create_uid
+#: model:ir.model.fields,field_description:sale.field_sale_order_line_variable_discount_create_uid
+msgid "Created by"
+msgstr "Créé par"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_account_sale_tax_create_date
+#: model:ir.model.fields,field_description:sale.field_called_sale_order_line_create_date
+#: model:ir.model.fields,field_description:sale.field_change_account_system_create_date
+#: model:ir.model.fields,field_description:sale.field_change_accounting_information_create_date
+#: model:ir.model.fields,field_description:sale.field_change_delivery_address_create_date
+#: model:ir.model.fields,field_description:sale.field_change_line_information_create_date
+#: model:ir.model.fields,field_description:sale.field_change_note_create_date
+#: model:ir.model.fields,field_description:sale.field_create_quick_sale_create_date
+#: model:ir.model.fields,field_description:sale.field_generate_called_sale_order_create_date
+#: model:ir.model.fields,field_description:sale.field_pricelist_customerinfo_create_date
+#: model:ir.model.fields,field_description:sale.field_product_customerinfo_create_date
+#: model:ir.model.fields,field_description:sale.field_replacement_date_create_date
+#: model:ir.model.fields,field_description:sale.field_res_partner_type_create_date
+#: model:ir.model.fields,field_description:sale.field_sale_anticipated_invoice_create_date
+#: model:ir.model.fields,field_description:sale.field_sale_common_attribute_create_date
+#: model:ir.model.fields,field_description:sale.field_sale_family_create_date
+#: model:ir.model.fields,field_description:sale.field_sale_order_analysis_create_date
+#: model:ir.model.fields,field_description:sale.field_sale_order_create_date
+#: model:ir.model.fields,field_description:sale.field_sale_order_invoice_analysis_create_date
+#: model:ir.model.fields,field_description:sale.field_sale_order_line_create_date
+#: model:ir.model.fields,field_description:sale.field_sale_order_line_fixed_discount_create_date
+#: model:ir.model.fields,field_description:sale.field_sale_order_line_section_create_date
+#: model:ir.model.fields,field_description:sale.field_sale_order_line_variable_discount_create_date
+msgid "Created on"
+msgstr "Créé le"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_sale_order_creation_date
+msgid "Creation date"
+msgstr "Date de création"
+
+#. module: sale
+#: code:addons/sale/sale.py:3887
+#, python-format
+msgid "Cumulative"
+msgstr "Cumulatif"
+
+#. module: sale
+#: model:ir.model,name:sale.model_res_currency
+#: model:ir.model.fields,field_description:sale.field_account_sale_tax_currency_id
+#: model:ir.model.fields,field_description:sale.field_product_customerinfo_currency_id
+#: model:ir.model.fields,field_description:sale.field_sale_order_currency_id
+#: model:ir.model.fields,field_description:sale.field_sale_order_line_currency_id
+msgid "Currency"
+msgstr "Devise"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_sale_order_line_currency_rate
+msgid "Currency rate"
+msgstr "Taux de devise"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_create_quick_sale_partner_id
+#: model:ir.model.fields,field_description:sale.field_generate_called_sale_order_partner_id
+#: model:ir.model.fields,field_description:sale.field_sale_order_partner_id
+#: model:ir.ui.menu,name:sale.menu_sale_configuration_customer
+#: model:ir.ui.view,arch_db:sale.view_search_product_customerinfo
+#: model:ir.ui.view,arch_db:sale.view_search_sale_order
+#: model:ir.ui.view,arch_db:sale.view_search_sale_order_line
+msgid "Customer"
+msgstr "Client"
+
+#. module: sale
+#: model:ir.ui.menu,name:sale.menu_sale_customer_analysis
+msgid "Customer analysis"
+msgstr "Analyse client"
+
+#. module: sale
+#: model:ir.ui.menu,name:sale.menu_sale_customer_contract
+msgid "Customer contract"
+msgstr "Contrat client"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_stock_move_cinfo_id
+msgid "Customer info"
+msgstr "Info clients"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_product_product_cinfo_ids
+#: model:ir.model.fields,field_description:sale.field_product_product_search_by_cinfo
+msgid "Customer information"
+msgstr "Informations client"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_product_customerinfo_cust_product_code
+#: model:ir.model.fields,field_description:sale.field_sale_order_line_customer_product_code
+msgid "Customer product code"
+msgstr "Code produit du client"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_product_customerinfo_cust_product_name
+#: model:ir.model.fields,field_description:sale.field_sale_order_line_customer_product_name
+msgid "Customer product name"
+msgstr "Nom produit du client"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_product_product_search_by_cname
+msgid "Customer product name/code"
+msgstr "Code/nom produit client"
+
+#. module: sale
+#: model:ir.actions.act_window,name:sale.action_product_customerinfo
+#: model:ir.ui.menu,name:sale.menu_product_customerinfo
+#: model:ir.ui.view,arch_db:sale.view_form_product
+#: model:ir.ui.view,arch_db:sale.view_form_product_customerinfo
+#: model:ir.ui.view,arch_db:sale.view_tree_product_customerinfo
+msgid "Customer referencing"
+msgstr "Référencement client"
+
+#. module: sale
+#: model:ir.ui.menu,name:sale.menu_open_sale_stat_family_sale
+msgid "Customer stat family"
+msgstr "Famille de stat client"
+
+#. module: sale
+#: model:ir.ui.view,arch_db:sale.view_form_sale_order
+#: model:ir.ui.view,arch_db:sale.view_form_sale_order_line
+msgid "Customer's request"
+msgstr "Demande client"
+
+#. module: sale
+#: model:ir.model,name:sale.model_product_customerinfo_property
+msgid "Customerinfo property"
+msgstr "Propriété des informations client"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_sale_order_subject_deb
+msgid "DEB declaration"
+msgstr "Déclaration de la DEB"
+
+#. module: sale
+#: model:ir.ui.view,arch_db:sale.view_form_sale_order_analysis
+#: model:ir.ui.view,arch_db:sale.view_form_sale_order_invoice_analysis
+msgid "Datas"
+msgstr "Données"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_create_quick_sale_date
+#: model:ir.model.fields,field_description:sale.field_generate_called_sale_order_date
+msgid "Date"
+msgstr "Date"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_sale_order_analysis_date_from
+#: model:ir.model.fields,field_description:sale.field_sale_order_invoice_analysis_date_from
+msgid "Date from"
+msgstr "Date de début"
+
+#. module: sale
+#: model:ir.ui.view,arch_db:sale.view_kanban_sale_order_analysis
+#: model:ir.ui.view,arch_db:sale.view_kanban_sale_order_invoice_analysis
+msgid "Date from :"
+msgstr "A partir de :"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_pricelist_customerinfo_date_start
+msgid "Date start"
+msgstr "Date de début"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_pricelist_customerinfo_date_stop
+msgid "Date stop"
+msgstr "Date de fin"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_sale_order_analysis_date_to
+#: model:ir.model.fields,field_description:sale.field_sale_order_invoice_analysis_date_to
+msgid "Date to"
+msgstr "Date de fin"
+
+#. module: sale
+#: model:ir.ui.view,arch_db:sale.view_kanban_sale_order_analysis
+#: model:ir.ui.view,arch_db:sale.view_kanban_sale_order_invoice_analysis
+msgid "Date to :"
+msgstr "Date de fin :"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_sale_order_day
+#: model:ir.model.fields,field_description:sale.field_sale_order_line_day
+#: model:ir.ui.view,arch_db:sale.view_search_sale_order
+#: model:ir.ui.view,arch_db:sale.view_search_sale_order_line
+msgid "Day"
+msgstr "Jour"
+
+#. module: sale
+#: code:addons/sale/sale.py:151
+#: code:addons/sale/sale.py:1476
+#, python-format
+msgid "December"
+msgstr "Décembre"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_sale_order_line_engagement_delay
+msgid "Delay"
+msgstr "Délai"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_sale_order_delay_confirm
+msgid "Delay confirm"
+msgstr "Confirmation délai"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_res_partner_delay_confirmation
+#: model:ir.model.fields,field_description:sale.field_sale_order_delay_confirmation
+msgid "Delay confirmation"
+msgstr "Délai de confirmation"
+
+#. module: sale
+#: model:ir.ui.view,arch_db:sale.view_kanban_sale_order_analysis
+#: model:ir.ui.view,arch_db:sale.view_kanban_sale_order_invoice_analysis
+msgid "Delete"
+msgstr "Supprimer"
+
+#. module: sale
+#: model:ir.ui.view,arch_db:sale.view_search_sale_order_line
+msgid "Delivered"
+msgstr "Livré"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_change_delivery_address_delivered_address_id
+#: model:ir.model.fields,field_description:sale.field_sale_order_delivered_address_id
+msgid "Delivered address"
+msgstr "Adresse livrée"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_sale_order_delivered_amount
+msgid "Delivered amount"
+msgstr "Montant livré"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_change_delivery_address_delivered_customer_id
+#: model:ir.model.fields,field_description:sale.field_sale_order_delivered_customer_id
+msgid "Delivered customer"
+msgstr "Client livré"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_sale_order_line_delivered
+msgid "Delivered percentage"
+msgstr "Pourcentage livré"
+
+#. module: sale
+#: code:addons/sale/res_partner.py:74
+#: code:addons/sale/sale.py:1337
+#, python-format
+msgid "Delivered quantities"
+msgstr "Quantités livrées"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_sale_order_line_delivered_qty
+msgid "Delivered quantity"
+msgstr "Quantité livrée"
+
+#. module: sale
+#: code:addons/sale/res_partner.py:29
+#: model:ir.ui.view,arch_db:sale.view_form_change_delivery_address
+#: model:ir.ui.view,arch_db:sale.view_form_sale_order
+#, python-format
+msgid "Delivered to"
+msgstr "Livré à"
+
+#. module: sale
+#: model:ir.ui.view,arch_db:sale.view_form_partner_sale
+#: model:ir.ui.view,arch_db:sale.view_form_sale_order
+msgid "Delivery"
+msgstr "Livraison"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_res_partner_sale_delivery_delay
+msgid "Delivery delay"
+msgstr "Délai de livraison"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_sale_order_delivery_note_ids
+#: model:ir.ui.view,arch_db:sale.view_form_sale_order
+msgid "Delivery notes"
+msgstr "Notes de livraison"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_sale_order_departure_date
+#: model:ir.model.fields,field_description:sale.field_sale_order_line_departure_date
+msgid "Departure date"
+msgstr "Date de départ"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_change_line_information_name
+#: model:ir.model.fields,field_description:sale.field_sale_order_line_name
+#: model:ir.ui.view,arch_db:sale.view_form_partner_sale
+msgid "Description"
+msgstr "Description"
+
+#. module: sale
+#: model:ir.ui.view,arch_db:sale.view_form_sale_order
+#: model:ir.ui.view,arch_db:sale.view_form_sale_order_line
+msgid "Description and progress"
+msgstr "Description et avancement"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_sale_order_line_fixed_discount_descriptive
+#: model:ir.model.fields,field_description:sale.field_sale_order_line_variable_discount_descriptive
+msgid "Descriptive"
+msgstr "Descriptif"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_change_accounting_information_discount
+#: model:ir.model.fields,field_description:sale.field_sale_order_discount
+msgid "Discount"
+msgstr "Escompte"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_res_partner_sale_discount_management
+msgid "Discount management"
+msgstr "Gestion de l'escompte"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_res_partner_sale_discount_value
+msgid "Discount value"
+msgstr "Valeur de l'escompte"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_change_accounting_information_discount_value
+#: model:ir.model.fields,field_description:sale.field_sale_order_discount_value
+msgid "Discount value in percentage"
+msgstr "Valeur de l'escompte en pourcentage"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_account_invoice_line_is_print_discount
+#: model:ir.model.fields,field_description:sale.field_sale_order_line_is_print_discount
+msgid "Discount visible in reports"
+msgstr "Remise visible dans les rapports"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_account_sale_tax_display_name
+#: model:ir.model.fields,field_description:sale.field_called_sale_order_line_display_name
+#: model:ir.model.fields,field_description:sale.field_change_account_system_display_name
+#: model:ir.model.fields,field_description:sale.field_change_accounting_information_display_name
+#: model:ir.model.fields,field_description:sale.field_change_delivery_address_display_name
+#: model:ir.model.fields,field_description:sale.field_change_line_information_display_name
+#: model:ir.model.fields,field_description:sale.field_change_note_display_name
+#: model:ir.model.fields,field_description:sale.field_create_quick_sale_display_name
+#: model:ir.model.fields,field_description:sale.field_generate_called_sale_order_display_name
+#: model:ir.model.fields,field_description:sale.field_pricelist_customerinfo_display_name
+#: model:ir.model.fields,field_description:sale.field_product_customerinfo_display_name
+#: model:ir.model.fields,field_description:sale.field_replacement_date_display_name
+#: model:ir.model.fields,field_description:sale.field_res_partner_type_display_name
+#: model:ir.model.fields,field_description:sale.field_sale_anticipated_invoice_display_name
+#: model:ir.model.fields,field_description:sale.field_sale_common_attribute_display_name
+#: model:ir.model.fields,field_description:sale.field_sale_family_display_name
+#: model:ir.model.fields,field_description:sale.field_sale_order_analysis_display_name
+#: model:ir.model.fields,field_description:sale.field_sale_order_display_name
+#: model:ir.model.fields,field_description:sale.field_sale_order_invoice_analysis_display_name
+#: model:ir.model.fields,field_description:sale.field_sale_order_line_display_name
+#: model:ir.model.fields,field_description:sale.field_sale_order_line_fixed_discount_display_name
+#: model:ir.model.fields,field_description:sale.field_sale_order_line_section_display_name
+#: model:ir.model.fields,field_description:sale.field_sale_order_line_variable_discount_display_name
+msgid "Display Name"
+msgstr "Nom affiché"
+
+#. module: sale
+#: model:ir.ui.view,arch_db:sale.view_form_sale_order
+#: model:ir.ui.view,arch_db:sale.view_form_sale_order_line
+msgid "Diverse"
+msgstr "Divers"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_product_customerinfo_divisor
+#: model:ir.model.fields,field_description:sale.field_product_product_sale_divisor
+#: model:ir.model.fields,field_description:sale.field_sale_order_line_divisor
+msgid "Divisor"
+msgstr "Diviseur"
+
+#. module: sale
+#: code:addons/sale/sale.py:131
+#: code:addons/sale/sale.py:1456
+#: model:workflow.display.state,label:sale.display_done_sale
+#, python-format
+msgid "Done"
+msgstr "Terminée"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_sale_order_done_sale
+msgid "Done sale"
+msgstr "Vente terminée"
+
+#. module: sale
+#: code:addons/sale/sale.py:126
+#: code:addons/sale/sale.py:1451
+#: model:ir.ui.view,arch_db:sale.view_search_sale_order
+#: model:ir.ui.view,arch_db:sale.view_search_sale_order_line
+#: model:workflow.display.state,label:sale.display_draft_sale
+#, python-format
+msgid "Draft"
+msgstr "Brouillon"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_product_customerinfo_dual_unit
+msgid "Dual unit"
+msgstr "Double unité"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_product_customerinfo_dual_unit_type
+msgid "Dual unit type"
+msgstr "Type double unité"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_product_product_ean13
+msgid "EAN 13"
+msgstr "EAN 13"
+
+#. module: sale
+#: code:addons/sale/sale.py:1356
+#: code:addons/sale/wizard/change_sale_wizard.py:218
+#, python-format
+msgid "EDI"
+msgstr "EDI"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_res_partner_edi_code
+msgid "EDI code"
+msgstr "Code EDI"
+
+#. module: sale
+#: model:ir.ui.view,arch_db:sale.view_kanban_sale_order_analysis
+#: model:ir.ui.view,arch_db:sale.view_kanban_sale_order_invoice_analysis
+msgid "Edit"
+msgstr "Modifier"
+
+#. module: sale
+#: code:addons/sale/res_partner.py:57
+#: code:addons/sale/sale.py:1365
+#, python-format
+msgid "Email"
+msgstr "Email"
+
+#. module: sale
+#: model:ir.model,name:sale.model_mail_compose_message
+msgid "Email composition wizard"
+msgstr "Assistant de composition de courriel"
+
+#. module: sale
+#: code:addons/sale/sale.py:1498
+#: code:addons/sale/wizard/change_sale_wizard.py:227
+#, python-format
+msgid "End of month"
+msgstr "Fin du mois"
+
+#. module: sale
+#: code:addons/sale/sale.py:1497
+#: code:addons/sale/wizard/change_sale_wizard.py:226
+#, python-format
+msgid "End of week"
+msgstr "Fin de la semaine"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_product_customerinfo_delivery_delay
+#: model:ir.model.fields,field_description:sale.field_product_product_free_delivery_delay
+msgid "Engagement delay"
+msgstr "Délai d'engagement"
+
+#. module: sale
+#: model:ir.ui.view,arch_db:sale.view_form_replacement_date
+msgid "Enter the new value for the date"
+msgstr "Entrez la nouvelle valeur pour la date"
+
+#. module: sale
+#: model:ir.ui.view,arch_db:sale.view_form_create_quick_sale
+msgid "Enter the values"
+msgstr "Entrez les valeurs"
+
+#. module: sale
+#: code:addons/sale/sale.py:3496
+#, python-format
+msgid "Error"
+msgstr "Erreur"
+
+#. module: sale
+#: code:addons/sale/res_partner.py:286
+#, python-format
+msgid "Error ! If the contact can be charged, the parent company must be charged too"
+msgstr "Erreur ! Si le contact peut être facturé, la société mère doit pouvoir être facturée également"
+
+#. module: sale
+#: code:addons/sale/res_partner.py:289
+#, python-format
+msgid "Error ! If the contact can be delivered, the parent company must be delivered too"
+msgstr "Erreur ! Si le contact peut être livré, la société mère doit pouvoir être livrée également"
+
+#. module: sale
+#: code:addons/sale/res_partner.py:292
+#, python-format
+msgid "Error ! If the contact can order, the parent company must order too"
+msgstr "Erreur ! Si le contact peut commander, la société mère doit pouvoir commander également"
+
+#. module: sale
+#: code:addons/sale/res_partner.py:295
+#, python-format
+msgid "Error ! If the contact can pay, the parent company must pay too"
+msgstr "Erreur ! Si le contact peut payer, la société mère doit pouvoir payer également"
+
+#. module: sale
+#: code:addons/sale/res_partner.py:314
+#, python-format
+msgid "Error ! If the contact haven't a parent company, it must order, pay, be charged and be delivered, or none of them."
+msgstr "Erreur ! Si le contact n'a pas de société mère, il doit pouvoir commander, payer, être facturé et être livré, ou n'appartenir à aucun des cas"
+
+#. module: sale
+#: code:addons/sale/res_partner.py:341
+#, python-format
+msgid "Error ! If the partner can order, it must be or have a payer, a charged and a delivered."
+msgstr "Erreur ! Si le partenaire peut commander, il doit être ou avoir un facturé, un payeur et un livré"
+
+#. module: sale
+#: code:addons/sale/sale.py:1921
+#, python-format
+msgid "Error ! You cannot generate rest if you don't accept partial delivery"
+msgstr "Erreur ! Vous ne pouvez générer de reliquat si vous n'acceptez pas les livraisons incomplètes"
+
+#. module: sale
+#: code:addons/sale/res_partner.py:262
+#, python-format
+msgid "Error ! You cannot generate rest if you don't accept partial delivery (in the sale tab)"
+msgstr "Erreur ! Vous ne pouvez générer de reliquat si vous n'acceptez pas les livraisons incomplètes (dans l'onglet vente)"
+
+#. module: sale
+#: code:addons/sale/sale.py:1950
+#, python-format
+msgid "Error ! You cannot have products in your sale that are not present in the opened order"
+msgstr "Erreur ! Certains produits de votre vente ne sont pas présents dans la vente ouverte correspondante"
+
+#. module: sale
+#: code:addons/sale/sale.py:1216
+#, python-format
+msgid "Error! Sale order %s must be in state waiting delay to be able to change its date"
+msgstr "Erreur! La vente %s doit être dans l'état attente délai pour pouvoir modifier sa date"
+
+#. module: sale
+#: code:addons/sale/product.py:230
+#, python-format
+msgid "Error: Invalid EAN code"
+msgstr "Erreur: Code EAN invalide"
+
+#. module: sale
+#: model:ir.model,name:sale.model_calendar_event
+msgid "Event"
+msgstr "Événement"
+
+#. module: sale
+#: model:ir.model.fields,help:sale.field_product_customerinfo_min_qty
+#: model:ir.model.fields,help:sale.field_product_customerinfo_multiple_qty
+msgid "Expressed in purchase quantity"
+msgstr "Exprimé en quantité d'achat"
+
+#. module: sale
+#: model:ir.model.fields,help:sale.field_product_product_sale_uoi_id
+msgid "Expressed in the sale unity"
+msgstr "Exprimé en unité de vente"
+
+#. module: sale
+#: model:ir.model.fields,help:sale.field_product_customerinfo_delivery_delay
+msgid "Expressed in working day"
+msgstr "Exprimé en jour ouvré"
+
+#. module: sale
+#: model:ir.ui.view,arch_db:sale.view_search_sale_order
+#: model:ir.ui.view,arch_db:sale.view_tree_sale_order
+msgid "External reference"
+msgstr "Référence externe"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_product_customerinfo_factor
+#: model:ir.model.fields,field_description:sale.field_product_product_sale_factor
+#: model:ir.model.fields,field_description:sale.field_sale_order_line_factor
+msgid "Factor"
+msgstr "Facteur"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_product_customerinfo_factor_help
+#: model:ir.model.fields,field_description:sale.field_product_product_sale_factor_help
+msgid "Factor help"
+msgstr "Aide facteur"
+
+#. module: sale
+#: model:ir.ui.view,arch_db:sale.view_search_sale_order_analysis
+msgid "Family"
+msgstr "Famille"
+
+#. module: sale
+#: code:addons/sale/res_partner.py:56
+#: code:addons/sale/sale.py:1364
+#, python-format
+msgid "Fax"
+msgstr "Fax"
+
+#. module: sale
+#: code:addons/sale/sale.py:141
+#: code:addons/sale/sale.py:1466
+#, python-format
+msgid "February"
+msgstr "Février"
+
+#. module: sale
+#: model:ir.ui.view,arch_db:sale.view_search_sale_order_line
+msgid "Filter by color"
+msgstr "Filtrer par couleur"
+
+#. module: sale
+#: model:ir.ui.view,arch_db:sale.view_search_product_customerinfo
+#: model:ir.ui.view,arch_db:sale.view_search_sale_order
+#: model:ir.ui.view,arch_db:sale.view_search_sale_order_analysis
+#: model:ir.ui.view,arch_db:sale.view_search_sale_order_line
+msgid "Filters"
+msgstr "Filtres"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_sale_order_final_customer_id
+msgid "Final customer"
+msgstr "Client final"
+
+#. module: sale
+#: model:ir.model,name:sale.model_account_fiscal_position
+msgid "Fiscal Position"
+msgstr "Régime fiscal"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_account_invoice_line_fixed_discount_ids
+#: model:ir.model.fields,field_description:sale.field_sale_order_line_fixed_discount_ids
+msgid "Fixed discount"
+msgstr "Remise fixe"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_account_invoice_line_fixed_discount
+#: model:ir.model.fields,field_description:sale.field_sale_order_line_fixed_discount
+msgid "Fixed discount on unit price"
+msgstr "Remise fixe sur prix unitaire"
+
+#. module: sale
+#: model:ir.model.fields,help:sale.field_res_company_rml_sale_footer
+msgid "Footer text displayed at the bottom of sale reports."
+msgstr "Pied de page des rapports de vente."
+
+#. module: sale
+#: code:addons/sale/sale.py:1314
+#: model:ir.model.fields,field_description:sale.field_sale_order_analysis_forecast
+#: model:ir.model.fields,field_description:sale.field_sale_order_invoice_analysis_forecast
+#: model:ir.ui.view,arch_db:sale.view_kanban_sale_order_analysis
+#: model:ir.ui.view,arch_db:sale.view_kanban_sale_order_invoice_analysis
+#, python-format
+msgid "Forecast"
+msgstr "Prévision"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_change_delivery_address_sale_forwarding_agent_id
+#: model:ir.model.fields,field_description:sale.field_res_partner_sale_forwarding_agent_id
+#: model:ir.model.fields,field_description:sale.field_sale_order_sale_forwarding_agent_id
+msgid "Forwarding Agent"
+msgstr "Transitaire"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_product_product_free_sale
+msgid "Free sale"
+msgstr "Vente libre"
+
+#. module: sale
+#: code:addons/sale/sale.py:163
+#: code:addons/sale/sale.py:1488
+#, python-format
+msgid "Friday"
+msgstr "Vendredi"
+
+#. module: sale
+#: model:ir.ui.view,arch_db:sale.view_form_product
+#: model:ir.ui.view,arch_db:sale.view_form_product_customerinfo
+#: model:ir.ui.view,arch_db:sale.view_form_sale_order
+#: model:ir.ui.view,arch_db:sale.view_form_sale_order_line
+msgid "General"
+msgstr "Général"
+
+#. module: sale
+#: model:ir.ui.view,arch_db:sale.view_form_product
+#: model:ir.ui.view,arch_db:sale.view_form_product_customerinfo
+msgid "Generality"
+msgstr "Généralité"
+
+#. module: sale
+#: model:ir.actions.act_window,name:sale.action_generate_sale_called_order
+#: model:ir.ui.view,arch_db:sale.view_form_sale_order
+msgid "Generate a call"
+msgstr "Générer un appel"
+
+#. module: sale
+#: model:workflow.transition,button_label:sale.st28
+#: model:workflow.transition,button_label:sale.st29
+#: model:workflow.transition,button_label:sale.st30
+msgid "Generate a payment"
+msgstr "Générer un paiement"
+
+#. module: sale
+#: model:ir.ui.view,arch_db:sale.view_form_sale_order
+msgid "Generate an action"
+msgstr "Créer une action"
+
+#. module: sale
+#: model:ir.ui.view,arch_db:sale.view_form_generate_sale_called_order
+msgid "Generate called order"
+msgstr "Générer une commande appelée"
+
+#. module: sale
+#: model:ir.ui.view,arch_db:sale.view_form_sale_order
+msgid "Generate invoice"
+msgstr "Générer la facture"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_sale_order_invoice_analysis_invoice_amount
+msgid "Generate invoices amount"
+msgstr "Générer le montant des factures"
+
+#. module: sale
+#: model:ir.model.fields,help:sale.field_account_sale_tax_sequence
+msgid "Gives the sequence order when displaying a list of invoice tax."
+msgstr "Détermine l'ordre de séquence dans lequel sont affichés les lignes de taxes des factures"
+
+#. module: sale
+#: model:ir.ui.view,arch_db:sale.view_search_sale_order_line
+msgid "Green"
+msgstr "Vert"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_sale_order_line_gross_weight
+msgid "Gross weight"
+msgstr "Poids brut"
+
+#. module: sale
+#: model:ir.ui.view,arch_db:sale.view_search_sale_order_line
+msgid "Group By..."
+msgstr "Regrouper par..."
+
+#. module: sale
+#: model:ir.ui.view,arch_db:sale.view_search_product_customerinfo
+#: model:ir.ui.view,arch_db:sale.view_search_sale_order
+msgid "Group by..."
+msgstr "Regrouper par..."
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_change_accounting_information_group_invoices
+#: model:ir.model.fields,field_description:sale.field_sale_order_group_invoices
+msgid "Group invoices"
+msgstr "Grouper les factures"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_sale_order_line_guarantee
+#: model:ir.ui.view,arch_db:sale.view_form_sale_order
+#: model:ir.ui.view,arch_db:sale.view_form_sale_order_line
+msgid "Guarantee"
+msgstr "Garantie"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_sale_order_line_guarantee_unity_id
+msgid "Guarantee unity"
+msgstr "Garantie unitaire"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_sale_order_advanced_invoice
+msgid "Has an advanced invoice"
+msgstr "A une facture anticipée"
+
+#. module: sale
+#: model:ir.ui.view,arch_db:sale.view_form_sale_order
+#: model:ir.ui.view,arch_db:sale.view_form_sale_order_line
+msgid "History"
+msgstr "Historique"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_account_sale_tax_id
+#: model:ir.model.fields,field_description:sale.field_called_sale_order_line_id
+#: model:ir.model.fields,field_description:sale.field_change_account_system_id
+#: model:ir.model.fields,field_description:sale.field_change_accounting_information_id
+#: model:ir.model.fields,field_description:sale.field_change_delivery_address_id
+#: model:ir.model.fields,field_description:sale.field_change_line_information_id
+#: model:ir.model.fields,field_description:sale.field_change_note_id
+#: model:ir.model.fields,field_description:sale.field_create_quick_sale_id
+#: model:ir.model.fields,field_description:sale.field_generate_called_sale_order_id
+#: model:ir.model.fields,field_description:sale.field_pricelist_customerinfo_id
+#: model:ir.model.fields,field_description:sale.field_product_customerinfo_id
+#: model:ir.model.fields,field_description:sale.field_replacement_date_id
+#: model:ir.model.fields,field_description:sale.field_res_partner_type_id
+#: model:ir.model.fields,field_description:sale.field_sale_anticipated_invoice_id
+#: model:ir.model.fields,field_description:sale.field_sale_common_attribute_id
+#: model:ir.model.fields,field_description:sale.field_sale_family_id
+#: model:ir.model.fields,field_description:sale.field_sale_order_analysis_id
+#: model:ir.model.fields,field_description:sale.field_sale_order_id
+#: model:ir.model.fields,field_description:sale.field_sale_order_invoice_analysis_id
+#: model:ir.model.fields,field_description:sale.field_sale_order_line_fixed_discount_id
+#: model:ir.model.fields,field_description:sale.field_sale_order_line_id
+#: model:ir.model.fields,field_description:sale.field_sale_order_line_section_id
+#: model:ir.model.fields,field_description:sale.field_sale_order_line_variable_discount_id
+msgid "ID"
+msgstr "ID"
+
+#. module: sale
+#: model:ir.model.fields,help:sale.field_res_partner_sale_contact_ids
+#: model:ir.model.fields,help:sale.field_sale_order_accounting_contact_id
+#: model:ir.model.fields,help:sale.field_sale_order_accounting_contact_ids
+#: model:ir.model.fields,help:sale.field_sale_order_sale_contact_ids
+msgid "If you choose a contact, the communication value will refer to its coordinates"
+msgstr "Si vous choisissez un contact, la valeur de la communication fera référence à ses coordonnées"
+
+#. module: sale
+#: model:ir.model.fields,help:sale.field_res_partner_partial_sale_delivery
+msgid "If you don't have enough stock available to deliver all at once, do you accept partial shipments or not?"
+msgstr "Si vous n'avez pas suffisamment de stock disponible, acceptez-vous les livraisons incomplètes?"
+
+#. module: sale
+#: model:workflow.transition,button_confirm:sale.st14
+#: model:workflow.transition,button_confirm:sale.st35
+msgid "If you pass the state of the sale to 'done', the delivery orders and the invoices not done will be deleted. Are you sure you want to pass the sale in state 'done'?"
+msgstr "Si vous passez l'état de la vente à 'terminée', les bons de livraison et les factures non terminées seront supprimées. Êtes-vous certain de vouloir passer la vente dans l'état 'terminé\"?"
+
+#. module: sale
+#: model:ir.model.fields,help:sale.field_res_partner_sale_max_delay
+msgid "In days"
+msgstr "En jours"
+
+#. module: sale
+#: code:addons/sale/product.py:679
+#, python-format
+msgid "In development"
+msgstr "En développement"
+
+#. module: sale
+#: code:addons/sale/sale.py:130
+#: code:addons/sale/sale.py:1455
+#, python-format
+msgid "In progress"
+msgstr "En cours"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_change_delivery_address_sale_incoterm_id
+#: model:ir.model.fields,field_description:sale.field_res_partner_sale_incoterm_id
+#: model:ir.model.fields,field_description:sale.field_sale_order_sale_incoterm_id
+msgid "Incoterm"
+msgstr "Incoterm"
+
+#. module: sale
+#: model:ir.model.fields,help:sale.field_change_delivery_address_sale_incoterm_id
+#: model:ir.model.fields,help:sale.field_res_partner_sale_incoterm_id
+#: model:ir.model.fields,help:sale.field_sale_order_sale_incoterm_id
+msgid "Incoterm which stands for 'International Commercial terms' implies its a series of sales terms which are used in the commercial transaction."
+msgstr "Incoterm signifie 'International Commercial Terms'. Cela implique une série de conditions générales de vente qui sont utilisées dans la transaction commerciale."
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_sale_order_order_date
+msgid "Input order date"
+msgstr "Date saisie commande"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_change_note_inter_note
+#: model:ir.model.fields,field_description:sale.field_sale_order_inter_note
+msgid "Intern note / Preparation note"
+msgstr "Note interne / Note de préparation"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_change_line_information_internal_note
+#: model:ir.model.fields,field_description:sale.field_product_customerinfo_internal_note
+#: model:ir.model.fields,field_description:sale.field_sale_order_line_internal_note
+#: model:ir.ui.view,arch_db:sale.view_form_change_line_information
+#: model:ir.ui.view,arch_db:sale.view_form_change_note
+#: model:ir.ui.view,arch_db:sale.view_form_product
+#: model:ir.ui.view,arch_db:sale.view_form_product_customerinfo
+#: model:ir.ui.view,arch_db:sale.view_form_sale_order
+#: model:ir.ui.view,arch_db:sale.view_form_sale_order_line
+msgid "Internal note"
+msgstr "Note interne"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_product_customerinfo_inv_factor_help
+#: model:ir.model.fields,field_description:sale.field_product_product_inv_sale_factor_help
+msgid "Inverse factor help"
+msgstr "Aide facteur inverse"
+
+#. module: sale
+#: model:ir.model,name:sale.model_account_invoice
+msgid "Invoice"
+msgstr "Facture"
+
+#. module: sale
+#: model:ir.model,name:sale.model_account_invoice_line
+#: model:ir.ui.view,arch_db:sale.view_form_sale_order
+#: model:ir.ui.view,arch_db:sale.view_form_sale_order_line
+msgid "Invoice Line"
+msgstr "Ligne de facuration"
+
+#. module: sale
+#: model:ir.actions.act_window,name:sale.action_sale_order_invoice_analysis
+#: model:ir.ui.menu,name:sale.menu_sale_order_invoice_analysis
+#: model:ir.ui.view,arch_db:sale.view_form_sale_order_invoice_analysis
+#: model:ir.ui.view,arch_db:sale.view_tree_sale_order_invoice_analysis
+msgid "Invoice analysis"
+msgstr "Analyse de facture"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_sale_order_line_invoiced
+msgid "Invoice generated percentage"
+msgstr "Pourcentage de factures générées"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_sale_order_line_fixed_discount_invoice_line_id
+#: model:ir.model.fields,field_description:sale.field_sale_order_line_variable_discount_invoice_line_id
+msgid "Invoice line"
+msgstr "Ligne de facture"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_sale_order_invoice_line_ids
+msgid "Invoice line ids"
+msgstr "Ids des lignes de facture"
+
+#. module: sale
+#: model:ir.ui.view,arch_db:sale.view_form_sale_order
+#: model:ir.ui.view,arch_db:sale.view_form_sale_order_line
+msgid "Invoice lines"
+msgstr "Lignes de facture"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_change_note_invoice_note
+#: model:ir.model.fields,field_description:sale.field_sale_order_invoice_note
+msgid "Invoice note"
+msgstr "Note de facture"
+
+#. module: sale
+#: model:workflow.display.state,label:sale.display_wait_paid_invoice
+msgid "Invoice paid"
+msgstr "Facture payée"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_sale_order_line_paid
+msgid "Invoice paid percentage"
+msgstr "Pourcentage de factures payées"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_change_delivery_address_sale_invoice_postage
+#: model:ir.model.fields,field_description:sale.field_sale_order_sale_invoice_postage
+msgid "Invoice postage"
+msgstr "Frais de port"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_res_partner_sale_invoice_postage
+msgid "Invoice postage type"
+msgstr "Type de frais de port"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_sale_order_sale_invoiced_amount
+#: model:ir.ui.view,arch_db:sale.view_kanban_sale_order_invoice_analysis
+msgid "Invoiced amount"
+msgstr "Montant facturé"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_change_accounting_information_invoiced_customer_id
+#: model:ir.model.fields,field_description:sale.field_sale_order_invoiced_customer_id
+msgid "Invoiced customer"
+msgstr "Client facturé"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_res_partner_sale_invoiced_on
+#: model:ir.model.fields,field_description:sale.field_sale_order_sale_account_invoiced_on
+msgid "Invoiced on"
+msgstr "Facturé sur"
+
+#. module: sale
+#: code:addons/sale/res_partner.py:28
+#: model:ir.ui.view,arch_db:sale.view_form_sale_order
+#, python-format
+msgid "Invoiced to"
+msgstr "Facturé à"
+
+#. module: sale
+#: model:ir.actions.act_window,name:sale.sale_invoice_action
+#: model:ir.ui.view,arch_db:sale.view_form_sale_order
+#: model:ir.ui.view,arch_db:sale.view_form_sale_order_line
+msgid "Invoices"
+msgstr "Factures"
+
+#. module: sale
+#: model:ir.actions.act_window,name:sale.sale_line_invoice_action
+#: model:ir.model.fields,field_description:sale.field_sale_order_line_invoice_line_ids
+msgid "Invoices lines"
+msgstr "Lignes de factures"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_change_accounting_information_invoices_period
+#: model:ir.model.fields,field_description:sale.field_sale_order_invoices_period
+msgid "Invoices period"
+msgstr "Période"
+
+#. module: sale
+#: model:ir.ui.view,arch_db:sale.view_form_sale_order
+msgid "Invoicing"
+msgstr "Facturation"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_change_accounting_information_invoicing_address_id
+#: model:ir.model.fields,field_description:sale.field_sale_order_invoicing_address_id
+msgid "Invoicing address"
+msgstr "Adresse de facturation"
+
+#. module: sale
+#: model:ir.ui.view,arch_db:sale.view_form_change_accounting_info
+msgid "Invoicing information"
+msgstr "Informations de facturation"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_res_partner_sale_invoicing_method_id
+#: model:ir.model.fields,field_description:sale.field_sale_order_invoicing_method_id
+msgid "Invoicing method"
+msgstr "Méthode de facturation"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_sale_order_sale_account_invoice_trigger
+msgid "Invoicing method trigger"
+msgstr "Méthode de déclenchement de facturation"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_res_partner_sale_invoicing_trigger
+msgid "Invoicing trigger method"
+msgstr "Mode de déclenchement"
+
+#. module: sale
+#: code:addons/sale/sale.py:140
+#: code:addons/sale/sale.py:1465
+#, python-format
+msgid "January"
+msgstr "Janvier"
+
+#. module: sale
+#: code:addons/sale/sale.py:146
+#: code:addons/sale/sale.py:1471
+#, python-format
+msgid "July"
+msgstr "Juillet"
+
+#. module: sale
+#: code:addons/sale/sale.py:145
+#: code:addons/sale/sale.py:1470
+#, python-format
+msgid "June"
+msgstr "Juin"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_account_sale_tax___last_update
+#: model:ir.model.fields,field_description:sale.field_called_sale_order_line___last_update
+#: model:ir.model.fields,field_description:sale.field_change_account_system___last_update
+#: model:ir.model.fields,field_description:sale.field_change_accounting_information___last_update
+#: model:ir.model.fields,field_description:sale.field_change_delivery_address___last_update
+#: model:ir.model.fields,field_description:sale.field_change_line_information___last_update
+#: model:ir.model.fields,field_description:sale.field_change_note___last_update
+#: model:ir.model.fields,field_description:sale.field_create_quick_sale___last_update
+#: model:ir.model.fields,field_description:sale.field_generate_called_sale_order___last_update
+#: model:ir.model.fields,field_description:sale.field_pricelist_customerinfo___last_update
+#: model:ir.model.fields,field_description:sale.field_product_customerinfo___last_update
+#: model:ir.model.fields,field_description:sale.field_replacement_date___last_update
+#: model:ir.model.fields,field_description:sale.field_res_partner_type___last_update
+#: model:ir.model.fields,field_description:sale.field_sale_anticipated_invoice___last_update
+#: model:ir.model.fields,field_description:sale.field_sale_common_attribute___last_update
+#: model:ir.model.fields,field_description:sale.field_sale_family___last_update
+#: model:ir.model.fields,field_description:sale.field_sale_order___last_update
+#: model:ir.model.fields,field_description:sale.field_sale_order_analysis___last_update
+#: model:ir.model.fields,field_description:sale.field_sale_order_invoice_analysis___last_update
+#: model:ir.model.fields,field_description:sale.field_sale_order_line___last_update
+#: model:ir.model.fields,field_description:sale.field_sale_order_line_fixed_discount___last_update
+#: model:ir.model.fields,field_description:sale.field_sale_order_line_section___last_update
+#: model:ir.model.fields,field_description:sale.field_sale_order_line_variable_discount___last_update
+msgid "Last Modified on"
+msgstr "Dernière modification le"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_account_sale_tax_write_uid
+#: model:ir.model.fields,field_description:sale.field_called_sale_order_line_write_uid
+#: model:ir.model.fields,field_description:sale.field_change_account_system_write_uid
+#: model:ir.model.fields,field_description:sale.field_change_accounting_information_write_uid
+#: model:ir.model.fields,field_description:sale.field_change_delivery_address_write_uid
+#: model:ir.model.fields,field_description:sale.field_change_line_information_write_uid
+#: model:ir.model.fields,field_description:sale.field_change_note_write_uid
+#: model:ir.model.fields,field_description:sale.field_create_quick_sale_write_uid
+#: model:ir.model.fields,field_description:sale.field_generate_called_sale_order_write_uid
+#: model:ir.model.fields,field_description:sale.field_pricelist_customerinfo_write_uid
+#: model:ir.model.fields,field_description:sale.field_product_customerinfo_write_uid
+#: model:ir.model.fields,field_description:sale.field_replacement_date_write_uid
+#: model:ir.model.fields,field_description:sale.field_res_partner_type_write_uid
+#: model:ir.model.fields,field_description:sale.field_sale_anticipated_invoice_write_uid
+#: model:ir.model.fields,field_description:sale.field_sale_common_attribute_write_uid
+#: model:ir.model.fields,field_description:sale.field_sale_family_write_uid
+#: model:ir.model.fields,field_description:sale.field_sale_order_analysis_write_uid
+#: model:ir.model.fields,field_description:sale.field_sale_order_invoice_analysis_write_uid
+#: model:ir.model.fields,field_description:sale.field_sale_order_line_fixed_discount_write_uid
+#: model:ir.model.fields,field_description:sale.field_sale_order_line_section_write_uid
+#: model:ir.model.fields,field_description:sale.field_sale_order_line_variable_discount_write_uid
+#: model:ir.model.fields,field_description:sale.field_sale_order_line_write_uid
+#: model:ir.model.fields,field_description:sale.field_sale_order_write_uid
+msgid "Last Updated by"
+msgstr "Dernière mise à jour par"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_account_sale_tax_write_date
+#: model:ir.model.fields,field_description:sale.field_called_sale_order_line_write_date
+#: model:ir.model.fields,field_description:sale.field_change_account_system_write_date
+#: model:ir.model.fields,field_description:sale.field_change_accounting_information_write_date
+#: model:ir.model.fields,field_description:sale.field_change_delivery_address_write_date
+#: model:ir.model.fields,field_description:sale.field_change_line_information_write_date
+#: model:ir.model.fields,field_description:sale.field_change_note_write_date
+#: model:ir.model.fields,field_description:sale.field_create_quick_sale_write_date
+#: model:ir.model.fields,field_description:sale.field_generate_called_sale_order_write_date
+#: model:ir.model.fields,field_description:sale.field_pricelist_customerinfo_write_date
+#: model:ir.model.fields,field_description:sale.field_product_customerinfo_write_date
+#: model:ir.model.fields,field_description:sale.field_replacement_date_write_date
+#: model:ir.model.fields,field_description:sale.field_res_partner_type_write_date
+#: model:ir.model.fields,field_description:sale.field_sale_anticipated_invoice_write_date
+#: model:ir.model.fields,field_description:sale.field_sale_common_attribute_write_date
+#: model:ir.model.fields,field_description:sale.field_sale_family_write_date
+#: model:ir.model.fields,field_description:sale.field_sale_order_analysis_write_date
+#: model:ir.model.fields,field_description:sale.field_sale_order_invoice_analysis_write_date
+#: model:ir.model.fields,field_description:sale.field_sale_order_line_fixed_discount_write_date
+#: model:ir.model.fields,field_description:sale.field_sale_order_line_section_write_date
+#: model:ir.model.fields,field_description:sale.field_sale_order_line_variable_discount_write_date
+#: model:ir.model.fields,field_description:sale.field_sale_order_line_write_date
+#: model:ir.model.fields,field_description:sale.field_sale_order_write_date
+msgid "Last Updated on"
+msgstr "Dernière mise à jour le"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_sale_order_line_last_delivery_date
+msgid "Last delivery date"
+msgstr "Dernière date de livraision"
+
+#. module: sale
+#: model:ir.ui.view,arch_db:sale.view_search_sale_order_line
+msgid "Late"
+msgstr "Retard"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_sale_order_line_lateness
+msgid "Lateness"
+msgstr "Retard"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_sale_order_location_id
+msgid "Location"
+msgstr "Emplacement"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_change_accounting_information_locked_invoice
+#: model:ir.model.fields,field_description:sale.field_sale_order_locked_invoice
+msgid "Locked invoice"
+msgstr "Facture piégée"
+
+#. module: sale
+#: code:addons/sale/sale.py:1357
+#: code:addons/sale/wizard/change_sale_wizard.py:219
+#, python-format
+msgid "Mail"
+msgstr "Mail"
+
+#. module: sale
+#: model:ir.ui.view,arch_db:sale.view_form_sale_order
+msgid "Mail and encs."
+msgstr "Mail et PJs"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_sale_order_mail_ids
+#: model:ir.ui.view,arch_db:sale.view_form_sale_order
+msgid "Mails"
+msgstr "Mails"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_sale_order_delivery_note_and_date
+msgid "Make delivery note for each delivery date"
+msgstr "Faire autant de BL que de date de livraison"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_account_sale_tax_manual
+msgid "Manual"
+msgstr "Manuel"
+
+#. module: sale
+#: model:ir.ui.view,arch_db:sale.view_sale_tax_form
+#: model:ir.ui.view,arch_db:sale.view_sale_tax_tree
+msgid "Manual Sale Taxes"
+msgstr "Taxes de vente manuelles"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_sale_order_manual_hide_invoice_button
+msgid "Manual hide invoice button"
+msgstr "Cacher manuellement le bouton de facturation"
+
+#. module: sale
+#: code:addons/sale/sale.py:1354
+#: code:addons/sale/wizard/change_sale_wizard.py:216
+#, python-format
+msgid "Manual printing"
+msgstr "Impression manuelle"
+
+#. module: sale
+#: code:addons/sale/sale.py:142
+#: code:addons/sale/sale.py:1467
+#, python-format
+msgid "March"
+msgstr "Mars"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_change_accounting_information_max_delay
+#: model:ir.model.fields,field_description:sale.field_sale_order_max_delay
+msgid "Maximal delay applicated"
+msgstr "Délai maximum appliqué"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_res_partner_sale_max_delay
+msgid "Maximum delay for application"
+msgstr "Délai maximum pour application"
+
+#. module: sale
+#: code:addons/sale/sale.py:144
+#: code:addons/sale/sale.py:1469
+#, python-format
+msgid "May"
+msgstr "Mai"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_sale_order_line_uom_id
+msgid "Measure unity"
+msgstr "Unité de mesure"
+
+#. module: sale
+#: model:ir.model,name:sale.model_mail_message
+msgid "Message"
+msgstr "Message"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_product_customerinfo_min_qty
+#: model:ir.model.fields,field_description:sale.field_product_product_sale_min_qty
+msgid "Min qty"
+msgstr "Qté minimum"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_parameter_dimension_model_id
+msgid "Model id"
+msgstr "ID du modèle"
+
+#. module: sale
+#: model:ir.model,name:sale.model_change_account_system
+msgid "Modification of the account system"
+msgstr "Modification de la position fiscale"
+
+#. module: sale
+#: model:ir.model,name:sale.model_change_accounting_information
+msgid "Modification of the accounting information"
+msgstr "Modification des informations comptable"
+
+#. module: sale
+#: model:ir.actions.act_window,name:sale.action_replacement_date
+#: model:ir.ui.view,arch_db:sale.view_form_replacement_date
+msgid "Modification of the date"
+msgstr "Modification de la date"
+
+#. module: sale
+#: model:ir.model,name:sale.model_change_note
+msgid "Modification of the note"
+msgstr "Modification des notes"
+
+#. module: sale
+#: model:ir.model,name:sale.model_change_product_uom
+msgid "Modification of the product uom"
+msgstr "Modification de l'UdM du produit"
+
+#. module: sale
+#: model:ir.model,name:sale.model_change_delivery_address
+msgid "Modification of the sale delivery address"
+msgstr "Modification de l'adresse de livraison"
+
+#. module: sale
+#: model:ir.model,name:sale.model_change_line_information
+msgid "Modification of the sale line information"
+msgstr "Modification des informations de la ligne de vente"
+
+#. module: sale
+#: model:ir.model,name:sale.model_change_transport_information
+msgid "Modification of the transport information"
+msgstr "Modification des informations de transport"
+
+#. module: sale
+#: model:ir.ui.view,arch_db:sale.view_form_sale_order
+#: model:ir.ui.view,arch_db:sale.view_form_sale_order_line
+msgid "Modifications"
+msgstr "Modifications"
+
+#. module: sale
+#: code:addons/sale/sale.py:159
+#: code:addons/sale/sale.py:1484
+#, python-format
+msgid "Monday"
+msgstr "Lundi"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_sale_order_line_month
+#: model:ir.model.fields,field_description:sale.field_sale_order_month
+#: model:ir.ui.view,arch_db:sale.view_search_sale_order
+#: model:ir.ui.view,arch_db:sale.view_search_sale_order_analysis
+#: model:ir.ui.view,arch_db:sale.view_search_sale_order_line
+msgid "Month"
+msgstr "Mois"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_product_customerinfo_flag_pricelist
+msgid "Multiple price"
+msgstr "Prix multiple"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_product_customerinfo_multiple_qty
+#: model:ir.model.fields,field_description:sale.field_product_product_sale_multiple_qty
+msgid "Multiple qty"
+msgstr "Multiple de vente"
+
+#. module: sale
+#: model:ir.ui.view,arch_db:sale.openprod_view_partner_customer_search
+msgid "My customers"
+msgstr "Mes clients"
+
+#. module: sale
+#: model:ir.ui.view,arch_db:sale.view_search_sale_order
+#: model:ir.ui.view,arch_db:sale.view_search_sale_order_line
+msgid "My sales"
+msgstr "Mes ventes"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_change_delivery_address_delivered_name
+#: model:ir.model.fields,field_description:sale.field_sale_family_name
+#: model:ir.model.fields,field_description:sale.field_sale_order_analysis_name
+#: model:ir.model.fields,field_description:sale.field_sale_order_delivered_name
+#: model:ir.model.fields,field_description:sale.field_sale_order_invoice_analysis_name
+#: model:ir.model.fields,field_description:sale.field_sale_order_line_section_name
+msgid "Name"
+msgstr "Nom"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_sale_order_need_delay_validation
+msgid "Need delay validation"
+msgstr "Besoin validation délai"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_sale_order_need_picking_payment
+msgid "Need picking payment"
+msgstr "Paiement à la livraison"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_sale_order_need_sale_payment
+msgid "Need sale payment"
+msgstr "Paiement à la commande"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_sale_order_line_net_weight
+msgid "Net weight"
+msgstr "Poids net"
+
+#. module: sale
+#: code:addons/sale/res_partner.py:90
+#: code:addons/sale/sale.py:1442
+#: code:addons/sale/wizard/change_sale_wizard.py:18
+#, python-format
+msgid "Never"
+msgstr "Jamais"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_replacement_date_name
+msgid "New date"
+msgstr "Nouvelle date"
+
+#. module: sale
+#: code:addons/sale/sale.py:119
+#, python-format
+msgid "No supply"
+msgstr "Pas d'approvisionnement"
+
+#. module: sale
+#: model:ir.ui.view,arch_db:sale.view_search_sale_order
+#: model:ir.ui.view,arch_db:sale.view_search_sale_order_line
+msgid "Not cancelled or done"
+msgstr "Non annulé ou terminé"
+
+#. module: sale
+#: model:ir.model.fields,help:sale.field_account_invoice_line_fixed_discount
+#: model:ir.model.fields,help:sale.field_account_invoice_line_fixed_discount_ids
+#: model:ir.model.fields,help:sale.field_account_invoice_line_is_print_discount
+#: model:ir.model.fields,help:sale.field_account_invoice_line_price_unit_without_discount
+#: model:ir.model.fields,help:sale.field_account_invoice_line_sale_order_line_id
+#: model:ir.model.fields,help:sale.field_account_invoice_line_section_id
+#: model:ir.model.fields,help:sale.field_account_invoice_line_variable_discount
+#: model:ir.model.fields,help:sale.field_account_invoice_line_variable_discount_ids
+#: model:ir.model.fields,help:sale.field_account_invoice_sale_manager_id
+#: model:ir.model.fields,help:sale.field_account_invoice_seller_id
+#: model:ir.model.fields,help:sale.field_account_sale_tax___last_update
+#: model:ir.model.fields,help:sale.field_account_sale_tax_account_analytic_id
+#: model:ir.model.fields,help:sale.field_account_sale_tax_account_id
+#: model:ir.model.fields,help:sale.field_account_sale_tax_amount
+#: model:ir.model.fields,help:sale.field_account_sale_tax_company_id
+#: model:ir.model.fields,help:sale.field_account_sale_tax_create_date
+#: model:ir.model.fields,help:sale.field_account_sale_tax_create_uid
+#: model:ir.model.fields,help:sale.field_account_sale_tax_currency_id
+#: model:ir.model.fields,help:sale.field_account_sale_tax_display_name
+#: model:ir.model.fields,help:sale.field_account_sale_tax_id
+#: model:ir.model.fields,help:sale.field_account_sale_tax_manual
+#: model:ir.model.fields,help:sale.field_account_sale_tax_name
+#: model:ir.model.fields,help:sale.field_account_sale_tax_sale_id
+#: model:ir.model.fields,help:sale.field_account_sale_tax_tax_id
+#: model:ir.model.fields,help:sale.field_account_sale_tax_write_date
+#: model:ir.model.fields,help:sale.field_account_sale_tax_write_uid
+#: model:ir.model.fields,help:sale.field_calendar_event_sale_id
+#: model:ir.model.fields,help:sale.field_called_sale_order_line___last_update
+#: model:ir.model.fields,help:sale.field_called_sale_order_line_called_order_id
+#: model:ir.model.fields,help:sale.field_called_sale_order_line_create_date
+#: model:ir.model.fields,help:sale.field_called_sale_order_line_create_uid
+#: model:ir.model.fields,help:sale.field_called_sale_order_line_display_name
+#: model:ir.model.fields,help:sale.field_called_sale_order_line_id
+#: model:ir.model.fields,help:sale.field_called_sale_order_line_price
+#: model:ir.model.fields,help:sale.field_called_sale_order_line_product_id
+#: model:ir.model.fields,help:sale.field_called_sale_order_line_quantity
+#: model:ir.model.fields,help:sale.field_called_sale_order_line_sale_order_line_id
+#: model:ir.model.fields,help:sale.field_called_sale_order_line_write_date
+#: model:ir.model.fields,help:sale.field_called_sale_order_line_write_uid
+#: model:ir.model.fields,help:sale.field_change_account_system___last_update
+#: model:ir.model.fields,help:sale.field_change_account_system_create_date
+#: model:ir.model.fields,help:sale.field_change_account_system_create_uid
+#: model:ir.model.fields,help:sale.field_change_account_system_display_name
+#: model:ir.model.fields,help:sale.field_change_account_system_id
+#: model:ir.model.fields,help:sale.field_change_account_system_sale_account_system_id
+#: model:ir.model.fields,help:sale.field_change_account_system_sale_id
+#: model:ir.model.fields,help:sale.field_change_account_system_write_date
+#: model:ir.model.fields,help:sale.field_change_account_system_write_uid
+#: model:ir.model.fields,help:sale.field_change_accounting_information___last_update
+#: model:ir.model.fields,help:sale.field_change_accounting_information_create_date
+#: model:ir.model.fields,help:sale.field_change_accounting_information_create_uid
+#: model:ir.model.fields,help:sale.field_change_accounting_information_discount_value
+#: model:ir.model.fields,help:sale.field_change_accounting_information_display_name
+#: model:ir.model.fields,help:sale.field_change_accounting_information_id
+#: model:ir.model.fields,help:sale.field_change_accounting_information_invoiced_customer_id
+#: model:ir.model.fields,help:sale.field_change_accounting_information_invoices_period
+#: model:ir.model.fields,help:sale.field_change_accounting_information_invoicing_address_id
+#: model:ir.model.fields,help:sale.field_change_accounting_information_max_delay
+#: model:ir.model.fields,help:sale.field_change_accounting_information_paid_customer_id
+#: model:ir.model.fields,help:sale.field_change_accounting_information_partner_id
+#: model:ir.model.fields,help:sale.field_change_accounting_information_sale_id
+#: model:ir.model.fields,help:sale.field_change_accounting_information_sale_send_method
+#: model:ir.model.fields,help:sale.field_change_accounting_information_write_date
+#: model:ir.model.fields,help:sale.field_change_accounting_information_write_uid
+#: model:ir.model.fields,help:sale.field_change_delivery_address___last_update
+#: model:ir.model.fields,help:sale.field_change_delivery_address_create_date
+#: model:ir.model.fields,help:sale.field_change_delivery_address_create_uid
+#: model:ir.model.fields,help:sale.field_change_delivery_address_delivered_address_id
+#: model:ir.model.fields,help:sale.field_change_delivery_address_delivered_city
+#: model:ir.model.fields,help:sale.field_change_delivery_address_delivered_country_id
+#: model:ir.model.fields,help:sale.field_change_delivery_address_delivered_customer_id
+#: model:ir.model.fields,help:sale.field_change_delivery_address_delivered_name
+#: model:ir.model.fields,help:sale.field_change_delivery_address_delivered_region_id
+#: model:ir.model.fields,help:sale.field_change_delivery_address_delivered_street
+#: model:ir.model.fields,help:sale.field_change_delivery_address_delivered_street2
+#: model:ir.model.fields,help:sale.field_change_delivery_address_delivered_street3
+#: model:ir.model.fields,help:sale.field_change_delivery_address_delivered_zip
+#: model:ir.model.fields,help:sale.field_change_delivery_address_display_name
+#: model:ir.model.fields,help:sale.field_change_delivery_address_id
+#: model:ir.model.fields,help:sale.field_change_delivery_address_partner_id
+#: model:ir.model.fields,help:sale.field_change_delivery_address_sale_account_system_id
+#: model:ir.model.fields,help:sale.field_change_delivery_address_sale_forwarding_agent_id
+#: model:ir.model.fields,help:sale.field_change_delivery_address_sale_id
+#: model:ir.model.fields,help:sale.field_change_delivery_address_sale_invoice_postage
+#: model:ir.model.fields,help:sale.field_change_delivery_address_sale_threshold
+#: model:ir.model.fields,help:sale.field_change_delivery_address_write_date
+#: model:ir.model.fields,help:sale.field_change_delivery_address_write_uid
+#: model:ir.model.fields,help:sale.field_change_line_information___last_update
+#: model:ir.model.fields,help:sale.field_change_line_information_confirmed_departure_date
+#: model:ir.model.fields,help:sale.field_change_line_information_create_date
+#: model:ir.model.fields,help:sale.field_change_line_information_create_uid
+#: model:ir.model.fields,help:sale.field_change_line_information_delivery_printed_note
+#: model:ir.model.fields,help:sale.field_change_line_information_display_name
+#: model:ir.model.fields,help:sale.field_change_line_information_id
+#: model:ir.model.fields,help:sale.field_change_line_information_internal_note
+#: model:ir.model.fields,help:sale.field_change_line_information_invoice_printed_note
+#: model:ir.model.fields,help:sale.field_change_line_information_name
+#: model:ir.model.fields,help:sale.field_change_line_information_order_printed_note
+#: model:ir.model.fields,help:sale.field_change_line_information_price_unit
+#: model:ir.model.fields,help:sale.field_change_line_information_requested_date
+#: model:ir.model.fields,help:sale.field_change_line_information_sale_line_id
+#: model:ir.model.fields,help:sale.field_change_line_information_write_date
+#: model:ir.model.fields,help:sale.field_change_line_information_write_uid
+#: model:ir.model.fields,help:sale.field_change_note___last_update
+#: model:ir.model.fields,help:sale.field_change_note_create_date
+#: model:ir.model.fields,help:sale.field_change_note_create_uid
+#: model:ir.model.fields,help:sale.field_change_note_customer_order_note
+#: model:ir.model.fields,help:sale.field_change_note_delivery_note
+#: model:ir.model.fields,help:sale.field_change_note_display_name
+#: model:ir.model.fields,help:sale.field_change_note_id
+#: model:ir.model.fields,help:sale.field_change_note_inter_note
+#: model:ir.model.fields,help:sale.field_change_note_invoice_note
+#: model:ir.model.fields,help:sale.field_change_note_sale_id
+#: model:ir.model.fields,help:sale.field_change_note_work_note
+#: model:ir.model.fields,help:sale.field_change_note_write_date
+#: model:ir.model.fields,help:sale.field_change_note_write_uid
+#: model:ir.model.fields,help:sale.field_create_quick_sale___last_update
+#: model:ir.model.fields,help:sale.field_create_quick_sale_create_date
+#: model:ir.model.fields,help:sale.field_create_quick_sale_create_uid
+#: model:ir.model.fields,help:sale.field_create_quick_sale_date
+#: model:ir.model.fields,help:sale.field_create_quick_sale_display_name
+#: model:ir.model.fields,help:sale.field_create_quick_sale_id
+#: model:ir.model.fields,help:sale.field_create_quick_sale_partner_id
+#: model:ir.model.fields,help:sale.field_create_quick_sale_product_id
+#: model:ir.model.fields,help:sale.field_create_quick_sale_quantity
+#: model:ir.model.fields,help:sale.field_create_quick_sale_sec_uom_id
+#: model:ir.model.fields,help:sale.field_create_quick_sale_write_date
+#: model:ir.model.fields,help:sale.field_create_quick_sale_write_uid
+#: model:ir.model.fields,help:sale.field_generate_called_sale_order___last_update
+#: model:ir.model.fields,help:sale.field_generate_called_sale_order_called_order_line_ids
+#: model:ir.model.fields,help:sale.field_generate_called_sale_order_create_date
+#: model:ir.model.fields,help:sale.field_generate_called_sale_order_create_uid
+#: model:ir.model.fields,help:sale.field_generate_called_sale_order_date
+#: model:ir.model.fields,help:sale.field_generate_called_sale_order_display_name
+#: model:ir.model.fields,help:sale.field_generate_called_sale_order_id
+#: model:ir.model.fields,help:sale.field_generate_called_sale_order_partner_id
+#: model:ir.model.fields,help:sale.field_generate_called_sale_order_sale_id
+#: model:ir.model.fields,help:sale.field_generate_called_sale_order_write_date
+#: model:ir.model.fields,help:sale.field_generate_called_sale_order_write_uid
+#: model:ir.model.fields,help:sale.field_mail_message_sale_id
+#: model:ir.model.fields,help:sale.field_parameter_dimension_model_id
+#: model:ir.model.fields,help:sale.field_parameter_dimension_sale_order_line_id
+#: model:ir.model.fields,help:sale.field_partner_stat_family_is_sale
+#: model:ir.model.fields,help:sale.field_pricelist_customerinfo___last_update
+#: model:ir.model.fields,help:sale.field_pricelist_customerinfo_cinfo_id
+#: model:ir.model.fields,help:sale.field_pricelist_customerinfo_create_date
+#: model:ir.model.fields,help:sale.field_pricelist_customerinfo_create_uid
+#: model:ir.model.fields,help:sale.field_pricelist_customerinfo_date_start
+#: model:ir.model.fields,help:sale.field_pricelist_customerinfo_date_stop
+#: model:ir.model.fields,help:sale.field_pricelist_customerinfo_display_name
+#: model:ir.model.fields,help:sale.field_pricelist_customerinfo_id
+#: model:ir.model.fields,help:sale.field_pricelist_customerinfo_write_date
+#: model:ir.model.fields,help:sale.field_pricelist_customerinfo_write_uid
+#: model:ir.model.fields,help:sale.field_procurement_order_sol_id
+#: model:ir.model.fields,help:sale.field_product_customerinfo___last_update
+#: model:ir.model.fields,help:sale.field_product_customerinfo_company_id
+#: model:ir.model.fields,help:sale.field_product_customerinfo_create_date
+#: model:ir.model.fields,help:sale.field_product_customerinfo_create_uid
+#: model:ir.model.fields,help:sale.field_product_customerinfo_currency_id
+#: model:ir.model.fields,help:sale.field_product_customerinfo_cust_product_code
+#: model:ir.model.fields,help:sale.field_product_customerinfo_cust_product_name
+#: model:ir.model.fields,help:sale.field_product_customerinfo_display_name
+#: model:ir.model.fields,help:sale.field_product_customerinfo_divisor
+#: model:ir.model.fields,help:sale.field_product_customerinfo_dual_unit
+#: model:ir.model.fields,help:sale.field_product_customerinfo_dual_unit_type
+#: model:ir.model.fields,help:sale.field_product_customerinfo_factor
+#: model:ir.model.fields,help:sale.field_product_customerinfo_factor_help
+#: model:ir.model.fields,help:sale.field_product_customerinfo_first_price
+#: model:ir.model.fields,help:sale.field_product_customerinfo_first_quantity
+#: model:ir.model.fields,help:sale.field_product_customerinfo_flag_pricelist
+#: model:ir.model.fields,help:sale.field_product_customerinfo_id
+#: model:ir.model.fields,help:sale.field_product_customerinfo_internal_note
+#: model:ir.model.fields,help:sale.field_product_customerinfo_inv_factor_help
+#: model:ir.model.fields,help:sale.field_product_customerinfo_packaging_id
+#: model:ir.model.fields,help:sale.field_product_customerinfo_partner_id
+#: model:ir.model.fields,help:sale.field_product_customerinfo_pricelist_ids
+#: model:ir.model.fields,help:sale.field_product_customerinfo_product_id
+#: model:ir.model.fields,help:sale.field_product_customerinfo_property_ids
+#: model:ir.model.fields,help:sale.field_product_customerinfo_sale_note
+#: model:ir.model.fields,help:sale.field_product_customerinfo_sec_uom_category_id
+#: model:ir.model.fields,help:sale.field_product_customerinfo_sequence
+#: model:ir.model.fields,help:sale.field_product_customerinfo_state
+#: model:ir.model.fields,help:sale.field_product_customerinfo_uom_category_id
+#: model:ir.model.fields,help:sale.field_product_customerinfo_uos_category_id
+#: model:ir.model.fields,help:sale.field_product_customerinfo_write_date
+#: model:ir.model.fields,help:sale.field_product_customerinfo_write_uid
+#: model:ir.model.fields,help:sale.field_product_product_cinfo_ids
+#: model:ir.model.fields,help:sale.field_product_product_ean13
+#: model:ir.model.fields,help:sale.field_product_product_free_delivery_delay
+#: model:ir.model.fields,help:sale.field_product_product_free_sale
+#: model:ir.model.fields,help:sale.field_product_product_inv_sale_factor_help
+#: model:ir.model.fields,help:sale.field_product_product_printed_sale_note
+#: model:ir.model.fields,help:sale.field_product_product_sale_factor_help
+#: model:ir.model.fields,help:sale.field_product_product_sale_family_id
+#: model:ir.model.fields,help:sale.field_product_product_sale_multiple_qty
+#: model:ir.model.fields,help:sale.field_product_product_sale_price
+#: model:ir.model.fields,help:sale.field_product_product_sale_responsible_id
+#: model:ir.model.fields,help:sale.field_product_product_search_by_cinfo
+#: model:ir.model.fields,help:sale.field_product_product_search_by_cname
+#: model:ir.model.fields,help:sale.field_product_product_uos_category_id
+#: model:ir.model.fields,help:sale.field_replacement_date___last_update
+#: model:ir.model.fields,help:sale.field_replacement_date_create_date
+#: model:ir.model.fields,help:sale.field_replacement_date_create_uid
+#: model:ir.model.fields,help:sale.field_replacement_date_display_name
+#: model:ir.model.fields,help:sale.field_replacement_date_id
+#: model:ir.model.fields,help:sale.field_replacement_date_name
+#: model:ir.model.fields,help:sale.field_replacement_date_write_date
+#: model:ir.model.fields,help:sale.field_replacement_date_write_uid
+#: model:ir.model.fields,help:sale.field_res_partner_can_be_charged
+#: model:ir.model.fields,help:sale.field_res_partner_can_be_delivered
+#: model:ir.model.fields,help:sale.field_res_partner_can_order
+#: model:ir.model.fields,help:sale.field_res_partner_can_paid
+#: model:ir.model.fields,help:sale.field_res_partner_delay_confirmation
+#: model:ir.model.fields,help:sale.field_res_partner_edi_code
+#: model:ir.model.fields,help:sale.field_res_partner_generate_sale_rest
+#: model:ir.model.fields,help:sale.field_res_partner_note_delivery_order
+#: model:ir.model.fields,help:sale.field_res_partner_note_header
+#: model:ir.model.fields,help:sale.field_res_partner_num_with_customer
+#: model:ir.model.fields,help:sale.field_res_partner_receipt_demand
+#: model:ir.model.fields,help:sale.field_res_partner_sale_communication_method
+#: model:ir.model.fields,help:sale.field_res_partner_sale_communication_value
+#: model:ir.model.fields,help:sale.field_res_partner_sale_contact_id
+#: model:ir.model.fields,help:sale.field_res_partner_sale_delivery_contact_id
+#: model:ir.model.fields,help:sale.field_res_partner_sale_discount_management
+#: model:ir.model.fields,help:sale.field_res_partner_sale_discount_value
+#: model:ir.model.fields,help:sale.field_res_partner_sale_forwarding_agent_id
+#: model:ir.model.fields,help:sale.field_res_partner_sale_invoice_postage
+#: model:ir.model.fields,help:sale.field_res_partner_sale_invoicing_method_id
+#: model:ir.model.fields,help:sale.field_res_partner_sale_invoicing_trigger
+#: model:ir.model.fields,help:sale.field_res_partner_sale_payment_method_id
+#: model:ir.model.fields,help:sale.field_res_partner_sale_threshold
+#: model:ir.model.fields,help:sale.field_res_partner_sales_manager_id
+#: model:ir.model.fields,help:sale.field_res_partner_seller_id
+#: model:ir.model.fields,help:sale.field_res_partner_stat_family_id
+#: model:ir.model.fields,help:sale.field_res_partner_type___last_update
+#: model:ir.model.fields,help:sale.field_res_partner_type_create_date
+#: model:ir.model.fields,help:sale.field_res_partner_type_create_uid
+#: model:ir.model.fields,help:sale.field_res_partner_type_display_name
+#: model:ir.model.fields,help:sale.field_res_partner_type_id
+#: model:ir.model.fields,help:sale.field_res_partner_type_ids
+#: model:ir.model.fields,help:sale.field_res_partner_type_inv_ids
+#: model:ir.model.fields,help:sale.field_res_partner_type_partner_id
+#: model:ir.model.fields,help:sale.field_res_partner_type_partner_type
+#: model:ir.model.fields,help:sale.field_res_partner_type_partner_type_id
+#: model:ir.model.fields,help:sale.field_res_partner_type_sequence
+#: model:ir.model.fields,help:sale.field_res_partner_type_write_date
+#: model:ir.model.fields,help:sale.field_res_partner_type_write_uid
+#: model:ir.model.fields,help:sale.field_sale_anticipated_invoice___last_update
+#: model:ir.model.fields,help:sale.field_sale_anticipated_invoice_amount_with_tax
+#: model:ir.model.fields,help:sale.field_sale_anticipated_invoice_amount_without_tax
+#: model:ir.model.fields,help:sale.field_sale_anticipated_invoice_create_date
+#: model:ir.model.fields,help:sale.field_sale_anticipated_invoice_create_uid
+#: model:ir.model.fields,help:sale.field_sale_anticipated_invoice_display_name
+#: model:ir.model.fields,help:sale.field_sale_anticipated_invoice_id
+#: model:ir.model.fields,help:sale.field_sale_anticipated_invoice_product_id
+#: model:ir.model.fields,help:sale.field_sale_anticipated_invoice_sale_id
+#: model:ir.model.fields,help:sale.field_sale_anticipated_invoice_tax_amount
+#: model:ir.model.fields,help:sale.field_sale_anticipated_invoice_taxes_ids
+#: model:ir.model.fields,help:sale.field_sale_anticipated_invoice_write_date
+#: model:ir.model.fields,help:sale.field_sale_anticipated_invoice_write_uid
+#: model:ir.model.fields,help:sale.field_sale_common_attribute___last_update
+#: model:ir.model.fields,help:sale.field_sale_common_attribute_create_date
+#: model:ir.model.fields,help:sale.field_sale_common_attribute_create_uid
+#: model:ir.model.fields,help:sale.field_sale_common_attribute_display_name
+#: model:ir.model.fields,help:sale.field_sale_common_attribute_id
+#: model:ir.model.fields,help:sale.field_sale_common_attribute_product_common_attribute_id
+#: model:ir.model.fields,help:sale.field_sale_common_attribute_sale_line_id
+#: model:ir.model.fields,help:sale.field_sale_common_attribute_sequence
+#: model:ir.model.fields,help:sale.field_sale_common_attribute_value
+#: model:ir.model.fields,help:sale.field_sale_common_attribute_write_date
+#: model:ir.model.fields,help:sale.field_sale_common_attribute_write_uid
+#: model:ir.model.fields,help:sale.field_sale_family___last_update
+#: model:ir.model.fields,help:sale.field_sale_family_create_date
+#: model:ir.model.fields,help:sale.field_sale_family_create_uid
+#: model:ir.model.fields,help:sale.field_sale_family_display_name
+#: model:ir.model.fields,help:sale.field_sale_family_id
+#: model:ir.model.fields,help:sale.field_sale_family_name
+#: model:ir.model.fields,help:sale.field_sale_family_write_date
+#: model:ir.model.fields,help:sale.field_sale_family_write_uid
+#: model:ir.model.fields,help:sale.field_sale_order___last_update
+#: model:ir.model.fields,help:sale.field_sale_order_accounting_communication_value
+#: model:ir.model.fields,help:sale.field_sale_order_advanced_amount
+#: model:ir.model.fields,help:sale.field_sale_order_advanced_amount_without_tax
+#: model:ir.model.fields,help:sale.field_sale_order_advanced_invoice
+#: model:ir.model.fields,help:sale.field_sale_order_amount_ex_taxes
+#: model:ir.model.fields,help:sale.field_sale_order_analysis___last_update
+#: model:ir.model.fields,help:sale.field_sale_order_analysis_color
+#: model:ir.model.fields,help:sale.field_sale_order_analysis_create_date
+#: model:ir.model.fields,help:sale.field_sale_order_analysis_create_uid
+#: model:ir.model.fields,help:sale.field_sale_order_analysis_date_from
+#: model:ir.model.fields,help:sale.field_sale_order_analysis_date_to
+#: model:ir.model.fields,help:sale.field_sale_order_analysis_display_name
+#: model:ir.model.fields,help:sale.field_sale_order_analysis_family_id
+#: model:ir.model.fields,help:sale.field_sale_order_analysis_forecast
+#: model:ir.model.fields,help:sale.field_sale_order_analysis_id
+#: model:ir.model.fields,help:sale.field_sale_order_analysis_is_active
+#: model:ir.model.fields,help:sale.field_sale_order_analysis_name
+#: model:ir.model.fields,help:sale.field_sale_order_analysis_sale_amount
+#: model:ir.model.fields,help:sale.field_sale_order_analysis_salesperson_id
+#: model:ir.model.fields,help:sale.field_sale_order_analysis_target
+#: model:ir.model.fields,help:sale.field_sale_order_analysis_write_date
+#: model:ir.model.fields,help:sale.field_sale_order_analysis_write_uid
+#: model:ir.model.fields,help:sale.field_sale_order_ar_send_date
+#: model:ir.model.fields,help:sale.field_sale_order_ar_user_id
+#: model:ir.model.fields,help:sale.field_sale_order_block_picking_payment
+#: model:ir.model.fields,help:sale.field_sale_order_block_sale_payment
+#: model:ir.model.fields,help:sale.field_sale_order_called_order_ids
+#: model:ir.model.fields,help:sale.field_sale_order_check_paid
+#: model:ir.model.fields,help:sale.field_sale_order_check_paid_invoice
+#: model:ir.model.fields,help:sale.field_sale_order_check_paid_sale
+#: model:ir.model.fields,help:sale.field_sale_order_company_id
+#: model:ir.model.fields,help:sale.field_sale_order_confirmation_date
+#: model:ir.model.fields,help:sale.field_sale_order_confirmation_user_id
+#: model:ir.model.fields,help:sale.field_sale_order_create_date
+#: model:ir.model.fields,help:sale.field_sale_order_create_uid
+#: model:ir.model.fields,help:sale.field_sale_order_creation_date
+#: model:ir.model.fields,help:sale.field_sale_order_creation_user_id
+#: model:ir.model.fields,help:sale.field_sale_order_currency_id
+#: model:ir.model.fields,help:sale.field_sale_order_customer_order_note
+#: model:ir.model.fields,help:sale.field_sale_order_day
+#: model:ir.model.fields,help:sale.field_sale_order_delay_confirm
+#: model:ir.model.fields,help:sale.field_sale_order_delay_confirmation
+#: model:ir.model.fields,help:sale.field_sale_order_delivered_address_id
+#: model:ir.model.fields,help:sale.field_sale_order_delivered_amount
+#: model:ir.model.fields,help:sale.field_sale_order_delivered_city
+#: model:ir.model.fields,help:sale.field_sale_order_delivered_contact_id
+#: model:ir.model.fields,help:sale.field_sale_order_delivered_country_id
+#: model:ir.model.fields,help:sale.field_sale_order_delivered_customer_id
+#: model:ir.model.fields,help:sale.field_sale_order_delivered_name
+#: model:ir.model.fields,help:sale.field_sale_order_delivered_region_id
+#: model:ir.model.fields,help:sale.field_sale_order_delivered_street
+#: model:ir.model.fields,help:sale.field_sale_order_delivered_street2
+#: model:ir.model.fields,help:sale.field_sale_order_delivered_street3
+#: model:ir.model.fields,help:sale.field_sale_order_delivered_zip
+#: model:ir.model.fields,help:sale.field_sale_order_delivery_note
+#: model:ir.model.fields,help:sale.field_sale_order_delivery_note_and_date
+#: model:ir.model.fields,help:sale.field_sale_order_delivery_note_ids
+#: model:ir.model.fields,help:sale.field_sale_order_departure_date
+#: model:ir.model.fields,help:sale.field_sale_order_discount_value
+#: model:ir.model.fields,help:sale.field_sale_order_display_name
+#: model:ir.model.fields,help:sale.field_sale_order_display_state
+#: model:ir.model.fields,help:sale.field_sale_order_done_sale
+#: model:ir.model.fields,help:sale.field_sale_order_final_customer_id
+#: model:ir.model.fields,help:sale.field_sale_order_id
+#: model:ir.model.fields,help:sale.field_sale_order_inter_note
+#: model:ir.model.fields,help:sale.field_sale_order_invoice_analysis___last_update
+#: model:ir.model.fields,help:sale.field_sale_order_invoice_analysis_color
+#: model:ir.model.fields,help:sale.field_sale_order_invoice_analysis_company_id
+#: model:ir.model.fields,help:sale.field_sale_order_invoice_analysis_create_date
+#: model:ir.model.fields,help:sale.field_sale_order_invoice_analysis_create_uid
+#: model:ir.model.fields,help:sale.field_sale_order_invoice_analysis_date_from
+#: model:ir.model.fields,help:sale.field_sale_order_invoice_analysis_date_to
+#: model:ir.model.fields,help:sale.field_sale_order_invoice_analysis_display_name
+#: model:ir.model.fields,help:sale.field_sale_order_invoice_analysis_forecast
+#: model:ir.model.fields,help:sale.field_sale_order_invoice_analysis_id
+#: model:ir.model.fields,help:sale.field_sale_order_invoice_analysis_invoice_amount
+#: model:ir.model.fields,help:sale.field_sale_order_invoice_analysis_is_active
+#: model:ir.model.fields,help:sale.field_sale_order_invoice_analysis_name
+#: model:ir.model.fields,help:sale.field_sale_order_invoice_analysis_payment_amount
+#: model:ir.model.fields,help:sale.field_sale_order_invoice_analysis_target
+#: model:ir.model.fields,help:sale.field_sale_order_invoice_analysis_write_date
+#: model:ir.model.fields,help:sale.field_sale_order_invoice_analysis_write_uid
+#: model:ir.model.fields,help:sale.field_sale_order_invoice_line_ids
+#: model:ir.model.fields,help:sale.field_sale_order_invoice_note
+#: model:ir.model.fields,help:sale.field_sale_order_invoiced_customer_id
+#: model:ir.model.fields,help:sale.field_sale_order_invoices_period
+#: model:ir.model.fields,help:sale.field_sale_order_invoicing_address_id
+#: model:ir.model.fields,help:sale.field_sale_order_line___last_update
+#: model:ir.model.fields,help:sale.field_sale_order_line_arrival_date
+#: model:ir.model.fields,help:sale.field_sale_order_line_calendar_date
+#: model:ir.model.fields,help:sale.field_sale_order_line_company_id
+#: model:ir.model.fields,help:sale.field_sale_order_line_confirmed_departure_date
+#: model:ir.model.fields,help:sale.field_sale_order_line_create_date
+#: model:ir.model.fields,help:sale.field_sale_order_line_create_uid
+#: model:ir.model.fields,help:sale.field_sale_order_line_currency_id
+#: model:ir.model.fields,help:sale.field_sale_order_line_currency_rate
+#: model:ir.model.fields,help:sale.field_sale_order_line_customer_product_code
+#: model:ir.model.fields,help:sale.field_sale_order_line_customer_product_name
+#: model:ir.model.fields,help:sale.field_sale_order_line_day
+#: model:ir.model.fields,help:sale.field_sale_order_line_delay_confirm
+#: model:ir.model.fields,help:sale.field_sale_order_line_delivered
+#: model:ir.model.fields,help:sale.field_sale_order_line_delivered_qty
+#: model:ir.model.fields,help:sale.field_sale_order_line_delivery_printed_note
+#: model:ir.model.fields,help:sale.field_sale_order_line_departure_date
+#: model:ir.model.fields,help:sale.field_sale_order_line_display_name
+#: model:ir.model.fields,help:sale.field_sale_order_line_divisor
+#: model:ir.model.fields,help:sale.field_sale_order_line_engagement_delay
+#: model:ir.model.fields,help:sale.field_sale_order_line_factor
+#: model:ir.model.fields,help:sale.field_sale_order_line_fixed_discount
+#: model:ir.model.fields,help:sale.field_sale_order_line_fixed_discount___last_update
+#: model:ir.model.fields,help:sale.field_sale_order_line_fixed_discount_amount
+#: model:ir.model.fields,help:sale.field_sale_order_line_fixed_discount_create_date
+#: model:ir.model.fields,help:sale.field_sale_order_line_fixed_discount_create_uid
+#: model:ir.model.fields,help:sale.field_sale_order_line_fixed_discount_descriptive
+#: model:ir.model.fields,help:sale.field_sale_order_line_fixed_discount_display_name
+#: model:ir.model.fields,help:sale.field_sale_order_line_fixed_discount_id
+#: model:ir.model.fields,help:sale.field_sale_order_line_fixed_discount_ids
+#: model:ir.model.fields,help:sale.field_sale_order_line_fixed_discount_invoice_line_id
+#: model:ir.model.fields,help:sale.field_sale_order_line_fixed_discount_sale_line_id
+#: model:ir.model.fields,help:sale.field_sale_order_line_fixed_discount_sequence
+#: model:ir.model.fields,help:sale.field_sale_order_line_fixed_discount_write_date
+#: model:ir.model.fields,help:sale.field_sale_order_line_fixed_discount_write_uid
+#: model:ir.model.fields,help:sale.field_sale_order_line_gross_weight
+#: model:ir.model.fields,help:sale.field_sale_order_line_guarantee
+#: model:ir.model.fields,help:sale.field_sale_order_line_guarantee_unity_id
+#: model:ir.model.fields,help:sale.field_sale_order_line_id
+#: model:ir.model.fields,help:sale.field_sale_order_line_internal_note
+#: model:ir.model.fields,help:sale.field_sale_order_line_invoice_line_ids
+#: model:ir.model.fields,help:sale.field_sale_order_line_invoice_printed_note
+#: model:ir.model.fields,help:sale.field_sale_order_line_invoiced
+#: model:ir.model.fields,help:sale.field_sale_order_line_is_print_discount
+#: model:ir.model.fields,help:sale.field_sale_order_line_last_delivery_date
+#: model:ir.model.fields,help:sale.field_sale_order_line_lateness
+#: model:ir.model.fields,help:sale.field_sale_order_line_month
+#: model:ir.model.fields,help:sale.field_sale_order_line_name
+#: model:ir.model.fields,help:sale.field_sale_order_line_net_weight
+#: model:ir.model.fields,help:sale.field_sale_order_line_order_printed_note
+#: model:ir.model.fields,help:sale.field_sale_order_line_packaging_id
+#: model:ir.model.fields,help:sale.field_sale_order_line_paid
+#: model:ir.model.fields,help:sale.field_sale_order_line_parameter_ids
+#: model:ir.model.fields,help:sale.field_sale_order_line_price_unit
+#: model:ir.model.fields,help:sale.field_sale_order_line_price_unit_without_discount
+#: model:ir.model.fields,help:sale.field_sale_order_line_product_attribute_ids
+#: model:ir.model.fields,help:sale.field_sale_order_line_product_id
+#: model:ir.model.fields,help:sale.field_sale_order_line_property_ids
+#: model:ir.model.fields,help:sale.field_sale_order_line_purchase_property_ids
+#: model:ir.model.fields,help:sale.field_sale_order_line_remaining_called_qty
+#: model:ir.model.fields,help:sale.field_sale_order_line_remaining_qty
+#: model:ir.model.fields,help:sale.field_sale_order_line_requested_date
+#: model:ir.model.fields,help:sale.field_sale_order_line_sale_line_color
+#: model:ir.model.fields,help:sale.field_sale_order_line_sale_order_id
+#: model:ir.model.fields,help:sale.field_sale_order_line_sale_order_manager_id
+#: model:ir.model.fields,help:sale.field_sale_order_line_sale_partner_id
+#: model:ir.model.fields,help:sale.field_sale_order_line_sale_seller_id
+#: model:ir.model.fields,help:sale.field_sale_order_line_sale_state
+#: model:ir.model.fields,help:sale.field_sale_order_line_sale_type
+#: model:ir.model.fields,help:sale.field_sale_order_line_scheduled_date
+#: model:ir.model.fields,help:sale.field_sale_order_line_sec_uom_category_id
+#: model:ir.model.fields,help:sale.field_sale_order_line_sec_uom_id
+#: model:ir.model.fields,help:sale.field_sale_order_line_sec_uom_qty
+#: model:ir.model.fields,help:sale.field_sale_order_line_section___last_update
+#: model:ir.model.fields,help:sale.field_sale_order_line_section_create_date
+#: model:ir.model.fields,help:sale.field_sale_order_line_section_create_uid
+#: model:ir.model.fields,help:sale.field_sale_order_line_section_display_name
+#: model:ir.model.fields,help:sale.field_sale_order_line_section_id
+#: model:ir.model.fields,help:sale.field_sale_order_line_section_id_6171
+#: model:ir.model.fields,help:sale.field_sale_order_line_section_name
+#: model:ir.model.fields,help:sale.field_sale_order_line_section_pagebreak
+#: model:ir.model.fields,help:sale.field_sale_order_line_section_separator
+#: model:ir.model.fields,help:sale.field_sale_order_line_section_sequence
+#: model:ir.model.fields,help:sale.field_sale_order_line_section_subtotal
+#: model:ir.model.fields,help:sale.field_sale_order_line_section_write_date
+#: model:ir.model.fields,help:sale.field_sale_order_line_section_write_uid
+#: model:ir.model.fields,help:sale.field_sale_order_line_sequence
+#: model:ir.model.fields,help:sale.field_sale_order_line_stock_move_ids
+#: model:ir.model.fields,help:sale.field_sale_order_line_supply_method
+#: model:ir.model.fields,help:sale.field_sale_order_line_taxes_ids
+#: model:ir.model.fields,help:sale.field_sale_order_line_total_price
+#: model:ir.model.fields,help:sale.field_sale_order_line_total_price_currency
+#: model:ir.model.fields,help:sale.field_sale_order_line_transport_delay
+#: model:ir.model.fields,help:sale.field_sale_order_line_uoi_category_id
+#: model:ir.model.fields,help:sale.field_sale_order_line_uoi_id
+#: model:ir.model.fields,help:sale.field_sale_order_line_uoi_qty
+#: model:ir.model.fields,help:sale.field_sale_order_line_uom_category_id
+#: model:ir.model.fields,help:sale.field_sale_order_line_uom_id
+#: model:ir.model.fields,help:sale.field_sale_order_line_uom_qty
+#: model:ir.model.fields,help:sale.field_sale_order_line_variable_discount
+#: model:ir.model.fields,help:sale.field_sale_order_line_variable_discount___last_update
+#: model:ir.model.fields,help:sale.field_sale_order_line_variable_discount_amount
+#: model:ir.model.fields,help:sale.field_sale_order_line_variable_discount_create_date
+#: model:ir.model.fields,help:sale.field_sale_order_line_variable_discount_create_uid
+#: model:ir.model.fields,help:sale.field_sale_order_line_variable_discount_descriptive
+#: model:ir.model.fields,help:sale.field_sale_order_line_variable_discount_display_name
+#: model:ir.model.fields,help:sale.field_sale_order_line_variable_discount_id
+#: model:ir.model.fields,help:sale.field_sale_order_line_variable_discount_ids
+#: model:ir.model.fields,help:sale.field_sale_order_line_variable_discount_invoice_line_id
+#: model:ir.model.fields,help:sale.field_sale_order_line_variable_discount_sale_line_id
+#: model:ir.model.fields,help:sale.field_sale_order_line_variable_discount_sequence
+#: model:ir.model.fields,help:sale.field_sale_order_line_variable_discount_type
+#: model:ir.model.fields,help:sale.field_sale_order_line_variable_discount_write_date
+#: model:ir.model.fields,help:sale.field_sale_order_line_variable_discount_write_uid
+#: model:ir.model.fields,help:sale.field_sale_order_line_week_number
+#: model:ir.model.fields,help:sale.field_sale_order_line_work_note
+#: model:ir.model.fields,help:sale.field_sale_order_line_write_date
+#: model:ir.model.fields,help:sale.field_sale_order_line_write_uid
+#: model:ir.model.fields,help:sale.field_sale_order_line_year
+#: model:ir.model.fields,help:sale.field_sale_order_location_id
+#: model:ir.model.fields,help:sale.field_sale_order_mail_ids
+#: model:ir.model.fields,help:sale.field_sale_order_manual_hide_invoice_button
+#: model:ir.model.fields,help:sale.field_sale_order_max_delay
+#: model:ir.model.fields,help:sale.field_sale_order_max_sequence
+#: model:ir.model.fields,help:sale.field_sale_order_month
+#: model:ir.model.fields,help:sale.field_sale_order_name
+#: model:ir.model.fields,help:sale.field_sale_order_need_delay_validation
+#: model:ir.model.fields,help:sale.field_sale_order_need_picking_payment
+#: model:ir.model.fields,help:sale.field_sale_order_need_sale_payment
+#: model:ir.model.fields,help:sale.field_sale_order_open_order_id
+#: model:ir.model.fields,help:sale.field_sale_order_order_address_id
+#: model:ir.model.fields,help:sale.field_sale_order_order_date
+#: model:ir.model.fields,help:sale.field_sale_order_order_line_ids
+#: model:ir.model.fields,help:sale.field_sale_order_paid_customer_id
+#: model:ir.model.fields,help:sale.field_sale_order_partner_id
+#: model:ir.model.fields,help:sale.field_sale_order_payment_type
+#: model:ir.model.fields,help:sale.field_sale_order_quotation_date
+#: model:ir.model.fields,help:sale.field_sale_order_quotation_user_id
+#: model:ir.model.fields,help:sale.field_sale_order_receipt_demand
+#: model:ir.model.fields,help:sale.field_sale_order_ref_order
+#: model:ir.model.fields,help:sale.field_sale_order_remaining_advanced_amount
+#: model:ir.model.fields,help:sale.field_sale_order_renting_end_date
+#: model:ir.model.fields,help:sale.field_sale_order_requested_date
+#: model:ir.model.fields,help:sale.field_sale_order_residual_amount
+#: model:ir.model.fields,help:sale.field_sale_order_sale_communication_method
+#: model:ir.model.fields,help:sale.field_sale_order_sale_communication_value
+#: model:ir.model.fields,help:sale.field_sale_order_sale_contact_id
+#: model:ir.model.fields,help:sale.field_sale_order_sale_forwarding_agent_id
+#: model:ir.model.fields,help:sale.field_sale_order_sale_invoice_balance_invoiced_on
+#: model:ir.model.fields,help:sale.field_sale_order_sale_invoice_balance_trigger
+#: model:ir.model.fields,help:sale.field_sale_order_sale_invoice_postage
+#: model:ir.model.fields,help:sale.field_sale_order_sale_invoice_trigger_manual
+#: model:ir.model.fields,help:sale.field_sale_order_sale_invoice_trigger_picking
+#: model:ir.model.fields,help:sale.field_sale_order_sale_invoice_trigger_postpaid
+#: model:ir.model.fields,help:sale.field_sale_order_sale_invoiced_amount
+#: model:ir.model.fields,help:sale.field_sale_order_sale_manager_id
+#: model:ir.model.fields,help:sale.field_sale_order_sale_send_method
+#: model:ir.model.fields,help:sale.field_sale_order_sale_threshold
+#: model:ir.model.fields,help:sale.field_sale_order_seller_id
+#: model:ir.model.fields,help:sale.field_sale_order_show_invoice_button
+#: model:ir.model.fields,help:sale.field_sale_order_state
+#: model:ir.model.fields,help:sale.field_sale_order_subject_deb
+#: model:ir.model.fields,help:sale.field_sale_order_tax_line_ids
+#: model:ir.model.fields,help:sale.field_sale_order_taxes
+#: model:ir.model.fields,help:sale.field_sale_order_total_amount
+#: model:ir.model.fields,help:sale.field_sale_order_tva_number
+#: model:ir.model.fields,help:sale.field_sale_order_type
+#: model:ir.model.fields,help:sale.field_sale_order_waiting_delay
+#: model:ir.model.fields,help:sale.field_sale_order_warehouse_id
+#: model:ir.model.fields,help:sale.field_sale_order_week_number
+#: model:ir.model.fields,help:sale.field_sale_order_wkf_id
+#: model:ir.model.fields,help:sale.field_sale_order_wkf_instance_ids
+#: model:ir.model.fields,help:sale.field_sale_order_wkf_progress_instance
+#: model:ir.model.fields,help:sale.field_sale_order_work_note
+#: model:ir.model.fields,help:sale.field_sale_order_write_date
+#: model:ir.model.fields,help:sale.field_sale_order_write_uid
+#: model:ir.model.fields,help:sale.field_sale_order_year
+#: model:ir.model.fields,help:sale.field_stock_move_cinfo_id
+#: model:ir.model.fields,help:sale.field_stock_move_sale_line_id
+#: model:ir.model.fields,help:sale.field_stock_picking_sale_id
+msgid "Not defined"
+msgstr "Non défini"
+
+#. module: sale
+#: model:ir.ui.view,arch_db:sale.view_search_sale_order_line
+msgid "Not delivered"
+msgstr "Non livré"
+
+#. module: sale
+#: model:ir.ui.view,arch_db:sale.view_form_product
+#: model:ir.ui.view,arch_db:sale.view_form_product_customerinfo
+msgid "Note"
+msgstr "Note"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_change_note_delivery_note
+#: model:ir.model.fields,field_description:sale.field_sale_order_delivery_note
+msgid "Note on delivery note"
+msgstr "Note sur le bon de livraison"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_res_partner_note_delivery_order
+#: model:ir.ui.view,arch_db:sale.view_form_partner_sale
+msgid "Note on delivery order"
+msgstr "Note sur le bon de livraison"
+
+#. module: sale
+#: model:ir.ui.view,arch_db:sale.view_form_change_line_information
+#: model:ir.ui.view,arch_db:sale.view_form_change_note
+#: model:ir.ui.view,arch_db:sale.view_form_sale_order
+msgid "Note on invoice"
+msgstr "Note sur facture"
+
+#. module: sale
+#: model:ir.ui.view,arch_db:sale.view_form_partner_sale
+msgid "Note on sale order header"
+msgstr "Note sur l'entête de commande de vente"
+
+#. module: sale
+#: model:ir.ui.view,arch_db:sale.view_form_change_line_information
+#: model:ir.ui.view,arch_db:sale.view_form_change_note
+#: model:ir.ui.view,arch_db:sale.view_form_sale_order
+msgid "Note on the delivery note"
+msgstr "Note sur le bon de livraison"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_res_partner_note_header
+msgid "Note on the sale order header"
+msgstr "Note sur l'entête de commande de vente"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_change_note_customer_order_note
+#: model:ir.model.fields,field_description:sale.field_sale_order_customer_order_note
+#: model:ir.ui.view,arch_db:sale.view_form_change_note
+#: model:ir.ui.view,arch_db:sale.view_form_sale_order
+msgid "Note printed on customer order"
+msgstr "Note imprimée sur commande client"
+
+#. module: sale
+#: model:ir.ui.view,arch_db:sale.view_form_change_note
+msgid "Note printed on planned"
+msgstr "Note imprimée sur planning"
+
+#. module: sale
+#: model:ir.ui.view,arch_db:sale.view_form_sale_order
+msgid "Note printed on planning"
+msgstr "Note imprimée sur planning"
+
+#. module: sale
+#: model:ir.ui.view,arch_db:sale.view_form_product
+#: model:ir.ui.view,arch_db:sale.view_form_sale_order
+#: model:ir.ui.view,arch_db:sale.view_form_sale_order_line
+msgid "Note printed on the delivery note"
+msgstr "Note imprimée sur le bon de livraison"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_change_line_information_delivery_printed_note
+#: model:ir.model.fields,field_description:sale.field_sale_order_line_delivery_printed_note
+msgid "Note printed on the delivery note line"
+msgstr "Note imprimée sur la ligne du BL"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_change_line_information_invoice_printed_note
+#: model:ir.model.fields,field_description:sale.field_sale_order_line_invoice_printed_note
+#: model:ir.ui.view,arch_db:sale.view_form_sale_order
+#: model:ir.ui.view,arch_db:sale.view_form_sale_order_line
+msgid "Note printed on the invoice line"
+msgstr "Note imprimée sur la ligne de facture"
+
+#. module: sale
+#: model:ir.ui.view,arch_db:sale.view_form_sale_order
+#: model:ir.ui.view,arch_db:sale.view_form_sale_order_line
+msgid "Note printed on the manufacturing note"
+msgstr "Note imprimée sur ordre de fabrication"
+
+#. module: sale
+#: model:ir.ui.view,arch_db:sale.view_form_product
+#: model:ir.ui.view,arch_db:sale.view_form_product_customerinfo
+msgid "Note printed on the sale order"
+msgstr "Note imprimée dans la commande de vente"
+
+#. module: sale
+#: model:ir.ui.view,arch_db:sale.view_form_change_line_information
+#: model:ir.ui.view,arch_db:sale.view_form_change_note
+#: model:ir.ui.view,arch_db:sale.view_form_sale_order
+#: model:ir.ui.view,arch_db:sale.view_form_sale_order_line
+msgid "Notes"
+msgstr "Notes"
+
+#. module: sale
+#: code:addons/sale/sale.py:150
+#: code:addons/sale/sale.py:1475
+#, python-format
+msgid "November"
+msgstr "Novembre"
+
+#. module: sale
+#: model:ir.ui.view,arch_db:sale.view_form_replacement_date
+msgid "OK"
+msgstr "OK"
+
+#. module: sale
+#: code:addons/sale/product.py:680
+#, python-format
+msgid "Obsolete"
+msgstr "Obsolète"
+
+#. module: sale
+#: code:addons/sale/sale.py:149
+#: code:addons/sale/sale.py:1474
+#, python-format
+msgid "October"
+msgstr "Octobre"
+
+#. module: sale
+#: code:addons/sale/res_partner.py:65
+#: code:addons/sale/sale.py:1328
+#, python-format
+msgid "On demand"
+msgstr "A la demande"
+
+#. module: sale
+#: code:addons/sale/res_partner.py:66
+#: code:addons/sale/sale.py:1329
+#: code:addons/sale/sale.py:1344
+#, python-format
+msgid "On the order"
+msgstr "A la commande"
+
+#. module: sale
+#: code:addons/sale/sale.py:1317
+#, python-format
+msgid "Open"
+msgstr "Ouverte"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_sale_order_open_order_id
+msgid "Open order"
+msgstr "Commande ouverte"
+
+#. module: sale
+#: model:ir.ui.view,arch_db:sale.view_search_sale_order_line
+msgid "Orange"
+msgstr "Orange"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_sale_order_order_address_id
+msgid "Order address"
+msgstr "Adresse de commande"
+
+#. module: sale
+#: model:ir.ui.view,arch_db:sale.view_form_sale_order
+msgid "Order date"
+msgstr "Date de commande"
+
+#. module: sale
+#: model:ir.ui.view,arch_db:sale.view_form_change_line_information
+#: model:ir.ui.view,arch_db:sale.view_form_sale_order
+#: model:ir.ui.view,arch_db:sale.view_form_sale_order_line
+msgid "Order line"
+msgstr "Ligne de commande"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_sale_order_name
+#: model:ir.model.fields,field_description:sale.field_sale_order_ref_order
+msgid "Order reference"
+msgstr "Référence de la commande"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_sale_order_receipt_demand
+msgid "Order's acknowledgement of receipt"
+msgstr "Accusé de réception de commande"
+
+#. module: sale
+#: code:addons/sale/res_partner.py:73
+#: code:addons/sale/sale.py:1336
+#, python-format
+msgid "Ordered quantities"
+msgstr "Quantités commandées"
+
+#. module: sale
+#: model:ir.ui.view,arch_db:sale.view_form_sale_order
+msgid "Ordered quantity"
+msgstr "Quantité commandée"
+
+#. module: sale
+#: model:ir.ui.view,arch_db:sale.view_form_partner_sale
+msgid "Orders"
+msgstr "Commandeurs"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_procurement_order_sol_id
+msgid "Origin SoL"
+msgstr "Origine ligne de vente"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_res_partner_num_with_customer
+msgid "Our number with the customer"
+msgstr "Notre numéro chez le client"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_product_customerinfo_packaging_id
+#: model:ir.model.fields,field_description:sale.field_sale_order_line_packaging_id
+msgid "Packaging"
+msgstr "Packaging"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_sale_order_check_paid
+msgid "Paid"
+msgstr "Payé"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_sale_order_check_paid_invoice
+msgid "Paid invoice"
+msgstr "Facture payée"
+
+#. module: sale
+#: code:addons/sale/res_partner.py:27
+#, python-format
+msgid "Paid per"
+msgstr "Payé par"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_sale_order_check_paid_sale
+msgid "Paid sale"
+msgstr "Vente payée"
+
+#. module: sale
+#: model:ir.ui.view,arch_db:sale.view_form_partner_sale
+msgid "Paiement process management"
+msgstr "Gestion des processus de paiement"
+
+#. module: sale
+#: model:ir.actions.act_window,name:sale.action_parameter_dimension_type
+msgid "Parameter Dimension Type"
+msgstr "Type paramètre dimension"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_sale_order_line_parameter_ids
+#: model:ir.ui.view,arch_db:sale.view_form_product
+#: model:ir.ui.view,arch_db:sale.view_form_sale_order
+#: model:ir.ui.view,arch_db:sale.view_form_sale_order_line
+msgid "Parameters"
+msgstr "Paramètres"
+
+#. module: sale
+#: model:ir.model,name:sale.model_parameter_dimension
+msgid "Paremater Dimension"
+msgstr "Paramètre"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_res_partner_partial_sale_delivery
+#: model:ir.model.fields,field_description:sale.field_sale_order_partial_delivery
+msgid "Partial delivery allowed"
+msgstr "Livraison incomplète autorisée"
+
+#. module: sale
+#: model:ir.model,name:sale.model_stock_partial_picking
+msgid "Partial picking"
+msgstr "Picking partiel"
+
+#. module: sale
+#: model:ir.model,name:sale.model_stock_partial_picking_line
+msgid "Partial picking line"
+msgstr "Ligne de picking partiel"
+
+#. module: sale
+#: model:ir.model,name:sale.model_res_partner
+#: model:ir.model.fields,field_description:sale.field_change_accounting_information_partner_id
+#: model:ir.model.fields,field_description:sale.field_change_delivery_address_partner_id
+#: model:ir.model.fields,field_description:sale.field_product_customerinfo_partner_id
+#: model:ir.model.fields,field_description:sale.field_res_partner_type_partner_id
+#: model:ir.model.fields,field_description:sale.field_res_partner_type_partner_type_id
+#: model:ir.model.fields,field_description:sale.field_sale_order_line_sale_partner_id
+msgid "Partner"
+msgstr "Partenaire"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_pricelist_customerinfo_cinfo_id
+msgid "Partner information"
+msgstr "Informations partenaire"
+
+#. module: sale
+#: model:ir.actions.act_window,name:sale.act_partner_stat_sale_family
+#: model:ir.ui.menu,name:sale.menu_open_sale_stat_family
+msgid "Partner sale stat family"
+msgstr "Famille de stat de vente des partenaires"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_res_partner_type_ids
+msgid "Partners types"
+msgstr "Types de partenaires"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_res_partner_type_inv_ids
+msgid "Partners types inverse"
+msgstr "Partners types inverse"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_change_accounting_information_paid_customer_id
+#: model:ir.model.fields,field_description:sale.field_sale_order_paid_customer_id
+msgid "Payer customer name"
+msgstr "Nom client payeur"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_change_accounting_information_payment_id
+#: model:ir.model.fields,field_description:sale.field_sale_order_payment_id
+#: model:ir.ui.view,arch_db:sale.view_form_sale_order
+msgid "Payment"
+msgstr "Paiement"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_sale_order_invoice_analysis_payment_amount
+msgid "Payment amount"
+msgstr "Montant paiement"
+
+#. module: sale
+#: model:ir.ui.view,arch_db:sale.view_form_change_accounting_info
+msgid "Payment information"
+msgstr "Informations de paiement"
+
+#. module: sale
+#: model:ir.actions.act_window,name:sale.action_sale_payment_method
+#: model:ir.model.fields,field_description:sale.field_res_partner_sale_payment_method_id
+#: model:ir.ui.menu,name:sale.menu_sale_payment_method
+msgid "Payment method"
+msgstr "Mode de paiement"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_change_accounting_information_payment_term_id
+#: model:ir.model.fields,field_description:sale.field_sale_order_payment_term_id
+msgid "Payment term"
+msgstr "Condition de paiement"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_sale_order_payment_type
+msgid "Payment type"
+msgstr "Type de paiement"
+
+#. module: sale
+#: model:workflow.display.state,label:sale.display_payment_validated
+msgid "Payment validated"
+msgstr "Paiement validé"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_sale_order_payment_ids
+msgid "Payments"
+msgstr "Règlements"
+
+#. module: sale
+#: model:ir.ui.view,arch_db:sale.view_kanban_sale_order_invoice_analysis
+msgid "Payments amount"
+msgstr "Montant des paiements"
+
+#. module: sale
+#: model:ir.ui.view,arch_db:sale.view_form_product
+#: model:ir.ui.view,arch_db:sale.view_form_product_customerinfo
+msgid "Period"
+msgstr "Période"
+
+#. module: sale
+#: model:ir.actions.act_window,name:sale.sale_picking_action
+msgid "Picking"
+msgstr "Bon de réception"
+
+#. module: sale
+#: model:ir.ui.view,arch_db:sale.view_form_sale_order
+msgid "Pickings"
+msgstr "Pickings"
+
+#. module: sale
+#: model:workflow.display.state,label:sale.display_plan_waiting_sale
+msgid "Plan waiting"
+msgstr "Attente planification"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_called_sale_order_line_price
+#: model:ir.model.fields,field_description:sale.field_product_customerinfo_first_price
+#: model:ir.ui.menu,name:sale.menu_sale_price
+#: model:ir.ui.view,arch_db:sale.view_form_product
+#: model:ir.ui.view,arch_db:sale.view_form_product_customerinfo
+msgid "Price"
+msgstr "Prix"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_change_line_information_price_unit
+#: model:ir.model.fields,field_description:sale.field_sale_order_line_price_unit
+msgid "Price unit"
+msgstr "Prix unitaire"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_account_invoice_line_price_unit_without_discount
+#: model:ir.model.fields,field_description:sale.field_sale_order_line_price_unit_without_discount
+msgid "Price unit without discount"
+msgstr "Prix unitaire sans remise"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_sale_order_line_uoi_id
+msgid "Price unity"
+msgstr "Unité de prix"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_product_customerinfo_pricelist_ids
+msgid "Pricelist"
+msgstr "Liste de prix"
+
+#. module: sale
+#: model:ir.model,name:sale.model_pricelist_customerinfo
+msgid "Pricelist customerinfo"
+msgstr "Liste de prix informations client"
+
+#. module: sale
+#: model:ir.ui.view,arch_db:sale.view_form_product
+#: model:ir.ui.view,arch_db:sale.view_form_product_customerinfo
+msgid "Prices list"
+msgstr "Liste de prix"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_change_note_work_note
+#: model:ir.model.fields,field_description:sale.field_sale_order_line_work_note
+#: model:ir.model.fields,field_description:sale.field_sale_order_work_note
+msgid "Printed work note"
+msgstr "Note imprimée sur le bon de travail"
+
+#. module: sale
+#: code:addons/sale/sale.py:1355
+#: code:addons/sale/wizard/change_sale_wizard.py:217
+#, python-format
+msgid "Printer"
+msgstr "Printer"
+
+#. module: sale
+#: model:ir.ui.view,arch_db:sale.view_form_sale_order
+#: model:ir.ui.view,arch_db:sale.view_form_sale_order_line
+msgid "Procurement"
+msgstr "Approvisionnement"
+
+#. module: sale
+#: model:ir.model,name:sale.model_procurement_order
+msgid "Procurement order"
+msgstr "Ordre d'approvisionnement"
+
+#. module: sale
+#: model:ir.model,name:sale.model_product_product
+#: model:ir.model.fields,field_description:sale.field_called_sale_order_line_product_id
+#: model:ir.model.fields,field_description:sale.field_create_quick_sale_product_id
+#: model:ir.model.fields,field_description:sale.field_product_customerinfo_product_id
+#: model:ir.model.fields,field_description:sale.field_sale_anticipated_invoice_product_id
+#: model:ir.model.fields,field_description:sale.field_sale_order_line_product_id
+#: model:ir.ui.menu,name:sale.menu_sale_configuration_product
+#: model:ir.ui.view,arch_db:sale.view_form_sale_order
+#: model:ir.ui.view,arch_db:sale.view_form_sale_order_line
+#: model:ir.ui.view,arch_db:sale.view_search_product_customerinfo
+msgid "Product"
+msgstr "Produit"
+
+#. module: sale
+#: model:ir.ui.menu,name:sale.menu_sale_product_pivot_analysis
+msgid "Product analysis"
+msgstr "Analyse de produit"
+
+#. module: sale
+#: model:ir.ui.menu,name:sale.menu_product_category_structure_sale
+msgid "Product category"
+msgstr "Product category"
+
+#. module: sale
+#: model:ir.model,name:sale.model_product_customerinfo
+msgid "Product customerinfo"
+msgstr "Produit informations client"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_sale_order_analysis_family_id
+msgid "Product family"
+msgstr "Famille de produit"
+
+#. module: sale
+#: model:ir.ui.view,arch_db:sale.view_kanban_sale_order_analysis
+msgid "Product family :"
+msgstr "Famille de produit :"
+
+#. module: sale
+#: model:ir.ui.view,arch_db:sale.view_form_product
+#: model:ir.ui.view,arch_db:sale.view_form_product_customerinfo
+msgid "Product information"
+msgstr "Informations du produit"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_change_line_information_order_printed_note
+#: model:ir.model.fields,field_description:sale.field_sale_order_line_order_printed_note
+msgid "Product note printed on order"
+msgstr "Note du produit imprimée sur la commande"
+
+#. module: sale
+#: model:ir.ui.view,arch_db:sale.view_form_change_line_information
+#: model:ir.ui.view,arch_db:sale.view_form_sale_order
+#: model:ir.ui.view,arch_db:sale.view_form_sale_order_line
+msgid "Product note printed on the order"
+msgstr "Note du produit imprimée sur commande"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_product_customerinfo_property_ids
+#: model:ir.model.fields,field_description:sale.field_sale_order_line_property_ids
+#: model:ir.model.fields,field_description:sale.field_sale_order_line_purchase_property_ids
+msgid "Properties"
+msgstr "Propriétés"
+
+#. module: sale
+#: code:addons/sale/sale.py:1315
+#, python-format
+msgid "Prototype"
+msgstr "Prototype"
+
+#. module: sale
+#: model:ir.model,name:sale.model_purchase_property
+#: model:ir.ui.menu,name:sale.menu_purchase_property_sale
+msgid "Purchase property"
+msgstr "Propriété d'achat"
+
+#. module: sale
+#: model:workflow.transition,button_label:sale.st20
+msgid "Put in draft"
+msgstr "Mettre en brouillon"
+
+#. module: sale
+#: model:ir.ui.view,arch_db:sale.view_tree_sale_order_line
+msgid "Qty"
+msgstr "Qté"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_called_sale_order_line_quantity
+#: model:ir.model.fields,field_description:sale.field_create_quick_sale_quantity
+#: model:ir.model.fields,field_description:sale.field_pricelist_customerinfo_min_qty
+#: model:ir.model.fields,field_description:sale.field_product_customerinfo_first_quantity
+msgid "Quantity"
+msgstr "Quantité"
+
+#. module: sale
+#: model:ir.ui.view,arch_db:sale.view_form_sale_order
+msgid "Quantity (UOI)"
+msgstr "Quantité (UDF)"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_sale_order_line_uom_qty
+msgid "Quantity in measure unit"
+msgstr "Quantité en unité de mesure"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_sale_order_line_uoi_qty
+msgid "Quantity in price unity"
+msgstr "Quantité en unité de prix"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_sale_order_line_sec_uom_qty
+msgid "Quantity in sale unity"
+msgstr "Quantité en unité de vente"
+
+#. module: sale
+#: model:mail.template,subject:sale.email_template_edi_sale_quotation
+msgid "Quotation ${object.name}"
+msgstr "Quotation ${object.name}"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_sale_order_quotation_date
+msgid "Quotation date"
+msgstr "Date du devis"
+
+#. module: sale
+#: model:workflow.display.state,label:sale.display_quotation_send_sale
+msgid "Quotation send"
+msgstr "Devis envoyé"
+
+#. module: sale
+#: model:workflow.display.state,label:sale.display_rd_send_purchase
+msgid "RD send"
+msgstr "AR envoyé"
+
+#. module: sale
+#: model:ir.ui.view,arch_db:sale.view_search_sale_order_line
+msgid "Red"
+msgstr "Rouge"
+
+#. module: sale
+#: model:ir.ui.view,arch_db:sale.view_form_sale_order
+msgid "References"
+msgstr "Références"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_change_delivery_address_delivered_region_id
+#: model:ir.model.fields,field_description:sale.field_sale_order_delivered_region_id
+msgid "Region"
+msgstr "Région"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_product_product_sale_remainder_percentage
+msgid "Remainder percentage"
+msgstr "Pourcentage de tolérance à livraison"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_sale_order_remaining_advanced_amount
+msgid "Remaining advanced invoice amount"
+msgstr "Montant restant de facture anticipée"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_sale_order_line_remaining_qty
+msgid "Remaining quantity"
+msgstr "Quantité restante"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_sale_order_line_remaining_called_qty
+msgid "Remaining quantity (opened order)"
+msgstr "Quantité restante (commande ouverte)"
+
+#. module: sale
+#: code:addons/sale/sale.py:1319
+#, python-format
+msgid "Renting"
+msgstr "Location"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_sale_order_renting_end_date
+msgid "Renting end date"
+msgstr "Date fin location"
+
+#. module: sale
+#: code:addons/sale/sale.py:2553
+#, python-format
+msgid "Renting end for %s / %s"
+msgstr "Fin de location pour %s / %s"
+
+#. module: sale
+#: model:ir.model,name:sale.model_replacement_date
+msgid "Replacement date"
+msgstr "Remplacement de la date"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_change_line_information_requested_date
+#: model:ir.model.fields,field_description:sale.field_sale_order_line_requested_date
+#: model:ir.model.fields,field_description:sale.field_sale_order_requested_date
+msgid "Requested date"
+msgstr "Date demandée"
+
+#. module: sale
+#: model:workflow.transition,button_label:sale.st21
+#: model:workflow.transition,button_label:sale.st22
+#: model:workflow.transition,button_label:sale.st23
+#: model:workflow.transition,button_label:sale.st24
+#: model:workflow.transition,button_label:sale.st75
+#: model:workflow.transition,button_label:sale.st80
+#: model:workflow.transition,button_label:sale.st81
+msgid "Reset the sale"
+msgstr "Réinitialiser la vente"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_sale_order_residual_amount
+msgid "Residual"
+msgstr "Solde dû"
+
+#. module: sale
+#: code:addons/sale/calendar_event.py:22
+#: model:ir.model.fields,field_description:sale.field_account_sale_tax_sale_id
+#: model:ir.model.fields,field_description:sale.field_account_voucher_sale_id
+#: model:ir.model.fields,field_description:sale.field_calendar_event_sale_id
+#: model:ir.model.fields,field_description:sale.field_change_account_system_sale_id
+#: model:ir.model.fields,field_description:sale.field_change_accounting_information_sale_id
+#: model:ir.model.fields,field_description:sale.field_change_delivery_address_sale_id
+#: model:ir.model.fields,field_description:sale.field_change_note_sale_id
+#: model:ir.model.fields,field_description:sale.field_mail_message_sale_id
+#: model:ir.model.fields,field_description:sale.field_partner_stat_family_is_sale
+#: model:ir.model.fields,field_description:sale.field_sale_anticipated_invoice_sale_id
+#: model:ir.model.fields,field_description:sale.field_sale_order_line_fixed_discount_sale_line_id
+#: model:ir.model.fields,field_description:sale.field_sale_order_line_variable_discount_sale_line_id
+#: model:ir.model.fields,field_description:sale.field_stock_picking_sale_id
+#: model:ir.ui.menu,name:sale.menu_sale_main
+#: model:ir.ui.view,arch_db:sale.view_form_partner_sale
+#: model:ir.ui.view,arch_db:sale.view_form_product
+#, python-format
+msgid "Sale"
+msgstr "Vente"
+
+#. module: sale
+#: model:mail.template,subject:sale.email_template_edi_sale_ar
+#: model:mail.template,subject:sale.email_template_edi_sale_confirm
+msgid "Sale ${object.name}"
+msgstr "Vente ${object.name}"
+
+#. module: sale
+#: model:ir.model,name:sale.model_sale_family
+msgid "Sale Family"
+msgstr "Famille de vente"
+
+#. module: sale
+#: model:ir.model,name:sale.model_account_sale_tax
+msgid "Sale Tax"
+msgstr "Taxe de vente"
+
+#. module: sale
+#: model:ir.ui.menu,name:sale.menu_sale_order_analysis
+#: model:ir.ui.view,arch_db:sale.view_form_sale_order_analysis
+#: model:ir.ui.view,arch_db:sale.view_form_sale_order_invoice_analysis
+msgid "Sale analysis"
+msgstr "Analyse de vente"
+
+#. module: sale
+#: model:ir.model,name:sale.model_sale_order_analysis
+msgid "Sale analysis module "
+msgstr "Module d'analyse de vente "
+
+#. module: sale
+#: model:ir.model,name:sale.model_called_sale_order_line
+msgid "Sale called order lines"
+msgstr "Sale called order lines"
+
+#. module: sale
+#: model:res.groups,name:sale.group_menu_sale_config
+msgid "Sale configuration"
+msgstr "Configuration des ventes"
+
+#. module: sale
+#: model:ir.ui.view,arch_db:sale.view_graph_sale_order_customer
+#: model:ir.ui.view,arch_db:sale.view_sale_order_customer_pivot
+msgid "Sale customer Analysis"
+msgstr "Analyse des ventes client"
+
+#. module: sale
+#: model:ir.actions.act_window,name:sale.action_sale_family
+#: model:ir.model.fields,field_description:sale.field_product_product_sale_family_id
+#: model:ir.ui.menu,name:sale.menu_sale_family
+#: model:ir.ui.menu,name:sale.menu_sale_family_sale
+#: model:ir.ui.view,arch_db:sale.view_form_sale_family
+#: model:ir.ui.view,arch_db:sale.view_tree_sale_family
+msgid "Sale family"
+msgstr "Famille de vente"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_res_company_rml_sale_footer
+msgid "Sale footer"
+msgstr "Pied de page de rapport des ventes"
+
+#. module: sale
+#: model:ir.model,name:sale.model_sale_order_invoice_analysis
+msgid "Sale invoice analysis module "
+msgstr "Module d'analyse des factures de vente "
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_sale_order_sale_invoice_balance_invoiced_on
+msgid "Sale invoice balance invoiced on"
+msgstr "Balance sur"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_sale_order_sale_invoice_balance_trigger
+msgid "Sale invoice balance trigger"
+msgstr "Sale invoice balance trigger"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_sale_order_sale_invoice_trigger_manual
+msgid "Sale invoice trigger manual"
+msgstr "Sale invoice trigger manual"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_sale_order_sale_invoice_trigger_picking
+msgid "Sale invoice trigger picking"
+msgstr "Sale invoice trigger picking"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_sale_order_sale_invoice_trigger_postpaid
+msgid "Sale invoice trigger postpaid"
+msgstr "Sale invoice trigger postpaid"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_change_line_information_sale_line_id
+#: model:ir.model.fields,field_description:sale.field_sale_common_attribute_sale_line_id
+#: model:ir.model.fields,field_description:sale.field_stock_move_sale_line_id
+msgid "Sale line"
+msgstr "Ligne de vente"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_account_invoice_sale_manager_id
+#: model:ir.model.fields,field_description:sale.field_sale_order_sale_manager_id
+#: model:ir.ui.view,arch_db:sale.view_search_sale_order
+#: model:ir.ui.view,arch_db:sale.view_search_sale_order_line
+msgid "Sale manager"
+msgstr "ADV"
+
+#. module: sale
+#: model:ir.model,name:sale.model_sale_order
+msgid "Sale module"
+msgstr "Module de vente"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_product_customerinfo_sale_note
+#: model:ir.model.fields,field_description:sale.field_product_product_printed_sale_note
+msgid "Sale note"
+msgstr "Note de vente"
+
+#. module: sale
+#: model:ir.actions.act_window,name:sale.action_sale_order
+#: model:ir.actions.act_window,name:sale.action_see_all_sale_order
+#: model:ir.actions.act_window,name:sale.sale_order_see_form
+#: model:ir.model.fields,field_description:sale.field_called_sale_order_line_called_order_id
+#: model:ir.model.fields,field_description:sale.field_generate_called_sale_order_sale_id
+#: model:ir.model.fields,field_description:sale.field_sale_order_line_sale_order_id
+#: model:ir.ui.menu,name:sale.menu_sale_order
+#: model:ir.ui.view,arch_db:sale.view_form_sale_order
+#: model:ir.ui.view,arch_db:sale.view_form_sale_order_analysis
+#: model:ir.ui.view,arch_db:sale.view_tree_sale_order
+msgid "Sale order"
+msgstr "Commande de vente"
+
+#. module: sale
+#: model:ir.actions.act_window,name:sale.action_sale_order_analysis
+#: model:ir.ui.view,arch_db:sale.view_tree_sale_order_analysis
+msgid "Sale order analysis"
+msgstr "Analyse de la commande de vente"
+
+#. module: sale
+#: model:ir.actions.act_window,name:sale.action_sale_pivot_analysis_customer
+msgid "Sale order customer"
+msgstr "Commande de vente client"
+
+#. module: sale
+#: model:ir.actions.act_window,name:sale.action_sale_order_line
+#: model:ir.actions.act_window,name:sale.sale_order_line_see_form
+#: model:ir.model,name:sale.model_sale_order_line
+#: model:ir.model.fields,field_description:sale.field_account_invoice_line_sale_order_line_id
+#: model:ir.model.fields,field_description:sale.field_called_sale_order_line_sale_order_line_id
+#: model:ir.model.fields,field_description:sale.field_generate_called_sale_order_called_order_line_ids
+#: model:ir.model.fields,field_description:sale.field_sale_order_order_line_ids
+#: model:ir.ui.menu,name:sale.menu_sale_order_line
+#: model:ir.ui.view,arch_db:sale.view_calendar_sale_order_line
+#: model:ir.ui.view,arch_db:sale.view_form_sale_order_line
+#: model:ir.ui.view,arch_db:sale.view_tree_sale_order_line
+msgid "Sale order line"
+msgstr "Ligne de commande de vente"
+
+#. module: sale
+#: model:ir.actions.act_window,name:sale.act_see_order_line_for_product
+#: model:ir.ui.view,arch_db:sale.view_form_generate_sale_called_order
+#: model:ir.ui.view,arch_db:sale.view_form_product
+#: model:ir.ui.view,arch_db:sale.view_form_sale_order
+msgid "Sale order lines"
+msgstr "Lignes de commande de vente"
+
+#. module: sale
+#: model:ir.actions.act_window,name:sale.action_sale_pivot_analysis_product
+msgid "Sale order product"
+msgstr "Produit de la commande de vente"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_product_product_sale_price
+msgid "Sale price"
+msgstr "Prix de vente"
+
+#. module: sale
+#: model:ir.ui.view,arch_db:sale.view_graph_sale_order_product
+#: model:ir.ui.view,arch_db:sale.view_sale_order_product_pivot
+msgid "Sale product Analysis"
+msgstr "Analyse du produit de la vente"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_product_product_sale_responsible_id
+#: model:res.groups,name:sale.group_sale_responsible
+msgid "Sale responsible"
+msgstr "Responsable de vente"
+
+#. module: sale
+#: model:ir.ui.view,arch_db:sale.openprod_view_partner_customer_search
+msgid "Sale stat family"
+msgstr "Famille de stat de vente"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_create_quick_sale_sec_uom_id
+#: model:ir.model.fields,field_description:sale.field_sale_order_line_sec_uom_id
+msgid "Sale unity"
+msgstr "Unité de vente"
+
+#. module: sale
+#: model:res.groups,name:sale.group_menu_sale_user
+msgid "Sale use"
+msgstr "Utilisateur des ventes"
+
+#. module: sale
+#: model:ir.model,name:sale.model_sale_warning_done
+msgid "Sale warning done"
+msgstr "Attention vente terminée"
+
+#. module: sale
+#: model:ir.ui.menu,name:sale.menu_sales
+#: model:ir.ui.view,arch_db:sale.view_form_partner_sale
+msgid "Sales"
+msgstr "Ventes"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_res_partner_sales_manager_id
+#: model:ir.ui.view,arch_db:sale.openprod_view_partner_customer_search
+#: model:ir.ui.view,arch_db:sale.view_search_product
+msgid "Sales manager"
+msgstr "ADV"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_sale_order_analysis_salesperson_id
+msgid "Salesperson"
+msgstr "Vendeur"
+
+#. module: sale
+#: model:ir.ui.view,arch_db:sale.view_kanban_sale_order_analysis
+msgid "Salesperson :"
+msgstr "Commercial :"
+
+#. module: sale
+#: code:addons/sale/sale.py:164
+#: code:addons/sale/sale.py:1489
+#, python-format
+msgid "Saturday"
+msgstr "Samedi"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_sale_order_line_scheduled_date
+msgid "Scheduled date"
+msgstr "Date planifiée"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_product_customerinfo_sec_uom_category_id
+msgid "Sec UoM category"
+msgstr "Catégorie de la seconde UdM"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_sale_order_line_sec_uom_category_id
+msgid "Second uom category"
+msgstr "Catégorie de la seconde udm"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_account_invoice_line_section_id
+#: model:ir.model.fields,field_description:sale.field_sale_order_line_section_id_6171
+msgid "Section"
+msgstr "Section"
+
+#. module: sale
+#: model:ir.model,name:sale.model_sale_order_line_section
+msgid "Section for sale order lines"
+msgstr "Section pour les lignes de commandes de vente"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_account_invoice_seller_id
+#: model:ir.model.fields,field_description:sale.field_res_partner_seller_id
+#: model:ir.model.fields,field_description:sale.field_sale_order_line_sale_seller_id
+#: model:ir.model.fields,field_description:sale.field_sale_order_seller_id
+#: model:ir.ui.view,arch_db:sale.openprod_view_partner_customer_search
+#: model:ir.ui.view,arch_db:sale.view_search_sale_order
+#: model:ir.ui.view,arch_db:sale.view_search_sale_order_analysis
+#: model:ir.ui.view,arch_db:sale.view_search_sale_order_line
+msgid "Seller"
+msgstr "Vendeur"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_change_accounting_information_sale_send_method
+#: model:ir.model.fields,field_description:sale.field_sale_order_sale_send_method
+msgid "Send method"
+msgstr "Méthode d'envoi"
+
+#. module: sale
+#: model:workflow.transition,button_label:sale.st3
+#: model:workflow.transition,button_label:sale.st61
+msgid "Sent RD"
+msgstr "Envoyer AR"
+
+#. module: sale
+#: model:workflow.transition,button_label:sale.st2
+#: model:workflow.transition,button_label:sale.st59
+#: model:workflow.transition,button_label:sale.st63
+#: model:workflow.transition,button_label:sale.st7
+msgid "Sent quotation"
+msgstr "Envoyer le devis"
+
+#. module: sale
+#: code:addons/sale/sale.py:128
+#: code:addons/sale/sale.py:1454
+#, python-format
+msgid "Sent the confirmation"
+msgstr "Envoyer la confirmation"
+
+#. module: sale
+#: code:addons/sale/sale.py:148
+#: code:addons/sale/sale.py:1473
+#, python-format
+msgid "September"
+msgstr "Septembre"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_account_sale_tax_sequence
+#: model:ir.model.fields,field_description:sale.field_product_customerinfo_sequence
+#: model:ir.model.fields,field_description:sale.field_res_partner_type_sequence
+#: model:ir.model.fields,field_description:sale.field_sale_common_attribute_sequence
+#: model:ir.model.fields,field_description:sale.field_sale_order_line_fixed_discount_sequence
+#: model:ir.model.fields,field_description:sale.field_sale_order_line_section_sequence
+#: model:ir.model.fields,field_description:sale.field_sale_order_line_sequence
+#: model:ir.model.fields,field_description:sale.field_sale_order_line_variable_discount_sequence
+msgid "Sequence"
+msgstr "Séquence"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_sale_order_max_sequence
+msgid "Sequence max"
+msgstr "Sequence max"
+
+#. module: sale
+#: code:addons/sale/sale.py:1316
+#, python-format
+msgid "Series"
+msgstr "Series"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_sale_order_show_invoice_button
+msgid "Show invoice button"
+msgstr "Afficher le bouton de facture"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_parameter_dimension_sale_order_line_id
+msgid "SoL"
+msgstr "SoL"
+
+#. module: sale
+#: model:ir.ui.view,arch_db:sale.view_form_sale_order
+msgid "Sold by"
+msgstr "Vendu par"
+
+#. module: sale
+#: sql_constraint:res.partner:0
+msgid "Some required fields are not filled, please check the form view of the partner:\n"
+"                 - if the partner is delivered, you must fill the incoterm and the fiscal position,\n"
+"                 - if the partner is invoiced, you must fill the invoicing method,\n"
+"                 - and if the partner can pay, you must fill the payment term and the payment method.\n"
+"          "
+msgstr "Certains champs requis ne sont pas renseignés, merci de vérifier que les conditions suivantes soient remplies:\n"
+"                 - si le client est livré, l'incoterm et le régime fiscal doivent être renseignés,\n"
+"                 - si le client est facturé, la méthode de facturation doit être renseignée,\n"
+"                 - si le client est payeur, la condition et la méthode de règlement doivent être renseignés.\n"
+"          "
+
+#. module: sale
+#: model:ir.ui.menu,name:sale.menu_sale_price_standard
+msgid "Standard price"
+msgstr "Tarif standard"
+
+#. module: sale
+#: model:ir.model,name:sale.model_partner_stat_family
+msgid "Stat family"
+msgstr "Famille de stat"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_product_customerinfo_state
+#: model:ir.model.fields,field_description:sale.field_sale_order_display_state
+#: model:ir.model.fields,field_description:sale.field_sale_order_line_sale_state
+#: model:ir.model.fields,field_description:sale.field_sale_order_state
+#: model:ir.ui.view,arch_db:sale.view_search_sale_order
+#: model:ir.ui.view,arch_db:sale.view_search_sale_order_line
+msgid "State"
+msgstr "État"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_res_partner_stat_family_id
+msgid "Statistics family"
+msgstr "Famille statistique"
+
+#. module: sale
+#: model:ir.model,name:sale.model_stock_move
+msgid "Stock Move"
+msgstr "Mouvements"
+
+#. module: sale
+#: model:ir.actions.act_window,name:sale.sale_stock_move_action
+#: model:ir.model.fields,field_description:sale.field_sale_order_line_stock_move_ids
+#: model:ir.ui.view,arch_db:sale.view_form_sale_order
+#: model:ir.ui.view,arch_db:sale.view_form_sale_order_line
+msgid "Stock moves"
+msgstr "Mouvements de stock"
+
+#. module: sale
+#: model:ir.model,name:sale.model_stock_picking
+msgid "Stock picking"
+msgstr "Stock Picking"
+
+#. module: sale
+#: model:ir.ui.view,arch_db:sale.view_form_sale_order
+#: model:ir.ui.view,arch_db:sale.view_form_sale_order_line
+msgid "Stock's move"
+msgstr "Mouvements de stock"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_change_delivery_address_delivered_street
+#: model:ir.model.fields,field_description:sale.field_sale_order_delivered_street
+msgid "Street"
+msgstr "Rue"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_change_delivery_address_delivered_street2
+#: model:ir.model.fields,field_description:sale.field_sale_order_delivered_street2
+msgid "Street 2"
+msgstr "Rue 2"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_change_delivery_address_delivered_street3
+#: model:ir.model.fields,field_description:sale.field_sale_order_delivered_street3
+msgid "Street 3"
+msgstr "Rue 3"
+
+#. module: sale
+#: code:addons/sale/sale.py:165
+#: code:addons/sale/sale.py:1490
+#, python-format
+msgid "Sunday"
+msgstr "Dimanche"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_sale_order_line_supply_method
+msgid "Supply method"
+msgstr "Méthode de fourniture par défaut"
+
+#. module: sale
+#: code:addons/sale/sale.py:117
+#, python-format
+msgid "Supply on demand"
+msgstr "Approvisionnement sur demande"
+
+#. module: sale
+#: code:addons/sale/sale.py:118
+#, python-format
+msgid "Supply on demand with stock"
+msgstr "Appro. sur demande avec stock"
+
+#. module: sale
+#: code:addons/sale/sale.py:116
+#, python-format
+msgid "Supply on scheduler"
+msgstr "Appro. sur planificateur"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_sale_order_tva_number
+msgid "TVA number"
+msgstr "Numéro TVA "
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_sale_order_analysis_target
+#: model:ir.model.fields,field_description:sale.field_sale_order_invoice_analysis_target
+msgid "Target"
+msgstr "Objectif"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_account_sale_tax_tax_id
+msgid "Tax"
+msgstr "Taxe"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_account_sale_tax_account_id
+msgid "Tax Account"
+msgstr "Compte de taxe"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_account_sale_tax_name
+msgid "Tax Description"
+msgstr "Description de la taxe"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_sale_anticipated_invoice_taxes_ids
+#: model:ir.model.fields,field_description:sale.field_sale_order_line_taxes_ids
+#: model:ir.ui.view,arch_db:sale.view_form_sale_order
+msgid "Taxes"
+msgstr "Taxes"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_sale_anticipated_invoice_tax_amount
+msgid "Taxes amount"
+msgstr "Montant des taxes"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_sale_order_tax_line_ids
+msgid "Taxes update"
+msgstr "Mettre à jour les taxes"
+
+#. module: sale
+#: code:addons/sale/sale.py:2407
+#, python-format
+msgid "The Customer selected to pay the order is not in the paid list of the partner who orders"
+msgstr "Le client selectionné pour payer la commande n'est pas dans la liste de payeur du partenaire qui commande"
+
+#. module: sale
+#: code:addons/sale/sale.py:2388
+#: code:addons/sale/wizard/change_sale_wizard.py:341
+#, python-format
+msgid "The Customer selected to pay the order is not qualified to pay his state must be \"qualified\""
+msgstr "Le client selectionné pour payer la commande n'est pas qualifié pour payer, son statut doit être \"qualifié\""
+
+#. module: sale
+#: model:ir.model.fields,help:sale.field_sale_order_payment_ids
+msgid "The automatic payments linked to the sale"
+msgstr "Les paiements automatiques liés à la vente"
+
+#. module: sale
+#: code:addons/sale/sale.py:923
+#, python-format
+msgid "The confirmed departure date is in the past"
+msgstr "la date de départ confirmée est dans le passé"
+
+#. module: sale
+#: code:addons/sale/sale.py:931
+#, python-format
+msgid "The confirmed departure date is not a business day for your company"
+msgstr "La date de départ confirmée n'est pas un jour ouvré pour votre société"
+
+#. module: sale
+#: code:addons/sale/wizard/change_sale_wizard.py:355
+#, python-format
+msgid "The customer selected to pay the order is not in the paid list of the partner who orders"
+msgstr "Le client selectionné pour payer la commande n'est pas dans la liste de payeur du partenaire qui commande"
+
+#. module: sale
+#: model:ir.model.fields,help:sale.field_product_product_sale_divisor
+#: model:ir.model.fields,help:sale.field_product_product_sale_factor
+msgid "The factor and the divisor work together in order to obtain a coherent round. If we enter a factor 1 and a divisor 3 with a unity of measure in gram, we will obtain: 1 piece = 0.33g"
+msgstr "Le facteur et le diviseur fonctionnent ensemble afin de permettre l'obtention d'un arrondis cohérent. Si l'on rentre un facteur 1 et un diviseur 3 avec une unité de mesure en gramme, on obtiendra une équivalence : 1 pièce = 0,33g"
+
+#. module: sale
+#: code:addons/sale/sale.py:3496
+#, python-format
+msgid "The field %s is not filled in the customer form, you have to fill it if you want to make a sale whith this customer"
+msgstr "Le champ %s n'est pas rempli dans le formulaire client, vous devez le remplir si vous souhaitez faire une vente avec ce client"
+
+#. module: sale
+#: model:ir.model.fields,help:sale.field_account_voucher_sale_id
+msgid "The linked sale in case of automatic payment"
+msgstr "La vente liée en cas de paiement automatique"
+
+#. module: sale
+#: model:ir.model.fields,help:sale.field_product_product_sale_min_qty
+msgid "The minimal quantity to sale"
+msgstr "La quantité minimale pour vendre"
+
+#. module: sale
+#: model:ir.model.fields,help:sale.field_pricelist_customerinfo_min_qty
+msgid "The minimal quantity to trigger this rule, expressed in the customer Unit of Measure if any or in the default Unit of Measure of the product otherwise."
+msgstr "La quantité minimum qui déclenchera cette règle, exprimée dans l'unité de mesure client si elle est renseignée ou dans l'unité de mesure par défaut de l'article dans le cas contraire."
+
+#. module: sale
+#: code:addons/sale/account_invoice.py:144
+#: code:addons/sale/account_invoice.py:154
+#, python-format
+msgid "The quantity in measure unit should be higher to the minimum quantity (%.2f)"
+msgstr "La quantité en unité de mesure doit être plus élevée que la quantité minimum (%.2f)"
+
+#. module: sale
+#: code:addons/sale/sale.py:781
+#: code:addons/sale/sale.py:809
+#, python-format
+msgid "The quantity in sale unit should be higher to the minimum quantity (%.2f)"
+msgstr "La quantité en unité de vente doit être plus élevée que la quantité minimum (%.2f)"
+
+#. module: sale
+#: code:addons/sale/account_invoice.py:141
+#: code:addons/sale/account_invoice.py:151
+#, python-format
+msgid "The quantity is not a multiple of %d"
+msgstr "La quantité n'est pas un multiple de %d"
+
+#. module: sale
+#: code:addons/sale/sale.py:775
+#: code:addons/sale/sale.py:803
+#, python-format
+msgid "The quantity is not a multiple of %f"
+msgstr "La quantité n'est pas un multiple de %f"
+
+#. module: sale
+#: code:addons/sale/sale.py:2554
+#, python-format
+msgid "The renting end date is near"
+msgstr "La date de fin de location est proche"
+
+#. module: sale
+#: code:addons/sale/sale.py:899
+#, python-format
+msgid "The requested date is in the past"
+msgstr "La date demandée est dans le passé"
+
+#. module: sale
+#: sql_constraint:product.product:0
+msgid "The sale divisor cannot be 0!"
+msgstr "Le diviseur des ventes ne peut être de 0!"
+
+#. module: sale
+#: code:addons/sale/sale.py:950
+#, python-format
+msgid "The scheduled date is not a business day for your company"
+msgstr "La date planifiée n'est pas un jour ouvré pour votre société"
+
+#. module: sale
+#: code:addons/sale/wizard/create_quick_sale.py:115
+#, python-format
+msgid "The selected date is not a business day"
+msgstr "La date sélectionnée n'est pas un jour ouvré"
+
+#. module: sale
+#: code:addons/sale/sale.py:907
+#, python-format
+msgid "The selected date is not a business day for this customer"
+msgstr "La date sélectionnée n'est pas un jour ouvré pour ce client"
+
+#. module: sale
+#: code:addons/sale/sale.py:2208
+#: code:addons/sale/wizard/change_sale_wizard.py:105
+#, python-format
+msgid "The selected delivered customer is not in the delivered list of the partner who orders"
+msgstr "Le client livré sélectionné n'est pas dans la liste des livrés du partenaire qui commande"
+
+#. module: sale
+#: code:addons/sale/sale.py:2187
+#: code:addons/sale/wizard/change_sale_wizard.py:92
+#, python-format
+msgid "The selected delivered customer is not qualified to be charged, his state must be \"qualified\""
+msgstr "Le client livré sélectionné n'est pas qualifié pour être livré, sont statut doit être \"qualifié\""
+
+#. module: sale
+#: code:addons/sale/sale.py:2137
+#: code:addons/sale/wizard/change_sale_wizard.py:309
+#, python-format
+msgid "The selected invoiced customer is not in the invoiced list of the partner who orders"
+msgstr "Le client facturé sélectionné n'est pas dans la liste des facturés du partenaire qui commande"
+
+#. module: sale
+#: code:addons/sale/sale.py:2121
+#: code:addons/sale/wizard/change_sale_wizard.py:295
+#, python-format
+msgid "The selected invoiced customer is not qualified to be charged, his state must be \"qualified\""
+msgstr "Le client facturé sélectionné n'est pas qualifié pour être facturé, sont statut doit être \"qualifié\""
+
+#. module: sale
+#: code:addons/sale/sale.py:2064
+#, python-format
+msgid "The selected partner has reached his credit limit"
+msgstr "Le partenaire sélectionné a atteint sa limite de crédit"
+
+#. module: sale
+#: code:addons/sale/sale.py:2057
+#, python-format
+msgid "The selected partner is not qualified to order, his state must be \"qualified\""
+msgstr "Le partenaire sélectionné n'est pas qualifié pour commander, son statut doit être \"qualifié\""
+
+#. module: sale
+#: model:ir.model.fields,help:sale.field_change_delivery_address_transport_delay
+#: model:ir.model.fields,help:sale.field_sale_order_transport_delay
+msgid "The transport delay come from the delivered partner."
+msgstr "Le délai de transport provient du partenaire livré."
+
+#. module: sale
+#: model:ir.model.fields,help:sale.field_sale_order_validity_period
+msgid "The validity period for the quotation"
+msgstr "La période de validité du devis"
+
+#. module: sale
+#: code:addons/sale/sale.py:3128
+#, python-format
+msgid "There is a done picking linked to this sale"
+msgstr "Il y a un picking terminé lié à cette vente"
+
+#. module: sale
+#: code:addons/sale/sale.py:3121
+#, python-format
+msgid "There is an invoice linked to this sale which is not cancelled or draft"
+msgstr "Il y a une facture liée à cette vente qui n'est pas annulée ou brouillon"
+
+#. module: sale
+#: code:addons/sale/sale.py:790
+#, python-format
+msgid "There is no active referencing for this properties, this product and this customer"
+msgstr "Il n'y a pas de référencement actif pour ces propriétés, ce produit et ce client"
+
+#. module: sale
+#: code:addons/sale/sale.py:2625
+#, python-format
+msgid "There is no lines on your sale!"
+msgstr "Il n'y a pas de lignes dans votre vente!"
+
+#. module: sale
+#: model:ir.model.fields,help:sale.field_sale_order_sale_account_invoiced_on
+msgid "This field comes from the invoiced customer. It indicates if the invoice on the basis of quantities actually delivered or on the basis of quantities ordered (can be useful in case of flat rate, for example)"
+msgstr "Ce champ provient du client facturé. Il indique si la facture est basée sur les quantité actuellement délivrée ou sur les quantités commandées (peut être utile en cas de forfait par exemple)"
+
+#. module: sale
+#: model:ir.model.fields,help:sale.field_res_partner_sale_invoiced_on
+msgid "This field indicates if the invoice on the basis of quantities actually delivered or on the basis of quantities ordered (can be useful in case of flat rate, for example)"
+msgstr "Ce champ indique si l’on facture sur la base des quantités réellement livrées ou bien sur base des quantités commandées (peut être utile dans le cas de forfait par exemple)"
+
+#. module: sale
+#: model:ir.model.fields,help:sale.field_pricelist_customerinfo_price
+msgid "This price will be considered as a price for the customer Unit of Price if any or the default Unit of Price of the product otherwise."
+msgstr "Ce prix sera considéré comme le prix par unité de prix client si celle-ci est renseignée, ou par unité de prix par défaut de l'article dans le cas contraire."
+
+#. module: sale
+#: model:ir.model.fields,help:sale.field_product_product_delay_confirm
+msgid "This product need a delay confirmation"
+msgstr "Ce produit requière une confirmation de délai"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_change_delivery_address_sale_threshold
+#: model:ir.model.fields,field_description:sale.field_res_partner_sale_threshold
+#: model:ir.model.fields,field_description:sale.field_sale_order_sale_threshold
+msgid "Threshold"
+msgstr "Seuil"
+
+#. module: sale
+#: code:addons/sale/sale.py:162
+#: code:addons/sale/sale.py:1487
+#, python-format
+msgid "Thursday"
+msgstr "Jeudi"
+
+#. module: sale
+#: code:addons/sale/sale.py:727
+#, python-format
+msgid "To be sold, the product's state should be life serie or end life"
+msgstr "Pour être vendu, le produit doit être dans l'état 'en vie' ou 'en fin de vie'"
+
+#. module: sale
+#: code:addons/sale/res_partner.py:64
+#: code:addons/sale/sale.py:1327
+#, python-format
+msgid "To the delivery"
+msgstr "A la livraison"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_sale_order_total_amount
+#: model:ir.ui.view,arch_db:sale.view_form_sale_order
+#: model:ir.ui.view,arch_db:sale.view_tree_sale_order
+#: model:ir.ui.view,arch_db:sale.view_tree_sale_order_line
+msgid "Total"
+msgstr "Total"
+
+#. module: sale
+#: model:ir.ui.view,arch_db:sale.view_tree_sale_order
+msgid "Total ex Taxes"
+msgstr "Total HT"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_sale_order_line_total_price
+msgid "Total price"
+msgstr "Prix total"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_sale_order_line_total_price_currency
+msgid "Total price currency company"
+msgstr "Prix total devise société"
+
+#. module: sale
+#: model:ir.ui.view,arch_db:sale.view_form_sale_order
+msgid "Transport"
+msgstr "Transport"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_change_delivery_address_transport_delay
+#: model:ir.model.fields,field_description:sale.field_sale_order_line_transport_delay
+#: model:ir.model.fields,field_description:sale.field_sale_order_transport_delay
+msgid "Transport delay"
+msgstr "Délai de transport"
+
+#. module: sale
+#: model:ir.ui.view,arch_db:sale.view_form_change_delivery_address
+msgid "Transport information"
+msgstr "Informations de transport"
+
+#. module: sale
+#: code:addons/sale/sale.py:160
+#: code:addons/sale/sale.py:1485
+#, python-format
+msgid "Tuesday"
+msgstr "Mardi"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_res_partner_type_partner_type
+#: model:ir.model.fields,field_description:sale.field_sale_order_line_sale_type
+#: model:ir.model.fields,field_description:sale.field_sale_order_line_variable_discount_type
+#: model:ir.model.fields,field_description:sale.field_sale_order_type
+msgid "Type"
+msgstr "Type"
+
+#. module: sale
+#: model:ir.model,name:sale.model_res_partner_type
+msgid "Type for partners"
+msgstr "Type pour les partenaires"
+
+#. module: sale
+#: model:ir.model.fields,help:sale.field_product_customerinfo_uoi_id
+msgid "Unit of Invoice"
+msgstr "Unité de prix"
+
+#. module: sale
+#: model:ir.model.fields,help:sale.field_product_customerinfo_uos_id
+#: model:ir.model.fields,help:sale.field_product_product_uos_id
+msgid "Unit of Sale"
+msgstr "Unité de vente"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_pricelist_customerinfo_price
+msgid "Unit price"
+msgstr "Unité de prix"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_product_customerinfo_uoi_id
+#: model:ir.model.fields,field_description:sale.field_product_product_sale_uoi_id
+msgid "UoI"
+msgstr "Unité de prix"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_product_customerinfo_uom_category_id
+msgid "UoM category"
+msgstr "Catégorie UdM"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_product_customerinfo_uos_id
+#: model:ir.model.fields,field_description:sale.field_product_product_uos_id
+msgid "UoS"
+msgstr "Unité de vente"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_product_customerinfo_uos_category_id
+msgid "UoS Category"
+msgstr "Catégorie UdV"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_product_product_uos_category_id
+msgid "UoS category"
+msgstr "Catégorie UdV"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_sale_order_line_uoi_category_id
+msgid "Uoi category"
+msgstr "Catégorie d'Udf"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_sale_order_line_uom_category_id
+msgid "Uom category"
+msgstr "Catégorie d'Udm"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_sale_order_ar_user_id
+#: model:ir.model.fields,field_description:sale.field_sale_order_confirmation_user_id
+#: model:ir.model.fields,field_description:sale.field_sale_order_creation_user_id
+#: model:ir.model.fields,field_description:sale.field_sale_order_quotation_user_id
+msgid "User"
+msgstr "Utilisateur"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_sale_order_analysis_sale_amount
+msgid "Validate sale amount"
+msgstr "Montant ventes validées"
+
+#. module: sale
+#: model:ir.ui.view,arch_db:sale.view_kanban_sale_order_analysis
+msgid "Validate sales"
+msgstr "Ventes validées"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_sale_order_validity_period
+msgid "Validity period"
+msgstr "Période de validité"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_sale_common_attribute_value
+msgid "Value"
+msgstr "Valeur"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_sale_order_line_variable_discount_amount
+msgid "Variable"
+msgstr "Variable"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_account_invoice_line_variable_discount_ids
+#: model:ir.model.fields,field_description:sale.field_sale_order_line_variable_discount_ids
+msgid "Variable discount"
+msgstr "Remise vairable"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_account_invoice_line_variable_discount
+#: model:ir.model.fields,field_description:sale.field_sale_order_line_variable_discount
+msgid "Variable discount % on unit price"
+msgstr "Remise variable en % sur prix unitaire"
+
+#. module: sale
+#: model:ir.ui.view,arch_db:sale.view_form_sale_order
+#: model:ir.ui.view,arch_db:sale.view_form_sale_order_line
+msgid "Various information"
+msgstr "Informations diverses"
+
+#. module: sale
+#: code:addons/sale/sale.py:129
+#: code:addons/sale/sale.py:1452
+#, python-format
+msgid "Waiting"
+msgstr "En attente"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_sale_order_waiting_delay
+msgid "Waiting delay"
+msgstr "Attente délai"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_product_product_delay_confirm
+#: model:ir.model.fields,field_description:sale.field_sale_order_line_delay_confirm
+msgid "Waiting delay confirmation"
+msgstr "Attente confirmation délai"
+
+#. module: sale
+#: model:workflow.display.state,label:sale.display_wait_invoice_payment
+msgid "Waiting invoice payment"
+msgstr "Attente paiement facture"
+
+#. module: sale
+#: model:workflow.display.state,label:sale.display_wait_payment_validation
+msgid "Waiting payment validation"
+msgstr "Attente validation paiement"
+
+#. module: sale
+#: model:workflow.transition,button_label:sale.st12
+#: model:workflow.transition,button_label:sale.st32
+#: model:workflow.transition,button_label:sale.st4
+#: model:workflow.transition,button_label:sale.st9
+msgid "Waiting plan"
+msgstr "Attente planification"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_sale_order_warehouse_id
+msgid "Warehouse"
+msgstr "Entrepôt"
+
+#. module: sale
+#: code:addons/sale/account_invoice.py:141
+#: code:addons/sale/account_invoice.py:144
+#: code:addons/sale/account_invoice.py:148
+#: code:addons/sale/account_invoice.py:151
+#: code:addons/sale/account_invoice.py:154
+#: code:addons/sale/sale.py:712
+#: code:addons/sale/sale.py:727
+#: code:addons/sale/sale.py:764
+#: code:addons/sale/sale.py:775
+#: code:addons/sale/sale.py:781
+#: code:addons/sale/sale.py:790
+#: code:addons/sale/sale.py:803
+#: code:addons/sale/sale.py:809
+#: code:addons/sale/sale.py:856
+#: code:addons/sale/sale.py:899
+#: code:addons/sale/sale.py:907
+#: code:addons/sale/sale.py:923
+#: code:addons/sale/sale.py:931
+#: code:addons/sale/sale.py:950
+#: code:addons/sale/sale.py:2057
+#: code:addons/sale/sale.py:2064
+#: code:addons/sale/sale.py:2121
+#: code:addons/sale/sale.py:2137
+#: code:addons/sale/sale.py:2187
+#: code:addons/sale/sale.py:2208
+#: code:addons/sale/sale.py:2388
+#: code:addons/sale/sale.py:2407
+#: code:addons/sale/wizard/change_sale_wizard.py:92
+#: code:addons/sale/wizard/change_sale_wizard.py:105
+#: code:addons/sale/wizard/change_sale_wizard.py:295
+#: code:addons/sale/wizard/change_sale_wizard.py:309
+#: code:addons/sale/wizard/change_sale_wizard.py:341
+#: code:addons/sale/wizard/change_sale_wizard.py:355
+#: code:addons/sale/wizard/create_quick_sale.py:115
+#: code:addons/sale/wizard/generate_called_order.py:35
+#, python-format
+msgid "Warning"
+msgstr "Attention"
+
+#. module: sale
+#: code:addons/sale/sale.py:161
+#: code:addons/sale/sale.py:1486
+#, python-format
+msgid "Wednesday"
+msgstr "Mercredi"
+
+#. module: sale
+#: model:ir.ui.view,arch_db:sale.view_search_sale_order
+#: model:ir.ui.view,arch_db:sale.view_search_sale_order_line
+msgid "Week"
+msgstr "Semaine"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_sale_order_line_week_number
+#: model:ir.model.fields,field_description:sale.field_sale_order_week_number
+msgid "Week number"
+msgstr "Nombre de semaine"
+
+#. module: sale
+#: code:addons/sale/sale.py:158
+#: code:addons/sale/sale.py:1483
+#, python-format
+msgid "Without day"
+msgstr "Sans jour"
+
+#. module: sale
+#: code:addons/sale/sale.py:139
+#: code:addons/sale/sale.py:1464
+#, python-format
+msgid "Without month"
+msgstr "Sans mois"
+
+#. module: sale
+#: model:ir.model,name:sale.model_sale_anticipated_invoice
+msgid "Wizard to create an anticipated invoice from the sale"
+msgstr "Wizard permettant de créer une facture anticipée pour la vente"
+
+#. module: sale
+#: model:ir.model,name:sale.model_create_quick_sale
+msgid "Wizard to create sales quickly"
+msgstr "Wizard pour créer des ventes rapide"
+
+#. module: sale
+#: model:ir.model,name:sale.model_generate_called_sale_order
+msgid "Wizard to generate a called order from an open order"
+msgstr "Wizard pour générer une commande appelée à partir d'une commande ouverte"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_sale_order_wkf_instance_ids
+msgid "Wkf instance ids"
+msgstr "Ids des instances de wkf"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_sale_order_wkf_progress_instance
+msgid "Wkf progress instance"
+msgstr "Instance en cours"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_sale_order_wkf_id
+msgid "Workflow"
+msgstr "Flux de travail"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_sale_order_line_year
+#: model:ir.model.fields,field_description:sale.field_sale_order_year
+#: model:ir.ui.view,arch_db:sale.view_search_sale_order
+#: model:ir.ui.view,arch_db:sale.view_search_sale_order_line
+msgid "Year"
+msgstr "Année"
+
+#. module: sale
+#: code:addons/sale/sale.py:1021
+#: code:addons/sale/sale.py:3341
+#: code:addons/sale/sale.py:3365
+#, python-format
+msgid "You can't change the accounting information because there is already a validated invoice linked to the sale"
+msgstr "Vous ne pouvez modifier les informations comptables car il y a déjà une facture validée liée à cette vente"
+
+#. module: sale
+#: code:addons/sale/sale.py:3389
+#, python-format
+msgid "You can't change the accounting system because there is already a validated invoice linked to the sale"
+msgstr "Vous ne pouvez modifier la position fiscale car il y a déjà une facture validée liée à cette vente"
+
+#. module: sale
+#: code:addons/sale/sale.py:3317
+#, python-format
+msgid "You can't change the delivery address because there is already a done delivery order linked to the sale"
+msgstr "Vous ne pouvez modifier l'adresse de livraison car il y a déjà un bon de livraison terminé lié à cette vente"
+
+#. module: sale
+#: code:addons/sale/sale.py:3802
+#, python-format
+msgid "You can't change the opened order of a sale if the opened order is done"
+msgstr "Vous ne pouvez changer la commande ouverte d'une vente si celle-ci est terminée"
+
+#. module: sale
+#: code:addons/sale/sale.py:3799
+#, python-format
+msgid "You can't change the type of a called or opened sale"
+msgstr "Vous ne pouvez changer le type d'une vente ouverte ou appelée"
+
+#. module: sale
+#: sql_constraint:sale.order.analysis:0
+msgid "You can't choose a family AND a salesperson for the analyse"
+msgstr "Vous ne pouvez choisir une famille ET un commercial pour l'analyse"
+
+#. module: sale
+#: code:addons/sale/sale.py:3578
+#, python-format
+msgid "You can't create a picking if there is no lines in your sale"
+msgstr "Vous ne pouvez créer un picking s'il n'y a pas de lignes dans votre vente"
+
+#. module: sale
+#: code:addons/sale/sale.py:2800
+#, python-format
+msgid "You can't create an invoice if there is no lines in your sale"
+msgstr "Vous ne pouvez créer une facture s'il n'y a pas de lignes dans votre vente"
+
+#. module: sale
+#: code:addons/sale/sale.py:2999
+#, python-format
+msgid "You can't have a sale invoiced on the delivery if all the lines are linked to a service which not manage receipts"
+msgstr "Vous ne pouvez avoir une vente facturée à la livraison si toutes les lignes sont liées à un service qui ne gère pas les réceptions"
+
+#. module: sale
+#: code:addons/sale/sale.py:3224
+#, python-format
+msgid "You can't reset the sale because there is a done linked picking"
+msgstr "Vous ne pouvez réinitialiser la vente car elle est liée à un picking terminé"
+
+#. module: sale
+#: code:addons/sale/sale.py:3218
+#, python-format
+msgid "You can't reset the sale because there is an opened or done linked invoice"
+msgstr "Vous ne pouvez réinitialiser la vente car elle est liée à une facture ouverte ou terminée"
+
+#. module: sale
+#: code:addons/sale/sale.py:964
+#, python-format
+msgid "You cannot change the value of the date because the sale is done or cancelled"
+msgstr "Vous ne pouvez pas changer la valeur de la date car la vente est terminée ou annulée"
+
+#. module: sale
+#: code:addons/sale/product.py:658
+#, python-format
+msgid "You cannot have 2 pricelists versions that overlap!"
+msgstr "Vous ne pouvez pas avoir deux lignes de prix qui se chevauchent!"
+
+#. module: sale
+#: code:addons/sale/product.py:632
+#, python-format
+msgid "You cannot have a start date superior to the end date!"
+msgstr "Vous ne pouvez avoir une date de début supérieure à la date de fin (ligne de prix)!"
+
+#. module: sale
+#: code:addons/sale/sale.py:3054
+#, python-format
+msgid "You cannot validate the sale order because procurement %s have a different trigger supply method"
+msgstr "Vous ne pouvez valider la commande de vente car l'approvisionnement %s a une méthode d'approvisionnement différente"
+
+#. module: sale
+#: code:addons/sale/sale.py:3003
+#, python-format
+msgid "You choose to have an AR but there is no AR send date (in the communication tab)"
+msgstr "Vous avez choisi d'avoir un accusé de réception mais il n'y a pas de date d'envoi d'accusé de réception (onglet communication)"
+
+#. module: sale
+#: code:addons/sale/wizard/generate_called_order.py:35
+#, python-format
+msgid "You have a quantity superior to the quantity in the sale line (%s)"
+msgstr "Vous avez une quantité supérieure à la quantité de la ligne de vente (%s)"
+
+#. module: sale
+#: code:addons/sale/sale.py:712
+#, python-format
+msgid "You must first select a customer in the sale order"
+msgstr "Vous devez d'abord sélectionner un client dans la commande"
+
+#. module: sale
+#: code:addons/sale/sale.py:764
+#: code:addons/sale/sale.py:856
+#, python-format
+msgid "You must have Management unit and Sale unit"
+msgstr "Vous devez avoir une unité de mesure et une unité de vente"
+
+#. module: sale
+#: code:addons/sale/account_invoice.py:148
+#, python-format
+msgid "You must have Management unit and Sale unit for the customer referencing"
+msgstr "Vous devez avoir une unité de mesure et une unité de vente pour le référencement client"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_change_delivery_address_delivered_zip
+#: model:ir.model.fields,field_description:sale.field_sale_order_delivered_zip
+msgid "Zip"
+msgstr "Code postal"
+
+#. module: sale
+#: model:ir.ui.view,arch_db:sale.view_form_change_account_system
+#: model:ir.ui.view,arch_db:sale.view_form_change_accounting_info
+#: model:ir.ui.view,arch_db:sale.view_form_change_delivery_address
+#: model:ir.ui.view,arch_db:sale.view_form_change_line_information
+#: model:ir.ui.view,arch_db:sale.view_form_change_note
+#: model:ir.ui.view,arch_db:sale.view_form_create_quick_sale
+#: model:ir.ui.view,arch_db:sale.view_form_generate_sale_called_order
+#: model:ir.ui.view,arch_db:sale.view_form_replacement_date
+#: model:ir.ui.view,arch_db:sale.view_form_sale_anticipated_invoice
+msgid "or"
+msgstr "ou"
+
+#. module: sale
+#: model:ir.model,name:sale.model_sale_common_attribute
+msgid "sale.common.attribute"
+msgstr "sale.common.attribute"
+
+#. module: sale
+#: model:ir.model,name:sale.model_sale_order_line_fixed_discount
+msgid "sale.order.line.fixed.discount"
+msgstr "sale.order.line.fixed.discount"
+
+#. module: sale
+#: model:ir.model,name:sale.model_sale_order_line_variable_discount
+msgid "sale.order.line.variable.discount"
+msgstr "sale.order.line.variable.discount"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_sale_order_taxes
+msgid "taxes"
+msgstr "Taxes"
+

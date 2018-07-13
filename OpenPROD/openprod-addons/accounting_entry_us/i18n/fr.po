@@ -1,0 +1,276 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#   * accounting_entry_us
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 9.0c\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-02-28 16:15+0000\n"
+"PO-Revision-Date: 2017-02-28 16:15+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: accounting_entry_us
+#: code:addons/accounting_entry_us/stock.py:38
+#, python-format
+msgid "%s -- Picking: %s"
+msgstr "%s -- Picking: %s"
+
+#. module: accounting_entry_us
+#: code:addons/accounting_entry_us/stock.py:149
+#, python-format
+msgid "%s -- Produce"
+msgstr "%s -- Production"
+
+#. module: accounting_entry_us
+#: code:addons/accounting_entry_us/stock.py:164
+#, python-format
+msgid "%s -- Total"
+msgstr "%s -- Total"
+
+#. module: accounting_entry_us
+#: code:addons/accounting_entry_us/stock.py:40
+#: code:addons/accounting_entry_us/stock.py:43
+#: code:addons/accounting_entry_us/stock.py:46
+#: code:addons/accounting_entry_us/stock.py:49
+#, python-format
+msgid "%s -- WO: %s[%s]"
+msgstr "%s -- OT: %s[%s]"
+
+#. module: accounting_entry_us
+#: model:ir.model,name:accounting_entry_us.model_account_move
+msgid "Account Entry"
+msgstr "Pièce comptable"
+
+#. module: accounting_entry_us
+#: model:ir.model.fields,field_description:accounting_entry_us.field_product_category_account_applied_overhead_id
+#: model:ir.model.fields,field_description:accounting_entry_us.field_product_product_account_applied_overhead_id
+msgid "Account applied overhead"
+msgstr "Compte de dépense de temps"
+
+#. module: accounting_entry_us
+#: model:ir.model.fields,field_description:accounting_entry_us.field_product_category_account_finish_good_inv_id
+#: model:ir.model.fields,field_description:accounting_entry_us.field_product_product_account_finish_good_inv_id
+msgid "Account finished goods inventory"
+msgstr "Compte de stock"
+
+#. module: accounting_entry_us
+#: model:ir.model.fields,field_description:accounting_entry_us.field_product_category_account_material_purchase_id
+#: model:ir.model.fields,field_description:accounting_entry_us.field_product_product_account_material_purchase_id
+msgid "Account material purchase"
+msgstr "Compte de dépense d’achat"
+
+#. module: accounting_entry_us
+#: model:ir.model.fields,field_description:accounting_entry_us.field_mrp_manufacturingorder_account_move_line_ids
+msgid "Account move line"
+msgstr "Écritures comptables"
+
+#. module: accounting_entry_us
+#: model:ir.ui.view,arch_db:accounting_entry_us.view_form_stock_valuation_account_move_id
+msgid "Account moves"
+msgstr "Pièces comptables"
+
+#. module: accounting_entry_us
+#: model:ir.ui.view,arch_db:accounting_entry_us.view_form_mrp_manufacturingorder_accounting_entry_us
+msgid "Account moves lines"
+msgstr "Écritures comptables
+
+#. module: accounting_entry_us
+#: model:ir.model.fields,field_description:accounting_entry_us.field_product_category_account_stock_value_in_id
+#: model:ir.model.fields,field_description:accounting_entry_us.field_product_product_account_stock_value_in_id
+msgid "Account stock in variation"
+msgstr "Compte de stock de variation entrant de stock"
+
+#. module: accounting_entry_us
+#: model:ir.model.fields,field_description:accounting_entry_us.field_product_category_account_stock_value_out_id
+#: model:ir.model.fields,field_description:accounting_entry_us.field_product_product_account_stock_value_out_id
+msgid "Account stock out variation"
+msgstr "Compte de stock de variation sortant de stock"
+
+#. module: accounting_entry_us
+#: model:ir.model.fields,field_description:accounting_entry_us.field_product_category_account_work_in_progress_id
+#: model:ir.model.fields,field_description:accounting_entry_us.field_product_product_account_work_in_progress_id
+msgid "Account work in progress"
+msgstr "Compte de l'encours"
+
+#. module: accounting_entry_us
+#: model:ir.actions.act_window,name:accounting_entry_us.act_stock_valuation_account_move_id
+#: model:ir.model,name:accounting_entry_us.model_stock_valuation_account_move
+#: model:ir.ui.menu,name:accounting_entry_us.menu_stock_valuation_account_move_id
+#: model:ir.ui.view,arch_db:accounting_entry_us.view_form_stock_valuation_account_move_id
+msgid "Accounting for inventory valuation"
+msgstr "Écritures comptable pour l'évaluation des stocks"
+
+#. module: accounting_entry_us
+#: model:ir.ui.view,arch_db:accounting_entry_us.view_tree_stock_valuation_account_move_id
+msgid "Accounting for inventory valuations"
+msgstr "Écritures comptable pour la valorisation des stocks"
+
+#. module: accounting_entry_us
+#: code:addons/accounting_entry_us/stock.py:217
+#: model:ir.ui.view,arch_db:accounting_entry_us.view_form_stock_valuation_account_move_id
+#, python-format
+msgid "Cancel"
+msgstr "Annuler"
+
+#. module: accounting_entry_us
+#: model:ir.ui.view,arch_db:accounting_entry_us.view_form_stock_valuation_account_move_id
+msgid "Comment"
+msgstr "Commentaire"
+
+#. module: accounting_entry_us
+#: code:addons/accounting_entry_us/stock.py:782
+#, python-format
+msgid "Compensation -- %s"
+msgstr "Compensation -- %s"
+
+#. module: accounting_entry_us
+#: code:addons/accounting_entry_us/stock.py:215
+#: model:ir.ui.view,arch_db:accounting_entry_us.view_form_stock_valuation_account_move_id
+#, python-format
+msgid "Draft"
+msgstr "Brouillon"
+
+#. module: accounting_entry_us
+#: code:addons/accounting_entry_us/stock.py:303
+#, python-format
+msgid "Error"
+msgstr "Erreur"
+
+#. module: accounting_entry_us
+#: code:addons/accounting_entry_us/stock.py:208
+#, python-format
+msgid "Every months"
+msgstr "À chaque mois"
+
+#. module: accounting_entry_us
+#: code:addons/accounting_entry_us/stock.py:207
+#, python-format
+msgid "Every moves"
+msgstr "À chaque mouvements"
+
+#. module: accounting_entry_us
+#: code:addons/accounting_entry_us/stock.py:733
+#, python-format
+msgid "IN -- %s"
+msgstr "IN -- %s"
+
+#. module: accounting_entry_us
+#: code:addons/accounting_entry_us/stock.py:247
+#: code:addons/accounting_entry_us/stock.py:254
+#, python-format
+msgid "If you choose every months, the start date must be the first of the month and the end date must be the last of the month"
+msgstr "Si vous choisissez à chaque mois, la date de début doit être la première du mois et la date de fin doit être la dernière du mois"
+
+#. module: accounting_entry_us
+#: model:ir.ui.view,arch_db:accounting_entry_us.view_form_stock_valuation_account_move_id
+msgid "Informations"
+msgstr "Informations"
+
+#. module: accounting_entry_us
+#: model:ir.model,name:accounting_entry_us.model_account_move_line
+msgid "Journal Items"
+msgstr "Écritures comptables"
+
+#. module: accounting_entry_us
+#: model:ir.model.fields,field_description:accounting_entry_us.field_account_move_line_mo_id
+msgid "MO"
+msgstr "OF"
+
+#. module: accounting_entry_us
+#: model:ir.model,name:accounting_entry_us.model_mrp_manufacturingorder
+msgid "Manufacturing order"
+msgstr "Manufacturing order"
+
+#. module: accounting_entry_us
+#: model:ir.model.fields,field_description:accounting_entry_us.field_mrp_manufacturingorder_real_rm_cost_aml
+msgid "Material first cost account move line"
+msgstr "Material first cost account move line"
+
+#. module: accounting_entry_us
+#: code:addons/accounting_entry_us/stock.py:738
+#: code:addons/accounting_entry_us/stock.py:742
+#, python-format
+msgid "OUT -- %s"
+msgstr "OUT -- %s"
+
+#. module: accounting_entry_us
+#: code:addons/accounting_entry_us/stock.py:816
+#, python-format
+msgid "Period %s/%s"
+msgstr "Périodz %s/%s"
+
+#. module: accounting_entry_us
+#: model:ir.model,name:accounting_entry_us.model_product_product
+msgid "Product"
+msgstr "Produit"
+
+#. module: accounting_entry_us
+#: model:ir.model,name:accounting_entry_us.model_product_category
+msgid "Product Category"
+msgstr "Catégorie de produit"
+
+#. module: accounting_entry_us
+#: code:addons/accounting_entry_us/stock.py:413
+#: code:addons/accounting_entry_us/stock.py:688
+#, python-format
+msgid "Product: %s -- %s"
+msgstr "Produit: %s -- %s"
+
+#. module: accounting_entry_us
+#: code:addons/accounting_entry_us/stock.py:34
+#, python-format
+msgid "Product: %s -- %s -- Qty: %f"
+msgstr "Produit: %s -- %s -- Qté: %f"
+
+#. module: accounting_entry_us
+#: code:addons/accounting_entry_us/stock.py:420
+#, python-format
+msgid "Product: %s -- LOT: %s -- %s"
+msgstr "Produit: %s -- LOT: %s -- %s"
+
+#. module: accounting_entry_us
+#: code:addons/accounting_entry_us/stock.py:31
+#, python-format
+msgid "Product: %s -- LOT: %s -- %s -- Qty: %f"
+msgstr "Produit: %s -- LOT: %s -- %s -- Qté: %f"
+
+#. module: accounting_entry_us
+#: code:addons/accounting_entry_us/stock.py:303
+#, python-format
+msgid "There is already a record for this period. (%s)"
+msgstr "Il ya déjà un enregistremant pour cette période. (%s)"
+
+#. module: accounting_entry_us
+#: model:ir.ui.view,arch_db:accounting_entry_us.view_form_stock_valuation_account_move_id
+msgid "Validate"
+msgstr "Valider"
+
+#. module: accounting_entry_us
+#: code:addons/accounting_entry_us/stock.py:216
+#, python-format
+msgid "Validated"
+msgstr "Validé"
+
+#. module: accounting_entry_us
+#: model:ir.model,name:accounting_entry_us.model_stock_valuation
+msgid "Valuation"
+msgstr "Valorisation"
+
+#. module: accounting_entry_us
+#: model:ir.model.fields,field_description:accounting_entry_us.field_account_move_line_is_wo_rm
+msgid "WO RM"
+msgstr "WO RM"
+
+#. module: accounting_entry_us
+#: code:addons/accounting_entry_us/stock.py:247
+#: code:addons/accounting_entry_us/stock.py:254
+#, python-format
+msgid "Warning"
+msgstr "Attention"
+

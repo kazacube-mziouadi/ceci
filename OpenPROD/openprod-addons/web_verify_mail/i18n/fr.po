@@ -1,0 +1,31 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* web_verify_mail
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 9.0c\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-07-17 15:55+0000\n"
+"PO-Revision-Date: 2017-07-17 15:55+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: web_verify_mail
+#. openerp-web
+#: code:addons/web_verify_mail/static/src/js/web_verify_mail.js:40
+#, python-format
+msgid "Invalid e-mail adress : "
+msgstr "Erreur dans les adresses e-mail"
+
+#. module: web_verify_mail
+#. openerp-web
+#: code:addons/web_verify_mail/static/src/js/web_verify_mail.js:40
+#, python-format
+msgid "Split up your e-mail adress with a coma"
+msgstr "Séparez les adresses e-mails avec une virgule"
+

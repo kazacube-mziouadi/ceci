@@ -1,0 +1,195 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* compute_stored_fields
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 9.0c\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-05-19 08:58+0000\n"
+"PO-Revision-Date: 2017-05-19 08:58+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: compute_stored_fields
+#: model:ir.ui.view,arch_db:compute_stored_fields.view_form_compute_stored_fields
+msgid "Actions"
+msgstr "Actions"
+
+#. module: compute_stored_fields
+#: model:ir.ui.view,arch_db:compute_stored_fields.view_form_compute_stored_fields_compute
+#: model:ir.ui.view,arch_db:compute_stored_fields.view_form_compute_stored_fields_import
+msgid "Cancel"
+msgstr "Annuler"
+
+#. module: compute_stored_fields
+#: model:ir.ui.view,arch_db:compute_stored_fields.view_form_compute_stored_fields
+#: model:ir.ui.view,arch_db:compute_stored_fields.view_tree_compute_stored_fields
+msgid "Compute"
+msgstr "Calculer"
+
+#. module: compute_stored_fields
+#: model:ir.actions.act_window,name:compute_stored_fields.act_compute_stored_fields
+#: model:ir.model,name:compute_stored_fields.model_compute_stored_fields
+#: model:ir.ui.menu,name:compute_stored_fields.menu_compute_stored_fields
+#: model:ir.ui.view,arch_db:compute_stored_fields.view_form_compute_stored_fields
+#: model:ir.ui.view,arch_db:compute_stored_fields.view_tree_compute_stored_fields
+msgid "Compute stored fields"
+msgstr "Calcul des champs fonctions stockés"
+
+#. module: compute_stored_fields
+#: model:ir.model,name:compute_stored_fields.model_compute_stored_fields_compute
+msgid "Compute stored fields compute"
+msgstr "Calcul de champ fonction stocké"
+
+#. module: compute_stored_fields
+#: model:ir.model,name:compute_stored_fields.model_compute_stored_fields_import
+msgid "Compute stored fields import"
+msgstr "Import de calcul de champ fonction stocké"
+
+#. module: compute_stored_fields
+#: model:ir.ui.view,arch_db:compute_stored_fields.view_form_compute_stored_fields_compute
+msgid "Compute stored function fields of objects with last date lower than provided date"
+msgstr "Calcul des champs fonction stoqués des objets ayant une date de dernière exécution inférieur à la date ci-dessous"
+
+#. module: compute_stored_fields
+#: model:ir.ui.view,arch_db:compute_stored_fields.view_form_compute_stored_fields_import
+msgid "Create lines for new models without overwrite existing lines"
+msgstr "Créer des lignes pour les nouveaux modèles sans écraser les lignes existantes"
+
+#. module: compute_stored_fields
+#: model:ir.model.fields,field_description:compute_stored_fields.field_compute_stored_fields_compute_create_uid
+#: model:ir.model.fields,field_description:compute_stored_fields.field_compute_stored_fields_create_uid
+#: model:ir.model.fields,field_description:compute_stored_fields.field_compute_stored_fields_import_create_uid
+msgid "Created by"
+msgstr "Créé par"
+
+#. module: compute_stored_fields
+#: model:ir.model.fields,field_description:compute_stored_fields.field_compute_stored_fields_compute_create_date
+#: model:ir.model.fields,field_description:compute_stored_fields.field_compute_stored_fields_create_date
+#: model:ir.model.fields,field_description:compute_stored_fields.field_compute_stored_fields_import_create_date
+msgid "Created on"
+msgstr "Créé le"
+
+#. module: compute_stored_fields
+#: model:ir.model.fields,field_description:compute_stored_fields.field_compute_stored_fields_compute_date
+msgid "Date"
+msgstr "Date"
+
+#. module: compute_stored_fields
+#: model:ir.model.fields,field_description:compute_stored_fields.field_compute_stored_fields_compute_display_name
+#: model:ir.model.fields,field_description:compute_stored_fields.field_compute_stored_fields_display_name
+#: model:ir.model.fields,field_description:compute_stored_fields.field_compute_stored_fields_import_display_name
+msgid "Display Name"
+msgstr "Nom"
+
+#. module: compute_stored_fields
+#: model:ir.model.fields,field_description:compute_stored_fields.field_compute_stored_fields_compute_id
+#: model:ir.model.fields,field_description:compute_stored_fields.field_compute_stored_fields_id
+#: model:ir.model.fields,field_description:compute_stored_fields.field_compute_stored_fields_import_id
+msgid "ID"
+msgstr "ID"
+
+#. module: compute_stored_fields
+#: model:ir.model.fields,help:compute_stored_fields.field_compute_stored_fields_compute_override_errors
+msgid "If this field is checked, errors will not stop processing"
+msgstr "Si ce champ est coché, les erreurs n'arrêteront"
+
+#. module: compute_stored_fields
+#: model:ir.model.fields,field_description:compute_stored_fields.field_compute_stored_fields_is_ignored
+msgid "Ignore"
+msgstr "Ignorer"
+
+#. module: compute_stored_fields
+#: model:ir.ui.view,arch_db:compute_stored_fields.view_form_compute_stored_fields_import
+msgid "Import"
+msgstr "Importer"
+
+#. module: compute_stored_fields
+#: model:ir.actions.act_window,name:compute_stored_fields.act_stored_fields_import
+msgid "Import models"
+msgstr "Importer les modèles"
+
+#. module: compute_stored_fields
+#: sql_constraint:compute.stored.fields:0
+msgid "Impossible to have two records with same model"
+msgstr "Impossible d'avoir deux enregistrements pour le même modèle"
+
+#. module: compute_stored_fields
+#: model:ir.model.fields,field_description:compute_stored_fields.field_compute_stored_fields___last_update
+#: model:ir.model.fields,field_description:compute_stored_fields.field_compute_stored_fields_compute___last_update
+#: model:ir.model.fields,field_description:compute_stored_fields.field_compute_stored_fields_import___last_update
+msgid "Last Modified on"
+msgstr "Dernière modification le"
+
+#. module: compute_stored_fields
+#: model:ir.model.fields,field_description:compute_stored_fields.field_compute_stored_fields_compute_write_uid
+#: model:ir.model.fields,field_description:compute_stored_fields.field_compute_stored_fields_import_write_uid
+#: model:ir.model.fields,field_description:compute_stored_fields.field_compute_stored_fields_write_uid
+msgid "Last Updated by"
+msgstr "Dernière modification par"
+
+#. module: compute_stored_fields
+#: model:ir.model.fields,field_description:compute_stored_fields.field_compute_stored_fields_compute_write_date
+#: model:ir.model.fields,field_description:compute_stored_fields.field_compute_stored_fields_import_write_date
+#: model:ir.model.fields,field_description:compute_stored_fields.field_compute_stored_fields_write_date
+msgid "Last Updated on"
+msgstr "Dernière modification le"
+
+#. module: compute_stored_fields
+#: model:ir.model.fields,field_description:compute_stored_fields.field_compute_stored_fields_last_date
+msgid "Last date"
+msgstr "Dernière exécution"
+
+#. module: compute_stored_fields
+#: model:ir.ui.view,arch_db:compute_stored_fields.view_form_compute_stored_fields
+msgid "Last execution"
+msgstr "Dernière exécution"
+
+#. module: compute_stored_fields
+#: model:ir.model.fields,field_description:compute_stored_fields.field_compute_stored_fields_log
+msgid "Log"
+msgstr "Log"
+
+#. module: compute_stored_fields
+#: model:ir.actions.act_window,name:compute_stored_fields.act_stored_fields_compute
+#: model:ir.ui.view,arch_db:compute_stored_fields.view_form_compute_stored_fields_compute
+msgid "Mass compute"
+msgstr "Calcul de masse"
+
+#. module: compute_stored_fields
+#: model:ir.model.fields,field_description:compute_stored_fields.field_compute_stored_fields_model_id
+msgid "Model"
+msgstr "Modèle"
+
+#. module: compute_stored_fields
+#: model:ir.ui.view,arch_db:compute_stored_fields.view_form_compute_stored_fields_compute
+#: model:ir.ui.view,arch_db:compute_stored_fields.view_form_compute_stored_fields_import
+msgid "OK"
+msgstr "OK"
+
+#. module: compute_stored_fields
+#: model:ir.model.fields,field_description:compute_stored_fields.field_compute_stored_fields_compute_override_errors
+msgid "Override errors"
+msgstr "Outrepasser les erreurs"
+
+#. module: compute_stored_fields
+#: model:ir.model.fields,field_description:compute_stored_fields.field_compute_stored_fields_model_name
+msgid "Technical name"
+msgstr "Nom technique"
+
+#. module: compute_stored_fields
+#: model:ir.model.fields,help:compute_stored_fields.field_compute_stored_fields_is_ignored
+msgid "This field allow to ignore the record during a mass recompute"
+msgstr "Ce champ permet d'ignorer l'enregistrement pendant les calculs de masse"
+
+#. module: compute_stored_fields
+#: model:ir.ui.view,arch_db:compute_stored_fields.view_form_compute_stored_fields_compute
+#: model:ir.ui.view,arch_db:compute_stored_fields.view_form_compute_stored_fields_import
+msgid "or"
+msgstr "ou"
+

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+		<record id="view_form_quick_create_project" model="ir.ui.view">
+			<field name="name">quick.create.project</field>
+			<field name="inherit_id" ref="project.view_form_quick_create_project" />
+			<field name="model">quick.create.project</field>
+			<field name="arch" type="xml">
+				<xpath expr="//field[@name='keep_resources']" position="after">
+					<field name="attach_to_affair_id"/>
+					<group colspan="2" />
+				</xpath>
+			</field>
+		</record>
+	</data>
+</openerp>

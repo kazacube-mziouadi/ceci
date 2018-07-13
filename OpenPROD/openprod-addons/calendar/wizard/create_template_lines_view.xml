@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+		<record id="view_form_create_template_lines" model="ir.ui.view">
+			<field name="name">view_form_create_template_lines</field>
+			<field name="model">wizard.create.template.lines</field>
+			<field name="arch" type="xml">
+				<form string="Create template lines">
+					<field name="calendar_template_id" invisible="1"/>
+					<group string="Period" colspan="4" col="4">
+						<field name="start_date" />
+						<field name="end_date" />
+					</group>
+					<group string="Hours definition for a week">
+						<table class="table table-condensed">
+							<thead>
+								<tr>
+									<th colspan="2">
+										Days
+									</th>
+									<th>
+										Start hours
+									</th>
+									<th>
+										End hours
+									</th>
+									<th>
+										Hours number
+									</th>
+								</tr>
+							</thead>
+							<tr>
+								<td>
+									Monday
+								</td>
+								<td>
+									<field name="monday" />
+								</td>
+								<td>
+									<field name="hour_start0" attrs="{'readonly': [('monday','=', False)],'required': [('monday','=', True)]}" widget="float_time" class="oe_inline" />
+								</td>
+								<td>
+									<field name="hour_end0" attrs="{'readonly': [('monday','=', False)],'required': [('monday','=', True)]}" widget="float_time" />
+								</td>
+								<td>
+									<field name="hour_number0" attrs="{'readonly': [('monday','=', False)],'required': [('monday','=', True)]}" widget="float_time" />
+								</td>
+							</tr>
+							<tr>
+								<td>
+									Tuesday
+								</td>
+								<td>
+									<field name="tuesday" />
+								</td>
+								<td>
+									<field name="hour_start1" attrs="{'readonly': [('tuesday','=', False)],'required': [('tuesday','=', True)]}" widget="float_time" />
+								</td>
+								<td>
+									<field name="hour_end1" attrs="{'readonly': [('tuesday','=', False)],'required': [('tuesday','=', True)]}" widget="float_time" />
+								</td>
+								<td>
+									<field name="hour_number1" attrs="{'readonly': [('tuesday','=', False)],'required': [('tuesday','=', True)]}" widget="float_time" />
+								</td>
+							</tr>
+							<tr>
+								<td>
+									Wednesday
+								</td>
+								<td>
+									<field name="wednesday" />
+								</td>
+								<td>
+									<field name="hour_start2" attrs="{'readonly': [('wednesday','=', False)],'required': [('wednesday','=', True)]}" widget="float_time" />
+								</td>
+								<td>
+									<field name="hour_end2" attrs="{'readonly': [('wednesday','=', False)],'required': [('wednesday','=', True)]}" widget="float_time" />
+								</td>
+								<td>
+									<field name="hour_number2" attrs="{'readonly': [('wednesday','=', False)],'required': [('wednesday','=', True)]}" widget="float_time" />
+								</td>
+							</tr>
+							<tr>
+								<td>
+									Thursday
+								</td>
+								<td>
+									<field name="thursday" />
+								</td>
+								<td>
+									<field name="hour_start3" attrs="{'readonly': [('thursday','=', False)],'required': [('thursday','=', True)]}" widget="float_time" />
+								</td>
+								<td>
+									<field name="hour_end3" attrs="{'readonly': [('thursday','=', False)],'required': [('thursday','=', True)]}" widget="float_time" />
+								</td>
+								<td>
+									<field name="hour_number3" attrs="{'readonly': [('thursday','=', False)],'required': [('thursday','=', True)]}" widget="float_time" />
+								</td>
+							</tr>
+							<tr>
+								<td>
+									Friday
+								</td>
+								<td>
+									<field name="friday" />
+								</td>
+								<td>
+									<field name="hour_start4" attrs="{'readonly': [('friday','=', False)],'required': [('friday','=', True)]}" widget="float_time" />
+								</td>
+								<td>
+									<field name="hour_end4" attrs="{'readonly': [('friday','=', False)],'required': [('friday','=', True)]}" widget="float_time" />
+								</td>
+								<td>
+									<field name="hour_number4" attrs="{'readonly': [('friday','=', False)],'required': [('friday','=', True)]}" widget="float_time" />
+								</td>
+							</tr>
+							<tr>
+								<td>
+									Saturday
+								</td>
+								<td>
+									<field name="saturday" />
+								</td>
+								<td>
+									<field name="hour_start5" attrs="{'readonly': [('saturday','=', False)],'required': [('saturday','=', True)]}" widget="float_time" />
+								</td>
+								<td>
+									<field name="hour_end5" attrs="{'readonly': [('saturday','=', False)],'required': [('saturday','=', True)]}" widget="float_time" />
+								</td>
+								<td>
+									<field name="hour_number5" attrs="{'readonly': [('saturday','=', False)],'required': [('saturday','=', True)]}" widget="float_time" />
+								</td>
+							</tr>
+							<tr>
+								<td>
+									Sunday
+								</td>
+								<td>
+									<field name="sunday" />
+								</td>
+								<td>
+									<field name="hour_start6" attrs="{'readonly': [('sunday','=', False)],'required': [('sunday','=', True)]}" widget="float_time" />
+								</td>
+								<td>
+									<field name="hour_end6" attrs="{'readonly': [('sunday','=', False)],'required': [('sunday','=', True)]}" widget="float_time" />
+								</td>
+								<td>
+									<field name="hour_number6" attrs="{'readonly': [('sunday','=', False)],'required': [('sunday','=', True)]}" widget="float_time" />
+								</td>
+							</tr>
+						</table>
+					</group>
+					<footer>
+						<button name="generate_lines" string="OK" type="object" class="oe_highlight" />
+						or
+						<button string="Cancel" class="oe_link" special="cancel" />
+					</footer>
+				</form>
+			</field>
+		</record>
+
+		<record id="action_create_template_lines" model="ir.actions.act_window">
+			<field name="name">Create template lines</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="res_model">wizard.create.template.lines</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">form</field>
+			<field name="target">new</field>
+		</record>
+
+	</data>
+</openerp>	

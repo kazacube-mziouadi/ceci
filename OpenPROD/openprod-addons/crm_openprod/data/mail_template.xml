@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+	
+		<record id="email_template_for_crm" model="mail.template">
+			<field name="name">CRM</field>
+			<field name="email_from">${user.email or ''}</field>
+			<field name="subject"></field>
+			<field name="email_to">${object.customer_id.email or ''}</field>
+			<field name="model_id" ref="model_crm" />
+			<field name="lang">${object.lang}</field>
+			<field name="edi_select"></field>
+			<field name="body_html"><![CDATA[
+<div style="font-family: 'Lucica Grande', Ubuntu, Arial, Verdana, sans-serif; font-size: 12px; color: rgb(34, 34, 34); background-color: #FFF; ">
+
+    <p>Hello ${object.customer_id.name},</p>
+</div>]]></field>
+		</record>
+		
+	</data>
+</openerp>

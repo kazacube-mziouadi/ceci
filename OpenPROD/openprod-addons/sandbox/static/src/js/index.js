@@ -1,0 +1,1 @@
+/home/barnabas/workspace/vgit/openprod/openprod-addons/sandbox/static/src/index.html

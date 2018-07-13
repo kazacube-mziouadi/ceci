@@ -1,0 +1,605 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* standard_offer
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 9.0c\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-10-04 13:18+0000\n"
+"PO-Revision-Date: 2016-10-04 13:18+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: standard_offer
+#: model:mail.template,body_html:standard_offer.email_template_edi_offer
+msgid "\n"
+"<div style=\"font-family: 'Lucica Grande', Ubuntu, Arial, Verdana, sans-serif; font-size: 12px; color: rgb(34, 34, 34); background-color: #FFF; \">\n"
+"\n"
+"    <p>Hello ${object.customer_id.name},</p>\n"
+"</div>"
+msgstr "\n"
+"<div style=\"font-family: 'Lucica Grande', Ubuntu, Arial, Verdana, sans-serif; font-size: 12px; color: rgb(34, 34, 34); background-color: #FFF; \">\n"
+"\n"
+"    <p>Bonjour ${object.customer_id.name},</p>\n"
+"</div>"
+
+#. module: standard_offer
+#: model:ir.ui.view,arch_db:standard_offer.view_search_offer
+#: model:ir.ui.view,arch_db:standard_offer.view_search_offer_line
+msgid "Active"
+msgstr "Actif"
+
+#. module: standard_offer
+#: code:addons/standard_offer/standard_offer.py:142
+#: model:ir.ui.view,arch_db:standard_offer.view_form_standard_offer
+#, python-format
+msgid "Applicable"
+msgstr "Applicable"
+
+#. module: standard_offer
+#: model:ir.model.fields,field_description:standard_offer.field_standard_offer_application_date
+msgid "Applicated on"
+msgstr "Date d'application"
+
+#. module: standard_offer
+#: code:addons/standard_offer/standard_offer.py:25
+#, python-format
+msgid "Base price"
+msgstr "Prix de base"
+
+#. module: standard_offer
+#: code:addons/standard_offer/standard_offer.py:132
+#, python-format
+msgid "Base price only for standard offer."
+msgstr "Le prix de base n'est possible que pour un tarif standard"
+
+#. module: standard_offer
+#: model:ir.ui.view,arch_db:standard_offer.view_form_category_import
+#: model:ir.ui.view,arch_db:standard_offer.view_form_product_import
+msgid "Cancel"
+msgstr "Annuler"
+
+#. module: standard_offer
+#: code:addons/standard_offer/standard_offer.py:21
+#: model:ir.model.fields,field_description:standard_offer.field_category_import_category_id
+#: model:ir.model.fields,field_description:standard_offer.field_standard_offer_category_id
+#: model:ir.model.fields,field_description:standard_offer.field_standard_offer_line_category_id
+#: model:ir.ui.view,arch_db:standard_offer.view_search_offer_line
+#, python-format
+msgid "Category"
+msgstr "Famille de tarif"
+
+#. module: standard_offer
+#: model:ir.actions.act_window,name:standard_offer.act_category_import
+#: model:ir.ui.view,arch_db:standard_offer.view_form_category_import
+msgid "Category Import"
+msgstr "Importer une famille"
+
+#. module: standard_offer
+#: model:ir.model.fields,field_description:standard_offer.field_standard_offer_comment
+#: model:ir.ui.view,arch_db:standard_offer.view_form_standard_offer
+msgid "Comment"
+msgstr "Commentaires"
+
+#. module: standard_offer
+#: model:ir.ui.view,arch_db:standard_offer.view_form_standard_offer
+msgid "Communication"
+msgstr "Communication"
+
+#. module: standard_offer
+#: model:ir.model,name:standard_offer.model_category_import
+msgid "Create print lines for all products of a category"
+msgstr "Create print lines for all products of a category"
+
+#. module: standard_offer
+#: model:ir.model.fields,field_description:standard_offer.field_category_import_create_uid
+#: model:ir.model.fields,field_description:standard_offer.field_product_import_create_uid
+#: model:ir.model.fields,field_description:standard_offer.field_standard_offer_create_uid
+#: model:ir.model.fields,field_description:standard_offer.field_standard_offer_line_create_uid
+#: model:ir.model.fields,field_description:standard_offer.field_standard_offer_print_line_create_uid
+msgid "Created by"
+msgstr "Créé par"
+
+#. module: standard_offer
+#: model:ir.model.fields,field_description:standard_offer.field_category_import_create_date
+#: model:ir.model.fields,field_description:standard_offer.field_product_import_create_date
+#: model:ir.model.fields,field_description:standard_offer.field_standard_offer_create_date
+#: model:ir.model.fields,field_description:standard_offer.field_standard_offer_line_create_date
+#: model:ir.model.fields,field_description:standard_offer.field_standard_offer_print_line_create_date
+msgid "Created on"
+msgstr "Créé le"
+
+#. module: standard_offer
+#: model:ir.model.fields,field_description:standard_offer.field_standard_offer_currency_id
+#: model:ir.model.fields,field_description:standard_offer.field_standard_offer_currency_manual_id
+msgid "Currency"
+msgstr "Devise"
+
+#. module: standard_offer
+#: code:addons/standard_offer/standard_offer.py:138
+#: model:ir.model.fields,field_description:standard_offer.field_standard_offer_customer_id
+#: model:ir.model.fields,field_description:standard_offer.field_standard_offer_line_customer_id
+#: model:ir.ui.view,arch_db:standard_offer.view_search_offer
+#: model:ir.ui.view,arch_db:standard_offer.view_search_offer_line
+#, python-format
+msgid "Customer"
+msgstr "Client"
+
+#. module: standard_offer
+#: model:ir.ui.view,arch_db:standard_offer.view_form_standard_offer
+msgid "Delete all lines?"
+msgstr "Supprimer toutes les lignes?"
+
+#. module: standard_offer
+#: model:ir.ui.view,arch_db:standard_offer.view_form_standard_offer
+msgid "Delete lines"
+msgstr "Supprimer les lignes"
+
+#. module: standard_offer
+#: code:addons/standard_offer/standard_offer.py:25
+#: model:ir.ui.view,arch_db:standard_offer.view_form_standard_offer
+#, python-format
+msgid "Discount"
+msgstr "Remise"
+
+#. module: standard_offer
+#: model:ir.model.fields,field_description:standard_offer.field_standard_offer_line_discount_type
+msgid "Discount type"
+msgstr "Type de remise"
+
+#. module: standard_offer
+#: model:ir.model.fields,field_description:standard_offer.field_category_import_display_name
+#: model:ir.model.fields,field_description:standard_offer.field_product_import_display_name
+#: model:ir.model.fields,field_description:standard_offer.field_standard_offer_display_name
+#: model:ir.model.fields,field_description:standard_offer.field_standard_offer_line_display_name
+#: model:ir.model.fields,field_description:standard_offer.field_standard_offer_print_line_display_name
+msgid "Display Name"
+msgstr "Nom affiché"
+
+#. module: standard_offer
+#: code:addons/standard_offer/standard_offer.py:142
+#: model:ir.ui.view,arch_db:standard_offer.view_form_standard_offer
+#: model:ir.ui.view,arch_db:standard_offer.view_search_offer_line
+#, python-format
+msgid "Draft"
+msgstr "Brouillon"
+
+#. module: standard_offer
+#: model:ir.model.fields,field_description:standard_offer.field_standard_offer_end_date
+msgid "End date"
+msgstr "Date de fin"
+
+#. module: standard_offer
+#: model:ir.model.fields,help:standard_offer.field_standard_offer_line_uoi_id
+#: model:ir.model.fields,help:standard_offer.field_standard_offer_print_line_uoi_id
+msgid "Expressed in the sale unity"
+msgstr "Exprimé dans l'unité de vente"
+
+#. module: standard_offer
+#: code:addons/standard_offer/standard_offer.py:138
+#: model:ir.model.fields,field_description:standard_offer.field_standard_offer_family_id
+#: model:ir.ui.view,arch_db:standard_offer.view_search_offer
+#: model:ir.ui.view,arch_db:standard_offer.view_search_offer_line
+#, python-format
+msgid "Family"
+msgstr "Famille de client"
+
+#. module: standard_offer
+#: model:ir.ui.view,arch_db:standard_offer.view_search_offer
+#: model:ir.ui.view,arch_db:standard_offer.view_search_offer_line
+msgid "Filters"
+msgstr "Filtres"
+
+#. module: standard_offer
+#: model:ir.ui.view,arch_db:standard_offer.view_search_offer
+#: model:ir.ui.view,arch_db:standard_offer.view_search_offer_line
+msgid "Group by..."
+msgstr "Regrouper par..."
+
+#. module: standard_offer
+#: model:ir.model.fields,field_description:standard_offer.field_category_import_id
+#: model:ir.model.fields,field_description:standard_offer.field_product_import_id
+#: model:ir.model.fields,field_description:standard_offer.field_standard_offer_id
+#: model:ir.model.fields,field_description:standard_offer.field_standard_offer_line_id
+#: model:ir.model.fields,field_description:standard_offer.field_standard_offer_print_line_id
+msgid "ID"
+msgstr "ID"
+
+#. module: standard_offer
+#: model:ir.ui.view,arch_db:standard_offer.view_form_category_import
+msgid "Import Category"
+msgstr "Importer famille"
+
+#. module: standard_offer
+#: model:ir.ui.view,arch_db:standard_offer.view_form_product_import
+msgid "Import Product"
+msgstr "Importer produit"
+
+#. module: standard_offer
+#: model:ir.ui.view,arch_db:standard_offer.view_form_standard_offer
+msgid "Import all lines?"
+msgstr "Importer toutes les lignes?"
+
+#. module: standard_offer
+#: model:ir.ui.view,arch_db:standard_offer.view_form_standard_offer
+msgid "Import category"
+msgstr "Importer une catégorie"
+
+#. module: standard_offer
+#: model:ir.ui.view,arch_db:standard_offer.view_form_standard_offer
+msgid "Import lines"
+msgstr "Importer lignes"
+
+#. module: standard_offer
+#: model:ir.model,name:standard_offer.model_product_import
+msgid "Import one product"
+msgstr "Importer un produit"
+
+#. module: standard_offer
+#: model:ir.ui.view,arch_db:standard_offer.view_form_standard_offer
+msgid "Import product"
+msgstr "Importer un produit"
+
+#. module: standard_offer
+#: code:addons/standard_offer/standard_offer.py:25
+#, python-format
+msgid "Increase"
+msgstr "Majoration"
+
+#. module: standard_offer
+#: model:ir.ui.view,arch_db:standard_offer.view_form_standard_offer
+msgid "Infos"
+msgstr "Infos"
+
+#. module: standard_offer
+#: model:ir.model.fields,field_description:standard_offer.field_category_import___last_update
+#: model:ir.model.fields,field_description:standard_offer.field_product_import___last_update
+#: model:ir.model.fields,field_description:standard_offer.field_standard_offer___last_update
+#: model:ir.model.fields,field_description:standard_offer.field_standard_offer_line___last_update
+#: model:ir.model.fields,field_description:standard_offer.field_standard_offer_print_line___last_update
+msgid "Last Modified on"
+msgstr "Dernière modification le"
+
+#. module: standard_offer
+#: model:ir.model.fields,field_description:standard_offer.field_category_import_write_uid
+#: model:ir.model.fields,field_description:standard_offer.field_product_import_write_uid
+#: model:ir.model.fields,field_description:standard_offer.field_standard_offer_line_write_uid
+#: model:ir.model.fields,field_description:standard_offer.field_standard_offer_print_line_write_uid
+#: model:ir.model.fields,field_description:standard_offer.field_standard_offer_write_uid
+msgid "Last Updated by"
+msgstr "Mis à jour par"
+
+#. module: standard_offer
+#: model:ir.model.fields,field_description:standard_offer.field_category_import_write_date
+#: model:ir.model.fields,field_description:standard_offer.field_product_import_write_date
+#: model:ir.model.fields,field_description:standard_offer.field_standard_offer_line_write_date
+#: model:ir.model.fields,field_description:standard_offer.field_standard_offer_print_line_write_date
+#: model:ir.model.fields,field_description:standard_offer.field_standard_offer_write_date
+msgid "Last Updated on"
+msgstr "Mis à jour le"
+
+#. module: standard_offer
+#: model:ir.ui.view,arch_db:standard_offer.view_form_standard_offer
+msgid "Mail"
+msgstr "Mail"
+
+#. module: standard_offer
+#: model:ir.model.fields,field_description:standard_offer.field_standard_offer_mail_ids
+msgid "Mails"
+msgstr "Mails"
+
+#. module: standard_offer
+#: model:ir.model.fields,field_description:standard_offer.field_standard_offer_line_mode
+msgid "Mode"
+msgstr "Mode"
+
+#. module: standard_offer
+#: model:ir.model.fields,field_description:standard_offer.field_standard_offer_name
+msgid "Name"
+msgstr "Nom"
+
+#. module: standard_offer
+#: code:addons/standard_offer/standard_offer.py:25
+#, python-format
+msgid "Net price"
+msgstr "Prix net"
+
+#. module: standard_offer
+#: code:addons/standard_offer/standard_offer.py:33
+#, python-format
+msgid "New"
+msgstr "Nouveau"
+
+#. module: standard_offer
+#: model:ir.ui.view,arch_db:standard_offer.view_search_offer
+msgid "Not active"
+msgstr "Non active"
+
+#. module: standard_offer
+#: code:addons/standard_offer/standard_offer.py:142
+#: model:ir.ui.view,arch_db:standard_offer.view_form_standard_offer
+#: model:ir.ui.view,arch_db:standard_offer.view_search_offer_line
+#, python-format
+msgid "Obsolete"
+msgstr "Obsolète"
+
+#. module: standard_offer
+#: model:ir.model.fields,field_description:standard_offer.field_standard_offer_obsolescence_date
+msgid "Obsoleted on"
+msgstr "Date d'obsolescence"
+
+#. module: standard_offer
+#: code:addons/standard_offer/standard_offer.py:33
+#, python-format
+msgid "Old"
+msgstr "Ancienne"
+
+#. module: standard_offer
+#: code:addons/standard_offer/standard_offer.py:134
+#, python-format
+msgid "Only base price is possible for standard offer"
+msgstr "Seul le prix de base est disponible pour un tarif standard"
+
+#. module: standard_offer
+#: model:ir.model.fields,field_description:standard_offer.field_standard_offer_line_offer_id
+msgid "Parent offer"
+msgstr "Offre parente"
+
+#. module: standard_offer
+#: code:addons/standard_offer/standard_offer.py:29
+#, python-format
+msgid "Percent"
+msgstr "Pourcentage"
+
+#. module: standard_offer
+#: model:ir.model,name:standard_offer.model_standard_offer_print_line
+msgid "Pre calculated line"
+msgstr "Pre calculated line"
+
+#. module: standard_offer
+#: model:ir.model.fields,field_description:standard_offer.field_standard_offer_print_line_price_1
+#: model:ir.model.fields,field_description:standard_offer.field_standard_offer_print_line_price_2
+#: model:ir.model.fields,field_description:standard_offer.field_standard_offer_print_line_price_3
+#: model:ir.model.fields,field_description:standard_offer.field_standard_offer_print_line_price_4
+msgid "Price"
+msgstr "Prix"
+
+#. module: standard_offer
+#: model:ir.ui.view,arch_db:standard_offer.view_form_standard_offer
+msgid "Print"
+msgstr "Imprimer"
+
+#. module: standard_offer
+#: model:ir.model.fields,field_description:standard_offer.field_standard_offer_print_line_ids
+msgid "Print Lines"
+msgstr "Print Lines"
+
+#. module: standard_offer
+#: code:addons/standard_offer/standard_offer.py:21
+#: model:ir.model,name:standard_offer.model_product_product
+#: model:ir.model.fields,field_description:standard_offer.field_product_import_product_id
+#: model:ir.model.fields,field_description:standard_offer.field_standard_offer_line_product_id
+#: model:ir.model.fields,field_description:standard_offer.field_standard_offer_print_line_product_id
+#: model:ir.ui.view,arch_db:standard_offer.view_search_offer_line
+#, python-format
+msgid "Product"
+msgstr "Produit"
+
+#. module: standard_offer
+#: model:ir.actions.act_window,name:standard_offer.act_product_import
+#: model:ir.ui.view,arch_db:standard_offer.view_form_product_import
+msgid "Product Import"
+msgstr "Importer un produit"
+
+#. module: standard_offer
+#: model:ir.model.fields,field_description:standard_offer.field_standard_offer_print_line_qty_1
+msgid "Q1"
+msgstr "Q1"
+
+#. module: standard_offer
+#: model:ir.model.fields,field_description:standard_offer.field_standard_offer_print_line_qty_2
+msgid "Q2"
+msgstr "Q2"
+
+#. module: standard_offer
+#: model:ir.model.fields,field_description:standard_offer.field_standard_offer_print_line_qty_3
+msgid "Q3"
+msgstr "Q3"
+
+#. module: standard_offer
+#: model:ir.model.fields,field_description:standard_offer.field_standard_offer_print_line_qty_4
+msgid "Q4"
+msgstr "Q4"
+
+#. module: standard_offer
+#: model:ir.model.fields,field_description:standard_offer.field_standard_offer_line_quantity
+msgid "Quantity"
+msgstr "Quantité"
+
+#. module: standard_offer
+#: model:ir.model.fields,field_description:standard_offer.field_standard_offer_line_type
+msgid "Rule type"
+msgstr "Type de règle"
+
+#. module: standard_offer
+#: model:ir.ui.view,arch_db:standard_offer.view_form_standard_offer
+msgid "Send Mail"
+msgstr "Envoyer un mail"
+
+#. module: standard_offer
+#: code:addons/standard_offer/standard_offer.py:142
+#: model:ir.ui.view,arch_db:standard_offer.view_form_standard_offer
+#, python-format
+msgid "Sent"
+msgstr "Envoyé"
+
+#. module: standard_offer
+#: model:ir.model.fields,field_description:standard_offer.field_standard_offer_sending_date
+msgid "Sent on"
+msgstr "Date d'envoi"
+
+#. module: standard_offer
+#: code:addons/standard_offer/standard_offer.py:138
+#: model:ir.ui.view,arch_db:standard_offer.view_search_offer
+#: model:ir.ui.view,arch_db:standard_offer.view_search_offer_line
+#, python-format
+msgid "Standard"
+msgstr "Standard"
+
+#. module: standard_offer
+#: model:ir.actions.act_window,name:standard_offer.act_standard_offer
+#: model:ir.ui.menu,name:standard_offer.menu_standard_offer
+#: model:ir.ui.view,arch_db:standard_offer.view_form_standard_offer
+msgid "Standard Tariff"
+msgstr "Tarif standard"
+
+#. module: standard_offer
+#: model:ir.actions.act_window,name:standard_offer.act_standard_offer_line
+#: model:ir.ui.menu,name:standard_offer.menu_standard_offer_line
+msgid "Standard Tariff Line"
+msgstr "Ligne de tarif standard"
+
+#. module: standard_offer
+#: model:ir.ui.view,arch_db:standard_offer.view_form_standard_offer_print_line
+msgid "Standard Tariff Print Line"
+msgstr "Ligne Tarif standard"
+
+#. module: standard_offer
+#: model:ir.ui.view,arch_db:standard_offer.view_tree_standard_offer
+msgid "Standard Tariffs"
+msgstr "Tarifs standard"
+
+#. module: standard_offer
+#: model:ir.ui.view,arch_db:standard_offer.view_tree_standard_offer_line
+msgid "Standard Tariffs Line"
+msgstr "Ligne de tarif standard"
+
+#. module: standard_offer
+#: model:ir.model,name:standard_offer.model_standard_offer
+msgid "Standard offer"
+msgstr "Offre standard"
+
+#. module: standard_offer
+#: model:ir.model,name:standard_offer.model_standard_offer_line
+msgid "Standard offer line"
+msgstr "Standard offer line"
+
+#. module: standard_offer
+#: model:ir.model.fields,field_description:standard_offer.field_standard_offer_rule_ids
+msgid "Standard offer rules"
+msgstr "Standard offer rules"
+
+#. module: standard_offer
+#: model:ir.model.fields,field_description:standard_offer.field_standard_offer_start_date
+msgid "Start date"
+msgstr "Date de début"
+
+#. module: standard_offer
+#: model:ir.model.fields,field_description:standard_offer.field_standard_offer_line_state
+#: model:ir.ui.view,arch_db:standard_offer.view_search_offer
+msgid "State"
+msgstr "État"
+
+#. module: standard_offer
+#: model:ir.model.fields,field_description:standard_offer.field_category_import_offer_id
+#: model:ir.model.fields,field_description:standard_offer.field_product_import_offer_id
+#: model:ir.model.fields,field_description:standard_offer.field_standard_offer_print_line_offer_id
+msgid "Tariff"
+msgstr "Tarif"
+
+#. module: standard_offer
+#: model:mail.template,subject:standard_offer.email_template_edi_offer
+msgid "Tariff ${object.name}"
+msgstr "Tarif ${object.name}"
+
+#. module: standard_offer
+#: model:ir.model.fields,field_description:standard_offer.field_standard_offer_state
+msgid "Tariff state"
+msgstr "État du tarif"
+
+#. module: standard_offer
+#: model:ir.model.fields,field_description:standard_offer.field_standard_offer_type
+msgid "Tariff type"
+msgstr "type de tarif"
+
+#. module: standard_offer
+#: code:addons/standard_offer/standard_offer.py:104
+#, python-format
+msgid "There is already an applicable offer for that customer on that period."
+msgstr "Il y a déjà une offre applicable pour ce client sur cette période."
+
+#. module: standard_offer
+#: code:addons/standard_offer/standard_offer.py:122
+#, python-format
+msgid "There is already an applicable offer for that family on that period."
+msgstr "Il y a déjà un tarif applicable pour cette famille de client sur cette période."
+
+#. module: standard_offer
+#: code:addons/standard_offer/standard_offer.py:113
+#, python-format
+msgid "There is already an applicable standard offer for that category on that period."
+msgstr "Il y a déjà une offre standard applicable pour cette famille sur cette période."
+
+#. module: standard_offer
+#: model:ir.model.fields,field_description:standard_offer.field_standard_offer_print_line_uoi_id
+msgid "Unit of Price"
+msgstr "Unité de prix"
+
+#. module: standard_offer
+#: model:ir.model.fields,field_description:standard_offer.field_standard_offer_print_line_uos_id
+#: model:ir.model.fields,help:standard_offer.field_standard_offer_line_uos_id
+#: model:ir.model.fields,help:standard_offer.field_standard_offer_print_line_uos_id
+msgid "Unit of Sale"
+msgstr "Unité de Vente"
+
+#. module: standard_offer
+#: model:ir.model.fields,field_description:standard_offer.field_standard_offer_line_uoi_id
+msgid "UoI"
+msgstr "Unité de prix"
+
+#. module: standard_offer
+#: model:ir.model.fields,field_description:standard_offer.field_standard_offer_line_uos_id
+msgid "UoS"
+msgstr "Unité de vente"
+
+#. module: standard_offer
+#: model:ir.model.fields,field_description:standard_offer.field_standard_offer_application_uid
+#: model:ir.model.fields,field_description:standard_offer.field_standard_offer_obsolescence_uid
+#: model:ir.model.fields,field_description:standard_offer.field_standard_offer_sending_uid
+msgid "User"
+msgstr "Utilisateur"
+
+#. module: standard_offer
+#: code:addons/standard_offer/standard_offer.py:29
+#: model:ir.model.fields,field_description:standard_offer.field_standard_offer_line_value
+#, python-format
+msgid "Value"
+msgstr "Valeur"
+
+#. module: standard_offer
+#: sql_constraint:standard.offer.line:0
+msgid "Vous ne pouvez pas avoir deux fois la même quantité pour un produit."
+msgstr "Vous ne pouvez pas avoir deux fois la même quantité pour un produit."
+
+#. module: standard_offer
+#: sql_constraint:standard.offer.line:0
+msgid "Vous ne pouvez pas avoir deux fois la même quantité pour une famille."
+msgstr "Vous ne pouvez pas avoir deux fois la même quantité pour une famille."
+
+#. module: standard_offer
+#: code:addons/standard_offer/standard_offer.py:61
+#, python-format
+msgid "You can't have the same category and quantity twice."
+msgstr "Vous ne pouvez pas avoir deux fois la même quantité pour une famille."
+
+#. module: standard_offer
+#: code:addons/standard_offer/standard_offer.py:60
+#, python-format
+msgid "You can't have the same product and quantity twice."
+msgstr "Vous ne pouvez pas avoir deux fois la même quantité pour un produit."
+

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+		<!-- FORM VIEW Balancing label -->
+		<record id='view_form_balancing_label_wizard' model='ir.ui.view'>
+			<field name="name">view_form_balancing_label_wizard</field>
+			<field name="model">balancing.label.wizard</field>
+			<field name="arch" type="xml">
+				<form string="Balancing label" version="8.0">
+					<group>
+						<field name="location_id" />
+						<field name="line_ids" colspan="4" nolabel="1">
+							<tree string="Labels" editable="bottom">
+								<field name="is_variable_double_unit" invisible="1" />
+								<field name="label_id" />
+								<field name="uom_qty" />
+								<field name="sec_uom_qty" attrs="{'invisible': [('is_variable_double_unit', '!=', True)]}" />
+							</tree>
+							<form>
+								<field name="is_variable_double_unit" invisible="1" />
+								<field name="label_id" />
+								<field name="uom_qty" />
+								<field name="sec_uom_qty" attrs="{'invisible': [('is_variable_double_unit', '!=', True)]}" />
+							</form>
+						</field>
+					</group>
+					<footer>
+						<button name="balancing_label" string="OK" type="object" class="oe_highlight" />
+						or
+						<button string="Cancel" class="oe_link" special="cancel" />
+					</footer>
+				</form>
+			</field>
+		</record>
+
+		<!-- ACTION Balancing label -->
+		<act_window name="Balancing label" res_model="balancing.label.wizard" src_model="stock.label" view_mode="form" target="new" key2="client_action_multi" id="act_balancing_label_wizard" />
+
+	</data>
+</openerp>

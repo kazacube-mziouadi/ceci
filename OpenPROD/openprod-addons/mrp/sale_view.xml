@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+    
+        <record model="ir.ui.view" id="view_form_sale_order_line_mrp">
+            <field name="name">sale.order.line.form.inherit</field>
+            <field name="inherit_id" ref="sale.view_form_sale_order_line"/>
+            <field name="priority" eval="1400" />
+            <field name="model">sale.order.line</field>
+            <field name="arch" type="xml">
+                <xpath expr="//group[@name='sale_guarantee']" position="after">
+                	<group colspan="2" col="2" string="Configuration's options of the product" groups="mrp.mrp_options">
+	                    <field name="option_lines_ids" colspan="2" nolabel="1" readonly="1">
+	                        <tree>
+	                            <field name="option_id" />
+	                            <field name="price_unit" />
+	                        </tree>
+	                    </field>
+                	</group>
+                </xpath>
+            </field>
+        </record>
+        
+        <record model="ir.ui.view" id="view_form_sale_order_mrp">
+            <field name="name">sale.order.form.inherit</field>
+            <field name="inherit_id" ref="sale.view_form_sale_order"/>
+            <field name="priority" eval="1400" />
+            <field name="model">sale.order</field>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='order_line_ids']//group[@name='sale_guarantee']" position="after">
+                	<group colspan="2" col="2" string="Configuration's options of the product" groups="mrp.mrp_options">
+	                    <field name="option_lines_ids" colspan="2" nolabel="1">
+	                        <tree editable="bottom">
+	                            <field name="option_id" />
+	                            <field name="price_unit" />
+	                        </tree>
+	                    </field>
+                	</group>
+                </xpath>
+            </field>
+        </record>
+        
+    </data>
+</openerp>

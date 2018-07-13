@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data noupdate="0">
+
+		<!-- WORKFLOW -->
+		<record id="wkf_product_product" model="workflow">
+			<field name="name">product_product</field>
+			<field name="osv">product.product</field>
+			<field name="on_create">True</field>
+			<field name="is_active" eval="False" />
+		</record>
+
+
+		<!-- DISPLAY STATE -->
+		<record id="product_display_state_dev" model="workflow.display.state">
+			<field name="wkf_id" ref="wkf_product_product" />
+			<field name="sequence" eval="0" />
+			<field name="label">Dev</field>
+			<field name="name">dev</field>
+			<field name="always_visible" eval="True" />
+		</record>
+		<record id="product_display_state_lifeserie" model="workflow.display.state">
+			<field name="wkf_id" ref="wkf_product_product" />
+			<field name="sequence" eval="10" />
+			<field name="label">Life serie</field>
+			<field name="name">lifeserie</field>
+			<field name="always_visible" eval="True" />
+		</record>
+		<record id="product_display_state_endlife" model="workflow.display.state">
+            <field name="wkf_id" ref="wkf_product_product" />
+            <field name="sequence" eval="20" />
+            <field name="label">End life</field>
+            <field name="name">endlife</field>
+            <field name="always_visible" eval="True" />
+        </record>
+		<record id="product_display_state_obsolete" model="workflow.display.state">
+			<field name="wkf_id" ref="wkf_product_product" />
+			<field name="sequence" eval="30" />
+			<field name="label">Obsolete</field>
+			<field name="name">obsolete</field>
+			<field name="always_visible" eval="False" />
+		</record>
+
+
+		<!-- ACTIVITY -->
+		<!-- dev -->
+		<record id="product_act_dev" model="workflow.activity">
+			<field name="wkf_id" ref="wkf_product_product" />
+			<field name="name">Dev</field>
+			<field name="kind">function</field>
+			<field name="can_not_be_deleted">False</field>
+			<field name="required">False</field>
+			<field name="sequence" eval="10" />
+			<field name="flow_start" eval="True"/>
+			<field name="flow_stop" eval="False"/>
+			<field name="action">write({'display_state': 'dev', 'state': 'dev'})</field>
+		</record>
+		<!-- lifeserie -->
+		<record id="product_act_lifeserie" model="workflow.activity">
+			<field name="wkf_id" ref="wkf_product_product" />
+			<field name="name">Life serie</field>
+			<field name="kind">function</field>
+			<field name="can_not_be_deleted">False</field>
+			<field name="required">False</field>
+			<field name="sequence" eval="20" />
+			<field name="flow_start" eval="False"/>
+			<field name="flow_stop" eval="False"/>
+			<field name="action">write({'display_state': 'lifeserie', 'state': 'lifeserie'})</field>
+		</record>
+		<!-- endlife -->
+        <record id="product_act_endlife" model="workflow.activity">
+            <field name="wkf_id" ref="wkf_product_product" />
+            <field name="name">End life</field>
+            <field name="kind">function</field>
+            <field name="can_not_be_deleted">False</field>
+            <field name="required">False</field>
+            <field name="sequence" eval="30" />
+            <field name="flow_start" eval="False"/>
+            <field name="flow_stop" eval="False"/>
+            <field name="action">write({'display_state': 'endlife', 'state': 'endlife'})</field>
+        </record>
+		<!-- obsolete -->
+		<record id="product_act_obsolete" model="workflow.activity">
+			<field name="wkf_id" ref="wkf_product_product" />
+			<field name="name">Obsolete</field>
+			<field name="kind">function</field>
+			<field name="can_not_be_deleted">False</field>
+			<field name="required">False</field>
+			<field name="sequence" eval="40" />
+			<field name="flow_start" eval="False"/>
+			<field name="flow_stop" eval="True"/>
+			<field name="action">write({'display_state': 'obsolete', 'state': 'obsolete'})</field>
+		</record>
+
+
+		<!-- TRANSITION -->
+		<!-- dev to lifeserie -->
+        <record id="product_dev_to_lifeserie" model="workflow.transition">
+            <field name="sequence" eval="10" />
+            <field name="act_from" ref="product_act_dev" />
+            <field name="act_to" ref="product_act_lifeserie" />
+            <field name="signal">lifeserie</field>
+            <field name="is_default">True</field>
+            <field name="visible_button">True</field>
+            <field name="button_label">Life serie</field>
+            <field name="button_class">openprod_logical_button</field>
+        </record>
+        <!-- lifeserie to endlife -->
+        <record id="product_lifeserie_to_endlife" model="workflow.transition">
+            <field name="sequence" eval="10" />
+            <field name="act_from" ref="product_act_lifeserie" />
+            <field name="act_to" ref="product_act_endlife" />
+            <field name="signal">endlife</field>
+            <field name="is_default">True</field>
+            <field name="visible_button">True</field>
+            <field name="button_label">End life</field>
+            <field name="button_class">openprod_logical_button</field>
+        </record>
+		<!-- lifeserie to obsolete -->
+		<record id="product_lifeserie_to_obsolete" model="workflow.transition">
+			<field name="sequence" eval="20" />
+			<field name="act_from" ref="product_act_lifeserie" />
+			<field name="act_to" ref="product_act_obsolete" />
+			<field name="signal">obsolete_lifeserie</field>
+			<field name="is_default">True</field>
+			<field name="visible_button">True</field>
+			<field name="button_label">obsolete</field>
+			<field name="button_class">openprod_cancel_button</field>
+		</record>
+		<!-- endlife to obsolete -->
+        <record id="product_endlife_to_obsolete" model="workflow.transition">
+            <field name="sequence" eval="20" />
+            <field name="act_from" ref="product_act_endlife" />
+            <field name="act_to" ref="product_act_obsolete" />
+            <field name="signal">obsolete_endlife</field>
+            <field name="is_default">True</field>
+            <field name="visible_button">True</field>
+            <field name="button_label">obsolete</field>
+            <field name="button_class">openprod_cancel_button</field>
+        </record>
+		<!-- dev to obsolete -->
+        <record id="product_dev_to_obsolete" model="workflow.transition">
+            <field name="sequence" eval="20" />
+            <field name="act_from" ref="product_act_dev" />
+            <field name="act_to" ref="product_act_obsolete" />
+            <field name="signal">obsolete_dev</field>
+            <field name="is_default">True</field>
+            <field name="visible_button">True</field>
+            <field name="button_label">obsolete</field>
+            <field name="button_class">openprod_cancel_button</field>
+        </record>
+		<!-- obsolete to dev -->
+		<record id="product_obsolete_to_draft" model="workflow.transition">
+			<field name="sequence" eval="60" />
+			<field name="act_from" ref="product_act_obsolete" />
+			<field name="act_to" ref="product_act_dev" />
+			<field name="signal">dev</field>
+			<field name="is_default">True</field>
+			<field name="visible_button">True</field>
+			<field name="button_label">dev</field>
+			<field name="button_class">openprod_logical_button</field>
+		</record>
+	</data>
+</openerp>

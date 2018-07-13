@@ -1,0 +1,226 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* supplier_price
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 9.0c\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-05-15 08:05+0000\n"
+"PO-Revision-Date: 2017-05-15 08:05+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: supplier_price
+#: model:ir.ui.view,arch_db:supplier_price.view_form_modif_price_productpartnerinfo
+msgid "Actions"
+msgstr "Actions"
+
+#. module: supplier_price
+#: model:ir.model.fields,field_description:supplier_price.field_modif_price_productpartnerinfo_create_uid
+msgid "Created by"
+msgstr "Créé par"
+
+#. module: supplier_price
+#: model:ir.model.fields,field_description:supplier_price.field_modif_price_productpartnerinfo_create_date
+msgid "Created on"
+msgstr "Créé le"
+
+#. module: supplier_price
+#: model:ir.model.fields,field_description:supplier_price.field_modif_price_productpartnerinfo_date_export
+msgid "Date export"
+msgstr "Date d'exportation"
+
+#. module: supplier_price
+#: model:ir.model.fields,field_description:supplier_price.field_modif_price_productpartnerinfo_date_import
+msgid "Date import"
+msgstr "Date d'importation"
+
+#. module: supplier_price
+#: model:ir.model.fields,field_description:supplier_price.field_modif_price_productpartnerinfo_date
+msgid "Date search"
+msgstr "Date de recherche"
+
+#. module: supplier_price
+#: model:ir.model.fields,field_description:supplier_price.field_modif_price_productpartnerinfo_display_name
+msgid "Display Name"
+msgstr "Afficher Nom"
+
+#. module: supplier_price
+#: model:ir.model.fields,field_description:supplier_price.field_modif_price_productpartnerinfo_is_export
+msgid "Export"
+msgstr "Exportation"
+
+#. module: supplier_price
+#: model:ir.ui.view,arch_db:supplier_price.view_form_modif_price_productpartnerinfo
+msgid "Export csv"
+msgstr "Exportation du csv"
+
+#. module: supplier_price
+#: model:ir.model.fields,help:supplier_price.field_modif_price_productpartnerinfo_report_export
+#: model:ir.model.fields,help:supplier_price.field_modif_price_productpartnerinfo_report_export_before_import
+msgid "Export csv file only"
+msgstr "Exportation de fichier csv uniquement"
+
+#. module: supplier_price
+#: model:ir.model.fields,field_description:supplier_price.field_modif_price_productpartnerinfo_id
+msgid "ID"
+msgstr "ID"
+
+#. module: supplier_price
+#: model:ir.model.fields,field_description:supplier_price.field_modif_price_productpartnerinfo_is_import
+#: model:ir.ui.view,arch_db:supplier_price.view_form_modif_price_productpartnerinfo
+msgid "Import"
+msgstr "Importation"
+
+#. module: supplier_price
+#: model:ir.ui.view,arch_db:supplier_price.view_form_modif_price_productpartnerinfo
+msgid "Import csv"
+msgstr "Importation csv"
+
+#. module: supplier_price
+#: model:ir.model.fields,help:supplier_price.field_modif_price_productpartnerinfo_report_import
+msgid "Import csv file only"
+msgstr "Importation de fichier csv uniquement"
+
+#. module: supplier_price
+#: model:ir.model.fields,field_description:supplier_price.field_modif_price_productpartnerinfo___last_update
+msgid "Last Modified on"
+msgstr "Derniére Modification le"
+
+#. module: supplier_price
+#: model:ir.model.fields,field_description:supplier_price.field_modif_price_productpartnerinfo_write_uid
+msgid "Last Updated by"
+msgstr "Derniére Mise à Jour par"
+
+#. module: supplier_price
+#: model:ir.model.fields,field_description:supplier_price.field_modif_price_productpartnerinfo_write_date
+msgid "Last Updated on"
+msgstr "Derniére Mise à Jour le"
+
+#. module: supplier_price
+#: model:ir.actions.act_window,name:supplier_price.action_modif_price_productpartnerinfo
+#: model:ir.ui.menu,name:supplier_price.menu_modif_price_productpartnerinfo
+#: model:ir.ui.view,arch_db:supplier_price.view_form_modif_price_productpartnerinfo
+#: model:ir.ui.view,arch_db:supplier_price.view_tree_modif_price_productpartnerinfo
+msgid "Modif price productpartnerinfo"
+msgstr "Modif tarif infoproduitpartenaire"
+
+#. module: supplier_price
+#: model:ir.model.fields,field_description:supplier_price.field_modif_price_productpartnerinfo_report_export_name
+msgid "Name report export"
+msgstr "Nom du fichier exporté"
+
+#. module: supplier_price
+#: model:ir.model.fields,field_description:supplier_price.field_modif_price_productpartnerinfo_report_export_before_import_name
+msgid "Name report export before import"
+msgstr "Nom du fichier exporter avant l'import"
+
+#. module: supplier_price
+#: model:ir.model.fields,field_description:supplier_price.field_modif_price_productpartnerinfo_report_import_name
+msgid "Name report import"
+msgstr "Nom du fichier importé"
+
+#. module: supplier_price
+#: model:ir.model.fields,field_description:supplier_price.field_modif_price_productpartnerinfo_new_date
+msgid "New start date price"
+msgstr "Nouvelle date de début du tarif"
+
+#. module: supplier_price
+#: model:ir.model.fields,field_description:supplier_price.field_modif_price_productpartnerinfo_partner_id
+msgid "Partner"
+msgstr "Partenaire"
+
+#. module: supplier_price
+#: model:ir.ui.view,arch_db:supplier_price.view_form_modif_price_productpartnerinfo
+msgid "Price list delete"
+msgstr "Liste des tarifs à supprimer"
+
+#. module: supplier_price
+#: model:ir.ui.view,arch_db:supplier_price.view_form_modif_price_productpartnerinfo
+msgid "Price list delete futur"
+msgstr "List des futurs tarifs à supprimer"
+
+#. module: supplier_price
+#: code:addons/supplier_price/modif_price_productpartnerinfo.py:159
+#, python-format
+msgid "Problem new start date price < Date search."
+msgstr "Probléme nouvelle date de debut du tarif < Date de recherche."
+
+#. module: supplier_price
+#: code:addons/supplier_price/modif_price_productpartnerinfo.py:217
+#, python-format
+msgid "Problem no file csv import declared."
+msgstr "Probléme aucun fichier csv d'import déclaré."
+
+#. module: supplier_price
+#: code:addons/supplier_price/modif_price_productpartnerinfo.py:114
+#, python-format
+msgid "Problem no report jasper 'management_price_productpartnerinfo' declared."
+msgstr "Probléme aucun rapport jasper 'management_price_productpartnerinfo' déclaré."
+
+#. module: supplier_price
+#: code:addons/supplier_price/modif_price_productpartnerinfo.py:156
+#, python-format
+msgid "Problem select new start date price."
+msgstr "Probléme sélection d'une nouvelle date de début des tarifs."
+
+#. module: supplier_price
+#: model:ir.ui.view,arch_db:supplier_price.view_form_modif_price_productpartnerinfo
+msgid "Product purchase"
+msgstr "Produits achetés"
+
+#. module: supplier_price
+#: model:ir.ui.view,arch_db:supplier_price.view_form_modif_price_productpartnerinfo
+msgid "Product purchase partner info"
+msgstr "Produit acheté"
+
+#. module: supplier_price
+#: model:ir.ui.view,arch_db:supplier_price.view_form_modif_price_productpartnerinfo
+msgid "Product purhase partner info"
+msgstr "Produits achetés"
+
+#. module: supplier_price
+#: model:ir.model.fields,field_description:supplier_price.field_modif_price_productpartnerinfo_purchase_delete_partnerinfo_ids
+msgid "Purchase Delete Partnerinfo"
+msgstr "Infopartenaire des achats à supprimer"
+
+#. module: supplier_price
+#: model:ir.model.fields,field_description:supplier_price.field_modif_price_productpartnerinfo_purchase_partnerinfo_ids
+msgid "Purchase Partnerinfo"
+msgstr "Achat"
+
+#. module: supplier_price
+#: model:ir.model.fields,field_description:supplier_price.field_modif_price_productpartnerinfo_report_export
+msgid "Report Export"
+msgstr "Fichier exporté"
+
+#. module: supplier_price
+#: model:ir.model.fields,field_description:supplier_price.field_modif_price_productpartnerinfo_report_export_before_import
+msgid "Report Export before import"
+msgstr "Exporter le rapport avant l'import"
+
+#. module: supplier_price
+#: model:ir.model.fields,field_description:supplier_price.field_modif_price_productpartnerinfo_report_import
+msgid "Report Import"
+msgstr "Fichier à importer"
+
+#. module: supplier_price
+#: model:ir.ui.view,arch_db:supplier_price.view_form_modif_price_productpartnerinfo
+msgid "View"
+msgstr "Vue"
+
+#. module: supplier_price
+#: model:ir.actions.act_window,name:supplier_price.act_modif_price_productpartnerinfo
+msgid "modif price productpartnerinfo"
+msgstr "Modification des tarifs infoproduitpartnenaire"
+
+#. module: supplier_price
+#: model:ir.model,name:supplier_price.model_modif_price_productpartnerinfo
+msgid "modif.price.productpartnerinfo"
+msgstr "modif.price.productpartnerinfo"
+

@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<openerp>
+	<data noupdate="0">
+		
+		<!-- Groupes -->
+		<record model="ir.module.category" id="module_base_gmao">
+            <field name="name">GMAO</field>
+            <field name="sequence">16</field>
+        </record>
+		
+		<record model="res.groups" id="gmao_user">
+			<field name="name">User</field>
+			<field name="category_id" ref="module_base_gmao"/>
+		</record>
+		
+		<record model="res.groups" id="gmao_manager">
+			<field name="name">Manager</field>
+			<field name="category_id" ref="module_base_gmao"/>
+			<field name="implied_ids" eval="[(4, ref('gmao_user'))]"/>
+		</record>
+		
+		<record model="res.groups" id="gmao_responsible">
+			<field name="name">Administrator</field>
+			<field name="category_id" ref="module_base_gmao"/>
+			<field name="implied_ids" eval="[(4, ref('gmao_manager'))]"/>
+		</record>
+	
+        
+        
+        <record model="ir.module.category" id="module_base_sav">
+            <field name="name">SAV</field>
+            <field name="sequence">16</field>
+        </record>
+        
+        <record model="res.groups" id="sav_user">
+            <field name="name">User</field>
+            <field name="category_id" ref="module_base_sav"/>
+        </record>
+        
+        <record model="res.groups" id="sav_manager">
+            <field name="name">Manager</field>
+            <field name="category_id" ref="module_base_sav"/>
+            <field name="implied_ids" eval="[(4, ref('sav_user'))]"/>
+        </record>
+        
+        <record model="res.groups" id="sav_responsible">
+            <field name="name">Administrator</field>
+            <field name="category_id" ref="module_base_sav"/>
+            <field name="implied_ids" eval="[(4, ref('sav_manager'))]"/>
+        </record>
+    
+	</data>
+</openerp>

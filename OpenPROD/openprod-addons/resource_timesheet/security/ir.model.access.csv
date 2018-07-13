@@ -1,0 +1,8 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_resource_timesheet_user,resource.timesheet,model_resource_timesheet,human_resources_user,1,0,0,0
+access_resource_timesheet_manager,resource.timesheet,model_resource_timesheet,human_resources_manager,1,1,1,1
+access_resource_timesheet_administrator,resource.timesheet,model_resource_timesheet,human_resources_responsible,1,1,1,1
+
+access_attendance_list_user,attendance.list,model_attendance_list,human_resources_user,1,1,1,1
+access_attendance_list_manager,attendance.list,model_attendance_list,human_resources_manager,1,1,1,1
+access_attendance_list_administrator,attendance.list,model_attendance_list,human_resources_responsible,1,1,1,1

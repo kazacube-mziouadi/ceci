@@ -1,0 +1,53 @@
+.favorite-item{
+  font-size: 2.2em;
+  cursor: pointer;
+}
+.favorite-item::before {
+    content: '★';
+    color: #4272ad;
+}
+.remove-favorite{
+  font-size: 2.2em;
+  cursor: pointer;
+}
+#fav-list{
+  padding : 20px;
+}
+.fav-title{
+    padding-left: 20px;
+    padding-top: 20px;
+}
+.oe-save-favorite-name{
+    display: none;
+    margin: 3px 25px;
+    width: auto;
+    max-width: 250px;
+}
+#favorites {
+	height: 100%;
+	background : url('/web/static/src/img/ui/bg_openprod.svg') center/100%;
+}
+#favorites > div {
+	display: flex;
+}
+#favorites ul {
+	margin-left: 15%;
+}
+#favorites li {
+	font-size: 3em;
+	cursor: pointer;
+	list-style-type: none;
+	margin: 10px;
+}
+#favorites h1 {
+	margin: 0;
+	padding: 50px;
+	color: #4272ad;
+}
+#favorites li:hover {
+	color: #4272ad;
+}
+#favorites li::before {
+	content: '★';
+	color: #4272ad;
+}

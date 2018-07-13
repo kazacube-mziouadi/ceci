@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+
+        <record id="connexion_pentaho" model="ir.actions.act_url">
+			<field name="name">Pentaho User Console</field>
+			<field name="url">/bi/connect</field>
+		</record>
+
+        <!-- top level menu: no parent -->
+        <menuitem id="main_bi_menu" name="BI" />
+
+        <menuitem id="bi_menu" name="Business Inteligence"
+                  parent="main_bi_menu"/>
+
+        <menuitem id="connexion_menu" name="Pentaho User Console" parent="bi_menu"
+                  action="connexion_pentaho"/>  
+                
+    </data>
+</openerp>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+	
+		<record model="ir.ui.view" id="view_form_print_wo">
+			<field name="name">view_form_print_wo</field>
+			<field name="model">print.wo</field>
+			<field name="type">form</field>
+			<field name="arch" type="xml">
+				<form string="Print work order">
+					<group colspan="4" col="4">
+						<field name="print_plan"/>
+						<field name="mrp_workorder_id" invisible="1"/>
+					</group>
+					<footer>
+						<button name="action_print_wo" string="Print the work order" type="object" class="oe_highlight" />
+						or
+						<button string="Cancel" class="oe_link" special="cancel" />
+					</footer>
+				</form>
+			</field>
+		</record>
+
+		<record model="ir.actions.act_window" id="action_print_wo">
+			<field name="name">Print the work order</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="res_model">print.wo</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">form</field>
+			<field name="target">new</field>
+		</record>
+		
+		
+		
+		
+		<record model="ir.ui.view" id="view_form_print_mo">
+            <field name="name">view_form_print_mo</field>
+            <field name="model">print.mo</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Print works orders">
+                    <group colspan="4" col="4">
+                        <field name="print_plan"/>
+                        <field name="mo_id" invisible="1"/>
+                    </group>
+                    <footer>
+                        <button name="action_print_mo" string="Print the works orders" type="object" class="oe_highlight" />
+                        or
+                        <button string="Cancel" class="oe_link" special="cancel" />
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="action_print_mo">
+            <field name="name">Print the works orders</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">print.mo</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+		
+	</data>
+</openerp>

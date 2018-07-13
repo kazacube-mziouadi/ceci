@@ -1,0 +1,8 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_affair_user,affair,model_affair,project.project_user,1,0,0,0
+access_affair_manager,affair,model_affair,project.project_manager,1,1,1,1
+access_affair_administrator,affair,model_affair,project.project_responsible,1,1,1,1
+
+access_affair_state_user,affair.state,model_affair_state,project.project_user,1,0,0,0
+access_affair_state_manager,affair.state,model_affair_state,project.project_manager,1,1,1,0
+access_affair_state_administrator,affair.state,model_affair_state,project.project_responsible,1,1,1,1

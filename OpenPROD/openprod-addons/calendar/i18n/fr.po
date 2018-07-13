@@ -1,0 +1,602 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* calendar
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 9.0c\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-12-14 08:38+0000\n"
+"PO-Revision-Date: 2016-12-14 08:38+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: calendar
+#: code:addons/calendar/calendar.py:964
+#, python-format
+msgid "April"
+msgstr "Avril"
+
+#. module: calendar
+#: code:addons/calendar/calendar.py:968
+#, python-format
+msgid "August"
+msgstr "Août"
+
+#. module: calendar
+#: model:ir.actions.act_window,name:calendar.act_calendar
+#: model:ir.model,name:calendar.model_calendar
+#: model:ir.model.fields,field_description:calendar.field_calendar_line_calendar_id
+#: model:ir.model.fields,field_description:calendar.field_wizard_create_template_lines_calendar_template_id
+#: model:ir.ui.menu,name:calendar.dummy
+#: model:ir.ui.menu,name:calendar.menu_calendar
+#: model:ir.ui.view,arch_db:calendar.view_form_calendar
+msgid "Calendar"
+msgstr "Calendrier"
+
+#. module: calendar
+#: model:ir.model.fields,field_description:calendar.field_calendar_loading_calendar_line_id
+msgid "Calendar Line"
+msgstr "Lignes du calendrier"
+
+#. module: calendar
+#: model:ir.actions.act_window,name:calendar.act_calendar_loading_id
+#: model:ir.model,name:calendar.model_calendar_loading
+msgid "Calendar Loading"
+msgstr "Suivi de charges"
+
+#. module: calendar
+#: model:ir.ui.view,arch_db:calendar.view_tree_calendar_loading_id
+msgid "Calendar Loadings"
+msgstr "Suivi de charges"
+
+#. module: calendar
+#: model:ir.model,name:calendar.model_calendar_line
+msgid "Calendar line"
+msgstr "Lignes du calendrier"
+
+#. module: calendar
+#: model:ir.model.fields,field_description:calendar.field_calendar_calendar_line_ids
+#: model:ir.ui.view,arch_db:calendar.view_form_calendar
+#: model:ir.ui.view,arch_db:calendar.view_form_calendar_template
+msgid "Calendar lines"
+msgstr "Lignes du calendrier"
+
+#. module: calendar
+#: model:ir.actions.act_window,name:calendar.act_calendar_template
+#: model:ir.model,name:calendar.model_calendar_template
+#: model:ir.model.fields,field_description:calendar.field_calendar_template_line_calendar_template_id
+#: model:ir.ui.menu,name:calendar.menu_calendar_template
+#: model:ir.ui.view,arch_db:calendar.view_form_calendar_template
+msgid "Calendar template"
+msgstr "Modèle de calendriers"
+
+#. module: calendar
+#: model:ir.actions.act_window,name:calendar.act_calendar_template_line
+#: model:ir.actions.act_window,name:calendar.act_calendar_template_line_filtred
+#: model:ir.model,name:calendar.model_calendar_template_line
+#: model:ir.model.fields,field_description:calendar.field_calendar_line_calendar_template_line_id
+msgid "Calendar template line"
+msgstr "Modèle de lignes de calendriers"
+
+#. module: calendar
+#: model:ir.model.fields,field_description:calendar.field_calendar_calendar_template_line_ids
+#: model:ir.model.fields,field_description:calendar.field_calendar_template_calendar_template_line_ids
+#: model:ir.ui.view,arch_db:calendar.view_tree_calendar_template_line
+msgid "Calendar template lines"
+msgstr "Modèle de lignes de calendriers"
+
+#. module: calendar
+#: model:ir.ui.view,arch_db:calendar.view_tree_calendar_template
+msgid "Calendar templates"
+msgstr "Modèle de calendriers"
+
+#. module: calendar
+#: model:ir.ui.view,arch_db:calendar.view_tree_calendar
+msgid "Calendars"
+msgstr "Calendriers"
+
+#. module: calendar
+#: model:ir.model.fields,field_description:calendar.field_calendar_calendar_ids
+#: model:ir.model.fields,field_description:calendar.field_calendar_template_calendar_ids
+#: model:ir.ui.view,arch_db:calendar.view_form_calendar_template
+msgid "Calendars attached to the template"
+msgstr "Calendriers attachés au modèle"
+
+#. module: calendar
+#: model:ir.ui.view,arch_db:calendar.view_form_create_template_lines
+msgid "Cancel"
+msgstr "Annuler"
+
+#. module: calendar
+#: model:ir.ui.view,arch_db:calendar.view_form_calendar_template
+msgid "Create lines"
+msgstr "Créer lignes"
+
+#. module: calendar
+#: model:ir.actions.act_window,name:calendar.action_create_template_lines
+#: model:ir.ui.view,arch_db:calendar.view_form_create_template_lines
+msgid "Create template lines"
+msgstr "Créer lignes modèles"
+
+#. module: calendar
+#: model:ir.model.fields,field_description:calendar.field_calendar_create_uid
+#: model:ir.model.fields,field_description:calendar.field_calendar_line_create_uid
+#: model:ir.model.fields,field_description:calendar.field_calendar_loading_create_uid
+#: model:ir.model.fields,field_description:calendar.field_calendar_template_create_uid
+#: model:ir.model.fields,field_description:calendar.field_calendar_template_line_create_uid
+#: model:ir.model.fields,field_description:calendar.field_wizard_create_template_lines_create_uid
+msgid "Created by"
+msgstr "Créé par"
+
+#. module: calendar
+#: model:ir.model.fields,field_description:calendar.field_calendar_create_date
+#: model:ir.model.fields,field_description:calendar.field_calendar_line_create_date
+#: model:ir.model.fields,field_description:calendar.field_calendar_loading_create_date
+#: model:ir.model.fields,field_description:calendar.field_calendar_template_create_date
+#: model:ir.model.fields,field_description:calendar.field_calendar_template_line_create_date
+#: model:ir.model.fields,field_description:calendar.field_wizard_create_template_lines_create_date
+msgid "Created on"
+msgstr "Créé le"
+
+#. module: calendar
+#: model:ir.ui.view,arch_db:calendar.view_form_create_template_lines
+msgid "Days"
+msgstr "Jours"
+
+#. module: calendar
+#: code:addons/calendar/calendar.py:972
+#, python-format
+msgid "December"
+msgstr "Décembre"
+
+#. module: calendar
+#: model:ir.model.fields,field_description:calendar.field_calendar_display_name
+#: model:ir.model.fields,field_description:calendar.field_calendar_line_display_name
+#: model:ir.model.fields,field_description:calendar.field_calendar_loading_display_name
+#: model:ir.model.fields,field_description:calendar.field_calendar_template_display_name
+#: model:ir.model.fields,field_description:calendar.field_calendar_template_line_display_name
+#: model:ir.model.fields,field_description:calendar.field_wizard_create_template_lines_display_name
+msgid "Display Name"
+msgstr "Nom affiché"
+
+#. module: calendar
+#: model:ir.model.fields,field_description:calendar.field_calendar_end_date
+#: model:ir.model.fields,field_description:calendar.field_calendar_line_end_date
+#: model:ir.model.fields,field_description:calendar.field_calendar_line_end_date_related
+#: model:ir.model.fields,field_description:calendar.field_calendar_template_end_date
+#: model:ir.model.fields,field_description:calendar.field_calendar_template_line_end_date
+#: model:ir.model.fields,field_description:calendar.field_wizard_create_template_lines_end_date
+msgid "End date"
+msgstr "Date de fin"
+
+#. module: calendar
+#: model:ir.model.fields,field_description:calendar.field_calendar_line_end_date_exception
+msgid "End date exception"
+msgstr "Date de fin exception"
+
+#. module: calendar
+#: model:ir.ui.view,arch_db:calendar.view_form_create_template_lines
+msgid "End hours"
+msgstr "Heure de fin"
+
+#. module: calendar
+#: code:addons/calendar/calendar.py:71
+#: code:addons/calendar/calendar.py:555
+#: code:addons/calendar/calendar.py:590
+#: code:addons/calendar/calendar.py:597
+#: code:addons/calendar/calendar.py:678
+#: code:addons/calendar/calendar.py:712
+#: code:addons/calendar/calendar.py:721
+#: code:addons/calendar/wizard/create_template_lines.py:121
+#, python-format
+msgid "Error"
+msgstr "Erreur"
+
+#. module: calendar
+#: code:addons/calendar/calendar.py:43
+#: sql_constraint:calendar.template:0
+#: sql_constraint:calendar.template.line:0
+#, python-format
+msgid "Error ! Dates are not consistent."
+msgstr "Erreur ! Les dates ne sont pas cohérentes."
+
+#. module: calendar
+#: sql_constraint:calendar.template:0
+msgid "Error: Calendar name must be unique."
+msgstr "Erreur: Le nom du calendrier doit être unique."
+
+#. module: calendar
+#: code:addons/calendar/calendar.py:962
+#, python-format
+msgid "February"
+msgstr "Février"
+
+#. module: calendar
+#: model:ir.model.fields,field_description:calendar.field_calendar_loading_is_forecast
+msgid "Forecast"
+msgstr "Prévision"
+
+#. module: calendar
+#: code:addons/calendar/wizard/create_template_lines.py:14
+#: model:ir.model.fields,field_description:calendar.field_wizard_create_template_lines_friday
+#: model:ir.ui.view,arch_db:calendar.view_form_create_template_lines
+#, python-format
+msgid "Friday"
+msgstr "Vendredi"
+
+#. module: calendar
+#: model:ir.model.fields,field_description:calendar.field_calendar_line_hour
+#: model:ir.model.fields,field_description:calendar.field_calendar_line_hour_related
+#: model:ir.model.fields,field_description:calendar.field_calendar_template_line_hour
+msgid "Hour"
+msgstr "Heure"
+
+#. module: calendar
+#: model:ir.model.fields,field_description:calendar.field_wizard_create_template_lines_hour_end0
+#: model:ir.model.fields,field_description:calendar.field_wizard_create_template_lines_hour_end1
+#: model:ir.model.fields,field_description:calendar.field_wizard_create_template_lines_hour_end2
+#: model:ir.model.fields,field_description:calendar.field_wizard_create_template_lines_hour_end3
+#: model:ir.model.fields,field_description:calendar.field_wizard_create_template_lines_hour_end4
+#: model:ir.model.fields,field_description:calendar.field_wizard_create_template_lines_hour_end5
+#: model:ir.model.fields,field_description:calendar.field_wizard_create_template_lines_hour_end6
+msgid "Hour end"
+msgstr "Heure de fin"
+
+#. module: calendar
+#: model:ir.model.fields,field_description:calendar.field_calendar_line_hour_exception
+msgid "Hour exception"
+msgstr "Heure exception"
+
+#. module: calendar
+#: model:ir.model.fields,field_description:calendar.field_wizard_create_template_lines_hour_number0
+#: model:ir.model.fields,field_description:calendar.field_wizard_create_template_lines_hour_number1
+#: model:ir.model.fields,field_description:calendar.field_wizard_create_template_lines_hour_number2
+#: model:ir.model.fields,field_description:calendar.field_wizard_create_template_lines_hour_number3
+#: model:ir.model.fields,field_description:calendar.field_wizard_create_template_lines_hour_number4
+#: model:ir.model.fields,field_description:calendar.field_wizard_create_template_lines_hour_number5
+#: model:ir.model.fields,field_description:calendar.field_wizard_create_template_lines_hour_number6
+msgid "Hour number"
+msgstr "Nombre d'Heures"
+
+#. module: calendar
+#: model:ir.model.fields,field_description:calendar.field_wizard_create_template_lines_hour_start0
+#: model:ir.model.fields,field_description:calendar.field_wizard_create_template_lines_hour_start1
+#: model:ir.model.fields,field_description:calendar.field_wizard_create_template_lines_hour_start2
+#: model:ir.model.fields,field_description:calendar.field_wizard_create_template_lines_hour_start3
+#: model:ir.model.fields,field_description:calendar.field_wizard_create_template_lines_hour_start4
+#: model:ir.model.fields,field_description:calendar.field_wizard_create_template_lines_hour_start5
+#: model:ir.model.fields,field_description:calendar.field_wizard_create_template_lines_hour_start6
+msgid "Hour start"
+msgstr "Heure de début"
+
+#. module: calendar
+#: model:ir.ui.view,arch_db:calendar.view_form_create_template_lines
+msgid "Hours definition for a week"
+msgstr "Heure définie pour une semaine"
+
+#. module: calendar
+#: model:ir.ui.view,arch_db:calendar.view_form_create_template_lines
+msgid "Hours number"
+msgstr "Nombre d'Heures"
+
+#. module: calendar
+#: model:ir.model.fields,field_description:calendar.field_calendar_id
+#: model:ir.model.fields,field_description:calendar.field_calendar_line_id
+#: model:ir.model.fields,field_description:calendar.field_calendar_loading_id
+#: model:ir.model.fields,field_description:calendar.field_calendar_template_id
+#: model:ir.model.fields,field_description:calendar.field_calendar_template_line_id
+#: model:ir.model.fields,field_description:calendar.field_wizard_create_template_lines_id
+msgid "ID"
+msgstr "ID"
+
+#. module: calendar
+#: model:ir.ui.view,arch_db:calendar.view_form_calendar
+msgid "Import lines"
+msgstr "Importer lignes"
+
+#. module: calendar
+#: code:addons/calendar/calendar.py:961
+#, python-format
+msgid "January"
+msgstr "Janvier"
+
+#. module: calendar
+#: code:addons/calendar/calendar.py:967
+#, python-format
+msgid "July"
+msgstr "Juillet"
+
+#. module: calendar
+#: code:addons/calendar/calendar.py:966
+#, python-format
+msgid "June"
+msgstr "Juin"
+
+#. module: calendar
+#: model:ir.model.fields,field_description:calendar.field_calendar___last_update
+#: model:ir.model.fields,field_description:calendar.field_calendar_line___last_update
+#: model:ir.model.fields,field_description:calendar.field_calendar_loading___last_update
+#: model:ir.model.fields,field_description:calendar.field_calendar_template___last_update
+#: model:ir.model.fields,field_description:calendar.field_calendar_template_line___last_update
+#: model:ir.model.fields,field_description:calendar.field_wizard_create_template_lines___last_update
+msgid "Last Modified on"
+msgstr "Dernière modification le"
+
+#. module: calendar
+#: model:ir.model.fields,field_description:calendar.field_calendar_line_write_uid
+#: model:ir.model.fields,field_description:calendar.field_calendar_loading_write_uid
+#: model:ir.model.fields,field_description:calendar.field_calendar_template_line_write_uid
+#: model:ir.model.fields,field_description:calendar.field_calendar_template_write_uid
+#: model:ir.model.fields,field_description:calendar.field_calendar_write_uid
+#: model:ir.model.fields,field_description:calendar.field_wizard_create_template_lines_write_uid
+msgid "Last Updated by"
+msgstr "Dernière mise à jour par"
+
+#. module: calendar
+#: model:ir.model.fields,field_description:calendar.field_calendar_line_write_date
+#: model:ir.model.fields,field_description:calendar.field_calendar_loading_write_date
+#: model:ir.model.fields,field_description:calendar.field_calendar_template_line_write_date
+#: model:ir.model.fields,field_description:calendar.field_calendar_template_write_date
+#: model:ir.model.fields,field_description:calendar.field_calendar_write_date
+#: model:ir.model.fields,field_description:calendar.field_wizard_create_template_lines_write_date
+msgid "Last Updated on"
+msgstr "Dernière mise à jour le"
+
+#. module: calendar
+#: model:ir.ui.view,arch_db:calendar.view_form_calendar_line
+msgid "Line"
+msgstr "Ligne"
+
+#. module: calendar
+#: code:addons/calendar/calendar.py:71
+#, python-format
+msgid "Lines can not overlap."
+msgstr "Les lignes ne peuvent pas se chevaucher."
+
+#. module: calendar
+#: model:ir.model.fields,field_description:calendar.field_calendar_loading_loading
+msgid "Loading"
+msgstr "Charge"
+
+#. module: calendar
+#: code:addons/calendar/calendar.py:963
+#, python-format
+msgid "March"
+msgstr "Mars"
+
+#. module: calendar
+#: code:addons/calendar/calendar.py:965
+#, python-format
+msgid "May"
+msgstr "Mai"
+
+#. module: calendar
+#: code:addons/calendar/wizard/create_template_lines.py:10
+#: model:ir.model.fields,field_description:calendar.field_wizard_create_template_lines_monday
+#: model:ir.ui.view,arch_db:calendar.view_form_create_template_lines
+#, python-format
+msgid "Monday"
+msgstr "Lundi"
+
+#. module: calendar
+#: model:ir.model.fields,field_description:calendar.field_calendar_loading_month
+msgid "Month"
+msgstr "Mois"
+
+#. module: calendar
+#: model:ir.model.fields,field_description:calendar.field_calendar_name
+#: model:ir.model.fields,field_description:calendar.field_calendar_template_name
+#: model:ir.ui.view,arch_db:calendar.view_form_calendar_template
+msgid "Name"
+msgstr "Nom"
+
+#. module: calendar
+#: code:addons/calendar/calendar.py:971
+#, python-format
+msgid "November"
+msgstr "Novembre"
+
+#. module: calendar
+#: model:ir.ui.view,arch_db:calendar.view_form_create_template_lines
+msgid "OK"
+msgstr "OK"
+
+#. module: calendar
+#: code:addons/calendar/calendar.py:970
+#, python-format
+msgid "October"
+msgstr "Octobre"
+
+#. module: calendar
+#: model:ir.ui.view,arch_db:calendar.view_form_calendar_template
+#: model:ir.ui.view,arch_db:calendar.view_form_create_template_lines
+msgid "Period"
+msgstr "Période"
+
+#. module: calendar
+#: model:ir.model.fields,field_description:calendar.field_calendar_line_real_end_date
+msgid "Real end date"
+msgstr "Date de fin réelle"
+
+#. module: calendar
+#: model:ir.model.fields,field_description:calendar.field_calendar_line_real_hour
+msgid "Real hour"
+msgstr "Heure réelle"
+
+#. module: calendar
+#: model:ir.model.fields,field_description:calendar.field_calendar_line_real_start_date
+msgid "Real start date"
+msgstr "Date de début réelle"
+
+#. module: calendar
+#: model:ir.model,name:calendar.model_mrp_resource
+msgid "Resource"
+msgstr "Ressource"
+
+#. module: calendar
+#. openerp-web
+#: code:addons/calendar/static/src/js/calendar.js:23
+#, python-format
+msgid "Resources"
+msgstr "Ressources"
+
+#. module: calendar
+#: code:addons/calendar/wizard/create_template_lines.py:15
+#: model:ir.model.fields,field_description:calendar.field_wizard_create_template_lines_saturday
+#: model:ir.ui.view,arch_db:calendar.view_form_create_template_lines
+#, python-format
+msgid "Saturday"
+msgstr "Samedi"
+
+#. module: calendar
+#: code:addons/calendar/calendar.py:969
+#, python-format
+msgid "September"
+msgstr "Septembre"
+
+#. module: calendar
+#: model:ir.ui.view,arch_db:calendar.view_form_calendar_template
+msgid "Shortcuts"
+msgstr "Raccourcis"
+
+#. module: calendar
+#: model:ir.model.fields,field_description:calendar.field_calendar_loading_start_date
+msgid "Start Date"
+msgstr "Date de début"
+
+#. module: calendar
+#: model:ir.model.fields,field_description:calendar.field_calendar_line_start_date
+#: model:ir.model.fields,field_description:calendar.field_calendar_line_start_date_related
+#: model:ir.model.fields,field_description:calendar.field_calendar_start_date
+#: model:ir.model.fields,field_description:calendar.field_calendar_template_line_start_date
+#: model:ir.model.fields,field_description:calendar.field_calendar_template_start_date
+#: model:ir.model.fields,field_description:calendar.field_wizard_create_template_lines_start_date
+msgid "Start date"
+msgstr "Date de début"
+
+#. module: calendar
+#: model:ir.model.fields,field_description:calendar.field_calendar_line_start_date_exception
+msgid "Start date exception"
+msgstr "Date de début exception"
+
+#. module: calendar
+#: model:ir.ui.view,arch_db:calendar.view_search_calendar
+#: model:ir.ui.view,arch_db:calendar.view_search_calendar_line
+#: model:ir.ui.view,arch_db:calendar.view_search_calendar_template
+#: model:ir.ui.view,arch_db:calendar.view_search_calendar_template_line
+msgid "Start date max"
+msgstr "Date de début max"
+
+#. module: calendar
+#: model:ir.ui.view,arch_db:calendar.view_search_calendar
+#: model:ir.ui.view,arch_db:calendar.view_search_calendar_line
+#: model:ir.ui.view,arch_db:calendar.view_search_calendar_template
+#: model:ir.ui.view,arch_db:calendar.view_search_calendar_template_line
+msgid "Start date min"
+msgstr "Date de début min"
+
+#. module: calendar
+#: model:ir.ui.view,arch_db:calendar.view_form_create_template_lines
+msgid "Start hours"
+msgstr "Heure de début"
+
+#. module: calendar
+#: code:addons/calendar/wizard/create_template_lines.py:16
+#: model:ir.model.fields,field_description:calendar.field_wizard_create_template_lines_sunday
+#: model:ir.ui.view,arch_db:calendar.view_form_create_template_lines
+#, python-format
+msgid "Sunday"
+msgstr "Dimanche"
+
+#. module: calendar
+#: model:ir.model.fields,field_description:calendar.field_calendar_calendar_template_id
+#: model:ir.ui.view,arch_db:calendar.view_form_calendar
+#: model:ir.ui.view,arch_db:calendar.view_form_calendar_line
+msgid "Template"
+msgstr "Modèle"
+
+#. module: calendar
+#: code:addons/calendar/wizard/create_template_lines.py:13
+#: model:ir.model.fields,field_description:calendar.field_wizard_create_template_lines_thursday
+#: model:ir.ui.view,arch_db:calendar.view_form_create_template_lines
+#, python-format
+msgid "Thursday"
+msgstr "Jeudi"
+
+#. module: calendar
+#: model:ir.model.fields,help:calendar.field_calendar_line_hour_exception
+msgid "To disable exception, give it a negative value"
+msgstr "Pour désactiver une exception, donnez-lui une valeur négative"
+
+#. module: calendar
+#: code:addons/calendar/wizard/create_template_lines.py:11
+#: model:ir.model.fields,field_description:calendar.field_wizard_create_template_lines_tuesday
+#: model:ir.ui.view,arch_db:calendar.view_form_create_template_lines
+#, python-format
+msgid "Tuesday"
+msgstr "Mardi"
+
+#. module: calendar
+#: code:addons/calendar/wizard/create_template_lines.py:12
+#: model:ir.model.fields,field_description:calendar.field_wizard_create_template_lines_wednesday
+#: model:ir.ui.view,arch_db:calendar.view_form_create_template_lines
+#, python-format
+msgid "Wednesday"
+msgstr "Mercredi"
+
+#. module: calendar
+#: model:ir.model.fields,field_description:calendar.field_calendar_loading_week_number
+msgid "Week number"
+msgstr "Nombre de semaine"
+
+#. module: calendar
+#: code:addons/calendar/calendar.py:960
+#, python-format
+msgid "Without month"
+msgstr "Sans mois"
+
+#. module: calendar
+#: code:addons/calendar/calendar.py:27
+#: model:ir.model.fields,field_description:calendar.field_calendar_loading_year
+#, python-format
+msgid "Year"
+msgstr "Année"
+
+#. module: calendar
+#: code:addons/calendar/calendar.py:555
+#: code:addons/calendar/calendar.py:590
+#: code:addons/calendar/calendar.py:597
+#: code:addons/calendar/calendar.py:678
+#: code:addons/calendar/calendar.py:712
+#: code:addons/calendar/calendar.py:721
+#, python-format
+msgid "You must have more calendar line."
+msgstr "Vous devez avoir plus de ligne de calendrier."
+
+#. module: calendar
+#: model:ir.actions.act_window,name:calendar.act_calendar_line
+#: model:ir.actions.act_window,name:calendar.act_calendar_line_filtred
+#: model:ir.ui.view,arch_db:calendar.view_form_calendar_line
+msgid "calendar line"
+msgstr "Lignes du calendrier"
+
+#. module: calendar
+#: model:ir.ui.view,arch_db:calendar.view_tree_calendar_line
+msgid "calendar lines"
+msgstr "Lignes du calendrier"
+
+#. module: calendar
+#: model:ir.ui.view,arch_db:calendar.view_form_create_template_lines
+msgid "or"
+msgstr "ou"
+
+#. module: calendar
+#: model:ir.model,name:calendar.model_wizard_create_template_lines
+msgid "wizard.create.template.lines"
+msgstr "wizard.create.template.lines"
+

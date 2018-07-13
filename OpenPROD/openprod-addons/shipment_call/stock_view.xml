@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+		<!-- TREE VIEW PICKING IN -->
+		<record id='view_tree_stock_picking_in' model='ir.ui.view'>
+			<field name="name">view_tree_stock_picking_in</field>
+			<field name="model">stock.picking</field>
+			<field name="inherit_id" ref="stock.view_tree_stock_picking_in" />
+			<field name="arch" type="xml">
+				<xpath expr="//field[@name='invoice_state']" position="after">
+					<field name='shipment_call_id' />
+					<button string="Add to request for removal" type="object" name="add_to_shipment_call" class="oe_inline oe_stat_button" icon="fa-truck" attrs="{'invisible': ['|', ('state', '!=', 'waiting'), ('shipment_call_id', '!=', False)]}" />
+				</xpath>
+			</field>
+		</record>
+		<!-- FORM VIEW PICKING IN -->
+		<record id='view_form_stock_picking_in' model='ir.ui.view'>
+			<field name="name">view_form_stock_picking_in</field>
+			<field name="model">stock.picking</field>
+			<field name="inherit_id" ref="stock.view_form_stock_picking_in" />
+			<field name="arch" type="xml">
+				<xpath expr="//group[@name='transport_picking']" position="inside">
+					<field name="shipment_call_id" readonly='1' />
+				</xpath>
+                <xpath expr="//separator[@name='separator_action_menu']" position="after">
+                    <button string="Add to request for removal" type="object" name="add_to_shipment_call" class="oe_inline oe_stat_button" icon="fa-truck" attrs="{'invisible': ['|', ('state', '!=', 'waiting'), ('shipment_call_id', '!=', False)]}" />
+                </xpath>
+
+			</field>
+		</record>
+
+		<!-- SEARCH VIEW PICKING IN -->
+		<record id='view_search_stock_picking_in' model='ir.ui.view'>
+			<field name="name">view_search_stock_picking_in</field>
+			<field name="model">stock.picking</field>
+			<field name="inherit_id" ref="stock.view_search_stock_picking_in" />
+			<field name="arch" type="xml">
+				<xpath expr="//field" position="before">
+					<field name="shipment_call_id" />
+				</xpath>
+			</field>
+		</record>
+	</data>
+</openerp>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+		<record id="view_form_stock_picking_out_customs" model="ir.ui.view">
+			<field name="name">view_form_stock_picking_out_customs</field>
+			<field name="model">stock.picking</field>
+			<field name="priority" eval="40" />
+			<field name="inherit_id" ref="stock.view_form_stock_picking_out" />
+			<field name="arch" type="xml">
+				<xpath expr="//separator[@name='separator_action_menu']" position="after">
+					<button class="oe_inline oe_stat_button" type="action" string="Update customs price" name="%(customs.action_update_move_customs_price)d" icon="fa-usd" attrs="{'invisible': [('state', '=', 'done')]}" />
+				</xpath>
+			</field>
+		</record>
+
+		<record id="view_form_move_customs" model="ir.ui.view">
+			<field name="name">view_form_move_customs</field>
+			<field name="model">stock.move</field>
+			<field name="priority" eval="40" />
+			<field name="inherit_id" ref="stock.view_form_move" />
+			<field name="arch" type="xml">
+				<xpath expr="//field[@name='freight_currency_id']" position="after">
+					<field name="is_customs_price" />
+					<field name="customs_price" />
+					<field name="customs_currency_id" />
+					<field name="customs_unit_id" />
+					<field name="customs_qty" />
+				</xpath>
+			</field>
+		</record>
+	</data>
+</openerp>

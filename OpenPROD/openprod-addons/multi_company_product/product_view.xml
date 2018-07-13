@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+		<!-- ======= -->
+		<!-- ACCOUNTING -->
+		<!-- ======= -->
+		<!-- FORM VIEW PRODUCT -->
+		<record id="view_form_product_account_mulit_company_product" model="ir.ui.view">
+			<field name="name">view_form_product_account_mulit_company_product</field>
+			<field name="model">product.product</field>
+			<field name="priority">2500</field>
+			<field name="inherit_id" ref="product.view_form_product" />
+			<field name="arch" type="xml">
+			    <xpath expr="//group[@name='procurement_product_group']" position="attributes">
+                    <attribute name="col">4</attribute>
+                </xpath>
+				<xpath expr="//group[@name='procurement_product_group_flag']" position="before">
+				    <group colspan="1" col="2" string="Supply method" >
+	                    <field name="mcpsm_ids" nolabel="1" colspan="2">
+	                         <tree string="Supply method" editable="bottom">
+	                             <field name="company_id" />
+	                             <field name="supply_method" />
+	                         </tree>
+	                     </field>
+				    </group>
+				</xpath>
+			</field>
+		</record>
+		
+		
+	</data>
+</openerp>

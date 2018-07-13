@@ -1,0 +1,276 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* planning
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 9.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-01-20 16:05+0000\n"
+"PO-Revision-Date: 2016-01-20 16:05+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: planning
+#: model:ir.ui.view,arch_db:planning.index
+msgid "&lt;!doctype html&gt;"
+msgstr "&lt;!doctype html&gt;"
+
+#. module: planning
+#. openerp-web
+#: code:addons/planning/static/src/js/planning.js:179
+msgid "3 Months"
+msgstr "3 Mois"
+
+#. module: planning
+#. openerp-web
+#: code:addons/planning/static/src/js/planning.js:179
+msgid "Apply to day"
+msgstr "Appliquer au jour"
+
+#. module: planning
+#. openerp-web
+#: code:addons/planning/static/src/js/planning.js:179
+msgid "Apply to week"
+msgstr "Appliquer à la semaine"
+
+#. module: planning
+#. openerp-web
+#: code:addons/planning/static/src/js/planning.js:179
+msgid "Area :"
+msgstr "Atelier :"
+
+#. module: planning
+#. openerp-web
+#: code:addons/planning/static/src/js/planning.js:179
+msgid "Cancel"
+msgstr "Annuler"
+
+#. module: planning
+#. openerp-web
+#: code:addons/planning/static/src/js/planning.js:179
+msgid "Clean Arrows"
+msgstr "Effacer ↝"
+
+#. module: planning
+#. openerp-web
+#: code:addons/planning/static/src/js/planning.js:178
+#, python-format
+msgid "Client"
+msgstr "Client"
+
+#. module: planning
+#. openerp-web
+#: code:addons/planning/static/src/js/planning.js:179
+msgid "Date :"
+msgstr "Date :"
+
+#. module: planning
+#. openerp-web
+#: code:addons/planning/static/src/js/planning.js:179
+msgid "Day"
+msgstr "Jour"
+
+#. module: planning
+#. openerp-web
+#: code:addons/planning/static/src/js/planning.js:179
+msgid "Day :"
+msgstr "Jour&nbsp;:"
+
+#. module: planning
+#. openerp-web
+#: code:addons/planning/static/src/js/planning.js:179
+#, python-format
+msgid "Delay"
+msgstr "Délai"
+
+#. module: planning
+#. openerp-web
+#: code:addons/planning/static/src/js/planning.js:179
+msgid "Duration :"
+msgstr "Durée :"
+
+#. module: planning
+#. openerp-web
+#: code:addons/planning/static/src/js/planning.js:179
+msgid "End time :"
+msgstr "Heure de fin :"
+
+#. module: planning
+#. openerp-web
+#: code:addons/planning/static/src/js/planning.js:176
+#, python-format
+msgid "FP"
+msgstr "FP"
+
+#. module: planning
+#. openerp-web
+#: code:addons/planning/static/src/js/planning.js:179
+msgid "Filter"
+msgstr "Filtre"
+
+#. module: planning
+#. openerp-web
+#: code:addons/planning/static/src/js/planning.js:179
+msgid "Final product :"
+msgstr "Produit final :"
+
+#. module: planning
+#. openerp-web
+#: code:addons/planning/static/src/js/planning.js:268
+#, python-format
+msgid "Finish Planning"
+msgstr "Terminer planif."
+
+#. module: planning
+#: model:ir.model.fields,field_description:planning.field_mrp_resource_limit_loading
+msgid "Limit loading"
+msgstr "Charge limite"
+
+#. module: planning
+#. openerp-web
+#: code:addons/planning/static/src/js/planning.js:177
+#, python-format
+msgid "MP"
+msgstr "MP"
+
+#. module: planning
+#. openerp-web
+#: code:addons/planning/static/src/js/planning.js:179
+msgid "Manufacturing order :"
+msgstr "OF :"
+
+#. module: planning
+#. openerp-web
+#: code:addons/planning/static/src/js/planning.js:179
+msgid "Month"
+msgstr "Mois"
+
+#. module: planning
+#: model:ir.model.fields,field_description:planning.field_mrp_workorder_next_step
+msgid "Next Step"
+msgstr "Étape suivante"
+
+#. module: planning
+#: model:ir.model.fields,field_description:planning.field_mrp_workorder_next_id
+msgid "Next Step ID"
+msgstr "Next Step ID"
+
+#. module: planning
+#: model:ir.actions.act_url,name:planning.act_planning
+#: model:ir.ui.view,arch_db:planning.index
+msgid "Planning"
+msgstr "Planning"
+
+#. module: planning
+#: model:ir.model.fields,field_description:planning.field_mrp_workorder_prev_step
+msgid "Prev Step"
+msgstr "Étape précédente"
+
+#. module: planning
+#: model:ir.model.fields,field_description:planning.field_mrp_workorder_prev_id
+msgid "Prev Step ID"
+msgstr "Prev Step ID"
+
+#. module: planning
+#: model:ir.model.fields,field_description:planning.field_mrp_workorder_client_date
+msgid "Requested Date"
+msgstr "Date demandée"
+
+#. module: planning
+#: model:ir.model,name:planning.model_mrp_resource
+msgid "Resource"
+msgstr "Ressource"
+
+#. module: planning
+#. openerp-web
+#: code:addons/planning/static/src/js/planning.js:179
+msgid "Sale :"
+msgstr "Vente :"
+
+#. module: planning
+#. openerp-web
+#: code:addons/planning/static/src/js/planning.js:179
+msgid "Resources :"
+msgstr "Ressources&nbsp;:"
+
+#. module: planning
+#: model:ir.model.fields,field_description:planning.field_mrp_workorder_sale_order_id
+msgid "Sale order"
+msgstr "Commande de vente"
+
+#. module: planning
+#. openerp-web
+#: code:addons/planning/static/src/js/planning.js:274
+#, python-format
+msgid "Show all neighbours"
+msgstr "Afficher tous les voisins"
+
+#. module: planning
+#. openerp-web
+#: code:addons/planning/static/src/js/planning.js:269
+#, python-format
+msgid "Show neighbours"
+msgstr "Afficher les voisins"
+
+#. module: planning
+#. openerp-web
+#: code:addons/planning/static/src/js/planning.js:179
+#: code:addons/planning/static/src/js/planning.js:284
+#, python-format
+msgid "Simulate"
+msgstr "Simuler"
+
+#. module: planning
+#. openerp-web
+#: code:addons/planning/static/src/js/planning.js:179
+msgid "Start time :"
+msgstr "Heure de début :"
+
+#. module: planning
+#. openerp-web
+#: code:addons/planning/static/src/js/planning.js:179
+msgid "Week"
+msgstr "Semaines"
+
+#. module: planning
+#: model:ir.ui.menu,name:planning.menu_wo_planning
+msgid "Work Orders Planning"
+msgstr "Planning des OT"
+
+#. module: planning
+#: model:ir.model,name:planning.model_mrp_workorder
+msgid "Workorder"
+msgstr "Ordre de travail"
+
+#. module: planning
+#. openerp-web
+#: code:addons/planning/static/src/js/planning.js:181
+#, python-format
+msgid "next"
+msgstr "suivant"
+
+#. module: planning
+#. openerp-web
+#: code:addons/planning/static/src/js/planning.js:179
+msgid "no title"
+msgstr "no title"
+
+#. module: planning
+#. openerp-web
+#: code:addons/planning/static/src/js/planning.js:180
+#, python-format
+msgid "prev"
+msgstr "prec"
+
+#. module: planning
+#. openerp-web
+#: code:addons/planning/static/src/js/planning.js:15
+#, python-format
+msgid "Today"
+msgstr "Aujourd'hui"
+

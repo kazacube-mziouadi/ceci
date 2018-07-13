@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+    
+        <record model="ir.ui.view" id="view_res_currency_base">
+            <field name="name">res.currency.base.form.inherit</field>
+            <field name="inherit_id" ref="base.view_currency_form"/>
+            <field name="priority" eval="1000" />
+            <field name="model">res.currency</field>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='active']" position="after">
+               		<field name="conversion_help"/>
+                </xpath>
+                <xpath expr="//group[@name='currency_group']" position="after">
+                	<group string="Rates" colspan="4">
+                		<field name="rate_ids" nolabel="1" colspan="4"/>
+                    </group>
+                </xpath>
+            </field>
+        </record>
+        
+    </data>
+</openerp>

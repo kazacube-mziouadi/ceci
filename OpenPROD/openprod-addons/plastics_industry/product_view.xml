@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+
+		<!-- FORM VIEW Product -->
+		<record id='view_form_product_plastics_industry' model='ir.ui.view'>
+			<field name="name">'view_form_product_plastics_industry'</field>
+			<field name="model">product.product</field>
+			<field name="priority" eval="2300" />
+			<field name="inherit_id" ref="product.view_form_product" />
+			<field name="arch" type="xml">
+				<xpath expr="//group[@name='product_technical_page']" position="after">
+					<group colspan="4" col="6" string="Plastics industry" >
+					   <field name="is_mold" />
+					   <field name="type_mold" attrs="{'invisible': [('is_mold', '!=', True)], 'required': [('is_mold', '=', True)]}" />
+					   <field name="number_imprint" attrs="{'invisible': [('is_mold', '!=', True)], 'required': [('is_mold', '=', True)]}" />
+					</group>
+				</xpath>
+			</field>
+		</record>
+
+	</data>
+</openerp>

@@ -1,0 +1,6 @@
+<template>
+ <t t-name="HighstockView">
+    <div id="openerp_highstock_container" style="height: 400px;min-width:85%;">
+    </div>
+</t>    
+</template>

@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_wizard_print_partner_address_user,wizard.print.partner.address,model_wizard_print_partner_address,partner_openprod.partner_user,1,1,1,1
+access_wizard_print_partner_address_manager,wizard.print.partner.address,model_wizard_print_partner_address,base.group_partner_manager,1,1,1,1
+access_wizard_print_partner_address_administrator,wizard.print.partner.address,model_wizard_print_partner_address,partner_openprod.partner_manager,1,1,1,1

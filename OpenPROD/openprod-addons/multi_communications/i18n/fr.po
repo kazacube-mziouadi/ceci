@@ -1,0 +1,243 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* multi_communications
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 9.0c\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-03-20 08:09+0000\n"
+"PO-Revision-Date: 2017-03-20 08:09+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: multi_communications
+#: model:ir.ui.view,arch_db:multi_communications.view_multi_communication_form
+msgid "Communication details"
+msgstr "Détails de communication"
+
+#. module: multi_communications
+#: model:ir.ui.view,arch_db:multi_communications.view_multi_communication_form
+msgid "Communication value"
+msgstr "Valeur de la communication"
+
+#. module: multi_communications
+#: model:ir.model.fields,field_description:multi_communications.field_res_partner_communication_ids
+#: model:ir.ui.view,arch_db:multi_communications.view_multi_communication_form
+#: model:ir.ui.view,arch_db:multi_communications.view_multi_communication_tree
+msgid "Communications"
+msgstr "Communications"
+
+#. module: multi_communications
+#: model:ir.model.fields,help:multi_communications.field_multi_communication_international
+msgid "Country number. For example: 33 for the France"
+msgstr "Numéro du pays. Par exemple: 33 pour la France"
+
+#. module: multi_communications
+#: model:ir.model.fields,field_description:multi_communications.field_multi_communication_create_uid
+#: model:ir.model.fields,field_description:multi_communications.field_multi_communication_type_create_uid
+msgid "Created by"
+msgstr "Créé par"
+
+#. module: multi_communications
+#: model:ir.model.fields,field_description:multi_communications.field_multi_communication_create_date
+#: model:ir.model.fields,field_description:multi_communications.field_multi_communication_type_create_date
+msgid "Created on"
+msgstr "Créé le"
+
+#. module: multi_communications
+#: model:ir.model.fields,field_description:multi_communications.field_multi_communication_display_name
+#: model:ir.model.fields,field_description:multi_communications.field_multi_communication_type_display_name
+msgid "Display Name"
+msgstr "Nom affiché"
+
+#. module: multi_communications
+#: code:addons/multi_communications/communication.py:21
+#: code:addons/multi_communications/communication.py:81
+#: model:multi.communication.type,name:multi_communications.email_type
+#, python-format
+msgid "Email"
+msgstr "Email"
+
+#. module: multi_communications
+#: code:addons/multi_communications/communication.py:129
+#: code:addons/multi_communications/communication.py:145
+#, python-format
+msgid "Error"
+msgstr "Erreur"
+
+#. module: multi_communications
+#: code:addons/multi_communications/communication.py:22
+#: code:addons/multi_communications/communication.py:82
+#: model:multi.communication.type,name:multi_communications.fax_type
+#, python-format
+msgid "Fax"
+msgstr "Fax"
+
+#. module: multi_communications
+#: model:ir.model.fields,field_description:multi_communications.field_multi_communication_id
+#: model:ir.model.fields,field_description:multi_communications.field_multi_communication_type_id
+msgid "ID"
+msgstr "ID"
+
+#. module: multi_communications
+#: model:ir.model.fields,field_description:multi_communications.field_multi_communication_indicative
+msgid "Indicative"
+msgstr "Indicatif"
+
+#. module: multi_communications
+#: model:ir.model.fields,field_description:multi_communications.field_multi_communication_intern
+msgid "Intern"
+msgstr "Interne"
+
+#. module: multi_communications
+#: model:ir.model.fields,field_description:multi_communications.field_multi_communication_international
+msgid "International"
+msgstr "International"
+
+#. module: multi_communications
+#: model:ir.model.fields,field_description:multi_communications.field_multi_communication___last_update
+#: model:ir.model.fields,field_description:multi_communications.field_multi_communication_type___last_update
+msgid "Last Modified on"
+msgstr "Dernière modification le"
+
+#. module: multi_communications
+#: model:ir.model.fields,field_description:multi_communications.field_multi_communication_type_write_uid
+#: model:ir.model.fields,field_description:multi_communications.field_multi_communication_write_uid
+msgid "Last Updated by"
+msgstr "Dernière mise à jour par"
+
+#. module: multi_communications
+#: model:ir.model.fields,field_description:multi_communications.field_multi_communication_type_write_date
+#: model:ir.model.fields,field_description:multi_communications.field_multi_communication_write_date
+msgid "Last Updated on"
+msgstr "Dernière mise à jour le"
+
+#. module: multi_communications
+#: model:ir.model.fields,field_description:multi_communications.field_multi_communication_login
+msgid "Login"
+msgstr "Login"
+
+#. module: multi_communications
+#: code:addons/multi_communications/communication.py:20
+#: code:addons/multi_communications/communication.py:80
+#: model:multi.communication.type,name:multi_communications.mobile_type
+#, python-format
+msgid "Mobile"
+msgstr "Mobile"
+
+#. module: multi_communications
+#: model:ir.model,name:multi_communications.model_multi_communication
+msgid "Multiple communications object"
+msgstr "Objet des multi communications"
+
+#. module: multi_communications
+#: model:ir.model.fields,field_description:multi_communications.field_multi_communication_name
+#: model:ir.model.fields,field_description:multi_communications.field_multi_communication_type_name
+msgid "Name"
+msgstr "Nom"
+
+#. module: multi_communications
+#: model:ir.ui.view,arch_db:multi_communications.view_multi_communication_form
+msgid "Note: Never put: the 0 to exit, or 00 of the International, for example 0474736901, enter International: 33 Code: 4 Number: 74736901, value will be calculated +33 4 74 73 39 01"
+msgstr "Remarque : Ne jamais mettre le 0 pour sortir, ou le 00 de l'international, exemple pour 0474736901, saisir International : 33 Indicatif :4 Numéro : 74736901, la valeur se calculera +33 4 74 73 39 01"
+
+#. module: multi_communications
+#: model:ir.model.fields,field_description:multi_communications.field_multi_communication_number
+msgid "Number"
+msgstr "Numéro"
+
+#. module: multi_communications
+#: model:ir.model.fields,help:multi_communications.field_multi_communication_indicative
+msgid "Number of the region. For example: In France, 4 for the southwest, 6 for mobile"
+msgstr "Numéro de la région. Par exemple: En France, 4 pour le sud-ouest, 6 pour les portables"
+
+#. module: multi_communications
+#: model:ir.model,name:multi_communications.model_res_partner
+#: model:ir.model.fields,field_description:multi_communications.field_multi_communication_partner_id
+msgid "Partner"
+msgstr "Partenaire"
+
+#. module: multi_communications
+#: model:ir.model.fields,field_description:multi_communications.field_multi_communication_password
+msgid "Password"
+msgstr "Password"
+
+#. module: multi_communications
+#: code:addons/multi_communications/communication.py:19
+#: code:addons/multi_communications/communication.py:79
+#: model:multi.communication.type,name:multi_communications.phone_type
+#, python-format
+msgid "Phone"
+msgstr "Téléphone"
+
+#. module: multi_communications
+#: model:ir.model.fields,help:multi_communications.field_multi_communication_number
+msgid "Phone number. Example: 8 digits for the France"
+msgstr "Numéro de téléphone. Exemple: 8 chiffres pour la France"
+
+#. module: multi_communications
+#: model:ir.model.fields,help:multi_communications.field_multi_communication_intern
+msgid "Post number to call (never fill for FAX)"
+msgstr "Numéro de poste à appeler (ne jamais remplir pour un fax)"
+
+#. module: multi_communications
+#: model:ir.model.fields,field_description:multi_communications.field_multi_communication_sequence
+msgid "Sequence"
+msgstr "Séquence"
+
+#. module: multi_communications
+#: code:addons/multi_communications/communication.py:129
+#: code:addons/multi_communications/communication.py:145
+#, python-format
+msgid "The email is not correct %s"
+msgstr "L'adresse mail n'est pas correcte %s"
+
+#. module: multi_communications
+#: model:ir.model.fields,field_description:multi_communications.field_multi_communication_communication_type_id
+#: model:ir.model.fields,field_description:multi_communications.field_multi_communication_type
+#: model:ir.model.fields,field_description:multi_communications.field_multi_communication_type_type
+msgid "Type"
+msgstr "Type"
+
+#. module: multi_communications
+#: model:ir.model,name:multi_communications.model_multi_communication_type
+msgid "Type for multi communications"
+msgstr "Type pour multi communications"
+
+#. module: multi_communications
+#: model:ir.model.fields,field_description:multi_communications.field_multi_communication_value
+msgid "Value"
+msgstr "Valeur"
+
+#. module: multi_communications
+#: model:multi.communication.type,name:multi_communications.webp_type
+msgid "Web Portal"
+msgstr "Web Portal"
+
+#. module: multi_communications
+#: model:ir.model.fields,field_description:multi_communications.field_res_partner_webp
+msgid "Web portal"
+msgstr "Web portal"
+
+#. module: multi_communications
+#: code:addons/multi_communications/communication.py:23
+#: code:addons/multi_communications/communication.py:83
+#, python-format
+msgid "Web portal"
+msgstr "Web portal"
+
+#. module: multi_communications
+#: model:ir.model.fields,help:multi_communications.field_multi_communication_login
+msgid "multi_communication.login.help"
+msgstr "multi_communication.login.help"
+
+#. module: multi_communications
+#: model:ir.model.fields,help:multi_communications.field_multi_communication_password
+msgid "multi_communication.password.help"
+msgstr "multi_communication.password.help"
+

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+
+		<record id="view_wizard_add_resource_valid_form" model="ir.ui.view">
+			<field name="name">wizard.add.resource.valid.form</field>
+			<field name="model">wizard.add.resource.valid</field>
+			<field name="priority" eval="8" />
+			<field name="arch" type="xml">
+				<form string="Add resource valid">
+					<group colspan="4" col="4">
+						<field name="routing_line_id" invisible="1" />
+						<group colspan="4" col="4" string="Existing resources" >
+							<field name="existing_resource_ids" nolabel="1" colspan="4" >
+								<tree string="resources" colors="grey:is_active==False;">
+									<field name="sequence" />
+									<field name="rl_resource_category_id" />
+									<field name="resource_id" />
+									<field name="is_active" invisible="1" />
+									<button name="up" icon="gtk-go-up" type="object" string="UP" attrs="{'invisible': [('is_active', '=', False)]}" />
+									<button name="down" icon="gtk-go-down" type="object" string="DOWN" attrs="{'invisible': [('is_active', '=', False)]}" />
+									<button name="delete" icon="STOCK_CANCEL" type="object" string="DELETE" attrs="{'invisible': [('is_active', '=', False)]}" />
+								</tree>
+								<form string="Resources">
+									<field name="sequence" />
+									<field name="rl_resource_category_id" colspan="4" />
+									<field name="resource_id" />
+								</form>
+							</field>
+					    </group>
+					    <group colspan="4" col="4" string="Add resources" >
+							<field name="resource_ids" nolabel="1" colspan="4" >
+								<tree string="Resources" editable="bottom">
+									<field name="rl_resource_category_id" colspan="4" domain="[('routing_line_id','=',parent.routing_line_id)]" required="1" />
+                                    <field name="resource_categ_id" invisible="1" />
+                                    <field name="resource_id" domain="[('category_resource_ids','=', resource_categ_id)]" 
+                                           attrs="{'readonly': [('rl_resource_category_id', '=', False)]}" required="1" />
+								</tree>
+								<form string="resources">
+									<field name="rl_resource_category_id" colspan="4" domain="[('routing_line_id','=',parent.routing_line_id)]" required="1" />
+									<field name="resource_categ_id" invisible="1" />
+									<field name="resource_id" domain="[('category_resource_ids','=', resource_categ_id)]" 
+									       attrs="{'readonly': [('rl_resource_category_id', '=', False)]}" required="1" />
+								</form>
+							</field>
+						</group>
+					</group>
+					<footer>
+						<button name="action_validate" string="OK" type="object" class="oe_highlight" />
+						or
+						<button string="Cancel" class="oe_link" special="cancel" />
+					</footer>
+				</form>
+			</field>
+		</record>
+
+		<record model="ir.actions.act_window" id="act_ftpr_add_resource_valid_view">
+			<field name="name">Add resource valid</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="res_model">wizard.add.resource.valid</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">form</field>
+			<field name="target">new</field>
+		</record>
+
+	</data>
+</openerp>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+        
+
+        <record model="ir.ui.view" id="wizard_form_view">
+            <field name="name">wizard.form</field>
+            <field name="model">bi.wizard</field>
+            <field name="arch" type="xml">
+                <form string="Add Dashboard">
+                    <group>
+                        <field name="dashboard_name"/>
+                        <field name="dashboard_adress"/>
+                    </group>
+                    <footer>
+                        <button name="save" type="object"
+                                string="Save" class="oe_highlight"/>
+                        or
+                        <button special="cancel" string="Cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="launch_bi_wizard">
+			<field name="name">Time declaration</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="res_model">bi.wizard</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">form</field>
+			<field name="target">new</field>
+		</record>
+
+        <menuitem   id="wizard_bi_menu" 
+                    name="Add dashboard" 
+                    parent="bi_menu"
+                    action="launch_bi_wizard"/>
+
+
+    </data>
+ </openerp>

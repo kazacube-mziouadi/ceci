@@ -1,0 +1,1059 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* crm_openprod
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 9.0c\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-11-04 09:23+0000\n"
+"PO-Revision-Date: 2016-11-04 09:23+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: crm_openprod
+#: model:mail.template,body_html:crm_openprod.email_template_for_crm
+msgid "\n"
+"<div style=\"font-family: 'Lucica Grande', Ubuntu, Arial, Verdana, sans-serif; font-size: 12px; color: rgb(34, 34, 34); background-color: #FFF; \">\n"
+"\n"
+"    <p>Hello ${object.customer_id.name},</p>\n"
+"</div>"
+msgstr "\n"
+"<div style=\"font-family: 'Lucica Grande', Ubuntu, Arial, Verdana, sans-serif; font-size: 12px; color: rgb(34, 34, 34); background-color: #FFF; \">\n"
+"\n"
+"    <p>Hello ${object.customer_id.name},</p>\n"
+"</div>"
+
+#. module: crm_openprod
+#: model:ir.model.fields,field_description:crm_openprod.field_crm_success_percent
+#: model:ir.ui.view,arch_db:crm_openprod.view_kanban_crm_openprod
+msgid "% of success"
+msgstr "% de réussite"
+
+#. module: crm_openprod
+#: code:addons/crm_openprod/wizard/create_partner.py:43
+#, python-format
+msgid "< Threshold"
+msgstr "< Seuil"
+
+#. module: crm_openprod
+#: model:ir.ui.view,arch_db:crm_openprod.view_kanban_crm_openprod
+msgid "<b>Creation : </b>"
+msgstr "<b>Création : </b>"
+
+#. module: crm_openprod
+#: model:ir.ui.view,arch_db:crm_openprod.view_kanban_crm_openprod
+msgid "<b>Customer : </b>"
+msgstr "<b>Client : </b>"
+
+#. module: crm_openprod
+#: model:ir.ui.view,arch_db:crm_openprod.view_kanban_crm_openprod
+msgid "<b>Limit : </b>"
+msgstr "<b>Limite : </b>"
+
+#. module: crm_openprod
+#: model:ir.ui.view,arch_db:crm_openprod.view_kanban_crm_openprod
+msgid "<b>Next action date : </b>"
+msgstr "<b>Date prochaine action : </b>"
+
+#. module: crm_openprod
+#: model:ir.ui.view,arch_db:crm_openprod.view_kanban_crm_openprod
+msgid "<b>Next action responsible : </b>"
+msgstr "<b>Responsable prochaine action : </b>"
+
+#. module: crm_openprod
+#: model:ir.ui.view,arch_db:crm_openprod.view_kanban_crm_openprod
+msgid "<b>Salesman : </b>"
+msgstr "<b>Commercial : </b>"
+
+#. module: crm_openprod
+#: model:ir.ui.view,arch_db:crm_openprod.view_form_crm_openprod
+msgid "Accept"
+msgstr "Accepter"
+
+#. module: crm_openprod
+#: model:ir.model.fields,field_description:crm_openprod.field_crm_log_state_id
+msgid "Action"
+msgstr "Action"
+
+#. module: crm_openprod
+#: model:ir.actions.act_window,name:crm_openprod.action_crm_action_analysis_pivot
+#: model:ir.ui.menu,name:crm_openprod.menu_crm_action_analysis
+#: model:ir.ui.view,arch_db:crm_openprod.view_crm_action_analysis_pivot
+msgid "Action analysis"
+msgstr "Analyse des actions"
+
+#. module: crm_openprod
+#: model:ir.model.fields,field_description:crm_openprod.field_crm_nb_actions
+#: model:ir.model.fields,field_description:crm_openprod.field_crm_user_event_ids
+#: model:ir.ui.view,arch_db:crm_openprod.view_form_crm_openprod
+#: model:ir.ui.view,arch_db:crm_openprod.view_kanban_crm_openprod
+msgid "Actions"
+msgstr "Actions"
+
+#. module: crm_openprod
+#: code:addons/crm_openprod/wizard/create_partner.py:42
+#, python-format
+msgid "Always"
+msgstr "Toujours"
+
+#. module: crm_openprod
+#: code:addons/crm_openprod/crm.py:23
+#, python-format
+msgid "April"
+msgstr "Avril"
+
+#. module: crm_openprod
+#: model:ir.ui.view,arch_db:crm_openprod.view_form_crm_openprod
+msgid "Attachments"
+msgstr "Pièces jointes"
+
+#. module: crm_openprod
+#: model:ir.ui.view,arch_db:crm_openprod.view_form_crm_openprod
+msgid "Attendees"
+msgstr "Participants"
+
+#. module: crm_openprod
+#: model:ir.ui.view,arch_db:crm_openprod.view_form_crm_openprod
+msgid "Attendees and invitations"
+msgstr "Participants et invitations"
+
+#. module: crm_openprod
+#: code:addons/crm_openprod/crm.py:27
+#, python-format
+msgid "August"
+msgstr "Août"
+
+#. module: crm_openprod
+#: model:ir.model.fields,field_description:crm_openprod.field_create_new_crm_partner_b2c_crm
+#: model:ir.model.fields,field_description:crm_openprod.field_crm_b2c_flag
+msgid "B2C"
+msgstr "B2C"
+
+#. module: crm_openprod
+#: model:ir.model.fields,field_description:crm_openprod.field_res_users_crm_b2c
+msgid "B2C (CRM)"
+msgstr "B2C (CRM)"
+
+#. module: crm_openprod
+#: code:addons/crm_openprod/calendar_event.py:14
+#: model:ir.actions.act_window,name:crm_openprod.act_crm_openprod
+#: model:ir.actions.act_window,name:crm_openprod.act_crm_view_only_form
+#: model:ir.actions.act_window,name:crm_openprod.action_see_all_crm
+#: model:ir.model.fields,field_description:crm_openprod.field_calendar_event_crm_id
+#: model:ir.model.fields,field_description:crm_openprod.field_crm_log_crm_id
+#: model:ir.model.fields,field_description:crm_openprod.field_note_openprod_crm_id
+#: model:ir.model.fields,field_description:crm_openprod.field_sale_order_crm_id
+#: model:ir.ui.menu,name:crm_openprod.menu_configuration_crm_openprod
+#: model:ir.ui.menu,name:crm_openprod.menu_crm_openprod
+#: model:ir.ui.view,arch_db:crm_openprod.view_form_crm_document_openprod
+#: model:ir.ui.view,arch_db:crm_openprod.view_form_crm_openprod
+#: model:ir.ui.view,arch_db:crm_openprod.view_res_users_form_crm
+#: model:ir.ui.view,arch_db:crm_openprod.view_tree_category_crm_openprod
+#: model:ir.ui.view,arch_db:crm_openprod.view_tree_crm_openprod
+#, python-format
+msgid "CRM"
+msgstr "CRM"
+
+#. module: crm_openprod
+#: model:ir.ui.view,arch_db:crm_openprod.view_form_category_crm_openprod
+msgid "CRM Category"
+msgstr "Categorie de CRM"
+
+#. module: crm_openprod
+#: model:ir.ui.view,arch_db:crm_openprod.view_form_crm_log_openprod
+#: model:ir.ui.view,arch_db:crm_openprod.view_form_state_crm_openprod
+msgid "CRM State"
+msgstr "Etat de CRM"
+
+#. module: crm_openprod
+#: model:ir.model,name:crm_openprod.model_crm_joined_document
+msgid "CRM joined documents"
+msgstr "Documents joints de la CRM"
+
+#. module: crm_openprod
+#: model:ir.ui.view,arch_db:crm_openprod.view_tree_crm_log_openprod
+msgid "CRM log"
+msgstr "Log de CRM"
+
+#. module: crm_openprod
+#: model:res.groups,name:crm_openprod.group_menu_crm_user
+msgid "CRM menu"
+msgstr "Menu CRM"
+
+#. module: crm_openprod
+#: model:ir.ui.view,arch_db:crm_openprod.view_tree_state_crm_openprod
+msgid "CRM state"
+msgstr "Etat de CRM"
+
+#. module: crm_openprod
+#: model:ir.model.fields,field_description:crm_openprod.field_create_new_crm_partner_calendar_id
+msgid "Calendar"
+msgstr "Calendrier"
+
+#. module: crm_openprod
+#: model:ir.ui.view,arch_db:crm_openprod.view_form_create_crm_partner
+msgid "Cancel"
+msgstr "Annuler"
+
+#. module: crm_openprod
+#: model:ir.actions.act_window,name:crm_openprod.act_category_crm_openprod
+#: model:ir.model.fields,field_description:crm_openprod.field_crm_category_ids
+#: model:ir.model.fields,field_description:crm_openprod.field_crm_concat_category
+#: model:ir.ui.menu,name:crm_openprod.menu_category_crm_openprod
+msgid "Categories"
+msgstr "Catégories"
+
+#. module: crm_openprod
+#: model:ir.model,name:crm_openprod.model_crm_category
+msgid "Categories for customer relationship management"
+msgstr "Catégories pour CRM"
+
+#. module: crm_openprod
+#: model:ir.model.fields,help:crm_openprod.field_res_users_crm_b2c
+msgid "Check this case if you want to manage CRM for B2C"
+msgstr "Cochez cette case si vous souohaitez gérer la CRM pour le B2C"
+
+#. module: crm_openprod
+#: model:ir.model.fields,field_description:crm_openprod.field_crm_category_child_ids
+msgid "Child categories"
+msgstr "Catégories enfant"
+
+#. module: crm_openprod
+#: model:ir.model.fields,field_description:crm_openprod.field_create_new_crm_partner_city
+#: model:ir.model.fields,field_description:crm_openprod.field_crm_city
+msgid "City"
+msgstr "Ville"
+
+#. module: crm_openprod
+#: model:ir.model.fields,field_description:crm_openprod.field_crm_color
+msgid "Color"
+msgstr "Couleur"
+
+#. module: crm_openprod
+#: model:ir.model.fields,field_description:crm_openprod.field_crm_origin_comments
+msgid "Comments"
+msgstr "Commentaires"
+
+#. module: crm_openprod
+#: model:ir.ui.view,arch_db:crm_openprod.view_form_crm_openprod
+msgid "Communications"
+msgstr "Communications"
+
+#. module: crm_openprod
+#: model:ir.model.fields,field_description:crm_openprod.field_crm_contact_ids
+msgid "Contacts"
+msgstr "Contacts"
+
+#. module: crm_openprod
+#: model:ir.model.fields,field_description:crm_openprod.field_create_new_crm_partner_country_id
+#: model:ir.model.fields,field_description:crm_openprod.field_crm_country_id
+msgid "Country"
+msgstr "Pays"
+
+#. module: crm_openprod
+#: model:ir.ui.view,arch_db:crm_openprod.view_form_create_crm_partner
+msgid "Create a new customer"
+msgstr "Créer un nouveau client"
+
+#. module: crm_openprod
+#: model:ir.actions.act_window,name:crm_openprod.action_create_new_customer_crm
+#: model:ir.ui.view,arch_db:crm_openprod.view_form_crm_openprod
+msgid "Create customer"
+msgstr "Créer un client"
+
+#. module: crm_openprod
+#: model:ir.ui.view,arch_db:crm_openprod.view_form_create_crm_partner
+msgid "Create new customer"
+msgstr "Créer un nouveau client"
+
+#. module: crm_openprod
+#: model:ir.ui.view,arch_db:crm_openprod.view_kanban_crm_openprod
+msgid "Create note"
+msgstr "Créer une note"
+
+#. module: crm_openprod
+#: model:ir.ui.view,arch_db:crm_openprod.view_form_crm_calendar_event
+msgid "Create opportunity"
+msgstr "Créer une opportunité"
+
+#. module: crm_openprod
+#: model:ir.ui.view,arch_db:crm_openprod.view_form_crm_openprod
+msgid "Create sale"
+msgstr "Créer une vente"
+
+#. module: crm_openprod
+#: model:ir.ui.view,arch_db:crm_openprod.view_kanban_crm_openprod
+msgid "Create task"
+msgstr "Créer une action"
+
+#. module: crm_openprod
+#: model:ir.model.fields,field_description:crm_openprod.field_create_new_crm_partner_create_uid
+#: model:ir.model.fields,field_description:crm_openprod.field_crm_category_create_uid
+#: model:ir.model.fields,field_description:crm_openprod.field_crm_create_uid
+#: model:ir.model.fields,field_description:crm_openprod.field_crm_log_create_uid
+#: model:ir.model.fields,field_description:crm_openprod.field_crm_origin_create_uid
+#: model:ir.model.fields,field_description:crm_openprod.field_crm_state_create_uid
+msgid "Created by"
+msgstr "Créé par"
+
+#. module: crm_openprod
+#: model:ir.model.fields,field_description:crm_openprod.field_create_new_crm_partner_create_date
+#: model:ir.model.fields,field_description:crm_openprod.field_crm_category_create_date
+#: model:ir.model.fields,field_description:crm_openprod.field_crm_create_date
+#: model:ir.model.fields,field_description:crm_openprod.field_crm_log_create_date
+#: model:ir.model.fields,field_description:crm_openprod.field_crm_origin_create_date
+#: model:ir.model.fields,field_description:crm_openprod.field_crm_state_create_date
+msgid "Created on"
+msgstr "Créé le"
+
+#. module: crm_openprod
+#: model:ir.model.fields,field_description:crm_openprod.field_crm_creation_date
+msgid "Creation date"
+msgstr "Date de création"
+
+#. module: crm_openprod
+#: code:addons/crm_openprod/crm.py:249
+#: model:ir.ui.view,arch_db:crm_openprod.view_search_crm_openprod
+#, python-format
+msgid "Critical"
+msgstr "Critique"
+
+#. module: crm_openprod
+#: model:ir.model.fields,field_description:crm_openprod.field_crm_criticality
+msgid "Criticality"
+msgstr "Criticité"
+
+#. module: crm_openprod
+#: model:ir.model.fields,field_description:crm_openprod.field_create_new_crm_partner_currency_id
+#: model:ir.model.fields,field_description:crm_openprod.field_crm_currency_id
+msgid "Currency"
+msgstr "Devise"
+
+#. module: crm_openprod
+#: model:ir.model.fields,field_description:crm_openprod.field_crm_customer_id
+#: model:ir.ui.view,arch_db:crm_openprod.view_search_crm_openprod
+msgid "Customer"
+msgstr "Client"
+
+#. module: crm_openprod
+#: model:ir.model.fields,field_description:crm_openprod.field_create_new_crm_partner_name
+msgid "Customer name"
+msgstr "Nom du client"
+
+#. module: crm_openprod
+#: model:ir.model,name:crm_openprod.model_crm
+msgid "Customer relationship management"
+msgstr "CRM"
+
+#. module: crm_openprod
+#: model:ir.ui.view,arch_db:crm_openprod.view_form_crm_openprod
+msgid "Customer's details"
+msgstr "Détails du client"
+
+#. module: crm_openprod
+#: model:ir.model.fields,field_description:crm_openprod.field_crm_log_date
+msgid "Date"
+msgstr "Date"
+
+#. module: crm_openprod
+#: code:addons/crm_openprod/crm.py:31
+#, python-format
+msgid "December"
+msgstr "Décembre"
+
+#. module: crm_openprod
+#: model:ir.ui.view,arch_db:crm_openprod.view_form_crm_openprod
+msgid "Decline"
+msgstr "Décliner"
+
+#. module: crm_openprod
+#: model:ir.ui.view,arch_db:crm_openprod.view_kanban_crm_openprod
+msgid "Delete"
+msgstr "Supprimer"
+
+#. module: crm_openprod
+#: code:addons/crm_openprod/wizard/create_partner.py:34
+#, python-format
+msgid "Delivered quantities"
+msgstr "Quantités livrées"
+
+#. module: crm_openprod
+#: model:ir.model.fields,field_description:crm_openprod.field_crm_category_description
+#: model:ir.model.fields,field_description:crm_openprod.field_crm_description
+#: model:ir.model.fields,field_description:crm_openprod.field_crm_state_description
+#: model:ir.ui.view,arch_db:crm_openprod.view_form_category_crm_openprod
+#: model:ir.ui.view,arch_db:crm_openprod.view_form_crm_openprod
+#: model:ir.ui.view,arch_db:crm_openprod.view_form_state_crm_openprod
+msgid "Description"
+msgstr "Description"
+
+#. module: crm_openprod
+#: model:ir.ui.view,arch_db:crm_openprod.view_form_crm_openprod
+msgid "Description and Actions"
+msgstr "Description et Actions"
+
+#. module: crm_openprod
+#: model:ir.ui.view,arch_db:crm_openprod.view_form_crm_openprod
+#: model:ir.ui.view,arch_db:crm_openprod.view_form_state_crm_openprod
+msgid "Details"
+msgstr "Détails"
+
+#. module: crm_openprod
+#: model:ir.model.fields,field_description:crm_openprod.field_create_new_crm_partner_display_name
+#: model:ir.model.fields,field_description:crm_openprod.field_crm_category_display_name
+#: model:ir.model.fields,field_description:crm_openprod.field_crm_display_name
+#: model:ir.model.fields,field_description:crm_openprod.field_crm_log_display_name
+#: model:ir.model.fields,field_description:crm_openprod.field_crm_origin_display_name
+#: model:ir.model.fields,field_description:crm_openprod.field_crm_state_display_name
+msgid "Display Name"
+msgstr "Nom affiché"
+
+#. module: crm_openprod
+#: model:ir.ui.view,arch_db:crm_openprod.view_form_crm_openprod
+msgid "Documentations"
+msgstr "Documentations"
+
+#. module: crm_openprod
+#: model:ir.model.fields,field_description:crm_openprod.field_crm_document_ids
+msgid "Documents"
+msgstr "Documents"
+
+#. module: crm_openprod
+#: model:ir.model,name:crm_openprod.model_document_openprod
+msgid "Documents Openprod"
+msgstr "Documents Openprod"
+
+#. module: crm_openprod
+#: model:ir.ui.view,arch_db:crm_openprod.view_kanban_crm_openprod
+msgid "Edit"
+msgstr "Modifier"
+
+#. module: crm_openprod
+#: model:ir.model.fields,field_description:crm_openprod.field_create_new_crm_partner_email
+#: model:ir.model.fields,field_description:crm_openprod.field_crm_email
+msgid "Email"
+msgstr "Courriel"
+
+#. module: crm_openprod
+#: model:ir.ui.view,arch_db:crm_openprod.view_form_crm_openprod
+msgid "Emails"
+msgstr "Courriels"
+
+#. module: crm_openprod
+#: model:ir.model.fields,field_description:crm_openprod.field_crm_end_date
+msgid "End date"
+msgstr "Date de fin"
+
+#. module: crm_openprod
+#: code:addons/crm_openprod/crm.py:386
+#: code:addons/crm_openprod/crm.py:406
+#, python-format
+msgid "Error"
+msgstr "Erreur"
+
+#. module: crm_openprod
+#: code:addons/crm_openprod/crm.py:141
+#, python-format
+msgid "Error ! You cannot create recursive categories."
+msgstr "Erreur ! Vous ne pouvez créer de catégories récursives."
+
+#. module: crm_openprod
+#: sql_constraint:crm.state:0
+msgid "Error: There is already an other state with this sequence."
+msgstr "Erreur: Il y a déjà un état avec cette séquence."
+
+#. module: crm_openprod
+#: model:ir.model.fields,field_description:crm_openprod.field_crm_estimated_revenue
+msgid "Estimated revenue"
+msgstr "CA estimé"
+
+#. module: crm_openprod
+#: model:ir.model,name:crm_openprod.model_calendar_event
+msgid "Event"
+msgstr "Événement"
+
+#. module: crm_openprod
+#: code:addons/crm_openprod/crm.py:21
+#, python-format
+msgid "February"
+msgstr "Février"
+
+#. module: crm_openprod
+#: model:ir.ui.view,arch_db:crm_openprod.view_search_crm_openprod
+msgid "Filters"
+msgstr "Filtres"
+
+#. module: crm_openprod
+#: model:ir.model.fields,field_description:crm_openprod.field_crm_state_fold
+msgid "Folded in kanban view"
+msgstr "Replié dans la vue kanban"
+
+#. module: crm_openprod
+#: model:ir.model.fields,field_description:crm_openprod.field_crm_estimated_revenue_avg
+msgid "Forecast revenue"
+msgstr "CA prévisionnel"
+
+#. module: crm_openprod
+#: model:ir.ui.view,arch_db:crm_openprod.view_search_crm_openprod
+msgid "Group By..."
+msgstr "Regrouper par..."
+
+#. module: crm_openprod
+#: model:ir.ui.view,arch_db:crm_openprod.view_form_crm_openprod
+msgid "History"
+msgstr "Historique"
+
+#. module: crm_openprod
+#: model:ir.model.fields,field_description:crm_openprod.field_create_new_crm_partner_id
+#: model:ir.model.fields,field_description:crm_openprod.field_crm_category_id
+#: model:ir.model.fields,field_description:crm_openprod.field_crm_id
+#: model:ir.model.fields,field_description:crm_openprod.field_crm_log_id
+#: model:ir.model.fields,field_description:crm_openprod.field_crm_origin_id
+#: model:ir.model.fields,field_description:crm_openprod.field_crm_state_id
+msgid "ID"
+msgstr "ID"
+
+#. module: crm_openprod
+#: model:ir.ui.view,arch_db:crm_openprod.view_kanban_crm_openprod
+msgid "Important Messages"
+msgstr "Messages Importants"
+
+#. module: crm_openprod
+#: model:ir.ui.view,arch_db:crm_openprod.view_form_crm_openprod
+msgid "Invitation details"
+msgstr "Détails des invitations"
+
+#. module: crm_openprod
+#: model:ir.ui.view,arch_db:crm_openprod.view_form_crm_openprod
+msgid "Invitations"
+msgstr "Invitations"
+
+#. module: crm_openprod
+#: model:ir.model.fields,field_description:crm_openprod.field_crm_state_is_end
+msgid "Is CRM end"
+msgstr "Est un état final"
+
+#. module: crm_openprod
+#: model:ir.model.fields,field_description:crm_openprod.field_crm_state_is_lost_state
+msgid "Is lost state"
+msgstr "État 'perdu'"
+
+#. module: crm_openprod
+#: model:ir.model.fields,field_description:crm_openprod.field_crm_state_is_new_state
+msgid "Is new state"
+msgstr "État 'nouveau'"
+
+#. module: crm_openprod
+#: model:ir.model.fields,field_description:crm_openprod.field_crm_state_is_sale_creation_state
+msgid "Is sale creation state"
+msgstr "État de la création de vente"
+
+#. module: crm_openprod
+#: model:ir.model.fields,field_description:crm_openprod.field_crm_state_is_won_state
+msgid "Is won state"
+msgstr "État 'gagné'"
+
+#. module: crm_openprod
+#: code:addons/crm_openprod/crm.py:20
+#, python-format
+msgid "January"
+msgstr "Janvier"
+
+#. module: crm_openprod
+#: code:addons/crm_openprod/crm.py:26
+#, python-format
+msgid "July"
+msgstr "Juillet"
+
+#. module: crm_openprod
+#: code:addons/crm_openprod/crm.py:25
+#, python-format
+msgid "June"
+msgstr "Juin"
+
+#. module: crm_openprod
+#: model:ir.model.fields,field_description:crm_openprod.field_create_new_crm_partner_lang
+msgid "Lang"
+msgstr "Langue"
+
+#. module: crm_openprod
+#: model:ir.model.fields,field_description:crm_openprod.field_create_new_crm_partner___last_update
+#: model:ir.model.fields,field_description:crm_openprod.field_crm___last_update
+#: model:ir.model.fields,field_description:crm_openprod.field_crm_category___last_update
+#: model:ir.model.fields,field_description:crm_openprod.field_crm_log___last_update
+#: model:ir.model.fields,field_description:crm_openprod.field_crm_origin___last_update
+#: model:ir.model.fields,field_description:crm_openprod.field_crm_state___last_update
+msgid "Last Modified on"
+msgstr "Dernière modification le"
+
+#. module: crm_openprod
+#: model:ir.model.fields,field_description:crm_openprod.field_create_new_crm_partner_write_uid
+#: model:ir.model.fields,field_description:crm_openprod.field_crm_category_write_uid
+#: model:ir.model.fields,field_description:crm_openprod.field_crm_log_write_uid
+#: model:ir.model.fields,field_description:crm_openprod.field_crm_origin_write_uid
+#: model:ir.model.fields,field_description:crm_openprod.field_crm_state_write_uid
+#: model:ir.model.fields,field_description:crm_openprod.field_crm_write_uid
+msgid "Last Updated by"
+msgstr "Mis à jour par"
+
+#. module: crm_openprod
+#: model:ir.model.fields,field_description:crm_openprod.field_create_new_crm_partner_write_date
+#: model:ir.model.fields,field_description:crm_openprod.field_crm_category_write_date
+#: model:ir.model.fields,field_description:crm_openprod.field_crm_log_write_date
+#: model:ir.model.fields,field_description:crm_openprod.field_crm_origin_write_date
+#: model:ir.model.fields,field_description:crm_openprod.field_crm_state_write_date
+#: model:ir.model.fields,field_description:crm_openprod.field_crm_write_date
+msgid "Last Updated on"
+msgstr "Mis à jour le"
+
+#. module: crm_openprod
+#: model:ir.model.fields,field_description:crm_openprod.field_crm_log_ids
+msgid "Logs"
+msgstr "Logs"
+
+#. module: crm_openprod
+#: model:ir.model,name:crm_openprod.model_crm_log
+msgid "Logs for customer relationship management"
+msgstr "Logs pour CRM"
+
+#. module: crm_openprod
+#: model:ir.model.fields,field_description:crm_openprod.field_crm_mail_ids
+msgid "Mails"
+msgstr "Mails"
+
+#. module: crm_openprod
+#: code:addons/crm_openprod/crm.py:22
+#, python-format
+msgid "March"
+msgstr "Mars"
+
+#. module: crm_openprod
+#: code:addons/crm_openprod/crm.py:24
+#, python-format
+msgid "May"
+msgstr "Mai"
+
+#. module: crm_openprod
+#: model:ir.model.fields,field_description:crm_openprod.field_crm_log_month
+msgid "Month"
+msgstr "Mois"
+
+#. module: crm_openprod
+#: model:ir.ui.view,arch_db:crm_openprod.view_search_crm_openprod
+msgid "My opportunities"
+msgstr "Mes opportunités"
+
+#. module: crm_openprod
+#: model:ir.model.fields,field_description:crm_openprod.field_crm_category_name
+#: model:ir.model.fields,field_description:crm_openprod.field_crm_customer_name
+#: model:ir.model.fields,field_description:crm_openprod.field_crm_origin_name
+#: model:ir.model.fields,field_description:crm_openprod.field_crm_state_name
+msgid "Name"
+msgstr "Nom"
+
+#. module: crm_openprod
+#: model:crm.state,name:crm_openprod.crm_state_negotiation
+msgid "Negotiation"
+msgstr "Négociation"
+
+#. module: crm_openprod
+#: model:crm.origin,name:crm_openprod.network_crm_origin
+msgid "Network"
+msgstr "Réseau"
+
+#. module: crm_openprod
+#: code:addons/crm_openprod/wizard/create_partner.py:41
+#, python-format
+msgid "Never"
+msgstr "Jamais"
+
+#. module: crm_openprod
+#: model:ir.model.fields,field_description:crm_openprod.field_crm_next_action_date
+msgid "Next action date"
+msgstr "Date prochaine action"
+
+#. module: crm_openprod
+#: model:ir.model.fields,field_description:crm_openprod.field_crm_next_action_user_id
+msgid "Next action responsible"
+msgstr "Responsable prochaine action"
+
+#. module: crm_openprod
+#: code:addons/crm_openprod/crm.py:248
+#, python-format
+msgid "Normal"
+msgstr "Normal"
+
+#. module: crm_openprod
+#: model:ir.model,name:crm_openprod.model_note_openprod
+msgid "Note Openprod"
+msgstr "Note Openprod"
+
+#. module: crm_openprod
+#: model:ir.model.fields,field_description:crm_openprod.field_crm_note_ids
+#: model:ir.ui.view,arch_db:crm_openprod.view_form_crm_openprod
+msgid "Notes"
+msgstr "Notes"
+
+#. module: crm_openprod
+#: code:addons/crm_openprod/crm.py:30
+#, python-format
+msgid "November"
+msgstr "Novembre"
+
+#. module: crm_openprod
+#: code:addons/crm_openprod/crm.py:29
+#, python-format
+msgid "October"
+msgstr "Octobre"
+
+#. module: crm_openprod
+#: code:addons/crm_openprod/wizard/create_partner.py:26
+#, python-format
+msgid "On demand"
+msgstr "À la demande"
+
+#. module: crm_openprod
+#: code:addons/crm_openprod/wizard/create_partner.py:27
+#, python-format
+msgid "On the order"
+msgstr "Sur commande"
+
+#. module: crm_openprod
+#: model:ir.ui.menu,name:crm_openprod.menu_opportunities_openprod
+msgid "Opportunities"
+msgstr "Opportunités"
+
+#. module: crm_openprod
+#: model:ir.actions.act_window,name:crm_openprod.action_crm_log_pivot
+#: model:ir.ui.menu,name:crm_openprod.menu_crm_log_analysis
+msgid "Opportunities progress"
+msgstr "Avancement des opportunités"
+
+#. module: crm_openprod
+#: model:ir.ui.view,arch_db:crm_openprod.view_form_crm_openprod
+msgid "Opportunity contacts"
+msgstr "Contacts des opportunités"
+
+#. module: crm_openprod
+#: model:ir.ui.view,arch_db:crm_openprod.view_form_crm_openprod
+msgid "Opportunity history"
+msgstr "Historique de l'opportunité"
+
+#. module: crm_openprod
+#: model:ir.model.fields,field_description:crm_openprod.field_crm_name
+msgid "Opportunity name"
+msgstr "Nom de l'opportunité"
+
+#. module: crm_openprod
+#: code:addons/crm_openprod/wizard/create_partner.py:33
+#, python-format
+msgid "Ordered quantities"
+msgstr "Quantités commandées"
+
+#. module: crm_openprod
+#: model:ir.model.fields,field_description:crm_openprod.field_crm_origin_id_8515
+msgid "Origin"
+msgstr "Origine"
+
+#. module: crm_openprod
+#: model:ir.model,name:crm_openprod.model_crm_origin
+msgid "Origin for customer relationship management"
+msgstr "Origine pour la gestion de la relation client"
+
+#. module: crm_openprod
+#: model:ir.ui.view,arch_db:crm_openprod.view_form_state_crm_openprod
+msgid "Parameters"
+msgstr "Paramètres"
+
+#. module: crm_openprod
+#: model:ir.model.fields,field_description:crm_openprod.field_crm_category_parent_id
+msgid "Parent category"
+msgstr "Catégorie parent"
+
+#. module: crm_openprod
+#: model:ir.model.fields,field_description:crm_openprod.field_crm_category_parent_left
+msgid "Parent left"
+msgstr "Parent left"
+
+#. module: crm_openprod
+#: model:ir.model.fields,field_description:crm_openprod.field_crm_category_parent_right
+msgid "Parent right"
+msgstr "Parent right"
+
+#. module: crm_openprod
+#: model:ir.ui.view,arch_db:crm_openprod.view_form_create_crm_partner
+msgid "Partner's details"
+msgstr "Détails du partenaire"
+
+#. module: crm_openprod
+#: model:crm.origin,name:crm_openprod.phone_crm_origin
+#: model:ir.model.fields,field_description:crm_openprod.field_create_new_crm_partner_phone
+#: model:ir.model.fields,field_description:crm_openprod.field_crm_phone
+msgid "Phone"
+msgstr "Téléphone"
+
+#. module: crm_openprod
+#: model:ir.ui.view,arch_db:crm_openprod.view_crm_log_pivot
+#: model:ir.ui.view,arch_db:crm_openprod.view_graph_crm_log
+msgid "Progress"
+msgstr "En cours"
+
+#. module: crm_openprod
+#: model:crm.state,name:crm_openprod.crm_state_proposition
+msgid "Proposition"
+msgstr "Proposition"
+
+#. module: crm_openprod
+#: model:crm.state,name:crm_openprod.crm_state_qualification
+msgid "Qualification"
+msgstr "Qualification"
+
+#. module: crm_openprod
+#: model:ir.model.fields,field_description:crm_openprod.field_create_new_crm_partner_region_id
+#: model:ir.model.fields,field_description:crm_openprod.field_crm_region_id
+msgid "Region"
+msgstr "Région"
+
+#. module: crm_openprod
+#: model:ir.actions.act_window,name:crm_openprod.action_crm_revenue_analysis_pivot
+#: model:ir.ui.menu,name:crm_openprod.menu_crm_revenue_analysis
+#: model:ir.ui.view,arch_db:crm_openprod.view_crm_graph_action_analysis
+#: model:ir.ui.view,arch_db:crm_openprod.view_crm_graph_revenue_analysis
+#: model:ir.ui.view,arch_db:crm_openprod.view_crm_revenue_analysis_pivot
+msgid "Revenue analysis"
+msgstr "Analyse du CA"
+
+#. module: crm_openprod
+#: model:ir.model,name:crm_openprod.model_sale_order
+msgid "Sale module"
+msgstr "Module de vente"
+
+#. module: crm_openprod
+#: model:ir.model.fields,field_description:crm_openprod.field_crm_sale_ids
+msgid "Sale orders"
+msgstr "Ordres de vente"
+
+#. module: crm_openprod
+#: model:ir.ui.view,arch_db:crm_openprod.view_form_crm_openprod
+msgid "Sales"
+msgstr "Ventes"
+
+#. module: crm_openprod
+#: model:ir.model.fields,field_description:crm_openprod.field_create_new_crm_partner_salesman_id
+#: model:ir.model.fields,field_description:crm_openprod.field_crm_salesman_id
+#: model:ir.ui.view,arch_db:crm_openprod.view_search_crm_openprod
+msgid "Salesman"
+msgstr "Commercial"
+
+#. module: crm_openprod
+#: model:ir.ui.view,arch_db:crm_openprod.view_form_crm_openprod
+msgid "Select attendees..."
+msgstr "Selectionnez les participants..."
+
+#. module: crm_openprod
+#: model:ir.ui.view,arch_db:crm_openprod.view_kanban_crm_openprod
+msgid "Send Email"
+msgstr "Envoyer un mail"
+
+#. module: crm_openprod
+#: model:ir.ui.view,arch_db:crm_openprod.view_form_crm_openprod
+msgid "Send Mail"
+msgstr "Envoyer un mail"
+
+#. module: crm_openprod
+#: model:ir.ui.view,arch_db:crm_openprod.view_form_crm_openprod
+msgid "Send mail"
+msgstr "Envoyer un mail"
+
+#. module: crm_openprod
+#: code:addons/crm_openprod/crm.py:28
+#, python-format
+msgid "September"
+msgstr "Septembre"
+
+#. module: crm_openprod
+#: model:ir.model.fields,field_description:crm_openprod.field_crm_log_sequence
+#: model:ir.model.fields,field_description:crm_openprod.field_crm_state_sequence
+msgid "Sequence"
+msgstr "Séquence"
+
+#. module: crm_openprod
+#: model:crm.origin,name:crm_openprod.show_crm_origin
+msgid "Show"
+msgstr "Salon"
+
+#. module: crm_openprod
+#: model:ir.model.fields,field_description:crm_openprod.field_crm_display_state
+#: model:ir.model.fields,field_description:crm_openprod.field_crm_state_id_8557
+#: model:ir.ui.view,arch_db:crm_openprod.view_search_crm_openprod
+msgid "State"
+msgstr "État"
+
+#. module: crm_openprod
+#: model:ir.model.fields,help:crm_openprod.field_crm_state_is_sale_creation_state
+msgid "State in which the record will pass when a sale order will be created"
+msgstr "État dans lequel l'enregistrement passera lorsque la vente sera créée"
+
+#. module: crm_openprod
+#: model:ir.model.fields,help:crm_openprod.field_crm_state_is_lost_state
+msgid "State in which the record will pass when the CRM is lost"
+msgstr "État dans lequel l'enregistrement passe lorsque l'opportunité est perdue"
+
+#. module: crm_openprod
+#: model:ir.model.fields,help:crm_openprod.field_crm_state_is_won_state
+msgid "State in which the record will pass when the CRM is won"
+msgstr "État dans lequel l'enregistrement passe lorsque l'opportunité est gagnée"
+
+#. module: crm_openprod
+#: model:ir.model.fields,help:crm_openprod.field_crm_state_is_new_state
+msgid "State in which the record will pass when you create a new CRM"
+msgstr "État dans lequel l'enregistrement passe à la création d'une nouvelle opportunité"
+
+#. module: crm_openprod
+#: model:ir.actions.act_window,name:crm_openprod.act_state_crm_openprod
+#: model:ir.ui.menu,name:crm_openprod.menu_state_crm_openprod
+msgid "States"
+msgstr "Etats"
+
+#. module: crm_openprod
+#: model:ir.model,name:crm_openprod.model_crm_state
+msgid "States for customer relationship management"
+msgstr "Etats pour CRM"
+
+#. module: crm_openprod
+#: model:ir.model.fields,field_description:crm_openprod.field_create_new_crm_partner_street
+#: model:ir.model.fields,field_description:crm_openprod.field_crm_street
+msgid "Street"
+msgstr "Rue"
+
+#. module: crm_openprod
+#: model:ir.model.fields,field_description:crm_openprod.field_create_new_crm_partner_street2
+#: model:ir.model.fields,field_description:crm_openprod.field_crm_street2
+msgid "Street 2"
+msgstr "Rue 2"
+
+#. module: crm_openprod
+#: model:ir.model.fields,field_description:crm_openprod.field_create_new_crm_partner_street3
+#: model:ir.model.fields,field_description:crm_openprod.field_crm_street3
+msgid "Street 3"
+msgstr "Rue 3"
+
+#. module: crm_openprod
+#: model:ir.model.fields,help:crm_openprod.field_create_new_crm_partner_calendar_id
+msgid "The calendar specify the work days, holidays... of the partner. It's used in most of date calculation"
+msgstr "Le calendrier spécifie les jours ouvrés, les vacances, etc.. du partenaire. Il est utilisé dans la plupart des calculs de date"
+
+#. module: crm_openprod
+#: model:ir.model.fields,help:crm_openprod.field_crm_state_fold
+msgid "This stage is folded in the kanban view whenthere are no records in that stage to display."
+msgstr "Cet état est replié dans la vue kanban lorsqu'il n'y a pas d'enregistrements dans cet état à afficher"
+
+#. module: crm_openprod
+#: model:ir.model.fields,help:crm_openprod.field_crm_state_is_end
+msgid "This stage is the end of the crm process. For example state \"Won\" or \"Lost\""
+msgstr "Cet état est la fin du processus de CRM. Comme par exemple l'état \"Gagné\" ou \"Perdu\""
+
+#. module: crm_openprod
+#: model:ir.model.fields,field_description:crm_openprod.field_crm_log_time
+msgid "Time"
+msgstr "Temps"
+
+#. module: crm_openprod
+#: model:ir.ui.view,arch_db:crm_openprod.view_form_crm_openprod
+msgid "Times"
+msgstr "Temps"
+
+#. module: crm_openprod
+#: code:addons/crm_openprod/wizard/create_partner.py:25
+#, python-format
+msgid "To the delivery"
+msgstr "A la livraison"
+
+#. module: crm_openprod
+#: model:ir.ui.view,arch_db:crm_openprod.view_form_crm_openprod
+msgid "Total"
+msgstr "Total"
+
+#. module: crm_openprod
+#: model:ir.model.fields,field_description:crm_openprod.field_crm_limit_date
+msgid "Treatment limit date"
+msgstr "Date limite de traitement"
+
+#. module: crm_openprod
+#: model:ir.model.fields,field_description:crm_openprod.field_crm_trunc_description
+msgid "Truncate description"
+msgstr "Description tronquée"
+
+#. module: crm_openprod
+#: model:ir.ui.view,arch_db:crm_openprod.view_form_crm_openprod
+msgid "Uncertain"
+msgstr "Incertain"
+
+#. module: crm_openprod
+#: model:ir.model.fields,field_description:crm_openprod.field_crm_log_user_id
+msgid "User"
+msgstr "Utilisateur"
+
+#. module: crm_openprod
+#: model:ir.model,name:crm_openprod.model_res_users
+msgid "Users"
+msgstr "Utilisateurs"
+
+#. module: crm_openprod
+#: model:crm.origin,name:crm_openprod.web_crm_origin
+msgid "Web site"
+msgstr "Site web"
+
+#. module: crm_openprod
+#: model:ir.model,name:crm_openprod.model_create_new_crm_partner
+msgid "Wizard to create new partner from an opportunity"
+msgstr "Wizard pour créer un nouveau partenaire depuis une opportunité"
+
+#. module: crm_openprod
+#: model:ir.model.fields,field_description:crm_openprod.field_crm_wkf_instance_ids
+msgid "Wkf instance ids"
+msgstr "Ids des instances de wkf"
+
+#. module: crm_openprod
+#: model:ir.model.fields,field_description:crm_openprod.field_crm_wkf_progress_instance
+msgid "Wkf progress instance"
+msgstr "Instance en cours"
+
+#. module: crm_openprod
+#: model:ir.model.fields,field_description:crm_openprod.field_crm_wkf_id
+msgid "Workflow"
+msgstr "Workflow"
+
+#. module: crm_openprod
+#: model:ir.model.fields,field_description:crm_openprod.field_crm_log_year
+msgid "Year"
+msgstr "Année"
+
+#. module: crm_openprod
+#: code:addons/crm_openprod/crm.py:406
+#, python-format
+msgid "You can't create a sale with a customer not qualified"
+msgstr "Vous ne pouvez créer une vente pour un client non qualifié"
+
+#. module: crm_openprod
+#: code:addons/crm_openprod/crm.py:386
+#, python-format
+msgid "You need a name and a country to create a partner"
+msgstr "Vous avez besoin d'un nom et d'un pays pour créer un partenaire"
+
+#. module: crm_openprod
+#: model:ir.model.fields,field_description:crm_openprod.field_create_new_crm_partner_zip
+#: model:ir.model.fields,field_description:crm_openprod.field_crm_zip
+msgid "Zip"
+msgstr "Code postal"
+
+#. module: crm_openprod
+#: model:ir.ui.view,arch_db:crm_openprod.view_form_create_crm_partner
+msgid "or"
+msgstr "ou"
+

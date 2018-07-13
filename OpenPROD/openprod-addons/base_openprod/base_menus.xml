@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+
+		<menuitem name="Technical data" id="menu_technical_data_main" sequence="6" web_icon="base_openprod,static/description/donnees_technique.png" />
+		<menuitem name="Configuration" id="menu_technical_data_configuration" parent="menu_technical_data_main" sequence="30"/>
+		<menuitem id="base.menu_management" parent="base.menu_administration" name="Apps" sequence="0"/>
+		
+	</data>
+</openerp>

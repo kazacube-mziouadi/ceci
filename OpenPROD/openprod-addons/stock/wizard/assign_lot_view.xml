@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+		<!-- FORM VIEW Assign lot -->
+		<record id='view_form_wizard_add_move_lot' model='ir.ui.view'>
+			<field name="name">Assign lot</field>
+			<field name="model">wizard.add.move.lot</field>
+			<field name="arch" type="xml">
+				<form string="Assign label" version="8.0">
+					<field name="move_id" invisible="1" />
+					<field name="product_id" invisible="1" />
+					<field name="move_type" invisible="1" />
+					<group>
+					   <field name="supplier_lot_number" attrs="{'invisible': [('move_type', '!=', 'in')]}"/>
+					</group>
+					<field name="line_ids" colspan="4" nolabel="1" context="{'default_product_id': product_id, 'default_supplier_lot_number': supplier_lot_number}">
+						<tree editable="bottom" string="Lots">
+							<field name="product_id" invisible="1" />
+							<field name="supplier_lot_number" invisible="1" />
+							<field name="lot_id" domain="[('product_id', '=', product_id)]" context="{'default_supplier_lot_number': supplier_lot_number, 'default_product_id': product_id}" />
+						</tree>
+						<form string="Lot">
+							<field name="product_id" invisible="1" />
+							<field name="supplier_lot_number" invisible="1" />
+							<field name="lot_id" domain="[('product_id', '=', product_id)]" context="{'default_supplier_lot_number': supplier_lot_number, 'default_product_id': product_id}" />
+						</form>
+					</field>
+					<footer>
+						<button name="add_move_lot" string="OK" type="object" class="oe_highlight" />
+						or
+						<button string="Cancel" class="oe_link" special="cancel" />
+					</footer>
+				</form>
+			</field>
+		</record>
+
+		<!-- ACTION Assign lot -->
+		<record id="act_assign_lot_wizard" model="ir.actions.act_window">
+			<field name="name">Assign lot</field>
+			<field name="res_model">wizard.add.move.lot</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">form</field>
+			<field name="target">new</field>
+		</record>
+	</data>
+</openerp>

@@ -1,0 +1,392 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+	
+		<!-- ACTION pour purchase order lines -->
+		<record id="act_see_purchase_order_line_for_product" model="ir.actions.act_window">
+		    <field name="name">Purchase order lines</field>
+		    <field name="res_model">purchase.order.line</field>
+		    <field name="view_type">form</field>
+		    <field name="view_mode">tree,form</field>
+		    <field name="domain">[('product_id', '=', active_id)]</field>
+		    <field name="context">{}</field>
+		</record>
+		
+		<!-- FORM VIEW Product -->
+		<record id='view_form_product' model='ir.ui.view'>
+			<field name="name">product</field>
+			<field name="model">product.product</field>
+			<field name="priority" eval="1100" />
+			<field name="inherit_id" ref="product.view_form_product" />
+			<field name="arch" type="xml">
+				<xpath expr="//page[@name='product_administration_page']" position="before">
+					<page string="Purchase" attrs="{'invisible': [('purchase_ok', '=', False)]}" name="purchase_product_page">
+						<group colspan="4" col="3">
+							<group colspan="1" col="1">
+								<group string="Generality" colspan="1" col="2">
+									<field name="eig_code" />
+									<field name="purchase_responsible_id" />
+									<field name="purchase_family_id" />
+									<field name="purchase_remainder_percentage" />
+									<field name="free_purchase" />
+									<field name="eoq" />
+									<field name="cost_method" attrs="{'required': [('purchase_ok', '=', True)]}" />
+									<field name="purchase_cost_price" attrs="{'invisible': [('cost_method', 'in', ('manual','supplier_pl'))]}"/>
+									<field name="purchase_cost_price_manual" attrs="{'invisible': [('cost_method', '!=', 'manual')]}"/>
+								</group>
+							</group>
+							<group colspan="2" col="2">
+								<group string="Parameters" colspan="1" col="2" attrs="{'invisible': [('free_purchase', '=', False)]}">
+									<group colspan="1" col="2">
+										<field name="default_price"/>
+										<field name="uop_id" groups="base.group_dual_unit" domain="(dual_unit_type=='variable' and [('category_id', '=', sec_uom_category_id), ('management_unit', '=', True)]) or (dual_unit_type=='fixed' and [('management_unit', '=', True)]) or [('category_id', '=', uom_category_id), ('management_unit', '=', True)]" 
+										attrs="{'required': [('purchase_ok', '=', True), ('free_purchase', '=', True)]}" />
+										<field name="uop_category_id" invisible="1" />
+										<field name="purchase_uoi_id" groups="base.group_uoi" domain="[('category_id', '=', uop_category_id), ('price_unit', '=', True)]" attrs="{'required': [('purchase_ok', '=', True), ('free_purchase', '=', True)]}" />
+										<field name="purchase_multiple_qty" />
+										<field name="purchase_min_qty"/>
+										<field name="packaging_id" />
+										<field name="free_supply_delay" />
+									</group>
+									<group colspan="1" col="2">
+										<field name="purchase_factor" groups="base.group_dual_unit" attrs="{'required': [('purchase_ok', '=', True), ('free_purchase', '=', True), ('dual_unit_type', '=', 'fixed')], 'invisible': [('dual_unit_type', '!=', 'fixed')]}" />
+										<field name="purchase_divisor" groups="base.group_dual_unit" attrs="{'required': [('purchase_ok', '=', True), ('free_purchase', '=', True), ('dual_unit_type', '=', 'fixed')], 'invisible': [('dual_unit_type', '!=', 'fixed')]}" />
+										<field name="purchase_factor_help" groups="base.group_dual_unit" attrs="{'required': [('purchase_ok', '=', True), ('free_purchase', '=', True), ('dual_unit_type', '=', 'fixed')], 'invisible': [('dual_unit_type', '!=', 'fixed')]}" />
+										<field name="inv_purchase_factor_help" groups="base.group_dual_unit" attrs="{'required': [('purchase_ok', '=', True), ('free_purchase', '=', True), ('dual_unit_type', '=', 'fixed')], 'invisible': [('dual_unit_type', '!=', 'fixed')]}" />
+									</group>
+								</group>
+								<group colspan="1" col="4" string="Supplier referencing" attrs="{'invisible': [('free_purchase', '=', True)]}">
+									<field name="sinfo_ids" colspan="4" nolabel="1" context="{'default_dual_unit': dual_unit, 'default_dual_unit_type': dual_unit_type, 'default_company_id': company_id, 'default_uop_id': dual_unit_type == 'variable' and sec_uom_id or uom_id}">
+										<tree string="Supplier referencing">
+											<field name="sequence"/>
+											<field name="state"/>
+											<field name="partner_id" domain="[('is_company', '=', True),('is_supplier','=',True)]"/>
+											<field name="first_quantity"/>
+											<field name="uop_id"/>
+											<field name="uoi_id" groups="base.group_uoi"/>
+											<field name="first_price"/>
+											<field name="currency_id"/>
+											<field name="flag_pricelist"/>
+											<field name="property_ids" widget="many2many_tags"/>
+										</tree>
+										<form string="Supplier referencing">
+											<field name="dual_unit" invisible="1" />
+											<field name="dual_unit_type" invisible="1" />
+											<notebook colspan="4">
+												<page string="General">
+													<group colspan="4" col="6" string="Generality">
+														<field name="sequence" />
+														<field name="partner_id" domain="[('is_company', '=', True),('is_supplier','=',True),('is_seller', '=', True)]" context="{'default_is_company':True, 'default_is_supplier':True}"/>
+														<field name="state" />
+														<field name="property_ids" widget="many2many_tags"/>
+														<field name="imposed_by_id" />
+														<field name="currency_id" />
+														<field name="company_id" />
+														<field name="flag_pricelist" invisible="1"/>
+														<field name="first_price" invisible="1"/>
+														<field name="first_quantity" invisible="1"/>
+													</group>
+													<group colspan="4" col="4" string="Product information">
+														<group colspan="2" col="2">
+															<field name="supp_product_code" />
+															<field name="uop_id" groups="base.group_dual_unit" domain="parent.dual_unit and (parent.dual_unit_type=='variable' and [('category_id', '=', parent.sec_uom_category_id), ('management_unit', '=', True)] or parent.dual_unit_type=='fixed' and [('management_unit', '=', True)]) or [('category_id', '=', parent.uom_category_id), ('management_unit', '=', True)]" />
+															<field name="uop_category_id" invisible="1" />
+															<field name="uoi_id" groups="base.group_uoi" domain="[('category_id', '=', uop_category_id), ('price_unit', '=', True)]" />
+															<field name="multiple_qty" />
+															<field name="min_qty" />
+															<field name="delivery_delay" />
+														</group>
+														<group colspan="2" col="2">
+															<field name="supp_product_name" />
+															<field name="packaging_id" />
+															<field name="factor" groups="base.group_dual_unit" attrs="{'required': [('dual_unit', '=', True), ('dual_unit_type', '=', 'fixed')], 'invisible': ['|', ('dual_unit', '=', False), ('dual_unit_type', '=', 'variable')]}" />
+															<field name="divisor" groups="base.group_dual_unit" attrs="{'required': [('dual_unit', '=', True), ('dual_unit_type', '=', 'fixed')], 'invisible': ['|', ('dual_unit', '=', False), ('dual_unit_type', '=', 'variable')]}" />
+															<field name="factor_help" groups="base.group_dual_unit" attrs="{'invisible': ['|', ('dual_unit', '=', False), ('dual_unit_type', '=', 'variable')]}" />
+															<field name="inv_factor_help" groups="base.group_dual_unit" attrs="{'invisible': ['|', ('dual_unit', '=', False), ('dual_unit_type', '=', 'variable')]}" />
+														</group>
+													</group>
+													<group colspan="4" col="1" string="Prices list">
+														<field name="pricelist_ids" nolabel="1">
+															<tree editable="bottom" colors="red:date_stop and (date_stop&lt;current_date); green:date_start and (date_start&gt;current_date);">
+																<field name="date_start" />
+																<field name="date_stop" />
+																<field name="min_qty" />
+																<field name="price" />
+															</tree>
+															<form>
+																<group colspan="4" col="4">
+																	<group string="Price">
+																		<field name="min_qty" />
+																		<field name="price" />
+																	</group>
+																	<group string="Period">
+																		<field name="date_start" />
+																		<field name="date_stop" />
+																	</group>
+																</group>
+															</form>
+														</field>
+														<p style="font-size:11px;">
+															<strong>Legend:</strong><br/>
+															<font color="red">- Red: timed out price</font><br/>
+															<font color="green">- Green: future price</font><br/>
+															- Black: active price <br/>
+														</p>
+													</group>
+												</page>
+												<page string="Note">
+													<group colspan="4" col="1" string="Note printed on the purchase order">
+														<field name="purchase_note" nolabel="1" />
+													</group>
+													<group colspan="4" col="1" string="Internal note">
+														<field name="internal_note" nolabel="1" />
+													</group>
+												</page>
+											</notebook>
+										</form>
+									</field>
+								</group>
+							</group>
+							<group colspan="2" col="2" name="purchase_notes">
+								<group colspan="2" col="1" string="Note printed on the purchase order" name="printed_order_note">
+									<field name="purchase_note" nolabel="1"/>
+								</group>
+								<group colspan="2" col="1" string="Note printed on the receipt note" name="printed_receipt_note">
+									<field name="receipt_transport_note" nolabel="1" attrs="{'invisible': [('purchase_ok', '!=', True)]}"/>
+								</group>
+							</group>
+							<group colspan="1" col="2" name="other_purchase_infos"/>
+						</group>
+					</page>
+				</xpath>
+				<xpath expr="//group[@name='product_technical_page']" position="before">
+					<group colspan="4" col="4">
+						<field name="nb_purchased_tool" />
+					</group>
+				</xpath>
+				<xpath expr="//separator[@name='separator_analysis_menu']" position="after">
+					<button name="%(act_see_purchase_order_line_for_product)d" string="Purchase order lines" type="action" class="oe_inline oe_stat_button" icon="fa-list-ul" 
+						attrs="{'invisible': [('purchase_ok', '=', False)]}"/>
+				</xpath>
+			</field>
+		</record>
+		
+		<!-- SEARCH VIEW PRODUCT -->
+		<record id='view_search_product' model='ir.ui.view'>
+			<field name="name">view_search_product</field>
+			<field name="model">product.product</field>
+			<field name="inherit_id" ref="product.view_search_product" />
+			<field name="arch" type="xml">
+				<xpath expr="//field[@name='code']" position="after">
+					<field name="search_by_sinfo" filter_domain="[('search_by_sinfo', '=', self)]"/>
+					<field name="search_by_sname" filter_domain="[('search_by_sname', '=', self)]"/>
+				</xpath>
+				<xpath expr="//group[@name='group_by_manager']" position="inside">
+					<filter string="Purchases manager" domain="[]" context="{'group_by': 'purchase_responsible_id'}"/>
+				</xpath>
+			</field>
+		</record>
+		
+		
+		
+		<!-- ============= -->
+		<!-- SUPPLIERINFO  -->
+		<!-- ============= -->
+		
+		<!-- FORM VIEW Supplierinfo -->
+		<record id='view_form_product_supplierinfo' model='ir.ui.view'>
+			<field name="name">view_form_product_supplierinfo</field>
+			<field name="model">product.supplierinfo</field>
+			<field name="arch" type="xml">
+				<form string="Supplier referencing" version="8.0">
+					<group colspan="4" col="6">
+						<field name="product_id" readonly="1"/>
+						<field name="partner_id" readonly="1" />
+						<field name="state"/>
+					</group>
+					<field name="dual_unit" invisible="1" />
+					<field name="dual_unit_type" invisible="1" />
+					<field name="sec_uom_category_id" invisible="1" />
+					<field name="uom_category_id" invisible="1" />
+					<notebook colspan="4">
+						<page string="General">
+							<group colspan="4" col="6" string="Generality">
+								<field name="sequence"/>
+								<field name="property_ids" widget="many2many_tags"/>
+								<field name="imposed_by_id"/>
+								<field name="currency_id"/>
+								<field name="company_id" invisible="1" />
+								<field name="flag_pricelist" invisible="1"/>
+								<field name="first_price" invisible="1"/>
+								<field name="first_quantity" invisible="1"/>
+							</group>
+							<group colspan="4" col="4" string="Product information">
+								<group colspan="2" col="2">
+									<field name="supp_product_code"/>
+									<field name="uop_id" groups="base.group_dual_unit" readonly="1"/>									
+									<field name="uop_category_id" invisible="1" />
+									<field name="uoi_id" groups="base.group_uoi" readonly="1" />
+									<field name="multiple_qty"/>
+									<field name="min_qty"/>
+									<field name="delivery_delay"/>
+								</group>
+								<group colspan="2" col="2">
+									<field name="supp_product_name"/>
+									<field name="packaging_id"/>
+									<field name="factor" groups="base.group_dual_unit"/>
+									<field name="divisor" groups="base.group_dual_unit"/>
+									<field name="factor_help" groups="base.group_dual_unit"/>
+									<field name="inv_factor_help" groups="base.group_dual_unit"/>
+								</group>
+							</group>
+							<group colspan="4" col="1" string="Prices list">
+								<p style="font-size:11px;">
+									<strong>Legend:</strong><br/>
+										<font color="red">- Red: timed out price</font><br/>
+										<font color="green">- Green: future price</font><br/>
+										- Black: active price <br/>
+								</p>
+								<field name="pricelist_ids" nolabel="1">
+									<tree editable="bottom" colors="red:date_stop and (date_stop&lt;current_date); green:date_start and (date_start&gt;current_date);">
+										<field name="date_start" />
+										<field name="date_stop" />
+										<field name="min_qty" />
+										<field name="price" />
+									</tree>
+									<form>
+										<group colspan="4" col="4">
+											<group string="Price">
+												<field name="min_qty" />
+												<field name="price" />
+											</group>
+											<group string="Period">
+												<field name="date_start" />
+												<field name="date_stop" />
+											</group>
+										</group>
+									</form>
+								</field>
+							</group>
+						</page>
+						<page string="Note">
+							<group colspan="4" col="1" string="Note printed on the purchase order">
+								<field name="purchase_note" nolabel="1"/>
+							</group>
+							<group colspan="4" col="1" string="Internal note">
+								<field name="internal_note" nolabel="1"/>
+							</group>
+						</page>
+					</notebook>
+				</form>
+			</field>
+		</record>
+		
+		<!-- TREE VIEW Supplierinfo -->
+		<record id='view_tree_product_supplierinfo' model='ir.ui.view'>
+			<field name="name">view_tree_product_supplierinfo</field>
+			<field name="model">product.supplierinfo</field>
+			<field name="arch" type="xml">
+				<tree string="Supplier referencing" version="8.0">
+					<field name="sequence"/>
+					<field name="product_id"/>
+					<field name="partner_id"/>
+					<field name="first_quantity"/>
+					<field name="uop_id"/>
+					<field name="first_price"/>
+					<field name="uoi_id" groups="base.group_uoi"/>
+					<field name="currency_id"/>
+					<field name="flag_pricelist"/>
+					<field name="state"/>
+				</tree>
+			</field>
+		</record>
+		
+		<!-- SEARCH VIEW Supplierinfo -->
+		<record id='view_search_product_supplierinfo' model='ir.ui.view'>
+			<field name="name">view_search_product_supplierinfo</field>
+			<field name="model">product.supplierinfo</field>
+			<field name="arch" type="xml">
+				<search version="8.0">
+					<field name="product_id"/>
+					<field name="partner_id"/>
+					<group expand="0" string="Filters">
+						<filter string="Active" domain="[('state', '=', 'active')]"/>
+					</group>
+					<group expand="0" string="Group by...">
+						<filter string="Product" icon="terp-partner" context="{'group_by' : 'product_id'}" />
+						<filter string="Supplier" icon="terp-partner" context="{'group_by' : 'partner_id'}" />
+					</group>
+				</search>
+			</field>
+		</record>
+		
+		<!-- ACTION Supplierinfo -->
+		<record id="action_product_supplierinfo" model="ir.actions.act_window">
+		    <field name="name">Supplier referencing</field>
+		    <field name="res_model">product.supplierinfo</field>
+		    <field name="view_type">form</field>
+		    <field name="view_mode">tree,form</field>
+		    <field name="domain">[]</field>
+		    <field name="context">{}</field>
+		    <field name="search_view_id" ref="view_search_product_supplierinfo"/>
+		</record>
+		
+		<menuitem name="Supplier referencing" action="action_product_supplierinfo" id="menu_product_supplierinfo" parent="menu_purchase_price" groups="group_menu_purchase_user"/>
+		
+		
+		<!-- ================ -->
+		<!-- PURCHASE FAMILY  -->
+		<!-- ================ -->
+		
+		<!-- FORM VIEW Purchase family -->
+		<record id='view_form_purchase_family' model='ir.ui.view'>
+			<field name="name">view_form_purchase_family</field>
+			<field name="model">purchase.family</field>
+			<field name="arch" type="xml">
+				<form string="Purchase family" version="8.0">
+					<group colspan="4" col="4">
+						<field name="name"/>
+						<label string="" colspan="2"/>
+					</group>
+				</form>
+			</field>
+		</record>
+		
+		<!-- TREE VIEW Purchase family -->
+		<record id='view_tree_purchase_family' model='ir.ui.view'>
+			<field name="name">view_tree_purchase_family</field>
+			<field name="model">purchase.family</field>
+			<field name="arch" type="xml">
+				<tree string="Purchase family" version="8.0">
+					<field name="name" />
+				</tree>
+			</field>
+		</record>
+		
+		<!-- SEARCH VIEW Purchase family -->
+		<record id='view_search_purchase_family' model='ir.ui.view'>
+			<field name="name">view_search_purchase_family</field>
+			<field name="model">purchase.family</field>
+			<field name="arch" type="xml">
+				<search version="8.0">
+					<field name="name"/>
+				</search>
+			</field>
+		</record>
+		
+		<!-- ACTION Purchase family -->
+		<record id="action_purchase_family" model="ir.actions.act_window">
+		    <field name="name">Purchase family</field>
+		    <field name="res_model">purchase.family</field>
+		    <field name="view_type">form</field>
+		    <field name="view_mode">tree,form</field>
+		    <field name="domain">[]</field>
+		    <field name="context">{}</field>
+		    <field name="search_view_id" ref="view_search_purchase_family"/>
+		</record>
+		
+		<menuitem name="Purchase family" action="action_purchase_family" id="menu_purchase_family" parent="product.menu_product_conf" groups="base_openprod.group_menu_tech_data_config"/>
+        <menuitem name="Purchase family" id="purchase_family_menu" action="action_purchase_family" parent="purchase.menu_purchase_configuration_product" sequence="20" />
+		
+	</data>
+</openerp>

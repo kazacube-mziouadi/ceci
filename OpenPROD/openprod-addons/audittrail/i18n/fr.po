@@ -1,0 +1,247 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* audittrail
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-10-23 12:33+0000\n"
+"PO-Revision-Date: 2015-10-23 12:33+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: audittrail
+#: code:addons/audittrail/audittrail.py:173
+#, python-format
+msgid " on "
+msgstr " sur "
+
+#. module: audittrail
+#: view:audittrail.rule:audittrail.view_form_audittrail_rule
+msgid "Activate"
+msgstr "Activer"
+
+#. module: audittrail
+#: code:addons/audittrail/audittrail.py:79
+#, python-format
+msgid "Activated"
+msgstr "Activé"
+
+#. module: audittrail
+#: model:ir.ui.menu,name:audittrail.menu_audittrail
+msgid "Audit trail"
+msgstr "Audit"
+
+#. module: audittrail
+#: view:audittrail.line:audittrail.view_form_audittrail_line
+#: model:ir.actions.act_window,name:audittrail.act_audittrail_line
+#: model:ir.model,name:audittrail.model_audittrail_line
+#: model:ir.ui.menu,name:audittrail.menu_audittrail_line
+msgid "Audit trail line"
+msgstr "Journaux d'audit"
+
+#. module: audittrail
+#: view:audittrail.line:audittrail.view_tree_audittrail_line
+msgid "Audit trail lines"
+msgstr "Journaux d'audit"
+
+#. module: audittrail
+#: view:audittrail.rule:audittrail.view_form_audittrail_rule
+#: model:ir.actions.act_window,name:audittrail.act_audittrail_rule
+#: model:ir.model,name:audittrail.model_audittrail_rule
+#: model:ir.ui.menu,name:audittrail.menu_audittrail_rule
+msgid "Audit trail rule"
+msgstr "Règle d'audit"
+
+#. module: audittrail
+#: view:audittrail.rule:audittrail.view_tree_audittrail_rule
+msgid "Audit trail rules"
+msgstr "Règles d'audit"
+
+#. module: audittrail
+#: model:ir.model,name:audittrail.model_audittrail_value
+msgid "Audittrail line value"
+msgstr "Valeur"
+
+#. module: audittrail
+#: field:audittrail.line,create_uid:0
+#: field:audittrail.model_log,create_uid:0
+#: field:audittrail.rule,create_uid:0
+#: field:audittrail.value,create_uid:0
+msgid "Created by"
+msgstr "Créé par"
+
+#. module: audittrail
+#: field:audittrail.line,create_date:0
+#: field:audittrail.model_log,create_date:0
+#: field:audittrail.rule,create_date:0
+#: field:audittrail.value,create_date:0
+msgid "Created on"
+msgstr "Créé le"
+
+#. module: audittrail
+#: view:audittrail.line:audittrail.view_form_audittrail_line
+#: view:audittrail.line:audittrail.view_tree_audittrail_line
+msgid "Date"
+msgstr "Date"
+
+#. module: audittrail
+#: view:audittrail.rule:audittrail.view_form_audittrail_rule
+msgid "Deactivate"
+msgstr "Désactiver"
+
+#. module: audittrail
+#: code:addons/audittrail/audittrail.py:78
+#, python-format
+msgid "Draft"
+msgstr "Brouillon"
+
+#. module: audittrail
+#: field:audittrail.value,field_name:0
+msgid "Field name"
+msgstr "Champ"
+
+#. module: audittrail
+#: field:audittrail.value,field_value:0
+msgid "Field value"
+msgstr "Valeur"
+
+#. module: audittrail
+#: field:audittrail.line,id:0
+#: field:audittrail.model_log,id:0
+#: field:audittrail.rule,id:0
+#: field:audittrail.value,id:0
+msgid "ID"
+msgstr "ID"
+
+#. module: audittrail
+#: field:audittrail.rule,interface_only:0
+msgid "Interface only"
+msgstr "Interface seulement"
+
+#. module: audittrail
+#: field:audittrail.line,write_uid:0
+#: field:audittrail.model_log,write_uid:0
+#: field:audittrail.rule,write_uid:0
+#: field:audittrail.value,write_uid:0
+msgid "Last Updated by"
+msgstr "Last Updated by"
+
+#. module: audittrail
+#: field:audittrail.line,write_date:0
+#: field:audittrail.model_log,write_date:0
+#: field:audittrail.rule,write_date:0
+#: field:audittrail.value,write_date:0
+msgid "Last Updated on"
+msgstr "Last Updated on"
+
+#. module: audittrail
+#: field:audittrail.value,line_id:0
+msgid "Line id"
+msgstr "Line id"
+
+#. module: audittrail
+#: field:audittrail.rule,log_delete:0
+msgid "Log delete"
+msgstr "Enregistrer les suppressions"
+
+#. module: audittrail
+#: field:audittrail.rule,log_write:0
+msgid "Log write"
+msgstr "Enregistrer les modifications"
+
+#. module: audittrail
+#: field:audittrail.line,method:0
+msgid "Method"
+msgstr "Méthode"
+
+#. module: audittrail
+#: field:audittrail.rule,model_id:0
+msgid "Model"
+msgstr "Modèle"
+
+#. module: audittrail
+#: model:ir.actions.act_window,name:audittrail.act_model_log
+msgid "Model Log"
+msgstr "Model Log"
+
+#. module: audittrail
+#: view:audittrail.model_log:audittrail.view_form_model_log
+msgid "Model Logs"
+msgstr "Model Logs"
+
+#. module: audittrail
+#: field:audittrail.model_log,model_id:0
+msgid "Model id"
+msgstr "Model id"
+
+#. module: audittrail
+#: field:audittrail.rule,name:0
+msgid "Name"
+msgstr "Nom"
+
+#. module: audittrail
+#: field:audittrail.value,old_value:0
+msgid "Old value"
+msgstr "Ancienne valeur"
+
+#. module: audittrail
+#: field:audittrail.line,resource_id:0
+msgid "Resource ID"
+msgstr "ID de la ressource"
+
+#. module: audittrail
+#: field:audittrail.line,rule_id:0
+msgid "Rule"
+msgstr "Règle"
+
+#. module: audittrail
+#: field:audittrail.rule,state:0
+msgid "State"
+msgstr "État"
+
+#. module: audittrail
+#: field:audittrail.line,type:0
+msgid "Type"
+msgstr "Type"
+
+#. module: audittrail
+#: code:addons/audittrail/audittrail.py:158
+#, python-format
+msgid "Unlink"
+msgstr "Supprimer"
+
+#. module: audittrail
+#: field:audittrail.line,user_id:0
+msgid "User"
+msgstr "Utilisateur"
+
+#. module: audittrail
+#: view:audittrail.line:audittrail.view_form_audittrail_line
+#: field:audittrail.line,value_ids:0
+msgid "Values"
+msgstr "Valeurs"
+
+#. module: audittrail
+#: code:addons/audittrail/audittrail.py:99
+#, python-format
+msgid "View audit trail"
+msgstr "Voir les journaux d'audit"
+
+#. module: audittrail
+#: code:addons/audittrail/audittrail.py:157
+#, python-format
+msgid "Write"
+msgstr "Modification"
+
+#. module: audittrail
+#: model:ir.model,name:audittrail.model_audittrail_model_log
+#: model:ir.model,name:audittrail.model_model
+msgid "See all audit trail log for a model"
+msgstr "Voir tous les journaux d'audit pour un modèle"
+

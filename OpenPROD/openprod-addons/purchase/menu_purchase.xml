@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        
+        <menuitem name="Purchase" id="menu_purchase_main" web_icon="base_openprod,static/description/purchase.png" />
+        <menuitem name="Purchase" id="menu_purchases" parent="menu_purchase_main" sequence="10"/>
+        <menuitem name="Price" id="menu_purchase_price" parent="menu_purchase_main" sequence="30" />
+        <menuitem name="Analysis" id="menu_purchase_analysis" parent="menu_purchase_main" sequence="40" />
+        <menuitem name="Configuration" id="menu_purchase_configuration" parent="menu_purchase_main" sequence="50" />
+        <menuitem name="Supplier" id="menu_purchase_configuration_supplier" parent="menu_purchase_configuration" sequence="10" />
+        <menuitem name="Product" id="menu_purchase_configuration_product" parent="menu_purchase_configuration" sequence="20" />
+        <menuitem id="menu_product_category_structure_purchase" name="Product category" action="product.product_category_structure_action" parent="menu_purchase_configuration_product" sequence="30" groups="base_openprod.group_menu_tech_data_config" />
+        <menuitem name="Purchase property" action="product.act_purchase_property" id="menu_purchase_property" parent="menu_purchase_configuration_product" groups="base_openprod.group_menu_tech_data_config" sequence="20" />
+
+        
+    </data>
+</openerp>

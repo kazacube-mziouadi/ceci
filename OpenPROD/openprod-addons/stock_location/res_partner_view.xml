@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+		
+		<!-- FORM VIEW Partner -->
+		<record id="view_form_partner_stock_location" model="ir.ui.view">
+			<field name="name">view_form_partner_stock_location</field>
+			<field name="inherit_id" ref="partner_openprod.openprod_view_partner_form" />
+			<field name="model">res.partner</field>
+			<field name="arch" type="xml">
+				<xpath expr="//page[@name='transport_partner_page']" position="after">
+					<page string="Administration" attrs="{'invisible': [('is_company', '=', False)]}" name="page_admistration" >
+						<group colspan="4" col="4">
+							<group colspan="2" col="4" string="Locations" name="group_location" >
+								<field name="customer_location_id" domain="[('usage','=','customer')]"/>
+								<field name="supplier_location_id" domain="[('usage','=','supplier')]"/>
+								<field name="company_id"/>
+							</group>
+							<group colspan="2" col="4"/>
+						</group>
+					</page>
+				</xpath>
+			</field>
+		</record>
+	
+	</data>
+</openerp>

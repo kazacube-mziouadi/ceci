@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+		<!-- FORM VIEW Update Variants -->
+		<record id='view_form_update_variants' model='ir.ui.view'>
+			<field name="name">update_variants</field>
+			<field name="model">update.variants</field>
+			<field name="arch" type="xml">
+				<form string="Update Variants" version="8.0">
+					<group col="4" string="Copy">
+						<field name="copy_fields" />
+						<field name="copy_customer_ref" />
+						<field name="copy_supplier_ref" />
+						<field name="copy_stock_rule" />
+						<field name="copy_plan_ctrl" />
+						<field name="copy_internal_plans" />
+						<field name="copy_quality_control" />
+						<field name="copy_attributes" />
+						<field name="copy_parameters" />
+					</group>
+					<group string="Variants">
+						<field name="variant_ids" nolabel="1" />
+					</group>
+					<group>
+						<button string="Update products" type="object" name="update_products" />
+					</group>
+				</form>
+			</field>
+		</record>
+
+		<!-- ACTION Update Variants -->
+		<record id="act_update_variants" model="ir.actions.act_window">
+			<field name="name">Update Variants</field>
+			<field name="res_model">update.variants</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">form</field>
+			<field name="target">new</field>
+		</record>
+	</data>
+</openerp>

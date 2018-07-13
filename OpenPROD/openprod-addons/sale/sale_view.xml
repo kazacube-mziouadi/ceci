@@ -1,0 +1,1122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+
+		<menuitem name="Sale" id="menu_sale_main" web_icon="base_openprod,static/description/sale.png" />
+		<menuitem name="Sales" id="menu_sales" parent="menu_sale_main" sequence="10" />
+		<menuitem name="Commission" id="menu_commission" parent="menu_sales" sequence="30" />
+		<menuitem name="Create quick sale" id="menu_create_quick_sale" action="action_create_quick_sale" parent="menu_sales" sequence="40" />
+		<menuitem name="Price" id="menu_sale_price" parent="menu_sale_main" sequence="20" />
+		<menuitem name="Standard price" id="menu_sale_price_standard" parent="menu_sale_price" sequence="10" />
+		<menuitem name="Consignement stock" id="menu_sale_consignement_stock" parent="menu_sale_main" sequence="30" />
+		<menuitem name="Customer contract" id="menu_sale_customer_contract" parent="menu_sale_main" sequence="40" />
+		<menuitem name="Analysis" id="menu_sale_analysis" parent="menu_sale_main" sequence="50" />
+		<menuitem name="Configuration" id="menu_sale_configuration" parent="menu_sale_main" sequence="60" />
+		<menuitem name="Customer" id="menu_sale_configuration_customer" parent="menu_sale_configuration" sequence="10" />
+		<menuitem name="Product" id="menu_sale_configuration_product" parent="menu_sale_configuration" sequence="20" />
+		<menuitem name="Purchase property" id="menu_purchase_property_sale" action="product.act_purchase_property" parent="menu_sale_configuration_product" sequence="20" groups="base_openprod.group_menu_tech_data_config" />
+		<menuitem name="Product category" id="menu_product_category_structure_sale" action="product.product_category_structure_action" parent="menu_sale_configuration_product" sequence="30" groups="base_openprod.group_menu_tech_data_config" />
+
+
+		<!-- ========== -->
+		<!-- SALE ORDER -->
+		<!-- ========== -->
+
+		<!-- FORM VIEW Sale order -->
+		<record id='view_form_sale_order' model='ir.ui.view'>
+			<field name="name">view_form_sale_order</field>
+			<field name="model">sale.order</field>
+			<field name="arch" type="xml">
+				<form string="Sale order" version="8.0">
+					<header>
+						<button name="generate_invoice_button" type="object" string="Generate invoice" attrs="{'invisible': ['|', '|', '|', '|', ('type', '=', 'sav'), ('sale_invoice_trigger_manual', '!=', True), ('show_invoice_button', '=', False), ('type', '=', 'open'), ('manual_hide_invoice_button', '=', True)]}" />
+						<button name="generate_invoice_button" type="object" string="Generate invoice" attrs="{'invisible': ['|', '|', ('state', '!=', 'progress'), ('type', '!=', 'sav'), ('show_invoice_button', '=', False)]}" />
+						<field name="state" widget="statusbar" statusbar_visible="draft,waiting,progress,done" />
+					</header>
+					<group colspan="4" col="9">
+						<group colspan="8">
+							<div class="oe_title">
+								<h1>
+									<field name="name" />
+								</h1>
+							</div>
+							<group colspan="4" col="6">
+								<group colspan="2" col="2">
+									<field name="partner_id" attrs="{'readonly': ['|', ('state', '!=', 'draft'), ('invoice_line_ids', '!=', [])]}" domain="[('cust_can_order', '=', [order_line_ids, partner_id]), ('is_company', '=', True), ('is_customer', '=', True)]" context="{'default_is_company':True, 'default_is_customer': True, 'default_can_order':True}" />
+									<field name="ref_order" attrs="{'readonly': ['|', ('state', '!=', 'draft'), ('invoice_line_ids', '!=', [])]}" />
+								</group>
+								<group colspan="2" col="2">
+									<field name="order_date" attrs="{'readonly': ['|', ('state', '!=', 'draft'), ('invoice_line_ids', '!=', [])]}" />
+									<field name="currency_id" attrs="{'readonly': ['|', ('state', '!=', 'draft'), ('invoice_line_ids', '!=', [])]}" domain="[('sale_order_currency_domain', '=', [order_line_ids, currency_id])]" />
+									<field name="open_order_id" attrs="{'invisible': [('type', '!=', 'call')], 'required': [('type', '=', 'call')]}" domain="[('partner_id', '=', partner_id), ('state', '=', 'progress'), ('type', '=', 'open')]" />
+								</group>
+								<group colspan="2" col="2">
+									<field name="type" attrs="{'readonly': ['|', ('state', '!=', 'draft'), ('invoice_line_ids', '!=', [])]}" />
+									<field name="renting_end_date" attrs="{'invisible': [('type', '!=', 'renting')], 'required': [('type', '=', 'renting')]}" />
+									<group colspan="2" invisible="1">
+										<field name="sale_invoiced_amount" />
+										<field name="advanced_invoice" />
+									</group>
+								</group>
+							</group>
+							<notebook colspan="4">
+								<page string="References">
+									<group colspan="4" col="4" string="Sale order lines">
+										<group colspan="4" col="6">
+											<field name="requested_date" attrs="{'readonly': ['|', ('state', '!=', 'draft'), ('invoice_line_ids', '!=', [])]}" />
+											<field name="transport_delay" attrs="{'readonly': ['|', ('state', '!=', 'draft'), ('invoice_line_ids', '!=', [])]}" />
+											<field name="departure_date" attrs="{'readonly': ['|', ('state', '!=', 'draft'), ('invoice_line_ids', '!=', [])]}" />
+										</group>
+										<field name="delay_confirm" invisible="1" />
+										<field name="order_line_ids" nolabel="1" colspan="4" context="{'quotation_date':bool(quotation_date), 'default_sequence': max_sequence, 
+										                                                               'default_requested_date': requested_date, 'default_currency_id': currency_id,
+										                                                               'default_company_id': company_id}" attrs="{'readonly': ['|', ('state', '!=', 'draft'), ('invoice_line_ids', '!=', [])]}">
+											<tree>
+												<field name="sale_line_color" colors="red:sale_line_color==3; orange:sale_line_color==2; green:sale_line_color==1; black:sale_line_color==4;" string=" " />
+												<field name="sequence" />
+												<field name="product_id" />
+												<field name="name" />
+												<field name="uom_id" />
+												<field name="uom_qty" string="Ordered quantity" />
+												<field name="delivered_qty" />
+												<field name="remaining_qty" />
+												<field name="uoi_qty" string="Quantity (UOI)" groups="base.group_uoi" />
+												<field name="uoi_id" groups="base.group_uoi" />
+												<field name="price_unit" widget="monetary" options="{'currency_field': 'currency_id'}" />
+												<field name="currency_id" invisible="1" />
+												<field name="total_price" widget="monetary" options="{'currency_field': 'currency_id'}" />
+												<field name="sale_state" invisible="1" />
+											</tree>
+											<form>
+												<group colspan="4" col="9">
+													<group colspan="8">
+														<notebook colspan="4">
+															<page string="Order line" name="page_order_line" autofocus="toutsaufautofocus">
+																<group colspan="4" col="4" invisible="1">
+																	<field name="factor" />
+																	<field name="divisor" />
+																	<field name="sec_uom_category_id" />
+																	<field name="sequence" />
+																	<field name="uom_category_id" />
+																	<field name="uoi_category_id" />
+																	<field name="total_price" />
+																	<field name="total_price_currency" />
+																	<field name="sale_state" />
+																	<field name="currency_rate" />
+																	<field name="sale_line_color" />
+																	<field name="sale_type" />
+																</group>
+																<group colspan="4" col="4">
+																	<group colspan="2" col="2" string="Product">
+																		<field name="product_id" domain="parent.partner_id and [('sale_ok', '=', True), '|', ('sale_product_customerinfo', '=', parent.partner_id), ('free_sale', '=', True)] or [('sale_ok', '=', True)]" colspan="2" required="1" context="{'customer_sale_order': True, 'partner_id': parent.partner_id}" />
+																		<label for="sec_uom_qty" groups="base.group_dual_unit" />
+																		<div groups="base.group_dual_unit">
+																			<field name="sec_uom_qty" class="oe_inline" groups="base.group_dual_unit" />
+																			<field name="sec_uom_id" domain="[('category_id', '=', sec_uom_category_id), ('management_unit', '=', True)]" class="oe_inline" groups="base.group_dual_unit" />
+																		</div>
+																		<label for="uom_qty" />
+																		<div>
+																			<field name="uom_qty" class="oe_inline" />
+																			<field name="uom_id" domain="[('category_id', '=', uom_category_id), ('management_unit', '=', True)]" class="oe_inline" />
+																		</div>
+																		<label for="uoi_qty" groups="base.group_uoi" />
+																		<div groups="base.group_uoi">
+																			<field name="uoi_qty" class="oe_inline" />
+																			<field name="uoi_id" domain="[('category_id', '=', uoi_category_id), ('price_unit', '=', True)]" class="oe_inline" />
+																		</div>
+																		<label for="price_unit" />
+																		<div>
+																			<field name="price_unit" class="oe_inline" />
+																			<field name="currency_id" class="oe_inline" />
+																		</div>
+																		<field name="property_ids" widget="many2many_tags" domain="[('cinfo_property_product', 'in', (product_id, parent.partner_id))]" />
+																		<field name="taxes_ids" widget="many2many_tags" />
+																		<field name="remaining_called_qty" attrs="{'invisible': [('sale_type', '!=', 'open')]}" />
+																	</group>
+																	<group colspan="2" col="2" name="description_progress">
+																		<group colspan="2" col="4" string="Description and progress">
+																			<field name="name" colspan="4" />
+																			<field name="section_id" />
+																			<field name="customer_product_name" />
+																			<field name="customer_product_code" />
+																		</group>
+																	</group>
+																	<group colspan="2" col="4" string="Customer's request">
+																		<group colspan="2" col="2">
+																			<field name="requested_date" />
+																			<field name="transport_delay" />
+																			<field name="departure_date" />
+																		</group>
+																		<group colspan="2" col="2">
+																			<field name="engagement_delay" />
+																		</group>
+																	</group>
+																	<group colspan="2" col="4" string="Confirmation">
+																		<field name="scheduled_date" />
+																		<label colspan="2" />
+																		<field name="confirmed_departure_date" />
+																		<button name="action_change_date" string="Change the date" type="object" colspan="2" />
+																		<field name="arrival_date" />
+																		<label colspan="2" />
+																	</group>
+																	<group colspan="4" col="4" string="Procurement">
+																		<field name="supply_method" />
+																		<field name="delay_confirm" />
+																		<field name="purchase_property_ids" widget="many2many_tags" colspan="4" groups="product.purchase_properties" domain="[('sinfo_property_product', 'in', product_id)]" />
+																	</group>
+																</group>
+															</page>
+															<page string="Additional information" name="additional_information">
+																<group colspan="4" col="4">
+																	<group colspan="2" col="2" string="Various information">
+																		<field name="packaging_id" />
+																		<field name="gross_weight" />
+																		<field name="net_weight" />
+																	</group>
+																	<group colspan="2" col="2" string="Guarantee" name="sale_guarantee">
+																		<field name="guarantee" />
+																		<field name="guarantee_unity_id" />
+																	</group>
+																	<group colspan="2" col="2" string="Attributes" name="attributes">
+																		<field name="product_attribute_ids" colspan="2" nolabel="1">
+																			<tree string="Attributes" editable="bottom" create="false" delete="false">
+																				<field name="product_common_attribute_id" readonly="1" />
+																				<field name="value" />
+																			</tree>
+																		</field>
+																	</group>
+																	<group colspan="2" string="Parameters" groups="product.product_parameters">
+																		<field name="parameter_ids" nolabel="1">
+																			<tree editable="top" string="Parameters">
+																				<field name="type_param_id" />
+																				<field name="value" />
+																				<field name="price_unit" />
+																				<field name="name" invisible="1" />
+																			</tree>
+																		</field>
+																	</group>
+																</group>
+															</page>
+															<page string="Notes">
+																<separator string="Internal note" colspan="4" name="sol_internal_note" />
+																<field name="internal_note" colspan="4" nolabel="1" />
+																<separator string="Note printed on the delivery note" colspan="4" />
+																<field name="delivery_printed_note" colspan="4" nolabel="1" />
+																<separator string="Note printed on the invoice line" colspan="4" />
+																<field name="invoice_printed_note" colspan="4" nolabel="1" />
+																<separator string="Product note printed on the order" colspan="4" name="sol_order_printed_note" />
+																<field name="order_printed_note" colspan="4" nolabel="1" />
+																<separator string="Note printed on the manufacturing note" colspan="4" name="sol_work_note" />
+																<field name="work_note" colspan="4" nolabel="1" />
+															</page>
+															<page string="History">
+																<group colspan="4" col="4" string="Invoice lines">
+																	<field name="invoice_line_ids" nolabel="1" colspan="4" readonly="1">
+																		<tree string="Invoice Line">
+																			<field name="invoice_id" />
+																			<field name="name" />
+																			<field name="account_id" groups="account.group_account_user" />
+																			<field name="quantity" />
+																			<field name="uom_id" groups="product.group_uom" />
+																			<field name="price_unit" />
+																			<field name="discount" groups="sale.group_discount_per_so_line" />
+																			<field name="price_subtotal" />
+																		</tree>
+																		<form string="Invoice Line">
+																			<div class="oe_title">
+																				<h1>
+																					<field name="invoice_id" context="{'form_view_ref':'account_openprod.account_cust_openprod_invoice_form'}" />
+																				</h1>
+																			</div>
+																			<notebook colspan="4">
+																				<page string="General">
+																					<group colspan="4" col="4">
+																						<group colspan="2" col="4" string="Product">
+																							<field name="product_id" domain="[('sale_ok', '=', True), ('state', 'in', ['dev','lifeserie','endlife'])]" />
+																							<group colspan="2" name="invisible_fields">
+																								<field name="factor" invisible="1" />
+																								<field name="divisor" invisible="1" />
+																								<field name="sec_uom_category_id" invisible="1" />
+																								<field name="uom_category_id" invisible="1" />
+																								<field name="uoi_category_id" invisible="1" />
+																							</group>
+																							<field name="sec_uom_qty" />
+																							<field name="sec_uom_id" domain="[('category_id', '=', sec_uom_category_id), ('management_unit', '=', True)]" />
+																							<field name="uom_qty" />
+																							<field name="uom_id" domain="[('category_id', '=', uom_category_id), ('management_unit', '=', True)]" />
+																							<field name="quantity" />
+																							<field name="uoi_id" domain="[('category_id', '=', uoi_category_id), ('price_unit', '=', True)]" />
+																							<field name="price_unit" />
+																							<field name="invoice_line_tax_ids" widget="many2many_tags" />
+																						</group>
+																						<group colspan="2" col="2" string="Description and progress">
+																							<field name="name" />
+																							<field name="customer_product_name" />
+																							<field name="customer_product_code" />
+																						</group>
+																					</group>
+																				</page>
+																				<page string="Diverse" name="diverse">
+																					<group colspan="4" col="4">
+																						<group colspan="2" col="2" name="divers1" />
+																						<group colspan="2" col="2">
+																							<label for="note_invoice_header" />
+																							<field name="note_invoice_header" colspan="2" nolabel="1" />
+																							<label for="note_invoice_intern" />
+																							<field name="note_invoice_intern" colspan="2" nolabel="1" />
+																						</group>
+																					</group>
+																				</page>
+																			</notebook>
+																		</form>
+																	</field>
+																</group>
+																<group colspan="4" col="4" string="Stock moves">
+																	<field name="stock_move_ids" nolabel="1" colspan="4" readonly="1" />
+																	<field name="last_delivery_date" colspan="4" />
+																</group>
+															</page>
+														</notebook>
+													</group>
+													<group colspan="1" col="1" class="op_shortcuts" name="action_sale_line_menu">
+														<separator string="Actions" colspan="1" name="separator_action_menu" />
+														<button class="oe_inline oe_stat_button" type="object" string="Compute quantities" name="compute_delivered_qty" icon="fa-calculator" groups="sale.group_sale_responsible" />
+														<separator string="Modifications" colspan="1" name="separator_modif_menu" />
+														<button class="oe_inline oe_stat_button" type="object" string="Change informations" name="change_sale_line_info" icon="fa-pencil" attrs="{'invisible': [('sale_state', 'in', ('draft', 'done', 'cancel'))]}" />
+														<separator string="Analysis" colspan="1" name="separator_analysis_menu" />
+														<button class="oe_inline oe_stat_button" type="object" string="Stock's move" name="show_sale_line_stock_move" icon="fa-exchange" />
+														<button class="oe_inline oe_stat_button" type="object" string="Invoices" name="show_sale_line_invoice_line" icon="fa-file-o" />
+													</group>
+												</group>
+											</form>
+										</field>
+									</group>
+									<group colspan="4" col="6" attrs="{'readonly': ['|', ('state', '!=', 'draft'), ('invoice_line_ids', '!=', [])]}">
+										<group colspan="3" col="2" string="Taxes">
+											<field name="tax_line_ids" nolabel="1" attrs="{'readonly': ['|', ('state', '!=', 'draft'), ('invoice_line_ids', '!=', [])]}">
+												<tree editable="bottom" string="Taxes">
+													<field name="name" />
+													<field name="tax_id" invisible="1" />
+													<field name="account_analytic_id" invisible="1" />
+													<field name="sequence" invisible="1" />
+													<field name="manual" invisible="1" />
+													<field name="account_id" groups="account.group_account_invoice" />
+													<field name="amount" />
+													<field name="currency_id" invisible="1" />
+												</tree>
+											</field>
+										</group>
+										<group colspan="1" col="2" name="group_max_sequence">
+											<field name="max_sequence" invisible="1" attrs="{'readonly': ['|', ('state', '!=', 'draft'), ('invoice_line_ids', '!=', [])]}" />
+											<group colspan="2" col="2" string="Amount analyse (Ex-Tax)">
+												<group class="oe_subtotal_footer oe_right" colspan="2">
+													<field name="delivered_amount" widget="monetary" options="{'currency_field': 'currency_id'}" />
+													<field name="sale_invoiced_amount" widget="monetary" options="{'currency_field': 'currency_id'}" />
+													<field name="residual_amount" class="oe_subtotal_footer_separator" widget="monetary" options="{'currency_field': 'currency_id'}" />
+												</group>
+												<!-- <label string="(Residual on ordered qty)" class="oe_right" attrs="{'invisible': [('sale_account_invoiced_on', '!=', 'order')]}" /> -->
+												<!-- <label string="(Residual on delivered qty)" class="oe_right" attrs="{'invisible': [('sale_invoice_trigger_picking', '!=', 'delivery')]}" /> -->
+											</group>
+										</group>
+										<group colspan="2" col="2">
+											<group colspan="2" col="2" string="Total" name="group_total_sale">
+												<group class="oe_subtotal_footer oe_right" colspan="2">
+													<field name="amount_ex_taxes" widget="monetary" options="{'currency_field': 'currency_id'}" />
+													<field name="taxes" widget="monetary" options="{'currency_field': 'currency_id'}" />
+													<field name="total_amount" class="oe_subtotal_footer_separator" widget="monetary" options="{'currency_field': 'currency_id'}" />
+												</group>
+											</group>
+										</group>
+									</group>
+								</page>
+								<page string="Address">
+									<group colspan="4" col="4">
+										<group colspan="2" col="2" string="Invoiced to">
+											<field name="invoiced_customer_id" attrs="{'readonly': ['|', ('state', '!=', 'draft'), ('invoice_line_ids', '!=', [])]}" domain="[('can_be_charged', '=', True), ('invoiced_customer_in_order_list', '=', partner_id)]" context="{'default_is_company':True, 'default_is_customer': True, 'default_can_be_charged':True}" />
+											<field name="invoicing_address_id" domain="[('partner_address_id', '=', invoiced_customer_id)]" attrs="{'readonly': ['|', ('state', '!=', 'draft'), ('invoice_line_ids', '!=', [])]}" />
+											<field name="tva_number" attrs="{'readonly': ['|', ('state', '!=', 'draft'), ('invoice_line_ids', '!=', [])]}" />
+											<field name="subject_deb" attrs="{'readonly': ['|', ('state', '!=', 'draft'), ('invoice_line_ids', '!=', [])]}" />
+										</group>
+										<group colspan="2" col="2">
+											<group colspan="2" col="2" string="Diverse">
+												<field name="final_customer_id" attrs="{'readonly': ['|', ('state', '!=', 'draft'), ('invoice_line_ids', '!=', [])]}" />
+												<field name="order_address_id" domain="[('partner_address_id', '=', partner_id)]" attrs="{'readonly': ['|', ('state', '!=', 'draft'), ('invoice_line_ids', '!=', [])]}" />
+												<field name="paid_customer_id" attrs="{'readonly': ['|', ('state', '!=', 'draft'), ('invoice_line_ids', '!=', [])]}" domain="[('can_paid', '=', True), ('paid_customer_in_order_list', '=', partner_id)]" context="{'default_is_company':True, 'default_is_customer': True, 'default_can_paid':True}" />
+												<field name="warehouse_id" attrs="{'readonly': ['|', ('state', '!=', 'draft'), ('invoice_line_ids', '!=', [])]}" />
+												<field name="location_id" attrs="{'readonly': ['|', ('state', '!=', 'draft'), ('invoice_line_ids', '!=', [])]}" />
+											</group>
+										</group>
+										<group colspan="4" col="4" string="Delivered to" name="address_delivered_to">
+											<group colspan="4" col="4">
+												<field name="delivered_customer_id" attrs="{'readonly': ['|', ('state', '!=', 'draft'), ('invoice_line_ids', '!=', [])]}" domain="[('can_be_delivered', '=', True), ('delivered_customer_in_order_list', '=', partner_id)]" context="{'default_is_company':True, 'default_is_customer': True, 'default_can_be_delivered':True}" />
+												<field name="delivered_address_id" domain="[('partner_address_id', '=', delivered_customer_id)]" attrs="{'readonly': ['|', ('state', '!=', 'draft'), ('invoice_line_ids', '!=', [])]}" />
+											</group>
+											<group colspan="4" col="4">
+												<field name="delivered_contact_id" options="{'no_create': True}" attrs="{'readonly': ['|', ('state', '!=', 'draft'), '&amp;', ('invoice_line_ids', '!=', [])]}" domain="[('partner_contact_sale_order', '=', delivered_customer_id)]" />
+												<label string="" colspan="2" />
+												<field name="delivered_name" attrs="{'readonly': ['|', ('state', '!=', 'draft'), ('invoice_line_ids', '!=', [])]}" />
+												<field name="delivered_zip" attrs="{'readonly': ['|', ('state', '!=', 'draft'), ('invoice_line_ids', '!=', [])]}" />
+												<field name="delivered_street" attrs="{'readonly': ['|', ('state', '!=', 'draft'), ('invoice_line_ids', '!=', [])]}" />
+												<field name="delivered_city" attrs="{'readonly': ['|', ('state', '!=', 'draft'), ('invoice_line_ids', '!=', [])]}" />
+												<field name="delivered_street2" attrs="{'readonly': ['|', ('state', '!=', 'draft'), ('invoice_line_ids', '!=', [])]}" />
+												<field name="delivered_region_id" attrs="{'readonly': ['|', ('state', '!=', 'draft'), ('invoice_line_ids', '!=', [])]}" domain="[('country_id','=',delivered_country_id)]" />
+												<field name="delivered_street3" attrs="{'readonly': ['|', ('state', '!=', 'draft'), ('invoice_line_ids', '!=', [])]}" />
+												<field name="delivered_country_id" attrs="{'readonly': ['|', ('state', '!=', 'draft'), ('invoice_line_ids', '!=', [])]}" />
+											</group>
+										</group>
+									</group>
+								</page>
+								<page string="Accounting">
+									<group colspan="4" col="4" string="Payment">
+										<group colspan="2" col="2">
+											<field name="payment_id" attrs="{'readonly': ['|', ('state', '!=', 'draft'), ('invoice_line_ids', '!=', [])]}" />
+											<field name="payment_term_id" attrs="{'readonly': ['|', ('state', '!=', 'draft'), ('invoice_line_ids', '!=', [])]}" />
+											<field name="invoicing_method_id" attrs="{'readonly': ['|', ('state', '!=', 'draft'), ('invoice_line_ids', '!=', [])]}" />
+											<field name="check_paid" invisible="0" />
+											<!-- START TO DELETE -->
+											<!-- <field name="payment_type" invisible="1"/> -->
+											<!-- <field name="check_paid_invoice" invisible="1" /> -->
+											<!-- <field name="check_paid_sale" invisible="1" /> -->
+											<!-- END TO DELETE -->
+										</group>
+										<group colspan="2" col="2">
+											<field name="discount" attrs="{'readonly': ['|', ('state', '!=', 'draft'), ('invoice_line_ids', '!=', [])]}" />
+											<field name="discount_value" attrs="{'invisible': [('discount', '=', False)], 'readonly': ['|', ('state', '!=', 'draft'), ('invoice_line_ids', '!=', [])]}" />
+											<field name="max_delay" attrs="{'invisible': [('discount', '=', False)], 'readonly': ['|', ('state', '!=', 'draft'), ('invoice_line_ids', '!=', [])]}" />
+											<field name="block_picking" attrs="{'readonly': ['|', ('state', '!=', 'draft'), ('invoice_line_ids', '!=', [])]}" />
+											<field name="need_picking_payment" invisible="1" />
+											<field name="need_sale_payment" invisible="1" />
+											<field name="block_picking_payment" invisible="1" />
+											<field name="block_sale_payment" invisible="1" />
+										</group>
+									</group>
+									<group colspan="2" col="2" string="Invoicing" name="sale_invoicing">
+										<!-- <field name="sale_account_invoice_trigger" attrs="{'readonly': ['|', ('state', '!=', 'draft'), ('invoice_line_ids', '!=', [])]}" /> -->
+										<!-- <field name="sale_account_invoiced_on" attrs="{'readonly': ['|', ('state', '!=', 'draft'), ('invoice_line_ids', '!=', [])]}" /> -->
+										<field name="sale_account_system_id" attrs="{'readonly': ['|', ('state', '!=', 'draft'), ('invoice_line_ids', '!=', [])]}" domain="[('line_system_domain', '=', [order_line_ids, sale_account_system_id])]" />
+										<field name="sale_send_method" attrs="{'readonly': ['|', ('state', '!=', 'draft'), ('invoice_line_ids', '!=', [])]}" />
+										<group colspan="2" col="2">
+											<group colspan="1" col="4">
+												<field name="group_invoices" attrs="{'readonly': ['|', ('state', '!=', 'draft'), ('invoice_line_ids', '!=', [])]}" />
+												<field name="invoices_period" attrs="{'invisible': [('group_invoices','=',False)], 'required': [('group_invoices','!=',False)], 'readonly': ['|', ('state', '!=', 'draft'), ('invoice_line_ids', '!=', [])]}" />
+												<field name="locked_invoice" attrs="{'readonly': ['|', ('state', '!=', 'draft'), ('invoice_line_ids', '!=', [])]}" />
+												<field name="sale_invoice_balance_trigger" invisible="1" />
+												<field name="sale_invoice_trigger_manual" invisible="1" />
+												<field name="sale_invoice_trigger_picking" invisible="1" />
+												<field name="sale_invoice_trigger_postpaid" invisible="1" />
+												<field name="show_invoice_button" invisible="1" />
+												<field name="manual_hide_invoice_button" invisible="1" />
+												<label colspan="2" string="" />
+											</group>
+											<group colspan="1" col="2" attrs="{'invisible': [('sale_send_method', '=', False)]}">
+												<field name="accounting_contact_ids" widget="many2many_tags" options="{'no_create': True}" domain="[('partner_contact_sale_order', '=', invoiced_customer_id)]" attrs="{'readonly': ['|', ('state', '!=', 'draft'), ('invoice_line_ids', '!=', [])]}" />
+												<field name="accounting_communication_value" />
+											</group>
+										</group>
+									</group>
+									<label colspan="2" col="2" name="agent" string="" />
+								</page>
+								<page string="Communication">
+									<group colspan="4" col="4" string="Confirmation of receipt">
+										<group colspan="2" col="2">
+											<field name="receipt_demand" attrs="{'readonly': ['|', ('state', '!=', 'draft'), ('invoice_line_ids', '!=', [])]}" />
+											<field name="delay_confirmation" attrs="{'readonly': ['|', ('state', '!=', 'draft'), ('invoice_line_ids', '!=', [])]}" />
+										</group>
+										<group colspan="2" col="2">
+											<field name="sale_contact_ids" options="{'no_create': True}" widget="many2many_tags" domain="[('partner_contact_sale_order', '=', partner_id)]" attrs="{'readonly': ['|', ('state', '!=', 'draft'), ('invoice_line_ids', '!=', [])]}" />
+											<field name="sale_communication_method" attrs="{'readonly': ['|', ('state', '!=', 'draft'), ('invoice_line_ids', '!=', [])]}" />
+											<field name="sale_communication_value" />
+										</group>
+									</group>
+									<group colspan="2" col="4" string="Order date">
+										<field name="creation_date" attrs="{'readonly': ['|', ('state', '!=', 'draft'), ('invoice_line_ids', '!=', [])]}" />
+										<field name="creation_user_id" attrs="{'readonly': ['|', ('state', '!=', 'draft'), ('invoice_line_ids', '!=', [])]}" />
+										<field name="ar_send_date" attrs="{'readonly': ['|', ('state', '!=', 'draft'), ('invoice_line_ids', '!=', [])]}" />
+										<field name="ar_user_id" attrs="{'readonly': ['|', ('state', '!=', 'draft'), ('invoice_line_ids', '!=', [])]}" />
+										<field name="quotation_date" attrs="{'readonly': ['|', ('state', 'not in', ['draft', 'waiting_delay', 'waiting']), ('invoice_line_ids', '!=', [])]}" />
+										<field name="quotation_user_id" attrs="{'readonly': ['|', ('state', 'not in', ['draft', 'waiting_delay', 'waiting']), ('invoice_line_ids', '!=', [])]}" />
+										<field name="confirmation_date" attrs="{'readonly': ['|', ('state', '!=', 'draft'), ('invoice_line_ids', '!=', [])]}" />
+										<field name="confirmation_user_id" attrs="{'readonly': ['|', ('state', '!=', 'draft'), ('invoice_line_ids', '!=', [])]}" />
+									</group>
+									<group colspan="2" col="4" string="Sold by">
+										<field name="seller_id" attrs="{'readonly': ['|', ('state', '!=', 'draft'), ('invoice_line_ids', '!=', [])]}" />
+										<field name="sale_manager_id" attrs="{'readonly': ['|', ('state', '!=', 'draft'), ('invoice_line_ids', '!=', [])]}" />
+										<field name="company_id" required="1" attrs="{'readonly': ['|', ('state', '!=', 'draft'), ('invoice_line_ids', '!=', [])]}" />
+										<field name="validity_period" required="1" attrs="{'readonly': ['|', ('state', '!=', 'draft'), ('invoice_line_ids', '!=', [])]}" />
+									</group>
+								</page>
+								<page string="History">
+									<group colspan="4" col="4" string="Delivery notes">
+										<field name="delivery_note_ids" nolabel="1" colspan="4" readonly="1" context="{'form_view_ref': 'stock.view_form_stock_picking_out'}">
+											<tree>
+												<field name="name" />
+												<field name="partner_id" />
+												<field name="origin" />
+												<field name="date_create" />
+												<field name="date_expected" />
+												<field name="state" />
+											</tree>
+										</field>
+									</group>
+									<group colspan="4" col="4" string="Anticipated invoice" attrs="{'invisible': [('advanced_invoice', '=', False)]}">
+										<field name="advanced_amount" />
+										<label colspan="2" string="" />
+										<field name="remaining_advanced_amount" />
+									</group>
+									<group colspan="4" col="4" string="Invoice lines">
+										<field name="invoice_line_ids" nolabel="1" colspan="4" readonly="1">
+											<tree string="Invoice Line">
+												<field name="invoice_id" />
+												<field name="name" />
+												<field name="account_id" groups="account.group_account_user" />
+												<field name="quantity" />
+												<field name="uom_id" groups="product.group_uom" />
+												<field name="price_unit" />
+												<field name="discount" groups="sale.group_discount_per_so_line" />
+												<field name="price_subtotal" />
+											</tree>
+											<form string="Invoice Line">
+												<div class="oe_title">
+													<h1>
+														<field name="invoice_id" context="{'form_view_ref':'account_openprod.account_cust_openprod_invoice_form'}" />
+													</h1>
+												</div>
+												<notebook colspan="4">
+													<page string="General">
+														<group colspan="4" col="4">
+															<group colspan="2" col="4" string="Product">
+																<field name="product_id" domain="[('sale_ok', '=', True), ('state', 'in', ['dev','lifeserie','endlife'])]" />
+																<group colspan="2" name="invisible_fields">
+																	<field name="factor" invisible="1" />
+																	<field name="divisor" invisible="1" />
+																	<field name="sec_uom_category_id" invisible="1" />
+																	<field name="uom_category_id" invisible="1" />
+																	<field name="uoi_category_id" invisible="1" />
+																</group>
+																<field name="sec_uom_qty" />
+																<field name="sec_uom_id" domain="[('category_id', '=', sec_uom_category_id), ('management_unit', '=', True)]" />
+																<field name="uom_qty" />
+																<field name="uom_id" domain="[('category_id', '=', uom_category_id), ('management_unit', '=', True)]" />
+																<field name="quantity" />
+																<field name="uoi_id" domain="[('category_id', '=', uoi_category_id), ('price_unit', '=', True)]" />
+																<field name="price_unit" />
+																<field name="invoice_line_tax_ids" widget="many2many_tags" />
+															</group>
+															<group colspan="2" col="2" string="Description and progress">
+																<field name="name" />
+																<field name="customer_product_name" />
+																<field name="customer_product_code" />
+															</group>
+														</group>
+													</page>
+													<page string="Diverse" name="diverse">
+														<group colspan="4" col="4">
+															<group colspan="2" col="2" name="divers1" />
+															<group colspan="2" col="2">
+																<label for="note_invoice_header" />
+																<field name="note_invoice_header" colspan="2" nolabel="1" />
+																<label for="note_invoice_intern" />
+																<field name="note_invoice_intern" colspan="2" nolabel="1" />
+															</group>
+														</group>
+													</page>
+												</notebook>
+											</form>
+										</field>
+									</group>
+								</page>
+								<page string="Mail and encs.">
+									<group colspan="4" col="4" string="Mails">
+										<field name="mail_ids" nolabel="1" colspan="4" />
+									</group>
+								</page>
+								<page string="Called orders" attrs="{'invisible': [('type', '!=', 'open')]}">
+									<field name="called_order_ids" colspan="4" nolabel="1" />
+								</page>
+								<page string="Notes">
+									<separator string="Internal note" colspan="4" name="inter_note" />
+									<field name="inter_note" colspan="4" nolabel="1" attrs="{'readonly': ['|', ('state', '!=', 'draft'), ('invoice_line_ids', '!=', [])]}" />
+									<separator string="Note printed on planning" colspan="4" />
+									<field name="work_note" colspan="4" nolabel="1" attrs="{'readonly': ['|', ('state', '!=', 'draft'), ('invoice_line_ids', '!=', [])]}" />
+									<separator string="Note on the delivery note" colspan="4" />
+									<field name="delivery_note" colspan="4" nolabel="1" attrs="{'readonly': ['|', ('state', '!=', 'draft'), ('invoice_line_ids', '!=', [])]}" />
+									<separator string="Note on invoice" colspan="4" />
+									<field name="invoice_note" colspan="4" nolabel="1" attrs="{'readonly': ['|', ('state', '!=', 'draft'), ('invoice_line_ids', '!=', [])]}" />
+									<separator string="Note printed on customer order" colspan="4" name="customer_order_note" />
+									<field name="customer_order_note" colspan="4" nolabel="1" attrs="{'readonly': ['|', ('state', '!=', 'draft'), ('invoice_line_ids', '!=', [])]}" />
+								</page>
+								<page string="Delivery">
+									<group colspan="4" col="4">
+										<group colspan="2" col="2" string="Delivery">
+											<field name="partial_delivery" attrs="{'readonly': ['|', ('state', '!=', 'draft'), ('invoice_line_ids', '!=', [])]}" />
+											<field name="allowed_rest" attrs="{'readonly': ['|', ('state', '!=', 'draft'), ('invoice_line_ids', '!=', [])]}" />
+											<field name="delivery_note_and_date" attrs="{'readonly': ['|', ('state', '!=', 'draft'), ('invoice_line_ids', '!=', [])]}" />
+										</group>
+										<group colspan="2" col="2" string="Transport">
+											<field name="sale_incoterm_id" attrs="{'readonly': ['|', ('state', '!=', 'draft'), ('invoice_line_ids', '!=', [])]}" />
+											<field name="sale_invoice_postage" attrs="{'invisible': [('sale_incoterm_id', '=', 1)], 'required': [('sale_incoterm_id', 'not in', (1, False))], 'readonly': ['|', ('state', '!=', 'draft'), ('invoice_line_ids', '!=', [])]}" />
+											<field name="sale_threshold" attrs="{'invisible': ['|', ('sale_invoice_postage', '!=', 'threshold'), ('sale_incoterm_id', '=', 1)], 'required': [('sale_invoice_postage', '=', 'threshold')], 'readonly': ['|', ('state', '!=', 'draft'), ('invoice_line_ids', '!=', [])]}" />
+											<field name="sale_forwarding_agent_id" attrs="{'readonly': ['|', ('state', '!=', 'draft'), ('invoice_line_ids', '!=', [])]}" />
+										</group>
+									</group>
+								</page>
+							</notebook>
+						</group>
+						<group colspan="1" col="1" class="op_shortcuts" name="action_menu">
+							<separator string="Actions" colspan="1" name="action_separator" />
+							<button class="oe_inline oe_stat_button" type="action" string="Generate a call" name="%(action_generate_sale_called_order)d" icon="fa-plus-square" attrs="{'invisible': ['|', ('state', 'not in', ('waiting', 'progress')), ('type', '!=', 'open')]}" />
+							<button class="oe_inline oe_stat_button" type="action" string="Create anticipated invoice" name="%(action_create_sale_anticipated_invoice)d" icon="fa-file-text-o" attrs="{'invisible': ['|', '|', ('state', '!=', 'progress'), ('type', '=', 'sav'), '&amp;', ('sale_invoice_trigger_manual', '=', False), ('sale_invoice_trigger_picking', '=', False)]}" />
+							<button class="oe_inline oe_stat_button" type="object" string="Generate an action" name="create_sale_action" icon="fa-plus-square" />
+							<separator string="Modifications" colspan="1" name="modif_separator" attrs="{'invisible': [('state', 'in', ('done', 'cancel'))]}" />
+							<button class="oe_inline oe_stat_button" type="object" string="Change transport information" name="change_sale_delivery_address" icon="fa-envelope-square" attrs="{'invisible': [('state', 'in', ('draft', 'done', 'cancel'))]}" />
+							<button class="oe_inline oe_stat_button" type="object" string="Change accounting information" name="change_sale_accounting_info" icon="fa-book" attrs="{'invisible': [('state', 'in', ('draft', 'done', 'cancel'))]}" />
+							<button class="oe_inline oe_stat_button" type="object" string="Change notes" name="change_sale_note" icon="fa-pencil-square-o" attrs="{'invisible': [('state', 'in', ('draft', 'done', 'cancel'))]}" />
+							<button class="oe_inline oe_stat_button" type="object" string="Change account system" name="change_account_system" icon="fa-usd" attrs="{'invisible': [('state', 'in', ('done', 'cancel'))]}" />
+							<separator string="Analysis" colspan="1" name="analysis_separator" />
+							<button class="oe_inline oe_stat_button" type="object" string="Pickings" name="show_sale_picking" icon="fa-external-link" />
+							<button class="oe_inline oe_stat_button" type="object" string="Invoices" name="show_sale_invoice" icon="fa-file-o" />
+							<button class="oe_inline oe_stat_button" type="object" string="Actions" name="show_sale_action" icon="fa-check-square-o" />
+						</group>
+					</group>
+				</form>
+			</field>
+		</record>
+
+		<!-- TREE VIEW Sale order -->
+		<record id='view_tree_sale_order' model='ir.ui.view'>
+			<field name="name">view_tree_sale_order</field>
+			<field name="model">sale.order</field>
+			<field name="arch" type="xml">
+				<tree string="Sale order" version="8.0">
+					<field name="name" />
+					<field name="partner_id" />
+					<field name="ref_order" string="External reference" />
+					<field name="state" />
+					<field name="seller_id" />
+					<field name="sale_manager_id" />
+					<field name="order_line_ids" />
+					<field name="currency_id" invisible="1" />
+					<field name="amount_ex_taxes" sum="Total ex Taxes" widget="monetary" options="{'currency_field': 'currency_id'}" />
+					<field name="total_amount" sum="Total" widget="monetary" options="{'currency_field': 'currency_id'}" />
+					<field name="month" invisible="1" />
+					<field name="day" invisible="1" />
+				</tree>
+			</field>
+		</record>
+
+		<!-- SEARCH VIEW Sale order -->
+		<record id='view_search_sale_order' model='ir.ui.view'>
+			<field name="name">view_search_sale_order</field>
+			<field name="model">sale.order</field>
+			<field name="arch" type="xml">
+				<search version="8.0">
+					<field name="name" />
+					<field name="ref_order" string="External reference" />
+					<field name="partner_id" />
+					<field name="seller_id" />
+					<field name="sale_manager_id" />
+					<group expand="0" string="Filters">
+						<filter string="Not cancelled or done" domain="[('state', 'not in', ('done', 'cancel'))]" name="not_cancelled" />
+						<filter string="Draft" domain="[('state', '=', 'draft')]" />
+						<filter string="My sales" domain="['|',('seller_id', '=', uid),('sale_manager_id', '=', uid)]" />
+					</group>
+					<group expand="0" string="Group by...">
+						<filter string="State" context="{'group_by' : 'state'}" />
+						<filter string="Customer" context="{'group_by' : 'partner_id'}" />
+						<filter string="Year" context="{'group_by' : 'year'}" />
+						<filter string="Month" context="{'group_by' : 'month'}" />
+						<filter string="Week" context="{'group_by' : 'week_number'}" />
+						<filter string="Day" context="{'group_by' : 'day'}" />
+						<filter string="Sale manager" context="{'group_by' : 'sale_manager_id'}" />
+						<filter string="Seller" context="{'group_by' : 'seller_id'}" />
+					</group>
+				</search>
+			</field>
+		</record>
+
+		<!-- ACTION Sale order -->
+		<record id="action_sale_order" model="ir.actions.act_window">
+			<field name="name">Sale order</field>
+			<field name="res_model">sale.order</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+			<field name="domain">[]</field>
+			<field name="context">{'search_default_not_cancelled': 1}</field>
+			<field name="search_view_id" ref="view_search_sale_order" />
+		</record>
+
+		<!-- ACTION Sale order form -->
+		<record model="ir.actions.act_window" id="sale_order_see_form">
+			<field name="name">Sale order</field>
+			<field name="res_model">sale.order</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">form</field>
+			<field name="view_id" ref="view_form_sale_order" />
+			<field name="target">current</field>
+		</record>
+
+		<!-- ACTION Partner sale order tree -->
+		<record model="ir.actions.act_window" id="action_see_all_sale_order">
+			<field name="name">Sale order</field>
+			<field name="res_model">sale.order</field>
+			<field name="view_type">form</field>
+			<field name="view_id" ref="view_tree_sale_order" />
+			<field name="view_mode">tree,form</field>
+			<field name="target">current</field>
+			<field name="domain">[('partner_id', '=', context.get('partner_id', False))]</field>
+		</record>
+
+		<menuitem name="Sale order" action="action_sale_order" id="menu_sale_order" parent="menu_sales" groups="group_menu_sale_user" />
+
+		<!-- =============== -->
+		<!-- SALE ORDER LINE -->
+		<!-- =============== -->
+
+		<!-- FORM VIEW Sale order line -->
+		<record id='view_form_sale_order_line' model='ir.ui.view'>
+			<field name="name">view_form_sale_order_line</field>
+			<field name="model">sale.order.line</field>
+			<field name="arch" type="xml">
+				<form string="Sale order line" version="8.0" create="false" edit="false">
+					<group colspan="4" col="9">
+						<group colspan="8">
+							<div class="oe_title">
+								<h1>
+									<field name="sale_order_id" readonly="1" />
+								</h1>
+							</div>
+							<notebook colspan="4">
+								<page string="Order line">
+									<group colspan="2" col="4" invisible="1">
+										<field name="factor" />
+										<field name="divisor" />
+										<field name="sec_uom_category_id" />
+										<field name="sequence" />
+										<field name="uom_category_id" />
+										<field name="uoi_category_id" />
+										<field name="delivered_qty" />
+										<field name="remaining_qty" />
+										<field name="total_price_currency" />
+										<field name="currency_rate" />
+										<field name="sale_state" />
+										<field name="sale_type" />
+									</group>
+									<group colspan="4" col="4">
+										<group colspan="2" col="2" string="Product">
+											<field name="product_id" domain="parent.partner_id and [('sale_ok', '=', True), '|', ('sale_product_customerinfo', '=', parent.partner_id), ('free_sale', '=', True)] or [('sale_ok', '=', True)]" colspan="2" required="1" />
+											<label for="sec_uom_qty" groups="base.group_dual_unit" />
+											<div groups="base.group_dual_unit">
+												<field name="sec_uom_qty" class="oe_inline" groups="base.group_dual_unit" />
+												<field name="sec_uom_id" domain="[('category_id', '=', sec_uom_category_id), ('management_unit', '=', True)]" class="oe_inline" groups="base.group_dual_unit" />
+											</div>
+											<label for="uom_qty" />
+											<div>
+												<field name="uom_qty" class="oe_inline" />
+												<field name="uom_id" domain="[('category_id', '=', uom_category_id), ('management_unit', '=', True)]" class="oe_inline" />
+											</div>
+											<label for="uoi_qty" groups="base.group_uoi" />
+											<div groups="base.group_uoi">
+												<field name="uoi_qty" class="oe_inline" />
+												<field name="uoi_id" domain="[('category_id', '=', uoi_category_id), ('price_unit', '=', True)]" class="oe_inline" />
+											</div>
+											<label for="price_unit" />
+											<div>
+												<field name="price_unit" class="oe_inline" />
+												<field name="currency_id" class="oe_inline" />
+											</div>
+											<field name="property_ids" widget="many2many_tags" />
+											<field name="taxes_ids" widget="many2many_tags" domain="[('type_tax_use', '!=', 'purchase')]" />
+											<field name="remaining_called_qty" attrs="{'invisible': [('sale_type', '!=', 'open')]}" />
+										</group>
+										<group colspan="2" col="4" string="Description and progress">
+											<field name="name" colspan="4" />
+											<field name="section_id" />
+											<field name="customer_product_name" />
+											<field name="customer_product_code" />
+										</group>
+										<group colspan="2" col="4" string="Customer's request">
+											<field name="requested_date" />
+											<field name="engagement_delay" />
+											<field name="transport_delay" />
+											<label colspan="2" string="" />
+											<field name="departure_date" />
+											<label colspan="2" string="" />
+										</group>
+										<group colspan="2" col="2" string="Confirmation">
+											<field name="scheduled_date" />
+											<field name="confirmed_departure_date" />
+											<field name="arrival_date" />
+										</group>
+										<group colspan="4" col="4" string="Procurement">
+											<field name="supply_method" />
+											<field name="delay_confirm" />
+											<field name="purchase_property_ids" widget="many2many_tags" groups="product.purchase_properties" domain="[('sinfo_property_product', 'in', product_id)]" />
+										</group>
+									</group>
+								</page>
+								<page string="Additional information" name="additional_information">
+									<group colspan="4" col="4">
+										<group colspan="2" col="2" string="Various information">
+											<field name="packaging_id" />
+											<field name="gross_weight" />
+											<field name="net_weight" />
+										</group>
+										<group colspan="2" col="2" string="Guarantee" name="sale_guarantee">
+											<field name="guarantee" />
+											<field name="guarantee_unity_id" />
+										</group>
+										<group colspan="2" col="2" string="Attributes" name="attributes">
+											<field name="product_attribute_ids" colspan="2" nolabel="1">
+												<tree string="Attributes" editable="bottom">
+													<field name="product_common_attribute_id" />
+													<field name="value" />
+												</tree>
+											</field>
+										</group>
+										<group colspan="2" string="Parameters" groups="product.product_parameters">
+											<field name="parameter_ids" nolabel="1">
+												<tree editable="top" string="Parameters">
+													<field name="type_param_id" />
+													<field name="value" />
+													<field name="price_unit" />
+													<field name="name" invisible="1" />
+												</tree>
+											</field>
+										</group>
+									</group>
+								</page>
+								<page string="Notes">
+									<separator string="Internal note" colspan="4" name="sol_internal_note" />
+									<field name="internal_note" colspan="4" nolabel="1" />
+									<separator string="Note printed on the delivery note" colspan="4" />
+									<field name="delivery_printed_note" colspan="4" nolabel="1" />
+									<separator string="Note printed on the invoice line" colspan="4" />
+									<field name="invoice_printed_note" colspan="4" nolabel="1" />
+									<separator string="Product note printed on the order" colspan="4" name="sol_order_printed_note" />
+									<field name="order_printed_note" colspan="4" nolabel="1" />
+									<separator string="Note printed on the manufacturing note" colspan="4" name="sol_work_note" />
+									<field name="work_note" colspan="4" nolabel="1" />
+								</page>
+								<page string="History">
+									<group colspan="4" col="4" string="Invoice lines">
+										<field name="invoice_line_ids" nolabel="1" colspan="4">
+											<tree string="Invoice Line">
+												<field name="invoice_id" />
+												<field name="name" />
+												<field name="account_id" groups="account.group_account_user" />
+												<field name="quantity" />
+												<field name="uom_id" groups="product.group_uom" />
+												<field name="price_unit" />
+												<field name="discount" groups="sale.group_discount_per_so_line" />
+												<field name="price_subtotal" />
+											</tree>
+											<form string="Invoice Line">
+												<div class="oe_title">
+													<h1>
+														<field name="invoice_id" context="{'form_view_ref':'account_openprod.account_cust_openprod_invoice_form'}" />
+													</h1>
+												</div>
+												<notebook colspan="4">
+													<page string="General">
+														<group colspan="4" col="4">
+															<group colspan="2" col="4" string="Product">
+																<field name="product_id" domain="[('sale_ok', '=', True), ('state', 'in', ['dev','lifeserie','endlife'])]" />
+																<group colspan="2" name="invisible_fields">
+																	<field name="factor" invisible="1" />
+																	<field name="divisor" invisible="1" />
+																	<field name="sec_uom_category_id" invisible="1" />
+																	<field name="uom_category_id" invisible="1" />
+																	<field name="uoi_category_id" invisible="1" />
+																</group>
+																<field name="sec_uom_qty" />
+																<field name="sec_uom_id" domain="[('category_id', '=', sec_uom_category_id), ('management_unit', '=', True)]" />
+																<field name="uom_qty" />
+																<field name="uom_id" domain="[('category_id', '=', uom_category_id), ('management_unit', '=', True)]" />
+																<field name="quantity" />
+																<field name="uoi_id" domain="[('category_id', '=', uoi_category_id), ('price_unit', '=', True)]" />
+																<field name="price_unit" />
+																<field name="invoice_line_tax_ids" widget="many2many_tags" />
+															</group>
+															<group colspan="2" col="2" string="Description and progress">
+																<field name="name" />
+																<field name="customer_product_name" />
+																<field name="customer_product_code" />
+															</group>
+														</group>
+													</page>
+													<page string="Diverse" name="diverse">
+														<group colspan="4" col="4">
+															<group colspan="2" col="2" name="divers1" />
+															<group colspan="2" col="2">
+																<label for="note_invoice_header" />
+																<field name="note_invoice_header" colspan="2" nolabel="1" />
+																<label for="note_invoice_intern" />
+																<field name="note_invoice_intern" colspan="2" nolabel="1" />
+															</group>
+														</group>
+													</page>
+												</notebook>
+											</form>
+										</field>
+									</group>
+									<group colspan="4" col="4" string="Stock moves">
+										<field name="stock_move_ids" nolabel="1" colspan="4" />
+										<field name="last_delivery_date" colspan="4" />
+									</group>
+								</page>
+							</notebook>
+						</group>
+						<group colspan="1" col="1" class="op_shortcuts" name="action_sale_line_menu">
+							<separator string="Actions" colspan="1" name="separator_action_menu" />
+							<button class="oe_inline oe_stat_button" type="object" string="Compute quantities" name="compute_delivered_qty" icon="fa-calculator" groups="sale.group_sale_responsible" />
+							<separator string="Modifications" colspan="1" name="separator_modif_menu" />
+							<button class="oe_inline oe_stat_button" type="object" string="Change informations" name="change_sale_line_info" icon="fa-pencil" attrs="{'invisible': [('sale_state', 'in', ('draft', 'done', 'cancel'))]}" />
+							<separator string="Analysis" colspan="1" name="separator_analysis_menu" />
+							<button class="oe_inline oe_stat_button" type="object" string="Stock's move" name="show_sale_line_stock_move" icon="fa-exchange" />
+							<button class="oe_inline oe_stat_button" type="object" string="Invoices" name="show_sale_line_invoice_line" icon="fa-file-o" />
+						</group>
+					</group>
+				</form>
+			</field>
+		</record>
+
+		<!-- TREE VIEW Sale order line -->
+		<record id='view_tree_sale_order_line' model='ir.ui.view'>
+
+			<field name="name">view_tree_sale_order_line</field>
+			<field name="model">sale.order.line</field>
+			<field name="arch" type="xml">
+				<tree string="Sale order line" version="8.0" default_order='id desc' create="false" edit="false">
+					<field name="sale_line_color" colors="red:sale_line_color==3; orange:sale_line_color==2; green:sale_line_color==1; black:sale_line_color==4;" string=" " />
+					<field name="sale_order_id" />
+					<field name="sale_partner_id" />
+					<field name="product_id" />
+					<field name="requested_date" />
+					<field name="confirmed_departure_date" string="Confirmed date" />
+					<field name="uom_qty" string="Qty" />
+					<field name="delivered_qty" />
+					<field name="remaining_qty" />
+					<field name="uom_id" />
+					<field name="sale_state" />
+					<field name="sale_seller_id" />
+					<field name="sale_order_manager_id" />
+					<field name="lateness" invisible="1" />
+					<field name="currency_id" invisible="1" />
+					<field name="total_price" sum="Total" widget="monetary" options="{'currency_field': 'currency_id'}" />
+					<field name="month" invisible="1" />
+					<field name="day" invisible="1" />
+				</tree>
+			</field>
+		</record>
+
+		<!-- SEARCH VIEW Sale order line -->
+		<record id='view_search_sale_order_line' model='ir.ui.view'>
+			<field name="name">view_search_sale_order_line</field>
+			<field name="model">sale.order.line</field>
+			<field name="arch" type="xml">
+				<search version="8.0">
+					<field name="product_id" />
+					<field name="requested_date" />
+					<field name="confirmed_departure_date" />
+					<field name="sale_order_id" />
+					<field name="sale_partner_id" />
+					<group expand="0" string="Filter by color">
+						<filter string="Black" domain="[('sale_line_color', '=', 4)]" />
+						<filter string="Red" domain="[('sale_line_color', '=', 3)]" />
+						<filter string="Orange" domain="[('sale_line_color', '=', 2)]" />
+						<filter string="Green" domain="[('sale_line_color', '=', 1)]" />
+					</group>
+					<group expand="0" string="Filters">
+						<filter string="Not cancelled or done" domain="[('sale_state', 'not in', ('done', 'cancel'))]" name="not_cancelled" />
+						<filter string="Draft" domain="[('sale_state', '=', 'draft')]" />
+						<filter string="Delivered" domain="[('remaining_qty', '=', 0), ('sale_state', 'not in', ['draft', 'cancel'])]" />
+						<filter string="Not delivered" domain="[('remaining_qty', '&gt;', 0)]" />
+						<filter string="Late" icon="terp-partner" domain="[('lateness', '=', 'True')]" />
+						<filter string="My sales" name='mysales' domain="['|',('sale_seller_id', '=', uid),('sale_order_manager_id', '=', uid)]" />
+					</group>
+					<newline />
+					<group expand="0" string="Group By...">
+						<filter string="State" context="{'group_by' : 'sale_state'}" />
+						<filter string="Customer" context="{'group_by' : 'sale_partner_id'}" />
+						<filter string="Year" context="{'group_by' : 'year'}" />
+						<filter string="Month" context="{'group_by' : 'month'}" />
+						<filter string="Week" context="{'group_by' : 'week_number'}" />
+						<filter string="Day" context="{'group_by' : 'day'}" />
+						<filter string="Sale manager" context="{'group_by' : 'sale_order_manager_id'}" />
+						<filter name="seller" string="Seller" context="{'group_by' : 'sale_seller_id'}" />
+					</group>
+				</search>
+			</field>
+		</record>
+
+		<!-- CALENDAR VIEW Sale order line -->
+		<record model="ir.ui.view" id="view_calendar_sale_order_line">
+			<field name="name">Sale order lines</field>
+			<field name="model">sale.order.line</field>
+			<field name="arch" type="xml">
+				<calendar string="Sale order line" date_start="calendar_date" color="sale_state" quick_add="False">
+					<field name="name" />
+					<field name="sec_uom_qty" />
+					<field name="sec_uom_id" />
+				</calendar>
+			</field>
+		</record>
+
+		<!-- PIVOT VIEW Sale order line product analysis -->
+		<record id="view_sale_order_product_pivot" model="ir.ui.view">
+			<field name="name">sale.order.product.pivot</field>
+			<field name="model">sale.order.line</field>
+			<field name="arch" type="xml">
+				<pivot string="Sale product Analysis" disable_linking="True">
+					<field name="product_id" type="row" />
+					<field name="year" type="col" />
+					<field name="month" type="col" />
+					<field name="total_price_currency" type="measure" />
+				</pivot>
+			</field>
+		</record>
+
+		<!-- GRAPH VIEW Sale order line product analysis -->
+		<record id="view_graph_sale_order_product" model="ir.ui.view">
+			<field name="name">sale.order.product.graph</field>
+			<field name="model">sale.order.line</field>
+			<field name="arch" type="xml">
+				<graph string="Sale product Analysis" disable_linking="True">
+					<field name="product_id" type="row" />
+					<field name="year" type="col" />
+					<field name="month" type="col" />
+					<field name="total_price_currency" type="measure" />
+				</graph>
+			</field>
+		</record>
+
+		<!-- ACTION Sale order line product analysis -->
+		<record id="action_sale_pivot_analysis_product" model="ir.actions.act_window">
+			<field name="name">Sale order product</field>
+			<field name="res_model">sale.order.line</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">pivot,graph</field>
+			<field name="context">{}</field>
+			<field name="view_id" ref="view_sale_order_product_pivot" />
+			<field name="search_view_id" ref="view_search_sale_order_line" />
+		</record>
+
+		<record id="action_sale_pivot_analysis_product_pivot_view" model="ir.actions.act_window.view">
+			<field eval="1" name="sequence" />
+			<field name="view_mode">pivot</field>
+			<field name="view_id" ref="view_sale_order_product_pivot" />
+			<field name="act_window_id" ref="action_sale_pivot_analysis_product" />
+		</record>
+
+		<record id="action_sale_pivot_analysis_product_graph_view" model="ir.actions.act_window.view">
+			<field eval="2" name="sequence" />
+			<field name="view_mode">graph</field>
+			<field name="view_id" ref="view_graph_sale_order_product" />
+			<field name="act_window_id" ref="action_sale_pivot_analysis_product" />
+		</record>
+
+		<menuitem name="Product analysis" action="action_sale_pivot_analysis_product" id="menu_sale_product_pivot_analysis" parent="menu_sale_analysis" groups="group_menu_sale_user" />
+
+		<!-- PIVOT VIEW Sale order line customer analysis -->
+		<record id="view_sale_order_customer_pivot" model="ir.ui.view">
+			<field name="name">sale.order.customer.pivot</field>
+			<field name="model">sale.order.line</field>
+			<field name="arch" type="xml">
+				<pivot string="Sale customer Analysis">
+					<field name="sale_partner_id" type="row" />
+					<field name="year" type="col" />
+					<field name="month" type="col" />
+					<field name="total_price_currency" type="measure" />
+				</pivot>
+			</field>
+		</record>
+
+		<!-- GRAPH VIEW Sale order line customer analysis -->
+		<record id="view_graph_sale_order_customer" model="ir.ui.view">
+			<field name="name">graph.sale.order.customer</field>
+			<field name="model">sale.order.line</field>
+			<field name="arch" type="xml">
+				<graph string="Sale customer Analysis">
+					<field name="sale_partner_id" type="row" />
+					<field name="year" type="col" />
+					<field name="month" type="col" />
+					<field name="total_price_currency" type="measure" />
+				</graph>
+			</field>
+		</record>
+
+		<!-- ACTION Sale order line customer analysis -->
+		<record id="action_sale_pivot_analysis_customer" model="ir.actions.act_window">
+			<field name="name">Sale order customer</field>
+			<field name="res_model">sale.order.line</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">pivot,graph</field>
+			<field name="domain">[]</field>
+			<field name="context">{}</field>
+			<field name="search_view_id" ref="view_search_sale_order_line" />
+		</record>
+
+		<record id="action_sale_pivot_analysis_customer_pivot_view" model="ir.actions.act_window.view">
+			<field eval="1" name="sequence" />
+			<field name="view_mode">pivot</field>
+			<field name="view_id" ref="view_sale_order_customer_pivot" />
+			<field name="act_window_id" ref="action_sale_pivot_analysis_customer" />
+		</record>
+
+		<record id="action_sale_pivot_analysis_customer_graph_view" model="ir.actions.act_window.view">
+			<field eval="2" name="sequence" />
+			<field name="view_mode">graph</field>
+			<field name="view_id" ref="view_graph_sale_order_customer" />
+			<field name="act_window_id" ref="action_sale_pivot_analysis_customer" />
+		</record>
+
+		<menuitem name="Customer analysis" action="action_sale_pivot_analysis_customer" id="menu_sale_customer_analysis" parent="menu_sale_analysis" groups="group_menu_sale_user" />
+
+
+		<!-- ACTION Sale order line -->
+		<record id="action_sale_order_line" model="ir.actions.act_window">
+			<field name="name">Sale order line</field>
+			<field name="res_model">sale.order.line</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form,calendar</field>
+			<field name="domain">[]</field>
+			<field name="context">{'search_default_not_cancelled': 1}</field>
+			<field name="search_view_id" ref="view_search_sale_order_line" />
+		</record>
+
+		<!-- ACTION Sale order line form -->
+		<record model="ir.actions.act_window" id="sale_order_line_see_form">
+			<field name="name">Sale order line</field>
+			<field name="res_model">sale.order.line</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">form</field>
+			<field name="view_id" ref="view_form_sale_order_line" />
+			<field name="target">current</field>
+		</record>
+
+		<menuitem name="Sale order line" action="action_sale_order_line" id="menu_sale_order_line" parent="menu_sales" groups="group_menu_sale_user" />
+
+		<!-- ACTION Payment method -->
+		<record id="action_sale_payment_method" model="ir.actions.act_window">
+			<field name="name">Payment method</field>
+			<field name="res_model">payment.method</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+			<field name="domain">[]</field>
+			<field name="context">{}</field>
+		</record>
+
+		<menuitem name="Payment method" action="action_sale_payment_method" id="menu_sale_payment_method" parent="menu_sale_configuration_customer" groups="group_menu_sale_config" />
+
+
+
+		<record id="action_parameter_dimension_type" model="ir.actions.act_window">
+			<field name="name">Parameter Dimension Type</field>
+			<field name="res_model">parameter.dimension.type</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+			<field name="domain">[]</field>
+			<field name="context">{}</field>
+		</record>
+	</data>
+</openerp>

@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<openerp>
+    <data noupdate="1">
+    	<!-- Product.product  -->
+        <record model="product.product" id="int_product_PCE">
+            <field name="name">INT product</field>
+            <field name="code">UNIT</field>
+            <field name="produce_ok">True</field>
+            <field name="state">lifeserie</field>
+            <field name="supply_method">produce</field>
+            <field name="trigger_supply">make_to_order_with_stock</field>
+            <field name="horizon_type">manual</field>
+            <field name="is_int">True</field>
+            <field name="is_no_unlink">True</field>
+            <field name="uom_id" ref="product.product_uom_unit"/>
+            <field name="categ_id" ref="product.all_product_category"/>
+        </record>
+        
+        <record forcecreate="True" id="decimal_product_efficiency" model="decimal.precision">
+            <field name="name">Product Efficiency</field>
+            <field name="digits" eval="3"/>
+        </record>
+        <record forcecreate="True" id="decimal_technical_product_round" model="decimal.precision">
+            <field name="name">Technical Product Round</field>
+            <field name="digits" eval="4"/>
+        </record>
+        
+        
+    </data>
+</openerp>

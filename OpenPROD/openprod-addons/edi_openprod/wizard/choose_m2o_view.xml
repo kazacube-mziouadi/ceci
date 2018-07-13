@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+		<record model="ir.ui.view" id="view_form_edi_choose_m2o">
+			<field name="name">view.form.edi.choose.m2o</field>
+			<field name="model">edi.choose.m2o</field>
+			<field name="type">form</field>
+			<field name="arch" type="xml">
+				<form string="Choose a record">
+					<group colspan="4" col="2" name="fields">
+						<field name="record_id" invisible="1" />
+						<field name="record_name" invisible="1" />
+						<field name="model" invisible="1" />
+						<field name="param_id" invisible="1" />
+					</group>
+					<footer>
+                        <button name="validate_button" string="Validate" type="object" class="oe_highlight" />
+                        or
+                        <button string="Cancel" class="oe_link" special="cancel" />
+                    </footer>
+				</form>
+			</field>
+		</record>
+	</data>
+</openerp>

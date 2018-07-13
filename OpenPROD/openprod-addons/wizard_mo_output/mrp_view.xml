@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id='inherit_view_form_mrp_workorder_mo_output' model='ir.ui.view'>
+            <field name="name">view_form_mrp_workorder_mo_output</field>
+            <field name="model">mrp.workorder</field>
+            <field name="priority" eval="3200" />
+            <field name="inherit_id" ref="mrp.view_form_mrp_workorder" />
+            <field name="arch" type="xml">
+                <xpath expr="//group[@name='group_consumed_service']" position="after">
+                    <group colspan="4" col="4" string="Reservations">
+                        <field name="reservation_ids" nolabel="1" colspan="4" readonly="1" >
+                            <tree string="Reservations" editable="bottom">
+                                <field name="product_id" />
+                                <field name="qty" />
+                                <field name="uom_id" />
+                                <field name="qty_mo" />
+                                <field name="user_id" />
+                                <field name="date" />
+                                <field name="move_id" />
+                                <field name="label_ids" />
+                                <button name="wkf_unlink" class="oe_inline oe_stat_button" icon="fa-trash" string="Delete lines" type="object" colspan="1" />
+                            </tree>
+                        </field>
+                    </group>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</openerp>

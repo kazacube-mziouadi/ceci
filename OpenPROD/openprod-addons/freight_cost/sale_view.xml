@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+        <record model="ir.ui.view" id="view_form_sale_order_freight_cost">
+            <field name="name">view_form_sale_order</field>
+            <field name="inherit_id" ref="sale.view_form_sale_order" />
+            <field name="priority" eval="1400" />
+            <field name="model">sale.order</field>
+            <field name="arch" type="xml">
+                <xpath expr="//group[@name='group_total_sale']" position="after">
+                    <group colspan="2" col="2" string="Freight cost" attrs="{'invisible': ['|', ('is_freight_cost', '!=', True), ('state', 'not in', ('draft', 'waiting', 'waiting_delay', 'waiting_conf_delay'))]}" >
+                        <field name="is_freight_cost" invisible="1" />
+                        <label string="Warning, freight cost" colspan="2" />
+                        <button class="oe_inline oe_stat_button" icon="fa-check" type="action" 
+                                string="Add freight" name="%(action_freight_cost_wizard)d" 
+                                attrs="{'invisible': [('is_freight_cost', '!=', True)]}" colspan="2" />
+                       <field name="freight_cost_total" />
+                    </group>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</openerp>

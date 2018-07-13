@@ -1,0 +1,25 @@
+# -*- coding: utf-8 -*-
+{
+    'name': 'standard offers',
+    'version': '0.1',
+    'author': 'Objectif PI',
+    'license': 'Open-prod license',
+    'category': 'Sales',
+    'description': """ Standard offers module """,
+    'website': 'http://objectif-pi.com',
+    'images': [],
+    'depends': ['sale'],
+    'data': [
+        'wizard/category_import_view.xml',
+        'wizard/product_import_view.xml',
+        'standard_offer_view.xml',
+        'data/offer_sequence.xml',
+        'data/offer_mail_template.xml',
+        'security/ir.model.access.csv',
+    ],
+    'qweb': [],
+    'demo': [],
+    'test': [],
+    'installable': True,
+    'auto_install': False,
+}

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+	
+		<record model="ir.ui.view" id="view_form_select_confirm_date">
+			<field name="name">view_form_select_confirm_date</field>
+			<field name="model">select.confirm.date</field>
+			<field name="type">form</field>
+			<field name="arch" type="xml">
+				<form string="Selection of the date">
+					<group colspan="4" col="4" string="Enter the value for the confirmation date">
+						<field name="name"/>
+					</group>
+					<footer>
+						<button name="action_select_confirmed_date" string="OK" type="object" class="oe_highlight" />
+						or
+						<button string="Cancel" class="oe_link" special="cancel" />
+					</footer>
+				</form>
+			</field>
+		</record>
+
+		<record model="ir.actions.act_window" id="action_select_confirm_date">
+			<field name="name">Selection of the date</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="res_model">select.confirm.date</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">form</field>
+			<field name="target">new</field>
+		</record>
+		
+	</data>
+</openerp>

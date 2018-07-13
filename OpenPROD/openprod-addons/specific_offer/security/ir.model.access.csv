@@ -1,0 +1,16 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_specific_offer_user,specific.offer,model_specific_offer,base.group_sale_salesman,1,0,0,0
+access_specific_offer_manager,specific.offer,model_specific_offer,base.group_sale_manager,1,1,0,0
+access_specific_offer_administrator,specific.offer,model_specific_offer,sale.group_sale_responsible,1,1,1,1
+
+access_simulation_line_user,simulation.line,model_simulation_line,base.group_sale_salesman,1,0,0,0
+access_simulation_line_manager,simulation.line,model_simulation_line,base.group_sale_manager,1,1,1,1
+access_simulation_line_administrator,simulation.line,model_simulation_line,sale.group_sale_responsible,1,1,1,1
+
+access_specific_offer_qty_user,specific.offer.qty,model_specific_offer_qty,base.group_sale_salesman,1,0,0,0
+access_specific_offer_qty_manager,specific.offer.qty,model_specific_offer_qty,base.group_sale_manager,1,1,1,1
+access_specific_offer_qty_administrator,specific.offer.qty,model_specific_offer_qty,sale.group_sale_responsible,1,1,1,1
+
+access_specific_offer_option_user,specific.offer.option,model_specific_offer_option,base.group_sale_salesman,1,0,0,0
+access_specific_offer_option_manager,specific.offer.option,model_specific_offer_option,base.group_sale_manager,1,1,1,1
+access_specific_offer_option_administrator,specific.offer.option,model_specific_offer_option,sale.group_sale_responsible,1,1,1,1

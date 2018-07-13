@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+		<!-- =================== -->
+		<!-- PURCHASE ORDER LINE -->
+		<!-- =================== -->
+  		<!-- FORM VIEW -->
+        <record model="ir.ui.view" id="view_form_purchase_order_line_affair">
+            <field name="name">view_form_purchase_order_line_affair</field>
+            <field name="inherit_id" ref="purchase.view_form_purchase_order_line"/>
+            <field name="priority" eval="1500" />
+            <field name="model">purchase.order.line</field>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='quantity']" position="after">
+                	<field name="affair_id" />
+                </xpath>
+            </field>
+        </record>
+        
+  		<!-- SEARCH VIEW -->
+		<record id='view_search_purchase_order_line_affair' model='ir.ui.view'>
+			<field name="name">view_search_purchase_order_line_affair</field>
+			<field name="inherit_id" ref="purchase.view_search_purchase_order_line" />
+			<field name="priority" eval="1500" />
+			<field name="model">purchase.order.line</field>
+			<field name="arch" type="xml">
+				<xpath expr="//field[last()]" position="after" >
+					<field name="affair_id" />
+				</xpath>
+			</field>
+		</record>
+		
+		
+		<!-- ============== -->
+		<!-- PURCHASE ORDER -->
+		<!-- ============== -->
+  		<!-- FORM VIEW -->
+        <record id='view_form_purchase_order_affair' model='ir.ui.view'>
+			<field name="name">view_form_purchase_order_affair</field>
+			<field name="model">purchase.order</field>
+			<field name="inherit_id" ref="purchase.view_form_purchase_order"/>
+			<field name="priority" eval="1500" />
+			<field name="arch" type="xml">
+                <xpath expr="//field[@name='purchase_order_line_ids']//form//field[@name='quantity']" position="after">
+                	<field name="affair_id" />
+                </xpath>
+        	</field>
+        </record>	
+        
+  		<!-- SEARCH VIEW -->
+<!-- 		<record id='view_search_purchase_order_affair' model='ir.ui.view'> -->
+<!-- 			<field name="name">view_search_purchase_order_affair</field> -->
+<!-- 			<field name="inherit_id" ref="purchase.view_search_purchase_order" /> -->
+<!-- 			<field name="priority" eval="1500" /> -->
+<!-- 			<field name="model">purchase.order</field> -->
+<!-- 			<field name="arch" type="xml"> -->
+<!-- 				<xpath expr="//field[last()]" position="after" > -->
+<!-- 					<field name="affair_id" /> -->
+<!-- 				</xpath> -->
+<!-- 			</field> -->
+<!-- 		</record> -->
+	</data>
+</openerp>

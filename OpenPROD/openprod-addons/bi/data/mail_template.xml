@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data noupdate="1">			
+            <record model="mail.template" id="bi_etl_error">
+				<field name="name">BI Error etl</field>
+				<field name="subject">[ERROR] BI data update</field>
+				<field name="model_id" ref="model_bi_server"/>
+				<field name="auto_delete" eval="True"/>
+				<field name="body_html"><![CDATA[
+					<div><p>An error occured during the BI update data process, see etl.log for more detail.</p>           
+					</div>
+					]]>
+				</field>
+			</record>
+
+			<record model="mail.template" id="bi_bash_error">
+				<field name="name">BI Error bash</field>
+				<field name="subject">[ERROR] BI data update</field>
+				<field name="model_id" ref="model_bi_server"/>
+				<field name="auto_delete" eval="True"/>
+				<field name="body_html"><![CDATA[
+					<div><p>An error occured during the BI update data process, an error occured in updateBDD.sh</p>           
+					</div>
+					]]>
+				</field>
+			</record>
+
+			<record model="mail.template" id="bi_config_error">
+				<field name="name">BI Error config</field>
+				<field name="subject">[ERROR] BI data update</field>
+				<field name="model_id" ref="model_bi_server"/>
+				<field name="auto_delete" eval="True"/>
+				<field name="body_html"><![CDATA[
+					<div><p>An error occured during the BI update data process, no configuration file, execute again instalationBDD.sh</p>           
+					</div>
+					]]>
+				</field>
+			</record>
+
+			<record model="mail.template" id="bi_java_error">
+				<field name="name">BI Error java</field>
+				<field name="subject">[ERROR] BI data update</field>
+				<field name="model_id" ref="model_bi_server"/>
+				<field name="auto_delete" eval="True"/>
+				<field name="body_html"><![CDATA[
+					<div><p>An error occured during the BI update data process, java oracle 1.8 needs to be installed, execute the scipr check_java.sh</p>           
+					</div>
+					]]>
+				</field>
+			</record>
+
+			<record model="mail.template" id="bi_path_error">
+				<field name="name">BI Error path</field>
+				<field name="subject">[ERROR] BI data update</field>
+				<field name="model_id" ref="model_bi_server"/>
+				<field name="auto_delete" eval="True"/>
+				<field name="body_html"><![CDATA[
+					<div><p>An error occured during the BI update data process, Invalid path for Pentaho instalation directory, fix it in BI -> Configuration</p>           
+					</div>
+					]]>
+				</field>
+			</record>
+			
+						
+			
+    </data>
+</openerp>			

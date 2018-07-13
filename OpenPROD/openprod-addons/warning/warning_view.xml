@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+
+
+		<!-- FORM VIEW Sale Res partner -->
+		<record id="view_partner_warning_form" model="ir.ui.view">
+			<field name="name">res.partner.warning.form.inherit</field>
+			<field name="inherit_id" ref="sale.view_form_partner_sale" />
+			<field name="model">res.partner</field>
+			<field name="arch" type="xml">
+				<xpath expr="//group[@name='sale_communication_method']" position="after">
+					<group colspan="2" col="4" string="Warning on the Sale Order" attrs="{'invisible': [('can_order', '!=', True)]}">
+						<field name="sale_warn" nolabel="1" />
+						<field name="sale_warn_msg" colspan="4" nolabel="1" attrs="{'required':[('sale_warn','!=','no-message')],'readonly':[('sale_warn','=','no-message')]}" />
+					</group>
+				</xpath>
+			</field>
+		</record>
+
+
+		<!-- FORM VIEW Purchase Res partner -->
+		<record id="view_purchase_partner_warning_form" model="ir.ui.view">
+			<field name="name">purchase.res.partner.warning.form.inherit</field>
+			<field name="inherit_id" ref="purchase.view_form_partner_purchase" />
+			<field name="model">res.partner</field>
+			<field name="arch" type="xml">
+				<xpath expr="//group[@name='purchase_note']" position="before">
+					<group colspan="2" col="4" string="Warning on the Purchase Order" attrs="{'invisible': [('is_seller','!=', True)]}">
+						<field name="purchase_warn" nolabel="1" />
+						<field name="purchase_warn_msg" colspan="4" nolabel="1" attrs="{'required':[('purchase_warn','!=','no-message')],'readonly':[('purchase_warn','=','no-message')]}" />
+					</group>
+				</xpath>
+			</field>
+		</record>
+
+
+		<!-- FORM VIEW Sale product.product -->
+		<record id='product_warning_form_view' model='ir.ui.view'>
+			<field name="name">product.warning.form.inherit</field>
+			<field name="model">product.product</field>
+			<field name="priority" eval="1200" />
+			<field name="inherit_id" ref="sale.view_form_product" />
+			<field name="arch" type="xml">
+				<xpath expr="//group[@name='other_sale_info']" position="inside">
+					<group colspan="2" col="2" string="Warning when Selling this Product">
+						<field name="sale_line_warn" nolabel="1" />
+						<field name="sale_line_warn_msg" colspan="3" nolabel="1" attrs="{'required':[('sale_line_warn','!=','no-message')],'readonly':[('sale_line_warn','=','no-message')]}" />
+					</group>
+				</xpath>
+				<xpath expr="//field[@name='cinfo_ids']/form//group[@name='note_printed_sale_order']" position="before">
+					<group colspan="4" col="2" string="Warning">
+						<field name="warn" colspan="2" />
+						<field name="warn_msg" nolabel="1" colspan="2" attrs="{'readonly': [('warn', '!=', 'warning')]}" />
+					</group>
+				</xpath>
+			</field>
+		</record>
+
+
+		<!-- FORM VIEW Purchase product.product -->
+		<record id='product_purchase_warning_form_view' model='ir.ui.view'>
+			<field name="name">product.purchase.warning.form.inherit</field>
+			<field name="model">product.product</field>
+			<field name="priority" eval="1200" />
+			<field name="inherit_id" ref="purchase.view_form_product" />
+			<field name="arch" type="xml">
+				<xpath expr="//group[@name='other_purchase_infos']" position="inside">
+					<group colspan="2" col="2" string="Warning when Purchasing this Product">
+						<field name="purchase_line_warn" nolabel="1" />
+						<field name="purchase_line_warn_msg" colspan="3" nolabel="1" attrs="{'required':[('purchase_line_warn','!=','no-message')],'readonly':[('purchase_line_warn','=','no-message')]}" />
+					</group>
+				</xpath>
+			</field>
+		</record>
+
+	</data>
+</openerp>

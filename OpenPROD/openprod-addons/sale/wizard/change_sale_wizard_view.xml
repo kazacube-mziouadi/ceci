@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+	
+		<!-- ======================= -->
+		<!-- CHANGE DELIVERY ADDRESS -->
+		<!-- ======================= -->
+	
+		<record model="ir.ui.view" id="view_form_change_delivery_address">
+			<field name="name">view_form_change_delivery_address</field>
+			<field name="model">change.delivery.address</field>
+			<field name="type">form</field>
+			<field name="arch" type="xml">
+				<form string="Change the delivery address">
+					<field name="partner_id" invisible="True"/>
+					<field name="sale_id" invisible="True"/>
+					<field name="sale_account_system_id" invisible="True"/>
+					<group colspan="4" col="4" string="Delivered to">
+						<group colspan="4" col="4">
+							<field name="delivered_customer_id" context="{'default_is_company':True, 'default_is_customer': True, 'default_can_be_delivered':True}"/>
+							<field name="delivered_address_id" domain="[('partner_address_id', '=', delivered_customer_id)]" />
+						</group>
+						<group colspan="4" col="4">
+							<field name="delivered_name"/>
+							<field name="delivered_zip"/>
+							<field name="delivered_street"/>
+							<field name="delivered_city"/>
+							<field name="delivered_street2"/>
+							<field name="delivered_region_id" domain="[('country_id','=',delivered_country_id)]"/>
+							<field name="delivered_street3"/>
+							<field name="delivered_country_id"/>
+						</group>
+					</group>
+					<group colspan="2" col="4" string="Transport information">
+						<field name="sale_incoterm_id" />
+						<field name="sale_invoice_postage" attrs="{'invisible': [('sale_incoterm_id', 'in', (1, False))]}"/>
+						<field name="sale_threshold" attrs="{'invisible': [('sale_invoice_postage', '!=', 'threshold')], 'required': [('sale_invoice_postage', '=', 'threshold')]}"/>
+						<field name="sale_forwarding_agent_id"/>
+						<field name="transport_delay"/>
+						</group>
+					<footer>
+						<button name="change_delivery_address" string="Change transport information" type="object" class="oe_highlight" />
+						or
+						<button string="Cancel" class="oe_link" special="cancel" />
+					</footer>
+				</form>
+			</field>
+		</record>
+
+		<record model="ir.actions.act_window" id="action_change_delivery_address">
+			<field name="name">Change delivery address</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="res_model">change.delivery.address</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">form</field>
+			<field name="target">new</field>
+		</record>
+	
+		<!-- =========== -->
+		<!-- CHANGE NOTE -->
+		<!-- =========== -->
+	
+		<record model="ir.ui.view" id="view_form_change_note">
+			<field name="name">view_form_change_note</field>
+			<field name="model">change.note</field>
+			<field name="type">form</field>
+			<field name="arch" type="xml">
+				<form string="Change the note">
+					<group colspan="4" col="4" string="Notes">
+						<separator string="Internal note" colspan="4"/>
+						<field name="inter_note" colspan="4" nolabel="1"/>
+						<separator string="Note printed on planned" colspan="4"/>
+						<field name="work_note" colspan="4" nolabel="1"/>
+						<separator string="Note on the delivery note" colspan="4"/>
+						<field name="delivery_note" colspan="4" nolabel="1"/>
+						<separator string="Note on invoice" colspan="4"/>
+						<field name="invoice_note" colspan="4" nolabel="1"/>
+						<separator string="Note printed on customer order" colspan="4"/>
+						<field name="customer_order_note" colspan="4" nolabel="1"/>
+						<field name="sale_id" invisible="True"/>
+					</group>
+					<footer>
+						<button name="change_note" string="Change notes" type="object" class="oe_highlight" />
+						or
+						<button string="Cancel" class="oe_link" special="cancel" />
+					</footer>
+				</form>
+			</field>
+		</record>
+
+		<record model="ir.actions.act_window" id="action_change_note">
+			<field name="name">Change notes</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="res_model">change.note</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">form</field>
+			<field name="target">new</field>
+		</record>
+		
+	
+		<!-- ====================== -->
+		<!-- CHANGE ACCOUNTING INFO -->
+		<!-- ====================== -->
+	
+		<record model="ir.ui.view" id="view_form_change_accounting_info">
+			<field name="name">view_form_change_accounting_info</field>
+			<field name="model">change.accounting.information</field>
+			<field name="type">form</field>
+			<field name="arch" type="xml">
+				<form string="Change the accounting information">
+					<field name="partner_id" invisible="True"/>
+					<field name="sale_id" invisible="True"/>
+					<field name="invoicing_address_id" invisible="True"/>
+					<group colspan="4" col="4">
+						<group colspan="4" string="Caution">
+							<label string="All the sale values will be replaced by the value in the wizard. The invoiced partner and partner who pay chosen in the wizard must have the 
+							same payment type, invoice trigger and invoiced quantity than the sale." colspan="4" />
+						</group>
+						<group colspan="2" col="4" string="Invoicing information">
+							<field name="invoiced_customer_id" colspan="4"/>
+							<field name="sale_send_method" colspan="4"/>
+							<field name="group_invoices"/>
+							<field name="invoices_period" attrs="{'invisible': [('group_invoices','=',False)], 'required': [('group_invoices','!=',False)]}"/>
+							<field name="locked_invoice"/>
+						</group>
+						<group colspan="2" col="4" string="Payment information">
+							<field name="paid_customer_id" colspan="4"/>
+							<field name="payment_id" colspan="4"/>
+							<field name="payment_term_id" colspan="4"/>
+							<field name="discount"/>
+							<field name="discount_value" attrs="{'invisible': [('discount', '=', False)]}"/>
+							<label string="" colspan="2"/>
+							<field name="max_delay" attrs="{'invisible': [('discount', '=', False)]}"/>
+						</group>
+					</group>
+					<footer>
+						<button name="change_accounting_information" string="Change accounting information" type="object" class="oe_highlight" />
+						or
+						<button string="Cancel" class="oe_link" special="cancel" />
+					</footer>
+				</form>
+			</field>
+		</record>
+
+		<record model="ir.actions.act_window" id="action_change_accounting_info">
+			<field name="name">Change accounting informations</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="res_model">change.accounting.information</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">form</field>
+			<field name="target">new</field>
+		</record>
+		
+	
+		<!-- ===================== -->
+		<!-- CHANGE SALE LINE INFO -->
+		<!-- ===================== -->
+	
+		<record model="ir.ui.view" id="view_form_change_line_information">
+			<field name="name">view_form_change_line_information</field>
+			<field name="model">change.line.information</field>
+			<field name="type">form</field>
+			<field name="arch" type="xml">
+				<form string="Change the information of the sale line">
+					<group colspan="4" col="4">
+						<notebook colspan="4">
+							<page string="Order line">
+								<group colspan="4" col="4">
+									<field name="requested_date"/>
+									<field name="confirmed_departure_date"/>
+									<field name="price_unit"/>
+									<label string="" colspan="2"/>
+									<field name="name" colspan="4"/>
+								</group>
+							</page>
+							<page string="Notes">
+								<separator string="Internal note" colspan="4"/>
+								<field name="internal_note" colspan="4" nolabel="1"/>
+								<separator string="Note on the delivery note" colspan="4"/>
+								<field name="delivery_printed_note" colspan="4" nolabel="1"/>
+								<separator string="Note on invoice" colspan="4"/>
+								<field name="invoice_printed_note" colspan="4" nolabel="1"/>
+								<separator string="Product note printed on the order" colspan="4"/>
+								<field name="order_printed_note" colspan="4" nolabel="1"/>
+							</page>
+						</notebook>
+					</group>
+					<field name="sale_line_id" invisible="True"/>
+					<footer>
+						<button name="change_line_information" string="Change sale line information" type="object" class="oe_highlight" />
+						or
+						<button string="Cancel" class="oe_link" special="cancel" />
+					</footer>
+				</form>
+			</field>
+		</record>
+
+		<record model="ir.actions.act_window" id="action_change_sale_line_info">
+			<field name="name">Change sale line informations</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="res_model">change.line.information</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">form</field>
+			<field name="target">new</field>
+		</record>
+		
+		
+		<!-- ===================== -->
+		<!-- CHANGE ACCOUNT SYSTEM -->
+		<!-- ===================== -->
+	
+		<record model="ir.ui.view" id="view_form_change_account_system">
+			<field name="name">view_form_change_account_system</field>
+			<field name="model">change.account.system</field>
+			<field name="type">form</field>
+			<field name="arch" type="xml">
+				<form string="Change the account system">
+					<group colspan="4" col="4">
+						<field name="sale_account_system_id"/>
+						<label string="" colspan="2"/>
+					</group>
+					<field name="sale_id" invisible="True"/>
+					<footer>
+						<button name="change_account_system" string="Change the account system" type="object" class="oe_highlight" />
+						or
+						<button string="Cancel" class="oe_link" special="cancel" />
+					</footer>
+				</form>
+			</field>
+		</record>
+
+		<record model="ir.actions.act_window" id="action_change_account_system">
+			<field name="name">Change account system</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="res_model">change.account.system</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">form</field>
+			<field name="target">new</field>
+		</record>
+		
+	</data>
+</openerp>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+	
+		<record model="ir.ui.view" id="view_form_sale_anticipated_invoice">
+			<field name="name">view_form_sale_anticipated_invoice</field>
+			<field name="model">sale.anticipated.invoice</field>
+			<field name="type">form</field>
+			<field name="arch" type="xml">
+				<form string="Anticipated invoice">
+					<field name="sale_id" invisible="True"/>
+					<group colspan="4" col="4" string="Anticipated invoice">
+						<field name="product_id"/>
+						<field name="taxes_ids" widget="many2many_tags"/>
+						<field name="amount_without_tax"/>
+						<label colspan="2" string=""/>
+						<field name="tax_amount"/>
+						<label colspan="2" string=""/>
+						<field name="amount_with_tax"/>
+						<label colspan="2" string=""/>
+					</group>
+					<footer>
+						<button name="create_anticipated_invoice" string="Create anticipated invoice" type="object" class="oe_highlight" />
+						or
+						<button string="Cancel" class="oe_link" special="cancel" />
+					</footer>
+				</form>
+			</field>
+		</record>
+
+		<record model="ir.actions.act_window" id="action_create_sale_anticipated_invoice">
+			<field name="name">Create an anticipated invoice</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="res_model">sale.anticipated.invoice</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">form</field>
+			<field name="target">new</field>
+		</record>
+
+	</data>
+</openerp>

@@ -1,0 +1,491 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <menuitem name="HR" id="menu_human_resource_main" groups="group_menu_human_resource_user" web_icon="base_openprod,static/description/rh.png" />
+        <menuitem name="HR" id="menu_human_resource" parent="menu_human_resource_main" sequence="10" groups="group_menu_human_resource_user" />
+        <menuitem name="Analysis" id="menu_human_resource_analysis" parent="menu_human_resource_main" sequence="30" groups="group_menu_human_resource_manager" />
+        <menuitem name="Configuration" id="menu_human_resource_config" parent="menu_human_resource_main" sequence="40" groups="group_menu_human_resource_config" />
+        <menuitem name="Employee" id="menu_employee_config" parent="menu_human_resource_config" sequence="10" groups="group_menu_human_resource_config" />
+	    
+		<!-- FORM VIEW Employee -->
+		<record id='view_form_employee_id' model='ir.ui.view'>
+			<field name="name">view_form_employee_id</field>
+			<field name="model">employee</field>
+			<field name="arch" type="xml">
+				<form string="Employee" version="8.0">
+					<header>
+		               <field name="state" widget="statusbar" clickable="True" />
+		           </header>
+		           <group colspan="4" col="9">
+		               <group colspan="8" col="4">
+		                   <group colspan="4" col="7">
+		                       <group colspan="1">
+		                           <field name="picture" nolabel="1" widget="image" class="oe_avatar oe_left" />
+		                       </group>
+		                       <group colspan="2" col="2">
+		                           <field name="name" />
+		                           <field name="resource_id" />
+		                           <field name="company_id" />
+		                       </group>
+		                       <group colspan="2" col="2">
+		                           <field name="first_name" />
+		                           <field name="calendar_id" />
+		                           <field name="is_responsible" />
+		                       </group>
+		                       <group colspan="2" col="2">
+		                           <field name="category_id" />
+		                           <field name="account_id" domain="[('type', 'not in', ('view', 'closed'))]" />
+		                       </group>
+		                   </group>
+		                   <notebook colspan="4">
+		                       <page string="Personal information">
+		                           <group colspan="4" col="9">
+			                           <group colspan="6" col="4">
+			                               <group colspan="4" col="4" string="Personal information" >
+			                                   <group colspan="2" col="2">
+			                                       <field name="address_id" />
+			                                       <field name="email" />
+			                                       <field name="phone" />
+			                                       <field name="account_bank_id" />
+			                                       <field name="place_birth" />
+			                                       <field name="age" />
+			                                   </group>
+			                                   <group colspan="2" col="2">
+			                                       <field name="nationality_id" />
+			                                       <field name="civility_id" />
+			                                       <field name="identity_number" />
+			                                       <field name="passport_number" />
+			                                       <field name="birth_date" />
+			                                   </group>
+			                               </group>
+			                               <group colspan="4" col="4" string="Family status" >
+			                                   <field name="family_situation" />
+			                                   <field name="type_sex" />
+			                                   <field name="children_ids" colspan="4" nolabel="1" >
+			                                       <tree string="Children" editable="bottom" >
+			                                           <field name="name" />
+			                                           <field name="first_name" />
+			                                           <field name="birth_date" />
+			                                           <field name="age" />
+			                                           <field name="comment" />
+			                                       </tree>
+			                                   </field>
+			                               </group>
+			                           </group>
+			                           <group colspan="3" col="2" string="Information in case of problems" >
+			                               <field name="contact_name" />
+			                               <field name="relationship_contact" />
+			                               <field name="contact_phone" />
+			                               <group colspan="3" col="3" >
+				                               <separator string="Specific note" colspan="3" />
+				                               <field name="specific_note_contact" nolabel="1" coslpan="6" />
+			                               </group>
+			                           </group>
+			                        </group>
+		                       </page>
+		                       <page string="HR information">
+		                           <group colspan="4" col="4" string="General information" >
+		                               <field name="entry_date" />
+		                               <field name="release_date" />
+		                               <field name="employee_number" />
+		                               <field name="degree_id" />
+		                               <field name="office_id" />
+		                               <field name="responsible_id" />
+		                               <field name="service_id" />
+		                               <field name="avg_hour" />
+		                               <separator string="HR note" colspan="4" />
+		                               <field name="note_hr" nolabel="1" colspan="4" />
+		                           </group>
+		                       </page>
+		                   </notebook>
+		               </group>
+		               <group colspan="1" col="1" class="op_shortcuts">
+		               </group>
+		           </group>
+				</form>
+			</field>
+		</record>
+		
+		<!-- TREE VIEW Employee -->
+		<record id='view_tree_employee_id' model='ir.ui.view'>
+			<field name="name">view_tree_employee_id</field>
+			<field name="model">employee</field>
+			<field name="arch" type="xml">
+				<tree string="Employees" version="8.0">
+				    <field name="name" />
+	                <field name="account_id" />
+	                <field name="first_name" />
+	                <field name="company_id" />
+	                <field name="resource_id" />
+	                <field name="is_responsible" />
+				</tree>
+			</field>
+		</record>
+		
+		<!-- SEARCH VIEW Employee -->
+		<record id='view_search_employee_id' model='ir.ui.view'>
+			<field name="name">view_search_employee_id</field>
+			<field name="model">employee</field>
+			<field name="arch" type="xml">
+				<search version="8.0">
+				    <field name="name" />
+                    <field name="account_id" />
+                    <field name="first_name" />
+                    <field name="company_id" />
+                    <field name="resource_id" />
+                    <field name="is_responsible" />
+				</search>
+			</field>
+		</record>
+		
+		<!-- ACTION Employee -->
+		<record id="act_employee_id" model="ir.actions.act_window">
+		    <field name="name">Employee</field>
+		    <field name="res_model">employee</field>
+		    <field name="view_type">form</field>
+		    <field name="view_mode">tree,form</field>
+		    <field name="domain">[]</field>
+		    <field name="context">{}</field>
+		    <field name="search_view_id" ref="view_search_employee_id"/>
+		</record>
+		
+		<record id="act_employee_id_tree" model="ir.actions.act_window.view">
+		    <field name="sequence" eval="10"/>
+		    <field name="view_mode">tree</field>
+		    <field name="view_id" ref="view_tree_employee_id"/>
+		    <field name="act_window_id" ref="act_employee_id"/>
+		</record>
+		
+		<record model="ir.actions.act_window.view" id="act_employee_id_form">
+		    <field name="sequence" eval="20"/>
+		    <field name="view_mode">form</field>
+		    <field name="view_id" ref="view_form_employee_id"/>
+		    <field name="act_window_id" ref="act_employee_id"/>
+		</record>
+		
+		<menuitem name="Employee" action="act_employee_id" id="menu_employee_id" parent="menu_human_resource" groups="group_menu_human_resource_user" />
+
+
+        
+        <!-- FORM VIEW Employee children -->
+		<record id='view_form_employee_children_id' model='ir.ui.view'>
+			<field name="name">view_form_employee_children_id</field>
+			<field name="model">employee.children</field>
+			<field name="arch" type="xml">
+				<form string="Employee children" version="8.0">
+					<group colspan="4" col="4" >
+		                <field name="employee_id" />
+	                    <field name="name" />
+	                    <field name="first_name" />
+	                    <field name="birth_date" />
+	                    <field name="age" />
+	                    <field name="comment" />
+		             </group>
+				</form>
+			</field>
+		</record>
+		
+		<!-- TREE VIEW Employee children -->
+		<record id='view_tree_employee_children_id' model='ir.ui.view'>
+			<field name="name">view_tree_employee_children_id</field>
+			<field name="model">employee.children</field>
+			<field name="arch" type="xml">
+				<tree string="Employee childrens" version="8.0">
+				    <field name="employee_id" />
+				    <field name="name" />
+                    <field name="first_name" />
+                    <field name="birth_date" />
+                    <field name="comment" />
+				</tree>
+			</field>
+		</record>
+		
+		<!-- SEARCH VIEW Employee children -->
+		<record id='view_search_employee_children_id' model='ir.ui.view'>
+			<field name="name">view_search_employee_children_id</field>
+			<field name="model">employee.children</field>
+			<field name="arch" type="xml">
+				<search version="8.0">
+				    <field name="employee_id" />
+                    <field name="name" />
+                    <field name="first_name" />
+                    <field name="birth_date" />
+				</search>
+			</field>
+		</record>
+		
+		<!-- ACTION Employee children -->
+		<record id="act_employee_children_id" model="ir.actions.act_window">
+		    <field name="name">Employee children</field>
+		    <field name="res_model">employee.children</field>
+		    <field name="view_type">form</field>
+		    <field name="view_mode">tree,form</field>
+		    <field name="domain">[]</field>
+		    <field name="context">{}</field>
+		    <field name="search_view_id" ref="view_search_employee_children_id"/>
+		</record>
+		
+		<record id="act_employee_children_id_tree" model="ir.actions.act_window.view">
+		    <field name="sequence" eval="10"/>
+		    <field name="view_mode">tree</field>
+		    <field name="view_id" ref="view_tree_employee_children_id"/>
+		    <field name="act_window_id" ref="act_employee_children_id"/>
+		</record>
+		
+		<record model="ir.actions.act_window.view" id="act_employee_children_id_form">
+		    <field name="sequence" eval="20"/>
+		    <field name="view_mode">form</field>
+		    <field name="view_id" ref="view_form_employee_children_id"/>
+		    <field name="act_window_id" ref="act_employee_children_id"/>
+		</record>
+        
+
+		<!-- FORM VIEW Employee degree -->
+		<record id='view_form_employee_degree_id' model='ir.ui.view'>
+			<field name="name">view_form_employee_degree_id</field>
+			<field name="model">employee.degree</field>
+			<field name="arch" type="xml">
+				<form string="Employee degree" version="8.0">
+					<group colspan="4" col="4" >
+		               <field name="name" />
+		            </group>
+				</form>
+			</field>
+		</record>
+		
+		<!-- TREE VIEW Employee degree -->
+		<record id='view_tree_employee_degree_id' model='ir.ui.view'>
+			<field name="name">view_tree_employee_degree_id</field>
+			<field name="model">employee.degree</field>
+			<field name="arch" type="xml">
+				<tree string="Employee degrees" version="8.0">
+				    <field name="name" />
+				</tree>
+			</field>
+		</record>
+		
+		<!-- SEARCH VIEW Employee degree -->
+		<record id='view_search_employee_degree_id' model='ir.ui.view'>
+			<field name="name">view_search_employee_degree_id</field>
+			<field name="model">employee.degree</field>
+			<field name="arch" type="xml">
+				<search version="8.0">
+				    <field name="name" />
+				</search>
+			</field>
+		</record>
+		
+		<!-- ACTION Employee degree -->
+		<record id="act_employee_degree_id" model="ir.actions.act_window">
+		    <field name="name">Employee degree</field>
+		    <field name="res_model">employee.degree</field>
+		    <field name="view_type">form</field>
+		    <field name="view_mode">tree,form</field>
+		    <field name="domain">[]</field>
+		    <field name="context">{}</field>
+		    <field name="search_view_id" ref="view_search_employee_degree_id"/>
+		</record>
+		
+		<record id="act_employee_degree_id_tree" model="ir.actions.act_window.view">
+		    <field name="sequence" eval="10"/>
+		    <field name="view_mode">tree</field>
+		    <field name="view_id" ref="view_tree_employee_degree_id"/>
+		    <field name="act_window_id" ref="act_employee_degree_id"/>
+		</record>
+		
+		<record model="ir.actions.act_window.view" id="act_employee_degree_id_form">
+		    <field name="sequence" eval="20"/>
+		    <field name="view_mode">form</field>
+		    <field name="view_id" ref="view_form_employee_degree_id"/>
+		    <field name="act_window_id" ref="act_employee_degree_id"/>
+		</record>
+		
+		<menuitem name="Employee degree" action="act_employee_degree_id" id="menu_employee_degree_id" parent="menu_employee_config" groups="group_menu_human_resource_config" />
+		
+		
+		
+		<!-- FORM VIEW Employee office -->
+		<record id='view_form_employee_office_id' model='ir.ui.view'>
+			<field name="name">view_form_employee_office_id</field>
+			<field name="model">employee.office</field>
+			<field name="arch" type="xml">
+				<form string="Employee office" version="8.0">
+					<group colspan="4" col="4" >
+		               <field name="code" />
+		               <field name="name" />
+		            </group>
+				</form>
+			</field>
+		</record>
+		
+		<!-- TREE VIEW Employee office -->
+		<record id='view_tree_employee_office_id' model='ir.ui.view'>
+			<field name="name">view_tree_employee_office_id</field>
+			<field name="model">employee.office</field>
+			<field name="arch" type="xml">
+				<tree string="Employee offices" version="8.0">
+				    <field name="code" />
+		            <field name="name" />
+				</tree>
+			</field>
+		</record>
+		
+		<!-- SEARCH VIEW Employee office -->
+		<record id='view_search_employee_office_id' model='ir.ui.view'>
+			<field name="name">view_search_employee_office_id</field>
+			<field name="model">employee.office</field>
+			<field name="arch" type="xml">
+				<search version="8.0">
+				    <field name="code" />
+		            <field name="name" />
+				</search>
+			</field>
+		</record>
+		
+		<!-- ACTION Employee office -->
+		<record id="act_employee_office_id" model="ir.actions.act_window">
+		    <field name="name">Employee office</field>
+		    <field name="res_model">employee.office</field>
+		    <field name="view_type">form</field>
+		    <field name="view_mode">tree,form</field>
+		    <field name="domain">[]</field>
+		    <field name="context">{}</field>
+		    <field name="search_view_id" ref="view_search_employee_office_id"/>
+		</record>
+		
+		<record id="act_employee_office_id_tree" model="ir.actions.act_window.view">
+		    <field name="sequence" eval="10"/>
+		    <field name="view_mode">tree</field>
+		    <field name="view_id" ref="view_tree_employee_office_id"/>
+		    <field name="act_window_id" ref="act_employee_office_id"/>
+		</record>
+		
+		<record model="ir.actions.act_window.view" id="act_employee_office_id_form">
+		    <field name="sequence" eval="20"/>
+		    <field name="view_mode">form</field>
+		    <field name="view_id" ref="view_form_employee_office_id"/>
+		    <field name="act_window_id" ref="act_employee_office_id"/>
+		</record>
+        
+        <menuitem name="Employee office" action="act_employee_office_id" id="menu_employee_office_id" parent="menu_employee_config" groups="group_menu_human_resource_config" />
+        
+
+		<!-- FORM VIEW Employee service -->
+		<record id='view_form_employee_service_id' model='ir.ui.view'>
+			<field name="name">view_form_employee_service_id</field>
+			<field name="model">employee.service</field>
+			<field name="arch" type="xml">
+				<form string="Employee service" version="8.0">
+					<group colspan="4" col="4" >
+                       <field name="parent_id" />
+                       <field name="name" />
+                    </group>
+				</form>
+			</field>
+		</record>
+		
+		<!-- TREE VIEW Employee service -->
+		<record id='view_tree_employee_service_id' model='ir.ui.view'>
+			<field name="name">view_tree_employee_service_id</field>
+			<field name="model">employee.service</field>
+			<field name="arch" type="xml">
+				<tree string="Employee services" version="8.0">
+				    <field name="parent_id" />
+                    <field name="name" />
+				</tree>
+			</field>
+		</record>
+		
+		<!-- SEARCH VIEW Employee service -->
+		<record id='view_search_employee_service_id' model='ir.ui.view'>
+			<field name="name">view_search_employee_service_id</field>
+			<field name="model">employee.service</field>
+			<field name="arch" type="xml">
+				<search version="8.0">
+				    <field name="parent_id" />
+                    <field name="name" />
+				</search>
+			</field>
+		</record>
+		
+		<!-- ACTION Employee service -->
+		<record id="act_employee_service_id" model="ir.actions.act_window">
+		    <field name="name">Employee service</field>
+		    <field name="res_model">employee.service</field>
+		    <field name="view_type">form</field>
+		    <field name="view_mode">tree,form</field>
+		    <field name="domain">[]</field>
+		    <field name="context">{}</field>
+		    <field name="search_view_id" ref="view_search_employee_service_id"/>
+		</record>
+		
+		<record id="act_employee_service_id_tree" model="ir.actions.act_window.view">
+		    <field name="sequence" eval="10"/>
+		    <field name="view_mode">tree</field>
+		    <field name="view_id" ref="view_tree_employee_service_id"/>
+		    <field name="act_window_id" ref="act_employee_service_id"/>
+		</record>
+		
+		<record model="ir.actions.act_window.view" id="act_employee_service_id_form">
+		    <field name="sequence" eval="20"/>
+		    <field name="view_mode">form</field>
+		    <field name="view_id" ref="view_form_employee_service_id"/>
+		    <field name="act_window_id" ref="act_employee_service_id"/>
+		</record>
+		
+		<menuitem name="Employee service" action="act_employee_service_id" id="menu_employee_service_id" parent="menu_employee_config" groups="group_menu_human_resource_config" />
+		
+		<!-- FORM VIEW Employee category -->
+		<record id='view_form_employee_category' model='ir.ui.view'>
+			<field name="name">view_form_employee_category</field>
+			<field name="model">employee.category</field>
+			<field name="arch" type="xml">
+				<form string="Employee categories" version="8.0">
+					<group colspan="4" col="4" >
+                       <field name="name" />
+                       <label colspan="2" string=""/>
+                       <group colspan="4" col="4" string="Employee's list">
+	                       <field name="employee_ids" colspan="4" nolabel="1"/>
+                       </group>
+                    </group>
+				</form>
+			</field>
+		</record>
+		
+		<!-- TREE VIEW Employee category -->
+		<record id='view_tree_employee_category' model='ir.ui.view'>
+			<field name="name">view_tree_employee_category</field>
+			<field name="model">employee.category</field>
+			<field name="arch" type="xml">
+				<tree string="Employee categories" version="8.0">
+                    <field name="name" />
+				</tree>
+			</field>
+		</record>
+		
+		<!-- SEARCH VIEW Employee category -->
+		<record id='view_search_employee_category' model='ir.ui.view'>
+			<field name="name">view_search_employee_category</field>
+			<field name="model">employee.category</field>
+			<field name="arch" type="xml">
+				<search version="8.0">
+                    <field name="name" />
+				</search>
+			</field>
+		</record>
+		
+		<!-- ACTION Employee service -->
+		<record id="act_employee_category" model="ir.actions.act_window">
+		    <field name="name">Employee category</field>
+		    <field name="res_model">employee.category</field>
+		    <field name="view_type">form</field>
+		    <field name="view_mode">tree,form</field>
+		    <field name="domain">[]</field>
+		    <field name="context">{}</field>
+		    <field name="search_view_id" ref="view_search_employee_category"/>
+		</record>
+		
+		<menuitem name="Employee category" action="act_employee_category" id="menu_employee_category" parent="menu_employee_config" groups="group_menu_human_resource_config" />
+		
+    </data>
+</openerp>

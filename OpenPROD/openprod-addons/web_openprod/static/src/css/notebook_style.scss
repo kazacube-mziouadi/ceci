@@ -1,0 +1,60 @@
+/*
+	##############################################################################
+	#
+	#    OpenERP, Open Source Management Solution
+	#    Copyright (C) 2015 Objectif-PI ([http://www.objectif-pi.com]).
+	#       Damien CRIER [damien.crier@objectif-pi.com]
+	#
+	#    This program is free software: you can redistribute it and/or modify
+	#    it under the terms of the GNU Affero General Public License as
+	#    published by the Free Software Foundation, either version 3 of the
+	#    License, or (at your option) any later version.
+	#
+	#    This program is distributed in the hope that it will be useful,
+	#    but WITHOUT ANY WARRANTY; without even the implied warranty of
+	#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	#    GNU Affero General Public License for more details.
+	#
+	#    You should have received a copy of the GNU Affero General Public License
+	#    along with this program.  If not, see [http://www.gnu.org/licenses/].
+	#
+	############################################################################## 
+*/
+
+
+$width: 4px;
+
+$bg-color: whitesmoke;
+
+$bg-color-active: white;
+
+
+$text-color: #404040;
+$text-color-active: #404040;
+
+
+.oe_notebook {
+	border-color: $bg-color !important;
+	border-width: 0 0 $width 0 !important;
+}
+
+.ui-tabs .ui-tabs-nav li a {
+	margin-bottom: -$width !important;
+}
+
+.openerp .oe_notebook > li > a {
+	background-color: $bg-color ;
+	color: $text-color;
+/* 	color: gray; */
+}
+
+.ui-tabs .ui-tabs-nav li.ui-tabs-active {
+	background-color: $bg-color-active !important;
+}
+
+.ui-tabs .ui-tabs-nav li.ui-tabs-active > a {
+/* 	font-variant: small-caps; */
+	font-weight: 700 !important;
+	color: $text-color-active;
+/* 	color: gray; */
+}

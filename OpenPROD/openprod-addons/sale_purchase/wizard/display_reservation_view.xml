@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+	
+		<record model="ir.ui.view" id="view_form_display_reservation">
+			<field name="name">view_form_display_reservation</field>
+			<field name="model">display.reservation</field>
+			<field name="type">form</field>
+			<field name="arch" type="xml">
+				<form string="Reservations display">
+					<group colspan="4" col="6">
+						<field name="product_id"/>
+						<field name="stock"/>
+						<field name="virtual_stock"/>
+					</group>
+					<group colspan="4" col="6">
+						<field name="display_reservation" invisible="1"/>
+						<field name="from_default" invisible="1"/>
+						<button name="update_product_id" string="Display the reservations" type="object" class="oe_highlight" attrs="{'invisible': [('display_reservation', '=', True)]}"/>
+					</group>
+					<notebook colspan="4">						
+						<page string="Stock moves" attrs="{'invisible': [('display_reservation', '=', False)]}" name="stock_move_page">
+							<group colspan="4" col="4" string="Stock moves">
+								<field name="stock_move_ids" nolabel="1" colspan="4">
+									<tree colors="red:qty_in_stock&lt;0">
+										<field name="date"/>
+										<field name="qty"/>
+										<field name="uom_id"/>
+										<field name="type"/>
+										<field name="purchase_order_id"/>
+										<field name="sale_order_id"/>
+										<field name="qty_in_stock"/>
+										<field name="state"/>
+									</tree>
+								</field>
+							</group>
+						</page>
+ 						<page string="Stocks view" attrs="{'invisible': [('display_reservation', '=', False)]}">
+							<field name="graph_stock_move_ids" mode="highstock" nolabel="1">
+								<highstock string="View Name" >
+									<field name="date" usage="x" label="Date"/>
+					                <field name="uom_qty" label="Qty" usage="y"/>
+					                <field name="product_id" usage="title" fields_to_read="['uom_id','high_class_id']"/>
+					                <field name="uom_id"/>
+				                </highstock>
+							</field>
+						</page>
+						<page string="Consommation" attrs="{'invisible': [('display_reservation', '=', False)]}">
+							<group colspan="4" col="4">
+								<group colspan="2" col="2" string="Weeks">
+									<field name="week_move_ids" nolabel="1" colspan="2">
+										<tree>
+											<field name="year"/>
+											<field name="week"/>
+											<field name="qty"/>
+										</tree>
+									</field>
+								</group>
+								<group colspan="2" col="2" string="Months">
+									<field name="month_move_ids" nolabel="1" colspan="2">
+										<tree>
+											<field name="year"/>
+											<field name="month"/>
+											<field name="qty"/>
+										</tree>
+									</field>
+								</group>
+							</group>
+						</page>
+					</notebook>
+					<footer>
+						<button string="Quit" class="oe_link" special="cancel" />
+					</footer>
+				</form>
+			</field>
+		</record>
+
+		<record model="ir.actions.act_window" id="action_display_reservation">
+			<field name="name">Display reservation</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="res_model">display.reservation</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">form</field>
+			<field name="target">new</field>
+		</record>
+		
+		
+		<!-- FORM VIEW Sale order -->
+		<record id='view_reservation_sale_order' model='ir.ui.view'>
+			<field name="name">view_reservation_sale_order</field>
+			<field name="model">sale.order</field>
+			<field name="priority" eval="1100" />
+			<field name="inherit_id" ref="sale.view_form_sale_order" />
+			<field name="arch" type="xml">
+				<xpath expr="//field[@name='order_line_ids']//form//button[@name='show_sale_line_stock_move']" position="after">
+	    			<button name="%(action_display_reservation)d" string="Display reservations" type="action" context="{'reservation_product_id': product_id}" icon="fa-area-chart" class="oe_inline oe_stat_button"/>
+    			</xpath>
+			</field>
+		</record>
+		
+		<!-- FORM VIEW Sale order line -->
+		<record id='view_reservation_sale_order_line' model='ir.ui.view'>
+			<field name="name">view_reservation_sale_order_line</field>
+			<field name="model">sale.order.line</field>
+			<field name="priority" eval="1100" />
+			<field name="inherit_id" ref="sale.view_form_sale_order_line" />
+			<field name="arch" type="xml">
+				<xpath expr="//separator[@name='separator_analysis_menu']" position="after">
+	    			<button name="%(action_display_reservation)d" string="Display reservations" type="action" context="{'reservation_product_id': product_id}" icon="fa-area-chart" class="oe_inline oe_stat_button"/>
+    			</xpath>
+			</field>
+		</record>
+		
+		
+		<!-- FORM VIEW Purchase order -->
+		<record id='view_reservation_purchase_order' model='ir.ui.view'>
+			<field name="name">view_reservation_purchase_order</field>
+			<field name="model">purchase.order</field>
+			<field name="priority" eval="1100" />
+			<field name="inherit_id" ref="purchase.view_form_purchase_order" />
+			<field name="arch" type="xml">
+				<xpath expr="//field[@name='purchase_order_line_ids']//form//button[@name='show_purchase_line_stock_move']" position="after">
+	    			<button name="%(action_display_reservation)d" string="Display reservations" type="action" context="{'reservation_product_id': product_id}" icon="fa-area-chart" class="oe_inline oe_stat_button"/>
+    			</xpath>
+			</field>
+		</record>
+		
+		<!-- FORM VIEW Purchase order line -->
+		<record id='view_reservation_purchase_order_line' model='ir.ui.view'>
+			<field name="name">view_reservation_purchase_order_line</field>
+			<field name="model">purchase.order.line</field>
+			<field name="priority" eval="1100" />
+			<field name="inherit_id" ref="purchase.view_form_purchase_order_line" />
+			<field name="arch" type="xml">
+				<xpath expr="//separator[@name='separator_analysis_menu']" position="after">
+	    			<button name="%(action_display_reservation)d" string="Display reservations" type="action" context="{'reservation_product_id': product_id}" icon="fa-area-chart" class="oe_inline oe_stat_button"/>
+    			</xpath>
+			</field>
+		</record>
+		
+		
+		<!-- FORM VIEW Product -->
+		<record id='view_reservation_product' model='ir.ui.view'>
+			<field name="name">view_reservation_product</field>
+			<field name="model">product.product</field>
+			<field name="priority" eval="1100" />
+			<field name="inherit_id" ref="stock.view_form_product" />
+			<field name="arch" type="xml">
+				<xpath expr="//button[@name='show_stock_move']" position="after">
+	    			<button name="%(action_display_reservation)d" string="Display reservations" type="action" context="{'reservation_product_id': id}" icon="fa-area-chart" class="oe_inline oe_stat_button" attrs="{'invisible': [('type', '=', 'article')]}" />
+    			</xpath>
+			</field>
+		</record>
+
+	</data>
+</openerp>

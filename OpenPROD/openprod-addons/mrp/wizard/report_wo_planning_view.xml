@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+		<!-- FORM VIEW Wizard Report WO Planning -->
+		<record id='view_form_report_wo_planning_id' model='ir.ui.view'>
+			<field name="name">view_form_report_wo_planning_id</field>
+			<field name="model">report.wo.planning</field>
+			<field name="arch" type="xml">
+				<form string="Wizard Report WO Planning" version="8.0">
+					<group colspan="4" col="4" >
+						<field name="week" />
+						<field name="year" noformat="1" />
+		                <field name="date_planned" />
+		                <field name="area_id" />
+		                <field name="resource_id"/>
+					</group>
+					<footer>
+						<button name="action_validate" string="OK" type="object" class="oe_highlight" />
+						or
+						<button string="Cancel" class="oe_link" special="cancel" />
+					</footer>
+				</form>
+			</field>
+		</record>
+		
+		<!-- ACTION Wizard Report WO Planning -->
+		<record id="act_report_wo_planning_id" model="ir.actions.act_window">
+		    <field name="name">Wizard Report WO Planning</field>
+		    <field name="res_model">report.wo.planning</field>
+		    <field name="view_type">form</field>
+		    <field name="view_mode">form</field>
+		    <field name="domain">[]</field>
+		    <field name="context">{}</field>
+		    <field name="target">new</field>
+		</record>
+		
+	</data>
+</openerp>

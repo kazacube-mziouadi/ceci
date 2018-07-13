@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+		<!-- FORM VIEW Reopen picking -->
+		<record id='view_form_reopen_picking' model='ir.ui.view'>
+			<field name="name">reopen_picking</field>
+			<field name="model">stock.reopen.picking</field>
+			<field name="arch" type="xml">
+				<form string="Partial picking" version="8.0">
+					<group>
+						<field name="keep_move_dates" />
+					</group>
+					<footer>
+						<button name="reopen" string="OK" type="object" class="oe_highlight" />
+						or
+						<button string="Cancel" class="oe_link" special="cancel" />
+					</footer>
+				</form>
+			</field>
+		</record>
+
+		<!-- ACTION Reopen picking -->
+		<record id="act_reopen_picking" model="ir.actions.act_window">
+			<field name="name">Reopen picking</field>
+			<field name="res_model">stock.reopen.picking</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">form</field>
+			<field name="target">new</field>
+		</record>
+	</data>
+</openerp>

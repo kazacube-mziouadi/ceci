@@ -1,0 +1,455 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* characteristics
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 9.0c\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-05-24 12:56+0000\n"
+"PO-Revision-Date: 2017-05-24 12:56+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: characteristics
+#: model:ir.model.fields,field_description:characteristics.field_characteristic_type_active
+msgid "Active"
+msgstr "Actif"
+
+#. module: characteristics
+#: model:ir.ui.view,arch_db:characteristics.view_form_characteristic_type
+msgid "Analysis"
+msgstr "Analyse"
+
+#. module: characteristics
+#: code:addons/characteristics/wizard/search_characteristic.py:190
+#, python-format
+msgid "Back"
+msgstr "Précédent"
+
+#. module: characteristics
+#: model:ir.ui.view,arch_db:characteristics.view_form_characteristic_type
+msgid "Categories"
+msgstr "Catégories"
+
+#. module: characteristics
+#: model:ir.model.fields,field_description:characteristics.field_characteristic_category_id
+#: model:ir.model.fields,field_description:characteristics.field_characteristic_parent_uom_category_id
+#: model:ir.model.fields,field_description:characteristics.field_characteristics_categories_category_id
+#: model:ir.model.fields,field_description:characteristics.field_search_characteristics_select_category_category_id
+msgid "Category"
+msgstr "Catégorie"
+
+#. module: characteristics
+#: model:ir.ui.menu,name:characteristics.menu_characteristic_type
+#: model:ir.ui.view,arch_db:characteristics.view_form_characteristic_type
+msgid "Characteristic Type"
+msgstr "Type de Caractéristique "
+
+#. module: characteristics
+#: model:ir.ui.view,arch_db:characteristics.view_tree_characteristic_type
+msgid "Characteristic Types"
+msgstr "Types de caractéristiques"
+
+#. module: characteristics
+#: model:ir.model.fields,field_description:characteristics.field_product_category_characteristic_category_ids
+msgid "Characteristic category ids"
+msgstr "Characteristic category ids"
+
+#. module: characteristics
+#: model:ir.model.fields,field_description:characteristics.field_characteristic_characteristic_format
+#: model:ir.model.fields,field_description:characteristics.field_characteristic_type_format
+#: model:ir.model.fields,field_description:characteristics.field_characteristics_categories_type_format
+msgid "Characteristic format"
+msgstr "Format de la caractéristique"
+
+#. module: characteristics
+#: model:ir.actions.act_window,name:characteristics.act_characteristic_type
+msgid "Characteristic type"
+msgstr "Characteristic type"
+
+#. module: characteristics
+#: model:ir.model,name:characteristics.model_characteristic_value
+#: model:ir.ui.view,arch_db:characteristics.view_form_characteristic_value
+msgid "Characteristic value"
+msgstr "Valeur de Caractéristique"
+
+#. module: characteristics
+#: model:ir.model.fields,field_description:characteristics.field_product_product_characteristics_ids
+#: model:ir.model.fields,field_description:characteristics.field_stock_label_characteristics_ids
+#: model:ir.ui.view,arch_db:characteristics.product_category_form_view
+#: model:ir.ui.view,arch_db:characteristics.view_form_printer_label
+#: model:ir.ui.view,arch_db:characteristics.view_form_product_account
+msgid "Characteristics"
+msgstr "Caractéristiques"
+
+#. module: characteristics
+#: code:addons/characteristics/product.py:72
+#, python-format
+msgid "Characteristics may have changed due to the change of category"
+msgstr "Characteristics may have changed due to the change of category"
+
+#. module: characteristics
+#: code:addons/characteristics/wizard/search_characteristic.py:87
+#, python-format
+msgid "Compute"
+msgstr "Calculer"
+
+#. module: characteristics
+#: model:ir.model.fields,field_description:characteristics.field_change_product_uom_copy_characteristics
+msgid "Copy characteristics"
+msgstr "Copier les caractéristiques"
+
+#. module: characteristics
+#: code:addons/characteristics/wizard/search_characteristic.py:88
+#: model:ir.model.fields,field_description:characteristics.field_search_characteristics_result_count
+#, python-format
+msgid "Count"
+msgstr "Compte"
+
+#. module: characteristics
+#: model:ir.model.fields,field_description:characteristics.field_characteristic_create_uid
+#: model:ir.model.fields,field_description:characteristics.field_characteristic_type_create_uid
+#: model:ir.model.fields,field_description:characteristics.field_characteristic_value_create_uid
+#: model:ir.model.fields,field_description:characteristics.field_characteristics_categories_create_uid
+#: model:ir.model.fields,field_description:characteristics.field_search_characteristics_create_uid
+#: model:ir.model.fields,field_description:characteristics.field_search_characteristics_select_category_create_uid
+#: model:ir.model.fields,field_description:characteristics.field_search_select_characteristic_category_create_uid
+msgid "Created by"
+msgstr "Créé par"
+
+#. module: characteristics
+#: model:ir.model.fields,field_description:characteristics.field_characteristic_create_date
+#: model:ir.model.fields,field_description:characteristics.field_characteristic_type_create_date
+#: model:ir.model.fields,field_description:characteristics.field_characteristic_value_create_date
+#: model:ir.model.fields,field_description:characteristics.field_characteristics_categories_create_date
+#: model:ir.model.fields,field_description:characteristics.field_search_characteristics_create_date
+#: model:ir.model.fields,field_description:characteristics.field_search_characteristics_select_category_create_date
+#: model:ir.model.fields,field_description:characteristics.field_search_select_characteristic_category_create_date
+msgid "Created on"
+msgstr "Créé le"
+
+#. module: characteristics
+#: model:ir.model.fields,field_description:characteristics.field_characteristic_display_name
+#: model:ir.model.fields,field_description:characteristics.field_characteristic_type_display_name
+#: model:ir.model.fields,field_description:characteristics.field_characteristic_value_display_name
+#: model:ir.model.fields,field_description:characteristics.field_characteristics_categories_display_name
+#: model:ir.model.fields,field_description:characteristics.field_search_characteristics_display_name
+#: model:ir.model.fields,field_description:characteristics.field_search_characteristics_select_category_display_name
+#: model:ir.model.fields,field_description:characteristics.field_search_select_characteristic_category_display_name
+msgid "Display Name"
+msgstr "Nom"
+
+#. module: characteristics
+#: model:ir.model.fields,field_description:characteristics.field_search_characteristics_dynamic_vals
+msgid "Dynamic vals"
+msgstr "Dynamic vals"
+
+#. module: characteristics
+#: model:ir.model.fields,field_description:characteristics.field_product_category_characteristics_editable
+#: model:ir.model.fields,field_description:characteristics.field_product_product_characteristics_editable
+msgid "Editable"
+msgstr "Éditable"
+
+#. module: characteristics
+#: code:addons/characteristics/characteristics.py:122
+#, python-format
+msgid "Error"
+msgstr "Erreur"
+
+#. module: characteristics
+#: model:ir.ui.view,arch_db:characteristics.view_search_characteristic_type
+msgid "Format"
+msgstr "Format"
+
+#. module: characteristics
+#: model:ir.model.fields,field_description:characteristics.field_characteristic_id
+#: model:ir.model.fields,field_description:characteristics.field_characteristic_type_id
+#: model:ir.model.fields,field_description:characteristics.field_characteristic_value_id
+#: model:ir.model.fields,field_description:characteristics.field_characteristics_categories_id
+#: model:ir.model.fields,field_description:characteristics.field_search_characteristics_id
+#: model:ir.model.fields,field_description:characteristics.field_search_characteristics_select_category_id
+#: model:ir.model.fields,field_description:characteristics.field_search_select_characteristic_category_id
+msgid "ID"
+msgstr "ID"
+
+#. module: characteristics
+#: code:addons/characteristics/characteristics.py:122
+#, python-format
+msgid "Invalid format for numeric value"
+msgstr "Format invalide pour une valeur numérique"
+
+#. module: characteristics
+#: model:ir.model.fields,field_description:characteristics.field_characteristic_is_created
+msgid "Is created"
+msgstr "Déjà créé"
+
+#. module: characteristics
+#: model:ir.model,name:characteristics.model_stock_label
+#: model:ir.model.fields,field_description:characteristics.field_characteristic_label_id
+msgid "Label"
+msgstr "Étiquette"
+
+#. module: characteristics
+#: model:ir.model.fields,field_description:characteristics.field_characteristic___last_update
+#: model:ir.model.fields,field_description:characteristics.field_characteristic_type___last_update
+#: model:ir.model.fields,field_description:characteristics.field_characteristic_value___last_update
+#: model:ir.model.fields,field_description:characteristics.field_characteristics_categories___last_update
+#: model:ir.model.fields,field_description:characteristics.field_search_characteristics___last_update
+#: model:ir.model.fields,field_description:characteristics.field_search_characteristics_select_category___last_update
+#: model:ir.model.fields,field_description:characteristics.field_search_select_characteristic_category___last_update
+msgid "Last Modified on"
+msgstr "Last Modified on"
+
+#. module: characteristics
+#: model:ir.model.fields,field_description:characteristics.field_characteristic_type_write_uid
+#: model:ir.model.fields,field_description:characteristics.field_characteristic_value_write_uid
+#: model:ir.model.fields,field_description:characteristics.field_characteristic_write_uid
+#: model:ir.model.fields,field_description:characteristics.field_characteristics_categories_write_uid
+#: model:ir.model.fields,field_description:characteristics.field_search_characteristics_select_category_write_uid
+#: model:ir.model.fields,field_description:characteristics.field_search_characteristics_write_uid
+#: model:ir.model.fields,field_description:characteristics.field_search_select_characteristic_category_write_uid
+msgid "Last Updated by"
+msgstr "Last Updated by"
+
+#. module: characteristics
+#: model:ir.model.fields,field_description:characteristics.field_characteristic_type_write_date
+#: model:ir.model.fields,field_description:characteristics.field_characteristic_value_write_date
+#: model:ir.model.fields,field_description:characteristics.field_characteristic_write_date
+#: model:ir.model.fields,field_description:characteristics.field_characteristics_categories_write_date
+#: model:ir.model.fields,field_description:characteristics.field_search_characteristics_select_category_write_date
+#: model:ir.model.fields,field_description:characteristics.field_search_characteristics_write_date
+#: model:ir.model.fields,field_description:characteristics.field_search_select_characteristic_category_write_date
+msgid "Last Updated on"
+msgstr "Last Updated on"
+
+#. module: characteristics
+#: code:addons/characteristics/wizard/search_characteristic.py:13
+#, python-format
+msgid "Like"
+msgstr "Contient"
+
+#. module: characteristics
+#: code:addons/characteristics/wizard/search_characteristic.py:182
+#, python-format
+msgid "List"
+msgstr "Liste"
+
+#. module: characteristics
+#: model:ir.model.fields,field_description:characteristics.field_characteristic_model_id
+msgid "Model"
+msgstr "Modèle"
+
+#. module: characteristics
+#: model:ir.model,name:characteristics.model_change_product_uom
+msgid "Modification of the product uom"
+msgstr "Modification de l'udm du produit"
+
+#. module: characteristics
+#: model:ir.model.fields,field_description:characteristics.field_characteristic_name
+#: model:ir.model.fields,field_description:characteristics.field_characteristic_type_name
+msgid "Name"
+msgstr "Nom"
+
+#. module: characteristics
+#: code:addons/characteristics/wizard/search_characteristic.py:13
+#, python-format
+msgid "Not Like"
+msgstr "Ne contient pas"
+
+#. module: characteristics
+#: code:addons/characteristics/wizard/search_characteristic.py:85
+#, python-format
+msgid "Number of results"
+msgstr "Nombre de résultats"
+
+#. module: characteristics
+#: code:addons/characteristics/wizard/search_characteristic.py:187
+#, python-format
+msgid "OK"
+msgstr "OK"
+
+#. module: characteristics
+#: code:addons/characteristics/wizard/search_characteristic.py:100
+#, python-format
+msgid "Operator"
+msgstr "Opérateur"
+
+#. module: characteristics
+#: code:addons/characteristics/wizard/search_characteristic.py:155
+#: code:addons/characteristics/wizard/search_characteristic.py:167
+#, python-format
+msgid "Operator %s"
+msgstr "Opérateur %s"
+
+#. module: characteristics
+#: code:addons/characteristics/wizard/search_characteristic.py:189
+#, python-format
+msgid "Or"
+msgstr "Ou"
+
+#. module: characteristics
+#: model:ir.ui.view,arch_db:characteristics.view_form_printer_label
+#: model:ir.ui.view,arch_db:characteristics.view_form_product_account
+msgid "Parent UoM"
+msgstr "UdM du parent"
+
+#. module: characteristics
+#: model:ir.model,name:characteristics.model_product_product
+#: model:ir.model.fields,field_description:characteristics.field_characteristic_product_id
+msgid "Product"
+msgstr "Produit"
+
+#. module: characteristics
+#: model:ir.model,name:characteristics.model_product_category
+msgid "Product Category"
+msgstr "Catégorie de produit"
+
+#. module: characteristics
+#: model:ir.ui.view,arch_db:characteristics.view_form_characteristic_type
+msgid "Products"
+msgstr "Produits"
+
+#. module: characteristics
+#: model:ir.actions.act_window,name:characteristics.act_related_categories
+msgid "Related Categories"
+msgstr "Catégories liées"
+
+#. module: characteristics
+#: model:ir.actions.act_window,name:characteristics.act_related_products
+msgid "Related Products"
+msgstr "Produits liés"
+
+#. module: characteristics
+#: model:ir.model,name:characteristics.model_characteristics_categories
+msgid "Relation table between characteristics and category"
+msgstr "Relation table between characteristics and category"
+
+#. module: characteristics
+#: code:addons/characteristics/wizard/search_characteristic.py:135
+#, python-format
+msgid "Search"
+msgstr "Recherche"
+
+#. module: characteristics
+#: model:ir.actions.act_window,name:characteristics.act_search_characteristics
+#: model:ir.actions.act_window,name:characteristics.act_search_characteristics_bar
+#: model:ir.actions.act_window,name:characteristics.act_search_characteristics_label
+#: model:ir.ui.view,arch_db:characteristics.view_form_search_characteristics
+msgid "Search characteristics"
+msgstr "Recherche"
+
+#. module: characteristics
+#: model:ir.ui.view,arch_db:characteristics.view_form_characteristics_select_category
+#: model:ir.ui.view,arch_db:characteristics.view_form_search_select_characteristic_category
+msgid "Search characteristics select category"
+msgstr "Selection de la catégorie"
+
+#. module: characteristics
+#: model:ir.ui.menu,name:characteristics.menu_search_characteristics
+msgid "Search product"
+msgstr "Recherche de produit"
+
+#. module: characteristics
+#: code:addons/characteristics/wizard/search_characteristic.py:71
+#, python-format
+msgid "Search products"
+msgstr "Recherche de produits"
+
+#. module: characteristics
+#: model:ir.model.fields,field_description:characteristics.field_characteristic_characteristic_type_id
+#: model:ir.model.fields,field_description:characteristics.field_characteristic_value_type_id
+#: model:ir.model.fields,field_description:characteristics.field_characteristics_categories_type_id
+#: model:ir.model.fields,field_description:characteristics.field_search_select_characteristic_category_characteristic_category_ids
+msgid "Type"
+msgstr "Type"
+
+#. module: characteristics
+#: model:ir.model,name:characteristics.model_characteristic_type
+msgid "Type of characteristic"
+msgstr "Type de caractéristique"
+
+#. module: characteristics
+#: code:addons/characteristics/wizard/search_characteristic.py:149
+#: model:ir.model.fields,field_description:characteristics.field_characteristic_parent_uom_id
+#: model:ir.model.fields,field_description:characteristics.field_characteristic_type_uom_id
+#: model:ir.model.fields,field_description:characteristics.field_characteristic_uom_id
+#, python-format
+msgid "UoM"
+msgstr "UdM"
+
+#. module: characteristics
+#: model:ir.ui.view,arch_db:characteristics.view_form_characteristics_select_category
+#: model:ir.ui.view,arch_db:characteristics.view_form_search_select_characteristic_category
+msgid "Validate"
+msgstr "Valider"
+
+#. module: characteristics
+#: model:ir.model.fields,field_description:characteristics.field_characteristic_parent_value
+#: model:ir.model.fields,field_description:characteristics.field_characteristic_uom_value
+#: model:ir.model.fields,field_description:characteristics.field_characteristic_value
+#: model:ir.model.fields,field_description:characteristics.field_characteristic_value_name
+#: model:ir.model.fields,field_description:characteristics.field_characteristics_categories_default_value
+msgid "Value"
+msgstr "Valeur"
+
+#. module: characteristics
+#: code:addons/characteristics/wizard/search_characteristic.py:159
+#: code:addons/characteristics/wizard/search_characteristic.py:171
+#, python-format
+msgid "Value %s"
+msgstr "Valeur %s"
+
+#. module: characteristics
+#: code:addons/characteristics/characteristics.py:173
+#, python-format
+msgid "Value is not numeric"
+msgstr "La valeur n'est pas un nombre"
+
+#. module: characteristics
+#: model:ir.model.fields,field_description:characteristics.field_characteristic_type_value_ids
+#: model:ir.ui.view,arch_db:characteristics.view_form_characteristic_type
+msgid "Values"
+msgstr "Valeurs"
+
+#. module: characteristics
+#: code:addons/characteristics/product.py:72
+#, python-format
+msgid "Warning"
+msgstr "Attention"
+
+#. module: characteristics
+#: code:addons/characteristics/characteristics.py:47
+#, python-format
+msgid "You can't have the same characteristic type twice"
+msgstr "Vous ne pouvez pas avoir deux fois le même type de caractéristique"
+
+#. module: characteristics
+#: model:ir.model,name:characteristics.model_characteristic
+msgid "characteristic"
+msgstr "Caractéristique"
+
+#. module: characteristics
+#: model:ir.model,name:characteristics.model_search_characteristics
+msgid "search.characteristics"
+msgstr "search.characteristics"
+
+#. module: characteristics
+#: model:ir.model,name:characteristics.model_search_characteristics_line
+msgid "search.characteristics.line"
+msgstr "search.characteristics.line"
+
+#. module: characteristics
+#: model:ir.model,name:characteristics.model_search_characteristics_select_category
+msgid "search.characteristics.select.category"
+msgstr "search.characteristics.select.category"
+
+#. module: characteristics
+#: model:ir.model,name:characteristics.model_search_select_characteristic_category
+msgid "search.select.characteristic.category"
+msgstr "search.select.characteristic.category"
+

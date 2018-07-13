@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+		
+		<!-- FORM VIEW Create quick purchase -->
+		<record model="ir.ui.view" id="view_form_create_quick_purchase">
+			<field name="name">view_form_create_quick_purchase</field>
+			<field name="model">create.quick.purchase</field>
+			<field name="type">form</field>
+			<field name="arch" type="xml">
+				<form string="Create quick purchase">
+					<group colspan="4" col="4" string="Enter the values">
+						<group colspan="2" col="4">
+							<field name="product_id" domain="[('purchase_ok', '=', True)]" colspan="4"/>
+							<field name="quantity"/>
+							<field name="uom_id"/>
+						</group>
+						<group colspan="2" col="2">
+							<field name="partner_id" domain="product_id and[('supplierinfo_product_search', '=', product_id)] or [('id', '=', False)]" required="1" />
+							<field name="date"/>
+						</group>
+					</group>
+					<footer>
+						<button name="create_quick_purchase" string="Create purchase" type="object" class="oe_highlight" />
+						or
+						<button string="Cancel" class="oe_link" special="cancel" />
+					</footer>
+				</form>
+			</field>
+		</record>
+		
+		<!-- ACTION Create quick purchase -->
+		<record model="ir.actions.act_window" id="action_create_quick_purchase">
+			<field name="name">Create quick purchase</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="res_model">create.quick.purchase</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">form</field>
+			<field name="target">new</field>
+		</record>
+		
+	</data>
+</openerp>

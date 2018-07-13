@@ -1,0 +1,267 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* gmao
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 9.0c\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-09-22 07:39+0000\n"
+"PO-Revision-Date: 2016-09-22 07:39+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: gmao
+#: model:ir.ui.view,arch_db:gmao.view_form_intervention_gmao_id
+msgid "Actions"
+msgstr "Actions"
+
+#. module: gmao
+#: model:ir.ui.menu,name:gmao.submenu_gmao_analisys_id
+#: model:ir.ui.view,arch_db:gmao.view_form_intervention_gmao_id
+msgid "Analisys"
+msgstr "Analyses"
+
+#. module: gmao
+#: model:ir.ui.view,arch_db:gmao.view_form_intervention_gmao_id
+msgid "Cancel"
+msgstr "Annuler"
+
+#. module: gmao
+#: model:ir.ui.menu,name:gmao.menu_gmao_cause_intervention_id
+msgid "Cause intervention"
+msgstr "Liste des causes"
+
+#. module: gmao
+#: model:ir.ui.view,arch_db:gmao.view_form_intervention_gmao_id
+msgid "Communications"
+msgstr "Communications"
+
+#. module: gmao
+#: model:ir.ui.menu,name:gmao.submenu_gmao_configuration_id
+msgid "Configuration"
+msgstr "Configuration"
+
+#. module: gmao
+#: model:ir.ui.view,arch_db:gmao.view_form_intervention_gmao_id
+msgid "Create MO for repair"
+msgstr "Créer OF de réparation"
+
+#. module: gmao
+#: model:ir.ui.view,arch_db:gmao.view_form_intervention_gmao_id
+msgid "Create PM from MOs"
+msgstr "Créer PM à partir des OFs"
+
+#. module: gmao
+#: model:ir.ui.menu,name:gmao.menu_wiz_create_park_gmao
+msgid "Create equipments"
+msgstr "Créer équipements"
+
+#. module: gmao
+#: model:ir.ui.view,arch_db:gmao.view_form_intervention_gmao_id
+msgid "Create invoice"
+msgstr "Créer facturation"
+
+#. module: gmao
+#: model:ir.ui.view,arch_db:gmao.view_form_intervention_gmao_id
+msgid "Create purchase"
+msgstr "Créer achat"
+
+#. module: gmao
+#: model:ir.ui.view,arch_db:gmao.view_form_intervention_gmao_id
+msgid "Create quotation"
+msgstr "Créer devis"
+
+#. module: gmao
+#: model:ir.ui.view,arch_db:gmao.view_form_intervention_gmao_id
+msgid "Declare time"
+msgstr "Déclaration des temps"
+
+#. module: gmao
+#: model:ir.actions.act_window,name:gmao.act_gmao_counter_id
+#: model:ir.ui.menu,name:gmao.menu_gmao_counter_id
+msgid "Definition counters"
+msgstr "Définition des compteurs"
+
+#. module: gmao
+#: model:ir.ui.view,arch_db:gmao.view_form_intervention_gmao_id
+msgid "Description"
+msgstr "Description"
+
+#. module: gmao
+#: model:ir.ui.view,arch_db:gmao.view_form_intervention_gmao_id
+msgid "Equipment"
+msgstr "Equipement"
+
+#. module: gmao
+#: model:ir.actions.act_window,name:gmao.act_gmao_park_id
+#: model:ir.ui.menu,name:gmao.menu_gmao_park_id
+msgid "Equipments"
+msgstr "Equipements"
+
+#. module: gmao
+#: model:ir.ui.view,arch_db:gmao.view_form_intervention_gmao_id
+msgid "Finish"
+msgstr "Terminée"
+
+#. module: gmao
+#: model:ir.ui.menu,name:gmao.menu_gmao_id
+#: model:ir.ui.menu,name:gmao.submenu_gmao_id
+msgid "GMAO"
+msgstr "GMAO"
+
+#. module: gmao
+#: model:res.groups,name:gmao.group_menu_gmao_config1
+msgid "GMAO configurations"
+msgstr "GMAO configuration"
+
+#. module: gmao
+#: model:res.groups,name:gmao.group_menu_gmao_manager1
+msgid "GMAO managers"
+msgstr "GMAO gestionnaire"
+
+#. module: gmao
+#: model:res.groups,name:gmao.group_menu_gmao_user1
+msgid "GMAO users"
+msgstr "GMAO utilisateur"
+
+#. module: gmao
+#: model:ir.ui.view,arch_db:gmao.view_form_intervention_gmao_id
+msgid "Import maintenance operation"
+msgstr "Import maintenance operation"
+
+#. module: gmao
+#: model:ir.ui.view,arch_db:gmao.view_form_intervention_gmao_id
+msgid "Instructions"
+msgstr "Instructions"
+
+#. module: gmao
+#: model:ir.ui.view,arch_db:gmao.view_form_intervention_gmao_id
+msgid "Instructions/Notes"
+msgstr "Instructions/Notes"
+
+#. module: gmao
+#: model:ir.ui.view,arch_db:gmao.view_form_intervention_gmao_id
+msgid "Interventions"
+msgstr "Interventions"
+
+#. module: gmao
+#: model:ir.ui.view,arch_db:gmao.view_form_intervention_gmao_id
+msgid "Invoices"
+msgstr "Invoices"
+
+#. module: gmao
+#: model:ir.ui.view,arch_db:gmao.view_form_intervention_gmao_id
+msgid "Invoicing"
+msgstr "Invoicing"
+
+#. module: gmao
+#: model:ir.ui.menu,name:gmao.menu_gmao_maintenance_operation_id
+msgid "List model maintenance operation"
+msgstr "Liste des modèles de maintenance"
+
+#. module: gmao
+#: model:ir.actions.act_window,name:gmao.act_gmao_maintenance_operation_id
+msgid "List model maintenance operations"
+msgstr "Liste des modèles d'opérations de maintenances"
+
+#. module: gmao
+#: model:ir.ui.view,arch_db:gmao.view_form_intervention_gmao_id
+msgid "Lists of charges"
+msgstr "Listes des charges"
+
+#. module: gmao
+#: model:ir.actions.act_window,name:gmao.act_gmao_intervention_id
+#: model:ir.ui.menu,name:gmao.menu_gmao_intervention_id
+msgid "Lists of interventions"
+msgstr "Listes des interventions"
+
+#. module: gmao
+#: model:ir.ui.view,arch_db:gmao.view_form_intervention_gmao_id
+msgid "Mails"
+msgstr "Mails"
+
+#. module: gmao
+#: model:ir.ui.view,arch_db:gmao.view_form_intervention_gmao_id
+msgid "Manufacturings orders of repair"
+msgstr "OF de réparation"
+
+#. module: gmao
+#: model:ir.ui.view,arch_db:gmao.view_form_intervention_gmao_id
+msgid "Notes"
+msgstr "Notes"
+
+#. module: gmao
+#: model:ir.ui.view,arch_db:gmao.view_form_intervention_gmao_id
+msgid "Pieces of maintenance"
+msgstr "Pièces de maintenance"
+
+#. module: gmao
+#: model:ir.ui.view,arch_db:gmao.view_form_intervention_gmao_id
+msgid "Planning"
+msgstr "Planning"
+
+#. module: gmao
+#: model:ir.ui.view,arch_db:gmao.view_form_intervention_gmao_id
+msgid "Production"
+msgstr "Production"
+
+#. module: gmao
+#: model:ir.ui.view,arch_db:gmao.view_form_intervention_gmao_id
+msgid "Quotations"
+msgstr "Devis"
+
+#. module: gmao
+#: model:ir.ui.view,arch_db:gmao.view_form_intervention_gmao_id
+msgid "Request"
+msgstr "Demande"
+
+#. module: gmao
+#: model:ir.ui.menu,name:gmao.menu_gmao_resource_intervention_id
+msgid "Resource intervention"
+msgstr "Planning des ressources"
+
+#. module: gmao
+#: model:ir.ui.view,arch_db:gmao.view_form_intervention_gmao_id
+msgid "Resources"
+msgstr "Ressources"
+
+#. module: gmao
+#: model:ir.actions.act_window,name:gmao.act_gmao_resource_intervention_id
+msgid "Resources interventions"
+msgstr "Ressources d'interventions"
+
+#. module: gmao
+#: model:ir.ui.view,arch_db:gmao.view_form_intervention_gmao_id
+msgid "Resources/materials"
+msgstr "Ressources/matériaux"
+
+#. module: gmao
+#: model:ir.ui.view,arch_db:gmao.view_form_intervention_gmao_id
+msgid "Sales"
+msgstr "Vente"
+
+#. module: gmao
+#: model:ir.ui.view,arch_db:gmao.view_form_intervention_gmao_id
+msgid "Send Mail"
+msgstr "Envoyer mail"
+
+#. module: gmao
+#: model:ir.ui.view,arch_db:gmao.view_form_intervention_gmao_id
+msgid "Times"
+msgstr "Temps"
+
+#. module: gmao
+#: model:ir.ui.view,arch_db:gmao.view_form_intervention_gmao_id
+msgid "To do"
+msgstr "À faire"
+
+#. module: gmao
+#: model:ir.ui.menu,name:gmao.menu_gmao_type_failure_intervention_id
+msgid "Type of failure intervention"
+msgstr "Liste des types de panne"
+

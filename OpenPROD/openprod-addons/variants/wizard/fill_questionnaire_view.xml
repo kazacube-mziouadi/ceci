@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+		<!-- ACTION Fill questionnaire -->
+		<record id="act_fill_questionnaire" model="ir.actions.act_window">
+			<field name="name">Fill questionnaire</field>
+			<field name="res_model">fill.questionnaire</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">form</field>
+			<field name="target">new</field>
+			<field name="context">{'dialog_size':'medium'}</field>
+		</record>
+
+		<!-- FORM VIEW Fill questionnaire -->
+		<record id='view_form_fill_questionnaire' model='ir.ui.view'>
+			<field name="name">Fill questionnaire</field>
+			<field name="model">fill.questionnaire</field>
+			<field name="arch" type="xml">
+				<form string="Fill questionnaire" version="8.0">
+					<group>
+						<field name="sale_order_line_id" invisible="1" />
+						<field name="questionnaire_id" />
+						<button string="Fill questionnaire" class="oe_button oe_highlight" type="object" name="fill" icon="fa-arrow-right"
+							colspan="4" />
+					</group>
+				</form>
+			</field>
+		</record>
+
+		<!-- FORM VIEW Fill questionnaire answer boolean -->
+		<record id='view_form_fill_questionnaire_answer_boolean' model='ir.ui.view'>
+			<field name="name">view_form_fill_questionnaire_answer_boolean</field>
+			<field name="model">fill.questionnaire.answer</field>
+			<field name="arch" type="xml">
+				<form string="Fill questionnaire" version="8.0">
+					<h1>
+						<field name="question_label" readonly="1" nolabel="1" />
+					</h1>
+					<group col="6">
+						<field name="fill_questionnaire_id" invisible="1" />
+						<group colspan="6" />
+						<field name="value_bool" />
+						<group colspan="4" />
+						<button string="Previous question" type="object" class="oe_button oe_highlight" name="previous" icon="fa-arrow-left" />
+						<button string="Next question" type="object" class="oe_button oe_highlight" name="next" icon="fa-arrow-right" />
+					</group>
+					<group>
+						<field name="help_text" readonly="1" nolabel="1" />
+					</group>
+				</form>
+			</field>
+		</record>
+
+		<!-- FORM VIEW Fill questionnaire answer variant -->
+		<record id='view_form_fill_questionnaire_answer_variant' model='ir.ui.view'>
+			<field name="name">view_form_fill_questionnaire_answer_variant</field>
+			<field name="model">fill.questionnaire.answer</field>
+			<field name="arch" type="xml">
+				<form string="Fill questionnaire" version="8.0">
+					<h1>
+						<field name="question_label" readonly="1" nolabel="1" />
+					</h1>
+					<group col="6">
+						<field name="fill_questionnaire_id" invisible="1" />
+						<field name="question_id" invisible="1" />
+						<group colspan="6" />
+						<field name="value_variant" domain="[('id', 'in_question', [fill_questionnaire_id, question_id])]" colspan="1" />
+					</group>
+					<group>
+						<button string="Previous question" type="object" class="oe_button oe_highlight" name="previous" icon="fa-arrow-left" />
+						<button string="Next question" type="object" class="oe_button oe_highlight" name="next" icon="fa-arrow-right" />
+					</group>
+					<group>
+						<field name="help_text" readonly="1" nolabel="1" />
+					</group>
+				</form>
+			</field>
+		</record>
+
+		<!-- FORM VIEW Fill questionnaire answer option -->
+		<record id='view_form_fill_questionnaire_answer_option' model='ir.ui.view'>
+			<field name="name">view_form_fill_questionnaire_answer_option</field>
+			<field name="model">fill.questionnaire.answer</field>
+			<field name="arch" type="xml">
+				<form string="Fill questionnaire" version="8.0">
+					<h1>
+						<field name="question_label" readonly="1" nolabel="1" />
+					</h1>
+					<group>
+						<field name="fill_questionnaire_id" invisible="1" />
+						<group colspan="2" />
+						<field name="question_id" invisible="1" />
+					</group>
+					<group string="Value">
+						<field name="value_option" domain="[('id', 'in_question', [fill_questionnaire_id, question_id])]" nolabel="1" />
+					</group>
+					<group>
+						<button string="Previous question" type="object" class="oe_button oe_highlight" name="previous" icon="fa-arrow-left" />
+						<button string="Next question" type="object" class="oe_button oe_highlight" name="next" icon="fa-arrow-right" />
+					</group>
+					<group>
+						<field name="help_text" readonly="1" nolabel="1" />
+					</group>
+				</form>
+			</field>
+		</record>
+
+		<!-- FORM VIEW Fill questionnaire answer dimension -->
+		<record id='view_form_fill_questionnaire_answer_dimension' model='ir.ui.view'>
+			<field name="name">view_form_fill_questionnaire_answer_dimension</field>
+			<field name="model">fill.questionnaire.answer</field>
+			<field name="arch" type="xml">
+				<form string="Fill questionnaire" version="8.0">
+					<field name="dimension_limit_type" invisible="1" />
+					<h1>
+						<field name="question_label" readonly="1" nolabel="1" />
+					</h1>
+					<group col="6">
+						<field name="fill_questionnaire_id" invisible="1" />
+						<group colspan="6" />
+						<field name="value_dimension_selection" attrs="{'invisible':[('dimension_limit_type', '!=', 'selection')]}" />
+						<field name="value_dimension" attrs="{'invisible':[('dimension_limit_type', '=', 'selection')]}" />
+						<group colspan="2" />
+						<button string="Previous question" type="object" class="oe_button oe_highlight" name="previous" icon="fa-arrow-left" />
+						<button string="Next question" type="object" class="oe_button oe_highlight" name="next" icon="fa-arrow-right" />
+					</group>
+					<group>
+						<field name="help_text" readonly="1" nolabel="1" />
+					</group>
+				</form>
+			</field>
+		</record>
+	</data>
+</openerp>

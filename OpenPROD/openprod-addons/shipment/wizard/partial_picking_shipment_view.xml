@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+		<!-- FORM VIEW Partial picking -->
+		<record id='view_form_partial_picking' model='ir.ui.view'>
+			<field name="name">partial_picking</field>
+			<field name="model">stock.partial.picking</field>
+			<field name="inherit_id" ref="stock.view_form_partial_picking" />
+			<field name="arch" type="xml">
+				<xpath expr="//form" position="inside">
+					<field name="not_done" invisible="1" />
+				</xpath>
+			</field>
+		</record>
+
+		<!-- FORM VIEW Partial picking -->
+		<record id='view_form_partial_picking_shipment' model='ir.ui.view'>
+			<field name="name">partial_picking_shipment</field>
+			<field name="model">stock.partial.picking</field>
+			<field name="arch" type="xml">
+				<form string="Partial picking shipment" version="8.0">
+					<field name="line_ids">
+						<tree string="Lines" editable="bottom">
+							<field name="product_id" />
+							<field name="uom_qty" />
+							<field name="uom_id" readonly="1" />
+							<field name="sec_uom_qty" />
+							<field name="sec_uom_id" readonly="1" />
+							<field name="uoi_qty" />
+							<field name="uoi_id" readonly="1" />
+							<field name="manage_scrap" />
+							<field name="move_id" invisible="1" />
+						</tree>
+					</field>
+					<footer>
+						<button name="do_partial_shipment" string="OK" type="object" class="oe_highlight" />
+						or
+						<button string="Cancel" class="oe_link" special="cancel" />
+					</footer>
+				</form>
+			</field>
+		</record>
+		<!-- ACTION Partial picking -->
+		<record id="act_partial_picking_shipment" model="ir.actions.act_window">
+			<field name="name">Partial picking shipment</field>
+			<field name="res_model">stock.partial.picking</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">form</field>
+			<field name="view_id" ref="view_form_partial_picking_shipment" />
+			<field name="target">new</field>
+		</record>
+	</data>
+</openerp>

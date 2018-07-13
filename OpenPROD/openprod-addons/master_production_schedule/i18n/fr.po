@@ -1,0 +1,835 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* master_production_schedule
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 9.0c\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-12-12 12:46+0000\n"
+"PO-Revision-Date: 2016-12-12 12:46+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: master_production_schedule
+#: model:ir.ui.view,arch_db:master_production_schedule.view_form_change_program_line
+msgid "Add a line"
+msgstr "Ajouter une ligne"
+
+#. module: master_production_schedule
+#: model:ir.model.fields,field_description:master_production_schedule.field_master_production_schedule_line_firm_qty_order_amount
+msgid "Amount firm consumption"
+msgstr "Montant consommation ferme"
+
+#. module: master_production_schedule
+#: model:ir.model.fields,field_description:master_production_schedule.field_master_production_schedule_line_firm_procurement_amount
+msgid "Amount firm procurement"
+msgstr "Montant approvisionnement ferme"
+
+#. module: master_production_schedule
+#: model:ir.model.fields,field_description:master_production_schedule.field_master_production_schedule_line_forecast_qty_order_amount
+msgid "Amount forecast consumption"
+msgstr "Montant consommation prévisionnel"
+
+#. module: master_production_schedule
+#: model:ir.model.fields,field_description:master_production_schedule.field_master_production_schedule_line_forecast_procurement_amount
+msgid "Amount forecast procurement"
+msgstr "Montant approvisionnement prévisionnel"
+
+#. module: master_production_schedule
+#: model:ir.ui.menu,name:master_production_schedule.menu_analysis_forecast_data
+msgid "Analysis"
+msgstr "Analyse"
+
+#. module: master_production_schedule
+#: code:addons/master_production_schedule/master_production_schedule.py:152
+#, python-format
+msgid "April"
+msgstr "Avril"
+
+#. module: master_production_schedule
+#: code:addons/master_production_schedule/master_production_schedule.py:156
+#, python-format
+msgid "August"
+msgstr "Août"
+
+#. module: master_production_schedule
+#: model:ir.model.fields,field_description:master_production_schedule.field_change_program_line_available_stock_firm_forecast
+msgid "Available stock (firm + forecast)"
+msgstr "Stock disponible (ferme + prévisionnel)"
+
+#. module: master_production_schedule
+#: model:ir.model.fields,field_description:master_production_schedule.field_change_program_line_available_stock_firm
+msgid "Available stock (firm)"
+msgstr "Stock disponible (ferme)"
+
+#. module: master_production_schedule
+#: model:ir.model.fields,field_description:master_production_schedule.field_master_production_schedule_line_produce_ok
+msgid "Can be produced"
+msgstr "Peut être produit"
+
+#. module: master_production_schedule
+#: model:ir.model.fields,field_description:master_production_schedule.field_master_production_schedule_line_sale_ok
+msgid "Can be sold"
+msgstr "Peut être vendu"
+
+#. module: master_production_schedule
+#: model:ir.ui.view,arch_db:master_production_schedule.view_search_master_production_schedule_line
+msgid "Category"
+msgstr "Catégorie"
+
+#. module: master_production_schedule
+#: model:ir.ui.view,arch_db:master_production_schedule.view_form_master_production_schedule
+#: model:ir.ui.view,arch_db:master_production_schedule.view_tree_master_production_schedule_line
+msgid "Change"
+msgstr "Modifier"
+
+#. module: master_production_schedule
+#: model:ir.actions.act_window,name:master_production_schedule.action_change_program_line
+#: model:ir.ui.view,arch_db:master_production_schedule.view_form_change_program_line
+msgid "Change program line"
+msgstr "Modifier ligne du programme"
+
+#. module: master_production_schedule
+#: model:ir.ui.view,arch_db:master_production_schedule.view_form_change_program_line
+msgid "Change quantity"
+msgstr "Modifier la quantité"
+
+#. module: master_production_schedule
+#: model:ir.ui.view,arch_db:master_production_schedule.view_form_change_program_line
+msgid "Confirm"
+msgstr "Confirmer"
+
+#. module: master_production_schedule
+#: model:ir.model.fields,field_description:master_production_schedule.field_change_program_line_stock_move_ids
+msgid "Consumption"
+msgstr "Consommation"
+
+#. module: master_production_schedule
+#: model:ir.ui.view,arch_db:master_production_schedule.view_form_change_program_line
+msgid "Consumption list"
+msgstr "Liste des consommations"
+
+#. module: master_production_schedule
+#: model:ir.model.fields,field_description:master_production_schedule.field_master_production_schedule_openprod_create_date
+msgid "Create date"
+msgstr "Date de création"
+
+#. module: master_production_schedule
+#: model:ir.ui.view,arch_db:master_production_schedule.view_form_master_production_schedule
+msgid "Create periods"
+msgstr "Créer les périodes"
+
+#. module: master_production_schedule
+#: model:ir.model.fields,field_description:master_production_schedule.field_change_program_line_create_uid
+#: model:ir.model.fields,field_description:master_production_schedule.field_master_production_period_create_uid
+#: model:ir.model.fields,field_description:master_production_schedule.field_master_production_schedule_create_uid
+#: model:ir.model.fields,field_description:master_production_schedule.field_master_production_schedule_line_create_uid
+msgid "Created by"
+msgstr "Créé par"
+
+#. module: master_production_schedule
+#: model:ir.model.fields,field_description:master_production_schedule.field_change_program_line_create_date
+#: model:ir.model.fields,field_description:master_production_schedule.field_master_production_period_create_date
+#: model:ir.model.fields,field_description:master_production_schedule.field_master_production_schedule_create_date
+#: model:ir.model.fields,field_description:master_production_schedule.field_master_production_schedule_line_create_date
+msgid "Created on"
+msgstr "Date de création"
+
+#. module: master_production_schedule
+#: model:ir.model.fields,field_description:master_production_schedule.field_change_program_line_customer_id
+#: model:ir.model.fields,field_description:master_production_schedule.field_master_production_schedule_customer_id
+#: model:ir.model.fields,field_description:master_production_schedule.field_master_production_schedule_line_customer_id
+#: model:ir.ui.view,arch_db:master_production_schedule.view_search_master_production_schedule_line
+msgid "Customer"
+msgstr "Client"
+
+#. module: master_production_schedule
+#: code:addons/master_production_schedule/master_production_schedule.py:160
+#, python-format
+msgid "December"
+msgstr "Décembre"
+
+#. module: master_production_schedule
+#: model:ir.ui.view,arch_db:master_production_schedule.view_form_change_program_line
+msgid "Delete"
+msgstr "Supprimer"
+
+#. module: master_production_schedule
+#: model:ir.ui.view,arch_db:master_production_schedule.view_form_master_production_schedule
+msgid "Delete all lines"
+msgstr "Supprimer toutes les lignes"
+
+#. module: master_production_schedule
+#: model:ir.ui.view,arch_db:master_production_schedule.view_form_master_production_schedule
+msgid "Delete all periods"
+msgstr "Supprimer toutes les périodes"
+
+#. module: master_production_schedule
+#: model:ir.ui.view,arch_db:master_production_schedule.view_form_master_production_schedule
+#: model:ir.ui.view,arch_db:master_production_schedule.view_form_master_production_schedule_line
+msgid "Detail"
+msgstr "Détail"
+
+#. module: master_production_schedule
+#: model:ir.model.fields,help:master_production_schedule.field_master_production_schedule_line_sale_ok
+msgid "Determine if the product is visible in the products list during the product choice in a sale order."
+msgstr "Détermine si le produit est visible dans la liste des produits pendant le choix du produit dans une vente"
+
+#. module: master_production_schedule
+#: model:ir.model.fields,field_description:master_production_schedule.field_change_program_line_display_name
+#: model:ir.model.fields,field_description:master_production_schedule.field_master_production_period_display_name
+#: model:ir.model.fields,field_description:master_production_schedule.field_master_production_schedule_display_name
+#: model:ir.model.fields,field_description:master_production_schedule.field_master_production_schedule_line_display_name
+msgid "Display Name"
+msgstr "Nom affiché"
+
+#. module: master_production_schedule
+#: model:ir.ui.view,arch_db:master_production_schedule.view_form_master_production_schedule
+msgid "Display lines"
+msgstr "Afficher les lignes"
+
+#. module: master_production_schedule
+#: code:addons/master_production_schedule/master_production_schedule.py:139
+#: code:addons/master_production_schedule/master_production_schedule.py:432
+#, python-format
+msgid "Draft"
+msgstr "Brouillon"
+
+#. module: master_production_schedule
+#: model:ir.model.fields,field_description:master_production_schedule.field_master_production_period_end_date
+#: model:ir.model.fields,field_description:master_production_schedule.field_master_production_schedule_line_end_date
+msgid "End date"
+msgstr "Date de fin"
+
+#. module: master_production_schedule
+#: code:addons/master_production_schedule/mrp.py:60
+#: code:addons/master_production_schedule/wizard/change_program_line.py:127
+#: code:addons/master_production_schedule/wizard/change_program_line.py:149
+#: code:addons/master_production_schedule/wizard/change_program_line.py:162
+#: code:addons/master_production_schedule/wizard/change_program_line.py:215
+#: code:addons/master_production_schedule/wizard/change_program_line.py:233
+#: code:addons/master_production_schedule/wizard/change_program_line.py:255
+#: code:addons/master_production_schedule/wizard/change_program_line.py:262
+#, python-format
+msgid "Error"
+msgstr "Erreur"
+
+#. module: master_production_schedule
+#: code:addons/master_production_schedule/master_production_schedule.py:150
+#, python-format
+msgid "February"
+msgstr "February"
+
+#. module: master_production_schedule
+#: model:ir.ui.view,arch_db:master_production_schedule.view_search_master_production_schedule_line
+msgid "Filters"
+msgstr "Filtres"
+
+#. module: master_production_schedule
+#: model:ir.actions.act_window,name:master_production_schedule.action_financial_master_production_schedule_line_analysis
+#: model:ir.ui.menu,name:master_production_schedule.menu_financial_master_production_schedule_line_analysis
+msgid "Financial forecast analysis"
+msgstr "Analyse financière"
+
+#. module: master_production_schedule
+#: model:ir.ui.view,arch_db:master_production_schedule.view_financial_master_production_schedule_line_pivot
+msgid "Financial program analysis"
+msgstr "Analyse des prévisions"
+
+#. module: master_production_schedule
+#: model:ir.model.fields,field_description:master_production_schedule.field_master_production_schedule_line_available_stock_firm_forecast
+msgid "Firm + forecast stock "
+msgstr "Stock ferme + prévi."
+
+#. module: master_production_schedule
+#: model:ir.model.fields,field_description:master_production_schedule.field_master_production_schedule_line_qty_firm_order
+msgid "Firm consum."
+msgstr "Conso. ferme"
+
+#. module: master_production_schedule
+#: model:ir.model.fields,field_description:master_production_schedule.field_master_production_schedule_line_qty_firm_procurement
+msgid "Firm proc."
+msgstr "Appro. ferme"
+
+#. module: master_production_schedule
+#: model:ir.model.fields,field_description:master_production_schedule.field_master_production_schedule_line_available_stock_firm
+msgid "Firm stock"
+msgstr "Stock ferme"
+
+#. module: master_production_schedule
+#: model:ir.actions.act_window,name:master_production_schedule.action_forecast_mo_for_schedule
+#: model:ir.ui.menu,name:master_production_schedule.menu_forecast_manufacturing_order
+msgid "Forecast MO"
+msgstr "OF prévisionnel"
+
+#. module: master_production_schedule
+#: model:ir.ui.menu,name:master_production_schedule.menu_forecast_stock_move_analysis
+msgid "Forecast RM analysis"
+msgstr "Analyse MP prévisionnelles"
+
+#. module: master_production_schedule
+#: model:ir.actions.act_window,name:master_production_schedule.action_master_production_schedule_line_analysis
+#: model:ir.ui.menu,name:master_production_schedule.menu_master_production_schedule_line_analysis
+msgid "Forecast analysis"
+msgstr "Analyse prévisionnelle"
+
+#. module: master_production_schedule
+#: model:ir.model.fields,field_description:master_production_schedule.field_master_production_schedule_line_qty_forecast_order
+msgid "Forecast consum."
+msgstr "Conso. prévi."
+
+#. module: master_production_schedule
+#: model:ir.actions.act_window,name:master_production_schedule.action_forecast_loading_for_schedule
+#: model:ir.ui.menu,name:master_production_schedule.menu_forecast_loading
+msgid "Forecast loading"
+msgstr "Charge prévisionnelle"
+
+#. module: master_production_schedule
+#: model:ir.model.fields,field_description:master_production_schedule.field_master_production_schedule_line_qty_forecast_procurement
+msgid "Forecast proc."
+msgstr "Appro. prévi."
+
+#. module: master_production_schedule
+#: model:ir.actions.act_window,name:master_production_schedule.action_forecast_stock_move_for_schedule
+#: model:ir.ui.menu,name:master_production_schedule.menu_forecast_raw_material
+msgid "Forecast raw material"
+msgstr "MP prévisionnelle"
+
+#. module: master_production_schedule
+#: model:ir.actions.act_window,name:master_production_schedule.action_forecast_stock_move_analysis
+msgid "Forecast raw material analysis"
+msgstr "Analyse matière première prévisionnelle"
+
+#. module: master_production_schedule
+#: model:ir.ui.view,arch_db:master_production_schedule.view_form_forecast_display_reservation
+msgid "Forecast stock moves"
+msgstr "Mouvements de stock prévi."
+
+#. module: master_production_schedule
+#: model:ir.ui.view,arch_db:master_production_schedule.view_search_master_production_schedule
+#: model:ir.ui.view,arch_db:master_production_schedule.view_search_master_production_schedule_line
+msgid "Group by..."
+msgstr "Regrouper par..."
+
+#. module: master_production_schedule
+#: model:ir.model.fields,field_description:master_production_schedule.field_change_program_line_has_customer
+msgid "Has a customer"
+msgstr "A un client"
+
+#. module: master_production_schedule
+#: model:ir.model.fields,field_description:master_production_schedule.field_change_program_line_id
+#: model:ir.model.fields,field_description:master_production_schedule.field_master_production_period_id
+#: model:ir.model.fields,field_description:master_production_schedule.field_master_production_schedule_id
+#: model:ir.model.fields,field_description:master_production_schedule.field_master_production_schedule_line_id
+msgid "ID"
+msgstr "ID"
+
+#. module: master_production_schedule
+#: model:ir.ui.view,arch_db:master_production_schedule.view_form_master_production_schedule
+msgid "Import lines"
+msgstr "Importer lignes"
+
+#. module: master_production_schedule
+#: model:ir.model.fields,help:master_production_schedule.field_master_production_schedule_line_firm_procurement_amount
+#: model:ir.model.fields,help:master_production_schedule.field_master_production_schedule_line_firm_qty_order_amount
+#: model:ir.model.fields,help:master_production_schedule.field_master_production_schedule_line_forecast_procurement_amount
+#: model:ir.model.fields,help:master_production_schedule.field_master_production_schedule_line_forecast_qty_order_amount
+msgid "In company currency"
+msgstr "Dans la devise de la société"
+
+#. module: master_production_schedule
+#: code:addons/master_production_schedule/master_production_schedule.py:75
+#, python-format
+msgid "Initial"
+msgstr "Initiale"
+
+#. module: master_production_schedule
+#: model:ir.ui.view,arch_db:master_production_schedule.view_search_forecast_manufacturingorder
+#: model:ir.ui.view,arch_db:master_production_schedule.view_search_forecast_mrp_workorder
+msgid "Is forecast"
+msgstr "Prévision"
+
+#. module: master_production_schedule
+#: model:ir.model.fields,field_description:master_production_schedule.field_master_production_period_is_initial
+msgid "Is initial"
+msgstr "Est initiale"
+
+#. module: master_production_schedule
+#: code:addons/master_production_schedule/master_production_schedule.py:149
+#, python-format
+msgid "January"
+msgstr "Janvier"
+
+#. module: master_production_schedule
+#: code:addons/master_production_schedule/master_production_schedule.py:155
+#, python-format
+msgid "July"
+msgstr "Juillet"
+
+#. module: master_production_schedule
+#: code:addons/master_production_schedule/master_production_schedule.py:154
+#, python-format
+msgid "June"
+msgstr "Juin"
+
+#. module: master_production_schedule
+#: model:ir.model.fields,field_description:master_production_schedule.field_change_program_line___last_update
+#: model:ir.model.fields,field_description:master_production_schedule.field_master_production_period___last_update
+#: model:ir.model.fields,field_description:master_production_schedule.field_master_production_schedule___last_update
+#: model:ir.model.fields,field_description:master_production_schedule.field_master_production_schedule_line___last_update
+msgid "Last Modified on"
+msgstr "Dernière modification le"
+
+#. module: master_production_schedule
+#: model:ir.model.fields,field_description:master_production_schedule.field_change_program_line_write_uid
+#: model:ir.model.fields,field_description:master_production_schedule.field_master_production_period_write_uid
+#: model:ir.model.fields,field_description:master_production_schedule.field_master_production_schedule_line_write_uid
+#: model:ir.model.fields,field_description:master_production_schedule.field_master_production_schedule_write_uid
+msgid "Last Updated by"
+msgstr "Dernière mise à jour par"
+
+#. module: master_production_schedule
+#: model:ir.model.fields,field_description:master_production_schedule.field_change_program_line_write_date
+#: model:ir.model.fields,field_description:master_production_schedule.field_master_production_period_write_date
+#: model:ir.model.fields,field_description:master_production_schedule.field_master_production_schedule_line_write_date
+#: model:ir.model.fields,field_description:master_production_schedule.field_master_production_schedule_write_date
+msgid "Last Updated on"
+msgstr "Dernière mise à jour le"
+
+#. module: master_production_schedule
+#: model:ir.model.fields,field_description:master_production_schedule.field_master_production_schedule_line_ids
+#: model:ir.ui.view,arch_db:master_production_schedule.view_form_master_production_schedule
+msgid "Lines"
+msgstr "Lignes"
+
+#. module: master_production_schedule
+#: model:ir.ui.menu,name:master_production_schedule.menu_listing_forecast_data
+msgid "Listing"
+msgstr "Listing"
+
+#. module: master_production_schedule
+#: model:ir.model.fields,field_description:master_production_schedule.field_change_program_line_uom_id
+#: model:ir.model.fields,field_description:master_production_schedule.field_master_production_schedule_line_uom_id
+msgid "Management unit"
+msgstr "Unité de mesure"
+
+#. module: master_production_schedule
+#: model:ir.ui.view,arch_db:master_production_schedule.view_form_change_program_line
+msgid "Management unit :"
+msgstr "Unité de mesure :"
+
+#. module: master_production_schedule
+#: model:ir.model,name:master_production_schedule.model_mrp_manufacturingorder
+msgid "Manufacturing order"
+msgstr "Ordre de fabrication"
+
+#. module: master_production_schedule
+#: model:ir.ui.view,arch_db:master_production_schedule.view_form_change_program_line
+msgid "Manufacturing order list"
+msgstr "Liste des OF"
+
+#. module: master_production_schedule
+#: code:addons/master_production_schedule/master_production_schedule.py:151
+#, python-format
+msgid "March"
+msgstr "Mars"
+
+#. module: master_production_schedule
+#: model:ir.model.fields,field_description:master_production_schedule.field_master_production_period_production_schedule_id
+#: model:ir.ui.menu,name:master_production_schedule.menu_master_production_schedule_main
+msgid "Master production schedule"
+msgstr "Plan directeur de production"
+
+#. module: master_production_schedule
+#: model:ir.model,name:master_production_schedule.model_master_production_schedule_line
+msgid "Master production schedule line"
+msgstr "Ligne de plan directeur de production"
+
+#. module: master_production_schedule
+#: model:ir.model,name:master_production_schedule.model_master_production_schedule
+msgid "Master production schedule management"
+msgstr "Gestion du plan directeur de production"
+
+#. module: master_production_schedule
+#: code:addons/master_production_schedule/master_production_schedule.py:153
+#, python-format
+msgid "May"
+msgstr "Mai"
+
+#. module: master_production_schedule
+#: model:ir.model.fields,field_description:master_production_schedule.field_master_production_schedule_line_mid_period
+msgid "Mid-date"
+msgstr "Date intermédiaire"
+
+#. module: master_production_schedule
+#: model:ir.model.fields,field_description:master_production_schedule.field_master_production_period_mid_period
+msgid "Mid-date of the period"
+msgstr "Date intermédiaire de la période"
+
+#. module: master_production_schedule
+#: code:addons/master_production_schedule/master_production_schedule.py:21
+#: code:addons/master_production_schedule/master_production_schedule.py:131
+#: code:addons/master_production_schedule/master_production_schedule.py:424
+#: model:ir.model.fields,field_description:master_production_schedule.field_master_production_schedule_line_month
+#: model:ir.ui.view,arch_db:master_production_schedule.view_search_master_production_schedule_line
+#, python-format
+msgid "Month"
+msgstr "Mois"
+
+#. module: master_production_schedule
+#: model:ir.model.fields,field_description:master_production_schedule.field_master_production_period_name
+#: model:ir.model.fields,field_description:master_production_schedule.field_master_production_schedule_name
+msgid "Name"
+msgstr "Nom"
+
+#. module: master_production_schedule
+#: model:ir.ui.view,arch_db:master_production_schedule.view_search_forecast_manufacturingorder
+#: model:ir.ui.view,arch_db:master_production_schedule.view_search_forecast_mrp_workorder
+msgid "Not forecast"
+msgstr "Non prévisionnel"
+
+#. module: master_production_schedule
+#: code:addons/master_production_schedule/master_production_schedule.py:159
+#, python-format
+msgid "November"
+msgstr "Novembre"
+
+#. module: master_production_schedule
+#: code:addons/master_production_schedule/master_production_schedule.py:141
+#: code:addons/master_production_schedule/master_production_schedule.py:434
+#: model:ir.ui.view,arch_db:master_production_schedule.view_form_master_production_schedule
+#, python-format
+msgid "Obsolete"
+msgstr "Obsolète"
+
+#. module: master_production_schedule
+#: code:addons/master_production_schedule/master_production_schedule.py:158
+#, python-format
+msgid "October"
+msgstr "Octobre"
+
+#. module: master_production_schedule
+#: model:ir.ui.view,arch_db:master_production_schedule.view_form_change_program_line
+msgid "Order"
+msgstr "Commande"
+
+#. module: master_production_schedule
+#: model:ir.ui.view,arch_db:master_production_schedule.view_form_change_program_line
+msgid "Order quantity"
+msgstr "Quantité de la commande"
+
+#. module: master_production_schedule
+#: model:ir.model.fields,field_description:master_production_schedule.field_change_program_line_period_id
+#: model:ir.model.fields,field_description:master_production_schedule.field_master_production_schedule_line_period_id
+#: model:ir.ui.view,arch_db:master_production_schedule.view_form_master_production_schedule
+#: model:ir.ui.view,arch_db:master_production_schedule.view_form_master_production_schedule_line
+#: model:ir.ui.view,arch_db:master_production_schedule.view_search_master_production_schedule_line
+msgid "Period"
+msgstr "Période"
+
+#. module: master_production_schedule
+#: model:ir.model,name:master_production_schedule.model_master_production_period
+msgid "Period for master production schedule"
+msgstr "Période pour le plan directeur de production"
+
+#. module: master_production_schedule
+#: model:ir.model.fields,field_description:master_production_schedule.field_master_production_schedule_period_ids
+msgid "Period lines"
+msgstr "Lignes de période"
+
+#. module: master_production_schedule
+#: model:ir.model.fields,field_description:master_production_schedule.field_master_production_schedule_period_nb
+msgid "Period number"
+msgstr "Nombre de périodes"
+
+#. module: master_production_schedule
+#: model:ir.model.fields,field_description:master_production_schedule.field_master_production_schedule_line_period_sequence
+msgid "Period sequence"
+msgstr "Séquence de la période"
+
+#. module: master_production_schedule
+#: model:ir.model.fields,field_description:master_production_schedule.field_master_production_period_period_type
+#: model:ir.model.fields,field_description:master_production_schedule.field_master_production_schedule_line_period_type
+#: model:ir.model.fields,field_description:master_production_schedule.field_master_production_schedule_period_type
+msgid "Period type"
+msgstr "Type de période"
+
+#. module: master_production_schedule
+#: model:ir.ui.view,arch_db:master_production_schedule.view_form_master_production_schedule
+msgid "Periods"
+msgstr "Periodes"
+
+#. module: master_production_schedule
+#: code:addons/master_production_schedule/mrp.py:60
+#: code:addons/master_production_schedule/wizard/change_program_line.py:127
+#: code:addons/master_production_schedule/wizard/change_program_line.py:162
+#: code:addons/master_production_schedule/wizard/change_program_line.py:262
+#, python-format
+msgid "Please enter a quantity"
+msgstr "Merci d'entrer une quantité"
+
+#. module: master_production_schedule
+#: model:ir.ui.view,arch_db:master_production_schedule.view_form_change_program_line
+msgid "Procurement"
+msgstr "Approvisionnement"
+
+#. module: master_production_schedule
+#: model:ir.ui.view,arch_db:master_production_schedule.view_form_change_program_line
+msgid "Procurement quantity"
+msgstr "Quantité d'approvisionnement"
+
+#. module: master_production_schedule
+#: model:ir.model.fields,field_description:master_production_schedule.field_change_program_line_mo_ids
+msgid "Procurements"
+msgstr "Approvisionnement"
+
+#. module: master_production_schedule
+#: model:ir.model.fields,field_description:master_production_schedule.field_change_program_line_product_id
+#: model:ir.model.fields,field_description:master_production_schedule.field_master_production_schedule_line_product_id
+#: model:ir.ui.view,arch_db:master_production_schedule.view_search_master_production_schedule_line
+msgid "Product"
+msgstr "Produit"
+
+#. module: master_production_schedule
+#: model:ir.model.fields,field_description:master_production_schedule.field_master_production_schedule_line_category_id
+msgid "Product category"
+msgstr "Catégorie de produit"
+
+#. module: master_production_schedule
+#: model:ir.model.fields,field_description:master_production_schedule.field_change_program_line_production_schedule_id
+msgid "Production schedule"
+msgstr "Plan de production"
+
+#. module: master_production_schedule
+#: model:ir.model.fields,field_description:master_production_schedule.field_master_production_schedule_product_ids
+msgid "Products"
+msgstr "Produits"
+
+#. module: master_production_schedule
+#: model:ir.ui.view,arch_db:master_production_schedule.view_form_master_production_schedule
+msgid "Products list"
+msgstr "Liste de produits"
+
+#. module: master_production_schedule
+#: model:ir.actions.act_window,name:master_production_schedule.action_master_production_schedule
+#: model:ir.actions.act_window,name:master_production_schedule.master_production_schedule_see_form
+#: model:ir.model.fields,field_description:master_production_schedule.field_master_production_schedule_line_master_production_id
+#: model:ir.ui.menu,name:master_production_schedule.menu_master_production_schedule
+#: model:ir.ui.view,arch_db:master_production_schedule.view_form_master_production_schedule
+#: model:ir.ui.view,arch_db:master_production_schedule.view_search_master_production_schedule_line
+#: model:ir.ui.view,arch_db:master_production_schedule.view_tree_master_production_schedule
+msgid "Program"
+msgstr "Programme"
+
+#. module: master_production_schedule
+#: model:ir.actions.act_window,name:master_production_schedule.action_master_production_schedule_line
+#: model:ir.actions.act_window,name:master_production_schedule.master_production_schedule_line_see_tree
+#: model:ir.ui.menu,name:master_production_schedule.menu__master_production_schedule_line
+#: model:ir.ui.view,arch_db:master_production_schedule.view_form_master_production_schedule
+#: model:ir.ui.view,arch_db:master_production_schedule.view_form_master_production_schedule_line
+#: model:ir.ui.view,arch_db:master_production_schedule.view_tree_master_production_schedule_line
+msgid "Program line"
+msgstr "Ligne de programme"
+
+#. module: master_production_schedule
+#: model:ir.ui.view,arch_db:master_production_schedule.view_financial_master_production_schedule_line_graph
+#: model:ir.ui.view,arch_db:master_production_schedule.view_master_production_schedule_line_graph
+#: model:ir.ui.view,arch_db:master_production_schedule.view_master_production_schedule_line_pivot
+msgid "Program line analysis"
+msgstr "Analyse des prévisions"
+
+#. module: master_production_schedule
+#: model:ir.actions.act_window,name:master_production_schedule.action_forecast_loading_analysis
+#: model:ir.ui.menu,name:master_production_schedule.menu_forecast_loading_analysis
+#: model:ir.ui.view,arch_db:master_production_schedule.view_forecast_loading_graph
+#: model:ir.ui.view,arch_db:master_production_schedule.view_forecast_loading_pivot
+#: model:ir.ui.view,arch_db:master_production_schedule.view_forecast_stock_move_graph
+#: model:ir.ui.view,arch_db:master_production_schedule.view_forecast_stock_move_pivot
+msgid "Program loading analysis"
+msgstr "Analyse de la charge prévisionnelle"
+
+#. module: master_production_schedule
+#: model:ir.ui.view,arch_db:master_production_schedule.view_form_master_production_period
+#: model:ir.ui.view,arch_db:master_production_schedule.view_tree_master_production_period
+msgid "Program period"
+msgstr "Période de programme"
+
+#. module: master_production_schedule
+#: model:ir.ui.view,arch_db:master_production_schedule.view_form_master_production_schedule
+msgid "Put in draft"
+msgstr "Mettre en brouillon"
+
+#. module: master_production_schedule
+#: model:ir.model.fields,field_description:master_production_schedule.field_change_program_line_appro_quantity
+#: model:ir.model.fields,field_description:master_production_schedule.field_change_program_line_order_quantity
+msgid "Quantity"
+msgstr "Quantité"
+
+#. module: master_production_schedule
+#: model:ir.model.fields,field_description:master_production_schedule.field_change_program_line_qty_firm_order
+msgid "Quantity firm order"
+msgstr "Quantité commande ferme"
+
+#. module: master_production_schedule
+#: model:ir.model.fields,field_description:master_production_schedule.field_change_program_line_qty_firm_procurement
+msgid "Quantity firm procurement"
+msgstr "Quantité approvisionnement ferme"
+
+#. module: master_production_schedule
+#: model:ir.model.fields,field_description:master_production_schedule.field_change_program_line_qty_forecast_order
+msgid "Quantity forecast order"
+msgstr "Quantité commande prévisionnelle"
+
+#. module: master_production_schedule
+#: model:ir.model.fields,field_description:master_production_schedule.field_change_program_line_qty_forecast_procurement
+msgid "Quantity forecast procurement"
+msgstr "Quantité approvisionnement prévisionnel"
+
+#. module: master_production_schedule
+#: model:ir.ui.view,arch_db:master_production_schedule.view_form_change_program_line
+msgid "Quit"
+msgstr "Quitter"
+
+#. module: master_production_schedule
+#: model:ir.model,name:master_production_schedule.model_sale_order_line
+msgid "Sale order line"
+msgstr "Ligne de commande de vente"
+
+#. module: master_production_schedule
+#: model:ir.ui.view,arch_db:master_production_schedule.view_form_change_program_line
+msgid "Sale order line list"
+msgstr "Liste des lignes de vente"
+
+#. module: master_production_schedule
+#: model:ir.model.fields,field_description:master_production_schedule.field_change_program_line_sale_line_ids
+msgid "Sales"
+msgstr "Ventes"
+
+#. module: master_production_schedule
+#: model:ir.ui.view,arch_db:master_production_schedule.view_form_master_production_schedule
+msgid "Select the period"
+msgstr "Sélectionnez la période"
+
+#. module: master_production_schedule
+#: code:addons/master_production_schedule/master_production_schedule.py:157
+#, python-format
+msgid "September"
+msgstr "Septembre"
+
+#. module: master_production_schedule
+#: model:ir.model.fields,field_description:master_production_schedule.field_master_production_period_sequence
+msgid "Sequence"
+msgstr "Séquence"
+
+#. module: master_production_schedule
+#: model:ir.ui.view,arch_db:master_production_schedule.view_form_master_production_schedule
+msgid "Settings"
+msgstr "Configuration"
+
+#. module: master_production_schedule
+#: model:ir.model.fields,field_description:master_production_schedule.field_master_production_period_start_date
+#: model:ir.model.fields,field_description:master_production_schedule.field_master_production_schedule_line_start_date
+#: model:ir.model.fields,field_description:master_production_schedule.field_master_production_schedule_start_date
+msgid "Start date"
+msgstr "Date de début"
+
+#. module: master_production_schedule
+#: model:ir.model.fields,field_description:master_production_schedule.field_change_program_line_line_mid_period
+msgid "Start date of the line"
+msgstr "Date de début de la ligne"
+
+#. module: master_production_schedule
+#: model:ir.model.fields,field_description:master_production_schedule.field_master_production_schedule_line_state
+#: model:ir.model.fields,field_description:master_production_schedule.field_master_production_schedule_state
+#: model:ir.ui.view,arch_db:master_production_schedule.view_search_master_production_schedule
+msgid "State"
+msgstr "État"
+
+#. module: master_production_schedule
+#: model:ir.ui.view,arch_db:master_production_schedule.view_form_forecast_display_reservation
+msgid "Stock moves"
+msgstr "Mouvements de stock"
+
+#. module: master_production_schedule
+#: code:addons/master_production_schedule/wizard/change_program_line.py:255
+#, python-format
+msgid "The line is not in draft, you can only change the draft lines"
+msgstr "La ligne n'est pas en brouillon, vous pouvez seulement modifier les lignes de vente brouillon"
+
+#. module: master_production_schedule
+#: code:addons/master_production_schedule/wizard/change_program_line.py:233
+#, python-format
+msgid "The line is not in draft, you can only confirm the forecast draft lines"
+msgstr "La ligne n'est pas en brouillon, vous pouvez seulement confirmer les lignes de vente brouillon"
+
+#. module: master_production_schedule
+#: code:addons/master_production_schedule/wizard/change_program_line.py:215
+#, python-format
+msgid "The line is not in draft, you can only delete the draft lines"
+msgstr "La ligne n'est pas en brouillon, vous pouvez seulement supprimer les lignes de vente brouillon"
+
+#. module: master_production_schedule
+#: code:addons/master_production_schedule/wizard/change_program_line.py:149
+#, python-format
+msgid "There is an error with the technical datas of your product and the system can't create the manufacturing order.Check the routing and the bom of your product."
+msgstr "Il y a une erreur avec les données techniques du produit et le système ne peut pas créer l'ordre de fabrication. Merci de vérifier la gamme et la nomenclature de votre produit."
+
+#. module: master_production_schedule
+#: code:addons/master_production_schedule/master_production_schedule.py:22
+#: code:addons/master_production_schedule/master_production_schedule.py:132
+#: code:addons/master_production_schedule/master_production_schedule.py:425
+#, python-format
+msgid "Trimester"
+msgstr "Trimestre"
+
+#. module: master_production_schedule
+#: model:ir.ui.view,arch_db:master_production_schedule.view_form_master_production_schedule
+msgid "Update line values"
+msgstr "Mettre à jour les valeurs des lignes"
+
+#. module: master_production_schedule
+#: code:addons/master_production_schedule/master_production_schedule.py:140
+#: code:addons/master_production_schedule/master_production_schedule.py:433
+#: model:ir.ui.view,arch_db:master_production_schedule.view_form_master_production_schedule
+#: model:ir.ui.view,arch_db:master_production_schedule.view_search_master_production_schedule_line
+#, python-format
+msgid "Validate"
+msgstr "Valider"
+
+#. module: master_production_schedule
+#: code:addons/master_production_schedule/master_production_schedule.py:20
+#: code:addons/master_production_schedule/master_production_schedule.py:130
+#: code:addons/master_production_schedule/master_production_schedule.py:423
+#: model:ir.model.fields,field_description:master_production_schedule.field_master_production_schedule_line_week
+#: model:ir.ui.view,arch_db:master_production_schedule.view_search_master_production_schedule_line
+#, python-format
+msgid "Week"
+msgstr "Semaines"
+
+#. module: master_production_schedule
+#: code:addons/master_production_schedule/master_production_schedule.py:148
+#, python-format
+msgid "Without month"
+msgstr "Sans mois"
+
+#. module: master_production_schedule
+#: model:ir.model,name:master_production_schedule.model_change_program_line
+msgid "Wizard to change program line"
+msgstr "Wizard pour changer la ligne du programme"
+
+#. module: master_production_schedule
+#: model:ir.model.fields,field_description:master_production_schedule.field_master_production_schedule_line_year
+#: model:ir.ui.view,arch_db:master_production_schedule.view_search_master_production_schedule_line
+msgid "Year"
+msgstr "Année"
+
+#. module: master_production_schedule
+#: model:ir.ui.view,arch_db:master_production_schedule.view_search_master_production_schedule
+msgid "customer_id"
+msgstr "customer_id"
+

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+		
+		<!-- FORM VIEW Register Payment Form -->
+		<record id="view_inherit_view_vendor_receipt_dialog_form" model="ir.ui.view">
+			<field name="name">view_inherit_view_vendor_receipt_dialog_form</field>
+			<field name="inherit_id" ref="account_voucher.view_vendor_receipt_dialog_form" />
+			<field name="model">account.voucher</field>
+			<field name="arch" type="xml">
+				<xpath expr="//field[@name='type']" position="after">
+					<field name="invoice_id"/>
+				</xpath>
+			</field>
+		</record>
+	
+		<!-- FORM VIEW Account voucher Form -->
+		<record id="inherit_view_vendor_receipt_form" model="ir.ui.view">
+			<field name="name">inherit_view_vendor_receipt_form</field>
+			<field name="inherit_id" ref="account_voucher.view_vendor_receipt_form" />
+			<field name="model">account.voucher</field>
+			<field name="arch" type="xml">
+				<xpath expr="//field[@name='partner_id']" position="attributes">
+					<attribute name="domain">['|', ('can_paid', '=', True), '&amp;', ('is_company', '=', True), ('is_customer', '=', True), ('can_paid', '=', True)]</attribute>
+				</xpath>
+				<xpath expr="//button[@name='cancel_voucher']" position="attributes">
+					<attribute name="string">Cancel voucher</attribute>
+				</xpath>
+				<xpath expr="//button[@name='cancel_voucher'][last()]" position="attributes">
+					<attribute name="string">Cancel voucher</attribute>
+				</xpath>
+				<xpath expr="//field[@name='state']" position="before">
+					<button name="unreconcile_payment" states="posted" string="Unreconcile" type="object" confirm="Are you sure to unreconcile this record ?"/>
+				</xpath>
+			</field>
+		</record>
+		
+		<!-- FORM VIEW Account voucher Form -->
+		<record id="inherit_view_vendor_payment_form" model="ir.ui.view">
+			<field name="name">inherit_view_vendor_payment_form</field>
+			<field name="inherit_id" ref="account_voucher.view_vendor_payment_form" />
+			<field name="model">account.voucher</field>
+			<field name="arch" type="xml">
+				<xpath expr="//field[@name='partner_id']" position="attributes">
+					<attribute name="domain">['|', ('is_company', '=', False), '&amp;', ('is_company', '=', True), ('is_supplier', '=', True), ('paid_to', '=', True)]</attribute>
+				</xpath>
+				<xpath expr="//button[@name='cancel_voucher']" position="attributes">
+					<attribute name="string">Cancel voucher</attribute>
+				</xpath>
+				<xpath expr="//button[@name='cancel_voucher'][last()]" position="attributes">
+					<attribute name="string">Cancel voucher</attribute>
+				</xpath>
+				<xpath expr="//button[@name='cancel_voucher'][last()]" position="after">
+					<button name="unreconcile_payment" states="posted" string="Unreconcile" type="object" confirm="Are you sure to unreconcile this record ?"/>
+				</xpath>
+			</field>
+		</record>
+	
+	</data>
+</openerp>

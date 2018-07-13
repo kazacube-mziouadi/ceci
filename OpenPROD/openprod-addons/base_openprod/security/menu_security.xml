@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+<openerp>
+        <data noupdate="0">
+                <record model="ir.module.category" id="module_menu_category">
+		            <field name="name">Menu rights</field>
+		            <field name="sequence">200</field>
+		        </record>
+
+                <record id="group_desk_user" model="res.groups">
+                    <field name="name">Desk user</field>
+                    <field name="category_id" ref="module_menu_category"/>
+                </record>
+
+                <record id="group_desk_manager" model="res.groups">
+                    <field name="name">Desk manager</field>
+                    <field name="category_id" ref="module_menu_category"/>
+                    <field name="implied_ids" eval="[(4, ref('group_desk_user'))]"/>
+                </record>
+                
+				<!-- Groupe pour les données techniques, nécessaire ici pour le module calendar -->
+                <record id="group_menu_tech_data_config" model="res.groups">
+		            <field name="name">Technical data configuration</field>
+		            <field name="category_id" ref="module_menu_category"/>
+		        </record>
+		        
+		        <!-- Groupes pour les ressources -->
+		        <record model="ir.module.category" id="module_resource">
+		            <field name="name">Resource</field>
+		            <field name="sequence">6</field>
+		        </record>
+				<record model="res.groups" id="resource_user">
+					<field name="name">User</field>
+					<field name="category_id" ref="module_resource"/>
+				</record>
+				<record model="res.groups" id="resource_manager">
+					<field name="name">Manager</field>
+					<field name="category_id" ref="module_resource"/>
+					<field name="implied_ids" eval="[(4, ref('resource_user'))]"/>
+				</record>
+				<record model="res.groups" id="resource_responsible">
+					<field name="name">Administrator</field>
+					<field name="category_id" ref="module_resource"/>
+					<field name="implied_ids" eval="[(4, ref('resource_manager'))]"/>
+				</record>
+				
+				<!-- Groupes de menu ressource-->
+				<record id="group_menu_resource_user" model="res.groups">
+		            <field name="name">Resource user</field>
+		            <field name="category_id" ref="module_menu_category"/>
+		        </record>
+		        
+		        <record id="group_menu_resource_analyse" model="res.groups">
+		            <field name="name">Resource analysis</field>
+		            <field name="category_id" ref="module_menu_category"/>
+		            <field name="implied_ids" eval="[(4, ref('group_menu_resource_user'))]"/>
+		        </record>
+		        
+		        <record id="group_menu_resource_config" model="res.groups">
+		            <field name="name">Resource configuration</field>
+		            <field name="category_id" ref="module_menu_category"/>
+		            <field name="implied_ids" eval="[(4, ref('group_menu_resource_analyse'))]"/>
+		        </record>
+		        
+        </data>
+</openerp>

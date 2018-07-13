@@ -1,0 +1,449 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+
+		<record id="view_move_form" model="ir.ui.view">
+			<field name="name">account.move.form</field>
+			<field name="model">account.move</field>
+			<field name="inherit_id" ref="account.view_move_form" />
+			<field name="arch" type="xml">
+				<xpath expr="//button[@name='button_cancel']" position="attributes">
+					<attribute name="context">{'manual_move_cancel': True}</attribute>
+				</xpath>
+			</field>
+		</record>
+
+		<menuitem name="Invoicing" id="account.menu_finance" groups="account.group_account_user,account.group_account_manager,account.group_account_invoice" sequence="20" />
+
+		<!-- FORM VIEW Payment term -->
+		<record id="view_form_payment_term" model="ir.ui.view">
+			<field name="name">view_form_payment_term</field>
+			<field name="model">account.payment.term</field>
+			<field name="inherit_id" ref="account.view_payment_term_form" />
+			<field name="arch" type="xml">
+				<xpath expr="//field[@name='line_ids']" position="after">
+					<group colspan="4" col="6">
+						<group colspan="4" col="5" string="Simulation">
+							<field name="invoice_date" />
+							<button name="compute_date_due" class="oe_highlights" type="object" string="Compute" />
+							<field name="invoice_date_due" />
+						</group>
+						<label colspan="2" string="" />
+					</group>
+				</xpath>
+			</field>
+		</record>
+
+		<!-- FORM VIEW Invoicing method -->
+		<record id="view_form_invoicing_method" model="ir.ui.view">
+			<field name="name">view_form_invoicing_method</field>
+			<field name="model">account.invoicing.method</field>
+			<field name="arch" type="xml">
+				<form>
+					<form>
+						<group colspan="4" col="4">
+							<field name="name" />
+							<field name="active" />
+						</group>
+						<notebook colspan="4">
+							<page string="Invoicing">
+								<field name="line_ids" nolabel="1" colspan="4">
+									<tree string="Invoicing method lines">
+										<field name="sequence" />
+										<field name="value" />
+										<field name="value_amount" attrs="{'invisible': [('value', '=', 'balance')]}" />
+										<field name="invoice_trigger" />
+										<field name="account_invoiced_on" attrs="{'invisible': [('invoice_trigger', '!=', 'picking')]}" />
+										<field name="payment_term_id" />
+									</tree>
+									<form string="Invoicing method line">
+										<group colspan="4" col="4">
+											<field name="sequence" />
+											<field name="payment_term_id" />
+											<field name="value" />
+											<field name="value_amount" attrs="{'invisible': [('value', '=', 'balance')]}" />
+											<field name="product_id" attrs="{'invisible': [('value', '!=', 'fixed')], 'required': [('value', '=', 'fixed')]}" />
+											<field name="invoice_trigger" />
+											<field name="account_invoiced_on" attrs="{'invisible': ['|', ('invoice_trigger', '!=', 'picking'), ('value', '=', 'fixed')]}" />
+										</group>
+									</form>
+								</field>
+							</page>
+							<page string="Advanced payments">
+								<field name="payment_line_ids" nolabel="1" colspan="4">
+									<tree string="Advanced payments" editable="bottom">
+										<field name="payment_type" />
+										<field name="value" />
+										<field name="value_amount" attrs="{'readonly': [('value', 'not in', ('procent', 'fixed'))]}" />
+										<field name="is_blocking" />
+									</tree>
+									<form string="Advanced payment">
+										<group colspan="4" col="4">
+											<field name="payment_type" />
+											<field name="is_blocking" />
+											<field name="value" />
+											<field name="value_amount" />
+										</group>
+									</form>
+								</field>
+							</page>
+							<page string="Description">
+								<field name="note" nolabel="1" colspan="4" />
+							</page>
+						</notebook>
+					</form>
+				</form>
+			</field>
+		</record>
+		
+		<!-- TREE VIEW Invoicing method -->
+		<record id="view_tree_invoicing_method" model="ir.ui.view">
+			<field name="name">view_tree_invoicing_method</field>
+			<field name="model">account.invoicing.method</field>
+			<field name="arch" type="xml">
+				<tree string="Invoicing method">
+					<field name="name" />
+					<field name="active" />
+				</tree>
+			</field>			
+		</record>
+		
+		<!-- SEARCH VIEW Invoicing method -->
+		<record id="view_search_invoicing_method" model="ir.ui.view">
+			<field name="name">view_search_invoicing_method</field>
+			<field name="model">account.invoicing.method</field>
+			<field name="arch" type="xml">
+				<search>
+					<field name="name" />
+					<field name="active" />
+				</search>
+			</field>			
+		</record>
+		
+		<!-- ACTION Invoicing method -->
+		<record id="act_invoicing_method" model="ir.actions.act_window">
+		    <field name="name">Invoicing method</field>
+		    <field name="res_model">account.invoicing.method</field>
+		    <field name="view_type">form</field>
+		    <field name="view_mode">tree,form</field>
+		</record>
+        <menuitem action="act_invoicing_method" id="menu_invoicing_method" parent="account.menu_configuration_misc" groups="account.group_menu_account_config"/>
+
+		<!-- FORM VIEW Payment term line -->
+		<record id="view_form_payment_term_line" model="ir.ui.view">
+			<field name="name">view_form_payment_term_line</field>
+			<field name="model">account.payment.term.line</field>
+			<field name="inherit_id" ref="account.view_payment_term_line_form" />
+			<field name="arch" type="xml">
+				<xpath expr="//field[@name='days2']" position="after">
+					<field name="term_type" />
+				</xpath>
+			</field>
+		</record>
+
+
+		<!-- FORM VIEW account journal -->
+		<record id="view_form_account_journal" model="ir.ui.view">
+			<field name="name">view_form_account_journal</field>
+			<field name="model">account.journal</field>
+			<field name="inherit_id" ref="account.view_account_journal_form" />
+			<field name="arch" type="xml">
+				<xpath expr="//field[@name='default_credit_account_id']" position="after">
+					<field name="is_default" attrs="{'invisible': [('type','not in',['cash', 'bank'])]}" />
+				</xpath>
+			</field>
+		</record>
+
+		<!-- ACTION Reconcile -->
+		<act_window name="Reconcile" res_model="account.move.line.reconcile" src_model="account.move.line" view_mode="form" target="new" key2="client_action_multi" id="reconcile_entries_action" />
+
+		<!-- FORM VIEW Account account -->
+		<record id="view_form_inherit_account_account" model="ir.ui.view">
+			<field name="name">view_form_inherit_account_account</field>
+			<field name="model">account.account</field>
+			<field name="inherit_id" ref="account.view_account_form" />
+			<field name="arch" type="xml">
+				<xpath expr="//group[@name='account_first_group']" position="after">
+					<group colspan="1" col="1" class="op_shortcuts" name="action_menu">
+						<separator string="Analysis" colspan="1" name="analysis_separator" />
+						<button class="oe_inline oe_stat_button" type="object" string="See entries" name="see_entries" icon="fa-pencil-square-o" />
+						<button class="oe_inline oe_stat_button" type="object" string="See unreconcile entries" name="see_unreconcile_entries" icon="fa-pencil-square-o" attrs="{'invisible': [('reconcile', '=', False)]}" />
+					</group>
+				</xpath>
+			</field>
+		</record>
+
+		<!-- FORM VIEW account.taxe -->
+		<record id="view_form_account_tax" model="ir.ui.view">
+			<field name="name">view_form_account_tax</field>
+			<field name="model">account.tax</field>
+			<field name="inherit_id" ref="account.view_tax_form" />
+			<field name="arch" type="xml">
+				<xpath expr="//field[@name='account_id']" position="before">
+					<field name="tax_on_payment" />
+				</xpath>
+				<xpath expr="//field[@name='account_id']" position="after">
+					<field name="account_payment_id" attrs="{'invisible': [('tax_on_payment', '=', False)]}" domain="[('type','&lt;&gt;','view'),('type','&lt;&gt;','consolidation')]" />
+				</xpath>
+				<xpath expr="//field[@name='refund_account_id']" position="after">
+					<field name="refund_account_payment_id" attrs="{'invisible': [('tax_on_payment', '=', False)]}" domain="[('type','&lt;&gt;','view'),('type','&lt;&gt;','consolidation')]" />
+				</xpath>
+			</field>
+		</record>
+
+		<!-- FORM VIEW VAT return -->
+		<record id='view_form_account_vat_return' model='ir.ui.view'>
+			<field name="name">view_form_account_vat_return</field>
+			<field name="model">account.vat.return</field>
+			<field name="arch" type="xml">
+				<form string="VAT return" version="8.0">
+					<header>
+						<field name="state" widget="statusbar" statusbar_visible="draft,progress,done" />
+					</header>
+					<group colspan="4" col="9">
+						<group colspan="8">
+							<group colspan="4" col="4">
+								<group colspan="4" col="4">
+									<field name="name" />
+									<field name="template_id" />
+									<field name="period_id" />
+									<field name="partner_id" context="{'default_is_company': True}" />
+									<field name="start_date" />
+									<field name="end_date" />
+									<field name="company_id" groups="base.group_multi_company" />
+								</group>
+								<notebook colspan="4">
+									<page string="Tax account">
+										<group colspan="4" col="4">
+											<group colspan="2" col="2" string="Debit account (Input tax)">
+												<field name="debit_vat_account_ids" nolabel="1" colspan="2" readonly="1">
+													<tree>
+														<field name="account_id" />
+														<field name="amount" sum="Total" />
+													</tree>
+													<form>
+														<group colspan="4" col="4">
+															<field name="account_id" />
+															<field name="amount" sum="Total" />
+															<field name="move_line_ids" colspan="4" nolabel="1" />
+														</group>
+													</form>
+												</field>
+											</group>
+											<group colspan="2" col="2" string="Credit account (Output tax)">
+												<field name="credit_vat_account_ids" nolabel="1" colspan="2" readonly="1">
+													<tree>
+														<field name="account_id" />
+														<field name="amount" sum="Total" />
+													</tree>
+													<form>
+														<group colspan="4" col="4">
+															<field name="account_id" />
+															<field name="amount" sum="Total" />
+															<field name="move_line_ids" colspan="4" nolabel="1" />
+														</group>
+													</form>
+												</field>
+											</group>
+											<group string="Validation" colspan="4" col="4">
+												<field name="validation_journal_id" />
+												<newline />
+												<field name="validation_move_id" />
+												<field name="validation_date" />
+											</group>
+											<group string="Payment" colspan="4" col="4">
+												<field name="payment_journal_id" />
+												<newline />
+												<field name="payment_amount" />
+												<field name="theorical_amount" />
+												<field name="payment_id" context="{'form_view_ref': 'account_voucher.view_vendor_payment_form'}" />
+												<field name="payment_date" />
+											</group>
+										</group>
+									</page>
+									<page string="Waiting tax account">
+										<group colspan="4" col="4">
+											<field name="waiting_vat_account_ids" nolabel="1" colspan="4" readonly="1">
+												<tree>
+													<field name="account_id" />
+													<field name="amount" sum="Total" />
+												</tree>
+												<form>
+													<group colspan="4" col="4">
+														<field name="account_id" />
+														<field name="amount" sum="Total" />
+														<field name="move_line_ids" colspan="4" nolabel="1" />
+													</group>
+												</form>
+											</field>
+											<field name="draft_purchase_amount" />
+											<field name="draft_sale_amount" />
+										</group>
+									</page>
+									<page string="Income and expense account">
+										<group colspan="4" col="4">
+											<group colspan="2" col="2" string="Purchase account">
+												<field name="purchase_account_ids" nolabel="1" colspan="2" readonly="1">
+													<tree>
+														<field name="account_id" />
+														<field name="amount" sum="Total" />
+													</tree>
+													<form>
+														<group colspan="4" col="4">
+															<field name="account_id" />
+															<field name="amount" sum="Total" />
+															<field name="move_line_ids" colspan="4" nolabel="1" />
+														</group>
+													</form>
+												</field>
+											</group>
+											<group colspan="2" col="2" string="Sale account">
+												<field name="sale_account_ids" nolabel="1" colspan="2" readonly="1">
+													<tree>
+														<field name="account_id" />
+														<field name="amount" sum="Total" />
+													</tree>
+													<form>
+														<group colspan="4" col="4">
+															<field name="account_id" />
+															<field name="amount" sum="Total" />
+															<field name="move_line_ids" colspan="4" nolabel="1" />
+														</group>
+													</form>
+												</field>
+											</group>
+										</group>
+									</page>
+								</notebook>
+							</group>
+						</group>
+						<group colspan="1" col="1" class="op_shortcuts" name="purchase_action_menu">
+							<separator string="Actions" colspan="1" name="separator_action_menu" attrs="{'invisible': [('state', 'in', ('done', 'cancel'))]}" />
+							<button class="oe_inline oe_stat_button" name="compute" string="Compute" type="object" attrs="{'invisible': [('state', '!=', 'draft')]}" icon="fa-calculator" />
+							<button class="oe_inline oe_stat_button" name="validate" string="Validate" type="object" attrs="{'invisible': [('state', '!=', 'draft')]}" icon="fa-check-square" />
+							<button class="oe_inline oe_stat_button" name="cancel_validation" string="Cancel validation" type="object" attrs="{'invisible': [('state', '!=', 'progress')]}" icon="fa-reply" />
+							<button class="oe_inline oe_stat_button" name="payment" string="Payment" type="object" attrs="{'invisible': [('state', '!=', 'progress')]}" icon="fa-usd" />
+							<button class="oe_inline oe_stat_button" name="cancel_payment" string="Cancel payment" type="object" attrs="{'invisible': [('state', '!=', 'done')]}" icon="fa-reply" />
+						</group>
+					</group>
+				</form>
+			</field>
+		</record>
+
+		<!-- TREE VIEW VAT return -->
+		<record id='view_tree_account_vat_return' model='ir.ui.view'>
+			<field name="name">view_tree_account_vat_return</field>
+			<field name="model">account.vat.return</field>
+			<field name="arch" type="xml">
+				<tree string="VAT returns" version="8.0">
+					<field name="name" />
+					<field name="template_id" />
+					<field name="partner_id" />
+					<field name="start_date" />
+					<field name="end_date" />
+					<field name="state" />
+				</tree>
+			</field>
+		</record>
+
+		<!-- SEARCH VIEW VAT return -->
+		<record id='view_search_account_vat_return' model='ir.ui.view'>
+			<field name="name">view_search_account_vat_return</field>
+			<field name="model">account.vat.return</field>
+			<field name="arch" type="xml">
+				<search version="8.0">
+					<field name="name" />
+					<field name="template_id" />
+					<field name="partner_id" />
+					<field name="start_date" />
+					<field name="end_date" />
+				</search>
+			</field>
+		</record>
+
+		<!-- ACTION VAT return -->
+		<record id="act_account_vat_return" model="ir.actions.act_window">
+			<field name="name">VAT return</field>
+			<field name="res_model">account.vat.return</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+			<field name="search_view_id" ref="view_search_account_vat_return" />
+		</record>
+
+		<menuitem id="menu_taxes" name="Taxes" parent="account.menu_finance" sequence="10" />
+		<menuitem name="VAT return" action="act_account_vat_return" id="menu_account_vat_return" parent="menu_taxes" />
+
+		<!-- FORM VIEW VAT return template -->
+		<record id='view_form_account_vat_return_template' model='ir.ui.view'>
+			<field name="name">view_form_account_vat_return_template</field>
+			<field name="model">account.vat.return.template</field>
+			<field name="arch" type="xml">
+				<form string="VAT return template" version="8.0">
+					<group colspan="4" col="4">
+						<group colspan="4" col="4">
+							<field name="name" colspan="4" />
+						</group>
+						<notebook>
+							<page string="Tax account">
+								<group colspan="4" col="4">
+									<group colspan="2" col="2" string="Debit account (Input tax)">
+										<field name="debit_vat_account_ids" nolabel="1" colspan="2" />
+									</group>
+									<group colspan="2" col="2" string="Credit account (Output tax)">
+										<field name="credit_vat_account_ids" nolabel="1" colspan="2" />
+									</group>
+								</group>
+							</page>
+							<page string="Waiting tax account">
+								<field name="waiting_vat_account_ids" nolabel="1" colspan="4" />
+							</page>
+							<page string="Income and expense account">
+								<group colspan="4" col="4">
+									<group colspan="2" col="2" string="Sale account">
+										<field name="sale_account_ids" nolabel="1" colspan="2" />
+									</group>
+									<group colspan="2" col="2" string="Purchase account">
+										<field name="purchase_account_ids" nolabel="1" colspan="2" />
+									</group>
+								</group>
+							</page>
+						</notebook>
+					</group>
+				</form>
+			</field>
+		</record>
+
+		<!-- TREE VIEW VAT return template -->
+		<record id='view_tree_account_vat_return_template' model='ir.ui.view'>
+			<field name="name">view_tree_account_vat_return_template</field>
+			<field name="model">account.vat.return.template</field>
+			<field name="arch" type="xml">
+				<tree string="VAT return templates" version="8.0">
+					<field name="name" />
+				</tree>
+			</field>
+		</record>
+
+		<!-- SEARCH VIEW VAT return template -->
+		<record id='view_search_account_vat_return_template' model='ir.ui.view'>
+			<field name="name">view_search_account_vat_return_template</field>
+			<field name="model">account.vat.return.template</field>
+			<field name="arch" type="xml">
+				<search version="8.0">
+					<field name="name" />
+				</search>
+			</field>
+		</record>
+
+		<!-- ACTION VAT return template -->
+		<record id="act_account_vat_return_template" model="ir.actions.act_window">
+			<field name="name">VAT return template</field>
+			<field name="res_model">account.vat.return.template</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+			<field name="search_view_id" ref="view_search_account_vat_return_template" />
+		</record>
+
+		<menuitem name="VAT return template" action="act_account_vat_return_template" id="menu_account_vat_return_template" parent="menu_taxes" />
+	</data>
+</openerp>

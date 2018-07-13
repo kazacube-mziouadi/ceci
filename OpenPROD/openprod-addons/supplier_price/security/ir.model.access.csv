@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_modif_price_productpartnerinfo,modif.price.productpartnerinfo,model_modif_price_productpartnerinfo,base.group_user,1,1,1,1

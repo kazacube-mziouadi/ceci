@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+		
+		<!-- FORM VIEW Partner -->
+		<record id="view_form_partner_sale" model="ir.ui.view">
+			<field name="name">view_form_partner_sale</field>
+			<field name="inherit_id" ref="partner_openprod.openprod_view_partner_form" />
+			<field name="model">res.partner</field>
+			<field name="arch" type="xml">
+				<xpath expr="//page[@name='contacts_notes_page']" position="after">
+					<page string="Sale" name="page_sale" attrs="{'invisible': [('is_customer', '=', False), ('is_company', '=', True)]}">
+						<group colspan="4" col="6">
+							<group colspan="2" col="2" attrs="{'invisible': ['|', '|', ('can_order', '=', False), ('is_customer', '=', False), ('is_company', '=', False)]}">
+								<group colspan="2" col="2" string="Contact management" name="group_contact_management" >
+									<field name="seller_id"/>
+									<field name="sales_manager_id"/>
+									<field name="stat_family_id" domain="[('is_sale','=',True)]" context="{'default_is_sale':True}"/>
+									<field name="edi_code"/>
+									<field name="num_with_customer"/>
+								</group>
+								<group colspan="2" col="2" string="Delivery" attrs="{'readonly': [('can_be_delivered', '!=', True)]}" >
+									<field name="partial_sale_delivery"/>
+									<field name="generate_sale_rest"/>
+									<field name="property_account_position_id"  attrs="{'required': [('is_company', '=', True),('is_customer', '=', True), ('state', '=', 'qualified'),('can_be_delivered', '=', True)]}"/>
+								</group>
+								<group colspan="2" col="2" string="Communication method" attrs="{'invisible': [('can_order', '!=', True)]}" name="sale_communication_method" >
+									<field name="receipt_demand"/>
+									<field name="delay_confirmation"/>
+									<field name="sale_contact_ids" options="{'no_create': True}" attrs="{'invisible': [('receipt_demand', '=', False), ('delay_confirmation', '=', False)]}"
+									       widget="many2many_tags" domain="[('contact_in_partner_sale', 'in', contact_ids)]"/>
+									<field name="sale_communication_method" attrs="{'required': [('is_customer', '=', True),('can_order', '=', True), '|', ('receipt_demand', '!=', False), ('delay_confirmation', '!=', False)],
+									                                                'invisible': [('receipt_demand', '=', False), ('delay_confirmation', '=', False)]}" />
+									<field name="sale_communication_value" attrs="{'invisible': [('receipt_demand', '=', False), ('delay_confirmation', '=', False)]}" />
+								</group>
+							</group>
+							<group colspan="4" col="4">
+								<group colspan="4" col="4" string="Description">
+									<field name="can_order"/>
+									<field name="can_be_charged"/>
+									<field name="can_be_delivered"/>
+									<field name="can_paid"/>
+									<field name="type_ids" colspan="4" nolabel="1" attrs="{'invisible': ['|', '|', ('can_order', '=', False), ('is_customer', '=', False), ('is_company', '=', False)]}">
+										<tree editable="bottom">
+											<field name="sequence"/>
+											<field name="partner_type"/>
+											<field name="partner_type_id" context="{'default_is_company': True, 'default_is_customer': True, 'default_can_order': True, 'default_can_be_charged': True, 'default_can_be_delivered': True, 'default_can_paid': True}"
+											       domain="[('id','!=',parent.id),(partner_type,'=',True),('is_company','=',True),'|', ('state','!=','stopped'), ('state','=',False)]" 
+											       attrs="{'readonly': [('partner_type', '=', False)], 'required': [('partner_type', '!=', False)]}"/>
+										</tree>
+									</field>
+									<separator string="Orders" colspan="4" attrs="{'invisible': ['|', '|', ('can_order', '=', True), ('is_customer', '=', False), ('is_company', '=', False)]}" />
+									<field name="type_inv_ids" colspan="4" nolabel="1" attrs="{'invisible': ['|', '|', ('can_order', '=', True), ('is_customer', '=', False), ('is_company', '=', False)]}" />
+								</group>
+								<group colspan="4" col="4" string="Paiement process management" name="paiement_process" attrs="{'invisible': ['|', ('is_customer', '=', False), ('is_company', '=', False)], 'readonly': [('can_paid', '!=', True)]}">
+									<group colspan="4" col="4">
+										<field name="property_payment_term_id" attrs="{'required': [('is_company', '=', True),('is_customer', '=', True), ('state', '=', 'qualified'),('can_paid', '=', True)]}"/>
+										<field name="sale_invoicing_method_id" attrs="{'required': [('is_company', '=', True),('is_customer', '=', True), ('state', '=', 'qualified'),('can_paid', '=', True)]}"/>
+<!-- 										<field name="sale_invoicing_trigger" attrs="{'required': [('is_company', '=', True),('is_customer', '=', True), ('state', '=', 'qualified'),('can_be_charged', '=', True)]}"/> -->
+										<field name="sale_payment_method_id"  attrs="{'required': [('is_company', '=', True),('is_customer', '=', True), ('state', '=', 'qualified'),('can_paid', '=', True)]}"/>
+<!-- 										<field name="sale_invoiced_on"  attrs="{'required': [('is_company', '=', True),('is_customer', '=', True), ('state', '=', 'qualified'),('can_be_charged', '=', True)]}"/> -->
+									</group>
+									<group colspan="4" col="6" >
+										<field name="sale_discount_management"/>
+										<field name="sale_max_delay" attrs="{'invisible': [('sale_discount_management', '=', False)],'required': [('is_company', '=', True),('is_customer', '=', True),('sale_discount_management','=',True)]}"/>
+										<field name="sale_discount_value" attrs="{'invisible': [('sale_discount_management', '=', False)],'required': [('is_company', '=', True),('is_customer', '=', True),('sale_discount_management','=',True)]}"/>
+									</group>
+								</group>
+								<group colspan="4" col="4" attrs="{'invisible': ['|', ('is_customer', '=', False), ('is_company', '=', False)]}" string="Note on sale order header" name="sale_note" >
+	                                <field name="note_header" nolabel="1" colspan="4"/>
+	                            </group>
+							</group>
+						</group>
+					</page>
+				</xpath>
+				<xpath expr="//field[@name='contact_ids']//form//page[@name='contact_address']" position="after">
+					<page string="Sale" name="page_sale_contact">
+						<group colspan="4" col="4">
+							<group colspan="4" col="4" string="Description">
+								<field name="can_order"/>
+								<field name="can_be_charged"/>
+								<field name="can_be_delivered"/>
+								<field name="can_paid"/>
+							</group>
+						</group>
+					</page>
+				</xpath>
+				<xpath expr="//group[@name='sale_transp_contact']" position="inside">
+					<group colspan="4" col="4" attrs="{'invisible': [('is_customer', '=', False)], 'readonly': [('can_be_delivered', '!=', True)]}" string="Sale" name="group_sale_transp" >
+						<group colspan="4" col="2">
+							<field name="sale_delivery_contact_id" options="{'no_create': True}" domain="[('contact_in_partner_sale', 'in', contact_ids)]"/>
+							<field name="sale_incoterm_id"/>
+							<field name="sale_invoice_postage" attrs="{'invisible': [('sale_incoterm_id', '=', 1)], 'required': [('sale_incoterm_id', 'not in', (1, False)),('is_customer', '=', True)]}"/>
+							<field name="sale_threshold" attrs="{'invisible': ['|', ('sale_invoice_postage', '!=', 'threshold'), ('sale_incoterm_id', '=', 1)], 'required': [('sale_invoice_postage', '=', 'threshold'), ('sale_incoterm_id', '!=', 1),('can_be_delivered', '=', True)]}"/>
+							<field name="sale_forwarding_agent_id" domain="[('is_company','=',True)]"/>
+							<field name="sale_delivery_delay" attrs="{'required': [('is_customer', '=', True), ('is_company', '=', True),('can_be_delivered', '=', True)]}"/>
+						</group>
+						<separator colspan="4" string="Note on delivery order"/>
+						<field name="note_delivery_order" colspan="4" nolabel="1"/>
+					</group>
+				</xpath>
+				<xpath expr="//separator[@name='separator_analysis_menu']" position="after">
+					<button class="oe_inline oe_stat_button" type="object" string="Sales" name="show_partner_sale" icon="fa-credit-card"
+					attrs="{'invisible': ['|',('is_company', '=', False), ('is_customer', '=', False)]}" />
+				</xpath>
+			</field>
+		</record>
+		
+		
+		<record id="view_form_general_partner_sale" model="ir.ui.view">
+            <field name="name">view_form_general_partner_sale</field>
+            <field name="inherit_id" ref="account_openprod.view_form_general_partner" />
+            <field name="priority">2000</field>
+            <field name="model">res.partner</field>
+            <field name="arch" type="xml">
+                <xpath expr="//group[@name='group_customer_invoicing']" position="attributes">
+                    <attribute name="attrs">{'invisible': [('is_customer', '=', False)], 'readonly': [('can_be_charged', '!=', True)]}</attribute>
+                </xpath>
+		    </field>
+		</record>
+		
+		
+		
+		
+		<!-- TREE VIEW Customer-->
+		<record id='openprod_view_partner_customer_tree' model='ir.ui.view'>
+			<field name="name">openprod_view_partner_customer_tree</field>
+			<field name="inherit_id" ref="partner_openprod.openprod_view_partner_tree" />
+			<field name="model">res.partner</field>
+			<field name="arch" type="xml">
+				<xpath expr="//field[@name='state']" position="after">
+					<field name="seller_id" invisible="1"/>
+				</xpath>
+			</field>
+		</record>
+		
+		<!-- SEARCH VIEW Customer-->
+		<record id='openprod_view_partner_customer_search' model='ir.ui.view'>
+			<field name="name">openprod_view_partner_customer_search</field>
+			<field name="inherit_id" ref="partner_openprod.openprod_view_partner_customer_search" />
+			<field name="model">res.partner</field>
+			<field name="arch" type="xml">
+				<xpath expr="//filter[@name='partner_state']" position="after">
+					<filter string="My customers" domain="['|', ('seller_id', '=', uid), ('sales_manager_id', '=', uid)]" />
+					<filter string="Sale stat family" domain="[]" context="{'group_by': 'stat_family_id'}" />
+					<filter string="Sales manager" domain="[]" context="{'group_by': 'sales_manager_id'}" />
+					<filter string="Seller" domain="[]" context="{'group_by': 'seller_id'}" />
+				</xpath>
+			</field>
+		</record>
+		
+		<!-- =================== -->
+		<!-- PARTNER STAT FAMILY -->
+		<!-- =================== -->
+		
+		
+		<!-- SEARCH VIEW Partner stat family -->
+		<record id='view_search_partner_stat_sale_family' model='ir.ui.view'>
+			<field name="name">view_search_partner_stat_sale_family</field>
+			<field name="model">partner.stat.family</field>
+			<field name="arch" type="xml">
+				<search version="8.0">
+					<field name="name"/>
+				</search>
+			</field>
+		</record>
+		
+		
+		<!-- FORM VIEW Partner stat purchase family -->
+		<record id="view_form_res_partner_stat_family" model="ir.ui.view">
+			<field name="name">view_form_res_partner_stat_family</field>
+			<field name="inherit_id" ref="partner_openprod.view_form_res_partner_stat_family"/>
+			<field name="model">partner.stat.family</field>
+			<field name="arch" type="xml">
+				<xpath expr="//field[@name='name']" position="after">
+					<field name="is_sale"/>
+				</xpath>
+			</field>
+		</record>
+		
+		<!-- ACTION Partner stat sale family -->
+		<record id="act_partner_stat_sale_family" model="ir.actions.act_window">
+		    <field name="name">Partner sale stat family</field>
+		    <field name="res_model">partner.stat.family</field>
+		    <field name="view_type">form</field>
+		    <field name="view_mode">tree,form</field>
+		    <field name="domain">[('is_sale', '=', True)]</field>
+		    <field name="context">{'default_is_sale': True}</field>
+		    <field name="search_view_id" ref="view_search_partner_stat_sale_family"/>
+		</record>
+		
+		<menuitem name="Partner sale stat family" action="act_partner_stat_sale_family" id="menu_open_sale_stat_family" parent="partner_openprod.menu_partner_categories" groups="partner_openprod.group_menu_partner_manager"/>
+        <menuitem name="Customer stat family" action="act_partner_stat_sale_family" id="menu_open_sale_stat_family_sale" parent="sale.menu_sale_configuration_customer" groups="partner_openprod.group_menu_partner_manager" sequence="20" />
+	
+	</data>
+</openerp>

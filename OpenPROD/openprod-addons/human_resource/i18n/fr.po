@@ -1,0 +1,948 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* human_resource
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 9.0c\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-01-23 10:02+0000\n"
+"PO-Revision-Date: 2017-01-23 10:02+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: human_resource
+#: model:ir.model.fields,field_description:human_resource.field_employee_account_id
+msgid "Account"
+msgstr "Compte"
+
+#. module: human_resource
+#: model:ir.model.fields,field_description:human_resource.field_employee_account_bank_id
+msgid "Account bank"
+msgstr "Compte bancaire"
+
+#. module: human_resource
+#: code:addons/human_resource/employee.py:43
+#, python-format
+msgid "Active"
+msgstr "Actif"
+
+#. module: human_resource
+#: model:ir.model.fields,field_description:human_resource.field_employee_address_id
+msgid "Address"
+msgstr "Adresse"
+
+#. module: human_resource
+#: model:res.groups,name:human_resource.human_resource_responsible
+msgid "Administrator"
+msgstr "Administrateur"
+
+#. module: human_resource
+#: model:ir.model.fields,field_description:human_resource.field_employee_age
+#: model:ir.model.fields,field_description:human_resource.field_employee_children_age
+msgid "Age"
+msgstr "Age"
+
+#. module: human_resource
+#: model:ir.model.fields,field_description:human_resource.field_resource_holiday_type_allow_override
+msgid "Allow to Override Limit"
+msgstr "Dépassement de limite autorisé"
+
+#. module: human_resource
+#: model:ir.ui.menu,name:human_resource.menu_human_resource_analysis
+msgid "Analysis"
+msgstr "Analyse"
+
+#. module: human_resource
+#: model:ir.model.fields,field_description:human_resource.field_employee_avg_hour
+msgid "Average hours"
+msgstr "Moyenne d'heures"
+
+#. module: human_resource
+#: model:ir.model.fields,field_description:human_resource.field_employee_birth_date
+#: model:ir.model.fields,field_description:human_resource.field_employee_children_birth_date
+msgid "Birth date"
+msgstr "Date de naissance"
+
+#. module: human_resource
+#: model:ir.model.fields,field_description:human_resource.field_employee_calendar_id
+msgid "Calendar"
+msgstr "Calendrier"
+
+#. module: human_resource
+#: model:workflow.transition,button_label:human_resource.holiday_confirmed_to_cancelled
+#: model:workflow.transition,button_label:human_resource.holiday_giving_confirmed_to_cancelled
+#: model:workflow.transition,button_label:human_resource.holiday_giving_to_approved_to_cancelled
+#: model:workflow.transition,button_label:human_resource.holiday_to_approved_to_cancelled
+msgid "Cancel"
+msgstr "Annuler"
+
+#. module: human_resource
+#: code:addons/human_resource/holiday.py:51
+#: code:addons/human_resource/holiday.py:343
+#: model:workflow.display.state,label:human_resource.resource_holiday_cancelled
+#: model:workflow.display.state,label:human_resource.resource_holiday_giving_cancelled
+#, python-format
+msgid "Cancelled"
+msgstr "Annulé"
+
+#. module: human_resource
+#: model:ir.model.fields,field_description:human_resource.field_employee_category_id
+msgid "Category"
+msgstr "Catégorie"
+
+#. module: human_resource
+#: model:ir.ui.view,arch_db:human_resource.view_search_resource_holiday_giving
+msgid "Category method"
+msgstr "Mode catégorie"
+
+#. module: human_resource
+#: model:ir.model.fields,field_description:human_resource.field_employee_children_ids
+#: model:ir.ui.view,arch_db:human_resource.view_form_employee_id
+msgid "Children"
+msgstr "Enfants"
+
+#. module: human_resource
+#: model:ir.model.fields,field_description:human_resource.field_employee_civility_id
+msgid "Civility"
+msgstr "Civilité"
+
+#. module: human_resource
+#: model:ir.model.fields,field_description:human_resource.field_employee_office_code
+msgid "Code"
+msgstr "Code"
+
+#. module: human_resource
+#: model:ir.model.fields,help:human_resource.field_employee_calendar_id
+msgid "Come from the selected resource or manually selected"
+msgstr "Provient de la ressource sélectionnée ou saisie manuellement"
+
+#. module: human_resource
+#: model:ir.model.fields,field_description:human_resource.field_employee_children_comment
+#: model:ir.model.fields,field_description:human_resource.field_resource_holiday_giving_comment
+#: model:ir.ui.view,arch_db:human_resource.view_form_resource_holiday_giving
+msgid "Comment"
+msgstr "Commentaire"
+
+#. module: human_resource
+#: model:ir.model.fields,field_description:human_resource.field_employee_company_id
+msgid "Company"
+msgstr "Société"
+
+#. module: human_resource
+#: model:resource.holiday.type,name:human_resource.holiday_compensatory_leave_type
+msgid "Compensatory Days"
+msgstr "Jours de compensation"
+
+#. module: human_resource
+#: model:ir.ui.menu,name:human_resource.menu_human_resource_config
+msgid "Configuration"
+msgstr "Configuration"
+
+#. module: human_resource
+#: model:workflow.transition,button_label:human_resource.holiday_giving_to_approved_to_confirmed
+#: model:workflow.transition,button_label:human_resource.holiday_to_approved_to_confirmed
+msgid "Confirm"
+msgstr "Confirmer"
+
+#. module: human_resource
+#: code:addons/human_resource/holiday.py:50
+#: code:addons/human_resource/holiday.py:342
+#: model:workflow.display.state,label:human_resource.resource_holiday_confirmed
+#: model:workflow.display.state,label:human_resource.resource_holiday_giving_confirmed
+#, python-format
+msgid "Confirmed"
+msgstr "Confirmé"
+
+#. module: human_resource
+#: model:ir.model.fields,field_description:human_resource.field_employee_contact_name
+msgid "Contact name"
+msgstr "Nom du contact"
+
+#. module: human_resource
+#: model:ir.model.fields,field_description:human_resource.field_employee_contact_phone
+msgid "Contact phone"
+msgstr "Téléphone du contact"
+
+#. module: human_resource
+#: model:ir.model.fields,field_description:human_resource.field_employee_category_create_uid
+#: model:ir.model.fields,field_description:human_resource.field_employee_children_create_uid
+#: model:ir.model.fields,field_description:human_resource.field_employee_create_uid
+#: model:ir.model.fields,field_description:human_resource.field_employee_degree_create_uid
+#: model:ir.model.fields,field_description:human_resource.field_employee_office_create_uid
+#: model:ir.model.fields,field_description:human_resource.field_employee_service_create_uid
+#: model:ir.model.fields,field_description:human_resource.field_resource_holiday_create_uid
+#: model:ir.model.fields,field_description:human_resource.field_resource_holiday_giving_create_uid
+#: model:ir.model.fields,field_description:human_resource.field_resource_holiday_type_create_uid
+msgid "Created by"
+msgstr "Créé par"
+
+#. module: human_resource
+#: model:ir.model.fields,field_description:human_resource.field_employee_category_create_date
+#: model:ir.model.fields,field_description:human_resource.field_employee_children_create_date
+#: model:ir.model.fields,field_description:human_resource.field_employee_create_date
+#: model:ir.model.fields,field_description:human_resource.field_employee_degree_create_date
+#: model:ir.model.fields,field_description:human_resource.field_employee_office_create_date
+#: model:ir.model.fields,field_description:human_resource.field_employee_service_create_date
+#: model:ir.model.fields,field_description:human_resource.field_resource_holiday_create_date
+#: model:ir.model.fields,field_description:human_resource.field_resource_holiday_giving_create_date
+#: model:ir.model.fields,field_description:human_resource.field_resource_holiday_type_create_date
+msgid "Created on"
+msgstr "Créé le"
+
+#. module: human_resource
+#: model:ir.ui.view,arch_db:human_resource.view_form_resource_holiday
+msgid "Dates"
+msgstr "Dates"
+
+#. module: human_resource
+#: model:ir.model.fields,field_description:human_resource.field_employee_degree_id
+msgid "Degree"
+msgstr "Diplome"
+
+#. module: human_resource
+#: code:addons/human_resource/holiday.py:41
+#: model:ir.ui.view,arch_db:human_resource.view_search_resource_holiday
+#, python-format
+msgid "Demand"
+msgstr "Demande"
+
+#. module: human_resource
+#: model:ir.model.fields,field_description:human_resource.field_resource_holiday_giving_name
+#: model:ir.model.fields,field_description:human_resource.field_resource_holiday_name
+msgid "Description"
+msgstr "Description"
+
+#. module: human_resource
+#: model:ir.ui.view,arch_db:human_resource.view_form_resource_holiday
+#: model:ir.ui.view,arch_db:human_resource.view_form_resource_holiday_giving
+msgid "Details"
+msgstr "Détails"
+
+#. module: human_resource
+#: model:ir.model.fields,field_description:human_resource.field_employee_category_display_name
+#: model:ir.model.fields,field_description:human_resource.field_employee_children_display_name
+#: model:ir.model.fields,field_description:human_resource.field_employee_degree_display_name
+#: model:ir.model.fields,field_description:human_resource.field_employee_display_name
+#: model:ir.model.fields,field_description:human_resource.field_employee_office_display_name
+#: model:ir.model.fields,field_description:human_resource.field_employee_service_display_name
+#: model:ir.model.fields,field_description:human_resource.field_resource_holiday_display_name
+#: model:ir.model.fields,field_description:human_resource.field_resource_holiday_giving_display_name
+#: model:ir.model.fields,field_description:human_resource.field_resource_holiday_type_display_name
+msgid "Display Name"
+msgstr "Nom"
+
+#. module: human_resource
+#: code:addons/human_resource/employee.py:74
+#, python-format
+msgid "Divorced"
+msgstr "Divorcé(e)"
+
+#. module: human_resource
+#: code:addons/human_resource/holiday.py:48
+#: code:addons/human_resource/holiday.py:340
+#: model:workflow.display.state,label:human_resource.resource_holiday_draft
+#: model:workflow.display.state,label:human_resource.resource_holiday_giving_draft
+#, python-format
+msgid "Draft"
+msgstr "Brouillon"
+
+#. module: human_resource
+#: model:ir.model.fields,field_description:human_resource.field_resource_holiday_demand_time
+#: model:ir.model.fields,field_description:human_resource.field_resource_holiday_giving_duration
+#: model:ir.model.fields,field_description:human_resource.field_resource_holiday_giving_time_11508
+#: model:ir.model.fields,field_description:human_resource.field_resource_holiday_total_duration
+msgid "Duration (in days)"
+msgstr "Durée (en jours)"
+
+#. module: human_resource
+#: model:ir.model.fields,field_description:human_resource.field_employee_email
+msgid "Email"
+msgstr "Email"
+
+#. module: human_resource
+#: code:addons/human_resource/holiday.py:332
+#: model:ir.actions.act_window,name:human_resource.act_employee_id
+#: model:ir.model,name:human_resource.model_employee
+#: model:ir.model.fields,field_description:human_resource.field_employee_children_employee_id
+#: model:ir.model.fields,field_description:human_resource.field_resource_holiday_employee_id
+#: model:ir.model.fields,field_description:human_resource.field_resource_holiday_giving_employee_id
+#: model:ir.ui.menu,name:human_resource.menu_employee_config
+#: model:ir.ui.menu,name:human_resource.menu_employee_id
+#: model:ir.ui.view,arch_db:human_resource.view_form_employee_id
+#: model:ir.ui.view,arch_db:human_resource.view_search_resource_holiday
+#: model:ir.ui.view,arch_db:human_resource.view_search_resource_holiday_giving
+#, python-format
+msgid "Employee"
+msgstr "Employé"
+
+#. module: human_resource
+#: code:addons/human_resource/employee.py:182
+#: code:addons/human_resource/employee.py:200
+#: code:addons/human_resource/employee.py:206
+#, python-format
+msgid "Employee already using this resource, you must change its status to 'old' before creating a new employee with this resource (%s %s)."
+msgstr "Un employé existe déjà pour cette ressource, vous devez passer l'état à 'ancien' avant de créer un nouveau employé avec cette ressource (%s %s)."
+
+#. module: human_resource
+#: model:ir.ui.view,arch_db:human_resource.view_form_employee_category
+#: model:ir.ui.view,arch_db:human_resource.view_tree_employee_category
+msgid "Employee categories"
+msgstr "Catégories d'employé"
+
+#. module: human_resource
+#: code:addons/human_resource/holiday.py:333
+#: model:ir.actions.act_window,name:human_resource.act_employee_category
+#: model:ir.model.fields,field_description:human_resource.field_resource_holiday_giving_employee_category_id
+#: model:ir.ui.menu,name:human_resource.menu_employee_category
+#, python-format
+msgid "Employee category"
+msgstr "Catégories d'employé"
+
+#. module: human_resource
+#: model:ir.actions.act_window,name:human_resource.act_employee_children_id
+#: model:ir.model,name:human_resource.model_employee_children
+#: model:ir.ui.view,arch_db:human_resource.view_form_employee_children_id
+msgid "Employee children"
+msgstr "Enfant de l'employé"
+
+#. module: human_resource
+#: model:ir.ui.view,arch_db:human_resource.view_tree_employee_children_id
+msgid "Employee childrens"
+msgstr "Enfants de l'employé"
+
+#. module: human_resource
+#: model:ir.actions.act_window,name:human_resource.act_employee_degree_id
+#: model:ir.model,name:human_resource.model_employee_degree
+#: model:ir.ui.menu,name:human_resource.menu_employee_degree_id
+#: model:ir.ui.view,arch_db:human_resource.view_form_employee_degree_id
+msgid "Employee degree"
+msgstr "Diplôme de l'employé"
+
+#. module: human_resource
+#: model:ir.ui.view,arch_db:human_resource.view_tree_employee_degree_id
+msgid "Employee degrees"
+msgstr "Diplômes de l'employé"
+
+#. module: human_resource
+#: model:ir.ui.view,arch_db:human_resource.view_search_resource_holiday_giving
+msgid "Employee method"
+msgstr "Méthode Employé"
+
+#. module: human_resource
+#: model:ir.model.fields,field_description:human_resource.field_employee_employee_number
+msgid "Employee number"
+msgstr "Numéro de l'employé"
+
+#. module: human_resource
+#: model:ir.actions.act_window,name:human_resource.act_employee_office_id
+#: model:ir.model,name:human_resource.model_employee_office
+#: model:ir.ui.menu,name:human_resource.menu_employee_office_id
+#: model:ir.ui.view,arch_db:human_resource.view_form_employee_office_id
+msgid "Employee office"
+msgstr "Poste de l'employé"
+
+#. module: human_resource
+#: model:ir.ui.view,arch_db:human_resource.view_tree_employee_office_id
+msgid "Employee offices"
+msgstr "Postes de l'employé"
+
+#. module: human_resource
+#: model:ir.actions.act_window,name:human_resource.act_employee_service_id
+#: model:ir.model,name:human_resource.model_employee_service
+#: model:ir.ui.menu,name:human_resource.menu_employee_service_id
+#: model:ir.ui.view,arch_db:human_resource.view_form_employee_service_id
+msgid "Employee service"
+msgstr "Service de l'employé"
+
+#. module: human_resource
+#: model:ir.ui.view,arch_db:human_resource.view_tree_employee_service_id
+msgid "Employee services"
+msgstr "Services de l'employé"
+
+#. module: human_resource
+#: model:ir.model,name:human_resource.model_employee_category
+msgid "Employee's category"
+msgstr "Catégorie des employés"
+
+#. module: human_resource
+#: model:ir.ui.view,arch_db:human_resource.view_form_employee_category
+msgid "Employee's list"
+msgstr "Liste des employés"
+
+#. module: human_resource
+#: model:ir.model.fields,field_description:human_resource.field_employee_category_employee_ids
+#: model:ir.ui.view,arch_db:human_resource.view_tree_employee_id
+msgid "Employees"
+msgstr "Employés"
+
+#. module: human_resource
+#: model:ir.model.fields,field_description:human_resource.field_resource_holiday_end_date
+msgid "End date"
+msgstr "Date de fin"
+
+#. module: human_resource
+#: model:ir.model.fields,field_description:human_resource.field_employee_entry_date
+msgid "Entry date"
+msgstr "Date d'entrée"
+
+#. module: human_resource
+#: code:addons/human_resource/employee.py:181
+#: code:addons/human_resource/employee.py:195
+#: code:addons/human_resource/employee.py:199
+#: code:addons/human_resource/employee.py:205
+#, python-format
+msgid "Error"
+msgstr "Erreur"
+
+#. module: human_resource
+#: model:ir.model.fields,field_description:human_resource.field_employee_family_situation
+msgid "Family situation"
+msgstr "Situtation familiale"
+
+#. module: human_resource
+#: model:ir.ui.view,arch_db:human_resource.view_form_employee_id
+msgid "Family status"
+msgstr "Status de la famille"
+
+#. module: human_resource
+#: code:addons/human_resource/employee.py:82
+#, python-format
+msgid "Female"
+msgstr "Femme"
+
+#. module: human_resource
+#: model:ir.ui.view,arch_db:human_resource.view_search_resource_holiday
+#: model:ir.ui.view,arch_db:human_resource.view_search_resource_holiday_giving
+msgid "Filters"
+msgstr "Filtres"
+
+#. module: human_resource
+#: model:ir.model.fields,field_description:human_resource.field_employee_children_first_name
+#: model:ir.model.fields,field_description:human_resource.field_employee_first_name
+msgid "First name"
+msgstr "Prénom"
+
+#. module: human_resource
+#: code:addons/human_resource/employee.py:42
+#, python-format
+msgid "Future"
+msgstr "Futur"
+
+#. module: human_resource
+#: model:ir.ui.view,arch_db:human_resource.view_form_employee_id
+msgid "General information"
+msgstr "Informations générales"
+
+#. module: human_resource
+#: code:addons/human_resource/holiday.py:40
+#: model:ir.ui.view,arch_db:human_resource.view_search_resource_holiday
+#, python-format
+msgid "Giving"
+msgstr "Attribution"
+
+#. module: human_resource
+#: model:ir.ui.view,arch_db:human_resource.view_search_resource_holiday
+#: model:ir.ui.view,arch_db:human_resource.view_search_resource_holiday_giving
+msgid "Group by..."
+msgstr "Grouper par..."
+
+#. module: human_resource
+#: model:ir.ui.menu,name:human_resource.menu_human_resource
+#: model:ir.ui.menu,name:human_resource.menu_human_resource_main
+msgid "HR"
+msgstr "RH"
+
+#. module: human_resource
+#: model:res.groups,name:human_resource.group_menu_human_resource_config
+msgid "HR configurations"
+msgstr "RH configuration"
+
+#. module: human_resource
+#: model:ir.ui.view,arch_db:human_resource.view_form_employee_id
+msgid "HR information"
+msgstr "RH information"
+
+#. module: human_resource
+#: model:res.groups,name:human_resource.group_menu_human_resource_manager
+msgid "HR managers"
+msgstr "RH gestionnaire"
+
+#. module: human_resource
+#: model:ir.ui.view,arch_db:human_resource.view_form_employee_id
+msgid "HR note"
+msgstr "Note RH"
+
+#. module: human_resource
+#: model:res.groups,name:human_resource.group_menu_human_resource_user
+msgid "HR users"
+msgstr "RH utilisateur"
+
+#. module: human_resource
+#: model:ir.ui.menu,name:human_resource.menu_holiday_resource
+#: model:ir.ui.menu,name:human_resource.menu_holiday_resource_config
+msgid "Holiday"
+msgstr "Congé"
+
+#. module: human_resource
+#: model:ir.actions.act_window,name:human_resource.act_resource_holiday_demand
+#: model:ir.ui.menu,name:human_resource.menu_holiday_resource_demand
+msgid "Holiday demand"
+msgstr "Demande de congés"
+
+#. module: human_resource
+#: model:ir.actions.act_window,name:human_resource.act_resource_holiday_demand_to_validate
+#: model:ir.ui.menu,name:human_resource.menu_holiday_resource_demand_to_validate
+msgid "Holiday demand to validate"
+msgstr "Demande de congés à valider"
+
+#. module: human_resource
+#: model:ir.model.fields,field_description:human_resource.field_resource_holiday_giving_id
+#: model:ir.ui.view,arch_db:human_resource.view_form_resource_holiday_giving
+#: model:ir.ui.view,arch_db:human_resource.view_tree_resource_holiday_giving
+msgid "Holiday giving"
+msgstr "Attribution congés"
+
+#. module: human_resource
+#: model:ir.actions.act_window,name:human_resource.act_resource_holiday_giving_demand
+#: model:ir.ui.menu,name:human_resource.menu_holiday_giving_demand
+msgid "Holiday giving demand"
+msgstr "Demande d'attribution de congés"
+
+#. module: human_resource
+#: model:ir.actions.act_window,name:human_resource.act_resource_holiday_type
+#: model:ir.model.fields,field_description:human_resource.field_resource_holiday_giving_holiday_type_id
+#: model:ir.model.fields,field_description:human_resource.field_resource_holiday_holiday_type_id
+#: model:ir.ui.menu,name:human_resource.menu_holiday_type_config
+#: model:ir.ui.view,arch_db:human_resource.view_form_resource_holiday_type
+#: model:ir.ui.view,arch_db:human_resource.view_search_resource_holiday
+#: model:ir.ui.view,arch_db:human_resource.view_search_resource_holiday_giving
+#: model:ir.ui.view,arch_db:human_resource.view_tree_resource_holiday_type
+msgid "Holiday type"
+msgstr "Type de congé"
+
+#. module: human_resource
+#: model:ir.ui.menu,name:human_resource.menu_all_holiday_resource_calendar
+msgid "Holiday's calendar"
+msgstr "Calendrier des congés"
+
+#. module: human_resource
+#: model:ir.model,name:human_resource.model_resource_holiday_type
+msgid "Holiday's type"
+msgstr "Type de congé"
+
+#. module: human_resource
+#: model:ir.actions.act_window,name:human_resource.action_all_holiday_resource_calendar
+#: model:ir.actions.act_window,name:human_resource.action_holiday_resource_pivot
+#: model:ir.ui.menu,name:human_resource.menu_holiday_resource_analysis
+#: model:ir.ui.view,arch_db:human_resource.view_graph_holiday_resource
+#: model:ir.ui.view,arch_db:human_resource.view_holiday_resource_pivot
+msgid "Holidays"
+msgstr "Congés"
+
+#. module: human_resource
+#: model:ir.model,name:human_resource.model_resource_holiday
+msgid "Holidays for resources"
+msgstr "Congés des ressources"
+
+#. module: human_resource
+#: model:ir.model,name:human_resource.model_resource_holiday_giving
+msgid "Holidays giving for resources"
+msgstr "Attribution des congés pour les ressources"
+
+#. module: human_resource
+#: model:ir.actions.act_window,name:human_resource.act_resource_holiday_all_summary
+#: model:ir.ui.menu,name:human_resource.menu_all_holiday_resource_summary
+msgid "Holidays summary"
+msgstr "Résumé des congés"
+
+#. module: human_resource
+#: model:ir.module.category,name:human_resource.module_human_resource
+msgid "Human resource"
+msgstr "Resource humaine"
+
+#. module: human_resource
+#: model:ir.model.fields,field_description:human_resource.field_employee_category_id_11659
+#: model:ir.model.fields,field_description:human_resource.field_employee_children_id
+#: model:ir.model.fields,field_description:human_resource.field_employee_degree_id_11260
+#: model:ir.model.fields,field_description:human_resource.field_employee_id
+#: model:ir.model.fields,field_description:human_resource.field_employee_office_id_11269
+#: model:ir.model.fields,field_description:human_resource.field_employee_service_id_11278
+#: model:ir.model.fields,field_description:human_resource.field_resource_holiday_giving_id_11434
+#: model:ir.model.fields,field_description:human_resource.field_resource_holiday_id
+#: model:ir.model.fields,field_description:human_resource.field_resource_holiday_type_id
+msgid "ID"
+msgstr "ID"
+
+#. module: human_resource
+#: model:ir.model.fields,field_description:human_resource.field_employee_identity_number
+msgid "Identity number"
+msgstr "Numéro d'identité"
+
+#. module: human_resource
+#: model:ir.model.fields,help:human_resource.field_resource_holiday_type_group_id
+msgid "If the holiday type need a validation, chose here the user group allowed to confirm the holiday"
+msgstr "Si le type de congés nécessite une validation, sélectionnez ici le groupe d'utilisateurs autorisé à confirmer les congés"
+
+#. module: human_resource
+#: model:ir.model.fields,help:human_resource.field_resource_holiday_type_allow_override
+msgid "If you select this check box, the system allows the employees to take more leaves than the available ones for this type"
+msgstr "Si vous cochez cette case, le système autorisera les employés à demander plus de congés de ce type que le nombre disponible."
+
+#. module: human_resource
+#: code:addons/human_resource/employee.py:152
+#, python-format
+msgid "If your employee is linked to a resource, he must have the same calendar than the resource"
+msgstr "Si l'employé est lié à une ressource, il doit avoir le même calendrier que cette ressource"
+
+#. module: human_resource
+#: model:ir.ui.view,arch_db:human_resource.view_form_employee_id
+msgid "Information in case of problems"
+msgstr "Imformations en cas de problèmes"
+
+#. module: human_resource
+#: model:ir.model.fields,field_description:human_resource.field_resource_holiday_type_duration
+msgid "Initial default balance"
+msgstr "Solde initial par défaut"
+
+#. module: human_resource
+#: code:addons/human_resource/employee.py:195
+#, python-format
+msgid "It is not possible to have more employees with the same resource with different old of state"
+msgstr "Il n'est pas possible d'avoir plusieurs employés avec la même ressource si l'état n'est pas 'ancien'"
+
+#. module: human_resource
+#: model:ir.model.fields,field_description:human_resource.field_employee___last_update
+#: model:ir.model.fields,field_description:human_resource.field_employee_category___last_update
+#: model:ir.model.fields,field_description:human_resource.field_employee_children___last_update
+#: model:ir.model.fields,field_description:human_resource.field_employee_degree___last_update
+#: model:ir.model.fields,field_description:human_resource.field_employee_office___last_update
+#: model:ir.model.fields,field_description:human_resource.field_employee_service___last_update
+#: model:ir.model.fields,field_description:human_resource.field_resource_holiday___last_update
+#: model:ir.model.fields,field_description:human_resource.field_resource_holiday_giving___last_update
+#: model:ir.model.fields,field_description:human_resource.field_resource_holiday_type___last_update
+msgid "Last Modified on"
+msgstr "Dernière modification le"
+
+#. module: human_resource
+#: model:ir.model.fields,field_description:human_resource.field_employee_category_write_uid
+#: model:ir.model.fields,field_description:human_resource.field_employee_children_write_uid
+#: model:ir.model.fields,field_description:human_resource.field_employee_degree_write_uid
+#: model:ir.model.fields,field_description:human_resource.field_employee_office_write_uid
+#: model:ir.model.fields,field_description:human_resource.field_employee_service_write_uid
+#: model:ir.model.fields,field_description:human_resource.field_employee_write_uid
+#: model:ir.model.fields,field_description:human_resource.field_resource_holiday_giving_write_uid
+#: model:ir.model.fields,field_description:human_resource.field_resource_holiday_type_write_uid
+#: model:ir.model.fields,field_description:human_resource.field_resource_holiday_write_uid
+msgid "Last Updated by"
+msgstr "Dernière modification par"
+
+#. module: human_resource
+#: model:ir.model.fields,field_description:human_resource.field_employee_category_write_date
+#: model:ir.model.fields,field_description:human_resource.field_employee_children_write_date
+#: model:ir.model.fields,field_description:human_resource.field_employee_degree_write_date
+#: model:ir.model.fields,field_description:human_resource.field_employee_office_write_date
+#: model:ir.model.fields,field_description:human_resource.field_employee_service_write_date
+#: model:ir.model.fields,field_description:human_resource.field_employee_write_date
+#: model:ir.model.fields,field_description:human_resource.field_resource_holiday_giving_write_date
+#: model:ir.model.fields,field_description:human_resource.field_resource_holiday_type_write_date
+#: model:ir.model.fields,field_description:human_resource.field_resource_holiday_write_date
+msgid "Last Updated on"
+msgstr "Dernière modification le"
+
+#. module: human_resource
+#: model:resource.holiday.type,name:human_resource.holiday_legal_leave_type
+msgid "Legal Leaves 2016"
+msgstr "Congés légaux 2016"
+
+#. module: human_resource
+#: code:addons/human_resource/employee.py:83
+#, python-format
+msgid "Male"
+msgstr "Homme"
+
+#. module: human_resource
+#: model:res.groups,name:human_resource.human_resource_manager
+msgid "Manager"
+msgstr "Responsable"
+
+#. module: human_resource
+#: code:addons/human_resource/employee.py:73
+#, python-format
+msgid "Married"
+msgstr "Marié(e)"
+
+#. module: human_resource
+#: model:ir.model.fields,field_description:human_resource.field_resource_holiday_giving_method
+msgid "Method"
+msgstr "Mode"
+
+#. module: human_resource
+#: model:ir.ui.menu,name:human_resource.menu_my_holiday_resource_summary
+msgid "My holiday summary"
+msgstr "Résumé de mes congés"
+
+#. module: human_resource
+#: model:ir.model.fields,field_description:human_resource.field_resource_holiday_my_holiday
+#: model:ir.ui.view,arch_db:human_resource.view_search_resource_holiday
+msgid "My holidays"
+msgstr "Mes congés"
+
+#. module: human_resource
+#: model:ir.actions.act_window,name:human_resource.act_resource_holiday_summary
+msgid "My holidays summary"
+msgstr "Résumé de mes congés"
+
+#. module: human_resource
+#: model:ir.model.fields,field_description:human_resource.field_employee_category_name
+#: model:ir.model.fields,field_description:human_resource.field_employee_children_name
+#: model:ir.model.fields,field_description:human_resource.field_employee_degree_name
+#: model:ir.model.fields,field_description:human_resource.field_employee_name
+#: model:ir.model.fields,field_description:human_resource.field_employee_office_name
+#: model:ir.model.fields,field_description:human_resource.field_employee_service_name
+#: model:ir.model.fields,field_description:human_resource.field_resource_holiday_type_name
+msgid "Name"
+msgstr "Nom"
+
+#. module: human_resource
+#: model:ir.model.fields,field_description:human_resource.field_employee_nationality_id
+msgid "Nationality"
+msgstr "Nationalité"
+
+#. module: human_resource
+#: model:ir.model.fields,field_description:human_resource.field_resource_holiday_type_need_validation
+msgid "Need a validation"
+msgstr "Nécessite une validation"
+
+#. module: human_resource
+#: model:ir.model.fields,field_description:human_resource.field_employee_note_hr
+msgid "Note HR"
+msgstr "Note RH"
+
+#. module: human_resource
+#: model:ir.model.fields,field_description:human_resource.field_employee_office_id
+msgid "Office"
+msgstr "Poste actuel"
+
+#. module: human_resource
+#: code:addons/human_resource/employee.py:44
+#, python-format
+msgid "Old"
+msgstr "Ancien"
+
+#. module: human_resource
+#: model:ir.model.fields,field_description:human_resource.field_employee_service_parent_id
+msgid "Parent"
+msgstr "Parent"
+
+#. module: human_resource
+#: model:ir.model.fields,field_description:human_resource.field_employee_passport_number
+msgid "Passport number"
+msgstr "Numéro du passeport"
+
+#. module: human_resource
+#: model:ir.ui.view,arch_db:human_resource.view_form_employee_id
+msgid "Personal information"
+msgstr "Informations personnelles"
+
+#. module: human_resource
+#: model:ir.model.fields,field_description:human_resource.field_employee_phone
+msgid "Phone"
+msgstr "Téléphone"
+
+#. module: human_resource
+#: model:ir.model.fields,field_description:human_resource.field_employee_picture
+msgid "Picture"
+msgstr "Image"
+
+#. module: human_resource
+#: model:ir.model.fields,field_description:human_resource.field_employee_place_birth
+msgid "Place of birth"
+msgstr "Lieu de naissance"
+
+#. module: human_resource
+#: model:workflow.transition,button_label:human_resource.holiday_cancelled_to_draft
+#: model:workflow.transition,button_label:human_resource.holiday_giving_cancelled_to_draft
+msgid "Put in draft"
+msgstr "Mettre en brouillon"
+
+#. module: human_resource
+#: model:ir.model.fields,field_description:human_resource.field_employee_relationship_contact
+msgid "Relationship with the contact"
+msgstr "Relation avec le contact"
+
+#. module: human_resource
+#: model:ir.model.fields,field_description:human_resource.field_employee_release_date
+msgid "Release date"
+msgstr "Date de sortie"
+
+#. module: human_resource
+#: model:ir.model.fields,field_description:human_resource.field_employee_resource_id
+msgid "Resource"
+msgstr "Ressource"
+
+#. module: human_resource
+#: model:ir.ui.view,arch_db:human_resource.view_form_resource_holiday
+#: model:ir.ui.view,arch_db:human_resource.view_tree_resource_holiday
+msgid "Resource holiday"
+msgstr "Congé de la ressource"
+
+#. module: human_resource
+#: model:ir.ui.view,arch_db:human_resource.view_calendar_all_resource_holiday
+#: model:ir.ui.view,arch_db:human_resource.view_calendar_resource_holiday
+msgid "Resource holidays"
+msgstr "Congés de la ressource"
+
+#. module: human_resource
+#: model:ir.model.fields,field_description:human_resource.field_employee_is_responsible
+#: model:ir.model.fields,field_description:human_resource.field_employee_responsible_id
+msgid "Responsible"
+msgstr "Responsable"
+
+#. module: human_resource
+#: model:ir.model.fields,field_description:human_resource.field_employee_service_id
+msgid "Service"
+msgstr "Service"
+
+#. module: human_resource
+#: model:ir.ui.view,arch_db:human_resource.view_form_resource_holiday_type
+msgid "Settings"
+msgstr "Paramètres"
+
+#. module: human_resource
+#: model:resource.holiday.type,name:human_resource.holiday_sick_leave_type
+msgid "Sick Leaves"
+msgstr "Arrêts maladie"
+
+#. module: human_resource
+#: code:addons/human_resource/employee.py:72
+#, python-format
+msgid "Single"
+msgstr "Célibataire"
+
+#. module: human_resource
+#: model:ir.ui.view,arch_db:human_resource.view_form_employee_id
+msgid "Specific note"
+msgstr "Note spécifiques"
+
+#. module: human_resource
+#: model:ir.model.fields,field_description:human_resource.field_employee_specific_note_contact
+msgid "Specific note contact"
+msgstr "Note spécifique du contact"
+
+#. module: human_resource
+#: model:ir.model.fields,field_description:human_resource.field_resource_holiday_start_date
+msgid "Start date"
+msgstr "Date de début"
+
+#. module: human_resource
+#: model:ir.model.fields,field_description:human_resource.field_employee_state
+#: model:ir.model.fields,field_description:human_resource.field_resource_holiday_display_state
+#: model:ir.model.fields,field_description:human_resource.field_resource_holiday_giving_display_state
+#: model:ir.model.fields,field_description:human_resource.field_resource_holiday_giving_state
+#: model:ir.model.fields,field_description:human_resource.field_resource_holiday_state
+#: model:ir.ui.view,arch_db:human_resource.view_search_resource_holiday
+#: model:ir.ui.view,arch_db:human_resource.view_search_resource_holiday_giving
+msgid "State"
+msgstr "État"
+
+#. module: human_resource
+#: model:ir.model.fields,help:human_resource.field_employee_avg_hour
+msgid "The average work hours of the employee (used to help for input the holidays )"
+msgstr "La moyenne d'heures travaillées par jour de l'employé (utilisée pour aider à la saisie des congés)"
+
+#. module: human_resource
+#: code:addons/human_resource/holiday.py:287
+#, python-format
+msgid "This holiday type don't allow balance override"
+msgstr "Ce type de congé n'autorise pas le dépassement du solde"
+
+#. module: human_resource
+#: code:addons/human_resource/holiday.py:49
+#: code:addons/human_resource/holiday.py:341
+#: model:ir.ui.view,arch_db:human_resource.view_search_resource_holiday
+#: model:ir.ui.view,arch_db:human_resource.view_search_resource_holiday_giving
+#: model:workflow.display.state,label:human_resource.resource_holiday_giving_to_approved
+#: model:workflow.display.state,label:human_resource.resource_holiday_to_approved
+#: model:workflow.transition,button_label:human_resource.holiday_draft_to_to_approved
+#: model:workflow.transition,button_label:human_resource.holiday_giving_draft_to_to_approved
+#, python-format
+msgid "To approved"
+msgstr "À approuver"
+
+#. module: human_resource
+#: model:ir.model.fields,field_description:human_resource.field_resource_holiday_giving_type
+msgid "Type"
+msgstr "Type"
+
+#. module: human_resource
+#: model:ir.model.fields,field_description:human_resource.field_employee_type_sex
+msgid "Type of sex"
+msgstr "Type de sexe"
+
+#. module: human_resource
+#: model:resource.holiday.type,name:human_resource.holiday_unpaid_leave_type
+msgid "Unpaid"
+msgstr "Impayé"
+
+#. module: human_resource
+#: model:res.groups,name:human_resource.human_resource_user
+msgid "User"
+msgstr "Utilisateur"
+
+#. module: human_resource
+#: model:ir.model.fields,field_description:human_resource.field_resource_holiday_type_group_id
+msgid "Validation group"
+msgstr "Groupe de validation"
+
+#. module: human_resource
+#: code:addons/human_resource/employee.py:75
+#, python-format
+msgid "Widowed"
+msgstr "Veuf(ve)"
+
+#. module: human_resource
+#: model:ir.model.fields,field_description:human_resource.field_resource_holiday_giving_wkf_instance_ids
+#: model:ir.model.fields,field_description:human_resource.field_resource_holiday_wkf_instance_ids
+msgid "Wkf instance ids"
+msgstr "Wkf instance ids"
+
+#. module: human_resource
+#: model:ir.model.fields,field_description:human_resource.field_resource_holiday_giving_wkf_progress_instance
+#: model:ir.model.fields,field_description:human_resource.field_resource_holiday_wkf_progress_instance
+msgid "Wkf progress instance"
+msgstr "Wkf progress instance"
+
+#. module: human_resource
+#: model:ir.model.fields,field_description:human_resource.field_resource_holiday_giving_wkf_id
+#: model:ir.model.fields,field_description:human_resource.field_resource_holiday_wkf_id
+msgid "Workflow"
+msgstr "Workflow"
+
+#. module: human_resource
+#: code:addons/human_resource/holiday.py:440
+#, python-format
+msgid "You can't delete an attribution which isn't in draft or cancelled"
+msgstr "Vous ne pouvez supprimer une attribution qui n'est pas brouillon ou annulée"
+
+#. module: human_resource
+#: code:addons/human_resource/holiday.py:315
+#, python-format
+msgid "You can't delete an holiday which isn't in draft or cancelled"
+msgstr "Vous ne pouvez supprimer un congé qui n'est pas brouillon ou annulé"
+
+#. module: human_resource
+#: code:addons/human_resource/holiday.py:179
+#, python-format
+msgid "You haven't the necessary rights to confirm this holiday type"
+msgstr "Vous n'avez pas les droits nécessaires pour confirmer ce type de congé"
+
+#. module: human_resource
+#: model:ir.model.fields,help:human_resource.field_employee_picture
+msgid "help"
+msgstr "Aide"
+

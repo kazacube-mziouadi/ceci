@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+		<!-- FORM VIEW Bom -->
+		<record id='inherit_view_form_mrp_bom_substitution_product' model='ir.ui.view'>
+			<field name="name">view_form_mrp_bom_substitution_product</field>
+			<field name="model">mrp.bom</field>
+			<field name="priority" eval="3200" />
+            <field name="inherit_id" ref="mrp.view_form_mrp_bom" />
+			<field name="arch" type="xml">
+			    <xpath expr="//field[@name='bom_ids']//tree//field[@name='product_id']" position="after">
+			        <field name="nb_substitution_product" readonly="1" />
+				</xpath>
+				<xpath expr="//field[@name='bom_ids']/tree" position="attributes">
+                    <attribute name="editable" eval="0" />
+                </xpath>
+                <xpath expr="//field[@name='bom_ids']//group[@name='group_formula_component']" position="before">
+                    <group colspan="2" col="4" string="Substitution product" >
+                       <separator colspan="4" string="Substitution product for the component"/>
+                        <field name="substitution_product_ids" coslpan="4" nolabel="1" domain="[('uom_category_id', '=', uom_category_id)]" />
+                        <separator colspan="4" string="Substitution product already used for the product"/>
+                        <field name="id" invisible="1" />
+                        <field name="substitution_product_used_ids" coslpan="4" nolabel="1" context="{'bom_id': id}" >
+                            <tree string="Products" version="8.0">
+                                <field name="name" />
+                                <field name="code" />
+                                <field name="uom_id" />
+                                <field name="categ_id" />
+                                <field name="supply_method" />
+                                <field name="type" />
+                                <field name="state" invisible="1" />
+                                <button name="add_product_substitution_component" string="Add substitution" type="object" column_invisible="[('id', '=', False)]"/>
+                            </tree>
+                        </field>
+                    </group>
+                </xpath>
+ 			</field>
+		</record>
+		
+		<!-- FORM VIEW Workorder -->
+        <record id='inherit_view_form_mrp_workorder_substitution_product' model='ir.ui.view'>
+            <field name="name">view_form_mrp_workorder</field>
+            <field name="model">mrp.workorder</field>
+            <field name="priority" eval="3200" />
+            <field name="inherit_id" ref="mrp.view_form_mrp_workorder" />
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='rm_draft_ids']//tree//field[@name='product_id']" position="before">
+                    <button name="%(act_wizard_substitution_product)d" string="Modification product with substitution product" type="action" icon="gtk-dnd-multiple" />
+                </xpath>
+            </field>
+        </record>
+        
+        
+        <!-- FORM VIEW Substitution product -->
+        <record id='view_form_component_substitution_product' model='ir.ui.view'>
+            <field name="name">view_component_substitution_product</field>
+            <field name="model">mrp.bom</field>
+            <field name="priority" eval="4000" />
+            <field name="arch" type="xml">
+                <form string="Substitution product" version="8.0">
+                    <group colspan="4" col="4">
+                        <separator colspan="4" string="Substitution product for the component"/>
+                        <field name="substitution_product_ids" coslpan="4" nolabel="1" domain="[('uom_category_id', '=', uom_category_id)]" />
+                        <separator colspan="4" string="Substitution product already used for the product"/>
+                        <field name="substitution_product_used_ids" coslpan="4" nolabel="1">
+                            <tree string="Products" version="8.0">
+			                    <field name="name" />
+			                    <field name="code" />
+			                    <field name="uom_id" />
+			                    <field name="categ_id" />
+			                    <field name="supply_method" />
+			                    <field name="type" />
+			                    <field name="state" invisible="1" />
+			                    <button name="add_product_substitution_component" string="Add substitution" type="object" />
+			                </tree>
+                        </field>
+                        <field name="uom_id" invisible="1" />
+                    </group>
+                    <footer>
+                        <button name="action_validate_substitution_product" string="Save" type="object" class="oe_highlight" />
+                        or
+                        <button string="Cancel" class="oe_link" special="cancel" />
+                    </footer>
+                </form>
+            </field>
+         </record>
+        
+        <record id="act_view_component_substitution_product" model="ir.actions.act_window">
+            <field name="name">Substitution product</field>
+            <field name="res_model">mrp.bom</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[('bom_id','=',False)]</field>
+            <field name="context">{}</field>
+        </record>
+        
+        <record model="ir.actions.act_window.view" id="act_component_substitution_product_form">
+            <field name="sequence" eval="20"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_form_component_substitution_product"/>
+            <field name="act_window_id" ref="act_view_component_substitution_product"/>
+        </record>
+        
+    </data>
+</openerp>

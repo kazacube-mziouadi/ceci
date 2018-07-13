@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+		<menuitem id="menu_other_db" name="Other DB" parent="base.menu_config" sequence="8" />
+		<menuitem id="menu_db_synchro_multi_config" name="Configuration" parent="menu_other_db" sequence="50" />
+
+		<!-- ====== -->
+		<!-- SERVER -->
+		<!-- ====== -->
+		<record model="ir.ui.view" id="db_synchro_server_form">
+			<field name="name">db.synchro.server.form</field>
+			<field name="model">db.synchro.server</field>
+			<field name="priority" eval="1010" />
+			<field name="arch" type="xml">
+				<form string="Server">
+					<sheet>
+						<center>
+							<label class="oe_edit_only" for="name" string="Name" />
+							<h1>
+								<field name="name" class="oe_inline" colspan="4" />
+							</h1>
+						</center>
+						<group colspan="4" col="4" string="Period">
+							<field name="ip_address" />
+							<field name="port" />
+						</group>
+					</sheet>
+				</form>
+			</field>
+		</record>
+
+		<record model="ir.ui.view" id="db_synchro_server_tree">
+			<field name="name">db.synchro.server.tree</field>
+			<field name="model">db.synchro.server</field>
+			<field name="priority" eval="1010" />
+			<field name="arch" type="xml">
+				<tree string="Servers">
+					<field name="name" />
+					<field name="ip_address" />
+					<field name="port" />
+				</tree>
+			</field>
+		</record>
+
+		<record model="ir.ui.view" id="db_synchro_server_search">
+			<field name="name">db.synchro.server.search</field>
+			<field name="model">db.synchro.server</field>
+			<field name="priority" eval="1010" />
+			<field name="arch" type="xml">
+				<search string="Servers">
+					<group name="s_fields">
+						<field name="name" />
+						<field name="ip_address" />
+					</group>
+				</search>
+			</field>
+		</record>
+
+		<record model="ir.actions.act_window" id="db_synchro_server_action">
+			<field name="name">Servers</field>
+			<field name="res_model">db.synchro.server</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+		<menuitem id="db_synchro_server_menu" name="Servers" parent="menu_db_synchro_multi_config" action="db_synchro_server_action" sequence="10" />
+
+
+		<!-- == -->
+		<!-- DB -->
+		<!-- == -->
+		<record model="ir.ui.view" id="db_synchro_base_form">
+			<field name="name">db.synchro.base.form</field>
+			<field name="model">db.synchro.base</field>
+			<field name="priority" eval="1010" />
+			<field name="arch" type="xml">
+				<form string="Base">
+					<sheet>
+						<group string="Connection" colspan="4">
+							<field name="server_id" />
+							<field name="name" />
+						</group>
+						<group string="Login" colspan="4">
+							<field name="login" />
+							<field name="password" password="True" />
+						</group>
+						<newline />
+						<button string="Test connection" name="test_connection" type="object" icon="fa-plug" class="oe_inline oe_stat_button" />
+					</sheet>
+				</form>
+			</field>
+		</record>
+
+		<record model="ir.ui.view" id="db_synchro_base_tree">
+			<field name="name">db.synchro.base.tree</field>
+			<field name="model">db.synchro.base</field>
+			<field name="priority" eval="1010" />
+			<field name="arch" type="xml">
+				<tree string="Bases">
+					<field name="server_id" />
+					<field name="name" />
+					<field name="login" />
+				</tree>
+			</field>
+		</record>
+
+		<record model="ir.ui.view" id="db_synchro_base_search">
+			<field name="name">db.synchro.base.search</field>
+			<field name="model">db.synchro.base</field>
+			<field name="priority" eval="1010" />
+			<field name="arch" type="xml">
+				<search string="FTPR">
+					<group name="search">
+						<field name="name" />
+						<field name="server_id" />
+					</group>
+				</search>
+			</field>
+		</record>
+
+		<record model="ir.actions.act_window" id="db_synchro_base_action">
+			<field name="name">Bases</field>
+			<field name="res_model">db.synchro.base</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+		<menuitem id="db_synchro_base_menu" name="Bases" parent="menu_db_synchro_multi_config" action="db_synchro_base_action" sequence="20" />
+
+	</data>
+</openerp>
+		

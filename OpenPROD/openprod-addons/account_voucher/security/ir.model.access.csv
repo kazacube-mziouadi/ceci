@@ -1,0 +1,20 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_account_voucher_invoice,account.voucher invoice,model_account_voucher,account.group_account_manager,1,0,0,0
+access_account_voucher_manager,account.voucher,model_account_voucher,account.group_account_manager,1,1,0,0
+access_account_voucher_administrator,account.voucher,model_account_voucher,account.group_account_invoice,1,1,1,1
+
+access_account_voucher_line_invoice,account.voucher.line invoice,model_account_voucher_line,account.group_account_invoice,1,0,0,0
+access_account_voucher_line_manager,account.voucher.line,model_account_voucher_line,account.group_account_user,1,1,0,0
+access_account_voucher_line_administrator,account.voucher.line,model_account_voucher_line,account.group_account_manager,1,1,1,1
+
+access_sale_receipt_report_user,account.sale.receipt.report,model_sale_receipt_report,account.group_account_invoice,1,0,0,0
+access_sale_receipt_report_manager,account.sale.receipt.report,model_sale_receipt_report,account.group_account_user,1,1,0,0
+access_sale_receipt_report_administrator,account.sale.receipt.report,model_sale_receipt_report,account.group_account_manager,1,1,1,1
+
+access_account_bank_statement_openprod_user,account.bank.statement.openprod,model_account_bank_statement_openprod,account.group_account_invoice,1,0,0,0
+access_account_bank_statement_openprod_manager,account.bank.statement.openprod,model_account_bank_statement_openprod,account.group_account_user,1,1,0,0
+access_account_bank_statement_openprod_administrator,account.bank.statement.openprod,model_account_bank_statement_openprod,account.group_account_manager,1,1,1,1
+
+access_account_bank_statement_line_openprod_user,account.bank.statement.line.openprod,model_account_bank_statement_line_openprod,account.group_account_invoice,1,0,0,0
+access_account_bank_statement_line_openprod_manager,account.bank.statement.line.openprod,model_account_bank_statement_line_openprod,account.group_account_user,1,1,0,0
+access_account_bank_statement_line_openprod_administrator,account.bank.statement.line.openprod,model_account_bank_statement_line_openprod,account.group_account_manager,1,1,1,1

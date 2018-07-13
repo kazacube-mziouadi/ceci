@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+
+		
+        
+		<!-- ======= -->
+		<!-- PRODUCT -->
+		<!-- ======= -->
+		<!-- FORM VIEW PRODUCT -->
+		<record id='view_form_product_test' model='ir.ui.view'>
+			<field name="name">view_form_product_test</field>
+			<field name="model">product.product</field>
+			<field name="inherit_id" ref="product.view_form_product"/>
+			<field name="priority" eval="1000"/>
+			<field name="arch" type="xml">
+				<xpath expr="//field[@name='name']" position="after">
+					<field name="binary1" widget="image"/>
+				</xpath>
+			</field>
+		</record>
+
+		
+	</data>
+</openerp>

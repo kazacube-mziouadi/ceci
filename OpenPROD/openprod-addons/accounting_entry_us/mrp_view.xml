@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+
+		<!-- ======================== -->
+		<!-- ManufacturingOrder -->
+		<!-- ======================== -->
+
+
+		<!-- FORM VIEW Manufacturing -->
+		<record id='view_form_mrp_manufacturingorder_accounting_entry_us' model='ir.ui.view'>
+			<field name="name">view_form_mrp_manufacturingorder_accounting_entry_us</field>
+			<field name="model">mrp.manufacturingorder</field>
+			<field name="inherit_id" ref="mrp.view_form_mrp_manufacturingorder" />
+			<field name="priority" eval="3500" />
+			<field name="arch" type="xml">
+                <xpath expr="//notebook" position="inside">
+                    <page string="Account moves lines">
+                        <group colspan="4" col="4" string="Account moves lines" >
+                            <field name="account_move_line_ids" nolabel="1" colspan="4" readonly="1" />
+                        </group>
+                    </page>
+                </xpath>
+			</field>
+		</record>
+	</data>
+</openerp>

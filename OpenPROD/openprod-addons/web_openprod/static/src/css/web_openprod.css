@@ -1,0 +1,192 @@
+/*
+	##############################################################################
+	#
+	#    OpenERP, Open Source Management Solution
+	#    Copyright (C) 2014 Objectif-PI ([http://www.objectif-pi.com]).
+	#       Damien CRIER [damien.crier@objectif-pi.com]
+	#
+	#    This program is free software: you can redistribute it and/or modify
+	#    it under the terms of the GNU Affero General Public License as
+	#    published by the Free Software Foundation, either version 3 of the
+	#    License, or (at your option) any later version.
+	#
+	#    This program is distributed in the hope that it will be useful,
+	#    but WITHOUT ANY WARRANTY; without even the implied warranty of
+	#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	#    GNU Affero General Public License for more details.
+	#
+	#    You should have received a copy of the GNU Affero General Public License
+	#    along with this program.  If not, see [http://www.gnu.org/licenses/].
+	#
+	############################################################################## 
+*/
+ 
+@charset "UTF-8";
+
+.openerp .oe_stat_button {
+	white-space: normal;
+}
+
+.o_column_last_kanban {
+	border-left: 1px solid #4272AD;
+}
+
+.openprod_cancel_button {
+	background-color: rgba(178,8,9,0.9);
+	color: #FFFFFF;
+	border-color: #931314;
+}
+
+.openprod_cancel_button:hover {
+	background-color: rgba(121,3,4,0.9);
+	color: #FFFFFF;
+	border-color: #720E0F;
+}
+
+.oe_form_button_openprod_delete {
+	background-color: rgba(178,8,9,0.9);
+	color: #FFFFFF;
+	border-color: #931314;
+}
+
+.oe_form_button_openprod_delete:hover {
+	background-color: rgba(121,3,4,0.9);
+	color: #FFFFFF;
+	border-color: #720E0F;
+}
+
+.openprod_logical_button {
+	background-color: #337AB7;
+	color: #FFFFFF;
+	border-color: #2D6DA3;
+}
+
+.openprod_logical_button:hover {
+	background-color: #1C628D;
+	color: #FFFFFF;
+	border-color: #05476F;
+}
+
+.openprod_green_button {
+    color: #FFFFFF;
+    border-color: #68B386;
+}
+
+.openprod_green_button:hover {
+    background-color: #68B386;
+    color: #FFFFFF;
+    border-color: #569A71;
+}
+
+.openprod_orange_button {
+    color: #FFFFFF;
+    border-color: #D77E0A;
+}
+
+.openprod_orange_button:hover {
+    background-color: #D77E0A;
+    color: #FFFFFF;
+    border-color: #CB7B12;
+}
+
+/* 
+	CSS pour le groupe qui regroupera tous les boutons sur le côté d'une vue form
+*/
+div.op_shortcuts fieldset.op_fieldset {
+	border-color: gray !important;
+	background-color: white !important;
+}
+
+div.op_shortcuts legend.op_legend {
+	color: #4272AD !important;
+}
+
+div.op_shortcuts{
+	height: 99%;
+	width: inherit;
+	padding-left: 5px;
+	margin-top: -11px;
+	margin-left: -10px;
+	background-color: #f8f8f8;
+	color: green;
+	min-height: 99%;
+	position: absolute;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+  	border-radius: 3px;
+}
+
+.op_shortcuts button.oe_stat_button{
+	width: 99% !important;
+}
+
+div.op_shortcuts button.openerp_button{
+	width: 99% !important;
+}
+
+div.op_no_padding {
+	padding: 0px !important;
+}
+
+/* 
+	CSS pour les groupes qui ont un attribut string="XXX" dans une vue form
+*/
+fieldset.op_fieldset {
+  -webkit-border-radius: 4px !important;
+  -moz-border-radius: 4px  !important;
+  border-radius: 4px !important;
+  border: 1px solid #4272AD !important; 
+  padding-left: 10px !important;
+  padding-right: 10px !important;
+  background-color: #f8f8f8;
+}
+
+
+legend.op_legend {
+    width: auto !important;
+    padding: 0px !important;
+    font-size: 21px !important;
+    color: #4272AD !important;
+    display: block !important;
+    margin-bottom: 0px !important;
+    padding-left: 10px !important;  
+    padding-right: 10px !important;  
+    line-height: inherit !important;
+    border-width: 0 !important;
+    border-style: none !important;
+    border-color: -moz-use-text-color -moz-use-text-color #E5E5E5 !important;
+    -moz-border-top-colors: none !important;
+    -moz-border-right-colors: none !important;
+    -moz-border-bottom-colors: none !important;
+    -moz-border-left-colors: none !important;
+    border-image: none !important;
+}
+
+
+.oe_form_field.oe_form_field_one2many {
+  background-color: transparent;
+  padding: 0 !important;
+}
+
+.oe_form_field.oe_form_field_many2many {
+  background-color: transparent;
+  padding: 0 !important;
+}
+
+.custom_width [data-id="label"]{
+	width: 400px;
+}
+
+div.oe-view-manager {
+	background-color: transparent !important;
+}
+.home_selected .edit_page {
+    position: absolute;
+    right: 0;
+    top: 34px;
+}
+.oe_form .edit_page {
+    position: absolute;
+    right: 0;
+    top: 0;
+}

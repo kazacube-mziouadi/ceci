@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+		
+        <record id="rule_1" model="rule.type">
+            <field name="text">Given I am on the login page</field>
+            <field name="nb_args">0</field>
+            <field name="example">Given I am on the login page</field>
+        </record>
+        <record id="rule_2" model="rule.type">
+            <field name="text">When I fill test_id '{}' with '{}'</field>
+            <field name="nb_args">2</field>
+            <field name="example">When I fill test_id 'mrp.routing.name' with 'Gamme 12'</field>
+        </record>
+        <record id="rule_3" model="rule.type">
+            <field name="text">When I fill {} with '{}'</field>
+            <field name="nb_args">2</field>
+            <field name="example">When I fill username with "admin"</field>
+        </record>
+        <record id="rule_4" model="rule.type">
+            <field name="text">When I select {} with '{}'</field>
+            <field name="nb_args">2</field>
+            <field name="example">When I select db with "gergonne"</field>
+        </record>
+        <record id="rule_6" model="rule.type">
+            <field name="text">When I click {} with text "{}"</field>
+            <field name="nb_args">2</field>
+            <field name="example">When I click button with text "Annuler"</field>
+        </record>
+        <record id="rule_8" model="rule.type">
+            <field name="text">When I click test_id '{}'</field>
+            <field name="nb_args">1</field>
+            <field name="example">When I click test_id 'menu_232'</field>
+        </record>
+        <record id="rule_9" model="rule.type">
+            <field name="text">Then I should be connected with "{}"</field>
+            <field name="nb_args">1</field>
+            <field name="example">Then I should be connected with "admin"</field>
+        </record>
+        <record id="rule_10" model="rule.type">
+            <field name="text">Then I should see "{}" in "{}"</field>
+            <field name="nb_args">2</field>
+            <field name="example">Then I should see "10484,14" in "amount_total"</field>
+        </record>
+        <record id="rule_11" model="rule.type">
+            <field name="text">Then I should see "{}"</field>
+            <field name="nb_args">1</field>
+            <field name="example">Then I should see "Vous êtes connecté"</field>
+        </record>
+        <record id="rule_12" model="rule.type">
+            <field name="text">Then I should not see "{}"</field>
+            <field name="nb_args">1</field>
+            <field name="example">Then I should not see "Error"</field>
+        </record>
+        <record id="rule_13" model="rule.type">
+            <field name="text">Then save screenshot</field>
+            <field name="nb_args">0</field>
+            <field name="example">Then save screenshot</field>
+        </record>
+        <record id="rule_14" model="rule.type">
+            <field name="text">When I wait {} seconds</field>
+            <field name="nb_args">1</field>
+            <field name="example">When I wait 3 seconds</field>
+        </record>
+        <record id="rule_15" model="rule.type">
+            <field name="text">Then save value of field '{}' in "{}"</field>
+            <field name="nb_args">2</field>
+            <field name="example">Then I save value of field 'mrp.routing.name' in "routing_name"</field>
+        </record>
+        <record id="rule_16" model="rule.type">
+            <field name="text">Then delete variable "{}"</field>
+            <field name="nb_args">1</field>
+            <field name="example">Then I delete variable "routing_name"</field>
+        </record>
+        <record id="rule_17" model="rule.type">
+            <field name="text">Then save "{}" in "{}"</field>
+            <field name="nb_args">2</field>
+            <field name="example">Then I save "MO00001" in "routing_name"</field>
+        </record>
+	</data>
+</openerp>

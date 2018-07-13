@@ -1,0 +1,361 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+	
+		<menuitem name="Call for tender" id="menu_main_call_for_tender" parent="purchase.menu_purchases" groups="purchase.group_menu_purchase_user"/>
+	
+		<!-- =============== -->
+		<!-- CALL FOR TENDER -->
+		<!-- =============== -->
+		
+		<!-- FORM VIEW Call for tender -->
+		<record id='view_form_call_for_tender' model='ir.ui.view'>
+			<field name="name">view_form_call_for_tender</field>
+			<field name="model">call.tender</field>
+			<field name="arch" type="xml">
+				<form string="Call for tender" version="8.0">
+					<header>
+						<field name="state" widget="statusbar" clickable="True"/>
+					</header>
+                   	<group colspan="4" col="9">
+						<group colspan="8" col="4">
+							<div class="oe_title">
+		                        <h1>
+									<field name="name" />
+		                        </h1>
+		                    </div>
+							<group colspan="4" col="6">	
+								<field name="request_date"/>
+								<field name="answer_date"/>
+								<field name="manager_id"/>
+								<field name="company_id" invisible="1"/>
+							</group>
+							<group colspan="4" col="4">
+								<notebook colspan="4">
+									<page string="Products">
+										<group colspan="4" col="4" string="Products">
+											<button type='action' string="Import products" name="%(call_tender.action_select_products_for_call_tender)d" colspan="1"
+											attrs="{'invisible': [('state', '!=', 'draft')]}" class="oe_inline oe_stat_button" icon="fa-arrow-circle-down"/>
+											<label colspan="3" string=""/>
+											<field name="product_ids" colspan="4" nolabel="1">
+												<tree editable="bottom">
+													<field name="sequence"/>
+													<field name="product_id" options="{'no_create': True}" 
+													domain="[('purchase_ok', '=', True), ('free_purchase', '=', False), ('product_call_tender', 'not in', parent.product_ids)]"/>
+													<field name="comment"/>
+												</tree>
+											</field>
+										</group>
+									</page>
+									<page string="Suppliers">
+										<group colspan="4" col="4" string="Suppliers">
+											<field name="supplier_ids" colspan="4" nolabel="1">
+												<tree editable="bottom">
+													<field name="supplier_id" options="{'no_create': True}" 
+													domain="[('is_supplier', '=', True), ('state', '=', 'qualified'),('supplier_call_tender', 'not in', parent.supplier_ids)]"/>
+													<field name="comment"/>
+													<field name="state"/>
+													<button name="action_send_mail" string="Send mail" type="object"/>
+													<button name="action_print_call" string="Print call" type="object"/>
+												</tree>
+											</field>
+										</group>
+									</page>
+									<page string="Answers">
+										<group colspan="4" col="4" string="Referencing values">
+											<group colspan="4">
+												<label string="If there is no existing referencing for the selected supplier and currency, 
+												the system will create a new referencing using this values" colspan="4" style='font-size:14px;font-weight:bold'/>
+											</group>
+											<field name="uop_id" groups="base.group_dual_unit" domain="[('management_unit', '=', True)])" />
+											<field name="uoi_id" groups="base.group_uoi" domain="[('category_id', '=', uop_category_id), ('price_unit', '=', True)]" />
+											<field name="multiple_qty"/>
+											<field name="min_qty"/>
+											<field name="currency_id"/>
+											<field name="delivery_delay"/>
+											<group colspan="4">
+												<label string="The factor and divisor are only used if the product is in fix dual unit" colspan="4"
+												 style='font-size:14px;font-weight:bold'/>
+											</group>
+											<field name="factor"/>
+											<field name="divisor"/>
+											<field name="uop_category_id" invisible="1"/>
+										</group>
+										<group colspan="4" col="6" string="Answers">
+											<group colspan="6" col="6">
+												<button type='action' string="Generate answers" name="%(call_tender.action_generate_answer_for_call_tender)d" colspan="1"
+												attrs="{'invisible': [('state', 'not in', ['draft', 'progress'])]}" class="oe_inline oe_stat_button" icon="fa-plus-square-o"/>
+												<label string="" colspan="4"/>
+												<button name="update_all_referencing" string="Update all the referencing" type="object" class="oe_stat_button pull-right"
+												attrs="{'invisible': [('state', 'not in', ['draft', 'progress'])]}" icon="fa-check-square-o" colspan="1"/>
+											</group>
+											<field name="answer_ids" colspan="6" nolabel="1">
+												<tree editable="bottom">
+													<field name="date_from"/>
+													<field name="date_to"/>
+													<field name="product_id" options="{'no_create': True}" domain="[('product_call_product', 'in', parent.product_ids)]"/>
+													<field name="supplier_id" options="{'no_create': True}" domain="[('tender_call_supplier', 'in', parent.supplier_ids)]"/>
+													<field name="quantity"/>
+													<field name="price"/>
+													<field name="currency_id" options="{'no_create': True}"/>
+													<field name="uop_id" groups="base.group_dual_unit" domain="[('management_unit', '=', True)])" />
+													<field name="uoi_id" groups="base.group_uoi" domain="[('category_id', '=', uop_category_id), ('price_unit', '=', True)]" />
+													<field name="state"/>
+													<button name="update_key_referencing" string="Update the referencing" type="object" attrs="{'invisible': [('state', '=', 'updated')]}"/>
+													<field name="uop_category_id" invisible="1"/>
+												</tree>
+											</field>
+										</group>
+									</page>
+									<page string="Notes">
+										<group colspan="4" col="4" string="Internal note">
+											<field name="internal_note" colspan="4" nolabel="1"/>
+										</group>
+										<group colspan="4" col="4" string="Printed note">
+											<field name="printed_note" colspan="4" nolabel="1"/>
+										</group>
+									</page>
+								</notebook>
+							</group>
+						</group>
+						<group colspan="1" col="1" class="op_shortcuts" name="action_menu">
+							<separator string="Analysis" colspan="1" name="separator_analysis_menu" />
+							<button class="oe_inline oe_stat_button" type="object" string="Answers" name="show_call_tender_answer" icon="fa-comments-o" />
+						</group>
+					</group>
+				</form>
+			</field>
+		</record>
+		
+		<!-- TREE VIEW Call for tender -->
+		<record id='view_tree_call_for_tender' model='ir.ui.view'>
+			<field name="name">view_tree_call_for_tender</field>
+			<field name="model">call.tender</field>
+			<field name="arch" type="xml">
+				<tree string="Call for tender" version="8.0">
+					<field name="name"/>
+					<field name="request_date"/>
+					<field name="answer_date"/>
+					<field name="answer_ids"/>
+					<field name="state"/>
+				</tree>
+			</field>
+		</record>
+		
+		<!-- SEARCH VIEW Call for tender -->
+		<record id='view_search_call_for_tender' model='ir.ui.view'>
+			<field name="name">view_search_call_for_tender</field>
+			<field name="model">call.tender</field>
+			<field name="arch" type="xml">
+				<search version="8.0">
+					<group>
+						<field name="name"/>
+						<field name="state"/>
+					</group>
+					<group expand="0" string="Filters">
+						<filter string="Draft" domain="[('state', '=', 'draft')]"/>
+						<filter string="Progress" domain="[('state', '=', 'progress')]"/>
+					</group>
+					<newline />
+					<group expand="0" string="Group By...">
+						<filter string="State" domain="[]" context="{'group_by': 'state'}"/>
+					</group>
+				</search>
+			</field>
+		</record>
+		
+		<!-- ACTION Call for tender -->
+		<record id="act_call_for_tender" model="ir.actions.act_window">
+		    <field name="name">Call for tender</field>
+		    <field name="res_model">call.tender</field>
+		    <field name="view_type">form</field>
+		    <field name="view_mode">tree,form</field>
+		    <field name="domain">[]</field>
+		    <field name="context">{}</field>
+		    <field name="search_view_id" ref="view_search_call_for_tender"/>
+		</record>
+		
+		<menuitem name="Call for tender" action="act_call_for_tender" id="menu_call_for_tender" parent="menu_main_call_for_tender" groups="purchase.group_menu_purchase_user"/>
+		
+		<!-- =================== -->
+		<!-- PRODUCT CALL TENDER -->
+		<!-- =================== -->
+		
+		<!-- FORM VIEW Product call tender -->
+		<record id='view_form_product_call_tender' model='ir.ui.view'>
+			<field name="name">view_form_product_call_tender</field>
+			<field name="model">product.call.tender</field>
+			<field name="arch" type="xml">
+				<form string="Product call tender" version="8.0">
+					<group colspan="4" col="4">
+						<field name="sequence"/>
+						<field name="product_id"/>
+						<field name="tender_id"/>
+						<group colspan="4" col="4" string="Comment">
+							<field name="comment" colspan="4" nolabel="1"/>
+						</group>
+					</group>
+				</form>
+			</field>
+		</record>
+		
+		<!-- TREE VIEW Product call tender -->
+		<record id='view_tree_product_call_tender' model='ir.ui.view'>
+			<field name="name">view_tree_product_call_tender</field>
+			<field name="model">product.call.tender</field>
+			<field name="arch" type="xml">
+				<tree string="Product call tender" version="8.0">
+					<field name="sequence"/>
+					<field name="product_id"/>
+					<field name="tender_id"/>
+				</tree>
+			</field>
+		</record>
+		
+		
+		<!-- =================== -->
+		<!-- SUPPLIER CALL TENDER -->
+		<!-- =================== -->
+		
+		<!-- FORM VIEW Supplier call tender -->
+		<record id='view_form_supplier_call_tender' model='ir.ui.view'>
+			<field name="name">view_form_supplier_call_tender</field>
+			<field name="model">supplier.call.tender</field>
+			<field name="arch" type="xml">
+				<form string="Supplier call tender" version="8.0">
+					<group colspan="4" col="4">
+						<field name="supplier_id"/>
+						<field name="state"/>
+						<field name="tender_id"/>
+						<group colspan="4" col="4" string="Comment">
+							<field name="comment" colspan="4" nolabel="1"/>
+						</group>
+					</group>
+				</form>
+			</field>
+		</record>
+		
+		<!-- TREE VIEW Supplier call tender -->
+		<record id='view_tree_supplier_call_tender' model='ir.ui.view'>
+			<field name="name">view_tree_supplier_call_tender</field>
+			<field name="model">supplier.call.tender</field>
+			<field name="arch" type="xml">
+				<tree string="Supplier call tender" version="8.0">
+					<field name="supplier_id"/>
+					<field name="tender_id"/>
+					<field name="state"/>
+				</tree>
+			</field>
+		</record>
+		
+		<!-- ============= -->
+		<!-- TENDER ANSWER -->
+		<!-- ============= -->
+		
+		<!-- FORM VIEW Tender answer -->
+		<record id='view_form_tender_answer' model='ir.ui.view'>
+			<field name="name">view_form_tender_answer</field>
+			<field name="model">tender.answer</field>
+			<field name="arch" type="xml">
+				<form string="Tender answer" version="8.0">
+					<header>
+						<button name="update_key_referencing" string="Update the referencing" type="object" attrs="{'invisible': [('state', '=', 'updated')]}"
+						confirm="This action will update all the line with the same call for tender, supplier, product and properties. Do you want to continue?"/>
+						<field name="state" widget="statusbar" clickable="True"/>
+					</header>
+					<group colspan="4" col="4">
+						<field name="product_id"/>
+						<field name="supplier_id"/>
+						<field name="property_ids" widget="many2many_tags"/>
+						<field name="tender_id"/>
+						<group colspan="4" col="4" string="Price">
+							<field name="date_from"/>
+							<field name="date_to"/>
+							<field name="quantity"/>
+							<field name="price"/>
+						</group>
+						<group colspan="4" col="4" string="Referencing">
+							<field name="uop_id" groups="base.group_dual_unit" domain="[('management_unit', '=', True)])" />
+							<field name="uoi_id" groups="base.group_uoi" domain="[('category_id', '=', uop_category_id), ('price_unit', '=', True)]" />
+							<field name="multiple_qty"/>
+							<field name="min_qty"/>
+							<field name="factor" attrs="{'invisible': ['|', ('dual_unit', '=', False), ('dual_unit_type', '!=', 'fixed')]}"/>
+							<field name="divisor" attrs="{'invisible': ['|', ('dual_unit', '=', False), ('dual_unit_type', '!=', 'fixed')]}"/>
+							<field name="currency_id"/>
+							<field name="delivery_delay"/>
+							<field name="uop_category_id" invisible="1"/>
+							<field name="dual_unit" invisible="1"/>
+							<field name="dual_unit_type" invisible="1"/>
+						</group>
+						<group colspan="4" col="4" string="Comment">
+							<field name="comment" colspan="4" nolabel="1"/>
+						</group>
+					</group>
+				</form>
+			</field>
+		</record>
+		
+		<!-- TREE VIEW Tender answer -->
+		<record id='view_tree_tender_answer' model='ir.ui.view'>
+			<field name="name">view_tree_tender_answer</field>
+			<field name="model">tender.answer</field>
+			<field name="arch" type="xml">
+				<tree string="Tender answer" version="8.0" create="false">
+					<field name="tender_id"/>
+					<field name="product_id"/>
+					<field name="supplier_id"/>
+					<field name="date_from" />
+					<field name="date_to" />
+					<field name="quantity"/>
+					<field name="price"/>
+					<field name="uoi_id" groups="base.group_uoi" />
+					<field name="multiple_qty"/>
+					<field name="min_qty"/>
+					<field name="delivery_delay"/>
+					<field name="state"/>
+					<field name="anomaly" invisible="1"/>
+				</tree>
+			</field>
+		</record>
+		
+		<!-- SEARCH VIEW Tender answer -->
+		<record id='view_search_tender_answer' model='ir.ui.view'>
+			<field name="name">view_search_tender_answer</field>
+			<field name="model">tender.answer</field>
+			<field name="arch" type="xml">
+				<search version="8.0">
+					<group>
+						<field name="product_id"/>
+						<field name="supplier_id"/>
+					</group>
+					<group expand="0" string="Filters">
+						<filter string="To update" domain="[('state', '=', 'draft')]"/>
+						<filter string="Updated" domain="[('state', '=', 'updated')]"/>
+						<filter string="Anomaly" domain="[('anomaly', '=', 'True')]"/>
+					</group>
+					<newline/>
+					<group expand="0" string="Group By...">
+						<filter string="Call for tender" domain="[]" context="{'group_by': 'tender_id'}"/>
+						<filter string="Product" domain="[]" context="{'group_by': 'product_id'}"/>
+						<filter string="Supplier" domain="[]" context="{'group_by': 'supplier_id'}"/>
+						<filter string="State" domain="[]" context="{'group_by': 'state'}"/>
+					</group>
+				</search>
+			</field>
+		</record>
+		
+		<!-- ACTION Tender answer -->
+		<record id="act_tender_answer" model="ir.actions.act_window">
+		    <field name="name">Answers</field>
+		    <field name="res_model">tender.answer</field>
+		    <field name="view_type">form</field>
+		    <field name="view_mode">tree,form</field>
+		    <field name="domain">[]</field>
+		    <field name="context">{}</field>
+		    <field name="search_view_id" ref="view_search_tender_answer"/>
+		</record>
+		
+		<menuitem name="Answers" action="act_tender_answer" id="menu_answer_call_for_tender" parent="menu_main_call_for_tender" groups="purchase.group_menu_purchase_user"/>
+		
+	</data>
+</openerp>

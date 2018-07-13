@@ -1,0 +1,2469 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* base_gmao_sav
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 9.0c\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-06-27 16:24+0000\n"
+"PO-Revision-Date: 2017-06-27 16:24+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: base_gmao_sav
+#: model:mail.template,body_html:base_gmao_sav.email_template_for_intervention
+msgid "\n"
+"<div style=\"font-family: 'Lucica Grande', Ubuntu, Arial, Verdana, sans-serif; font-size: 12px; color: rgb(34, 34, 34); background-color: #FFF; \">\n"
+"\n"
+"    <p>Hello ${object.customer_id.name or ''},</p>\n"
+"</div>"
+msgstr "\n"
+"<div style=\"font-family: 'Lucica Grande', Ubuntu, Arial, Verdana, sans-serif; font-size: 12px; color: rgb(34, 34, 34); background-color: #FFF; \">\n"
+"\n"
+"    <p>Hello ${object.customer_id.name or ''},</p>\n"
+"</div>"
+
+#. module: base_gmao_sav
+#: model:ir.ui.view,arch_db:base_gmao_sav.view_kanban_intervention_id
+#: model:ir.ui.view,arch_db:base_gmao_sav.view_kanban_resource_intervention_id
+msgid "<b>Alert: </b>"
+msgstr "<b>Alerte: </b>"
+
+#. module: base_gmao_sav
+#: model:ir.ui.view,arch_db:base_gmao_sav.view_kanban_intervention_id
+msgid "<b>Emergency: </b>"
+msgstr "<b>Urgence: </b>"
+
+#. module: base_gmao_sav
+#: model:ir.ui.view,arch_db:base_gmao_sav.view_kanban_resource_intervention_id
+msgid "<b>End date: </b>"
+msgstr "<b>Date de fin: </b>"
+
+#. module: base_gmao_sav
+#: model:ir.ui.view,arch_db:base_gmao_sav.view_kanban_intervention_id
+msgid "<b>Ended date planned: </b>"
+msgstr "<b>Date de fin plannif: </b>"
+
+#. module: base_gmao_sav
+#: model:ir.ui.view,arch_db:base_gmao_sav.view_kanban_resource_intervention_id
+msgid "<b>Intervention: </b>"
+msgstr "<b>Intervention: </b>"
+
+#. module: base_gmao_sav
+#: model:ir.ui.view,arch_db:base_gmao_sav.view_kanban_resource_intervention_id
+msgid "<b>Park: </b>"
+msgstr "<b>Parc: </b>"
+
+#. module: base_gmao_sav
+#: model:ir.ui.view,arch_db:base_gmao_sav.view_kanban_intervention_id
+msgid "<b>Responsible: </b>"
+msgstr "<b>Responsable: </b>"
+
+#. module: base_gmao_sav
+#: model:ir.ui.view,arch_db:base_gmao_sav.view_kanban_intervention_id
+msgid "<b>Start date planned: </b>"
+msgstr "<b>Date de début plannif: </b>"
+
+#. module: base_gmao_sav
+#: model:ir.ui.view,arch_db:base_gmao_sav.view_kanban_resource_intervention_id
+msgid "<b>Start date: </b>"
+msgstr "<b>Date de début: </b>"
+
+#. module: base_gmao_sav
+#: model:ir.ui.view,arch_db:base_gmao_sav.view_kanban_intervention_id
+msgid "<b>Time theo: </b>"
+msgstr "<b>Temps théo: </b>"
+
+#. module: base_gmao_sav
+#: model:ir.ui.view,arch_db:base_gmao_sav.view_kanban_resource_intervention_id
+msgid "<b>Time: </b>"
+msgstr "<b>Temps: </b>"
+
+#. module: base_gmao_sav
+#: model:ir.model,name:base_gmao_sav.model_add_operation_in_park
+msgid "ADD operation in park"
+msgstr "Ajouter une opération de maintenance dans le parc"
+
+#. module: base_gmao_sav
+#: model:ir.model,name:base_gmao_sav.model_add_park_in_operation
+msgid "ADD park in operation"
+msgstr "Ajouter un parc dans l'opération de maintenance"
+
+#. module: base_gmao_sav
+#: model:ir.ui.view,arch_db:base_gmao_sav.view_form_intervention_id
+#: model:ir.ui.view,arch_db:base_gmao_sav.view_form_park_id
+msgid "Actions"
+msgstr "Actions"
+
+#. module: base_gmao_sav
+#: code:addons/base_gmao_sav/gmao_sav.py:771
+#, python-format
+msgid "Active"
+msgstr "Actif"
+
+#. module: base_gmao_sav
+#: model:ir.model.fields,field_description:base_gmao_sav.field_park_is_active_label
+msgid "Active label"
+msgstr "Étiquette active"
+
+#. module: base_gmao_sav
+#: model:ir.actions.act_window,name:base_gmao_sav.act_add_operation_in_park
+#: model:ir.ui.view,arch_db:base_gmao_sav.view_form_add_operation_in_park
+msgid "Add operation in park"
+msgstr "Ajouter une opération de maintenance dans le parc"
+
+#. module: base_gmao_sav
+#: model:ir.ui.view,arch_db:base_gmao_sav.view_form_park_id
+msgid "Add operations"
+msgstr "Ajouter opérations de maintenance"
+
+#. module: base_gmao_sav
+#: model:ir.actions.act_window,name:base_gmao_sav.act_add_park_in_operation
+#: model:ir.ui.view,arch_db:base_gmao_sav.view_form_add_park_in_operation
+msgid "Add park in operation"
+msgstr "Ajouter un parc dans l'opération de maintenance"
+
+#. module: base_gmao_sav
+#: model:ir.ui.view,arch_db:base_gmao_sav.view_form_maintenance_operation_id
+msgid "Add parks"
+msgstr "Ajouter parcs"
+
+#. module: base_gmao_sav
+#: model:res.groups,name:base_gmao_sav.gmao_responsible
+#: model:res.groups,name:base_gmao_sav.sav_responsible
+msgid "Administrator"
+msgstr "Administrateur"
+
+#. module: base_gmao_sav
+#: code:addons/base_gmao_sav/gmao_sav.py:1090
+#, python-format
+msgid "Affect"
+msgstr "Affecter"
+
+#. module: base_gmao_sav
+#: model:ir.model.fields,field_description:base_gmao_sav.field_intervention_alert
+#: model:ir.model.fields,field_description:base_gmao_sav.field_resource_intervention_alert
+#: model:ir.ui.view,arch_db:base_gmao_sav.view_search_intervention_id
+#: model:ir.ui.view,arch_db:base_gmao_sav.view_search_resource_intervention_id
+msgid "Alert"
+msgstr "Alerte"
+
+#. module: base_gmao_sav
+#: model:ir.ui.view,arch_db:base_gmao_sav.view_form_maintenance_operation_id
+msgid "All Resources"
+msgstr "Toutes les ressources"
+
+#. module: base_gmao_sav
+#: model:ir.model.fields,field_description:base_gmao_sav.field_add_operation_in_park_all_operation_ids
+#: model:ir.model.fields,field_description:base_gmao_sav.field_park_all_operation_ids
+#: model:ir.model.fields,field_description:base_gmao_sav.field_wiz_mo_repair_all_operation_ids
+msgid "All operations"
+msgstr "Toutes les opérations"
+
+#. module: base_gmao_sav
+#: model:ir.model.fields,field_description:base_gmao_sav.field_add_park_in_operation_all_park_ids
+#: model:ir.model.fields,field_description:base_gmao_sav.field_maintenance_operation_all_park_ids
+msgid "All parks"
+msgstr "Tous les parcs"
+
+#. module: base_gmao_sav
+#: model:ir.model.fields,field_description:base_gmao_sav.field_maintenance_operation_all_resource_ids
+#: model:ir.model.fields,field_description:base_gmao_sav.field_resource_intervention_all_resource_ids
+msgid "All resources"
+msgstr "Toutes les ressources"
+
+#. module: base_gmao_sav
+#: model:ir.ui.view,arch_db:base_gmao_sav.view_form_intervention_id
+#: model:ir.ui.view,arch_db:base_gmao_sav.view_form_wiz_mo_repair
+msgid "Analisys"
+msgstr "Analyses"
+
+#. module: base_gmao_sav
+#: model:ir.ui.view,arch_db:base_gmao_sav.view_form_park_id
+msgid "Analysis"
+msgstr "Analyses"
+
+#. module: base_gmao_sav
+#: model:ir.model.fields,field_description:base_gmao_sav.field_intervention_applicant_id
+msgid "Applicant"
+msgstr "Demandeur"
+
+#. module: base_gmao_sav
+#: model:ir.ui.menu,name:base_gmao_sav.menu_certificate_line_application_equipment_id
+msgid "Application equipment"
+msgstr "Application équipement"
+
+#. module: base_gmao_sav
+#: model:ir.actions.act_window,name:base_gmao_sav.act_certificate_line_application_equipment_id
+msgid "Application of certificates equipments"
+msgstr "Applications des certificats équipements"
+
+#. module: base_gmao_sav
+#: model:ir.actions.act_window,name:base_gmao_sav.act_certificate_line_application_park_id
+msgid "Application of certificates parks"
+msgstr Applications des certificats parcs"
+
+#. module: base_gmao_sav
+#: model:ir.ui.menu,name:base_gmao_sav.menu_certificate_line_application_park_id
+msgid "Application park"
+msgstr "Application parc"
+
+#. module: base_gmao_sav
+#: code:addons/base_gmao_sav/gmao_sav.py:1224
+#: code:addons/base_gmao_sav/gmao_sav.py:2422
+#, python-format
+msgid "April"
+msgstr "Avril"
+
+#. module: base_gmao_sav
+#: model:ir.model.fields,field_description:base_gmao_sav.field_wiz_mo_repair_assembly_rl_id
+msgid "Assembly operation"
+msgstr "Opération de montage"
+
+#. module: base_gmao_sav
+#: code:addons/base_gmao_sav/gmao_sav.py:1228
+#: code:addons/base_gmao_sav/gmao_sav.py:2426
+#, python-format
+msgid "August"
+msgstr "Août"
+
+#. module: base_gmao_sav
+#: code:addons/base_gmao_sav/gmao_sav.py:1361
+#: code:addons/base_gmao_sav/gmao_sav.py:2155
+#, python-format
+msgid "Billable"
+msgstr "Facturable"
+
+#. module: base_gmao_sav
+#: code:addons/base_gmao_sav/gmao_sav.py:763
+#, python-format
+msgid "Calendar"
+msgstr "Calendrier"
+
+#. module: base_gmao_sav
+#: code:addons/base_gmao_sav/gmao_sav.py:1093
+#: code:addons/base_gmao_sav/gmao_sav.py:2075
+#: model:ir.ui.view,arch_db:base_gmao_sav.view_form_add_operation_in_park
+#: model:ir.ui.view,arch_db:base_gmao_sav.view_form_add_park_in_operation
+#: model:ir.ui.view,arch_db:base_gmao_sav.view_form_create_picking_intervention
+#: model:ir.ui.view,arch_db:base_gmao_sav.view_form_intervention_id
+#: model:ir.ui.view,arch_db:base_gmao_sav.view_form_wiz_create_park
+#: model:ir.ui.view,arch_db:base_gmao_sav.view_form_wiz_intervention_quotation
+#: model:ir.ui.view,arch_db:base_gmao_sav.view_form_wiz_mo_repair
+#: model:ir.ui.view,arch_db:base_gmao_sav.view_form_wiz_mo_repair_select_label
+#, python-format
+msgid "Cancel"
+msgstr "Annuler"
+
+#. module: base_gmao_sav
+#: model:ir.model.fields,field_description:base_gmao_sav.field_maintenance_operation_categ_resource_ids
+msgid "Categ resource"
+msgstr "Catég ressource"
+
+#. module: base_gmao_sav
+#: model:ir.model,name:base_gmao_sav.model_categ_resource_maintenance_operation
+msgid "Categ resource maintenance operation"
+msgstr "Catég ressource opération maintenance"
+
+#. module: base_gmao_sav
+#: model:ir.model.fields,field_description:base_gmao_sav.field_intervention_cause_id
+#: model:ir.model.fields,field_description:base_gmao_sav.field_wiz_mo_repair_cause
+msgid "Cause"
+msgstr "Cause"
+
+#. module: base_gmao_sav
+#: model:ir.actions.act_window,name:base_gmao_sav.act_cause_intervention_id
+#: model:ir.model,name:base_gmao_sav.model_cause_intervention
+#: model:ir.ui.view,arch_db:base_gmao_sav.view_form_cause_intervention_id
+msgid "Cause intervention"
+msgstr "Cause intervention"
+
+#. module: base_gmao_sav
+#: model:ir.ui.view,arch_db:base_gmao_sav.view_tree_cause_intervention_id
+msgid "Cause interventions"
+msgstr "Liste des causes"
+
+#. module: base_gmao_sav
+#: model:ir.model,name:base_gmao_sav.model_certificate_line
+msgid "Certificate line"
+msgstr "Ligne de certificats"
+
+#. module: base_gmao_sav
+#: model:ir.model,name:base_gmao_sav.model_certificate_line_application
+msgid "Certificate line application"
+msgstr "Ligne d'application des certificats"
+
+#. module: base_gmao_sav
+#: model:ir.model,name:base_gmao_sav.model_certificate_template
+msgid "Certificate template"
+msgstr "Modèle de certificat"
+
+#. module: base_gmao_sav
+#: model:ir.model.fields,field_description:base_gmao_sav.field_park_child_structure_complete_ids
+msgid "Child structure complete ids"
+msgstr "Child structure complete ids"
+
+#. module: base_gmao_sav
+#: model:ir.model.fields,field_description:base_gmao_sav.field_park_child_structure_ids
+msgid "Child structure ids"
+msgstr "Child structure ids"
+
+#. module: base_gmao_sav
+#: model:ir.model.fields,field_description:base_gmao_sav.field_intervention_color_kanban
+#: model:ir.model.fields,field_description:base_gmao_sav.field_resource_intervention_color_kanban
+msgid "Color Kanban"
+msgstr "Color Kanban"
+
+#. module: base_gmao_sav
+#: model:ir.model.fields,field_description:base_gmao_sav.field_counter_comment
+msgid "Comment"
+msgstr "Commentaire"
+
+#. module: base_gmao_sav
+#: model:ir.model.fields,field_description:base_gmao_sav.field_park_commissioning_date
+msgid "Commissioning date"
+msgstr "Date de mise en service"
+
+#. module: base_gmao_sav
+#: model:ir.ui.view,arch_db:base_gmao_sav.view_form_intervention_id
+msgid "Communications"
+msgstr "Communications"
+
+#. module: base_gmao_sav
+#: model:ir.ui.view,arch_db:base_gmao_sav.view_form_intervention_id
+msgid "Confirmed date"
+msgstr "Date confirmée"
+
+#. module: base_gmao_sav
+#: model:ir.model.fields,field_description:base_gmao_sav.field_intervention_contact_id
+msgid "Contact"
+msgstr "Contact"
+
+#. module: base_gmao_sav
+#: code:addons/base_gmao_sav/gmao_sav.py:742
+#, python-format
+msgid "Corrective"
+msgstr "Correctif"
+
+#. module: base_gmao_sav
+#: code:addons/base_gmao_sav/gmao_sav.py:1058
+#, python-format
+msgid "Corrective maintenance"
+msgstr "Maintenance corrective "
+
+#. module: base_gmao_sav
+#: code:addons/base_gmao_sav/gmao_sav.py:762
+#: model:ir.model,name:base_gmao_sav.model_counter
+#: model:ir.model.fields,field_description:base_gmao_sav.field_maintenance_operation_counter_id
+#: model:ir.model.fields,field_description:base_gmao_sav.field_park_counter_counter_id
+#: model:ir.ui.view,arch_db:base_gmao_sav.view_form_counter_id
+#, python-format
+msgid "Counter"
+msgstr "Compteur"
+
+#. module: base_gmao_sav
+#: model:ir.actions.act_window,name:base_gmao_sav.act_counter_id
+#: model:ir.model.fields,field_description:base_gmao_sav.field_park_counter_ids
+#: model:ir.ui.view,arch_db:base_gmao_sav.view_form_park_id
+#: model:ir.ui.view,arch_db:base_gmao_sav.view_tree_counter_id
+msgid "Counters"
+msgstr "Compteurs"
+
+#. module: base_gmao_sav
+#: model:ir.ui.view,arch_db:base_gmao_sav.view_form_intervention_id
+msgid "Create MO for repair"
+msgstr "Créer OF de réparation"
+
+#. module: base_gmao_sav
+#: model:ir.ui.view,arch_db:base_gmao_sav.view_form_intervention_id
+msgid "Create PM from MOs"
+msgstr "Créer PM à partir des OFs"
+
+#. module: base_gmao_sav
+#: model:ir.model.fields,field_description:base_gmao_sav.field_wiz_mo_repair_is_new_num_serie
+msgid "Create a new serial num"
+msgstr "Créer un nouveau numéro de série"
+
+#. module: base_gmao_sav
+#: model:ir.model,name:base_gmao_sav.model_wizard_create_timetracking
+msgid "Create a timetracking entry, or edit similar entries"
+msgstr "Déclaration des temps"
+
+#. module: base_gmao_sav
+#: model:ir.model.fields,field_description:base_gmao_sav.field_park_date_create
+msgid "Create date"
+msgstr "Date de création"
+
+#. module: base_gmao_sav
+#: model:ir.model.fields,field_description:base_gmao_sav.field_intervention_date_create
+msgid "Create date intervention"
+msgstr "Date de création intervention"
+
+#. module: base_gmao_sav
+#: model:ir.ui.view,arch_db:base_gmao_sav.view_form_park_id
+msgid "Create intervention"
+msgstr "Créer intervention"
+
+#. module: base_gmao_sav
+#: model:ir.ui.view,arch_db:base_gmao_sav.view_form_intervention_id
+msgid "Create invoice"
+msgstr "Créer facturation"
+
+#. module: base_gmao_sav
+#: model:ir.actions.act_window,name:base_gmao_sav.act_wiz_create_park_gmao
+#: model:ir.actions.act_window,name:base_gmao_sav.act_wiz_create_park_sav
+#: model:ir.ui.view,arch_db:base_gmao_sav.view_form_wiz_create_park
+msgid "Create parks"
+msgstr "Créer parcs"
+
+#. module: base_gmao_sav
+#: code:addons/base_gmao_sav/gmao_sav.py:2304
+#: model:ir.actions.act_window,name:base_gmao_sav.act_out_create_picking_intervention
+#: model:ir.ui.view,arch_db:base_gmao_sav.view_form_create_picking_intervention
+#, python-format
+msgid "Create picking"
+msgstr "Créer bon de livraison"
+
+#. module: base_gmao_sav
+#: model:ir.model,name:base_gmao_sav.model_create_picking_intervention
+msgid "Create picking intervention"
+msgstr "Créer bon de livraison de l'intervention"
+
+#. module: base_gmao_sav
+#: model:ir.ui.view,arch_db:base_gmao_sav.view_form_intervention_id
+msgid "Create purchase"
+msgstr "Créer achat"
+
+#. module: base_gmao_sav
+#: code:addons/base_gmao_sav/gmao_sav.py:2275
+#, python-format
+msgid "Create quick purchase"
+msgstr "Créer achat"
+
+#. module: base_gmao_sav
+#: model:ir.ui.view,arch_db:base_gmao_sav.view_form_intervention_id
+msgid "Create quotation"
+msgstr "Créer devis"
+
+#. module: base_gmao_sav
+#: code:addons/base_gmao_sav/gmao_sav.py:1749
+#: model:ir.actions.act_window,name:base_gmao_sav.act_wiz_intervention_quotation
+#: model:ir.ui.view,arch_db:base_gmao_sav.view_form_wiz_intervention_quotation
+#, python-format
+msgid "Create quotation of intervention"
+msgstr "Créer devis de l'intervention"
+
+#. module: base_gmao_sav
+#: model:ir.model.fields,field_description:base_gmao_sav.field_add_operation_in_park_create_uid
+#: model:ir.model.fields,field_description:base_gmao_sav.field_add_park_in_operation_create_uid
+#: model:ir.model.fields,field_description:base_gmao_sav.field_categ_resource_maintenance_operation_create_uid
+#: model:ir.model.fields,field_description:base_gmao_sav.field_cause_intervention_create_uid
+#: model:ir.model.fields,field_description:base_gmao_sav.field_counter_create_uid
+#: model:ir.model.fields,field_description:base_gmao_sav.field_create_picking_intervention_create_uid
+#: model:ir.model.fields,field_description:base_gmao_sav.field_instruction_intervention_create_uid
+#: model:ir.model.fields,field_description:base_gmao_sav.field_instruction_maintenance_create_uid
+#: model:ir.model.fields,field_description:base_gmao_sav.field_intervention_create_uid
+#: model:ir.model.fields,field_description:base_gmao_sav.field_maintenance_operation_create_uid
+#: model:ir.model.fields,field_description:base_gmao_sav.field_park_counter_create_uid
+#: model:ir.model.fields,field_description:base_gmao_sav.field_park_create_uid
+#: model:ir.model.fields,field_description:base_gmao_sav.field_park_maintenance_operation_create_uid
+#: model:ir.model.fields,field_description:base_gmao_sav.field_piece_maintenance_create_uid
+#: model:ir.model.fields,field_description:base_gmao_sav.field_piece_maintenance_intervention_create_uid
+#: model:ir.model.fields,field_description:base_gmao_sav.field_quotation_intervention_create_uid
+#: model:ir.model.fields,field_description:base_gmao_sav.field_resource_intervention_create_uid
+#: model:ir.model.fields,field_description:base_gmao_sav.field_resource_maintenance_operation_create_uid
+#: model:ir.model.fields,field_description:base_gmao_sav.field_type_failure_intervention_create_uid
+#: model:ir.model.fields,field_description:base_gmao_sav.field_wiz_create_park_create_uid
+#: model:ir.model.fields,field_description:base_gmao_sav.field_wiz_intervention_quotation_create_uid
+#: model:ir.model.fields,field_description:base_gmao_sav.field_wiz_intervention_quotation_line_create_uid
+#: model:ir.model.fields,field_description:base_gmao_sav.field_wiz_intervention_quotation_noorder_create_uid
+#: model:ir.model.fields,field_description:base_gmao_sav.field_wiz_mo_repair_create_uid
+#: model:ir.model.fields,field_description:base_gmao_sav.field_wiz_mo_repair_label_create_uid
+#: model:ir.model.fields,field_description:base_gmao_sav.field_wiz_mo_repair_operations_create_uid
+#: model:ir.model.fields,field_description:base_gmao_sav.field_wiz_mo_repair_select_label_create_uid
+msgid "Created by"
+msgstr "Créer par"
+
+#. module: base_gmao_sav
+#: model:ir.model.fields,field_description:base_gmao_sav.field_add_operation_in_park_create_date
+#: model:ir.model.fields,field_description:base_gmao_sav.field_add_park_in_operation_create_date
+#: model:ir.model.fields,field_description:base_gmao_sav.field_categ_resource_maintenance_operation_create_date
+#: model:ir.model.fields,field_description:base_gmao_sav.field_cause_intervention_create_date
+#: model:ir.model.fields,field_description:base_gmao_sav.field_counter_create_date
+#: model:ir.model.fields,field_description:base_gmao_sav.field_create_picking_intervention_create_date
+#: model:ir.model.fields,field_description:base_gmao_sav.field_instruction_intervention_create_date
+#: model:ir.model.fields,field_description:base_gmao_sav.field_instruction_maintenance_create_date
+#: model:ir.model.fields,field_description:base_gmao_sav.field_intervention_create_date
+#: model:ir.model.fields,field_description:base_gmao_sav.field_maintenance_operation_create_date
+#: model:ir.model.fields,field_description:base_gmao_sav.field_park_counter_create_date
+#: model:ir.model.fields,field_description:base_gmao_sav.field_park_create_date
+#: model:ir.model.fields,field_description:base_gmao_sav.field_park_maintenance_operation_create_date
+#: model:ir.model.fields,field_description:base_gmao_sav.field_piece_maintenance_create_date
+#: model:ir.model.fields,field_description:base_gmao_sav.field_piece_maintenance_intervention_create_date
+#: model:ir.model.fields,field_description:base_gmao_sav.field_quotation_intervention_create_date
+#: model:ir.model.fields,field_description:base_gmao_sav.field_resource_intervention_create_date
+#: model:ir.model.fields,field_description:base_gmao_sav.field_resource_maintenance_operation_create_date
+#: model:ir.model.fields,field_description:base_gmao_sav.field_type_failure_intervention_create_date
+#: model:ir.model.fields,field_description:base_gmao_sav.field_wiz_create_park_create_date
+#: model:ir.model.fields,field_description:base_gmao_sav.field_wiz_intervention_quotation_create_date
+#: model:ir.model.fields,field_description:base_gmao_sav.field_wiz_intervention_quotation_line_create_date
+#: model:ir.model.fields,field_description:base_gmao_sav.field_wiz_intervention_quotation_noorder_create_date
+#: model:ir.model.fields,field_description:base_gmao_sav.field_wiz_mo_repair_create_date
+#: model:ir.model.fields,field_description:base_gmao_sav.field_wiz_mo_repair_label_create_date
+#: model:ir.model.fields,field_description:base_gmao_sav.field_wiz_mo_repair_operations_create_date
+#: model:ir.model.fields,field_description:base_gmao_sav.field_wiz_mo_repair_select_label_create_date
+msgid "Created on"
+msgstr "Créé le"
+
+#. module: base_gmao_sav
+#: code:addons/base_gmao_sav/gmao_sav.py:1068
+#, python-format
+msgid "Critical"
+msgstr "Critique"
+
+#. module: base_gmao_sav
+#: model:ir.model.fields,field_description:base_gmao_sav.field_intervention_currency_id
+#: model:ir.model.fields,field_description:base_gmao_sav.field_intervention_currency_invoice_id
+#: model:ir.model.fields,field_description:base_gmao_sav.field_quotation_intervention_currency_id
+#: model:ir.model.fields,field_description:base_gmao_sav.field_wiz_intervention_quotation_line_currency_id
+msgid "Currency"
+msgstr "Devise"
+
+#. module: base_gmao_sav
+#: model:ir.model.fields,field_description:base_gmao_sav.field_intervention_customer_id
+#: model:ir.model.fields,field_description:base_gmao_sav.field_park_customer_id
+#: model:ir.model.fields,field_description:base_gmao_sav.field_quotation_intervention_customer_id
+#: model:ir.model.fields,field_description:base_gmao_sav.field_wiz_intervention_quotation_customer_id
+msgid "Customer"
+msgstr "Client"
+
+#. module: base_gmao_sav
+#: model:ir.model.fields,field_description:base_gmao_sav.field_wiz_add_certificate_application_equipment_ids
+msgid "Customers"
+msgstr "Clients"
+
+#. module: base_gmao_sav
+#: model:ir.model.fields,field_description:base_gmao_sav.field_create_picking_intervention_date
+#: model:ir.model.fields,field_description:base_gmao_sav.field_instruction_intervention_date
+#: model:ir.model.fields,field_description:base_gmao_sav.field_park_counter_date
+#: model:ir.model.fields,field_description:base_gmao_sav.field_wiz_intervention_quotation_date
+msgid "Date"
+msgstr "Date"
+
+#. module: base_gmao_sav
+#: code:addons/base_gmao_sav/gmao_sav.py:750
+#: code:addons/base_gmao_sav/gmao_sav.py:1078
+#, python-format
+msgid "Day"
+msgstr "Jour"
+
+#. module: base_gmao_sav
+#: code:addons/base_gmao_sav/gmao_sav.py:1232
+#: code:addons/base_gmao_sav/gmao_sav.py:2430
+#, python-format
+msgid "December"
+msgstr "Décembre"
+
+#. module: base_gmao_sav
+#: model:ir.ui.view,arch_db:base_gmao_sav.view_form_intervention_id
+msgid "Declare time"
+msgstr "Déclaration des temps"
+
+#. module: base_gmao_sav
+#: model:ir.ui.view,arch_db:base_gmao_sav.view_form_park_id
+msgid "Delete operations"
+msgstr "Supprimer opérations"
+
+#. module: base_gmao_sav
+#: model:ir.ui.view,arch_db:base_gmao_sav.view_form_maintenance_operation_id
+msgid "Delete parks"
+msgstr "Supprimer parcs"
+
+#. module: base_gmao_sav
+#: model:ir.model.fields,field_description:base_gmao_sav.field_park_delivery_date
+msgid "Delivery date"
+msgstr "Date de livraison"
+
+#. module: base_gmao_sav
+#: model:ir.model.fields,field_description:base_gmao_sav.field_instruction_intervention_description
+#: model:ir.model.fields,field_description:base_gmao_sav.field_instruction_maintenance_description
+#: model:ir.model.fields,field_description:base_gmao_sav.field_intervention_description
+#: model:ir.model.fields,field_description:base_gmao_sav.field_maintenance_operation_description
+#: model:ir.model.fields,field_description:base_gmao_sav.field_park_description
+#: model:ir.model.fields,field_description:base_gmao_sav.field_piece_maintenance_description
+#: model:ir.model.fields,field_description:base_gmao_sav.field_piece_maintenance_intervention_description
+#: model:ir.model.fields,field_description:base_gmao_sav.field_wiz_intervention_quotation_line_description
+#: model:ir.model.fields,field_description:base_gmao_sav.field_wiz_intervention_quotation_noorder_description
+#: model:ir.ui.view,arch_db:base_gmao_sav.view_form_intervention_id
+#: model:ir.ui.view,arch_db:base_gmao_sav.view_form_maintenance_operation_id
+#: model:ir.ui.view,arch_db:base_gmao_sav.view_form_wiz_mo_repair
+msgid "Description"
+msgstr "Description"
+
+#. module: base_gmao_sav
+#: model:ir.model.fields,field_description:base_gmao_sav.field_wiz_mo_repair_disassembly_rl_id
+msgid "Disassembly operation"
+msgstr "Opération de démontage"
+
+#. module: base_gmao_sav
+#: model:ir.model.fields,field_description:base_gmao_sav.field_add_operation_in_park_display_name
+#: model:ir.model.fields,field_description:base_gmao_sav.field_add_park_in_operation_display_name
+#: model:ir.model.fields,field_description:base_gmao_sav.field_categ_resource_maintenance_operation_display_name
+#: model:ir.model.fields,field_description:base_gmao_sav.field_cause_intervention_display_name
+#: model:ir.model.fields,field_description:base_gmao_sav.field_counter_display_name
+#: model:ir.model.fields,field_description:base_gmao_sav.field_create_picking_intervention_display_name
+#: model:ir.model.fields,field_description:base_gmao_sav.field_instruction_intervention_display_name
+#: model:ir.model.fields,field_description:base_gmao_sav.field_instruction_maintenance_display_name
+#: model:ir.model.fields,field_description:base_gmao_sav.field_intervention_display_name
+#: model:ir.model.fields,field_description:base_gmao_sav.field_maintenance_operation_display_name
+#: model:ir.model.fields,field_description:base_gmao_sav.field_park_counter_display_name
+#: model:ir.model.fields,field_description:base_gmao_sav.field_park_display_name
+#: model:ir.model.fields,field_description:base_gmao_sav.field_park_maintenance_operation_display_name
+#: model:ir.model.fields,field_description:base_gmao_sav.field_piece_maintenance_display_name
+#: model:ir.model.fields,field_description:base_gmao_sav.field_piece_maintenance_intervention_display_name
+#: model:ir.model.fields,field_description:base_gmao_sav.field_quotation_intervention_display_name
+#: model:ir.model.fields,field_description:base_gmao_sav.field_resource_intervention_display_name
+#: model:ir.model.fields,field_description:base_gmao_sav.field_resource_maintenance_operation_display_name
+#: model:ir.model.fields,field_description:base_gmao_sav.field_type_failure_intervention_display_name
+#: model:ir.model.fields,field_description:base_gmao_sav.field_wiz_create_park_display_name
+#: model:ir.model.fields,field_description:base_gmao_sav.field_wiz_intervention_quotation_display_name
+#: model:ir.model.fields,field_description:base_gmao_sav.field_wiz_intervention_quotation_line_display_name
+#: model:ir.model.fields,field_description:base_gmao_sav.field_wiz_intervention_quotation_noorder_display_name
+#: model:ir.model.fields,field_description:base_gmao_sav.field_wiz_mo_repair_display_name
+#: model:ir.model.fields,field_description:base_gmao_sav.field_wiz_mo_repair_label_display_name
+#: model:ir.model.fields,field_description:base_gmao_sav.field_wiz_mo_repair_operations_display_name
+#: model:ir.model.fields,field_description:base_gmao_sav.field_wiz_mo_repair_select_label_display_name
+msgid "Display Name"
+msgstr "Afficher le nom"
+
+#. module: base_gmao_sav
+#: model:ir.model.fields,field_description:base_gmao_sav.field_park_document_ids
+msgid "Document"
+msgstr "Document"
+
+#. module: base_gmao_sav
+#: model:ir.ui.view,arch_db:base_gmao_sav.view_form_park_id
+msgid "Documents"
+msgstr "Documents"
+
+#. module: base_gmao_sav
+#: code:addons/base_gmao_sav/gmao_sav.py:1092
+#: code:addons/base_gmao_sav/gmao_sav.py:2074
+#, python-format
+msgid "Done"
+msgstr "Terminer"
+
+#. module: base_gmao_sav
+#: code:addons/base_gmao_sav/gmao_sav.py:770
+#, python-format
+msgid "Draft"
+msgstr "Brouillon"
+
+#. module: base_gmao_sav
+#: model:ir.model.fields,field_description:base_gmao_sav.field_intervention_emergency
+#: model:ir.ui.view,arch_db:base_gmao_sav.view_search_intervention_id
+msgid "Emergency"
+msgstr "Urgence"
+
+#. module: base_gmao_sav
+#: model:ir.model.fields,field_description:base_gmao_sav.field_resource_intervention_end_date
+msgid "End date"
+msgstr "Date de fin"
+
+#. module: base_gmao_sav
+#: model:ir.model.fields,field_description:base_gmao_sav.field_intervention_ended_date_planned
+msgid "Ended date planned"
+msgstr "Date de fin plannifiée"
+
+#. module: base_gmao_sav
+#: model:ir.model.fields,field_description:base_gmao_sav.field_intervention_ended_date_real
+msgid "Ended date real"
+msgstr "Date de fin réelle"
+
+#. module: base_gmao_sav
+#: model:ir.model.fields,field_description:base_gmao_sav.field_intervention_ended_date_requested
+msgid "Ended date requested"
+msgstr "Date de fin demandée"
+
+#. module: base_gmao_sav
+#: model:ir.ui.view,arch_db:base_gmao_sav.view_form_create_picking_intervention
+msgid "Enter the values"
+msgstr "Entrez les valeurs"
+
+#. module: base_gmao_sav
+#: code:addons/base_gmao_sav/certificate_management.py:18
+#: code:addons/base_gmao_sav/certificate_management.py:50
+#: code:addons/base_gmao_sav/certificate_management.py:116
+#: code:addons/base_gmao_sav/wizard/wiz_add_certificate_application.py:17
+#: model:ir.model.fields,field_description:base_gmao_sav.field_certificate_line_application_equipment_id
+#: model:ir.model.fields,field_description:base_gmao_sav.field_certificate_line_equipment_id
+#: model:ir.model.fields,field_description:base_gmao_sav.field_park_is_equipment
+#: model:ir.model.fields,field_description:base_gmao_sav.field_wiz_create_park_is_equipment
+#: model:ir.ui.view,arch_db:base_gmao_sav.view_form_park_id
+#, python-format
+msgid "Equipment"
+msgstr "Equipement"
+
+#. module: base_gmao_sav
+#: code:addons/base_gmao_sav/gmao_sav.py:548
+#: code:addons/base_gmao_sav/gmao_sav.py:1597
+#: code:addons/base_gmao_sav/gmao_sav.py:1640
+#: code:addons/base_gmao_sav/gmao_sav.py:1670
+#: code:addons/base_gmao_sav/gmao_sav.py:1803
+#: code:addons/base_gmao_sav/gmao_sav.py:1891
+#: code:addons/base_gmao_sav/gmao_sav.py:1895
+#: code:addons/base_gmao_sav/gmao_sav.py:1982
+#: code:addons/base_gmao_sav/gmao_sav.py:2005
+#: code:addons/base_gmao_sav/gmao_sav.py:2058
+#: code:addons/base_gmao_sav/wizard/wiz_intervention_quotation.py:51
+#: code:addons/base_gmao_sav/wizard/wiz_intervention_quotation.py:56
+#: code:addons/base_gmao_sav/wizard/wiz_mo_repair.py:125
+#: code:addons/base_gmao_sav/wizard/wiz_mo_repair.py:147
+#: code:addons/base_gmao_sav/wizard/wiz_mo_repair.py:154
+#: code:addons/base_gmao_sav/wizard/wiz_mo_repair.py:157
+#, python-format
+msgid "Error"
+msgstr "Erreur"
+
+#. module: base_gmao_sav
+#: code:addons/base_gmao_sav/gmao_sav.py:22
+#: code:addons/base_gmao_sav/gmao_sav.py:1101
+#: code:addons/base_gmao_sav/gmao_sav.py:2148
+#: code:addons/base_gmao_sav/gmao_sav.py:2535
+#: code:addons/base_gmao_sav/wizard/wiz_create_park.py:19
+#, python-format
+msgid "External"
+msgstr "Externe"
+
+#. module: base_gmao_sav
+#: code:addons/base_gmao_sav/gmao_sav.py:1222
+#: code:addons/base_gmao_sav/gmao_sav.py:2420
+#, python-format
+msgid "February"
+msgstr "Février"
+
+#. module: base_gmao_sav
+#: model:ir.ui.view,arch_db:base_gmao_sav.view_search_counter_id
+#: model:ir.ui.view,arch_db:base_gmao_sav.view_search_intervention_id
+#: model:ir.ui.view,arch_db:base_gmao_sav.view_search_maintenance_operation_id
+#: model:ir.ui.view,arch_db:base_gmao_sav.view_search_park_id
+#: model:ir.ui.view,arch_db:base_gmao_sav.view_search_resource_intervention_id
+msgid "Filters"
+msgstr "Filtres"
+
+#. module: base_gmao_sav
+#: model:ir.ui.view,arch_db:base_gmao_sav.view_form_intervention_id
+msgid "Finish"
+msgstr "Terminée"
+
+#. module: base_gmao_sav
+#: model:ir.model.fields,field_description:base_gmao_sav.field_maintenance_operation_frequency
+msgid "Frequency"
+msgstr "Fréquence"
+
+#. module: base_gmao_sav
+#: model:ir.model.fields,field_description:base_gmao_sav.field_maintenance_operation_frequency_type
+msgid "Frequency type"
+msgstr "Type de fréquence"
+
+#. module: base_gmao_sav
+#: model:ir.module.category,name:base_gmao_sav.module_base_gmao
+msgid "GMAO"
+msgstr "GMAO"
+
+#. module: base_gmao_sav
+#: model:ir.ui.view,arch_db:base_gmao_sav.view_search_counter_id
+#: model:ir.ui.view,arch_db:base_gmao_sav.view_search_intervention_id
+#: model:ir.ui.view,arch_db:base_gmao_sav.view_search_maintenance_operation_id
+#: model:ir.ui.view,arch_db:base_gmao_sav.view_search_park_id
+#: model:ir.ui.view,arch_db:base_gmao_sav.view_search_resource_intervention_id
+msgid "Group By..."
+msgstr "Grouper par..."
+
+#. module: base_gmao_sav
+#: model:ir.model.fields,field_description:base_gmao_sav.field_park_guarantee
+#: model:ir.model.fields,field_description:base_gmao_sav.field_res_partner_guarantee
+#: model:ir.ui.view,arch_db:base_gmao_sav.view_form_res_partner_sav
+msgid "Guarantee"
+msgstr "Garantie"
+
+#. module: base_gmao_sav
+#: model:ir.model.fields,field_description:base_gmao_sav.field_park_guarantee_start_date
+msgid "Guarantee start date"
+msgstr "Date de début de garantie"
+
+#. module: base_gmao_sav
+#: model:ir.model.fields,field_description:base_gmao_sav.field_park_guarantee_unity_id
+#: model:ir.model.fields,field_description:base_gmao_sav.field_res_partner_guarantee_unity_id
+msgid "Guarantee unity"
+msgstr "Unité de garantie"
+
+#. module: base_gmao_sav
+#: code:addons/base_gmao_sav/gmao_sav.py:1069
+#, python-format
+msgid "High"
+msgstr "Forte"
+
+#. module: base_gmao_sav
+#: model:ir.ui.view,arch_db:base_gmao_sav.view_form_park_id
+msgid "History"
+msgstr "Historique"
+
+#. module: base_gmao_sav
+#: model:ir.model.fields,field_description:base_gmao_sav.field_add_operation_in_park_id
+#: model:ir.model.fields,field_description:base_gmao_sav.field_add_park_in_operation_id
+#: model:ir.model.fields,field_description:base_gmao_sav.field_categ_resource_maintenance_operation_id
+#: model:ir.model.fields,field_description:base_gmao_sav.field_cause_intervention_id
+#: model:ir.model.fields,field_description:base_gmao_sav.field_counter_id
+#: model:ir.model.fields,field_description:base_gmao_sav.field_create_picking_intervention_id
+#: model:ir.model.fields,field_description:base_gmao_sav.field_instruction_intervention_id
+#: model:ir.model.fields,field_description:base_gmao_sav.field_instruction_maintenance_id
+#: model:ir.model.fields,field_description:base_gmao_sav.field_intervention_id
+#: model:ir.model.fields,field_description:base_gmao_sav.field_maintenance_operation_id
+#: model:ir.model.fields,field_description:base_gmao_sav.field_park_counter_id
+#: model:ir.model.fields,field_description:base_gmao_sav.field_park_id
+#: model:ir.model.fields,field_description:base_gmao_sav.field_park_maintenance_operation_id
+#: model:ir.model.fields,field_description:base_gmao_sav.field_piece_maintenance_id
+#: model:ir.model.fields,field_description:base_gmao_sav.field_piece_maintenance_intervention_id
+#: model:ir.model.fields,field_description:base_gmao_sav.field_quotation_intervention_id
+#: model:ir.model.fields,field_description:base_gmao_sav.field_resource_intervention_id
+#: model:ir.model.fields,field_description:base_gmao_sav.field_resource_maintenance_operation_id
+#: model:ir.model.fields,field_description:base_gmao_sav.field_type_failure_intervention_id
+#: model:ir.model.fields,field_description:base_gmao_sav.field_wiz_create_park_id
+#: model:ir.model.fields,field_description:base_gmao_sav.field_wiz_intervention_quotation_id
+#: model:ir.model.fields,field_description:base_gmao_sav.field_wiz_intervention_quotation_line_id
+#: model:ir.model.fields,field_description:base_gmao_sav.field_wiz_intervention_quotation_noorder_id
+#: model:ir.model.fields,field_description:base_gmao_sav.field_wiz_mo_repair_id
+#: model:ir.model.fields,field_description:base_gmao_sav.field_wiz_mo_repair_label_id
+#: model:ir.model.fields,field_description:base_gmao_sav.field_wiz_mo_repair_operations_id
+#: model:ir.model.fields,field_description:base_gmao_sav.field_wiz_mo_repair_select_label_id
+msgid "ID"
+msgstr "ID"
+
+#. module: base_gmao_sav
+#: model:ir.ui.view,arch_db:base_gmao_sav.view_form_intervention_id
+msgid "Import maintenance operation"
+msgstr "Importer maintenance opérationnelle"
+
+#. module: base_gmao_sav
+#: code:addons/base_gmao_sav/gmao_sav.py:30
+#, python-format
+msgid "In activity"
+msgstr "En activité"
+
+#. module: base_gmao_sav
+#: model:ir.ui.view,arch_db:base_gmao_sav.view_search_intervention_id
+#: model:ir.ui.view,arch_db:base_gmao_sav.view_search_resource_intervention_id
+msgid "In the month"
+msgstr "Dans le mois"
+
+#. module: base_gmao_sav
+#: model:ir.ui.view,arch_db:base_gmao_sav.view_search_intervention_id
+#: model:ir.ui.view,arch_db:base_gmao_sav.view_search_resource_intervention_id
+msgid "In the week"
+msgstr "Dans la semaine"
+
+#. module: base_gmao_sav
+#: code:addons/base_gmao_sav/gmao_sav.py:29
+#, python-format
+msgid "Inactive"
+msgstr "Inactif"
+
+#. module: base_gmao_sav
+#: model:ir.model.fields,field_description:base_gmao_sav.field_intervention_invoicing_spare_part
+msgid "Ingest spares in the quote"
+msgstr "Intégrer les pièces de rechange dans le devis"
+
+#. module: base_gmao_sav
+#: model:ir.model,name:base_gmao_sav.model_instruction_intervention
+msgid "Instruction intervention"
+msgstr "Instruction d'intervention"
+
+#. module: base_gmao_sav
+#: model:ir.model,name:base_gmao_sav.model_instruction_maintenance
+#: model:ir.model.fields,field_description:base_gmao_sav.field_instruction_intervention_instruction_maintenance_id
+msgid "Instruction maintenance"
+msgstr "Instruction de maintenance"
+
+#. module: base_gmao_sav
+#: model:ir.model.fields,field_description:base_gmao_sav.field_intervention_instruction_intervention_ids
+#: model:ir.model.fields,field_description:base_gmao_sav.field_maintenance_operation_instruction_maintenance_ids
+#: model:ir.ui.view,arch_db:base_gmao_sav.view_form_intervention_id
+#: model:ir.ui.view,arch_db:base_gmao_sav.view_form_maintenance_operation_id
+msgid "Instructions"
+msgstr "Instructions"
+
+#. module: base_gmao_sav
+#: model:ir.ui.view,arch_db:base_gmao_sav.view_form_maintenance_operation_id
+msgid "Instructions of maintenance"
+msgstr "Instructions de maintenance"
+
+#. module: base_gmao_sav
+#: model:ir.ui.view,arch_db:base_gmao_sav.view_form_intervention_id
+#: model:ir.ui.view,arch_db:base_gmao_sav.view_form_maintenance_operation_id
+msgid "Instructions/Notes"
+msgstr "Instructions/Notes"
+
+#. module: base_gmao_sav
+#: code:addons/base_gmao_sav/gmao_sav.py:21
+#: code:addons/base_gmao_sav/gmao_sav.py:1100
+#: code:addons/base_gmao_sav/gmao_sav.py:2147
+#: code:addons/base_gmao_sav/gmao_sav.py:2534
+#: code:addons/base_gmao_sav/wizard/wiz_create_park.py:18
+#: model:ir.model.fields,field_description:base_gmao_sav.field_intervention_is_intern
+#, python-format
+msgid "Intern"
+msgstr "Interne"
+
+#. module: base_gmao_sav
+#: code:addons/base_gmao_sav/gmao_sav.py:582
+#: code:addons/base_gmao_sav/wizard/wizard_create_timetracking.py:14
+#: model:ir.model,name:base_gmao_sav.model_intervention
+#: model:ir.model.fields,field_description:base_gmao_sav.field_account_invoice_intervention_id
+#: model:ir.model.fields,field_description:base_gmao_sav.field_create_quick_purchase_pm_intervention_id
+#: model:ir.model.fields,field_description:base_gmao_sav.field_instruction_intervention_intervention_id
+#: model:ir.model.fields,field_description:base_gmao_sav.field_mrp_manufacturingorder_intervention_id
+#: model:ir.model.fields,field_description:base_gmao_sav.field_mrp_workorder_intervention_id
+#: model:ir.model.fields,field_description:base_gmao_sav.field_piece_maintenance_intervention_intervention_id
+#: model:ir.model.fields,field_description:base_gmao_sav.field_quotation_intervention_intervention_id
+#: model:ir.model.fields,field_description:base_gmao_sav.field_resource_intervention_intervention_id
+#: model:ir.model.fields,field_description:base_gmao_sav.field_resource_timetracking_intervention_id
+#: model:ir.model.fields,field_description:base_gmao_sav.field_sale_order_line_intervention_id
+#: model:ir.model.fields,field_description:base_gmao_sav.field_stock_move_intervention_id
+#: model:ir.model.fields,field_description:base_gmao_sav.field_wiz_intervention_quotation_intervention_id
+#: model:ir.model.fields,field_description:base_gmao_sav.field_wiz_mo_repair_intervention_id
+#: model:ir.model.fields,field_description:base_gmao_sav.field_wizard_create_timetracking_intervention_id
+#, python-format
+msgid "Intervention"
+msgstr "Intervention"
+
+#. module: base_gmao_sav
+#: model:ir.model.fields,field_description:base_gmao_sav.field_park_maintenance_operation_intervention_last_date
+msgid "Intervention last date"
+msgstr "Date de la dernière intervention"
+
+#. module: base_gmao_sav
+#: model:ir.model.fields,field_description:base_gmao_sav.field_park_maintenance_operation_intervention_next_date
+msgid "Intervention next date"
+msgstr "Date de la prochaine intervention"
+
+#. module: base_gmao_sav
+#: model:ir.model.fields,field_description:base_gmao_sav.field_wiz_intervention_quotation_line_intervention_quotation_id
+#: model:ir.model.fields,field_description:base_gmao_sav.field_wiz_intervention_quotation_noorder_intervention_quotation_id
+msgid "Intervention quotation"
+msgstr "Devis de l'intervention"
+
+#. module: base_gmao_sav
+#: code:addons/base_gmao_sav/gmao_sav.py:383
+#: model:ir.actions.act_window,name:base_gmao_sav.act_intervention_id
+#: model:ir.ui.view,arch_db:base_gmao_sav.view_calendar_interventions_id
+#: model:ir.ui.view,arch_db:base_gmao_sav.view_form_intervention_id
+#: model:ir.ui.view,arch_db:base_gmao_sav.view_tree_intervention_id
+#, python-format
+msgid "Interventions"
+msgstr "Interventions"
+
+#. module: base_gmao_sav
+#: code:addons/base_gmao_sav/gmao_sav.py:1672
+#: model:ir.model,name:base_gmao_sav.model_account_invoice
+#, python-format
+msgid "Invoice"
+msgstr "Facutre"
+
+#. module: base_gmao_sav
+#: model:ir.model.fields,field_description:base_gmao_sav.field_piece_maintenance_intervention_invoice_line_id
+msgid "Invoice line"
+msgstr "Ligne de facture"
+
+#. module: base_gmao_sav
+#: model:ir.model.fields,field_description:base_gmao_sav.field_piece_maintenance_intervention_price
+#: model:ir.model.fields,field_description:base_gmao_sav.field_quotation_intervention_price
+#: model:ir.model.fields,field_description:base_gmao_sav.field_wiz_intervention_quotation_line_price
+msgid "Invoice price"
+msgstr "Prix de facturation"
+
+#. module: base_gmao_sav
+#: model:ir.model.fields,field_description:base_gmao_sav.field_intervention_invoice_price
+msgid "Invoice price (hours)"
+msgstr "Prix de facturation (heure)"
+
+#. module: base_gmao_sav
+#: model:ir.model.fields,field_description:base_gmao_sav.field_intervention_invoice_product_id
+msgid "Invoice product"
+msgstr "Produit de facturation"
+
+#. module: base_gmao_sav
+#: model:ir.model.fields,field_description:base_gmao_sav.field_intervention_invoice_ids
+#: model:ir.ui.view,arch_db:base_gmao_sav.view_form_intervention_id
+msgid "Invoices"
+msgstr "Factures"
+
+#. module: base_gmao_sav
+#: model:ir.ui.view,arch_db:base_gmao_sav.view_form_intervention_id
+msgid "Invoicing"
+msgstr "Facturation"
+
+#. module: base_gmao_sav
+#: model:ir.model.fields,field_description:base_gmao_sav.field_intervention_is_invoice_piece_maintenance
+msgid "Invoicing of maintenance pieces"
+msgstr "Facturation des pièces de rechange"
+
+#. module: base_gmao_sav
+#: model:ir.model.fields,field_description:base_gmao_sav.field_intervention_is_invoice_times_past
+msgid "Invoicing of times past"
+msgstr "Facturation du temps passés"
+
+#. module: base_gmao_sav
+#: model:ir.model.fields,field_description:base_gmao_sav.field_intervention_is_month
+#: model:ir.model.fields,field_description:base_gmao_sav.field_resource_intervention_is_month
+msgid "Is month"
+msgstr "Dans le mois"
+
+#. module: base_gmao_sav
+#: model:ir.model.fields,field_description:base_gmao_sav.field_intervention_is_today
+#: model:ir.model.fields,field_description:base_gmao_sav.field_resource_intervention_is_today
+msgid "Is today"
+msgstr "Aujourd'hui"
+
+#. module: base_gmao_sav
+#: model:ir.model.fields,field_description:base_gmao_sav.field_piece_maintenance_intervention_is_track_in_lot
+msgid "Is track in lot"
+msgstr "Suivi des lots entrants"
+
+#. module: base_gmao_sav
+#: model:ir.model.fields,field_description:base_gmao_sav.field_piece_maintenance_intervention_is_track_out_lot
+msgid "Is track out lot"
+msgstr "Suivi des lots sortants"
+
+#. module: base_gmao_sav
+#: model:ir.model.fields,field_description:base_gmao_sav.field_intervention_is_week
+#: model:ir.model.fields,field_description:base_gmao_sav.field_resource_intervention_is_week
+msgid "Is week"
+msgstr "Dans la semaine"
+
+#. module: base_gmao_sav
+#: code:addons/base_gmao_sav/wizard/wiz_mo_repair.py:157
+#, python-format
+msgid "It can not be two times the same maximum sequence."
+msgstr "Il ne peut pas y avoir deux fois la même séquence maximum."
+
+#. module: base_gmao_sav
+#: code:addons/base_gmao_sav/wizard/wiz_mo_repair.py:154
+#, python-format
+msgid "It can not be two times the same minimal sequence."
+msgstr "Il ne peut pas y avoir deux fois la même séquence minimum."
+
+#. module: base_gmao_sav
+#: code:addons/base_gmao_sav/gmao_sav.py:1221
+#: code:addons/base_gmao_sav/gmao_sav.py:2419
+#, python-format
+msgid "January"
+msgstr "Janvier"
+
+#. module: base_gmao_sav
+#: code:addons/base_gmao_sav/gmao_sav.py:1227
+#: code:addons/base_gmao_sav/gmao_sav.py:2425
+#, python-format
+msgid "July"
+msgstr "Juillet"
+
+#. module: base_gmao_sav
+#: code:addons/base_gmao_sav/gmao_sav.py:1226
+#: code:addons/base_gmao_sav/gmao_sav.py:2424
+#, python-format
+msgid "June"
+msgstr "Juin"
+
+#. module: base_gmao_sav
+#: model:ir.model,name:base_gmao_sav.model_stock_label
+#: model:ir.model.fields,field_description:base_gmao_sav.field_piece_maintenance_intervention_label_id
+#: model:ir.model.fields,field_description:base_gmao_sav.field_wiz_mo_repair_label_label_id
+msgid "Label"
+msgstr "Étiquette"
+
+#. module: base_gmao_sav
+#: model:ir.model.fields,field_description:base_gmao_sav.field_wiz_mo_repair_qty_label
+msgid "Label qty"
+msgstr "Qté étiquette"
+
+#. module: base_gmao_sav
+#: model:ir.model,name:base_gmao_sav.model_stock_label_traceability
+msgid "Label traceability"
+msgstr "Traçabilité"
+
+#. module: base_gmao_sav
+#: model:ir.model.fields,field_description:base_gmao_sav.field_wiz_mo_repair_wmrl_ids
+#: model:ir.ui.view,arch_db:base_gmao_sav.view_form_wiz_mo_repair
+msgid "Labels"
+msgstr "Étiquettes"
+
+#. module: base_gmao_sav
+#: model:ir.model.fields,field_description:base_gmao_sav.field_add_operation_in_park___last_update
+#: model:ir.model.fields,field_description:base_gmao_sav.field_add_park_in_operation___last_update
+#: model:ir.model.fields,field_description:base_gmao_sav.field_categ_resource_maintenance_operation___last_update
+#: model:ir.model.fields,field_description:base_gmao_sav.field_cause_intervention___last_update
+#: model:ir.model.fields,field_description:base_gmao_sav.field_counter___last_update
+#: model:ir.model.fields,field_description:base_gmao_sav.field_create_picking_intervention___last_update
+#: model:ir.model.fields,field_description:base_gmao_sav.field_instruction_intervention___last_update
+#: model:ir.model.fields,field_description:base_gmao_sav.field_instruction_maintenance___last_update
+#: model:ir.model.fields,field_description:base_gmao_sav.field_intervention___last_update
+#: model:ir.model.fields,field_description:base_gmao_sav.field_maintenance_operation___last_update
+#: model:ir.model.fields,field_description:base_gmao_sav.field_park___last_update
+#: model:ir.model.fields,field_description:base_gmao_sav.field_park_counter___last_update
+#: model:ir.model.fields,field_description:base_gmao_sav.field_park_maintenance_operation___last_update
+#: model:ir.model.fields,field_description:base_gmao_sav.field_piece_maintenance___last_update
+#: model:ir.model.fields,field_description:base_gmao_sav.field_piece_maintenance_intervention___last_update
+#: model:ir.model.fields,field_description:base_gmao_sav.field_quotation_intervention___last_update
+#: model:ir.model.fields,field_description:base_gmao_sav.field_resource_intervention___last_update
+#: model:ir.model.fields,field_description:base_gmao_sav.field_resource_maintenance_operation___last_update
+#: model:ir.model.fields,field_description:base_gmao_sav.field_type_failure_intervention___last_update
+#: model:ir.model.fields,field_description:base_gmao_sav.field_wiz_create_park___last_update
+#: model:ir.model.fields,field_description:base_gmao_sav.field_wiz_intervention_quotation___last_update
+#: model:ir.model.fields,field_description:base_gmao_sav.field_wiz_intervention_quotation_line___last_update
+#: model:ir.model.fields,field_description:base_gmao_sav.field_wiz_intervention_quotation_noorder___last_update
+#: model:ir.model.fields,field_description:base_gmao_sav.field_wiz_mo_repair___last_update
+#: model:ir.model.fields,field_description:base_gmao_sav.field_wiz_mo_repair_label___last_update
+#: model:ir.model.fields,field_description:base_gmao_sav.field_wiz_mo_repair_operations___last_update
+#: model:ir.model.fields,field_description:base_gmao_sav.field_wiz_mo_repair_select_label___last_update
+msgid "Last Modified on"
+msgstr "Dernière modification le"
+
+#. module: base_gmao_sav
+#: model:ir.model.fields,field_description:base_gmao_sav.field_add_operation_in_park_write_uid
+#: model:ir.model.fields,field_description:base_gmao_sav.field_add_park_in_operation_write_uid
+#: model:ir.model.fields,field_description:base_gmao_sav.field_categ_resource_maintenance_operation_write_uid
+#: model:ir.model.fields,field_description:base_gmao_sav.field_cause_intervention_write_uid
+#: model:ir.model.fields,field_description:base_gmao_sav.field_counter_write_uid
+#: model:ir.model.fields,field_description:base_gmao_sav.field_create_picking_intervention_write_uid
+#: model:ir.model.fields,field_description:base_gmao_sav.field_instruction_intervention_write_uid
+#: model:ir.model.fields,field_description:base_gmao_sav.field_instruction_maintenance_write_uid
+#: model:ir.model.fields,field_description:base_gmao_sav.field_intervention_write_uid
+#: model:ir.model.fields,field_description:base_gmao_sav.field_maintenance_operation_write_uid
+#: model:ir.model.fields,field_description:base_gmao_sav.field_park_counter_write_uid
+#: model:ir.model.fields,field_description:base_gmao_sav.field_park_maintenance_operation_write_uid
+#: model:ir.model.fields,field_description:base_gmao_sav.field_park_write_uid
+#: model:ir.model.fields,field_description:base_gmao_sav.field_piece_maintenance_intervention_write_uid
+#: model:ir.model.fields,field_description:base_gmao_sav.field_piece_maintenance_write_uid
+#: model:ir.model.fields,field_description:base_gmao_sav.field_quotation_intervention_write_uid
+#: model:ir.model.fields,field_description:base_gmao_sav.field_resource_intervention_write_uid
+#: model:ir.model.fields,field_description:base_gmao_sav.field_resource_maintenance_operation_write_uid
+#: model:ir.model.fields,field_description:base_gmao_sav.field_type_failure_intervention_write_uid
+#: model:ir.model.fields,field_description:base_gmao_sav.field_wiz_create_park_write_uid
+#: model:ir.model.fields,field_description:base_gmao_sav.field_wiz_intervention_quotation_line_write_uid
+#: model:ir.model.fields,field_description:base_gmao_sav.field_wiz_intervention_quotation_noorder_write_uid
+#: model:ir.model.fields,field_description:base_gmao_sav.field_wiz_intervention_quotation_write_uid
+#: model:ir.model.fields,field_description:base_gmao_sav.field_wiz_mo_repair_label_write_uid
+#: model:ir.model.fields,field_description:base_gmao_sav.field_wiz_mo_repair_operations_write_uid
+#: model:ir.model.fields,field_description:base_gmao_sav.field_wiz_mo_repair_select_label_write_uid
+#: model:ir.model.fields,field_description:base_gmao_sav.field_wiz_mo_repair_write_uid
+msgid "Last Updated by"
+msgstr "Dernière modification par"
+
+#. module: base_gmao_sav
+#: model:ir.model.fields,field_description:base_gmao_sav.field_add_operation_in_park_write_date
+#: model:ir.model.fields,field_description:base_gmao_sav.field_add_park_in_operation_write_date
+#: model:ir.model.fields,field_description:base_gmao_sav.field_categ_resource_maintenance_operation_write_date
+#: model:ir.model.fields,field_description:base_gmao_sav.field_cause_intervention_write_date
+#: model:ir.model.fields,field_description:base_gmao_sav.field_counter_write_date
+#: model:ir.model.fields,field_description:base_gmao_sav.field_create_picking_intervention_write_date
+#: model:ir.model.fields,field_description:base_gmao_sav.field_instruction_intervention_write_date
+#: model:ir.model.fields,field_description:base_gmao_sav.field_instruction_maintenance_write_date
+#: model:ir.model.fields,field_description:base_gmao_sav.field_intervention_write_date
+#: model:ir.model.fields,field_description:base_gmao_sav.field_maintenance_operation_write_date
+#: model:ir.model.fields,field_description:base_gmao_sav.field_park_counter_write_date
+#: model:ir.model.fields,field_description:base_gmao_sav.field_park_maintenance_operation_write_date
+#: model:ir.model.fields,field_description:base_gmao_sav.field_park_write_date
+#: model:ir.model.fields,field_description:base_gmao_sav.field_piece_maintenance_intervention_write_date
+#: model:ir.model.fields,field_description:base_gmao_sav.field_piece_maintenance_write_date
+#: model:ir.model.fields,field_description:base_gmao_sav.field_quotation_intervention_write_date
+#: model:ir.model.fields,field_description:base_gmao_sav.field_resource_intervention_write_date
+#: model:ir.model.fields,field_description:base_gmao_sav.field_resource_maintenance_operation_write_date
+#: model:ir.model.fields,field_description:base_gmao_sav.field_type_failure_intervention_write_date
+#: model:ir.model.fields,field_description:base_gmao_sav.field_wiz_create_park_write_date
+#: model:ir.model.fields,field_description:base_gmao_sav.field_wiz_intervention_quotation_line_write_date
+#: model:ir.model.fields,field_description:base_gmao_sav.field_wiz_intervention_quotation_noorder_write_date
+#: model:ir.model.fields,field_description:base_gmao_sav.field_wiz_intervention_quotation_write_date
+#: model:ir.model.fields,field_description:base_gmao_sav.field_wiz_mo_repair_label_write_date
+#: model:ir.model.fields,field_description:base_gmao_sav.field_wiz_mo_repair_operations_write_date
+#: model:ir.model.fields,field_description:base_gmao_sav.field_wiz_mo_repair_select_label_write_date
+#: model:ir.model.fields,field_description:base_gmao_sav.field_wiz_mo_repair_write_date
+msgid "Last Updated on"
+msgstr "Dernière mise à jour le"
+
+#. module: base_gmao_sav
+#: model:ir.model.fields,field_description:base_gmao_sav.field_intervention_is_late
+#: model:ir.ui.view,arch_db:base_gmao_sav.view_search_intervention_id
+msgid "Late"
+msgstr "En retard"
+
+#. module: base_gmao_sav
+#: model:ir.model.fields,field_description:base_gmao_sav.field_wiz_intervention_quotation_line_ids
+#: model:ir.model.fields,field_description:base_gmao_sav.field_wiz_intervention_quotation_no_order_line_ids
+#: model:ir.ui.view,arch_db:base_gmao_sav.view_form_wiz_intervention_quotation
+msgid "Lines"
+msgstr "Lignes"
+
+#. module: base_gmao_sav
+#: model:ir.model.fields,field_description:base_gmao_sav.field_wiz_create_park_label_ids
+#: model:ir.ui.view,arch_db:base_gmao_sav.view_form_wiz_mo_repair_select_label
+msgid "List labels"
+msgstr "Liste des étiquettes"
+
+#. module: base_gmao_sav
+#: model:ir.ui.view,arch_db:base_gmao_sav.view_form_wiz_mo_repair
+msgid "List of operations"
+msgstr "Liste des opérations"
+
+#. module: base_gmao_sav
+#: model:ir.model.fields,field_description:base_gmao_sav.field_wiz_mo_repair_select_label_label_ids
+#: model:ir.ui.view,arch_db:base_gmao_sav.view_form_wiz_mo_repair
+msgid "List of subset has disassembles"
+msgstr "Liste des sous ensembles à démonter"
+
+#. module: base_gmao_sav
+#: model:ir.ui.view,arch_db:base_gmao_sav.view_form_intervention_id
+msgid "Lists of charges"
+msgstr "Liste des charges"
+
+#. module: base_gmao_sav
+#: model:ir.ui.view,arch_db:base_gmao_sav.view_form_park_id
+msgid "Lists of interventions"
+msgstr "Liste des interventions"
+
+#. module: base_gmao_sav
+#: model:ir.ui.view,arch_db:base_gmao_sav.view_form_park_id
+msgid "Lists of pickings"
+msgstr "Liste des bons de livraisons"
+
+#. module: base_gmao_sav
+#: model:ir.ui.view,arch_db:base_gmao_sav.view_form_park_id
+msgid "Lists of purchase"
+msgstr "Liste des achats"
+
+#. module: base_gmao_sav
+#: model:ir.ui.view,arch_db:base_gmao_sav.view_form_park_id
+msgid "Lists of sales"
+msgstr "Liste des ventes"
+
+#. module: base_gmao_sav
+#: model:ir.model.fields,field_description:base_gmao_sav.field_piece_maintenance_intervention_lot_id
+msgid "Lot"
+msgstr "Lot"
+
+#. module: base_gmao_sav
+#: code:addons/base_gmao_sav/gmao_sav.py:1071
+#, python-format
+msgid "Low"
+msgstr "Faible"
+
+#. module: base_gmao_sav
+#: code:addons/base_gmao_sav/gmao_sav.py:1061
+#, python-format
+msgid "MO SAV repair"
+msgstr "Réparation SAV OF"
+
+#. module: base_gmao_sav
+#: model:ir.model.fields,field_description:base_gmao_sav.field_intervention_mo_ids
+msgid "MOs"
+msgstr "OFs"
+
+#. module: base_gmao_sav
+#: model:ir.model.fields,field_description:base_gmao_sav.field_intervention_mail_ids
+#: model:ir.ui.view,arch_db:base_gmao_sav.view_form_intervention_id
+msgid "Mails"
+msgstr "Mails"
+
+#. module: base_gmao_sav
+#: model:ir.model,name:base_gmao_sav.model_maintenance_contract
+#: model:ir.model.fields,field_description:base_gmao_sav.field_maintenance_contract_is_maintenance_contract
+msgid "Maintenance contract"
+msgstr "Contrat de maintenance"
+
+#. module: base_gmao_sav
+#: model:ir.model,name:base_gmao_sav.model_maintenance_operation
+#: model:ir.model.fields,field_description:base_gmao_sav.field_add_park_in_operation_maintenance_operation_id
+#: model:ir.model.fields,field_description:base_gmao_sav.field_categ_resource_maintenance_operation_maintenance_operation_id
+#: model:ir.model.fields,field_description:base_gmao_sav.field_instruction_maintenance_maintenance_operation_id
+#: model:ir.model.fields,field_description:base_gmao_sav.field_intervention_maintenance_operation_id
+#: model:ir.model.fields,field_description:base_gmao_sav.field_maintenance_contract_maintenance_operation_ids
+#: model:ir.model.fields,field_description:base_gmao_sav.field_park_maintenance_operation_maintenance_operation_id
+#: model:ir.model.fields,field_description:base_gmao_sav.field_piece_maintenance_maintenance_operation_id
+#: model:ir.model.fields,field_description:base_gmao_sav.field_resource_intervention_maintenance_operation_id
+#: model:ir.model.fields,field_description:base_gmao_sav.field_resource_maintenance_operation_maintenance_operation_id
+msgid "Maintenance operation"
+msgstr "Opération de maintenance"
+
+#. module: base_gmao_sav
+#: model:ir.actions.act_window,name:base_gmao_sav.act_maintenance_operation_id
+#: model:ir.model.fields,field_description:base_gmao_sav.field_add_operation_in_park_maintenance_operation_ids
+#: model:ir.ui.view,arch_db:base_gmao_sav.view_form_maintenance_operation_id
+#: model:ir.ui.view,arch_db:base_gmao_sav.view_tree_maintenance_operation_id
+msgid "Maintenance operations"
+msgstr "Opérations de maintenances"
+
+#. module: base_gmao_sav
+#: model:ir.ui.view,arch_db:base_gmao_sav.view_form_maintenance_contract_gmao_sav_id
+#: model:ir.ui.view,arch_db:base_gmao_sav.view_form_park_id
+msgid "Maintenances"
+msgstr "Maintenances"
+
+#. module: base_gmao_sav
+#: model:ir.ui.view,arch_db:base_gmao_sav.view_form_maintenance_contract_gmao_sav_id
+#: model:ir.ui.view,arch_db:base_gmao_sav.view_form_park_id
+msgid "Maintenances operations"
+msgstr "Opérations de maintenances"
+
+#. module: base_gmao_sav
+#: model:ir.model.fields,field_description:base_gmao_sav.field_maintenance_operation_park_ids
+msgid "Maintenances operations park"
+msgstr "Opérations de maintenances du parc"
+
+#. module: base_gmao_sav
+#: model:res.groups,name:base_gmao_sav.gmao_manager
+#: model:res.groups,name:base_gmao_sav.sav_manager
+msgid "Manager"
+msgstr "Gestionnaire"
+
+#. module: base_gmao_sav
+#: code:addons/base_gmao_sav/gmao_sav.py:761
+#, python-format
+msgid "Manual"
+msgstr "Manuel"
+
+#. module: base_gmao_sav
+#: model:ir.model.fields,field_description:base_gmao_sav.field_park_manufacturing_name
+msgid "Manufacturing name"
+msgstr "Nom du fabriquant"
+
+#. module: base_gmao_sav
+#: model:ir.model,name:base_gmao_sav.model_mrp_manufacturingorder
+msgid "Manufacturing order"
+msgstr "Ordre de fabricaton"
+
+#. module: base_gmao_sav
+#: code:addons/base_gmao_sav/gmao_sav.py:1769
+#: code:addons/base_gmao_sav/wizard/wiz_mo_repair.py:228
+#: model:ir.actions.act_window,name:base_gmao_sav.act_wiz_mo_repair2
+#: model:ir.model.fields,field_description:base_gmao_sav.field_wiz_mo_repair_label_wiz_mo_repair_id
+#: model:ir.model.fields,field_description:base_gmao_sav.field_wiz_mo_repair_operations_wiz_mo_repair_id
+#: model:ir.model.fields,field_description:base_gmao_sav.field_wiz_mo_repair_select_label_wiz_mo_repair_id
+#: model:ir.ui.view,arch_db:base_gmao_sav.view_form_wiz_mo_repair
+#, python-format
+msgid "Manufacturing order for repair"
+msgstr "OF de réparation"
+
+#. module: base_gmao_sav
+#: model:ir.ui.view,arch_db:base_gmao_sav.view_form_intervention_id
+msgid "Manufacturings orders of repair"
+msgstr "OF de réparation"
+
+#. module: base_gmao_sav
+#: code:addons/base_gmao_sav/gmao_sav.py:1223
+#: code:addons/base_gmao_sav/gmao_sav.py:2421
+#, python-format
+msgid "March"
+msgstr "Mars"
+
+#. module: base_gmao_sav
+#: model:ir.ui.view,arch_db:base_gmao_sav.view_form_maintenance_operation_id
+msgid "Materials resources"
+msgstr "Ressources/Matériaux"
+
+#. module: base_gmao_sav
+#: model:ir.model.fields,field_description:base_gmao_sav.field_counter_max_limit
+msgid "Max limit"
+msgstr "Limite max"
+
+#. module: base_gmao_sav
+#: code:addons/base_gmao_sav/gmao_sav.py:1225
+#: code:addons/base_gmao_sav/gmao_sav.py:2423
+#, python-format
+msgid "May"
+msgstr "Mai"
+
+#. module: base_gmao_sav
+#: code:addons/base_gmao_sav/gmao_sav.py:1070
+#, python-format
+msgid "Medium"
+msgstr "Moyen"
+
+#. module: base_gmao_sav
+#: model:ir.model.fields,field_description:base_gmao_sav.field_counter_min_limit
+msgid "Min limit"
+msgstr "Limite min"
+
+#. module: base_gmao_sav
+#: code:addons/base_gmao_sav/gmao_sav.py:752
+#: code:addons/base_gmao_sav/gmao_sav.py:1080
+#: model:ir.model.fields,field_description:base_gmao_sav.field_intervention_month
+#: model:ir.model.fields,field_description:base_gmao_sav.field_resource_intervention_month
+#: model:ir.ui.view,arch_db:base_gmao_sav.view_search_intervention_id
+#: model:ir.ui.view,arch_db:base_gmao_sav.view_search_resource_intervention_id
+#, python-format
+msgid "Month"
+msgstr "Mois"
+
+#. module: base_gmao_sav
+#: model:ir.model.fields,field_description:base_gmao_sav.field_intervention_move_piece_ids
+msgid "Moves pieces"
+msgstr "Mouvements des pièces"
+
+#. module: base_gmao_sav
+#: model:ir.model.fields,field_description:base_gmao_sav.field_cause_intervention_name
+#: model:ir.model.fields,field_description:base_gmao_sav.field_counter_name
+#: model:ir.model.fields,field_description:base_gmao_sav.field_instruction_intervention_name
+#: model:ir.model.fields,field_description:base_gmao_sav.field_instruction_maintenance_name
+#: model:ir.model.fields,field_description:base_gmao_sav.field_intervention_name
+#: model:ir.model.fields,field_description:base_gmao_sav.field_maintenance_operation_name
+#: model:ir.model.fields,field_description:base_gmao_sav.field_park_name
+#: model:ir.model.fields,field_description:base_gmao_sav.field_type_failure_intervention_name
+msgid "Name"
+msgstr "Nom"
+
+#. module: base_gmao_sav
+#: code:addons/base_gmao_sav/gmao_sav.py:1362
+#: code:addons/base_gmao_sav/gmao_sav.py:2156
+#, python-format
+msgid "No billable"
+msgstr "Non facturable"
+
+#. module: base_gmao_sav
+#: code:addons/base_gmao_sav/gmao_sav.py:1354
+#, python-format
+msgid "No guarantee"
+msgstr "Non garantie"
+
+#. module: base_gmao_sav
+#: code:addons/base_gmao_sav/gmao_sav.py:1670
+#, python-format
+msgid "No invoice create."
+msgstr "Pas de facture créée."
+
+#. module: base_gmao_sav
+#: code:addons/base_gmao_sav/gmao_sav.py:548
+#, python-format
+msgid "No move out."
+msgstr "Pas de mouvement de sortie."
+
+#. module: base_gmao_sav
+#: model:ir.ui.view,arch_db:base_gmao_sav.view_search_intervention_id
+msgid "Not invoiced"
+msgstr "Non facturé"
+
+#. module: base_gmao_sav
+#: model:ir.model.fields,field_description:base_gmao_sav.field_intervention_note
+#: model:ir.model.fields,field_description:base_gmao_sav.field_maintenance_operation_note
+msgid "Note"
+msgstr "Note"
+
+#. module: base_gmao_sav
+#: model:ir.model,name:base_gmao_sav.model_note_openprod
+msgid "Note Openprod"
+msgstr "Note Openprod"
+
+#. module: base_gmao_sav
+#: model:ir.model.fields,field_description:base_gmao_sav.field_intervention_note_time
+msgid "Note time"
+msgstr "Note des temps"
+
+#. module: base_gmao_sav
+#: model:ir.model.fields,field_description:base_gmao_sav.field_park_note_ids
+#: model:ir.ui.view,arch_db:base_gmao_sav.view_form_intervention_id
+#: model:ir.ui.view,arch_db:base_gmao_sav.view_form_maintenance_operation_id
+#: model:ir.ui.view,arch_db:base_gmao_sav.view_form_park_id
+msgid "Notes"
+msgstr "Notes"
+
+#. module: base_gmao_sav
+#: code:addons/base_gmao_sav/gmao_sav.py:1231
+#: code:addons/base_gmao_sav/gmao_sav.py:2429
+#, python-format
+msgid "November"
+msgstr "Novembre"
+
+#. module: base_gmao_sav
+#: model:ir.ui.view,arch_db:base_gmao_sav.view_form_add_operation_in_park
+#: model:ir.ui.view,arch_db:base_gmao_sav.view_form_add_park_in_operation
+#: model:ir.ui.view,arch_db:base_gmao_sav.view_form_create_picking_intervention
+#: model:ir.ui.view,arch_db:base_gmao_sav.view_form_wiz_create_park
+#: model:ir.ui.view,arch_db:base_gmao_sav.view_form_wiz_intervention_quotation
+#: model:ir.ui.view,arch_db:base_gmao_sav.view_form_wiz_mo_repair
+#: model:ir.ui.view,arch_db:base_gmao_sav.view_form_wiz_mo_repair_select_label
+msgid "OK"
+msgstr "OK"
+
+#. module: base_gmao_sav
+#: code:addons/base_gmao_sav/gmao_sav.py:772
+#, python-format
+msgid "Obsolete"
+msgstr "Obsolète"
+
+#. module: base_gmao_sav
+#: code:addons/base_gmao_sav/gmao_sav.py:1230
+#: code:addons/base_gmao_sav/gmao_sav.py:2428
+#, python-format
+msgid "October"
+msgstr "Octobre"
+
+#. module: base_gmao_sav
+#: model:ir.model.fields,field_description:base_gmao_sav.field_wiz_mo_repair_operations_rl_id
+msgid "Operation"
+msgstr "Opérations"
+
+#. module: base_gmao_sav
+#: model:ir.model.fields,field_description:base_gmao_sav.field_wiz_mo_repair_origin_product_id
+msgid "Origin product product"
+msgstr "Produit d'origine"
+
+#. module: base_gmao_sav
+#: model:ir.model.fields,field_description:base_gmao_sav.field_wiz_mo_repair_origin_num_serie_id
+msgid "Origin serial num"
+msgstr "Numéro de série d'origine"
+
+#. module: base_gmao_sav
+#: model:ir.model.fields,field_description:base_gmao_sav.field_wiz_intervention_quotation_line_pmi_id
+msgid "PMI"
+msgstr "PMI"
+
+#. module: base_gmao_sav
+#: model:ir.model.fields,field_description:base_gmao_sav.field_park_parent_equipment_id
+msgid "Parent park"
+msgstr "Équipement parent"
+
+#. module: base_gmao_sav
+#: code:addons/base_gmao_sav/certificate_management.py:17
+#: code:addons/base_gmao_sav/certificate_management.py:49
+#: code:addons/base_gmao_sav/certificate_management.py:115
+#: code:addons/base_gmao_sav/wizard/wiz_add_certificate_application.py:16
+#: model:ir.model,name:base_gmao_sav.model_park
+#: model:ir.model.fields,field_description:base_gmao_sav.field_add_operation_in_park_park_id
+#: model:ir.model.fields,field_description:base_gmao_sav.field_certificate_line_application_park_id
+#: model:ir.model.fields,field_description:base_gmao_sav.field_certificate_line_park_id
+#: model:ir.model.fields,field_description:base_gmao_sav.field_intervention_park_id
+#: model:ir.model.fields,field_description:base_gmao_sav.field_maintenance_contract_park_ids
+#: model:ir.model.fields,field_description:base_gmao_sav.field_note_openprod_park_id
+#: model:ir.model.fields,field_description:base_gmao_sav.field_park_counter_park_id
+#: model:ir.model.fields,field_description:base_gmao_sav.field_park_maintenance_operation_park_id
+#: model:ir.model.fields,field_description:base_gmao_sav.field_resource_intervention_park_id
+#: model:ir.ui.view,arch_db:base_gmao_sav.view_search_intervention_id
+#, python-format
+msgid "Park"
+msgstr "Parc"
+
+#. module: base_gmao_sav
+#: model:ir.model,name:base_gmao_sav.model_park_counter
+msgid "Park counter"
+msgstr "Parc compteur"
+
+#. module: base_gmao_sav
+#: model:ir.model,name:base_gmao_sav.model_park_maintenance_operation
+msgid "Park maintenance operation"
+msgstr "Parc operation de maintenance"
+
+#. module: base_gmao_sav
+#: model:ir.model.fields,field_description:base_gmao_sav.field_park_maintenance_operation_ids
+msgid "Park maintenances operations"
+msgstr "Parc operation de maintenance"
+
+#. module: base_gmao_sav
+#: model:ir.actions.act_window,name:base_gmao_sav.act_park_structure_id
+#: model:ir.ui.view,arch_db:base_gmao_sav.view_form_park_id
+msgid "Park structure"
+msgstr "Structure équipement"
+
+#. module: base_gmao_sav
+#: model:ir.model.fields,field_description:base_gmao_sav.field_intervention_park_num_serie_id
+#: model:ir.model.fields,field_description:base_gmao_sav.field_intervention_park_type
+#: model:ir.model.fields,field_description:base_gmao_sav.field_piece_maintenance_intervention_park_type
+#: model:ir.model.fields,field_description:base_gmao_sav.field_resource_intervention_park_type
+msgid "Park type"
+msgstr "Type de parc"
+
+#. module: base_gmao_sav
+#: code:addons/base_gmao_sav/wizard/wiz_create_park.py:47
+#: model:ir.actions.act_window,name:base_gmao_sav.act_park_id
+#: model:ir.model.fields,field_description:base_gmao_sav.field_add_park_in_operation_park_ids
+#: model:ir.ui.view,arch_db:base_gmao_sav.view_form_maintenance_contract_gmao_sav_id
+#: model:ir.ui.view,arch_db:base_gmao_sav.view_form_maintenance_operation_id
+#: model:ir.ui.view,arch_db:base_gmao_sav.view_form_park_id
+#: model:ir.ui.view,arch_db:base_gmao_sav.view_tree_park_id
+#: model:ir.ui.view,arch_db:base_gmao_sav.view_tree_park_structure_id
+#, python-format
+msgid "Parks"
+msgstr "Parcs"
+
+#. module: base_gmao_sav
+#: model:ir.model,name:base_gmao_sav.model_res_partner
+#: model:ir.model.fields,field_description:base_gmao_sav.field_create_picking_intervention_customer_id
+#: model:ir.model.fields,field_description:base_gmao_sav.field_create_picking_intervention_partner_id
+msgid "Partner"
+msgstr "Partenaire"
+
+#. module: base_gmao_sav
+#: code:addons/base_gmao_sav/gmao_sav.py:1091
+#, python-format
+msgid "Performed"
+msgstr "Effectué"
+
+#. module: base_gmao_sav
+#: model:ir.model.fields,field_description:base_gmao_sav.field_create_picking_intervention_picking_id
+#: model:ir.model.fields,field_description:base_gmao_sav.field_intervention_picking_id
+#: model:ir.model.fields,field_description:base_gmao_sav.field_piece_maintenance_intervention_picking_id
+msgid "Picking"
+msgstr "Bon de livraison"
+
+#. module: base_gmao_sav
+#: model:ir.model.fields,field_description:base_gmao_sav.field_create_picking_intervention_is_existant
+msgid "Picking existant"
+msgstr "Bon de livraison existant"
+
+#. module: base_gmao_sav
+#: code:addons/base_gmao_sav/gmao_sav.py:465
+#, python-format
+msgid "Pickings"
+msgstr "Bons de livraisons"
+
+#. module: base_gmao_sav
+#: model:ir.model.fields,field_description:base_gmao_sav.field_park_picture
+msgid "Picture"
+msgstr "Image"
+
+#. module: base_gmao_sav
+#: model:ir.model.fields,field_description:base_gmao_sav.field_park_piece_guarantee_end_date
+msgid "Piece guarantee end date"
+msgstr "Date de fin de garantie pièces"
+
+#. module: base_gmao_sav
+#: model:ir.model.fields,field_description:base_gmao_sav.field_create_picking_intervention_pm_intervention_id
+#: model:ir.model.fields,field_description:base_gmao_sav.field_intervention_piece_maintenance_ids
+#: model:ir.model.fields,field_description:base_gmao_sav.field_piece_maintenance_intervention_piece_maintenance_id
+msgid "Piece maintenance"
+msgstr "Pièce de maintenance"
+
+#. module: base_gmao_sav
+#: model:ir.model.fields,field_description:base_gmao_sav.field_park_piece_guarantee
+msgid "Pieces guarantee (months)"
+msgstr "Garantie pièce (months)"
+
+#. module: base_gmao_sav
+#: model:ir.model.fields,field_description:base_gmao_sav.field_maintenance_operation_piece_maintenance_ids
+msgid "Pieces maintenance"
+msgstr "Pièces de maintenance"
+
+#. module: base_gmao_sav
+#: model:ir.model,name:base_gmao_sav.model_piece_maintenance
+#: model:ir.ui.view,arch_db:base_gmao_sav.view_form_intervention_id
+#: model:ir.ui.view,arch_db:base_gmao_sav.view_form_maintenance_operation_id
+msgid "Pieces of maintenance"
+msgstr "Pièces de maintenance"
+
+#. module: base_gmao_sav
+#: model:ir.model,name:base_gmao_sav.model_piece_maintenance_intervention
+msgid "Pieces of maintenance intervention"
+msgstr "Pièces de maintenances de l'intervention"
+
+#. module: base_gmao_sav
+#: model:ir.model.fields,field_description:base_gmao_sav.field_instruction_intervention_plan_id
+#: model:ir.model.fields,field_description:base_gmao_sav.field_instruction_maintenance_plan_id
+msgid "Plan"
+msgstr "Plan"
+
+#. module: base_gmao_sav
+#: model:ir.ui.view,arch_db:base_gmao_sav.view_form_intervention_id
+msgid "Planning"
+msgstr "Planning"
+
+#. module: base_gmao_sav
+#: model:ir.ui.view,arch_db:base_gmao_sav.view_form_park_id
+msgid "Plans/Notes"
+msgstr "Plans/Notes"
+
+#. module: base_gmao_sav
+#: code:addons/base_gmao_sav/gmao_sav.py:2058
+#, python-format
+msgid "Please check the state of the label."
+msgstr "Merci de vérifier l'était de l'étiquette."
+
+#. module: base_gmao_sav
+#: code:addons/base_gmao_sav/wizard/wiz_mo_repair.py:147
+#, python-format
+msgid "Please choose at least one operation."
+msgstr "S'il vous plaît veuillez choisir au moins une opération."
+
+#. module: base_gmao_sav
+#: code:addons/base_gmao_sav/gmao_sav.py:1640
+#, python-format
+msgid "Please indicate the invoice product for the times."
+msgstr "Pouvez vous sélectionner le produit de facturation pour les temps."
+
+#. module: base_gmao_sav
+#: code:addons/base_gmao_sav/gmao_sav.py:741
+#, python-format
+msgid "Preventive"
+msgstr "Préventif"
+
+#. module: base_gmao_sav
+#: code:addons/base_gmao_sav/gmao_sav.py:1057
+#, python-format
+msgid "Preventive maintenance"
+msgstr "Maintenance préventive"
+
+#. module: base_gmao_sav
+#: model:ir.ui.view,arch_db:base_gmao_sav.view_form_maintenance_operation_id
+msgid "Preventive/Security"
+msgstr "Préventif/Sécurité"
+
+#. module: base_gmao_sav
+#: model:ir.model.fields,field_description:base_gmao_sav.field_create_picking_intervention_product_id
+#: model:ir.model.fields,field_description:base_gmao_sav.field_park_product_id
+#: model:ir.model.fields,field_description:base_gmao_sav.field_piece_maintenance_intervention_product_id
+#: model:ir.model.fields,field_description:base_gmao_sav.field_piece_maintenance_product_id
+#: model:ir.model.fields,field_description:base_gmao_sav.field_quotation_intervention_product_id
+#: model:ir.model.fields,field_description:base_gmao_sav.field_wiz_intervention_quotation_line_product_id
+#: model:ir.model.fields,field_description:base_gmao_sav.field_wiz_intervention_quotation_noorder_product_id
+#: model:ir.model.fields,field_description:base_gmao_sav.field_wiz_mo_repair_product_id
+msgid "Product"
+msgstr "Produit"
+
+#. module: base_gmao_sav
+#: model:ir.ui.view,arch_db:base_gmao_sav.view_form_wiz_intervention_quotation
+msgid "Product not ordered"
+msgstr "Produits non commandés"
+
+#. module: base_gmao_sav
+#: model:ir.ui.view,arch_db:base_gmao_sav.view_form_intervention_id
+msgid "Production"
+msgstr "Production"
+
+#. module: base_gmao_sav
+#: model:ir.model.fields,field_description:base_gmao_sav.field_piece_maintenance_intervention_purchase_id
+msgid "Purchase"
+msgstr "Achat"
+
+#. module: base_gmao_sav
+#: code:addons/base_gmao_sav/gmao_sav.py:405
+#, python-format
+msgid "Purchases"
+msgstr "Achats"
+
+#. module: base_gmao_sav
+#: model:ir.model.fields,field_description:base_gmao_sav.field_wiz_intervention_quotation_line_qi_id
+msgid "QI"
+msgstr "QI"
+
+#. module: base_gmao_sav
+#: model:ir.model.fields,field_description:base_gmao_sav.field_piece_maintenance_intervention_qty
+#: model:ir.model.fields,field_description:base_gmao_sav.field_piece_maintenance_qty
+#: model:ir.model.fields,field_description:base_gmao_sav.field_quotation_intervention_qty
+#: model:ir.model.fields,field_description:base_gmao_sav.field_wiz_intervention_quotation_line_qty
+#: model:ir.ui.view,arch_db:base_gmao_sav.view_form_intervention_id
+msgid "Qty"
+msgstr "Qté"
+
+#. module: base_gmao_sav
+#: model:ir.model.fields,field_description:base_gmao_sav.field_create_picking_intervention_uom_qty
+#: model:ir.model.fields,field_description:base_gmao_sav.field_wiz_mo_repair_quantity
+msgid "Quantity"
+msgstr "Quantité"
+
+#. module: base_gmao_sav
+#: code:addons/base_gmao_sav/gmao_sav.py:753
+#: code:addons/base_gmao_sav/gmao_sav.py:1081
+#, python-format
+msgid "Quarter"
+msgstr "Trimestre"
+
+#. module: base_gmao_sav
+#: model:ir.model,name:base_gmao_sav.model_quotation_intervention
+msgid "Quotation intervention"
+msgstr "Devis d'intervention"
+
+#. module: base_gmao_sav
+#: model:ir.ui.view,arch_db:base_gmao_sav.view_search_intervention_id
+msgid "Quotation not generated"
+msgstr "Devis non généré"
+
+#. module: base_gmao_sav
+#: model:ir.ui.view,arch_db:base_gmao_sav.view_form_intervention_id
+msgid "Quotations"
+msgstr "Devis"
+
+#. module: base_gmao_sav
+#: model:ir.model.fields,field_description:base_gmao_sav.field_park_release_date
+msgid "Release date"
+msgstr "Date de sortie"
+
+#. module: base_gmao_sav
+#: model:ir.model.fields,field_description:base_gmao_sav.field_park_counter_remark
+msgid "Remark"
+msgstr "Remarque"
+
+#. module: base_gmao_sav
+#: model:ir.model.fields,field_description:base_gmao_sav.field_wiz_mo_repair_repair_date
+msgid "Repair date"
+msgstr "Date de réparation"
+
+#. module: base_gmao_sav
+#: code:addons/base_gmao_sav/wizard/wiz_mo_repair.py:28
+#, python-format
+msgid "Repair overhead"
+msgstr "Réparation produit de tête"
+
+#. module: base_gmao_sav
+#: code:addons/base_gmao_sav/wizard/wiz_mo_repair.py:29
+#, python-format
+msgid "Repair subset"
+msgstr "Réparation sous ensemble"
+
+#. module: base_gmao_sav
+#: model:ir.model.fields,field_description:base_gmao_sav.field_wiz_mo_repair_repair_type
+msgid "Repair type"
+msgstr "Type de réparation"
+
+#. module: base_gmao_sav
+#: model:ir.ui.view,arch_db:base_gmao_sav.view_form_intervention_id
+msgid "Request"
+msgstr "Demande"
+
+#. module: base_gmao_sav
+#: model:ir.model,name:base_gmao_sav.model_mrp_resource
+#: model:ir.model.fields,field_description:base_gmao_sav.field_park_resource_id
+#: model:ir.model.fields,field_description:base_gmao_sav.field_resource_intervention_resource_id
+#: model:ir.model.fields,field_description:base_gmao_sav.field_resource_maintenance_operation_resource_id
+#: model:ir.ui.view,arch_db:base_gmao_sav.view_search_resource_intervention_id
+msgid "Resource"
+msgstr "Ressource"
+
+#. module: base_gmao_sav
+#: model:ir.ui.view,arch_db:base_gmao_sav.view_form_maintenance_operation_id
+msgid "Resource categories"
+msgstr "Ressource categories"
+
+#. module: base_gmao_sav
+#: model:ir.model.fields,field_description:base_gmao_sav.field_categ_resource_maintenance_operation_categ_resource_id
+#: model:ir.model.fields,field_description:base_gmao_sav.field_resource_intervention_categ_resource_id
+msgid "Resource category"
+msgstr "Catégorie de ressource"
+
+#. module: base_gmao_sav
+#: model:ir.model,name:base_gmao_sav.model_resource_intervention
+#: model:ir.model.fields,field_description:base_gmao_sav.field_intervention_resource_intervention_ids
+#: model:ir.ui.view,arch_db:base_gmao_sav.view_form_resource_intervention_id
+msgid "Resource intervention"
+msgstr "Ressource intervention"
+
+#. module: base_gmao_sav
+#: model:ir.model,name:base_gmao_sav.model_resource_maintenance_operation
+#: model:ir.model.fields,field_description:base_gmao_sav.field_resource_intervention_categ_resource_maint_oper_id
+msgid "Resource maintenance operation"
+msgstr "Ressource maintenance opération"
+
+#. module: base_gmao_sav
+#: model:ir.model.fields,field_description:base_gmao_sav.field_maintenance_operation_resource_ids
+#: model:ir.model.fields,field_description:base_gmao_sav.field_wiz_add_certificate_application_park_ids
+#: model:ir.ui.view,arch_db:base_gmao_sav.view_form_intervention_id
+#: model:ir.ui.view,arch_db:base_gmao_sav.view_form_maintenance_operation_id
+msgid "Resources"
+msgstr "Ressources"
+
+#. module: base_gmao_sav
+#: model:ir.actions.act_window,name:base_gmao_sav.act_resource_intervention_id
+#: model:ir.ui.view,arch_db:base_gmao_sav.view_calendar_resource_interventions_id
+#: model:ir.ui.view,arch_db:base_gmao_sav.view_tree_resource_intervention_id
+msgid "Resources interventions"
+msgstr "Ressources interventions"
+
+#. module: base_gmao_sav
+#: model:ir.ui.view,arch_db:base_gmao_sav.view_form_intervention_id
+msgid "Resources/materials"
+msgstr "Ressources/matériaux"
+
+#. module: base_gmao_sav
+#: model:ir.model.fields,field_description:base_gmao_sav.field_intervention_responsible_id
+#: model:ir.model.fields,field_description:base_gmao_sav.field_maintenance_operation_responsible_id
+msgid "Responsible"
+msgstr "Responsable"
+
+#. module: base_gmao_sav
+#: model:ir.model.fields,field_description:base_gmao_sav.field_wiz_mo_repair_return_date
+msgid "Return date"
+msgstr "Date de retour"
+
+#. module: base_gmao_sav
+#: code:addons/base_gmao_sav/gmao_sav.py:537
+#, python-format
+msgid "Return picking"
+msgstr "Retour bon de livraion"
+
+#. module: base_gmao_sav
+#: model:ir.ui.view,arch_db:base_gmao_sav.view_form_park_id
+msgid "Return serial num"
+msgstr "Retourner num série"
+
+#. module: base_gmao_sav
+#: model:ir.model.fields,field_description:base_gmao_sav.field_wiz_mo_repair_routing_id
+msgid "Routing"
+msgstr "Gamme"
+
+#. module: base_gmao_sav
+#: model:ir.model,name:base_gmao_sav.model_mrp_routing_line
+msgid "Routing line"
+msgstr "Ligne de gammes"
+
+#. module: base_gmao_sav
+#: model:ir.model.fields,field_description:base_gmao_sav.field_wiz_mo_repair_mo_repair_ope_ids
+msgid "Routing lines"
+msgstr "Lignes de gammes"
+
+#. module: base_gmao_sav
+#: model:ir.module.category,name:base_gmao_sav.module_base_sav
+msgid "SAV"
+msgstr "SAV"
+
+#. module: base_gmao_sav
+#: model:ir.model.fields,field_description:base_gmao_sav.field_stock_warehouse_location_sav_id
+msgid "SAV location"
+msgstr "Emplacement SAV"
+
+#. module: base_gmao_sav
+#: code:addons/base_gmao_sav/gmao_sav.py:1597
+#, python-format
+msgid "Sale already invoiced."
+msgstr "La vente est déjà facturée."
+
+#. module: base_gmao_sav
+#: model:ir.model.fields,field_description:base_gmao_sav.field_piece_maintenance_intervention_sale_line_id
+#: model:ir.model.fields,field_description:base_gmao_sav.field_quotation_intervention_sale_line_id
+msgid "Sale line"
+msgstr "Ligne de vente"
+
+#. module: base_gmao_sav
+#: model:ir.model,name:base_gmao_sav.model_sale_order
+msgid "Sale module"
+msgstr "Module de vente"
+
+#. module: base_gmao_sav
+#: code:addons/base_gmao_sav/wizard/wiz_intervention_quotation.py:98
+#, python-format
+msgid "Sale order"
+msgstr "Commande de vente"
+
+#. module: base_gmao_sav
+#: model:ir.model,name:base_gmao_sav.model_sale_order_line
+msgid "Sale order line"
+msgstr "Ligne commande de vente"
+
+#. module: base_gmao_sav
+#: code:addons/base_gmao_sav/gmao_sav.py:507
+#: model:ir.model.fields,field_description:base_gmao_sav.field_intervention_sale_id
+#: model:ir.model.fields,field_description:base_gmao_sav.field_intervention_sale_line_ids
+#: model:ir.ui.view,arch_db:base_gmao_sav.view_form_intervention_id
+#, python-format
+msgid "Sales"
+msgstr "Ventes"
+
+#. module: base_gmao_sav
+#: code:addons/base_gmao_sav/gmao_sav.py:743
+#: code:addons/base_gmao_sav/gmao_sav.py:1059
+#, python-format
+msgid "Security"
+msgstr "Sécurité"
+
+#. module: base_gmao_sav
+#: model:ir.ui.view,arch_db:base_gmao_sav.view_form_wiz_mo_repair
+msgid "Select label"
+msgstr "Sélectionner une étiquette"
+
+#. module: base_gmao_sav
+#: code:addons/base_gmao_sav/wizard/wiz_mo_repair.py:285
+#: model:ir.ui.view,arch_db:base_gmao_sav.view_form_wiz_mo_repair_select_label
+#, python-format
+msgid "Select labels"
+msgstr "Sélectionner les étiquettes"
+
+#. module: base_gmao_sav
+#: model:ir.ui.view,arch_db:base_gmao_sav.view_form_intervention_id
+msgid "Select/Create picking"
+msgstr "Sélectionner/créer bon de livraison"
+
+#. module: base_gmao_sav
+#: model:ir.ui.view,arch_db:base_gmao_sav.view_form_intervention_id
+msgid "Send Mail"
+msgstr "Envoyer mail"
+
+#. module: base_gmao_sav
+#: code:addons/base_gmao_sav/gmao_sav.py:1229
+#: code:addons/base_gmao_sav/gmao_sav.py:2427
+#, python-format
+msgid "September"
+msgstr "Septembre"
+
+#. module: base_gmao_sav
+#: model:ir.model.fields,field_description:base_gmao_sav.field_instruction_intervention_sequence
+#: model:ir.model.fields,field_description:base_gmao_sav.field_instruction_maintenance_sequence
+#: model:ir.model.fields,field_description:base_gmao_sav.field_wiz_mo_repair_operations_sequence
+msgid "Sequence"
+msgstr "Séquence"
+
+#. module: base_gmao_sav
+#: model:ir.model.fields,field_description:base_gmao_sav.field_park_num_serie_id
+msgid "Serial num"
+msgstr "Numéro de série"
+
+#. module: base_gmao_sav
+#: code:addons/base_gmao_sav/gmao_sav.py:1060
+#, python-format
+msgid "Simple SAV repair"
+msgstr "Réparation SAV simple"
+
+#. module: base_gmao_sav
+#: model:ir.model.fields,field_description:base_gmao_sav.field_resource_intervention_start_date
+msgid "Start date"
+msgstr "Date de début"
+
+#. module: base_gmao_sav
+#: model:ir.model.fields,field_description:base_gmao_sav.field_intervention_start_date_planned
+msgid "Start date planned"
+msgstr "Date de début plannifiée"
+
+#. module: base_gmao_sav
+#: model:ir.model.fields,field_description:base_gmao_sav.field_intervention_start_date_real
+msgid "Start date real"
+msgstr "Date de début réelle"
+
+#. module: base_gmao_sav
+#: model:ir.model.fields,field_description:base_gmao_sav.field_intervention_start_date_requested
+msgid "Start date requested"
+msgstr "Date de début demandée"
+
+#. module: base_gmao_sav
+#: model:ir.model.fields,field_description:base_gmao_sav.field_instruction_intervention_state
+#: model:ir.model.fields,field_description:base_gmao_sav.field_intervention_state
+#: model:ir.model.fields,field_description:base_gmao_sav.field_maintenance_operation_state
+#: model:ir.model.fields,field_description:base_gmao_sav.field_park_state
+msgid "State"
+msgstr "État"
+
+#. module: base_gmao_sav
+#: model:ir.model,name:base_gmao_sav.model_stock_move
+msgid "Stock Move"
+msgstr "Mouvement de stock"
+
+#. module: base_gmao_sav
+#: model:ir.model,name:base_gmao_sav.model_stock_picking
+msgid "Stock picking"
+msgstr "Bon de livraison"
+
+#. module: base_gmao_sav
+#: model:ir.model,name:base_gmao_sav.model_stock_warehouse
+msgid "Stock warehouse"
+msgstr "Entrepôt"
+
+#. module: base_gmao_sav
+#: model:ir.model,name:base_gmao_sav.model_resource_timetracking
+msgid "Suivi des temps"
+msgstr "Suivi des temps"
+
+#. module: base_gmao_sav
+#: model:ir.ui.view,arch_db:base_gmao_sav.view_form_maintenance_operation_id
+msgid "Sum time"
+msgstr "Somme des temps"
+
+#. module: base_gmao_sav
+#: model:ir.model.fields,field_description:base_gmao_sav.field_park_supplier_id
+msgid "Supplier"
+msgstr "Fournisseur"
+
+#. module: base_gmao_sav
+#: code:addons/base_gmao_sav/gmao_sav.py:1803
+#, python-format
+msgid "The line \"%s\" is already invoiced."
+msgstr "La ligne \"%s\" est déjà facturée."
+
+#. module: base_gmao_sav
+#: code:addons/base_gmao_sav/wizard/wiz_intervention_quotation.py:56
+#, python-format
+msgid "The sale has to be in the state draft."
+msgstr "La vente doit être à l'état brouillon."
+
+#. module: base_gmao_sav
+#: code:addons/base_gmao_sav/wizard/wiz_mo_repair.py:125
+#, python-format
+msgid "The sequence field must be a multiple of 10."
+msgstr "La séquence doit être un multiple de 10."
+
+#. module: base_gmao_sav
+#: code:addons/base_gmao_sav/wizard/wiz_intervention_quotation.py:51
+#, python-format
+msgid "There are not lines."
+msgstr "Il n'y a pas de lignes."
+
+#. module: base_gmao_sav
+#: code:addons/base_gmao_sav/gmao_sav.py:1895
+#, python-format
+msgid "There is not SAV location."
+msgstr "Il n'y a pas d'emplacement de SAV."
+
+#. module: base_gmao_sav
+#: code:addons/base_gmao_sav/gmao_sav.py:1891
+#, python-format
+msgid "There is not production location."
+msgstr "Il n'y a pas d'emplacement de production."
+
+#. module: base_gmao_sav
+#: model:ir.model.fields,field_description:base_gmao_sav.field_categ_resource_maintenance_operation_time
+#: model:ir.model.fields,field_description:base_gmao_sav.field_instruction_maintenance_time
+#: model:ir.model.fields,field_description:base_gmao_sav.field_resource_intervention_time
+msgid "Time"
+msgstr "Temps"
+
+#. module: base_gmao_sav
+#: model:ir.model.fields,field_description:base_gmao_sav.field_instruction_intervention_time
+msgid "Time (HH:MM)"
+msgstr "Temps (HH:MM)"
+
+#. module: base_gmao_sav
+#: model:ir.actions.act_window,name:base_gmao_sav.act_wizard_create_timetracking_intervention
+msgid "Time declaration"
+msgstr "Déclaration de temps"
+
+#. module: base_gmao_sav
+#: model:ir.model.fields,field_description:base_gmao_sav.field_maintenance_operation_intervention_time
+msgid "Time of intervention (HH:MM)"
+msgstr "Temps d'intervention (HH:MM)"
+
+#. module: base_gmao_sav
+#: model:ir.model.fields,field_description:base_gmao_sav.field_intervention_time_real_interv
+msgid "Time real intervention (HH:MM)"
+msgstr "Temps réel d'intervention (HH:MM)"
+
+#. module: base_gmao_sav
+#: model:ir.model.fields,field_description:base_gmao_sav.field_park_maintenance_operation_time_spent
+msgid "Time spent"
+msgstr "Temps passé"
+
+#. module: base_gmao_sav
+#: model:ir.model.fields,field_description:base_gmao_sav.field_intervention_time_synchro_resource
+#: model:ir.model.fields,field_description:base_gmao_sav.field_maintenance_operation_time_synchro_resource
+msgid "Time synchronized with the resources"
+msgstr "Temps synchronisé avec les ressources"
+
+#. module: base_gmao_sav
+#: model:ir.model.fields,field_description:base_gmao_sav.field_intervention_time_theo_interv
+msgid "Time theo intervention (HH:MM)"
+msgstr "Temps théo d'intervention (HH:MM)"
+
+#. module: base_gmao_sav
+#: code:addons/base_gmao_sav/gmao_sav.py:427
+#, python-format
+msgid "Time tracking"
+msgstr "Temps"
+
+#. module: base_gmao_sav
+#: model:ir.ui.view,arch_db:base_gmao_sav.view_form_intervention_id
+msgid "Times"
+msgstr "Temps"
+
+#. module: base_gmao_sav
+#: model:ir.model.fields,field_description:base_gmao_sav.field_intervention_timetracking_ids
+msgid "Timetracking"
+msgstr "Suivi des temps"
+
+#. module: base_gmao_sav
+#: model:ir.model.fields,field_description:base_gmao_sav.field_piece_maintenance_intervention_is_to_invoice
+msgid "To Invoice"
+msgstr "À facturer"
+
+#. module: base_gmao_sav
+#: code:addons/base_gmao_sav/gmao_sav.py:2182
+#, python-format
+msgid "To add"
+msgstr "A ajouter"
+
+#. module: base_gmao_sav
+#: code:addons/base_gmao_sav/gmao_sav.py:2073
+#: model:ir.ui.view,arch_db:base_gmao_sav.view_form_intervention_id
+#, python-format
+msgid "To do"
+msgstr "À faire"
+
+#. module: base_gmao_sav
+#: code:addons/base_gmao_sav/gmao_sav.py:2183
+#, python-format
+msgid "To get back"
+msgstr "A récupérer"
+
+#. module: base_gmao_sav
+#: model:ir.ui.view,arch_db:base_gmao_sav.view_search_intervention_id
+#: model:ir.ui.view,arch_db:base_gmao_sav.view_search_resource_intervention_id
+msgid "Today"
+msgstr "Ajourd'hui"
+
+#. module: base_gmao_sav
+#: model:ir.model.fields,field_description:base_gmao_sav.field_intervention_tolerance
+#: model:ir.model.fields,field_description:base_gmao_sav.field_maintenance_operation_tolerance
+msgid "Tolerance"
+msgstr "Tolérance"
+
+#. module: base_gmao_sav
+#: model:ir.model.fields,field_description:base_gmao_sav.field_piece_maintenance_intervention_is_track_label
+msgid "Track label"
+msgstr "Etiquette tracée"
+
+#. module: base_gmao_sav
+#: model:ir.model.fields,field_description:base_gmao_sav.field_maintenance_operation_trigger_mode
+msgid "Trigger mode"
+msgstr "Mode de déclenchement"
+
+#. module: base_gmao_sav
+#: model:ir.model.fields,field_description:base_gmao_sav.field_create_picking_intervention_type
+#: model:ir.model.fields,field_description:base_gmao_sav.field_intervention_type
+#: model:ir.model.fields,field_description:base_gmao_sav.field_maintenance_operation_type
+#: model:ir.model.fields,field_description:base_gmao_sav.field_park_type
+#: model:ir.model.fields,field_description:base_gmao_sav.field_piece_maintenance_intervention_type_add_back
+#: model:ir.model.fields,field_description:base_gmao_sav.field_wiz_create_park_type
+#: model:ir.ui.view,arch_db:base_gmao_sav.view_search_intervention_id
+msgid "Type"
+msgstr "Type"
+
+#. module: base_gmao_sav
+#: code:addons/base_gmao_sav/gmao_sav.py:1982
+#: code:addons/base_gmao_sav/gmao_sav.py:2005
+#, python-format
+msgid "Type \"sav repair\" can only be used in SAV."
+msgstr "Le type \"réparation SAV\" peut être seulement utilisé dans SAV."
+
+#. module: base_gmao_sav
+#: model:ir.model.fields,field_description:base_gmao_sav.field_intervention_type_guarantee
+msgid "Type guarantee"
+msgstr "Type de garantie"
+
+#. module: base_gmao_sav
+#: model:ir.model.fields,field_description:base_gmao_sav.field_intervention_type_invoice
+#: model:ir.model.fields,field_description:base_gmao_sav.field_piece_maintenance_intervention_type_invoice
+msgid "Type invoice"
+msgstr "Type de facture"
+
+#. module: base_gmao_sav
+#: model:ir.model.fields,field_description:base_gmao_sav.field_intervention_type_failure_id
+msgid "Type of failure"
+msgstr "Type de panne"
+
+#. module: base_gmao_sav
+#: model:ir.actions.act_window,name:base_gmao_sav.act_type_failure_intervention_id
+#: model:ir.model,name:base_gmao_sav.model_type_failure_intervention
+#: model:ir.ui.view,arch_db:base_gmao_sav.view_form_type_failure_intervention_id
+msgid "Type of failure intervention"
+msgstr "Type de panne pour les interventions"
+
+#. module: base_gmao_sav
+#: model:ir.ui.view,arch_db:base_gmao_sav.view_tree_type_failure_intervention_id
+msgid "Type of failure interventions"
+msgstr "Liste des types de panne"
+
+#. module: base_gmao_sav
+#: model:ir.model.fields,field_description:base_gmao_sav.field_piece_maintenance_intervention_uom_category_id
+#: model:ir.model.fields,field_description:base_gmao_sav.field_piece_maintenance_uom_category_id
+#: model:ir.model.fields,field_description:base_gmao_sav.field_quotation_intervention_uom_category_id
+#: model:ir.model.fields,field_description:base_gmao_sav.field_wiz_intervention_quotation_line_uom_category_id
+msgid "UOM category"
+msgstr "Catégorie UdM"
+
+#. module: base_gmao_sav
+#: model:ir.ui.view,arch_db:base_gmao_sav.view_search_intervention_id
+msgid "Undelivered"
+msgstr "Non livré"
+
+#. module: base_gmao_sav
+#: code:addons/base_gmao_sav/gmao_sav.py:1353
+#, python-format
+msgid "Under guarantee"
+msgstr "Sous garantie"
+
+#. module: base_gmao_sav
+#: code:addons/base_gmao_sav/gmao_sav.py:31
+#, python-format
+msgid "Under maintenance"
+msgstr "En maintenance"
+
+#. module: base_gmao_sav
+#: model:ir.model.fields,field_description:base_gmao_sav.field_counter_uom_id
+#: model:ir.model.fields,field_description:base_gmao_sav.field_create_picking_intervention_uom_id
+#: model:ir.model.fields,field_description:base_gmao_sav.field_piece_maintenance_intervention_uom_id
+#: model:ir.model.fields,field_description:base_gmao_sav.field_piece_maintenance_uom_id
+#: model:ir.model.fields,field_description:base_gmao_sav.field_quotation_intervention_uom_id
+#: model:ir.model.fields,field_description:base_gmao_sav.field_wiz_intervention_quotation_line_uom_id
+#: model:ir.model.fields,field_description:base_gmao_sav.field_wiz_mo_repair_uom_id
+msgid "UoM"
+msgstr "UdM"
+
+#. module: base_gmao_sav
+#: model:ir.model.fields,field_description:base_gmao_sav.field_wiz_mo_repair_label_uom_qty
+msgid "UoM qty"
+msgstr "Qté UdM"
+
+#. module: base_gmao_sav
+#: model:ir.model.fields,field_description:base_gmao_sav.field_wiz_mo_repair_use_operation_ids
+msgid "Use operations"
+msgstr "Opérations utilisées"
+
+#. module: base_gmao_sav
+#: model:ir.model.fields,field_description:base_gmao_sav.field_instruction_intervention_user_id
+#: model:res.groups,name:base_gmao_sav.gmao_user
+#: model:res.groups,name:base_gmao_sav.sav_user
+msgid "User"
+msgstr "Utilisateur"
+
+#. module: base_gmao_sav
+#: model:ir.model.fields,field_description:base_gmao_sav.field_park_counter_value
+msgid "Value"
+msgstr "Valeur"
+
+#. module: base_gmao_sav
+#: model:ir.model.fields,field_description:base_gmao_sav.field_create_picking_intervention_variable
+msgid "Variable"
+msgstr "Variable"
+
+#. module: base_gmao_sav
+#: model:ir.model.fields,field_description:base_gmao_sav.field_piece_maintenance_intervention_is_wo_rm
+msgid "WO RM"
+msgstr "OT MP"
+
+#. module: base_gmao_sav
+#: code:addons/base_gmao_sav/gmao_sav.py:1089
+#, python-format
+msgid "Waiting"
+msgstr "En attente"
+
+#. module: base_gmao_sav
+#: model:ir.model.fields,field_description:base_gmao_sav.field_create_picking_intervention_warehouse_id
+#: model:ir.model.fields,field_description:base_gmao_sav.field_intervention_warehouse_id
+msgid "Warehouse"
+msgstr "Entrepôt"
+
+#. module: base_gmao_sav
+#: code:addons/base_gmao_sav/gmao_sav.py:751
+#: code:addons/base_gmao_sav/gmao_sav.py:1079
+#: model:ir.ui.view,arch_db:base_gmao_sav.view_search_intervention_id
+#: model:ir.ui.view,arch_db:base_gmao_sav.view_search_resource_intervention_id
+#, python-format
+msgid "Week"
+msgstr "Semaine"
+
+#. module: base_gmao_sav
+#: model:ir.model.fields,field_description:base_gmao_sav.field_intervention_week_number
+#: model:ir.model.fields,field_description:base_gmao_sav.field_resource_intervention_week_number
+msgid "Week number"
+msgstr "Nombre de semaine"
+
+#. module: base_gmao_sav
+#: code:addons/base_gmao_sav/gmao_sav.py:1220
+#: code:addons/base_gmao_sav/gmao_sav.py:2418
+#, python-format
+msgid "Without month"
+msgstr "Sans mois"
+
+#. module: base_gmao_sav
+#: model:ir.model,name:base_gmao_sav.model_wiz_add_certificate_application
+msgid "Wiz add certificate application"
+msgstr "Wiz d'ajout des applications de certificats"
+
+#. module: base_gmao_sav
+#: model:ir.model,name:base_gmao_sav.model_wiz_intervention_quotation
+msgid "Wiz intervention quotation"
+msgstr "Wiz devis d'intervention"
+
+#. module: base_gmao_sav
+#: model:ir.model,name:base_gmao_sav.model_wiz_intervention_quotation_line
+msgid "Wiz intervention quotation line"
+msgstr "Wiz devis d'intervention ligne"
+
+#. module: base_gmao_sav
+#: model:ir.model,name:base_gmao_sav.model_wiz_intervention_quotation_noorder
+msgid "Wiz intervention quotation noorder"
+msgstr "Wiz devis d'intervention non commandé"
+
+#. module: base_gmao_sav
+#: model:ir.model,name:base_gmao_sav.model_wiz_create_park
+#: model:ir.model,name:base_gmao_sav.model_wiz_mo_repair
+msgid "Wiz manufacturing order for repair"
+msgstr "Wiz OF de réparation"
+
+#. module: base_gmao_sav
+#: model:ir.model,name:base_gmao_sav.model_wiz_mo_repair_label
+msgid "Wiz manufacturing order for repair label"
+msgstr "Wiz OF de réparation étiquette"
+
+#. module: base_gmao_sav
+#: model:ir.model,name:base_gmao_sav.model_wiz_mo_repair_operations
+msgid "Wiz manufacturing order for repair operations"
+msgstr "Wiz OF de réparation opérations"
+
+#. module: base_gmao_sav
+#: model:ir.model,name:base_gmao_sav.model_wiz_mo_repair_select_label
+msgid "Wiz manufacturing order for repair select label"
+msgstr "Wiz OF de réparation sélection étiquette"
+
+#. module: base_gmao_sav
+#: model:ir.model,name:base_gmao_sav.model_create_quick_purchase
+msgid "Wizard to create purchases quickly"
+msgstr "Wizard de création d'achats"
+
+#. module: base_gmao_sav
+#: model:ir.model.fields,field_description:base_gmao_sav.field_park_workforce_guarantee
+msgid "Workforce guarantee (months)"
+msgstr "Garantie main d'oeuvre (mois)"
+
+#. module: base_gmao_sav
+#: model:ir.model.fields,field_description:base_gmao_sav.field_park_workforce_guarantee_end_date
+msgid "Workforce guarantee end date"
+msgstr "Date de fin de garantie main d'oeuvre"
+
+#. module: base_gmao_sav
+#: model:ir.model,name:base_gmao_sav.model_mrp_workorder
+msgid "Workorder"
+msgstr "OT"
+
+#. module: base_gmao_sav
+#: code:addons/base_gmao_sav/gmao_sav.py:754
+#: code:addons/base_gmao_sav/gmao_sav.py:1082
+#: model:ir.model.fields,field_description:base_gmao_sav.field_intervention_year
+#: model:ir.model.fields,field_description:base_gmao_sav.field_resource_intervention_year
+#: model:ir.ui.view,arch_db:base_gmao_sav.view_search_intervention_id
+#: model:ir.ui.view,arch_db:base_gmao_sav.view_search_resource_intervention_id
+#, python-format
+msgid "Year"
+msgstr "Année"
+
+#. module: base_gmao_sav
+#: model:ir.model.fields,help:base_gmao_sav.field_park_picture
+msgid "help"
+msgstr "Aide"
+
+#. module: base_gmao_sav
+#: model:ir.model.fields,field_description:base_gmao_sav.field_piece_maintenance_intervention_move_piece_maintenance_id
+msgid "move_piece_maintenance"
+msgstr "move_piece_maintenance"
+
+#. module: base_gmao_sav
+#: model:ir.ui.view,arch_db:base_gmao_sav.view_form_add_operation_in_park
+#: model:ir.ui.view,arch_db:base_gmao_sav.view_form_add_park_in_operation
+#: model:ir.ui.view,arch_db:base_gmao_sav.view_form_create_picking_intervention
+#: model:ir.ui.view,arch_db:base_gmao_sav.view_form_wiz_create_park
+#: model:ir.ui.view,arch_db:base_gmao_sav.view_form_wiz_intervention_quotation
+#: model:ir.ui.view,arch_db:base_gmao_sav.view_form_wiz_mo_repair
+#: model:ir.ui.view,arch_db:base_gmao_sav.view_form_wiz_mo_repair_select_label
+msgid "or"
+msgstr "ou"
+
+#. module: base_gmao_sav
+#: model:ir.model.fields,field_description:base_gmao_sav.field_intervention_quotation_ids
+#: model:ir.model.fields,field_description:base_gmao_sav.field_wiz_create_park_name
+msgid "string"
+msgstr "Champ"
+

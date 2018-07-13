@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+		<!-- FORM VIEW Shipment -->
+		<record id='view_form_shipment_packing_list' model='ir.ui.view'>
+			<field name="name">view_form_shipment_packing_list</field>
+			<field name="model">shipment</field>
+			<field name="priority" eval="1200" />
+			<field name="inherit_id" ref="shipment.view_form_shipment" />
+			<field name="arch" type="xml">
+				<xpath expr="//group[@name='synthesis']//newline[@name='after_pallet_type']" position="replace">
+				    <button name="retrieve_packing_list_informations" type="object" string="Retrieve packing list informations" class="oe_inline oe_stat_button" icon="fa-archive" colspan="2" />
+				    <newline />
+				</xpath>
+				<xpath expr="//page[@name='addresses']" position="after">
+					<page string="Packing list" name="packing_list">
+						<field name="um_label_ids" nolabel="1" colspan="4" />
+					</page>
+				</xpath>
+				<xpath expr="//button[@name='action_send_mail']" position="after">
+				    <button name="%(act_create_packing_list)d" type="action" string="Packing list (create)" class="oe_inline oe_stat_button" icon="fa-archive" />
+				    <button name="%(act_delete_packing_list)d" type="action" string="Packing list (delete)" class="oe_inline oe_stat_button" icon="fa-archive" />
+				</xpath>
+			</field>
+		</record>
+	</data>
+</openerp>

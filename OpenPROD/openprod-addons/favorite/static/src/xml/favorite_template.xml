@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+
+    <t t-extend="SearchView.FavoriteMenu">      
+        <t t-jquery="ul" t-operation="append">
+            <li class="oe-save-favorite o_closed_menu"><a>Add to favorite</a></li>
+            <li class="oe-save-favorite-name"><input type="text" class="form-control"></input></li>
+            <li class="oe-save-favorite-name"><button type="button" class="btn btn-default">Add to my favorite</button></li>
+        </t>  
+    </t>
+
+    <t t-name="list-favorite">
+        <div class="clasic-background">
+            <h1 class="fav-title">List of my favorites</h1>
+            <div id="fav-list">
+                <t t-foreach="model" t-as="favorite">
+                    <t t-if="favorite">
+                        <p  t-att="{'class' : favorite.user }">
+                        <span t-att="{'data-id' : favorite.filter }" class="favorite-item"> <t t-esc="favorite.name"/>  </span>
+                        <span class="fa fa-trash-o remove-filter remove-favorite" t-att="{'data-id' : favorite.id }"></span></p>
+                    </t>
+                </t>
+            </div>
+            <script>
+                // Affiche les favoris de l'utilisateur courrant
+                $(function(){ 
+                    $('#fav-list p').css({'display': 'none'});
+                    $('#fav-list p.'+window.openerp.session.uid).css({'display': 'block'});
+                });
+            </script>
+        </div>
+    </t>
+
+</templates>

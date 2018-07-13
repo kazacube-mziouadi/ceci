@@ -1,0 +1,202 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* customs
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 9.0c\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-03-10 13:18+0000\n"
+"PO-Revision-Date: 2017-03-10 13:18+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: customs
+#: model:ir.ui.view,arch_db:customs.view_form_update_move_customs_price
+msgid "Cancel"
+msgstr "Annuler"
+
+#. module: customs
+#: model:ir.model.fields,field_description:customs.field_update_move_customs_price_line_move_uom_category_id
+msgid "Category"
+msgstr "Catégorie"
+
+#. module: customs
+#: model:ir.model.fields,field_description:customs.field_update_move_customs_price_create_uid
+#: model:ir.model.fields,field_description:customs.field_update_move_customs_price_line_create_uid
+msgid "Created by"
+msgstr "Créé par"
+
+#. module: customs
+#: model:ir.model.fields,field_description:customs.field_update_move_customs_price_create_date
+#: model:ir.model.fields,field_description:customs.field_update_move_customs_price_line_create_date
+msgid "Created on"
+msgstr "Créé le"
+
+#. module: customs
+#: model:ir.model.fields,field_description:customs.field_update_move_customs_price_line_currency_id
+msgid "Currency"
+msgstr "Devise"
+
+#. module: customs
+#: model:ir.model.fields,field_description:customs.field_stock_move_customs_qty
+msgid "Custom qty"
+msgstr "Qté douane"
+
+#. module: customs
+#: model:ir.model.fields,field_description:customs.field_product_product_is_customs_price
+#: model:ir.model.fields,field_description:customs.field_stock_move_is_customs_price
+#: model:ir.model.fields,field_description:customs.field_update_move_customs_price_line_is_customs_price
+msgid "Custome price"
+msgstr "Prix douane"
+
+#. module: customs
+#: model:ir.model.fields,field_description:customs.field_product_product_customs_code
+#: model:ir.model.fields,help:customs.field_product_product_customs_code
+msgid "Customs code"
+msgstr "Code douane"
+
+#. module: customs
+#: model:ir.model.fields,field_description:customs.field_product_product_customs_currency_id
+#: model:ir.model.fields,field_description:customs.field_stock_move_customs_currency_id
+msgid "Customs currency"
+msgstr "Devise prix douane"
+
+#. module: customs
+#: model:ir.model.fields,field_description:customs.field_product_product_customs_price
+#: model:ir.model.fields,field_description:customs.field_stock_move_customs_price
+msgid "Customs price"
+msgstr "Unité de prix douane"
+
+#. module: customs
+#: model:ir.model.fields,field_description:customs.field_product_product_customs_stat_nb
+msgid "Customs statistic number"
+msgstr "Numéro de statistiques douanières"
+
+#. module: customs
+#: model:ir.model.fields,field_description:customs.field_product_product_customs_unit_id
+#: model:ir.model.fields,field_description:customs.field_stock_move_customs_unit_id
+#: model:ir.model.fields,field_description:customs.field_update_move_customs_price_line_customs_unit_id
+msgid "Customs unit"
+msgstr "Unité pour douanes"
+
+#. module: customs
+#: model:ir.model.fields,field_description:customs.field_update_move_customs_price_display_name
+#: model:ir.model.fields,field_description:customs.field_update_move_customs_price_line_display_name
+msgid "Display Name"
+msgstr "Afficher le nom"
+
+#. module: customs
+#: model:ir.ui.view,arch_db:customs.view_form_update_move_customs_price
+msgid "Enter the new prices and currencies for the picking's move"
+msgstr "Entrez les nouveaux prix et devises pour les mouvements du BL"
+
+#. module: customs
+#: code:addons/customs/stock.py:63
+#: code:addons/customs/wizard/update_move_customs_price.py:57
+#, python-format
+msgid "Error"
+msgstr "Erreur"
+
+#. module: customs
+#: model:ir.model.fields,field_description:customs.field_update_move_customs_price_id
+#: model:ir.model.fields,field_description:customs.field_update_move_customs_price_line_id
+msgid "ID"
+msgstr "ID"
+
+#. module: customs
+#: model:ir.model.fields,field_description:customs.field_update_move_customs_price___last_update
+#: model:ir.model.fields,field_description:customs.field_update_move_customs_price_line___last_update
+msgid "Last Modified on"
+msgstr "Dernière modification le"
+
+#. module: customs
+#: model:ir.model.fields,field_description:customs.field_update_move_customs_price_line_write_uid
+#: model:ir.model.fields,field_description:customs.field_update_move_customs_price_write_uid
+msgid "Last Updated by"
+msgstr "Dernière mise à jour par"
+
+#. module: customs
+#: model:ir.model.fields,field_description:customs.field_update_move_customs_price_line_write_date
+#: model:ir.model.fields,field_description:customs.field_update_move_customs_price_write_date
+msgid "Last Updated on"
+msgstr "Dernière mise à jour le"
+
+#. module: customs
+#: model:ir.ui.view,arch_db:customs.view_form_product_customs
+msgid "Legal"
+msgstr "Légal"
+
+#. module: customs
+#: model:ir.model.fields,field_description:customs.field_update_move_customs_price_update_move_line_ids
+msgid "Lines to update"
+msgstr "Lignes à mettre à jour"
+
+#. module: customs
+#: model:ir.model,name:customs.model_update_move_customs_price_line
+msgid "Lines to update customs prices moves from an out picking"
+msgstr "Lignes pour mettre à jour les prix de douane des mouvements depuis un BL"
+
+#. module: customs
+#: model:ir.model.fields,field_description:customs.field_update_move_customs_price_line_move_id
+msgid "Move"
+msgstr "Mouvement"
+
+#. module: customs
+#: model:ir.model.fields,field_description:customs.field_update_move_customs_price_line_price
+msgid "Price"
+msgstr "Prix"
+
+#. module: customs
+#: model:ir.model,name:customs.model_product_product
+#: model:ir.model.fields,field_description:customs.field_update_move_customs_price_line_product_id
+msgid "Product"
+msgstr "Produit"
+
+#. module: customs
+#: model:ir.model,name:customs.model_stock_move
+msgid "Stock Move"
+msgstr "Mouvement de stock"
+
+#. module: customs
+#: model:ir.ui.view,arch_db:customs.view_form_stock_picking_out_customs
+#: model:ir.ui.view,arch_db:customs.view_form_update_move_customs_price
+msgid "Update customs price"
+msgstr "Mettre à jour les prix de douane"
+
+#. module: customs
+#: model:ir.actions.act_window,name:customs.action_update_move_customs_price
+msgid "Update customs price move"
+msgstr "Mettre à jour les prix de douane des mouvements"
+
+#. module: customs
+#: model:ir.model.fields,field_description:customs.field_update_move_customs_price_line_update_move_id
+msgid "Update move"
+msgstr "Mettre à jour les mouvements"
+
+#. module: customs
+#: model:ir.ui.view,arch_db:customs.view_form_update_move_customs_price
+msgid "Update prices"
+msgstr "Mettre à jour les prix"
+
+#. module: customs
+#: model:ir.model,name:customs.model_update_move_customs_price
+msgid "Wizard to update customs prices moves from an out picking"
+msgstr "Wizard pour mettre à jour les prix des douanes des mouvements depuis un BL"
+
+#. module: customs
+#: code:addons/customs/stock.py:63
+#: code:addons/customs/wizard/update_move_customs_price.py:57
+#, python-format
+msgid "You can't update a customs price of a done move"
+msgstr "Vous ne pouvez mettre à jour un prix de douane sur un mouvement terminé"
+
+#. module: customs
+#: model:ir.ui.view,arch_db:customs.view_form_update_move_customs_price
+msgid "or"
+msgstr "ou"
+

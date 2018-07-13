@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        
+        <record id='view_form_category_resource_multi_company' model='ir.ui.view'>
+            <field name="name">view_form_category_resource_multi_company</field>
+            <field name="model">mrp.resource.category</field>
+            <field name="inherit_id" ref="base_openprod.view_form_category_resource"/>
+            <field name="priority" eval="3400" />
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='hourly_rate']" position="after">
+                    <field name="company_id" required="1" />
+                </xpath>
+            </field>
+        </record>
+        
+        <!-- TREE VIEW Category resources -->
+        <record id='view_tree_category_resource_multi_company' model='ir.ui.view'>
+            <field name="name">view_tree_category_resource_multi_company</field>
+            <field name="model">mrp.resource.category</field>
+            <field name="inherit_id" ref="base_openprod.view_tree_category_resource"/>
+            <field name="priority" eval="3400" />
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='hourly_rate']" position="after">
+                    <field name="company_id" required="1" />
+                </xpath>
+            </field>
+        </record>
+        
+        
+    </data>
+</openerp>

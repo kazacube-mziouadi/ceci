@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+		
+		<!-- FORM VIEW Partner -->
+		<record id="view_form_partner_shipment" model="ir.ui.view">
+			<field name="name">view_form_partner_shipment</field>
+			<field name="inherit_id" ref="partner_openprod.openprod_view_partner_form" />
+			<field name="model">res.partner</field>
+			<field name="arch" type="xml">
+				<xpath expr="//field[@name='num_with_customer']" position="after">
+				    <field name="shipment_processing_id" groups="edi_openprod.group_menu_edi_openprod" />
+				</xpath>
+				<xpath expr="//field[@name='sale_delivery_delay']" position="after">
+				    <field name="carrier_processing_id" groups="edi_openprod.group_menu_edi_openprod" />
+				</xpath>
+			</field>
+		</record>
+	</data>
+</openerp>

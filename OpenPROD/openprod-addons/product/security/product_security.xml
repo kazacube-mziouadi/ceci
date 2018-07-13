@@ -1,0 +1,69 @@
+<?xml version="1.0"?>
+<openerp>
+	<data noupdate="0">
+		<!-- Users Groups -->
+		<record model="ir.module.category" id="module_product_product">
+            <field name="name">Product</field>
+            <field name="sequence">5</field>
+        </record>
+		<record model="res.groups" id="base.group_uoi">
+			<field name="name">Unit of Invoice</field>
+		</record>
+		<record model="res.groups" id="base.group_dual_unit">
+			<field name="name">Dual unit</field>
+		</record>
+		<record model="res.groups" id="base.group_variable_dual_unit">
+			<field name="name">Variable dual unit</field>
+		</record>
+		<record model="res.groups" id="product_parameters">
+			<field name="name">Product parameters</field>
+		</record>
+		<record model="res.groups" id="product_user">
+			<field name="name">User</field>
+			<field name="category_id" ref="module_product_product"/>
+		</record>
+		<record model="res.groups" id="product_manager">
+			<field name="name">Manager</field>
+			<field name="category_id" ref="module_product_product"/>
+			<field name="implied_ids" eval="[(4, ref('product_user'))]"/>
+		</record>
+		<record model="res.groups" id="product_responsible">
+			<field name="name">Administrator</field>
+			<field name="category_id" ref="module_product_product"/>
+			<field name="implied_ids" eval="[(4, ref('product_manager'))]"/>
+		</record>
+		
+		<!-- Groupes de menu produit -->
+		<record id="group_menu_product_user" model="res.groups">
+            <field name="name">Product menu</field>
+            <field name="category_id" ref="base_openprod.module_menu_category"/>
+        </record>
+
+        <record id="base_openprod.group_menu_tech_data_config" model="res.groups">
+            <field name="implied_ids" eval="[(4, ref('group_menu_product_user'))]"/>
+        </record>
+        
+		<!-- Groupes de menu qualité -->
+        <record id="group_menu_customer_quality" model="res.groups">
+            <field name="name">Customer quality use menu</field>
+            <field name="category_id" ref="base_openprod.module_menu_category"/>
+        </record>
+
+        <record id="group_menu_supplier_quality" model="res.groups">
+            <field name="name">Supplier quality use menu</field>
+            <field name="category_id" ref="base_openprod.module_menu_category"/>
+        </record>
+
+        <record id="group_menu_internal_quality" model="res.groups">
+            <field name="name">Internal quality use menu</field>
+            <field name="category_id" ref="base_openprod.module_menu_category"/>
+        </record>
+
+        <record id="group_menu_analysis_quality" model="res.groups">
+            <field name="name">Analysis quality use menu</field>
+            <field name="category_id" ref="base_openprod.module_menu_category"/>
+            <field name="implied_ids" eval="[(4, ref('group_menu_internal_quality')),(4, ref('group_menu_supplier_quality')),(4, ref('group_menu_customer_quality'))]"/>
+        </record>
+        
+	</data>
+</openerp>

@@ -1,0 +1,550 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* specific_offer
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 9.0c\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-10-14 13:14+0000\n"
+"PO-Revision-Date: 2016-10-14 13:14+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: specific_offer
+#: model:mail.template,body_html:specific_offer.email_template_for_specific_offere
+msgid "\n"
+"<div style=\"font-family: 'Lucica Grande', Ubuntu, Arial, Verdana, sans-serif; font-size: 12px; color: rgb(34, 34, 34); background-color: #FFF; \">\n"
+"\n"
+"    <p>Hello ${object.partner_id.name},</p>\n"
+"</div>"
+msgstr "\n"
+"<div style=\"font-family: 'Lucica Grande', Ubuntu, Arial, Verdana, sans-serif; font-size: 12px; color: rgb(34, 34, 34); background-color: #FFF; \">\n"
+"\n"
+"    <p>Bonjour ${object.partner_id.name},</p>\n"
+"</div>"
+
+#. module: specific_offer
+#: model:ir.model.fields,field_description:specific_offer.field_simulation_line_availability_date
+msgid "Availability date"
+msgstr "Date de dispo"
+
+#. module: specific_offer
+#: model:ir.model.fields,field_description:specific_offer.field_simulation_line_bom_id
+msgid "BoM"
+msgstr "Nomenclature"
+
+#. module: specific_offer
+#: code:addons/specific_offer/specific_offer.py:92
+#, python-format
+msgid "BoM and routing not found"
+msgstr "Gamme et nomenclature non trouvées"
+
+#. module: specific_offer
+#: code:addons/specific_offer/specific_offer.py:316
+#, python-format
+msgid "Buy"
+msgstr "Acheter"
+
+#. module: specific_offer
+#: model:ir.model.fields,field_description:specific_offer.field_specific_offer_crm_id
+msgid "CRM"
+msgstr "CRM"
+
+#. module: specific_offer
+#: model:ir.ui.view,arch_db:specific_offer.view_form_create_sale_from_offer
+msgid "Cancel"
+msgstr "Annuler"
+
+#. module: specific_offer
+#: code:addons/specific_offer/specific_offer.py:41
+#, python-format
+msgid "Cancelled"
+msgstr "Abandonné"
+
+#. module: specific_offer
+#: model:ir.model,name:specific_offer.model_change_simulation_line
+msgid "Change product and quantity of a simulation line"
+msgstr "Change product and quantity of a simulation line"
+
+#. module: specific_offer
+#: model:ir.actions.act_window,name:specific_offer.act_change_simulation_line
+#: model:ir.ui.view,arch_db:specific_offer.view_form_change_simulation_line
+msgid "Change simulation line"
+msgstr "Change simulation line"
+
+#. module: specific_offer
+#: model:ir.ui.view,arch_db:specific_offer.view_form_specific_offer
+msgid "Communications"
+msgstr "Communications"
+
+#. module: specific_offer
+#: model:ir.ui.view,arch_db:specific_offer.view_form_specific_offer
+msgid "Configuration"
+msgstr "Configuration"
+
+#. module: specific_offer
+#: model:ir.ui.view,arch_db:specific_offer.view_form_create_sale_from_offer
+msgid "Create a sale"
+msgstr "Create a sale"
+
+#. module: specific_offer
+#: model:ir.ui.view,arch_db:specific_offer.view_form_specific_offer
+msgid "Create or update customer reference"
+msgstr "Créer ou mettre à jour le référencement client"
+
+#. module: specific_offer
+#: model:ir.ui.view,arch_db:specific_offer.view_form_specific_offer
+msgid "Create product"
+msgstr "Créer produit"
+
+#. module: specific_offer
+#: model:ir.ui.view,arch_db:specific_offer.view_form_create_sale_from_offer
+msgid "Create quick sale"
+msgstr "Créer une vente rapide"
+
+#. module: specific_offer
+#: model:ir.actions.act_window,name:specific_offer.action_create_sale_from_offer
+#: model:ir.ui.view,arch_db:specific_offer.view_form_specific_offer
+msgid "Create sale"
+msgstr "Créer une vente"
+
+#. module: specific_offer
+#: model:ir.model.fields,field_description:specific_offer.field_change_simulation_line_create_uid
+#: model:ir.model.fields,field_description:specific_offer.field_create_sale_from_offer_create_uid
+#: model:ir.model.fields,field_description:specific_offer.field_simulation_line_create_uid
+#: model:ir.model.fields,field_description:specific_offer.field_specific_offer_create_uid
+#: model:ir.model.fields,field_description:specific_offer.field_specific_offer_option_create_uid
+#: model:ir.model.fields,field_description:specific_offer.field_specific_offer_qty_create_uid
+msgid "Created by"
+msgstr "Créé par"
+
+#. module: specific_offer
+#: model:ir.model.fields,field_description:specific_offer.field_change_simulation_line_create_date
+#: model:ir.model.fields,field_description:specific_offer.field_create_sale_from_offer_create_date
+#: model:ir.model.fields,field_description:specific_offer.field_simulation_line_create_date
+#: model:ir.model.fields,field_description:specific_offer.field_specific_offer_create_date
+#: model:ir.model.fields,field_description:specific_offer.field_specific_offer_option_create_date
+#: model:ir.model.fields,field_description:specific_offer.field_specific_offer_qty_create_date
+msgid "Created on"
+msgstr "Date de création"
+
+#. module: specific_offer
+#: model:ir.model.fields,field_description:specific_offer.field_simulation_line_cumulative_delay
+msgid "Cumulative delay"
+msgstr "Délai cumulé"
+
+#. module: specific_offer
+#: model:ir.model.fields,field_description:specific_offer.field_create_sale_from_offer_partner_id
+msgid "Customer"
+msgstr "Client"
+
+#. module: specific_offer
+#: model:ir.model.fields,field_description:specific_offer.field_create_sale_from_offer_date
+msgid "Date"
+msgstr "Date"
+
+#. module: specific_offer
+#: model:ir.model.fields,field_description:specific_offer.field_specific_offer_date_from
+msgid "Date from"
+msgstr "Date de début"
+
+#. module: specific_offer
+#: model:ir.model.fields,field_description:specific_offer.field_specific_offer_date_to
+msgid "Date to"
+msgstr "Date de fin"
+
+#. module: specific_offer
+#: model:ir.model.fields,field_description:specific_offer.field_simulation_line_delay
+msgid "Delay"
+msgstr "Délai"
+
+#. module: specific_offer
+#: model:ir.model.fields,field_description:specific_offer.field_specific_offer_description
+#: model:ir.ui.view,arch_db:specific_offer.view_form_specific_offer
+msgid "Description"
+msgstr "Description"
+
+#. module: specific_offer
+#: model:ir.model.fields,field_description:specific_offer.field_change_simulation_line_display_name
+#: model:ir.model.fields,field_description:specific_offer.field_create_sale_from_offer_display_name
+#: model:ir.model.fields,field_description:specific_offer.field_simulation_line_display_name
+#: model:ir.model.fields,field_description:specific_offer.field_specific_offer_display_name
+#: model:ir.model.fields,field_description:specific_offer.field_specific_offer_option_display_name
+#: model:ir.model.fields,field_description:specific_offer.field_specific_offer_qty_display_name
+msgid "Display Name"
+msgstr "Nom affiché"
+
+#. module: specific_offer
+#: code:addons/specific_offer/specific_offer.py:37
+#, python-format
+msgid "Draft"
+msgstr "Brouillon"
+
+#. module: specific_offer
+#: model:ir.model,name:specific_offer.model_mail_compose_message
+msgid "Email composition wizard"
+msgstr "Assistant de composition de courriel"
+
+#. module: specific_offer
+#: model:ir.ui.view,arch_db:specific_offer.view_form_specific_offer
+msgid "Emails"
+msgstr "Courriels"
+
+#. module: specific_offer
+#: model:ir.ui.view,arch_db:specific_offer.view_form_create_sale_from_offer
+msgid "Enter the values"
+msgstr "Entrez les valeurs"
+
+#. module: specific_offer
+#: model:ir.model.fields,field_description:specific_offer.field_specific_offer_start_date_simulation
+msgid "From"
+msgstr "Depuis"
+
+#. module: specific_offer
+#: model:ir.ui.view,arch_db:specific_offer.view_search_specific_offer
+msgid "Group By"
+msgstr "Regrouper par"
+
+#. module: specific_offer
+#: model:ir.model.fields,field_description:specific_offer.field_change_simulation_line_id
+#: model:ir.model.fields,field_description:specific_offer.field_create_sale_from_offer_id
+#: model:ir.model.fields,field_description:specific_offer.field_simulation_line_id
+#: model:ir.model.fields,field_description:specific_offer.field_specific_offer_id
+#: model:ir.model.fields,field_description:specific_offer.field_specific_offer_option_id
+#: model:ir.model.fields,field_description:specific_offer.field_specific_offer_qty_id
+msgid "ID"
+msgstr "ID"
+
+#. module: specific_offer
+#: model:ir.model.fields,field_description:specific_offer.field_change_simulation_line___last_update
+#: model:ir.model.fields,field_description:specific_offer.field_create_sale_from_offer___last_update
+#: model:ir.model.fields,field_description:specific_offer.field_simulation_line___last_update
+#: model:ir.model.fields,field_description:specific_offer.field_specific_offer___last_update
+#: model:ir.model.fields,field_description:specific_offer.field_specific_offer_option___last_update
+#: model:ir.model.fields,field_description:specific_offer.field_specific_offer_qty___last_update
+msgid "Last Modified on"
+msgstr "Dernière modification le"
+
+#. module: specific_offer
+#: model:ir.model.fields,field_description:specific_offer.field_change_simulation_line_write_uid
+#: model:ir.model.fields,field_description:specific_offer.field_create_sale_from_offer_write_uid
+#: model:ir.model.fields,field_description:specific_offer.field_simulation_line_write_uid
+#: model:ir.model.fields,field_description:specific_offer.field_specific_offer_option_write_uid
+#: model:ir.model.fields,field_description:specific_offer.field_specific_offer_qty_write_uid
+#: model:ir.model.fields,field_description:specific_offer.field_specific_offer_write_uid
+msgid "Last Updated by"
+msgstr "Dernière mise à jour par"
+
+#. module: specific_offer
+#: model:ir.model.fields,field_description:specific_offer.field_change_simulation_line_write_date
+#: model:ir.model.fields,field_description:specific_offer.field_create_sale_from_offer_write_date
+#: model:ir.model.fields,field_description:specific_offer.field_simulation_line_write_date
+#: model:ir.model.fields,field_description:specific_offer.field_specific_offer_option_write_date
+#: model:ir.model.fields,field_description:specific_offer.field_specific_offer_qty_write_date
+#: model:ir.model.fields,field_description:specific_offer.field_specific_offer_write_date
+msgid "Last Updated on"
+msgstr "Dernière mise à jour le"
+
+#. module: specific_offer
+#: model:ir.model.fields,field_description:specific_offer.field_simulation_line_level
+msgid "Level"
+msgstr "Niveau"
+
+#. module: specific_offer
+#: model:ir.model.fields,field_description:specific_offer.field_change_simulation_line_simulation_line_id
+msgid "Line"
+msgstr "Ligne"
+
+#. module: specific_offer
+#: model:ir.model.fields,field_description:specific_offer.field_specific_offer_simulation_line_ids
+#: model:ir.ui.view,arch_db:specific_offer.view_form_specific_offer
+msgid "Lines"
+msgstr "Lignes"
+
+#. module: specific_offer
+#: model:ir.model,name:specific_offer.model_specific_offer_qty
+msgid "List of price and quantity for specific offer"
+msgstr "Liste de prix et de quantité pour les offres spécifiques"
+
+#. module: specific_offer
+#: model:ir.model.fields,field_description:specific_offer.field_specific_offer_mail_ids
+msgid "Mails"
+msgstr "Mails"
+
+#. module: specific_offer
+#: model:ir.model.fields,field_description:specific_offer.field_specific_offer_model_id
+msgid "Model"
+msgstr "Modèle"
+
+#. module: specific_offer
+#: model:ir.model.fields,field_description:specific_offer.field_simulation_line_name
+#: model:ir.model.fields,field_description:specific_offer.field_specific_offer_name
+msgid "Name"
+msgstr "Nom"
+
+#. module: specific_offer
+#: model:ir.model.fields,field_description:specific_offer.field_create_sale_from_offer_offer_id
+#: model:ir.ui.view,arch_db:specific_offer.view_form_specific_offer
+msgid "Offer"
+msgstr "Offre"
+
+#. module: specific_offer
+#: model:ir.model.fields,field_description:specific_offer.field_specific_offer_option_option_id
+msgid "Option"
+msgstr "Option"
+
+#. module: specific_offer
+#: model:ir.model.fields,field_description:specific_offer.field_simulation_line_option_id
+#: model:ir.model.fields,field_description:specific_offer.field_specific_offer_option_ids
+#: model:ir.ui.view,arch_db:specific_offer.view_form_specific_offer
+msgid "Options"
+msgstr "Options"
+
+#. module: specific_offer
+#: model:ir.model,name:specific_offer.model_parameter_dimension
+msgid "Paremater Dimension"
+msgstr "Paramètre de dimension"
+
+#. module: specific_offer
+#: model:ir.model.fields,field_description:specific_offer.field_specific_offer_partner_id
+#: model:ir.ui.view,arch_db:specific_offer.view_search_specific_offer
+msgid "Partner"
+msgstr "Client"
+
+#. module: specific_offer
+#: model:ir.model.fields,field_description:specific_offer.field_specific_offer_qty_price
+msgid "Price"
+msgstr "Prix"
+
+#. module: specific_offer
+#: model:ir.model.fields,field_description:specific_offer.field_specific_offer_price_labour
+msgid "Price labour"
+msgstr "Prix main d'oeuvre"
+
+#. module: specific_offer
+#: model:ir.model.fields,field_description:specific_offer.field_specific_offer_qty_ids
+msgid "Price list"
+msgstr "Liste de prix"
+
+#. module: specific_offer
+#: model:ir.model.fields,field_description:specific_offer.field_specific_offer_price_rm
+msgid "Price rm"
+msgstr "Prix MP"
+
+#. module: specific_offer
+#: model:ir.ui.view,arch_db:specific_offer.view_form_specific_offer
+msgid "Price serie"
+msgstr "Prix série"
+
+#. module: specific_offer
+#: model:ir.model.fields,field_description:specific_offer.field_specific_offer_option_price_unit
+msgid "Price unit"
+msgstr "Prix unitaire"
+
+#. module: specific_offer
+#: code:addons/specific_offer/specific_offer.py:317
+#, python-format
+msgid "Produce"
+msgstr "Production"
+
+#. module: specific_offer
+#: model:ir.model,name:specific_offer.model_product_product
+#: model:ir.model.fields,field_description:specific_offer.field_change_simulation_line_product_id
+#: model:ir.model.fields,field_description:specific_offer.field_create_sale_from_offer_product_id
+#: model:ir.model.fields,field_description:specific_offer.field_specific_offer_product_id
+msgid "Product"
+msgstr "Produit"
+
+#. module: specific_offer
+#: model:ir.model.fields,field_description:specific_offer.field_simulation_line_product_id
+msgid "Product id"
+msgstr "Produit"
+
+#. module: specific_offer
+#: model:ir.model.fields,field_description:specific_offer.field_specific_offer_proposition_date
+msgid "Proposition date"
+msgstr "Date de proposition"
+
+#. module: specific_offer
+#: model:ir.model.fields,field_description:specific_offer.field_change_simulation_line_quantity
+#: model:ir.model.fields,field_description:specific_offer.field_create_sale_from_offer_quantity
+#: model:ir.model.fields,field_description:specific_offer.field_simulation_line_quantity
+#: model:ir.model.fields,field_description:specific_offer.field_specific_offer_qty_quantity
+#: model:ir.model.fields,field_description:specific_offer.field_specific_offer_quantity
+msgid "Quantity"
+msgstr "Quantité"
+
+#. module: specific_offer
+#: model:ir.model.fields,field_description:specific_offer.field_specific_offer_responsible_id
+msgid "Responsible"
+msgstr "Responsable"
+
+#. module: specific_offer
+#: model:ir.model.fields,field_description:specific_offer.field_simulation_line_routing_id
+msgid "Routing"
+msgstr "Gamme"
+
+#. module: specific_offer
+#: model:ir.model.fields,field_description:specific_offer.field_create_sale_from_offer_sec_uom_id
+msgid "Sale unity"
+msgstr "Unité de vente"
+
+#. module: specific_offer
+#: model:ir.ui.view,arch_db:specific_offer.view_form_specific_offer
+msgid "Send Mail"
+msgstr "Envoyer mail"
+
+#. module: specific_offer
+#: code:addons/specific_offer/specific_offer.py:39
+#, python-format
+msgid "Sent"
+msgstr "Envoyé"
+
+#. module: specific_offer
+#: model:ir.model.fields,field_description:specific_offer.field_specific_offer_sequence
+msgid "Sequence"
+msgstr "Séquence"
+
+#. module: specific_offer
+#: model:ir.ui.view,arch_db:specific_offer.view_form_specific_offer
+msgid "Simulate"
+msgstr "Simuler"
+
+#. module: specific_offer
+#: code:addons/specific_offer/specific_offer.py:38
+#, python-format
+msgid "Simulated"
+msgstr "Simulé"
+
+#. module: specific_offer
+#: model:ir.model,name:specific_offer.model_simulation_line
+msgid "Simulation line"
+msgstr "Simulation line"
+
+#. module: specific_offer
+#: model:ir.actions.act_window,name:specific_offer.act_specific_offer_view_only_form
+#: model:ir.model.fields,field_description:specific_offer.field_parameter_dimension_specific_offer_id
+#: model:ir.model.fields,field_description:specific_offer.field_simulation_line_specific_offer_id
+#: model:ir.model.fields,field_description:specific_offer.field_specific_offer_option_specific_offer_id
+#: model:ir.model.fields,field_description:specific_offer.field_specific_offer_qty_specific_offer_id
+msgid "Specific offer"
+msgstr "Offre spécifique"
+
+#. module: specific_offer
+#: model:ir.model,name:specific_offer.model_specific_offer_option
+msgid "Specific offer option"
+msgstr "Specific offer option"
+
+#. module: specific_offer
+#: model:ir.model.fields,field_description:specific_offer.field_specific_offer_state
+#: model:ir.ui.view,arch_db:specific_offer.view_search_specific_offer
+msgid "State"
+msgstr "État"
+
+#. module: specific_offer
+#: model:ir.model.fields,field_description:specific_offer.field_simulation_line_stock_qty
+msgid "Stock Qty"
+msgstr "Qté en stock"
+
+#. module: specific_offer
+#: model:ir.model.fields,field_description:specific_offer.field_change_simulation_line_supplier_id
+#: model:ir.model.fields,field_description:specific_offer.field_simulation_line_supplier_id
+msgid "Supplier"
+msgstr "Fournisseur"
+
+#. module: specific_offer
+#: model:ir.model.fields,field_description:specific_offer.field_simulation_line_supply_method
+msgid "Supply method"
+msgstr "Appro"
+
+#. module: specific_offer
+#: model:ir.ui.view,arch_db:specific_offer.view_form_specific_offer
+msgid "Technical datas"
+msgstr "Données techniques"
+
+#. module: specific_offer
+#: code:addons/specific_offer/wizard/create_sale.py:105
+#, python-format
+msgid "The selected date is not a business day"
+msgstr "The selected date is not a business day"
+
+#. module: specific_offer
+#: code:addons/specific_offer/specific_offer.py:208
+#, python-format
+msgid "There is no customer referencing for this product and this customer"
+msgstr "Il n'y a pas de référencement client pour ce produit et ce client"
+
+#. module: specific_offer
+#: model:ir.model.fields,field_description:specific_offer.field_specific_offer_end_date_simulation
+msgid "To"
+msgstr "A"
+
+#. module: specific_offer
+#: code:addons/specific_offer/specific_offer.py:294
+#, python-format
+msgid "To create a sale, your product must be in life or end of life, and he must have an active customer referencing with the customer of the offer"
+msgstr "Pour créer une vente, votre produit doit être en vie ou en fin de vie, et il doit avoir un référencement client actif avec ce client"
+
+#. module: specific_offer
+#: model:ir.model.fields,field_description:specific_offer.field_simulation_line_total_price
+#: model:ir.model.fields,field_description:specific_offer.field_specific_offer_total_price
+msgid "Total price"
+msgstr "Prix total"
+
+#. module: specific_offer
+#: model:ir.model.fields,field_description:specific_offer.field_change_simulation_line_unit_price
+#: model:ir.model.fields,field_description:specific_offer.field_simulation_line_unit_price
+#: model:ir.model.fields,field_description:specific_offer.field_specific_offer_unit_price
+msgid "Unit price"
+msgstr "Prix unitaire"
+
+#. module: specific_offer
+#: model:ir.ui.view,arch_db:specific_offer.view_form_change_simulation_line
+#: model:ir.ui.view,arch_db:specific_offer.view_form_specific_offer
+msgid "Update"
+msgstr "Mise à jour"
+
+#. module: specific_offer
+#: code:addons/specific_offer/specific_offer.py:40
+#, python-format
+msgid "Validated"
+msgstr "Validé"
+
+#. module: specific_offer
+#: model:ir.ui.view,arch_db:specific_offer.view_form_specific_offer
+msgid "Visualization"
+msgstr "Visualisation"
+
+#. module: specific_offer
+#: code:addons/specific_offer/wizard/create_sale.py:105
+#, python-format
+msgid "Warning"
+msgstr "Warning"
+
+#. module: specific_offer
+#: model:ir.model,name:specific_offer.model_create_sale_from_offer
+msgid "Wizard to create from the specific offer"
+msgstr "Wizard to create from the specific offer"
+
+#. module: specific_offer
+#: model:ir.ui.view,arch_db:specific_offer.view_form_create_sale_from_offer
+msgid "or"
+msgstr "ou"
+
+#. module: specific_offer
+#: model:ir.model,name:specific_offer.model_specific_offer
+#: model:ir.ui.menu,name:specific_offer.menu_specific_offer
+#: model:ir.ui.view,arch_db:specific_offer.view_form_specific_offer
+msgid "specific offer"
+msgstr "Offre spécifique"
+
+#. module: specific_offer
+#: model:ir.actions.act_window,name:specific_offer.act_specific_offer
+msgid "specific_offer"
+msgstr "specific_offer"
+

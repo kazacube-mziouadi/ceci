@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_bi_server_all,BI server all,model_bi_server,base.group_user,1,0,0,0
+access_bi_server_admin,BI server admin,model_bi_server,base.group_system,1,1,0,0
+access_bi_dashboard_all,BI dashboard all,model_bi_dashboard,base.group_user,1,1,1,0
+access_bi_dashboard_admin,BI dashboard admin,model_bi_dashboard,base.group_system,1,1,1,1

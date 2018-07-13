@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+		<menuitem id="menu_audittrail" name="Audit trail" parent="base.menu_config" />
+
+		<!-- ACTION Audit trail rule -->
+		<record id="act_audittrail_rule" model="ir.actions.act_window">
+			<field name="name">Audit trail rule</field>
+			<field name="res_model">audittrail.rule</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+
+		<!-- FORM VIEW Audit trail rule -->
+		<record id='view_form_audittrail_rule' model='ir.ui.view'>
+			<field name="name">audittrail_rule</field>
+			<field name="model">audittrail.rule</field>
+			<field name="arch" type="xml">
+				<form string="Audit trail rule" version="8.0">
+					<header>
+						<field name="state" widget="statusbar" />
+					</header>
+					<group col="4">
+						<field name="name" />
+						<field name="model_id" />
+						<field name="log_write" />
+						<field name="log_delete" />
+						<field name="interface_only" />
+					</group>
+					<button class="oe_inline oe_stat_button" string="Activate" type="object" name="activate" icon="fa-list-ul"
+						states="draft" />
+					<button class="oe_inline oe_stat_button" string="Deactivate" type="object" name="deactivate" icon="fa-list-ul"
+						states="activated" />
+				</form>
+			</field>
+		</record>
+
+		<!-- TREE VIEW Audit trail rule -->
+		<record id='view_tree_audittrail_rule' model='ir.ui.view'>
+			<field name="name">audittrail_rule</field>
+			<field name="model">audittrail.rule</field>
+			<field name="arch" type="xml">
+				<tree string="Audit trail rules" version="8.0">
+					<field name="name" />
+					<field name="model_id" />
+					<field name="log_write" />
+					<field name="log_delete" />
+					<field name="state" />
+				</tree>
+			</field>
+		</record>
+
+		<menuitem id="menu_audittrail_rule" name="Audit trail rule" action="act_audittrail_rule" parent="menu_audittrail" />
+
+		<!-- ACTION Audit trail line -->
+		<record id="act_audittrail_line" model="ir.actions.act_window">
+			<field name="name">Audit trail line</field>
+			<field name="res_model">audittrail.line</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+
+		<!-- FORM VIEW Audit trail line -->
+		<record id='view_form_audittrail_line' model='ir.ui.view'>
+			<field name="name">audittrail_line</field>
+			<field name="model">audittrail.line</field>
+			<field name="arch" type="xml">
+				<form string="Audit trail line" version="8.0">
+					<group col="4">
+						<field name="create_date" string="Date" />
+						<field name="user_id" />
+						<field name="method" />
+						<field name="resource_id" />
+						<field name="rule_id" />
+						<field name="type" />
+					</group>
+					<group string="Values">
+						<field name="value_ids" nolabel="1" colspan="4">
+							<tree>
+								<field name="field_name" />
+								<field name="field_value" />
+								<field name="old_value" />
+							</tree>
+						</field>
+					</group>
+				</form>
+			</field>
+		</record>
+
+		<!-- TREE VIEW Audit trail line -->
+		<record id='view_tree_audittrail_line' model='ir.ui.view'>
+			<field name="name">audittrail_line</field>
+			<field name="model">audittrail.line</field>
+			<field name="arch" type="xml">
+				<tree string="Audit trail lines" version="8.0">
+					<field name="create_date" string="Date" />
+					<field name="rule_id" />
+					<field name="type" />
+					<field name="user_id" />
+				</tree>
+			</field>
+		</record>
+
+		<menuitem id="menu_audittrail_line" name="Audit trail line" action="act_audittrail_line" parent="menu_audittrail" />
+	</data>
+</openerp>

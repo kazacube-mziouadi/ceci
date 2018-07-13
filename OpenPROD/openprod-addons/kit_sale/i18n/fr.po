@@ -1,0 +1,272 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* kit_sale
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 9.0c\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-05-02 09:39+0000\n"
+"PO-Revision-Date: 2016-05-02 09:39+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: kit_sale
+#: model:ir.model.fields,field_description:kit_sale.field_kit_sale_bom_id
+msgid "Bom"
+msgstr "Nomenclature"
+
+#. module: kit_sale
+#: model:ir.ui.view,arch_db:kit_sale.view_form_generate_kit_sale
+msgid "Cancel"
+msgstr "Annuler"
+
+#. module: kit_sale
+#: model:ir.ui.view,arch_db:kit_sale.view_form_kit_for_sale_order
+msgid "Create a kit"
+msgstr "Créer un kit"
+
+#. module: kit_sale
+#: model:ir.ui.view,arch_db:kit_sale.view_form_generate_kit_sale
+msgid "Create a kit sale"
+msgstr "Créer un kit de vente"
+
+#. module: kit_sale
+#: model:ir.ui.view,arch_db:kit_sale.view_form_generate_kit_sale
+msgid "Create kit sale"
+msgstr "Créer un kit de vente"
+
+#. module: kit_sale
+#: model:ir.model.fields,field_description:kit_sale.field_kit_sale_create_uid
+#: model:ir.model.fields,field_description:kit_sale.field_kit_sale_line_create_uid
+msgid "Created by"
+msgstr "Créé par"
+
+#. module: kit_sale
+#: model:ir.model.fields,field_description:kit_sale.field_kit_sale_create_date
+#: model:ir.model.fields,field_description:kit_sale.field_kit_sale_line_create_date
+msgid "Created on"
+msgstr "Créé le"
+
+#. module: kit_sale
+#: model:ir.model.fields,field_description:kit_sale.field_kit_sale_currency_id
+msgid "Currency"
+msgstr "Devise"
+
+#. module: kit_sale
+#: code:addons/kit_sale/wizard/kit_sale.py:226
+#, python-format
+msgid "Descriptive heading"
+msgstr "Entête descriptif"
+
+#. module: kit_sale
+#: model:ir.model.fields,field_description:kit_sale.field_kit_sale_display_name
+#: model:ir.model.fields,field_description:kit_sale.field_kit_sale_line_display_name
+msgid "Display Name"
+msgstr "Nom affiché"
+
+#. module: kit_sale
+#: model:ir.model.fields,field_description:kit_sale.field_kit_sale_divisor
+#: model:ir.model.fields,field_description:kit_sale.field_kit_sale_line_divisor
+msgid "Divisor"
+msgstr "Diviseur"
+
+#. module: kit_sale
+#: model:ir.model.fields,field_description:kit_sale.field_kit_sale_factor
+#: model:ir.model.fields,field_description:kit_sale.field_kit_sale_line_factor
+msgid "Factor"
+msgstr "Facteur"
+
+#. module: kit_sale
+#: model:ir.actions.act_window,name:kit_sale.action_generate_kit_sale
+msgid "Generate a kit sale"
+msgstr "Générer un kit de vente"
+
+#. module: kit_sale
+#: model:ir.model.fields,field_description:kit_sale.field_kit_sale_id
+#: model:ir.model.fields,field_description:kit_sale.field_kit_sale_line_id
+msgid "ID"
+msgstr "ID"
+
+#. module: kit_sale
+#: model:ir.ui.view,arch_db:kit_sale.view_form_generate_kit_sale
+msgid "Import lines"
+msgstr "Importer lignes"
+
+#. module: kit_sale
+#: model:ir.model.fields,field_description:kit_sale.field_kit_sale_line_kit_id
+#: model:ir.ui.view,arch_db:kit_sale.view_form_kit_for_sale_order
+msgid "Kit"
+msgstr "Kit"
+
+#. module: kit_sale
+#: model:ir.model,name:kit_sale.model_kit_sale_line
+msgid "Kit sale line for kit sale wizard"
+msgstr "Ligne de kit de vente pour wizard de kit de vente"
+
+#. module: kit_sale
+#: model:ir.model.fields,field_description:kit_sale.field_kit_sale___last_update
+#: model:ir.model.fields,field_description:kit_sale.field_kit_sale_line___last_update
+msgid "Last Modified on"
+msgstr "Dernière modification le"
+
+#. module: kit_sale
+#: model:ir.model.fields,field_description:kit_sale.field_kit_sale_line_write_uid
+#: model:ir.model.fields,field_description:kit_sale.field_kit_sale_write_uid
+msgid "Last Updated by"
+msgstr "Dernière mise à jour par"
+
+#. module: kit_sale
+#: model:ir.model.fields,field_description:kit_sale.field_kit_sale_line_write_date
+#: model:ir.model.fields,field_description:kit_sale.field_kit_sale_write_date
+msgid "Last Updated on"
+msgstr "Dernière mise à jour le"
+
+#. module: kit_sale
+#: model:ir.model.fields,field_description:kit_sale.field_kit_sale_line_uom_id
+#: model:ir.model.fields,field_description:kit_sale.field_kit_sale_uom_id
+msgid "Measure unit"
+msgstr "Unité de mesure"
+
+#. module: kit_sale
+#: model:ir.model.fields,field_description:kit_sale.field_kit_sale_line_uop_id
+#: model:ir.model.fields,field_description:kit_sale.field_kit_sale_uop_id
+msgid "Price unit"
+msgstr "Prix unitaire"
+
+#. module: kit_sale
+#: model:ir.model.fields,field_description:kit_sale.field_kit_sale_line_product_id
+#: model:ir.model.fields,field_description:kit_sale.field_kit_sale_product_id
+msgid "Product"
+msgstr "Produit"
+
+#. module: kit_sale
+#: model:ir.ui.view,arch_db:kit_sale.view_form_generate_kit_sale
+msgid "Product lines"
+msgstr "Lignes de produit"
+
+#. module: kit_sale
+#: model:ir.ui.view,arch_db:kit_sale.view_form_generate_kit_sale
+msgid "Quantities"
+msgstr "Quantités"
+
+#. module: kit_sale
+#: model:ir.model.fields,field_description:kit_sale.field_kit_sale_line_uom_qty
+msgid "Quantity in UoM"
+msgstr "Quantité en UdM"
+
+#. module: kit_sale
+#: model:ir.model.fields,field_description:kit_sale.field_kit_sale_line_uop_qty
+msgid "Quantity in UoP"
+msgstr "Quantité en UdP"
+
+#. module: kit_sale
+#: model:ir.model.fields,field_description:kit_sale.field_kit_sale_line_sec_uom_qty
+msgid "Quantity in UoS"
+msgstr "Quantité en UdV"
+
+#. module: kit_sale
+#: model:ir.model.fields,field_description:kit_sale.field_kit_sale_uom_qty
+msgid "Quantity in measure unit"
+msgstr "Quantité en unité de mesure"
+
+#. module: kit_sale
+#: model:ir.model.fields,field_description:kit_sale.field_kit_sale_uop_qty
+msgid "Quantity in price unity"
+msgstr "Quantité en unité de prix"
+
+#. module: kit_sale
+#: model:ir.model.fields,field_description:kit_sale.field_kit_sale_sec_uom_qty
+msgid "Quantity in sale unity"
+msgstr "Quantité en unité de vente"
+
+#. module: kit_sale
+#: model:ir.model.fields,field_description:kit_sale.field_kit_sale_requested_date
+msgid "Requested date"
+msgstr "Date demandée"
+
+#. module: kit_sale
+#: model:ir.model.fields,field_description:kit_sale.field_kit_sale_sale_id
+msgid "Sale"
+msgstr "Vente"
+
+#. module: kit_sale
+#: model:ir.model.fields,field_description:kit_sale.field_kit_sale_line_sec_uom_id
+#: model:ir.model.fields,field_description:kit_sale.field_kit_sale_sec_uom_id
+msgid "Sale unit"
+msgstr "Unité de vente"
+
+#. module: kit_sale
+#: model:ir.model.fields,field_description:kit_sale.field_kit_sale_section_id
+msgid "Section"
+msgstr "Section"
+
+#. module: kit_sale
+#: model:ir.model.fields,field_description:kit_sale.field_kit_sale_line_sequence
+msgid "Sequence"
+msgstr "Séquence"
+
+#. module: kit_sale
+#: code:addons/kit_sale/wizard/kit_sale.py:227
+#, python-format
+msgid "Service heading"
+msgstr "Entête service"
+
+#. module: kit_sale
+#: code:addons/kit_sale/wizard/kit_sale.py:173
+#, python-format
+msgid "The product %s of your bom can't be sold. All the products of your bom must have the 'Can be sold' field checked to make a sale kit"
+msgstr "Le produit %s de votre nomenclature ne peut être vendu. Tous les produits de votre nomenclature doivent avoir le champ 'Peut être vendu' de coché pour faire une vente de kit"
+
+#. module: kit_sale
+#: code:addons/kit_sale/wizard/kit_sale.py:390
+#, python-format
+msgid "To create a kit, your product must be a sold service which manage delivery!"
+msgstr "Pour créer un kit, votre produit doit être un service vendu dont on gère la livraison!"
+
+#. module: kit_sale
+#: model:ir.model.fields,field_description:kit_sale.field_kit_sale_line_total_price
+msgid "Total price"
+msgstr "Prix total"
+
+#. module: kit_sale
+#: model:ir.model.fields,field_description:kit_sale.field_kit_sale_type
+msgid "Type"
+msgstr "Type"
+
+#. module: kit_sale
+#: model:ir.model.fields,field_description:kit_sale.field_kit_sale_line_unity_price
+msgid "Unity price"
+msgstr "Prix unitaire"
+
+#. module: kit_sale
+#: code:addons/kit_sale/wizard/kit_sale.py:228
+#, python-format
+msgid "Without heading"
+msgstr "Sans entête"
+
+#. module: kit_sale
+#: model:ir.model,name:kit_sale.model_kit_sale
+msgid "Wizard to create a kit sale"
+msgstr "Wizard pour créer un kit de vente"
+
+#. module: kit_sale
+#: code:addons/kit_sale/wizard/kit_sale.py:393
+#, python-format
+msgid "You must create lines with the import button to create a kit sale"
+msgstr "Vous devez créer des lignes avec le bouton d'importation pour créer une vente de kit"
+
+#. module: kit_sale
+#: model:ir.ui.view,arch_db:kit_sale.view_form_generate_kit_sale
+msgid "or"
+msgstr "ou"
+
+#. module: kit_sale
+#: model:ir.model.fields,field_description:kit_sale.field_kit_sale_line_ids
+msgid "string"
+msgstr "string"
+

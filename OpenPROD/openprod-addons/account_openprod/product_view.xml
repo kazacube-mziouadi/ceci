@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+		<!-- ======= -->
+		<!-- ACCOUNTING -->
+		<!-- ======= -->
+		<!-- FORM VIEW PRODUCT -->
+		<record id="view_form_product_account" model="ir.ui.view">
+			<field name="name">view.form.product.account</field>
+			<field name="model">product.product</field>
+			<field name="priority">1500</field>
+			<field name="inherit_id" ref="product.view_form_product" />
+			<field name="arch" type="xml">
+				<xpath expr="//notebook" position="inside">
+					<page string="Accounting" groups="account.group_account_invoice" attrs="{'invisible': [('type', '=', 'article')]}">
+						<group name="accounting_product">
+							<group string="Price" colspan="4" col="4" attrs="{'invisible': [('type', '=', 'service')]}" >
+								<field name="inventory_valuation" colspan="2" attrs="{'invisible': [('type', 'in', ('service', 'article'))], 'required': [('type', '!=', 'service'), ('type', '!=', 'article')]}"/>
+								<field name="type_valuation_purchase" colspan="2" attrs="{'invisible': ['|', ('type', '=', 'service'), ('purchase_ok', '!=', True)], 'required': [('type', 'not in', ('service', 'article')), ('purchase_ok', '=', True)]}"/>
+							</group>
+							<group string="Note printed on demand invoice" colspan="4">
+								<field name="description_invoice" nolabel="1"/>
+							</group>
+<!-- 							<group string="Legal"> -->
+<!-- 								<field name="customs_number"/> -->
+<!-- 								<field name="customs_value"/> -->
+<!-- 								<field name="currency_id"/> -->
+<!-- 							</group> -->
+							<group col="4" name="product_account">
+								<group string="Accounting account">
+									<field name="property_account_income_id" attrs="{'required': [('type', '!=', 'article'), ('sale_ok', '=', True)]}" domain="[('company_id', '=', company_id), ('type', '!=', 'view')]" />
+									<field name="property_account_expense_id" attrs="{'required': [('type', '!=', 'article'), ('purchase_ok', '=', True)]}" domain="[('company_id', '=', company_id), ('type',  '!=', 'view')]" />
+								</group>
+							</group>
+							<group col="4" name="product_taxes">
+								<group string="Sales taxes" colspan="4">
+									<field name="sale_taxes_ids" widget="many2many_tags" attrs="{'required': [('type', '!=', 'article'), ('sale_ok', '=', True)]}"/>
+								</group>
+								<group string="Purchase taxes" colspan="4">
+									<field name="purchase_taxes_ids" widget="many2many_tags" attrs="{'required': [('type', '!=', 'article'), ('purchase_ok', '=', True)]}"/>
+								</group>
+							</group>
+						</group>
+					</page>
+				</xpath>
+			</field>
+		</record>
+	</data>
+</openerp>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+         <record id='view_configuration_tree' model='ir.ui.view'>
+			<field name="name">Pentaho server</field>
+			<field name="model">bi.server</field>
+			<field name="arch" type="xml">
+			
+                <tree string="Configuration" create="0" delete="0">
+                    
+                            <field name="pentaho_server_address" string="Pentaho server adress"></field>     
+                            <field name="db_name" string="Database name"></field>
+                            <field name="bi_instalation_dir" string="Pentaho instalation directory"></field>
+                </tree>
+
+			</field>
+		</record> 
+
+        <record id='view_configuration_form' model='ir.ui.view'>
+			<field name="name">Pentaho server</field>
+			<field name="model">bi.server</field>
+			<field name="arch" type="xml">
+			
+                <form string="Configuration"  create="0" delete="0">
+                    <group>
+                            <field name="pentaho_server_address" string="Pentaho server adress"></field> 
+                            <field name="db_name" string="Database name"></field>
+                            <field name="bi_instalation_dir" string="Pentaho instalation directory"></field>    
+                    </group>
+                </form>
+
+			</field>
+		</record>
+ 
+ 
+         <record id="configuration_pentaho_action" model="ir.actions.act_window">
+			<field name="name">Configurations</field>
+			<field name="res_model">bi.server</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+ 
+ 
+        <menuitem id="configuration_pentaho_menu" name="Configuration" parent="bi_menu"
+                  action="configuration_pentaho_action"/>  
+
+
+    </data>
+</openerp>

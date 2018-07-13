@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+		
+		<record model="ir.ui.view" id="view_form_mrp_resource_calendar">
+			<field name="name">view_form_mrp_resource_calendar</field>
+			<field name="inherit_id" ref="base_openprod.view_form_mrp_resource" />
+			<field name="model">mrp.resource</field>
+			<field name="arch" type="xml">
+				<field name="company_id" position="after">
+					<field name="calendar_id" />
+				</field>
+			</field>
+		</record>
+		
+		<record model="ir.ui.view" id="view_tree_mrp_resource_calendar">
+			<field name="name">view_tree_mrp_resource_calendar</field>
+			<field name="inherit_id" ref="base_openprod.view_tree_mrp_resource" />
+			<field name="model">mrp.resource</field>
+			<field name="arch" type="xml">
+				<field name="name" position="after">
+					<field name="calendar_id" />
+				</field>
+			</field>
+		</record>
+		
+	</data>
+</openerp>

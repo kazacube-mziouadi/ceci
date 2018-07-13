@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>	
+
+        <record id='view_pentaho_force_de_vente' model='ir.ui.view'>
+			<field name="name">Force de vente</field>
+			<field name="model">bi.dashboard</field>
+			<field name="arch" type="xml">
+			<pentaho> 
+			</pentaho>   
+			</field>
+		</record>
+
+		<record id='view_pentaho_performance_de_vente' model='ir.ui.view'>
+			<field name="name">Performance de vente</field>
+			<field name="model">bi.dashboard</field>
+			<field name="arch" type="xml">
+			<pentaho> 
+			</pentaho>   
+			</field>
+		</record>
+
+        <record id="pentaho_action_force_de_vente" model="ir.actions.act_window">
+			<field name="name">Pentaho action force de vente</field>
+			<field name="res_model">ir.ui.view</field>
+			<field name="view_type">form</field>
+            <field name="view_id" ref="view_pentaho_force_de_vente"></field>
+			<field name="view_mode">pentaho</field>
+		</record>
+
+		<record id="pentaho_action_performance_de_vente" model="ir.actions.act_window">
+			<field name="name">Pentaho action performance de vente</field>
+			<field name="res_model">ir.ui.view</field>
+			<field name="view_type">form</field>
+            <field name="view_id" ref="view_pentaho_performance_de_vente"></field>
+			<field name="view_mode">pentaho</field>
+		</record>
+
+        <menuitem id="pentaho_force_de_vente" name="Force de vente" parent="bi_menu"
+                  action="pentaho_action_force_de_vente"/>
+		
+		<menuitem id="pentaho_performance_de_vente" name="Performance de vente" parent="bi_menu"
+                  action="pentaho_action_performance_de_vente"/>
+
+        <template id="assets_backend" name="web_pentaho assets" inherit_id="web.assets_backend">
+			<xpath expr="." position="inside">
+				<script type="text/javascript" src="/bi/static/src/js/pentaho.js"></script>
+			</xpath>
+		</template>
+
+
+	</data>
+</openerp>

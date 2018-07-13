@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+
+		<!-- TREE VIEW schedule_planning_mo -->
+		<record id='view_tree_schedule_planning_mo_id' model='ir.ui.view'>
+			<field name="name">view_tree_schedule_planning_mo_id</field>
+			<field name="model">schedule.planning.mo</field>
+			<field name="arch" type="xml">
+				<tree string="Schedule planning MO" version="8.0" editable="bottom">
+					<field name="mo_id" required="1" />
+					<field name="product_id" readonly="1" />
+					<field name="date" />
+					<field name="qty" />
+					<field name="time" widget="float_time_seconds" />
+					<button name="%(mrp.action_print_mo)d" string="Print the works orders" type="action" class="oe_inline oe_stat_button" icon="fa-print" />
+					<field name="is_today" invisible="1" />
+					<field name="is_tomorrow" invisible="1" />
+					<field name="is_week" invisible="1" />
+					<field name="is_month" invisible="1" />
+				</tree>
+			</field>
+		</record>
+
+		<!-- SEARCH VIEW schedule_planning_mo -->
+		<record id='view_search_schedule_planning_mo_id' model='ir.ui.view'>
+			<field name="name">view_search_schedule_planning_mo_id</field>
+			<field name="model">schedule.planning.mo</field>
+			<field name="arch" type="xml">
+				<search version="8.0">
+					<field name="mo_id" />
+					<field name="product_id" />
+					<field name="date" />
+					<group string="Filters">
+						<filter name="today" string="Today" icon="terp-personal" domain="[('is_today', '=', True)]" context="{'view_mo': True}" />
+						<filter name="tomorrow" string="Tomorrow" icon="terp-personal" domain="[('is_tomorrow', '=', True)]" context="{'view_mo': True}" />
+						<filter name="current_week" string="Current week" icon="terp-personal" domain="[('is_week', '=', True)]" context="{'view_mo': True}" />
+						<filter name="current_month" string="Current month" icon="terp-personal" domain="[('is_month', '=', True)]" context="{'view_mo': True}" />
+					</group>
+					<group expand="0" string="Group By...">
+						<filter string="Product" icon="terp-partner" context="{'group_by' : 'product_id'}" />
+					</group>
+				</search>
+			</field>
+		</record>
+
+		<!-- ACTION schedule_planning_mo -->
+		<record id="act_schedule_planning_mo_id" model="ir.actions.act_window">
+			<field name="name">Schedule planning MO</field>
+			<field name="res_model">schedule.planning.mo</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree</field>
+			<field name="domain">[('mo_id', '!=', False)]</field>
+			<field name="context">{}</field>
+			<field name="search_view_id" ref="view_search_schedule_planning_mo_id" />
+		</record>
+
+		<record id="act_schedule_planning_mo_id_tree" model="ir.actions.act_window.view">
+			<field name="sequence" eval="10" />
+			<field name="view_mode">tree</field>
+			<field name="view_id" ref="view_tree_schedule_planning_mo_id" />
+			<field name="act_window_id" ref="act_schedule_planning_mo_id" />
+		</record>
+
+
+		<menuitem name="Schedule planning MO" action="act_schedule_planning_mo_id" id="menu_schedule_planning_mo_id" sequence="30" parent="mrp.menu_production_planning" />
+
+
+
+		<!-- TREE VIEW schedule_planning_mo_wo -->
+		<record id='view_tree_schedule_planning_mo_wo_id' model='ir.ui.view'>
+			<field name="name">view_tree_schedule_planning_mo_wo_id</field>
+			<field name="model">schedule.planning.mo</field>
+			<field name="arch" type="xml">
+				<tree string="Schedule planning WO" version="8.0" editable="bottom" create="false" readonly="1">
+					<field name="wo_id" required="1" />
+					<field name="product_id" readonly="1" />
+					<field name="date" />
+					<field name="qty" />
+					<field name="time" widget="float_time_seconds" />
+					<button name="%(mrp.action_print_wo)d" string="Print the work order" type="action" class="oe_inline oe_stat_button" icon="fa-print" />
+					<field name="is_today" invisible="1" />
+                    <field name="is_tomorrow" invisible="1" />
+                    <field name="is_week" invisible="1" />
+                    <field name="is_month" invisible="1" />
+				</tree>
+			</field>
+		</record>
+
+		<!-- SEARCH VIEW schedule_planning_mo_wo -->
+		<record id='view_search_schedule_planning_mo_wo_id' model='ir.ui.view'>
+			<field name="name">view_search_schedule_planning_mo_wo_id</field>
+			<field name="model">schedule.planning.mo</field>
+			<field name="arch" type="xml">
+				<search version="8.0">
+					<field name="wo_id" />
+					<field name="product_id" />
+					<field name="date" />
+					<group string="Filters">
+                        <filter name="today" string="Today" icon="terp-personal" domain="[('is_today', '=', True)]"  />
+                        <filter name="tomorrow" string="Tomorrow" icon="terp-personal" domain="[('is_tomorrow', '=', True)]" />
+                        <filter name="current_week" string="Current week" icon="terp-personal" domain="[('is_week', '=', True)]" />
+                        <filter name="current_month" string="Current month" icon="terp-personal" domain="[('is_month', '=', True)]" />
+                    </group>
+                    <group expand="0" string="Group By...">
+                        <filter string="Product" icon="terp-partner" context="{'group_by' : 'product_id'}" />
+                    </group>
+				</search>
+			</field>
+		</record>
+
+		<!-- ACTION schedule_planning_mo_wo -->
+		<record id="act_schedule_planning_mo_wo_id" model="ir.actions.act_window">
+			<field name="name">Schedule planning WO</field>
+			<field name="res_model">schedule.planning.mo</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree</field>
+			<field name="domain">[('wo_id', '!=', False)]</field>
+			<field name="context">{}</field>
+			<field name="search_view_id" ref="view_search_schedule_planning_mo_wo_id" />
+		</record>
+
+		<record id="act_schedule_planning_mo_wo_id_tree" model="ir.actions.act_window.view">
+			<field name="sequence" eval="10" />
+			<field name="view_mode">tree</field>
+			<field name="view_id" ref="view_tree_schedule_planning_mo_wo_id" />
+			<field name="act_window_id" ref="act_schedule_planning_mo_wo_id" />
+		</record>
+
+
+		<menuitem name="Schedule planning WO" action="act_schedule_planning_mo_wo_id" id="menu_schedule_planning_mo_wo_id" sequence="40" parent="mrp.menu_production_planning" />
+
+
+
+
+	</data>
+</openerp>

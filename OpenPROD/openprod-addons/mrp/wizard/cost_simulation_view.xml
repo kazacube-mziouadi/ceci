@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+	
+		<record model="ir.ui.view" id="view_form_wiz_cost_simulation">
+			<field name="name">view_form_wiz_cost_simulation</field>
+			<field name="model">wiz.cost.simulation</field>
+			<field name="type">form</field>
+			<field name="arch" type="xml">
+				<form string="Cost simulation">
+					<group colspan="4" col="6">
+					    <group colspan="2" col="4">
+							<field name="product_id" required="1" domain="[('produce_ok', '=', True)]" colspan="4" />
+							<field name="price_qty" required="1" colspan="3" />
+							<button name="action_validate" string="Simulate" type="object" class="oe_highlight" colspan="1" />
+						</group>
+						<group colspan="2" col="2">
+						    <field name="bom_id" required="1" domain="[('bom_id', '=', False), ('product_id', '=', product_id)] or [('id', '=', False)]" />
+						    <field name="uom_id" required="1" domain="categ_uom_id and [('category_id', '=', categ_uom_id)] or [('id', '=', False)]" />
+						</group>
+						<group colspan="2" col="2">
+						    <field name="routing_id" required="1" domain="bom_id and [('bom_ids', '=', bom_id)] or [('id', '=', False)]" />
+						    <field name="categ_uom_id" invisible="1" />
+						</group>
+					</group>
+					<notebook colspan="4">
+                        <page string="Results">
+						    <field name="line_ids" nolabel="1" colspan="4" readonly="1" >
+						        <tree string="Lines" >
+						            <field name="product_id" />
+						            <field name="price_qty" />
+						            <field name="uom_id" />
+						            <field name="bom_id" />
+						            <field name="unit_price_bom" />
+						            <field name="routing_id" />
+						            <field name="unit_price_routing" />
+						            <field name="total_unit_price" />
+						        </tree>
+						    </field>
+						</page>
+						<page string="Options">
+                            <field name="option_ids" colspan="4" nolabel="1" />
+                        </page>
+			        </notebook>
+					<footer>
+						<button string="Cancel" class="oe_link" special="cancel" />
+					</footer>
+				</form>
+			</field>
+		</record>
+
+		<record model="ir.actions.act_window" id="action_wiz_cost_simulation">
+			<field name="name">Cost simulation</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="res_model">wiz.cost.simulation</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">form</field>
+			<field name="target">new</field>
+		</record>
+		
+	</data>
+</openerp>

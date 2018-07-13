@@ -1,0 +1,160 @@
+<!doctype html>
+<head>
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8"/>
+	<title>Sandbox</title>
+	<link rel="stylesheet" href="/website/static/src/less/web.assets_backend/import_bootstrap.less.css" type="text/css"/>
+	<script type="text/javascript" src="/web/static/lib/jquery/jquery.js"></script>
+	<script type="text/javascript" src="/web/static/lib/moment/moment.js"></script>
+	<script type="text/javascript" src="/web/static/lib/jquery/jquery.browser.js"></script>
+	<script type="text/javascript" src="/web/static/lib/jquery.blockUI/jquery.blockUI.js"></script>
+	<script type="text/javascript" src="/web/static/lib/underscore/underscore.js"></script>
+	<script type="text/javascript" src="/web/static/lib/underscore.string/lib/underscore.string.js"></script>
+	<script type="text/javascript" src="/web/static/lib/backbone/backbone.js"></script>
+	<script type="text/javascript" src="/web/static/lib/jquery.ba-bbq/jquery.ba-bbq.js"></script>
+	<script type="text/javascript" src="/web/static/lib/qweb/qweb2.js"></script>
+	<script type="text/javascript" src="/web/static/src/js/boot.js"></script>
+	<script type="text/javascript" src="/web/static/src/js/framework/class.js"></script>
+	<script type="text/javascript" src="/web/static/src/js/framework/translation.js"></script>
+	<script type="text/javascript" src="/web/static/src/js/framework/ajax.js"></script>
+	<script type="text/javascript" src="/web/static/src/js/framework/time.js"></script>
+	<script type="text/javascript" src="/web/static/src/js/framework/mixins.js"></script>
+	<script type="text/javascript" src="/web/static/src/js/framework/registry.js"></script>
+	<script type="text/javascript" src="/web/static/src/js/framework/session.js"></script>
+	<script type="text/javascript" src="/web/static/src/js/framework/session_instance.js"></script>
+	<script type="text/javascript" src="/web/static/src/js/framework/data_model.js"></script>
+	<script type="text/javascript" src="/web/static/src/js/framework/model.js"></script>
+	<script type="text/javascript" src="/web/static/src/js/framework/utils.js"></script>
+	<script type="text/javascript" src="/web/static/src/js/framework/core.js"></script>
+	<script type="text/javascript" src="/web/static/src/js/framework/data.js"></script>
+	<script type="text/javascript" src="/web/static/lib/py.js/lib/py.js"></script>
+	<script type="text/javascript" src="/web/static/src/js/framework/pyeval.js"></script>
+	<script type="text/javascript" src="/web/static/lib/underscore.string/lib/underscore.string.js"></script>
+	<script src="/planning/static/src/js/dhtmlxscheduler.js" type="text/javascript" charset="utf-8"></script>
+	<script src="/planning/static/src/js/ext/dhtmlxscheduler_limit.js"></script>
+	<script src="/planning/static/src/js/ext/dhtmlxscheduler_timeline.js"></script>
+	<script src="/planning/static/src/js/ext/dhtmlxscheduler_readonly.js"></script>
+	<script src="/planning/static/src/js/ext/dhtmlxscheduler_treetimeline.js"></script>
+	<script src="/planning/static/src/js/ext/dhtmlxscheduler_url.js"></script>
+	<script src="/planning/static/src/js/ext/dhtmlxscheduler_multisection.js"></script>
+	<script src="/planning/static/src/js/ext/dhtmlxscheduler_readonly.js"></script>
+	<script src="/planning/static/src/js/ext/dhtmlxscheduler_tooltip.js"></script>
+	<script src="/planning/static/src/js/planning.js"></script>
+	<script src="/sandbox/static/src/js/sandbox.js"></script>
+	<script src="/planning/static/src/js/context.js"></script>
+	<link rel="stylesheet" href="/planning/static/src/css/dhtmlxscheduler.css" type="text/css" media="screen" charset="utf-8"/>
+	<link rel="stylesheet" href="/planning/static/src/css/planning.css" type="text/css" media="screen" charset="utf-8"/>
+	<link rel="stylesheet" href="/planning/static/src/css/planning.css" type="text/css" media="screen" title="no title"
+		charset="utf-8" />
+	<script type="text/javascript" src="/web/static/lib/bootstrap/js/dropdown.js"></script>
+	<script src="/planning/static/lib/js/bootstrap-select.min.js"></script>
+	<link rel="stylesheet" href="/planning/static/lib/css/bootstrap-select.min.css" type="text/css" media="screen" charset="utf-8"/>
+</head>
+<body>
+	<script type="text/template" id="body_t">
+		<div id="planning_header" class="container-fluid">
+			
+			<div class="row">
+				<div class="form_group col-md-4 col-lg-3">
+					<label for="areas" class="col-sm-4 control-label"><%= _t('Area :') %></label>
+					<div class="col-sm-8">
+						<select name="first_resource_id.area_id" id="areas" class="filter form-control">
+							<option value="">--</option>
+						</select>
+					</div>
+				</div>
+				<div class="form-group col-md-4 col-lg-3">
+					<label for="sales" class="col-sm-4 control-label"><%= _t('Sale :') %></label>
+					<div class="col-sm-8">
+						<input id="sales" class="form-control highlight"/>
+					</div>
+				</div>
+				<div class="form-group col-md-4 col-lg-3">
+					<label for="manufacturing_orders" class="col-sm-4 control-label"><%= _t('Manufacturing order :') %></label>
+					<div class="col-sm-8">
+						<input id="manufacturing_orders" class="form-control highlight"/>
+					</div>
+				</div>
+				<div class="form-group  col-md-4 col-lg-3">
+					<label for="final_products" class="col-sm-4 control-label"><%= _t('Final product :') %></label>
+					<div class="col-sm-8">
+						<input id="final_products" class="form-control highlight"/>
+					</div>
+				</div>
+				<div class="form-group  col-md-4 col-lg-3">
+					<label for="day_selector" class="col-sm-4 control-label"><%= _t('Date :') %></label>
+					<div class="col-sm-8">
+						<input id="day_selector" class="form-control" type="date"/>
+					</div>
+				</div>
+				<div class="form-group  col-md-4 col-lg-3">
+					<label for="resource_select" class="col-sm-4 control-label"><%= _t('Resources :') %></label>
+					<select class="selectpicker col-sm-5" multiple="1" id="resources_select">
+						
+					</select>
+					<button id="filter" class="btn btn-default col-sm-2"><%= _t('Filtre') %></button>
+				</div>
+				<div class=" col-md-4 col-lg-3">
+					<button id="clean-arrows" class="btn btn-default  col-sm-4"><%= _t('Clean Arrows') %></button>
+					<label class="col-sm-2"><%= _t('Day :') %></label>
+					<button id="prev_day" class="btn btn-default col-sm-2"><</button>
+					<button id="next_day" class="btn btn-default col-sm-2">></button>
+				</div>
+				<div class=" col-md-4 col-lg-3">
+					<button id="days" class="btn btn-default col-sm-3"><%= _t('Day') %></button>
+					<button id="weeks" class="btn btn-default col-sm-3"><%= _t('Week') %></button>
+					<button id="months" class="btn btn-default col-sm-3"><%= _t('Month') %></button>
+					<button id="3months" class="btn btn-default col-sm-3"><%= _t('3 Months') %></button>
+				</div>
+			</div>
+		</div>
+		<div id="planning_container">
+			<div id="scheduler" class="dhx_cal_container">
+				<div class="dhx_cal_navline">
+					<div class="dhx_cal_prev_button"></div>
+					<div class="dhx_cal_next_button"></div>
+					<div class="dhx_cal_today_button"></div>
+					<div class=" col-md-4 col-lg-3">
+						<button id="reset-sandbox" class="btn btn-default  col-sm-4"><%= _t('Reset') %></button>
+						<button style="margin-left:10px;" id="validate-sandbox" class="btn btn-default  col-sm-4"><%= _t('Validate') %></button>
+					</div>
+					<div class="dhx_cal_date"></div>
+				</div>
+				<div class="dhx_cal_header">
+				</div>
+				<div class="dhx_cal_data">
+				</div>
+			</div>
+		</div>
+		<div id="popup_calendar" class="modal-content">
+			<div class="modal-body">
+				<div class="form-group">
+					<label for="start_time"><%= _t('Start time :') %></label>
+					<input id="start_time"/>
+				</div>
+				<div class="form-group">
+					<label for="end_time"><%= _t('End time :') %></label>
+					<input id="end_time"/>
+				</div>
+				<div class="form-group">
+					<label for="duration"><%= _t('Duration :') %></label>
+					<input id="duration"/>
+				</div>
+				<div class="modal-footer">
+					<button id="calendar_apply_week" class="btn btn-default"><%= _t('Apply to week') %></button>
+					<button id="calendar_apply_day" class="btn btn-default"><%= _t('Apply to day') %></button>
+					<button id="calendar_cancel" class="btn btn-default"><%= _t('Cancel') %></button>
+				</div>
+			</div>
+		</div>
+		<div id="popup_workorder">
+			<button id="close_popup_workorder" class="close">×</button>
+			<iframe></iframe>
+		</div>
+	</script>
+	<script>
+		odoo.define('initSandbox',function(require){
+			var sandbox = require('sandbox');
+			sandbox.init();
+		});
+	</script>
+</body>

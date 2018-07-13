@@ -1,0 +1,1857 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* product
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 9.0c\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-06-27 16:21+0000\n"
+"PO-Revision-Date: 2017-06-27 16:21+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: product
+#: model:ir.model.fields,help:product.field_product_product_trigger_supply
+msgid "'On scheduler': When needed, the system take from the stock or wait until re-supplying. 'On demand': When needed, purchase or produce the product for the procurement request. 'On demand with stock': During the order, the system will substract the virtual quantity to the stock if needed. 'None':Select if you don't want automatic supplying proposition from the system. CAUTION: If 'None' is selected, the system does not make supply proposition even if it observes an insufficient need and stock. There is an out of stock risk."
+msgstr "'Sur planificateur': Quand il y a une demande, on prend du stock ou on attend jusqu'au prochain réapprovisionnement. 'A la demande': Quand il y a une demande, on achète ou on fabrique selon cette demande. 'A la demande en tenant compte du stock': Si cette case est cochée, lors de la commande on soustraira la quantité virtuelle en stock au besoin. 'Pas d'approvisionnement': Sélectionnez si vous ne souhaitez pas que le système fasse des propositions d'approvisionnement en automatique. ATTENTION : lorsque ce champs est coché, le système ne fait pas de proposition d'approvisionnement même s'il constate des besoins et un stock insuffisant. Il y a donc risque de tomber en rupture"
+
+#. module: product
+#: code:addons/product/product.py:338
+#, python-format
+msgid "A normal category can't have children"
+msgstr "Une catégorie de type normal ne peut pas avoir de sous catégories"
+
+#. module: product
+#: code:addons/product/product.py:336
+#, python-format
+msgid "A view category can't have products attached to it"
+msgstr "Une catégorie de type vue ne peut pas avoir de produits attachés"
+
+#. module: product
+#: model:ir.model.fields,help:product.field_product_category_type
+msgid "A view type is a virtual category used to create a hierarchical structures for your categories.\n"
+"                                                                   \n"
+"* You cannot select a view type in products."
+msgstr "Un type vue est une catégorie 'virtuelle', utilisée pour créer une structure hiérarchique pour vos catégories.\n"
+"                                                                   \n"
+"* Vous ne pouvez sélectionner une catégorie de type vue dans les produits."
+
+#. module: product
+#: model:ir.ui.view,arch_db:product.view_form_product
+msgid "Actions"
+msgstr "Actions"
+
+#. module: product
+#: model:ir.model.fields,field_description:product.field_product_product_active
+#: model:ir.model.fields,field_description:product.field_product_uom_active
+msgid "Active"
+msgstr "Actif"
+
+#. module: product
+#: model:ir.ui.view,arch_db:product.view_form_product
+msgid "Administration"
+msgstr "Administration"
+
+#. module: product
+#: model:res.groups,name:product.product_responsible
+msgid "Administrator"
+msgstr "Administrateur"
+
+#. module: product
+#: code:addons/product/product.py:1236
+#: code:addons/product/product.py:1469
+#, python-format
+msgid "All"
+msgstr "Tous"
+
+#. module: product
+#: model:ir.ui.menu,name:product.menu_quality_analyse_id
+msgid "Analyse/Various"
+msgstr "Analyse/Divers"
+
+#. module: product
+#: model:ir.ui.view,arch_db:product.product_category_form_view
+#: model:ir.ui.view,arch_db:product.view_form_product
+msgid "Analysis"
+msgstr "Analyses"
+
+#. module: product
+#: model:res.groups,name:product.group_menu_analysis_quality
+msgid "Analysis quality use menu"
+msgstr "Utilisation menu analyse qualité"
+
+#. module: product
+#: code:addons/product/product.py:518
+#, python-format
+msgid "Automatic"
+msgstr "Automatique"
+
+#. module: product
+#: model:ir.ui.view,arch_db:product.view_form_product
+msgid "Be sure to check documents related to the product (purchases, sales, ...)"
+msgstr "Attention: verifiez bien les documents liés au produit (achats, ventes, ...)"
+
+#. module: product
+#: code:addons/product/product.py:550
+#, python-format
+msgid "Best before"
+msgstr "DLUO"
+
+#. module: product
+#: model:ir.model.fields,field_description:product.field_product_uom_factor_inv
+msgid "Bigger Ratio"
+msgstr "Bigger Ratio"
+
+#. module: product
+#: code:addons/product/product.py:92
+#, python-format
+msgid "Bigger than the reference Unit of Measure"
+msgstr "Plus grand que l'unité de mesure de référence"
+
+#. module: product
+#: code:addons/product/product.py:495
+#, python-format
+msgid "Buy"
+msgstr "Acheter"
+
+#. module: product
+#: model:ir.model.fields,field_description:product.field_product_product_produce_ok
+msgid "Can be produced"
+msgstr "Peut être produit"
+
+#. module: product
+#: model:ir.model.fields,field_description:product.field_product_product_purchase_ok
+msgid "Can be purchased"
+msgstr "Peut être acheté"
+
+#. module: product
+#: model:ir.model.fields,field_description:product.field_product_product_sale_ok
+msgid "Can be sold"
+msgstr "Peut être vendu"
+
+#. module: product
+#: model:ir.ui.view,arch_db:product.view_form_change_change_product_uom
+#: model:ir.ui.view,arch_db:product.view_form_change_dual_unit
+msgid "Cancel"
+msgstr "Annuler"
+
+#. module: product
+#: model:ir.model.fields,field_description:product.field_product_product_categ_id
+#: model:ir.model.fields,field_description:product.field_product_uom_category_id_2409
+#: model:ir.model.fields,field_description:product.field_purchase_property_category_id_2582
+#: model:ir.model.fields,field_description:product.field_quality_control_product_category_id
+#: model:ir.ui.view,arch_db:product.view_search_product
+msgid "Category"
+msgstr "Catégorie"
+
+#. module: product
+#: model:ir.ui.view,arch_db:product.product_category_form_view
+msgid "Category Type"
+msgstr "Type de catégorie"
+
+#. module: product
+#: model:ir.ui.view,arch_db:product.product_category_form_view
+msgid "Category name"
+msgstr "Nom de la catégorie"
+
+#. module: product
+#: model:ir.actions.act_window,name:product.product_category_structure_action
+#: model:ir.ui.menu,name:product.menu_product_category_structure
+#: model:ir.ui.view,arch_db:product.product_category_structure_view
+msgid "Category structure"
+msgstr "Structure des catégories"
+
+#. module: product
+#: model:ir.actions.act_window,name:product.action_change_dual_unit
+msgid "Change dual unit"
+msgstr "Changer double unité"
+
+#. module: product
+#: model:ir.actions.act_window,name:product.action_change_product_uom
+msgid "Change product uom"
+msgstr "Changer l'udm du produit"
+
+#. module: product
+#: model:ir.ui.view,arch_db:product.view_form_change_change_product_uom
+#: model:ir.ui.view,arch_db:product.view_form_change_dual_unit
+msgid "Change the product uom"
+msgstr "Changer l'udm du produit"
+
+#. module: product
+#: model:ir.model.fields,field_description:product.field_change_product_uom_change_unit
+msgid "Change unit of measure"
+msgstr "Changer l'unité de mesure"
+
+#. module: product
+#: model:ir.ui.view,arch_db:product.view_form_change_change_product_uom
+#: model:ir.ui.view,arch_db:product.view_form_change_dual_unit
+msgid "Change units of measure"
+msgstr "Modifier les unités de mesure"
+
+#. module: product
+#: model:ir.model.fields,help:product.field_product_product_dual_unit
+msgid "Check if you want manage a dual unit for this product"
+msgstr "A cocher si l'on souhaite gérer une double unité pour ce produit"
+
+#. module: product
+#: model:ir.model.fields,field_description:product.field_product_category_child_ids
+msgid "Child categories"
+msgstr "Catégories enfant"
+
+#. module: product
+#: model:ir.model.fields,field_description:product.field_product_product_code
+msgid "Code"
+msgstr "Code"
+
+#. module: product
+#: model:ir.model.fields,field_description:product.field_product_product_company_id
+msgid "Company"
+msgstr "Société"
+
+#. module: product
+#: model:ir.model.fields,field_description:product.field_product_category_display_name
+msgid "Complete Path"
+msgstr "Chemin complet"
+
+#. module: product
+#: model:ir.ui.menu,name:product.menu_quality_conf
+msgid "Configuration"
+msgstr "Configuration"
+
+#. module: product
+#: model:res.groups,name:product.purchase_properties
+msgid "Configurator properties"
+msgstr "Configuration des propriétés"
+
+#. module: product
+#: model:ir.model.fields,field_description:product.field_product_product_conformity_certificate
+msgid "Conformity certificate"
+msgstr "Certificat de conformité"
+
+#. module: product
+#: model:ir.model.fields,field_description:product.field_quality_control_product_control_id
+msgid "Control"
+msgstr "Contrôle"
+
+#. module: product
+#: model:ir.ui.view,arch_db:product.view_form_quality_control_id
+msgid "Controls"
+msgstr "Contrôles"
+
+#. module: product
+#: model:ir.model.fields,field_description:product.field_quality_control_control_value_ids
+msgid "Controls values"
+msgstr "Valeurs de contrôles"
+
+#. module: product
+#: code:addons/product/product.py:176
+#, python-format
+msgid "Conversion from Product UoM %s to Default UoM %s is not possible as they both belong to different Category!."
+msgstr "La conversion d'unité de mesure (UdM) %s dans l'UdM par défaut %s n'est pas possible car elles appartiennent à deux catégories différentes !"
+
+#. module: product
+#: model:ir.ui.view,arch_db:product.view_form_change_change_product_uom
+msgid "Copy other data"
+msgstr "Copier d'autres données"
+
+#. module: product
+#: model:ir.ui.view,arch_db:product.view_form_change_change_product_uom
+msgid "Copy the product"
+msgstr "Copier le produit"
+
+#. module: product
+#: model:ir.model.fields,field_description:product.field_change_dual_unit_create_uid
+#: model:ir.model.fields,field_description:product.field_change_product_uom_create_uid
+#: model:ir.model.fields,field_description:product.field_parameter_dimension_create_uid
+#: model:ir.model.fields,field_description:product.field_parameter_dimension_type_create_uid
+#: model:ir.model.fields,field_description:product.field_product_category_create_uid
+#: model:ir.model.fields,field_description:product.field_product_packaging_create_uid
+#: model:ir.model.fields,field_description:product.field_product_product_create_uid
+#: model:ir.model.fields,field_description:product.field_product_sizing_create_uid
+#: model:ir.model.fields,field_description:product.field_product_template_create_uid
+#: model:ir.model.fields,field_description:product.field_product_uom_category_create_uid
+#: model:ir.model.fields,field_description:product.field_product_uom_create_uid
+#: model:ir.model.fields,field_description:product.field_product_version_historical_create_uid
+#: model:ir.model.fields,field_description:product.field_purchase_property_category_create_uid
+#: model:ir.model.fields,field_description:product.field_purchase_property_create_uid
+#: model:ir.model.fields,field_description:product.field_quality_control_create_uid
+#: model:ir.model.fields,field_description:product.field_quality_control_product_create_uid
+#: model:ir.model.fields,field_description:product.field_quality_control_value_create_uid
+msgid "Created by"
+msgstr "Créé par"
+
+#. module: product
+#: model:ir.model.fields,field_description:product.field_change_dual_unit_create_date
+#: model:ir.model.fields,field_description:product.field_change_product_uom_create_date
+#: model:ir.model.fields,field_description:product.field_parameter_dimension_create_date
+#: model:ir.model.fields,field_description:product.field_parameter_dimension_type_create_date
+#: model:ir.model.fields,field_description:product.field_product_category_create_date
+#: model:ir.model.fields,field_description:product.field_product_packaging_create_date
+#: model:ir.model.fields,field_description:product.field_product_product_create_date
+#: model:ir.model.fields,field_description:product.field_product_sizing_create_date
+#: model:ir.model.fields,field_description:product.field_product_template_create_date
+#: model:ir.model.fields,field_description:product.field_product_uom_category_create_date
+#: model:ir.model.fields,field_description:product.field_product_uom_create_date
+#: model:ir.model.fields,field_description:product.field_purchase_property_category_create_date
+#: model:ir.model.fields,field_description:product.field_purchase_property_create_date
+#: model:ir.model.fields,field_description:product.field_quality_control_create_date
+#: model:ir.model.fields,field_description:product.field_quality_control_product_create_date
+#: model:ir.model.fields,field_description:product.field_quality_control_value_create_date
+msgid "Created on"
+msgstr "Créé le"
+
+#. module: product
+#: model:ir.model.fields,field_description:product.field_product_product_customer_material
+msgid "Customer material"
+msgstr "Matière client"
+
+#. module: product
+#: model:res.groups,name:product.group_menu_customer_quality
+msgid "Customer quality use menu"
+msgstr "Utilisation menu qualité client"
+
+#. module: product
+#: model:ir.ui.menu,name:product.menu_quality_customer_id
+msgid "Customers"
+msgstr "Clients"
+
+#. module: product
+#: model:ir.model.fields,field_description:product.field_quality_control_product_date_next_frequency
+msgid "Date next frequency"
+msgstr "Date prochaine fréquence"
+
+#. module: product
+#: code:addons/product/product.py:1227
+#: model:ir.model.fields,field_description:product.field_product_product_expiry_day
+#: model:ir.model.fields,field_description:product.field_product_product_removal_day
+#, python-format
+msgid "Day"
+msgstr "Jour"
+
+#. module: product
+#: model:product.uom,name:product.product_uom_day
+msgid "Day(s)"
+msgstr "Day(s)"
+
+#. module: product
+#: model:ir.model.fields,field_description:product.field_product_sizing_depth
+msgid "Depth (in cm)"
+msgstr "Profondeur (en cm)"
+
+#. module: product
+#: model:ir.model.fields,field_description:product.field_quality_control_description
+#: model:ir.ui.view,arch_db:product.view_form_quality_control_id
+msgid "Description"
+msgstr "Description"
+
+#. module: product
+#: model:ir.model.fields,help:product.field_product_product_purchase_ok
+msgid "Determine if the product is visible in the products list during the product choice in a purchase order."
+msgstr "Détermine si le produit est visible dans la liste lors du choix du produit sur une ligne d'un bon de commande."
+
+#. module: product
+#: model:ir.model.fields,help:product.field_product_product_sale_ok
+msgid "Determine if the product is visible in the products list during the product choice in a sale order."
+msgstr "Détermine si le produit est visible dans la liste lors du choix du produit sur une ligne de commande de vente."
+
+#. module: product
+#: model:workflow.display.state,label:product.product_display_state_dev
+msgid "Dev"
+msgstr "Développement"
+
+#. module: product
+#: code:addons/product/product.py:478
+#, python-format
+msgid "Development"
+msgstr "Développement"
+
+#. module: product
+#: model:ir.model.fields,field_description:product.field_change_dual_unit_display_name
+#: model:ir.model.fields,field_description:product.field_change_product_uom_display_name
+#: model:ir.model.fields,field_description:product.field_parameter_dimension_display_name
+#: model:ir.model.fields,field_description:product.field_parameter_dimension_type_display_name
+#: model:ir.model.fields,field_description:product.field_product_packaging_display_name
+#: model:ir.model.fields,field_description:product.field_product_product_display_name
+#: model:ir.model.fields,field_description:product.field_product_sizing_display_name
+#: model:ir.model.fields,field_description:product.field_product_template_display_name
+#: model:ir.model.fields,field_description:product.field_product_uom_category_display_name
+#: model:ir.model.fields,field_description:product.field_product_uom_display_name
+#: model:ir.model.fields,field_description:product.field_purchase_property_category_display_name
+#: model:ir.model.fields,field_description:product.field_purchase_property_display_name
+#: model:ir.model.fields,field_description:product.field_quality_control_display_name
+#: model:ir.model.fields,field_description:product.field_quality_control_product_display_name
+#: model:ir.model.fields,field_description:product.field_quality_control_value_display_name
+msgid "Display Name"
+msgstr "Nom affiché"
+
+#. module: product
+#: model:ir.ui.view,arch_db:product.view_form_product
+msgid "Diverse"
+msgstr "Divers"
+
+#. module: product
+#: model:ir.model,name:product.model_document_openprod
+msgid "Documents Openprod"
+msgstr "Documents Openprod"
+
+#. module: product
+#: model:ir.model.fields,field_description:product.field_change_dual_unit_dual_unit
+#: model:ir.model.fields,field_description:product.field_change_product_uom_dual_unit
+#: model:ir.model.fields,field_description:product.field_product_product_dual_unit
+msgid "Dual unit"
+msgstr "Double unité"
+
+#. module: product
+#: model:ir.model.fields,field_description:product.field_change_dual_unit_dual_unit_type
+#: model:ir.model.fields,field_description:product.field_change_product_uom_dual_unit_type
+#: model:ir.model.fields,field_description:product.field_product_product_dual_unit_type
+msgid "Dual unit type"
+msgstr "Type double unité"
+
+#. module: product
+#: model:ir.ui.view,arch_db:product.view_form_product
+msgid "Duplicate"
+msgstr "Dupliquer"
+
+#. module: product
+#: code:addons/product/product.py:1217
+#, python-format
+msgid "Each declaration"
+msgstr "À chaque déclaration"
+
+#. module: product
+#: code:addons/product/product.py:480
+#: model:workflow.display.state,label:product.product_display_state_endlife
+#: model:workflow.transition,button_label:product.product_lifeserie_to_endlife
+#, python-format
+msgid "End life"
+msgstr "Fin de vie"
+
+#. module: product
+#: code:addons/product/product.py:1312
+#: code:addons/product/product.py:1386
+#: code:addons/product/product.py:1395
+#: code:addons/product/product.py:1513
+#, python-format
+msgid "Error"
+msgstr "Erreur"
+
+#. module: product
+#: code:addons/product/product.py:323
+#, python-format
+msgid "Error ! You cannot change the type in 'view' if some products are links to this category ."
+msgstr "Erreur ! Vous ne pouvez changer le type en 'vue' si des produits sont attachés à cette catégorie."
+
+#. module: product
+#: code:addons/product/product.py:299
+#, python-format
+msgid "Error ! You cannot create recursive categories."
+msgstr "Erreur ! Vous ne pouvez créer de catégories récursives."
+
+#. module: product
+#: model:ir.model.fields,field_description:product.field_product_product_expiry_type
+msgid "Expiry and removal date type"
+msgstr "Type de date de péremption et de retrait"
+
+#. module: product
+#: model:ir.ui.view,arch_db:product.view_form_product
+msgid "Expiry date"
+msgstr "Date de péremption"
+
+#. module: product
+#: model:ir.ui.view,arch_db:product.view_search_product
+msgid "Filter"
+msgstr "Filtre"
+
+#. module: product
+#: model:ir.ui.view,arch_db:product.view_search_product
+msgid "Filter by state"
+msgstr "Filtre par état"
+
+#. module: product
+#: code:addons/product/wizard/change_dual_unit.py:18
+#: code:addons/product/wizard/change_product_uom.py:18
+#: selection:product.product,dual_unit_type:0
+#, python-format
+msgid "Fixed"
+msgstr "Fixe"
+
+#. module: product
+#: model:ir.model.fields,field_description:product.field_product_product_track_label
+msgid "Follow with labels"
+msgstr "Suivre avec des étiquettes"
+
+#. module: product
+#: code:addons/product/product.py:1248
+#: code:addons/product/product.py:1256
+#: model:ir.model.fields,field_description:product.field_quality_control_formula
+#, python-format
+msgid "Formula"
+msgstr "Formule"
+
+#. module: product
+#: model:ir.model.fields,field_description:product.field_quality_control_formula_numeric_max
+msgid "Formula max"
+msgstr "Formule max"
+
+#. module: product
+#: model:ir.model.fields,field_description:product.field_quality_control_formula_numeric_min
+msgid "Formula min"
+msgstr "Formule min"
+
+#. module: product
+#: model:ir.model.fields,field_description:product.field_quality_control_product_frequency_value
+msgid "Frequency Value"
+msgstr "Valeur de la fréquence"
+
+#. module: product
+#: model:ir.model.fields,field_description:product.field_quality_control_frequency_manual
+msgid "Frequency manual"
+msgstr "Fréquence manuelle"
+
+#. module: product
+#: model:ir.model.fields,field_description:product.field_quality_control_frequency_mode
+msgid "Frequency mode"
+msgstr "Mode de fréquence"
+
+#. module: product
+#: model:ir.model.fields,field_description:product.field_quality_control_frequency_type
+msgid "Frequency type"
+msgstr "Type de fréquence"
+
+#. module: product
+#: model:ir.model.fields,field_description:product.field_product_product_gross_weight
+msgid "Gross weight"
+msgstr "Poids brut"
+
+#. module: product
+#: model:ir.ui.view,arch_db:product.view_search_product
+msgid "Group By"
+msgstr "Regrouper par"
+
+#. module: product
+#: model:ir.ui.view,arch_db:product.view_search_product
+msgid "Group By Manager"
+msgstr "Grouper par responsable"
+
+#. module: product
+#: model:ir.ui.view,arch_db:product.product_template_search_view
+msgid "Group by..."
+msgstr "Regrouper par..."
+
+#. module: product
+#: model:ir.model.fields,field_description:product.field_product_product_guarantee
+msgid "Guarantee"
+msgstr "Garantie"
+
+#. module: product
+#: model:ir.model.fields,field_description:product.field_product_product_guarantee_unity_id
+msgid "Guarantee unity"
+msgstr "Garantie unitaire"
+
+#. module: product
+#: model:ir.model.fields,field_description:product.field_product_sizing_height
+msgid "Height (in cm)"
+msgstr "Hauteur (en cm)"
+
+#. module: product
+#: model:ir.actions.act_window,help:product.product_category_action
+msgid "Here is a list of all your products classified by category. You\n"
+"					can click a category to get the list of all products linked to\n"
+"					this category or to a child of this category."
+msgstr "Vous pouvez trouvez ici une liste de tous les produits classés par catégorie.\n"
+"					Vous pouvez cliquer sur une catégorie pour avoir la liste de tous les\n"
+"					produits liés à cette catégorie ou à un enfant de cette catégorie."
+
+#. module: product
+#: model:ir.ui.view,arch_db:product.view_form_parameter_dimension_type
+msgid "Here is an example of the formula 14 + 6 * 3 - value.        \"Value\" is the only parameter that you can use and which corresponds to the value of the parameter that has this type of parameter"
+msgstr "Voici un expemple de formule 14 + 6 * 3 - value. \n"
+"		                                \"Value\" étant le seul paramètre que vous pouvez utiliser et qui correspond à la valeur du paramétre qui aura ce type de paramètre.\\br/>"
+
+#. module: product
+#: model:ir.model.fields,help:product.field_parameter_dimension_type_price_formula
+msgid "Here is an example of the formula 14 + 6 * 3 - value. 'Value' is the only parameter that you can use and which corresponds to the value of the parameter that has this type of parameter"
+msgstr "Voici un expemple de formule 14 + 6 * 3 - value . \"value\" étant le seul paramètre que vous pouvez utiliser et qui correspond à la valeur du paramétre qui aura ce type de paramètre."
+
+#. module: product
+#: code:addons/product/product.py:1226
+#, python-format
+msgid "Hour"
+msgstr "Heure"
+
+#. module: product
+#: model:product.uom,name:product.product_uom_hour
+msgid "Hour(s)"
+msgstr "Heure(s)"
+
+#. module: product
+#: model:ir.model.fields,help:product.field_product_uom_factor
+msgid "How much bigger or smaller this unit is compared to the reference Unit of Measure for this category:\n"
+" 1 * (reference unit) = ratio * (this unit)"
+msgstr "Combien de fois cette unité est plus petite ou plus grande que l'unité de mesure de référence de cette catégorie :1 x (unité de référence) = ratio x (cette unité)"
+
+#. module: product
+#: model:ir.model.fields,field_description:product.field_change_dual_unit_id
+#: model:ir.model.fields,field_description:product.field_change_product_uom_id
+#: model:ir.model.fields,field_description:product.field_parameter_dimension_id
+#: model:ir.model.fields,field_description:product.field_parameter_dimension_type_id
+#: model:ir.model.fields,field_description:product.field_product_category_id
+#: model:ir.model.fields,field_description:product.field_product_packaging_id
+#: model:ir.model.fields,field_description:product.field_product_product_id
+#: model:ir.model.fields,field_description:product.field_product_sizing_id
+#: model:ir.model.fields,field_description:product.field_product_template_id
+#: model:ir.model.fields,field_description:product.field_product_uom_category_id
+#: model:ir.model.fields,field_description:product.field_product_uom_id
+#: model:ir.model.fields,field_description:product.field_purchase_property_category_id
+#: model:ir.model.fields,field_description:product.field_purchase_property_id
+#: model:ir.model.fields,field_description:product.field_quality_control_id
+#: model:ir.model.fields,field_description:product.field_quality_control_product_id
+#: model:ir.model.fields,field_description:product.field_quality_control_value_id
+msgid "ID"
+msgstr "ID"
+
+#. module: product
+#: model:ir.model.fields,help:product.field_product_product_manage_service_delivery
+msgid "If checked, there will be a delivery of service during the order"
+msgstr "Si cochée, il y aura une livraison de service pendant la commande"
+
+#. module: product
+#: model:ir.model.fields,help:product.field_product_product_manage_service_receipt
+msgid "If checked, there will be a reception of service during the order"
+msgstr "Si cette case est cochée, lors de la commande on fera une réception de service"
+
+#. module: product
+#: model:ir.model.fields,help:product.field_quality_control_formula
+#: model:ir.model.fields,help:product.field_quality_control_formula_numeric_max
+#: model:ir.model.fields,help:product.field_quality_control_formula_numeric_min
+msgid "If the type is formula you can put in the formula of defined parameters\n"
+"Here is the unit time\n"
+"The default parameter values are taken from the product file (Use the formula param[ 'parameter name'])\n"
+"example:\n"
+"    220 * 12/11\n"
+"    param['width1'] / param['length1'] + 5"
+msgstr "Si le type est formule vous pouvez mettre dans la formule, des paramètres définis\n"
+"Ici c'est le temps unitaire\n"
+"Les valeurs des paramètres par défaut sont prises à partir de la fiche du produit de la première nomenclature ou du produit fabriqué (Utiliser dans la formule param['nom du paramètre'])\n"
+"exemple:\n"
+"    220 * 12/11\n"
+"    param['width1'] / param['length1'] + 5"
+
+#. module: product
+#: model:ir.model.fields,help:product.field_product_product_track_label
+msgid "If this field is checked, no move without UC label can be completed"
+msgstr "Si ce champ est coché, aucun move sans étiquette UC ne peut être complété"
+
+#. module: product
+#: code:addons/product/product.py:656
+#, python-format
+msgid "If your product has an expiry date, you must track it with labels"
+msgstr "Si votre produit a une date d'expiration, vous devez le suivre avec des étiquettes"
+
+#. module: product
+#: code:addons/product/product.py:1054
+#, python-format
+msgid "Impossible to change dual unit type. Please contact an administrator"
+msgstr "Impossible de changer la double unité. Merci de contacter un administrateur"
+
+#. module: product
+#: sql_constraint:product.product:0
+msgid "Impossible to set traceability by label and by lot on a same product"
+msgstr "Impossible d'activer les suivis par étiquette et par lot pour un produit"
+
+#. module: product
+#: model:ir.ui.view,arch_db:product.view_search_product
+msgid "In development product"
+msgstr "Produit en développement"
+
+#. module: product
+#: model:ir.model.fields,field_description:product.field_quality_control_product_int_next_frequency
+msgid "Integer next frequency"
+msgstr "Décimale prochaine fréquence"
+
+#. module: product
+#: model:ir.model.fields,field_description:product.field_product_product_internal_plan_ids
+#: model:ir.ui.view,arch_db:product.view_form_product
+msgid "Internal documents"
+msgstr "Documents internes"
+
+#. module: product
+msgid "Internal documents for product"
+msgstr "Documents internes pour le produit"
+
+#. module: product
+#: model:ir.model.fields,field_description:product.field_product_product_internal_note
+#: model:ir.ui.view,arch_db:product.view_form_product
+msgid "Internal note"
+msgstr "Note interne"
+
+#. module: product
+#: model:res.groups,name:product.group_menu_internal_quality
+msgid "Internal quality use menu"
+msgstr "Utilisation menu qualité interne"
+
+#. module: product
+#: code:addons/product/product.py:1220
+#, python-format
+msgid "Label"
+msgstr "Etiquette"
+
+#. module: product
+#: model:ir.ui.view,arch_db:product.view_form_product
+msgid "Labels"
+msgstr "Étiquettes"
+
+#. module: product
+#: model:ir.model.fields,field_description:product.field_change_dual_unit___last_update
+#: model:ir.model.fields,field_description:product.field_change_product_uom___last_update
+#: model:ir.model.fields,field_description:product.field_parameter_dimension___last_update
+#: model:ir.model.fields,field_description:product.field_parameter_dimension_type___last_update
+#: model:ir.model.fields,field_description:product.field_product_category___last_update
+#: model:ir.model.fields,field_description:product.field_product_packaging___last_update
+#: model:ir.model.fields,field_description:product.field_product_product___last_update
+#: model:ir.model.fields,field_description:product.field_product_sizing___last_update
+#: model:ir.model.fields,field_description:product.field_product_template___last_update
+#: model:ir.model.fields,field_description:product.field_product_uom___last_update
+#: model:ir.model.fields,field_description:product.field_product_uom_category___last_update
+#: model:ir.model.fields,field_description:product.field_purchase_property___last_update
+#: model:ir.model.fields,field_description:product.field_purchase_property_category___last_update
+#: model:ir.model.fields,field_description:product.field_quality_control___last_update
+#: model:ir.model.fields,field_description:product.field_quality_control_product___last_update
+#: model:ir.model.fields,field_description:product.field_quality_control_value___last_update
+msgid "Last Modified on"
+msgstr "Dernière modification le"
+
+#. module: product
+#: model:ir.model.fields,field_description:product.field_change_dual_unit_write_uid
+#: model:ir.model.fields,field_description:product.field_change_product_uom_write_uid
+#: model:ir.model.fields,field_description:product.field_parameter_dimension_type_write_uid
+#: model:ir.model.fields,field_description:product.field_parameter_dimension_write_uid
+#: model:ir.model.fields,field_description:product.field_product_category_write_uid
+#: model:ir.model.fields,field_description:product.field_product_packaging_write_uid
+#: model:ir.model.fields,field_description:product.field_product_product_write_uid
+#: model:ir.model.fields,field_description:product.field_product_sizing_write_uid
+#: model:ir.model.fields,field_description:product.field_product_template_write_uid
+#: model:ir.model.fields,field_description:product.field_product_uom_category_write_uid
+#: model:ir.model.fields,field_description:product.field_product_uom_write_uid
+#: model:ir.model.fields,field_description:product.field_purchase_property_category_write_uid
+#: model:ir.model.fields,field_description:product.field_purchase_property_write_uid
+#: model:ir.model.fields,field_description:product.field_quality_control_product_write_uid
+#: model:ir.model.fields,field_description:product.field_quality_control_value_write_uid
+#: model:ir.model.fields,field_description:product.field_quality_control_write_uid
+msgid "Last Updated by"
+msgstr "Dernière mise à jour par"
+
+#. module: product
+#: model:ir.model.fields,field_description:product.field_change_dual_unit_write_date
+#: model:ir.model.fields,field_description:product.field_change_product_uom_write_date
+#: model:ir.model.fields,field_description:product.field_parameter_dimension_type_write_date
+#: model:ir.model.fields,field_description:product.field_parameter_dimension_write_date
+#: model:ir.model.fields,field_description:product.field_product_category_write_date
+#: model:ir.model.fields,field_description:product.field_product_packaging_write_date
+#: model:ir.model.fields,field_description:product.field_product_product_write_date
+#: model:ir.model.fields,field_description:product.field_product_sizing_write_date
+#: model:ir.model.fields,field_description:product.field_product_template_write_date
+#: model:ir.model.fields,field_description:product.field_product_uom_category_write_date
+#: model:ir.model.fields,field_description:product.field_product_uom_write_date
+#: model:ir.model.fields,field_description:product.field_purchase_property_category_write_date
+#: model:ir.model.fields,field_description:product.field_purchase_property_write_date
+#: model:ir.model.fields,field_description:product.field_quality_control_product_write_date
+#: model:ir.model.fields,field_description:product.field_quality_control_value_write_date
+#: model:ir.model.fields,field_description:product.field_quality_control_write_date
+msgid "Last Updated on"
+msgstr "Dernière mise à jour le"
+
+#. module: product
+#: model:ir.model.fields,field_description:product.field_product_packaging_layer_nb
+msgid "Layer number"
+msgstr "Nombre de couches"
+
+#. module: product
+#: model:product.uom.category,name:product.uom_categ_length
+msgid "Length / Distance"
+msgstr "Longueur / Distance"
+
+#. module: product
+#: code:addons/product/product.py:479
+#: model:workflow.display.state,label:product.product_display_state_lifeserie
+#: model:workflow.transition,button_label:product.product_dev_to_lifeserie
+#, python-format
+msgid "Life serie"
+msgstr "En vie"
+
+#. module: product
+#: model:ir.model.fields,field_description:product.field_product_product_limit_type
+msgid "Limit type"
+msgstr "Type de limite"
+
+#. module: product
+#: model:product.uom,name:product.product_uom_litre
+msgid "Liter(s)"
+msgstr "Litre(s)"
+
+#. module: product
+#: model:ir.ui.view,arch_db:product.view_form_product
+msgid "Lots"
+msgstr "Lots"
+
+#. module: product
+#: model:ir.model.fields,field_description:product.field_product_product_manage_service_delivery
+msgid "Manage deliveries"
+msgstr "Gérer les livraisons"
+
+#. module: product
+#: model:ir.model.fields,field_description:product.field_product_product_manage_service_receipt
+msgid "Manage receipts"
+msgstr "Gérer les réceptions"
+
+#. module: product
+#: model:ir.model.fields,field_description:product.field_product_uom_management_unit
+msgid "Management unit"
+msgstr "Unité de mesure"
+
+#. module: product
+#: model:res.groups,name:product.product_manager
+msgid "Manager"
+msgstr "Responsable"
+
+#. module: product
+#: code:addons/product/product.py:517
+#: code:addons/product/product.py:1247
+#: code:addons/product/product.py:1255
+#, python-format
+msgid "Manual"
+msgstr "Manuelle"
+
+#. module: product
+#: model:ir.model.fields,field_description:product.field_quality_control_max_manual
+msgid "Max"
+msgstr "Max"
+
+#. module: product
+#: model:ir.model.fields,field_description:product.field_quality_control_min_manual
+msgid "Min"
+msgstr "Min"
+
+#. module: product
+#: model:ir.model,name:product.model_change_dual_unit
+msgid "Modification of the product dual unit"
+msgstr "Modification de la double unité"
+
+#. module: product
+#: model:ir.model,name:product.model_change_product_uom
+msgid "Modification of the product uom"
+msgstr "Modification de l'udm du produit"
+
+#. module: product
+#: code:addons/product/product.py:1229
+#: model:ir.model.fields,field_description:product.field_product_product_expiry_month
+#: model:ir.model.fields,field_description:product.field_product_product_removal_month
+#, python-format
+msgid "Month"
+msgstr "Mois"
+
+#. module: product
+#: model:ir.model.fields,field_description:product.field_parameter_dimension_name
+#: model:ir.model.fields,field_description:product.field_parameter_dimension_type_name
+#: model:ir.model.fields,field_description:product.field_parameter_dimension_type_param_id
+#: model:ir.model.fields,field_description:product.field_product_category_name
+#: model:ir.model.fields,field_description:product.field_product_packaging_name
+#: model:ir.model.fields,field_description:product.field_product_product_name
+#: model:ir.model.fields,field_description:product.field_product_uom_category_name
+#: model:ir.model.fields,field_description:product.field_product_uom_name
+#: model:ir.model.fields,field_description:product.field_purchase_property_category_name
+#: model:ir.model.fields,field_description:product.field_purchase_property_name
+#: model:ir.model.fields,field_description:product.field_quality_control_name
+msgid "Name"
+msgstr "Nom"
+
+#. module: product
+#: model:ir.model.fields,field_description:product.field_product_product_net_weight
+msgid "Net weight"
+msgstr "Poids net"
+
+#. module: product
+#: code:addons/product/product.py:1057
+#, python-format
+msgid "New UoM must belong to same UoM category '%s' as the old UoM"
+msgstr "La nouvelle UdM doit appartenir à la même catégorie d'UdM '%s' que l'ancienne UdM"
+
+#. module: product
+#: code:addons/product/product.py:1060
+#, python-format
+msgid "New second UoM must belong to same UoM category '%s' as the old second UoM"
+msgstr "La nouvelle seconde UdM doit appartenir à la même catégorie d'UdM '%s' que l'ancienne seconde UdM"
+
+#. module: product
+#: code:addons/product/product.py:1312
+#: code:addons/product/product.py:1513
+#, python-format
+msgid "No parameter (%s) in product."
+msgstr "Pas de paramètre (%s) pour le produit."
+
+#. module: product
+#: model:ir.model.fields,field_description:product.field_product_product_is_no_unlink
+msgid "No unlink"
+msgstr "Non supprimable"
+
+#. module: product
+#: code:addons/product/product.py:504
+#, python-format
+msgid "None"
+msgstr "Aucun"
+
+#. module: product
+#: code:addons/product/product.py:264
+#: model:ir.ui.view,arch_db:product.product_category_search_view
+#, python-format
+msgid "Normal"
+msgstr "Normal"
+
+#. module: product
+#: model:ir.model.fields,field_description:product.field_product_packaging_note
+msgid "Note"
+msgstr "Note"
+
+#. module: product
+#: model:ir.model.fields,field_description:product.field_product_product_transport_note
+msgid "Note printed on the delivery note"
+msgstr "Note imprimée sur le bon de livraison"
+
+#. module: product
+#: model:ir.model.fields,field_description:product.field_product_product_receipt_transport_note
+msgid "Note printed on the receipt note"
+msgstr "Note imprimée sur le bon de réception"
+
+#. module: product
+#: model:ir.ui.view,arch_db:product.view_form_product
+msgid "Notes and parameters"
+msgstr "Notes et paramètres"
+
+#. module: product
+#: code:addons/product/product.py:1263
+#, python-format
+msgid "Numeric"
+msgstr "Numérique"
+
+#. module: product
+#: model:ir.ui.view,arch_db:product.view_form_change_dual_unit
+msgid "OK"
+msgstr "OK"
+
+#. module: product
+#: code:addons/product/product.py:481
+#: model:workflow.display.state,label:product.product_display_state_obsolete
+#, python-format
+msgid "Obsolete"
+msgstr "Obsolète"
+
+#. module: product
+#: model:ir.ui.view,arch_db:product.view_search_product
+msgid "Obsolete product"
+msgstr "Produit obsolète"
+
+#. module: product
+#: code:addons/product/product.py:502
+#, python-format
+msgid "On demand"
+msgstr "A la demande"
+
+#. module: product
+#: code:addons/product/product.py:503
+#, python-format
+msgid "On demand with stock"
+msgstr "A la demande en tenant compte du stock"
+
+#. module: product
+#: code:addons/product/product.py:501
+#, python-format
+msgid "On scheduler"
+msgstr "Sur planificateur"
+
+#. module: product
+#: code:addons/product/product.py:1266
+#, python-format
+msgid "Only result"
+msgstr "Seulement le résultat"
+
+#. module: product
+#: model:ir.ui.view,arch_db:product.view_form_product_packaging
+msgid "Pallet"
+msgstr "Palette"
+
+#. module: product
+#: model:ir.model,name:product.model_parameter_dimension
+#: model:ir.ui.view,arch_db:product.view_form_parameter_dimension
+msgid "Parameter Dimension"
+msgstr "Paramètres"
+
+#. module: product
+#: model:ir.model,name:product.model_parameter_dimension_type
+#: model:ir.ui.view,arch_db:product.view_form_parameter_dimension_type
+msgid "Parameter Dimension Type"
+msgstr "Type de Paramètres"
+
+#. module: product
+#: model:ir.model.fields,field_description:product.field_product_product_parameter_ids
+#: model:ir.ui.view,arch_db:product.view_form_product
+msgid "Parameters"
+msgstr "Paramètres"
+
+#. module: product
+#: model:ir.ui.view,arch_db:product.view_form_product_packaging
+msgid "Parcel"
+msgstr "Colis"
+
+#. module: product
+#: model:ir.model.fields,field_description:product.field_product_packaging_parcel_per_layer_nb
+msgid "Parcel per layer nb"
+msgstr "Nombre de colis par couches"
+
+#. module: product
+#: model:ir.model,name:product.model_parameter_dimension
+msgid "Paremater Dimension"
+msgstr "Paramètre"
+
+#. module: product
+#: model:ir.model,name:product.model_parameter_dimension_type
+msgid "Paremater Dimension Type"
+msgstr "Type paramètre"
+
+#. module: product
+#: model:ir.model.fields,field_description:product.field_quality_control_product_parent_id
+msgid "Parent"
+msgstr "Parent"
+
+#. module: product
+#: model:ir.model.fields,field_description:product.field_product_category_parent_id
+msgid "Parent category"
+msgstr "Catégorie parent"
+
+#. module: product
+#: code:addons/product/product.py:312
+#, python-format
+msgid "Parent category can't be of type normal"
+msgstr "La catégorie parent ne peut être de type normal"
+
+#. module: product
+#: model:ir.model.fields,field_description:product.field_product_category_parent_left
+msgid "Parent left"
+msgstr "Parent left"
+
+#. module: product
+#: model:ir.model.fields,field_description:product.field_product_category_parent_right
+msgid "Parent right"
+msgstr "Parent right"
+
+#. module: product
+#: model:ir.model.fields,field_description:product.field_product_product_partner_id
+#: model:ir.model.fields,field_description:product.field_quality_control_product_partner_id
+msgid "Partner"
+msgstr "Partenaire"
+
+#. module: product
+#: code:addons/product/product.py:1218
+#, python-format
+msgid "Period of time"
+msgstr "Period of time"
+
+#. module: product
+#: model:ir.model.fields,field_description:product.field_quality_control_frequency_date_type
+msgid "Period type"
+msgstr "Period type"
+
+#. module: product
+#: model:ir.model.fields,field_description:product.field_product_product_picture
+msgid "Picture"
+msgstr "Picture"
+
+#. module: product
+#: code:addons/product/product.py:1219
+#, python-format
+msgid "Piece"
+msgstr "Pièce"
+
+#. module: product
+#: model:ir.ui.view,arch_db:product.product_category_form_view
+#: model:ir.ui.view,arch_db:product.view_form_product
+msgid "Plan of Control"
+msgstr "Plan de contrôle"
+
+#. module: product
+#: model:ir.model.fields,field_description:product.field_quality_control_plan
+#: model:ir.ui.view,arch_db:product.view_form_quality_control_id
+msgid "Plan/Picture"
+msgstr "Plan/Image"
+
+#. module: product
+#: code:addons/product/product.py:1106
+#, python-format
+msgid "Please use the button \"Copy product\" to duplicate a product"
+msgstr "Merci d'utiliser le bouton \"Dupliquer\" pour copier un produit"
+
+#. module: product
+#: code:addons/product/product.py:1240
+#: code:addons/product/product.py:1473
+#, python-format
+msgid "Post Reception"
+msgstr "Post réception"
+
+#. module: product
+#: code:addons/product/product.py:1241
+#: code:addons/product/product.py:1474
+#, python-format
+msgid "Post production"
+msgstr "Post production"
+
+#. module: product
+#: model:ir.model.fields,field_description:product.field_product_packaging_price
+msgid "Price"
+msgstr "Prix"
+
+#. module: product
+#: model:ir.model.fields,field_description:product.field_parameter_dimension_type_price_formula
+#: model:ir.ui.view,arch_db:product.view_form_parameter_dimension_type
+msgid "Price formula"
+msgstr "Formule de prix"
+
+#. module: product
+#: model:ir.model.fields,field_description:product.field_parameter_dimension_price_unit
+#: model:ir.ui.view,arch_db:product.view_search_uom
+msgid "Price unit"
+msgstr "Prix unitaire"
+
+#. module: product
+#: model:ir.model.fields,field_description:product.field_product_uom_price_unit
+msgid "Price unity"
+msgstr "Unité de prix"
+
+#. module: product
+#: model:ir.ui.view,arch_db:product.view_form_product
+msgid "Procurement"
+msgstr "Approvisionnement"
+
+#. module: product
+#: model:ir.model.fields,help:product.field_product_product_supply_method
+msgid "Produce will generate production order or tasks, according to the product type. Buy will trigger purchase orders when requested."
+msgstr "Fabriquer génère l'ordre de fabrication ou les tâches, en fonction du type de produit. Acheter déclenchera des commandes d'achat en cas de besoin"
+
+#. module: product
+#: model:ir.actions.act_window,name:product.act_product
+#: model:ir.actions.act_window,name:product.action_see_all_product
+#: model:ir.actions.act_window,name:product.product_product_see_form
+#: model:ir.model,name:product.model_product_product
+#: model:ir.model.fields,field_description:product.field_change_dual_unit_product_id
+#: model:ir.model.fields,field_description:product.field_change_product_uom_product_id
+#: model:ir.model.fields,field_description:product.field_parameter_dimension_product_id
+#: model:ir.model.fields,field_description:product.field_product_sizing_product_id
+#: model:ir.model.fields,field_description:product.field_quality_control_product_product_id
+#: model:ir.module.category,name:product.module_product_product
+#: model:ir.ui.menu,name:product.menu_product_conf
+#: model:ir.ui.menu,name:product.menu_product_main
+#: model:ir.ui.menu,name:product.menu_product_product
+#: model:ir.ui.view,arch_db:product.product_template_form_view
+#: model:ir.ui.view,arch_db:product.view_form_product
+msgid "Product"
+msgstr "Produit"
+
+#. module: product
+#: model:ir.actions.act_window,name:product.product_category_action_form
+#: model:ir.ui.menu,name:product.menu_product_category_action_form
+#: model:ir.ui.view,arch_db:product.product_category_list_view
+#: model:ir.ui.view,arch_db:product.product_category_search_view
+#: model:ir.ui.view,arch_db:product.product_category_tree_view
+msgid "Product Categories"
+msgstr "Catégories de produit"
+
+#. module: product
+#: model:ir.model,name:product.model_product_category
+msgid "Product Category"
+msgstr "Catégorie d'articles"
+
+#. module: product
+#: model:ir.actions.act_window,name:product.act_product_packaging
+#: model:ir.ui.menu,name:product.menu_product_packaging
+#: model:ir.ui.view,arch_db:product.view_form_product_packaging
+msgid "Product Packaging"
+msgstr "Packaging du produit"
+
+#. module: product
+#: model:ir.ui.view,arch_db:product.view_tree_product_packaging
+msgid "Product Packagings"
+msgstr "Packagings du produit"
+
+#. module: product
+#: model:res.groups,name:product.group_menu_product_user
+msgid "Product menu"
+msgstr "Menu produit"
+
+#. module: product
+#: model:ir.model,name:product.model_product_packaging
+msgid "Product packaging"
+msgstr "Packaging du produit"
+
+#. module: product
+#: model:res.groups,name:product.product_parameters
+msgid "Product parameters"
+msgstr "Paramètres produit"
+
+#. module: product
+#: model:ir.ui.menu,name:product.quality_control_product_menu
+msgid "Product quality control"
+msgstr "Contrôle qualité produit"
+
+#. module: product
+#: model:ir.actions.act_window,name:product.act_product_sizing
+#: model:ir.model,name:product.model_product_sizing
+#: model:ir.ui.menu,name:product.menu_product_sizing
+#: model:ir.ui.view,arch_db:product.view_form_product_sizing
+msgid "Product sizing"
+msgstr "Conditionnement du produit"
+
+#. module: product
+#: model:ir.ui.view,arch_db:product.view_tree_product_sizing
+msgid "Product sizings"
+msgstr "Conditionnements du produit"
+
+#. module: product
+#: model:ir.model,name:product.model_product_template
+msgid "Product template"
+msgstr "Modèle de produit"
+
+#. module: product
+#: model:ir.model.fields,field_description:product.field_product_product_type
+msgid "Product type"
+msgstr "Type de produit"
+
+#. module: product
+#: model:ir.model.fields,field_description:product.field_product_product_is_expiry_date
+msgid "Product with expiry date"
+msgstr "Produit avec date d'expiration"
+
+#. module: product
+#: code:addons/product/product.py:1239
+#: code:addons/product/product.py:1472
+#, python-format
+msgid "Production"
+msgstr "Production"
+
+#. module: product
+#: model:ir.model.fields,field_description:product.field_switch_document_wizard_product_ids
+#: model:ir.ui.view,arch_db:product.product_category_form_view
+#: model:ir.ui.view,arch_db:product.view_form_product
+#: model:ir.ui.view,arch_db:product.view_form_product_document_openprod
+#: model:ir.ui.view,arch_db:product.view_tree_product
+msgid "Products"
+msgstr "Produits"
+
+#. module: product
+#: model:ir.actions.act_window,name:product.product_normal_action_tree
+msgid "Products List"
+msgstr "Liste de produits"
+
+#. module: product
+#: model:ir.actions.act_window,name:product.product_category_action
+#: model:ir.ui.menu,name:product.menu_products_category
+msgid "Products by Category"
+msgstr "Produits par catégorie"
+
+#. module: product
+#: code:addons/product/product.py:665
+#, python-format
+msgid "Products can't belong to a `View` category"
+msgstr "Les produits ne peuvent pas appartenir à une catégorie de type vue"
+
+#. module: product
+#: model:ir.model.fields,field_description:product.field_purchase_property_purchase
+msgid "Purchase"
+msgstr "Achat"
+
+#. module: product
+#: model:ir.ui.view,arch_db:product.view_tree_purchase_property
+msgid "Purchase properties"
+msgstr "Propriétés d'achat"
+
+#. module: product
+#: model:ir.actions.act_window,name:product.act_purchase_property
+#: model:ir.model,name:product.model_purchase_property
+#: model:ir.ui.menu,name:product.menu_purchase_property
+#: model:ir.ui.view,arch_db:product.view_form_purchase_property
+msgid "Purchase property"
+msgstr "Propriété d'achat"
+
+#. module: product
+#: model:ir.model,name:product.model_purchase_property_category
+msgid "Purchase property category"
+msgstr "Catégorie de propriété d'achat"
+
+#. module: product
+#: model:ir.ui.view,arch_db:product.view_search_product
+msgid "Purchased product"
+msgstr "Produit acheté"
+
+#. module: product
+#: model:ir.model.fields,field_description:product.field_product_packaging_parcel_qty
+msgid "Qty per parcel"
+msgstr "Nombre de pièces par colis"
+
+#. module: product
+#: model:ir.ui.menu,name:product.menu_quality_main
+#: model:ir.ui.view,arch_db:product.product_category_form_view
+#: model:ir.ui.view,arch_db:product.view_form_product
+msgid "Quality"
+msgstr "Qualité"
+
+#. module: product
+#: model:ir.actions.act_window,name:product.act_quality_control_id
+#: model:ir.model,name:product.model_quality_control
+#: model:ir.model.fields,field_description:product.field_product_category_quality_control_ids
+#: model:ir.model.fields,field_description:product.field_product_product_quality_control_ids
+#: model:ir.ui.menu,name:product.menu_quality_control_id
+#: model:ir.ui.view,arch_db:product.view_form_quality_control_id
+#: model:ir.ui.view,arch_db:product.view_tree_quality_control_id
+msgid "Quality Control"
+msgstr "Contrôle qualité"
+
+#. module: product
+#: model:ir.model,name:product.model_quality_control_product
+msgid "Quality Control Product"
+msgstr "Contrôle qualité produit"
+
+#. module: product
+#: model:ir.model,name:product.model_quality_control_value
+msgid "Quality Control.value"
+msgstr "Valeur contrôle qualité"
+
+#. module: product
+#: code:addons/product/product.py:1571
+#: model:ir.ui.view,arch_db:product.view_tree_quality_control_product_id
+#, python-format
+msgid "Quality control"
+msgstr "Contrôle qualité"
+
+#. module: product
+#: model:ir.actions.act_window,name:product.act_quality_control_product_delivery_id
+#: model:ir.actions.act_window,name:product.act_quality_control_product_intern_id
+#: model:ir.actions.act_window,name:product.act_quality_control_product_reception_id
+#: model:ir.ui.view,arch_db:product.view_form_quality_control_product_id
+#: model:ir.ui.view,arch_db:product.view_tree_quality_control_product_id
+msgid "Quality control product"
+msgstr "Contrôle qualité produit"
+
+#. module: product
+#: model:ir.model.fields,field_description:product.field_product_packaging_total_qty
+msgid "Quantity"
+msgstr "Quantité"
+
+#. module: product
+#: model:ir.model.fields,field_description:product.field_product_product_rohs_logo
+msgid "ROHS logo"
+msgstr "Logo ROHS"
+
+#. module: product
+#: model:ir.model.fields,field_description:product.field_product_uom_factor
+msgid "Ratio"
+msgstr "Ratio"
+
+#. module: product
+#: code:addons/product/product.py:1237
+#: code:addons/product/product.py:1470
+#, python-format
+msgid "Reception"
+msgstr "Réception"
+
+#. module: product
+#: code:addons/product/product.py:93
+#, python-format
+msgid "Reference Unit of Measure for this category"
+msgstr "Unité de mesure de référence pour cette catégorie"
+
+#. module: product
+#: model:ir.ui.view,arch_db:product.view_form_product
+msgid "Regulations management"
+msgstr "Gestion de la régulation"
+
+#. module: product
+#: model:ir.model.fields,field_description:product.field_product_product_regulatory_auto_logo
+msgid "Regulatory automobile logo"
+msgstr "Logo réglementaire automobile"
+
+#. module: product
+#: model:ir.actions.act_window,name:product.act_related_products
+msgid "Related Products"
+msgstr "Produits liés"
+
+#. module: product
+#: model:ir.ui.view,arch_db:product.view_form_product_packaging
+msgid "Remarks"
+msgstr "Remarques"
+
+#. module: product
+#: model:ir.ui.view,arch_db:product.view_form_product
+msgid "Removal date"
+msgstr "Date de retrait"
+
+#. module: product
+#: model:ir.model.fields,field_description:product.field_product_uom_rounding
+msgid "Rounding Precision"
+msgstr "Précision d'arrondi"
+
+#. module: product
+#: model:ir.model.fields,field_description:product.field_purchase_property_sale
+msgid "Sale"
+msgstr "Vente"
+
+#. module: product
+#: model:ir.model.fields,field_description:product.field_product_product_sec_uom_category_id
+msgid "Sec UoM category"
+msgstr "Catégorie de la seconde UdM"
+
+#. module: product
+#: model:ir.model.fields,field_description:product.field_change_dual_unit_sec_uom_id
+#: model:ir.model.fields,field_description:product.field_change_product_uom_sec_uom_id
+#: model:ir.model.fields,field_description:product.field_product_product_sec_uom_id
+msgid "Second unit of measure"
+msgstr "Seconde unité de mesure"
+
+#. module: product
+#: model:ir.ui.view,arch_db:product.view_form_inherit_switch_openprod_document
+msgid "Select the products to switch"
+msgstr "Sélectionnez les produits à basculer"
+
+#. module: product
+#: code:addons/product/product.py:1265
+#, python-format
+msgid "Selection"
+msgstr "Sélection"
+
+#. module: product
+#: model:ir.model.fields,field_description:product.field_product_category_sequence
+msgid "Sequence"
+msgstr "Séquence"
+
+#. module: product
+#: code:addons/product/product.py:488
+#, python-format
+msgid "Service"
+msgstr "Service"
+
+#. module: product
+#: model:ir.ui.view,arch_db:product.view_form_product
+msgid "Set fixed dual unit"
+msgstr "Passer en double unité fixe"
+
+#. module: product
+#: model:ir.model.fields,field_description:product.field_product_packaging_pallet_sizing_id
+#: model:ir.model.fields,field_description:product.field_product_packaging_parcel_sizing_id
+msgid "Sizing"
+msgstr "Conditionnement"
+
+#. module: product
+#: code:addons/product/product.py:94
+#, python-format
+msgid "Smaller than the reference Unit of Measure"
+msgstr "Plus petit que l'unité de mesure de référence"
+
+#. module: product
+#: model:ir.ui.view,arch_db:product.view_search_product
+msgid "Sold product"
+msgstr "Produit vendu"
+
+#. module: product
+#: model:ir.model.fields,field_description:product.field_product_product_display_state
+#: model:ir.model.fields,field_description:product.field_product_product_state
+msgid "State"
+msgstr "État"
+
+#. module: product
+#: code:addons/product/product.py:487
+#, python-format
+msgid "Stockable"
+msgstr "Stockable"
+
+#. module: product
+#: model:res.groups,name:product.group_menu_supplier_quality
+msgid "Supplier quality use menu"
+msgstr "Utilisation menu qualité fournisseur"
+
+#. module: product
+#: model:ir.ui.menu,name:product.menu_quality_supplier_id
+msgid "Suppliers"
+msgstr "Fournisseurs"
+
+#. module: product
+#: model:ir.model.fields,field_description:product.field_product_product_supply_method
+#: model:ir.ui.view,arch_db:product.view_search_product
+msgid "Supply method"
+msgstr "Méthode de fourniture par défaut"
+
+#. module: product
+#: model:ir.model.fields,field_description:product.field_product_product_control_categ_syncro
+msgid "Synchronize with the controls of the category"
+msgstr "Synchroniser avec les contrôles de la catégorie"
+
+#. module: product
+#: model:ir.ui.view,arch_db:product.view_form_product
+msgid "Technical"
+msgstr "Technique"
+
+#. module: product
+#: code:addons/product/product.py:489
+#: model:ir.ui.view,arch_db:product.view_form_product
+#, python-format
+msgid "Technical tool"
+msgstr "Outil technique"
+
+#. module: product
+#: code:addons/product/product.py:1264
+#, python-format
+msgid "Text"
+msgstr "Texte"
+
+#. module: product
+#: model:ir.model.fields,field_description:product.field_quality_control_text_value
+msgid "Text value"
+msgstr "Valeur du texte"
+
+#. module: product
+#: sql_constraint:purchase.property.category:0
+msgid "The category name must be unique"
+msgstr "Le nom de la catégorie doit être unique"
+
+#. module: product
+#: sql_constraint:product.uom.category:0
+msgid "The category uom name must be unique!"
+msgstr "Le nom de la catégorie d'UdM doit être unique"
+
+#. module: product
+#: model:ir.model.fields,help:product.field_product_product_code
+msgid "The code must be unique"
+msgstr "Le code doit être unique"
+
+#. module: product
+#: sql_constraint:product.product:0
+msgid "The code must be unique."
+msgstr "Le code doit être unique"
+
+#. module: product
+#: model:ir.model.fields,help:product.field_product_uom_rounding
+msgid "The computed quantity will be a multiple of this value. Use 1.0 for a Unit of Measure that cannot be further split, such as a piece."
+msgstr "La quantité calculée sera un multiple de cette valeur. Utilisez 1,0 pour une unité de mesure indivisible telle que la pièce."
+
+#. module: product
+#: sql_constraint:product.uom:0
+msgid "The conversion ratio for a unit of measure cannot be 0!"
+msgstr "Le rapport de conversion d'une unité de mesure ne peut pas être 0 !"
+
+#. module: product
+#: sql_constraint:product.uom:0
+msgid "The partner title name must be unique!"
+msgstr "Le nom du titre doit être unique"
+
+#. module: product
+#: code:addons/product/product.py:646
+#, python-format
+msgid "The product can not be produced"
+msgstr "Le produit ne peut pas être fabriqué"
+
+#. module: product
+#: code:addons/product/product.py:644
+#, python-format
+msgid "The product can not be purchased"
+msgstr "Le produit ne peut pas être acheté"
+
+#. module: product
+#: sql_constraint:product.category:0
+msgid "The product category name must be unique!"
+msgstr "Le nom de la catégorie de produit doit être unique!"
+
+#. module: product
+#: model:ir.model.fields,help:product.field_product_product_state
+msgid "The product management can be made in function of his life cycle. In other words, we have several options according to the status: In development, we can buy the product, produced it, but not sale it. In life serie, we can produce, buy and sale the product. In the end of his life, we can't produce or buy the product but we can sale it. When the product is obsolete, we can't produce, buy or sale the product. If there is no choice here, we can't do anything."
+msgstr "La gestion du produit peut se faire en fonction de son cycle de vie. C'est-à-dire que l'on aura différentes possibilités selon son statut : - En développement : On peut l'acheter, le fabriquer, mais pas le vendre - Vie / En série : On peut le vendre, le fabriquer et l'acheter - Fin de cycle : On ne peut pas l'acheter ni le produire mais on peut le vendre - Arrêté : On ne peut ni fabriquer, ni acheter, ni vendre - Pas de statut : On ne peut rien faire"
+
+#. module: product
+#: sql_constraint:purchase.property:0
+msgid "The property name must be unique per category"
+msgstr "Le nom de la catégorie doit être unique par catégorie"
+
+#. module: product
+#: model:ir.model.fields,help:product.field_product_product_type
+msgid "This field enables to define the product type. A product with a 'Stockable product' type can be received and put in stock. A product with a 'Service' type only create a voucher to paid in reception, can't be put in stock and can't have a classification."
+msgstr " Ce champ permet de définir le type de produit. Un produit de type « Produit stockable » peut être réceptionné et mis en stockn produit de type « Service » génère uniquement un bon à payer en réception, ne peut être mis en stock et n'est pas nomenclaturable"
+
+#. module: product
+#: model:ir.model.fields,help:product.field_product_product_customer_material
+msgid "This fiels enables to define if the product is supplied by a customer. A customer material is supplied at value 0 (no stock value). A customer material is necessarily a stockable product whose supply method is 'Buy'. A customer material can't be product."
+msgstr "Ce champs permet de définir si le produit est fourni par un client. Une matière client est fournie à valeur 0 (pas de valeur de stock). Une matière client est obligatoirement un produit stockable dont la méthode d'approvisionnement est 'Achetée'. Une matière client ne peut être produite."
+
+#. module: product
+#: model:ir.model.fields,help:product.field_product_product_conformity_certificate
+msgid "To check if there is a conformity certificate for the delivery or the receipt"
+msgstr "A cocher si il y a un certificat de conformité pour la livraison ou la réception"
+
+#. module: product
+#: model:ir.ui.view,arch_db:product.view_form_product
+msgid "Tracability"
+msgstr "Traçabilité"
+
+#. module: product
+#: model:ir.model.fields,field_description:product.field_product_product_track_in_lot
+msgid "Track IN lots"
+msgstr "Suivre les lots entrants"
+
+#. module: product
+#: model:ir.model.fields,field_description:product.field_product_product_track_out_lot
+msgid "Track OUT lots"
+msgstr "Suivre les lots sortants"
+
+#. module: product
+#: model:ir.model.fields,field_description:product.field_product_product_trigger_supply
+msgid "Trigger supply"
+msgstr "Déclenchement d'approvisionnement"
+
+#. module: product
+#: model:ir.model.fields,field_description:product.field_product_category_type
+#: model:ir.model.fields,field_description:product.field_product_uom_type
+#: model:ir.model.fields,field_description:product.field_quality_control_product_type
+#: model:ir.model.fields,field_description:product.field_quality_control_type
+#: model:ir.model.fields,field_description:product.field_quality_control_type_numeric
+#: model:ir.ui.view,arch_db:product.view_search_product
+msgid "Type"
+msgstr "Type"
+
+#. module: product
+#: model:ir.model.fields,field_description:product.field_quality_control_type_control
+msgid "Type control"
+msgstr "Type de contrôle"
+
+#. module: product
+#: model:product.uom.category,name:product.product_uom_categ_unit
+msgid "Unit"
+msgstr "Unité"
+
+#. module: product
+#: model:ir.model.fields,field_description:product.field_change_product_uom_uom_id
+#: model:ir.model.fields,field_description:product.field_product_product_uom_id
+msgid "Unit of measure"
+msgstr "Unité de Mesure"
+
+#. module: product
+#: model:product.uom,name:product.product_uom_unit
+msgid "Unit(s)"
+msgstr "Unité(s)"
+
+#. module: product
+#: model:ir.ui.view,arch_db:product.view_form_uom
+msgid "Units of Measure"
+msgstr "Unités de Mesure"
+
+#. module: product
+#: model:ir.ui.view,arch_db:product.view_form_uom_category
+msgid "Units of Measure category"
+msgstr "Catégorie d'unité de mesure"
+
+#. module: product
+#: model:ir.actions.act_window,name:product.act_uom
+#: model:ir.model,name:product.model_product_uom
+#: model:ir.model,name:product.model_product_uom_category
+#: model:ir.ui.menu,name:product.menu_uom
+msgid "UoM"
+msgstr "UdM"
+
+#. module: product
+#: model:ir.actions.act_window,name:product.act_uom_category
+#: model:ir.model.fields,field_description:product.field_product_product_uom_category_id
+#: model:ir.ui.menu,name:product.menu_uom_category
+msgid "UoM category"
+msgstr "Catégorie UdM"
+
+#. module: product
+#: model:ir.ui.view,arch_db:product.view_tree_uom
+#: model:ir.ui.view,arch_db:product.view_tree_uom_category
+msgid "UoMs"
+msgstr "UdMs"
+
+#. module: product
+#: code:addons/product/product.py:549
+#, python-format
+msgid "Use by"
+msgstr "DLC"
+
+#. module: product
+#: model:res.groups,name:product.product_user
+msgid "User"
+msgstr "Utilisateur"
+
+#. module: product
+#: model:ir.model.fields,field_description:product.field_parameter_dimension_value
+#: model:ir.model.fields,field_description:product.field_quality_control_value_name
+msgid "Value"
+msgstr "Valeur"
+
+#. module: product
+#: model:ir.ui.view,arch_db:product.view_form_quality_control_id
+msgid "Value frequency"
+msgstr "Valeur de fréquence"
+
+#. module: product
+#: code:addons/product/wizard/change_dual_unit.py:19
+#: code:addons/product/wizard/change_product_uom.py:19
+#: selection:product.product,dual_unit_type:0
+#, python-format
+msgid "Variable"
+msgstr "Variable"
+
+#. module: product
+#: model:ir.model.fields,field_description:product.field_product_product_version
+#: model:ir.model.fields,field_description:product.field_product_version_historical_version
+msgid "Version"
+msgstr "Version"
+
+#. module: product
+#: model:ir.model.fields,field_description:product.field_product_product_version_historical_ids
+#: model:ir.ui.view,arch_db:product.view_form_product
+msgid "Version historical"
+msgstr "Historique des versions"
+
+#. module: product
+#: code:addons/product/product.py:260
+#: model:ir.ui.view,arch_db:product.product_category_search_view
+#, python-format
+msgid "View"
+msgstr "Vue"
+
+#. module: product
+#: model:product.uom.category,name:product.product_uom_categ_vol
+msgid "Volume"
+msgstr "Volume"
+
+#. module: product
+#: code:addons/product/product.py:1386
+#: code:addons/product/product.py:1395
+#, python-format
+msgid "We can not do is control the label other than on post type (%s)."
+msgstr "Vous ne pouvez pas faire de contrôle sur les étiquettes autres que sur les types post (%s)."
+
+#. module: product
+#: code:addons/product/product.py:1228
+#, python-format
+msgid "Week"
+msgstr "Semaine"
+
+#. module: product
+#: model:product.uom.category,name:product.product_uom_categ_kgm
+msgid "Weight"
+msgstr "Poids"
+
+#. module: product
+#: model:ir.model.fields,field_description:product.field_product_sizing_width
+msgid "Width (in cm)"
+msgstr "Largeur (en cm)"
+
+#. module: product
+#: model:ir.model,name:product.model_switch_document_wizard
+msgid "Wizard to switch the openprod document"
+msgstr "Wizard pour basculer les documents openprod"
+
+#. module: product
+#: model:ir.model.fields,field_description:product.field_product_product_wkf_instance_ids
+msgid "Wkf instance ids"
+msgstr "Ids des instances de wkf"
+
+#. module: product
+#: model:ir.model.fields,field_description:product.field_product_product_wkf_progress_instance
+msgid "Wkf progress instance"
+msgstr "Instance en cours"
+
+#. module: product
+#: model:ir.model.fields,field_description:product.field_product_product_wkf_id
+msgid "Workflow"
+msgstr "Flux de travail"
+
+#. module: product
+#: model:product.uom.category,name:product.uom_categ_wtime
+msgid "Working Time"
+msgstr "Temps de travail"
+
+#. module: product
+#: model:ir.model.fields,field_description:product.field_product_product_expiry_year
+#: model:ir.model.fields,field_description:product.field_product_product_removal_year
+msgid "Year"
+msgstr "Année"
+
+#. module: product
+#: code:addons/product/product.py:1094
+#, python-format
+msgid "You can not delete this product because the field can not be deleted is checked"
+msgstr "Vous ne pouvez pas supprimer ce produit car le champ non supprimable est coché."
+
+#. module: product
+#: model:ir.model.fields,field_description:product.field_product_template_categ_id
+msgid "categ_id"
+msgstr "categ_id"
+
+#. module: product
+#: model:product.uom,name:product.product_uom_cm
+msgid "cm"
+msgstr "cm"
+
+#. module: product
+#: model:workflow.transition,button_label:product.product_obsolete_to_draft
+msgid "dev"
+msgstr "Développement"
+
+#. module: product
+#: model:ir.ui.view,arch_db:product.product_category_form_view
+msgid "e.g. Lamps"
+msgstr "e.g. Lamps"
+
+#. module: product
+#: model:ir.ui.view,arch_db:product.view_form_uom
+msgid "e.g: 1 * (reference unit) = ratio * (this unit)"
+msgstr "ex : 1 * (unité de référence) = rapport * (cette unité)"
+
+#. module: product
+#: model:ir.ui.view,arch_db:product.view_form_uom
+msgid "e.g: 1 * (this unit) = ratio * (reference unit)"
+msgstr "ex. : 1 x (cette unité) = rapport x (unité de référence)"
+
+#. module: product
+#: model:ir.model.fields,help:product.field_quality_control_plan
+msgid "help"
+msgstr "Aide"
+
+#. module: product
+#: model:product.uom,name:product.product_uom_kgm
+msgid "kg"
+msgstr "kg"
+
+#. module: product
+#: model:product.uom,name:product.product_uom_km
+msgid "km"
+msgstr "km"
+
+#. module: product
+#: model:workflow.transition,button_label:product.product_dev_to_obsolete
+#: model:workflow.transition,button_label:product.product_endlife_to_obsolete
+#: model:workflow.transition,button_label:product.product_lifeserie_to_obsolete
+msgid "obsolete"
+msgstr "Obsolète"
+
+#. module: product
+#: model:ir.ui.view,arch_db:product.view_form_change_change_product_uom
+#: model:ir.ui.view,arch_db:product.view_form_change_dual_unit
+msgid "or"
+msgstr "ou"
+
+#. module: product
+#: model:ir.model.fields,field_description:product.field_product_template_product_variant_ids
+msgid "product_variant_ids"
+msgstr "product_variant_ids"
+

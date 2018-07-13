@@ -1,0 +1,335 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* wizard_mo_output
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 9.0c\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-04-14 12:31+0000\n"
+"PO-Revision-Date: 2017-04-14 12:31+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: wizard_mo_output
+#: model:ir.ui.view,arch_db:wizard_mo_output.view_form_wizard_mo_output_id
+msgid "Add lines"
+msgstr "Ajouter lignes"
+
+#. module: wizard_mo_output
+#: model:ir.model,name:wizard_mo_output.model_wizard_mo_output_line_add
+msgid "Ajout Wizard ligne sortie OF"
+msgstr "Ajout Wizard ligne sortie OF"
+
+#. module: wizard_mo_output
+#: model:ir.ui.view,arch_db:wizard_mo_output.view_form_wizard_mo_output_id
+#: model:ir.ui.view,arch_db:wizard_mo_output.view_form_wizard_mo_output_line_add_id
+msgid "Cancel"
+msgstr "Annuler"
+
+#. module: wizard_mo_output
+#: model:ir.ui.view,arch_db:wizard_mo_output.view_form_wizard_mo_output_id
+msgid "Create lines"
+msgstr "Créer lignes"
+
+#. module: wizard_mo_output
+#: model:ir.model.fields,field_description:wizard_mo_output.field_mrp_reservation_create_uid
+#: model:ir.model.fields,field_description:wizard_mo_output.field_wizard_mo_output_create_uid
+#: model:ir.model.fields,field_description:wizard_mo_output.field_wizard_mo_output_line_add_create_uid
+#: model:ir.model.fields,field_description:wizard_mo_output.field_wizard_mo_output_line_create_uid
+msgid "Created by"
+msgstr "Créé par"
+
+#. module: wizard_mo_output
+#: model:ir.model.fields,field_description:wizard_mo_output.field_mrp_reservation_create_date
+#: model:ir.model.fields,field_description:wizard_mo_output.field_wizard_mo_output_create_date
+#: model:ir.model.fields,field_description:wizard_mo_output.field_wizard_mo_output_line_add_create_date
+#: model:ir.model.fields,field_description:wizard_mo_output.field_wizard_mo_output_line_create_date
+msgid "Created on"
+msgstr "Créé le"
+
+#. module: wizard_mo_output
+#: model:ir.model.fields,field_description:wizard_mo_output.field_mrp_reservation_date
+msgid "Date"
+msgstr "Date"
+
+#. module: wizard_mo_output
+#: model:ir.ui.view,arch_db:wizard_mo_output.inherit_view_form_mrp_workorder_mo_output
+#: model:ir.ui.view,arch_db:wizard_mo_output.view_form_wizard_mo_output_id
+msgid "Delete lines"
+msgstr "Supprimer lignes"
+
+#. module: wizard_mo_output
+#: model:ir.model.fields,field_description:wizard_mo_output.field_mrp_reservation_display_name
+#: model:ir.model.fields,field_description:wizard_mo_output.field_wizard_mo_output_display_name
+#: model:ir.model.fields,field_description:wizard_mo_output.field_wizard_mo_output_line_add_display_name
+#: model:ir.model.fields,field_description:wizard_mo_output.field_wizard_mo_output_line_display_name
+msgid "Display Name"
+msgstr "Display Name"
+
+#. module: wizard_mo_output
+#: code:addons/wizard_mo_output/mrp.py:60
+#: code:addons/wizard_mo_output/wizard/wizard_mo_output.py:101
+#: code:addons/wizard_mo_output/wizard/wizard_mo_output.py:105
+#, python-format
+msgid "Error"
+msgstr "Erreur"
+
+#. module: wizard_mo_output
+#: code:addons/wizard_mo_output/wizard/wizard_mo_output.py:101
+#, python-format
+msgid "For line %s[%s] / [%s]%s, there is no selected label"
+msgstr "Pour la ligne %s[%s] / [%s]%s, il n'y a pas d'étiquettes sélectionnées"
+
+#. module: wizard_mo_output
+#: code:addons/wizard_mo_output/wizard/wizard_mo_output.py:105
+#, python-format
+msgid "For line %s[%s] / [%s]%s, there is no selected location"
+msgstr "Pour la ligne %s[%s] / [%s]%s, il n'y a pas d'emplacement sélectionné"
+
+#. module: wizard_mo_output
+#: model:ir.model.fields,field_description:wizard_mo_output.field_mrp_reservation_id
+#: model:ir.model.fields,field_description:wizard_mo_output.field_wizard_mo_output_id
+#: model:ir.model.fields,field_description:wizard_mo_output.field_wizard_mo_output_line_add_id
+#: model:ir.model.fields,field_description:wizard_mo_output.field_wizard_mo_output_line_id
+msgid "ID"
+msgstr "ID"
+
+#. module: wizard_mo_output
+#: model:ir.model.fields,field_description:wizard_mo_output.field_wizard_mo_output_line_is_label
+msgid "Is label"
+msgstr "Is label"
+
+#. module: wizard_mo_output
+#: code:addons/wizard_mo_output/mrp.py:60
+#, python-format
+msgid "It is necessary to first make the output of the materials."
+msgstr "Il faut d'abord faire la sortie des matières."
+
+#. module: wizard_mo_output
+#: model:ir.model,name:wizard_mo_output.model_stock_label
+#: model:ir.model.fields,field_description:wizard_mo_output.field_mrp_reservation_label_ids
+#: model:ir.model.fields,field_description:wizard_mo_output.field_wizard_mo_output_label_ids
+#: model:ir.model.fields,field_description:wizard_mo_output.field_wizard_mo_output_line_label_ids
+msgid "Label"
+msgstr "Étiquette"
+
+#. module: wizard_mo_output
+#: model:ir.model.fields,field_description:wizard_mo_output.field_mrp_reservation___last_update
+#: model:ir.model.fields,field_description:wizard_mo_output.field_wizard_mo_output___last_update
+#: model:ir.model.fields,field_description:wizard_mo_output.field_wizard_mo_output_line___last_update
+#: model:ir.model.fields,field_description:wizard_mo_output.field_wizard_mo_output_line_add___last_update
+msgid "Last Modified on"
+msgstr "Dernière modification le"
+
+#. module: wizard_mo_output
+#: model:ir.model.fields,field_description:wizard_mo_output.field_mrp_reservation_write_uid
+#: model:ir.model.fields,field_description:wizard_mo_output.field_wizard_mo_output_line_add_write_uid
+#: model:ir.model.fields,field_description:wizard_mo_output.field_wizard_mo_output_line_write_uid
+#: model:ir.model.fields,field_description:wizard_mo_output.field_wizard_mo_output_write_uid
+msgid "Last Updated by"
+msgstr "Dernière mise à jour par"
+
+#. module: wizard_mo_output
+#: model:ir.model.fields,field_description:wizard_mo_output.field_mrp_reservation_write_date
+#: model:ir.model.fields,field_description:wizard_mo_output.field_wizard_mo_output_line_add_write_date
+#: model:ir.model.fields,field_description:wizard_mo_output.field_wizard_mo_output_line_write_date
+#: model:ir.model.fields,field_description:wizard_mo_output.field_wizard_mo_output_write_date
+msgid "Last Updated on"
+msgstr "Dernière mise à jour le"
+
+#. module: wizard_mo_output
+#: model:ir.model.fields,field_description:wizard_mo_output.field_wizard_mo_output_line_ids
+#: model:ir.ui.view,arch_db:wizard_mo_output.view_form_wizard_mo_output_id
+msgid "Lines"
+msgstr "Lignes"
+
+#. module: wizard_mo_output
+#: model:ir.model.fields,field_description:wizard_mo_output.field_wizard_mo_output_line_add_location_dest_id
+#: model:ir.model.fields,field_description:wizard_mo_output.field_wizard_mo_output_line_location_dest_id
+msgid "Location dest"
+msgstr "Emplacement dest"
+
+#. module: wizard_mo_output
+#: model:ir.model.fields,field_description:wizard_mo_output.field_wizard_mo_output_line_add_location_src_id
+#: model:ir.model.fields,field_description:wizard_mo_output.field_wizard_mo_output_line_location_src_id
+msgid "Location src"
+msgstr "Emplacement src"
+
+#. module: wizard_mo_output
+#: model:ir.model.fields,field_description:wizard_mo_output.field_wizard_mo_output_line_add_wo_id
+#: model:ir.model.fields,field_description:wizard_mo_output.field_wizard_mo_output_line_wo_id
+#: model:ir.model.fields,field_description:wizard_mo_output.field_wizard_mo_output_mo_id
+msgid "MO"
+msgstr "OF"
+
+#. module: wizard_mo_output
+#: model:ir.actions.act_window,name:wizard_mo_output.act_view_wizard_mo_output_id
+#: model:ir.ui.menu,name:wizard_mo_output.menu_mrp_add_operation_id
+#: model:ir.ui.view,arch_db:wizard_mo_output.view_form_wizard_mo_output_id
+msgid "MO output"
+msgstr "Sortie MP OF"
+
+#. module: wizard_mo_output
+#: model:ir.actions.act_window,name:wizard_mo_output.act_view_wizard_mo_output_line_add_id
+#: model:ir.ui.view,arch_db:wizard_mo_output.view_form_wizard_mo_output_line_add_id
+msgid "MO output line add"
+msgstr "Ajouter ligne dans sortie MP OF"
+
+#. module: wizard_mo_output
+#: model:ir.model.fields,field_description:wizard_mo_output.field_mrp_reservation_move_id
+#: model:ir.model.fields,field_description:wizard_mo_output.field_wizard_mo_output_line_move_id
+msgid "Move"
+msgstr "Mouvement"
+
+#. module: wizard_mo_output
+#: model:ir.model,name:wizard_mo_output.model_mrp_reservation
+msgid "Mrp reservation"
+msgstr "Mrp réservation"
+
+#. module: wizard_mo_output
+#: model:ir.model.fields,field_description:wizard_mo_output.field_wizard_mo_output_line_qty_need
+msgid "Need qty"
+msgstr "Qté du besoin"
+
+#. module: wizard_mo_output
+#: model:ir.model.fields,field_description:wizard_mo_output.field_wizard_mo_output_line_is_no_stock
+msgid "No stock"
+msgstr "No stock"
+
+#. module: wizard_mo_output
+#: model:ir.ui.view,arch_db:wizard_mo_output.view_form_wizard_mo_output_id
+#: model:ir.ui.view,arch_db:wizard_mo_output.view_form_wizard_mo_output_line_add_id
+msgid "OK"
+msgstr "OK"
+
+#. module: wizard_mo_output
+#: model:ir.ui.view,arch_db:wizard_mo_output.view_form_wizard_mo_output_id
+msgid "Operations"
+msgstr "Opérations"
+
+#. module: wizard_mo_output
+#: model:ir.model.fields,field_description:wizard_mo_output.field_wizard_mo_output_line_add_mo_output_line_id
+#: model:ir.model.fields,field_description:wizard_mo_output.field_wizard_mo_output_line_mo_output_id
+msgid "Output MO"
+msgstr "Sortie MP"
+
+#. module: wizard_mo_output
+#: model:ir.model.fields,field_description:wizard_mo_output.field_wizard_mo_output_produce_qty
+msgid "Produce quantity"
+msgstr "Quantité produite"
+
+#. module: wizard_mo_output
+#: model:ir.model.fields,field_description:wizard_mo_output.field_mrp_reservation_product_id
+#: model:ir.model.fields,field_description:wizard_mo_output.field_wizard_mo_output_line_add_product_id
+#: model:ir.model.fields,field_description:wizard_mo_output.field_wizard_mo_output_line_product_id
+msgid "Product"
+msgstr "Produit"
+
+#. module: wizard_mo_output
+#: model:ir.model.fields,field_description:wizard_mo_output.field_mrp_reservation_qty
+#: model:ir.model.fields,field_description:wizard_mo_output.field_wizard_mo_output_line_add_qty
+#: model:ir.model.fields,field_description:wizard_mo_output.field_wizard_mo_output_line_qty
+msgid "Qty"
+msgstr "Qté"
+
+#. module: wizard_mo_output
+#: model:ir.model.fields,field_description:wizard_mo_output.field_mrp_reservation_qty_mo
+msgid "Qty MO"
+msgstr "Qté OF"
+
+#. module: wizard_mo_output
+#: model:ir.model.fields,field_description:wizard_mo_output.field_wizard_mo_output_line_qty_already_taken
+msgid "Qty already taken"
+msgstr "Qté déjà emmenée"
+
+#. module: wizard_mo_output
+#: model:ir.model.fields,field_description:wizard_mo_output.field_wizard_mo_output_line_qty_stock
+msgid "Qty on stock"
+msgstr "Qté sur stock"
+
+#. module: wizard_mo_output
+#: model:ir.model.fields,field_description:wizard_mo_output.field_wizard_mo_output_qty
+msgid "Qty remaining"
+msgstr "Quantité restante"
+
+#. module: wizard_mo_output
+#: model:ir.model.fields,help:wizard_mo_output.field_wizard_mo_output_qty
+msgid "Qty remaining to be produced"
+msgstr "Qté restante à produire"
+
+#. module: wizard_mo_output
+#: model:ir.model.fields,field_description:wizard_mo_output.field_wizard_mo_output_line_qty_taken_stock
+msgid "Qty taken from stock"
+msgstr "Qté prise sur stock"
+
+#. module: wizard_mo_output
+#: model:ir.model.fields,field_description:wizard_mo_output.field_mrp_reservation_qty_taken_stock
+msgid "Qty taken stock"
+msgstr "Qté prise sur stock"
+
+#. module: wizard_mo_output
+#: model:ir.model.fields,help:wizard_mo_output.field_wizard_mo_output_line_qty_already_taken
+msgid "Quantity already taken but not used"
+msgstr "Quantité déjà emmenée mais non utilisée"
+
+#. module: wizard_mo_output
+#: model:ir.model.fields,field_description:wizard_mo_output.field_mrp_workorder_reservation_ids
+#: model:ir.ui.view,arch_db:wizard_mo_output.inherit_view_form_mrp_workorder_mo_output
+msgid "Reservations"
+msgstr "Réservations"
+
+#. module: wizard_mo_output
+#: model:ir.model.fields,field_description:wizard_mo_output.field_wizard_mo_output_total_qty
+msgid "Total quantity of OF"
+msgstr "Quantité total de l'OF"
+
+#. module: wizard_mo_output
+#: model:ir.model.fields,field_description:wizard_mo_output.field_mrp_reservation_uom_id
+#: model:ir.model.fields,field_description:wizard_mo_output.field_wizard_mo_output_line_add_uom_id
+#: model:ir.model.fields,field_description:wizard_mo_output.field_wizard_mo_output_line_uom_id
+#: model:ir.model.fields,field_description:wizard_mo_output.field_wizard_mo_output_uom_id
+msgid "UoM"
+msgstr "UdM"
+
+#. module: wizard_mo_output
+#: model:ir.model.fields,field_description:wizard_mo_output.field_mrp_reservation_user_id
+msgid "User"
+msgstr "Utilisateur"
+
+#. module: wizard_mo_output
+#: model:ir.model.fields,field_description:wizard_mo_output.field_mrp_reservation_wo_id
+#: model:ir.model.fields,field_description:wizard_mo_output.field_wizard_mo_output_wo_ids
+msgid "WO"
+msgstr "OT"
+
+#. module: wizard_mo_output
+#: model:ir.ui.view,arch_db:wizard_mo_output.view_form_wizard_mo_output_id
+msgid "WOs"
+msgstr "OTs"
+
+#. module: wizard_mo_output
+#: model:ir.model,name:wizard_mo_output.model_wizard_mo_output_line
+msgid "Wizard ligne sortie OF"
+msgstr "Wizard ligne sortie OF"
+
+#. module: wizard_mo_output
+#: model:ir.model,name:wizard_mo_output.model_wizard_mo_output
+msgid "Wizard sortie OF"
+msgstr "Wizard sortie OF"
+
+#. module: wizard_mo_output
+#: model:ir.model,name:wizard_mo_output.model_mrp_workorder
+msgid "Workorder"
+msgstr "Ordre de travail"
+
+#. module: wizard_mo_output
+#: model:ir.ui.view,arch_db:wizard_mo_output.view_form_wizard_mo_output_id
+#: model:ir.ui.view,arch_db:wizard_mo_output.view_form_wizard_mo_output_line_add_id
+msgid "or"
+msgstr "ou"
+

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+		
+		<act_window 
+        name="All reset workflow" 
+        res_model="all.reset.workflow" 
+        src_model="res.partner" 
+        view_mode="form" 
+        target="new" 
+        groups="group_menu_partner_manager"
+        key2="client_action_multi" 
+        id="act_all_reset_workflow_partner" />
+		
+	</data>
+</openerp>

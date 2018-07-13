@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+    
+    	<!-- FORM VIEW Resource Timetracking -->
+		<record id='analytic_view_form_resource_timetracking' model='ir.ui.view'>
+			<field name="name">analytic_view_form_resource_timetracking</field>
+			<field name="model">resource.timetracking</field>
+			<field name="inherit_id" ref="base_openprod.view_form_resource_timetracking" />
+			<field name="priority" eval="1400" />
+			<field name="arch" type="xml">
+				<xpath expr="//group[@name='timetracking_first_group']" position="after">
+					<group colspan="4" col="4" string="Analytic lines">
+						<group colspan="4" col="6">
+							<field name="analytic_distribution_id" colspan="2"/>
+							<label colspan="4" string=""/>
+						</group>
+						<field name="analytic_line_ids" colspan="4" nolabel="1"/>
+					</group>
+				</xpath>
+			</field>
+		</record>
+    
+    </data>
+</openerp>

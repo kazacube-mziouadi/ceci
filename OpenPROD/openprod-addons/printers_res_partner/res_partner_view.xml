@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+		
+		<!-- FORM VIEW Partner -->
+		<record id="view_form_print_partner_address" model="ir.ui.view">
+			<field name="name">view_form_print_partner_address</field>
+			<field name="inherit_id" ref="partner_openprod.openprod_view_partner_form" />
+			<field name="model">res.partner</field>
+			<field name="arch" type="xml">
+				<xpath expr="//separator[@name='separator_analysis_menu']" position="before">
+					<button class="oe_inline oe_stat_button" type="action" string="Print address" 
+					name="%(action_print_partner_address)d" icon="fa-print" />
+				</xpath>
+				<xpath expr="//field[@name='contact_ids']//form//separator[@name='separator_analysis_line']" position="before">
+					<button class="oe_inline oe_stat_button" type="action" string="Print address" 
+					name="%(action_print_partner_address)d" icon="fa-print" />
+				</xpath>
+			</field>
+		</record>
+
+	</data>
+</openerp>

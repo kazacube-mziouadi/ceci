@@ -1,0 +1,6 @@
+*.pyc
+config
+.settings
+org.eclipse.core.resources.prefs
+oerp_sentinel.log
+openprod-conf2

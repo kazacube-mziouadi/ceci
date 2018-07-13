@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+		<!-- FORM VIEW Product -->
+		<record id='view_form_product' model='ir.ui.view'>
+			<field name="name">product</field>
+			<field name="model">product.product</field>
+			<field name="inherit_id" ref="product.view_form_product" />
+			<field name="arch" type="xml">
+				<xpath expr="//page[@name='product_administration_page']" position="after">
+					<page string="Variants" attrs="{'invisible': [('is_model', '=', False)]}">
+						<group string="Variant category" colspan="3">
+							<field name="variant_category_ids" nolabel="1" />
+						</group>
+						<group colspan="3">
+							<button string="Generate variants" type="action" name="%(act_create_variants)d"
+								context="{'default_model_id':id,
+								  'default_variant_category_ids':variant_category_ids}" class="oe_inline oe_stat_button"
+								icon="fa-list-ul" />
+                            <button string="Update variants" type="action" name="%(act_update_variants)d" context="{'default_variant_ids':variant_ids}"
+                                class="oe_inline oe_stat_button" icon="fa-list-ul" />
+                            <button string="Update variants categories" type="action" name="%(act_update_variants_categories)d"  context="{'default_parent_id':active_id}"
+                                class="oe_inline oe_stat_button" icon="fa-list-ul" attrs="{'invisible': [('variant_ids', '=', [])]}" />
+						</group>
+						<group string="Variants">
+							<field name="variant_ids" nolabel="1" />
+						</group>
+					</page>
+					<page attrs="{'invisible': ['|', ('is_model', '=', True), ('model_id', '=', False)]}" string="Criteria">
+						<group string="Criteria">
+							<field name="variant_values_ids" readonly="1" nolabel="1">
+								<tree>
+									<field name="variant_category_id" />
+									<field name="value" />
+									<field name="price_unit" />
+								</tree>
+							</field>
+						</group>
+					</page>
+				</xpath>
+				<xpath expr="//field[@name='code']" position="after">
+					<field name="bom_ids" invisible="1" />
+					<field name="is_model" attrs="{'invisible': [('model_id', '!=', False)]}" />
+					<field name="model_id" attrs="{'invisible': ['|', ('is_model', '=', True), ('model_id', '=', False)]}" />
+				</xpath>
+			</field>
+		</record>
+
+		<!-- ACTION Value -->
+		<record id="act_variant_category_value" model="ir.actions.act_window">
+			<field name="name">Value</field>
+			<field name="res_model">variant.category.value</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+
+		<!-- TREE VIEW Value -->
+		<record id='view_tree_variant_category_value' model='ir.ui.view'>
+			<field name="name">view_tree_variant_category_value</field>
+			<field name="model">variant.category.value</field>
+			<field name="arch" type="xml">
+				<tree string="Variant value" version="8.0">
+					<field name="variant_category_id" />
+					<field name="value" />
+					<field name="price_unit" />
+				</tree>
+			</field>
+		</record>
+
+		<!-- FORM VIEW Values -->
+		<record id='view_form_variant_category_value' model='ir.ui.view'>
+			<field name="name">variant_category.value</field>
+			<field name="model">variant.category.value</field>
+			<field name="arch" type="xml">
+				<form string="Values" version="8.0">
+					<group colspan="4" col="4">
+						<field name="variant_category_id" colspan="2"/>
+						<label string="" colspan="2"/>
+					</group>
+					<group colspan="4" col="6" string="Value">
+						<field name="value" />
+						<field name="name_suffix" />
+						<field name="code_suffix" />
+						<field name="price_unit" />
+					</group>
+				</form>
+			</field>
+		</record>
+
+		<!-- SEARCH VIEW Value -->
+		<record id='view_search_variant_category_value' model='ir.ui.view'>
+			<field name="name">view_search_variant_category_value</field>
+			<field name="model">variant.category.value</field>
+			<field name="arch" type="xml">
+				<search version="8.0">
+					<field name="variant_category_id" />
+					<field name="value" />
+					<group expand="0" string="Group By">
+						<filter string="Category" context="{'group_by': 'variant_category_id'}" />
+					</group>
+				</search>
+			</field>
+		</record>
+
+		<!-- ACTION Category -->
+		<record id="act_variant_category" model="ir.actions.act_window">
+			<field name="name">Category variant</field>
+			<field name="res_model">variant.category</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+
+		<!-- ACTION TREE Category -->
+		<record id="act_variant_category_tree" model="ir.actions.act_window.view">
+			<field name="sequence" eval="10" />
+			<field name="view_mode">tree</field>
+			<field name="act_window_id" ref="act_variant_category" />
+		</record>
+
+		<!-- ACTION FORM Category -->
+		<record id="act_variant_category_form" model="ir.actions.act_window.view">
+			<field name="sequence" eval="20" />
+			<field name="view_mode">form</field>
+			<field name="act_window_id" ref="act_variant_category" />
+		</record>
+		
+		<record id="action_parameter_dimension_type" model="ir.actions.act_window">
+            <field name="name">Parameter Dimension Type</field>
+            <field name="res_model">parameter.dimension.type</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[]</field>
+            <field name="context">{}</field>
+        </record>
+    
+        <menuitem name="Variant category" action="act_variant_category" id="menu_variant_category_menu_sale" parent="sale.menu_sale_configuration" groups="sale.group_menu_sale_config"/>
+
+		<!-- FORM VIEW Category -->
+		<record id='view_form_variant_category' model='ir.ui.view'>
+			<field name="name">variant_category</field>
+			<field name="model">variant.category</field>
+			<field name="arch" type="xml">
+				<form string="Category" version="8.0">
+					<group colspan="4" col="4" >
+						<field name="name" colspan="4" />
+						<field name="active" />
+						<field name="price_unit" />
+						<field name="old_price_unit" invisible="1" />
+					</group>
+					<group string="Values" colspan="4" >
+						<field name="value_ids" nolabel="1" colspan="4" context="{'default_price_unit': price_unit}">
+							<tree editable="bottom">
+								<field name="value" />
+								<field name="name_suffix" />
+								<field name="code_suffix" />
+								<field name="price_unit" />
+							</tree>
+						</field>
+					</group>
+				</form>
+			</field>
+		</record>
+
+		<menuitem name="Variant Categories" id="variant_categories" parent="product.menu_product_main" sequence="20"
+			action="act_variant_category" groups="product.group_menu_product_user"/>
+		<menuitem name="Variant Values" id="variant_values" parent="product.menu_product_main" sequence="30"
+			action="act_variant_category_value" groups="product.group_menu_product_user"/>
+	</data>
+</openerp>

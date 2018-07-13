@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+		<template id="assets_oee" name="oee assets" inherit_id="web.webclient_bootstrap">
+			<xpath expr="//script[last()]" position="after">
+				<script type="text/javascript" src="/oee/static/src/js/oee.js"></script>
+				<script src="/planning/static/src/js/dhtmlxscheduler.js" type="text/javascript" charset="utf-8"></script>
+				<script src="/planning/static/src/js/ext/dhtmlxscheduler_limit.js"></script>
+				<script src="/planning/static/src/js/ext/dhtmlxscheduler_timeline.js"></script>
+				<script src="/planning/static/src/js/ext/dhtmlxscheduler_readonly.js"></script>
+				<script src="/planning/static/src/js/ext/dhtmlxscheduler_treetimeline.js"></script>
+				<script src="/planning/static/src/js/ext/dhtmlxscheduler_multisection.js"></script>
+				<script src="/planning/static/src/js/ext/dhtmlxscheduler_readonly.js"></script>
+				<script src="/planning/static/src/js/ext/dhtmlxscheduler_tooltip.js"></script>
+				<link rel="stylesheet" href="/planning/static/src/css/dhtmlxscheduler.css" type="text/css" media="screen"
+					charset="utf-8" />
+				<link rel="stylesheet" href="/oee/static/src/css/oee.css" type="text/css" media="screen" charset="utf-8" />
+			</xpath>
+		</template>
+
+		<!-- FORM VIEW OEE -->
+		<record id='view_form_oee' model='ir.ui.view'>
+			<field name="name">view_form_oee</field>
+			<field name="model">oee</field>
+			<field name="arch" type="xml">
+				<form string="OEE" version="8.0">
+					<group col="8">
+						<field name='name' />
+						<group colspan="6" />
+						<field name='resource_id' />
+						<field name='area_id' />
+						<group colspan="4" />
+						<field name='period_1' />
+						<field name='oee_period_1' />
+						<group colspan="4" />
+						<field name='period_2' />
+						<field name='oee_period_2' />
+						<group colspan="4" />
+						<field name='last_mo_id' />
+						<field name='last_activity' />
+						<group colspan="4" />
+						<field name='last_activity_start_date' />
+						<group colspan="6" />
+						<group string="Last times" colspan="8">
+							<field name='last_time_ids' nolabel="1" />
+						</group>
+					</group>
+				</form>
+			</field>
+		</record>
+
+		<!-- TREE VIEW OEE -->
+		<record id='view_tree_oee' model='ir.ui.view'>
+			<field name="name">view_tree_oee</field>
+			<field name="model">oee</field>
+			<field name="arch" type="xml">
+				<tree string="OEE" version="8.0">
+					<field name='name' />
+					<field name='resource_id' />
+					<field name='period_1' />
+					<field name='oee_period_1' />
+					<field name='period_2' />
+					<field name='oee_period_2' />
+					<field name='area_id' />
+				</tree>
+			</field>
+		</record>
+
+		<!-- SEARCH VIEW OEE -->
+		<record id='view_search_oee' model='ir.ui.view'>
+			<field name="name">view_search_oee</field>
+			<field name="model">oee</field>
+			<field name="arch" type="xml">
+				<search version="8.0">
+					<group>
+						<field name="area_id" />
+						<field name="resource_id" />
+					</group>
+				</search>
+			</field>
+		</record>
+
+		<!-- KANBAN VIEW OEE -->
+		<record id="view_kanban_oee" model="ir.ui.view">
+			<field name="name">view_kanban_oee</field>
+			<field name="model">oee</field>
+			<field name="arch" type="xml">
+				<kanban class="oe_background_grey" default_group_by="area_id" readonly="1">
+					<templates>
+						<t t-name="kanban-box">
+							<div t-attf-class="activity_{{ record.last_activity.value }} oe_kanban_global_click">
+								<div class="o_dropdown_kanban dropdown">
+									<a class="dropdown-toggle btn" data-toggle="dropdown" href="#">
+										<span class="fa fa-bars fa-lg" />
+									</a>
+								</div>
+								<div class="oe_kanban_content">
+									<h4 class="text-center" name="name">
+										<strong>
+											<field name="name" />
+										</strong>
+									</h4>
+									<div class="oe_clear"></div>
+									<div class="oe_center">
+										<span>
+											Last Manufacturing Order :
+											<field name="last_mo_id" />
+										</span>
+									</div>
+									<div class="oe_center">
+										<span>
+											Activity :
+											<field name="last_activity" />
+										</span>
+									</div>
+									<div class="oe_center">
+										<span>
+											Since :
+											<field name="last_activity_start_date" />
+										</span>
+									</div>
+								</div>
+								<div class="oe_footer" style="margin-top:4px;">
+									<div>
+										<field name="oee_period_1" widget="gauge" style="width:140px; height: 120px; cursor: pointer;"
+											options="{'customsectors':[{'lo':0,'hi':50,'color':'#F00'},
+											                           {'lo':50,'hi':80,'color':'#F80'},
+											                           {'lo':80,'hi':100,'color':'#0F0'},]}">OEE period 1</field>
+										<field name="oee_period_2" widget="gauge" style="width:140px; height: 120px; cursor: pointer;"
+											options="{'customsectors':[{'lo':0,'hi':50,'color':'#F00'},
+											                           {'lo':50,'hi':80,'color':'#F80'},
+											                           {'lo':80,'hi':100,'color':'#0F0'},]}">OEE period 2</field>
+									</div>
+								</div>
+							</div>
+						</t>
+					</templates>
+				</kanban>
+			</field>
+		</record>
+
+		<!-- OEE VIEW -->
+		<record id='view_oee_oee' model='ir.ui.view'>
+			<field name="name">view_form_oee</field>
+			<field name="model">oee</field>
+			<field name="arch" type="xml">
+				<oee string="OEE" version="8.0">
+				</oee>
+			</field>
+		</record>
+
+		<!-- ACTION OEE -->
+		<record id="act_oee" model="ir.actions.act_window">
+			<field name="name">Overall Equipment Effectiveness</field>
+			<field name="res_model">oee</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">kanban,tree,form,oee</field>
+			<field name="search_view_id" ref="view_search_oee" />
+		</record>
+
+		<menuitem name="OEE" action="act_oee" id="menu_oee" parent="base_openprod.menu_resource_main" />
+	</data>
+</openerp>

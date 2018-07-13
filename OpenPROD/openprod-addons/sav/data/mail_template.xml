@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data noupdate="1">
+	
+		
+		<record id="email_template_for_crm_reclaim" model="mail.template">
+            <field name="name">CRM reclaim</field>
+            <field name="email_from">${user.email or ''}</field>
+            <field name="subject"></field>
+            <field name="email_to">${object.customer_id.email or ''}</field>
+            <field name="model_id" ref="model_crm_reclaim" />
+            <field name="lang">${object.customer_id.lang}</field>
+            <field name="edi_select"></field>
+            <field name="body_html"><![CDATA[
+<div style="font-family: 'Lucica Grande', Ubuntu, Arial, Verdana, sans-serif; font-size: 12px; color: rgb(34, 34, 34); background-color: #FFF; ">
+
+    <p>Hello ${object.customer_id.name or ''},</p>
+</div>]]></field>
+        </record>
+		
+	</data>
+</openerp>

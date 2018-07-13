@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data noupdate="0">
+
+		<!-- WORKFLOW -->
+		<record id="wkf_res_partner" model="workflow">
+			<field name="name">res_partner</field>
+			<field name="osv">res.partner</field>
+			<field name="on_create">True</field>
+		</record>
+
+
+		<!-- DISPLAY STATE -->
+		<record id="partner_display_state_prospect" model="workflow.display.state">
+			<field name="wkf_id" ref="wkf_res_partner" />
+			<field name="sequence" eval="0" />
+			<field name="label">Prospect</field>
+			<field name="name">prospect</field>
+			<field name="always_visible" eval="True" />
+		</record>
+		<record id="partner_display_state_qualified" model="workflow.display.state">
+			<field name="wkf_id" ref="wkf_res_partner" />
+			<field name="sequence" eval="10" />
+			<field name="label">Qualified</field>
+			<field name="name">qualified</field>
+			<field name="always_visible" eval="True" />
+		</record>
+		<record id="partner_display_state_stopped" model="workflow.display.state">
+			<field name="wkf_id" ref="wkf_res_partner" />
+			<field name="sequence" eval="30" />
+			<field name="label">Stopped</field>
+			<field name="name">stopped</field>
+			<field name="always_visible" eval="False" />
+		</record>
+
+
+		<!-- ACTIVITY -->
+		<!-- Prospect -->
+		<record id="partner_act_prospect" model="workflow.activity">
+			<field name="wkf_id" ref="wkf_res_partner" />
+			<field name="name">Prospect</field>
+			<field name="kind">function</field>
+			<field name="can_not_be_deleted">False</field>
+			<field name="required">False</field>
+			<field name="sequence" eval="10" />
+			<field name="flow_start" eval="True"/>
+			<field name="flow_stop" eval="False"/>
+			<field name="action">write({'display_state': 'prospect', 'state': 'prospect'})</field>
+		</record>
+		<!-- Qualified -->
+		<record id="partner_act_qualified" model="workflow.activity">
+			<field name="wkf_id" ref="wkf_res_partner" />
+			<field name="name">Qualified</field>
+			<field name="kind">function</field>
+			<field name="can_not_be_deleted">False</field>
+			<field name="required">False</field>
+			<field name="sequence" eval="20" />
+			<field name="flow_start" eval="False"/>
+			<field name="flow_stop" eval="False"/>
+			<field name="action">write({'display_state': 'qualified', 'state': 'qualified'})</field>
+		</record>
+		<!-- Stopped -->
+		<record id="partner_act_stopped" model="workflow.activity">
+			<field name="wkf_id" ref="wkf_res_partner" />
+			<field name="name">Stopped</field>
+			<field name="kind">function</field>
+			<field name="can_not_be_deleted">False</field>
+			<field name="required">False</field>
+			<field name="sequence" eval="30" />
+			<field name="flow_start" eval="False"/>
+			<field name="flow_stop" eval="True"/>
+			<field name="action">write({'display_state': 'stopped', 'state': 'stopped'})
+			action_stopped()</field>
+		</record>
+
+
+		<!-- TRANSITION -->
+		<!-- Prospect to Qualified -->
+		<record id="partner_prospect_to_qualified" model="workflow.transition">
+			<field name="sequence" eval="10" />
+			<field name="act_from" ref="partner_act_prospect" />
+			<field name="act_to" ref="partner_act_qualified" />
+			<field name="signal">qualified</field>
+			<field name="is_default">True</field>
+			<field name="visible_button">True</field>
+			<field name="button_label">Qualified</field>
+			<field name="button_class">openprod_logical_button</field>
+		</record>
+		<!-- Qualified to Stopped -->
+		<record id="partner_qualified_to_stopped" model="workflow.transition">
+			<field name="sequence" eval="20" />
+			<field name="act_from" ref="partner_act_qualified" />
+			<field name="act_to" ref="partner_act_stopped" />
+			<field name="signal">stopped_qualified</field>
+			<field name="is_default">True</field>
+			<field name="visible_button">True</field>
+			<field name="button_label">Stopped</field>
+			<field name="attrs">[('is_company', '=', True)]</field>
+			<field name="button_class">openprod_cancel_button</field>
+		</record>
+		<!-- Qualified to Stopped for company -->
+        <record id="partner_qualified_to_stopped_company" model="workflow.transition">
+            <field name="sequence" eval="20" />
+            <field name="act_from" ref="partner_act_qualified" />
+            <field name="act_to" ref="partner_act_stopped" />
+            <field name="signal">stopped_qualified_company</field>
+            <field name="is_default">True</field>
+            <field name="visible_button">True</field>
+            <field name="button_confirm">WARNING this will put referencing obsolete products</field>
+            <field name="button_label">Stopped</field>
+            <field name="attrs">[('is_company', '!=', True)]</field>
+            <field name="button_class">openprod_cancel_button</field>
+        </record>
+		<!-- Prospect to Stopped -->
+        <record id="partner_prospect_to_stopped" model="workflow.transition">
+            <field name="sequence" eval="20" />
+            <field name="act_from" ref="partner_act_prospect" />
+            <field name="act_to" ref="partner_act_stopped" />
+            <field name="signal">stopped_prospect</field>
+            <field name="is_default">True</field>
+            <field name="visible_button">True</field>
+            <field name="button_label">Stopped</field>
+            <field name="attrs">[('is_company', '=', True)]</field>
+            <field name="button_class">openprod_cancel_button</field>
+        </record>
+        <!-- Prospect to Stopped for company -->
+        <record id="partner_prospect_to_stopped_company" model="workflow.transition">
+            <field name="sequence" eval="20" />
+            <field name="act_from" ref="partner_act_prospect" />
+            <field name="act_to" ref="partner_act_stopped" />
+            <field name="signal">stopped_prospect_company</field>
+            <field name="is_default">True</field>
+            <field name="visible_button">True</field>
+            <field name="button_confirm">WARNING this will put referencing obsolete products</field>
+            <field name="button_label">Stopped</field>
+            <field name="attrs">[('is_company', '!=', True)]</field>
+            <field name="button_class">openprod_cancel_button</field>
+        </record>
+		<!-- Stopped to Prospect -->
+		<record id="partner_stopped_to_draft" model="workflow.transition">
+			<field name="sequence" eval="60" />
+			<field name="act_from" ref="partner_act_stopped" />
+			<field name="act_to" ref="partner_act_prospect" />
+			<field name="signal">prospect</field>
+			<field name="is_default">True</field>
+			<field name="visible_button">True</field>
+			<field name="button_label">Prospect</field>
+			<field name="button_class">openprod_logical_button</field>
+		</record>
+	</data>
+</openerp>

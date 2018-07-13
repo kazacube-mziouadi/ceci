@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+		<!-- FORM VIEW Add attendee -->
+		<record model="ir.ui.view" id="view_form_launch_test_suit">
+			<field name="name">Launch test suit</field>
+			<field name="model">launch.test.suit</field>
+			<field name="type">form</field>
+			<field name="arch" type="xml">
+				<form string="Launch test suit">
+					<group>
+						<field name="batch_id" />
+						<field name="batch_ids" widget="many2many_tags" />
+						<field name="scenario_id" />
+						<field name="scenario_line_id" />
+						<field name="lang_code" invisible="1" />
+						<field name="target_id" />
+					</group>
+					<footer>
+						<button name="launch_test_suit" string="Launch" type="object" class="oe_highlight" />
+						or
+						<button string="Cancel" class="oe_link" special="cancel" />
+					</footer>
+				</form>
+			</field>
+		</record>
+
+		<!-- ACTION launch test -->
+		<record id="act_launch_test_suit" model="ir.actions.act_window">
+			<field name="name">Launch test suit</field>
+			<field name="res_model">launch.test.suit</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">form</field>
+			<field name="target">new</field>
+		</record>
+		
+	</data>
+</openerp>

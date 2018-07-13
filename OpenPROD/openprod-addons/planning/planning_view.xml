@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+		<record id="act_planning" model="ir.actions.act_url">
+			<field name="name">Planning</field>
+			<field name="url">/planning/static/src/index.html</field>
+		</record>
+		<menuitem id="menu_wo_planning" name="Work Orders Planning" action="act_planning" parent="mrp.menu_production_planning" groups="mrp.group_menu_manuf_plan"/>
+	</data>
+</openerp>

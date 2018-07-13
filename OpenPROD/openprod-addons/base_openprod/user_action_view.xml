@@ -1,0 +1,404 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+	
+		<menuitem name="My actions" id="menu_main_actions" parent="base_openprod.menu_desk_main" sequence="10" groups="group_desk_user" />
+		
+		<record id='calendar_event.view_calendar_event_form' model='ir.ui.view'>
+			<field name="priority" eval="1600" />
+        </record>
+		<record id='calendar_event.view_calendar_event_form_popup' model='ir.ui.view'>
+			<field name="priority" eval="1700" />
+        </record>
+        
+		<!-- FORM VIEW Calendar event -->
+		<record id='view_form_calendar_event' model='ir.ui.view'>
+			<field name="name">view_form_calendar_event</field>
+			<field name="model">calendar.event</field>
+			<field name="arch" type="xml">
+				<form string="Actions" version="8.0">
+					<header>
+						<button name="%(act_wizard_create_timetracking_action)d" string="Declare time" type="action" context="{'default_action_id': id, 'default_target_type': 'action'}" 
+						attrs="{'invisible': [('button_save_visible', '=', True)]}"/>
+						<field name="state_id" widget="statusbar" clickable="True"/>
+					</header>
+					<group colspan="4" col="9">
+						<group colspan="8" col="6">
+							<group colspan="6" col="1">
+								<field name="button_save_visible" invisible="1" />
+							</group>
+							<group colspan="2" col="2">
+								<field name="name" />
+								<field name="start_datetime" on_change="onchange_duration('start', start_datetime, duration)" attrs="{'invisible': [('related_type', '!=', 'plan')]}"/>
+								<field name="stop_datetime" on_change="onchange_duration('stop', stop_datetime, duration)"/>
+								<field name="confidentiality" />
+							</group>
+							<group colspan="2" col="2">
+								<field name="affected_user_id" />
+								<field name="duration" widget="float_time" on_change="onchange_duration('start', start_datetime, duration)" attrs="{'invisible': [('related_type', '!=', 'plan')]}"/>
+								<field name="alert_period" />
+							</group>
+							<group colspan="2" col="2">
+								<field name="alarm_ids" widget="many2many_tags"/>
+								<field name="type_id" />
+								<field name="related_type" invisible="1"/>
+							</group>
+							<group colpsan="6" invisible="1">
+								<field name="state"/>
+								<field name="is_attendee"/>
+	                    		<field name="attendee_status"/>
+							</group>
+							<notebook colspan="6">
+                        		<page string="Details">
+									<group colspan="4" col="4" string="Description">
+										<field name="description" colspan="4" nolabel="1"/>
+									</group>
+									<group colspan="4" col="4" string="Details">
+										<field name="user_id" />
+										<field name="categ_ids"  widget="many2many_tags"/>
+										<field name="location" />
+										<group colspan="4" col="8" attrs="{'invisible': [('button_save_visible', '=', True)]}">
+				                          	<button name="remove_seven_days" type="object" string="- 7" icon="gtk-go-back" colspan="1"/>
+											<button name="remove_one_day" type="object" string="- 1" icon="gtk-go-back" colspan="1"/>
+				                          	<label colspan="4" string=""/>
+				                          	<button name="add_one_day" type="object" string="+ 1" icon="gtk-go-forward" colspan="1"/>
+				                          	<button name="add_seven_days" type="object" string="+ 7" icon="gtk-go-forward" colspan="1"/>
+										</group>
+									</group>
+									<group colspan="4" col="4" attrs="{'invisible': [('confidentiality', '!=', 'user')]}">
+										<group colspan="2" col="2" string="Authorized users">
+											<field name="auth_user_ids" colspan="2" nolabel="1"/>
+										</group>
+										<group colspan="2" col="2" string="Authorized groups">
+											<field name="auth_group_ids" colspan="2" nolabel="1"/>
+										</group>
+									</group>
+									<group colspan="4" col="4" string="Times">
+										<field name="timetracking_ids" nolabel="1" colspan="4">
+											<tree>
+												<field name="name"/>
+												<field name="activity"/>
+												<field name="user_id"/>
+												<field name="start_date"/>
+												<field name="end_date"/>
+												<field name="time" widget="float_time" sum="Total"/>
+											</tree>
+										</field>
+									</group>
+								</page>
+                        		<page string="Recurrence" attrs="{'invisible': [('related_type', '!=', 'plan')]}">
+                        			<group string="Details">
+		                                <div>
+		                                    <group>
+		                                        <field name="recurrency"/>
+		                                    </group>
+		                                    <div attrs="{'invisible': [('recurrency', '=', False)]}">
+		                                        <group>
+		                                            <label for="interval"/>
+		                                            <div class="o_row">
+		                                                <field name="interval" attrs="{'required': [('recurrency', '=', True)]}"/>
+		                                                <field name="rrule_type" attrs="{'required': [('recurrency', '=', True)]}"/>
+		                                            </div>
+		                                            <label string="Until" for="end_type"/>
+		                                            <div class="o_row">
+		                                                <field name="end_type" attrs="{'required': [('recurrency', '=', True)]}"/>
+		                                                <field name="count" attrs="{'invisible': [('end_type', '!=', 'count')], 'required': [('recurrency', '=', True)]}"/>
+		                                                <field name="final_date" attrs="{'invisible': [('end_type', '!=', 'end_date')], 'required': [('end_type', '=', 'end_date')]}"/>
+		                                            </div>
+		                                        </group>
+		                                        <group attrs="{'invisible': [('rrule_type', '!=', 'weekly')]}" name="weekdays">
+		                                            <field name="mo"/>
+		                                            <field name="tu"/>
+		                                            <field name="we"/>
+		                                            <field name="th"/>
+		                                            <field name="fr"/>
+		                                            <field name="sa"/>
+		                                            <field name="su"/>
+		                                        </group>
+		                                        <group attrs="{'invisible': [('rrule_type', '!=', 'monthly')]}">
+		                                            <label string="Day of Month" for="month_by"/>
+		                                            <div class="o_row">
+		                                                <field name="month_by"/>
+		                                                <field name="day"
+		                                                    attrs="{'required': [('month_by', '=', 'date'), ('rrule_type', '=', 'monthly')],
+		                                                            'invisible': [('month_by', '!=', 'date')]}"/>
+		                                                <field name="byday" string="The"
+		                                                    attrs="{'required': [('month_by', '=', 'day'), ('rrule_type', '=', 'monthly')],
+		                                                            'invisible': [('month_by', '!=', 'day')]}"/>
+		                                                <field name="week_list" nolabel="1"
+		                                                    attrs="{'required': [('month_by', '=', 'day'), ('rrule_type', '=', 'monthly')],
+		                                                            'invisible': [('month_by', '!=', 'day')]}"/>
+		                                            </div>
+		                                        </group>
+		                                    </div>
+		                                </div>
+		                                <group>
+		                                    <field name="class"/>
+		                                    <field name="show_as"/>
+		                                    <field name="rrule" invisible="1" readonly="0" />                                    
+		                                    <field name="recurrent_id" invisible="1" />
+		                                </group>
+		                            </group>
+                        		</page>
+                        		<page string="Attendees and invitations" attrs="{'invisible': [('related_type', '!=', 'plan')]}">
+                        			<group colspan="4" col="4" string="Attendees">
+	                        			<label for="user_ids" string="Attendees" class="oe_edit_only"/>
+				                        <h2>
+				                            <field name="user_ids" widget="many2manyattendee"
+				                                placeholder="Select attendees..."
+				                                context="{'force_email':True}"
+				                                on_change="onchange_user_ids(user_ids)"
+				                                class="oe_inline"/>
+				                        </h2>
+			                        </group>
+			                        <group colspan="4" col="4" string="Invitations">
+	                        			<button name="do_sendmail" type="object" string="Send mail" icon="terp-mail-message-new" class="oe_link"/>
+			                            <field name="attendee_ids" widget="one2many" colspan="4" nolabel="1">
+			                                <tree string="Invitation details" editable="top" create="false" delete="false">
+			                                    <field name="user_id" />
+			                                    <field name="state" />
+			                                    <field name="email" widget="email"/>
+			                                    <button name="do_tentative" states="needsAction,declined,accepted" string="Uncertain" type="object" icon="terp-crm" />
+			                                    <button name="do_accept" string="Accept" states="needsAction,tentative,declined" type="object" icon="gtk-apply"/>
+			                                    <button name="do_decline" string="Decline" states="needsAction,tentative,accepted" type="object" icon="gtk-cancel"/>
+			                                </tree>
+			                            </field>
+			                        </group>
+                        		</page>
+                        		<page string="Linked document">
+									<group colspan="4" col="4" name="group_link_object" string="Link">
+										<div colspan="4">
+											<p>
+												<label colspan="4" string="You can link your action to a document (e.g : a purchase, a work order...). You can't have more than one document per action"/>
+											</p>
+										</div>
+										<field name="link_object" invisible="1"/>
+										<label colspan="2" string=""/>
+									</group>
+                        		</page>
+							</notebook>
+						</group>
+						<group colspan="1" col="1" class="op_shortcuts" name="shortcut_action_menu" attrs="{'invisible': [('button_save_visible', '=', True)]}">
+							<separator string="Actions" colspan="1" name="separator_action_menu"/>
+						</group>
+					</group>
+				</form>
+			</field>
+		</record>
+		
+		<!-- TREE VIEW Calendar event -->
+		<record id='view_tree_calendar_event' model='ir.ui.view'>
+			<field name="name">view_tree_calendar_event</field>
+			<field name="model">calendar.event</field>
+			<field name="inherit_id" ref="calendar_event.view_calendar_event_tree" />
+			<field name="arch" type="xml">
+				<xpath expr="//field[@name='start_datetime']" position="before">
+					<field name="type_id"/>
+					<field name="related_type"/>
+				</xpath>
+			</field>
+		</record>
+		
+		<!-- CRM Meeting Calendar -->
+	    <record model="ir.ui.view" id="calendar_event.view_calendar_event_calendar">
+	        <field name="name">Meeting</field>
+	        <field name="model">calendar.event</field>
+	        <field name="priority" eval="2"/>
+	        <field name="arch" type="xml">
+	            <calendar string="Meetings" date_start="start_datetime" date_stop="stop_datetime" date_delay="duration" 
+	                         display="[name]" color="color_user_id" attendee="user_ids" avatar_model="res.users"
+	                         use_contacts="True" quick_add="False">
+	                <field name="name"/>
+	                <field name="user_id"/>
+	                <field name="color_user_id"/>
+	                <field name="user_ids"/>
+	                <field name="related_type" invisible="1"/>
+	            </calendar>
+	        </field>
+	    </record>
+	    
+		
+		<!-- KANBAN VIEW Calendar event -->
+        <record model="ir.ui.view" id="calendar_event_kanban_view">
+            <field name="name">calendar_event_kanban_view</field>
+            <field name="model">calendar.event</field>
+            <field name="priority">1</field>
+            <field name="arch" type="xml">
+                <kanban default_group_by="state_id">
+                    <field name="name"/>
+                    <field name="color"/>
+                    <field name="start_datetime"/>
+                    <field name="stop_datetime"/>
+                    <field name="duration"/>
+                    <field name="affected_user_id"/>
+                    <field name="state_id"/>
+                    <field name="state"/>
+                    <field name="end_of_week"/>
+                    <field name="affected_user_kanban"/>
+                    <templates>
+                        <t t-name="kanban-box">
+                        	<div t-attf-class="#{kanban_color(record.color.raw_value)} oe_kanban_global_click" 
+                        		t-attf-style="#{record.affected_user_kanban.raw_value == 1 ? 'border-color:blue;' : ''}">
+                                <div class="o_dropdown_kanban dropdown">
+                                    <a class="dropdown-toggle btn" data-toggle="dropdown" href="#" >
+                                        <span class="fa fa-bars fa-lg"/>
+                                    </a>
+                                    <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+                                        <t t-if="widget.editable"><li><a type="edit">Edit</a></li></t>
+                                        <t t-if="widget.deletable"><li><a type="delete">Delete</a></li></t>
+                                    </ul>
+                                </div>
+                                <div class="oe_kanban_content">
+                                    <h4 class="oe_partner_heading" align="middle" valign="middle"><a type="open"><field name="name"/></a></h4>
+                                    <ul>
+                                        <li t-if="record.start_datetime.raw_value"><b>Date from : </b><field name="start_datetime"/></li>
+                                        <li t-if="record.affected_user_id.raw_value"><b>Affected user : </b><field name="affected_user_id"/></li>
+                                        <li t-if="record.stop_datetime.raw_value"><b>Limit date : </b><field name="stop_datetime"/></li>
+                                        <li t-if="record.duration.raw_value"><b>Time : </b><field name="duration"/></li>
+                                        <li t-if="record.type_id.raw_value"><b>Type : </b><field name="type_id"/></li>
+                                        <li t-if="record.state_id.raw_value"><b>State : </b><field name="state_id"/></li>
+	                                	<li> </li>
+	                                	<li><b>Change limit date</b></li>
+                                    </ul>
+                                </div>
+                                <div class="oe_kanban_footer_left">
+                                	<button name="remove_seven_days" type="object" style="border-radius:5px;">-7</button>
+                                	<button name="remove_one_day" type="object" style="margin-left:5px;border-radius:5px;">-1</button>
+                                	<button name="add_one_day" type="object" style="margin-left:140px;border-radius:5px;">+1</button>
+                                	<button name="add_seven_days" type="object" style="border-radius:5px;">+7</button>
+                                </div>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+		
+		<!-- SEARCH VIEW User action -->
+		<record id='view_search_calendar_event' model='ir.ui.view'>
+			<field name="name">view_search_calendar_event</field>
+			<field name="model">calendar.event</field>
+			<field name="arch" type="xml">
+				<search version="8.0">
+					<filter icon="terp-personal+" string="My actions" name="filter_user_active" domain="['|', ('affected_user_id','=',context.get('uid',False)),('user_ids','in',context.get('uid',False))]"/>
+					<filter string="Plan actions" name="filter_plan_action" domain="[('related_type','=','plan')]"/>
+					<filter string="Do list" name="filter_plan_action" domain="[('related_type','=','do_list')]"/>
+					<field name="name"/>
+					<field name="affected_user_id"/>
+					<field name="state_id"/>
+					<group expand="0" string="Filters">
+						<filter string="Today" domain="[('state_id', 'not in', ('done', 'cancel')), ('start_datetime','&lt;=',time.strftime('%%Y-%%m-%%d'))]" name="today"/>
+						<filter string="In the week" domain="[('state_id', 'not in', ('done', 'cancel')), ('start_datetime','&lt;=',(datetime.date.today()+datetime.timedelta(days=(7))).strftime('%%Y-%%m-%%d'))]"/>
+						<filter string="To do" domain="[('state_id', 'not in', ('done', 'cancel'))]" />
+						<filter string="Orange" domain="[('color', '=', 3)]" />
+						<filter string="Red" domain="[('color', '=', 2)]" />
+					</group>
+					<group expand="0" string="Group by...">
+						<filter string="Action type" icon="terp-partner" context="{'group_by' : 'type_id'}" />
+					</group>
+				</search>
+			</field>
+		</record>
+		
+		<!-- Surcharge de l'action Odoo pour afficher la nouvelle vue form -->
+		<record id='calendar_event.action_calendar_event_notify'  model="ir.actions.act_window">
+			<field name="view_id" ref="view_form_calendar_event"/>
+        </record>
+		
+		<!-- ACTION User action (My actions)-->
+		<record id="action_user_my_action" model="ir.actions.act_window">
+		    <field name="name">Actions</field>
+		    <field name="res_model">calendar.event</field>
+		    <field name="view_type">form</field>
+		    <field name="view_mode">kanban,tree,form</field>
+		    <field name="domain">[]</field>
+		    <field name="context">{'default_search_today': True, 'search_default_filter_user_active': 1}</field>
+		    <field name="search_view_id" ref="view_search_calendar_event"/>
+		</record>
+		
+		<menuitem name="My actions" action="action_user_my_action" id="menu_my_actions" parent="menu_main_actions" sequence="10" groups="group_desk_user"/>
+		
+		<!-- ACTION My calendar -->
+		<record id="action_user_my_calendar" model="ir.actions.act_window">
+		    <field name="name">My calendar</field>
+		    <field name="res_model">calendar.event</field>
+		    <field name="view_type">form</field>
+		    <field name="view_mode">calendar,form</field>
+		    <field name="domain">[('related_type', '=', 'plan')]</field>
+		    <field name="context">{'default_search_today': True, 'search_default_filter_user_active': 1}</field>
+		    <field name="search_view_id" ref="view_search_calendar_event"/>
+		</record>
+		
+		<menuitem name="My calendar" action="action_user_my_calendar" id="menu_my_calendar" parent="menu_main_actions" sequence="20" groups="group_desk_user"/>
+		
+		<!-- ACTION User action (All actions)-->
+		<record id="action_user_all_actions" model="ir.actions.act_window">
+		    <field name="name">Actions</field>
+		    <field name="res_model">calendar.event</field>
+		    <field name="view_type">form</field>
+		    <field name="view_mode">kanban,tree,form</field>
+		    <field name="domain">[]</field>
+		    <field name="context">{'default_search_today': True, 'group_by' : 'affected_user_id'}</field>
+		    <field name="search_view_id" ref="view_search_calendar_event"/>
+		</record>
+		
+		<menuitem name="All actions" action="action_user_all_actions" id="menu_all_actions" parent="menu_main_actions" sequence="30" groups="group_desk_manager"/>
+		
+		<!-- ACTION User calendar (All calendards)-->
+		<record id="action_user_all_calendar" model="ir.actions.act_window">
+		    <field name="name">Calendars</field>
+		    <field name="res_model">calendar.event</field>
+		    <field name="view_type">form</field>
+		    <field name="view_mode">calendar,form</field>
+		    <field name="domain">[('related_type', '=', 'plan')]</field>
+		    <field name="context">{'default_search_today': True, 'group_by' : 'affected_user_id'}</field>
+		    <field name="search_view_id" ref="view_search_calendar_event"/>
+		</record>
+		
+		<menuitem name="All calendars" action="action_user_all_calendar" id="menu_all_calendars" parent="menu_main_actions" sequence="40" groups="group_desk_manager"/>
+		
+		<record id="action_user_action_target_new" model="ir.actions.act_window">
+		    <field name="name">Actions</field>
+		    <field name="res_model">calendar.event</field>
+		    <field name="view_type">form</field>
+		    <field name="view_mode">form</field>
+		    <field name="domain">[]</field>
+		    <field name="target">new</field>
+		    <field name="context">{'default_search_today': True, 'search_default_filter_user_active': 1, 'default_button_save_visible': True}</field>
+		</record>
+		
+		<menuitem name="Times declaration" action="act_wizard_create_timetracking_action" id="menu_action_declaration_timetracking" parent="menu_main_actions" sequence="50" groups="group_desk_user"/>
+		
+		<!-- ACTION See one action -->
+		<record model="ir.actions.act_window" id="action_see_one_action">
+			<field name="name">Action</field>
+			<field name="res_model">calendar.event</field>
+			<field name="view_type">form</field>
+			<field name="view_id" ref="view_form_calendar_event" />
+			<field name="view_mode">form</field>
+			<field name="target">current</field>
+		</record>
+		
+		<!-- ACTION See one action wizard -->
+		<record model="ir.actions.act_window" id="action_see_one_action_popup">
+			<field name="name">Action Pop-up</field>
+			<field name="res_model">calendar.event</field>
+			<field name="view_type">form</field>
+			<field name="view_id" ref="view_form_calendar_event" />
+			<field name="view_mode">form</field>
+			<field name="flags">{'action_buttons': True}</field>
+			<field name="target">new</field>
+		</record>
+		
+		<!-- ACTION See actions -->
+		<record model="ir.actions.act_window" id="see_actions">
+		    <field name="name">Action</field>
+		    <field name="res_model">calendar.event</field>
+		    <field name="view_type">form</field>
+		    <field name="view_mode">kanban,tree,form</field>
+		    <field name="target">current</field>
+		    <field name="domain">[('id', 'in', context.get('action_ids', []))]</field>
+	  	</record>
+		
+	</data>
+</openerp>

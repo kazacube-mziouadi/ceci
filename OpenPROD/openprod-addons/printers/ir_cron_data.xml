@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+        ##############################################################################
+        #
+        #    printers module for OpenERP, Allow to manage printers un OpenERP
+        #    Copyright (C) 2013 SYLEAM Info Services ([http://www.Syleam.fr/])
+        #              Sylvain Garancher [sylvain.garancher@syleam.fr]
+        #
+        #    This file is a part of printers
+        #
+        #    printers is free software: you can redistribute it and/or modify
+        #    it under the terms of the GNU Affero General Public License as published by
+        #    the Free Software Foundation, either version 3 of the License, or
+        #    (at your option) any later version.
+        #
+        #    printers is distributed in the hope that it will be useful,
+        #    but WITHOUT ANY WARRANTY; without even the implied warranty of
+        #    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+        #    GNU Affero General Public License for more details.
+        #
+        #    You should have received a copy of the GNU Affero General Public License
+        #    along with this program.  If not, see [http://www.gnu.org/licenses/].
+        #
+        ##############################################################################
+
+        <record forcecreate="True" id="ir_cron_update_all_cups_jobs" model="ir.cron">
+            <field name="name">Update all cups jobs</field>
+            <field eval="True" name="active"/>
+            <field name="user_id" ref="base.user_root"/>
+            <field name="interval_number">1</field>
+            <field name="interval_type">days</field>
+            <field name="numbercall">-1</field>
+            <field eval="False" name="doall"/>
+            <field name="model">printers.server</field>
+            <field name="function">_update_jobs</field>
+            <field name="args">('all', -1)</field>
+        </record>
+
+        <record forcecreate="True" id="ir_cron_update_not_completed_cups_jobs" model="ir.cron">
+            <field name="name">Update uncompleted cups jobs</field>
+            <field eval="True" name="active"/>
+            <field name="user_id" ref="base.user_root"/>
+            <field name="interval_number">5</field>
+            <field name="interval_type">minutes</field>
+            <field name="numbercall">-1</field>
+            <field eval="False" name="doall"/>
+            <field name="model">printers.server</field>
+            <field name="function">_update_jobs</field>
+            <field name="args">()</field>
+        </record>
+
+    </data>
+</openerp>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+
+		<!-- FORM VIEW Change mold -->
+		<record id='view_form_change_mold_id' model='ir.ui.view'>
+			<field name="name">view_form_change_mold_id</field>
+			<field name="model">change.mold</field>
+			<field name="arch" type="xml">
+				<form string="Change mold" version="8.0">
+				    <group colspan="4" col="6" string="Change mold" >
+				        <group colspan="6" col="6">
+					        <field name="product_id" colspan="6" />
+				        </group>
+				        <group colspan="3" col="3">
+					        <field name="quantity" />
+				        </group>
+				        <group colspan="3" col="3">
+					        <field name="date" required="1" />
+				        </group>
+				        <group colspan="2" col="2">
+				            <field name="routing_id" domain="[('domain_plastic_industry_routing', 'in', (resource_id, mold_id, mo_id))]"  required="1" />
+				        </group>
+				        <group colspan="2" col="2">
+				            <field name="resource_id" domain="[('domain_plastic_industry_resource', 'in', (routing_id, mold_id, mo_id))]" required="1" />
+				        </group>
+				        <group colspan="2" col="2">
+		                    <field name="mold_id" domain="[('domain_plastic_industry_mold', 'in', (routing_id, resource_id, mo_id))]"  required="1" />
+		                    <field name="type_mold" attrs="{'invisible': [('mold_id', '=', False)], 'required': [('mold_id', '!=', False)]}" />
+		                    <field name="number_imprint" attrs="{'invisible': [('mold_id', '=', False)], 'required': [('mold_id', '!=', False)]}" />
+                        </group>
+				    </group>
+				    <field name="wo_id" invisible="1" />
+				    <field name="mo_id" invisible="1" />
+				    <field name="group_id" invisible="1" />
+				    <field name="routing_line_id" invisible="1" />
+                    <footer>
+                        <button name="button_validate" string="OK" type="object" class="oe_highlight" attrs="{'invisible': [('group_id', '!=', False)]}" />
+                        <button name="button_validate" string="OK" type="object" class="oe_highlight" attrs="{'invisible': [('group_id', '=', False)]}" 
+                                confirm="The work order is part of a grouping that will modify the other work orders apartment to this grouping" />
+                        or
+                        <button string="Cancel" class="oe_link" special="cancel" />
+                    </footer>
+				</form>
+			</field>
+		</record>
+
+
+		<!-- ACTION Change mold -->
+		<record id="act_change_mold_id" model="ir.actions.act_window">
+			<field name="name">Change mold</field>
+			<field name="res_model">change.mold</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">form</field>
+			<field name="target">new</field>
+			<field name="context">{}</field>
+		</record>
+
+	</data>
+</openerp>

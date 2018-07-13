@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+		<record model="ir.ui.view" id="view_form_wizard_price">
+			<field name="name">view_form_wizard_price</field>
+			<field name="model">wizard.price</field>
+			<field name="type">form</field>
+			<field name="arch" type="xml">
+				<form string="Wizard price">
+					<group colspan="4" col="6">
+						<field name="product_id"/>
+						<field name="qty"/>
+						<field name="sec_uom_id" attrs="{'required' :[('qty', '!=', 0)]}" />
+						 <field name="partner_id" domain="['|', ('is_customer', '=', True), ('is_supplier', '=', True)]" />
+						<field name="date"/>
+						<field name="type"/>
+						<field name="property_ids" widget="many2many_tags" domain="[('sinfo_property_product', 'in', product_id)]" />
+					</group>
+					<field name="line_purchase_ids" colspan="4" nolabel="1" readonly="1" >
+						<tree string="Lines" editable="bottom">
+		                    <field name="free_purchase"/>
+		                    <field name="suppinfo_id"/>
+		                    <field name="date_start"/>
+		                    <field name="date_stop"/>
+		                    <field name="min_qty"/>
+		                    <field name="price"/>
+		                    <field name="uoi_id"/>
+		                </tree>
+					</field>
+					<field name="line_sale_ids" colspan="4" nolabel="1" readonly="1" >
+						<tree string="Lines" editable="bottom">
+		                    <field name="free_sale"/>
+		                    <field name="cusinfo_id"/>
+		                    <field name="date_start"/>
+		                    <field name="date_stop"/>
+		                    <field name="min_qty"/>
+		                    <field name="price"/>
+		                    <field name="uoi_id"/>
+		                </tree>
+					</field>
+				</form>
+			</field>
+		</record>
+
+		<record model="ir.actions.act_window" id="action_wizard_price">
+			<field name="name">Wizard price</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="res_model">wizard.price</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">form</field>
+			<field name="target">new</field>
+		</record>
+		
+		<menuitem name="Wizard price" action="action_wizard_price" id="menu_purchase_wizard_price" parent="purchase.menu_purchase_price" groups="purchase.group_menu_purchase_user"/>
+		
+	</data>
+</openerp>

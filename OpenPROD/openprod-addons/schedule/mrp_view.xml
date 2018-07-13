@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+
+		<!-- FORM VIEW Product category -->
+		<record id='view_form_mrp_manufacturingorder_multi_company' model='ir.ui.view'>
+            <field name="name">view_form_mrp_manufacturingorder_multi_company</field>
+            <field name="model">mrp.manufacturingorder</field>
+			<field name="inherit_id" ref="mrp.view_form_mrp_manufacturingorder" />
+            <field name="priority" eval="3000" />
+			<field name="arch" type="xml">
+				<xpath expr="//group[@name='options_page']" position="after">
+					<group colspan="4" string="Schedule planning" name="schedule_planning_page" >
+                        <field name="spm_ids" nolabel="1">
+                            <tree string="Schedule planning" version="8.0" editable="bottom" >
+                                <field name="date" />
+                                <field name="qty" />
+                                <field name="time" widget="float_time_seconds" />
+                            </tree>
+                        </field>
+                    </group>
+				</xpath>
+			</field>
+		</record>
+
+		<!-- FORM VIEW Product -->
+		<record id='view_form_mrp_workorder_multi_company' model='ir.ui.view'>
+            <field name="name">view_form_mrp_workorder_multi_company</field>
+            <field name="model">mrp.workorder</field>
+			<field name="priority" eval="3000" />
+			<field name="inherit_id" ref="mrp.view_form_mrp_workorder" />
+			<field name="arch" type="xml">
+				<xpath expr="//group[@name='group_various_plan']" position="after">
+                    <group colspan="4" string="Schedule planning" name="schedule_planning_page" >
+                        <field name="spm_ids" nolabel="1" readonly="1" >
+                            <tree string="Schedule planning" version="8.0" editable="bottom" >
+                                <field name="product_id" readonly="1" />
+                                <field name="date" />
+                                <field name="qty" />
+                                <field name="time" widget="float_time_seconds" />
+                            </tree>
+                        </field>
+                    </group>
+                </xpath>
+			</field>
+		</record>
+
+	</data>
+</openerp>

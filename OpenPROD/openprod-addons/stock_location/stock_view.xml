@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+
+		<!-- ============== -->
+		<!-- STOCK LOCATION -->
+		<!-- ============== -->
+		<!-- FORM VIEW Sock location -->
+		<record id='view_form_stock_location' model='ir.ui.view'>
+			<field name="name">view_form_stock_location
+			</field>
+			<field name="model">stock.location</field>
+			<field name="arch" type="xml">
+				<form string="Stock Location">
+					<label for="name" class="oe_edit_only" />
+					<h1>
+						<field name="name" />
+					</h1>
+					<label for="location_id" class="oe_edit_only" />
+					<h2>
+						<field name="location_id" domain="[('usage', '=', 'view')]" />
+					</h2>
+
+					<group>
+						<group string="Additional Information">
+							<field name="usage" />
+							<field name="partner_id" />
+							<field name="company_id" groups="base.group_multi_company" widget="selection" attrs="{'required': [('usage', '=', 'internal')]}" />
+							<field name="warehouse_id" attrs="{'required': [('usage', '=', 'internal')]}" />
+							<field name="control" />
+							<field name="quarantine" />
+							<field name="active" />
+						</group>
+						<group string="Localization" name="localization">
+							<field name="posx" />
+							<field name="posy" />
+							<field name="posz" />
+							<field name="barcode" />
+						</group>
+					</group>
+					<separator string="Note" />
+					<field name="comment" />
+				</form>
+			</field>
+		</record>
+
+		<!-- TREE VIEW Sock location -->
+		<record id='view_tree_stock_location' model='ir.ui.view'>
+			<field name="name">view_tree_stock_location
+			</field>
+			<field name="model">stock.location</field>
+			<field name="arch" type="xml">
+				<tree string="Stock Location" colors="blue:usage=='view';darkred:usage=='internal'">
+					<field name="complete_name" />
+					<field name="usage" />
+				</tree>
+			</field>
+		</record>
+
+		<!-- SEARCH VIEW Sock location -->
+		<record id='view_search_stock_location' model='ir.ui.view'>
+			<field name="name">view_search_stock_location
+			</field>
+			<field name="model">stock.location</field>
+			<field name="arch" type="xml">
+				<search version="8.0">
+					<field name="name" string="Stock Locations" />
+					<filter name="in_location" string="Internal" domain="[('usage', '=', 'internal')]" help="Internal Locations" />
+					<filter name="customer" string="Customer" domain="[('usage', '=', 'customer')]" help="Customer Locations" />
+					<filter name="supplier" string="Supplier" domain="[('usage', '=', 'supplier')]" help="Supplier Locations" />
+					<field name="location_id" string="Parent Location" />
+				</search>
+			</field>
+		</record>
+
+		<!-- ACTION Sock location -->
+		<record id="act_stock_location" model="ir.actions.act_window">
+			<field name="name">Sock location</field>
+			<field name="res_model">stock.location</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+			<field name="search_view_id" ref="view_search_stock_location" />
+		</record>
+
+
+		<!-- =============== -->
+		<!-- STOCK WAREHOUSE -->
+		<!-- =============== -->
+		<!-- FORM VIEW Stock warehouse -->
+		<record id='view_form_stock_warehouse' model='ir.ui.view'>
+			<field name="name">view_form_stock_warehouse
+			</field>
+			<field name="model">stock.warehouse</field>
+			<field name="arch" type="xml">
+				<form string="Stock warehouse">
+					<field name="id" invisible="1" />
+					<group colspan="4" col="4" string="Warehouse configuration">
+						<field name="name" />
+						<field name="company_id" />
+					</group>
+				</form>
+			</field>
+		</record>
+
+		<!-- TREE VIEW Stock warehouse -->
+		<record id='view_tree_stock_warehouse' model='ir.ui.view'>
+			<field name="name">view_tree_stock_warehouse
+			</field>
+			<field name="model">stock.warehouse</field>
+			<field name="arch" type="xml">
+				<tree string="Stock warehouse">
+					<field name="name" />
+					<field name="company_id" />
+				</tree>
+			</field>
+		</record>
+
+		<!-- SEARCH VIEW Stock warehouse -->
+		<record id='view_search_stock_warehouse' model='ir.ui.view'>
+			<field name="name">view_search_stock_warehouse
+			</field>
+			<field name="model">stock.warehouse</field>
+			<field name="arch" type="xml">
+				<search version="8.0">
+					<field name="name" string="Stock warehouse" />
+					<field name="company_id" string="Company" />
+				</search>
+			</field>
+		</record>
+
+		<!-- ACTION Stock warehouse -->
+		<record id="act_stock_warehouse" model="ir.actions.act_window">
+			<field name="name">Stock warehouse</field>
+			<field name="res_model">stock.warehouse</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+			<field name="search_view_id" ref="view_search_stock_warehouse" />
+		</record>
+
+	</data>
+</openerp>

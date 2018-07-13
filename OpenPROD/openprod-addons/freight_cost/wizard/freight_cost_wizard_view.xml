@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+    
+        <record model="ir.ui.view" id="view_form_freight_cost_wizard">
+            <field name="name">view_form_freight_cost_wizard</field>
+            <field name="model">freight.cost.wizard</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Freight cost">
+                    <group>
+                        <group colspan="4" col="6" >
+                            <field name="product_id"/>
+                            <field name="price_unit"/>
+                            <field name="requested_date"/>
+                            <field name="sale_id" invisible="1"/>
+                            <field name="partner_id" invisible="1"/>
+                            <field name="sec_uom_qty" invisible="1"/>
+                        </group>
+                        <footer>
+                            <button name="create_sale_line" string="Create sale line" type="object" class="oe_highlight" />
+                            or
+                            <button string="Cancel" class="oe_link" special="cancel" />
+                        </footer>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="action_freight_cost_wizard">
+            <field name="name">Freight cost</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">freight.cost.wizard</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+
+    </data>
+</openerp>

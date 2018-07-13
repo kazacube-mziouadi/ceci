@@ -1,0 +1,1 @@
+../../lib/trumbowyg/dist/plugins/openprod/trumbowyg.openprod.js

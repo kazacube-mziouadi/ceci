@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+		
+		<!-- FORM VIEW Partner -->
+		<record id="inherit_mrp_view_form_partner" model="ir.ui.view">
+			<field name="name">inherit_mrp_view_form_partner</field>
+			<field name="inherit_id" ref="partner_openprod.openprod_view_partner_form" />
+			<field name="model">res.partner</field>
+			<field name="arch" type="xml">
+				<xpath expr="//separator[@name='separator_analysis_menu']" position="after">
+					<button class="oe_inline oe_stat_button" type="object" string="Work orders" name="show_partner_wo" icon="fa-tasks"
+					attrs="{'invisible': ['|',('is_company', '=', False), ('is_customer', '=', False)]}" />
+				</xpath>
+			</field>
+		</record>
+		
+	</data>
+</openerp>

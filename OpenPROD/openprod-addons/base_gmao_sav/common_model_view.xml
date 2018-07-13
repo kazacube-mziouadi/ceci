@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+	
+		<!-- FORM VIEW project phase -->
+		<record id="view_form_note_openprod_inherit_gmao_sav" model="ir.ui.view">
+			<field name="name">view_form_affair_note_openprod_inherit</field>
+			<field name="inherit_id" ref="base_openprod.view_form_note_openprod_id" />
+			<field name="model">note.openprod</field>
+			<field name="arch" type="xml">
+				<xpath expr="//group[@name='note_groupe']" position="inside">
+					<field name="park_id" invisible="context.get('from_object', False)"/>
+				</xpath>
+			</field>
+		</record>
+		
+
+	</data>
+</openerp>

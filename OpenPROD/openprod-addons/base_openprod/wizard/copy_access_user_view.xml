@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+	
+		<record model="ir.ui.view" id="view_form_copy_access_user">
+			<field name="name">view_form_copy_access_user</field>
+			<field name="model">copy.access.user</field>
+			<field name="type">form</field>
+			<field name="arch" type="xml">
+				<form string="Copy access users">
+					<group colspan="4" col="4">
+						<field name="original_user_id" />
+						<field name="user_ids" colspan="4" nolabel="1" />
+					</group>
+					<footer>
+						<button name="validate" string="Validate" type="object" class="oe_highlight"/>
+						or
+						<button string="Close" class="oe_highlight" special="cancel" />
+					</footer>
+				</form>
+			</field>
+		</record>
+
+		<act_window id="action_form_copy_access_user"
+            name="Copy access users"
+            src_model="res.users"
+            res_model="copy.access.user"
+            view_type="form" view_mode="form"
+            key2="client_action_multi" target="new"
+           />
+
+		
+		
+	</data>
+</openerp>

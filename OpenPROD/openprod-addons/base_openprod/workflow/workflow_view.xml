@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+		<!-- === -->
+		<!-- WKF -->
+		<!-- === -->
+
+		<!-- FORM VIEW WKF -->
+		<record id="base.view_workflow_form" model="ir.ui.view">
+			<field name="name">workflow.form</field>
+			<field name="model">workflow</field>
+			<field name="arch" type="xml">
+				<form string="Workflow">
+					<group colspan="4" col="9">
+						<group colspan="8" col="4">
+							<group colspan="4" col="4">
+								<field name="name" />
+								<field name="osv" />
+								<field name="is_active" />
+								<field name="on_create" />
+							</group>
+							<notebook colspan="4">
+								<page string="Activities">
+									<group colspan="4" col="4" string="Activities">
+										<field name="activities" colspan="4" nolabel="1" context="{'default_wkf_id': active_id}">
+											<tree string="Activities">
+												<field name="sequence" />
+												<field name="name" />
+												<field name="kind" />
+												<field name="flow_start" />
+												<field name="flow_stop" />
+											</tree>
+											<form string="Activity">
+												<sheet>
+													<group>
+														<group>
+															<field name="name" />
+															<field name="kind" />
+															<field name="can_not_be_deleted" />
+															<field name="required" attrs="{'readonly': [('can_not_be_deleted', '=', True)]}" />
+															<field name="sequence" />
+														</group>
+														<group>
+															<field name="flow_start" />
+															<field name="flow_stop" />
+														</group>
+													</group>
+													<notebook>
+														<page string="Properties">
+															<group>
+																<group string="Subflow">
+																	<field name="subflow_id" attrs="{'readonly':[('kind','&lt;&gt;','subflow')]}" />
+																	<field name="signal_send" />
+																</group>
+																<group string="Conditions">
+																	<field name="split_mode" />
+																	<field name="join_mode" />
+																</group>
+																<group string="Actions">
+																	<field name="action_id" />
+																	<field name="action" attrs="{'readonly':[('kind','=','dummy')]}" />
+																	<button name="create_display_state" string="Create the associated state" type="object" class="oe_inline oe_stat_button" icon="fa-plus-square" colspan="4" />
+																</group>
+															</group>
+														</page>
+														<page string="Transitions">
+															<field name="in_transitions">
+																<tree string="Incoming Transitions">
+																	<field name="sequence" widget="handle" />
+																	<field name="act_from" />
+																	<field name="signal" />
+																	<field name="condition" />
+																</tree>
+															</field>
+															<field name="out_transitions">
+																<tree string="Outgoing Transitions">
+																	<field name="sequence" widget="handle" />
+																	<field name="act_to" />
+																	<field name="signal" />
+																	<field name="condition" />
+																</tree>
+															</field>
+														</page>
+													</notebook>
+												</sheet>
+											</form>
+										</field>
+									</group>
+								</page>
+								<page string="States">
+									<group colspan="4" col="4" string="States">
+										<field name="display_state_ids" colspan="4" nolabel="1">
+											<tree string="States">
+												<field name="sequence" />
+												<field name="label" />
+												<field name="always_visible" />
+											</tree>
+											<form string="State">
+												<group colspan="4" col="4">
+													<field name="sequence" />
+													<field name="always_visible" />
+													<field name="label" />
+													<field name="name" />
+												</group>
+											</form>
+										</field>
+									</group>
+								</page>
+							</notebook>
+						</group>
+						<group colspan="1" col="1" class="op_shortcuts" name="action_crm_menu">
+							<separator string="Actions" colspan="1" />
+							<button name="new_version" string="New version" type="object" class="oe_inline oe_stat_button" icon="fa-files-o" />
+						</group>
+					</group>
+				</form>
+			</field>
+		</record>
+
+		<!-- TREE VIEW WKF -->
+		<record id="view_workflow_tree" model="ir.ui.view">
+			<field name="name">view_workflow_tree</field>
+			<field name="model">workflow</field>
+			<field name="inherit_id" ref="base.view_workflow_tree" />
+			<field name="arch" type="xml">
+				<xpath expr="//field[@name='on_create']" position="before">
+					<field name="version" />
+					<field name="versioning_date" />
+				</xpath>
+				<xpath expr="//field[@name='on_create']" position="after">
+					<field name="is_active" />
+				</xpath>
+			</field>
+		</record>
+
+		<record id="view_workflow_diagram" model="ir.ui.view">
+			<field name="name">view_workflow_diagram</field>
+			<field name="inherit_id" ref="base.view_workflow_diagram" />
+			<field name="model">workflow</field>
+			<field name="arch" type="xml">
+				<xpath expr="//arrow" position="inside">
+					<field name="filter_group_id" />
+				</xpath>
+				<xpath expr="//node" position="inside">
+					<field name="position_x" />
+					<field name="position_y" />
+				</xpath>
+			</field>
+		</record>
+
+		<!-- SEARCH VIEW WKF -->
+		<record id="view_workflow_search" model="ir.ui.view">
+			<field name="name">view_workflow_search</field>
+			<field name="model">workflow</field>
+			<field name="inherit_id" ref="base.view_workflow_search" />
+			<field name="arch" type="xml">
+				<xpath expr="//field[@name='name']" position="before">
+					<filter name="is_active" string="Active" domain="[('is_active', '=', True)]" />
+				</xpath>
+			</field>
+		</record>
+
+		<!-- ACTION WKF -->
+		<record id="base.action_workflow_form" model="ir.actions.act_window">
+			<field name="context">{'search_default_is_active': True}</field>
+		</record>
+
+
+		<!-- ============ -->
+		<!-- WKF INSTANCE -->
+		<!-- ============ -->
+		<!-- FORM VIEW WKF INSTANCE -->
+		<record id='view_form_wkf_instance' model='ir.ui.view'>
+			<field name="name">view_form_wkf_instance</field>
+			<field name="model">workflow.instance</field>
+			<field name="arch" type="xml">
+				<form string="Instance" version="8.0">
+					<center>
+						<label class="oe_edit_only" for="name" string="Name" />
+						<h1>
+							<field name="name" class="oe_inline" colspan="4" readonly="1" />
+						</h1>
+					</center>
+					<group>
+						<field name="date" invisible="1" />
+						<field name="required" invisible="1" />
+						<field name="is_active" attrs="{'readonly': ['|', ('required', '=', True), ('required', '!=', False)]}" />
+					</group>
+				</form>
+			</field>
+		</record>
+
+		<!-- TREE VIEW WKF INSTANCE -->
+		<record id='view_tree_wkf_instance' model='ir.ui.view'>
+			<field name="name">view_tree_wkf_instance</field>
+			<field name="model">workflow.instance</field>
+			<field name="arch" type="xml">
+				<tree string="Instances" version="8.0" colors="gray: is_active==False; blue: date==False; brown: date!=False and not progress">
+					<field name="name" />
+					<field name="required" />
+					<field name="is_active" />
+					<field name="progress" />
+					<field name="uid" />
+					<field name="date" />
+				</tree>
+			</field>
+		</record>
+
+		<!-- ============ -->
+		<!-- WKF ACTIVITY -->
+		<!-- ============ -->
+		<record id="view_workflow_activity_form_required" model="ir.ui.view">
+			<field name="name">view_workflow_activity_form_required</field>
+			<field name="inherit_id" ref="base.view_workflow_activity_form" />
+			<field name="model">workflow.activity</field>
+			<field name="arch" type="xml">
+				<xpath expr="//field[@name='kind']" position="after">
+					<field name="can_not_be_deleted" />
+					<field name="required" attrs="{'readonly': [('can_not_be_deleted', '=', True)]}" />
+					<field name="sequence" />
+				</xpath>
+				<xpath expr="//field[@name='action']" position="after">
+					<button name="create_display_state" string="Create the associated state" type="object" class="oe_inline oe_stat_button" icon="fa-plus-square" colspan="4" />
+				</xpath>
+			</field>
+		</record>
+
+		<!-- ============== -->
+		<!-- WKF TRANSITION -->
+		<!-- ============== -->
+		<record id="view_workflow_transition_form_default" model="ir.ui.view">
+			<field name="name">view_workflow_transition_form_default</field>
+			<field name="inherit_id" ref="base.view_workflow_transition_form" />
+			<field name="model">workflow.transition</field>
+			<field name="arch" type="xml">
+				<xpath expr="//field[@name='group_id']" position="replace">
+					<newline />
+				</xpath>
+				<xpath expr="//field[@name='signal']" position="replace" />
+				<xpath expr="//field[@name='trigger_model']" position="replace" />
+				<xpath expr="//field[@name='trigger_expr_id']" position="replace">
+					<field name="is_default" />
+					<field name="filter_group_id" />
+				</xpath>
+				<xpath expr="//group[last()]" position="after">
+					<group string="Button" colspan="4" col="4">
+						<field name="signal" />
+						<field name="visible_button" />
+						<field name="button_label" attrs="{'invisible': [('visible_button', '=', False)], 'required': [('visible_button', '=', True)]}" />
+						<separator colspan="4" string="Advanced button options" attrs="{'invisible': [('visible_button', '=', False)]}"/>
+						<group colspan="4" col="4">
+							<field name="button_group_id" attrs="{'invisible': [('visible_button', '=', False)]}" />
+							<field name="button_confirm" attrs="{'invisible': [('visible_button', '=', False)]}" />
+							<field name="button_specific_sequence" attrs="{'invisible': [('visible_button', '=', False)]}" />
+							<field name="with_mail" attrs="{'invisible': [('visible_button', '=', False)]}" />
+							<field name="mail_template_id" attrs="{'invisible': ['|', ('visible_button', '=', False), ('with_mail', '=', False)]}" />
+							<newline />
+							<field name="attrs" attrs="{'invisible': [('visible_button', '=', False)]}" colspan="4"/>
+							<label colspan="1" string="" />
+							<label colspan="3" string="Ex: ['|', '|', ('file1', '=', 1), ('file1', '=', 2)]" attrs="{'invisible': [('visible_button', '=', False)]}"/>
+							<separator colspan="4"/>
+							<field name="button_context" attrs="{'invisible': [('visible_button', '=', False)]}" colspan="4" />
+							<label colspan="1" string="" />
+							<label colspan="3" string="Ex: 'validate_order': True" attrs="{'invisible': [('visible_button', '=', False)]}"/>
+							<separator colspan="4"/>
+							<field name="button_class" attrs="{'invisible': [('visible_button', '=', False)]}" colspan="4" />
+							<label colspan="1" string="" />
+							<label colspan="3" string="Ex: openprod_logical_button" attrs="{'invisible': [('visible_button', '=', False)]}"/>
+						</group>
+					</group>
+				</xpath>
+			</field>
+		</record>
+	</data>
+</openerp>

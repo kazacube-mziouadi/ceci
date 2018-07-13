@@ -1,0 +1,137 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* planning_priority
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 9.0c\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-06-19 14:16+0000\n"
+"PO-Revision-Date: 2017-06-19 14:16+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: planning_priority
+#: model:ir.ui.view,arch_db:planning_priority.view_form_planning_priority_wo_id
+#: model:ir.ui.view,arch_db:planning_priority.view_form_wizard_priority_wo_id
+msgid "Cancel"
+msgstr "Annuler"
+
+#. module: planning_priority
+#: model:ir.model.fields,field_description:planning_priority.field_planning_priority_wo_create_uid
+#: model:ir.model.fields,field_description:planning_priority.field_wizard_priority_wo_create_uid
+msgid "Created by"
+msgstr "Créé par"
+
+#. module: planning_priority
+#: model:ir.model.fields,field_description:planning_priority.field_planning_priority_wo_create_date
+#: model:ir.model.fields,field_description:planning_priority.field_wizard_priority_wo_create_date
+msgid "Created on"
+msgstr "Créé le"
+
+#. module: planning_priority
+#: model:ir.model.fields,field_description:planning_priority.field_planning_priority_wo_date
+msgid "Date"
+msgstr "Date"
+
+#. module: planning_priority
+#: model:ir.model.fields,field_description:planning_priority.field_planning_priority_wo_display_name
+#: model:ir.model.fields,field_description:planning_priority.field_wizard_priority_wo_display_name
+msgid "Display Name"
+msgstr "Display Name"
+
+#. module: planning_priority
+#: model:ir.model.fields,field_description:planning_priority.field_planning_priority_wo_id
+#: model:ir.model.fields,field_description:planning_priority.field_wizard_priority_wo_id
+msgid "ID"
+msgstr "ID"
+
+#. module: planning_priority
+#: model:ir.model.fields,field_description:planning_priority.field_planning_priority_wo___last_update
+#: model:ir.model.fields,field_description:planning_priority.field_wizard_priority_wo___last_update
+msgid "Last Modified on"
+msgstr "Dernière modification le"
+
+#. module: planning_priority
+#: model:ir.model.fields,field_description:planning_priority.field_planning_priority_wo_write_uid
+#: model:ir.model.fields,field_description:planning_priority.field_wizard_priority_wo_write_uid
+msgid "Last Updated by"
+msgstr "Dernière mise à jour par"
+
+#. module: planning_priority
+#: model:ir.model.fields,field_description:planning_priority.field_planning_priority_wo_write_date
+#: model:ir.model.fields,field_description:planning_priority.field_wizard_priority_wo_write_date
+msgid "Last Updated on"
+msgstr "Dernière mise à jour le"
+
+#. module: planning_priority
+#: model:ir.ui.view,arch_db:planning_priority.view_form_planning_priority_wo_id
+#: model:ir.ui.view,arch_db:planning_priority.view_form_wizard_priority_wo_id
+msgid "OK"
+msgstr "OK"
+
+#. module: planning_priority
+#: code:addons/planning_priority/wizard/planning_priority_wo.py:59
+#, python-format
+msgid "Parallel"
+msgstr "Parallèle"
+
+#. module: planning_priority
+#: model:ir.model.fields,field_description:planning_priority.field_mrp_workorder_planning_priority
+#: model:ir.model.fields,field_description:planning_priority.field_wizard_priority_wo_planning_priority
+msgid "Planning priority"
+msgstr "Planification par priorité"
+
+#. module: planning_priority
+#: model:ir.actions.act_window,name:planning_priority.act_planning_priority_wo_id
+#: model:ir.actions.act_window,name:planning_priority.action_planning_priority_wo_id
+#: model:ir.model,name:planning_priority.model_planning_priority_wo
+#: model:ir.ui.view,arch_db:planning_priority.view_form_planning_priority_wo_id
+msgid "Planning priority wo"
+msgstr "Planification par priorité des OTs"
+
+#. module: planning_priority
+#: model:ir.actions.act_window,name:planning_priority.act_wizard_priority_wo_id
+#: model:ir.actions.act_window,name:planning_priority.action_wizard_priority_wo_id
+#: model:ir.ui.view,arch_db:planning_priority.view_form_wizard_priority_wo_id
+#: model:ir.ui.view,arch_db:planning_priority.view_tree_mrp_workorder_planning_priority
+msgid "Priority wo"
+msgstr "Priorité des OTs"
+
+#. module: planning_priority
+#: code:addons/planning_priority/wizard/planning_priority_wo.py:58
+#, python-format
+msgid "Series"
+msgstr "Série"
+
+#. module: planning_priority
+#: model:ir.model.fields,field_description:planning_priority.field_planning_priority_wo_type_priority
+msgid "Type of priority"
+msgstr "Type de priorité"
+
+#. module: planning_priority
+#: model:ir.model.fields,field_description:planning_priority.field_planning_priority_wo_wo_ids
+#: model:ir.model.fields,field_description:planning_priority.field_wizard_priority_wo_wo_ids
+msgid "WOs"
+msgstr "OTs"
+
+#. module: planning_priority
+#: model:ir.model,name:planning_priority.model_wizard_priority_wo
+msgid "Wizard priority wo"
+msgstr "Wizard priorité des OTs"
+
+#. module: planning_priority
+#: model:ir.model,name:planning_priority.model_mrp_workorder
+msgid "Workorder"
+msgstr "Ordre de travail"
+
+#. module: planning_priority
+#: model:ir.ui.view,arch_db:planning_priority.view_form_planning_priority_wo_id
+#: model:ir.ui.view,arch_db:planning_priority.view_form_wizard_priority_wo_id
+msgid "or"
+msgstr "ou"
+

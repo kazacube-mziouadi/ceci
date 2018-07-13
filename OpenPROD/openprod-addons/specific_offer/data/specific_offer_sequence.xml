@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+		
+        <record id="seq_specific_offer" model="ir.sequence">
+            <field name="name">specific_offer</field>
+            <field name="code">specific.offer</field>
+            <field name="prefix">OFS</field>
+            <field name="padding">5</field>
+        </record>
+	</data>
+</openerp>

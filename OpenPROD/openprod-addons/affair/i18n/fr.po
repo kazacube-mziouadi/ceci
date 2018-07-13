@@ -1,0 +1,624 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* affair
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 9.0c\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-11-30 16:49+0000\n"
+"PO-Revision-Date: 2016-11-30 16:49+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: affair
+#: model:mail.template,body_html:affair.email_template_for_affair
+msgid "\n"
+"<div style=\"font-family: 'Lucica Grande', Ubuntu, Arial, Verdana, sans-serif; font-size: 12px; color: rgb(34, 34, 34); background-color: #FFF; \">\n"
+"\n"
+"    <p>Hello ${object.customer_id.name},</p>\n"
+"</div>"
+msgstr "\n"
+"<div style=\"font-family: 'Lucica Grande', Ubuntu, Arial, Verdana, sans-serif; font-size: 12px; color: rgb(34, 34, 34); background-color: #FFF; \">\n"
+"\n"
+"    <p>Hello ${object.customer_id.name},</p>\n"
+"</div>"
+
+#. module: affair
+#: model:ir.ui.view,arch_db:affair.view_kanban_affair_openprod
+msgid "<b>Creation : </b>"
+msgstr "<b>Création : </b>"
+
+#. module: affair
+#: model:ir.ui.view,arch_db:affair.view_kanban_affair_openprod
+msgid "<b>Customer : </b>"
+msgstr "<b>Client : </b>"
+
+#. module: affair
+#: model:ir.ui.view,arch_db:affair.view_kanban_affair_openprod
+msgid "<b>Limit : </b>"
+msgstr "<b>Limite : </b>"
+
+#. module: affair
+#: model:ir.ui.view,arch_db:affair.view_kanban_affair_openprod
+msgid "<b>Salesman : </b>"
+msgstr "<b>Commercial : </b>"
+
+#. module: affair
+#: model:ir.ui.view,arch_db:affair.view_form_affair_id
+msgid "Accept"
+msgstr "Accepter"
+
+#. module: affair
+#: model:ir.model.fields,field_description:affair.field_affair_nb_actions
+#: model:ir.model.fields,field_description:affair.field_affair_user_event_ids
+#: model:ir.ui.view,arch_db:affair.view_form_affair_id
+#: model:ir.ui.view,arch_db:affair.view_kanban_affair_openprod
+msgid "Actions"
+msgstr "Actions"
+
+#. module: affair
+#: model:ir.ui.view,arch_db:affair.view_form_affair_id
+msgid "Add RM"
+msgstr "Ajouter MP"
+
+#. module: affair
+#: code:addons/affair/calendar_event.py:12
+#: model:ir.actions.act_window,name:affair.act_affair_id
+#: model:ir.actions.act_window,name:affair.act_all_affair_id
+#: model:ir.actions.act_window,name:affair.action_see_all_affair
+#: model:ir.model,name:affair.model_affair
+#: model:ir.model.fields,field_description:affair.field_calendar_event_affair_id
+#: model:ir.model.fields,field_description:affair.field_mrp_bom_affair_id
+#: model:ir.model.fields,field_description:affair.field_mrp_manufacturingorder_affair_id
+#: model:ir.model.fields,field_description:affair.field_mrp_routing_line_affair_id
+#: model:ir.model.fields,field_description:affair.field_mrp_workorder_affair_id
+#: model:ir.model.fields,field_description:affair.field_note_openprod_affair_id
+#: model:ir.model.fields,field_description:affair.field_procurement_order_affair_id
+#: model:ir.model.fields,field_description:affair.field_project_phase_affair_id
+#: model:ir.model.fields,field_description:affair.field_purchase_order_line_affair_id
+#: model:ir.model.fields,field_description:affair.field_sale_order_line_affair_id
+#: model:ir.ui.menu,name:affair.main_menu_affair_id
+#: model:ir.ui.view,arch_db:affair.view_form_affair_id
+#: model:ir.ui.view,arch_db:affair.view_search_mrp_workorder_affair
+#: model:ir.ui.view,arch_db:affair.view_search_project_phase
+#, python-format
+msgid "Affair"
+msgstr "Affaire"
+
+#. module: affair
+#: model:ir.ui.view,arch_db:affair.view_form_state_affair_openprod
+msgid "Affair State"
+msgstr "Etat de l'affaire"
+
+#. module: affair
+#: model:ir.ui.view,arch_db:affair.view_tree_state_affair_openprod
+msgid "Affair state"
+msgstr "Etat de l'affaire"
+
+#. module: affair
+#: model:ir.ui.view,arch_db:affair.view_form_affair_document_openprod
+#: model:ir.ui.view,arch_db:affair.view_tree_affair_id
+msgid "Affairs"
+msgstr "Affaires"
+
+#. module: affair
+#: model:ir.ui.menu,name:affair.menu_all_affair_id
+msgid "All Affairs"
+msgstr "Toutes les affaires"
+
+#. module: affair
+#: model:ir.ui.view,arch_db:affair.view_form_affair_id
+msgid "Attachments"
+msgstr "Pièces jointes"
+
+#. module: affair
+#: model:ir.ui.view,arch_db:affair.view_form_affair_id
+msgid "Attendees"
+msgstr "Participants"
+
+#. module: affair
+#: model:ir.ui.view,arch_db:affair.view_form_affair_id
+msgid "Attendees and invitations"
+msgstr "Participants et invitations"
+
+#. module: affair
+#: model:ir.model,name:affair.model_mrp_bom
+msgid "Bill of Material"
+msgstr "Nomenclature"
+
+#. module: affair
+#: model:ir.model.fields,field_description:affair.field_affair_bom_ids
+msgid "BoM lines"
+msgstr "Lignes de nomenclature"
+
+#. module: affair
+#: model:affair.state,name:affair.affair_state_cancel
+msgid "Cancel"
+msgstr "Annulée"
+
+#. module: affair
+#: model:ir.model.fields,field_description:affair.field_affair_code
+msgid "Code"
+msgstr "Code"
+
+#. module: affair
+#: model:ir.model.fields,field_description:affair.field_affair_color
+msgid "Color"
+msgstr "Couleur"
+
+#. module: affair
+#: model:ir.ui.view,arch_db:affair.view_form_affair_id
+msgid "Communications"
+msgstr "Communications"
+
+#. module: affair
+#: model:ir.ui.view,arch_db:affair.view_form_affair_id
+msgid "Compute level"
+msgstr "Calcul du niveau"
+
+#. module: affair
+#: model:ir.ui.menu,name:affair.menu_configuration_affair_openprod
+msgid "Configuration"
+msgstr "Configuration"
+
+#. module: affair
+#: model:ir.ui.view,arch_db:affair.view_form_affair_id
+msgid "Costs"
+msgstr "Coûts"
+
+#. module: affair
+#: model:ir.ui.view,arch_db:affair.view_form_affair_id
+#: model:ir.ui.view,arch_db:affair.view_form_project_phase
+msgid "Create Purchase"
+msgstr "Créer Achat"
+
+#. module: affair
+#: model:ir.model.fields,field_description:affair.field_affair_date
+msgid "Create date"
+msgstr "Date de création"
+
+#. module: affair
+#: model:ir.ui.view,arch_db:affair.view_kanban_affair_openprod
+msgid "Create note"
+msgstr "Créer une note"
+
+#. module: affair
+#: model:ir.ui.view,arch_db:affair.view_form_affair_id
+msgid "Create sale"
+msgstr "Créer une vente"
+
+#. module: affair
+#: model:ir.ui.view,arch_db:affair.view_kanban_affair_openprod
+msgid "Create task"
+msgstr "Créer une action"
+
+#. module: affair
+#: model:ir.model.fields,field_description:affair.field_affair_create_uid
+#: model:ir.model.fields,field_description:affair.field_affair_state_create_uid
+msgid "Created by"
+msgstr "Créé par"
+
+#. module: affair
+#: model:ir.model.fields,field_description:affair.field_affair_create_date
+#: model:ir.model.fields,field_description:affair.field_affair_state_create_date
+msgid "Created on"
+msgstr "Créé le"
+
+#. module: affair
+#: model:ir.model.fields,field_description:affair.field_affair_criticality
+msgid "Criticality"
+msgstr "Criticité"
+
+#. module: affair
+#: model:ir.model.fields,field_description:affair.field_affair_customer_id
+msgid "Customer"
+msgstr "Client"
+
+#. module: affair
+#: model:ir.ui.view,arch_db:affair.view_form_affair_id
+msgid "Decline"
+msgstr "Décliner"
+
+#. module: affair
+#: model:ir.ui.view,arch_db:affair.view_kanban_affair_openprod
+msgid "Delete"
+msgstr "Supprimer"
+
+#. module: affair
+#: model:ir.model.fields,field_description:affair.field_affair_description
+#: model:ir.model.fields,field_description:affair.field_affair_state_description
+#: model:ir.ui.view,arch_db:affair.view_form_affair_id
+#: model:ir.ui.view,arch_db:affair.view_form_state_affair_openprod
+msgid "Description"
+msgstr "Description"
+
+#. module: affair
+#: model:ir.ui.view,arch_db:affair.view_form_affair_id
+#: model:ir.ui.view,arch_db:affair.view_form_state_affair_openprod
+msgid "Details"
+msgstr "Détails"
+
+#. module: affair
+#: model:ir.model.fields,field_description:affair.field_affair_state_display_name
+msgid "Display Name"
+msgstr "Nom affiché"
+
+#. module: affair
+#: model:ir.model.fields,field_description:affair.field_affair_document_ids
+msgid "Document"
+msgstr "Document"
+
+#. module: affair
+#: model:ir.model,name:affair.model_document_openprod
+msgid "Documents Openprod"
+msgstr "Documents Openprod"
+
+#. module: affair
+#: model:affair.state,name:affair.affair_state_done
+msgid "Done"
+msgstr "Terminée"
+
+#. module: affair
+#: model:affair.state,name:affair.affair_state_draft
+msgid "Draft"
+msgstr "Brouillon"
+
+#. module: affair
+#: model:ir.ui.view,arch_db:affair.view_kanban_affair_openprod
+msgid "Edit"
+msgstr "Modifier"
+
+#. module: affair
+#: model:ir.ui.view,arch_db:affair.view_form_affair_id
+msgid "Emails"
+msgstr "Courriels"
+
+#. module: affair
+#: model:ir.model.fields,field_description:affair.field_affair_end_date
+msgid "End date"
+msgstr "Date de fin"
+
+#. module: affair
+#: sql_constraint:affair.state:0
+msgid "Error: There is already an other state with this sequence."
+msgstr "Erreur: Il y a déjà un autre état avec cette séquence."
+
+#. module: affair
+#: model:ir.model,name:affair.model_calendar_event
+msgid "Event"
+msgstr "Événement"
+
+#. module: affair
+#: model:ir.model.fields,field_description:affair.field_affair_state_fold
+msgid "Folded in kanban view"
+msgstr "Replié dans la vue kanban"
+
+#. module: affair
+#: model:ir.model.fields,field_description:affair.field_affair_id
+#: model:ir.model.fields,field_description:affair.field_affair_state_id
+msgid "ID"
+msgstr "ID"
+
+#. module: affair
+#: model:ir.ui.view,arch_db:affair.view_kanban_affair_openprod
+msgid "Important Messages"
+msgstr "Messages Importants"
+
+#. module: affair
+#: model:ir.ui.view,arch_db:affair.view_form_affair_id
+msgid "Invitation details"
+msgstr "Détails des invitations"
+
+#. module: affair
+#: model:ir.ui.view,arch_db:affair.view_form_affair_id
+msgid "Invitations"
+msgstr "Invitations"
+
+#. module: affair
+#: model:ir.model.fields,field_description:affair.field_affair_state_is_end
+msgid "Is affair end"
+msgstr "Est un état final"
+
+#. module: affair
+#: model:ir.model.fields,field_description:affair.field_affair___last_update
+#: model:ir.model.fields,field_description:affair.field_affair_state___last_update
+msgid "Last Modified on"
+msgstr "Dernière modification le"
+
+#. module: affair
+#: model:ir.model.fields,field_description:affair.field_affair_state_write_uid
+#: model:ir.model.fields,field_description:affair.field_affair_write_uid
+msgid "Last Updated by"
+msgstr "Dernière mise à jour par"
+
+#. module: affair
+#: model:ir.model.fields,field_description:affair.field_affair_state_write_date
+#: model:ir.model.fields,field_description:affair.field_affair_write_date
+msgid "Last Updated on"
+msgstr "Dernière mise à jour le"
+
+#. module: affair
+#: model:ir.model.fields,field_description:affair.field_affair_limit_date
+msgid "Limit date"
+msgstr "Date limite"
+
+#. module: affair
+#: model:ir.ui.view,arch_db:affair.view_form_affair_id
+msgid "Link"
+msgstr "Lien"
+
+#. module: affair
+#: model:ir.model.fields,field_description:affair.field_affair_mail_ids
+msgid "Mails"
+msgstr "Mails"
+
+#. module: affair
+#: model:ir.model,name:affair.model_mrp_manufacturingorder
+msgid "Manufacturing order"
+msgstr "Ordre de fabrication"
+
+#. module: affair
+#: model:ir.ui.menu,name:affair.menu_affair_id
+msgid "My Affairs"
+msgstr "Mes affaires"
+
+#. module: affair
+#: model:ir.ui.view,arch_db:affair.view_search_affair_id
+msgid "My affairs"
+msgstr "Mes affaires"
+
+#. module: affair
+#: model:ir.model.fields,field_description:affair.field_affair_display_name
+#: model:ir.model.fields,field_description:affair.field_affair_name
+#: model:ir.model.fields,field_description:affair.field_affair_state_name
+msgid "Name"
+msgstr "Nom"
+
+#. module: affair
+#: model:ir.model,name:affair.model_note_openprod
+msgid "Note Openprod"
+msgstr "Note Openprod"
+
+#. module: affair
+#: model:ir.model.fields,field_description:affair.field_affair_note_ids
+#: model:ir.ui.view,arch_db:affair.view_form_affair_id
+msgid "Notes"
+msgstr "Notes"
+
+#. module: affair
+#: model:ir.ui.view,arch_db:affair.view_form_state_affair_openprod
+msgid "Parameters"
+msgstr "Paramètres"
+
+#. module: affair
+#: model:ir.ui.view,arch_db:affair.view_form_affair_id
+msgid "Phase"
+msgstr "Phase"
+
+#. module: affair
+#: model:ir.model.fields,field_description:affair.field_affair_phase_ids
+#: model:ir.ui.view,arch_db:affair.view_form_affair_id
+msgid "Phases"
+msgstr "Phases"
+
+#. module: affair
+#: model:ir.ui.view,arch_db:affair.view_form_affair_id
+msgid "Planification"
+msgstr "Planification"
+
+#. module: affair
+#: model:ir.model,name:affair.model_procurement_order
+msgid "Procurement order"
+msgstr "Ordre d'approvisionnement"
+
+#. module: affair
+#: model:ir.ui.view,arch_db:affair.view_form_affair_id
+msgid "Production"
+msgstr "Production"
+
+#. module: affair
+#: model:affair.state,name:affair.affair_state_progress
+msgid "Progress"
+msgstr "En cours"
+
+#. module: affair
+#: model:ir.ui.view,arch_db:affair.view_form_affair_id
+msgid "Project Phases"
+msgstr "Phases "
+
+#. module: affair
+#: model:ir.model,name:affair.model_project_phase
+msgid "Project phase"
+msgstr "Phases du projet"
+
+#. module: affair
+#: model:ir.model.fields,field_description:affair.field_affair_pol_ids
+msgid "Purchase lines"
+msgstr "Lignes d'achat"
+
+#. module: affair
+#: model:ir.model,name:affair.model_purchase_order_line
+msgid "Purchase order line"
+msgstr "Ligne de commande d'achat"
+
+#. module: affair
+#: model:ir.ui.view,arch_db:affair.view_form_affair_id
+msgid "Purchases"
+msgstr "Achats"
+
+#. module: affair
+#: model:ir.model,name:affair.model_quick_create_project
+msgid "Quick create wizard for projects"
+msgstr "Création rapide de projet"
+
+#. module: affair
+#: model:ir.model.fields,field_description:affair.field_affair_wo_real_cost
+msgid "Real WO costs"
+msgstr "Coût réel OT"
+
+#. module: affair
+#: model:ir.model.fields,field_description:affair.field_affair_profit_margin_real
+msgid "Real profit margin"
+msgstr "Marge réelle"
+
+#. module: affair
+#: model:ir.model.fields,field_description:affair.field_affair_responsible_id
+msgid "Responsible"
+msgstr "Responsable"
+
+#. module: affair
+#: model:ir.model,name:affair.model_mrp_routing_line
+msgid "Routing line"
+msgstr "Ligne de gamme"
+
+#. module: affair
+#: model:ir.model.fields,field_description:affair.field_affair_rl_ids
+msgid "Routing lines"
+msgstr "Lignes de gammes"
+
+#. module: affair
+#: model:ir.model,name:affair.model_sale_order_line
+msgid "Sale order line"
+msgstr "Ligne de commande de vente"
+
+#. module: affair
+#: model:ir.model.fields,field_description:affair.field_affair_sol_ids
+msgid "Sale order lines"
+msgstr "Lignes de ventes"
+
+#. module: affair
+#: model:ir.model.fields,field_description:affair.field_affair_sol_price
+msgid "Sale price"
+msgstr "Prix de vente"
+
+#. module: affair
+#: model:ir.ui.view,arch_db:affair.view_form_affair_id
+msgid "Sales"
+msgstr "Ventes"
+
+#. module: affair
+#: model:ir.ui.view,arch_db:affair.view_form_affair_id
+msgid "Select attendees..."
+msgstr "Selectionnez les participants..."
+
+#. module: affair
+#: model:ir.ui.view,arch_db:affair.view_kanban_affair_openprod
+msgid "Send Email"
+msgstr "Envoyer un mail"
+
+#. module: affair
+#: model:ir.ui.view,arch_db:affair.view_form_affair_id
+msgid "Send Mail"
+msgstr "Envoyer un mail"
+
+#. module: affair
+#: model:ir.ui.view,arch_db:affair.view_form_affair_id
+msgid "Send mail"
+msgstr "Envoyer un mail"
+
+#. module: affair
+#: model:ir.model.fields,field_description:affair.field_affair_state_sequence
+msgid "Sequence"
+msgstr "Séquence"
+
+#. module: affair
+#: model:ir.model.fields,field_description:affair.field_affair_state_id_9307
+msgid "State"
+msgstr "État"
+
+#. module: affair
+#: model:ir.actions.act_window,name:affair.act_state_affair_openprod
+#: model:ir.ui.menu,name:affair.menu_state_affair_openprod
+msgid "States"
+msgstr "Etats"
+
+#. module: affair
+#: model:ir.model,name:affair.model_affair_state
+msgid "States for affair"
+msgstr "États pour les affaires"
+
+#. module: affair
+#: model:ir.model,name:affair.model_stock_move
+msgid "Stock Move"
+msgstr "Mouvements"
+
+#. module: affair
+#: model:ir.model.fields,help:affair.field_affair_code
+msgid "The code must be unique"
+msgstr "Le code doit être unique"
+
+#. module: affair
+#: model:ir.model.fields,field_description:affair.field_affair_wo_theo_cost
+msgid "Theorical WO costs"
+msgstr "Coût théorique OT"
+
+#. module: affair
+#: model:ir.model.fields,field_description:affair.field_affair_profit_margin_theo
+msgid "Theorical profit margin"
+msgstr "Marge théorique"
+
+#. module: affair
+#: model:ir.model.fields,help:affair.field_affair_state_fold
+msgid "This stage is folded in the kanban view whenthere are no records in that stage to display."
+msgstr "Cet état est replié dans la vue kanban lorsqu'il n'y a pas d'enregistrements dans cet état à afficher"
+
+#. module: affair
+#: model:ir.model.fields,help:affair.field_affair_state_is_end
+msgid "This stage is the end of the affair process. For example state \"Done\""
+msgstr "Cet état correspond à la fin du processus des affaires. Comme par exemple le statut \"Terminé\""
+
+#. module: affair
+#: model:ir.ui.view,arch_db:affair.view_form_affair_id
+msgid "Times"
+msgstr "Temps"
+
+#. module: affair
+#: model:ir.ui.view,arch_db:affair.view_form_affair_id
+msgid "Total"
+msgstr "Total"
+
+#. module: affair
+#: model:ir.ui.view,arch_db:affair.view_form_affair_id
+msgid "Total charge"
+msgstr "Charge totale"
+
+#. module: affair
+#: model:ir.model.fields,field_description:affair.field_affair_type
+msgid "Type"
+msgstr "Type"
+
+#. module: affair
+#: model:ir.ui.view,arch_db:affair.view_form_affair_id
+msgid "Uncertain"
+msgstr "Incertain"
+
+#. module: affair
+#: model:affair.state,name:affair.affair_state_waiting
+msgid "Waiting"
+msgstr "En attente"
+
+#. module: affair
+#: model:ir.model.fields,field_description:affair.field_affair_wo_ids
+msgid "Work orders"
+msgstr "Ordres de travail"
+
+#. module: affair
+#: model:ir.model,name:affair.model_mrp_workorder
+msgid "Workorder"
+msgstr "Ordre de travail"
+
+#. module: affair
+#: model:ir.ui.view,arch_db:affair.view_form_affair_id
+msgid "Workorders"
+msgstr "Ordres de travail"
+
+#. module: affair
+#: model:ir.ui.view,arch_db:affair.view_form_affair_id
+msgid "project phase"
+msgstr "Phase"
+

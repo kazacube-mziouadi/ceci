@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data noupdate="1">
+
+        <!-- Document security -->
+        <record id="document_openprod_users" model="ir.rule">
+            <field name="name">Document access for users</field>
+            <field name="model_id" ref="base_openprod.model_document_openprod"/>
+            <field name="groups" eval="[(4, ref('base.group_user'))]"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="True"/>
+            <field name="perm_unlink" eval="True"/>
+            <field name="domain_force">['|',
+            ('confidentiality','in',(False, 'all')),
+            '|',
+            '&amp;',('confidentiality','=','user'), 
+            '|', ('user_ids', 'in', user.id), ('group_ids.users','in', user.id),
+            '&amp;',('confidentiality','=','responsible'),('user_id','=',user.id)]</field>
+        </record>
+
+        <record id="document_openprod_admin" model="ir.rule">
+            <field name="name">Document access for admin</field>
+            <field name="model_id" ref="base_openprod.model_document_openprod"/>
+            <field name="groups" eval="[(4, ref('base.group_system'))]"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="True"/>
+            <field name="perm_unlink" eval="True"/>
+            <field name="domain_force">[(1, '=', 1)]</field>
+        </record>
+
+        <!-- Action security -->
+        <record id="action_openprod_users" model="ir.rule">
+            <field name="name">Action access for users</field>
+            <field name="model_id" ref="calendar_event.model_calendar_event"/>
+            <field name="groups" eval="[(4, ref('base.group_user'))]"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="True"/>
+            <field name="perm_unlink" eval="True"/>
+            <field name="domain_force">['|',
+            ('confidentiality','in',(False, 'all')),
+            '|',
+            '&amp;',('confidentiality','=','user'), 
+            '|', ('auth_user_ids', 'in', user.id), ('auth_group_ids.users','in', user.id),
+            '&amp;',('confidentiality','=','responsible'),('affected_user_id','=',user.id)]</field>
+        </record>
+
+        <record id="action_openprod_admin" model="ir.rule">
+            <field name="name">Action access for admin</field>
+            <field name="model_id" ref="calendar_event.model_calendar_event"/>
+            <field name="groups" eval="[(4, ref('base.group_system'))]"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="True"/>
+            <field name="perm_unlink" eval="True"/>
+            <field name="domain_force">[(1, '=', 1)]</field>
+        </record>
+        
+        <!-- Note security -->
+        <record id="note_openprod_users" model="ir.rule">
+            <field name="name">Note access for users</field>
+            <field name="model_id" ref="base_openprod.model_note_openprod"/>
+            <field name="groups" eval="[(4, ref('base.group_user'))]"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="True"/>
+            <field name="perm_unlink" eval="True"/>
+            <field name="domain_force">['|',
+            ('confidentiality','in',(False, 'all')),
+            '|',
+            '&amp;',('confidentiality','=','user'), 
+            '|', ('user_ids', 'in', user.id), ('group_ids.users','in', user.id),
+            '&amp;',('confidentiality','=','responsible'),('user_id','=',user.id)]</field>
+        </record>
+
+        <record id="note_openprod_admin" model="ir.rule">
+            <field name="name">Note access for admin</field>
+            <field name="model_id" ref="base_openprod.model_note_openprod"/>
+            <field name="groups" eval="[(4, ref('base.group_system'))]"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="True"/>
+            <field name="perm_unlink" eval="True"/>
+            <field name="domain_force">[(1, '=', 1)]</field>
+        </record>
+
+    </data>
+</openerp>

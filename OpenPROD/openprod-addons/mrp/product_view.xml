@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+
+		<!-- Action pour BoM -->
+		<record id="act_mrp_bom_for_product_menu" model="ir.actions.act_window">
+			<field name="name">BoM</field>
+			<field name="res_model">mrp.bom</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+			<field name="domain">[('bom_id', '=', False),('product_id', '=', active_id)]</field>
+			<field name="context">{}</field>
+			<field name="search_view_id" ref="view_search_mrp_bom" />
+		</record>
+
+		<record id="act_mrp_bom_using_this_products_menu" model="ir.actions.act_window">
+			<field name="name">BoM using this products</field>
+			<field name="res_model">mrp.bom</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+			<field name="domain">[('bom_id', '!=', False),('product_id', '=', active_id)]</field>
+			<field name="context">{}</field>
+		</record>
+
+		<!-- ACTION Manufacturing -->
+		<record id="act_mrp_manufacturingorder_for_product" model="ir.actions.act_window">
+			<field name="name">Manufacturing</field>
+			<field name="res_model">mrp.manufacturingorder</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+			<field name="domain">[('product_id', '=', active_id)]</field>
+			<field name="context">{}</field>
+			<field name="search_view_id" ref="view_search_mrp_manufacturingorder" />
+		</record>
+
+		<!-- ACTION Routing -->
+		<record id="act_mrp_routing_for_product" model="ir.actions.act_window">
+			<field name="name">Routing</field>
+			<field name="res_model">mrp.routing</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+			<field name="domain">[('routing_product', 'in', active_id)]</field>
+			<field name="context">{}</field>
+			<field name="search_view_id" ref="view_search_mrp_routing" />
+		</record>
+
+		<!-- FORM VIEW Product -->
+		<record id='view_form_product' model='ir.ui.view'>
+			<field name="name">product</field>
+			<field name="model">product.product</field>
+			<field name="priority" eval="1300" />
+			<field name="inherit_id" ref="product.view_form_product" />
+			<field name="arch" type="xml">
+			    <xpath expr="//field[@name='purchase_ok']" position="after">
+			        <field name="produce_ok" />
+			    </xpath>
+			    <xpath expr="//field[@name='customer_material']" position="attributes">
+                    <attribute name="attrs">{'invisible': ['|', '|', ('type', '!=', 'stockable'), ('supply_method', '!=', 'buy'), ('produce_ok', '=', True)]}</attribute>
+                </xpath>
+				<xpath expr="//page[@name='product_administration_page']" position="before">
+					<page string="Production" attrs="{'invisible': [('produce_ok', '=', False)]}" >
+						<group coslpan="4" col="4">
+							<group coslpan="2" col="2" string="Generality">
+								<field name="production_manager_id" />
+								<field name="planning_manager_id" />
+								<field name="price_qty" />
+								<field name="production_cost_price" />
+							</group>
+							<group coslpan="2" col="2" string="Parameters" name="parameters_production" >
+							    <field name="prod_family_id" context="{'default_uom_id': uom_id}" domain="[('uom_id', '=', uom_id)]" />
+								<field name="production_delay" />
+								<field name="production_min_qty" />
+								<field name="production_multiple_qty" />
+								<field name="bom_level" readonly="1"/>
+								<field name="is_int" invisible="1" />
+							</group>
+						</group>
+					</page>
+				</xpath>
+
+				<xpath expr="//group[@name='product_technical_page']" position="after">
+					<!-- <group colspan="4" col="4"> -->
+					<!-- <field name="tool_nb_wo" /> -->
+					<!-- </group> -->
+					<group string="Routing lines using this tool" colspan="4" col="4">
+						<field name="tool_routing_ids" nolabel="1" />
+					</group>
+				</xpath>
+				<xpath expr="//separator[@name='separator_analysis_menu']" position="before">
+				    <button name="cron_calc_bom_level" class="oe_inline oe_stat_button" type="object" icon="fa-sort-numeric-desc" string="Calculate BOM level" attrs="{'invisible': [('produce_ok', '=', False)]}" />
+				</xpath>
+				<xpath expr="//separator[@name='separator_analysis_menu']" position="after">
+					<button name="%(act_mrp_manufacturingorder_for_product)d" string="Manufacturing Order" type="action"
+						class="oe_inline oe_stat_button" icon="fa-list-ul" attrs="{'invisible': [('produce_ok', '=', False)]}" />
+					<button name="%(act_mrp_routing_for_product)d" string="Routing" type="action" class="oe_inline oe_stat_button"
+						icon="fa-list-ul" attrs="{'invisible': [('produce_ok', '=', False)]}" />
+					<button name="%(act_mrp_bom_for_product_menu)d" string="BoM" type="action" class="oe_inline oe_stat_button"
+						icon="fa-list-ul" attrs="{'invisible': [('produce_ok', '=', False)]}" />
+					<button name="button_view_bom_head" string="BoM using this products" type="object"
+                        class="oe_inline oe_stat_button" icon="fa-list-ul" attrs="{'invisible': [('type', '=', 'article')]}" />
+                    <button name="%(action_wiz_cost_simulation)d" string="Cost simulation" type="action" class="oe_inline oe_stat_button" icon="fa-balance-scale" attrs="{'invisible': [('produce_ok', '!=', True)]}" />
+				</xpath>
+			</field>
+			</record>
+
+		<!-- FORM VIEW Product (Stock) -->
+		<record model="ir.ui.view" id="view_form_inherit_product">
+			<field name="name">view.form.inherit.product</field>
+			<field name="inherit_id" ref="sale_purchase.view_form_product_sale_purchase" />
+			<field name="priority" eval="1400" />
+			<field name="model">product.product</field>
+			<field name="arch" type="xml">
+				<xpath
+					expr="//field[@name='plan_control_ids']//form//field[@name='report_id']"
+					position="attributes">
+					<attribute name="attrs">{'invisible': [('type', 'not in',
+						('jasper_receipt', 'jasper_delivery', 'jasper_production'))], 'required':
+						[('type', 'in', ('jasper_receipt', 'jasper_delivery',
+						'jasper_production'))]}
+					</attribute>
+				</xpath>
+				<xpath
+					expr="//field[@name='plan_control_ids']//form//field[@name='pdf_file']"
+					position="attributes">
+					<attribute name="attrs">{'invisible': [('type', 'not in',
+						('pdf_receipt', 'pdf_delivery', 'pdf_production', 'pdf_purchase_mail',
+						'pdf_sale_mail'))], 'required':
+						[('type', 'in', ('pdf_receipt', 'pdf_delivery',
+						'pdf_production', 'pdf_purchase_mail',
+						'pdf_sale_mail'))]}
+					</attribute>
+				</xpath>
+			</field>
+		</record>
+	
+		<!-- FORM VIEW Product category (Stock) -->
+		<record model="ir.ui.view" id="view_form_inherit_product_category">
+			<field name="name">view.form.inherit.product.category</field>
+			<field name="inherit_id"
+				ref="sale_purchase.view_form_product_category_sale_purchase_inherit" />
+			<field name="priority" eval="1400" />
+			<field name="model">product.category</field>
+			<field name="arch" type="xml">
+				<xpath
+					expr="//field[@name='plan_control_ids']//form//field[@name='report_id']"
+					position="attributes">
+					<attribute name="attrs">{'invisible': [('type', 'not in',
+						('jasper_receipt', 'jasper_delivery', 'jasper_production'))], 'required':
+						[('type', 'in', ('jasper_receipt', 'jasper_delivery',
+						'jasper_production'))]}
+					</attribute>
+				</xpath>
+				<xpath
+					expr="//field[@name='plan_control_ids']//form//field[@name='pdf_file']"
+					position="attributes">
+					<attribute name="attrs">{'invisible': [('type', 'not in',
+						('pdf_receipt', 'pdf_delivery', 'pdf_production', 'pdf_purchase_mail',
+						'pdf_sale_mail'))], 'required':
+						[('type', 'in', ('pdf_receipt', 'pdf_delivery',
+						'pdf_production', 'pdf_purchase_mail',
+						'pdf_sale_mail'))]}
+					</attribute>
+				</xpath>
+			</field>
+		</record>
+				
+		<record id="view_form_product_account_mrp" model="ir.ui.view">
+            <field name="name">view.form.product.account</field>
+            <field name="model">product.product</field>
+            <field name="priority">1600</field>
+            <field name="inherit_id" ref="account_openprod.view_form_product_account" />
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='type_valuation_purchase']" position="after">
+                    <field name="type_valuation_production" colspan="2" attrs="{'invisible': ['|', ('type', '=', 'service'), ('produce_ok', '!=', True)], 'required': [('type', '!=', 'service'), ('produce_ok', '=', True)]}"/>
+                    <field name="pourcent_sale_price" colspan="2" attrs="{'invisible': ['|', '|', ('type', '=', 'service'),('type_valuation_production', '!=', 'pourcent_sale'), ('produce_ok', '!=', True)], 'required': [('type', '!=', 'service'), ('type_valuation_production', '=', 'pourcent_sale'), ('produce_ok', '=', True)]}"/>
+                    <field name="price_theo_manual" colspan="2" 
+                           attrs="{'invisible': ['|', '|', ('type', '=', 'service'),('type_valuation_production', '!=', 'manual'), ('produce_ok', '!=', True)], 'required': [('type', '!=', 'service'), ('type_valuation_production', '=', 'manual'), ('produce_ok', '=', True)]}"/>
+                </xpath>
+           </field>
+        </record>                     
+
+
+		<!-- SEARCH VIEW PRODUCT -->
+		<record id='view_search_product' model='ir.ui.view'>
+			<field name="name">view_search_product</field>
+			<field name="model">product.product</field>
+			<field name="inherit_id" ref="product.view_search_product" />
+			<field name="arch" type="xml">
+			    <xpath expr="//filter[@name='filter_purchased_product']" position="before">
+				    <filter string="Produced product" domain="[('produce_ok', '=', True)]" />
+				</xpath>
+				<xpath expr="//group[@name='group_by_manager']" position="inside">
+					<filter string="Production manager" domain="[]" context="{'group_by': 'production_manager_id'}" />
+				</xpath>
+			</field>
+		</record>
+		
+		<record id='view_form_product_mrp' model='ir.ui.view'>
+            <field name="name">view_form_product_mrp</field>
+            <field name="model">product.product</field>
+            <field name="priority" eval="3100" />
+            <field name="inherit_id" ref="purchase.view_form_product" />
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='sinfo_ids']/form//field[@name='packaging_id']" position="after">
+                    <field name="customs_duties" />
+                    <field name="other_expenses" />
+                </xpath>
+            </field>
+        </record>
+
+		
+		<!-- ================ -->
+        <!-- Production FAMILY  -->
+        <!-- ================ -->
+        
+        <!-- FORM VIEW Production family -->
+        <record id='view_form_production_family' model='ir.ui.view'>
+            <field name="name">view_form_production_family</field>
+            <field name="model">production.family</field>
+            <field name="arch" type="xml">
+                <form string="Production family" version="8.0">
+                    <group colspan="4" col="4">
+	                    <group colspan="4" col="4" string="Details">
+	                        <field name="name" />
+		                    <field name="uom_id" domain="uom_id and [('id', '=', uom_id)] or []" />
+		                    <field name="price_qty" />
+		                    <field name="production_cost_price" />
+	                    </group>
+	                    <group colspan="4" col="4" string="Parameters">
+		                    <field name="parameter_ids" nolabel="1" colspan="4" >
+	                            <tree editable="bottom" string="Parameters">
+	                                <field name="type_param_id" />
+	                                <field name="value" />
+	                                <field name="price_unit" />
+	                                <field name="name" invisible="1" />
+	                            </tree>
+	                        </field>
+	                    </group>
+	                    <group colspan="4" col="4" string="Family products">
+		                    <field name="product_ids" nolabel="1" colspan="4" readonly="1" />
+	                    </group>
+                    </group>
+                </form>
+            </field>
+        </record>
+        
+        <!-- TREE VIEW Production family -->
+        <record id='view_tree_production_family' model='ir.ui.view'>
+            <field name="name">view_tree_production_family</field>
+            <field name="model">production.family</field>
+            <field name="arch" type="xml">
+                <tree string="Production family" version="8.0">
+                    <field name="name" />
+                    <field name="uom_id" />
+                    <field name="price_qty" />
+                    <field name="production_cost_price" />
+                    <field name="product_ids" />
+                    <field name="parameter_ids" />
+                </tree>
+            </field>
+        </record>
+        
+        <!-- SEARCH VIEW Production family -->
+        <record id='view_search_production_family' model='ir.ui.view'>
+            <field name="name">view_search_production_family</field>
+            <field name="model">production.family</field>
+            <field name="arch" type="xml">
+                <search version="8.0">
+                    <field name="name"/>
+                </search>
+            </field>
+        </record>
+        
+        <!-- ACTION Production family -->
+        <record id="action_production_family" model="ir.actions.act_window">
+            <field name="name">Production family</field>
+            <field name="res_model">production.family</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[]</field>
+            <field name="context">{}</field>
+            <field name="search_view_id" ref="view_search_production_family"/>
+        </record>
+        
+        <menuitem name="Production family" action="action_production_family" id="menu_production_family" parent="product.menu_product_conf" groups="base_openprod.group_menu_tech_data_config"/>
+        
+		
+	</data>
+</openerp>

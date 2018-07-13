@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+		<!-- FORM VIEW PARTNER -->
+		<record id='openprod_view_partner_form_instructor' model='ir.ui.view'>
+			<field name="name">view_form_partner_instructor</field>
+			<field name="model">res.partner</field>
+			<field name="priority" eval="100" />
+			<field name="inherit_id" ref="partner_openprod.openprod_view_partner_form" />
+			<field name="arch" type="xml">
+				<xpath expr="//field[@name='is_supplier']" position="before">
+					<field name="is_instructor" />
+				</xpath>
+				<xpath expr="//notebook" position="inside">
+					<page string="Sessions">
+					   <field name="session_ids" colspan="4" nolabel="1" />
+					</page>
+				</xpath>
+			</field>
+		</record>
+	</data>
+</openerp>

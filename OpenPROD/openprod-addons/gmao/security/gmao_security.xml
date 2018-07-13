@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<openerp>
+	<data noupdate="0">
+		
+		<!-- Groupes de menu -->
+		<record id="group_menu_gmao_user1" model="res.groups">
+            <field name="name">GMAO users</field>
+            <field name="category_id" ref="base_openprod.module_menu_category"/>
+        </record>
+        
+		<record id="group_menu_gmao_manager1" model="res.groups">
+            <field name="name">GMAO managers</field>
+            <field name="category_id" ref="base_openprod.module_menu_category"/>
+            <field name="implied_ids" eval="[(4, ref('group_menu_gmao_user1'))]"/>
+        </record>
+
+        <record id="group_menu_gmao_config1" model="res.groups">
+            <field name="name">GMAO configurations</field>
+            <field name="category_id" ref="base_openprod.module_menu_category"/>
+            <field name="implied_ids" eval="[(4, ref('group_menu_gmao_manager1'))]"/>
+        </record>
+        
+	</data>
+</openerp>

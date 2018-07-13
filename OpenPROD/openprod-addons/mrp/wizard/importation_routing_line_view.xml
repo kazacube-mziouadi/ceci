@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+    	<!-- FORM VIEW Importation routing line -->
+		<record id='view_form_importation_routing_line' model='ir.ui.view'>
+			<field name="name">view_form_importation_routing_line</field>
+			<field name="model">importation.routing.line</field>
+			<field name="arch" type="xml">
+				<form string="Importation routing line" version="8.0">
+					<field name="routing_id" invisible="1" />
+					<field name="importation_routing_line_ids" colspan="4" nolabel="1" >
+						<tree string="Routings lines" editable="top" >
+							<field name="is_import" />
+							<field name="routing_line_id" domain="[('id', '=', routing_line_id)]" />
+							<field name="is_import_consumed_component" />
+							<field name="is_import_consumed_service" />
+							<field name="is_import_tools" />
+							<field name="is_import_complaints" />
+							<field name="is_import_documents" />
+							<field name="is_import_consigns" />
+						</tree>
+					</field>
+					<footer>
+						<button name="action_importation" string="OK" type="object" class="oe_highlight" />
+						or
+						<button string="Cancel" class="oe_link" special="cancel" />
+					</footer>
+				</form>
+			</field>
+		</record>
+		
+		<!-- ACTION Importation routing line -->
+		<record id="act_importation_routing_line" model="ir.actions.act_window">
+		    <field name="name">Importation routing line</field>
+		    <field name="res_model">importation.routing.line</field>
+		    <field name="view_type">form</field>
+		    <field name="view_mode">form</field>
+		    <field name="domain">[]</field>
+		    <field name="target">new</field>
+		</record>
+    </data>
+ </openerp>

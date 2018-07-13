@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data noupdate="1">
+
+        <!--
+        Payment term
+        -->
+        <record id="account_payment_term_delivery" model="account.payment.term">
+            <field name="name">Before delivery</field>
+            <field name="note">Before delivery</field>
+            <field name="payment_type">before_delivery</field>
+        </record>
+        
+        <record id="account_payment_term_delivery_line" model="account.payment.term.line">
+            <field name="value">balance</field>
+            <field name="term_type">days_then_month</field>
+            <field eval="0" name="days"/>
+            <field eval="0" name="days2"/>
+            <field eval="account_payment_term_delivery" name="payment_id"/>
+        </record>
+        
+        <record id="account.account_payment_term_immediate" model="account.payment.term">
+            <field name="payment_type">before_validation</field>
+        </record>
+        
+        <record id="account.account_payment_term_line_immediate" model="account.payment.term.line">
+            <field name="term_type">days_then_month</field>
+        </record>
+        
+        <record id="account.account_payment_term_line_15days" model="account.payment.term.line">
+            <field name="term_type">days_then_month</field>
+        </record>
+        
+        <record id="account.account_payment_term_line_net" model="account.payment.term.line">
+            <field name="term_type">days_then_month</field>
+        </record>
+        
+        <!--Email template -->
+        <record id="account.email_template_edi_invoice" model="mail.template">
+            <field name="email_to">${(object.communication_method=='email' and object.communication_value) or (object.partner_id.email)}</field>
+        </record>
+        
+    </data>
+</openerp>

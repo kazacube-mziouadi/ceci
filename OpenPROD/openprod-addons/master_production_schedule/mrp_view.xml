@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+	
+		<!-- =================== -->
+		<!-- MANUFACTURING ORDER -->
+		<!-- =================== -->
+		
+		<!-- TREE VIEW Manufacturing order -->
+		<record id="view_tree_forecast_manufacturingorder" model="ir.ui.view">
+			<field name="name">view_tree_forecast_manufacturingorder</field>
+			<field name="inherit_id" ref="mrp.view_tree_mrp_manufacturingorder" />
+			<field name="model">mrp.manufacturingorder</field>
+			<field name="arch" type="xml">
+				<xpath expr="//field[@name='need_delay_validation']" position="after">
+					<field name="is_forecast"/>
+				</xpath>
+			</field>
+		</record>
+		
+		<!-- SEARCH Manufacturing order -->
+		<record id="view_search_forecast_manufacturingorder" model="ir.ui.view">
+			<field name="name">view_search_forecast_manufacturingorder</field>
+			<field name="inherit_id" ref="mrp.view_search_mrp_manufacturingorder" />
+			<field name="model">mrp.manufacturingorder</field>
+			<field name="arch" type="xml">
+				<xpath expr="//filter[@name='not_cancelled']" position="after">
+					<separator orientation="vertical" />
+					<filter name="forecast" string="Is forecast" domain="[('is_forecast', '=', True)]"/> 
+					<filter name="not_forecast" string="Not forecast" domain="[('is_forecast', '=', False)]"/> 
+				</xpath>
+			</field>
+		</record>
+		
+		<!-- ACTION Manufacturing order -->
+		<record id="mrp.act_mrp_manufacturingorder" model="ir.actions.act_window">
+		    <field name="context">{'search_default_not_cancelled': 1, 'search_default_not_forecast': 1}</field>
+		</record>
+		
+		
+		<!-- ========== -->
+		<!-- WORK ORDER -->
+		<!-- ========== -->
+		
+		<!-- TREE VIEW Workorder -->
+		<record id="view_tree_forecast_mrp_workorder" model="ir.ui.view">
+			<field name="name">view_tree_forecast_mrp_workorder</field>
+			<field name="inherit_id" ref="mrp.view_tree_mrp_workorder" />
+			<field name="model">mrp.workorder</field>
+			<field name="arch" type="xml">
+				<xpath expr="//field[@name='week_number']" position="after">
+					<field name="is_forecast"/>
+				</xpath>
+			</field>
+		</record>
+		
+		<!-- SEARCH Workorder -->
+		<record id="view_search_forecast_mrp_workorder" model="ir.ui.view">
+			<field name="name">view_search_forecast_manufacturingorder</field>
+			<field name="inherit_id" ref="mrp.view_search_mrp_workorder" />
+			<field name="model">mrp.workorder</field>
+			<field name="arch" type="xml">
+				<xpath expr="//filter[@name='not_cancelled']" position="after">
+					<separator orientation="vertical" />
+					<filter name="forecast" string="Is forecast" domain="[('is_forecast', '=', True)]"/> 
+					<filter name="not_forecast" string="Not forecast" domain="[('is_forecast', '=', False)]"/> 
+				</xpath>
+			</field>
+		</record>
+		
+		<!-- ACTION Workorder -->
+		<record id="mrp.act_mrp_workorder" model="ir.actions.act_window">
+		    <field name="context">{'search_default_not_cancelled': 1, 'search_default_not_forecast': 1}</field>
+		</record>
+		
+	</data>
+</openerp>

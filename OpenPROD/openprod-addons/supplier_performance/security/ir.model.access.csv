@@ -1,0 +1,8 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_supplier_performance_category_user,supplier.performance.category,model_supplier_performance_category,purchase.purchase_user,1,1,1,0
+access_supplier_performance_category_manager,supplier.performance.category,model_supplier_performance_category,purchase.purchase_manager,1,1,1,1
+access_supplier_performance_category_responsible,supplier.performance.category,model_supplier_performance_category,purchase.purchase_responsible,1,1,1,1
+
+access_supplier_performance_user,supplier.performance,model_supplier_performance,purchase.purchase_user,1,1,1,1
+access_supplier_performance_manager,supplier.performance,model_supplier_performance,purchase.purchase_manager,1,1,1,1
+access_supplier_performance_category_responsible,supplier.performance,model_supplier_performance,purchase.purchase_responsible,1,1,1,1

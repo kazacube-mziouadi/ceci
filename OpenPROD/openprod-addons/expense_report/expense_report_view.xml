@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+		<menuitem name="Expense report" id="menu_human_resource_expense_report" parent="human_resource.menu_human_resource_main" sequence="10" groups="group_menu_expense_report_user" />
+		
+		<!-- FORM VIEW expense report --> 
+        <record id="expense_report_view_form" model="ir.ui.view">
+            <field name="name">expense_report_view_form</field>
+            <field name="model">expense.report</field>
+            <field name="priority">1</field>
+            <field name="arch" type="xml">
+                <form string="Expense report" version="8.0">
+		            <header>
+                        <field name="state" widget="statusbar" nolabel="1" statusbar_visible="draft,waiting,validated,payment_requested" />
+                    </header>
+                    <group colspan="4" col="9">
+                        <group colspan="8" col="4" attrs="{'readonly': [('state', '!=', 'draft')]}" >
+                            <div class="oe_title" colspan="4">
+                                <h1>
+                                    <field name="name" class="oe_inline" colspan="4" attrs="{'readonly': [('state', '!=', 'draft')]}" />
+                                </h1>
+                            </div>
+                            <group colspan="2" col="2">
+                                <field name="requested_date" />
+                                <field name="employee_id" attrs="{'required': [('payment', '=', 'employee')]}" />
+                                <field name="account_id" domain="[('type', 'not in', ('view', 'closed'))]" />  
+                                <field name="journal_id" domain="[('type','=', 'general')]" />   
+                                <field name="journal_payment_id" domain="[('type','in',['bank', 'cash'])]" widget="selection" 
+                                       attrs="{'required': [('state', 'in', ('validated', 'payment_requested'))], 'readonly': [('state', 'in', ('payment_requested', 'paid', 'cancel'))]}"
+                                 />   
+                                <field name="company_currency_id" invisible="1" />   
+                            </group>
+                            <group colspan="2" col="2">
+                                <field name="payment" widget="radio" />
+                                <field name="company_id" />
+                                <field name="currency_id" />
+                                <field name="period_id" />
+                            </group>
+                            <notebook colspan="4">
+                                <page string="Lines of expense report" attrs="{'readonly': [('state', '!=', 'draft')]}" >
+                                   <group colspan="4" col="4" attrs="{'readonly': [('state', '!=', 'draft')]}" >
+	                                   <group colspan="4" col="4" string="Lines of expense report" attrs="{'readonly': [('state', '!=', 'draft')]}" >
+		                                    <field name="line_ids" nolabel="1" colspan="4" attrs="{'readonly': [('state', '!=', 'draft')]}" >
+		                                        <tree string="Line of expense report" editable="bottom"  >
+		                                           <field name="product_id" domain="[('type', '=', 'service'), ('is_expense_report', '=', True)]" />
+		                                           <field name="price_unit" />
+		                                           <field name="quantity" />
+		                                           <field name="uom_id" domain="[('id', '=', uom_id)]" />
+		                                           <field name="expense_line_tax_ids" widget="many2many_tags" />
+		                                           <field name="total_price" />
+		                                           <field name="remark" />
+		                                           <field name="account_id" />
+		                                           <field name="pad_id" />
+		                                           <field name="reinvoicing" />
+		                                           <field name="currency_id" invisible="1"/>
+		                                        </tree>
+		                                    </field>
+		                                    <separator colspan="4" string="Comment"/>
+		                                    <field name="comment" nolabel="1" colspan="4" />
+		                               </group>
+		                               <group colspan="2" col="2" string="Tax" attrs="{'readonly': [('state', '!=', 'draft')]}" >
+		                                   <field name="tax_line_ids" nolabel="1" colspan="2" attrs="{'readonly': [('state', '!=', 'draft')]}" >
+	                                           <tree editable="bottom" string="Taxes">
+	                                               <field name="name"/>
+	                                               <field name="tax_id" invisible="1"/>
+	                                               <field name="account_analytic_id" invisible="1"/>
+	                                               <field name="sequence" invisible="1"/>
+	                                               <field name="manual" invisible="1"/>
+	                                               <field name="account_id" groups="account.group_account_invoice"/>
+	                                               <field name="amount"/>
+	                                               <field name="base_code_id" invisible="1"/>
+	                                               <field name="currency_id" invisible="1"/>
+	                                               <field name="tax_on_payment" invisible="1"/>
+	                                               <field name="account_payment_id" invisible="1"/>
+	                                           </tree>
+	                                       </field>
+		                               </group>
+		                               <group colspan="1" col="1" />
+		                               <group colspan="1" col="2" string="Total">
+	                                       <group class="oe_subtotal_footer oe_right" colspan="2">
+	                                           <field name="amount_untaxed" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+	                                           <field name="amount_tax" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+	                                           <field name="amount_total" class="oe_subtotal_footer_separator" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+	                                       </group>
+	                                   </group>
+	                               </group>
+                                </page>
+                                <page string="History and link">
+                                    <group colspan="4" col="8" >
+	                                    <group colspan="4" col="4" string="History" >
+	                                        <field name="validation_date" readonly="1" />
+	                                        <field name="valid_move_id" readonly="1"  />
+	                                        <field name="payment_date" readonly="1"  />
+	                                        <field name="pay_move_id" readonly="1"  />
+	                                        <field name="pay_voucher_id" readonly="1" context="{'form_view_ref': 'account_voucher.view_vendor_payment_form'}" />
+	                                        <field name="customer_id" attrs="{'required': [('reinvoicing_state', '=', 'to_reinvoice')]}" domain="[('can_be_charged', '=', True), ('is_customer', '=', True)]" />
+	                                        <field name="reinvoicing_state" readonly="0" />
+	                                        <field name="reinvoicing_date" readonly="1" />
+	                                        <field name="invoice_id" attrs="{'invisible': ['|', ('state', 'in', ('draft', 'cancel')), ('reinvoicing_state', '!=', 'to_reinvoice')]}" readonly="1" />
+	                                    </group>
+	                                    <group colspan="4" col="4" string="Link" >
+	                                    </group>
+	                                </group>
+                                </page>
+                            </notebook>
+                        </group>
+                        <group colspan="1" col="1" class="op_shortcuts">
+                            <separator colspan="1" string="Actions" name="separator_actions_menu" />
+                            <button name="button_reset_taxes" string="Update taxes" class="oe_inline oe_stat_button" 
+                                    icon="fa-calculator" type="object" help="Recompute taxes and total" attrs="{'invisible': [('state', 'in', ('validated', 'payment_requested', 'cancel'))]}" />
+                            <button name="button_create_reinvoice" string="Reinvoice" class="oe_inline oe_stat_button" icon="fa-usd" 
+                                    type="object" help="Create Reinvoice" attrs="{'invisible': ['|', '|', ('state', 'in', ('draft', 'cancel')), ('invoice_id', '!=', False), ('reinvoicing_state', '!=', 'to_reinvoice')]}" />
+                        </group>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <!-- TREE VIEW expense report -->
+        <record id="expense_report_view_tree" model="ir.ui.view">
+            <field name="name">expense_report_view_tree</field>
+            <field name="model">expense.report</field>
+            <field name="priority">1</field>
+            <field name="arch" type="xml">
+                <tree string="Expense report" version="8.0">
+                    <field name="name" />
+                    <field name="requested_date" />
+                    <field name="employee_id" />
+                    <field name="account_id" />   
+                    <field name="company_currency_id" />   
+                    <field name="payment" />
+                    <field name="company_id" />
+                    <field name="currency_id" />
+                    <field name="state" />
+                </tree>
+            </field>
+        </record>
+
+        
+        <!-- SEARCH VIEW expense_report -->
+        <record id='view_search_expense_report_id' model='ir.ui.view'>
+            <field name="name">view_search_expense_report_id</field>
+            <field name="model">expense.report</field>
+            <field name="arch" type="xml">
+                <search version="8.0">
+                    <field name="name" />
+                    <field name="requested_date" />
+                    <field name="employee_id" />
+                    <field name="account_id" />   
+                    <field name="company_currency_id" />   
+                    <field name="payment" />
+                    <field name="company_id" />
+                    <field name="currency_id" />
+                    <field name="state" />
+                </search>
+            </field>
+        </record>
+        
+        
+        <record id="action_expense_report" model="ir.actions.act_window">
+            <field name="name">Expense reports</field>
+            <field name="res_model">expense.report</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field eval="False" name="view_id"/>
+            <field name="domain">[]</field>
+            <field name="search_view_id" ref="view_search_expense_report_id"/>
+        </record>
+        
+        
+        <record id="action_expense_report_tree_view" model="ir.actions.act_window.view">
+            <field eval="1" name="sequence"/>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="expense_report_view_tree"/>
+            <field name="act_window_id" ref="action_expense_report"/>
+        </record>
+        
+
+        <record id="action_expense_report_form_view" model="ir.actions.act_window.view">
+            <field eval="2" name="sequence"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="expense_report_view_form"/>
+            <field name="act_window_id" ref="action_expense_report"/>
+        </record>
+        
+        <menuitem name="Expense report" action="action_expense_report" id="menu_act_hr_expense_report_id" parent="menu_human_resource_expense_report" groups="group_menu_expense_report_user" />
+        
+    </data>
+</openerp>

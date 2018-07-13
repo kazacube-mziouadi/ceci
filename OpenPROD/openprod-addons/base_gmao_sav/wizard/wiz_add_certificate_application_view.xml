@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+        <record model="ir.ui.view" id="view_form_wiz_add_certificate_application_gmao_sav">
+            <field name="name">view_form_wiz_add_certificate_application_gmao_sav</field>
+            <field name="model">wiz.add.certificate.application</field>
+            <field name="type">form</field>
+            <field name="priority" eval="1300" />
+            <field name="inherit_id" ref="sale_purchase.view_form_wiz_add_certificate_application" />
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='ref_supplier_ids']" position="after">
+                    <field name="park_ids" attrs="{'invisible': [('type', '!=', 'park')]}" 
+                           domain="[('domain_certificate_management', 'not in', list_ids_text), ('type', '=', 'external')]" colspan="4" nolabel="1" />
+                    <field name="equipment_ids" attrs="{'invisible': [('type', '!=', 'equipment')]}" 
+                           domain="[('domain_certificate_management', 'not in', list_ids_text), ('type', '=', 'intern')]" colspan="4" nolabel="1" />
+                </xpath>
+            </field>
+        </record>
+        
+        
+        
+    </data>
+</openerp>

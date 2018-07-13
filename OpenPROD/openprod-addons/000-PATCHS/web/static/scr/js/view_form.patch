@@ -1,0 +1,16 @@
+### Eclipse Workspace Patch 1.0
+#P odoo-addons
+Index: web/static/src/js/view_form.js
+===================================================================
+--- web/static/src/js/view_form.js	(revision 1)
++++ web/static/src/js/view_form.js	(working copy)
+@@ -4540,7 +4540,8 @@
+     },
+     reload_record: function (record) {
+         // Evict record.id from cache to ensure it will be reloaded correctly
+-        this.dataset.evict_record(record.get('id'));
++        if (record){
++           this.dataset.evict_record(record.get('id'));}
+ 
+         return this._super(record);
+     }

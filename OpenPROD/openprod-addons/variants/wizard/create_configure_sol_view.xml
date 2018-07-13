@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+		<!-- ACTION Create and configure SOL -->
+		<record id="act_create_configure_sol" model="ir.actions.act_window">
+			<field name="name">Create and configure SOL</field>
+			<field name="res_model">create.configure.sol</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">form</field>
+			<field name="target">new</field>
+		</record>
+
+		<!-- FORM VIEW Create and configure SOL -->
+		<record id='view_form_create_configure_sol' model='ir.ui.view'>
+			<field name="name">create_configure_sol</field>
+			<field name="model">create.configure.sol</field>
+			<field name="arch" type="xml">
+				<form string="Create and configure SOL" version="8.0">
+					<group col="6">
+						<field name="sale_order_id" invisible="1" />
+						<field name="sale_partner_id" invisible="1" />
+						<field name="product_id" domain="sale_partner_id and [('sale_ok', '=', True), '|', ('sale_product_customerinfo', '=', sale_partner_id), ('free_sale', '=', True)] or [('sale_ok', '=', True)]" colspan="1" />
+						<field name="quantity" />
+						<group colspan="4" />
+						<field name="requested_date" />
+						<group colspan="4" />
+						<button type="object" class="oe_button oe_highlight" name="create_configure" string="Configure" />
+						<button special="cancel" class="oe_form_button_openprod_delete btn btn-default btn-sm" string="Cancel" />
+					</group>
+				</form>
+			</field>
+		</record>
+
+		<record model="ir.ui.view" id="view_form_sale_order_configure">
+			<field name="name">sale.order.form.inherit</field>
+			<field name="inherit_id" ref="mrp.view_form_sale_order_mrp" />
+			<field name="model">sale.order</field>
+			<field name="arch" type="xml">
+				<xpath expr="//separator[@name='action_separator']" position="after">
+					<button class="oe_inline oe_stat_button" string="Add line" type="action" name="%(act_create_configure_sol)d"
+						icon="fa-gears" context="{'default_sale_order_id':active_id}" attrs="{'invisible':[('state', '!=', 'draft')]}" />
+				</xpath>
+			</field>
+		</record>
+
+	</data>
+</openerp>

@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+		
+		<!-- ANALYTIC MENU -->
+		<menuitem id="analytic_main_menu" name="Analytic" parent="control_management_main_menu"/>
+		<menuitem id="analytic_analyse_main_menu" name="Analyse" parent="analytic_main_menu" sequence="10"/>
+		
+		<!-- TREE VIEW ANALYTIC LINE -->
+		<record id="view_openprod_account_analytic_line_tree" model="ir.ui.view">
+            <field name="name">view.openprod.account.analytic.line.tree</field>
+            <field name="model">account.analytic.line</field>
+            <field name="arch" type="xml">
+                <tree string="Analytic Entries">
+                    <field name="date"/>
+                    <field name="user_id"/>
+                    <field name="name"/>
+                    <field name="account_id"/>
+                    <field name="amount" sum="Total"/>
+                    <field name="period_id"/>
+                    <field name="year"/>
+                    <field name="journal_id" invisible="context.get('to_invoice', False)"/>
+                    <field name="invoice_line_id"/>
+                    <field name="general_account_id"/>
+                </tree>
+            </field>
+        </record>
+        
+        <!-- SEARCH VIEW ANALYTIC LINE-->
+		<record id='openprod_search_view_account_analytic_line' model='ir.ui.view'>
+			<field name="name">openprod_search_view_account_analytic_line</field>
+			<field name="model">account.analytic.line</field>
+			<field name="arch" type="xml">
+				<search version="8.0">
+					<field name="account_id"/>
+					<field name="name"/>
+					<field name="period_id"/>
+					<field name="year"/>
+					<filter string="This year" domain="[('year','=',time.strftime('%%Y'))]" name="this_year"/>
+					<group expand="0" string="Group By">
+						<filter string="Account" domain="[]" context="{'group_by': 'account_id'}"/>
+						<filter string="Journal" domain="[]" context="{'group_by': 'journal_id'}"/>
+						<filter string="User" domain="[]" context="{'group_by': 'user_id'}"/>
+						<filter string="Year" domain="[]" context="{'group_by': 'year'}"/>
+						<filter string="Period" domain="[]" context="{'group_by': 'period_id'}"/>
+					</group>
+				</search>
+			</field>
+		</record>
+	
+		<!-- ANALYTIC LINE ACTION -->
+		<record model="ir.actions.act_window" id="openprod_analytic_entries_action">
+			<field name="name">Analytic Entries</field>
+			<field name="res_model">account.analytic.line</field>
+			<field name="view_type">form</field>
+		    <field name="view_mode">tree,form</field>
+		    <field name="context">{'search_default_this_year': True}</field>
+			<field name="view_id" ref="view_openprod_account_analytic_line_tree"/>
+			<field name="search_view_id" ref="openprod_search_view_account_analytic_line"/>
+		</record>
+		
+		<menuitem id="analytic_entries_menu" action="openprod_analytic_entries_action" name="Analytic entries" parent="analytic_main_menu" sequence="2"/>
+		
+		
+		<!-- TREE VIEW ANALYTIC ACCOUNT -->
+		<record id="view_openprod_account_analytic_account_tree" model="ir.ui.view">
+            <field name="name">view.openprod.account.analytic.account.tree</field>
+            <field name="model">account.analytic.account</field>
+            <field name="arch" type="xml">
+                <tree string="Analytic account">
+                    <field name="name"/>
+                    <field name="amount"/>
+                    <field name="budget"/>
+                    <field name="partner_id"/>
+                    <field name="manager_id"/>
+                </tree>
+            </field>
+        </record>
+        
+        <!-- FORM VIEW Account analytic account -->
+		<record id='view_form_inherit_account_analytic_account' model='ir.ui.view'>
+			<field name="name">view_form_inherit_account_analytic_account</field>
+			<field name="model">account.analytic.account</field>
+			<field name="inherit_id" ref="analytic.view_account_analytic_account_form" />
+			<field name="arch" type="xml">
+				<xpath expr="//field[@name='manager_id']" position="after">
+					<field name="budget" attrs="{'invisible': [('type', '!=', 'contract')]}"/>
+					<field name="amount" />
+				</xpath>
+			</field>
+		</record>
+        
+        <!-- SEARCH VIEW ANALYTIC ACCOUNT-->
+		<record id='openprod_search_view_account_analytic_account' model='ir.ui.view'>
+			<field name="name">openprod_search_view_account_analytic_account</field>
+			<field name="model">account.analytic.account</field>
+			<field name="arch" type="xml">
+				<search version="8.0">
+					<field name="name"/>
+				</search>
+			</field>
+		</record>
+	
+		<!-- ANALYTIC ACCOUNT ACTION -->
+		<record model="ir.actions.act_window" id="openprod_analytic_account_action">
+			<field name="name">Analytic account</field>
+			<field name="res_model">account.analytic.account</field>
+			<field name="view_type">form</field>
+		    <field name="view_mode">tree,form</field>
+			<field name="view_id" ref="view_openprod_account_analytic_account_tree"/>
+			<field name="search_view_id" ref="openprod_search_view_account_analytic_account"/>
+		</record>
+		
+		<menuitem id="analytic_account_menu" action="openprod_analytic_account_action" name="Analytic account" parent="analytic_main_menu" sequence="4"/>
+		
+		<!-- ACTION Analytic journal -->
+		<record id="action_control_analytic_journal" model="ir.actions.act_window">
+		    <field name="name">Analytic journal</field>
+		    <field name="res_model">account.analytic.journal</field>
+		    <field name="view_type">form</field>
+		    <field name="view_mode">tree,form</field>
+		    <field name="domain">[]</field>
+		    <field name="context">{}</field>
+		</record>
+		
+		<menuitem id="analytic_journal_menu" action="action_control_analytic_journal" name="Analytic journals" parent="analytic_main_menu" sequence="6"/>
+    	
+		<!-- ACTION Analytic distribution -->
+		<record id="action_control_analytic_distribution" model="ir.actions.act_window">
+		    <field name="name">Analytic distribution</field>
+		    <field name="res_model">product.analytic.distribution</field>
+		    <field name="view_type">form</field>
+		    <field name="view_mode">tree,form</field>
+		    <field name="domain">[]</field>
+		    <field name="context">{}</field>
+		    <field name="search_view_id" ref="analytic_distribution.view_search_product_analytic_distribution"/>
+		</record>
+		
+		<menuitem id="control_analytic_distribution_menu" action="action_control_analytic_distribution" name="Analytic distribution" parent="analytic_main_menu" sequence="8"/>
+		
+		<!-- ANALYTIC ACCOUNT LINE ANALYSE -->
+		<record id="view_account_analytic_line_pivot" model="ir.ui.view">
+         <field name="name">account.analytic.line.pivot</field>
+         <field name="model">account.analytic.line</field>
+         <field name="arch" type="xml">
+             <pivot string="Analytic Entries Analysis">
+                <field name="account_id" type="row"/>
+                <field name="date" interval="month" type="col"/>
+                <field name="journal_id" type="col"/>
+                <field name="amount" type="measure"/>
+             </pivot>
+         </field>
+    	</record>
+    	
+		<!-- ANALYTIC ACCOUNT LINE ANALYSE GRAPH -->
+		<record id="view_graph_account_analytic_line" model="ir.ui.view">
+         <field name="name">graph.account.analytic.line</field>
+         <field name="model">account.analytic.line</field>
+         <field name="arch" type="xml">
+             <graph string="Analytic Entries Analysis">
+                <field name="account_id" type="row"/>
+                <field name="date" interval="month" type="col"/>
+                <field name="journal_id" type="col"/>
+                <field name="amount" type="measure"/>
+             </graph>
+         </field>
+    	</record>
+    	
+    	<!-- ANALYTIC ACCOUNT LINE GRAPH ACTION -->
+		<record id="action_analytic_line_pivot_analysis_product" model="ir.actions.act_window">
+		    <field name="name">Analytic entries analyse</field>
+		    <field name="res_model">account.analytic.line</field>
+		    <field name="view_type">form</field>
+		    <field name="view_mode">pivot,graph</field>
+		    <field name="domain">[]</field>
+		    <field name="context">{}</field>
+		    <field name="view_id" ref="view_account_analytic_line_pivot" />
+		</record>
+		
+		<menuitem id="analytic_analyse_menu" action="action_analytic_line_pivot_analysis_product" name="Analytic entries analyse" parent="analytic_analyse_main_menu" sequence="2"/>
+		
+		<!-- ANALYTIC ACCOUNT ANALYSE -->
+		<record id="view_account_analytic_account_pivot" model="ir.ui.view">
+         <field name="name">account.analytic.account.pivot</field>
+         <field name="model">account.analytic.account</field>
+         <field name="arch" type="xml">
+             <pivot string="Analytic account analysis">
+                <field name="name" type="row"/>
+                <field name="company_id" type="col"/>
+                <field name="amount" type="measure"/>
+                <field name="budget" type="measure"/>
+                <field name="debit" type="measure"/>
+             </pivot>
+         </field>
+    	</record>
+		
+		<!-- ANALYTIC ACCOUNT ANALYSE GRAPH -->
+		<record id="view_graph_account_analytic_account" model="ir.ui.view">
+         <field name="name">graph.account.analytic.account</field>
+         <field name="model">account.analytic.account</field>
+         <field name="arch" type="xml">
+             <graph string="Analytic account analysis">
+                <field name="name" type="row"/>
+                <field name="company_id" type="col"/>
+                <field name="amount" type="measure"/>
+                <field name="budget" type="measure"/>
+                <field name="debit" type="measure"/>
+             </graph>
+         </field>
+    	</record>
+		
+    	<!-- ANALYTIC ACCOUNT GRAPH ACTION -->
+		<record id="action_analytic_account_pivot_analysis" model="ir.actions.act_window">
+		    <field name="name">Analytic account analyse</field>
+		    <field name="res_model">account.analytic.account</field>
+		    <field name="view_type">form</field>
+		    <field name="view_mode">pivot,graph</field>
+		    <field name="domain">[]</field>
+		    <field name="context">{}</field>
+		    <field name="view_id" ref="view_account_analytic_account_pivot" />
+		</record>
+		
+		<menuitem id="analytic_account_analyse_menu" action="action_analytic_account_pivot_analysis" name="Analytic account analyse" parent="analytic_analyse_main_menu" sequence="4"/>
+		
+		<!-- PURCHASE SALE ANALYTIC DISTRIBUTION Sale -->
+		<record id="view_sale_purchase_sale_analytic_distribution_pivot" model="ir.ui.view">
+         <field name="name">view_sale_purchase_sale_analytic_distribution_pivot</field>
+         <field name="model">purchase.sale.analytic.distribution</field>
+         <field name="arch" type="xml">
+             <pivot string="Sale analytic distribution">
+                <field name="account_id" type="row"/>
+                <field name="create_date" type="col"/>
+                <field name="total_currency" type="measure"/>
+             </pivot>
+         </field>
+    	</record>
+		
+		<!-- PURCHASE SALE ANALYTIC DISTRIBUTION Sale -->
+		<record id="view_sale_graph_purchase_sale_analytic_distribution" model="ir.ui.view">
+         <field name="name">view_sale_graph_purchase_sale_analytic_distribution</field>
+         <field name="model">purchase.sale.analytic.distribution</field>
+         <field name="arch" type="xml">
+             <graph string="Sale analytic distribution">
+                <field name="account_id" type="row"/>
+                <field name="create_date" type="col"/>
+                <field name="total_currency" type="measure"/>
+             </graph>
+         </field>
+    	</record>
+		
+		<!-- PURCHASE SALE ANALYTIC DISTRIBUTION Sale -->
+		<record id="action_sale_purchase_sale_analytic_distribution" model="ir.actions.act_window">
+		    <field name="name">Sale analytic distribution</field>
+		    <field name="res_model">purchase.sale.analytic.distribution</field>
+		    <field name="view_type">form</field>
+		    <field name="view_mode">pivot,graph</field>
+		    <field name="domain">[('analytic_sale_order_line_id', '!=', False)]</field>
+		    <field name="context">{}</field>
+		    <field name="view_id" ref="view_sale_purchase_sale_analytic_distribution_pivot" />
+		</record>
+		
+		<menuitem id="sale_purchase_sale_analytic_distribution_menu" action="action_sale_purchase_sale_analytic_distribution" name="Sale analytic distribution" parent="analytic_analyse_main_menu" sequence="6"/>
+		
+		<!-- PURCHASE SALE ANALYTIC DISTRIBUTION Purchase -->
+		<record id="view_purchase_purchase_sale_analytic_distribution_pivot" model="ir.ui.view">
+         <field name="name">view_purchase_purchase_sale_analytic_distribution_pivot</field>
+         <field name="model">purchase.sale.analytic.distribution</field>
+         <field name="arch" type="xml">
+             <pivot string="Purchase analytic distribution">
+                <field name="account_id" type="row"/>
+                <field name="create_date" type="col"/>
+                <field name="total_currency" type="measure"/>
+             </pivot>
+         </field>
+    	</record>
+		
+		<!-- PURCHASE SALE ANALYTIC DISTRIBUTION Purchase -->
+		<record id="view_purchase_graph_purchase_sale_analytic_distribution" model="ir.ui.view">
+         <field name="name">view_purchase_graph_purchase_sale_analytic_distribution</field>
+         <field name="model">purchase.sale.analytic.distribution</field>
+         <field name="arch" type="xml">
+             <graph string="Sale analytic distribution">
+                <field name="account_id" type="row"/>
+                <field name="create_date" type="col"/>
+                <field name="total_currency" type="measure"/>
+             </graph>
+         </field>
+    	</record>
+		
+		<!-- PURCHASE SALE ANALYTIC DISTRIBUTION Purchase -->
+		<record id="action_purchase_purchase_sale_analytic_distribution" model="ir.actions.act_window">
+		    <field name="name">Purchase analytic distribution</field>
+		    <field name="res_model">purchase.sale.analytic.distribution</field>
+		    <field name="view_type">form</field>
+		    <field name="view_mode">pivot,graph</field>
+		    <field name="domain">[('analytic_purchase_order_line_id', '!=', False)]</field>
+		    <field name="context">{}</field>
+		    <field name="view_id" ref="view_purchase_purchase_sale_analytic_distribution_pivot" />
+		</record>
+		
+		<menuitem id="purchase_purchase_sale_analytic_distribution_menu" action="action_purchase_purchase_sale_analytic_distribution" name="Purchase analytic distribution" parent="analytic_analyse_main_menu" sequence="8"/>
+	
+	</data>
+</openerp>

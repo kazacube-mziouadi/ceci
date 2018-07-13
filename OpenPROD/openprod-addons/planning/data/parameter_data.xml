@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<openerp>
+    <data>
+        <record model="ir.config_parameter" id="int_parameter_planning_coeff">
+            <field name="key">planning_period_coeff</field>
+            <field name="value">1</field>
+        </record>
+    </data>
+</openerp>

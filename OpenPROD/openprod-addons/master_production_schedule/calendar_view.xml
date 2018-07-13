@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+	
+		<!-- ================ -->
+		<!-- CALENDAR LOADING -->
+		<!-- ================ -->
+		
+		<!-- TREE VIEW Calendar loading -->
+		<record id="view_tree_forecast_calendar_loading_id" model="ir.ui.view">
+			<field name="name">view_tree_forecast_calendar_loading_id</field>
+			<field name="inherit_id" ref="calendar.view_tree_calendar_loading_id" />
+			<field name="model">calendar.loading</field>
+			<field name="arch" type="xml">
+				<xpath expr="//field[@name='year']" position="after">
+					<field name="is_forecast"/>
+				</xpath>
+			</field>
+		</record>
+		
+	</data>
+</openerp>

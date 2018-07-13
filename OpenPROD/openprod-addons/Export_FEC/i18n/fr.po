@@ -1,0 +1,164 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* Export_FEC
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 9.0c\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-11-03 08:26+0000\n"
+"PO-Revision-Date: 2016-11-03 08:26+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: Export_FEC
+#: model:ir.ui.view,arch_db:Export_FEC.account_fr_fec_view
+msgid "Cancel"
+msgstr "Annuler"
+
+#. module: Export_FEC
+#: model:ir.ui.view,arch_db:Export_FEC.account_fr_fec_view
+msgid "Close"
+msgstr "Fermer"
+
+#. module: Export_FEC
+#: model:ir.model.fields,field_description:Export_FEC.field_account_fr_fec_company_id
+msgid "Company"
+msgstr "Société"
+
+#. module: Export_FEC
+#: model:ir.model.fields,field_description:Export_FEC.field_account_fr_fec_type
+msgid "Company Type"
+msgstr "Type de société"
+
+#. module: Export_FEC
+#: model:ir.model.fields,field_description:Export_FEC.field_account_fr_fec_create_uid
+msgid "Created by"
+msgstr "Créé par"
+
+#. module: Export_FEC
+#: model:ir.model.fields,field_description:Export_FEC.field_account_fr_fec_create_date
+msgid "Created on"
+msgstr "Créé le"
+
+#. module: Export_FEC
+#: model:ir.model.fields,field_description:Export_FEC.field_account_fr_fec_display_name
+msgid "Display Name"
+msgstr "Nom affiché"
+
+#. module: Export_FEC
+#: selection:account.fr.fec,state:0
+msgid "Done"
+msgstr "Terminé"
+
+#. module: Export_FEC
+#: selection:account.fr.fec,state:0
+msgid "Draft"
+msgstr "Brouillon"
+
+#. module: Export_FEC
+#: model:ir.model.fields,field_description:Export_FEC.field_account_fr_fec_export_type
+msgid "Export Type"
+msgstr "Type d'export"
+
+#. module: Export_FEC
+#: model:ir.actions.act_window,name:Export_FEC.account_fr_fec_action
+#: model:ir.ui.menu,name:Export_FEC.account_fr_fec_menu
+msgid "FEC"
+msgstr "FEC"
+
+#. module: Export_FEC
+#: model:ir.model.fields,field_description:Export_FEC.field_account_fr_fec_fec_data
+msgid "FEC File"
+msgstr "Fichier FEC"
+
+#. module: Export_FEC
+#: model:ir.ui.view,arch_db:Export_FEC.account_fr_fec_view
+msgid "FEC File Generation"
+msgstr "Génération Fichier FEC"
+
+#. module: Export_FEC
+#: model:ir.model,name:Export_FEC.model_account_fr_fec
+msgid "Ficher Echange Informatise"
+msgstr "Ficher d'Échange Informatisé"
+
+#. module: Export_FEC
+#: model:ir.model.fields,field_description:Export_FEC.field_account_fr_fec_filename
+msgid "Filename"
+msgstr "Nom du fichier"
+
+#. module: Export_FEC
+#: model:ir.model.fields,field_description:Export_FEC.field_account_fr_fec_fiscalyear_id
+msgid "Fiscal Year"
+msgstr "Année fiscale"
+
+#. module: Export_FEC
+#: model:ir.ui.view,arch_db:Export_FEC.account_fr_fec_view
+msgid "Generate"
+msgstr "Générer"
+
+#. module: Export_FEC
+#: selection:account.fr.fec,type:0
+msgid "I.S. or BIC @ I.R."
+msgstr "I.S. ou BIC @ I.R."
+
+#. module: Export_FEC
+#: model:ir.model.fields,field_description:Export_FEC.field_account_fr_fec_id
+msgid "ID"
+msgstr "ID"
+
+#. module: Export_FEC
+#: model:ir.model.fields,field_description:Export_FEC.field_account_fr_fec___last_update
+msgid "Last Modified on"
+msgstr "Dernière modification le"
+
+#. module: Export_FEC
+#: model:ir.model.fields,field_description:Export_FEC.field_account_fr_fec_write_uid
+msgid "Last Updated by"
+msgstr "Dernière mise à jour par"
+
+#. module: Export_FEC
+#: model:ir.model.fields,field_description:Export_FEC.field_account_fr_fec_write_date
+msgid "Last Updated on"
+msgstr "Dernière mise à jour le"
+
+#. module: Export_FEC
+#: code:addons/Export_FEC/wizard/fec.py:173
+#, python-format
+msgid "Missing VAT number and SIRET for company %s"
+msgstr "Le numéro de TVA est manquant ainsi que le SIRET sur la société %s"
+
+#. module: Export_FEC
+#: selection:account.fr.fec,export_type:0
+msgid "Non-official FEC report (posted and unposted entries)"
+msgstr "Rapport FEC non-officiel (entrées postées et non-postées)"
+
+#. module: Export_FEC
+#: selection:account.fr.fec,export_type:0
+msgid "Official FEC report (posted entries only)"
+msgstr "Rapport FEC officiel (entrées postées uniquement)"
+
+#. module: Export_FEC
+#: model:ir.ui.view,arch_db:Export_FEC.account_fr_fec_view
+msgid "Period"
+msgstr "Périodes"
+
+#. module: Export_FEC
+#: model:ir.model.fields,field_description:Export_FEC.field_account_fr_fec_period_ids
+msgid "Period ids"
+msgstr "Périodes ids"
+
+#. module: Export_FEC
+#: model:ir.model.fields,field_description:Export_FEC.field_account_fr_fec_state
+msgid "State"
+msgstr "État"
+
+#. module: Export_FEC
+#: model:ir.ui.view,arch_db:Export_FEC.account_fr_fec_view
+msgid "The encoding of this text file is UTF-8."
+msgstr "Ce fichier texte est encodé en UTF-8."
+

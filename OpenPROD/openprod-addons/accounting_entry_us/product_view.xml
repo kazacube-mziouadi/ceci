@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+
+		<!-- FORM VIEW Product category -->
+		<record id="view_form_product_category_inherit_accounting_entry_us" model="ir.ui.view">
+			<field name="name">view_form_product_category_inherit_accounting_entry_us</field>
+			<field name="model">product.category</field>
+			<field name="inherit_id" ref="product.product_category_form_view" />
+			<field name="arch" type="xml">
+				<xpath expr="//field[@name='property_account_expense_categ_id']" position="after">
+                    <field name="account_stock_out_id" attrs="{'required': [('type', '!=', 'view')]}" domain="[('type', '!=', 'view')]" />
+                    <field name="account_stock_in_id" attrs="{'required': [('type', '!=', 'view')]}" domain="[('type', '!=', 'view')]" />
+                    <field name="account_stock_value_in_id" attrs="{'required': [('type', '!=', 'view')]}" domain="[('type', '!=', 'view')]" />
+                    <field name="account_stock_value_out_id" attrs="{'required': [('type', '!=', 'view')]}" domain="[('type', '!=', 'view')]" />
+                    
+                    <field name="account_finish_good_inv_id" attrs="{'required': [('type', '!=', 'view')]}" domain="[('type', '!=', 'view')]" />
+                    <field name="account_work_in_progress_id" attrs="{'required': [('type', '!=', 'view')]}" domain="[('type', '!=', 'view')]" />
+                    <field name="account_applied_overhead_id" attrs="{'required': [('type', '!=', 'view')]}" domain="[('type', '!=', 'view')]" />
+                    <field name="account_material_purchase_id" attrs="{'required': [('type', '!=', 'view')]}" domain="[('type', '!=', 'view')]" />
+                </xpath>
+			</field>
+		</record>
+		
+
+		<!-- FORM VIEW Product -->
+		<record id='view_form_product_accounting_entry_us' model='ir.ui.view'>
+			<field name="name">product</field>
+			<field name="model">product.product</field>
+			<field name="priority" eval="1000" />
+			<field name="inherit_id" ref="account_openprod.view_form_product_account" />
+			<field name="arch" type="xml">
+				<xpath expr="//field[@name='property_account_expense_id']" position="after">
+                    <field name="account_stock_out_id" domain="[('type', '!=', 'view')]" attrs="{'invisible': [('purchase_ok', '!=', True)]}" />
+                    <field name="account_stock_in_id" domain="[('type', '!=', 'view')]" attrs="{'invisible': [('purchase_ok', '!=', True)]}" />
+                    <field name="account_stock_value_in_id" domain="[('type', '!=', 'view')]" attrs="{'invisible': [('purchase_ok', '!=', True)]}" />
+                    <field name="account_stock_value_out_id" domain="[('type', '!=', 'view')]" attrs="{'invisible': [('purchase_ok', '!=', True)]}" />
+                    
+                    <field name="account_finish_good_inv_id" domain="[('type', '!=', 'view')]" attrs="{'invisible': [('produce_ok', '!=', True)]}" />
+                    <field name="account_work_in_progress_id" domain="[('type', '!=', 'view')]" attrs="{'invisible': [('produce_ok', '!=', True)]}" />
+                    <field name="account_applied_overhead_id" domain="[('type', '!=', 'view')]" attrs="{'invisible': [('produce_ok', '!=', True)]}" />
+                    <field name="account_material_purchase_id" domain="[('type', '!=', 'view')]" attrs="{'invisible': [('produce_ok', '!=', True)]}" />
+                </xpath>
+			</field>
+		</record>
+
+
+	</data>
+</openerp>

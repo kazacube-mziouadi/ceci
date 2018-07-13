@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data noupdate="1">
+
+        <!-- Calendar template -->
+        <record id="first_calendar_template" model="calendar.template">
+            <field name="name" eval="'Year ' + time.strftime(str(DateTime.today().year))"/>
+            <field name="start_date" eval="time.strftime(str(DateTime.today().year) + '-01-01')"/>
+            <field name="end_date" eval="time.strftime(str(DateTime.today().year) + '-12-31')"/>
+        </record>
+        
+        <!-- Calendar -->
+        <record id="first_calendar" model="calendar">
+            <field name="calendar_template_id" ref="first_calendar_template"/>
+            <field name="name" eval="'Year ' + time.strftime(str(DateTime.today().year))"/>
+        </record>
+        
+    </data>
+</openerp>

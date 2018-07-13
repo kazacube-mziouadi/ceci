@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+    
+        <record model="ir.ui.view" id="view_form_purchase_order_line_mrp">
+            <field name="name">purchase.order.line.form.inherit</field>
+            <field name="inherit_id" ref="purchase.view_form_purchase_order_line"/>
+            <field name="priority" eval="1400" />
+            <field name="model">purchase.order.line</field>
+            <field name="arch" type="xml">
+                <xpath expr="//group[@name='purchase_guarantee']" position="after">
+                	<group colspan="4" col="4" string="Subcontracting Workorder">
+	                    <field name="wo_rm_subcontracting_id" colspan="2" readonly="1"/>
+	                    <field name="wo_fp_subcontracting_id" colspan="2" readonly="1"/>
+                	</group>
+                </xpath>
+            </field>
+        </record>
+        
+        
+        <record id='view_form_purchase_order_mpr' model='ir.ui.view'>
+			<field name="name">view_form_purchase_order</field>
+			<field name="model">purchase.order</field>
+			<field name="inherit_id" ref="purchase.view_form_purchase_order"/>
+			<field name="priority" eval="1400" />
+			<field name="arch" type="xml">
+        		<xpath expr="//group[@name='purchase_guarantee']" position="after">
+                	<group colspan="4" col="4" string="Subcontracting Workorder">
+	                    <field name="wo_rm_subcontracting_id" colspan="2" readonly="1"/>
+	                    <field name="wo_fp_subcontracting_id" colspan="2" readonly="1"/>
+                	</group>
+                </xpath>
+        	</field>
+        </record>	
+        
+        
+        <!-- ACTION Operations -->
+		<record model="ir.actions.act_window" id="act_purchase_order_open_button">
+		    <field name="name">Purchase</field>
+		    <field name="res_model">purchase.order</field>
+		    <field name="view_type">form</field>
+		    <field name="view_mode">form</field>
+		    <field name="view_id" ref="purchase.view_form_purchase_order"/>
+		    <field name="target">new</field>
+	  	</record>	
+	  	
+	  	<menuitem name="Subcontracting procurement" id="menu_purchases_st_procurment" parent="purchase.menu_purchase_main" sequence="20" />
+	  	<menuitem name="WO" action="act_mrp_workorder_st_procurment" id="menu_mrp_workorder_st_procurment" parent="menu_purchases_st_procurment" groups="group_menu_manuf_user" sequence="10" />
+        <menuitem name="Procurement order" action="stock.act_procurement_order" id="menu_procurement_order_purchase" parent="menu_purchases_st_procurment" sequence="20" groups="stock.group_menu_procurement" />
+        <menuitem name="Manual procurement" action="stock.act_product_procurement" id="menu_product_procurement" parent="menu_purchases_st_procurment" sequence="30" groups="stock.group_menu_procurement"/>
+    </data>
+</openerp>

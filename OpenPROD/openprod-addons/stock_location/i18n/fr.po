@@ -1,0 +1,426 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* stock_location
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 9.0c\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-08-25 07:37+0000\n"
+"PO-Revision-Date: 2016-08-25 07:37+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: stock_location
+#: model:ir.model.fields,help:stock_location.field_stock_location_usage
+msgid "* Supplier Location: Virtual location representing the source location for products coming from your suppliers\n"
+"                                                                                                   \n"
+"* View: Virtual location used to create a hierarchical structures for your warehouse, aggregating its child locations ; can't directly contain products\n"
+"                                                                                                   \n"
+"* Internal Location: Physical locations inside your own warehouses,\n"
+"                                                                                                   \n"
+"* Customer Location: Virtual location representing the destination location for products sent to your customers\n"
+"                                                                                                   \n"
+"* Inventory: Virtual location serving as counterpart for inventory operations used to correct stock levels (Physical inventories)\n"
+"                                                                                                   \n"
+"* Procurement: Virtual location serving as temporary counterpart for procurement operations when the source (supplier or production) is not known yet. This location should be empty when the procurement scheduler has finished running.\n"
+"                                                                                                   \n"
+"* Production: Virtual counterpart location for production operations: this location consumes the raw material and produces finished products\n"
+"                                                                                                   \n"
+"* Transit Location: Counterpart location that should be used in inter-companies or inter-warehouses operations\n"
+"                                                                                                  "
+msgstr "* Emplacement fournisseur: Emplacement virtuel représentant l'emplacement source pour un produit provenant de vos fournisseurs.\n"
+"                                                                                                   \n"
+"* Vue: Emplacement virtuel utilisé afin de créer une structure hiérarchique pour votre entrepôt. Contient des emplacements enfant. Ne peut pas contenir de produit.\n"
+"                                                                                                   \n"
+"* Emplacement interne: Emplacement physique dans votre entrepôt.\n"
+"                                                                                                   \n"
+"* Emplacement client: Emplacement virtuel qui représente l'emplacement de destination pour les produits envoyés à vos clients.\n"
+"                                                                                                   \n"
+"* Inventaire: Emplacement virtuel servant de contrepartie pour les opérations d'inventaire.\n"
+"                                                                                                   \n"
+"* Approvisionnement: Emplacement virtuel servant de contrepartie temporaire pour les opérations d'approvisionnement lorsque la source (fournisseur ou production) n'est pas encore connue.\n"
+"                                                                                                   \n"
+"* Production: Emplacement virtuel pour les opérations de production: cet emplacement consomme la matière première et produit les produits finis.\n"
+"                                                                                                   \n"
+"* Emplacement transit: Emplacement de contrepartie utilisé pour les opérations inter-entreprises ou inter-entrepôts: Transit Lieu\n"
+"                                                                                          "
+
+#. module: stock_location
+#: model:ir.model.fields,field_description:stock_location.field_stock_location_active
+msgid "Active"
+msgstr "Actif"
+
+#. module: stock_location
+#: model:ir.model.fields,field_description:stock_location.field_stock_location_comment
+#: model:ir.ui.view,arch_db:stock_location.view_form_stock_location
+msgid "Additional Information"
+msgstr "Informations complémentaires"
+
+#. module: stock_location
+#: model:ir.ui.view,arch_db:stock_location.view_form_partner_stock_location
+msgid "Administration"
+msgstr "Administration"
+
+#. module: stock_location
+#: model:res.groups,name:stock_location.group_stock_admin
+msgid "Administrator"
+msgstr "Administrateur"
+
+#. module: stock_location
+#: model:ir.model.fields,field_description:stock_location.field_stock_location_barcode
+msgid "Barcode"
+msgstr "Code-barres"
+
+#. module: stock_location
+#: model:ir.model.fields,help:stock_location.field_stock_location_active
+msgid "By unchecking the active field, you may hide a location without deleting it."
+msgstr "En décochant le champ actif, vous pouvez cacher un emplacement sans le supprimer."
+
+#. module: stock_location
+#: model:ir.model.fields,field_description:stock_location.field_stock_location_child_ids_ids
+msgid "Child locations"
+msgstr "Emplacements enfant"
+
+#. module: stock_location
+#: model:ir.model,name:stock_location.model_res_company
+msgid "Companies"
+msgstr "Sociétés"
+
+#. module: stock_location
+#: model:ir.model.fields,field_description:stock_location.field_stock_location_company_id
+#: model:ir.model.fields,field_description:stock_location.field_stock_warehouse_company_id
+#: model:ir.ui.view,arch_db:stock_location.view_search_stock_warehouse
+msgid "Company"
+msgstr "Société"
+
+#. module: stock_location
+#: model:ir.model.fields,field_description:stock_location.field_stock_location_control
+msgid "Control"
+msgstr "Contrôle"
+
+#. module: stock_location
+#: model:ir.model.fields,field_description:stock_location.field_stock_location_posx
+msgid "Corridor (X)"
+msgstr "Couloir (X)"
+
+#. module: stock_location
+#: model:ir.model.fields,field_description:stock_location.field_stock_location_create_uid
+#: model:ir.model.fields,field_description:stock_location.field_stock_warehouse_create_uid
+msgid "Created by"
+msgstr "Créé par"
+
+#. module: stock_location
+#: model:ir.model.fields,field_description:stock_location.field_stock_location_create_date
+#: model:ir.model.fields,field_description:stock_location.field_stock_warehouse_create_date
+msgid "Created on"
+msgstr "Créé le"
+
+#. module: stock_location
+#: model:ir.ui.view,arch_db:stock_location.view_search_stock_location
+msgid "Customer"
+msgstr "Client"
+
+#. module: stock_location
+#: code:addons/stock_location/stock.py:46
+#, python-format
+msgid "Customer Location"
+msgstr "Emplacement client"
+
+#. module: stock_location
+#: model:ir.ui.view,arch_db:stock_location.view_search_stock_location
+msgid "Customer Locations"
+msgstr "Emplacements client"
+
+#. module: stock_location
+#: model:ir.model.fields,field_description:stock_location.field_res_partner_customer_location_id
+msgid "Customer location"
+msgstr "Emplacement client"
+
+#. module: stock_location
+#: model:ir.model.fields,field_description:stock_location.field_stock_location_display_name
+#: model:ir.model.fields,field_description:stock_location.field_stock_warehouse_display_name
+msgid "Display Name"
+msgstr "Nom affiché"
+
+#. module: stock_location
+#: code:addons/stock_location/stock.py:120
+#, python-format
+msgid "Duplication prohibited."
+msgstr "Duplication interdite."
+
+#. module: stock_location
+#: sql_constraint:stock.location:0
+msgid "Error: There is already an other location with this name."
+msgstr "Erreur: Il existe déjà un autre emplacement avec le même nom."
+
+#. module: stock_location
+#: model:ir.model.fields,field_description:stock_location.field_stock_location_posz
+msgid "Height (Z)"
+msgstr "Hauteur (Z)"
+
+#. module: stock_location
+#: model:ir.model.fields,field_description:stock_location.field_stock_location_id
+#: model:ir.model.fields,field_description:stock_location.field_stock_warehouse_id
+msgid "ID"
+msgstr "ID"
+
+#. module: stock_location
+#: model:ir.model.fields,help:stock_location.field_stock_location_control
+msgid "If this field is checked, labels present in this location will be in state control"
+msgstr "Si ce champ est coché, les étiquettes présentes dans cet emplacement seront en état contrôle"
+
+#. module: stock_location
+#: model:ir.model.fields,help:stock_location.field_stock_location_quarantine
+msgid "If this field is checked, labels present in this location will be in state quarantine"
+msgstr "Si ce champ est coché, les étiquettes présentes dans cet emplacement seront en état quarantaine"
+
+#. module: stock_location
+#: model:ir.ui.view,arch_db:stock_location.view_search_stock_location
+msgid "Internal"
+msgstr "Interne"
+
+#. module: stock_location
+#: code:addons/stock_location/stock.py:43
+#, python-format
+msgid "Internal Location"
+msgstr "Emplacement interne"
+
+#. module: stock_location
+#: model:ir.ui.view,arch_db:stock_location.view_search_stock_location
+msgid "Internal Locations"
+msgstr "Emplacements intenes"
+
+#. module: stock_location
+#: code:addons/stock_location/stock.py:47
+#, python-format
+msgid "Inventory"
+msgstr "Inventaire"
+
+#. module: stock_location
+#: model:ir.model.fields,field_description:stock_location.field_stock_location___last_update
+#: model:ir.model.fields,field_description:stock_location.field_stock_warehouse___last_update
+msgid "Last Modified on"
+msgstr "Dernière modification le"
+
+#. module: stock_location
+#: model:ir.model.fields,field_description:stock_location.field_stock_location_write_uid
+#: model:ir.model.fields,field_description:stock_location.field_stock_warehouse_write_uid
+msgid "Last Updated by"
+msgstr "Dernière mise à jour par"
+
+#. module: stock_location
+#: model:ir.model.fields,field_description:stock_location.field_stock_location_write_date
+#: model:ir.model.fields,field_description:stock_location.field_stock_warehouse_write_date
+msgid "Last Updated on"
+msgstr "Dernière mise à jour le"
+
+#. module: stock_location
+#: model:ir.model.fields,field_description:stock_location.field_stock_location_parent_left
+msgid "Left parent"
+msgstr "Parent gauche"
+
+#. module: stock_location
+#: model:ir.ui.view,arch_db:stock_location.view_form_stock_location
+msgid "Localization"
+msgstr "Localisation"
+
+#. module: stock_location
+#: model:ir.ui.view,arch_db:stock_location.view_form_partner_stock_location
+msgid "Locations"
+msgstr "Locations"
+
+#. module: stock_location
+#: model:res.groups,name:stock_location.group_stock_manager
+msgid "Manager"
+msgstr "Gestionnaire"
+
+#. module: stock_location
+#: model:ir.model.fields,field_description:stock_location.field_stock_location_complete_name
+#: model:ir.model.fields,field_description:stock_location.field_stock_location_name
+#: model:ir.model.fields,field_description:stock_location.field_stock_warehouse_name
+msgid "Name"
+msgstr "Nom"
+
+#. module: stock_location
+#: model:ir.ui.view,arch_db:stock_location.view_form_stock_location
+msgid "Note"
+msgstr "Note"
+
+#. module: stock_location
+#: model:ir.model.fields,help:stock_location.field_stock_location_posx
+#: model:ir.model.fields,help:stock_location.field_stock_location_posy
+#: model:ir.model.fields,help:stock_location.field_stock_location_posz
+msgid "Optional localization details, for information purpose only"
+msgstr "Détails facultatifs sur la localisation, uniquement à but informatif."
+
+#. module: stock_location
+#: model:ir.model.fields,field_description:stock_location.field_stock_location_partner_id
+msgid "Owner"
+msgstr "Propriétaire"
+
+#. module: stock_location
+#: model:ir.model.fields,help:stock_location.field_stock_location_partner_id
+msgid "Owner of the location if not internal"
+msgstr "Propriétaire de l'emplacement si non interne"
+
+#. module: stock_location
+#: model:ir.ui.view,arch_db:stock_location.view_search_stock_location
+msgid "Parent Location"
+msgstr "Emplacement parent"
+
+#. module: stock_location
+#: model:ir.model.fields,field_description:stock_location.field_stock_location_location_id
+msgid "Parent location"
+msgstr "Emplacement parent"
+
+#. module: stock_location
+#: model:ir.model,name:stock_location.model_res_partner
+msgid "Partner"
+msgstr "Partenaire"
+
+#. module: stock_location
+#: code:addons/stock_location/stock.py:48
+#, python-format
+msgid "Procurement"
+msgstr "Approvisionnement"
+
+#. module: stock_location
+#: code:addons/stock_location/stock.py:49
+#, python-format
+msgid "Production"
+msgstr "Production"
+
+#. module: stock_location
+#: model:ir.model.fields,field_description:stock_location.field_stock_location_quarantine
+msgid "Quarantine"
+msgstr "Quarantaine"
+
+#. module: stock_location
+#: model:ir.model,name:stock_location.model_mrp_resource
+msgid "Resource"
+msgstr "Ressource"
+
+#. module: stock_location
+#: model:ir.model.fields,field_description:stock_location.field_stock_location_parent_right
+msgid "Right parent"
+msgstr "Parent de droite"
+
+#. module: stock_location
+#: model:ir.model.fields,field_description:stock_location.field_stock_location_posy
+msgid "Shelves (Y)"
+msgstr "Etagères (Y)"
+
+#. module: stock_location
+#: model:ir.actions.act_window,name:stock_location.act_stock_location
+msgid "Sock location"
+msgstr "Emplacement de stock"
+
+#. module: stock_location
+#: model:ir.module.category,name:stock_location.category_group_stock
+msgid "Stock"
+msgstr "Stock"
+
+#. module: stock_location
+#: model:ir.ui.view,arch_db:stock_location.view_form_stock_location
+#: model:ir.ui.view,arch_db:stock_location.view_tree_stock_location
+msgid "Stock Location"
+msgstr "Emplacement de stock"
+
+#. module: stock_location
+#: model:ir.ui.view,arch_db:stock_location.view_search_stock_location
+msgid "Stock Locations"
+msgstr "Emplacements de stock"
+
+#. module: stock_location
+#: model:ir.model,name:stock_location.model_stock_location
+msgid "Stock location"
+msgstr "Stock location"
+
+#. module: stock_location
+#: model:ir.actions.act_window,name:stock_location.act_stock_warehouse
+#: model:ir.model,name:stock_location.model_stock_warehouse
+#: model:ir.ui.view,arch_db:stock_location.view_form_stock_warehouse
+#: model:ir.ui.view,arch_db:stock_location.view_search_stock_warehouse
+#: model:ir.ui.view,arch_db:stock_location.view_tree_stock_warehouse
+msgid "Stock warehouse"
+msgstr "Entrepôt"
+
+#. module: stock_location
+#: model:ir.ui.view,arch_db:stock_location.view_search_stock_location
+msgid "Supplier"
+msgstr "Fournisseur"
+
+#. module: stock_location
+#: code:addons/stock_location/stock.py:45
+#, python-format
+msgid "Supplier Location"
+msgstr "Emplacement fournisseur"
+
+#. module: stock_location
+#: model:ir.ui.view,arch_db:stock_location.view_search_stock_location
+msgid "Supplier Locations"
+msgstr "Emplacements fournisseur"
+
+#. module: stock_location
+#: model:ir.model.fields,field_description:stock_location.field_res_partner_supplier_location_id
+msgid "Supplier location"
+msgstr "Emplacement fournisseur"
+
+#. module: stock_location
+#: sql_constraint:stock.location:0
+msgid "The barcode for a location must be unique per company !"
+msgstr "Le code-barres de l'emplacement doit être unique par société!"
+
+#. module: stock_location
+#: model:ir.model.fields,help:stock_location.field_res_partner_supplier_location_id
+msgid "This stock location will be used instead of the default location for the goodsreceived from this supplier"
+msgstr "Cet emplacement de stock sera utilisé à la place l'emplacement par défaut pour le bon de réception de ce fournisseur"
+
+#. module: stock_location
+#: model:ir.model.fields,help:stock_location.field_res_partner_customer_location_id
+msgid "This stock location will be used instead of the default location for the goodssent to this customer"
+msgstr "Cet emplacement de stock sera utilisé à la place l'emplacement par défaut pour le bon d'envoie de ce client"
+
+#. module: stock_location
+#: code:addons/stock_location/stock.py:50
+#, python-format
+msgid "Transit Location"
+msgstr "Emplacement de transit"
+
+#. module: stock_location
+#: model:ir.model.fields,field_description:stock_location.field_stock_location_usage
+msgid "Type"
+msgstr "Type"
+
+#. module: stock_location
+#: model:res.groups,name:stock_location.group_stock_user
+msgid "User"
+msgstr "Utilisateur"
+
+#. module: stock_location
+#: code:addons/stock_location/stock.py:44
+#, python-format
+msgid "View"
+msgstr "Vue"
+
+#. module: stock_location
+#: model:ir.model.fields,field_description:stock_location.field_res_company_warehouse_id
+#: model:ir.model.fields,field_description:stock_location.field_stock_location_warehouse_id
+msgid "Warehouse"
+msgstr "Entrepôt"
+
+#. module: stock_location
+#: model:ir.ui.view,arch_db:stock_location.view_form_stock_warehouse
+msgid "Warehouse configuration"
+msgstr "Configuration de l'entrepôt"
+
+#. module: stock_location
+#: model:ir.module.category,description:stock_location.category_group_stock
+msgid "Warehouse management."
+msgstr "Warehouse management."
+

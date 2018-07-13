@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data noupdate="1">
+		<record id="ir_cron_procurement_buy" model="ir.cron">
+			<field name="name">Procurement (Buy)</field>
+			<field name="interval_number">1</field>
+			<field name="interval_type">days</field>
+			<field name="numbercall">-1</field>
+			<field name="doall" eval="False" />
+			<field name="active" eval="False" />
+			<field name="model">procurement.order</field>
+			<field name="function">do_all_procurement</field>
+			<field name="args">('buy',)</field>
+		</record>
+
+		<record id="ir_cron_procurement_produce" model="ir.cron">
+			<field name="name">Procurement (Produce)</field>
+			<field name="interval_number">1</field>
+			<field name="interval_type">days</field>
+			<field name="numbercall">-1</field>
+			<field name="doall" eval="False" />
+			<field name="active" eval="False" />
+			<field name="model">procurement.order</field>
+			<field name="function">do_all_procurement</field>
+			<field name="args">('produce',)</field>
+		</record>
+		
+		<record id="ir_cron_stock_valuation" model="ir.cron">
+            <field name="name">Stock valuation PMP</field>
+            <field name="interval_number">1</field>
+            <field name="interval_type">months</field>
+            <field name="numbercall">-1</field>
+            <field name="doall" eval="False" />
+            <field name="active" eval="False" />
+            <field name="model">stock.valuation</field>
+            <field name="function">cron_calculate_all_products</field>
+        </record>
+        
+        <record id="ir_cron_stock_valuation_lot" model="ir.cron">
+            <field name="name">Stock valuation LOT</field>
+            <field name="interval_number">1</field>
+            <field name="interval_type">months</field>
+            <field name="numbercall">-1</field>
+            <field name="doall" eval="False" />
+            <field name="active" eval="False" />
+            <field name="model">stock.valuation.lot</field>
+            <field name="function">cron_calculate_all_products</field>
+        </record>
+		
+        <record id="ir_cron_consumption" model="ir.cron">
+            <field name="name">Consumprtions compute</field>
+            <field name="interval_number">1</field>
+            <field name="interval_type">months</field>
+            <field name="numbercall">-1</field>
+            <field name="doall" eval="False" />
+            <field name="active" eval="False" />
+            <field name="model">product.consumption</field>
+            <field name="function">compute</field>
+        </record>
+		
+    </data>
+</openerp>

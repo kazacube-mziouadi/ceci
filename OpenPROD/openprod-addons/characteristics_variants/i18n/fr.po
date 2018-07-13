@@ -1,0 +1,83 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* characteristics_variants
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 9.0c\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-07-08 10:04+0000\n"
+"PO-Revision-Date: 2016-07-08 10:04+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: characteristics_variants
+#: model:ir.model.fields,field_description:characteristics_variants.field_search_variant_line_category_id
+msgid "Category"
+msgstr "Catégorie"
+
+#. module: characteristics_variants
+#: model:ir.model.fields,field_description:characteristics_variants.field_search_variant_line_create_uid
+msgid "Created by"
+msgstr "Created by"
+
+#. module: characteristics_variants
+#: model:ir.model.fields,field_description:characteristics_variants.field_search_variant_line_create_date
+msgid "Created on"
+msgstr "Created on"
+
+#. module: characteristics_variants
+#: model:ir.model.fields,field_description:characteristics_variants.field_search_variant_line_display_name
+msgid "Display Name"
+msgstr "Nom"
+
+#. module: characteristics_variants
+#: model:ir.model.fields,field_description:characteristics_variants.field_search_variant_line_id
+msgid "ID"
+msgstr "ID"
+
+#. module: characteristics_variants
+#: model:ir.model.fields,field_description:characteristics_variants.field_search_variant_line___last_update
+msgid "Last Modified on"
+msgstr "Last Modified on"
+
+#. module: characteristics_variants
+#: model:ir.model.fields,field_description:characteristics_variants.field_search_variant_line_write_uid
+msgid "Last Updated by"
+msgstr "Last Updated by"
+
+#. module: characteristics_variants
+#: model:ir.model.fields,field_description:characteristics_variants.field_search_variant_line_write_date
+msgid "Last Updated on"
+msgstr "Last Updated on"
+
+#. module: characteristics_variants
+#: model:ir.model.fields,field_description:characteristics_variants.field_search_variant_line_value_id
+msgid "Value"
+msgstr "Valeur"
+
+#. module: characteristics_variants
+#: model:ir.model.fields,field_description:characteristics_variants.field_search_characteristics_variant_ids
+#: model:ir.ui.view,arch_db:characteristics_variants.view_form_search_characteristics
+msgid "Variants"
+msgstr "Variantes"
+
+#. module: characteristics_variants
+#: model:ir.model.fields,field_description:characteristics_variants.field_search_variant_line_wizard_id
+msgid "Wizard id"
+msgstr "Wizard id"
+
+#. module: characteristics_variants
+#: model:ir.model,name:characteristics_variants.model_search_characteristics
+msgid "search.characteristics"
+msgstr "search.characteristics"
+
+#. module: characteristics_variants
+#: model:ir.model,name:characteristics_variants.model_search_variant_line
+msgid "search.variant.line"
+msgstr "search.variant.line"
+

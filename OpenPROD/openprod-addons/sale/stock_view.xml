@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+
+		<!-- ============= -->
+		<!-- STOCK PICKING -->
+		<!-- ============= -->
+		<!-- FORM VIEW Stock -->
+		<record id='view_form_sale' model='ir.ui.view'>
+			<field name="name">view_form_sale_picking</field>
+			<field name="model">stock.picking</field>
+			<field name="priority" eval="1200" />
+			<field name="inherit_id" ref="stock.view_form_stock_picking_out" />
+			<field name="arch" type="xml">
+				<field name="invoice_state" position="after">
+					<field name="sale_id" domain="[('partner_id', '=', partner_id)]" readonly="1"/>
+				</field>
+				<field name="address_contact_id" position="attributes">
+					<attribute name="domain">[('partner_contact_sale_order', '=', partner_id)]</attribute>
+				</field>
+			</field>
+		</record>
+
+		<!-- SEARCH VIEW PICKING OUT -->
+		<record id='view_search_stock_picking_out_sale' model='ir.ui.view'>
+			<field name="name">view_search_stock_picking_out</field>
+			<field name="model">stock.picking</field>
+			<field name="priority" eval="1200" />
+			<field name="inherit_id" ref="stock.view_search_stock_picking_out" />
+			<field name="arch" type="xml">
+				<field name="origin" position="before">
+					<field name="sale_id" />
+				</field>
+			</field>
+		</record>
+		
+		<!-- TREE VIEW PICKING OUT -->
+		<record id='view_tree_sale_stock_picking_out' model='ir.ui.view'>
+			<field name="name">view_tree_sale_stock_picking_out</field>
+			<field name="model">stock.picking</field>
+			<field name="inherit_id" ref="stock.view_tree_stock_picking_out" />
+			<field name="arch" type="xml">
+				<xpath expr="//field[@name='origin']" position="before">
+					<field name='sale_id' />
+				</xpath>
+			</field>
+		</record>
+		
+		<!-- ACTION Picking -->
+		<record model="ir.actions.act_window" id="sale_picking_action">
+			<field name="name">Picking</field>
+			<field name="res_model">stock.picking</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+			<field name="target">current</field>
+			<field name="domain">[('sale_id', '=', context.get('sale_id', False))]</field>
+		</record>
+		<record id="sale_picking_action_tree" model="ir.actions.act_window.view">
+		    <field name="sequence" eval="90"/>
+		    <field name="view_mode">tree</field>
+		    <field name="view_id" ref="stock.view_tree_stock_picking_out"/>
+		    <field name="act_window_id" ref="sale_picking_action"/>
+		</record>
+		<record id="sale_picking_action_form" model="ir.actions.act_window.view">
+		    <field name="sequence" eval="100"/>
+		    <field name="view_mode">form</field>
+		    <field name="view_id" ref="stock.view_form_stock_picking_out"/>
+		    <field name="act_window_id" ref="sale_picking_action"/>
+		</record>
+
+		<!-- ========== -->
+		<!-- STOCK MOVE -->
+		<!-- ========== -->
+		<!-- FORM VIEW Stock move -->
+		<record id='view_form_move_sale' model='ir.ui.view'>
+			<field name="name">view_form_move</field>
+			<field name="model">stock.move</field>
+			<field name="priority" eval="1200" />
+			<field name="inherit_id" ref="stock.view_form_move" />
+			<field name="arch" type="xml">
+				<group name="link" position="inside">
+					<field name="sale_line_id" domain="[('product_id', '=', product_id)]" />
+					<field name="cinfo_id" domain="[('product_id', '=', product_id)]" />
+				</group>
+			</field>
+		</record>
+		
+		
+		<!-- ACTION Stock move -->
+		<record model="ir.actions.act_window" id="sale_stock_move_action">
+		    <field name="name">Stock moves</field>
+		    <field name="res_model">stock.move</field>
+		    <field name="view_type">form</field>
+		    <field name="view_mode">tree,form</field>
+		    <field name="view_id" ref="stock.view_tree_move"/>
+		    <field name="target">current</field>
+		    <field name="domain">[('sale_line_id', 'in', context.get('sale_line_ids', []))]</field>
+	  	</record>
+	  	
+		<!-- ================= -->
+		<!-- PROCUREMENT ORDER -->
+		<!-- ================= -->
+		<!-- FORM VIEW Procurement order -->
+		<record id='view_form_procurement_order_sale' model='ir.ui.view'>
+			<field name="name">view_form_procurement_order_sale</field>
+			<field name="model">procurement.order</field>
+			<field name="priority" eval="1500" />
+			<field name="inherit_id" ref="stock.view_form_procurement_order" />
+			<field name="arch" type="xml">
+				<field name="move_id" position="after">
+				    <field name="sol_id" />
+				</field>
+			</field>
+		</record>
+	</data>
+</openerp>

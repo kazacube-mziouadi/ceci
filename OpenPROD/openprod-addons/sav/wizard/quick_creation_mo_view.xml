@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+		<!-- FORM VIEW quick_creation_mo -->
+		<record id='view_form_quick_creation_mo_id_sav' model='ir.ui.view'>
+			<field name="name">view_form_quick_creation_mo_id_sav</field>
+			<field name="model">quick.creation.mo</field>
+			<field name="priority" eval="3000" />
+			<field name="inherit_id" ref="quick_creation_mo.view_form_quick_creation_mo_id" />
+			<field name="arch" type="xml">
+				<xpath expr="//field[@name='categ_uom_id']" position="after">
+					<field name="intervention_id" invisible="1" />
+				</xpath>
+			</field>
+		</record>
+
+
+	</data>
+</openerp>

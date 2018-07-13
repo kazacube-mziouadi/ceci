@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+	
+		<record model="ir.ui.view" id="view_form_change_change_product_uom">
+			<field name="name">view_form_change_change_product_uom</field>
+			<field name="model">change.product.uom</field>
+			<field name="type">form</field>
+			<field name="arch" type="xml">
+				<form string="Change the product uom">
+					<group colspan="4" col="4">
+						<group colspan="4" col="4" string="Change units of measure" name="change_uom">
+							<field name="change_unit"/>
+							<field name="uom_id" attrs="{'invisible': [('change_unit', '=', False)], 'required': [('change_unit', '=', True)]}" />
+							<field name="dual_unit" />
+							<field name="dual_unit_type" groups="base.group_variable_dual_unit" attrs="{'invisible': [('dual_unit', '=', False)], 'required': [('dual_unit', '=', True)]}" />
+							<field name="sec_uom_id" groups="base.group_variable_dual_unit" attrs="{'invisible': [('dual_unit_type', '!=', 'variable')], 'required': [('dual_unit_type', '=', 'variable')]}" />
+							<field name="product_id" invisible="1"/>
+						</group>
+					</group>
+					<group colspan="4" col="4" string="Copy other data" name="copy_other_data">
+						<field name="copy_quality_control"/>
+						<field name="copy_internal_plans"/>
+						<field name="copy_parameters"/>
+					</group>
+					<footer>
+						<button name="copy_product" string="Copy the product" type="object" class="oe_highlight" />
+						or
+						<button string="Cancel" class="oe_link" special="cancel" />
+					</footer>
+				</form>
+			</field>
+		</record>
+
+		<record model="ir.actions.act_window" id="action_change_product_uom">
+			<field name="name">Change product uom</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="res_model">change.product.uom</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">form</field>
+			<field name="target">new</field>
+		</record>
+	
+	</data>
+</openerp>

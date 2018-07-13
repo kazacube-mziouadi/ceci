@@ -1,0 +1,207 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* fiscal_position
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 9.0c\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-06-16 14:52+0000\n"
+"PO-Revision-Date: 2017-06-16 14:52+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: fiscal_position
+#: model:ir.ui.view,arch_db:fiscal_position.fiscal_position_tax_exemption_tree
+msgid "Action Rule"
+msgstr "Régle d'Action"
+
+#. module: fiscal_position
+#: model:ir.ui.view,arch_db:fiscal_position.fiscal_position_tax_exemption_form
+msgid "Action rule"
+msgstr "Régle d'action"
+
+#. module: fiscal_position
+#: model:ir.model,name:fiscal_position.model_res_company
+msgid "Companies"
+msgstr "Entreprises"
+
+#. module: fiscal_position
+#: model:ir.model.fields,field_description:fiscal_position.field_res_company_country_fiscal_position
+msgid "Country fiscal position"
+msgstr "Position fiscale du pays"
+
+#. module: fiscal_position
+#: model:ir.model.fields,field_description:fiscal_position.field_tax_exemption_create_uid
+msgid "Created by"
+msgstr "Créée par"
+
+#. module: fiscal_position
+#: model:ir.model.fields,field_description:fiscal_position.field_tax_exemption_create_date
+msgid "Created on"
+msgstr "Créée le"
+
+#. module: fiscal_position
+#: model:ir.model.fields,field_description:fiscal_position.field_tax_exemption_currency_id
+msgid "Currency"
+msgstr "Devise"
+
+#. module: fiscal_position
+#: code:addons/fiscal_position/account_invoice.py:31
+#: code:addons/fiscal_position/sale.py:50
+#, python-format
+msgid "Customer subject to exemption, tax final compute at the invoicing time."
+msgstr "Client sujet à l'exemption, la taxe final est calculée au moment de la facturation."
+
+#. module: fiscal_position
+#: model:ir.model.fields,field_description:fiscal_position.field_account_invoice_customer_with_exoneration
+#: model:ir.model.fields,field_description:fiscal_position.field_account_invoice_related_customer_with_exoneration
+#: model:ir.model.fields,field_description:fiscal_position.field_sale_order_customer_with_exoneration
+#: model:ir.model.fields,field_description:fiscal_position.field_sale_order_related_customer_with_exoneration
+#: model:ir.ui.view,arch_db:fiscal_position.account_cust_openprod_invoice_form_fiscal_position
+#: model:ir.ui.view,arch_db:fiscal_position.view_form_sale_order_fiscal_position
+msgid "Customer with exoneration"
+msgstr "Client avec exonération"
+
+#. module: fiscal_position
+#: model:ir.model.fields,field_description:fiscal_position.field_account_invoice_delivery_country_id
+msgid "Delivered country"
+msgstr "Pays de livraison"
+
+#. module: fiscal_position
+#: model:ir.model.fields,field_description:fiscal_position.field_tax_exemption_display_name
+msgid "Display Name"
+msgstr "Afficher nom"
+
+#. module: fiscal_position
+#: model:ir.model.fields,field_description:fiscal_position.field_tax_exemption_date_end
+msgid "End date"
+msgstr "Date de fin"
+
+#. module: fiscal_position
+#: model:ir.model.fields,field_description:fiscal_position.field_tax_exemption_exception_tax
+#: model:ir.ui.view,arch_db:fiscal_position.fiscal_position_tax_exemption_form
+msgid "Exception tax printed on invoice"
+msgstr "Taxe exception imprimée sur facture"
+
+#. module: fiscal_position
+#: model:ir.model.fields,field_description:fiscal_position.field_tax_exemption_file
+msgid "File"
+msgstr "Fichier"
+
+#. module: fiscal_position
+#: model:ir.model.fields,field_description:fiscal_position.field_account_invoice_related_fiscal_position_id
+#: model:ir.model.fields,field_description:fiscal_position.field_tax_exemption_fiscal_position_id
+msgid "Fiscal position"
+msgstr "Position fiscale"
+
+#. module: fiscal_position
+#: model:ir.model.fields,field_description:fiscal_position.field_res_company_free_exchange_area_fiscal_position
+msgid "Free exchange area fiscal position (CEE)"
+msgstr "Position fiscale de zone d'achange libre (CEE)"
+
+#. module: fiscal_position
+#: model:ir.model.fields,field_description:fiscal_position.field_res_company_free_exchange_area_service_fiscal_position
+msgid "Free exchange area fiscal position (CEE) service"
+msgstr "Position fiscale de zone d'échange libre (CEE) service"
+
+#. module: fiscal_position
+#: model:ir.ui.view,arch_db:fiscal_position.fiscal_position_tax_exemption_search
+msgid "Group by ..."
+msgstr "Grouper par ..."
+
+#. module: fiscal_position
+#: model:ir.model.fields,field_description:fiscal_position.field_res_company_high_export_fiscal_position
+msgid "High export fiscal position"
+msgstr "Position fiscale de grand export"
+
+#. module: fiscal_position
+#: model:ir.model.fields,field_description:fiscal_position.field_res_company_high_export_service_fiscal_position
+msgid "High export fiscal position service"
+msgstr "High export fiscal position service"
+
+#. module: fiscal_position
+#: model:ir.model.fields,field_description:fiscal_position.field_tax_exemption_id
+msgid "ID"
+msgstr "ID"
+
+#. module: fiscal_position
+#: model:ir.model,name:fiscal_position.model_account_invoice
+msgid "Invoice"
+msgstr "Facture"
+
+#. module: fiscal_position
+#: model:ir.model.fields,field_description:fiscal_position.field_tax_exemption_max_amount
+msgid "Invoice maximum amount without taxes"
+msgstr "Montant maximum de facture hors taxes"
+
+#. module: fiscal_position
+#: model:ir.model.fields,field_description:fiscal_position.field_tax_exemption_partner_id
+msgid "Invoiced customer"
+msgstr "Client facturé"
+
+#. module: fiscal_position
+#: model:ir.model.fields,field_description:fiscal_position.field_tax_exemption_is_active
+#: model:ir.ui.view,arch_db:fiscal_position.fiscal_position_tax_exemption_search
+msgid "Is active"
+msgstr "Est actif"
+
+#. module: fiscal_position
+#: model:ir.model.fields,field_description:fiscal_position.field_tax_exemption___last_update
+msgid "Last Modified on"
+msgstr "Derniére modification le"
+
+#. module: fiscal_position
+#: model:ir.model.fields,field_description:fiscal_position.field_tax_exemption_write_uid
+msgid "Last Updated by"
+msgstr "Derniére modification par"
+
+#. module: fiscal_position
+#: model:ir.model.fields,field_description:fiscal_position.field_tax_exemption_write_date
+msgid "Last Updated on"
+msgstr "Derniére mise à jour le"
+
+#. module: fiscal_position
+#: model:ir.model.fields,field_description:fiscal_position.field_tax_exemption_note_invoice
+#: model:ir.ui.view,arch_db:fiscal_position.fiscal_position_tax_exemption_form
+msgid "Note printed on invoice"
+msgstr "Note imprimée sur facture"
+
+#. module: fiscal_position
+#: model:ir.ui.view,arch_db:fiscal_position.fiscal_position_tax_exemption_search
+msgid "Partner"
+msgstr "Partenaire"
+
+#. module: fiscal_position
+#: model:ir.model,name:fiscal_position.model_sale_order
+msgid "Sale module"
+msgstr "Module de vente"
+
+#. module: fiscal_position
+#: model:ir.model.fields,field_description:fiscal_position.field_tax_exemption_date_start
+msgid "Start date"
+msgstr "Date de début"
+
+#. module: fiscal_position
+#: model:ir.actions.act_window,name:fiscal_position.fiscal_position_tax_exemption_act
+#: model:ir.model.fields,field_description:fiscal_position.field_account_invoice_related_tax_exemption_id
+#: model:ir.model.fields,field_description:fiscal_position.field_account_invoice_tax_exemption_id
+#: model:ir.ui.menu,name:fiscal_position.fiscal_position_tax_exemption_menu
+#: model:ir.ui.menu,name:fiscal_position.fiscal_position_tax_exemption_menu_sale
+msgid "Tax exemption"
+msgstr "Exemption de taxe"
+
+#. module: fiscal_position
+#: sql_constraint:tax.exemption:0
+msgid "The start date is superior than the end date."
+msgstr "La date de début est supérieure a la date de fin."
+
+#. module: fiscal_position
+#: model:ir.model,name:fiscal_position.model_tax_exemption
+msgid "tax.exemption"
+msgstr "tax.exemption"
+

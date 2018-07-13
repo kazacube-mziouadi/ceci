@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<openerp>
+	<data>
+		<!-- FORM VIEW Sale Res partner -->
+		<record id="openprod_view_partner_form" model="ir.ui.view">
+			<field name="name">openprod_view_partner_form</field>
+			<field name="inherit_id" ref="partner_openprod.openprod_view_partner_form" />
+			<field name="model">res.partner</field>
+			<field name="priority" eval="5000" />
+			<field name="arch" type="xml">
+				<xpath expr="//group[@name='paiement_process']" position="after">
+					<group string="Commissions" colspan="2" col="4" attrs="{'invisible': [('can_order', '=', False)]}">
+						<group colspan="4" col="4">
+							<field name="rate_ids" nolabel="1">
+								<tree>
+									<field name="agent_id" readonly="0" />
+									<field name="commission_rule_set_id" />
+								</tree>
+								<form>
+									<group col="2" colspan="2">
+										<field name="agent_id" colspan="2" required="1" domain="[('state','=', 'active')]" />
+										<field name="commission_rule_set_id" colspan="2" readonly="0" attrs="{'invisible': [('agent_id', '=', False)], 'required': [('agent_id', '!=', False)]}" />
+									</group>
+								</form>
+							</field>
+						</group>
+						<group colspan="4" col="4">
+							<button name="%(action_add_agent_in_partner)d" string="Addition Agent in Partner" type="action" class="oe_highlight" />
+						</group>
+					</group>
+				</xpath>
+				<xpath expr="//field[@name='is_customer']" position="after">
+					<field name="is_agent" attrs="{'invisible': [('is_company', '=', False)]}" />
+				</xpath>
+			</field>
+		</record>
+	</data>
+</openerp>

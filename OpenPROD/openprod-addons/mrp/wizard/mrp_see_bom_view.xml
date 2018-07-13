@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+		<!-- <record id="test2" model="ir.actions.act_window">
+            <field name="name">Bill of Material</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">mrp.bom</field>
+            <field name="domain">[('id','in',active_id)]</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+		
+		<record id="test2_tree" model="ir.actions.act_window.view">
+		    <field name="sequence" eval="10"/>
+		    <field name="view_mode">form</field>
+		    <field name="domain">[('id','in',active_id)]</field>
+		    <field name="view_id" ref="view_form_mrp_bom"/>
+		    <field name="act_window_id" ref="test2"/>
+		</record>
+		
+        <record id="ir_BOM_structure" model="ir.values">
+            <field eval="'client_action_multi'" name="key2" />
+            <field eval="'mrp.bom'" name="model" />
+            <field name="name">Bill of Materials Structure</field>
+            <field eval="'ir.actions.act_window,%d'%test2_tree" name="value" />
+        </record> -->
+        
+<!-- 							<button name="%(test2)d" string="BoM structure" type="action" context="{'active_id':bom_id}"/> -->
+		<record id="view_see_bom_wiz_form" model="ir.ui.view">
+			<field name="name">view_see_bom_wiz_form</field>
+			<field name="model">mrp.see.bom</field>
+			<field name="type">form</field>
+			<field name="arch" type="xml">
+				<form string="Structure BoM" version="8.0">
+					<group string="Selected bill of material" colspan="4">
+						<field name="name" invisible="1"/>
+						<field name="bom_id" attrs="{'invisible': [('is_no_produce', '=', True)]}" />
+						<label string="The product is not produced" attrs="{'invisible': [('is_no_produce', '!=', True)]}" />
+						<field name="is_flag_bom" invisible="1"/>
+						<field name="is_no_produce" invisible="1"/>
+						<footer>
+							<button name="create_head_bom" string="Create new boms" type="object" class="oe_highlight" attrs="{'invisible': ['|', ('is_no_produce', '=', True), ('is_flag_bom','=',True)]}" />
+							<button name="see_form_bom" string="See the selected bom" type="object" class="oe_highlight" attrs="{'invisible': ['|', ('is_no_produce', '=', True), ('is_flag_bom','=',False)]}" />
+							or
+							<button string="Cancel" class="oe_link" special="cancel" />
+						</footer>
+					</group>
+				</form>
+			</field>
+		</record>
+		
+		
+
+	</data>
+</openerp>

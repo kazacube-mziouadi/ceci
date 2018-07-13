@@ -1,0 +1,78 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* multi_address
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 9.0c\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-07-05 08:36+0000\n"
+"PO-Revision-Date: 2016-07-05 08:36+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: multi_address
+#: model:ir.model.fields,field_description:multi_address.field_res_partner_address_ids
+#: model:ir.model.fields,field_description:multi_address.field_res_partner_parent_address_id
+#: model:ir.ui.view,arch_db:multi_address.view_form_partner_multi_address
+msgid "Address"
+msgstr "Adresse"
+
+#. module: multi_address
+#: model:ir.model,name:multi_address.model_address
+msgid "Address object"
+msgstr "L'objet des adresses"
+
+#. module: multi_address
+#: model:ir.ui.view,arch_db:multi_address.view_form_partner_multi_address
+msgid "Caution! You must save the partner before the creation or the modification of a contact!"
+msgstr "Attention! Vous devez enregistrer le partenaire avant la création ou la modification d'un contact!"
+
+#. module: multi_address
+#: model:ir.ui.view,arch_db:multi_address.view_form_partner_multi_address
+msgid "Details"
+msgstr "Détails"
+
+#. module: multi_address
+#: code:addons/multi_address/multi_address.py:121
+#, python-format
+msgid "Error ! You can't have more than one principal address for a partner."
+msgstr "Erreur ! Vous ne pouvez pas avoir plus d'une adresse principale par partenaire."
+
+#. module: multi_address
+#: code:addons/multi_address/multi_address.py:123
+#, python-format
+msgid "Error ! You need a principal address for the partner."
+msgstr "Erreur ! Il est nécessaire d'avoir une adresse principale pour le partenaire."
+
+#. module: multi_address
+#: model:ir.ui.view,arch_db:multi_address.view_form_partner_multi_address
+msgid "Note"
+msgstr "Note"
+
+#. module: multi_address
+#: model:ir.model,name:multi_address.model_res_partner
+msgid "Partner"
+msgstr "Partenaire"
+
+#. module: multi_address
+#: code:addons/multi_address/multi_address.py:40
+#, python-format
+msgid "Principal"
+msgstr "Principale"
+
+#. module: multi_address
+#: code:addons/multi_address/multi_address.py:41
+#, python-format
+msgid "Secondary"
+msgstr "Secondaire"
+
+#. module: multi_address
+#: model:ir.model.fields,field_description:multi_address.field_address_address_type
+msgid "Type"
+msgstr "Type"
+

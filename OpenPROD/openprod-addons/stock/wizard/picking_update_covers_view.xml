@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+		<!-- FORM VIEW Update covers -->
+		<record id='view_form_picking_update_covers' model='ir.ui.view'>
+			<field name="name">view_form_picking_update_covers</field>
+			<field name="model">picking.update.covers</field>
+			<field name="arch" type="xml">
+				<form string="Update covers" version="8.0">
+					<sheet>
+						<center>
+							<h1>Update covers of selected pickings</h1>
+							<br />
+							<br />
+							<br />
+							<br />
+							<button name="update" string="Update" type="object" class="oe_highlight" />
+							or
+							<button string="Cancel" class="oe_link" special="cancel" />
+						</center>
+					</sheet>
+				</form>
+			</field>
+		</record>
+
+		<!-- ACTION Update covers -->
+		<act_window name="Update covers" res_model="picking.update.covers" src_model="stock.picking" view_mode="form" target="new" key2="client_action_multi" id="act_picking_update_covers" />
+
+	</data>
+</openerp>

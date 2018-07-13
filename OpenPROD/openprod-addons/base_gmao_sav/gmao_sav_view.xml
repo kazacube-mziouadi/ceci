@@ -1,0 +1,1295 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+
+		<!-- ======================== -->
+		<!-- Park -->
+		<!-- ======================== -->
+
+		<!-- FORM VIEW park structure -->
+		<record id="view_tree_park_structure_id" model="ir.ui.view">
+			<field name="name">view_tree_park_structure_id</field>
+			<field name="model">park</field>
+			<field name="type">tree</field>
+			<field name="field_parent">child_structure_ids</field>
+			<field name="priority">10</field>
+			<field name="arch" type="xml">
+				<tree string="Parks">
+					<field name="name" />
+					<field name="num_serie_id" />
+					<field name="product_id" />
+					<field name="type" />
+					<field name="state" />
+				</tree>
+			</field>
+		</record>
+		<!-- ACTION Structure -->
+		<record id="act_park_structure_id" model="ir.actions.act_window">
+			<field name="name">Park structure</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="res_model">park</field>
+			<field name="domain">[('id','in',active_ids)]</field>
+			<field name="view_id" ref="view_tree_park_structure_id" />
+			<field name="view_type">tree</field>
+			<field name="view_type">tree</field>
+		</record>
+
+		<record id="ir_park_structure" model="ir.values">
+			<field eval="'client_action_multi'" name="key2" />
+			<field eval="'park'" name="model" />
+			<field name="name">Park</field>
+			<field eval="'ir.actions.act_window,'+str(act_park_structure_id)" name="value" />
+		</record>
+
+
+		<!-- FORM VIEW park -->
+		<record id='view_form_park_id' model='ir.ui.view'>
+			<field name="name">view_form_park_id</field>
+			<field name="model">park</field>
+			<field name="arch" type="xml">
+				<form string="Parks" version="8.0">
+					<header>
+						<field name="state" widget="statusbar" statusbar_visible="inactive,activity,maintenance" clickable="True" />
+					</header>
+					<group colspan="4" col="9">
+						<group colspan="8" col="8">
+							<group colspan="8" col="9">
+								<group colspan="3" col="3">
+									<field name="name" colspan="3" required="1" />
+									<field name="customer_id" colspan="3" attrs="{'invisible':[('type', '!=', 'external')], 'required': [('type', '=', 'external')]}" domain="[('is_customer', '=', True)]" />
+									<field name="supplier_id" colspan="3" attrs="{'invisible':[('type', '!=', 'intern')]}" domain="[('is_supplier', '=', True)]" />
+								</group>
+								<group colspan="3" col="3">
+									<field name="num_serie_id" colspan="3" attrs="{'required':[('type', '=', 'external')]}" domain="[('domain_label_create_park', '=', False)]" />
+							 		<field name="is_equipment" colspan="3" />
+									<field name="is_active_label" colspan="3" invisible="1" />
+								</group>
+								<group colspan="3" col="3">
+									<field name="product_id" colspan="3" />
+									<field name="resource_id" colspan="3" attrs="{'invisible':['|', ('is_equipment', '!=', True), ('type', '!=', 'intern')]}" domain="[('type', '=', 'machin')]" />
+									<field name="type" colspan="3" invisible="1" />
+								</group>
+							</group>
+							<notebook colspan="8">
+								<page string="History">
+									<group colspan="8" col="9" string="History">
+										<group colspan="3" col="3">
+											<field name="date_create" colspan="3" />
+											<field name="guarantee_start_date" colspan="3" />
+										</group>
+										<group colspan="3" col="3">
+											<field name="delivery_date" colspan="3" />
+											<label for="guarantee" attrs="{'invisible': [('is_equipment', '=', True)]}" />
+											<div attrs="{'invisible': [('is_equipment', '=', True)]}">
+												<field name="guarantee" colspan="1" class="oe_inline" nolabel="1" attrs="{'invisible': [('is_equipment', '=', True)]}" />
+												<field name="guarantee_unity_id" colspan="1" class="oe_inline" nolabel="1" attrs="{'invisible': [('is_equipment', '=', True)]}" />
+											</div>
+										</group>
+										<group colspan="3" col="3">
+											<field name="commissioning_date" colspan="3" />
+										</group>
+										<field name="description" colspan="8" nolabel="1" />
+									</group>
+								</page>
+								<page string="Equipment" attrs="{'invisible': [('is_equipment', '!=', True)]}">
+									<group colspan="8" col="8" string="Equipment">
+										<group colspan="8" col="8">
+											<group colspan="4" col="4">
+												<field name="picture" nolabel="1" widget="image" class="oe_left" img_height="200px" />
+											</group>
+											<group colspan="4" col="4">
+												<group colspan="2" col="2">
+													<field name="manufacturing_name" colspan="2" />
+													<field name="workforce_guarantee" colspan="2" />
+													<field name="piece_guarantee" colspan="2" />
+													<field name="parent_equipment_id" colspan="2" domain="[('is_equipment', '=' , True), ('id', '!=', id)]}" />
+												</group>
+												<group colspan="2" col="2">
+													<field name="release_date" colspan="2" />
+													<field name="workforce_guarantee_end_date" colspan="2" />
+													<field name="piece_guarantee_end_date" colspan="2" />
+												</group>
+											</group>
+										</group>
+									</group>
+								</page>
+								<page string="Maintenances">
+									<group colspan="8" col="8" string="Maintenances operations">
+										<button name="%(act_add_operation_in_park)d" string="Add operations" type="action" icon="fa-check" colspan="4" />
+										<button name="delete_operation" string="Delete operations" type="object" icon="gtk-cancel" colspan="4" />
+										<field name="maintenance_operation_ids" colspan="8" nolabel="1">
+											<tree editable="bottom" string="Maintenances operations">
+												<field name="maintenance_operation_id" readonly="1" />
+												<field name="time_spent" widget="float_time" />
+												<field name="intervention_last_date" />
+												<field name="intervention_next_date" />
+											</tree>
+										</field>
+										<field name="all_operation_ids" invisible="1" />
+									</group>
+									<group colspan="8" col="8" string="Counters">
+										<field name="counter_ids" colspan="8" nolabel="1">
+											<tree editable="bottom" string="Counters">
+												<field name="date" />
+												<field name="counter_id" />
+												<field name="value" />
+												<field name="remark" />
+											</tree>
+										</field>
+									</group>
+								</page>
+								<page string="Plans/Notes">
+									<group colspan="8" col="8" string="Documents">
+										<field name="document_ids" colspan="8" nolabel="1" />
+									</group>
+									<group colspan="8" col="8" string="Notes">
+										<field name="note_ids" colspan="8" nolabel="1">
+											<tree string="Notes">
+												<field name="date" />
+												<field name="name" />
+												<field name="user_id" />
+											</tree>
+											<form string="Notes">
+												<group colspan="4" col="4">
+													<field name="date" required="1" />
+													<field name="user_id" required="1" />
+													<field name="name" required="1" />
+													<group colspan="4" col="4" strind="Description">
+														<field name="description" nolabel="1" colspan="4" />
+													</group>
+												</group>
+											</form>
+										</field>
+									</group>
+								</page>
+							</notebook>
+						</group>
+						<group colspan="1" col="1" class="op_shortcuts">
+							<separator colspan="1" string="Actions" name="separator_actions_menu" attrs="{'invisible': [('is_active_label', '=', True)]}" />
+							<button name="button_return_move" string="Return serial num" type="object" class="oe_inline oe_stat_button" icon="fa-reply" attrs="{'invisible': [('is_active_label', '=', True)]}" />
+							<button name="button_create_intervention" string="Create intervention" type="object" class="oe_inline oe_stat_button" icon="fa-wrench" />
+							<separator colspan="1" string="Analysis" name="separator_analysis_menu" />
+							<button name="button_list_intervention" string="Lists of interventions" type="object" class="oe_inline oe_stat_button" icon="fa-list" />
+							<button name="button_list_purchase" string="Lists of purchase" type="object" class="oe_inline oe_stat_button" icon="fa-list" />
+							<!-- <button name="button_list_timetracking" string="Lists of time tracking" -->
+							<!-- type="object" class="oe_inline oe_stat_button" icon="fa-check" /> -->
+							<button name="%(act_park_structure_id)d" string="Park structure" type="action" class="oe_inline oe_stat_button" icon="fa-list-ol" attrs="{'invisible':[('is_equipment', '!=', True)]}" />
+							<button name="button_list_picking" string="Lists of pickings" type="object" class="oe_inline oe_stat_button" icon="fa-list" attrs="{'invisible': [('type', '!=', 'external')]}" />
+							<button name="button_list_sale" string="Lists of sales" type="object" class="oe_inline oe_stat_button" icon="fa-list" attrs="{'invisible': [('type', '!=', 'external')]}" />
+						</group>
+					</group>
+				</form>
+			</field>
+		</record>
+
+		<!-- TREE VIEW park -->
+		<record id='view_tree_park_id' model='ir.ui.view'>
+			<field name="name">view_tree_park_id</field>
+			<field name="model">park</field>
+			<field name="arch" type="xml">
+				<tree string="Parks" version="8.0">
+					<field name="name" />
+					<field name="num_serie_id" />
+					<field name="product_id" />
+					<field name="type" />
+					<field name="customer_id" />
+					<field name="supplier_id" />
+					<field name="is_equipment" />
+					<field name="resource_id" />
+					<field name="state" />
+				</tree>
+			</field>
+		</record>
+
+		<!-- SEARCH VIEW park -->
+		<record id='view_search_park_id' model='ir.ui.view'>
+			<field name="name">view_search_park_id</field>
+			<field name="model">park</field>
+			<field name="arch" type="xml">
+				<search version="8.0">
+					<field name="name" />
+					<field name="num_serie_id" />
+					<field name="product_id" />
+					<field name="type" />
+					<field name="customer_id" />
+					<field name="supplier_id" />
+					<field name="is_equipment" />
+					<field name="resource_id" />
+					<group string="Filters">
+					</group>
+					<newline />
+					<group expand="0" string="Group By...">
+					</group>
+				</search>
+			</field>
+		</record>
+
+		<!-- ACTION park -->
+		<record id="act_park_id" model="ir.actions.act_window">
+			<field name="name">Parks</field>
+			<field name="res_model">park</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+			<field name="domain">[]</field>
+			<field name="context">{}</field>
+			<field name="search_view_id" ref="view_search_park_id" />
+		</record>
+
+		<record id="act_park_id_tree" model="ir.actions.act_window.view">
+			<field name="sequence" eval="10" />
+			<field name="view_mode">tree</field>
+			<field name="view_id" ref="view_tree_park_id" />
+			<field name="act_window_id" ref="act_park_id" />
+		</record>
+
+		<record model="ir.actions.act_window.view" id="act_park_id_form">
+			<field name="sequence" eval="20" />
+			<field name="view_mode">form</field>
+			<field name="view_id" ref="view_form_park_id" />
+			<field name="act_window_id" ref="act_park_id" />
+		</record>
+
+
+		<!-- ======================== -->
+		<!-- Maintenance Operation -->
+		<!-- ======================== -->
+
+		<!-- FORM VIEW maintenance_operation -->
+		<record id='view_form_maintenance_operation_id' model='ir.ui.view'>
+			<field name="name">view_form_maintenance_operation_id</field>
+			<field name="model">maintenance.operation</field>
+			<field name="arch" type="xml">
+				<form string="Maintenance operations" version="8.0">
+					<header>
+						<field name="state" widget="statusbar" statusbar_visible="draft,active,obsolete" clickable="True" />
+					</header>
+					<group colspan="4" col="9">
+						<group colspan="8" col="8">
+							<group colspan="8" col="9">
+								<group colspan="3" col="3">
+									<field name="name" colspan="3" />
+									<field name="responsible_id" colspan="3" />
+								</group>
+								<group colspan="3" col="3">
+									<field name="type" colspan="3" />
+									<field name="intervention_time" colspan="3" widget="float_time" />
+								</group>
+								<group colspan="3" col="3">
+									<field name="tolerance" colspan="3" />
+									<field name="time_synchro_resource" colspan="3" />
+								</group>
+								<field name="description" colspan="9" nolabel="1" />
+							</group>
+							<notebook colspan="8">
+								<page string="Parks">
+									<group colspan="8" col="8" string="Parks">
+										<button name="%(act_add_park_in_operation)d" string="Add parks" type="action" icon="fa-check" colspan="4" />
+										<button name="delete_park" string="Delete parks" type="object" icon="gtk-cancel" colspan="4" />
+										<field name="park_ids" colspan="8" nolabel="1">
+											<tree editable="bottom" string="Parks">
+												<field name="park_id" readonly="1" />
+												<field name="intervention_last_date" />
+												<field name="intervention_next_date" />
+											</tree>
+										</field>
+									</group>
+								</page>
+								<page string="Materials resources">
+									<group colspan="8" col="8">
+										<group colspan="8" col="8" string="Pieces of maintenance">
+											<field name="piece_maintenance_ids" colspan="8" nolabel="1">
+												<tree editable="bottom" string="Pieces of maintenance">
+													<field name="product_id" />
+													<field name="description" />
+													<field name="qty" />
+													<field name="uom_id" domain="product_id and [('category_id', '=', uom_category_id)] or []" />
+													<field name="uom_category_id" invisible="1" />
+												</tree>
+											</field>
+										</group>
+										<group colspan="4" col="4" string="Resource categories">
+											<field name="categ_resource_ids" colspan="4" nolabel="1">
+												<tree editable="bottom" string="Resource categories">
+													<field name="categ_resource_id" />
+													<field name="time" widget="float_time" column_invisible="[('time_synchro_resource', '=', True)]" />
+												</tree>
+											</field>
+										</group>
+										<group colspan="4" col="4" string="Resources">
+											<field name="resource_ids" colspan="4" nolabel="1" domain="[('domain_resource_gmao', 'in', all_resource_ids)]">
+												<tree editable="bottom" string="Resources">
+													<field name="name" />
+												</tree>
+											</field>
+											<field name="all_resource_ids" colspan="4" invisible="1">
+												<tree editable="bottom" string="All Resources">
+													<field name="name" />
+												</tree>
+											</field>
+										</group>
+									</group>
+								</page>
+								<page string="Instructions/Notes">
+									<group colspan="8" col="4" string="Preventive/Security" attrs="{'invisible': [('type', 'not in', ('preventive', 'security'))]}">
+										<group colspan="4" col="4">
+											<group colspan="2" col="2">
+												<field name="trigger_mode" colspan="2" />
+											</group>
+											<group colspan="2" col="3">
+												<field name="counter_id" colspan="3" attrs="{'invisible': [('trigger_mode', '!=', 'counter')]}" />
+												<label for="frequency" attrs="{'invisible': [('trigger_mode', '!=', 'calendar')]}" />
+												<div attrs="{'invisible': [('trigger_mode', '!=', 'calendar')]}">
+													<field name="frequency" class="oe_inline" nolabel="1" attrs="{'invisible': [('trigger_mode', '!=', 'calendar')], 'required': [('trigger_mode', '=', 'calendar')]}" />
+													<field name="frequency_type" class="oe_inline" nolabel="1" attrs="{'invisible': [('trigger_mode', '!=', 'calendar')], 'required': [('trigger_mode', '=', 'calendar')]}" />
+												</div>
+											</group>
+										</group>
+									</group>
+									<group colspan="8" col="8">
+										<group colspan="8" col="8" string="Instructions">
+											<field name="instruction_maintenance_ids" colspan="8" nolabel="1">
+												<tree string="Instructions of maintenance">
+													<field name="sequence" />
+													<field name="name" />
+													<field name="plan_id" />
+													<field name="time" sum="Sum time" widget="float_time" />
+												</tree>
+												<form string="Instructions of maintenance">
+													<group colspan="4" col="4">
+														<field name="sequence" />
+														<field name="name" />
+														<field name="plan_id" />
+														<field name="time" sum="Sum time" widget="float_time" />
+														<group colspan="4" col="4" string="Description">
+															<field name="description" colspan="4" nolabel="1" />
+														</group>
+													</group>
+												</form>
+											</field>
+										</group>
+										<group colspan="8" col="8" string="Notes">
+											<field name="note" colspan="8" nolabel="1" />
+										</group>
+									</group>
+								</page>
+							</notebook>
+						</group>
+						<group colspan="1" col="1" class="op_shortcuts">
+						</group>
+					</group>
+				</form>
+			</field>
+		</record>
+
+		<!-- TREE VIEW maintenance_operation -->
+		<record id='view_tree_maintenance_operation_id' model='ir.ui.view'>
+			<field name="name">view_tree_maintenance_operation_id</field>
+			<field name="model">maintenance.operation</field>
+			<field name="arch" type="xml">
+				<tree string="Maintenance operations" version="8.0">
+					<field name="name" />
+					<field name="type" />
+					<field name="tolerance" />
+					<field name="responsible_id" />
+					<field name="intervention_time" widget="float_time" />
+					<field name="time_synchro_resource" />
+				</tree>
+			</field>
+		</record>
+
+		<!-- SEARCH VIEW maintenance_operation -->
+		<record id='view_search_maintenance_operation_id' model='ir.ui.view'>
+			<field name="name">view_search_maintenance_operation_id</field>
+			<field name="model">maintenance.operation</field>
+			<field name="arch" type="xml">
+				<search version="8.0">
+					<field name="name" />
+					<field name="type" />
+					<field name="tolerance" />
+					<field name="responsible_id" />
+					<field name="intervention_time" />
+					<field name="time_synchro_resource" />
+					<group string="Filters">
+					</group>
+					<newline />
+					<group expand="0" string="Group By...">
+					</group>
+				</search>
+			</field>
+		</record>
+
+		<!-- ACTION maintenance_operation -->
+		<record id="act_maintenance_operation_id" model="ir.actions.act_window">
+			<field name="name">Maintenance operations</field>
+			<field name="res_model">maintenance.operation</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+			<field name="domain">[]</field>
+			<field name="context">{}</field>
+			<field name="search_view_id" ref="view_search_maintenance_operation_id" />
+		</record>
+
+		<record id="act_maintenance_operation_id_tree" model="ir.actions.act_window.view">
+			<field name="sequence" eval="10" />
+			<field name="view_mode">tree</field>
+			<field name="view_id" ref="view_tree_maintenance_operation_id" />
+			<field name="act_window_id" ref="act_maintenance_operation_id" />
+		</record>
+
+		<record model="ir.actions.act_window.view" id="act_maintenance_operation_id_form">
+			<field name="sequence" eval="20" />
+			<field name="view_mode">form</field>
+			<field name="view_id" ref="view_form_maintenance_operation_id" />
+			<field name="act_window_id" ref="act_maintenance_operation_id" />
+		</record>
+
+		<!-- ======================== -->
+		<!-- Intervention -->
+		<!-- ======================== -->
+
+
+		<!-- FORM VIEW intervention -->
+		<record id='view_form_intervention_id' model='ir.ui.view'>
+			<field name="name">view_form_intervention_id</field>
+			<field name="model">intervention</field>
+			<field name="arch" type="xml">
+				<form string="Interventions" version="8.0">
+					<header>
+						<field name="state" widget="statusbar" statusbar_visible="waiting,affect,performed,done,cancel" clickable="True" />
+					</header>
+					<group colspan="4" col="9">
+						<group colspan="8" col="8">
+							<group colspan="8" col="9">
+								<group colspan="3" col="3">
+									<field name="name" colspan="3" />
+									<field name="applicant_id" colspan="3" />
+									<field name="emergency" colspan="3" />
+									<field name="customer_id" attrs="{'required': [('park_type', '=', 'external')], 'invisible':[('park_type', '!=', 'external')]}" domain="[('can_order', '=', True), ('is_customer', '=', True)]" colspan="2" />
+									<field name="currency_id" colspan="3" attrs="{'invisible': ['|', ('type_invoice', '!=', 'billable'), ('sale_line_ids', '=', False), 
+                                                                 ('quotation_ids', '=', False), ('invoice_ids', '=', False), ('piece_maintenance_ids', '=', False)]}" />
+								</group>
+								<group colspan="3" col="3">
+									<field name="type" colspan="3" required="1" />
+									<field name="responsible_id" colspan="3" attrs="{'required': [('state', 'not in', ('waiting', 'cancel'))]}" />
+									<field name="park_type" colspan="3" />
+									<field name="contact_id" options="{'no_create': True}" domain="[('partner_contact_sale_order', '=', customer_id)]" />
+								</group>
+								<group colspan="3" col="3">
+									<field name="park_id" colspan="3" domain="is_intern and [('type', '=', 'intern')] or [('type', '=', 'external')]" />
+									<field name="maintenance_operation_id" colspan="3" domain="park_id and [('domain_park_id', '=', park_id)] or [('id', '=', False)]" attrs="{'invisible': [('type', '=', 'repair_sav')]}" />
+									<field name="type_invoice" colspan="3" />
+									<field name="park_num_serie_id" invisible="1" />
+									<field name="is_intern" invisible="1" />
+								</group>
+							</group>
+							<notebook colspan="8">
+								<page string="Analisys" attrs="{'invisible':[('type', 'in', ('preventive', 'security'))]}">
+									<group colspan="8" col="4" string="Analisys">
+										<field name="type_failure_id" />
+										<field name="cause_id" />
+										<group colspan="4" col="4">
+											<field name="description" colspan="9" nolabel="1" />
+										</group>
+									</group>
+								</page>
+								<page string="Planning">
+									<group colspan="8" col="9">
+										<group colspan="3" col="3">
+											<group colspan="3" col="3" string="Request">
+												<field name="date_create" colspan="3" />
+												<field name="start_date_requested" colspan="3" />
+												<field name="ended_date_requested" colspan="3" />
+												<field name="tolerance" colspan="3" />
+											</group>
+										</group>
+										<group colspan="6" col="6">
+											<group colspan="3" col="3" string="Planning" attrs="{'invisible': [('type', '=', 'repair_sav')]}">
+												<field name="start_date_planned" colspan="3" attrs="{'required': [('state', 'not in', ('waiting', 'cancel')), ('type', '!=', 'repair_sav')]}" />
+												<field name="time_theo_interv" colspan="3" widget="float_time" />
+												<field name="ended_date_planned" colspan="3" attrs="{'required': [('state', 'not in', ('waiting', 'cancel')), ('type', '!=', 'repair_sav')]}" />
+												<field name="time_synchro_resource" colspan="3" />
+											</group>
+											<group colspan="3" col="3" string="Production" attrs="{'invisible': [('type', '=', 'repair_sav')]}">
+												<field name="start_date_real" colspan="3" attrs="{'required': [('state', 'in', ('performed', 'done')), ('type', '!=', 'repair_sav')]}" />
+												<field name="time_real_interv" colspan="3" widget="float_time" />
+												<field name="ended_date_real" colspan="3" attrs="{'required': [('state', '=', 'done'), ('type', '!=', 'repair_sav')]}" />
+												<field name="alert" colspan="3" />
+											</group>
+										</group>
+									</group>
+								</page>
+								<page string="Resources/materials">
+									<group colspan="8" col="8" string="Pieces of maintenance">
+										<field name="piece_maintenance_ids" colspan="8" nolabel="1">
+											<tree editable="bottom" string="Pieces of maintenance">
+												<field name="product_id" />
+												<field name="description" />
+												<field name="qty" />
+												<field name="uom_id" domain="product_id and [('category_id', '=', uom_category_id)] or []" />
+												<field name="price" />
+												<field name="is_to_invoice" />
+												<field name="invoice_line_id" readonly="1" />
+												<field name="purchase_id" readonly="1" />
+												<button name="button_create_purchase" string="Create purchase" type="object" icon="fa-check" colspan="4" attrs="{'invisible': ['|', '|', '|', ('is_wo_rm', '=', True), ('purchase_id', '!=', False), ('park_type', '!=', 'external'), ('product_id', '=', False)]}" />
+												<field name="picking_id" readonly="1" />
+												<button name="button_create_picking" string="Select/Create picking" type="object" icon="fa-check" colspan="4" attrs="{'invisible': ['|', '|', '|', ('is_wo_rm', '=', True), ('picking_id', '!=', False), ('park_type', '!=', 'external'), ('product_id', '=', False)]}" />
+												<field name="is_wo_rm" readonly="1" />
+												<field name="uom_category_id" invisible="1" />
+												<field name="park_type" invisible="1" />
+											</tree>
+										</field>
+									</group>
+									<group colspan="8" col="8" string="Resources" attrs="{'invisible': [('type', '=', 'repair_sav')]}">
+										<field name="resource_intervention_ids" colspan="8" nolabel="1">
+											<tree editable="bottom" string="Resources">
+												<field name="categ_resource_id" />
+												<field name="resource_id" domain="[('domain_resource_gmao', 'in', all_resource_ids)]" />
+												<field name="start_date" />
+												<field name="end_date" />
+												<field name="time" widget="float_time" />
+												<field name="all_resource_ids" invisible="1" />
+											</tree>
+										</field>
+									</group>
+									<group colspan="8" col="8" string="Manufacturings orders of repair" attrs="{'invisible': [('type', '!=', 'repair_sav')]}">
+										<field name="mo_ids" nolabel="1" colspane="8" />
+									</group>
+								</page>
+								<page string="Instructions/Notes">
+									<group colspan="8" col="8" string="Instructions">
+										<field name="instruction_intervention_ids" colspan="8" nolabel="1">
+											<tree string="Instructions">
+												<field name="sequence" />
+												<field name="name" />
+												<field name="plan_id" />
+												<field name="time" widget="float_time" />
+												<field name="date" />
+												<field name="user_id" />
+												<field name="state" />
+												<button name="wkf_done" string="Finish" type="object" states="to_do" icon="fa-check" />
+												<button name="wkf_todo" string="To do" type="object" states="cancel" icon="fa-check" />
+												<button name="wkf_cancel" string="Cancel" type="object" states="to_do,done" icon="gtk-cancel" />
+											</tree>
+											<form string="Instructions">
+												<group colspan="4" col="4">
+													<field name="sequence" />
+													<field name="name" />
+													<field name="plan_id" />
+													<field name="time" widget="float_time" />
+													<field name="date" />
+													<field name="user_id" />
+													<field name="state" readonly="1" />
+													<group colspan="4" col="4" string="Description">
+														<field name="description" colspan="4" nolabel="1" />
+													</group>
+												</group>
+											</form>
+										</field>
+									</group>
+									<group colspan="8" col="8" string="Notes">
+										<field name="note" colspan="8" nolabel="1" />
+									</group>
+								</page>
+								<page string="Quotations" attrs="{'invisible':[('park_type', '!=', 'external')]}">
+									<group colspan="8" col="9" string="Quotations">
+										<field name="quotation_ids" nolabel="1" colspan="9" context="{'default_customer_id': customer_id}">
+											<tree editable="bottom" string="Quotations">
+												<field name="product_id" domain="customer_id and 
+                                                                                [('sale_ok', '=', True), '|', ('sale_product_customerinfo', '=', customer_id), ('free_sale', '=', True)] 
+                                                                                or [('sale_ok', '=', True)]" />
+												<field name="qty" />
+												<field name="price" />
+												<field name="uom_id" domain="product_id and [('category_id', '=', uom_category_id)] or []" />
+												<field name="currency_id" />
+												<field name="uom_category_id" invisible="1" />
+												<field name="customer_id" invisible="1" />
+											</tree>
+										</field>
+										<field name="invoicing_spare_part" colspan="3" />
+									</group>
+									<group colspan="8" col="8" string="Sales">
+										<field name="sale_id" colspan="4" attrs="{'readonly': [('sale_line_ids', '!=', False)]}" domain="[('state', '=', 'draft'), ('partner_id', '=', customer_id), ('currency_id', '=', currency_id)]" />
+										<field name="sale_line_ids" nolabel="1" colspan="8">
+											<tree editable="bottom" string="Sales" create="false">
+												<field name="sale_partner_id" />
+												<field name="product_id" />
+												<field name="requested_date" />
+												<field name="confirmed_departure_date" string="Confirmed date" />
+												<field name="uom_qty" string="Qty" />
+												<field name="delivered_qty" />
+												<field name="remaining_qty" />
+												<field name="uom_id" />
+												<field name="sale_state" />
+											</tree>
+										</field>
+									</group>
+								</page>
+								<page string="Times">
+									<group colspan="8" col="5" string="Times">
+										<field name="invoice_product_id" attrs="{'invisible':[('park_type', '!=', 'external')]}" />
+										<label for="invoice_price" attrs="{'invisible':[('park_type', '!=', 'external')]}" />
+										<div attrs="{'invisible':[('park_type', '!=', 'external')]}">
+											<field name="invoice_price" colspan="1" class="oe_inline" nolabel="1" attrs="{'invisible':[('park_type', '!=', 'external')]}" />
+											<field name="currency_id" colspan="1" class="oe_inline" nolabel="1" attrs="{'invisible':[('park_type', '!=', 'external')]}" />
+										</div>
+										<group colspan="5" col="5">
+											<field name="timetracking_ids" colspan="5" nolabel="1">
+												<tree string="Lists of charges" editable="bottom" create="false">
+													<field name="start_date" />
+													<field name="end_date" required="1" />
+													<field name="time" required="1" widget="float_time" />
+													<field name="resource_id" required="1" />
+													<field name="hourly_cost" required="1" />
+													<field name="is_to_invoice" />
+													<field name="invoice_line_id" readonly="1" />
+												</tree>
+											</field>
+										</group>
+										<group colspan="5" col="5">
+											<field name="note_time" colspan="5" nolabel="1" />
+										</group>
+									</group>
+								</page>
+								<page string="Invoices">
+									<group colspan="8" col="4" string="Invoicing">
+										<group colspan="2" col="2">
+											<field name="is_invoice_times_past" colspane="2" />
+										</group>
+										<group colspan="2" col="2">
+											<field name="is_invoice_piece_maintenance" colspane="2" attrs="{'readonly': [('invoicing_spare_part', '=', True)]}"/>
+										</group>
+										<field name="invoice_ids" nolabel="1" colspan="4" />
+									</group>
+								</page>
+								<page string="Communications">
+									<group colspan="8" col="8" string="Mails">
+										<field name="mail_ids" nolabel="1" colspan="8" />
+									</group>
+								</page>
+							</notebook>
+						</group>
+						<group colspan="1" col="1" class="op_shortcuts">
+							<separator colspan="1" string="Actions" name="separator_actions_menu" />
+							<button name="action_send_mail" type="object" string="Send Mail" class="oe_inline oe_stat_button" icon="fa-envelope" />
+							<button name="button_importation_maintenance_operation" string="Import maintenance operation" type="object" class="oe_inline oe_stat_button" icon="fa-download" attrs="{'invisible': [('maintenance_operation_id', '=', False)]}" />
+							<button name="button_open_wiz_create_quotation" string="Create quotation" type="object" class="oe_inline oe_stat_button" icon="fa-shopping-cart" attrs="{'invisible':[('park_type', '!=', 'external')]}" />
+							<button name="%(act_wizard_create_timetracking_intervention)d" string="Declare time" type="action" icon="fa-hourglass-half" colspan="2" class="oe_inline oe_stat_button" context="{'default_end_date': (datetime.datetime.utcnow()).strftime('%Y-%m-%d %H:%M:%S'), 'default_hourly_cost': invoice_price, 'from_intervention': True}" />
+							<button name="button_create_invoice_intervention" string="Create invoice" class="oe_inline oe_stat_button" type="object" icon="fa-usd" colspan="2" />
+							<button name="button_create_mo_repair" string="Create MO for repair" type="object" class="oe_inline oe_stat_button" icon="fa-wrench" attrs="{'invisible':['|', ('park_type', '!=', 'external'), ('type', '!=', 'repair_sav')]}" />
+							<button name="button_search_create_piece_maintenance" type="object" string="Create PM from MOs" class="oe_inline oe_stat_button" icon="fa-search" attrs="{'invisible':['|', ('park_type', '!=', 'external'), ('type', '!=', 'repair_sav')]}" />
+						</group>
+					</group>
+				</form>
+			</field>
+		</record>
+
+		<!-- TREE VIEW intervention -->
+		<record id='view_tree_intervention_id' model='ir.ui.view'>
+			<field name="name">view_tree_intervention_id</field>
+			<field name="model">intervention</field>
+			<field name="arch" type="xml">
+				<tree string="Interventions" version="8.0">
+					<field name="name" />
+					<field name="type" />
+					<field name="park_id" />
+					<field name="applicant_id" />
+					<field name="responsible_id" />
+					<field name="maintenance_operation_id" />
+					<field name="start_date_planned" />
+					<field name="emergency" />
+					<field name="state" />
+					<field name="alert" />
+					<field name="is_late" />
+				</tree>
+			</field>
+		</record>
+
+		<!-- SEARCH VIEW intervention -->
+		<record id='view_search_intervention_id' model='ir.ui.view'>
+			<field name="name">view_search_intervention_id</field>
+			<field name="model">intervention</field>
+			<field name="arch" type="xml">
+				<search version="8.0">
+					<field name="name" />
+					<field name="type" />
+					<field name="park_id" />
+					<field name="applicant_id" />
+					<field name="responsible_id" />
+					<field name="maintenance_operation_id" />
+					<field name="emergency" />
+					<field name="is_late" />
+					<field name="alert" />
+					<group string="Filters">
+						<filter string="Today" domain="[('is_today', '=', True)]" />
+						<filter string="In the week" domain="[('is_week', '=', True)]" />
+						<filter string="In the month" domain="[('is_month', '=', True)]" />
+						<filter string="Alert" domain="[('alert', '=', True)]" />
+						<filter string="Late" domain="[('is_late', '=', True)]" />
+						<filter string="Not invoiced" domain="[('type_invoice', '=', 'billable'),('invoice_ids', '=', False)]" />
+						<filter string="Quotation not generated" domain="[('type_invoice', '=', 'billable'), ('quotation_ids', '=', False),  ('sale_id', '=', False)]" />
+						<filter string="Undelivered" domain="[('picking_id', '=', False)]" />
+					</group>
+					<newline />
+					<group expand="0" string="Group By...">
+						<filter string="Type" icon="terp-partner" context="{'group_by' : 'type'}" />
+						<separator orientation="vertical" />
+						<filter string="Park" icon="terp-partner" context="{'group_by' : 'park_id'}" />
+						<separator orientation="vertical" />
+						<filter string="Emergency" icon="terp-partner" context="{'group_by' : 'emergency'}" />
+						<separator orientation="vertical" />
+						<filter string="Year" icon="terp-partner" context="{'group_by' : 'year'}" />
+						<separator orientation="vertical" />
+						<filter string="Month" icon="terp-partner" context="{'group_by' : 'month'}" />
+						<separator orientation="vertical" />
+						<filter string="Week" icon="terp-partner" context="{'group_by' : 'week_number'}" />
+						<separator orientation="vertical" />
+					</group>
+				</search>
+			</field>
+		</record>
+
+
+		<!-- KANBAN VIEW intervention -->
+		<record model="ir.ui.view" id="view_kanban_intervention_id">
+			<field name="name">view_kanban_intervention_id</field>
+			<field name="model">intervention</field>
+			<field name="priority">10</field>
+			<field name="arch" type="xml">
+				<kanban default_group_by="state">
+					<field name="name" />
+					<field name="park_id" />
+					<field name="type" />
+					<field name="start_date_planned" />
+					<field name="applicant_id" />
+					<field name="responsible_id" />
+					<field name="maintenance_operation_id" />
+					<field name="emergency" />
+					<field name="alert" />
+					<field name="state" />
+					<templates>
+						<t t-name="kanban-box">
+							<div t-attf-class="oe_kanban_color_#{kanban_getcolor(record.color_kanban.raw_value)} oe_kanban_card oe_kanban_global_click oe_kanban_crm_salesteams" t-attf-style="#{record.emergency.raw_value == 'critical' ? 'border-color:red;border-style: solid;border-width: 1px;' : ''}">
+								<div class="o_dropdown_kanban dropdown">
+									<a class="dropdown-toggle btn" data-toggle="dropdown" href="#">
+										<span class="fa fa-bars fa-lg" />
+									</a>
+								</div>
+								<div class="oe_kanban_content">
+									<h4 class="oe_partner_heading">
+										<a type="open">
+											<field name="name" />
+										</a>
+									</h4>
+									<div class="oe_kanban_partner_categories" />
+									<div class="oe_kanban_partner_links" />
+									<div>
+										<b>Start date planned: </b>
+										<t t-if="record.start_date_planned">
+											<field name="start_date_planned" />
+										</t>
+									</div>
+									<div t-attf-style="#{record.ended_date_planned.raw_value and record.ended_date_planned.raw_value lt (new Date())? 'color:red;' : ''}">
+										<b>Ended date planned: </b>
+										<t t-if="record.ended_date_planned">
+											<field name="ended_date_planned" />
+										</t>
+									</div>
+									<div>
+										<b>Time theo: </b>
+										<t t-if="record.time_theo_interv">
+											<field name="time_theo_interv" widget="float_time" />
+										</t>
+									</div>
+									<div>
+										<b>Responsible: </b>
+										<t t-if="record.responsible_id.raw_value">
+											<field name="responsible_id" />
+										</t>
+									</div>
+									<div>
+										<b>Emergency: </b>
+										<t t-if="record.emergency">
+											<field name="emergency" />
+										</t>
+									</div>
+									<div>
+										<b>Alert: </b>
+										<t t-if="record.alert">
+											<field name="alert" />
+										</t>
+									</div>
+									<field name="color_kanban" invisible="1" />
+								</div>
+							</div>
+						</t>
+					</templates>
+				</kanban>
+			</field>
+		</record>
+
+
+		<!-- CALENDAR VIEW intervention -->
+		<record model="ir.ui.view" id="view_calendar_interventions_id">
+			<field name="name">view_calendar_interventions_id</field>
+			<field name="model">intervention</field>
+			<field name="priority" eval="2" />
+			<field name="arch" type="xml">
+				<calendar string="Interventions" date_start="start_date_planned" date_stop="ended_date_planned" color="park_id" quick_add="False">
+					<field name="name" />
+					<field name="park_id" />
+					<field name="state" />
+				</calendar>
+			</field>
+		</record>
+
+
+		<!-- ACTION intervention -->
+		<record id="act_intervention_id" model="ir.actions.act_window">
+			<field name="name">Interventions</field>
+			<field name="res_model">intervention</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form,calendar,kanban</field>
+			<field name="domain">[]</field>
+			<field name="context">{}</field>
+			<field name="search_view_id" ref="view_search_intervention_id" />
+		</record>
+
+		<record id="act_intervention_id_tree" model="ir.actions.act_window.view">
+			<field name="sequence" eval="10" />
+			<field name="view_mode">tree</field>
+			<field name="view_id" ref="view_tree_intervention_id" />
+			<field name="act_window_id" ref="act_intervention_id" />
+		</record>
+
+		<record model="ir.actions.act_window.view" id="act_intervention_id_form">
+			<field name="sequence" eval="20" />
+			<field name="view_mode">form</field>
+			<field name="view_id" ref="view_form_intervention_id" />
+			<field name="act_window_id" ref="act_intervention_id" />
+		</record>
+
+
+
+		<!-- ======================== -->
+		<!-- Counter -->
+		<!-- ======================== -->
+
+
+		<!-- FORM VIEW counter -->
+		<record id='view_form_counter_id' model='ir.ui.view'>
+			<field name="name">view_form_counter_id</field>
+			<field name="model">counter</field>
+			<field name="arch" type="xml">
+				<form string="Counter" version="8.0">
+					<group colspan="4" col="4">
+						<field name="name" />
+						<field name="uom_id" />
+						<field name="min_limit" />
+						<field name="max_limit" />
+						<group colspan="4" col="4" strin="Description">
+							<field name="comment" nolabel="1" coslpan="4" />
+						</group>
+					</group>
+				</form>
+			</field>
+		</record>
+
+		<!-- TREE VIEW counter -->
+		<record id='view_tree_counter_id' model='ir.ui.view'>
+			<field name="name">view_tree_counter_id</field>
+			<field name="model">counter</field>
+			<field name="arch" type="xml">
+				<tree string="Counters" version="8.0">
+					<field name="name" />
+					<field name="uom_id" />
+					<field name="min_limit" />
+					<field name="max_limit" />
+					<field name="comment" />
+				</tree>
+			</field>
+		</record>
+
+		<!-- SEARCH VIEW counter -->
+		<record id='view_search_counter_id' model='ir.ui.view'>
+			<field name="name">view_search_counter_id</field>
+			<field name="model">counter</field>
+			<field name="arch" type="xml">
+				<search version="8.0">
+					<field name="name" />
+					<field name="uom_id" />
+					<field name="min_limit" />
+					<field name="max_limit" />
+					<group string="Filters">
+					</group>
+					<newline />
+					<group expand="0" string="Group By...">
+					</group>
+				</search>
+			</field>
+		</record>
+
+		<!-- ACTION counter -->
+		<record id="act_counter_id" model="ir.actions.act_window">
+			<field name="name">Counters</field>
+			<field name="res_model">counter</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+			<field name="domain">[]</field>
+			<field name="context">{}</field>
+			<field name="search_view_id" ref="view_search_counter_id" />
+		</record>
+
+		<record id="act_counter_id_tree" model="ir.actions.act_window.view">
+			<field name="sequence" eval="10" />
+			<field name="view_mode">tree</field>
+			<field name="view_id" ref="view_tree_counter_id" />
+			<field name="act_window_id" ref="act_counter_id" />
+		</record>
+
+		<record model="ir.actions.act_window.view" id="act_counter_id_form">
+			<field name="sequence" eval="20" />
+			<field name="view_mode">form</field>
+			<field name="view_id" ref="view_form_counter_id" />
+			<field name="act_window_id" ref="act_counter_id" />
+		</record>
+
+
+		<!-- ======================== -->
+		<!-- Resource_intervention -->
+		<!-- ======================== -->
+
+		<!-- TREE VIEW Resource_intervention -->
+		<record id='view_form_resource_intervention_id' model='ir.ui.view'>
+			<field name="name">view_form_resource_intervention_id</field>
+			<field name="model">resource.intervention</field>
+			<field name="arch" type="xml">
+				<form string="Resource intervention" version="8.0">
+					<group colspan="4" col="4">
+						<field name="intervention_id" />
+						<field name="park_id" />
+						<field name="categ_resource_id" />
+						<field name="resource_id" domain="[('domain_resource_gmao', 'in', all_resource_ids)]" />
+						<field name="start_date" />
+						<field name="end_date" />
+						<field name="time" widget="float_time" />
+						<field name="all_resource_ids" invisible="1" />
+					</group>
+				</form>
+			</field>
+		</record>
+
+
+		<!-- TREE VIEW Resource_intervention -->
+		<record id='view_tree_resource_intervention_id' model='ir.ui.view'>
+			<field name="name">view_tree_resource_intervention_id</field>
+			<field name="model">resource.intervention</field>
+			<field name="arch" type="xml">
+				<tree string="Resources interventions" version="8.0">
+					<field name="intervention_id" />
+					<field name="park_id" />
+					<field name="categ_resource_id" />
+					<field name="resource_id" />
+					<field name="start_date" />
+					<field name="end_date" />
+					<field name="time" />
+					<field name="alert" />
+					<field name="park_type" invisible="1" />
+					<field name="month" invisible="1" />
+					<field name="week_number" invisible="1" />
+					<field name="year" invisible="1" />
+				</tree>
+			</field>
+		</record>
+
+		<!-- SEARCH VIEW resource_intervention -->
+		<record id='view_search_resource_intervention_id' model='ir.ui.view'>
+			<field name="name">view_search_resource_intervention_id</field>
+			<field name="model">resource.intervention</field>
+			<field name="arch" type="xml">
+				<search version="8.0">
+					<field name="intervention_id" />
+					<field name="park_id" />
+					<field name="categ_resource_id" />
+					<field name="resource_id" />
+					<group string="Filters">
+						<filter string="Today" domain="[('is_today', '=', True)]" />
+						<filter string="In the week" domain="[('is_week', '=', True)]" />
+						<filter string="In the month" domain="[('is_month', '=', True)]" />
+						<filter string="Alert" domain="[('alert', '=', True)]" />
+					</group>
+					<newline />
+					<group expand="0" string="Group By...">
+						<filter string="Resource" icon="terp-partner" context="{'group_by' : 'resource_id'}" />
+						<separator orientation="vertical" />
+						<filter string="Year" icon="terp-partner" context="{'group_by' : 'year'}" />
+						<separator orientation="vertical" />
+						<filter string="Month" icon="terp-partner" context="{'group_by' : 'month'}" />
+						<separator orientation="vertical" />
+						<filter string="Week" icon="terp-partner" context="{'group_by' : 'week_number'}" />
+						<separator orientation="vertical" />
+					</group>
+				</search>
+			</field>
+		</record>
+
+
+		<!-- KANBAN VIEW resource_intervention -->
+		<record model="ir.ui.view" id="view_kanban_resource_intervention_id">
+			<field name="name">view_kanban_resource_intervention_id</field>
+			<field name="model">resource.intervention</field>
+			<field name="priority">8</field>
+			<field name="arch" type="xml">
+				<kanban default_group_by="resource_id">
+					<field name="intervention_id" />
+					<field name="park_id" />
+					<field name="categ_resource_id" />
+					<field name="resource_id" />
+					<field name="start_date" />
+					<field name="end_date" />
+					<field name="time" />
+					<field name="alert" />
+					<templates>
+						<t t-name="kanban-box">
+							<div t-attf-class="oe_kanban_color_#{kanban_getcolor(record.color_kanban.raw_value)} oe_kanban_card oe_kanban_global_click oe_kanban_crm_salesteams">
+								<div class="o_dropdown_kanban dropdown">
+									<a class="dropdown-toggle btn" data-toggle="dropdown" href="#">
+										<span class="fa fa-bars fa-lg" />
+									</a>
+								</div>
+								<div class="oe_kanban_details">
+									<h4 class="oe_partner_heading">
+										<a type="open">
+											<field name="resource_id" />
+										</a>
+									</h4>
+									<div class="oe_kanban_partner_categories" />
+									<div class="oe_kanban_partner_links" />
+									<ul>
+										<div>
+											<b>Intervention: </b>
+											<t t-if="record.intervention_id.raw_value">
+												<field name="intervention_id" />
+											</t>
+										</div>
+										<div>
+											<b>Park: </b>
+											<t t-if="record.park_id.raw_value">
+												<field name="park_id" />
+											</t>
+										</div>
+										<div>
+											<b>Start date: </b>
+											<t t-if="record.start_date">
+												<field name="start_date" />
+											</t>
+										</div>
+										<div t-attf-style="#{record.end_date.raw_value and record.end_date.raw_value lt (new Date())? 'color:red;' : ''}">
+											<b>End date: </b>
+											<t t-if="record.end_date">
+												<field name="end_date" />
+											</t>
+										</div>
+										<div>
+											<b>Time: </b>
+											<t t-if="record.time">
+												<field name="time" widget="float_time" />
+											</t>
+										</div>
+										<div>
+											<b>Alert: </b>
+											<t t-if="record.alert">
+												<field name="alert" />
+											</t>
+										</div>
+										<field name="color_kanban" invisible="1" />
+									</ul>
+								</div>
+							</div>
+						</t>
+					</templates>
+				</kanban>
+			</field>
+		</record>
+
+
+		<!-- CALENDAR VIEW resource_intervention -->
+		<record model="ir.ui.view" id="view_calendar_resource_interventions_id">
+			<field name="name">view_calendar_resource_interventions_id</field>
+			<field name="model">resource.intervention</field>
+			<field name="priority" eval="2" />
+			<field name="arch" type="xml">
+				<calendar string="Resources interventions" date_start="start_date" date_stop="end_date" color="intervention_id" quick_add="False">
+					<field name="intervention_id" />
+					<field name="park_id" />
+					<field name="resource_id" />
+				</calendar>
+			</field>
+		</record>
+
+
+		<!-- ACTION resource_intervention -->
+		<record id="act_resource_intervention_id" model="ir.actions.act_window">
+			<field name="name">Resources interventions</field>
+			<field name="res_model">resource.intervention</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form,calendar,kanban</field>
+			<field name="domain">[]</field>
+			<field name="context">{}</field>
+			<field name="search_view_id" ref="view_search_resource_intervention_id" />
+		</record>
+
+		<record id="act_resource_intervention_id_tree" model="ir.actions.act_window.view">
+			<field name="sequence" eval="10" />
+			<field name="view_mode">tree</field>
+			<field name="view_id" ref="view_tree_resource_intervention_id" />
+			<field name="act_window_id" ref="act_resource_intervention_id" />
+		</record>
+
+		<record model="ir.actions.act_window.view" id="act_resource_intervention_id_form">
+			<field name="sequence" eval="20" />
+			<field name="view_mode">form</field>
+			<field name="view_id" ref="view_form_resource_intervention_id" />
+			<field name="act_window_id" ref="act_resource_intervention_id" />
+		</record>
+
+
+
+		<!-- ========================= -->
+		<!-- type_failure_intervention -->
+		<!-- ========================= -->
+
+
+		<!-- FORM VIEW Type failure -->
+		<record id='view_form_type_failure_intervention_id' model='ir.ui.view'>
+			<field name="name">view_form_type_failure_intervention_id</field>
+			<field name="model">type.failure.intervention</field>
+			<field name="arch" type="xml">
+				<form string="Type of failure intervention" version="8.0">
+					<group colspan="4" col="4">
+						<field name="name" coslpan="4" />
+					</group>
+				</form>
+			</field>
+		</record>
+
+		<!-- TREE VIEW Type failure -->
+		<record id='view_tree_type_failure_intervention_id' model='ir.ui.view'>
+			<field name="name">view_tree_type_failure_intervention_id</field>
+			<field name="model">type.failure.intervention</field>
+			<field name="arch" type="xml">
+				<tree string="Type of failure interventions" version="8.0">
+					<field name="name" />
+				</tree>
+			</field>
+		</record>
+
+		<!-- SEARCH VIEW Type failure -->
+		<record id='view_search_type_failure_intervention_id' model='ir.ui.view'>
+			<field name="name">view_search_type_failure_intervention_id</field>
+			<field name="model">type.failure.intervention</field>
+			<field name="arch" type="xml">
+				<search version="8.0">
+					<field name="name" />
+				</search>
+			</field>
+		</record>
+
+		<!-- ACTION Type failure -->
+		<record id="act_type_failure_intervention_id" model="ir.actions.act_window">
+			<field name="name">Type of failure intervention</field>
+			<field name="res_model">type.failure.intervention</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+			<field name="domain">[]</field>
+			<field name="context">{}</field>
+			<field name="search_view_id" ref="view_search_type_failure_intervention_id" />
+		</record>
+
+		<record id="act_type_failure_intervention_id_tree" model="ir.actions.act_window.view">
+			<field name="sequence" eval="10" />
+			<field name="view_mode">tree</field>
+			<field name="view_id" ref="view_tree_type_failure_intervention_id" />
+			<field name="act_window_id" ref="act_type_failure_intervention_id" />
+		</record>
+
+		<record model="ir.actions.act_window.view" id="act_type_failure_intervention_id_form">
+			<field name="sequence" eval="20" />
+			<field name="view_mode">form</field>
+			<field name="view_id" ref="view_form_type_failure_intervention_id" />
+			<field name="act_window_id" ref="act_type_failure_intervention_id" />
+		</record>
+
+		<!-- ========================= -->
+		<!-- cause_intervention -->
+		<!-- ========================= -->
+
+
+		<!-- FORM VIEW Cause intervention -->
+		<record id='view_form_cause_intervention_id' model='ir.ui.view'>
+			<field name="name">view_form_cause_intervention_id</field>
+			<field name="model">cause.intervention</field>
+			<field name="arch" type="xml">
+				<form string="Cause intervention" version="8.0">
+					<group colspan="4" col="4">
+						<field name="name" coslpan="4" />
+					</group>
+				</form>
+			</field>
+		</record>
+
+		<!-- TREE VIEW Cause intervention -->
+		<record id='view_tree_cause_intervention_id' model='ir.ui.view'>
+			<field name="name">view_tree_cause_intervention_id</field>
+			<field name="model">cause.intervention</field>
+			<field name="arch" type="xml">
+				<tree string="Cause interventions" version="8.0">
+					<field name="name" />
+				</tree>
+			</field>
+		</record>
+
+		<!-- SEARCH VIEW Cause intervention -->
+		<record id='view_search_cause_intervention_id' model='ir.ui.view'>
+			<field name="name">view_search_cause_intervention_id</field>
+			<field name="model">cause.intervention</field>
+			<field name="arch" type="xml">
+				<search version="8.0">
+					<field name="name" />
+				</search>
+			</field>
+		</record>
+
+		<!-- ACTION Cause intervention -->
+		<record id="act_cause_intervention_id" model="ir.actions.act_window">
+			<field name="name">Cause intervention</field>
+			<field name="res_model">cause.intervention</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+			<field name="domain">[]</field>
+			<field name="context">{}</field>
+			<field name="search_view_id" ref="view_search_cause_intervention_id" />
+		</record>
+
+		<record id="act_cause_intervention_id_tree" model="ir.actions.act_window.view">
+			<field name="sequence" eval="10" />
+			<field name="view_mode">tree</field>
+			<field name="view_id" ref="view_tree_cause_intervention_id" />
+			<field name="act_window_id" ref="act_cause_intervention_id" />
+		</record>
+
+		<record model="ir.actions.act_window.view" id="act_cause_intervention_id_form">
+			<field name="sequence" eval="20" />
+			<field name="view_mode">form</field>
+			<field name="view_id" ref="view_form_cause_intervention_id" />
+			<field name="act_window_id" ref="act_cause_intervention_id" />
+		</record>
+
+
+
+
+
+
+
+
+	</data>
+</openerp>

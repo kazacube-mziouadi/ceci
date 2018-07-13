@@ -1,0 +1,357 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+
+		<!-- FORM VIEW CRM reclaim -->
+		<record id='view_form_crm_reclaim_id' model='ir.ui.view'>
+			<field name="name">view_form_crm_reclaim_id</field>
+			<field name="model">crm.reclaim</field>
+			<field name="arch" type="xml">
+				<form string="CRM reclaim" version="8.0">
+					<header>
+						<field name="state_id" widget="statusbar" clickable="True" />
+					</header>
+					<group colspan="4" col="9">
+						<group colspan="8">
+							<group colspan="8" col="6">
+								<group colspan="2" col="2">
+									<field name="sequence" readonly="1" />
+									<field name="responsible_id" />
+									<field name="criticality" />
+									<field name="park_id" domain="customer_id and [('customer_id', '=', customer_id)] or []" attrs="{'readonly': ['|', ('return_picking_id', '!=', False), ('intervention_id', '!=', False)]}" />
+								</group>
+								<group colspan="2" col="2">
+									<field name="customer_id" domain="park_id and [('id', '=', customer_park_id)] or [('is_customer', '=', True)]" />
+									<field name="category_ids" widget="many2many_tags" />
+									<field name="cause_id" />
+									<field name="return_picking_id" readonly="1" />
+								</group>
+								<group colspan="2" col="2">
+									<field name="date_create" />
+									<field name="processing_date" />
+									<field name="end_date" />
+									<field name="intervention_id" readonly="1" />
+									<field name="color" invisible="1" />
+									<field name="customer_park_id" invisible="1" />
+								</group>
+							</group>
+							<notebook colspan="8">
+								<page string="Descriptions">
+									<group colspan="8" col="4" string="Description">
+										<field name="description" colspan="4" nolabel="1" />
+									</group>
+									<group colspan="8" col="4" string="Actions">
+										<field name="action_ids" colspan="4" nolabel="1" />
+									</group>
+								</page>
+								<page string="Communications">
+									<group colspan="8" col="4" string="Contact of the relcaim">
+										<field name="contact_ids" colspan="4" nolabel="1" />
+									</group>
+									<group colspan="8" col="4" string="Mails of the reclaim">
+										<field name="mail_ids" colspan="4" nolabel="1" />
+									</group>
+								</page>
+								<page string="Notes">
+									<group colspan="8" col="4" string="Note of the relcaim">
+										<field name="note_ids" colspan="4" nolabel="1">
+											<tree string="Notes">
+												<field name="user_id" />
+												<field name="type" />
+												<field name="subject" />
+												<field name="date" />
+											</tree>
+											<form string="Notes">
+												<group colspan="4" col="4">
+													<field name="user_id" />
+													<field name="type" />
+													<field name="subject" />
+													<field name="date" />
+													<group colspan="4" col="4">
+														<field name="description" nolabel="1" colspan="4" />
+													</group>
+												</group>
+											</form>
+										</field>
+									</group>
+									<group colspan="8" col="4" string="Document of the reclaim">
+										<field name="document_ids" colspan="4" nolabel="1">
+											<tree string="Documents" editable="bottom">
+												<field name="name" />
+												<field name="user_id" />
+												<field name="type" />
+												<field name="date" />
+												<field name="document" />
+											</tree>
+										</field>
+									</group>
+								</page>
+							</notebook>
+						</group>
+						<group colspan="1" col="1" class="op_shortcuts">
+							<separator colspan="1" string="Actions" name="separator_actions_menu" />
+							<button name="button_return_move" string="Return serial num" type="object" class="oe_inline oe_stat_button" icon="fa-reply" attrs="{'invisible': ['|', ('return_picking_id', '!=', False), ('park_id', '=', False)]}" />
+							<button name="button_create_intervention" string="Create intervention" type="object" class="oe_inline oe_stat_button" icon="fa-wrench" attrs="{'invisible': ['|', ('intervention_id', '!=', False), ('park_id', '=', False)]}" />
+							<button name="action_send_mail" type="object" string="Send Mail" class="oe_inline oe_stat_button" icon="fa-envelope" />
+						</group>
+					</group>
+				</form>
+			</field>
+		</record>
+
+		<!-- TREE VIEW CRM reclaim -->
+		<record id='view_tree_crm_reclaim_id' model='ir.ui.view'>
+			<field name="name">view_tree_crm_reclaim_id</field>
+			<field name="model">crm.reclaim</field>
+			<field name="arch" type="xml">
+				<tree string="CRM reclaims" version="8.0">
+					<field name="responsible_id" />
+					<field name="criticality" />
+					<field name="park_id" />
+					<field name="customer_id" />
+					<field name="category_ids" />
+					<field name="cause_id" />
+					<field name="state_id" />
+				</tree>
+			</field>
+		</record>
+
+		<!-- SEARCH VIEW CRM reclaim -->
+		<record id='view_search_crm_reclaim_id' model='ir.ui.view'>
+			<field name="name">view_search_crm_reclaim_id</field>
+			<field name="model">crm.reclaim</field>
+			<field name="arch" type="xml">
+				<search version="8.0">
+					<field name="responsible_id" />
+					<field name="criticality" />
+					<field name="park_id" />
+					<field name="customer_id" />
+					<field name="category_ids" />
+					<field name="cause_id" />
+				</search>
+			</field>
+		</record>
+
+
+		<!-- KANBAN VIEW CRM -->
+		<record model="ir.ui.view" id="view_kanban_crm_reclaim">
+			<field name="name">CRM reclaim</field>
+			<field name="model">crm.reclaim</field>
+			<field name="sequence">10</field>
+			<field name="arch" type="xml">
+				<kanban default_group_by="state_id">
+					<field name="state_id" />
+					<field name="responsible_id" />
+					<field name="criticality" />
+					<field name="park_id" />
+					<field name="return_picking_id" />
+					<field name="customer_id" />
+					<field name="category_ids" />
+					<field name="cause_id" />
+					<field name="intervention_id" />
+					<field name="date_create" />
+					<field name="processing_date" />
+					<field name="end_date" />
+					<field name="color" />
+					<field name="sequence" />
+					<field name="nb_actions" />
+					<field name="next_action_date" />
+					<templates>
+						<t t-name="kanban-box">
+							<div t-attf-class="oe_kanban_color_{{kanban_getcolor(record.color.raw_value)}} oe_kanban_global_click" t-attf-style="#{record.criticality.raw_value == 'critical' ? 'border-color:red;border-style: solid;border-width: 1px;' : ''}">
+								<div class="o_dropdown_kanban dropdown">
+									<a class="dropdown-toggle btn" data-toggle="dropdown" href="#">
+										<span class="fa fa-bars fa-lg" />
+									</a>
+									<ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+										<t t-if="widget.editable">
+											<li>
+												<a type="edit">Edit</a>
+											</li>
+										</t>
+										<t t-if="widget.deletable">
+											<li>
+												<a type="delete">Delete</a>
+											</li>
+										</t>
+										<li>
+											<a name="action_send_mail" type="object">Send Email</a>
+										</li>
+									</ul>
+								</div>
+								<div class="oe_kanban_content">
+									<div>
+                                        <b><field name="sequence"/></b> ,
+                                        <span>
+                                            <t t-if="record.trunc_description.raw_value" >
+                                                <field name="trunc_description"/>
+                                            </t>
+                                        </span>
+                                    </div>
+									<div>
+										<b>Customer : </b>
+										<t t-if="record.customer_id.raw_value">
+											<field name="customer_id" />
+										</t>
+									</div>
+									<div>
+										<b>Responsible : </b>
+										<t t-if="record.responsible_id.raw_value">
+											<field name="responsible_id" />
+										</t>
+									</div>
+									<div>
+										<b>Creation : </b>
+										<t t-if="record.date_create.raw_value">
+											<field name="date_create" />
+										</t>
+									</div>
+									<div>
+										<b>Limit : </b>
+										<t t-if="record.processing_date.raw_value">
+											<field name="processing_date" />
+										</t>
+									</div>
+									<div t-attf-style="#{record.next_action_date.raw_value and record.next_action_date.raw_value lt (new Date())? 'color:red;' : ''}">
+										<b>Next action date : </b>
+										<t t-if="record.next_action_date.raw_value">
+											<field name="next_action_date" />
+										</t>
+									</div>
+									<div>
+										<b>Categories : </b>
+										<t t-if="record.category_ids.raw_value">
+											<field name="category_ids" />
+										</t>
+									</div>
+									<div class="oe_kanban_footer">
+										<span class='oe_kanban_mail_new' title='Important Messages' t-attf-style="background-color:#8A89BA;padding:3px;color:white;border-style:solid;border-color:grey;border-width:1px;float:left;">
+											<i class='fa fa-comments' />
+											<b>
+												<t t-raw="record.nb_actions.raw_value" />
+												Actions
+											</b>
+										</span>
+									</div>
+								</div>
+								<div class="oe_clear"></div>
+							</div>
+						</t>
+					</templates>
+				</kanban>
+			</field>
+		</record>
+
+
+		<!-- ACTION CRM reclaim -->
+		<record id="act_crm_reclaim_id" model="ir.actions.act_window">
+			<field name="name">CRM reclaim</field>
+			<field name="res_model">crm.reclaim</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form,kanban</field>
+			<field name="domain">[]</field>
+			<field name="context">{}</field>
+			<field name="search_view_id" ref="view_search_crm_reclaim_id" />
+		</record>
+
+		<record id="act_crm_reclaim_id_tree" model="ir.actions.act_window.view">
+			<field name="sequence" eval="10" />
+			<field name="view_mode">tree</field>
+			<field name="view_id" ref="view_tree_crm_reclaim_id" />
+			<field name="act_window_id" ref="act_crm_reclaim_id" />
+		</record>
+
+		<record model="ir.actions.act_window.view" id="act_crm_reclaim_id_form">
+			<field name="sequence" eval="20" />
+			<field name="view_mode">form</field>
+			<field name="view_id" ref="view_form_crm_reclaim_id" />
+			<field name="act_window_id" ref="act_crm_reclaim_id" />
+		</record>
+
+		<record id="act_crm_reclaim_category_id" model="ir.actions.act_window">
+			<field name="name">CRM reclaim category</field>
+			<field name="res_model">crm.reclaim.category</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+			<field name="domain">[]</field>
+			<field name="context">{}</field>
+		</record>
+
+		<menuitem name="CRM reclaim" action="act_crm_reclaim_id" id="menu_crm_reclaim_id" parent="submenu_sav_id" sequence="50" groups="group_menu_crm_reclaim_user1" />
+		<menuitem name="CRM reclaim category" action="act_crm_reclaim_category_id" id="menu_crm_reclaim_category_id" parent="submenu_sav_configuration_id" sequence="50" groups="group_menu_crm_reclaim_config1" />
+
+
+
+		<!-- ========= -->
+		<!-- CRM STATE -->
+		<!-- ========= -->
+
+		<!-- FORM VIEW CRM state -->
+		<record id='view_form_state_crm_reclaim' model='ir.ui.view'>
+			<field name="name">view_form_state_crm_reclaim</field>
+			<field name="model">crm.reclaim.state</field>
+			<field name="arch" type="xml">
+				<form string="CRM reclaim state" version="8.0">
+					<group colspan="4" col="4" string="Details">
+						<field name="name" />
+						<field name="sequence" />
+					</group>
+					<group colspan="4" col="4" string="Parameters">
+						<group colspan="2" col="2">
+							<field name="fold" />
+							<field name="is_sale_creation_state" />
+						</group>
+						<group colspan="2" col="2">
+							<field name="is_new_state" />
+							<field name="is_won_state" />
+							<field name="is_lost_state" />
+							<field name="is_end" />
+						</group>
+					</group>
+					<group colspan="4" col="4" string="Description">
+						<field name="description" colspan="4" nolabel="1" />
+					</group>
+				</form>
+			</field>
+		</record>
+
+		<!-- TREE VIEW CRM state -->
+		<record id='view_tree_state_crm_reclaim' model='ir.ui.view'>
+			<field name="name">view_tree_state_crm_reclaim</field>
+			<field name="model">crm.reclaim.state</field>
+			<field name="arch" type="xml">
+				<tree string="CRM reclaim state" version="8.0">
+					<field name="sequence" />
+					<field name="name" />
+					<field name="fold" />
+				</tree>
+			</field>
+		</record>
+
+		<!-- SEARCH VIEW CRM state -->
+		<record id='view_search_state_crm_reclaim' model='ir.ui.view'>
+			<field name="name">view_search_state_crm_reclaim</field>
+			<field name="model">crm.reclaim.state</field>
+			<field name="arch" type="xml">
+				<search version="8.0">
+					<field name="name" />
+				</search>
+			</field>
+		</record>
+
+		<!-- ACTION CRM state -->
+		<record id="act_state_crm_reclaim" model="ir.actions.act_window">
+			<field name="name">CRM reclaim states</field>
+			<field name="res_model">crm.reclaim.state</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+			<field name="domain">[]</field>
+			<field name="context">{}</field>
+			<field name="search_view_id" ref="view_search_state_crm_reclaim" />
+		</record>
+
+		<menuitem name="States" action="act_state_crm_reclaim" id="menu_state_crm_reclaim" parent="submenu_sav_configuration_id" groups="group_menu_crm_reclaim_config1" />
+
+
+	</data>
+</openerp>

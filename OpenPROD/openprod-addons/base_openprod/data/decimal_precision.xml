@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<openerp>
+    <data noupdate="1">
+<!--         ############################################################################## -->
+<!--         # -->
+<!--         #    OpenERP, Open Source Management Solution -->
+<!--         #    Copyright (C) 2014 Objectif PI ([http://www.objectif-pi.com/])  -->
+<!--         #       Damien Crier [damien.crier@objectif-pi.com] -->
+<!--         # -->
+<!--         #    This program is free software: you can redistribute it and/or modify -->
+<!--         #    it under the terms of the GNU General Public License as published by -->
+<!--         #    the Free Software Foundation, either version 3 of the License, or -->
+<!--         #    (at your option) any later version. -->
+<!--         # -->
+<!--         #    This program is distributed in the hope that it will be useful, -->
+<!--         #    but WITHOUT ANY WARRANTY; without even the implied warranty of -->
+<!--         #    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the -->
+<!--         #    GNU General Public License for more details. -->
+<!--         # -->
+<!--         #    You should have received a copy of the GNU General Public License -->
+<!--         #    along with this program.  If not, see [http://www.gnu.org/licenses/]. -->
+<!--         # -->
+<!--         ############################################################################## -->
+        
+        <record model="decimal.precision" id="time_widget_precision">
+            <field name="digits" eval="10"/>
+            <field name="name">Time</field>
+        </record>
+        
+        <record model="decimal.precision" id="product_price_widget_precision">
+            <field name="digits" eval="2"/>
+            <field name="name">Product price</field>
+        </record>
+        
+        <record model="decimal.precision" id="hourly_rate_widget_precision">
+            <field name="digits" eval="2"/>
+            <field name="name">Hourly rate</field>
+        </record>
+    </data>
+</openerp>

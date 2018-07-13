@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+	
+		<record model="ir.ui.view" id="view_form_clock_in_out">
+			<field name="name">view_form_clock_in_out</field>
+			<field name="model">clock.in.out</field>
+			<field name="type">form</field>
+			<field name="arch" type="xml">
+				<form string="Clock in and/or out">
+					<group colspan="4" col="4" string="Select the date">
+						<field name="date_in"/>
+						<field name="date_out"/>
+					</group>
+					<footer>
+						<button name="create_resource_timetracking" string="Clock in/out" type="object" class="oe_highlight" />
+						or
+						<button string="Cancel" class="oe_link" special="cancel" />
+					</footer>
+				</form>
+			</field>
+		</record>
+
+		<record model="ir.actions.act_window" id="action_clock_in_out">
+			<field name="name">Clock in/out</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="res_model">clock.in.out</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">form</field>
+			<field name="target">new</field>
+		</record>
+
+	</data>
+</openerp>

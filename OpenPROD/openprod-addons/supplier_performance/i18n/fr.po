@@ -1,0 +1,257 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* supplier_performance
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 9.0c\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-08-29 08:08+0000\n"
+"PO-Revision-Date: 2016-08-29 08:08+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: supplier_performance
+#: model:ir.model.fields,help:supplier_performance.field_supplier_performance_late_day_avg_qty
+msgid "(Sum of late days) / (Late purchase line number)"
+msgstr "(Somme des jours de retard) / (Nombre de ligne d'achat en retard)"
+
+#. module: supplier_performance
+#: model:ir.ui.view,arch_db:supplier_performance.view_form_supplier_performance
+msgid "Analysis"
+msgstr "Analyse"
+
+#. module: supplier_performance
+#: model:ir.ui.view,arch_db:supplier_performance.view_form_supplier_performance
+msgid "Authorized groups"
+msgstr "Groupes autorisés"
+
+#. module: supplier_performance
+#: model:ir.ui.view,arch_db:supplier_performance.view_form_supplier_performance
+msgid "Authorized users"
+msgstr "Utilisateurs autorisés"
+
+#. module: supplier_performance
+#: model:ir.model.fields,field_description:supplier_performance.field_supplier_performance_comment_ids
+#: model:ir.ui.view,arch_db:supplier_performance.view_form_supplier_performance
+msgid "Comments"
+msgstr "Commentaires"
+
+#. module: supplier_performance
+#: model:ir.model,name:supplier_performance.model_supplier_perf_comment_category
+msgid "Comments category for supplier performance"
+msgstr "Catégorie de commentaires pour les performances fournisseurs"
+
+#. module: supplier_performance
+#: model:ir.model,name:supplier_performance.model_supplier_performance_comment
+msgid "Comments for supplier performance"
+msgstr "Commentaires pour les performances fournisseurs"
+
+#. module: supplier_performance
+#: model:ir.model.fields,field_description:supplier_performance.field_supplier_perf_comment_category_create_uid
+#: model:ir.model.fields,field_description:supplier_performance.field_supplier_performance_category_create_uid
+#: model:ir.model.fields,field_description:supplier_performance.field_supplier_performance_create_uid
+msgid "Created by"
+msgstr "Créé par"
+
+#. module: supplier_performance
+#: model:ir.model.fields,field_description:supplier_performance.field_supplier_perf_comment_category_create_date
+#: model:ir.model.fields,field_description:supplier_performance.field_supplier_performance_category_create_date
+#: model:ir.model.fields,field_description:supplier_performance.field_supplier_performance_create_date
+msgid "Created on"
+msgstr "Créé le"
+
+#. module: supplier_performance
+#: model:ir.ui.view,arch_db:supplier_performance.view_form_supplier_performance
+msgid "Delay"
+msgstr "Délai"
+
+#. module: supplier_performance
+#: model:ir.ui.view,arch_db:supplier_performance.view_form_supplier_performance
+msgid "Description"
+msgstr "Description"
+
+#. module: supplier_performance
+#: model:ir.ui.view,arch_db:supplier_performance.view_form_supplier_performance
+msgid "Details"
+msgstr "Détails"
+
+#. module: supplier_performance
+#: model:ir.model.fields,field_description:supplier_performance.field_supplier_perf_comment_category_display_name
+#: model:ir.model.fields,field_description:supplier_performance.field_supplier_performance_category_display_name
+#: model:ir.model.fields,field_description:supplier_performance.field_supplier_performance_display_name
+msgid "Display Name"
+msgstr "Afficher nom"
+
+#. module: supplier_performance
+#: model:ir.model.fields,field_description:supplier_performance.field_supplier_performance_date_to
+msgid "End date of the period"
+msgstr "Date de fin de la période"
+
+#. module: supplier_performance
+#: model:ir.ui.view,arch_db:supplier_performance.view_search_supplier_performance
+msgid "Group By..."
+msgstr "Grouper par..."
+
+#. module: supplier_performance
+#: model:ir.model.fields,field_description:supplier_performance.field_supplier_perf_comment_category_id
+#: model:ir.model.fields,field_description:supplier_performance.field_supplier_performance_category_id
+#: model:ir.model.fields,field_description:supplier_performance.field_supplier_performance_id
+msgid "ID"
+msgstr "ID"
+
+#. module: supplier_performance
+#: model:ir.ui.view,arch_db:supplier_performance.view_form_supplier_performance
+msgid "Indicators"
+msgstr "Indicateurs"
+
+#. module: supplier_performance
+#: model:ir.model.fields,field_description:supplier_performance.field_supplier_perf_comment_category___last_update
+#: model:ir.model.fields,field_description:supplier_performance.field_supplier_performance___last_update
+#: model:ir.model.fields,field_description:supplier_performance.field_supplier_performance_category___last_update
+msgid "Last Modified on"
+msgstr "Dernière modification le"
+
+#. module: supplier_performance
+#: model:ir.model.fields,field_description:supplier_performance.field_supplier_perf_comment_category_write_uid
+#: model:ir.model.fields,field_description:supplier_performance.field_supplier_performance_category_write_uid
+#: model:ir.model.fields,field_description:supplier_performance.field_supplier_performance_write_uid
+msgid "Last Updated by"
+msgstr "Dernière mise à jour par"
+
+#. module: supplier_performance
+#: model:ir.model.fields,field_description:supplier_performance.field_supplier_perf_comment_category_write_date
+#: model:ir.model.fields,field_description:supplier_performance.field_supplier_performance_category_write_date
+#: model:ir.model.fields,field_description:supplier_performance.field_supplier_performance_write_date
+msgid "Last Updated on"
+msgstr "Dernière mise à jour le"
+
+#. module: supplier_performance
+#: model:ir.model.fields,field_description:supplier_performance.field_supplier_performance_late_day_avg_qty
+msgid "Late day average number"
+msgstr "Nombre de jour moyen de retard"
+
+#. module: supplier_performance
+#: model:ir.ui.view,arch_db:supplier_performance.view_form_supplier_performance
+msgid "Late purchase lines"
+msgstr "Lignes d'achat en retard"
+
+#. module: supplier_performance
+#: model:ir.model.fields,field_description:supplier_performance.field_supplier_perf_comment_category_name
+#: model:ir.model.fields,field_description:supplier_performance.field_supplier_performance_category_name
+msgid "Name"
+msgstr "Nom"
+
+#. module: supplier_performance
+#: model:ir.ui.view,arch_db:supplier_performance.view_form_supplier_performance
+msgid "Non conformity"
+msgstr "Non-conformité"
+
+#. module: supplier_performance
+#: model:ir.model.fields,field_description:supplier_performance.field_supplier_performance_non_conformity_qty
+msgid "Non conformity number"
+msgstr "Nombre de non-conformités"
+
+#. module: supplier_performance
+#: model:ir.model,name:supplier_performance.model_note_openprod
+msgid "Note Openprod"
+msgstr "Note Openprod"
+
+#. module: supplier_performance
+#: model:ir.model.fields,field_description:supplier_performance.field_supplier_performance_purchase_line_qty
+msgid "Purchase line number generated"
+msgstr "Nombre de lignes d'achat générées"
+
+#. module: supplier_performance
+#: model:ir.ui.view,arch_db:supplier_performance.view_form_supplier_performance
+msgid "Purchase lines"
+msgstr "Lignes d'achat"
+
+#. module: supplier_performance
+#: model:ir.model.fields,field_description:supplier_performance.field_supplier_performance_purchased_product_qty
+msgid "Purchased products number"
+msgstr "Nombre de produits achetés"
+
+#. module: supplier_performance
+#: model:ir.ui.view,arch_db:supplier_performance.view_form_supplier_performance
+msgid "Quality"
+msgstr "Qualité"
+
+#. module: supplier_performance
+#: model:ir.model.fields,field_description:supplier_performance.field_supplier_performance_late_line_qty
+msgid "Receipt late line number"
+msgstr "Nombre de ligne de réception en retard"
+
+#. module: supplier_performance
+#: model:ir.model.fields,field_description:supplier_performance.field_supplier_performance_service_rate
+msgid "Service rate"
+msgstr "Taux de service"
+
+#. module: supplier_performance
+#: model:ir.model.fields,help:supplier_performance.field_supplier_performance_service_rate
+msgid "Service rate = ((1 - Receipt late line number) / Purchase line number generated ) * 100"
+msgstr "Taux de service = ((1 - Nombre de ligne de réception en retard) / Nombre de lignes d'achat générées ) * 100"
+
+#. module: supplier_performance
+#: model:ir.model.fields,field_description:supplier_performance.field_supplier_performance_date_from
+msgid "Start date of the period"
+msgstr "Date de début de la période"
+
+#. module: supplier_performance
+#: model:ir.model.fields,field_description:supplier_performance.field_supplier_performance_supplier_id
+msgid "Supplier"
+msgstr "Fournisseur"
+
+#. module: supplier_performance
+#: model:ir.model.fields,field_description:supplier_performance.field_supplier_performance_cat_supplier_id
+msgid "Supplier category"
+msgstr "Catégorie fournisseur"
+
+#. module: supplier_performance
+#: model:ir.model,name:supplier_performance.model_supplier_performance_category
+msgid "Supplier category for supplier performance"
+msgstr "Catégorie fournisseur pour performance fournisseur"
+
+#. module: supplier_performance
+#: model:ir.model.fields,field_description:supplier_performance.field_supplier_performance_supplier_grade
+msgid "Supplier grade"
+msgstr "Note fournisseur"
+
+#. module: supplier_performance
+#: model:ir.ui.menu,name:supplier_performance.menu_supplier_performance
+msgid "Supplier perfomance"
+msgstr "Performance fournisseur"
+
+#. module: supplier_performance
+#: model:ir.actions.act_window,name:supplier_performance.act_supplier_performance
+#: model:ir.model.fields,field_description:supplier_performance.field_note_openprod_supplier_performance_id
+#: model:ir.ui.view,arch_db:supplier_performance.view_tree_supplier_performance
+msgid "Supplier performance"
+msgstr "Performance fournisseur"
+
+#. module: supplier_performance
+#: model:ir.model,name:supplier_performance.model_supplier_performance
+#: model:ir.ui.view,arch_db:supplier_performance.view_form_supplier_performance
+msgid "Supplier performance analysis"
+msgstr "Analyse performance fournisseur"
+
+#. module: supplier_performance
+#: model:ir.model.fields,field_description:supplier_performance.field_supplier_performance_year_revenue
+msgid "Supplier revenue on the year"
+msgstr "CA fournisseur sur l'année"
+
+#. module: supplier_performance
+#: model:ir.ui.view,arch_db:supplier_performance.view_form_supplier_performance
+msgid "Volumetry"
+msgstr "Volumétrie"
+
+#. module: supplier_performance
+#: model:ir.model.fields,field_description:supplier_performance.field_supplier_performance_year
+#: model:ir.ui.view,arch_db:supplier_performance.view_search_supplier_performance
+msgid "Year"
+msgstr "Année"
+

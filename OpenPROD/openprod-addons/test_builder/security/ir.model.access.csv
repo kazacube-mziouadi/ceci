@@ -1,0 +1,15 @@
+"id","name","model_id/id","group_id/id","perm_read","perm_write","perm_create","perm_unlink"
+access_rule_type,access_rule_type,model_rule_type,,1,0,0,0
+access_argument,access_argument,model_argument,,1,0,0,0
+access_scenario_line,access_scenario_line,model_scenario_line,,1,0,0,0
+access_scenario,access_scenario,model_scenario,,1,0,0,0
+access_verb,access_verb,model_verb,,1,0,0,0
+access_batch,access_batch,model_batch,,1,0,0,0
+access_test_variable,access_test_variable,model_test_variable,,1,0,0,0
+access_trade,access_trade,model_trade,,1,0,0,0
+access_domain_name,access_domain_name,model_domain_name,,1,0,0,0
+access_run,access_run,model_run,,1,0,0,0
+access_scenario_result,access_scenario_result,model_scenario_result,,1,0,0,0
+access_scenario_line_result,access_scenario_line_result,model_scenario_line_result,,1,0,0,0
+access_target,access_target,model_target,,1,0,0,0
+access_target_db,access_target_db,model_target_db,,1,0,0,0

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+		<record model="ir.ui.view" id="view_form_wiz_add_certificate_application">
+			<field name="name">view_form_wiz_add_certificate_application</field>
+			<field name="model">wiz.add.certificate.application</field>
+			<field name="type">form</field>
+			<field name="arch" type="xml">
+				<form string="Add certificate application">
+					<group colspan="4" col="6">
+						<field name="certicate_template_id" invisible="1" />
+						<field name="type" invisible="1" />
+						<field name="list_ids_text" invisible="1" />
+	                    <field name="resource_ids" attrs="{'invisible': [('type', '!=', 'resource')]}" domain="[('domain_certificate_management', 'not in', list_ids_text)]" colspan="4" nolabel="1" />
+	                    <field name="customer_ids" attrs="{'invisible': [('type', '!=', 'customer')]}" domain="[('domain_certificate_management', 'not in', list_ids_text)]" colspan="4" nolabel="1"  />
+	                    <field name="supplier_ids" attrs="{'invisible': [('type', '!=', 'supplier')]}" domain="[('domain_certificate_management', 'not in', list_ids_text)]" colspan="4" nolabel="1"  />
+	                    <field name="ref_customer_ids" attrs="{'invisible': [('type', '!=', 'ref_customer')]}" domain="[('domain_certificate_management', 'not in', list_ids_text)]" colspan="4" nolabel="1"  />
+	                    <field name="ref_supplier_ids" attrs="{'invisible': [('type', '!=', 'ref_supplier')]}" domain="[('domain_certificate_management', 'not in', list_ids_text)]" colspan="4" nolabel="1"  />
+                    </group>
+                    <footer>
+                        <button name="button_validate" string="Validate" type="object" class="oe_highlight" />
+                        or
+                        <button string="Cancel" class="oe_link" special="cancel" />
+                    </footer>
+				</form>
+			</field>
+		</record>
+
+		<record model="ir.actions.act_window" id="action_wiz_add_certificate_application">
+			<field name="name">Add certificate application</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="res_model">wiz.add.certificate.application</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">form</field>
+			<field name="target">new</field>
+		</record>
+		
+		
+		
+	</data>
+</openerp>

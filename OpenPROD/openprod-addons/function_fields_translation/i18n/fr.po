@@ -1,0 +1,324 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-09-25 08:51+0000\n"
+"PO-Revision-Date: 2015-09-25 08:51+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: mrp
+#: field:purchase.subcontracting.line.wiz,virtual_stock:0
+msgid "Virtual Stock"
+msgstr "Stock virtuel"
+
+#. module: mrp
+#: field:purchase.subcontracting.line.wiz,uom_id:0
+msgid "UoM"
+msgstr "UdM"
+
+#. module: mrp
+#: field:wo.declaration.consumption.line,label_qty:0
+msgid "Label Quantity"
+msgstr "Quantité d'étiquette"
+
+#. module: mrp
+#: field:wo.change.mo.qty,old_qty:0
+msgid "Old Quantity"
+msgstr "Ancienne Quantité"
+
+#. module: mrp
+#: field:purchase.subcontracting.fp,final_product_id:0
+msgid "Final Product"
+msgstr "Produit final"
+
+#. module: mrp
+#: field:purchase.subcontracting.fp,uom_id:0
+msgid "UoM"
+msgstr "UdM"
+
+#. module: mrp
+#: field:purchase.subcontracting.services.wiz,uom_id:0
+msgid "UoM"
+msgstr "UdM"
+
+#. module: mrp
+#: field:purchase.subcontracting.services.wiz,price_total:0
+msgid "Price Total"
+msgstr "Prix total"
+
+#. module: mrp
+#: field:purchase.subcontracting.rm,uom_id:0
+msgid "UoM"
+msgstr "UdM"
+
+#. module: mrp
+#: field:purchase.subcontracting.rm,final_product_id:0
+msgid "Final Product"
+msgstr "Produit final"
+
+#. module: mrp
+#: field:wo.declaration.main,product_id:0
+msgid "Product"
+msgstr "Produit"
+
+#. module: mrp
+#: field:wo.declaration.main,uom_id:0
+msgid "UoM"
+msgstr "UdM"
+
+#. module: mrp
+#: field:mrp.manufacturingorder,uom_id:0
+msgid "UoM"
+msgstr "UdM"
+
+#. module: mrp
+#: field:mrp.manufacturingorder,planned_start_date:0
+msgid "Planned Start Date"
+msgstr "Date de début planifiée"
+
+#. module: mrp
+#: field:mrp.manufacturingorder,planned_end_date:0
+msgid "Planned End Date"
+msgstr "Date de fin planifiée"
+
+#. module: mrp
+#: field:mrp.workorder,real_start_date:0
+msgid "Real Start Date"
+msgstr "Date de début réelle"
+
+#. module: mrp
+#: field:mrp.workorder,real_end_date:0
+msgid "Real End Date"
+msgstr "Date de fin réelle"
+
+#. module: mrp
+#: field:mrp.workorder,availability:0
+msgid "Availability"
+msgstr "Disponibilité"
+
+#. module: mrp
+#: field:mrp.workorder,advancement:0
+msgid "Advancement"
+msgstr "Avancement"
+
+#. module: mrp
+#: field:mrp.workorder,total_time_real:0
+msgid "Total Time Real"
+msgstr "Temps total réel"
+
+#. module: mrp
+#: field:mrp.workorder,total_time_theo:0
+msgid "Total Time Theo"
+msgstr "Temps total theo"
+
+#. module: mrp
+#: field:mrp.mo.split,quantity:0
+msgid "Quantity"
+msgstr "Quantité"
+
+#. module: mrp
+#: field:mrp.mo.split,remainder:0
+msgid "Remainder"
+msgstr "Restant"
+
+#. module: mrp
+#: field:stock.move,available_date:0
+msgid "Available date"
+msgstr "Date de disponibilité"
+
+#. module: mrp
+#: field:mrp.wo.resource,total_time_real:0
+msgid "Total Time Real"
+msgstr "Temps total réel"
+
+#. module: mrp
+#: field:mrp.wo.resource,total_time_theo:0
+msgid "Total Time Theo"
+msgstr "Temps total theo"
+
+#. module: mrp
+#: field:mrp.wo.consumed.service,price_total:0
+msgid "Price Total"
+msgstr "Prix total"
+
+#. module: mrp
+#: field:mrp.workorder,availability_date_rm:0
+msgid "Availability Date Raw Material"
+msgstr "Date de validité de la matière première"
+
+#. module: mrp
+#: field:mrp.workorder,availability_delay_rm:0
+msgid "Availability delay Raw Material"
+msgstr "Date de délai de la matière première"
+
+#. module: mrp
+#: field:mrp.workorder,theo_rm_cost:0
+msgid "Material first cost"
+msgstr "Coût de la matière première"
+
+#. module: mrp
+#: field:mrp.workorder,theo_produce_cost:0
+msgid "Produce cost"
+msgstr "Coût de production"
+
+#. module: mrp
+#: field:mrp.workorder,theo_subcontracting_cost:0
+msgid "Subcontracting cost"
+msgstr "Coût de sous-traitance"
+
+#. module: mrp
+#: field:mrp.workorder,theo_total_cost:0
+msgid "Total cost"
+msgstr "Coût total"
+
+#. module: mrp
+#: field:mrp.workorder,real_total_cost:0
+msgid "Total cost"
+msgstr "Coût total"
+
+#. module: mrp
+#: field:mrp.workorder,real_rm_cost:0
+msgid "Material first cost"
+msgstr "Coût de la matière première"
+
+#. module: mrp
+#: field:mrp.workorder,real_produce_cost:0
+msgid "Produce cost"
+msgstr "Coût de production"
+
+#. module: mrp
+#: field:mrp.workorder,real_subcontracting_cost:0
+msgid "Subcontracting cost"
+msgstr "Coût de sous-traitance"
+
+#. module: mrp
+#: field:mrp.workorder,real_total_cost:0
+msgid "Total cost"
+msgstr "Coût total"
+
+#. module: mrp
+#: field:mrp.wo.split,quantity:0
+msgid "Quantity"
+msgstr "Quantité"
+
+#. module: mrp
+#: field:mrp.wo.split,remainder:0
+msgid "Remainder Quantity"
+msgstr "Quantité restante"
+
+#. module: mrp
+#: field:mrp.routing.line,first_category_id:0
+msgid "First category resource"
+msgstr "Première catégorie de ressource"
+
+#. module: mrp
+#: field:mrp.routing.line,first_resource_id:0
+msgid "First resource"
+msgstr "Première ressource"
+
+#. module: mrp
+#: field:mrp.routing.line,preparation_time:0
+msgid "Preparation time"
+msgstr "Temps de préparation"
+
+#: field:mrp.routing.line,production_time:0
+msgid "Production time"
+msgstr "Temps de production"
+
+#: field:mrp.routing.line,cleaning_time:0
+msgid "Cleaning time"
+msgstr "Temps de nettoyage"
+
+#: field:mrp.routing.line,total_time:0
+msgid "Total time"
+msgstr "Temps total"
+
+#: field:mrp.routing.line,total_time_unit:0
+msgid "Total time unit"
+msgstr "Temps total unitaire"
+
+#. module: mrp
+#: field:mrp.rl.consumed.service,price_total:0
+msgid "Price Total"
+msgstr "Prix total"
+
+#. module: mrp
+#: field:mrp.routing,efficiency_global:0
+msgid "Global efficiency"
+msgstr "Efficience globale"
+
+#. module: mrp
+#: field:mrp.bom,production_cost_price:0
+msgid "Cost price"
+msgstr "Prix de revient"
+
+#. module: mrp
+#: field:mrp.wo.consumed.service,price_total_component:0
+msgid "Price Total"
+msgstr "Prix total"
+
+#. module: sale_purchase
+#: field:display.reservation,virtual_stock:0
+msgid "Virtual stock"
+msgstr "Stock virtuel"
+
+#. module: mrp
+#: field:wo.time.recording,start_date:0
+msgid "Start date"
+msgstr "Date de début"
+
+#. module: base_openprod
+#: field:res.currency,conversion_help:0
+msgid "Conversion help"
+msgstr "Aide facteur conversion"
+
+#. module: affair
+#: field:affair,wo_cost:0
+msgid "WO costs"
+msgstr "Coûts OT"
+
+#. module: affair
+#: field:affair,sol_price:0
+msgid "Sale price"
+msgstr "Somme des ventes"
+
+#. module: affair
+#: field:affair,profit_margin:0
+msgid "Profit margin"
+msgstr "Marge réelle"
+
+#. module: sale
+#: field:sale.order.line,engagement_delay:0
+msgid "Engagement delay"
+msgstr "Délai d'engagement"
+
+#. module: account
+#: model:ir.model.fields,field_description:account.field_account_bank_statement_currency_id
+#: model:ir.model.fields,field_description:account.field_account_bank_statement_line_journal_currency_id
+#: model:ir.model.fields,field_description:account.field_account_move_currency_id
+#: model:ir.model.fields,field_description:account.field_res_partner_currency_id
+msgid "Currency"
+msgstr "Devise"
+
+#. module: base
+#: model:res.groups,name:base.group_manufacturing_user
+msgid "User"
+msgstr "Utilisateur"
+
+#. module: base
+#: model:res.groups,name:base.group_manufacturing_manager
+msgid "Manager"
+msgstr "Responsable"
+
+#. module: base
+#: model:res.groups,name:base.group_manufacturing_admin
+msgid "Administrator"
+msgstr "Administrateur"

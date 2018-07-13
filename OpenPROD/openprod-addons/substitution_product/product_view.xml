@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+
+		<!-- FORM VIEW Product -->
+		<record id='view_form_product' model='ir.ui.view'>
+			<field name="name">product</field>
+			<field name="model">product.product</field>
+			<field name="priority" eval="1300" />
+			<field name="inherit_id" ref="product.view_form_product" />
+			<field name="arch" type="xml">
+				<xpath expr="//page[@name='product_administration_page']" position="before">
+					<page string="Substition product" >
+						<group coslpan="4" col="4">
+						    <separator colspan="4" string="Substitution product already used for the product"/>
+						    <field name="substitution_product_used_ids" coslpan="4" nolabel="1" />
+							<separator colspan="4" string="Product list in which it is used as a substitute"/>
+                            <field name="substituent_ids" coslpan="4" nolabel="1" />
+						</group>
+					</page>
+				</xpath>
+			</field>
+		</record>
+		
+		
+	</data>
+</openerp>

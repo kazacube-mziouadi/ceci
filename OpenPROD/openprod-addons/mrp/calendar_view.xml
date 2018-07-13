@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+		<!-- ====================== -->
+		<!-- 	Calendar Loadings   -->
+		<!-- ====================== -->
+
+		<!-- TREE VIEW Calendar Loading -->
+		<record id='view_tree_calendar_loading_id_mrp' model='ir.ui.view'>
+			<field name="name">view_tree_calendar_loading_id</field>
+			<field name="model">calendar.loading</field>
+			<field name="inherit_id" ref="calendar.view_tree_calendar_loading_id"/>
+            <field name="priority" eval="1400" />
+			<field name="arch" type="xml">
+				<xpath expr="//field[@name='calendar_line_id']" position="after">
+					<field name="resource_id" />
+					<field name="area_id" />
+					<field name="mo_id" />
+					<field name="wo_id" />
+					<field name="is_at_earlier" />
+				</xpath>
+			</field>
+		</record>
+		
+		<!-- SEARCH VIEW Calendar Loading -->
+		<record id='view_search_calendar_loading_id_mrp' model='ir.ui.view'>
+			<field name="name">view_search_calendar_loading_id</field>
+			<field name="model">calendar.loading</field>
+			<field name="inherit_id" ref="calendar.view_search_calendar_loading_id"/>
+            <field name="priority" eval="1400" />
+			<field name="arch" type="xml">
+				<xpath expr="//field[@name='calendar_line_id']" position="after">
+					<field name="resource_id" />
+					<field name="area_id" />
+					<field name="mo_id" />
+					<field name="wo_id" />
+					<field name="is_at_earlier" />
+				</xpath>
+			</field>
+		</record>
+		
+		
+		
+		<!-- ACTION SCalendar Loading analysis -->	
+		
+		<record id="view_mrp_calendar_loading_pivot" model="ir.ui.view">
+			<field name="name">calendar.loading.pivot</field>
+			<field name="model">calendar.loading</field>
+			<field name="arch" type="xml">
+				<pivot string="Calendar Loading Analysis">
+					<field name="area_id" type="row"/>
+					<field name="resource_id" type="row"/>
+					<field name="year" type="col"/>
+					<field name="month" type="col"/>     
+					<field name="week_number" type="col"/>            
+					<field name="loading" type="measure"/>
+				</pivot>
+			</field>
+		</record>
+		
+		<record id="view_graph_mrp_calendar_loading" model="ir.ui.view">
+			<field name="name">graph.calendar.loading</field>
+			<field name="model">calendar.loading</field>
+			<field name="arch" type="xml">
+				<graph string="Calendar Loading Analysis">
+					<field name="area_id" type="row"/>
+					<field name="resource_id" type="row"/>
+					<field name="year" type="col"/>
+					<field name="month" type="col"/>     
+					<field name="week_number" type="col"/>            
+					<field name="loading" type="measure"/>
+				</graph>
+			</field>
+		</record>
+				
+		<record id="action_mrp_calendar_loading_pivot_analysis" model="ir.actions.act_window">
+			<field name="name">Calendar Loading Analysis</field>
+			<field name="res_model">calendar.loading</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">pivot,graph</field>
+			<field name="domain">[]</field>
+			<field name="context">{}</field>
+			<field name="view_id" ref="view_mrp_calendar_loading_pivot" />
+			<field name="search_view_id" ref="view_search_calendar_loading_id_mrp"/>
+		</record>
+			
+			
+		<menuitem name="Calendar Loading Analysis" action="action_mrp_calendar_loading_pivot_analysis" id="menu_mrp_calendar_loading_analysis" parent="menu_production_analysis" groups="group_menu_manuf_analyse"/>
+	    <menuitem name="Calendar Loading" action="calendar.act_calendar_loading_id" id="menu_calendar_loading_id_mrp" parent="menu_production_declaration" sequence="40" groups="group_menu_manuf_analyse"/>	
+	</data>
+</openerp>

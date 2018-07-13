@@ -1,0 +1,136 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* freight_cost
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 9.0c\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-05-12 08:01+0000\n"
+"PO-Revision-Date: 2016-05-12 08:01+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: freight_cost
+#: model:ir.ui.view,arch_db:freight_cost.view_form_sale_order_freight_cost
+msgid "Add freight"
+msgstr "Ajouter frais"
+
+#. module: freight_cost
+#: model:ir.ui.view,arch_db:freight_cost.view_form_freight_cost_wizard
+msgid "Cancel"
+msgstr "Annuler"
+
+#. module: freight_cost
+#: model:ir.ui.view,arch_db:freight_cost.view_form_freight_cost_wizard
+msgid "Create sale line"
+msgstr "Créer ligne de vente"
+
+#. module: freight_cost
+#: model:ir.model.fields,field_description:freight_cost.field_freight_cost_wizard_create_uid
+msgid "Created by"
+msgstr "Créé par"
+
+#. module: freight_cost
+#: model:ir.model.fields,field_description:freight_cost.field_freight_cost_wizard_create_date
+msgid "Created on"
+msgstr "Créé le"
+
+#. module: freight_cost
+#: model:ir.model.fields,field_description:freight_cost.field_freight_cost_wizard_display_name
+msgid "Display Name"
+msgstr "Nom affiché"
+
+#. module: freight_cost
+#: model:ir.actions.act_window,name:freight_cost.action_freight_cost_wizard
+#: model:ir.model.fields,field_description:freight_cost.field_sale_order_is_freight_cost
+#: model:ir.model.fields,field_description:freight_cost.field_sale_order_line_is_freight_cost
+#: model:ir.ui.view,arch_db:freight_cost.view_form_freight_cost_wizard
+#: model:ir.ui.view,arch_db:freight_cost.view_form_sale_order_freight_cost
+msgid "Freight cost"
+msgstr "Frais de transports & frais divers"
+
+#. module: freight_cost
+#: model:ir.model.fields,field_description:freight_cost.field_sale_order_freight_cost_total
+msgid "Freight cost total"
+msgstr "Coût total des frais"
+
+#. module: freight_cost
+#: model:ir.model,name:freight_cost.model_freight_cost_wizard
+msgid "Freight cost wizard"
+msgstr "Frais de transports & frais divers"
+
+#. module: freight_cost
+#: model:ir.model.fields,field_description:freight_cost.field_freight_cost_wizard_id
+msgid "ID"
+msgstr "ID"
+
+#. module: freight_cost
+#: model:ir.model.fields,field_description:freight_cost.field_freight_cost_wizard___last_update
+msgid "Last Modified on"
+msgstr "Dernière modification le"
+
+#. module: freight_cost
+#: model:ir.model.fields,field_description:freight_cost.field_freight_cost_wizard_write_uid
+msgid "Last Updated by"
+msgstr "Mis à jour par"
+
+#. module: freight_cost
+#: model:ir.model.fields,field_description:freight_cost.field_freight_cost_wizard_write_date
+msgid "Last Updated on"
+msgstr "Mis à jour le"
+
+#. module: freight_cost
+#: model:ir.model.fields,field_description:freight_cost.field_freight_cost_wizard_partner_id
+msgid "Partner"
+msgstr "Partenaire"
+
+#. module: freight_cost
+#: model:ir.model.fields,field_description:freight_cost.field_freight_cost_wizard_price_unit
+msgid "Price"
+msgstr "Prix"
+
+#. module: freight_cost
+#: model:ir.model.fields,field_description:freight_cost.field_freight_cost_wizard_product_id
+msgid "Product"
+msgstr "Article"
+
+#. module: freight_cost
+#: model:ir.model.fields,field_description:freight_cost.field_freight_cost_wizard_requested_date
+msgid "Requested date"
+msgstr "Date demandée"
+
+#. module: freight_cost
+#: model:ir.model.fields,field_description:freight_cost.field_freight_cost_wizard_sale_id
+msgid "Sale"
+msgstr "Vente"
+
+#. module: freight_cost
+#: model:ir.model,name:freight_cost.model_sale_order
+msgid "Sale module"
+msgstr "Module de vente"
+
+#. module: freight_cost
+#: model:ir.model,name:freight_cost.model_sale_order_line
+msgid "Sale order line"
+msgstr "Ligne de commande de vente"
+
+#. module: freight_cost
+#: model:ir.ui.view,arch_db:freight_cost.view_form_sale_order_freight_cost
+msgid "Warning, freight cost"
+msgstr "Attention, frais de transports & frais divers"
+
+#. module: freight_cost
+#: model:ir.ui.view,arch_db:freight_cost.view_form_freight_cost_wizard
+msgid "or"
+msgstr "ou"
+
+#. module: freight_cost
+#: model:ir.model.fields,field_description:freight_cost.field_freight_cost_wizard_sec_uom_qty
+msgid "uom_qty"
+msgstr "uom_qty"
+

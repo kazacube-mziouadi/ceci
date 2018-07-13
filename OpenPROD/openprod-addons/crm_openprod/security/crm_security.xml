@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<openerp>
+	<data noupdate="0">
+		
+		<!-- Groupes de menu -->
+		<record id="group_menu_crm_user" model="res.groups">
+            <field name="name">CRM menu</field>
+            <field name="category_id" ref="base_openprod.module_menu_category"/>
+        </record>
+	</data>
+</openerp>

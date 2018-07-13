@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+
+		<!-- FORM VIEW PRODUCT -->
+		<record id="view_form_product_account" model="ir.ui.view">
+			<field name="name">view.form.product.account</field>
+			<field name="model">product.product</field>
+			<field name="priority">1500</field>
+			<field name="inherit_id" ref="product.view_form_product" />
+			<field name="arch" type="xml">
+				<xpath expr="//notebook" position="inside">
+					<page string="Characteristics">
+						<field name="characteristics_ids" context="{'from_product':True}">
+							<tree editable="bottom" delete="false">
+								<field name="characteristic_type_id" attrs="{'readonly':[('is_created', '=', True)]}" />
+								<field name="value" 
+									context="{'default_type_id': characteristic_type_id, 'from_product':True}" 
+									domain="[('type_id', '=', characteristic_type_id)]"
+									options="{'force_quick_create':True}" />
+								<field name="uom_id" domain="[('category_id', '=', parent_uom_category_id)]"
+								    attrs="{'invisible':[('characteristic_format', '!=', 'numerical')]}" />
+								<button type="object" name="delete" string="X" icon="STOCK_CANCEL" />
+								<field name="parent_uom_id" invisible="1" string="Parent UoM" />
+                                <field name="is_created" invisible="1" />
+                                <field name="model_id" invisible="1" />
+								<field name="parent_uom_category_id" invisible="1" />
+								<field name="characteristic_format" invisible="1" />
+							</tree>
+						</field>
+					</page>
+				</xpath>
+			</field>
+		</record>
+
+		<!-- ajouter les caractéristiques à la vue des catégories -->
+		<record id="product_category_form_view" model="ir.ui.view">
+			<field name="name">Product Category</field>
+			<field name="inherit_id" ref="product.product_category_form_view" />
+			<field name="model">product.category</field>
+			<field name="arch" type="xml">
+				<xpath expr="//group[@name='group_main']" position="inside">
+					<group string="Characteristics" attrs="{'invisible':[('type', '!=', 'normal')]}">
+						<field name="characteristic_category_ids" nolabel="1">
+							<tree editable="bottom">
+								<field name="type_id" />
+								<field name="default_value" context="{'default_type_id': type_id}" 
+									domain="[('type_id', '=', type_id)]" 
+									options="{'force_quick_create':True}" />
+								<field name="type_format" invisible="1" />
+							</tree>
+						</field>
+					</group>
+				</xpath>
+			</field>
+		</record>
+	</data>
+</openerp>

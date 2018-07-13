@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+
+		<record model="ir.ui.view" id="view_form_purchase_change_note">
+			<field name="name">view_form_purchase_change_note</field>
+			<field name="model">purchase.change.note</field>
+			<field name="type">form</field>
+			<field name="arch" type="xml">
+				<form string="Change the note">
+					<group colspan="4" col="4" string="Notes">
+						<separator string="Supplier's note" colspan="4"/>
+						<field name="supplier_note" colspan="4" nolabel="1"/>
+						<separator string="Note on the delivery note" colspan="4"/>
+						<field name="delivery_note" colspan="4" nolabel="1"/>
+						<separator string="Note on invoice" colspan="4"/>
+						<field name="invoice_note" colspan="4" nolabel="1"/>
+						<separator string="Internal note" colspan="4"/>
+						<field name="inter_note" colspan="4" nolabel="1"/>
+						<field name="purchase_id" invisible="True"/>
+					</group>
+					<footer>
+						<button name="change_note" string="Change notes" type="object" class="oe_highlight" />
+						or
+						<button string="Cancel" class="oe_link" special="cancel" />
+					</footer>
+				</form>
+			</field>
+		</record>
+
+		<record model="ir.actions.act_window" id="action_purchase_change_note">
+			<field name="name">Change notes</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="res_model">purchase.change.note</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">form</field>
+			<field name="target">new</field>
+		</record>
+
+	</data>
+</openerp>

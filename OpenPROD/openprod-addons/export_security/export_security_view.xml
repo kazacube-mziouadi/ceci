@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+
+        <!-- TREE VIEW Export logs -->
+        <record id='view_tree_export_logs' model='ir.ui.view'>
+            <field name="name">Exports logs</field>
+            <field name="model">export.security.log</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="Export security logs">
+                    <field name="model" />
+                    <field name="user_id" />
+                    <field name="criticality" />
+                    <field name="name" />
+                    <field name="filter" />
+                    <field name="group_by" />
+                    <field name="lines_count" />
+                    <field name="create_date" />
+                </tree>
+            </field>
+        </record>
+
+        <!-- SEARCH VIEW Export logs -->
+        <record id='view_search_export_logs' model='ir.ui.view'>
+            <field name="name">view_search_export_logs</field>
+            <field name="model">export.security.log</field>
+            <field name="type">search</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="model" />
+                </search>
+            </field>
+        </record>
+
+        <!-- ACTION View Log -->
+        <record id="act_view_export_logs" model="ir.actions.act_window">
+            <field name="name">Export security logs</field>
+            <field name="res_model">export.security.log</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree</field>
+            <field name="search_view_id" ref="view_search_export_logs" />
+        </record>
+        
+        
+		<!-- FORM VIEW Export security rule -->
+		<record id='view_form_export_security_rule' model='ir.ui.view'>
+			<field name="name">view_form_export_security_rule</field>
+			<field name="model">export.security.rule</field>
+			<field name="type">form</field>
+			<field name="arch" type="xml">
+				<form string="Export security rule">
+				    <group col="9">
+    					<group colspan="8">
+    						<field name="model_id" />
+    						<field name="criticality" />
+    						<field name="hide_reports" />
+    						<group col="4" colspan="2">
+                              <field name="show_export" />
+                              <field name="trace_export" />
+                              <field name="show_export_current" />
+                              <field name="trace_export_current" />
+                              <field name="show_import" />
+                              <field name="trace_report" />
+    						</group>
+    						<notebook colspan="4">
+    							<page string="Authorizations">
+    								<group string="Authorizations">
+    									<field name="auth_export" nolabel="1" colspan="4" />
+    									<field name="auth_export_users" nolabel="1" colspan="4" />
+    								</group>
+    							</page>
+    							<page string="Logs">
+    								<group string="Logs">
+    									<field name="log_ids" nolabel="1" colspan="4">
+    										<tree>
+    											<field name="create_date" />
+    											<field name="user_id" />
+    											<field name="criticality" />
+    											<field name="name" />
+    											<field name="filter" />
+    											<field name="group_by" />
+    											<field name="lines_count" />
+    										</tree>
+    									</field>
+    								</group>
+    							</page>
+    						</notebook>
+    					</group>
+                        <group colspan="1" col="1" class="op_shortcuts" name="action_menu">
+                            <separator string="Analysis" colspan="1" name="separator_analysis_menu"/>
+                            <button class="oe_inline oe_stat_button" type="action" name="%(act_view_export_logs)d"
+                            context="{'search_default_model': model_id}" string="Logs" icon="fa-money" />
+                        </group>
+                    </group>
+				</form>
+			</field>
+		</record>
+
+		<!-- TREE VIEW Export security rule -->
+		<record id='view_tree_export_security_rule' model='ir.ui.view'>
+			<field name="name">view_tree_export_security_rule</field>
+			<field name="model">export.security.rule</field>
+			<field name="type">tree</field>
+			<field name="arch" type="xml">
+				<tree string="Export security rules">
+					<field name="model_id" />
+					<field name="criticality" />
+					<field name="hide_reports" />
+				</tree>
+			</field>
+		</record>
+
+		<!-- SEARCH VIEW Export security rule -->
+		<record id='view_search_export_security_rule' model='ir.ui.view'>
+			<field name="name">view_search_export_security_rule</field>
+			<field name="model">export.security.rule</field>
+			<field name="type">search</field>
+			<field name="arch" type="xml">
+				<search>
+				</search>
+			</field>
+		</record>
+
+		<!-- ACTION Export security rule -->
+		<record id="act_export_security_rule" model="ir.actions.act_window">
+			<field name="name">Export security rule</field>
+			<field name="res_model">export.security.rule</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+			<field name="domain">[]</field>
+			<field name="context">{}</field>
+			<field name="search_view_id" ref="view_search_export_security_rule" />
+		</record>
+
+		<record id="act_export_security_rule_tree" model="ir.actions.act_window.view">
+			<field name="sequence" eval="10" />
+			<field name="view_mode">tree</field>
+			<field name="act_window_id" ref="act_export_security_rule" />
+		</record>
+
+		<record model="ir.actions.act_window.view" id="act_export_security_rule_form">
+			<field name="sequence" eval="20" />
+			<field name="view_mode">form</field>
+			<field name="view_id" ref="view_form_export_security_rule" />
+			<field name="act_window_id" ref="act_export_security_rule" />
+		</record>
+
+        <menuitem name="Export security rule" action="act_export_security_rule" id="menu_export_security_rule"
+            parent="base.menu_security" />
+        <menuitem name="Export security logs" action="act_view_export_logs" id="menu_export_logs"
+            parent="base.menu_security" />
+	</data>
+</openerp>

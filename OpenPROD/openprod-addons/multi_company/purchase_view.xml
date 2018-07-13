@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+    
+        <record model="ir.ui.view" id="view_form_purchase_order_line_multi_company">
+            <field name="name">view_form_purchase_order_line_multi_company</field>
+            <field name="model">purchase.order.line</field>
+            <field name="inherit_id" ref="purchase.view_form_purchase_order_line"/>
+            <field name="priority" eval="3400" />
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='supplier_product_code']" position="after">
+                    <field name="company_id" />
+                </xpath>
+            </field>
+        </record>
+        
+        
+        <record id='view_form_purchase_order_multi_company' model='ir.ui.view'>
+			<field name="name">view_form_purchase_order_multi_company</field>
+			<field name="model">purchase.order</field>
+			<field name="inherit_id" ref="purchase.view_form_purchase_order"/>
+			<field name="priority" eval="3400" />
+			<field name="arch" type="xml">
+        		<xpath expr="//field[@name='purchase_order_line_ids']//form//field[@name='supplier_product_code']" position="after">
+                    <field name="company_id" />
+                </xpath>
+                <xpath expr="//field[@name='purchase_order_line_ids']//form//field[@name='taxes_ids']" position="attributes">
+                    <atribute name="domain">[('type_tax_use', '!=', 'sale'), ('company_id', '=', comapny_id)]</atribute>
+                </xpath>
+        	</field>
+        </record>	
+        
+        
+        <record id='view_tree_purchase_order_line_multi_company' model='ir.ui.view'>
+            <field name="name">view_tree_purchase_order_line_multi_company</field>
+            <field name="model">purchase.order.line</field>
+            <field name="inherit_id" ref="purchase.view_tree_purchase_order_line"/>
+            <field name="priority" eval="3400" />
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='purchase_state']" position="after">
+                    <field name="company_id" />
+                </xpath>
+            </field>
+        </record>
+        
+    </data>
+</openerp>

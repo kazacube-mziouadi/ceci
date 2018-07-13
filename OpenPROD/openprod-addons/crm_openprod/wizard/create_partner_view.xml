@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+	
+		<!-- ============== -->
+		<!-- CREATE PARTNER -->
+		<!-- ============== -->
+	
+		<record model="ir.ui.view" id="view_form_create_crm_partner">
+			<field name="name">view_form_create_crm_partner</field>
+			<field name="model">create.new.crm.partner</field>
+			<field name="type">form</field>
+			<field name="arch" type="xml">
+				<form string="Create new customer">
+					<group>
+						<group colspan="4" col="4" string="Partner's details">
+							<field name="calendar_id" attrs="{'invisible': [('b2c_crm','=',True)], 'required': [('b2c_crm','=',False)]}"/>
+							<field name="currency_id" attrs="{'invisible': [('b2c_crm','=',True)], 'required': [('b2c_crm','=',False)]}"/>
+							<field name="lang"/>
+							<field name="b2c_crm" invisible="1"/>
+						</group>
+						<footer>
+							<button name="create_new_partner" string="Create a new customer" type="object" class="oe_highlight" />
+							or
+							<button string="Cancel" class="oe_link" special="cancel" />
+						</footer>
+					</group>
+				</form>
+			</field>
+		</record>
+
+		<record model="ir.actions.act_window" id="action_create_new_customer_crm">
+			<field name="name">Create customer</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="res_model">create.new.crm.partner</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">form</field>
+			<field name="target">new</field>
+		</record>
+
+	</data>
+</openerp>

@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_db_synchro_server,db.synchro.server,model_db_synchro_server,base.group_user,1,1,1,1
+access_db_synchro_base,db.synchro.base,model_db_synchro_base,base.group_user,1,1,1,1

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+		<record model="ir.ui.view" id="view_form_create_packing_list">
+			<field name="name">view_form_create_packing_list</field>
+			<field name="model">create.packing.list</field>
+			<field name="type">form</field>
+			<field name="arch" type="xml">
+				<form string="Create Packaging">
+					<field name="shipment_id" invisible="1" />
+					<group colspan="4" col="4">
+						<field name="label_template_id" domain="[('type', '=', 'um')]" />
+						<field name="nb_uc" />
+						<field name="gross_weight" />
+						<field name="net_weight" attrs="{'readonly': [('chosen_label_ids', '=', [])]}"/>
+					</group>
+					<group colspan="4" col="8">
+						<field name="pallet_type_id" colspan="4" />
+						<newline />
+						<field name="length" />
+						<field name="width" />
+						<field name="height" />
+						<field name="volume" />
+					</group>
+					<field name="label_ids" nolabel="1" colspan="4" invisible="1" />
+					<group colspan="4" col="4" string="Labels">
+						<field name="chosen_label_ids" nolabel="1" colspan="4" domain="[('um_label_id', '=', False), ('id', 'in', label_ids and label_ids[0] and label_ids[0][2] or [])]" />
+					</group>
+					<footer>
+						<button name="create_packing_list" string="Validate" type="object" class="oe_highlight" />
+						or
+						<button string="Cancel" class="oe_link" special="cancel" />
+					</footer>
+				</form>
+			</field>
+		</record>
+
+		<record id="act_create_packing_list" model="ir.actions.act_window">
+			<field name="name">Create packing list</field>
+			<field name="res_model">create.packing.list</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">form</field>
+			<field name="context">{'dialog_size': 'large'}</field>
+			<field name="target">new</field>
+		</record>
+	</data>
+</openerp>

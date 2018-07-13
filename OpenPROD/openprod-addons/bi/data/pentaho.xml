@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data noupdate="1">
+			<record model="bi.server" id="bi_server_address">
+				<field name="pentaho_server_address">http://localhost:7080/</field>
+				<field name="db_name">bi_database_name</field>
+				<field name="base_location">pentaho/api/repos/%3Apublic%3A</field>
+				<field name="bi_instalation_dir">/home/user_name/bi_objectif_pi/</field>
+			</record>
+
+			<record model="bi.dashboard" id="dashboard_address_performance_de_vente">
+				<field name="dashboard_address">%3Abi_vente%3APerformanceSQL.wcdf/generatedContent</field>
+				<field name="name">Performance de vente</field>
+			</record>
+
+			<record model="bi.dashboard" id="dashboard_address_force_de_vente">
+				<field name="dashboard_address">%3Abi_vente%3AForceSQL.wcdf/generatedContent</field>
+				<field name="name">Force de vente</field>
+			</record>
+
+			
+    </data>
+
+
+</openerp>

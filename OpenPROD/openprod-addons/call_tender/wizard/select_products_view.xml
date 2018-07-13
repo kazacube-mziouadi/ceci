@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+	
+		<!-- =============== -->
+		<!-- SELECT PRODUCTS -->
+		<!-- =============== -->
+	
+		<record model="ir.ui.view" id="view_form_select_products_for_call_tender">
+			<field name="name">view_form_select_products_for_call_tender</field>
+			<field name="model">select.products.wizard</field>
+			<field name="type">form</field>
+			<field name="arch" type="xml">
+				<form string="Select the products">
+					<group>
+						<field name="call_tender_id" invisible="1"/>
+						<group colspan="4" col="4" string="Products list">
+							<field name="product_ids" colspan="4" nolabel="1"/>
+						</group>
+						<footer>
+							<button name="select_call_products" string="Create product lines" type="object" class="oe_highlight" />
+							or
+							<button string="Cancel" class="oe_link" special="cancel" />
+						</footer>
+					</group>
+				</form>
+			</field>
+		</record>
+
+		<record model="ir.actions.act_window" id="action_select_products_for_call_tender">
+			<field name="name">Select products</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="res_model">select.products.wizard</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">form</field>
+			<field name="target">new</field>
+		</record>
+
+	</data>
+</openerp>

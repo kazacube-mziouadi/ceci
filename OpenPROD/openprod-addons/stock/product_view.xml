@@ -1,0 +1,459 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+		<!-- RACCOURCI Produit vers consommation -->
+		<record id="act_product_consumption_sc" model="ir.actions.act_window">
+			<field name="name">Consumption</field>
+			<field name="res_model">product.consumption</field>
+			<field name="view_type">form</field>
+			<field name="domain">[('product_id', '=', active_id)]</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+
+
+		<!-- FORM VIEW Product category -->
+		<record id="view_form_product_category_inherit" model="ir.ui.view">
+			<field name="name">view_form_product_category_inherit</field>
+			<field name="model">product.category</field>
+			<field name="inherit_id" ref="product.product_category_form_view" />
+			<field name="arch" type="xml">
+				<xpath expr="//group[@name='group_main']" position="inside">
+					<group colspan="4" string="Attributes" attrs="{'invisible':[('type', '!=', 'normal')]}">
+						<field name="common_attribute_ids" colspan="4" nolabel="1" />
+					</group>
+				</xpath>
+				<xpath expr="//group[@name='plan_of_control_group']" position="after">
+					<group colspan="2" col="2" string="Print Documents">
+						<field name="plan_control_ids" colspan="2" nolabel="1">
+							<tree>
+								<field name="type" />
+								<field name="report_id" />
+								<field name="pdf_file" />
+							</tree>
+							<form>
+								<group colspan="2" col="6">
+									<field name="type" />
+									<field name="report_id" attrs="{'invisible': [('type', 'not in', ('jasper_receipt', 'jasper_delivery'))], 'required': [('type', 'in', ('jasper_receipt', 'jasper_delivery'))]}" />
+									<field name="pdf_file" attrs="{'invisible': [('type', 'not in', ('pdf_receipt', 'pdf_delivery'))], 'required': [('type', 'in', ('pdf_receipt', 'pdf_delivery'))]}" context="{'from_object': True}" />
+								</group>
+							</form>
+						</field>
+					</group>
+					<group colspan="2" />
+				</xpath>
+			</field>
+		</record>
+
+
+		<!-- FORM VIEW Product -->
+		<record id='view_form_product' model='ir.ui.view'>
+			<field name="name">product</field>
+			<field name="model">product.product</field>
+			<field name="priority" eval="1000" />
+			<field name="inherit_id" ref="account_openprod.view_form_product_account" />
+			<field name="arch" type="xml">
+				<xpath expr="//field[@name='trigger_supply']" position="after">
+					<field name="low_procurement" attrs="{'invisible': ['|', '|', ('exclude_of_mrp', '=', True), ('trigger_supply', '=', 'without_stock'), ('type', '=', 'service')]}" />
+					<field name="exclude_of_mrp" attrs="{'invisible': ['|', ('trigger_supply', '=', 'without_stock'), ('type', '=', 'service')]}" />
+					<field name="is_always_available" attrs="{'invisible': [('type', '=', 'service')]}" />
+				</xpath>
+				<xpath expr="//field[@name='type_valuation_purchase']" position="after">
+					<field name="enhanced_price" attrs="{'invisible': [('type', '=', 'service')]}" />
+				</xpath>
+				<xpath expr="//group[@name='procurement_product_group']" position="after">
+					<group string="Stock" colspan="4" col="4" attrs="{'invisible': [('type', '=', 'service')]}">
+						<group colspan="2" col="50">
+							<button name="show_warehouse_stock_level" string="" type="object" class="oe_inline oe_stat_button" icon="fa-info" colspan="1" help="Show warehouse stock" />
+							<field name="available_stock" colspan="24" />
+							<field name="available_stock_sec_uom" colspan="24" attrs="{'invisible': ['|', ('dual_unit', '=', False), ('dual_unit_type', '!=', 'variable')]}" />
+						</group>
+						<group colspan="2" col="2">
+							<field name="virtual_stock" />
+						</group>
+						<group colspan="4" col="4">
+							<group string="Stock rules" colspan="4" col="1" attrs="{'invisible': [('type', '=', 'service')]}">
+								<field name="orderpoint_ids" nolabel="1">
+									<tree>
+										<field name="name" />
+										<field name="product_id" />
+										<field name="location_id" />
+										<field name="qtys_type" />
+										<field name="min_qty" />
+										<field name="max_qty" />
+										<field name="start_date" />
+										<field name="end_date" />
+									</tree>
+									<form>
+										<group colspan="4" col="4">
+											<group colspan="4" col="4">
+												<field name="name" />
+												<field name="location_id" />
+												<field name="uom_id" />
+											</group>
+											<group string="Quantities" colspan="2" col="4">
+												<field name="qtys_type" colspan="4" />
+												<field name="min_qty" attrs="{'invisible': [('qtys_type', '!=', 'automatic')]}" />
+												<field name="max_qty" attrs="{'invisible': [('qtys_type', '!=', 'automatic')]}" />
+												<field name="manual_min_qty" attrs="{'invisible': [('qtys_type', '!=', 'manual')]}" />
+												<field name="manual_max_qty" attrs="{'invisible': [('qtys_type', '!=', 'manual')]}" />
+											</group>
+											<group string="Dates" colspan="2" col="4">
+												<field name="start_date" />
+												<field name="end_date" />
+											</group>
+											<group string="Other informations" colspan="4" col="4">
+												<field name="last_proc_id" />
+											</group>
+										</group>
+									</form>
+								</field>
+							</group>
+							<group string="Storage locations" colspan="4">
+								<field name="storage_location_ids" colspan="4" nolabel="1">
+									<tree string="Storage locations" editable="bottom">
+										<field name="warehouse_id" />
+										<field name="location_id" domain="[('usage', '=', 'internal'), ('warehouse_id', '=', warehouse_id)]" />
+									</tree>
+									<form string="Storage location">
+										<group>
+											<field name="warehouse_id" domain="[('usage', '=', 'internal'), ('warehouse_id', '=', warehouse_id)]" />
+											<field name="location_id" />
+										</group>
+									</form>
+								</field>
+							</group>
+						</group>
+					</group>
+				</xpath>
+
+				<xpath expr="//field[@name='partner_id']" position="before">
+					<field name="location_id" />
+				</xpath>
+
+                <xpath expr="//field[@name='track_label']" position="after">
+                    <field name="label_template_id" attrs="{'required': [('track_label', '=', True)]}" domain="[('type', '=', 'uc')]" />
+                </xpath>
+
+				<xpath expr="//field[@name='track_label']//.." position="after">
+					<group string="Version historical" colspan="2" col="2">
+                        <field name="version_product" />
+						<field name="version_historical_ids" nolabel="1" colspan="2">
+							<tree editable="bottom">
+								<field name="start_date" />
+								<field name="version" />
+							</tree>
+						</field>
+					</group>
+				</xpath>
+
+				<xpath expr="//group[@name='regul_management']/.." position="after">
+					<group colspan="3" col="4" string="Attributes" attrs="{'invisible': [('track_label', '!=', True)]}">
+						<field name="exclude_category_attribute" />
+						<field name="common_attribute_ids" colspan="4" nolabel="1" />
+					</group>
+				</xpath>
+
+				<xpath expr="//separator[@name='separator_analysis_menu']" position="before">
+					<button name="%(act_product_procurement)d" string="Procurement" type="action" class="oe_inline oe_stat_button" icon="fa-truck" attrs="{'invisible': [('type', '!=', 'stockable')]}" />
+				</xpath>
+
+				<xpath expr="//separator[@name='separator_analysis_menu']" position="after">
+					<button class="oe_inline oe_stat_button" type="object" string="Stock's chart" name="show_graph" icon="fa-line-chart" attrs="{'invisible': [('type', '=', 'article')]}" />
+					<button class="oe_inline oe_stat_button" type="object" string="Stock's move" name="show_stock_move" icon="fa-exchange" attrs="{'invisible': [('type', '=', 'article')]}" />
+					<button name="%(act_product_consumption_sc)d" string="Consumptions" type="action" class="oe_inline oe_stat_button" icon="fa-sign-out" attrs="{'invisible': [('type', '=', 'article')]}" />
+				</xpath>
+				<xpath expr="//page[@name='quality_product_page']//group[@name='plan_control_group']" position="after">
+					<group string="Print Documents" colspan="2" col="2">
+						<field name="printed_doc_categ_syncro" />
+						<field name="plan_control_ids" colspan="2" nolabel="1" attrs="{'readonly': [('printed_doc_categ_syncro', '=', True)]}">
+							<tree>
+								<field name="type" />
+								<field name="report_id" />
+								<field name="pdf_file" />
+							</tree>
+							<form>
+								<group colspan="2" col="6">
+									<field name="type" />
+									<field name="report_id" attrs="{'invisible': [('type', 'not in', ('jasper_receipt', 'jasper_delivery'))], 'required': [('type', 'in', ('jasper_receipt', 'jasper_delivery'))]}" />
+									<field name="pdf_file" attrs="{'invisible': [('type', 'not in', ('pdf_receipt', 'pdf_delivery'))], 'required': [('type', 'in', ('pdf_receipt', 'pdf_delivery'))]}" context="{'from_object': True}" />
+								</group>
+							</form>
+						</field>
+					</group>
+				</xpath>
+				<xpath expr="//page[@name='quality_product_page']" position="after">
+					<page string="Consumption" attrs="{'invisible': [('type', 'in', ('service', 'article'))]}">
+						<group string="Horizon" colspan="4" col="4">
+							<field name="horizon_type" attrs="{'required': [('type', 'not in', ('service', 'article'))]}" />
+							<field name="manual_horizon" attrs="{'invisible': [('horizon_type', '!=', 'manual')]}" />
+							<field name="horizon" attrs="{'invisible': [('horizon_type', '!=', 'auto')]}" />
+						</group>
+						<group string="Average consumption" colspan="4" col="4">
+							<field name="consumption_avg_3" readonly="1" />
+							<field name="consumption_avg_6" readonly="1" />
+							<field name="consumption_avg_12" readonly="1" />
+							<field name="critical_stock" readonly="1" />
+						</group>
+					</page>
+				</xpath>
+			</field>
+		</record>
+
+		<!-- TREE VIEW PRODUCT -->
+		<record id='view_tree_product' model='ir.ui.view'>
+			<field name="name">view_tree_product</field>
+			<field name="model">product.product</field>
+			<field name="inherit_id" ref="product.view_tree_product" />
+			<field name="arch" type="xml">
+				<xpath expr="//field[@name='code']" position="after">
+					<field name="available_stock" />
+					<field name="virtual_stock" />
+				</xpath>
+			</field>
+		</record>
+
+		<!-- Graph des stocks -->
+		<record id="view_product_graph_stock" model="ir.ui.view">
+			<field name="name">product.stock.graph.highstock</field>
+			<field name="model">stock.move</field>
+			<field name="priority" eval="8" />
+			<field name="type">highstock</field>
+			<field name="arch" type="xml">
+				<highstock string="View Name">
+					<field name="date" usage="x" label="Date" />
+					<field name="uom_qty" label="Qty" usage="y" />
+					<field name="product_id" usage="title" fields_to_read="['uom_id','high_class_id']" />
+					<field name="uom_id" />
+				</highstock>
+			</field>
+		</record>
+
+		<record model="ir.actions.act_window" id="product_graph_stock_action">
+			<field name="name">Stock level for product</field>
+			<field name="res_model">stock.move</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">highstock</field>
+			<field name="view_id" ref="view_product_graph_stock" />
+			<field name="target">new</field>
+			<field name="domain">[('type', 'in', ('in', 'out')), ('state', 'not in', ('cancel','draft')),('is_forecast','=',False)]</field>
+		</record>
+
+		<record model="ir.actions.act_window" id="product_stock_move_action">
+			<field name="name">Stock level for product</field>
+			<field name="res_model">stock.move</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+			<field name="view_id" ref="view_tree_move" />
+			<field name="target">current</field>
+			<field name="domain">[('product_id', '=', context.get('product_id', False))]</field>
+		</record>
+
+		<!-- FORM VIEW Consumption -->
+		<record id='view_form_product_consumption' model='ir.ui.view'>
+			<field name="name">view_form_product_consumption</field>
+			<field name="model">product.consumption</field>
+			<field name="arch" type="xml">
+				<form string="Consumption" version="8.0">
+					<sheet>
+						<group col="4">
+							<field name="product_id" colspan="4" />
+							<field name="month" />
+							<field name="year" />
+							<field name="qty" />
+							<newline />
+							<button type="object" string="Compute ALL" name="compute_all_button" />
+							<button type="object" string="Recompute line" name="compute_line_button" />
+							<button type="object" string="Compute last month" name="compute_last_button" />
+							<button type="object" string="Compute product" name="compute_product_button" />
+						</group>
+					</sheet>
+				</form>
+			</field>
+		</record>
+
+		<!-- TREE VIEW Consumption -->
+		<record id='view_tree_product_consumption' model='ir.ui.view'>
+			<field name="name">view_tree_product_consumption</field>
+			<field name="model">product.consumption</field>
+			<field name="arch" type="xml">
+				<tree string="Consumptions" version="8.0">
+					<field name="product_id" />
+					<field name="month" />
+					<field name="year" />
+					<field name="qty" />
+					<button type="object" string="Recompute line" name="compute_line_button" />
+				</tree>
+			</field>
+		</record>
+
+		<!-- SEARCH VIEW Consumption -->
+		<record id='view_search_product_consumption' model='ir.ui.view'>
+			<field name="name">view_search_product_consumption</field>
+			<field name="model">product.consumption</field>
+			<field name="arch" type="xml">
+				<search version="8.0">
+					<field name="product_id" />
+					<field name="month" />
+					<field name="year" />
+					<group expand="1" string="Group By">
+						<filter string="Product" domain="[]" context="{'group_by': 'product_id'}" />
+						<filter string="Year" domain="[]" context="{'group_by': 'year'}" />
+						<filter string="Month" domain="[]" context="{'group_by': 'month'}" />
+					</group>
+				</search>
+			</field>
+		</record>
+
+		<!-- ACTION Consumption -->
+		<record id="act_product_consumption" model="ir.actions.act_window">
+			<field name="name">Consumption</field>
+			<field name="res_model">product.consumption</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+			<field name="search_view_id" ref="view_search_product_consumption" />
+		</record>
+
+		<menuitem name="Consumption" action="act_product_consumption" id="menu_product_consumption" parent="menu_stock_report" groups="group_menu_stock_analyse" />
+
+
+		<!-- ========================= -->
+		<!-- COMMON ATTRIBUTE CATEGORY -->
+		<!-- ========================= -->
+		<!-- FORM VIEW Attribute category -->
+		<record id='view_form_common_attribute_category' model='ir.ui.view'>
+			<field name="name">view_form_common_attribute_category</field>
+			<field name="model">common.attribute.category</field>
+			<field name="arch" type="xml">
+				<form string="Attribute category" version="8.0">
+					<sheet>
+						<group colspan="4" col="1">
+							<label for="name" class="oe_edit_only" />
+							<h1>
+								<field name="name" class="oe_inline" />
+							</h1>
+						</group>
+						<field name="common_attribute_model_ids" nolabel="1" colspan="4" />
+					</sheet>
+				</form>
+			</field>
+		</record>
+
+		<!-- TREE VIEW Attribute category -->
+		<record id='view_tree_common_attribute_category' model='ir.ui.view'>
+			<field name="name">view_tree_common_attribute_category</field>
+			<field name="model">common.attribute.category</field>
+			<field name="arch" type="xml">
+				<tree string="Attribute categories" version="8.0">
+					<field name="name" />
+				</tree>
+			</field>
+		</record>
+
+		<!-- SEARCH VIEW Attribute category -->
+		<record id='view_search_common_attribute_category' model='ir.ui.view'>
+			<field name="name">view_search_common_attribute_category</field>
+			<field name="model">common.attribute.category</field>
+			<field name="arch" type="xml">
+				<search version="8.0">
+					<field name="name" />
+				</search>
+			</field>
+		</record>
+
+		<!-- FORM VIEW Common attribute model -->
+		<record id='view_form_common_attribute_model' model='ir.ui.view'>
+			<field name="name">view_form_common_attribute_model</field>
+			<field name="model">common.attribute.model</field>
+			<field name="arch" type="xml">
+				<form string="Common attribute model" version="8.0">
+					<group colspan="4" col="4" string="Display">
+						<field name="label" />
+						<field name="category_id" />
+						<field name="type" />
+						<field name="default_value" attrs="{'readonly': [('is_default_compute', '=', True)]}" />
+						<group colspan="4" col="6">
+							<field name="is_visible" />
+							<field name="is_required" />
+							<field name="is_readonly" />
+							<field name="is_compute" />
+							<field name="is_default_compute" />
+							<field name="is_unique" />
+						</group>
+					</group>
+					<group colspan="4" col="8" string="Application">
+						<field name="sale" />
+						<field name="production" />
+						<field name="purchase" />
+						<field name="receipt" />
+					</group>
+					<group colspan="4" col="8" string="Technical">
+						<field name="sequence" />
+						<field name="name" />
+						<field name="is_quantity" />
+						<field name="is_printable" />
+						<field name="function" colspan="8" attrs="{'invisible': [('is_compute', '=', False), ('is_default_compute', '=', False)]}" />
+					</group>
+					<separator colspan="4" string="Note" />
+					<field name="note" colspan="4" nolabel="1" />
+				</form>
+			</field>
+		</record>
+
+		<!-- TREE VIEW Common attribute model -->
+		<record id='view_tree_common_attribute_model' model='ir.ui.view'>
+			<field name="name">view_tree_common_attribute_model</field>
+			<field name="model">common.attribute.model</field>
+			<field name="arch" type="xml">
+				<tree string="Common attribute models" version="8.0">
+					<field name="sequence" />
+					<field name="label" />
+					<field name="name" />
+					<field name="category_id" />
+					<field name="default_value" />
+					<field name="type" />
+					<field name="is_visible" />
+					<field name="is_required" />
+					<field name="is_readonly" />
+					<field name="is_quantity" />
+					<field name="is_compute" />
+					<field name="is_unique" />
+					<field name="note" />
+				</tree>
+			</field>
+		</record>
+
+		<!-- SEARCH VIEW Common attribute model -->
+		<record id='view_search_common_attribute_model' model='ir.ui.view'>
+			<field name="name">view_search_common_attribute_model</field>
+			<field name="model">common.attribute.model</field>
+			<field name="arch" type="xml">
+				<search version="8.0">
+					<field name="name" />
+					<field name="category_id" />
+					<filter string="Sale" domain="[('sale', '=', True)]" />
+					<filter string="Purchase" domain="[('purchase', '=', True)]" />
+					<filter string="Production" domain="[('production', '=', True)]" />
+					<filter string="Receipt" domain="[('receipt', '=', True)]" />
+					<filter string="Computed" domain="[('is_compute', '=', True)]" />
+					<group expand="1" string="Group By">
+						<filter string="Category" domain="[]" context="{'group_by': 'category_id'}" />
+					</group>
+				</search>
+			</field>
+		</record>
+
+		<!-- ACTION Common attribute model -->
+		<record id="act_common_attribute_model" model="ir.actions.act_window">
+			<field name="name">Common attribute model</field>
+			<field name="res_model">common.attribute.model</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+			<field name="domain">[]</field>
+			<field name="context">{}</field>
+			<field name="search_view_id" ref="view_search_common_attribute_model" />
+		</record>
+
+		<menuitem name="Common attribute model" action="act_common_attribute_model" id="menu_common_attribute_model" parent="product.menu_product_main" sequence="15" groups="product.group_menu_product_user" />
+
+	</data>
+</openerp>

@@ -1,0 +1,351 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+
+		<!-- ACTION Scenario Line -->
+		<record id="act_scenario_line" model="ir.actions.act_window">
+			<field name="name">Scenario Line</field>
+			<field name="res_model">scenario.line</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+
+		<!-- TREE VIEW Scenario Line -->
+		<record id='view_tree_scenario_line' model='ir.ui.view'>
+			<field name="name">scenario_line</field>
+			<field name="model">scenario.line</field>
+			<field name="arch" type="xml">
+				<tree string="Scenario Lines" version="8.0">
+					<field name="sequence" />
+					<field name="text" />
+				</tree>
+			</field>
+		</record>
+
+		<!-- SEARCH VIEW Scenario Line -->
+		<record id='view_search_scenario_line' model='ir.ui.view'>
+			<field name="name">scenario_line</field>
+			<field name="model">scenario.line</field>
+			<field name="arch" type="xml">
+				<search version="8.0">
+					<field name="scenario_id" />
+				</search>
+			</field>
+		</record>
+
+		<!-- FORM VIEW Scenario -->
+		<record id='view_form_scenario' model='ir.ui.view'>
+			<field name="name">Scenario</field>
+			<field name="model">scenario</field>
+			<field name="arch" type="xml">
+				<form string="Tests" version="8.0">
+					<group col="6">
+						<field name="name" colspan="2" />
+						<field name="hide" />
+						<group colspan="2" />
+						<field name="description" colspan="6" />
+						<group string="Scenario Lines" colspan="6">
+							<button name="%(act_scenario_line)d" string="Open lines" type="action"
+								context="{'default_scenario_id':id, 'search_default_scenario_id':id}" colspan="6" />
+							<field name="scenario_line_ids" nolabel="1" context="{'default_scenario_id':id}">
+								<tree>
+									<field name="text" />
+									<field name="sequence" />
+									<field name="hide" />
+									<button name="launch" string="Launch" type="object" context="{'default_scenario_line_id':id}" class="openprod_cancel_button" />
+									<button name="launch_to" string="Launch to" type="object" context="{'default_scenario_line_id':id}"
+										class="openprod_cancel_button" />
+									<button name="add_screenshot" string="Screenshot" type="object" />
+								</tree>
+							</field>
+						</group>
+						<group>
+							<button name="%(act_launch_test_suit)d" string="Launch" type="action" context="{'default_scenario_id':id}"
+								class="openprod_cancel_button" />
+						</group>
+					</group>
+				</form>
+			</field>
+		</record>
+
+		<!-- FORM VIEW Scenario Line -->
+		<record id='view_form_scenario_line' model='ir.ui.view'>
+			<field name="name">Scenario Line</field>
+			<field name="model">scenario.line</field>
+			<field name="arch" type="xml">
+				<form string="Test Line" version="8.0">
+					<group col="6">
+						<field name="rule_type_id" colspan="2" />
+						<field name="hide" />
+						<group colspan="2" />
+						<field name="rule_example" readonly="1" />
+						<group colspan="4" />
+						<field name="description" colspan="4" />
+						<group string="Parameters" colspan="6">
+							<field name="argument_ids" nolabel="1">
+								<tree editable="bottom">
+									<field name="value" />
+								</tree>
+							</field>
+						</group>
+						<group colspan="6">
+							<field name="text" required="True" />
+							<field name="sequence" invisible="1" />
+						</group>
+						<button name="launch" string="Launch" type="object" context="{'default_scenario_line_id':id}" class="openprod_cancel_button" />
+						<field name="scenario_id" invisible="1" />
+					</group>
+				</form>
+			</field>
+		</record>
+
+		<!-- ACTION Scenario -->
+		<record id="act_scenario" model="ir.actions.act_window">
+			<field name="name">Scenario</field>
+			<field name="res_model">scenario</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+
+		<!-- ACTION TREE Scenario -->
+		<record id="act_scenario_tree" model="ir.actions.act_window.view">
+			<field name="sequence" eval="10" />
+			<field name="view_mode">tree</field>
+			<field name="act_window_id" ref="act_scenario" />
+		</record>
+
+		<!-- ACTION FORM Scenario -->
+		<record id="act_scenario_form" model="ir.actions.act_window.view">
+			<field name="sequence" eval="20" />
+			<field name="view_mode">form</field>
+			<field name="act_window_id" ref="act_scenario" />
+		</record>
+
+		<!-- ACTION Batch -->
+		<record id="act_batch" model="ir.actions.act_window">
+			<field name="name">Batch</field>
+			<field name="res_model">batch</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+
+		<!-- ACTION TREE Batch -->
+		<record id="act_batch_tree" model="ir.actions.act_window.view">
+			<field name="sequence" eval="10" />
+			<field name="view_mode">tree</field>
+			<field name="act_window_id" ref="act_batch" />
+		</record>
+
+		<!-- ACTION FORM Batch -->
+		<record id="act_batch_form" model="ir.actions.act_window.view">
+			<field name="sequence" eval="20" />
+			<field name="view_mode">form</field>
+			<field name="act_window_id" ref="act_batch" />
+		</record>
+
+		<!-- FORM VIEW Batch -->
+		<record id='view_form_batch' model='ir.ui.view'>
+			<field name="name">Batch</field>
+			<field name="model">batch</field>
+			<field name="arch" type="xml">
+				<form string="Test suit" version="8.0">
+					<group col="6">
+						<field name="name" colspan="2" />
+						<group colspan="4" />
+						<field name="description" colspan="4" />
+						<group colspan="2" />
+						<field name="auto_launch" colspan="3" />
+						<field name="create_doc" colspan="3" />
+						<group attrs="{'invisible':[('create_doc', '=', False)]}" colspan="6" col="4">
+							<field name="document_name" />
+							<field name="verb_id" />
+							<field name="domain_name_id" attrs="{'required':[('create_doc', '!=', False)]}" />
+							<field name="complimentary_text" />
+							<field name="trade_id" attrs="{'required':[('create_doc', '!=', False)]}" />
+							<field name="jasper_template_id" attrs="{'required':[('create_doc', '!=', False)]}" />
+						</group>
+						<notebook colspan="6">
+							<page string="Scenarios" colspan="6">
+								<group colspan="4" />
+								<button name="%(act_add_scenarios)d" type="action" string="Add scenarios" class="oe_highlight"
+									context="{'default_batch_id':active_id}" />
+								<field name="scenario_ids" nolabel="1">
+									<tree editable="bottom">
+										<field name="scenario_id" />
+										<field name="sequence" />
+									</tree>
+								</field>
+							</page>
+							<page string="Runs">
+								<field name="run_ids" readonly="1" />
+							</page>
+							<page string="Documentation">
+							</page>
+						</notebook>
+						<field name="last_run_result" readonly="1" colspan="3" />
+						<field name="last_run_date" readonly="1" colspan="3" />
+						<field name="last_document_id" readonly="1" colspan="3" />
+						<field name="last_document_date" readonly="1" colspan="3" />
+						<group colspan="6">
+							<button name="%(act_launch_test_suit)d" string="Launch" type="action" context="{'default_batch_id':id}"
+								class="openprod_cancel_button" />
+						</group>
+					</group>
+				</form>
+			</field>
+		</record>
+
+		<!-- TREE VIEW Batch -->
+		<record id='view_tree_batch' model='ir.ui.view'>
+			<field name="name">batch</field>
+			<field name="model">batch</field>
+			<field name="arch" type="xml">
+				<tree string="Batchs" version="8.0" decoration-danger="last_run_result == 'failed'" decoration-success="last_run_result == 'passed'">
+					<field name="name" />
+					<field name="last_run_result" />
+					<field name="last_run_date" />
+				</tree>
+			</field>
+		</record>
+
+		<!-- SEARCH VIEW Batch -->
+		<record id='view_search_batch' model='ir.ui.view'>
+			<field name="name">batch</field>
+			<field name="model">batch</field>
+			<field name="arch" type="xml">
+				<search version="8.0">
+					<field name="name" />
+					<filter string="Failed" domain="[('last_run_result', '=', 'failed')]" />
+					<filter string="Passed" domain="[('last_run_result', '=', 'passed')]" />
+				</search>
+			</field>
+		</record>
+
+		<!-- ACTION Run multiple batch -->
+		<act_window name="Run" res_model="launch.test.suit" src_model="batch" view_mode="form" target="new"
+			key2="client_action_multi" id="act_launch_test_suit_multi" context="{'default_batch_ids':active_ids}" />
+
+		<!-- ACTION Run -->
+		<record id="act_run" model="ir.actions.act_window">
+			<field name="name">Test result</field>
+			<field name="res_model">run</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+
+		<!-- ACTION TREE Run -->
+		<record id="act_run_tree" model="ir.actions.act_window.view">
+			<field name="sequence" eval="10" />
+			<field name="view_mode">tree</field>
+		</record>
+
+		<!-- FORM VIEW Run -->
+		<record id='view_form_run' model='ir.ui.view'>
+			<field name="name">Run</field>
+			<field name="model">run</field>
+			<field name="arch" type="xml">
+				<form string="Run" version="8.0" create="false" edit="false">
+					<group col="4">
+						<field name="name" />
+						<field name="batch_id" />
+						<field name="scenario_id" />
+						<field name="target_id" />
+						<field name="lang_code" />
+						<field name="result" />
+						<group string="Scenario results" colspan="4">
+							<field name="scenario_result_ids" nolabel="1">
+								<tree decoration-danger="result == 'failed'" decoration-success="result == 'passed'">
+									<field name="scenario_id" />
+									<field name="result" />
+								</tree>
+							</field>
+						</group>
+					</group>
+				</form>
+			</field>
+		</record>
+
+		<!-- TREE VIEW Run -->
+		<record id='view_tree_run' model='ir.ui.view'>
+			<field name="name">Run</field>
+			<field name="model">run</field>
+			<field name="arch" type="xml">
+				<tree string="Run" version="8.0" create="false" edit="false">
+					<field name="name" />
+					<field name="batch_id" />
+					<field name="scenario_id" />
+					<field name="target_id" />
+					<field name="lang_code" />
+					<field name="result" />
+				</tree>
+			</field>
+		</record>
+
+		<!-- FORM VIEW Scenario Result -->
+		<record id='view_form_scenario_result' model='ir.ui.view'>
+			<field name="name">scenario_result</field>
+			<field name="model">scenario.result</field>
+			<field name="arch" type="xml">
+				<form string="Scenario Result" version="8.0">
+					<group>
+						<field name="scenario_id" />
+						<field name="result" />
+						<group string="Scenario line results" colspan="4">
+							<field name="result_line_ids" nolabel="1">
+								<tree decoration-danger="result == 'failed'" decoration-success="result == 'passed'">
+									<field name="line_text" />
+									<field name="result" />
+									<field name="screenshot" filename="screenshot_name" />
+									<field name="screenshot_name" invisible="1" />
+								</tree>
+							</field>
+						</group>
+					</group>
+				</form>
+			</field>
+		</record>
+
+		<!-- FORM VIEW Scenario line result -->
+		<record id='view_form_result_line' model='ir.ui.view'>
+			<field name="name">scenario_line_result</field>
+			<field name="model">scenario.line.result</field>
+			<field name="arch" type="xml">
+				<form string="Scenario line result" version="8.0">
+					<group col="6">
+						<field name="line_text" />
+						<field name="result" />
+						<field name="label" />
+						<field name="help_text" />
+						<field name="screenshot" filename="screenshot_name" />
+						<field name="screenshot_name" invisible="1" />
+						<field name="error" colspan="6" attrs="{'invisible':[('error', '=', None)]}" />
+					</group>
+				</form>
+			</field>
+		</record>
+
+		<!-- ACTION Target -->
+		<record id="act_target" model="ir.actions.act_window">
+			<field name="name">Target</field>
+			<field name="res_model">target</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+
+		<!-- ACTION Database -->
+		<record id="act_target_db" model="ir.actions.act_window">
+			<field name="name">Database</field>
+			<field name="res_model">target.db</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+
+		<menuitem id="menu_test_builder" name="Test Builder" parent="base.menu_administration" />
+		<menuitem id="menu_scenario" name="Scenario" parent="menu_test_builder" action="act_scenario" />
+		<menuitem id="menu_batch" name="Batch" parent="menu_test_builder" action="act_batch" />
+		<menuitem id="menu_config_test" name="Configuration" parent="menu_test_builder" />
+		<menuitem id="menu_target" name="Server" parent="menu_config_test" action="act_target" />
+		<menuitem id="menu_target_db" name="Database" parent="menu_config_test" action="act_target_db" />
+		<menuitem id="menu_run" name="Run results" parent="menu_test_builder" action="act_run" />
+	</data>
+</openerp>

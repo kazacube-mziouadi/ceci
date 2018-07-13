@@ -1,0 +1,27 @@
+# -*- coding: utf-8 -*-
+import importation_component_bom
+import importation_routing_line
+import mrp_see_bom
+import mrp_add_product
+import mrp_add_resource_wo
+import wo_declaration
+import change_qty_mo
+import split_wo
+import split_mo
+import mrp_planning_mo
+import change_date_wo
+import print_wo
+import purchase_subcontracting
+import production_operator_time
+import mrp_add_operation
+import display_reservation
+import report_wo_planning
+import confirm_date
+import switch_document
+import son_mo_wo
+import more_produce
+import change_sale_wizard
+import wizard_create_timetracking
+import cost_simulation
+import compute_cost
+import label_comsuption

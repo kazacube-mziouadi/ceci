@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+		<!-- FORM VIEW Synthesis valuation report -->
+		<record id='view_form_stock_synthesis_valuation_report' model='ir.ui.view'>
+			<field name="name">view_form_stock_synthesis_valuation_report</field>
+			<field name="model">stock.synthesis.valuation.report</field>
+			<field name="arch" type="xml">
+				<form string="Synthesis valuation report" version="8.0">
+					<sheet>
+						<group>
+							<field name="month" />
+							<field name="year" />
+							<field name="product_id" />
+							<field name="qty_in_stock" />
+							<field name="valuation" />
+							<field name="deprecated_valuation" />
+							<field name="inventory_valuation" />
+							<field name="type_valuation" />
+						</group>
+					</sheet>
+				</form>
+			</field>
+		</record>
+
+		<!-- TREE VIEW Synthesis valuation report -->
+		<record id='view_tree_stock_synthesis_valuation_report' model='ir.ui.view'>
+			<field name="name">view_tree_stock_synthesis_valuation_report</field>
+			<field name="model">stock.synthesis.valuation.report</field>
+			<field name="arch" type="xml">
+				<tree string="Synthesis valuation reports" version="8.0">
+					<field name="month" />
+                    <field name="year" />
+                    <field name="product_id" />
+                    <field name="qty_in_stock" />
+                    <field name="valuation" />
+                    <field name="deprecated_valuation" />
+                    <field name="inventory_valuation" />
+                    <field name="type_valuation" />
+				</tree>
+			</field>
+		</record>
+
+		<!-- SEARCH VIEW Synthesis valuation report -->
+		<record id='view_search_stock_synthesis_valuation_report' model='ir.ui.view'>
+			<field name="name">view_search_stock_synthesis_valuation_report</field>
+			<field name="model">stock.synthesis.valuation.report</field>
+			<field name="arch" type="xml">
+				<search version="8.0">
+					<field name="month" />
+                    <field name="year" />
+                    <field name="product_id" />
+                    <field name="inventory_valuation" />
+                    <field name="type_valuation" />
+                    <group expand="0" string="Group by...">
+                        <filter string="Month" context="{'group_by' : 'month'}" />
+                        <filter string="Year" context="{'group_by' : 'year'}" />
+                        <filter string="Product" context="{'group_by' : 'product_id'}" />
+                        <filter string="Inventory valuation" context="{'group_by' : 'inventory_valuation'}" />
+                        <filter string="Type valuation" context="{'group_by' : 'type_valuation'}" />
+                    </group>
+				</search>
+			</field>
+		</record>
+
+		<!-- ACTION Synthesis valuation report -->
+		<record id="act_stock_synthesis_valuation_report" model="ir.actions.act_window">
+			<field name="name">Synthesis valuation report</field>
+			<field name="res_model">stock.synthesis.valuation.report</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+			<field name="search_view_id" ref="view_search_stock_synthesis_valuation_report" />
+		</record>
+
+		<menuitem name="Synthesis valuation report" action="act_stock_synthesis_valuation_report" id="menu_stock_synthesis_valuation_report" 
+		          parent="stock.synthesis_valuation" sequence="10" />
+	</data>
+</openerp>

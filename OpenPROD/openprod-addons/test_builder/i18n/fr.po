@@ -1,0 +1,849 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* test_builder
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 9.0c\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-10-27 07:51+0000\n"
+"PO-Revision-Date: 2016-10-27 07:51+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: test_builder
+#: model:ir.ui.view,arch_db:test_builder.view_form_add_scenarios
+msgid "Add"
+msgstr "Ajouter"
+
+#. module: test_builder
+#: model:ir.actions.act_window,name:test_builder.act_add_scenarios
+#: model:ir.ui.view,arch_db:test_builder.view_form_add_scenarios
+msgid "Add Scenarios"
+msgstr "Ajouter scénarios"
+
+#. module: test_builder
+#: model:ir.model,name:test_builder.model_add_scenarios
+msgid "Add multiple scenarios at once to a batch"
+msgstr "Add multiple scenarios at once to a batch"
+
+#. module: test_builder
+#: model:ir.ui.view,arch_db:test_builder.view_form_batch
+msgid "Add scenarios"
+msgstr "Ajouter scénarios"
+
+#. module: test_builder
+#: model:ir.model.fields,field_description:test_builder.field_scenario_line_argument_ids
+msgid "Arguments"
+msgstr "Arguments"
+
+#. module: test_builder
+#: model:ir.model.fields,field_description:test_builder.field_batch_auto_launch
+msgid "Automatic launch"
+msgstr "Lancement automatique"
+
+#. module: test_builder
+#: model:ir.actions.act_window,name:test_builder.act_batch
+#: model:ir.model.fields,field_description:test_builder.field_add_scenarios_batch_id
+#: model:ir.model.fields,field_description:test_builder.field_batch_scenario_rel_batch_id
+#: model:ir.model.fields,field_description:test_builder.field_launch_test_suit_batch_id
+#: model:ir.model.fields,field_description:test_builder.field_run_batch_id
+#: model:ir.ui.menu,name:test_builder.menu_batch
+msgid "Batch"
+msgstr "Batch"
+
+#. module: test_builder
+#: model:ir.model.fields,field_description:test_builder.field_launch_test_suit_batch_ids
+msgid "Batch ids"
+msgstr "Batch ids"
+
+#. module: test_builder
+#: model:ir.ui.view,arch_db:test_builder.view_tree_batch
+msgid "Batchs"
+msgstr "Batchs"
+
+#. module: test_builder
+#: model:ir.ui.view,arch_db:test_builder.view_form_launch_test_suit
+msgid "Cancel"
+msgstr "Annuler"
+
+#. module: test_builder
+#: model:ir.model.fields,field_description:test_builder.field_domain_name_complete_name
+msgid "Complete name"
+msgstr "Nom complet"
+
+#. module: test_builder
+#: model:ir.model.fields,field_description:test_builder.field_batch_complimentary_text
+msgid "Complimentary Text"
+msgstr "Texte complémentaire"
+
+#. module: test_builder
+#: model:ir.ui.menu,name:test_builder.menu_config_test
+msgid "Configuration"
+msgstr "Configuration"
+
+#. module: test_builder
+#: model:ir.model.fields,field_description:test_builder.field_batch_create_doc
+msgid "Create Documentation"
+msgstr "Créer Documentation"
+
+#. module: test_builder
+#: model:ir.model.fields,field_description:test_builder.field_add_scenarios_create_uid
+#: model:ir.model.fields,field_description:test_builder.field_argument_create_uid
+#: model:ir.model.fields,field_description:test_builder.field_batch_create_uid
+#: model:ir.model.fields,field_description:test_builder.field_batch_scenario_rel_create_uid
+#: model:ir.model.fields,field_description:test_builder.field_domain_name_create_uid
+#: model:ir.model.fields,field_description:test_builder.field_launch_test_suit_create_uid
+#: model:ir.model.fields,field_description:test_builder.field_rule_type_create_uid
+#: model:ir.model.fields,field_description:test_builder.field_run_create_uid
+#: model:ir.model.fields,field_description:test_builder.field_scenario_create_uid
+#: model:ir.model.fields,field_description:test_builder.field_scenario_line_create_uid
+#: model:ir.model.fields,field_description:test_builder.field_scenario_line_result_create_uid
+#: model:ir.model.fields,field_description:test_builder.field_scenario_result_create_uid
+#: model:ir.model.fields,field_description:test_builder.field_target_create_uid
+#: model:ir.model.fields,field_description:test_builder.field_target_db_create_uid
+#: model:ir.model.fields,field_description:test_builder.field_test_variable_create_uid
+#: model:ir.model.fields,field_description:test_builder.field_trade_create_uid
+#: model:ir.model.fields,field_description:test_builder.field_verb_create_uid
+msgid "Created by"
+msgstr "Created by"
+
+#. module: test_builder
+#: model:ir.model.fields,field_description:test_builder.field_add_scenarios_create_date
+#: model:ir.model.fields,field_description:test_builder.field_argument_create_date
+#: model:ir.model.fields,field_description:test_builder.field_batch_create_date
+#: model:ir.model.fields,field_description:test_builder.field_batch_scenario_rel_create_date
+#: model:ir.model.fields,field_description:test_builder.field_domain_name_create_date
+#: model:ir.model.fields,field_description:test_builder.field_launch_test_suit_create_date
+#: model:ir.model.fields,field_description:test_builder.field_rule_type_create_date
+#: model:ir.model.fields,field_description:test_builder.field_run_create_date
+#: model:ir.model.fields,field_description:test_builder.field_scenario_create_date
+#: model:ir.model.fields,field_description:test_builder.field_scenario_line_create_date
+#: model:ir.model.fields,field_description:test_builder.field_scenario_line_result_create_date
+#: model:ir.model.fields,field_description:test_builder.field_scenario_result_create_date
+#: model:ir.model.fields,field_description:test_builder.field_target_create_date
+#: model:ir.model.fields,field_description:test_builder.field_target_db_create_date
+#: model:ir.model.fields,field_description:test_builder.field_test_variable_create_date
+#: model:ir.model.fields,field_description:test_builder.field_trade_create_date
+#: model:ir.model.fields,field_description:test_builder.field_verb_create_date
+msgid "Created on"
+msgstr "Created on"
+
+#. module: test_builder
+#: model:ir.actions.act_window,name:test_builder.act_target_db
+#: model:ir.model.fields,field_description:test_builder.field_launch_test_suit_target_id
+#: model:ir.model.fields,field_description:test_builder.field_run_target_id
+#: model:ir.ui.menu,name:test_builder.menu_target_db
+msgid "Database"
+msgstr "Database"
+
+#. module: test_builder
+#: model:ir.model.fields,field_description:test_builder.field_batch_description
+#: model:ir.model.fields,field_description:test_builder.field_scenario_description
+#: model:ir.model.fields,field_description:test_builder.field_scenario_line_description
+msgid "Description"
+msgstr "Description"
+
+#. module: test_builder
+#: model:ir.model.fields,field_description:test_builder.field_add_scenarios_display_name
+#: model:ir.model.fields,field_description:test_builder.field_argument_display_name
+#: model:ir.model.fields,field_description:test_builder.field_batch_display_name
+#: model:ir.model.fields,field_description:test_builder.field_batch_scenario_rel_display_name
+#: model:ir.model.fields,field_description:test_builder.field_domain_name_display_name
+#: model:ir.model.fields,field_description:test_builder.field_launch_test_suit_display_name
+#: model:ir.model.fields,field_description:test_builder.field_rule_type_display_name
+#: model:ir.model.fields,field_description:test_builder.field_run_display_name
+#: model:ir.model.fields,field_description:test_builder.field_scenario_display_name
+#: model:ir.model.fields,field_description:test_builder.field_scenario_line_display_name
+#: model:ir.model.fields,field_description:test_builder.field_scenario_line_result_display_name
+#: model:ir.model.fields,field_description:test_builder.field_scenario_result_display_name
+#: model:ir.model.fields,field_description:test_builder.field_target_db_display_name
+#: model:ir.model.fields,field_description:test_builder.field_target_display_name
+#: model:ir.model.fields,field_description:test_builder.field_test_variable_display_name
+#: model:ir.model.fields,field_description:test_builder.field_trade_display_name
+#: model:ir.model.fields,field_description:test_builder.field_verb_display_name
+msgid "Display Name"
+msgstr "Nom affiché"
+
+#. module: test_builder
+#: model:ir.model.fields,field_description:test_builder.field_batch_document_name
+msgid "Document Name"
+msgstr "Nom du document"
+
+#. module: test_builder
+#: model:ir.ui.view,arch_db:test_builder.view_form_batch
+msgid "Documentation"
+msgstr "Documentation"
+
+#. module: test_builder
+#: model:ir.model,name:test_builder.model_domain_name
+msgid "Domain Names"
+msgstr "Nom du domaine"
+
+#. module: test_builder
+#: model:ir.model.fields,field_description:test_builder.field_batch_domain_name_id
+msgid "Domain name"
+msgstr "Nom du domaine"
+
+#. module: test_builder
+#: model:ir.model.fields,field_description:test_builder.field_scenario_line_result_error
+msgid "Error"
+msgstr "Erreur"
+
+#. module: test_builder
+#: model:ir.model.fields,field_description:test_builder.field_rule_type_example
+msgid "Example"
+msgstr "Exemple"
+
+#. module: test_builder
+#: model:ir.ui.view,arch_db:test_builder.view_search_batch
+msgid "Failed"
+msgstr "Échec"
+
+#. module: test_builder
+#: code:addons/test_builder/test_builder.py:68
+#, python-format
+msgid "Failed launch"
+msgstr "Lancement échoué"
+
+#. module: test_builder
+#: model:ir.model.fields,help:test_builder.field_target_name
+msgid "For human use only"
+msgstr "Pour information seulement"
+
+#. module: test_builder
+#: model:rule.type,example:test_builder.rule_1
+#: model:rule.type,text:test_builder.rule_1
+msgid "Given I am on the login page"
+msgstr "Sachant que je suis sur la page d'accueil\n"
+""
+
+#. module: test_builder
+#: model:ir.model.fields,field_description:test_builder.field_scenario_line_result_help_text
+msgid "Help Text"
+msgstr "Aide"
+
+#. module: test_builder
+#: model:ir.model.fields,field_description:test_builder.field_scenario_hide
+#: model:ir.model.fields,field_description:test_builder.field_scenario_line_hide
+#: model:ir.model.fields,field_description:test_builder.field_scenario_line_result_hide
+#: model:ir.model.fields,field_description:test_builder.field_scenario_result_hide
+msgid "Hide"
+msgstr "Cacher"
+
+#. module: test_builder
+#: model:ir.model.fields,field_description:test_builder.field_add_scenarios_id
+#: model:ir.model.fields,field_description:test_builder.field_argument_id
+#: model:ir.model.fields,field_description:test_builder.field_batch_id
+#: model:ir.model.fields,field_description:test_builder.field_batch_scenario_rel_id
+#: model:ir.model.fields,field_description:test_builder.field_domain_name_id
+#: model:ir.model.fields,field_description:test_builder.field_launch_test_suit_id
+#: model:ir.model.fields,field_description:test_builder.field_rule_type_id
+#: model:ir.model.fields,field_description:test_builder.field_run_id
+#: model:ir.model.fields,field_description:test_builder.field_scenario_id
+#: model:ir.model.fields,field_description:test_builder.field_scenario_line_id
+#: model:ir.model.fields,field_description:test_builder.field_scenario_line_result_id
+#: model:ir.model.fields,field_description:test_builder.field_scenario_result_id
+#: model:ir.model.fields,field_description:test_builder.field_target_db_id
+#: model:ir.model.fields,field_description:test_builder.field_target_id
+#: model:ir.model.fields,field_description:test_builder.field_test_variable_id
+#: model:ir.model.fields,field_description:test_builder.field_trade_id
+#: model:ir.model.fields,field_description:test_builder.field_verb_id
+msgid "ID"
+msgstr "ID"
+
+#. module: test_builder
+#: model:ir.model.fields,field_description:test_builder.field_batch_jasper_template_id
+msgid "Jasper Template"
+msgstr "Jasper Template"
+
+#. module: test_builder
+#: model:ir.model.fields,field_description:test_builder.field_scenario_line_result_label
+msgid "Label"
+msgstr "Label"
+
+#. module: test_builder
+#: model:ir.model.fields,field_description:test_builder.field_launch_test_suit_lang_code
+#: model:ir.model.fields,field_description:test_builder.field_run_lang_code
+msgid "Lang code"
+msgstr "Lang code"
+
+#. module: test_builder
+#: model:ir.model.fields,field_description:test_builder.field_batch_last_document_id
+msgid "Last Document"
+msgstr "Last Document"
+
+#. module: test_builder
+#: model:ir.model.fields,field_description:test_builder.field_add_scenarios___last_update
+#: model:ir.model.fields,field_description:test_builder.field_argument___last_update
+#: model:ir.model.fields,field_description:test_builder.field_batch___last_update
+#: model:ir.model.fields,field_description:test_builder.field_batch_scenario_rel___last_update
+#: model:ir.model.fields,field_description:test_builder.field_domain_name___last_update
+#: model:ir.model.fields,field_description:test_builder.field_launch_test_suit___last_update
+#: model:ir.model.fields,field_description:test_builder.field_rule_type___last_update
+#: model:ir.model.fields,field_description:test_builder.field_run___last_update
+#: model:ir.model.fields,field_description:test_builder.field_scenario___last_update
+#: model:ir.model.fields,field_description:test_builder.field_scenario_line___last_update
+#: model:ir.model.fields,field_description:test_builder.field_scenario_line_result___last_update
+#: model:ir.model.fields,field_description:test_builder.field_scenario_result___last_update
+#: model:ir.model.fields,field_description:test_builder.field_target___last_update
+#: model:ir.model.fields,field_description:test_builder.field_target_db___last_update
+#: model:ir.model.fields,field_description:test_builder.field_test_variable___last_update
+#: model:ir.model.fields,field_description:test_builder.field_trade___last_update
+#: model:ir.model.fields,field_description:test_builder.field_verb___last_update
+msgid "Last Modified on"
+msgstr "Last Modified on"
+
+#. module: test_builder
+#: model:ir.model.fields,field_description:test_builder.field_add_scenarios_write_uid
+#: model:ir.model.fields,field_description:test_builder.field_argument_write_uid
+#: model:ir.model.fields,field_description:test_builder.field_batch_scenario_rel_write_uid
+#: model:ir.model.fields,field_description:test_builder.field_batch_write_uid
+#: model:ir.model.fields,field_description:test_builder.field_domain_name_write_uid
+#: model:ir.model.fields,field_description:test_builder.field_launch_test_suit_write_uid
+#: model:ir.model.fields,field_description:test_builder.field_rule_type_write_uid
+#: model:ir.model.fields,field_description:test_builder.field_run_write_uid
+#: model:ir.model.fields,field_description:test_builder.field_scenario_line_result_write_uid
+#: model:ir.model.fields,field_description:test_builder.field_scenario_line_write_uid
+#: model:ir.model.fields,field_description:test_builder.field_scenario_result_write_uid
+#: model:ir.model.fields,field_description:test_builder.field_scenario_write_uid
+#: model:ir.model.fields,field_description:test_builder.field_target_db_write_uid
+#: model:ir.model.fields,field_description:test_builder.field_target_write_uid
+#: model:ir.model.fields,field_description:test_builder.field_test_variable_write_uid
+#: model:ir.model.fields,field_description:test_builder.field_trade_write_uid
+#: model:ir.model.fields,field_description:test_builder.field_verb_write_uid
+msgid "Last Updated by"
+msgstr "Last Updated by"
+
+#. module: test_builder
+#: model:ir.model.fields,field_description:test_builder.field_add_scenarios_write_date
+#: model:ir.model.fields,field_description:test_builder.field_argument_write_date
+#: model:ir.model.fields,field_description:test_builder.field_batch_scenario_rel_write_date
+#: model:ir.model.fields,field_description:test_builder.field_batch_write_date
+#: model:ir.model.fields,field_description:test_builder.field_domain_name_write_date
+#: model:ir.model.fields,field_description:test_builder.field_launch_test_suit_write_date
+#: model:ir.model.fields,field_description:test_builder.field_rule_type_write_date
+#: model:ir.model.fields,field_description:test_builder.field_run_write_date
+#: model:ir.model.fields,field_description:test_builder.field_scenario_line_result_write_date
+#: model:ir.model.fields,field_description:test_builder.field_scenario_line_write_date
+#: model:ir.model.fields,field_description:test_builder.field_scenario_result_write_date
+#: model:ir.model.fields,field_description:test_builder.field_scenario_write_date
+#: model:ir.model.fields,field_description:test_builder.field_target_db_write_date
+#: model:ir.model.fields,field_description:test_builder.field_target_write_date
+#: model:ir.model.fields,field_description:test_builder.field_test_variable_write_date
+#: model:ir.model.fields,field_description:test_builder.field_trade_write_date
+#: model:ir.model.fields,field_description:test_builder.field_verb_write_date
+msgid "Last Updated on"
+msgstr "Last Updated on"
+
+#. module: test_builder
+#: model:ir.model.fields,field_description:test_builder.field_batch_last_document_date
+msgid "Last document date"
+msgstr "Last document date"
+
+#. module: test_builder
+#: model:ir.model.fields,field_description:test_builder.field_batch_last_run_date
+msgid "Last run date"
+msgstr "Last run date"
+
+#. module: test_builder
+#: model:ir.model.fields,field_description:test_builder.field_batch_last_run_result
+msgid "Last run result"
+msgstr "Last run result"
+
+#. module: test_builder
+#: model:ir.ui.view,arch_db:test_builder.view_form_batch
+#: model:ir.ui.view,arch_db:test_builder.view_form_launch_test_suit
+#: model:ir.ui.view,arch_db:test_builder.view_form_scenario
+#: model:ir.ui.view,arch_db:test_builder.view_form_scenario_line
+msgid "Launch"
+msgstr "Launch"
+
+#. module: test_builder
+#: model:ir.actions.act_window,name:test_builder.act_launch_test_suit
+#: model:ir.ui.view,arch_db:test_builder.view_form_launch_test_suit
+msgid "Launch test suit"
+msgstr "Launch test suit"
+
+#. module: test_builder
+#: model:ir.ui.view,arch_db:test_builder.view_form_scenario
+msgid "Launch to"
+msgstr "Launch to"
+
+#. module: test_builder
+#: model:ir.model.fields,field_description:test_builder.field_scenario_line_result_line_text
+msgid "Line Text"
+msgstr "Line Text"
+
+#. module: test_builder
+#: model:ir.model.fields,field_description:test_builder.field_batch_name
+#: model:ir.model.fields,field_description:test_builder.field_domain_name_name
+#: model:ir.model.fields,field_description:test_builder.field_run_name
+#: model:ir.model.fields,field_description:test_builder.field_scenario_name
+#: model:ir.model.fields,field_description:test_builder.field_target_db_name
+#: model:ir.model.fields,field_description:test_builder.field_target_name
+#: model:ir.model.fields,field_description:test_builder.field_test_variable_name
+#: model:ir.model.fields,field_description:test_builder.field_trade_name
+#: model:ir.model.fields,field_description:test_builder.field_verb_name
+msgid "Name"
+msgstr "Name"
+
+#. module: test_builder
+#: model:ir.model.fields,field_description:test_builder.field_rule_type_nb_args
+msgid "Number of arguments"
+msgstr "Number of arguments"
+
+#. module: test_builder
+#: model:ir.ui.view,arch_db:test_builder.view_form_scenario
+msgid "Open lines"
+msgstr "Open lines"
+
+#. module: test_builder
+#: model:ir.ui.view,arch_db:test_builder.view_form_scenario_line
+msgid "Parameters"
+msgstr "Parameters"
+
+#. module: test_builder
+#: model:ir.model.fields,field_description:test_builder.field_domain_name_parent_id
+msgid "Parent id"
+msgstr "Parent id"
+
+#. module: test_builder
+#: model:ir.ui.view,arch_db:test_builder.view_search_batch
+msgid "Passed"
+msgstr "Passed"
+
+#. module: test_builder
+#: model:ir.model,name:test_builder.model_test_variable
+msgid "Persistent variable for the test builder"
+msgstr "Persistent variable for the test builder"
+
+#. module: test_builder
+#: model:ir.model.fields,field_description:test_builder.field_run_result
+#: model:ir.model.fields,field_description:test_builder.field_scenario_line_result_result
+#: model:ir.model.fields,field_description:test_builder.field_scenario_result_result
+msgid "Result"
+msgstr "Result"
+
+#. module: test_builder
+#: model:ir.model.fields,field_description:test_builder.field_scenario_line_rule_example
+msgid "Rule Example"
+msgstr "Rule Example"
+
+#. module: test_builder
+#: model:ir.model.fields,field_description:test_builder.field_scenario_line_rule_type_id
+msgid "Rule Type"
+msgstr "Rule Type"
+
+#. module: test_builder
+#: model:ir.actions.act_window,name:test_builder.act_launch_test_suit_multi
+#: model:ir.model.fields,field_description:test_builder.field_scenario_result_run_id
+#: model:ir.ui.view,arch_db:test_builder.view_form_run
+#: model:ir.ui.view,arch_db:test_builder.view_tree_run
+msgid "Run"
+msgstr "Run"
+
+#. module: test_builder
+#: model:ir.ui.menu,name:test_builder.menu_run
+msgid "Run results"
+msgstr "Run results"
+
+#. module: test_builder
+#: model:ir.model.fields,field_description:test_builder.field_batch_run_ids
+#: model:ir.ui.view,arch_db:test_builder.view_form_batch
+msgid "Runs"
+msgstr "Runs"
+
+#. module: test_builder
+#: model:ir.actions.act_window,name:test_builder.act_scenario
+#: model:ir.model.fields,field_description:test_builder.field_batch_scenario_rel_scenario_id
+#: model:ir.model.fields,field_description:test_builder.field_launch_test_suit_scenario_id
+#: model:ir.model.fields,field_description:test_builder.field_run_scenario_id
+#: model:ir.model.fields,field_description:test_builder.field_scenario_line_scenario_id
+#: model:ir.model.fields,field_description:test_builder.field_scenario_result_scenario_id
+#: model:ir.ui.menu,name:test_builder.menu_scenario
+msgid "Scenario"
+msgstr "Scenario"
+
+#. module: test_builder
+#: model:ir.actions.act_window,name:test_builder.act_scenario_line
+#: model:ir.model.fields,field_description:test_builder.field_launch_test_suit_scenario_line_id
+#: model:ir.model.fields,field_description:test_builder.field_scenario_line_result_scenario_line_id
+msgid "Scenario Line"
+msgstr "Scenario Line"
+
+#. module: test_builder
+#: model:ir.ui.view,arch_db:test_builder.view_form_scenario
+#: model:ir.ui.view,arch_db:test_builder.view_tree_scenario_line
+msgid "Scenario Lines"
+msgstr "Scenario Lines"
+
+#. module: test_builder
+#: model:ir.model.fields,field_description:test_builder.field_scenario_line_result_scenario_result_id
+#: model:ir.ui.view,arch_db:test_builder.view_form_scenario_result
+msgid "Scenario Result"
+msgstr "Scenario Result"
+
+#. module: test_builder
+#: model:ir.model.fields,field_description:test_builder.field_argument_scenario_line_id
+msgid "Scenario line"
+msgstr "Scenario line"
+
+#. module: test_builder
+#: model:ir.ui.view,arch_db:test_builder.view_form_result_line
+msgid "Scenario line result"
+msgstr "Scenario line result"
+
+#. module: test_builder
+#: model:ir.model.fields,field_description:test_builder.field_scenario_result_result_line_ids
+#: model:ir.ui.view,arch_db:test_builder.view_form_scenario_result
+msgid "Scenario line results"
+msgstr "Scenario line results"
+
+#. module: test_builder
+#: model:ir.model.fields,field_description:test_builder.field_scenario_scenario_line_ids
+msgid "Scenario lines"
+msgstr "Scenario lines"
+
+#. module: test_builder
+#: model:ir.model.fields,field_description:test_builder.field_run_scenario_result_ids
+#: model:ir.ui.view,arch_db:test_builder.view_form_run
+msgid "Scenario results"
+msgstr "Scenario results"
+
+#. module: test_builder
+#: model:ir.ui.view,arch_db:test_builder.view_form_batch
+msgid "Scenarios"
+msgstr "Scenarios"
+
+#. module: test_builder
+#: model:ir.ui.view,arch_db:test_builder.view_form_scenario
+msgid "Screenshot"
+msgstr "Screenshot"
+
+#. module: test_builder
+#: model:ir.model.fields,field_description:test_builder.field_scenario_line_result_screenshot_name
+msgid "Screenshot name"
+msgstr "Screenshot name"
+
+#. module: test_builder
+#: model:ir.model.fields,field_description:test_builder.field_batch_scenario_rel_sequence
+#: model:ir.model.fields,field_description:test_builder.field_scenario_line_sequence
+msgid "Sequence"
+msgstr "Sequence"
+
+#. module: test_builder
+#: model:ir.ui.menu,name:test_builder.menu_target
+msgid "Server"
+msgstr "Server"
+
+#. module: test_builder
+#: model:ir.actions.act_window,name:test_builder.act_target
+#: model:ir.model.fields,field_description:test_builder.field_target_db_target_id
+msgid "Target"
+msgstr "Target"
+
+#. module: test_builder
+#: model:ir.ui.menu,name:test_builder.menu_test_builder
+msgid "Test Builder"
+msgstr "Test Builder"
+
+#. module: test_builder
+#: model:ir.ui.view,arch_db:test_builder.view_form_scenario_line
+msgid "Test Line"
+msgstr "Test Line"
+
+#. module: test_builder
+#: model:ir.model.fields,field_description:test_builder.field_batch_scenario_ids
+msgid "Test lines"
+msgstr "Test lines"
+
+#. module: test_builder
+#: model:ir.actions.act_window,name:test_builder.act_run
+msgid "Test result"
+msgstr "Test result"
+
+#. module: test_builder
+#: model:ir.ui.view,arch_db:test_builder.view_form_batch
+msgid "Test suit"
+msgstr "Test suit"
+
+#. module: test_builder
+#: model:ir.ui.view,arch_db:test_builder.view_form_scenario
+msgid "Tests"
+msgstr "Tests"
+
+#. module: test_builder
+#: model:ir.model.fields,field_description:test_builder.field_rule_type_text
+#: model:ir.model.fields,field_description:test_builder.field_scenario_line_text
+msgid "Text"
+msgstr "Text"
+
+#. module: test_builder
+#: model:rule.type,example:test_builder.rule_16
+msgid "Then I delete variable \"routing_name\""
+msgstr "Then I delete variable \"routing_name\""
+
+#. module: test_builder
+#: model:rule.type,example:test_builder.rule_17
+msgid "Then I save \"MO00001\" in \"routing_name\""
+msgstr "Then I save \"MO00001\" in \"routing_name\""
+
+#. module: test_builder
+#: model:rule.type,example:test_builder.rule_15
+msgid "Then I save value of field 'mrp.routing.name' in \"routing_name\""
+msgstr "Then I save value of field 'mrp.routing.name' in \"routing_name\""
+
+#. module: test_builder
+#: model:rule.type,example:test_builder.rule_9
+msgid "Then I should be connected with \"admin\""
+msgstr "Then I should be connected with \"admin\""
+
+#. module: test_builder
+#: model:rule.type,text:test_builder.rule_9
+msgid "Then I should be connected with \"{}\""
+msgstr "Then I should be connected with \"{}\""
+
+#. module: test_builder
+#: model:rule.type,example:test_builder.rule_12
+msgid "Then I should not see \"Error\""
+msgstr "Then I should not see \"Error\""
+
+#. module: test_builder
+#: model:rule.type,text:test_builder.rule_12
+msgid "Then I should not see \"{}\""
+msgstr "Then I should not see \"{}\""
+
+#. module: test_builder
+#: model:rule.type,example:test_builder.rule_10
+msgid "Then I should see \"10484,14\" in \"amount_total\""
+msgstr "Then I should see \"10484,14\" in \"amount_total\""
+
+#. module: test_builder
+#: model:rule.type,example:test_builder.rule_11
+msgid "Then I should see \"Vous êtes connecté\""
+msgstr "Then I should see \"Vous êtes connecté\""
+
+#. module: test_builder
+#: model:rule.type,text:test_builder.rule_11
+msgid "Then I should see \"{}\""
+msgstr "Then I should see \"{}\""
+
+#. module: test_builder
+#: model:rule.type,text:test_builder.rule_10
+msgid "Then I should see \"{}\" in \"{}\""
+msgstr "Then I should see \"{}\" in \"{}\""
+
+#. module: test_builder
+#: model:rule.type,text:test_builder.rule_16
+msgid "Then delete variable \"{}\""
+msgstr "Then delete variable \"{}\""
+
+#. module: test_builder
+#: model:rule.type,text:test_builder.rule_17
+msgid "Then save \"{}\" in \"{}\""
+msgstr "Then save \"{}\" in \"{}\""
+
+#. module: test_builder
+#: model:rule.type,example:test_builder.rule_13
+#: model:rule.type,text:test_builder.rule_13
+msgid "Then save screenshot"
+msgstr "Then save screenshot"
+
+#. module: test_builder
+#: model:rule.type,text:test_builder.rule_15
+msgid "Then save value of field '{}' in \"{}\""
+msgstr "Then save value of field '{}' in \"{}\""
+
+#. module: test_builder
+#: model:ir.model,name:test_builder.model_trade
+#: model:ir.model.fields,field_description:test_builder.field_batch_trade_id
+msgid "Trade"
+msgstr "Trade"
+
+#. module: test_builder
+#: model:ir.model.fields,field_description:test_builder.field_target_url
+msgid "URL"
+msgstr "URL"
+
+#. module: test_builder
+#: model:ir.model.fields,help:test_builder.field_target_url
+msgid "URL of home page, from the Selenium server PoV"
+msgstr "URL of home page, from the Selenium server PoV"
+
+#. module: test_builder
+#: model:ir.model.fields,field_description:test_builder.field_argument_value
+#: model:ir.model.fields,field_description:test_builder.field_test_variable_value
+msgid "Value"
+msgstr "Value"
+
+#. module: test_builder
+#: model:ir.model,name:test_builder.model_verb
+#: model:ir.model.fields,field_description:test_builder.field_batch_verb_id
+msgid "Verb"
+msgstr "Verb"
+
+#. module: test_builder
+#: model:rule.type,example:test_builder.rule_6
+msgid "When I click button with text \"Annuler\""
+msgstr "When I click button with text \"Annuler\""
+
+#. module: test_builder
+#: model:rule.type,example:test_builder.rule_8
+msgid "When I click test_id 'menu_232'"
+msgstr "When I click test_id 'menu_232'"
+
+#. module: test_builder
+#: model:rule.type,text:test_builder.rule_8
+msgid "When I click test_id '{}'"
+msgstr "When I click test_id '{}'"
+
+#. module: test_builder
+#: model:rule.type,text:test_builder.rule_6
+msgid "When I click {} with text \"{}\""
+msgstr "When I click {} with text \"{}\""
+
+#. module: test_builder
+#: model:rule.type,example:test_builder.rule_2
+msgid "When I fill test_id 'mrp.routing.name' with 'Gamme 12'"
+msgstr "Quand je remplis test_id 'mrp.routing.name' avec 'Gamme 12'"
+
+#. module: test_builder
+#: model:rule.type,text:test_builder.rule_2
+msgid "When I fill test_id '{}' with '{}'"
+msgstr "When I fill test_id '{}' with '{}'"
+
+#. module: test_builder
+#: model:rule.type,example:test_builder.rule_3
+msgid "When I fill username with \"admin\""
+msgstr "When I fill username with \"admin\""
+
+#. module: test_builder
+#: model:rule.type,text:test_builder.rule_3
+msgid "When I fill {} with '{}'"
+msgstr "When I fill {} with '{}'"
+
+#. module: test_builder
+#: model:rule.type,example:test_builder.rule_4
+msgid "When I select db with \"gergonne\""
+msgstr "When I select db with \"gergonne\""
+
+#. module: test_builder
+#: model:rule.type,text:test_builder.rule_4
+msgid "When I select {} with '{}'"
+msgstr "When I select {} with '{}'"
+
+#. module: test_builder
+#: model:rule.type,example:test_builder.rule_14
+msgid "When I wait 3 seconds"
+msgstr "When I wait 3 seconds"
+
+#. module: test_builder
+#: model:rule.type,text:test_builder.rule_14
+msgid "When I wait {} seconds"
+msgstr "When I wait {} seconds"
+
+#. module: test_builder
+#: code:addons/test_builder/test_builder.py:41
+#, python-format
+msgid "Wrong number of arguments"
+msgstr "Wrong number of arguments"
+
+#. module: test_builder
+#: code:addons/test_builder/test_builder.py:280
+#: sql_constraint:test.variable:0
+#, python-format
+msgid "You can't have the same variable twice."
+msgstr "You can't have the same variable twice."
+
+#. module: test_builder
+#: code:addons/test_builder/wizard/launch_test_suit.py:52
+#, python-format
+msgid "You must set a batch or a scenario"
+msgstr "You must set a batch or a scenario"
+
+#. module: test_builder
+#: model:ir.model,name:test_builder.model_argument
+msgid "argument"
+msgstr "argument"
+
+#. module: test_builder
+#: model:ir.model,name:test_builder.model_batch
+msgid "batch"
+msgstr "batch"
+
+#. module: test_builder
+#: model:ir.model,name:test_builder.model_batch_scenario_rel
+msgid "batch.scenario.rel"
+msgstr "batch.scenario.rel"
+
+#. module: test_builder
+#: model:ir.model.fields,help:test_builder.field_target_db_name
+msgid "database name"
+msgstr "database name"
+
+#. module: test_builder
+#: model:ir.model,name:test_builder.model_launch_test_suit
+msgid "description"
+msgstr "description"
+
+#. module: test_builder
+#: model:ir.model.fields,help:test_builder.field_scenario_line_result_screenshot
+msgid "help"
+msgstr "help"
+
+#. module: test_builder
+#: model:ir.ui.view,arch_db:test_builder.view_form_launch_test_suit
+msgid "or"
+msgstr "or"
+
+#. module: test_builder
+#: model:ir.model,name:test_builder.model_rule_type
+msgid "rule.type"
+msgstr "rule.type"
+
+#. module: test_builder
+#: model:ir.model,name:test_builder.model_run
+msgid "run"
+msgstr "run"
+
+#. module: test_builder
+#: model:ir.model,name:test_builder.model_scenario
+msgid "scenario"
+msgstr "scenario"
+
+#. module: test_builder
+#: model:ir.model,name:test_builder.model_scenario_line
+msgid "scenario.line"
+msgstr "scenario.line"
+
+#. module: test_builder
+#: model:ir.model,name:test_builder.model_scenario_line_result
+msgid "scenario.line.result"
+msgstr "scenario.line.result"
+
+#. module: test_builder
+#: model:ir.model,name:test_builder.model_scenario_result
+msgid "scenario.result"
+msgstr "scenario.result"
+
+#. module: test_builder
+#: model:ir.model.fields,field_description:test_builder.field_add_scenarios_scenario_ids
+#: model:ir.model.fields,field_description:test_builder.field_scenario_line_result_screenshot
+msgid "string"
+msgstr "string"
+
+#. module: test_builder
+#: model:ir.model,name:test_builder.model_target
+msgid "target"
+msgstr "target"
+
+#. module: test_builder
+#: model:ir.model,name:test_builder.model_target_db
+msgid "target.db"
+msgstr "target.db"
+

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+        <template id="favorite_js" name="favorite js" inherit_id="web.assets_backend">
+            <xpath expr="." position="inside">
+                <script type="text/javascript" src="/favorite/static/src/js/search_menu.js"></script>
+            </xpath>
+        </template>
+
+        <template id="favorite_js_view" name="favorite js view" inherit_id="web.assets_backend">
+            <xpath expr="." position="inside">
+                <script type="text/javascript" src="/favorite/static/src/js/favorite.js"></script>
+            </xpath>
+        </template>
+
+        <template id="favorite_js_menu" name="favorite js menu" inherit_id="web.assets_backend">
+            <xpath expr="." position="inside">
+                <script type="text/javascript" src="/favorite/static/src/js/menu.js"></script>
+            </xpath>
+        </template>
+
+        <template id="favorite_js_web_client" name="favorite js webclclient" inherit_id="web.assets_backend">
+            <xpath expr="." position="inside">
+                <script type="text/javascript" src="/favorite/static/src/js/web_client.js"></script>
+            </xpath>
+        </template>
+
+        <template id="favorite_css" name="favorite css" inherit_id="web.assets_backend">
+            <xpath expr="." position="inside">
+                <link rel="stylesheet" href="/favorite/static/src/css/favorite.css"/>
+             </xpath>
+        </template>
+
+        <record id='list_favorite_view' model='ir.ui.view'>
+            <field name="name">List favorite</field>
+            <field name="model">favorite</field>
+            <field name="arch" type="xml">
+                <simple>
+                list-favorite
+                </simple>
+            </field>      
+        </record>
+
+        <record id="list_favorite_action" model="ir.actions.act_window">
+			<field name="name">Favorite</field>
+            <field name="res_model">favorite</field>
+            <field name="view_mode">simple</field>
+            <field name="view_id" ref="list_favorite_view"/>
+		</record>
+
+        <menuitem id="main_favorite_menu" 
+                name="Favorite"
+                sequence="1"
+                action="list_favorite_action"
+                web_icon="favorite,static/src/description/favorite.png"
+                /> 
+
+        <menuitem id="my_favorites" 
+                name="My Favorites"
+                parent="main_favorite_menu"
+                /> 
+
+        <menuitem id="my_favorites_config" 
+                name="Configuration of my favorites"
+                parent="my_favorites"
+                action="list_favorite_action"
+                />       
+    </data>
+</openerp>

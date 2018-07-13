@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+		<!-- FORM VIEW mrp_planning_mo_at_earlier -->
+		<record id='view_form_mrp_planning_mo_at_earlier_id' model='ir.ui.view'>
+			<field name="name">view_form_mrp_planning_mo_at_earlier_id</field>
+			<field name="model">mrp.planning.mo.at.earlier</field>
+			<field name="inherit_id" ref="mrp.view_form_mrp_planning_mo_at_earlier_id" />
+			<field name="arch" type="xml">
+				<xpath expr="//field[@name='is_product_sublevel_manufact']" position="after">
+					<field name="change_resources" />
+				</xpath>
+			</field>
+		</record>
+		
+		<!-- FORM VIEW mrp_planning_mo_at_the_latest -->
+		<record id='view_form_mrp_planning_mo_at_the_latest_id' model='ir.ui.view'>
+			<field name="name">view_form_mrp_planning_mo_at_the_latest_id</field>
+			<field name="model">mrp.planning.mo.at.the.latest</field>
+			<field name="inherit_id" ref="mrp.view_form_mrp_planning_mo_at_the_latest_id" />
+			<field name="arch" type="xml">
+				<xpath expr="//field[@name='is_product_sublevel_manufact']" position="after">
+					<field name="change_resources" />
+				</xpath>
+			</field>
+		</record>
+		
+		<!-- CONFIG -->
+		<record id='planning_stock_config_settings_mrp' model='ir.ui.view'>
+			<field name="name">Planning stock settings</field>
+			<field name="model">stock.config.settings</field>
+			<field name="inherit_id" ref="mrp.stock_config_settings_mrp" />
+			<field name="arch" type="xml">
+				<xpath expr="//field[@name='is_product_sublevel_manufact']" position="after">
+					<field name="change_resources" />
+				</xpath>
+			</field>
+		</record>
+	</data>
+</openerp>

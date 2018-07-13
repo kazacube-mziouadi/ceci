@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+		<!-- FORM VIEW Print picking -->
+		<record id='view_form_print_picking_wizard' model='ir.ui.view'>
+			<field name="name">print_picking_wizard</field>
+			<field name="model">stock.print.picking.wizard</field>
+			<field name="arch" type="xml">
+				<form string="Print picking" version="8.0">
+					<p>Dou you want to print picking?</p>
+                    <field name="picking_ids" invisible="1" />
+					<footer>
+						<button name="validate" string="Ok" type="object" class="oe_highlight" />
+						or
+						<button string="Cancel" class="oe_link" special="cancel" />
+					</footer>
+				</form>
+			</field>
+		</record>
+		<act_window name="Print" res_model="stock.print.picking.wizard" src_model="stock.picking" view_mode="form" target="new" key2="client_action_multi" id="act_print_picking_wizard" />
+	</data>
+</openerp>

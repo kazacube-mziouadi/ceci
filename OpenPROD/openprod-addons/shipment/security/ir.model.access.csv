@@ -1,0 +1,12 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_shipment_user,shipment,model_shipment,stock_location.group_stock_user,1,0,0,0
+access_shipment_manager,shipment,model_shipment,stock_location.group_stock_manager,1,1,0,0
+access_shipment_administrator,shipment,model_shipment,stock_location.group_stock_admin,1,1,1,1
+
+access_stock_pallet_type_user,stock.pallet.type,model_stock_pallet_type,stock_location.group_stock_user,1,0,0,0
+access_stock_pallet_type_manager,stock.pallet.type,model_stock_pallet_type,stock_location.group_stock_manager,1,1,0,0
+access_stock_pallet_type_administrator,stock.pallet.type,model_stock_pallet_type,stock_location.group_stock_admin,1,1,1,1
+
+access_shipment_carrier_user,shipment.carrier.type,model_shipment_carrier,stock_location.group_stock_user,1,0,0,0
+access_shipment_carrier_manager,shipment.carrier,model_shipment_carrier,stock_location.group_stock_manager,1,1,0,0
+access_shipment_carrier_administrator,shipment.carrier,model_shipment_carrier,stock_location.group_stock_admin,1,1,1,1

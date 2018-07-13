@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_multi_communication,multi.communication,model_multi_communication,base.group_partner_manager,1,1,1,1
+access_multi_communication_user,multi.communication,model_multi_communication,partner_openprod.partner_user,1,0,0,0
+access_multi_communication_type,multi.communication.type,model_multi_communication_type,base.group_partner_manager,1,1,1,1
+access_multi_communication_type_user,multi.communication.type,model_multi_communication_type,partner_openprod.partner_user,1,0,0,0

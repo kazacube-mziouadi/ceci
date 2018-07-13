@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+		
+		<record id="view_res_users_form_crm" model="ir.ui.view">
+            <field name="name">view_res_users_form_crm</field>
+            <field name="model">res.users</field>
+            <field name="priority" eval="40"/>
+            <field name="inherit_id" ref="base.view_users_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//group[@name='messaging']" position="before">
+                	<group colspan="2" col="2" string="CRM">
+	                    <field name="crm_b2c"/>
+                	</group>
+                </xpath>
+            </field>
+        </record>
+    
+    </data>
+</openerp>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+		
+		<record id="act_declaration" model="ir.actions.act_url">
+			<field name="name">Declaration</field>
+			<field name="url">/declaration/static/src/index.html</field>
+		</record>
+		<menuitem id="menu_declaration" name="Declaration" action="act_declaration" groups="base.group_declaration" web_icon="base_openprod,static/description/tablette.png" />
+    	<menuitem name="Declaration" id="menu_declaration_main" parent="mrp.menu_production_main" />
+    	<menuitem name="Tablet Declaration" id="menu_declaration_declaration" parent="mrp.menu_mrp_declaration_main" action="act_declaration" groups="mrp.group_menu_manuf_user"/>
+	</data>
+</openerp>

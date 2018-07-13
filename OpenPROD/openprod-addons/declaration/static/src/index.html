@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" /> 
+		<title>Déclaration</title>
+            <link rel="stylesheet" href="/web/static/lib/bootstrap/css/bootstrap.css" type="text/css"/>
+            <link rel="stylesheet" href="/declaration/static/src/css/declaration.css" type="text/css"/>
+	</head>
+	<body>
+	<script type="text/template" id="t_add_label_conso">
+		<div class="modal" id="add_label_conso">
+			<div class="modal-dialog">
+				<div class="modal-content form">
+					<div class="modal-header">
+						<h1><%= _t('Add label') %></h1>
+					</div>
+					<div class="modal-body">
+						<ul>
+							<li><input></input></li>
+						</ul>
+					</div>
+					<div class="modal-footer">
+						<button id="add_label_ok" class="btn btn-danger">Ok</button>
+						<button id="add_label_cancel" class="btn">Cancel</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</script>
+	<script type="text/template" id="t_home">
+<h1><%= _t("Production declaration") %></h1>
+<div>
+	<form class="wrapper-col space">
+		<div>
+			<label><%= _t("Resource") %></label>
+			<div id="resource">
+				<input id="resource_input">
+			</div>
+		</div>
+		<div>
+			<label><%= _t("Workorder") %></label>
+			<div id="workorder">
+				<input id="workorder_input" />
+			</div>
+		</div>
+		<button id="validate" disabled><%= _t("Validate") %></button>
+	</form>
+</div>
+<div>
+	<button id="quit"><%= _t("Cancel") %></button>
+</div>
+	</script>
+
+	<script type="text/template" id="t_main">
+	<div class="wrapper" id="header">
+		<div>
+		    <% if (workorders.length > 1 ) _.each(workorders, function(wo) { %>
+			    <span><%= _t("WO") %>: <%= wo.display_name %></span>
+			<% }) %>
+			<div class="overflow-product">	
+				<% _.each(workorders, function(wo) { %>
+					<% if (workorders.length > 1 ) { %>
+					<div>
+					<% } %>
+						<%= wo.display_name %> <%= _t("Qty") %> <%= wo.quantity %>
+						<br />
+						<%= _t('Product') %> : <%= wo.final_product_id[1] %>
+					<% if (workorders.length > 1 ) { %>
+					</div>
+					<% } %>
+				<% }) %>
+			</div>
+		</div>
+		<div id="resources-list">
+			<span><%= _t("Resource") %>: <%= workorders[0].first_resource_id[1] %></span>
+			<% _.each(workorders[0].additional_resources, function(resource) {%>
+			    <span class="btn btn-primary" data-res-id="<%= resource.id %>"><%= resource.resource_id[1] %></span>
+		    <% }); %>
+		</div>
+		<div>
+			<span><%= _t("Product") %>: <%= workorders[0].final_product_id[1] %></span>
+		</div>
+		<div>
+			<span><%= _t("Qty") %>: <%= workorders[0].quantity * workorders[0].advancement / 100 %> / <%= workorders[0].quantity %> <%= _t("pce") %></span>
+		</div>
+	</div>
+	<div id="main">
+		<div class="wrapper-col">
+			<div class="wrapper-col" id="rawmaterial">
+			</div>
+			<div id="unassigned"><h3><%= _t("Unassigned") %> :</h3></div>
+			<div class="declaration">
+				<div class="text-center">
+					<h3><%= _t("Time input") %> : <%= workorders[0].state_timetracking %></h3>
+				</div>
+				<div class="space" id="declaration_buttons">
+					<div>
+						<button id="waiting" class="btn btn-info"><%= _t("Waiting") %></button>
+					</div>
+					<div>
+						<button id="setting" class="btn btn-warning"><%= _t("Setting") %></button>
+					</div>
+					<div>
+						<button id="production" class="btn btn-success"><%= _t("Production") %></button>
+					</div>
+					<div>
+						<button id="cleaning" class="btn btn-warning"><%= _t("Cleaning") %></button>
+					</div>
+					<div>
+						<button id="stop" class="btn btn-danger"><%= _t("Stop") %></button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="col-right">
+			<div class="buttons">
+				<div class="text-center">
+					<button id="traceability" class="btn btn-<%= (labels.length) ? 'success' : 'primary' %>"><%= _t("Traceability") %></button>
+				</div>
+				<% if (workorders[0].declare_tablet_cons && workorders.length < 2) { %><div class="text-center">
+					<button class="btn btn-<%= (consumptions.length) ? 'success' : 'primary' %>" id="conso-btn"><%= _t("Conso") %></button>
+				</div><% } %>
+				<% if (workorders[0].declare_tablet_product && workorders.length < 2) { %><div class="text-center">
+					<button class="btn btn-<%= (declaration_ok) ? 'success' : 'primary' %>" id="declaration-btn"><%= _t("Produce") %></button>
+				</div><% } %>
+                <% if (workorders[0].allow_operator_add) { %><div class="text-center">
+                    <button class="btn btn-primary" id="add-resource-btn"><%= _t("Add resource") %></button>
+                </div><% } %>
+				<div class="text-center">
+					<button class="btn btn-primary" id="exit-btn"><%= _t("Exit") %></button>
+				</div>
+			</div>
+			<div class="buttons" style="flex-grow: 0.2">
+				<div class="text-center">
+					<button class="btn btn-primary" id="note-btn"><%= _t("Note") %></button>
+				</div>
+			</div>
+			<div id="firstresource">
+			</div>
+			<div id="timetracking">
+			</div>
+		</div>
+	</div>
+	</script>
+	<script type="text/template" id="t_timetracking">
+	<h3><%= _t("Real") %></h3>
+	<span><%= _t("Preparation") %>: <%= app.format_time(prep_time) %></span>
+	<span><%= _t("Production") %>: <%= app.format_time(prod_time) %></span>
+	<span><%= _t("Cleaning") %>: <%= app.format_time(cleaning_time) %></span>
+	</script>
+	<script type="text/template" id="t_wo_resource">
+	<h3><%= _t("Theorical") %></h3>
+	<span><%= _t("Preparation") %>: <%= app.format_time(preparation_time) %></span>
+	<span><%= _t("Production") %>: <%= app.format_time(total_production_time) %></span>
+	<span><%= _t("Cleaning") %>: <%= app.format_time(cleaning_time) %></span>
+	</script>
+	<script type="text/template" id="t_rawmaterial">
+<div class="rm<% if (track_label_product){ %> track_label<% } %>">
+<strong><%= name %></strong>
+<%= _t("Qty") %>: <%= uom_qty %> pce <% if (!is_grouped) { %>&nbsp;<%= _t('Consumed') %>: <%= consumed_qty %><% } %>
+</div>
+	</script>
+	<script type="text/template" id="t_declaration"><div id="declaration" class="wrapper-col">
+<h3><strong><%= _t("Declaration") %> :</strong><%= display_name %></span> <span><%= _t("product") %> : <%= product_id[1] %></span></h3>
+<div class="wrapper space">
+</div>
+<div class="wrapper space">
+	<%= _t("Quantity") %> <input id="quantity" type="number" value="<%= quantity %>" />
+	<%= _t("Qty OK") %> <input id="qty_ok" type="number" value="<%= qty_ok %>" />
+	<%= _t("Qty HS") %> <input id="qty_hs" type="number" value="<%= qty_hs %>" />
+	<%= _t("Qty quarantine") %> <input id="qty_quarantine" type="number" value="<%= qty_quarantine %>" />
+</div>
+<% if (track_label) { %><div class="wrapper-col">
+	<div class="space" id="gen-div">
+		<span class="no-shrink"><%= _t("Number of labels") %></span><input id="nb_label" type="number" value="<%= nb_label %>" />
+		<span class="no-shrink"><%= _t("Label quantity") %></span><input id="qty_label" type="number" value="<%= qty_label %>" />
+		<button id="generate_labels"><%= _t("Generate labels") %></button>
+		<button id="delete_labels" style="display:none"><%= _t("Delete labels") %></button>
+	</div>
+	<div id="section_labels" />
+</div><% } %>
+<div class="wrapper space" id="val-div">
+<span style="display:none;">	<%= _t("Close WO") %> <input id="wind_up" type="checkbox"/> </span>
+	<%= _t("Print Label") %> <input id="is_print_label" type="checkbox" />
+	<%= is_subproduct?'':_t("Consume") %> <input id="consume" type="checkbox" <%= is_subproduct?'':'checked' %><%= is_subproduct?'style="display:none"':'' %> />
+	<button id="cancel" type="number"><%= _t("Cancel") %></button>
+	<button id="validate" type="number"><%= _t("Validate") %></button>
+</div>
+</div>
+	</script>
+	<script type="text/template" id="t_editrm"><div>
+	<% if (track_label_product && !declare_tablet_cons) { %><div>
+		<h3><%= _t("Traceability") %></h3>
+		<div class="wrapper space">
+			<span><%= _t("Cause") %> : </span><input id="no_traceability" />
+			<button id="no_traceability_btn"><%= _t("No traceability") %></button>
+		</div>
+	</div><% } %>
+	<div>
+		<h3><%= _t("Replacement product") %></h3>
+		<div class="wrapper space">
+			<span><%= _t("Replacement product") %> : </span>
+			<div class="wrapper-col">
+				<input id="replacement" />
+				<ul id="complete"></ul>
+			</div>
+			<button id="replacement_btn"><%= _t("Validate") %></button>
+		</div>
+	</div>
+	<div class="space">
+		<button id="cancel"><%= _t("Cancel") %></button>
+	</div></div>
+	</script>
+	<script type="text/template" id="t_labelview">
+		<label><%= _t('Label') %> : </label><input name="label" />
+		<label><%= _t('qty') %> : </label><input type="number" name="quantity" />
+	</script>
+	<script type="text/template" id="t_exit">
+<div>
+	<span><%= _t("Preparation") %>: <%= app.format_time(preparation_time) %></span>
+	<span><%= _t("Production") %>: <%= app.format_time(production_time) %></span>
+	<span><%= _t("Cleaning") %>: <%= app.format_time(cleaning_time) %></span>
+</div>
+<div>
+	<div>
+		<input id="wind_up_exit" type="checkbox" name="wind_up_exit"/>  <label for="wind_up_exit"><%= _t("Close WO") %></exit>
+	</div>
+	<input id="time_ok" name="time_ok" type="checkbox" checked /> <label for="time_ok"><%= _t('Time ok') %></label>
+	<div style="min-width: 300px; height: 100px">
+		<label for="decl_time" style="display:none"><%= _t('Time') %></label>
+		<input id="decl_time" style="display:none;width:120px" />
+	</div>
+<div>
+<% if (!declaration_ok) { %><div>
+	<span class="alert"><%= _t('Warning: production declaration not done') %></span>
+</div><% } %>
+<div class="actions">
+	<button id="validate"><%= _t('Validate') %></button>
+	<button id="cancel"><%= _t('Cancel') %></button>
+</div>
+	</script>
+	<script type="text/template" id="t_conso">
+<h3><%= _t('Consumed Materials') %></h3>
+<div>
+	<label for="qty_declaration"><%= _t('quantity') %></label>
+	<input name="qty_declaration" value="<%= parseInt( parseFloat((quantity - consumed).toFixed(4)) * 1000 ) / 1000  %>"></input>
+</div>
+<div id="conso_rawmaterial">
+</div>
+<div>
+	<button id="validate_conso" class="btn btn-danger"><%= _t('Validate') %></button>
+	<button class="btn" id="cancel_conso"><%= _t('Cancel') %></button>
+</div>
+<div class="conso_add_another">
+	<div>
+		<button id="conso_add_another_label">+</button><span><%= _t('Add another label') %></span>
+	</div>
+	<div>
+		<button id="conso_add_another_product">+</button><span><%= _t('Add another product') %></span>
+	</div>
+</div>
+	</script>
+	<script type="text/template" id="t_add_conso_label">
+			<div class="modal-dialog modal-lg">
+				<div class="modal-content form">
+					<div class="modal-header">
+						<h1><%= _t('Add label') %></h1>
+					</div>
+					<div class="modal-body wrapper-col">
+						<div>
+							<label for="label" style="width: 200px"><%= _t('Label') %></label>
+							<input name="label" style="width: 500px" />
+							<ul id="complete" class="complete_popup"></ul>
+						</div>
+						<div>
+							<label for="qty" style="width: 200px"><%= _t('Quantity') %></label>
+							<span>
+								<button class="button_minus" style="width: 50px">-</button>
+								<input name="qty" style="width: 378px" />
+								<button class="button_plus" style="width: 50px">+</button>
+							</span>
+						</div>
+					</div>
+					<div class="modal-footer">
+						<button id="ok" class="btn btn-danger"><%= _t('Ok') %></button>
+						<button id="cancel" class="btn"><%= _t('Cancel') %></button>
+					</div>
+				</div>
+		</div>
+	</script>
+	<script type="text/template" id="t_add_conso_product">
+			<div class="modal-dialog modal-lg">
+				<div class="modal-content form">
+					<div class="modal-header">
+						<h1><%= _t('Add Product') %></h1>
+					</div>
+					<div class="modal-body wrapper-col">
+						<div>
+							<label for="product" style="width: 200px"><%= _t('Product') %></label>
+							<input name="product" style="width: 500px" />
+							<ul id="complete" class="complete_popup"></ul>
+						</div>
+						<div>
+							<label for="qty" style="width: 200px"><%= _t('Quantity') %></label>
+							<button class="button_minus" style="width: 50px">-</button>
+							<input name="qty" style="width: 378px" />
+							<button class="button_plus" style="width: 50px">+</button>
+						</div>
+					</div>
+					<div class="modal-footer">
+						<button id="ok" class="btn btn-danger"><%= _t('Ok') %></button>
+						<button id="cancel" class="btn"><%= _t('Cancel') %></button>
+					</div>
+				</div>
+		</div>
+	</script>
+    <script type="text/template" id="t_note">
+        <div class="modal" id="note_popup">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content form">
+                    <div class="modal-header">
+                        <h1>Note</h1>
+                    </div>
+                    <div class="modal-body">
+                        <textarea style="width: 800px; height: 300px;"><%= note %></textarea>
+                    </div>
+                    <div class="modal-footer">
+                        <button id="note_ok" class="btn btn-danger">Ok</button>
+                        <button id="note_cancel" class="btn">Cancel</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </script>
+    <script type="text/template" id="t_add_resource">
+        <div class="modal" id="add_resource_popup">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content form">
+                    <div class="modal-header">
+                        <h1><%= _t('Add Resource') %></h1>
+                    </div>
+                    <div class="modal-body">
+                        <input name="resource" />
+                        <ul id="complete" class="complete_popup add_resource"></ul>
+                    </div>
+                    <div class="modal-footer">
+                        <button id="add_resource_ok" class="btn btn-danger">Ok</button>
+                        <button id="add_resource_cancel" class="btn">Cancel</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </script>
+	<script type="text/template" id="t_conso_rm">
+<h4 class="<%= track_label_product ? "track_label rm" : "rm" %>">
+	<%= this.model.get('name') %>
+	<% if (track_label_product) { %><button class="btn btn-warning">+</button><% } %>
+	<button class="btn btn-warning remove-rm">-</button>
+</h4>
+<% if (!track_label_product){ %>
+<div class="wrapper">
+	<div></div>
+	<div><%= consumed_qty %> / <%= uom_qty %></div>
+	<div>
+		<button class="button_plus">+</button>
+		<input data-max="<%= uom_qty - consumed_qty %>" value="<%= uom_qty - consumed_qty %>"></input>
+		<button class="button_minus">-</button>
+	</div>
+</div>
+<% } %>
+	</script>
+	<script type="text/template" id="t_editlabelconsumed">
+			<h3><%= _t('Traceability') %></h3>
+			<span><%= _t('Label') %> : <%= label_id[1] %></span><span><%= _t('qty') %> : <input type="number" id="quantity" value="<%= quantity %>" /> <%= _t('pce') %> </span>
+			<div class="wrapper space">
+				<button id="delete"><%= _t('Delete') %></button>
+				<button id="validate"><%= _t('Validate') %></button>
+				<button id="cancel"><%= _t('Cancel') %></button>
+			</div>
+	</script>
+	<script type="text/template" id="t_conso_label">
+<% if (quantity_label) { %><div class="wrapper" data-label="<%= label_id[0] %>">
+	<div><%= label_id[1] %></div>
+	<div><%= ( parseInt(parseFloat(quantity_label.toFixed(2)) * 100000 ) / 100000 ) %></div>
+	<div>
+		<button class="button_plus">+</button>
+			<input data-max="<%= Math.min(quantity_label, max_qty) %>" value="<%= parseInt(parseFloat(Math.min(quantity_label, max_qty).toFixed(3)) * 100000 ) / 100000  %>"></input>
+		<button class="button_minus">-</button>
+	</div>
+</div><% } %>
+	</script>
+	<script type="text/template" id="t_producelabel">
+	<span><%= _t('Label') %> <%= index %> : </span><input type="number" value="<%= quantity %>" class="quantity" /><input type="checkbox" <%= for_quarantine?"checked":"" %> class="for_quarantine" />
+	</script>
+	
+	<script type="text/template" id="t_workorderview">
+			<% if (declaration_grouping_flag) { %> 
+				<% _.each(workorders, function (wo) { %>
+					<h2><%= wo.name %>  <button class="deleteWO" data-wo-id="<%= wo.id %>" style="float:right;">X</button></h2>
+				<% }) %>
+				<input id='workorder_input' />
+            <% } else if (workorders.length > 0 ) { %> 
+				<h2><%= workorders[0].name %> <button class="deleteWO" data-wo-id="<%= workorders[0].id %>"  style="float:right;">X</button></h2>
+            <% } else { %> <input id="workorder_input" />
+			<% }  %>
+	</script>
+
+	<script type="text/javascript" src="/web/static/lib/jquery/jquery.js"></script>
+	<script type="text/javascript" src="/web/static/lib/bootstrap/js/modal.js"></script>
+	<script type="text/javascript" src="/web/static/lib/moment/moment.js"></script>
+	<script type="text/javascript" src="/web/static/lib/jquery/jquery.browser.js"></script>
+	<script type="text/javascript" src="/web/static/lib/jquery.blockUI/jquery.blockUI.js"></script>
+	<script type="text/javascript" src="/web/static/lib/underscore/underscore.js"></script>
+	<script type="text/javascript" src="/web/static/lib/underscore.string/lib/underscore.string.js"></script>
+	<script type="text/javascript" src="/web/static/lib/backbone/backbone.js"></script>
+	<script type="text/javascript" src="/web/static/lib/jquery.ba-bbq/jquery.ba-bbq.js"></script>
+	<script type="text/javascript" src="/web/static/lib/qweb/qweb2.js"></script>
+	<script type="text/javascript" src="/web/static/src/js/boot.js"></script>
+	<script type="text/javascript" src="/web/static/src/js/framework/class.js"></script>
+	<script type="text/javascript" src="/web/static/src/js/framework/translation.js"></script>
+	<script type="text/javascript" src="/web/static/src/js/framework/ajax.js"></script>
+	<script type="text/javascript" src="/web/static/src/js/framework/time.js"></script>
+	<script type="text/javascript" src="/web/static/src/js/framework/mixins.js"></script>
+	<script type="text/javascript" src="/web/static/src/js/framework/registry.js"></script>
+	<script type="text/javascript" src="/web/static/src/js/framework/session.js"></script>
+	<script type="text/javascript" src="/web/static/src/js/framework/session_instance.js"></script>
+	<script type="text/javascript" src="/web/static/src/js/framework/data_model.js"></script>
+	<script type="text/javascript" src="/web/static/src/js/framework/model.js"></script>
+	<script type="text/javascript" src="/web/static/src/js/framework/utils.js"></script>
+	<script type="text/javascript" src="/web/static/src/js/framework/core.js"></script>
+	<script type="text/javascript" src="/web/static/src/js/framework/data.js"></script>
+	<script type="text/javascript" src="/web/static/lib/py.js/lib/py.js"></script>
+	<script type="text/javascript" src="/web/static/src/js/framework/pyeval.js"></script>
+	<script type="text/javascript" src="/web/static/lib/underscore.string/lib/underscore.string.js"></script>
+    <script src="js/app.js"></script>
+    <script src="../../javascript"></script><!-- appelle le controller qui renvoi les surcharges de JS -->
+    </body>
+</html>

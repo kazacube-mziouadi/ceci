@@ -1,0 +1,3220 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+
+		<!-- ========== -->
+		<!-- STOCK MOVE -->
+		<!-- ========== -->
+		<!-- FORM VIEW Stock move -->
+		<record id='view_form_move' model='ir.ui.view'>
+			<field name="name">view_form_move</field>
+			<field name="model">stock.move</field>
+			<field name="arch" type="xml">
+				<form string="Stock move" version="8.0">
+					<header>
+						<button name="wkf_draft_button" states="cancel" string="Draft" type="object" class="oe_highlight" />
+						<button name="wkf_waiting" states="draft" string="Waiting" type="object" class="oe_highlight" />
+						<button name="wkf_done" states="waiting" string="Done" type="object" class="oe_highlight" />
+						<button name="reopen" states="done" string="Reopen" type="object" />
+						<button name="wkf_cancel_button" states="draft,waiting,done" string="Cancel" type="object" confirm="Are you sure you want to cancel this move?" class="openprod_cancel_button" />
+						<field name="state" widget="statusbar" statusbar_visible="draft,waiting,done" />
+					</header>
+					<group colspan="4" col="4">
+						<field name="dual_unit" invisible="1" />
+						<field name="is_control_declaration_recep" invisible="1" />
+						<field name="dual_unit_type" invisible="1" />
+						<field name="factor" invisible="1" />
+						<field name="divisor" invisible="1" />
+						<field name="color_priority_need" invisible="1" />
+						<field name="track_label_product" invisible="1" />
+						<field name="track_in_lot_product" invisible="1" />
+						<field name="track_out_lot_product" invisible="1" />
+						<field name="is_recalculate_frequency_control" invisible="1" />
+						<field name="is_return" invisible="1" />
+						<group colspan="4" col="3">
+							<group colspan="2" col="2">
+								<field name="name" />
+								<field name="product_id" />
+								<field name="location_id" domain="[('usage', '!=', 'view')]" />
+								<field name="location_dest_id" domain="[('usage', '!=', 'view')]" />
+								<field name="sequence" />
+							</group>
+							<group colspan="1" col="3">
+								<group colspan="4" string="Quantities">
+									<label for="uom_qty" />
+									<div>
+										<field name="uom_qty" class="oe_inline" />
+										<field name="uom_id" domain="uom_id and [('id', '=', uom_id)] or []" class="oe_inline" />
+									</div>
+									<label for="sec_uom_qty" groups="base.group_dual_unit" />
+									<div groups="base.group_dual_unit">
+										<field name="sec_uom_qty" class="oe_inline" />
+										<field name="sec_uom_id" domain="sec_uom_id and [('id', '=', sec_uom_id)] or []" class="oe_inline" />
+									</div>
+									<label for="uoi_qty" groups="base.group_uoi" />
+									<div groups="base.group_uoi">
+										<field name="uoi_qty" class="oe_inline" />
+										<field name="uoi_id" domain="[('category_id', '=', sec_uom_category_id)]" class="oe_inline" />
+									</div>
+									<field name="sec_uom_category_id" invisible="1" />
+								</group>
+							</group>
+						</group>
+						<notebook colspan="4">
+							<page string="Information">
+								<group colspan="4" col="2">
+									<group colspan="1" col="1">
+										<group string="Dates" colspan="1" col="2">
+											<field name="date_create" />
+											<field name="date_expected" />
+											<field name="date" />
+											<field name="priority_date" />
+											<field name="is_confirmed" readonly="1" />
+											<field name="is_forecast" />
+											<button class="oe_inline oe_stat_button" name="%(act_change_move_date)d" type="action" string="Change date" attrs="{'invisible': [('state', '!=', 'done')]}" icon="fa-calendar" colspan="2" />
+											<button class="oe_inline oe_stat_button" name="prioritizing" type="object" string="Prioritizing" icon="fa-arrow-up" colspan="2" />
+										</group>
+										<group colspan="1" col="2" string="Price">
+											<field name="theo_price" />
+											<field name="partner_price" />
+											<field name="currency_id" />
+											<field name="freight_price" />
+											<field name="freight_currency_id" />
+										</group>
+									</group>
+									<group colspan="1" col="1">
+										<group colspan="1" col="2" string="Link" name="link">
+											<group colspan="2" col="8" name="procurement">
+												<field name="procurement_id" colspan="6" />
+												<field name="reserved_qty" colspan="2" />
+											</group>
+											<field name="picking_id" />
+											<field name="control_declaration_id" readonly="1" />
+											<field name="post_control_declaration_id" readonly="1" context="{'form_view_ref': 'stock.view_form_quality_control_declaration_id'}" />
+										</group>
+									</group>
+								</group>
+							</page>
+							<page string="Various">
+								<group colspan="4" col="4" string="Various informations">
+									<field name="origin" />
+									<field name="initial_uom_qty" />
+									<field name="type" />
+									<field name="company_id" />
+									<field name="warehouse_id" />
+									<field name="supply_method" />
+									<field name="trigger_supply" />
+									<field name="force_covers_display_in" groups="base.group_erp_manager" />
+									<field name="force_covers_display_out" groups="base.group_erp_manager" />
+									<field name="is_not_billable" readonly="1" />
+									<button name="generate_nonconformity_manual" states="done" string="Nonconformity" type="object" attrs="{'invisible': [('type', '=', 'in')]}" />
+								</group>
+								<group colspan="4" col="4" string="Note">
+									<field name="note" colspan="4" nolabel="1" />
+								</group>
+								<field name="control_ids" invisible="1" />
+							</page>
+							<page string="Covers" attrs="{'invisible': [('force_covers_display_in', '=', False), ('force_covers_display_out', '=', False), '|', ('is_forecast', '=', True), '|', ('state', '!=', 'waiting'), ('type', 'not in', ('out', 'in'))]}">
+								<group colspan="4" col="4">
+									<group colspan="2" col="4" name='out_qtys' attrs="{'invisible': [('force_covers_display_out', '=', False), ('type', '!=', 'out')]}">
+										<field name="covered_by_stock_percent" widget="progressbar" />
+										<field name="covered_by_stock_qty" />
+										<field name="covered_by_move_percent" widget="progressbar" />
+										<field name="covered_by_move_qty" />
+										<field name="not_covered_percent" widget="progressbar" />
+										<field name="not_covered_qty" />
+									</group>
+									<group colspan="2" col="4" name='out_dates' attrs="{'invisible': [('force_covers_display_out', '=', False), ('type', '!=', 'out')]}">
+										<field name="in_date" />
+										<field name="out_delta" />
+									</group>
+									<group colspan="2" col="4" name='in_qtys' attrs="{'invisible': [('force_covers_display_in', '=', False), ('type', '!=', 'in')]}">
+										<field name="covers_move_percent" widget="progressbar" />
+										<field name="covers_move_qty" />
+										<field name="covers_stock_percent" widget="progressbar" />
+										<field name="covers_stock_qty" />
+									</group>
+									<group colspan="2" col="4" name='in_dates' attrs="{'invisible': [('force_covers_display_in', '=', False), ('type', '!=', 'in')]}">
+										<field name="out_date" />
+										<field name="in_delta" />
+									</group>
+									<field name="out_move_ids" attrs="{'invisible': [('force_covers_display_in', '=', False), ('type', '!=', 'in')]}" context="{'monitoring_move_id': id, 'monitoring_product_id': product_id, 'monitoring_move_type': type}" colspan="4" nolabel="1">
+										<tree>
+											<field name="priority_date" />
+											<field name="date" />
+											<field name="date_expected" />
+											<field name="origin" />
+											<field name="procurement_id" />
+											<field name="uom_qty" />
+											<field name="uom_id" />
+											<field name="cover_qty" />
+											<field name="out_cover_percent" widget="progressbar" />
+											<field name="state" invisible="1" />
+										</tree>
+									</field>
+									<field name="in_move_ids" attrs="{'invisible': [('force_covers_display_out', '=', False), ('type', '!=', 'out')]}" context="{'monitoring_move_id': id, 'monitoring_product_id': product_id, 'monitoring_move_type': type}" colspan="4" nolabel="1">
+										<tree>
+											<field name="priority_date" />
+											<field name="date" />
+											<field name="date_expected" />
+											<field name="origin" />
+											<field name="procurement_id" />
+											<field name="uom_qty" />
+											<field name="uom_id" />
+											<field name="cover_qty" />
+											<field name="in_cover_percent" widget="progressbar" />
+											<field name="state" invisible="1" />
+										</tree>
+									</field>
+									<button class="oe_inline oe_stat_button" name="update_covers" type="object" string="Update" icon="fa-refresh" />
+								</group>
+							</page>
+							<page string="Labels" attrs="{'invisible': ['|', ('track_label_product', '!=', True), ('state', '=', 'draft')]}">
+								<field name="valid_label" invisible="1" />
+								<field name="is_variable_double_unit" invisible="1" />
+								<button class="oe_inline oe_stat_button" name="%(act_create_label_wizard)d" type="action" string="Generate line" icon="fa-plus-square" attrs="{'invisible': ['|', '|', ('valid_label', '=', True), ('type', '!=', 'in'), ('state', '=', 'done')]}" />
+								<button class="oe_inline oe_stat_button" name="unprepare" type="object" string="Unprepare" icon="fa-trash-o" attrs="{'invisible': [('state', '=', 'done')]}" confirm="Are you sure you want to unprepare the picking?" />
+								<field name="move_label_ids" nolabel="1" colspan="4" attrs="{'readonly': [('valid_label', '=', True)]}" context="{'default_is_variable_double_unit': is_variable_double_unit}">
+									<tree string="Labels" editable="bottom">
+										<field name="is_variable_double_unit" invisible="1" />
+										<field name="label_id" />
+										<field name="uom_qty" sum="Total" />
+										<field name="uom_id" readonly="1" />
+										<field name="sec_uom_qty" sum="Total" attrs="{'readonly': [('is_variable_double_unit', '!=', True)]}" />
+										<field name="sec_uom_id" readonly="1" />
+										<button class="oe_inline oe_stat_button" name="unlink_button" type="object" string="Delete" icon="fa-trash-o" />
+									</tree>
+								</field>
+								<!-- <button class="oe_inline oe_stat_button" name="validate_label" type="object" string="Validate labels" icon="fa-plus-square" attrs="{'invisible': ['|', '|', ('valid_label', '=', True), ('type', '!=', 'in'), ('move_label_ids', '=', [])]}" /> -->
+							</page>
+							<page string="Lots" attrs="{'invisible': ['|', '|', '&amp;', ('type', '=', 'in'), ('track_in_lot_product', '!=', True), '&amp;', ('type', '=', 'out'), ('track_out_lot_product', '!=', True), ('state', '=', 'draft')]}">
+								<field name="move_lot_ids" nolabel="1" colspan="4">
+									<tree string="Lots" editable="bottom">
+										<field name="lot_id" />
+									</tree>
+								</field>
+							</page>
+							<page string="Parameters" groups="product.product_parameters">
+								<group colspan="4" col="4" string="Parameters">
+									<field name="parameter_ids" colspan="4" nolabel="1">
+										<tree string="Parameters" version="8.0" editable="bottom">
+											<field name="type_component" />
+											<field name="formula_component" />
+											<field name="property_ids" widget="many2many_tags" groups="product.purchase_properties" domain="[('sinfo_property_product', 'in', product_id)]" />
+											<field name="qty_bom" />
+											<field name="qty_component" />
+											<field name="round_component" />
+											<field name="eff_component" />
+										</tree>
+									</field>
+								</group>
+							</page>
+						</notebook>
+					</group>
+				</form>
+			</field>
+		</record>
+
+		<!-- TREE VIEW Stock move -->
+		<record id='view_tree_move' model='ir.ui.view'>
+			<field name="name">view_tree_move</field>
+			<field name="model">stock.move</field>
+			<field name="arch" type="xml">
+				<tree string="Stock moves" version="8.0" colors="gray:state=='cancel'; blue:state=='draft'; brown:state=='done';">
+					<field name="color_priority_need" colors="red:color_priority_need==3; orange:color_priority_need==2; green:color_priority_need==1; black:color_priority_need==4;" string=" " />
+					<field name="product_id" />
+					<button class="oe_inline" name="create_declaration" type="object" string="Quality control declaration" attrs="{'invisible': ['|', '|', ('is_control_declaration_recep', '!=', True), ('is_recalculate_frequency_control', '=', True), ('state', 'in', ('draft', 'done', 'cancel'))]}" />
+					<field name="uom_qty" />
+					<field name="uom_id" />
+					<field name="origin" />
+					<field name="date" />
+					<field name="date_expected" />
+					<field name="state" />
+					<field name="availability" widget="progressbar" />
+					<field name="location_id" />
+					<field name="location_dest_id" />
+					<field name="picking_id" />
+					<field name="type" />
+					<field name="warehouse_id" />
+					<field name="is_control_declaration_recep" invisible="1" />
+					<field name="is_recalculate_frequency_control" invisible="1" />
+				</tree>
+			</field>
+		</record>
+
+		<!-- SEARCH VIEW Stock move -->
+		<record id='view_search_move' model='ir.ui.view'>
+			<field name="name">view_search_move</field>
+			<field name="model">stock.move</field>
+			<field name="arch" type="xml">
+				<search version="8.0">
+					<filter name="available" string="Available" domain="[('availability', '&gt;=', 100)]" />
+					<separator orientation="vertical" />
+					<filter name="in" string="IN" domain="[('type', '=', 'in')]" />
+					<filter name="out" string="OUT" domain="[('type', '=', 'out')]" />
+					<separator orientation="vertical" />
+					<filter name="green" string="Green" domain="[('color_priority_need', '=', 1)]" />
+					<filter name="orange" string="Orange" domain="[('color_priority_need', '=', 2)]" />
+					<filter name="red" string="Red" domain="[('color_priority_need', '=', 3)]" />
+					<filter name="black" string="Black" domain="[('color_priority_need', '=', 4)]" />
+					<separator orientation="vertical" />
+					<filter name="draft" string="Draft" domain="[('state', '=', 'draft')]" />
+					<filter name="waiting" string="Waiting" domain="[('state', '=', 'waiting')]" />
+					<filter name="done" string="Done" domain="[('state', '=', 'done')]" />
+					<filter name="cancel" string="Cancel" domain="[('state', '=', 'cancel')]" />
+					<field name="product_id" />
+					<field name="origin" />
+					<field name="picking_id" />
+					<field name="warehouse_id" />
+					<field name="date" />
+					<group expand="0" string="Group By">
+						<filter string="Product" domain="[]" context="{'group_by': 'product_id'}" />
+						<filter string="Src location" domain="[]" context="{'group_by': 'location_id'}" />
+						<filter string="Dest location" domain="[]" context="{'group_by': 'location_dest_id'}" />
+						<filter string="State" domain="[]" context="{'group_by': 'state'}" />
+						<filter string="Type" domain="[]" context="{'group_by': 'type'}" />
+					</group>
+				</search>
+			</field>
+		</record>
+
+		<!-- ACTION Stock move -->
+		<record id="act_move" model="ir.actions.act_window">
+			<field name="name">Stock move</field>
+			<field name="res_model">stock.move</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+			<field name="context">{'search_default_waiting': 1}</field>
+			<field name="search_view_id" ref="view_search_move" />
+		</record>
+
+		<!-- ACTION Stock move IN -->
+		<record id="act_move_in" model="ir.actions.act_window">
+			<field name="name">In stock move</field>
+			<field name="res_model">stock.move</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+			<field name="domain">[('type', '=', 'in')]</field>
+			<field name="context">{'search_default_waiting': 1}</field>
+			<field name="search_view_id" ref="view_search_move" />
+		</record>
+
+		<!-- ACTION Stock move OUT -->
+		<record id="act_move_out" model="ir.actions.act_window">
+			<field name="name">Out stock move</field>
+			<field name="res_model">stock.move</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+			<field name="domain">[('type', '=', 'out')]</field>
+			<field name="context">{'search_default_waiting': 1}</field>
+			<field name="search_view_id" ref="view_search_move" />
+		</record>
+
+		<menuitem name="Stock move" action="act_move" id="menu_move" parent="menu_stock_traceability" sequence="20" groups="group_menu_stock_analyse" />
+		<menuitem name="Stock move" action="act_move" id="menu_move" parent="menu_stock_move" sequence="10" groups="group_menu_stock_analyse" />
+		<menuitem name="In stock move" action="act_move_in" id="menu_move_in" parent="menu_stock_stock_in" sequence="30" groups="group_menu_receipt_order" />
+		<menuitem name="Out stock move" action="act_move_out" id="menu_move_out" parent="menu_stock_stock_out" sequence="30" groups="group_menu_delivery_order" />
+
+		<!-- ============= -->
+		<!-- STOCK PICKING -->
+		<!-- ============= -->
+		<!-- FORM VIEW PICKING OUT -->
+		<record id='view_form_stock_picking_out' model='ir.ui.view'>
+			<field name="name">view_form_stock_picking_out</field>
+			<field name="model">stock.picking</field>
+			<field name="arch" type="xml">
+				<form string="Out picking" version="8.0">
+					<header>
+						<button name="wkf_draft" states="cancel" string="Draft" type="object" class="oe_highlight" />
+						<button name="wkf_waiting" states="draft" string="Validate" type="object" class="oe_highlight" />
+						<button name="reopen" states="done" string="Reopen" type="object" />
+						<button name="%(act_partial_picking)d" type="action" string="Process" attrs="{'invisible': ['|', '|', ('payment_lock', '=', True), ('lock', '=', True), ('state', '!=', 'waiting')]}" />
+						<button name="%(act_return_picking)d" type="action" string="Return" attrs="{'invisible': [('state', '!=', 'done')]}" />
+						<button name="update_covers" type="object" string="Update" />
+						<button name="button_create_invoice" type="object" string="Create invoice" attrs="{'invisible': ['|', '|', ('invoice_auto', '=', True), ('state', '!=', 'done'), '|', ('invoice_state', 'in', ['invoiced','none']), ('partner_id', '=', False)]}" />
+						<button name="wkf_cancel" states="draft,waiting,cancel" string="Cancel" type="object" confirm="Are you sure you want to cancel this picking?" class="openprod_cancel_button" />
+						<field name="state" widget="statusbar" statusbar_visible="draft,waiting,done" />
+					</header>
+					<field name="type" invisible="1" />
+					<field name="color_priority_need" invisible="1" />
+					<field name="manage_documents" invisible="1" />
+					<group colspan="4" col="9">
+						<group colspan="8">
+							<group colspan="4" col="6">
+								<group colspan="4" col="4">
+									<field name="name" />
+									<field name="origin" />
+									<field name="partner_id" attrs="{'required': [('invoice_state', '!=', 'none')]}" domain="['|', '&amp;', ('is_company', '=', False), '&amp;', ('can_be_delivered', '=', True), ('parent_id.is_customer', '=', True), '&amp;', ('is_company', '=', True), '|', ('is_supplier', '=', True), '&amp;', ('is_customer', '=', True), ('can_be_delivered', '=', True)]" />
+									<field name="backorder_id" />
+									<field name="invoice_state" />
+								</group>
+								<group colspan="2" col="2">
+									<field name="date_create" />
+									<field name="date" />
+									<field name="date_expected" />
+								</group>
+								<notebook colspan="6">
+									<page string="Products">
+										<button name="%(act_add_move_to_picking)d" type="action" string="Add a product" attrs="{'invisible': [('state', 'not in', ('draft', 'waiting'))]}" class="oe_inline oe_stat_button" icon="fa-plus" />
+										<field name="move_ids" colspan="6" context="{'picking_type': type}">
+											<tree string="Stock moves" colors="gray:state=='cancel'; blue:state=='draft'; brown:state=='done';">
+												<field name="color_priority_need" colors="red:color_priority_need==3; orange:color_priority_need==2; green:color_priority_need==1; black:color_priority_need==4;" string=" " />
+												<field name="product_id" />
+												<field name="uom_qty" />
+												<field name="uom_id" />
+												<field name="origin" invisible="1" />
+												<field name="date" />
+												<field name="date_expected" invisible="1" />
+												<field name="state" />
+												<field name="availability" widget="progressbar" />
+                                                <button name="prioritizing" string="Prioritizing" type="object" icon="terp-emblem-important" />
+												<field name="location_id" />
+												<field name="location_dest_id" />
+												<field name="type" />
+												<field name="track_out_lot_product" invisible="1" />
+												<field name="track_label_product" invisible="1" />
+												<field name="is_return" invisible="1" />
+												<button name="%(act_assign_lot_wizard)d" string="Assign lots" type="action" icon="gtk-ok" attrs="{'invisible': ['|', '|', ('type', '!=', 'out'), ('state', 'in', ('done', 'cancel')), ('track_out_lot_product', '!=', True)]}" />
+												<button name="%(act_assign_label_wizard)d" string="Assign labels" type="action" icon="gtk-ok" attrs="{'invisible': ['|', '|', ('type', '!=', 'out'), ('state', 'in', ('done', 'cancel')), ('track_label_product', '!=', True)]}" />
+												<button name="%(act_change_move_label_qty)d" string="Change labels quantities" type="action" icon="gtk-edit" attrs="{'invisible': ['|', '|', ('type', '!=', 'out'), ('state', 'in', ('done', 'cancel')), ('track_label_product', '!=', True)]}" groups="stock.group_change_label_qty" />
+												<field name="move_label_ids" />
+											</tree>
+										</field>
+									</page>
+									<page string="Informations">
+										<group colspan="2" col="2">
+											<group colspan="1" col="2">
+												<group string="Parameters and invoicing" colspan="2" col="2">
+													<field name="is_partial" attrs="{'readonly': [('state', 'in', ('done', 'cancel'))]}" />
+													<field name="manage_scrap" attrs="{'readonly': [('state', 'in', ('done', 'cancel'))]}" />
+													<field name="lock" attrs="{'readonly': [('state', 'in', ('done', 'cancel'))]}" />
+													<field name="payment_lock" groups="base.group_erp_manager" />
+													<field name="forecast" attrs="{'readonly': [('state', 'in', ('done', 'cancel'))]}" />
+													<field name="invoice_auto" attrs="{'readonly': [('state', 'in', ('done', 'cancel'))]}" />
+													<field name="print_packaging_list" attrs="{'readonly': [('state', 'in', ('done', 'cancel'))]}" />
+												</group>
+												<group string="Company" colspan="2" col="2" name="picking_company">
+													<field name="company_id" />
+													<field name="warehouse_id" />
+												</group>
+											</group>
+											<group colspan="1" col="1" name="picking_note">
+												<group string="Note" colspan="1" col="1">
+													<field name="internal_note" />
+													<field name="printed_note" />
+												</group>
+												<group string="Diverse information" colspan="1" col="4">
+													<field name="total_weight" />
+													<field name="weight_unit_id" attrs="{'required': [('total_weight', '!=', 0), ('total_weight', '!=', False)]}" />
+													<field name="total_volume" />
+													<field name="volume_unit_id" attrs="{'required': [('total_volume', '!=', 0), ('total_volume', '!=', False)]}" />
+													<field name="nb_pallet_package" colspan="4" />
+													<field name="insurance_value" />
+													<field name="insurance_currency_id" attrs="{'required': [('insurance_value', '!=', 0), ('insurance_value', '!=', False)]}" />
+												</group>
+											</group>
+											<group colspan="4" col="4" string="Printed documents" attrs="{'invisible': [('manage_documents', '=', False)]}">
+												<field name="quality_control_ids" colspan="4" nolabel="1" />
+											</group>
+										</group>
+									</page>
+									<page string="Addresses">
+										<group string="Delivery address" colspan="4" col="4" attrs="{'readonly': [('state', 'in', ('done', 'cancel'))]}">
+											<field name="address_contact_id" options="{'no_create': True}" colspan="4" attrs="{'readonly': [('state', 'in', ('done', 'cancel'))]}" />
+											<field name="address_id" colspan="4" domain="[('partner_address_id', '=', partner_id)]" attrs="{'readonly': [('state', 'in', ('done', 'cancel'))]}" />
+											<field name="address_name" colspan="4" attrs="{'readonly': [('state', 'in', ('done', 'cancel'))]}" />
+											<group colspan="2" col="2">
+												<field name="street" attrs="{'readonly': [('state', 'in', ('done', 'cancel'))]}" />
+												<field name="street2" attrs="{'readonly': [('state', 'in', ('done', 'cancel'))]}" />
+												<field name="street3" attrs="{'readonly': [('state', 'in', ('done', 'cancel'))]}" />
+											</group>
+											<group colspan="2" col="2">
+												<field name="zip" attrs="{'readonly': [('state', 'in', ('done', 'cancel'))]}" />
+												<field name="city" attrs="{'readonly': [('state', 'in', ('done', 'cancel'))]}" />
+												<field name="region_id" domain="[('country_id','=',country_id)]" attrs="{'readonly': [('state', 'in', ('done', 'cancel'))]}" />
+												<field name="country_id" attrs="{'readonly': [('state', 'in', ('done', 'cancel'))]}" />
+											</group>
+										</group>
+									</page>
+									<page string="Transport">
+										<group string="Transport" colspan="4" col="4" attrs="{'readonly': [('state', 'in', ('done', 'cancel'))]}">
+											<group colspan="2" col="2">
+												<field name="incoterm_id" attrs="{'readonly': [('state', 'in', ('done', 'cancel'))]}" />
+												<field name="invoice_postage" attrs="{'invisible': ['|', ('incoterm_id', '=', 1), ('incoterm_id', '=', False)], 'required': [('incoterm_id', '!=', 1), ('incoterm_id', '!=', False)], 'readonly': [('state', 'in', ('done', 'cancel'))]}" />
+												<field name="threshold" attrs="{'invisible': ['|', ('invoice_postage', '!=', 'threshold'), ('incoterm_id', '=', 1)], 'required': [('invoice_postage', '=', 'threshold'), ('incoterm_id', '!=', 1)], 'readonly': [('state', 'in', ('done', 'cancel'))]}" />
+												<field name="forwarding_agent_id" attrs="{'readonly': [('state', 'in', ('done', 'cancel'))]}" />
+												<field name="delivery_delay" attrs="{'readonly': [('state', 'in', ('done', 'cancel'))]}" />
+											</group>
+											<group colspan="2" col="2" name="transport_picking">
+											</group>
+										</group>
+									</page>
+								</notebook>
+							</group>
+						</group>
+						<group colspan="1" col="1" class="op_shortcuts" name="action_menu">
+							<separator string="Actions" colspan="1" name="separator_action_menu" />
+							<button class="oe_inline oe_stat_button" name="%(act_change_move_date)d" type="action" string="Change date" attrs="{'invisible': [('state', '!=', 'done')]}" icon="fa-calendar" />
+							<!-- <button class="oe_inline oe_stat_button" name="%(act_partial_picking)d" type="action" string="Process" attrs="{'invisible': ['|', ('state', '!=', 'waiting'), ('lock', '=', True)]}" icon="fa-share" /> -->
+							<!-- <button class="oe_inline oe_stat_button" name="%(act_return_picking)d" type="action" string="Return" attrs="{'invisible': [('state', '!=', 'done')]}" icon="fa-reply" /> -->
+							<!-- <button class="oe_inline oe_stat_button" name="update_covers" type="object" string="Update" icon="fa-refresh" /> -->
+							<!-- <button class="oe_inline oe_stat_button" name="create_invoice" type="object" string="Create invoice" icon="fa-refresh" attrs="{'invisible': ['|', '|', ('invoice_auto', '=', True), ('state', '!=', 'done'), '|', ('invoice_state', 'in', ['invoiced','none']), ('partner_id', '=', False)]}" /> -->
+						</group>
+					</group>
+				</form>
+			</field>
+		</record>
+
+		<!-- FORM VIEW PICKING IN -->
+		<record id='view_form_stock_picking_in' model='ir.ui.view'>
+			<field name="name">view_form_stock_picking_in</field>
+			<field name="model">stock.picking</field>
+			<field name="arch" type="xml">
+				<form string="In picking" version="8.0">
+					<header>
+						<button name="wkf_draft" states="cancel" string="Draft" type="object" class="oe_highlight" />
+						<button name="wkf_waiting" states="draft" string="Validate" type="object" class="oe_highlight" />
+						<button name="%(act_reopen_picking)d" states="done" string="Reopen" type="action" />
+						<button name="%(act_partial_picking)d" type="action" string="Process" attrs="{'invisible': ['|', '|', ('payment_lock', '=', True), ('lock', '=', True), ('state', '!=', 'waiting')]}" />
+						<button name="%(act_return_picking)d" type="action" string="Return" attrs="{'invisible': [('state', '!=', 'done')]}" />
+						<button name="update_covers" type="object" string="Update" />
+						<button name="button_create_invoice" type="object" string="Create invoice" attrs="{'invisible': ['|', '|', ('invoice_auto', '=', True), ('state', '!=', 'done'), '|', ('invoice_state', 'in', ['invoiced','none']), ('partner_id', '=', False)]}" />
+						<button name="wkf_cancel" states="draft,waiting,cancel" string="Cancel" type="object" confirm="Are you sure you want to cancel this picking?" class="openprod_cancel_button" />
+						<field name="state" widget="statusbar" statusbar_visible="draft,waiting,done" />
+					</header>
+
+					<field name="type" invisible="1" />
+					<field name="manage_documents" invisible="1" />
+					<group colspan="4" col="9">
+						<group colspan="8">
+							<group colspan="4" col="6">
+								<group colspan="4" col="4">
+									<field name="name" />
+									<field name="origin" />
+									<field name="partner_id" attrs="{'required': [('invoice_state', '!=', 'none')]}" domain="['|', '&amp;', ('is_company', '=', False), '&amp;', ('can_be_delivered', '=', True), ('parent_id.is_customer', '=', True), '&amp;', ('is_company', '=', True), '|', ('is_supplier', '=', True), '&amp;', ('is_customer', '=', True), ('can_be_delivered', '=', True)]" />
+									<field name="backorder_id" />
+									<field name="invoice_state" />
+									<field name="picking_external" attrs="{'readonly': [('state', 'in', ('done', 'cancel'))], 'required': [('state', 'in', ('waiting', 'done'))]}" />
+								</group>
+								<group colspan="2" col="2">
+									<field name="date_create" />
+									<field name="date" />
+									<field name="date_expected" />
+								</group>
+								<notebook colspan="6">
+									<page string="Products">
+										<button name="%(act_add_move_to_picking)d" type="action" string="Add a product" attrs="{'invisible': [('state', 'not in', ('draft', 'waiting'))]}" class="oe_inline oe_stat_button" icon="fa-plus" />
+										<field name="move_ids" colspan="6" context="{'picking_type': type}">
+											<tree string="Stock moves" colors="gray:state=='cancel'; blue:state=='draft'; brown:state=='done';">
+												<field name="color_priority_need" colors="red:color_priority_need==3; orange:color_priority_need==2; green:color_priority_need==1; black:color_priority_need==4;" string=" " />
+												<field name="product_id" />
+												<field name="uom_qty" />
+												<field name="uom_id" />
+												<field name="origin" invisible="1" />
+												<field name="date" />
+												<field name="date_expected" invisible="1" />
+												<field name="location_id" />
+												<field name="location_dest_id" />
+												<button class="oe_inline" name="create_declaration" type="object" string="Quality control declaration" attrs="{'invisible': ['|', '|',('is_control_declaration_recep', '!=', True), ('is_recalculate_frequency_control', '=', True), ('state', 'in', ('draft', 'done', 'cancel'))]}" />
+												<field name="post_control_declaration_id" groups="product.group_menu_supplier_quality" />
+												<button class="oe_inline" name="button_post_control_open" type="object" icon="fa-link" string="Quality control declaration" attrs="{'invisible': [('post_control_declaration_id', '=', False)]}" groups="product.group_menu_supplier_quality" />
+												<field name="state" />
+												<field name="type" invisible="1" />
+												<field name="valid_label" invisible="1" />
+                                                <field name="track_in_lot_product" invisible="1" />
+												<field name="track_label_product" invisible="1" />
+												<field name="is_return" invisible="1" />
+                                                <button name="%(act_assign_lot_wizard)d" string="Assign lots" type="action" class="oe_inline" attrs="{'invisible': ['|', '|', ('type', '!=', 'in'), ('state', 'in', ('done', 'cancel')), ('track_in_lot_product', '!=', True)]}" />
+												<button name="%(act_change_move_label_qty)d" string="Change labels quantities" type="action" icon="gtk-edit" attrs="{'invisible': ['|', '|', ('state', 'in', ('done', 'cancel')), ('track_label_product', '!=', True), ('is_return', '!=', True)]}" groups="stock.group_change_label_qty" />
+												<button name="%(act_assign_inactive_label_wizard)d" string="Assign labels" type="action" icon="gtk-ok" attrs="{'invisible': ['|', '|', ('is_return', '!=', True), ('state', 'in', ('done', 'cancel')), ('track_label_product', '!=', True)]}" />
+												<button class="oe_inline" name="%(act_create_label_wizard)d" type="action" string="Generate labels" attrs="{'invisible': ['|', '|', '|', ('track_label_product', '!=', True), ('valid_label', '=', True), ('type', '!=', 'in'), ('state', '=', 'done')]}" />
+												<field name="move_label_ids" />
+												<field name="is_control_declaration_recep" invisible="1" />
+												<field name="is_recalculate_frequency_control" invisible="1" />
+											</tree>
+										</field>
+									</page>
+									<page string="Informations">
+										<group colspan="2" col="2">
+											<group coslpan="1" col="2">
+												<group string="Parameters and invoicing" colspan="2" col="2">
+													<field name="is_partial" attrs="{'readonly': [('state', 'in', ('done', 'cancel'))]}" />
+													<field name="manage_scrap" attrs="{'readonly': [('state', 'in', ('done', 'cancel'))]}" />
+													<field name="lock" attrs="{'readonly': [('state', 'in', ('done', 'cancel'))]}" />
+													<field name="payment_lock" groups="base.group_erp_manager" />
+													<field name="invoice_auto" attrs="{'readonly': [('state', 'in', ('done', 'cancel'))]}" />
+												</group>
+												<group string="Company" colspan="2" col="2" name="picking_company">
+													<field name="company_id" />
+													<field name="warehouse_id" />
+												</group>
+											</group>
+											<group colspan="1" col="1" name="picking_in_note">
+												<group string="Note" colspan="1" col="1">
+													<field name="internal_note" />
+													<field name="printed_note" />
+												</group>
+											</group>
+											<group colspan="4" col="4" string="Printed documents" attrs="{'invisible': [('manage_documents', '=', False)]}">
+												<field name="quality_control_ids" colspan="4" nolabel="1" />
+											</group>
+										</group>
+									</page>
+									<page string="Adresses">
+										<group string="Delivery address" colspan="4" col="4">
+											<field name="address_id" colspan="4" attrs="{'readonly': [('state', 'in', ('done', 'cancel'))]}" />
+											<field name="address_name" colspan="4" attrs="{'readonly': [('state', 'in', ('done', 'cancel'))]}" />
+											<group colspan="2" col="2">
+												<field name="street" attrs="{'readonly': [('state', 'in', ('done', 'cancel'))]}" />
+												<field name="street2" attrs="{'readonly': [('state', 'in', ('done', 'cancel'))]}" />
+												<field name="street3" attrs="{'readonly': [('state', 'in', ('done', 'cancel'))]}" />
+											</group>
+											<group colspan="2" col="2">
+												<field name="zip" attrs="{'readonly': [('state', 'in', ('done', 'cancel'))]}" />
+												<field name="city" attrs="{'readonly': [('state', 'in', ('done', 'cancel'))]}" />
+												<field name="region_id" domain="[('country_id','=',country_id)]" attrs="{'readonly': [('state', 'in', ('done', 'cancel'))]}" />
+												<field name="country_id" attrs="{'readonly': [('state', 'in', ('done', 'cancel'))]}" />
+											</group>
+										</group>
+									</page>
+									<page string="Transport">
+										<group string="Transport" colspan="4" col="4" attrs="{'readonly': [('state', 'in', ('done', 'cancel'))]}">
+											<group colspan="2" col="2">
+												<field name="incoterm_id" attrs="{'readonly': [('state', 'in', ('done', 'cancel'))]}" />
+												<field name="invoice_postage" attrs="{'invisible': ['|', ('incoterm_id', '=', 1), ('incoterm_id', '=', False)], 'required': [('incoterm_id', '!=', 1), ('incoterm_id', '!=', False)], 'readonly': [('state', 'in', ('done', 'cancel'))]}" />
+												<field name="threshold" attrs="{'invisible': ['|', ('invoice_postage', '!=', 'threshold'), ('incoterm_id', '=', 1)], 'required': [('invoice_postage', '=', 'threshold'), ('incoterm_id', '!=', 1)], 'readonly': [('state', 'in', ('done', 'cancel'))]}" />
+												<field name="forwarding_agent_id" attrs="{'readonly': [('state', 'in', ('done', 'cancel'))]}" />
+											</group>
+											<group colspan="2" col="2" name="transport_picking">
+											</group>
+										</group>
+									</page>
+								</notebook>
+							</group>
+						</group>
+						<group colspan="1" col="1" class="op_shortcuts" name="action_menu">
+							<separator string="Actions" colspan="1" name="separator_action_menu" />
+							<button class="oe_inline oe_stat_button" name="%(act_change_move_date)d" type="action" string="Change date" attrs="{'invisible': ['|', ('state', '!=', 'done')]}" icon="fa-calendar" />
+							<!-- <button class="oe_inline oe_stat_button" name="%(act_partial_picking)d" type="action" string="Process" attrs="{'invisible': ['|',('state', '!=', 'waiting'), ('lock', '=', True)]}" icon="fa-share" /> -->
+							<!-- <button class="oe_inline oe_stat_button" name="%(act_return_picking)d" type="action" string="Return" attrs="{'invisible': [('state', '!=', 'done')]}" icon="fa-reply" /> -->
+							<!-- <button class="oe_inline oe_stat_button" name="update_covers" type="object" string="Update" icon="fa-refresh" /> -->
+						</group>
+					</group>
+				</form>
+			</field>
+		</record>
+
+		<!-- TREE VIEW PICKING OUT -->
+		<record id='view_tree_stock_picking_out' model='ir.ui.view'>
+			<field name="name">view_tree_stock_picking_out</field>
+			<field name="model">stock.picking</field>
+			<field name="arch" type="xml">
+				<tree string="Pickings" version="8.0" colors="gray: state == 'cancel'; blue: state == 'draft'; brown: state == 'done'">
+					<field name="color_priority_need" colors="red:color_priority_need==3; orange:color_priority_need==2; green:color_priority_need==1; black:color_priority_need==4;" string=" " />
+					<field name="name" />
+					<field name="partner_id" />
+					<field name="origin" />
+					<field name="backorder_id" />
+					<field name="date_expected" />
+					<field name="availability" widget="progressbar" />
+					<field name="invoice_state" />
+					<field name="state" />
+				</tree>
+			</field>
+		</record>
+
+		<!-- TREE VIEW PICKING IN -->
+		<record id='view_tree_stock_picking_in' model='ir.ui.view'>
+			<field name="name">view_tree_stock_picking_in</field>
+			<field name="model">stock.picking</field>
+			<field name="arch" type="xml">
+				<tree string="Pickings" version="8.0" colors="gray: state == 'cancel'; blue: state == 'draft'; brown: state == 'done'">
+					<field name="color_priority_need" colors="red:color_priority_need==3; orange:color_priority_need==2; green:color_priority_need==1; black:color_priority_need==4;" string=" " />
+					<field name="name" />
+					<field name="partner_id" />
+					<field name="origin" />
+					<field name="backorder_id" />
+					<field name="date_expected" />
+					<field name="invoice_state" />
+					<field name="state" />
+				</tree>
+			</field>
+		</record>
+
+		<!-- SEARCH VIEW PICKING OUT -->
+		<record id='view_search_stock_picking_out' model='ir.ui.view'>
+			<field name="name">view_search_stock_picking_out</field>
+			<field name="model">stock.picking</field>
+			<field name="arch" type="xml">
+				<search version="8.0">
+					<filter name="available" string="Available" domain="[('availability', '&gt;=', 100)]" />
+					<filter name="partial_available" string="Partial available" domain="[('availability', '&gt;', 0)]" />
+					<separator orientation="vertical" />
+					<filter name="green" string="Green" domain="[('color_priority_need', '=', 1)]" />
+					<filter name="orange" string="Orange" domain="[('color_priority_need', '=', 2)]" />
+					<filter name="red" string="Red" domain="[('color_priority_need', '=', 3)]" />
+					<filter name="black" string="Black" domain="[('color_priority_need', '=', 4)]" />
+					<separator orientation="vertical" />
+					<filter name="draft" string="Draft" domain="[('state', '=', 'draft')]" />
+					<filter name="waiting" string="Waiting" domain="[('state', '=', 'waiting')]" />
+					<filter name="done" string="Done" domain="[('state', '=', 'done')]" />
+					<filter name="cancel" string="Cancel" domain="[('state', '=', 'cancel')]" />
+					<separator orientation="vertical" />
+					<filter name="lock" string="Lock" domain="['|', ('payment_lock', '=', True), ('lock', '=', True)]" />
+					<field name="origin" />
+					<field name="partner_id" />
+					<field name="name" />
+					<field name="date_expected" />
+					<field name="state" />
+					<filter name="not_automatic" string="Not automatic" domain="['!', '&amp;', ('is_automatic', '=', True), ('is_not_company_warehouse', '=', True)]" />
+					<group expand="0" string="Group By" name="groupby">
+						<filter string="Partner" domain="[]" context="{'group_by': 'partner_id'}" />
+						<filter string="State" domain="[]" context="{'group_by': 'state'}" />
+						<filter string="Date" domain="[]" context="{'group_by': 'date'}" />
+						<filter string="Invoice state" domain="[]" context="{'group_by': 'invoice_state'}" />
+					</group>
+				</search>
+			</field>
+		</record>
+
+
+		<!-- ACTION PICKING OUT -->
+		<record id="act_stock_picking_out" model="ir.actions.act_window">
+			<field name="name">PICKING</field>
+			<field name="res_model">stock.picking</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+			<field name="domain">[('type', '=', 'out'), ('forecast', '!=', True)]</field>
+			<field name="context">{'default_type': 'out', 'search_default_waiting': 1, 'search_default_not_automatic': 1}</field>
+			<field name="search_view_id" ref="view_search_stock_picking_out" />
+		</record>
+
+		<record model="ir.actions.act_window.view" id="act_stock_picking_tree_out">
+			<field name="sequence" eval="10" />
+			<field name="view_mode">tree</field>
+			<field name="view_id" ref="view_tree_stock_picking_out" />
+			<field name="act_window_id" ref="act_stock_picking_out" />
+		</record>
+
+		<record model="ir.actions.act_window.view" id="act_stock_picking_form_out">
+			<field name="sequence" eval="20" />
+			<field name="view_mode">form</field>
+			<field name="view_id" ref="view_form_stock_picking_out" />
+			<field name="act_window_id" ref="act_stock_picking_out" />
+		</record>
+
+
+		<!-- ACTION PICKING OUT Forecast -->
+		<record id="act_stock_picking_out_forecast" model="ir.actions.act_window">
+			<field name="name">PICKING</field>
+			<field name="res_model">stock.picking</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+			<field name="domain">[('type', '=', 'out'), ('forecast', '=', True)]</field>
+			<field name="context">{'default_type': 'out', 'default_forecast': 1, 'search_default_waiting': 1}</field>
+			<field name="search_view_id" ref="view_search_stock_picking_out" />
+		</record>
+
+		<record model="ir.actions.act_window.view" id="act_stock_picking_tree_out_forecast">
+			<field name="sequence" eval="10" />
+			<field name="view_mode">tree</field>
+			<field name="view_id" ref="view_tree_stock_picking_out" />
+			<field name="act_window_id" ref="act_stock_picking_out_forecast" />
+		</record>
+
+		<record model="ir.actions.act_window.view" id="act_stock_picking_form_out_forecast">
+			<field name="sequence" eval="20" />
+			<field name="view_mode">form</field>
+			<field name="view_id" ref="view_form_stock_picking_out" />
+			<field name="act_window_id" ref="act_stock_picking_out_forecast" />
+		</record>
+
+
+		<!-- SEARCH VIEW PICKING IN -->
+		<record id='view_search_stock_picking_in' model='ir.ui.view'>
+			<field name="name">view_search_stock_picking</field>
+			<field name="model">stock.picking</field>
+			<field name="arch" type="xml">
+				<search version="8.0">
+					<filter name="green" string="Green" domain="[('color_priority_need', '=', 1)]" />
+					<filter name="orange" string="Orange" domain="[('color_priority_need', '=', 2)]" />
+					<filter name="red" string="Red" domain="[('color_priority_need', '=', 3)]" />
+					<separator orientation="vertical" />
+					<filter name="draft" string="Draft" domain="[('state', '=', 'draft')]" />
+					<filter name="waiting" string="Waiting" domain="[('state', '=', 'waiting')]" />
+					<filter name="done" string="Done" domain="[('state', '=', 'done')]" />
+					<filter name="cancel" string="Cancel" domain="[('state', '=', 'cancel')]" />
+					<separator orientation="vertical" />
+					<filter name="lock" string="Lock" domain="['|', ('payment_lock', '=', True), ('lock', '=', True)]" />
+					<field name="origin" />
+					<field name="partner_id" />
+					<field name="name" />
+					<field name="date_expected" />
+					<field name="state" />
+					<filter name="not_automatic" string="Not automatic" domain="['!', '&amp;', ('is_automatic', '=', True), ('is_not_company_warehouse', '=', True)]" />
+					<group expand="0" string="Group By">
+						<filter string="Partner" domain="[]" context="{'group_by': 'partner_id'}" />
+						<filter string="State" domain="[]" context="{'group_by': 'state'}" />
+						<filter string="Date" domain="[]" context="{'group_by': 'date'}" />
+						<filter string="Invoice state" domain="[]" context="{'group_by': 'invoice_state'}" />
+					</group>
+				</search>
+			</field>
+		</record>
+
+		<!-- ACTION PICKING IN -->
+		<record id="act_stock_picking_in" model="ir.actions.act_window">
+			<field name="name">PICKING</field>
+			<field name="res_model">stock.picking</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+			<field name="domain">[('type', '=', 'in')]</field>
+			<field name="context">{'default_type': 'in', 'search_default_waiting': 1, 'search_default_not_automatic': 1}</field>
+			<field name="search_view_id" ref="view_search_stock_picking_in" />
+		</record>
+
+		<record model="ir.actions.act_window.view" id="act_stock_picking_tree_in">
+			<field name="sequence" eval="10" />
+			<field name="view_mode">tree</field>
+			<field name="view_id" ref="view_tree_stock_picking_in" />
+			<field name="act_window_id" ref="act_stock_picking_in" />
+		</record>
+
+		<record model="ir.actions.act_window.view" id="act_stock_picking_form_in">
+			<field name="sequence" eval="20" />
+			<field name="view_mode">form</field>
+			<field name="view_id" ref="view_form_stock_picking_in" />
+			<field name="act_window_id" ref="act_stock_picking_in" />
+		</record>
+
+		<record model="ir.actions.act_window" id="stock_picking_form_in_see">
+			<field name="name">PICKING</field>
+			<field name="res_model">stock.picking</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">form</field>
+			<field name="view_id" ref="view_form_stock_picking_in" />
+			<field name="target">current</field>
+		</record>
+
+		<!-- ACTION Picking -->
+		<record model="ir.actions.act_window" id="action_see_all_picking">
+			<field name="name">Pickings</field>
+			<field name="res_model">stock.picking</field>
+			<field name="view_type">form</field>
+			<field name="view_id" ref="view_tree_stock_picking_in" />
+			<field name="view_mode">tree,form</field>
+			<field name="target">current</field>
+		</record>
+
+		<menuitem name="Delivery order" action="act_stock_picking_out" id="menu_stock_picking_out" parent="menu_stock_stock_out" sequence="10" groups="group_menu_delivery_order" />
+		<menuitem name="Forecast delivery order" action="act_stock_picking_out_forecast" id="menu_stock_picking_out_forecast" parent="menu_stock_stock_out" sequence="100" groups="group_menu_delivery_order" />
+		<menuitem name="Receipt order" action="act_stock_picking_in" id="menu_stock_picking_in" parent="menu_stock_stock_in" sequence="10" groups="group_menu_receipt_order" />
+
+		<!-- ================= -->
+		<!-- STOCK ALERT COLOR -->
+		<!-- ================= -->
+		<!-- FORM VIEW Stock alert color -->
+		<record id='view_form_stock_color' model='ir.ui.view'>
+			<field name="name">view_form_stock_color</field>
+			<field name="model">stock.alert.color</field>
+			<field name="arch" type="xml">
+				<form string="Stock alert color" version="8.0">
+					<sheet>
+						<div class="oe_title">
+							<div class="oe_edit_only">
+								<field name="is_active" class="oe_inline" />
+								<label for="is_active" string="Is active" />
+							</div>
+							<h1>
+								<field name="name" default_focus="1" placeholder="Name" />
+							</h1>
+						</div>
+						<notebook colspan="4">
+							<page string="Move">
+								<group string="Priority 1 (red)" colspan="4" col="6">
+									<field name="move_1_active" />
+									<field name="move_1_min" />
+									<field name="move_1_max" />
+								</group>
+								<group string="Priority 2 (orange)" colspan="4" col="6">
+									<field name="move_2_active" />
+									<field name="move_2_min" />
+									<field name="move_2_max" />
+								</group>
+								<group string="Priority 3 (green)" colspan="4" col="6">
+									<field name="move_3_active" />
+									<field name="move_3_min" />
+									<field name="move_3_max" />
+								</group>
+							</page>
+						</notebook>
+					</sheet>
+				</form>
+			</field>
+		</record>
+
+		<!-- TREE VIEW Stock alert color -->
+		<record id='view_tree_stock_color' model='ir.ui.view'>
+			<field name="name">view_tree_stock_color</field>
+			<field name="model">stock.alert.color</field>
+			<field name="arch" type="xml">
+				<tree string="Stock alert colors" version="8.0">
+					<field name="name" />
+					<field name="is_active" />
+				</tree>
+			</field>
+		</record>
+
+		<!-- SEARCH VIEW Stock alert color -->
+		<record id='view_search_stock_color' model='ir.ui.view'>
+			<field name="name">view_search_stock_color</field>
+			<field name="model">stock.alert.color</field>
+			<field name="arch" type="xml">
+				<search version="8.0">
+					<field name="is_active" />
+				</search>
+			</field>
+		</record>
+
+		<!-- ACTION Stock alert color -->
+		<record id="act_stock_color" model="ir.actions.act_window">
+			<field name="name">Stock alert color</field>
+			<field name="res_model">stock.alert.color</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+			<field name="search_view_id" ref="view_search_stock_color" />
+		</record>
+
+		<menuitem name="Stock alert color" action="act_stock_color" id="menu_stock_color" parent="menu_stock_configuration" groups="group_menu_stock_config" />
+
+
+		<!-- ==================== -->
+		<!-- STOCK LABEL TEMPLATE -->
+		<!-- ==================== -->
+		<!-- FORM VIEW Label template -->
+		<record id='view_form_label_template' model='ir.ui.view'>
+			<field name="name">view_form_label_template</field>
+			<field name="model">stock.label.template</field>
+			<field name="arch" type="xml">
+				<form string="Label template" version="8.0">
+					<sheet>
+						<center>
+							<label class="oe_edit_only" for="name" string="Name" />
+							<h1>
+								<field name="name" class="oe_inline" colspan="4" />
+							</h1>
+						</center>
+						<group colspan="4" col="4" name="label">
+							<field name="type" />
+							<field name="sequence_id" context="{'default_code': 'stock.label'}" domain="['|', ('code', '=', 'stock.label'), ('code', '=', '')]" />
+							<field name="counterpart_location_id" attrs="{'invisible': [('type', '!=', 'uc')], 'required': [('type', '=', 'uc')]}" />
+							<field name="is_theorical_comuption" />
+							<field name="is_delete_um" attrs="{'invisible': [('type', '!=', 'um')]}" />
+							<field name="generate_label_in_advance" attrs="{'invisible': [('type', '!=', 'uc')]}" />
+						</group>
+					</sheet>
+				</form>
+			</field>
+		</record>
+
+		<!-- TREE VIEW Label template -->
+		<record id='view_tree_label_template' model='ir.ui.view'>
+			<field name="name">view_tree_label_template</field>
+			<field name="model">stock.label.template</field>
+			<field name="arch" type="xml">
+				<tree string="Label templates" version="8.0">
+					<field name="name" />
+					<field name="type" />
+					<field name="sequence_id" />
+					<field name="is_theorical_comuption" />
+				</tree>
+			</field>
+		</record>
+
+		<!-- SEARCH VIEW Label template -->
+		<record id='view_search_label_template' model='ir.ui.view'>
+			<field name="name">view_search_label_template</field>
+			<field name="model">stock.label.template</field>
+			<field name="arch" type="xml">
+				<search version="8.0">
+					<field name="name" />
+					<field name="type" />
+					<field name="is_theorical_comuption" />
+				</search>
+			</field>
+		</record>
+
+		<!-- ACTION Label template -->
+		<record id="act_label_template" model="ir.actions.act_window">
+			<field name="name">Label template</field>
+			<field name="res_model">stock.label.template</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+			<field name="search_view_id" ref="view_search_label_template" />
+		</record>
+
+		<menuitem name="Label template" action="act_label_template" id="menu_label_template" parent="menu_stock_configuration" groups="group_menu_stock_config" />
+		<menuitem name="Wizard change the deadline for changing movements" action="act_wizard_limit_modif_move" id="menu_swizard_limit_modif_move" parent="menu_stock_configuration" groups="group_menu_stock_config" />
+
+		<!-- =========== -->
+		<!-- STOCK LABEL -->
+		<!-- =========== -->
+		<!-- FORM VIEW Label -->
+		<record id='view_form_label' model='ir.ui.view'>
+			<field name="name">view_form_label</field>
+			<field name="model">stock.label</field>
+			<field name="arch" type="xml">
+				<form string="Label" version="8.0">
+					<header>
+						<field name="state" widget="statusbar" statusbar_visible="draft,available,inactive" attrs="{'invisible': [('type', '!=', 'uc')]}" />
+					</header>
+					<group colspan="4" col="9">
+						<group colspan="8" col="4">
+							<group colspan="2" col="2">
+								<field name="name" />
+								<field name="product_id" attrs="{'invisible': [('type', '!=', 'uc')]}" />
+								<field name="type" />
+								<field name="uom_qty" attrs="{'invisible': [('type', '!=', 'uc')]}" />
+								<field name="sec_uom_qty" attrs="{'invisible': ['|', ('type', '!=', 'uc'), ('is_variable_double_unit', '!=', True)]}" />
+								<field name="location_id" attrs="{'invisible': [('type', '!=', 'uc')]}" />
+								<field name="first_move_id" attrs="{'invisible': [('type', '!=', 'uc')]}" />
+								<field name="is_variable_double_unit" invisible="1" />
+							</group>
+							<group colspan="2" col="2">
+								<field name="template_id" />
+								<field name="um_label_id" attrs="{'invisible': [('type', '!=', 'uc')]}" readonly="1" />
+								<field name="is_delete_um" attrs="{'invisible': [('type', '=', 'uc')]}" />
+								<field name="lot_id" attrs="{'invisible': [('type', '!=', 'uc')]}" />
+								<field name="uom_id" attrs="{'invisible': [('type', '!=', 'uc')]}" />
+								<field name="sec_uom_id" attrs="{'invisible': ['|', ('type', '!=', 'uc'), ('is_variable_double_unit', '!=', True)]}" />
+								<field name="warehouse_id" attrs="{'invisible': [('type', '!=', 'uc')]}" />
+                                <field name="last_move_id" attrs="{'invisible': [('type', '!=', 'uc')]}" />
+								<field name="origin_label_id" attrs="{'invisible': [('origin_label_id', '=', False)]}" />
+							</group>
+							<notebook colspan="4">
+								<page string="Attributes" colspan="4" attrs="{'invisible': [('type', '!=', 'uc')]}">
+									<group colspan="4" col="4" string="Attributes">
+										<field name="attribute_ids" nolabel="1" colspan="4" reandonly="0">
+											<tree editable="bottom" create="false" delete="false">
+												<field name="label" readonly="1" />
+												<field name="value" readonly="0" />
+											</tree>
+											<form>
+												<group>
+													<field name="label" readonly="1" />
+													<field name="value" readonly="0" />
+												</group>
+											</form>
+										</field>
+									</group>
+								</page>
+								<page string="Labels UC" colspan="4" attrs="{'invisible': [('type', '=', 'uc')]}">
+									<group colspan="4" col="4" string="Labels UC">
+										<field name="uc_label_ids" nolabel="1" colspan="4" />
+									</group>
+								</page>
+							</notebook>
+						</group>
+						<group colspan="1" col="1" class="op_shortcuts" name="action_menu">
+							<separator string="Actions" colspan="1" />
+							<button class="oe_inline oe_stat_button" type="action" string="Move" name="%(act_stock_move_label)d" icon="fa-external-link" />
+							<button class="oe_inline oe_stat_button" type="action" string="Assign UM" name="%(act_assing_um_label_wizard)d" icon="fa-caret-square-o-down" attrs="{'invisible': [('type', '!=', 'uc')]}" />
+							<button class="oe_inline oe_stat_button" type="action" string="Assign UC" name="%(act_assing_uc_label_wizard)d" icon="fa-caret-square-o-down" context="{'default_um_label_id': active_id}" attrs="{'invisible': [('type', '=', 'uc')]}" />
+							<button class="oe_inline oe_stat_button" type="action" string="Split" name="%(act_stock_split_label_choice)d" icon="fa-scissors" attrs="{'invisible': [('type', '!=', 'uc')]}" />
+							<button class="oe_inline oe_stat_button" type="action" string="Balancing" name="%(act_balancing_label_wizard)d" icon="fa-exchange" />
+							<button class="oe_inline oe_stat_button" type="action" string="Close" name="%(act_stock_close_label)d" icon="fa-trash-o" />
+							<button class="oe_inline oe_stat_button" type="action" string="Recalculate" name="%(act_stock_recalculate_label)d" icon="fa-refresh" groups="base.group_erp_manager" />
+							<button class="oe_inline oe_stat_button" type="object" string="Unassign UM" name="button_unassign_um_label" icon="fa-caret-square-o-up" attrs="{'invisible': [('um_label_id', '=', False)]}" />
+							<separator string="Analysis" colspan="1" name="separator_analysis_menu" />
+							<button class="oe_inline oe_stat_button" type="object" string="Upstream Traceability" name="show_traceability_upstream" icon="fa-angle-double-up" />
+							<button class="oe_inline oe_stat_button" type="object" string="Downstream Traceability" name="show_traceability_downstream" icon="fa-angle-double-down" />
+						</group>
+					</group>
+				</form>
+			</field>
+		</record>
+
+		<!-- TREE VIEW Label -->
+		<record id='view_tree_label' model='ir.ui.view'>
+			<field name="name">view_tree_label</field>
+			<field name="model">stock.label</field>
+			<field name="arch" type="xml">
+				<tree string="Labels" version="8.0">
+					<field name="name" />
+					<field name="product_id" />
+					<field name="template_id" />
+					<field name="type" />
+					<field name="uom_qty" sum="sum_uom_qty" />
+					<field name="uom_id" />
+					<field name="location_id" />
+					<field name="lot_id" />
+					<field name="um_label_id" />
+					<field name="expiry_date" />
+					<field name="removal_date" />
+					<field name="state" />
+					<field name="um_label_id" invisible="1" />
+					<button class="oe_inline oe_stat_button" type="object" string="Unassign UM" name="button_unassign_um_label" icon="fa-trash-o" attrs="{'invisible': [('um_label_id', '=', False)]}" />
+				</tree>
+			</field>
+		</record>
+
+		<!-- SEARCH VIEW Label -->
+		<record id='view_search_label' model='ir.ui.view'>
+			<field name="name">view_search_label</field>
+			<field name="model">stock.label</field>
+			<field name="arch" type="xml">
+				<search version="8.0">
+					<filter name="is_active" string="Active" domain="[('is_active', '=', True)]" />
+					<filter name="is_draft" string="Draft" domain="[('state', '=', 'draft')]" />
+					<filter name="is_uc" string="Label UC" domain="[('type', '=', 'uc')]" />
+					<filter name="is_um" string="Label UM" domain="[('type', '=', 'um')]" />
+					<filter name="expiry_date_exceeded" string="Expiry date exceeded" domain="[('expiry_date', '=', '')]" />
+					<field name="name" />
+					<field name="product_id" />
+					<field name="template_id" />
+					<field name="type" />
+					<field name="uom_qty" />
+					<field name="uom_id" />
+					<field name="location_id" />
+					<field name="warehouse_id" />
+					<field name="lot_id" />
+					<group string="Group By" expand="0">
+						<filter string="Product" context="{'group_by':'product_id'}" />
+						<filter string="Template" context="{'group_by':'template_id'}" />
+						<filter string="Location" context="{'group_by':'location_id'}" />
+						<filter string="Lot" context="{'group_by':'lot_id'}" />
+					</group>
+				</search>
+			</field>
+		</record>
+
+		<!-- ACTION Label -->
+		<record id="act_label" model="ir.actions.act_window">
+			<field name="name">Label</field>
+			<field name="res_model">stock.label</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+			<field name="context">{'search_default_is_active': 1}</field>
+			<field name="search_view_id" ref="view_search_label" />
+		</record>
+
+		<menuitem name="Label" action="act_label" id="menu_label" parent="menu_stock_traceability" groups="group_menu_stock_analyse" />
+		<menuitem name="Label" action="act_label" id="menu_label_stock_level" parent="menu_stock_stock_level" groups="group_menu_stock_analyse" />
+		<!-- =============== -->
+		<!-- STOCK INCOTERMS -->
+		<!-- =============== -->
+		<!-- FORM VIEW Incoterms -->
+		<record id='view_form_incoterms' model='ir.ui.view'>
+			<field name="name">view_form_incoterms</field>
+			<field name="model">stock.incoterms</field>
+			<field name="arch" type="xml">
+				<form string="Incoterms" version="8.0">
+					<group colspan="4" col="9">
+						<field name="name" />
+						<field name="code" />
+						<field name="active" />
+					</group>
+				</form>
+			</field>
+		</record>
+
+		<!-- TREE VIEW Incoterms -->
+		<record id='view_tree_incoterms' model='ir.ui.view'>
+			<field name="name">view_tree_incoterms</field>
+			<field name="model">stock.incoterms</field>
+			<field name="arch" type="xml">
+				<tree string="Incoterms" version="8.0">
+					<field name="name" />
+					<field name="code" />
+				</tree>
+			</field>
+		</record>
+
+		<!-- SEARCH VIEW Incoterms -->
+		<record id='view_search_incoterms' model='ir.ui.view'>
+			<field name="name">view_search_incoterms</field>
+			<field name="model">stock.incoterms</field>
+			<field name="arch" type="xml">
+				<search version="8.0">
+					<field name="name" />
+					<field name="code" />
+				</search>
+			</field>
+		</record>
+
+		<!-- ACTION Label -->
+		<record id="act_incoterms" model="ir.actions.act_window">
+			<field name="name">Incoterms</field>
+			<field name="res_model">stock.incoterms</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+			<field name="search_view_id" ref="view_search_incoterms" />
+		</record>
+
+		<menuitem name="Incoterms" action="act_incoterms" id="menu_incoterms" parent="account.account_account_menu" groups="account.group_menu_account_config" />
+
+
+		<!-- ========= -->
+		<!-- STOCK LOT -->
+		<!-- ========= -->
+		<!-- FORM VIEW Lot -->
+		<record id='view_form_stock_lot' model='ir.ui.view'>
+			<field name="name">view_form_stock_lot</field>
+			<field name="model">stock.lot</field>
+			<field name="arch" type="xml">
+				<form string="Lot" version="8.0">
+				<group colspan="4" col="9">
+                        <group colspan="8" col="4">
+<h1>
+                        <field name="name" default_focus="1" placeholder="Name" />
+                    </h1>
+                    <field name="is_expiry_date" invisible="1" />
+                    <group colspan="4" col="4">
+                        <field name="product_id" />
+                        <field name="supplier_lot_number" />
+                    </group>
+                    <group colspan="4" col="4" string="Quantities">
+                        <field name="uom_qty" />
+                        <field name="uom_id" />
+                        <field name="sec_uom_qty" />
+                        <field name="sec_uom_id" />
+                    </group>
+                    <group colspan="4" col="4" string="Expiry dates" attrs="{'invisible': [('is_expiry_date', '=', False)]}">
+                        <field name="expiry_date" />
+                        <field name="removal_date" />
+                    </group>
+                        </group>
+                        <group colspan="1" col="1" class="op_shortcuts" invisible="1" name="op_shortcuts">
+                        </group>
+                    </group>
+				</form>
+			</field>
+		</record>
+
+		<!-- TREE VIEW Lot -->
+		<record id='view_tree_stock_lot' model='ir.ui.view'>
+			<field name="name">view_tree_stock_lot</field>
+			<field name="model">stock.lot</field>
+			<field name="arch" type="xml">
+				<tree string="Lots" version="8.0">
+					<field name="name" />
+					<field name="product_id" />
+				</tree>
+			</field>
+		</record>
+
+		<!-- SEARCH VIEW Lot -->
+		<record id='view_search_stock_lot' model='ir.ui.view'>
+			<field name="name">view_search_stock_lot</field>
+			<field name="model">stock.lot</field>
+			<field name="arch" type="xml">
+				<search version="8.0">
+					<field name="name" />
+					<field name="product_id" />
+				</search>
+			</field>
+		</record>
+
+		<!-- ACTION Lot -->
+		<record id="act_stock_lot" model="ir.actions.act_window">
+			<field name="name">Lot</field>
+			<field name="res_model">stock.lot</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+			<field name="search_view_id" ref="view_search_stock_lot" />
+		</record>
+		<menuitem name="Lot" action="act_stock_lot" id="menu_stock_lot" parent="menu_stock_traceability" groups="group_menu_stock_analyse" />
+
+
+		<!-- ================= -->
+		<!-- PROCUREMENT ORDER -->
+		<!-- ================= -->
+		<!-- FORM VIEW Procurement order -->
+		<record id='view_form_procurement_order' model='ir.ui.view'>
+			<field name="name">view_form_procurement_order</field>
+			<field name="model">procurement.order</field>
+			<field name="arch" type="xml">
+				<form string="Procurement order" version="8.0">
+					<header>
+						<button name="wkf_draft" states="exception,progress,done,cancel" string="Draft" type="object" groups="base.group_erp_manager" />
+						<button name="wkf_progress" states="draft,exception,done,cancel" string="Progress" type="object" groups="base.group_erp_manager" />
+						<button name="wkf_done" states="draft,exception,progress,cancel" string="Done" type="object" groups="base.group_erp_manager" />
+						<button name="wkf_cancel" states="draft,exception,progress,done" string="Cancel" type="object" groups="base.group_erp_manager" confirm="Are you sure you want to cancel this procurement?" class="openprod_cancel_button" />
+						<field name="state" widget="statusbar" statusbar_visible="draft,progress,done" />
+					</header>
+					<label class="oe_edit_only" for="name" string="Name" />
+					<h1>
+						<field name="name" class="oe_inline" colspan="4" />
+					</h1>
+					<group colspan="4" col="4">
+						<notebook colspan="4">
+							<page string="Informations">
+								<group colspan="4" col="6" string="Need" name="need">
+									<group colspan="4" col="4">
+										<field name="product_id" />
+										<field name="needed_date" />
+										<!-- <field name="needed_uom_qty" /> -->
+										<!-- <field name="needed_uom_id" /> -->
+										<!-- <field name="needed_sec_uom_qty" /> -->
+										<!-- <field name="needed_sec_uom_id" /> -->
+										<field name="supply_method" />
+										<field name="trigger_supply" />
+										<field name="is_forecast" />
+									</group>
+									<group colspan="2" col="2">
+										<field name="date" />
+										<field name="user_id" />
+										<group colspan="2" col="2" string="Origin" name="origin">
+											<field name="move_id" />
+										</group>
+									</group>
+								</group>
+								<group colspan="3" col="4" string="Procurement" name="procurement">
+									<field name="automatic" />
+									<field name="orderpoint_id" />
+									<field name="responsible_id" />
+									<field name="reserved_qty" />
+									<field name="uom_qty" />
+									<field name="uom_id" />
+									<field name="sec_uom_qty" />
+									<field name="sec_uom_id" />
+									<group colspan="4" col="4" name="action">
+										<group name="transfer" position="before">
+											<group string="Transfer" colspan="2" col="2">
+												<field name="transfer_id" />
+												<group colspan="2" col="1">
+													<center>
+														<button type="object" string="Create transfer" name="create_warehouse_transfer" colspan="2" attrs="{'invisible': [('transfer_id', '!=', False)]}" />
+														<button type="object" string="Delete transfer" name="unlink_warehouse_transfer" colspan="2" attrs="{'invisible': [('transfer_id', '=', False)]}" />
+													</center>
+												</group>
+											</group>
+										</group>
+									</group>
+								</group>
+								<group colspan="1" col="4" string="Informations" name="informations">
+									<separator string="Error" colspan="4" />
+									<field name="error" colspan="4" nolabel="1" />
+									<separator string="Log" colspan="4" />
+									<field name="log" colspan="4" nolabel="1" />
+								</group>
+							</page>
+							<page string="Stock moves">
+								<field name="move_ids" nolabel="1" readonly="1">
+									<tree string="Stock moves">
+										<field name="type" />
+										<field name="location_id" />
+										<field name="location_dest_id" />
+										<field name="uom_qty" />
+										<field name="uom_id" />
+										<field name="reserved_qty" />
+										<field name="state" />
+									</tree>
+								</field>
+								<button class="oe_inline oe_stat_button" name="update_reserved_qtys" type="object" string="Update" icon="fa-refresh" />
+							</page>
+						</notebook>
+					</group>
+				</form>
+			</field>
+		</record>
+
+		<!-- TREE VIEW Procurement order -->
+		<record id='view_tree_procurement_order' model='ir.ui.view'>
+			<field name="name">view_tree_procurement_order</field>
+			<field name="model">procurement.order</field>
+			<field name="arch" type="xml">
+				<tree string="Procurement orders" version="8.0">
+					<field name="name" />
+					<field name="product_id" />
+					<!-- <field name="needed_uom_qty" /> -->
+					<!-- <field name="needed_uom_id" /> -->
+					<field name="needed_date" />
+					<field name="trigger_supply" />
+					<field name="state" />
+					<field name="responsible_id" />
+					<field name="low_procurement" />
+					<field name="is_forecast" />
+					<field name="supply_method" invisible="1" />
+				</tree>
+			</field>
+		</record>
+
+		<!-- SEARCH VIEW Procurement order -->
+		<record id='view_search_procurement_order' model='ir.ui.view'>
+			<field name="name">view_search_procurement_order</field>
+			<field name="model">procurement.order</field>
+			<field name="arch" type="xml">
+				<search version="8.0">
+					<group colspan="4">
+						<separator orientation="vertical" />
+						<filter name="draft" string="Draft" domain="[('state', '=', 'draft')]" />
+						<filter name="progress" string="Progress" domain="[('state', '=', 'progress')]" />
+						<filter name="done" string="Done" domain="[('state', '=', 'done')]" />
+						<filter name="cancel" string="Cancel" domain="[('state', '=', 'cancel')]" />
+						<filter name="exception" string="Exception" domain="[('state', '=', 'exception')]" />
+						<separator orientation="vertical" />
+						<filter name="my_procurement" string="My procurement orders" domain="[('responsible_id', '=', uid)]" />
+						<field name="name" />
+						<field name="product_id" />
+						<field name="low_procurement" />
+						<field name="is_forecast" />
+                        <separator orientation="vertical" />
+                        <filter name="default_procurement" string="Procurement method by default is &quot;purchase&quot;" domain="[('supply_method', '=', 'buy')]" />
+                        <field name="name" />
+					</group>
+					<newline />
+					<group string="Group by ..." colspan="4">
+						<filter string="State" domain="[]" context="{'group_by': 'state'}" />
+						<filter string="Trigger supply" domain="[]" context="{'group_by': 'trigger_supply'}" />
+						<filter string="Responsible" domain="[]" context="{'group_by': 'responsible_id'}" />
+					</group>
+				</search>
+			</field>
+		</record>
+
+		<!-- ACTION Procurement order -->
+		<record id="act_procurement_order" model="ir.actions.act_window">
+			<field name="name">Procurement order</field>
+			<field name="res_model">procurement.order</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+			<field name="context">{'search_default_draft': 1, 'search_default_exception': 1, 'search_default_default_procurement': 1, 'search_default_low_procurement': False}</field>
+			<field name="search_view_id" ref="view_search_procurement_order" />
+		</record>
+
+		<menuitem name="Procurement order" action="act_procurement_order" id="menu_procurement_order" parent="menu_stock_procurement" sequence="10" groups="group_menu_procurement" />
+
+		<!-- FORM VIEW Orderpoint -->
+		<record id='view_form_stock_warehouse_orderpoint' model='ir.ui.view'>
+			<field name="name">view_form_stock_warehouse_orderpoint</field>
+			<field name="model">stock.warehouse.orderpoint</field>
+			<field name="arch" type="xml">
+				<form string="Orderpoint">
+					<group colspan="4" col="4">
+						<group colspan="4" col="4">
+							<field name="name" />
+							<field name="location_id" />
+							<field name="product_id" />
+							<field name="uom_id" />
+						</group>
+						<group string="Quantities" colspan="2" col="4">
+							<field name="qtys_type" colspan="4" />
+							<field name="min_qty" attrs="{'invisible': [('qtys_type', '!=', 'automatic')]}" />
+							<field name="max_qty" attrs="{'invisible': [('qtys_type', '!=', 'automatic')]}" />
+							<field name="manual_min_qty" attrs="{'invisible': [('qtys_type', '!=', 'manual')]}" />
+							<field name="manual_max_qty" attrs="{'invisible': [('qtys_type', '!=', 'manual')]}" />
+						</group>
+						<group string="Validity" colspan="2" col="4">
+							<field name="is_active" />
+							<newline />
+							<field name="start_date" />
+							<field name="end_date" />
+						</group>
+						<group string="Other informations" colspan="4" col="4">
+							<field name="last_proc_id" />
+							<field name="last_procurement_date" />
+						</group>
+					</group>
+				</form>
+			</field>
+		</record>
+
+		<!-- TREE VIEW Orderpoint -->
+		<record id='view_tree_stock_warehouse_orderpoint' model='ir.ui.view'>
+			<field name="name">view_tree_stock_warehouse_orderpoint</field>
+			<field name="model">stock.warehouse.orderpoint</field>
+			<field name="arch" type="xml">
+				<tree string="Orderpoints">
+					<field name="name" />
+					<field name="product_id" />
+					<field name="location_id" />
+					<field name="qtys_type" />
+					<field name="min_qty" />
+					<field name="max_qty" />
+					<field name="start_date" />
+					<field name="end_date" />
+				</tree>
+			</field>
+		</record>
+
+		<!-- SEARCH VIEW Orderpoint -->
+		<record id='view_search_stock_warehouse_orderpoint' model='ir.ui.view'>
+			<field name="name">view_search_stock_warehouse_orderpoint</field>
+			<field name="model">stock.warehouse.orderpoint</field>
+			<field name="arch" type="xml">
+				<search version="8.0">
+					<field name="name" />
+					<field name="product_id" />
+					<field name="location_id" />
+					<field name="min_qty" />
+					<field name="max_qty" />
+				</search>
+			</field>
+		</record>
+
+		<!-- ACTION Orderpoint -->
+		<record id="act_stock_warehouse_orderpoint" model="ir.actions.act_window">
+			<field name="name">Orderpoint</field>
+			<field name="res_model">stock.warehouse.orderpoint</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+
+		<menuitem name="Orderpoint" action="act_stock_warehouse_orderpoint" id="menu_stock_warehouse_orderpoint" parent="menu_stock_procurement" sequence="30" groups="group_menu_procurement" />
+
+
+
+		<!-- FORM VIEW Valuation -->
+		<record id='view_form_valuation' model='ir.ui.view'>
+			<field name="name">valuation</field>
+			<field name="model">stock.valuation</field>
+			<field name="arch" type="xml">
+				<form string="Valuation" version="8.0">
+					<sheet>
+						<group>
+							<field name="month" />
+							<field name="year" />
+							<field name="depreciation_coeff" />
+							<field name="product_id" />
+							<field name="qty_in_stock" />
+							<field name="valuation" />
+							<field name="price" />
+							<field name="uom_id" />
+							<field name="deprecated_valuation" />
+							<field name="deprecated_price" />
+							<field name="last_qty" />
+							<field name="last_valuation" />
+							<field name="last_price" />
+							<field name="valuation_gap" />
+							<field name="price_gap" />
+							<field name="price_gap_percent" />
+							<field name="valuation_gap_percent" />
+							<field name="supply_method" />
+							<field name="warehouse_id" />
+						</group>
+					</sheet>
+				</form>
+			</field>
+		</record>
+
+		<!-- TREE VIEW Valuation -->
+		<record id='view_tree_valuation' model='ir.ui.view'>
+			<field name="name">valuation</field>
+			<field name="model">stock.valuation</field>
+			<field name="arch" type="xml">
+				<tree string="Valuations real" version="8.0" editable="bottom">
+					<field name="month" />
+					<field name="year" />
+					<field name="depreciation_coeff" />
+					<field name="product_id" />
+					<field name="qty_in_stock" />
+					<field name="valuation" />
+					<field name="price" />
+					<field name="uom_id" />
+					<field name="deprecated_valuation" />
+					<field name="deprecated_price" />
+					<field name="last_qty" />
+					<field name="last_valuation" />
+					<field name="last_price" />
+					<field name="valuation_gap" />
+					<field name="price_gap" />
+					<field name="price_gap_percent" />
+					<field name="valuation_gap_percent" />
+					<field name="supply_method" />
+					<field name="warehouse_id" />
+					<field name="comment" />
+				</tree>
+			</field>
+		</record>
+
+
+		<record id='view_tree_valuation_theo' model='ir.ui.view'>
+			<field name="name">view_tree_valuation_theo</field>
+			<field name="model">stock.valuation</field>
+			<field name="arch" type="xml">
+				<tree string="Valuations theo" version="8.0" editable="bottom">
+					<field name="month" />
+					<field name="year" />
+					<field name="depreciation_coeff" />
+					<field name="product_id" />
+					<field name="qty_in_stock" />
+					<field name="valuation_theo" />
+					<field name="price_theo" />
+					<field name="uom_id" />
+					<field name="deprecated_valuation_theo" />
+					<field name="deprecated_price_theo" />
+					<field name="last_qty" />
+					<field name="last_valuation_theo" />
+					<field name="last_price_theo" />
+					<field name="valuation_gap_theo" />
+					<field name="price_gap_theo" />
+					<field name="price_gap_percent_theo" />
+					<field name="valuation_gap_percent_theo" />
+					<field name="supply_method" />
+					<field name="warehouse_id" />
+					<field name="comment" />
+				</tree>
+			</field>
+		</record>
+
+		<!-- SEARCH VIEW Valuation -->
+		<record id='view_search_valuation' model='ir.ui.view'>
+			<field name="name">view_search_valuation</field>
+			<field name="model">stock.valuation</field>
+			<field name="arch" type="xml">
+				<search version="8.0">
+					<filter string="Buy" domain="[('supply_method', '=', 'buy')]" />
+					<filter string="Produce" domain="[('supply_method', '=', 'produce')]" />
+					<group expand="0" string="Group By">
+						<filter string="Month" domain="[]" context="{'group_by': 'month'}" />
+						<filter string="Year" domain="[]" context="{'group_by': 'year'}" />
+						<filter string="Product" domain="[]" context="{'group_by': 'product_id'}" />
+						<filter string="Supply method" domain="[]" context="{'group_by': 'supply_method'}" />
+					</group>
+					<field name="product_id" />
+					<field name="month" />
+					<field name="year" />
+					<field name="price_gap" filter_domain="['|', ('price_gap', '&gt;', self), ('price_gap', '&lt;', -self)]" />
+					<field name="valuation_gap" filter_domain="['|', ('valuation_gap', '&gt;', self), ('valuation_gap', '&lt;', -self)]" />
+				</search>
+			</field>
+		</record>
+
+		<!-- ACTION Valuation -->
+
+		<record id="act_valuation" model="ir.actions.act_window">
+			<field name="name">Valuation real</field>
+			<field name="res_model">stock.valuation</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree</field>
+		</record>
+
+		<!-- ACTION TREE Valuation -->
+		<record id="act_valuation_tree" model="ir.actions.act_window.view">
+			<field name="sequence" eval="10" />
+			<field name="view_mode">tree</field>
+			<field name="act_window_id" ref="act_valuation" />
+		</record>
+
+
+		<record id="act_valuation_theo" model="ir.actions.act_window">
+			<field name="name">Valuation theo</field>
+			<field name="res_model">stock.valuation</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree</field>
+		</record>
+
+
+		<!-- ACTION TREE Valuation -->
+		<record id="act_valuation_tree" model="ir.actions.act_window.view">
+			<field name="sequence" eval="10" />
+			<field name="view_mode">tree</field>
+			<field name="view_id" ref="view_tree_valuation_theo" />
+			<field name="act_window_id" ref="act_valuation_theo" />
+		</record>
+
+
+		<!-- TREE VIEW Valuation -->
+		<record id='view_tree_valuation_lot' model='ir.ui.view'>
+			<field name="name">view_tree_valuation_lot</field>
+			<field name="model">stock.valuation.lot</field>
+			<field name="arch" type="xml">
+				<tree string="Valuations real lots" version="8.0" editable="bottom">
+					<field name="month" />
+					<field name="year" />
+					<field name="depreciation_coeff" />
+					<field name="lot_id" />
+					<field name="product_id" />
+					<field name="qty_in_stock" />
+					<field name="valuation" />
+					<field name="price" />
+					<field name="uom_id" />
+					<field name="deprecated_valuation" />
+					<field name="deprecated_price" />
+					<field name="last_qty" />
+					<field name="last_valuation" />
+					<field name="last_price" />
+					<field name="valuation_gap" />
+					<field name="price_gap" />
+					<field name="price_gap_percent" />
+					<field name="valuation_gap_percent" />
+					<field name="supply_method" />
+					<field name="warehouse_id" />
+					<field name="comment" />
+				</tree>
+			</field>
+		</record>
+
+		<!-- TREE VIEW Valuation -->
+		<record id='view_tree_valuation_lot_theo' model='ir.ui.view'>
+			<field name="name">view_tree_valuation_lot_theo</field>
+			<field name="model">stock.valuation.lot</field>
+			<field name="arch" type="xml">
+				<tree string="Valuations theo lots" version="8.0" editable="bottom">
+					<field name="month" />
+					<field name="year" />
+					<field name="depreciation_coeff" />
+					<field name="lot_id" />
+					<field name="product_id" />
+					<field name="qty_in_stock" />
+					<field name="valuation_theo" />
+					<field name="price_theo" />
+					<field name="uom_id" />
+					<field name="deprecated_valuation_theo" />
+					<field name="deprecated_price_theo" />
+					<field name="last_qty" />
+					<field name="last_valuation_theo" />
+					<field name="last_price_theo" />
+					<field name="valuation_gap_theo" />
+					<field name="price_gap_theo" />
+					<field name="price_gap_percent_theo" />
+					<field name="valuation_gap_percent_theo" />
+					<field name="supply_method" />
+					<field name="warehouse_id" />
+					<field name="comment" />
+				</tree>
+			</field>
+		</record>
+
+
+		<!-- SEARCH VIEW Valuation -->
+		<record id='view_search_valuation_lot' model='ir.ui.view'>
+			<field name="name">view_search_valuation</field>
+			<field name="model">stock.valuation.lot</field>
+			<field name="arch" type="xml">
+				<search version="8.0">
+					<filter string="Buy" domain="[('supply_method', '=', 'buy')]" />
+					<filter string="Produce" domain="[('supply_method', '=', 'produce')]" />
+					<group expand="0" string="Group By">
+						<filter string="Month" domain="[]" context="{'group_by': 'month'}" />
+						<filter string="Year" domain="[]" context="{'group_by': 'year'}" />
+						<filter string="Product" domain="[]" context="{'group_by': 'product_id'}" />
+						<filter string="Supply method" domain="[]" context="{'group_by': 'supply_method'}" />
+					</group>
+					<field name="lot_id" />
+					<field name="product_id" />
+					<field name="warehouse_id" />
+					<field name="month" />
+					<field name="year" />
+					<field name="price_gap" filter_domain="['|', ('price_gap', '&gt;', self), ('price_gap', '&lt;', -self)]" />
+					<field name="valuation_gap" filter_domain="['|', ('valuation_gap', '&gt;', self), ('valuation_gap', '&lt;', -self)]" />
+				</search>
+			</field>
+		</record>
+
+
+		<record id="act_valuation_lot" model="ir.actions.act_window">
+			<field name="name">Valuation real lot</field>
+			<field name="res_model">stock.valuation.lot</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree</field>
+		</record>
+
+
+		<!-- ACTION TREE Valuation -->
+		<record id="act_valuation_lot_tree" model="ir.actions.act_window.view">
+			<field name="sequence" eval="10" />
+			<field name="view_mode">tree</field>
+			<field name="view_id" ref="view_tree_valuation_lot" />
+			<field name="act_window_id" ref="act_valuation_lot" />
+		</record>
+
+		<record id="act_valuation_lot_theo" model="ir.actions.act_window">
+			<field name="name">Valuation theo lot</field>
+			<field name="res_model">stock.valuation.lot</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree</field>
+		</record>
+
+
+		<!-- ACTION TREE Valuation -->
+		<record id="act_valuation_lot_tree" model="ir.actions.act_window.view">
+			<field name="sequence" eval="10" />
+			<field name="view_mode">tree</field>
+			<field name="view_id" ref="view_tree_valuation_lot_theo" />
+			<field name="act_window_id" ref="act_valuation_lot_theo" />
+		</record>
+
+
+		<menuitem name="Product calculation" id="product_valuation_wizard" parent="valuation" action="act_product_valuation" sequence="10" groups="group_menu_stock_analyse" />
+		<menuitem name="All products calculation" id="all_products_valuation_wizard" parent="valuation" action="act_all_products_valuation" sequence="20" groups="group_menu_stock_analyse" />
+		<menuitem name="Valuations real" id="valuation_real_tree" parent="stock.valuation" action="act_valuation" sequence="30" groups="group_menu_stock_analyse" />
+		<menuitem name="Valuations theo" id="valuation_theo_tree" parent="stock.valuation" action="act_valuation_theo" sequence="35" groups="group_menu_stock_analyse" />
+		<menuitem name="Product lot calculation" id="product_valuation_lot_wizard" parent="stock.valuation_lot" action="act_product_valuation_lot" sequence="10" groups="group_menu_stock_analyse" />
+		<menuitem name="All products lot calculation" id="all_products_valuation_lot_wizard" parent="stock.valuation_lot" action="act_all_products_valuation_lot" sequence="20" groups="group_menu_stock_analyse" />
+		<menuitem name="Valuations real lot" id="valuation_lot_tree" parent="stock.valuation_lot" action="act_valuation_lot" sequence="30" groups="group_menu_stock_analyse" />
+		<menuitem name="Valuations theo lot" id="valuation_theo_lot_tree" parent="stock.valuation_lot" action="act_valuation_lot_theo" sequence="40" groups="group_menu_stock_analyse" />
+
+		<!-- TREE VIEW Inventory Line -->
+		<record id='view_tree_stock_invetory_line_id' model='ir.ui.view'>
+			<field name="name">view_tree_stock_invetory_line_id</field>
+			<field name="model">stock.inventory.line</field>
+			<field name="arch" type="xml">
+				<tree string="Inventory Label" version="8.0" editable="bottom">
+					<field name="inventory_id" readonly="1" />
+					<field name="location_id" readonly="1" />
+					<field name="product_id" readonly="1" />
+					<field name="theoretical_qty" readonly="1" />
+					<field name="uom_id" domain="[('id', '=', uom_id)]" readonly="1" />
+					<field name="quantity" attrs="{'readonly': [('state', 'not in', ('draft', 'line_confirm'))]}" />
+					<field name="make_inventory" />
+					<field name="to_update" />
+					<field name="update1" readonly="1" />
+					<field name="state" readonly="1" />
+					<field name="theoretical_qty_inv" invisible="1" />
+					<field name="automatic" invisible="1" />
+				</tree>
+			</field>
+		</record>
+
+		<!-- SEARCH VIEW Inventory Line -->
+		<record id='view_search_stock_invetory_line_id' model='ir.ui.view'>
+			<field name="name">view_search_stock_invetory_line_id</field>
+			<field name="model">stock.inventory.line</field>
+			<field name="arch" type="xml">
+				<search version="8.0">
+					<field name="inventory_id" />
+					<field name="location_id" />
+					<field name="product_id" />
+					<field name="make_inventory" />
+					<field name="to_update" />
+					<field name="update1" />
+					<field name="state" />
+					<field name="automatic" />
+				</search>
+			</field>
+		</record>
+
+		<!-- ACTION Inventory Line -->
+		<record id="act_stock_invetory_line_id" model="ir.actions.act_window">
+			<field name="name">Inventory Line</field>
+			<field name="res_model">stock.inventory.line</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree</field>
+			<field name="search_view_id" ref="view_search_stock_invetory_line_id" />
+			<field name="context">{'search_default_inventory_id': active_id}</field>
+		</record>
+
+		<record id="act_stock_invetory_line_id_tree" model="ir.actions.act_window.view">
+			<field name="sequence" eval="10" />
+			<field name="view_mode">tree</field>
+			<field name="view_id" ref="view_tree_stock_invetory_line_id" />
+			<field name="act_window_id" ref="act_stock_invetory_line_id" />
+		</record>
+
+
+		<record id='view_form_assists_inventory' model='ir.ui.view'>
+			<field name="name">view_form_assists_inventory</field>
+			<field name="model">assists.inventory</field>
+			<field name="arch" type="xml">
+				<form string="Assists inventory" version="8.0">
+					<header>
+						<button name="wkf_draft" states="cancel" string="Draft" type="object" class="oe_highlight" />
+						<button name="button_save" states="draft" string="Save" type="object" class="oe_highlight" />
+						<button name="wkf_validate" states="draft" string="Validate" type="object" class="oe_highlight" />
+						<button name="wkf_cancel" states="draft,validate" string="Cancel" type="object" class="openprod_cancel_button" />
+						<field name="state" widget="statusbar" statusbar_visible="draft,validate" />
+					</header>
+					<group colspan="4" col="4">
+						<field name="name" attrs="{'readonly': [('state', '!=', 'draft')]}" />
+						<field name="date" attrs="{'readonly': [('state', '!=', 'draft')]}" />
+						<field name="user_id" attrs="{'readonly': [('state', '!=', 'draft')]}" />
+						<field name="line_ids" attrs="{'readonly': [('state', '!=', 'draft')]}" colspan="4" nolabel="1">
+							<tree string="Lines" editable="bottom">
+								<field name="product_id" />
+								<field name="location_id" />
+								<field name="qty" />
+								<field name="uom_id" domain="[('category_id', '=', uom_category_id)]" />
+								<field name="uom_category_id" invisible="1" />
+							</tree>
+						</field>
+					</group>
+				</form>
+			</field>
+		</record>
+
+		<!-- FORM VIEW Stock Inventory -->
+		<record id='view_form_stock_inventory_id' model='ir.ui.view'>
+			<field name="name">view_form_stock_inventory_id</field>
+			<field name="model">stock.inventory</field>
+			<field name="arch" type="xml">
+				<form string="Stock Inventory" version="8.0">
+					<header>
+						<button name="wkf_draft" states="cancel" string="Draft" type="object" class="oe_highlight" />
+						<button name="wkf_waiting" states="draft" string="Waiting" type="object" class="oe_highlight" />
+						<button name="wkf_done" states="waiting" string="Done" type="object" class="oe_highlight" />
+						<button name="wkf_cancel" states="draft,waiting,done" string="Cancel" type="object" confirm="Are you sure you want to cancel this stock inventory?" class="openprod_cancel_button" />
+						<field name="state" widget="statusbar" statusbar_visible="draft,waiting,done" />
+					</header>
+					<group colspan="4" col="9">
+						<group colspan="8" col="4">
+							<group colspan="4" col="4">
+								<field name="name" attrs="{'readonly': [('state', '!=', 'draft')]}" />
+								<group colspan="2" col="4">
+									<field name="date" attrs="{'readonly': [('state', '!=', 'draft')]}" />
+									<field name="move_date" attrs="{'readonly': [('state', '!=', 'draft')]}" />
+								</group>
+								<field name="company_id" attrs="{'readonly': [('state', '!=', 'draft')]}" />
+								<field name="location_id" attrs="{'readonly': [('state', '!=', 'draft')]}" />
+							</group>
+							<group colspan="4" col="4">
+								<notebook colspan="4">
+									<page string="Informations">
+										<field name="line_ids" nolabel="1" colspan="4" attrs="{'readonly': [('state', '!=', 'draft')]}">
+											<tree string="Stock moves" editable="bottom">
+												<field name="inventory_id" invisible="1" />
+												<field name="location_id" attrs="{'readonly': ['|', ('state', '!=', 'draft'), ('automatic', '=', True)], 
+												                                  'required': [('state', '=', 'draft')]}" />
+												<field name="product_id" attrs="{'readonly': ['|', ('state', '!=', 'draft'), ('automatic', '=', True)],
+												                                 'required': [('state', '=', 'draft')]}" domain="[('track_label', '=', False)]" />
+												<field name="theoretical_qty" readonly="1" />
+												<field name="uom_id" domain="[('id', '=', uom_id)]" attrs="{'readonly': ['|', ('state', '!=', 'draft'), ('automatic', '=', True)],
+												                                                            'required': [('state', '=', 'draft')]}" />
+												<field name="origin_uom_id" invisible="1" />
+												<field name="quantity" attrs="{'readonly': [('state', '!=', 'draft')],
+												                               'required': [('state', '=', 'draft')]}" />
+												<field name="make_inventory" attrs="{'readonly': [('state', '!=', 'draft')]}" />
+												<field name="to_update" attrs="{'readonly': [('state', 'not in', ('draft', 'line_confirm'))]}" />
+												<field name="update1" readonly="1" />
+												<field name="theoretical_qty_inv" invisible="1" />
+												<field name="state" invisible="1" />
+												<field name="automatic" invisible="1" />
+											</tree>
+										</field>
+									</page>
+									<page string="Assists">
+										<field name="assists_inventory_ids" nolabel="1" colspan="4" readonly="1">
+											<tree string="Assists inventory" editable="bottom">
+												<field name="name" />
+												<field name="date" />
+												<field name="user_id" />
+												<field name="state" />
+												<button name="wkf_cancel" icon="fa-times" class="oe_inline oe_stat_button" string="Cancel" type="object" states="draft,validate" />
+												<button name="button_open_assits_inventory" icon="fa-pencil" class="oe_inline oe_stat_button" string="Modificate" type="object" />
+												<button name="wkf_validate" states="draft" string="Validate" type="object" icon="fa-check-square-o" class="oe_inline oe_stat_button" />
+											</tree>
+										</field>
+									</page>
+									<page string="Moves">
+										<field name="move_ids" nolabel="1" colspan="4" readonly="1" />
+									</page>
+								</notebook>
+							</group>
+						</group>
+						<group colspan="1" col="1" class="op_shortcuts">
+							<separator colspan="1" string="Actions" name="separator_actions_menu" />
+							<button name="button_importation" states="draft" string="Importation" type="object" icon="fa-download" class="oe_inline oe_stat_button" />
+							<button name="button_del_line" states="draft" string="Delete" type="object" icon="fa-times" class="oe_inline oe_stat_button" />
+							<button name="button_compute_qty_line" states="draft,waiting" string="Compute qty" type="object" icon="fa-pencil" class="oe_inline oe_stat_button" />
+							<button name="button_create_assits_inventory" states="draft,waiting" string="Create assist" type="object" icon="fa-pencil" class="oe_inline oe_stat_button" />
+							<separator colspan="1" string="Modifications" name="separator_modif_menu" />
+							<button name="button_to_update" states="draft,waiting" string="Check to update lines" type="object" icon="fa-download" class="oe_inline oe_stat_button" />
+							<separator colspan="1" string="Analysis" name="separator_analysis_menu" />
+							<button class="oe_inline oe_stat_button" name="%(act_stock_invetory_line_id)d" type="action" string="View lines" icon="fa-list-ul" />
+						</group>
+					</group>
+				</form>
+			</field>
+		</record>
+
+		<!-- TREE VIEW Stock Inventory -->
+		<record id='view_tree_stock_inventory_id' model='ir.ui.view'>
+			<field name="name">view_tree_stock_inventory_id</field>
+			<field name="model">stock.inventory</field>
+			<field name="arch" type="xml">
+				<tree string="Stock Inventorys" version="8.0">
+					<field name="name" />
+					<field name="date" />
+					<field name="company_id" />
+					<field name="location_id" />
+				</tree>
+			</field>
+		</record>
+
+		<!-- SEARCH VIEW Stock Inventory -->
+		<record id='view_search_stock_inventory_id' model='ir.ui.view'>
+			<field name="name">view_search_stock_inventory_id</field>
+			<field name="model">stock.inventory</field>
+			<field name="arch" type="xml">
+				<search version="8.0">
+					<field name="name" />
+					<field name="date" />
+					<field name="company_id" />
+					<field name="location_id" />
+				</search>
+			</field>
+		</record>
+
+		<!-- ACTION Stock Inventory -->
+		<record id="act_stock_inventory_id" model="ir.actions.act_window">
+			<field name="name">Stock Inventory</field>
+			<field name="res_model">stock.inventory</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+			<field name="domain">[]</field>
+			<field name="context">{}</field>
+			<field name="search_view_id" ref="view_search_stock_inventory_id" />
+		</record>
+
+		<record id="act_stock_inventory_id_tree" model="ir.actions.act_window.view">
+			<field name="sequence" eval="10" />
+			<field name="view_mode">tree</field>
+			<field name="view_id" ref="view_tree_stock_inventory_id" />
+			<field name="act_window_id" ref="act_stock_inventory_id" />
+		</record>
+
+		<record model="ir.actions.act_window.view" id="act_stock_inventory_id_form">
+			<field name="sequence" eval="20" />
+			<field name="view_mode">form</field>
+			<field name="view_id" ref="view_form_stock_inventory_id" />
+			<field name="act_window_id" ref="act_stock_inventory_id" />
+		</record>
+
+		<menuitem name="Stock Inventory" action="act_stock_inventory_id" id="menu_stock_inventory_id" parent="menu_stock_inventory" groups="group_menu_inventory" />
+
+		<!-- TREE VIEW Inventory Label Line -->
+		<record id='view_tree_stock_invetory_label_line_id' model='ir.ui.view'>
+			<field name="name">view_tree_stock_invetory_label_line_id</field>
+			<field name="model">stock.inventory.label.line</field>
+			<field name="arch" type="xml">
+				<tree string="Inventory Label Lines" version="8.0" editable="bottom">
+					<field name="inventory_label_id" readonly="1" />
+					<field name="label_id" readonly="1" />
+					<field name="product_id" />
+					<field name="current_qty" />
+					<field name="current_location_id" />
+					<field name="uom_id" />
+					<field name="new_qty" attrs="{'readonly': [('state', 'not in', ('draft', 'line_confirm'))]}" />
+					<field name="new_location_id" attrs="{'readonly': [('state', 'not in', ('draft', 'line_confirm'))]}" />
+					<field name="make_inventory" attrs="{'readonly': [('state', 'not in', ('draft', 'line_confirm'))]}" />
+					<field name="to_update" attrs="{'readonly': [('state', 'not in', ('draft', 'line_confirm'))]}" />
+					<field name="update1" readonly="1" />
+					<field name="automatic" readonly="1" />
+					<field name="state" />
+					<field name="qty_error" />
+					<field name="location_error" />
+					<field name="current_qty_inv" invisible="1" />
+				</tree>
+			</field>
+		</record>
+
+		<!-- SEARCH VIEW Inventory Label Line -->
+		<record id='view_search_stock_invetory_label_line_id' model='ir.ui.view'>
+			<field name="name">view_search_stock_invetory_label_line_id</field>
+			<field name="model">stock.inventory.label.line</field>
+			<field name="arch" type="xml">
+				<search version="8.0">
+					<field name="inventory_label_id" />
+					<field name="label_id" />
+					<field name="product_id" />
+					<field name="current_location_id" />
+					<field name="new_location_id" />
+					<field name="make_inventory" />
+					<field name="to_update" />
+					<field name="update1" />
+					<field name="automatic" />
+					<field name="state" />
+					<field name="qty_error" />
+					<field name="location_error" />
+				</search>
+			</field>
+		</record>
+
+		<!-- ACTION Inventory Label Line -->
+		<record id="act_stock_invetory_label_line_id" model="ir.actions.act_window">
+			<field name="name">Inventory Label Lines </field>
+			<field name="res_model">stock.inventory.label.line</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree</field>
+			<field name="search_view_id" ref="view_search_stock_invetory_label_line_id" />
+			<field name="context">{'search_default_inventory_label_id': active_id}</field>
+		</record>
+
+		<record id="act_stock_invetory_label_line_id_tree" model="ir.actions.act_window.view">
+			<field name="sequence" eval="10" />
+			<field name="view_mode">tree</field>
+			<field name="view_id" ref="view_tree_stock_invetory_label_line_id" />
+			<field name="act_window_id" ref="act_stock_invetory_label_line_id" />
+		</record>
+
+
+		<record id='view_form_assists_inventory_label' model='ir.ui.view'>
+			<field name="name">view_form_assists_inventory_label</field>
+			<field name="model">assists.inventory.label</field>
+			<field name="arch" type="xml">
+				<form string="Assists inventory" version="8.0">
+					<header>
+						<button name="wkf_draft" states="cancel" string="Draft" type="object" class="oe_highlight" />
+						<button name="button_save" states="draft" string="Save" type="object" class="oe_highlight" />
+						<button name="wkf_validate" states="draft" string="Validate" type="object" class="oe_highlight" />
+						<button name="wkf_cancel" states="draft,validate" string="Cancel" type="object" class="openprod_cancel_button" />
+						<field name="state" widget="statusbar" statusbar_visible="draft,validate" />
+					</header>
+					<group colspan="4" col="4">
+						<field name="name" attrs="{'readonly': [('state', '!=', 'draft')]}" />
+						<field name="date" attrs="{'readonly': [('state', '!=', 'draft')]}" />
+						<field name="user_id" attrs="{'readonly': [('state', '!=', 'draft')]}" />
+						<field name="line_ids" attrs="{'readonly': [('state', '!=', 'draft')]}" colspan="4" nolabel="1">
+							<tree string="Lines" editable="bottom">
+								<field name="label_id" />
+								<field name="qty" />
+								<field name="location_id" attrs="{'readonly': [('qty', '=', 0.0)]}" domain="[('usage', '=', 'internal')]" />
+							</tree>
+						</field>
+					</group>
+				</form>
+			</field>
+		</record>
+
+
+		<!-- FORM VIEW Inventory Label -->
+		<record id='view_form_stock_inventory_label_id' model='ir.ui.view'>
+			<field name="name">view_form_stock_inventory_label_id</field>
+			<field name="model">stock.inventory.label</field>
+			<field name="arch" type="xml">
+				<form string="Inventory Label" version="8.0">
+					<header>
+						<button name="wkf_draft" states="cancel" string="Draft" type="object" class="oe_highlight" />
+						<button name="wkf_waiting" states="draft" string="Waiting" type="object" class="oe_highlight" />
+						<button name="wkf_done" states="waiting" string="Done" type="object" class="oe_highlight" />
+						<button name="wkf_cancel" states="draft,waiting,done" string="Cancel" type="object" confirm="Are you sure you want to cancel this stock inventory?" class="openprod_cancel_button" />
+						<field name="state" widget="statusbar" statusbar_visible="draft,waiting,done" />
+					</header>
+					<group colspan="4" col="9">
+						<group colspan="8" col="4">
+							<group colspan="4" col="4">
+								<field name="name" attrs="{'readonly': [('state', '!=', 'draft')]}" />
+								<group colspan="2" col="4">
+									<field name="date" attrs="{'readonly': [('state', '!=', 'draft')]}" />
+									<field name="move_date" attrs="{'readonly': [('state', 'in', ('done', 'cancel'))]}" />
+								</group>
+								<field name="company_id" attrs="{'readonly': [('state', '!=', 'draft')]}" />
+								<field name="location_id" attrs="{'readonly': [('state', '!=', 'draft')]}" />
+							</group>
+							<group colspan="4" col="4">
+								<notebook colspan="4">
+									<page string="Informations">
+										<field name="line_ids" nolabel="1" colspan="4" attrs="{'readonly': [('state', 'in', ('done', 'cancel'))]}">
+											<tree string="Stock moves" editable="bottom">
+												<field name="label_id" attrs="{'readonly': ['|', ('state', '!=', 'draft'), ('automatic', '=', True)]}" domain="[('is_active', '=', True)]" />
+												<field name="product_id" />
+												<field name="current_qty" />
+												<field name="current_location_id" />
+												<field name="uom_id" />
+												<field name="new_qty" attrs="{'readonly': [('state', 'not in', ('draft', 'line_confirm'))]}" />
+												<field name="new_location_id" attrs="{'readonly': [('state', 'not in', ('draft', 'line_confirm'))]}" />
+												<field name="make_inventory" attrs="{'readonly': [('state', 'not in', ('draft', 'line_confirm'))]}" />
+												<field name="to_update" attrs="{'readonly': [('state', 'not in', ('draft', 'line_confirm'))]}" />
+												<field name="update1" readonly="1" />
+												<field name="automatic" invisible="1" />
+												<field name="state" invisible="1" />
+												<field name="current_qty_inv" invisible="1" />
+												<field name="inventory_label_id" invisible="1" />
+											</tree>
+										</field>
+									</page>
+									<page string="Assists">
+										<field name="assists_inventory_ids" nolabel="1" colspan="4" readonly="1">
+											<tree string="Assists inventory" editable="bottom">
+												<field name="name" />
+												<field name="date" />
+												<field name="user_id" />
+												<field name="state" />
+												<button name="wkf_cancel" icon="fa-times" class="oe_inline oe_stat_button" string="Cancel" type="object" states="draft,validate" />
+												<button name="button_open_assits_inventory" icon="fa-pencil" class="oe_inline oe_stat_button" string="Modificate" type="object" />
+												<button name="wkf_validate" states="draft" string="Validate" type="object" icon="fa-check-square-o" class="oe_inline oe_stat_button" />
+											</tree>
+										</field>
+									</page>
+									<page string="Moves">
+										<field name="move_ids" nolabel="1" colspan="4" readonly="1" />
+									</page>
+								</notebook>
+							</group>
+						</group>
+						<group colspan="1" col="1" class="op_shortcuts">
+							<separator colspan="1" string="Actions" name="separator_actions_menu" />
+							<button name="button_importation" states="draft" string="Importation" type="object" icon="fa-download" class="oe_inline oe_stat_button" />
+							<button name="button_del_line" states="draft" string="Delete" type="object" icon="fa-times" class="oe_inline oe_stat_button" />
+							<button name="button_compute_qty_line" states="draft,waiting" string="Compute qty" type="object" icon="fa-pencil" class="oe_inline oe_stat_button" />
+							<button name="button_create_assits_inventory" states="draft,waiting" string="Create assist" type="object" icon="fa-pencil" class="oe_inline oe_stat_button" />
+							<separator colspan="1" string="Modifications" name="separator_modif_menu" />
+							<button name="button_to_update" states="draft,waiting" string="Check to update lines" type="object" icon="fa-download" class="oe_inline oe_stat_button" />
+							<separator colspan="1" string="Analysis" name="separator_analysis_menu" />
+							<button class="oe_inline oe_stat_button" name="%(act_stock_invetory_label_line_id)d" type="action" string="Lines" icon="fa-list-ul" />
+						</group>
+					</group>
+				</form>
+			</field>
+		</record>
+
+		<!-- TREE VIEW Inventory Label -->
+		<record id='view_tree_stock_inventory_label_id' model='ir.ui.view'>
+			<field name="name">view_tree_stock_inventory_label_id</field>
+			<field name="model">stock.inventory.label</field>
+			<field name="arch" type="xml">
+				<tree string="Inventory Labels" version="8.0">
+					<field name="name" />
+					<field name="date" />
+					<field name="company_id" />
+					<field name="location_id" />
+				</tree>
+			</field>
+		</record>
+
+		<!-- SEARCH VIEW Inventory Label -->
+		<record id='view_search_stock_inventory_label_id' model='ir.ui.view'>
+			<field name="name">view_search_stock_inventory_label_id</field>
+			<field name="model">stock.inventory.label</field>
+			<field name="arch" type="xml">
+				<search version="8.0">
+					<field name="name" />
+					<field name="date" />
+					<field name="company_id" />
+					<field name="location_id" />
+				</search>
+			</field>
+		</record>
+
+		<!-- ACTION Inventory Label -->
+		<record id="act_stock_inventory_label_id" model="ir.actions.act_window">
+			<field name="name">Inventory Label</field>
+			<field name="res_model">stock.inventory.label</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+			<field name="domain">[]</field>
+			<field name="context">{}</field>
+			<field name="search_view_id" ref="view_search_stock_inventory_label_id" />
+		</record>
+
+		<record id="act_stock_inventory_label_id_tree" model="ir.actions.act_window.view">
+			<field name="sequence" eval="10" />
+			<field name="view_mode">tree</field>
+			<field name="view_id" ref="view_tree_stock_inventory_label_id" />
+			<field name="act_window_id" ref="act_stock_inventory_label_id" />
+		</record>
+
+		<record model="ir.actions.act_window.view" id="act_stock_inventory_label_id_form">
+			<field name="sequence" eval="20" />
+			<field name="view_mode">form</field>
+			<field name="view_id" ref="view_form_stock_inventory_label_id" />
+			<field name="act_window_id" ref="act_stock_inventory_label_id" />
+		</record>
+
+		<menuitem name="Inventory Label" action="act_stock_inventory_label_id" id="menu_stock_inventory_label_id" parent="menu_stock_inventory" groups="group_menu_inventory" />
+
+
+		<!-- FORM VIEW quality_control_declaration_line_control -->
+		<record id='view_form_quality_control_declaration_line_result_id_view_stack' model='ir.ui.view'>
+			<field name="name">view_form_quality_control_declaration_line_result_id_view_stack</field>
+			<field name="model">quality.control.declaration.line.result</field>
+			<field name="priority" eval="100" />
+			<field name="arch" type="xml">
+				<form string="Quality control declaration lines results" version="8.0">
+					<group colspan="4" col="4">
+						<field name="control_id" readonly="1" />
+						<field name="sample" readonly="1" />
+						<field name="user_id" readonly="1" />
+						<field name="date" readonly="1" />
+						<field name="is_validate" invisible="1" />
+						<group colspan="4" col="4">
+							<group colspan="2" col="2">
+								<group colspan="2" col="2" string="Description">
+									<field name="description" nolabel="1" colspan="2" attrs="{'readonly': [('is_validate', '=', True)]}" />
+								</group>
+								<group colspan="2" col="2" string="Plan/Picture">
+									<field name="plan" nolabel="1" colspan="2" widget="image" readonly="1" />
+								</group>
+							</group>
+							<group colspan="2" col="2" string="Controls">
+								<field name="type_control" />
+								<field name="min" colspan="2" attrs="{'invisible': [('type_control', '!=', 'numeric')], 'readonly': [('type_control', '=', 'numeric')]}" />
+								<field name="max" colspan="2" attrs="{'invisible': [('type_control', '!=', 'numeric')], 'readonly': [('type_control', '=', 'numeric')]}" />
+								<field name="value_target" colspan="2" attrs="{'invisible': [('type_control', '!=', 'numeric')], 'readonly': [('is_validate', '=', True)]}" />
+								<field name="control_value_ids" attrs="{'invisible': [('type_control', '!=', 'selection')], 'readonly': [('type_control', '=', 'selection')]}" nolabel="1" colspan="2" />
+								<field name="result_control_value_id" attrs="{'invisible': [('type_control', '!=', 'selection')], 'readonly': [('is_validate', '=', True)]}" colspan="2" domain="[('domain_result_control', 'in', control_value_ids)]" />
+								<field name="text_value" attrs="{'invisible': [('type_control', '!=', 'text')], 'readonly': [('type_control', '=', 'text')]}" nolabel="1" colspan="2" />
+								<field name="result_text_value" attrs="{'invisible': [('type_control', '!=', 'text')], 'readonly': [('is_validate', '=', True)]}" nolabel="1" colspan="2" />
+								<field name="result" colspan="2" attrs="{'readonly': [('is_validate', '=', True)]}" />
+							</group>
+						</group>
+					</group>
+					<button name="button_save_true" string="Save" type="object" colspan="2" attrs="{'invisible': [('is_validate', '=', True)]}" />
+				</form>
+			</field>
+		</record>
+
+		<record id="act_quality_control_declaration_line_result_id_view_stack" model="ir.actions.act_window">
+			<field name="name">Production quality control declaration lines results view stack</field>
+			<field name="res_model">quality.control.declaration.line.result</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">form</field>
+			<field name="target">stack</field>
+		</record>
+
+		<record model="ir.actions.act_window.view" id="act_quality_control_declaration_line_result_id_view_stack_form">
+			<field name="sequence" eval="20" />
+			<field name="view_mode">form</field>
+			<field name="view_id" ref="view_form_quality_control_declaration_line_result_id_view_stack" />
+			<field name="act_window_id" ref="act_quality_control_declaration_line_result_id_view_stack" />
+		</record>
+
+
+		<!-- FORM VIEW quality_control -->
+		<record id='view_form_quality_control_declaration_id_for_wizard' model='ir.ui.view'>
+			<field name="name">view_form_quality_control_declaration_id_for_wizard</field>
+			<field name="model">quality.control.declaration</field>
+			<field name="priority" eval="100" />
+			<field name="arch" type="xml">
+				<form string="Quality Control Declaration" version="8.0">
+					<header>
+						<field name="state" widget="statusbar" statusbar_visible="draft, progress, cancel" />
+					</header>
+					<group colspan="4" col="6">
+						<field name="name" colspan="2" readonly="1" />
+						<field name="product_id" colspan="2" readonly="1" />
+						<field name="location_id" />
+						<field name="max_qty" />
+						<field name="type" readonly="1" />
+						<field name="date" colspan="2" readonly="1" />
+						<field name="qty_ok" />
+						<field name="qty_quarantine" />
+						<field name="qty_hs" />
+						<label string="" colspan="2" />
+						<field name="nc_quarantine" />
+						<field name="nc_hs" />
+						<field name="qty_label" readonly="1" attrs="{'invisible': [('type', 'not in', ('post_reception', 'post_intern'))]}" />
+						<field name="move_ids" invisible="1" />
+						<field name="post_move_ids" invisible="1" />
+						<field name="is_validate" invisible="1" />
+						<field name="type_control" invisible="1" />
+						<field name="product_track_label" invisible="1" />
+						<notebook colspan="8" col="4">
+							<page string="Lines results">
+								<group colspan="4" col="4">
+									<button name="button_regenerate_control_declaration_wiz" string="Generate" type="object" icon="fa-refresh" class="oe_inline oe_stat_button" confirm="Are sure you want to delete the result rows before recreating them?" />
+									<field name="line_result_ids" nolabel="1" colspan="4">
+										<tree string="Line result" version="8.0" editable="bottom" create="false">
+											<field name="control_id" />
+											<field name="sample" />
+											<field name="type_control" />
+											<field name="min" readonly="1" column_invisible="[('type_control', 'not in', ('numeric', 'all'))]" />
+											<field name="max" readonly="1" column_invisible="[('type_control', 'not in', ('numeric', 'all'))]" />
+											<field name="value_target" attrs="{'required': [('type_control', '=', 'numeric')]}" column_invisible="[('type_control', 'not in', ('numeric', 'all'))]" />
+											<field name="control_value_ids" readonly="1" widget="many2many_tags" column_invisible="[('type_control', 'not in', ('selection', 'all'))]" />
+											<field name="result_control_value_id" attrs="{'required': [('type_control', '=', 'selection')]}" column_invisible="[('type_control', 'not in', ('selection', 'all'))]" domain="[('domain_result_control', 'in', control_value_ids)]" />
+											<field name="text_value" readonly="1" column_invisible="[('type_control', 'not in', ('text', 'all'))]" />
+											<field name="result_text_value" attrs="{'required': [('type_control', '=', 'text')]}" column_invisible="[('type_control', 'not in', ('text', 'all'))]" />
+											<field name="result" column_invisible="[('type_control', 'not in', ('text', 'all'))]" />
+											<button name="return_view_form" string="View" type="object" icon="terp-tools" />
+										</tree>
+									</field>
+								</group>
+							</page>
+							<page string="Lines controls">
+								<group colspan="4" col="4">
+									<field name="line_control_ids" nolabel="1" colspan="4">
+										<tree string="Line result" version="8.0" editable="bottom">
+											<field name="control_id" />
+											<field name="frequency_type" />
+											<field name="frequency_value" />
+											<field name="int_next_frequency" readonly="1" />
+										</tree>
+									</field>
+								</group>
+							</page>
+						</notebook>
+					</group>
+					<footer>
+						<button name="validate" string="Validate" type="object" class="oe_highlight" />
+						or
+						<button string="Cancel" class="oe_link" special="cancel" />
+					</footer>
+				</form>
+			</field>
+		</record>
+
+
+		<!-- FORM VIEW quality_control -->
+		<record id='view_form_quality_control_declaration_id' model='ir.ui.view'>
+			<field name="name">view_form_quality_control_declaration_id</field>
+			<field name="model">quality.control.declaration</field>
+			<field name="priority" eval="1000" />
+			<field name="arch" type="xml">
+				<form string="Quality Control Declaration" version="8.0">
+					<header>
+						<button type="object" name="wkf_draft" string="Draft" class="oe_highlight" attrs="{'invisible': ['|', ('state', '!=', 'cancel'), ('type', 'not in', ('post_reception', 'post_intern', 'manual'))]}" />
+						<button type="object" name="wkf_cancel" string="Cancel" class="openprod_cancel_button" attrs="{'invisible': ['|', ('state', 'not in', ('draft', 'progress', 'done')), ('type', 'not in', ('post_reception', 'post_intern', 'manual'))]}" />
+						<button name="validate" string="Validate" type="object" class="oe_highlight" states='progress' />
+						<button name="button_regenerate_control_declaration" string="Generate" type="object" class="oe_highlight" confirm="Are sure you want to delete the result rows before recreating them?" states='draft,progress' />
+						<field name="state" widget="statusbar" statusbar_visible="draft, progress, done" />
+					</header>
+					<group colspan="4" col="6">
+						<field name="name" colspan="2" />
+						<field name="product_id" colspan="2" />
+						<field name="location_id" />
+						<field name="max_qty" />
+						<field name="type" readonly="1" />
+						<field name="location_dest_id" colspan="2" attrs="{'required': [('type', '=', 'post_reception')]}" />
+						<field name="qty_ok" attrs="{'invisible': [('product_track_label', '=', True)]}" />
+						<field name="qty_quarantine" attrs="{'invisible': [('product_track_label', '=', True)]}" />
+						<field name="qty_hs" attrs="{'invisible': [('product_track_label', '=', True)]}" />
+						<field name="label_qty_ok" attrs="{'invisible': [('product_track_label', '!=', True)]}" />
+						<field name="label_qty_quarantine" attrs="{'invisible': [('product_track_label', '!=', True)]}" />
+						<field name="label_qty_hs" attrs="{'invisible': [('product_track_label', '!=', True)]}" />
+						<field name="date" />
+						<field name="nc_quarantine" />
+						<field name="nc_hs" />
+						<field name="resource_id" />
+						<field name="qty_label" readonly="1" invisible="1" /> <!-- attrs="{'invisible': [('type', 'not in', ('post_reception', 'post_intern'))]}" /> -->
+						<field name="move_ids" invisible="1" />
+						<field name="post_move_ids" invisible="1" />
+						<field name="is_validate" invisible="1" />
+						<field name="type_control" invisible="1" />
+						<field name="product_track_label" invisible="1" />
+						<notebook colspan="6" col="4">
+							<page string="Lines results">
+								<group colspan="4" col="4">
+									<field name="line_result_ids" nolabel="1" colspan="4">
+										<tree string="Line result" version="8.0" editable="bottom" create="false">
+											<field name="control_id" />
+											<field name="label_id" column_invisible="[('product_track_label', '!=', True)]" domain="[('state', 'in', ('available', 'control')), ('product_id', '=', parent.product_id), ('location_id', '=', parent.location_id)]" />
+											<field name="result" column_invisible="[('product_track_label', '!=', True)]" />
+											<field name="sample" />
+											<field name="type_control" />
+											<field name="min" readonly="1" column_invisible="[('type_control', 'not in', ('numeric', 'all'))]" />
+											<field name="max" readonly="1" column_invisible="[('type_control', 'not in', ('numeric', 'all'))]" />
+											<field name="value_target" attrs="{'required': [('type_control', '=', 'numeric')]}" column_invisible="[('type_control', 'not in', ('numeric', 'all'))]" />
+											<field name="control_value_ids" readonly="1" widget="many2many_tags" column_invisible="[('type_control', 'not in', ('selection', 'all'))]" />
+											<field name="result_control_value_id" attrs="{'required': [('type_control', '=', 'selection')]}" column_invisible="[('type_control', 'not in', ('selection', 'all'))]" domain="[('domain_result_control', 'in', control_value_ids)]" />
+											<field name="text_value" readonly="1" column_invisible="[('type_control', 'not in', ('text', 'all'))]" />
+											<field name="result_text_value" attrs="{'required': [('type_control', '=', 'text')]}" column_invisible="[('type_control', 'not in', ('text', 'all'))]" />
+											<button name="return_view_form" string="View" type="object" icon="terp-tools" />
+										</tree>
+									</field>
+								</group>
+							</page>
+							<page string="Lines controls">
+								<group colspan="4" col="4">
+									<field name="line_control_ids" nolabel="1" colspan="4">
+										<tree string="Line result" version="8.0" editable="bottom">
+											<field name="control_id" />
+											<field name="frequency_type" />
+											<field name="frequency_value" />
+											<field name="int_next_frequency" readonly="1" />
+										</tree>
+									</field>
+								</group>
+							</page>
+							<page string="Labels" attrs="{'invisible': [('product_track_label', '!=', True)]}">
+								<group colspan="4" col="4" string="OK labels">
+									<field name="ok_label_ids" colspan="4" nolabel="1" domain="[('state', 'in', ('available', 'control')), ('product_id', '=', product_id), ('quality_label_ids', 'not in', quarantine_label_ids), ('quality_label_ids', 'not in', hs_label_ids), ('location_id', '=', location_id)]" />
+								</group>
+								<group colspan="4" col="4" string="Quarantine labels">
+									<field name="quarantine_label_ids" colspan="4" nolabel="1" domain="[('state', 'in', ('available', 'control')), ('product_id', '=', product_id), ('quality_label_ids', 'not in', hs_label_ids), ('quality_label_ids', 'not in', ok_label_ids), ('location_id', '=', location_id)]" />
+								</group>
+								<group colspan="4" col="4" string="HS labels">
+									<field name="hs_label_ids" colspan="4" nolabel="1" domain="[('state', 'in', ('available', 'control')), ('product_id', '=', product_id), ('quality_label_ids', 'not in', quarantine_label_ids), ('quality_label_ids', 'not in', ok_label_ids), ('location_id', '=', location_id)]" />
+								</group>
+							</page>
+							<page string="Moves">
+								<field name="move_ids" colspan="4" nolabel="1" options="{'no_create': True}">
+									<tree string="Stock moves" version="8.0" colors="gray:state=='cancel'; blue:state=='draft'; brown:state=='done';" create="false" delete="false">
+										<field name="color_priority_need" colors="red:color_priority_need==3; orange:color_priority_need==2; green:color_priority_need==1; black:color_priority_need==4;" string=" " />
+										<field name="product_id" />
+										<field name="uom_qty" />
+										<field name="uom_id" />
+										<field name="origin" />
+										<field name="date" />
+										<field name="date_expected" />
+										<field name="state" />
+										<field name="availability" widget="progressbar" />
+										<field name="location_id" />
+										<field name="location_dest_id" />
+										<field name="picking_id" />
+										<field name="type" />
+										<field name="warehouse_id" />
+										<field name="is_control_declaration_recep" invisible="1" />
+										<field name="is_recalculate_frequency_control" invisible="1" />
+									</tree>
+								</field>
+								<field name="post_move_ids" colspan="4" nolabel="1" options="{'no_create': True}">
+									<tree string="Stock moves" version="8.0" colors="gray:state=='cancel'; blue:state=='draft'; brown:state=='done';" create="false" delete="false">
+										<field name="color_priority_need" colors="red:color_priority_need==3; orange:color_priority_need==2; green:color_priority_need==1; black:color_priority_need==4;" string=" " />
+										<field name="product_id" />
+										<field name="uom_qty" />
+										<field name="uom_id" />
+										<field name="origin" />
+										<field name="date" />
+										<field name="date_expected" />
+										<field name="state" />
+										<field name="availability" widget="progressbar" />
+										<field name="location_id" />
+										<field name="location_dest_id" />
+										<field name="picking_id" />
+										<field name="type" />
+										<field name="warehouse_id" />
+										<field name="is_control_declaration_recep" invisible="1" />
+										<field name="is_recalculate_frequency_control" invisible="1" />
+									</tree>
+								</field>
+							</page>
+							<page string="Nonconformity">
+								<field name="nonconformity_ids" nolabel="1" colspan="4" readonly="1" />
+							</page>
+						</notebook>
+					</group>
+				</form>
+			</field>
+		</record>
+		<!-- TREE VIEW Quality Control Declaration -->
+		<record id='view_tree_quality_control_declaration_id' model='ir.ui.view'>
+			<field name="name">view_tree_quality_control_declaration_id</field>
+			<field name="model">quality.control.declaration</field>
+			<field name="arch" type="xml">
+				<tree string="Quality Control Declaration" version="8.0">
+					<field name="name" />
+					<field name="product_id" />
+					<field name="qty_ok" />
+					<field name="qty_hs" />
+					<field name="qty_quarantine" />
+					<field name="qty_label" />
+					<field name="date" />
+					<field name="state" />
+				</tree>
+			</field>
+		</record>
+
+		<!-- SEARCH VIEW Quality Control Declaration -->
+		<record id='view_search_quality_control_declaration_id' model='ir.ui.view'>
+			<field name="name">view_search_quality_control_declaration_id</field>
+			<field name="model">quality.control.declaration</field>
+			<field name="arch" type="xml">
+				<search version="8.0">
+					<field name="name" />
+					<field name="product_id" />
+					<field name="qty_ok" />
+					<field name="qty_hs" />
+					<field name="qty_quarantine" />
+					<field name="qty_label" />
+					<field name="date" />
+					<group expand="0" string="Filters">
+						<filter string="Progress" domain="[('state', '=', 'progress')]" name="state_progress" />
+					</group>
+				</search>
+			</field>
+		</record>
+
+
+		<!-- ACTION Intern Production Quality Control Declaration -->
+		<record id="act_quality_control_declaration_intern_id" model="ir.actions.act_window">
+			<field name="name">Production Quality Control Declaration</field>
+			<field name="res_model">quality.control.declaration</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+			<field name="domain">[('type', 'in', ('intern', 'post_intern', 'manual'))]</field>
+			<field name="context">{'default_type': 'manual', 'search_default_state_progress': 1}</field>
+			<field name="search_view_id" ref="view_search_quality_control_declaration_id" />
+		</record>
+
+		<record id="act_quality_control_declaration_intern_id_tree" model="ir.actions.act_window.view">
+			<field name="sequence" eval="10" />
+			<field name="view_mode">tree</field>
+			<field name="view_id" ref="view_tree_quality_control_declaration_id" />
+			<field name="act_window_id" ref="act_quality_control_declaration_intern_id" />
+		</record>
+
+		<record model="ir.actions.act_window.view" id="act_quality_control_declaration_intern_id_form">
+			<field name="sequence" eval="20" />
+			<field name="view_mode">form</field>
+			<field name="view_id" ref="view_form_quality_control_declaration_id" />
+			<field name="act_window_id" ref="act_quality_control_declaration_intern_id" />
+		</record>
+
+		<!-- ACTION Delivery Production Quality Control Declaration -->
+		<!-- <record id="act_quality_control_declaration_delivery_id" model="ir.actions.act_window"> -->
+		<!-- <field name="name">Production Quality Control Declaration</field> -->
+		<!-- <field name="res_model">quality.control.declaration</field> -->
+		<!-- <field name="view_type">form</field> -->
+		<!-- <field name="view_mode">tree,form</field> -->
+		<!-- <field name="domain">[('type', '=', 'delivery')]</field> -->
+		<!-- <field name="context">{'default_type': 'delivery'}</field> -->
+		<!-- <field name="search_view_id" ref="view_search_quality_control_declaration_id" /> -->
+		<!-- </record> -->
+
+		<!-- <record id="act_quality_control_declaration_delivery_id_tree" model="ir.actions.act_window.view"> -->
+		<!-- <field name="sequence" eval="10" /> -->
+		<!-- <field name="view_mode">tree</field> -->
+		<!-- <field name="view_id" ref="view_tree_quality_control_declaration_id" /> -->
+		<!-- <field name="act_window_id" ref="act_quality_control_declaration_delivery_id" /> -->
+		<!-- </record> -->
+
+		<!-- <record model="ir.actions.act_window.view" id="act_quality_control_declaration_delivery_id_form"> -->
+		<!-- <field name="sequence" eval="20" /> -->
+		<!-- <field name="view_mode">form</field> -->
+		<!-- <field name="view_id" ref="view_form_quality_control_declaration_id" /> -->
+		<!-- <field name="act_window_id" ref="act_quality_control_declaration_delivery_id" /> -->
+		<!-- </record> -->
+
+		<!-- ACTION Reception Production Quality Control Declaration -->
+		<record id="act_quality_control_declaration_reception_id" model="ir.actions.act_window">
+			<field name="name">Production Quality Control Declaration</field>
+			<field name="res_model">quality.control.declaration</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+			<field name="domain">[('type', 'in', ('reception', 'post_reception', 'manual'))]</field>
+			<field name="context">{'default_type': 'manual', 'search_default_state_progress': 1}</field>
+			<field name="search_view_id" ref="view_search_quality_control_declaration_id" />
+		</record>
+
+		<record id="act_quality_control_declaration_reception_id_tree" model="ir.actions.act_window.view">
+			<field name="sequence" eval="10" />
+			<field name="view_mode">tree</field>
+			<field name="view_id" ref="view_tree_quality_control_declaration_id" />
+			<field name="act_window_id" ref="act_quality_control_declaration_reception_id" />
+		</record>
+
+		<record model="ir.actions.act_window.view" id="act_quality_control_declaration_reception_id_form">
+			<field name="sequence" eval="20" />
+			<field name="view_mode">form</field>
+			<field name="view_id" ref="view_form_quality_control_declaration_id" />
+			<field name="act_window_id" ref="act_quality_control_declaration_reception_id" />
+		</record>
+
+		<!-- <menuitem name="Quality Control Declaration" action="act_quality_control_declaration_delivery_id" id="menu_quality_control_declaration_delivey_id" parent="product.menu_quality_customer_id" sequence="20" /> -->
+		<menuitem name="Quality Control Declaration" action="act_quality_control_declaration_reception_id" id="menu_quality_control_declaration_reception_id" parent="product.menu_quality_supplier_id" sequence="20" groups="product.group_menu_supplier_quality" />
+
+
+
+		<record id='view_tree_quality_control_declaration_line_result_id' model='ir.ui.view'>
+			<field name="name">view_tree_quality_control_declaration_line_result_id</field>
+			<field name="model">quality.control.declaration.line.result</field>
+			<field name="arch" type="xml">
+				<tree string="Lines results" version="8.0" editable="bottom" readonly="1">
+					<field name="product_id" />
+					<field name="control_id" />
+					<field name="value_target" />
+					<field name="min" />
+					<field name="max" />
+					<field name="result" />
+					<field name="date" />
+					<field name="picking_id" />
+					<field name="week_number" invisible="1" />
+					<field name="month" invisible="1" />
+					<field name="year" invisible="1" />
+					<button name="return_view_form" string="View" type="object" icon="terp-tools" />
+				</tree>
+			</field>
+		</record>
+
+
+		<record id='view_search_quality_control_declaration_line_result_id' model='ir.ui.view'>
+			<field name="name">view_search_quality_control_declaration_line_result_id</field>
+			<field name="model">quality.control.declaration.line.result</field>
+			<field name="arch" type="xml">
+				<search version="8.0">
+					<field name="product_id" />
+					<field name="control_id" />
+					<field name="result" />
+					<field name="picking_id" />
+					<group expand="0" string="Filters">
+						<filter string="OK" domain="[('result', '=', 'ok')]" name="result_ok" />
+						<filter string="Quarantine" domain="[('result', '=', 'quarantine')]" name="result_quarantine" />
+						<filter string="HS" domain="[('result', '=', 'hs')]" name="result_hs" />
+					</group>
+					<group expand="0" string="Group by...">
+						<filter string="Product" context="{'group_by' : 'product_id'}" />
+						<filter string="Control" context="{'group_by' : 'control_id'}" />
+						<filter string="Year" context="{'group_by' : 'year'}" />
+						<filter string="Month" context="{'group_by' : 'month'}" />
+						<filter string="Week" context="{'group_by' : 'week_number'}" />
+						<filter string="Picking" context="{'group_by' : 'picking_id'}" name="picking_filter" />
+					</group>
+				</search>
+			</field>
+		</record>
+
+
+		<!-- ACTION quality_control_declaration_line_result -->
+		<record id="act_quality_control_declaration_line_result_id" model="ir.actions.act_window">
+			<field name="name">Quality control lines results</field>
+			<field name="res_model">quality.control.declaration.line.result</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree</field>
+		</record>
+
+		<menuitem name="Quality control lines results" action="act_quality_control_declaration_line_result_id" id="menu_quality_control_declaration_line_result" parent="product.menu_quality_analyse_id" sequence="20" groups="product.group_menu_analysis_quality" />
+		<menuitem name="Lines results Analysis" action="action_quality_control_line_result_report_analysis" id="menu_quality_control_declaration_line_result_id_analysis" parent="product.menu_quality_analyse_id" sequence="30" groups="product.group_menu_analysis_quality" />
+
+
+		<!-- FORM VIEW Nonconformity File -->
+		<record id='view_form_nonconformity_file_id' model='ir.ui.view'>
+			<field name="name">view_form_nonconformity_file_id</field>
+			<field name="model">nonconformity.file</field>
+			<field name="arch" type="xml">
+				<form string="Nonconformity File" version="8.0">
+					<header>
+						<field name="state" widget="statusbar" statusbar_visible="draft,progress,done" />
+					</header>
+					<group colspan="4" col="9">
+						<group colspan="8" col="8" attrs="{'readonly': [('state', '=', 'done')]}">
+							<group colspan="8" col="6">
+								<field name="type" />
+								<field name="partner_id" attrs="{'required': [('type', '=', 'partner')]}" />
+								<field name="origin" />
+								<newline />
+								<field name="product_id" attrs="{'invisible': [('type', '!=', 'product')], 'required': [('type', '=', 'product')]}" />
+								<field name="qty" attrs="{'invisible': [('type', '!=', 'product')], 'required': [('type', '=', 'product')]}" />
+								<newline />
+								<field name="create_date" />
+								<field name="limit_date" />
+								<field name="end_date" />
+							</group>
+							<notebook colspan="8" col="4" attrs="{'readonly': [('state', '=', 'done')]}">
+								<page string="Analyses">
+									<group colspan="4" string="Description" col="4">
+										<group colspan="2" col="2">
+											<field name="origin_type" />
+											<field name="cause_id" />
+											<field name="is_return_product" attrs="{'invisible': [('origin_type', 'not in', ('reception', 'post_reception'))]}" />
+										</group>
+										<group colspan="2" col="2">
+											<field name="move_id" readonly="1" attrs="{'invisible': [('origin_type', 'not in', ('reception', 'intern', 'post_reception', 'post_intern'))]}" />
+											<field name="declaration_id" readonly="1" />
+										</group>
+										<field name="description" colspan="4" nolabel="1" />
+									</group>
+									<group colspan="4" string="Attachments">
+										<field name="attachment_ids" colspan="4" nolabel="1" />
+									</group>
+								</page>
+								<page string="Actions">
+									<group colspan="4" col="4" string="Actions">
+										<field name="user_event_ids" colspan="4" nolabel="1" context="{'reference_generat_auto': True}">
+											<tree>
+												<field name="name" />
+												<field name="state_id" />
+												<field name="affected_user_id" />
+												<field name="duration" />
+												<field name="state" invisible="1" />
+											</tree>
+											<form string="Actions" version="8.0">
+												<group colspan="4" col="6">
+													<group colspan="2" col="2">
+														<field name="name" />
+														<field name="start_datetime" on_change="onchange_duration('start', start_datetime, duration)" attrs="{'invisible': [('related_type', '!=', 'plan')]}" />
+														<field name="stop_datetime" on_change="onchange_duration('stop', stop_datetime, duration)" />
+													</group>
+													<group colspan="2" col="2">
+														<field name="affected_user_id" />
+														<field name="duration" widget="float_time" on_change="onchange_duration('start', start_datetime, duration)" attrs="{'invisible': [('related_type', '!=', 'plan')]}" />
+														<field name="alert_period" />
+													</group>
+													<group colspan="2" col="2">
+														<field name="alarm_ids" widget="many2many_tags" />
+														<field name="type_id" />
+														<field name="state_id" required="1" />
+														<field name="related_type" invisible="1" />
+													</group>
+													<group colpsan="6" invisible="1">
+														<field name="state" />
+														<field name="is_attendee" />
+														<field name="attendee_status" />
+													</group>
+													<notebook colspan="6">
+														<page string="Details">
+															<group colspan="4" col="4" string="Description">
+																<field name="description" colspan="4" nolabel="1" />
+															</group>
+															<group colspan="4" col="4" string="Details">
+																<field name="user_id" />
+																<field name="categ_ids" widget="many2many_tags" />
+																<field name="location" />
+																<group colspan="4" col="8">
+																	<button name="remove_seven_days" type="object" string="- 7" icon="gtk-go-back" colspan="1" />
+																	<button name="remove_one_day" type="object" string="- 1" icon="gtk-go-back" colspan="1" />
+																	<label colspan="4" string="" />
+																	<button name="add_one_day" type="object" string="+ 1" icon="gtk-go-forward" colspan="1" />
+																	<button name="add_seven_days" type="object" string="+ 7" icon="gtk-go-forward" colspan="1" />
+																</group>
+															</group>
+															<group colspan="4" col="4" string="Times">
+																<field name="timetracking_ids" nolabel="1" colspan="4">
+																	<tree>
+																		<field name="name" />
+																		<field name="activity" />
+																		<field name="user_id" />
+																		<field name="start_date" />
+																		<field name="end_date" />
+																		<field name="time" widget="float_time" sum="Total" />
+																	</tree>
+																</field>
+															</group>
+														</page>
+														<page string="Attendees and invitations" attrs="{'invisible': [('related_type', '!=', 'plan')]}">
+															<group colspan="4" col="4" string="Attendees">
+																<label for="user_ids" string="Attendees" class="oe_edit_only" />
+																<h2>
+																	<field name="user_ids" widget="many2manyattendee" placeholder="Select attendees..." context="{'force_email':True}" on_change="onchange_user_ids(user_ids)" class="oe_inline" />
+																</h2>
+															</group>
+															<group colspan="4" col="4" string="Invitations">
+																<button name="do_sendmail" type="object" string="Send mail" icon="terp-mail-message-new" class="oe_link" />
+																<field name="attendee_ids" widget="one2many" colspan="4" nolabel="1">
+																	<tree string="Invitation details" editable="top" create="false" delete="false">
+																		<field name="user_id" />
+																		<field name="state" />
+																		<field name="email" widget="email" />
+																		<button name="do_tentative" states="needsAction,declined,accepted" string="Uncertain" type="object" icon="terp-crm" />
+																		<button name="do_accept" string="Accept" states="needsAction,tentative,declined" type="object" icon="gtk-apply" />
+																		<button name="do_decline" string="Decline" states="needsAction,tentative,accepted" type="object" icon="gtk-cancel" />
+																	</tree>
+																</field>
+															</group>
+														</page>
+													</notebook>
+												</group>
+											</form>
+										</field>
+									</group>
+									<group colspan="4" string="Notes">
+										<field name="note_ids" colspan="4" nolabel="1" context="{'from_object': True}">
+											<tree>
+												<field name="user_id" />
+												<field name="type" />
+												<field name="name" />
+												<field name="date" />
+											</tree>
+										</field>
+									</group>
+								</page>
+								<page string="Communications">
+									<field name="mail_ids" />
+									<button name="action_send_mail" type="object" string="Send Mail" class="oe_inline oe_stat_button" icon="fa-envelope" />
+								</page>
+							</notebook>
+						</group>
+						<group colspan="1" col="1" class="op_shortcuts">
+							<separator colspan="1" string="Actions" name="separator_actions_menu" />
+							<button name="button_return_move" type="object" string="Return move" class="oe_inline oe_stat_button" icon="fa-check" attrs="{'invisible': ['|', ('origin_type', 'in', ('post_intern', 'intern')), ('is_return_product', '=', True)]}" />
+						</group>
+					</group>
+				</form>
+			</field>
+		</record>
+
+		<!-- TREE VIEW Nonconformity File -->
+		<record id='view_tree_nonconformity_file_id' model='ir.ui.view'>
+			<field name="name">view_tree_nonconformity_file_id</field>
+			<field name="model">nonconformity.file</field>
+			<field name="arch" type="xml">
+				<tree string="Nonconformity Files" version="8.0">
+					<field name="move_id" />
+					<field name="product_id" />
+					<field name="qty" />
+					<field name="partner_id" />
+					<field name="cause_id" />
+					<field name="origin_type" />
+					<field name="create_date" />
+					<field name="limit_date" />
+					<field name="end_date" />
+					<field name="declaration_id" />
+					<field name="state" />
+					<field name="is_return_product" />
+				</tree>
+			</field>
+		</record>
+
+		<!-- SEARCH VIEW Nonconformity File -->
+		<record id='view_search_nonconformity_file_id' model='ir.ui.view'>
+			<field name="name">view_search_nonconformity_file_id</field>
+			<field name="model">nonconformity.file</field>
+			<field name="arch" type="xml">
+				<search version="8.0">
+					<field name="move_id" />
+					<field name="product_id" />
+					<field name="qty" />
+					<field name="partner_id" />
+					<field name="cause_id" />
+					<field name="origin_type" />
+					<field name="create_date" />
+					<field name="limit_date" />
+					<field name="end_date" />
+					<field name="declaration_id" />
+					<field name="state" />
+					<field name="is_return_product" />
+				</search>
+			</field>
+		</record>
+
+		<!-- ACTION Nonconformity File Reception -->
+		<record id="act_nonconformity_file_reception_id" model="ir.actions.act_window">
+			<field name="name">Nonconformity File</field>
+			<field name="res_model">nonconformity.file</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+			<field name="domain">[('origin_type', 'in', ('reception', 'post_reception'))]</field>
+			<field name="context">{'default_origin_type': 'reception'}</field>
+			<field name="search_view_id" ref="view_search_nonconformity_file_id" />
+		</record>
+
+		<record id="act_nonconformity_file_reception_id_tree" model="ir.actions.act_window.view">
+			<field name="sequence" eval="10" />
+			<field name="view_mode">tree</field>
+			<field name="view_id" ref="view_tree_nonconformity_file_id" />
+			<field name="act_window_id" ref="act_nonconformity_file_reception_id" />
+		</record>
+
+		<record model="ir.actions.act_window.view" id="act_nonconformity_file_reception_id_form">
+			<field name="sequence" eval="20" />
+			<field name="view_mode">form</field>
+			<field name="view_id" ref="view_form_nonconformity_file_id" />
+			<field name="act_window_id" ref="act_nonconformity_file_reception_id" />
+		</record>
+
+		<!-- ACTION Nonconformity File Delivery -->
+		<record id="act_nonconformity_file_delivery_id" model="ir.actions.act_window">
+			<field name="name">Nonconformity File</field>
+			<field name="res_model">nonconformity.file</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+			<field name="domain">[('origin_type', '=', 'delivery')]</field>
+			<field name="context">{'default_origin_type': 'delivery'}</field>
+			<field name="search_view_id" ref="view_search_nonconformity_file_id" />
+		</record>
+
+		<record id="act_nonconformity_file_delivery_id_tree" model="ir.actions.act_window.view">
+			<field name="sequence" eval="10" />
+			<field name="view_mode">tree</field>
+			<field name="view_id" ref="view_tree_nonconformity_file_id" />
+			<field name="act_window_id" ref="act_nonconformity_file_delivery_id" />
+		</record>
+
+		<record model="ir.actions.act_window.view" id="act_nonconformity_file_delivery_id_form">
+			<field name="sequence" eval="20" />
+			<field name="view_mode">form</field>
+			<field name="view_id" ref="view_form_nonconformity_file_id" />
+			<field name="act_window_id" ref="act_nonconformity_file_delivery_id" />
+		</record>
+
+		<!-- ACTION Nonconformity File Intern -->
+		<record id="act_nonconformity_file_intern_id" model="ir.actions.act_window">
+			<field name="name">Nonconformity File</field>
+			<field name="res_model">nonconformity.file</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+			<field name="domain">[('origin_type', 'in', ('intern', 'post_intern'))]</field>
+			<field name="context">{'default_origin_type': 'intern'}</field>
+			<field name="search_view_id" ref="view_search_nonconformity_file_id" />
+		</record>
+
+		<record id="act_nonconformity_file_intern_id_tree" model="ir.actions.act_window.view">
+			<field name="sequence" eval="10" />
+			<field name="view_mode">tree</field>
+			<field name="view_id" ref="view_tree_nonconformity_file_id" />
+			<field name="act_window_id" ref="act_nonconformity_file_intern_id" />
+		</record>
+
+		<record model="ir.actions.act_window.view" id="act_nonconformity_file_intern_id_form">
+			<field name="sequence" eval="20" />
+			<field name="view_mode">form</field>
+			<field name="view_id" ref="view_form_nonconformity_file_id" />
+			<field name="act_window_id" ref="act_nonconformity_file_intern_id" />
+		</record>
+
+
+		<menuitem name="Nonconformity File" action="act_nonconformity_file_reception_id" id="menu_nonconformity_file_reception_id" parent="product.menu_quality_supplier_id" sequence="30" groups="product.group_menu_supplier_quality" />
+		<!-- <menuitem name="Nonconformity File" action="act_nonconformity_file_delivery_id" id="menu_nonconformity_file_delivery_id" parent="product.menu_quality_customer_id" sequence="30" /> -->
+
+		<!-- ================ -->
+		<!-- Common attribute -->
+		<!-- ================ -->
+		<!-- FORM VIEW Common attribute -->
+		<record id='view_form_common_attribute' model='ir.ui.view'>
+			<field name="name">view_form_common_attribute</field>
+			<field name="model">common.attribute</field>
+			<field name="arch" type="xml">
+				<form string="Common attribute" version="8.0">
+					<group>
+						<field name="uc_label_id" />
+						<field name="product_id" />
+						<field name="label_uom_qty" />
+						<field name="label_uom_id" />
+						<field name="name" />
+						<field name="value" />
+					</group>
+				</form>
+			</field>
+		</record>
+
+		<!-- TREE VIEW Common attribute -->
+		<record id='view_tree_common_attribute' model='ir.ui.view'>
+			<field name="name">view_tree_common_attribute</field>
+			<field name="model">common.attribute</field>
+			<field name="arch" type="xml">
+				<tree string="Common attributes" version="8.0">
+					<field name="name" />
+					<field name="value" sum="Total" />
+					<field name="product_id" />
+					<field name="uc_label_id" />
+					<field name="label_uom_qty" sum="Total" />
+					<field name="label_uom_id" />
+				</tree>
+			</field>
+		</record>
+
+		<!-- SEARCH VIEW Common attribute -->
+		<record id='view_search_common_attribute' model='ir.ui.view'>
+			<field name="name">view_search_common_attribute</field>
+			<field name="model">common.attribute</field>
+			<field name="arch" type="xml">
+				<search version="8.0">
+					<field name="product_id" />
+					<field name="uc_label_id" />
+					<field name="name" />
+					<filter name="active_label" string="Active label" domain="[('active_label', '=', True)]" context="{}" />
+					<group expand="1" string="Group By">
+						<filter string="Product" domain="[]" context="{'group_by': 'product_id'}" />
+						<filter string="Name" domain="[]" context="{'group_by': 'name'}" />
+						<filter string="Value" domain="[]" context="{'group_by': 'value'}" />
+					</group>
+				</search>
+			</field>
+		</record>
+
+		<!-- ACTION Common attribute -->
+		<record id="act_common_attribute" model="ir.actions.act_window">
+			<field name="name">Common attribute</field>
+			<field name="res_model">common.attribute</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+			<field name="context">{'search_default_active_label': True}</field>
+			<field name="search_view_id" ref="view_search_common_attribute" />
+		</record>
+
+		<menuitem name="Common attribute" action="act_common_attribute" id="menu_common_attribute" parent="menu_stock_traceability" groups="group_menu_stock_analyse" />
+
+
+		<record id="view_graph_quality_control" model="ir.ui.view">
+			<field name="name">Quality control</field>
+			<field name="model">quality.control</field>
+			<field name="arch" type="xml">
+				<qualitychart string="Quality control">
+				</qualitychart>
+			</field>
+		</record>
+
+		<!-- ACTION Quality control graph -->
+		<record id="act_quality_control_graph" model="ir.actions.act_window">
+			<field name="name">Quality control graph</field>
+			<field name="res_model">quality.control</field>
+			<field name="view_mode">tree,qualitychart</field>
+			<field name="domain">[('type_control', '=', 'numeric')]</field>
+			<field name="view_type">form</field>
+		</record>
+
+		<menuitem name="Quality control graph" action="act_quality_control_graph" id="menu_quality_control_graph" parent="product.menu_quality_analyse_id" sequence="30" groups="product.group_menu_analysis_quality" />
+
+
+
+		<!-- ======================== -->
+		<!-- Warehouse transfer delay -->
+		<!-- ======================== -->
+		<!-- FORM VIEW Warehouse transfer delay -->
+		<record id='view_form_warehouse_transfer_delay' model='ir.ui.view'>
+			<field name="name">view_form_warehouse_transfer_delay</field>
+			<field name="model">warehouse.transfer.delay</field>
+			<field name="arch" type="xml">
+				<form string="Warehouse transfer delay" version="8.0">
+					<group colspan="4" col="4">
+						<field name="warehouse_id" />
+						<field name="warehouse_dest_id" />
+						<field name="delay" />
+					</group>
+				</form>
+			</field>
+		</record>
+
+		<!-- TREE VIEW Warehouse transfer delay -->
+		<record id='view_tree_warehouse_transfer_delay' model='ir.ui.view'>
+			<field name="name">view_tree_warehouse_transfer_delay</field>
+			<field name="model">warehouse.transfer.delay</field>
+			<field name="arch" type="xml">
+				<tree string="Warehouse transfer delays" version="8.0" editable="bottom" delete="false">
+					<field name="warehouse_id" />
+					<field name="warehouse_dest_id" />
+					<field name="delay" />
+				</tree>
+			</field>
+		</record>
+
+		<!-- SEARCH VIEW Warehouse transfer delay -->
+		<record id='view_search_warehouse_transfer_delay' model='ir.ui.view'>
+			<field name="name">view_search_warehouse_transfer_delay</field>
+			<field name="model">warehouse.transfer.delay</field>
+			<field name="arch" type="xml">
+				<search version="8.0">
+					<field name="warehouse_id" />
+					<field name="warehouse_dest_id" />
+				</search>
+			</field>
+		</record>
+
+		<!-- ACTION Warehouse transfer delay -->
+		<record id="act_warehouse_transfer_delay" model="ir.actions.act_window">
+			<field name="name">Warehouse transfer delay</field>
+			<field name="res_model">warehouse.transfer.delay</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+			<field name="search_view_id" ref="view_search_warehouse_transfer_delay" />
+		</record>
+
+		<menuitem name="Warehouse transfer delay" action="act_warehouse_transfer_delay" id="menu_warehouse_transfer_delay" parent="menu_stock_configuration" sequence="100" groups="group_menu_stock_config" />
+
+
+		<!-- ================ -->
+		<!-- Transfer request -->
+		<!-- ================ -->
+		<!-- FORM VIEW Transfer request -->
+		<record id='view_form_stock_transfer_request' model='ir.ui.view'>
+			<field name="name">view_form_stock_transfer_request</field>
+			<field name="model">stock.transfer.request</field>
+			<field name="arch" type="xml">
+				<form string="Transfer request" version="8.0">
+					<header>
+						<button name="wkf_draft" states="cancel" string="Draft" type="object" class="oe_highlight" />
+						<button name="wkf_cancel_button" states="draft,done" string="Cancel" type="object" class="openprod_cancel_button" confirm="Are you sure you want to cancel this transfer request?" />
+						<field name="state" widget="statusbar" statusbar_visible="draft,done" />
+					</header>
+					<group colspan="4" col="9">
+						<group colspan="8">
+							<group colspan="4" col="4">
+								<field name="product_id" />
+								<field name="origin" />
+								<field name="warehouse_id" />
+								<field name="warehouse_dest_id" />
+								<group colspan="2" col="2" string="Quantities">
+									<label for="needed_uom_qty" />
+									<div>
+										<field name="needed_uom_qty" class="oe_inline" />
+										<field name="needed_uom_id" class="oe_inline" />
+									</div>
+									<label for="uom_qty" />
+									<div>
+										<field name="uom_qty" class="oe_inline" />
+										<field name="uom_id" class="oe_inline" />
+									</div>
+								</group>
+								<group colspan="2" col="4" string="Dates">
+									<field name="need_date" />
+									<field name="departure_date" />
+								</group>
+								<group colspan="4" col="2" string="Stock moves">
+									<field name="is_automatic" />
+									<group colspan="2" col="2" string="OUT">
+										<field name="out_move_ids" colspan="2" nolabel="1" />
+									</group>
+									<group colspan="2" col="2" string="IN">
+										<field name="in_move_ids" colspan="2" nolabel="1" />
+									</group>
+								</group>
+							</group>
+						</group>
+						<group colspan="1" col="1" class="op_shortcuts" name="action_purchase_line_menu">
+							<separator string="Actions" colspan="1" name="separator_actions_menu" attrs="{'invisible': [('state', 'not in', ('draft', 'done'))]}" />
+							<button class="oe_inline oe_stat_button" string="Affect to picking" type="action" name="%(act_choose_picking_wizard)d" icon="fa-sign-in fa-rotate-90" attrs="{'invisible': [('state', '!=', 'draft')]}" />
+							<button class="oe_inline oe_stat_button" string="Take out of picking" type="object" name="take_out_picking" icon="fa-sign-out fa-rotate-270" attrs="{'invisible': [('state', '!=', 'done')]}" />
+							<button class="oe_inline oe_stat_button" string="Create pickings" type="object" name="create_transfer_picking_button" icon="fa-plus-square" attrs="{'invisible': [('state', '!=', 'draft')]}" />
+							<separator string="Analysis" colspan="1" name="separator_analysis_menu" />
+							<button class="oe_inline oe_stat_button" string="Open procurement" type="object" name="open_source_procurement" icon="fa-sign-out" />
+						</group>
+					</group>
+				</form>
+			</field>
+		</record>
+
+		<!-- TREE VIEW Transfer request -->
+		<record id='view_tree_stock_transfer_request' model='ir.ui.view'>
+			<field name="name">view_tree_stock_transfer_request</field>
+			<field name="model">stock.transfer.request</field>
+			<field name="arch" type="xml">
+				<tree string="Transfer requests" version="8.0">
+					<field name="product_id" />
+					<field name="origin" />
+					<field name="warehouse_id" />
+					<field name="warehouse_dest_id" />
+					<field name="uom_qty" />
+					<field name="uom_id" />
+					<field name="need_date" />
+					<field name="departure_date" />
+					<field name="state" />
+				</tree>
+			</field>
+		</record>
+
+		<!-- SEARCH VIEW Transfer request -->
+		<record id='view_search_stock_transfer_request' model='ir.ui.view'>
+			<field name="name">view_search_stock_transfer_request</field>
+			<field name="model">stock.transfer.request</field>
+			<field name="arch" type="xml">
+				<search version="8.0">
+					<field name="product_id" />
+					<field name="origin" />
+					<field name="warehouse_id" />
+					<field name="warehouse_dest_id" />
+					<field name="need_date" />
+					<field name="departure_date" />
+					<field name="state" />
+				</search>
+			</field>
+		</record>
+
+		<!-- ACTION Transfer request -->
+		<record id="act_stock_transfer_request" model="ir.actions.act_window">
+			<field name="name">Transfer request</field>
+			<field name="res_model">stock.transfer.request</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+			<field name="search_view_id" ref="view_search_stock_transfer_request" />
+		</record>
+
+		<menuitem name="Transfer request" action="act_stock_transfer_request" id="menu_stock_transfer_request" parent="menu_stock_procurement" sequence="20" groups="group_menu_procurement" />
+
+
+		<!-- =============== -->
+		<!-- STOCK WAREHOUSE -->
+		<!-- =============== -->
+		<!-- FORM VIEW Stock warehouse -->
+		<record id='view_form_stock_warehouse' model='ir.ui.view'>
+			<field name="name">view_form_stock_warehouse</field>
+			<field name="model">stock.warehouse</field>
+			<field name="inherit_id" ref="stock_location.view_form_stock_warehouse" />
+			<field name="priority" eval="100" />
+			<field name="arch" type="xml">
+				<xpath expr="//group" position="inside">
+					<field name="generate_procurement_buy" />
+					<field name="generate_procurement_produce" />
+					<field name="included_into_the_stock" />
+					<field name="included_into_the_valorization" />
+					<field name="is_consume_directly_storage" />
+					<field name="is_produce_directly_storage" />
+					<field name="is_receipt_directly_storage" />
+				</xpath>
+				<xpath expr="//group" position="after">
+					<group colspan="4" col="4" string="Locations">
+						<field name="stock_location_id" attrs="{'required': [('id', '!=', False)]}" domain="[('warehouse_id', '=', id), ('usage', '=', 'view')]" context="{'default_warehouse_id': id, 'default_usage': 'view'}" />
+						<field name="input_location_id" attrs="{'required': [('id', '!=', False)]}" domain="[('warehouse_id', '=', id), ('usage', '=', 'internal')]" context="{'default_warehouse_id': id, 'default_usage': 'internal'}" />
+						<field name="delivery_location_id" attrs="{'required': [('id', '!=', False)]}" domain="[('warehouse_id', '=', id), ('usage', '=', 'internal')]" context="{'default_warehouse_id': id, 'default_usage': 'internal'}" />
+						<field name="service_location_id" attrs="{'required': [('id', '!=', False)]}" domain="[('warehouse_id', '=', id), ('usage', '!=', 'view')]" context="{'default_warehouse_id': id}" />
+						<field name="hs_location_id" attrs="{'required': [('id', '!=', False)]}" domain="[('usage', '!=', 'view')]" context="{'default_warehouse_id': id}" />
+						<field name="quarantine_location_id" attrs="{'required': [('id', '!=', False)]}" domain="[('usage', '!=', 'view')]" context="{'default_warehouse_id': id}" />
+						<field name="control_location_id" attrs="{'required': [('id', '!=', False)]}" domain="[('usage', '!=', 'view'), ('control', '=', True)]" context="{'default_control': True, 'default_warehouse_id': id}" />
+						<field name="customer_location_id" attrs="{'required': [('id', '!=', False)]}" domain="[('warehouse_id', '=', id), ('usage', '=', 'customer')]" context="{'default_warehouse_id': id, 'default_usage': 'customer'}" />
+						<field name="supplier_location_id" attrs="{'required': [('id', '!=', False)]}" domain="[('warehouse_id', '=', id), ('usage', '=', 'supplier')]" context="{'default_warehouse_id': id, 'default_usage': 'supplier'}" />
+					</group>
+				</xpath>
+			</field>
+		</record>
+	</data>
+</openerp>

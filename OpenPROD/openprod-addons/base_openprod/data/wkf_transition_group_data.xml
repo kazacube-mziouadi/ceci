@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data noupdate="1">
+
+        <record id="wkf_transition_grp_reset" model="workflow.transition.group">
+            <field name="name">Reset flow</field>
+        </record>
+
+        <record id="wkf_transition_grp_cancel" model="workflow.transition.group">
+            <field name="name">Cancel flow</field>
+        </record>
+
+        <record id="wkf_transition_grp_with_mail" model="workflow.transition.group">
+            <field name="name">Mail flow</field>
+        </record>
+
+        <record id="wkf_transition_grp_standard_without_mail" model="workflow.transition.group">
+            <field name="name">Standard flow without mail</field>
+        </record>
+        
+        <record id="wkf_transition_grp_payment" model="workflow.transition.group">
+            <field name="name">Payment flow</field>
+        </record>
+        
+        <record id="wkf_transition_grp_manual_invoicing" model="workflow.transition.group">
+            <field name="name">Manual invoicing</field>
+        </record>
+        
+    </data>
+</openerp>

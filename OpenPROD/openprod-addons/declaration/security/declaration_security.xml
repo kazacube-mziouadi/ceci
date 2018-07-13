@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data noupdate="1">
+
+		<!-- ====== -->
+		<!-- GROUPS -->
+		<!-- ====== -->
+		<record id="base.group_declaration" model="res.groups">
+			<field name="name">Operator</field>
+			<field name="category_id" ref="base_openprod.module_menu_category"/>
+		</record>
+
+	</data>
+</openerp>

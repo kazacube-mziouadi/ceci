@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+		<!-- FORM VIEW Import help fields -->
+		<record id='view_form_import_help_fields' model='ir.ui.view'>
+			<field name="name">view_form_import_help_fields</field>
+			<field name="model">import.help.fields</field>
+			<field name="arch" type="xml">
+				<form string="Import help fields" version="8.0">
+					<sheet>
+						<group colspan="4" col="4">
+							<field name="name" />
+							<field name="model_id" attrs="{'readonly': [('state','!=', 'manual')]}" />
+							<field name="field_description" />
+							<field name="ttype" />
+							<field name="translate" attrs="{'invisible': [('ttype','not in',['char','text'])]}" />
+							<field name="selection_txt" attrs="{'invisible': [('ttype','not in',['selection','reference'])]}" />
+							<field name="size" attrs="{'invisible': [('ttype','not in',['char','reference'])]}" />
+							<group colspan="4" col="4" string="Relation" attrs="{'invisible': [('ttype', 'not in', ['many2one', 'one2many', 'many2many'])]}">
+								<field name="domain" />
+								<field name="relation" />
+								<field name="on_delete" attrs="{'invisible': [('ttype','!=','many2one')]}" />
+								<field name="relation_field" attrs="{'invisible': [('ttype','!=','one2many')]}" />
+							</group>
+							<group colspan="4" col="4" string="Relation table" attrs="{'invisible': ['|', ('ttype','!=','many2many')]}">
+								<field name="relation_table" />
+								<field name="column1" />
+								<field name="column2" />
+							</group>
+							<field name="required" />
+							<field name="readonly" />
+							<field name="index" />
+							<field name="copy" />
+							<field name="is_stored" />
+							<newline />
+							<field name="help" />
+							<field name="import_help" />
+							<field name="state" invisible="1" />
+						</group>
+					</sheet>
+				</form>
+			</field>
+		</record>
+
+		<!-- TREE VIEW Import help fields -->
+		<record id='view_tree_import_help_fields' model='ir.ui.view'>
+			<field name="name">view_tree_import_help_fields</field>
+			<field name="model">import.help.fields</field>
+			<field name="arch" type="xml">
+				<tree string="Import help fieldss" version="8.0">
+					<field name="name" />
+					<field name="field_description" />
+					<field name="required" />
+					<field name="ttype" />
+					<field name="default" />
+					<field name="is_stored" />
+					<field name="import_help" />
+				</tree>
+			</field>
+		</record>
+
+		<!-- SEARCH VIEW Import help fields -->
+		<record id='view_search_import_help_fields' model='ir.ui.view'>
+			<field name="name">view_search_import_help_fields</field>
+			<field name="model">import.help.fields</field>
+			<field name="arch" type="xml">
+				<search version="8.0">
+					<filter string="To import" domain="[('is_stored', '=', True), ('ttype', '!=', 'one2many'), ('name', 'not in', ('id', ))]" />
+				</search>
+			</field>
+		</record>
+
+		<!-- ACTION Import help fields -->
+		<record id="act_import_help_fields" model="ir.actions.act_window">
+			<field name="name">Import help fields</field>
+			<field name="res_model">import.help.fields</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+			<field name="context">{}</field>
+			<field name="search_view_id" ref="view_search_import_help_fields" />
+		</record>
+
+		<menuitem name="Import help" action="" id="menu_import_help" parent="base.next_id_9" />
+		<menuitem name="Import help fields" action="act_import_help_fields" id="menu_import_help_fields" parent="menu_import_help" />
+	</data>
+</openerp>

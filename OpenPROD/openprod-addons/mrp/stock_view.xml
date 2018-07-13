@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+
+		<!-- Menu Quality -->
+		<menuitem name="Productions" id="menu_quality_intern_id" parent="product.menu_quality_main" sequence="30" />
+		<!-- <menuitem name="Product Quality Control" action="product.act_quality_control_product_intern_id" id="menu_quality_control_product_intern_id" parent="menu_quality_intern_id" sequence="10" groups="product.group_menu_internal_quality" /> -->
+		<menuitem name="Quality Control Declaration" action="stock.act_quality_control_declaration_intern_id" id="menu_quality_control_declaration_intern_id" parent="menu_quality_intern_id" sequence="20" groups="product.group_menu_internal_quality" />
+		<menuitem name="Nonconformity File" action="stock.act_nonconformity_file_intern_id" id="menu_nonconformity_file_intern_id" parent="menu_quality_intern_id" sequence="30" groups="product.group_menu_internal_quality" />
+		<menuitem name="Complaints" action="act_mrp_rl_complaint_intern" id="menu_mrp_rl_complaint_intern" parent="menu_quality_intern_id" sequence="40" groups="product.group_menu_internal_quality" />
+
+
+		<!-- ======================== -->
+		<!-- STOCK LABEL TRACEABILITY -->
+		<!-- ======================== -->
+		<!-- FORM VIEW Label traceability -->
+		<record id='view_form_stock_label_traceability' model='ir.ui.view'>
+			<field name="name">view_form_stock_label_traceability</field>
+			<field name="model">stock.label.traceability</field>
+			<field name="arch" type="xml">
+				<form string="Label traceability" version="8.0">
+					<group>
+						<field name="from_label_id" />
+						<field name="from_lot_id" />
+						<field name="level" />
+						<field name="product_id" />
+						<field name="lot_id" />
+						<field name="label_id" />
+						<field name="date" />
+						<field name="quantity" />
+						<field name="origin" />
+						<field name="initial_lot_id" />
+						<field name="initial_label_id" />
+						<field name="initial_date" />
+						<field name="initial_quantity" />
+						<field name="initial_origin" />
+					</group>
+				</form>
+			</field>
+		</record>
+
+		<!-- TREE VIEW Label traceability -->
+		<record id='view_tree_stock_label_traceability' model='ir.ui.view'>
+			<field name="name">view_tree_stock_label_traceability</field>
+			<field name="model">stock.label.traceability</field>
+			<field name="arch" type="xml">
+				<tree string="Label traceability" version="8.0">
+					<field name="from_label_id" />
+					<field name="from_lot_id" />
+					<field name="level" />
+					<field name="product_id" />
+					<field name="lot_id" />
+					<field name="label_id" />
+					<field name="date" />
+					<field name="quantity" />
+					<field name="origin" />
+					<field name="initial_label_id" />
+					<field name="initial_date" />
+					<field name="initial_quantity" />
+					<field name="initial_origin" />
+				</tree>
+			</field>
+		</record>
+
+		<!-- SEARCH VIEW Label traceability -->
+		<record id='view_search_stock_label_traceability' model='ir.ui.view'>
+			<field name="name">view_search_stock_label_traceability</field>
+			<field name="model">stock.label.traceability</field>
+			<field name="arch" type="xml">
+				<search version="8.0">
+					<field name="from_label_id" />
+					<field name="from_lot_id" />
+					<field name="label_id" />
+					<field name="initial_label_id" />
+				</search>
+			</field>
+		</record>
+
+		<!-- ACTION Label traceability -->
+		<record id="act_stock_label_traceability" model="ir.actions.act_window">
+			<field name="name">Label traceability</field>
+			<field name="res_model">stock.label.traceability</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+			<field name="search_view_id" ref="view_search_stock_label_traceability" />
+		</record>
+
+
+		<!-- =========== -->
+		<!-- STOCK LABEL -->
+		<!-- =========== -->
+		<!-- FORM VIEW Stock label -->
+		<record id="view_form_traceability_label" model="ir.ui.view">
+			<field name="name">view.form.printer.label</field>
+			<field name="model">stock.label</field>
+			<field name="inherit_id" ref="stock.view_form_label" />
+			<field name="priority" eval="1400" />
+			<field name="arch" type="xml">
+				<xpath expr="//button[@name='show_traceability_upstream']" position="before">
+					<button name="build_traceability" string="Compute traceability" type="object" class="oe_inline oe_stat_button" icon="fa-cubes" />
+					<button name="%(act_stock_label_traceability)d" string="Traceability list" type="action" class="oe_inline oe_stat_button" icon="fa-list" context="{'search_default_from_label_id': id}" />
+				</xpath>
+				<xpath expr="//notebook" position="inside">
+					<page string="Traceability">
+						<group colspan="4" col="4" string="Traceability">
+							<field name="traceability_ids" nolabel="1" readonly="1">
+								<tree>
+									<field name="level" />
+									<field name="product_id" />
+									<field name="lot_id" />
+									<field name="label_id" />
+									<field name="date" />
+									<field name="quantity" />
+									<field name="origin" />
+									<field name="initial_lot_id" />
+									<field name="initial_label_id" />
+									<field name="initial_date" />
+									<field name="initial_quantity" />
+									<field name="initial_origin" />
+								</tree>
+							</field>
+						</group>
+					</page>
+				</xpath>
+			</field>
+		</record>
+
+
+		<!-- ========= -->
+		<!-- STOCK LOT -->
+		<!-- ========= -->
+		<!-- FORM VIEW Stock label -->
+<!-- 		<record id="view_form_traceability_lot" model="ir.ui.view"> -->
+<!-- 			<field name="name">view_form_traceability_lot</field> -->
+<!-- 			<field name="model">stock.lot</field> -->
+<!-- 			<field name="inherit_id" ref="stock.view_form_stock_lot" /> -->
+<!-- 			<field name="priority" eval="1400" /> -->
+<!-- 			<field name="arch" type="xml"> -->
+<!-- 				<xpath expr="//group[@name='op_shortcuts']" position="attributes"> -->
+<!-- 					<attribute name="invisible">0</attribute> -->
+<!-- 				</xpath> -->
+<!-- 				<xpath expr="//group[@name='op_shortcuts']" position="inside"> -->
+<!-- 					<separator colspan="1" string="Actions" name="separator_actions_menu" /> -->
+<!-- 					<button name="build_traceability" string="Compute traceability" type="object" class="oe_inline oe_stat_button" icon="fa-cubes" /> -->
+<!-- 					<button name="%(act_stock_label_traceability)d" string="Traceability list" type="action" class="oe_inline oe_stat_button" icon="fa-list" context="{'search_default_from_lot_id': id}" /> -->
+<!-- 				</xpath> -->
+<!-- 				<xpath expr="//field[@name='uom_qty']/.." position="after"> -->
+<!-- 					<group colspan="4" col="4" string="Traceability"> -->
+<!-- 						<field name="traceability_ids" nolabel="1" readonly="1"> -->
+<!-- 							<tree> -->
+<!-- 								<field name="level" /> -->
+<!-- 								<field name="product_id" /> -->
+<!-- 								<field name="lot_id" /> -->
+<!-- 								<field name="label_id" /> -->
+<!-- 								<field name="date" /> -->
+<!-- 								<field name="quantity" /> -->
+<!-- 								<field name="origin" /> -->
+<!-- 								<field name="initial_lot_id" /> -->
+<!-- 								<field name="initial_label_id" /> -->
+<!-- 								<field name="initial_date" /> -->
+<!-- 								<field name="initial_quantity" /> -->
+<!-- 								<field name="initial_origin" /> -->
+<!-- 							</tree> -->
+<!-- 						</field> -->
+<!-- 					</group> -->
+<!-- 				</xpath> -->
+<!-- 			</field> -->
+<!-- 		</record> -->
+
+
+		<!-- ========== -->
+		<!-- STOCK MOVE -->
+		<!-- ========== -->
+		<record model="ir.ui.view" id="view_form_move_mrp">
+			<field name="name">sale.order.line.form.inherit</field>
+			<field name="inherit_id" ref="stock.view_form_move" />
+			<field name="priority" eval="1400" />
+			<field name="model">stock.move</field>
+			<field name="arch" type="xml">
+				<xpath expr="//group[@name='link']" position="after">
+					<group colspan="1" col="2" string="Production">
+						<field name="wo_outgoing_id" />
+						<field name="wo_incoming_id" />
+						<field name="efficient_unit_qty" />
+						<field name="type_qty" />
+						<field name="wo_rm_subcontracting_id" />
+						<field name="wo_fp_subcontracting_id" />
+					</group>
+				</xpath>
+			</field>
+		</record>
+
+
+		<!-- ================= -->
+		<!-- PROCUREMENT ORDER -->
+		<!-- ================= -->
+		<!-- FORM VIEW Procurement order -->
+		<record id='view_form_procurement_order_mrp' model='ir.ui.view'>
+			<field name="name">view_form_procurement_order_mrp</field>
+			<field name="model">procurement.order</field>
+			<field name="priority" eval="1600" />
+			<field name="inherit_id" ref="stock.view_form_procurement_order" />
+			<field name="arch" type="xml">
+				<group name="transfer" position="before">
+					<group string="Manufacturing" colspan="2" col="2">
+						<field name="mo_id" />
+						<field name="consider_mo" />
+						<group colspan="2" col="1">
+							<center>
+								<button type="object" string="Create MO" name="create_mo" colspan="2" attrs="{'invisible': ['|', ('supply_method', '!=', 'produce'), ('mo_id', '!=', False)]}" />
+								<button type="object" string="Delete MO" name="unlink_mo" colspan="2" attrs="{'invisible': [('mo_id', '=', False)]}" />
+							</center>
+						</group>
+					</group>
+				</group>
+				<field name="move_id" position="after">
+					<field name="origin_wo_id" />
+				</field>
+			</field>
+		</record>
+
+		<!-- TREE VIEW Procurement order -->
+		<record id='view_tree_procurement_order' model='ir.ui.view'>
+			<field name="name">view_tree_procurement_order</field>
+			<field name="model">procurement.order</field>
+			<field name="priority" eval="1600" />
+			<field name="inherit_id" ref="stock.view_tree_procurement_order" />
+			<field name="arch" type="xml">
+				<tree position="inside">
+					<field name="mo_id" />
+					<button type="object" string="Create MO" name="create_mo" attrs="{'invisible': ['|', ('supply_method', '!=', 'produce'), ('mo_id', '!=', False)]}" />
+					<button type="object" string="Delete MO" name="unlink_mo" attrs="{'invisible': [('mo_id', '=', False)]}" />
+				</tree>
+			</field>
+		</record>
+
+
+		<!-- ACTION Operations -->
+		<record model="ir.actions.act_window" id="act_picking_out_open_button">
+			<field name="name">Picking</field>
+			<field name="res_model">stock.picking</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">form</field>
+			<field name="view_id" ref="stock.view_form_stock_picking_out" />
+			<field name="target">new</field>
+		</record>
+
+		<!-- ACTION Operations -->
+		<record model="ir.actions.act_window" id="act_picking_in_open_button">
+			<field name="name">Picking</field>
+			<field name="res_model">stock.picking</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">form</field>
+			<field name="view_id" ref="stock.view_form_stock_picking_in" />
+			<field name="target">new</field>
+		</record>
+
+
+		<record id='view_tree_quality_control_declaration_line_result_id_workorder' model='ir.ui.view'>
+			<field name="name">view_tree_quality_control_declaration_line_result_id</field>
+			<field name="model">quality.control.declaration.line.result</field>
+			<field name="priority" eval="1600" />
+			<field name="inherit_id" ref="stock.view_tree_quality_control_declaration_line_result_id" />
+			<field name="arch" type="xml">
+				<field name="picking_id" position="after">
+					<field name="wo_produce_id" />
+				</field>
+			</field>
+		</record>
+
+		<record id='view_search_quality_control_declaration_line_result_id_workorder' model='ir.ui.view'>
+			<field name="name">view_search_quality_control_declaration_line_result_id</field>
+			<field name="model">quality.control.declaration.line.result</field>
+			<field name="priority" eval="1600" />
+			<field name="inherit_id" ref="stock.view_search_quality_control_declaration_line_result_id" />
+			<field name="arch" type="xml">
+				<field name="picking_id" position="after">
+					<field name="wo_id" />
+				</field>
+				<xpath expr="//filter[@name='picking_filter']" position="before">
+					<filter string="WO" context="{'group_by': 'wo_id'}" />
+				</xpath>
+			</field>
+		</record>
+
+		<!-- =============== -->
+		<!-- STOCK WAREHOUSE -->
+		<!-- =============== -->
+		<!-- FORM VIEW Stock warehouse -->
+		<record id='view_form_stock_warehouse' model='ir.ui.view'>
+			<field name="name">view_form_stock_warehouse</field>
+			<field name="model">stock.warehouse</field>
+			<field name="inherit_id" ref="stock_location.view_form_stock_warehouse" />
+			<field name="priority" eval="1000" />
+			<field name="arch" type="xml">
+				<xpath expr="//field[@name='quarantine_location_id']" position="after">
+					<field name="production_location_id" attrs="{'required': [('id', '!=', False)]}" domain="[('usage', '!=', 'view')]" context="{'default_warehouse_id': id}" />
+					<field name="regulation_location_id" domain="[('usage', '!=', 'view')]" context="{'default_warehouse_id': id}" />
+				</xpath>
+			</field>
+		</record>
+
+		<!-- FORM VIEW Nonconformity File -->
+		<record id='view_form_nonconformity_file_id' model='ir.ui.view'>
+			<field name="name">view_form_nonconformity_file_id</field>
+			<field name="model">nonconformity.file</field>
+			<field name="inherit_id" ref="stock.view_form_nonconformity_file_id" />
+			<field name="arch" type="xml">
+				<xpath expr="//field[@name='move_id']" position="after">
+					<field name="complaint_id" attrs="{'invisible': [('origin_type', '!=', 'complaint')]}" />
+				</xpath>
+			</field>
+		</record>
+	</data>
+</openerp>

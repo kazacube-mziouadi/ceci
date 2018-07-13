@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+		<!-- ACTION act_project_phase -->
+		<record id="act_project_phase" model="ir.actions.act_window">
+			<field name="name">Projects</field>
+			<field name="res_model">project.phase</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form,gantt</field>
+			<field name="context">{'search_default_no_model':1}</field>
+		</record>
+
+		<!-- GANTT VIEW project phase -->
+		<record id='view_gantt_project_phase' model='ir.ui.view'>
+			<field name="name">Projects</field>
+			<field name="model">project.phase</field>
+			<field name="arch" type="xml">
+				<gantt>
+				</gantt>
+			</field>
+		</record>
+
+		<!-- FORM VIEW project phase -->
+		<record id='view_form_project_phase' model='ir.ui.view'>
+			<field name="name">project_phase</field>
+			<field name="model">project.phase</field>
+			<field name="arch" type="xml">
+				<form string="project phase" version="8.0">
+					<header>
+						<field name="state" widget="statusbar" clickable="True" />
+					</header>
+					<group col="9">
+						<group colspan="8">
+							<notebook>
+								<page string="Description">
+									<group string="Description" colspan="1" col="2">
+										<field name="name" />
+										<field name="user_id" />
+										<field name="sequence" />
+										<field name="description" />
+										<field name="is_model" />
+									</group>
+									<group string="Link" colspan="1" col="2">
+										<field name="parent_id" />
+										<field name="next_ids" widget="many2many_tags" />
+									</group>
+									<group string="Planification" colspan="4" col="2" attrs="{'invisible': [('child_ids', '!=', [])]}">
+										<group colspan="1" col="2">
+											<field name="start_date" attrs="{'invisible': [('child_ids', '!=', [])]}" />
+											<field name="end_date" attrs="{'invisible': ['|', ('child_ids', '!=', []), ('wo_ids', '=', [])]}" />
+											<field name="child_ids" invisible="1" />
+											<field name="event_ids" invisible="1" />
+											<field name="wo_ids" invisible="1" />
+											<field name="mo_ids" invisible="1" />
+											<field name="duration" attrs="{'invisible': ['|', ('child_ids', '!=', []), ('wo_ids', '!=', [])]}" />
+											<field name="resource_id"
+												attrs="{'invisible': ['|', ('child_ids', '!=', []), ('mo_ids', '!=', [])], 
+											'readonly': ['|',
+														('wo_ids', '!=', []),
+														('event_ids', '!=', [])]}" />
+										</group>
+										<group colspan="1" col="2">
+											<field name="charge" widget="float_time_seconds"
+												attrs="{'readonly': ['|', ('event_ids', '!=', []), ('wo_ids', '!=', [])],'invisible': ['|', ('child_ids', '!=', [])]}" />
+											<field name="fullfiled" widget="float_time_seconds" />
+											<field name="progress"
+												attrs="{'invisible': ['|', '|', ('is_model', '=', True), ('child_ids', '!=', []), ('mo_ids', '!=', [])],
+																		'readonly': ['|',
+																			('wo_ids', '!=', []),
+																			('event_ids', '!=', [])]}" />
+										</group>
+									</group>
+								</page>
+								<page string="Documents">
+									<group string="Documents" colspan="4" col="4">
+										<field name="phase_document_ids" colspan="4" nolabel="1" />
+									</group>
+								</page>
+							</notebook>
+						</group>
+						<group colspan="1" col="1" class="op_shortcuts" name="action_menu">
+							<separator string="Actions" colspan="1" name="separator_action_menu" />
+							<button id="declare_time" class="oe_inline oe_stat_button" type="action" string="Declare time" name="%(base_openprod.act_wizard_create_timetracking_action)d"
+								attrs="{'invisible': ['|', ('is_model', '=', True), ('child_ids', '!=', [])]}" context="{'default_target_type': 'phase', 'default_phase_id': id}"
+								icon="fa-clock-o" />
+						</group>
+					</group>
+				</form>
+			</field>
+		</record>
+
+		<!-- TREE VIEW Project Phase -->
+		<record id='view_tree_project_phase' model='ir.ui.view'>
+			<field name="name">project_phase</field>
+			<field name="model">project.phase</field>
+			<field name="arch" type="xml">
+				<tree string="Project Phases" version="8.0" default_order="parent_left">
+					<field name="name_level" />
+					<field name="start_date" />
+					<field name="user_id" />
+					<field name="progress" widget="progressbar" />
+					<field name="charge" widget="float_time_seconds" sum="Total charge" />
+					<field name="resource_id" />
+					<field name="state" />
+					<field name="parent_left" invisible="1" />
+				</tree>
+			</field>
+		</record>
+
+		<!-- SEARCH VIEW project phase -->
+		<record id='view_search_project_phase' model='ir.ui.view'>
+			<field name="name">project_phase</field>
+			<field name="model">project.phase</field>
+			<field name="arch" type="xml">
+				<search version="8.0">
+					<group string="Filters">
+						<filter name="has_wo" string="Has WO" domain="[('wo_ids', '!=', False)]" />
+						<filter name="has_mo" string="Has MO" domain="[('mo_ids', '!=', False)]" />
+						<filter name="has_event" string="Has event" domain="[('event_ids', '!=', False)]" />
+						<field name="name" />
+						<field name="user_id" />
+						<field name="resource_id" />
+						<filter name="not_done" string="Not done" domain="[('state', '!=', 'done')]" />
+						<filter name="done" string="Done" domain="[('state', '=', 'done')]" />
+						<filter name="no_model" string="No model" domain="[('is_model', '=', False)]" />
+						<filter name="only_model" string="Only models" domain="[('is_model', '=', True)]" />
+					</group>
+					<newline />
+					<group expand="0" string="Group By...">
+						<filter string="User" context="{'group_by' : 'user_id'}" />
+						<filter string="Resource" context="{'group_by' : 'resource_id'}" />
+					</group>
+				</search>
+			</field>
+		</record>
+
+		<menuitem id="menu_tasks" name="Projects" web_icon="base_openprod,static/description/project.png" />
+		<menuitem id="menu_main_phase" name="Projects" parent="menu_tasks" />
+		<menuitem id="menu_phase" name="Projects" parent="menu_main_phase" action="act_project_phase" groups="group_menu_project_user" />
+
+		<template id="assets_backend" name="web_gantt assets" inherit_id="web.assets_backend">
+			<xpath expr="." position="inside">
+				<link rel="stylesheet" href="/project/static/lib/dhtmlxgantt.css" />
+				<link rel="stylesheet" href="/project/static/src/css/gantt.less" />
+				<script type="text/javascript" src="/project/static/lib/dhtmlxgantt.js"></script>
+				<script type="text/javascript" src="/project/static/lib/dhtmlxgantt_smart_rendering.js"></script>
+				<script type="text/javascript" src="/project/static/src/js/gantt.js"></script>
+			</xpath>
+		</template>
+	</data>
+</openerp>

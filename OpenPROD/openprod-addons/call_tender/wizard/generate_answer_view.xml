@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+	
+		<!-- =============== -->
+		<!-- GENERATE ANSWER -->
+		<!-- =============== -->
+	
+		<record model="ir.ui.view" id="view_form_generate_answer_for_call_tender">
+			<field name="name">view_form_generate_answer_for_call_tender</field>
+			<field name="model">generate.answer</field>
+			<field name="type">form</field>
+			<field name="arch" type="xml">
+				<form string="Generate answers">
+					<group colspan="4" col="4">
+						<field name="date_from"/>
+						<field name="date_to"/>
+						<group colspan="4" col="4">
+							<group colspan="2" col="4" string="Products list">
+								<field name="product_ids" colspan="4" nolabel="1">
+									<tree>
+										<field name="name"/>
+										<field name="code"/>
+										<field name="uom_id"/>
+									</tree>
+								</field>
+							</group>
+							<group colspan="2" col="4" string="Suppliers list">
+								<field name="supplier_ids" colspan="4" nolabel="1">
+									<tree>
+										<field name="name"/>
+										<field name="reference"/>
+									</tree>
+								</field>
+							</group>
+						</group>
+						<group colspan="4" col="4" string="Quantities">
+							<field name="quantity_ids" colspan="4" nolabel="1">
+								<tree editable="bottom">
+									<field name="quantity"/>
+								</tree>
+								<form>
+									<group colpan="4" col="4" string="Quantity">
+										<field name="quantity"/>
+									</group>
+								</form>
+							</field>
+						</group>
+						<field name="call_tender_id" invisible="1"/>
+					</group>
+						<footer>
+							<button name="create_call_answer" string="Generate the answers" type="object" class="oe_highlight" />
+							or
+							<button string="Cancel" class="oe_link" special="cancel" />
+						</footer>
+				</form>
+			</field>
+		</record>
+
+		<record model="ir.actions.act_window" id="action_generate_answer_for_call_tender">
+			<field name="name">Generate answers</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="res_model">generate.answer</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">form</field>
+			<field name="target">new</field>
+		</record>
+
+	</data>
+</openerp>

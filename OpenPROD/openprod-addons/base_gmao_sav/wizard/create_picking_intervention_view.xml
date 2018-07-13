@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+		<!-- FORM VIEW Picking quick create -->
+		<record id='view_form_create_picking_intervention' model='ir.ui.view'>
+			<field name="name">view_form_create_picking_intervention</field>
+			<field name="model">create.picking.intervention</field>
+			<field name="arch" type="xml">
+				<form string="Create picking" version="8.0">
+					<field name="type" invisible="1" />
+					<field name="variable" invisible="1" />
+					<group colspan="4" col="4" string="Enter the values" >
+					    <group colspan="4" col="4" >
+					        <field name="is_existant" />
+					        <field name="picking_id" attrs="{'invisible': [('is_existant', '!=', True)], 'required': [('is_existant', '=', True)]}" domain="[('domain_piece_maintenance_intervention', '=', customer_id)]" />
+							<field name="product_id" />
+							<field name="warehouse_id" />
+							<field name="partner_id" 
+							domain="type == 'out' and ['|', '&amp;', ('is_company', '=', False), '&amp;', ('can_be_delivered', '=', True), ('parent_id.is_customer', '=', True), '&amp;', ('is_company', '=', True), '|', ('is_supplier', '=', True), '&amp;', ('is_customer', '=', True), ('can_be_delivered', '=', True)]
+							 or ['&amp;', ('is_company', '=', True), '|', ('is_supplier', '=', True), '&amp;', ('is_customer', '=', True), ('can_be_delivered', '=', True)]" attrs="{'required': [('is_existant', '!=', True)], 'readonly': [('is_existant', '=', True)]}" />
+							<field name="date" />
+							<field name="uom_qty" />
+							<field name="uom_id" />
+							<field name="type" invisible="1"/>
+							<field name="pm_intervention_id" invisible="1"/>
+                            <field name="customer_id" invisible="1"/>							
+						</group>
+					</group>
+					<footer>
+						<button name="quick_create" string="OK" type="object" class="oe_highlight" />
+						or
+						<button string="Cancel" class="oe_link" special="cancel" />
+					</footer>
+				</form>
+			</field>
+		</record>
+
+		<!-- ACTION Picking OUT quick create -->
+		<record id="act_out_create_picking_intervention" model="ir.actions.act_window">
+			<field name="name">Create picking</field>
+			<field name="res_model">create.picking.intervention</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">form</field>
+			<field name="context">{'default_type': 'out', 'partner_required': True}</field>
+			<field name="target">new</field>
+		</record>
+
+	</data>
+</openerp>

@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<openerp>
+	<data>
+
+		<!-- =================== -->
+		<!-- View agent -->
+		<!-- =================== -->
+
+
+		<record id='view_form_agent' model='ir.ui.view'>
+			<field name="name">New agent</field>
+			<field name="model">commission.agent</field>
+			<field name="arch" type="xml">
+				<form string="Agents" version="8.0">
+					<header>
+						<button name="wkf_draft" states="inactive" string="Draft" type="object" class="oe_highlight" />
+						<button name="wkf_active" states="draft" string="Active" type="object" class="oe_highlight" />
+						<button name="wkf_inactive" states="draft,active" string="Inactive" type="object" class="openprod_cancel_button" />
+						<field name="state" widget="statusbar" statusbar_visible="draft,active" />
+					</header>
+					<group colspan="4" col="9">
+						<group colspan="8" col="4">
+							<group colspan="4" col="6">
+								<group colspan="2" col="2">
+									<field name="name" />
+									<field name="product_id" required="True" />
+									<field name="currency_id" />
+								</group>
+								<group colspan="2" col="2">
+									<field name="type_" />
+									<field name="billing_frequency" />
+								</group>
+								<group colspan="2" col="2">
+									<field name="employee_id" attrs="{'invisible': [('type_', '!=', 'employee')], 'required': [('type_', '=', 'employee')]}" />
+									<field name="partner_id" 
+									       context="{'default_is_company': True, 'default_is_supplier': True, 'default_invoiced_by': True, 'default_is_agent': True}" 
+									       attrs="{'invisible': [('type_', '!=', 'partner')], 'required': [('type_', '=', 'partner')]}" 
+									       domain="[('invoiced_by', '=', True), ('is_agent', '=', True)]" />
+									<field name="default_rule_set_id" required="True" />
+								</group>
+							</group>
+							<notebook colspan="4">
+								<page string="Assigned customer">
+									<field name="rate_ids" colspan="4" readonly="1" nolabel="1">
+										<tree editable="bottom">
+											<field name="partner_id" />
+											<field name="commission_rule_set_id" />
+										</tree>
+									</field>
+								</page>
+							</notebook>
+						</group>
+						<group colspan="1" col="1" class="op_shortcuts">
+						</group>
+					</group>
+				</form>
+			</field>
+		</record>
+
+		<record id='view_tree_agent' model='ir.ui.view'>
+			<field name="name">Agent list</field>
+			<field name="model">commission.agent</field>
+			<field name="arch" type="xml">
+				<tree string="Agents" version="8.0">
+					<field name="name" />
+					<field name="billing_frequency" />
+					<field name="type_" />
+					<field name="state" />
+				</tree>
+			</field>
+		</record>
+
+		<record id="action_agent" model="ir.actions.act_window">
+			<field name="name">Agents</field>
+			<field name="res_model">commission.agent</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+			<field name="domain">[]</field>
+			<field name="context">{}</field>
+		</record>
+
+		<menuitem name="Agents" id="menu_agent" parent="sale.menu_commission" action="action_agent" groups="group_commission_user" />
+
+
+		<!-- =================== -->
+		<!-- View payment -->
+		<!-- =================== -->
+		<record id='view_form_commission_payment' model='ir.ui.view'>
+			<field name="name">New payment</field>
+			<field name="model">commission.payment</field>
+			<field name="arch" type="xml">
+				<form string="Payments" version="8.0">
+					<header>
+						<button name="wkf_draft" states="cancel" string="Draft" type="object" class="oe_highlight" />
+						<button name="wkf_cancel" states="draft,validate,done" string="Cancel" type="object" class="openprod_cancel_button" />
+						<field name="state" widget="statusbar" statusbar_visible="draft,validate,done" />
+					</header>
+					<group colspan="4" col="9">
+						<group colspan="8" col="4" attrs="{'readonly': [('state', '!=', 'draft')]}">
+							<group col="4" colspan="4">
+								<group col="2" colspan="2">
+									<field name="name" colspan="2" readonly="0" />
+									<field name="start_date" colspan="2" readonly="0" />
+									<field name="total_amount_commission" colspan="2" readonly="1" />
+									<field name="journal_payment_id" />
+									<field name="currency_id" readonly="1" />
+								</group>
+								<group col="2" colspan="2">
+									<field name="agent_id" colspan="2" readonly="0" />
+									<field name="end_date" colspan="2" readonly="0" />
+									<field name="total_to_pay" colspan="2" readonly="0" />
+									<field name="period_id" />
+									<field name="type" colspan="2" invisible="1" />
+								</group>
+							</group>
+							<notebook coslpan="4">
+								<page string="Commissions">
+									<group col="4" colspan="4" string="Commissions">
+										<field name="line_ids" colspan="4" readonly="1" nolabel="1">
+											<tree editable="bottom">
+												<field name="agent_id" />
+												<field name="commission_rule_set_id" />
+												<field name="invoice_id" />
+												<field name="total_currency_invoice" />
+												<field name="total" />
+												<field name="invoice_currency_id" invisible="1" />
+												<field name="payment_currency_id" invisible="1" />
+												<field name="commission_invoice_line_id" invisible="1" />
+												<button name="delete_payment_line" string="Delete line" type="object" class="oe_inline oe_stat_button" icon="fa-trash-o" />
+											</tree>
+										</field>
+										<group col="2" colspan="2">
+											<field name="invoice_id" colspan="2" readonly="1" attrs="{'invisible': [('type', '!=', 'partner')]}" />
+											<field name="payment_id" colspan="2" readonly="1" context="{'form_view_ref': 'account_voucher.view_vendor_payment_form'}" />
+										</group>
+									</group>
+								</page>
+							</notebook>
+						</group>
+						<group colspan="1" col="1" class="op_shortcuts">
+							<separator colspan="1" string="Actions" name="separator_actions_menu" attrs="{'invisible': [('state', 'not in', ('draft', 'validate'))]}" />
+							<button name="search_commission_payment_line" string="Search commissions lines" type="object" class="oe_inline oe_stat_button" icon="fa-check" attrs="{'invisible': [('state', '!=', 'draft')]}" />
+							<button name="generate_invoice" string="Generate invoice" type="object" class="oe_inline oe_stat_button" icon="fa-check" attrs="{'invisible': ['|', '|', ('state', '!=', 'draft'), ('type', '!=', 'partner'), ('line_ids', '=', [])]}" />
+							<button name="generate_payment" string="Generate payment" type="object" class="oe_inline oe_stat_button" icon="fa-check" attrs="{'invisible': ['|', '|', ('state', '!=', 'draft'), ('type', '!=', 'employee'), ('line_ids', '=', [])]}" />
+							<button name="done_invoice" string="Paid invoice" type="object" class="oe_inline oe_stat_button" icon="fa-check" attrs="{'invisible': ['|', '|', '|', ('state', '!=', 'validate'), ('state', '!=', 'validate'), ('type', '!=', 'partner'), ('line_ids', '=', [])]}" />
+							<button name="validate_payment" string="Validate payment" type="object" class="oe_inline oe_stat_button" icon="fa-check" attrs="{'invisible': ['|', '|', ('state', '!=', 'validate'), ('type', '!=', 'employee'), ('line_ids', '=', [])]}" />
+							<button name="delete_all_payment_line" string="Delete all lines" type="object" class="oe_inline oe_stat_button" icon="fa-trash-o" attrs="{'invisible': [('state', '!=', 'draft')]}" />
+						</group>
+					</group>
+				</form>
+			</field>
+		</record>
+
+		<record id='view_tree_commission_payment' model='ir.ui.view'>
+			<field name="name">Payment list</field>
+			<field name="model">commission.payment</field>
+			<field name="arch" type="xml">
+				<tree string="Payments" version="8.0">
+					<field name="agent_id" />
+					<field name="start_date" />
+					<field name="end_date" />
+					<field name="total_amount_commission" />
+					<field name="total_to_pay" />
+					<field name="currency_id" readonly="1" />
+					<field name="state" />
+				</tree>
+			</field>
+		</record>
+
+		<record id="action_commission_payment" model="ir.actions.act_window">
+			<field name="name">Commission payment</field>
+			<field name="res_model">commission.payment</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+			<field name="domain">[]</field>
+			<field name="context">{}</field>
+		</record>
+
+		<menuitem name="Commission payment" id="menu_commission_payment" parent="sale.menu_commission" action="action_commission_payment" groups="group_commission_user" />
+
+
+
+		<!-- =========================== -->
+		<!-- View commission rule -->
+		<!-- =========================== -->
+
+		<record id='view_form_rule_set' model='ir.ui.view'>
+			<field name="name">New rule set</field>
+			<field name="model">commission.rule.set</field>
+			<field name="arch" type="xml">
+				<form string="Rule set" version="8.0">
+					<group col="6" colspan="4">
+						<field name="name" colspan="6" />
+						<field name="rule_ids" colspan="6" readonly="0" nolabel="1">
+							<tree>
+								<field name="min_total" colspan="2" readonly="0" />
+								<field name="percentage" colspan="2" readonly="0" />
+								<field name="fix_part" colspan="2" readonly="0" />
+							</tree>
+							<form>
+								<group col="6" colspan="4">
+									<field name="min_total" colspan="2" readonly="0" />
+									<field name="percentage" colspan="2" readonly="0" />
+									<field name="fix_part" colspan="2" readonly="0" />
+								</group>
+							</form>
+						</field>
+					</group>
+				</form>
+			</field>
+		</record>
+	</data>
+</openerp>

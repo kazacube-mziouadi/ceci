@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<openerp>
+	<data noupdate="1">
+		<!-- Users Groups -->
+		<record model="res.groups" id="human_resources_user">
+			<field name="name">User</field>
+			<field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+			<field name="category_id" ref="base.module_category_human_resources"/>
+		</record>
+		<record model="res.groups" id="human_resources_manager">
+			<field name="name">Manager</field>
+			<field name="category_id" ref="base.module_category_human_resources"/>
+			<field name="implied_ids" eval="[(4, ref('human_resources_user'))]"/>
+		</record>
+		<record model="res.groups" id="human_resources_responsible">
+			<field name="name">Administrator</field>
+			<field name="category_id" ref="base.module_category_human_resources"/>
+			<field name="implied_ids" eval="[(4, ref('human_resources_manager'))]"/>
+		</record>
+		
+		<!-- Groupes de menu -->
+		<record id="group_menu_human_resources_user" model="res.groups">
+            <field name="name">HR user</field>
+            <field name="category_id" ref="base_openprod.module_menu_category"/>
+        </record>
+        
+        <record id="group_menu_human_resources_analyse" model="res.groups">
+            <field name="name">HR analysis</field>
+            <field name="category_id" ref="base_openprod.module_menu_category"/>
+            <field name="implied_ids" eval="[(4, ref('group_menu_human_resources_user'))]"/>
+        </record>
+        
+        <record id="group_menu_human_resources_config" model="res.groups">
+            <field name="name">HR configuration</field>
+            <field name="category_id" ref="base_openprod.module_menu_category"/>
+            <field name="implied_ids" eval="[(4, ref('group_menu_human_resources_analyse'))]"/>
+        </record>
+        
+	</data>
+</openerp>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data noupdate="1">
+        <record id="default_vm_url" model="ir.config_parameter">
+            <field name="key">test_builder.vm_url</field>
+            <field name="value"><![CDATA[http://127.0.0.1:8068/]]></field>
+        </record>
+        <record id="default_lang" model="ir.config_parameter">
+            <field name="key">test_builder.default_lang</field>
+            <field name="value">en_GB</field>
+        </record>
+        <record id="default_target_db_id" model="ir.config_parameter">
+            <field name="key">test_builder.default_target_db_id</field>
+            <field name="value">1</field>
+        </record>
+	</data>
+</openerp>

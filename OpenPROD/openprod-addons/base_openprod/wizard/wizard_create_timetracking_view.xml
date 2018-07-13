@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+		
+		<record model="ir.ui.view" id="view_form_wizard_create_timetracking">
+			<field name="name">view_form_wizard_create_timetracking</field>
+			<field name="model">wizard.create.timetracking</field>
+			<field name="type">form</field>
+			<field name="arch" type="xml">
+				<form string="Create Timetracking">
+					<group colspan="4" col="4" name="group_add_line">
+						<field name="user_id" invisible="1"/>
+						<field name="target" invisible="1"/>
+						<group colspan="4" col="6" string="Details">
+							<field name="resource_id"/>
+							<field name="activity"/>
+						</group>
+						<group colspan="4" col="6" string="Enter the time values" name="group_add_values">
+							<group colspan="2" col="2">
+								<field name="end_date"/>
+								<field name="target_type" invisible="not context.get('add_line', False)" required="context.get('add_line', False)" />
+								<field name="action_id" attrs="{'invisible': [('target_type', '!=', 'action')], 'required': [('target_type', '=', 'action')]}" />
+								<field name="day_only" />
+							</group>
+							<group colspan="2" col="2">
+								<field name="duration" widget="float_time"/>
+								<field name="name" required="1"/>
+							</group>
+							<group colspan="2" col="2">
+								<field name="start_date"/>
+							</group>
+						</group>
+						<group colspan="4" col="4" string="Last times" name="last_times_group" >
+							<field name="previous_time_ids" nolabel="1" colspan="4" />
+						</group>
+						<div name="buttons_add_line" style="padding-top:20px">
+							<button name="create_timetracking" string="Validate" type="object" class="oe_highlight" 
+								context="{'close_wizard': False}"/>
+							or
+							
+							<button name="create_timetracking" string="Validate and close" type="object" class="oe_highlight" 
+								context="{'close_wizard': True}"/>
+							or
+							
+							<button string="Close" class="oe_highlight" special="cancel" />
+						</div>
+					</group>
+				</form>
+			</field>
+		</record>
+
+		<record model="ir.actions.act_window" id="act_wizard_create_timetracking_action">
+			<field name="name">Time declaration</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="res_model">wizard.create.timetracking</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">form</field>
+			<field name="context">{'default_target_type': 'action'}</field>
+			<field name="target">new</field>
+		</record>
+		
+		<!-- ACTION Create timetracking -->
+<!-- 		<record id="act_create_timetracking" model="ir.actions.act_window"> -->
+<!-- 			<field name="name">Create timetracking</field> -->
+<!-- 			<field name="res_model">create.timetracking</field> -->
+<!-- 			<field name="view_type">form</field> -->
+<!-- 			<field name="view_mode">form</field> -->
+<!-- 			<field name="target">new</field> -->
+<!-- 			<field name="context">{'dialog_size':'medium'}</field> -->
+<!-- 		</record> -->
+		
+		<!-- FORM VIEW Update state -->
+		<record id='view_form_update_timetracking_state' model='ir.ui.view'>
+			<field name="name">view_form_update_timetracking_state</field>
+			<field name="model">udpate.timetracking.state</field>
+			<field name="arch" type="xml">
+				<form string="Update times state" version="8.0">
+					<group colspan="4" col="4">
+						<field name="state"/>
+						<label colspan="2" string=""/>
+					</group>
+					<footer>
+						<button name="update_state" string="Update" type="object" class="oe_highlight" />
+						or
+						<button string="Cancel" class="oe_link" special="cancel" />
+					</footer>
+				</form>
+			</field>
+		</record>
+
+		<!-- ACTION Update state -->
+		<act_window 
+		name="Update state" 
+		res_model="udpate.timetracking.state" 
+		src_model="resource.timetracking" 
+		view_mode="form" 
+		target="new" 
+		key2="client_action_multi" 
+		id="act_update_resource_timetracking" />
+		
+	</data>
+</openerp>

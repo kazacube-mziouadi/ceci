@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+		<!-- FORM VIEW Importation routing line -->
+		<record id='view_form_duplicate_ftpr' model='ir.ui.view'>
+			<field name="name">view_form_duplicate_ftpr</field>
+			<field name="model">duplicate.ftpr</field>
+			<field name="arch" type="xml">
+				<form string="Duplicate FTPR" version="8.0">
+					<group colaspan="4" col="6">
+						<field name="copy_complaints" />
+						<field name="copy_instruc_controls" />
+						<field name="copy_ope_attach" />
+						<field name="type" />
+						<field name="bom_id" attrs="{'required': [('type', '=', 'product')], 'invisible': [('type', '!=', 'product')]}" domain="[('bom_id', '=', False)]" />
+						<field name="ftpr_id" invisible="1" />
+					</group>
+					<footer>
+						<button name="action_ducplicate" string="OK" type="object" class="oe_highlight" />
+						or
+						<button string="Cancel" class="oe_link" special="cancel" />
+					</footer>
+				</form>
+			</field>
+		</record>
+
+		<!-- ACTION Importation routing line -->
+		<record id="act_duplicate_ftpr" model="ir.actions.act_window">
+			<field name="name">Duplicate FTPR</field>
+			<field name="res_model">duplicate.ftpr</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">form</field>
+			<field name="domain">[]</field>
+			<field name="target">new</field>
+		</record>
+
+	</data>
+</openerp>

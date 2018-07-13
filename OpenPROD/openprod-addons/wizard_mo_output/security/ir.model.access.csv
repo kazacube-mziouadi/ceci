@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_mrp_reservation_user,mrp.reservation,model_mrp_reservation,base.group_manufacturing_user,1,1,1,0
+access_mrp_reservation_manager,mrp.reservation,model_mrp_reservation,base.group_manufacturing_manager,1,1,1,1
+access_mrp_reservation_administrator,mrp.reservation,model_mrp_reservation,base.group_manufacturing_admin,1,1,1,1
+

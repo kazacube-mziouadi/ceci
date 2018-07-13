@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<openerp>
+	<data>
+
+        <record id="wo_group_modify_form_view_wiz" model="ir.ui.view">
+            <field name="name">wizard.group.wo.form_wiz_modify</field>
+            <field name="model">wizard.modify.group.wo</field>
+            <field name="priority" eval="1000"/>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="WO Group">
+                    <group name="headers" colspan="4">
+                        <field name="wo_group_id"/>
+                    </group>
+                    <group colspan="4" col="2">
+                        <button name="go" type="object" string="Group" icon="gtk-validate"/>
+                        <button special="cancel" string="Cancel" icon="gtk-cancel"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="act_open_wo_modify_group_view_wiz">
+            <field name="name">Modify Group Work Orders</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">wizard.modify.group.wo</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="domain">[]</field>
+            <field name="context">{}</field>
+            <field name="target">new</field>
+        </record>
+        
+        <record id="link_wizard_modify_group_wo" model="ir.values">
+            <field name="name">Modify Group Work Orders</field>
+            <field name="key2">client_action_multi</field>
+            <field name="model">mrp.production.workcenter.line</field>
+            <field name="value" eval="'ir.actions.act_window,%d'%act_open_wo_modify_group_view_wiz" />
+            <field name="object" eval="True" />
+        </record>
+
+	</data>
+</openerp>

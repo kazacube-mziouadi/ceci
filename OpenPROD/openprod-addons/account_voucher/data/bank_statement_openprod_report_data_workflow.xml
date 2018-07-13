@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data noupdate="0">
+
+		<!-- WORKFLOW -->
+		<record id="wkf_account_bank_statement_openprod" model="workflow">
+			<field name="name">account_bank_statement_openprod</field>
+			<field name="osv">account.bank.statement.openprod</field>
+			<field name="on_create">True</field>
+		</record>
+
+
+		<!-- DISPLAY STATE -->
+		<record id="account_bank_statement_openprod_display_state_draft" model="workflow.display.state">
+			<field name="wkf_id" ref="wkf_account_bank_statement_openprod" />
+			<field name="sequence" eval="0" />
+			<field name="label">Draft</field>
+			<field name="name">draft</field>
+			<field name="always_visible" eval="True" />
+		</record>
+		<record id="account_bank_statement_openprod_display_state_validated" model="workflow.display.state">
+            <field name="wkf_id" ref="wkf_account_bank_statement_openprod" />
+            <field name="sequence" eval="10" />
+            <field name="label">Validated</field>
+            <field name="name">validated</field>
+            <field name="always_visible" eval="True" />
+        </record>
+        <record id="account_bank_statement_openprod_display_state_done" model="workflow.display.state">
+            <field name="wkf_id" ref="wkf_account_bank_statement_openprod" />
+            <field name="sequence" eval="20" />
+            <field name="label">Done</field>
+            <field name="name">done</field>
+            <field name="always_visible" eval="True" />
+            <field name="flow_stop" eval="True" />
+        </record>
+		<record id="account_bank_statement_openprod_display_state_cancel" model="workflow.display.state">
+			<field name="wkf_id" ref="wkf_account_bank_statement_openprod" />
+			<field name="sequence" eval="30" />
+			<field name="label">Cancel</field>
+			<field name="name">cancel</field>
+			<field name="always_visible" eval="False" />
+		</record>
+
+
+		<!-- ACTIVITY -->
+		<!-- draft -->
+		<record id="account_bank_statement_openprod_act_draft" model="workflow.activity">
+			<field name="wkf_id" ref="wkf_account_bank_statement_openprod" />
+			<field name="name">Draft</field>
+			<field name="kind">function</field>
+			<field name="can_not_be_deleted">True</field>
+			<field name="required">True</field>
+			<field name="sequence" eval="10" />
+			<field name="flow_start" eval="True"/>
+			<field name="flow_stop" eval="False"/>
+			<field name="action">write({'display_state': 'draft', 'state': 'draft'})</field>
+		</record>
+        <!-- validated -->
+        <record id="account_bank_statement_openprod_act_validated" model="workflow.activity">
+            <field name="wkf_id" ref="wkf_account_bank_statement_openprod" />
+            <field name="name">Validated</field>
+            <field name="kind">function</field>
+            <field name="can_not_be_deleted">True</field>
+            <field name="required">True</field>
+            <field name="sequence" eval="20" />
+            <field name="flow_start" eval="False"/>
+            <field name="flow_stop" eval="False"/>
+            <field name="action">write({'display_state': 'validated', 'state': 'validated'})
+                                 wkf_validated()</field>
+        </record>
+        <!-- done -->
+        <record id="account_bank_statement_openprod_act_done" model="workflow.activity">
+            <field name="wkf_id" ref="wkf_account_bank_statement_openprod" />
+            <field name="name">Done</field>
+            <field name="kind">function</field>
+            <field name="can_not_be_deleted">True</field>
+            <field name="required">True</field>
+            <field name="sequence" eval="30" />
+            <field name="flow_start" eval="False"/>
+            <field name="flow_stop" eval="False"/>
+            <field name="action">write({'display_state': 'done', 'state': 'done'})
+                                 wkf_done()</field>
+        </record>
+		<!-- Cancel -->
+		<record id="account_bank_statement_openprod_act_cancel" model="workflow.activity">
+			<field name="wkf_id" ref="wkf_account_bank_statement_openprod" />
+			<field name="name">Cancel</field>
+			<field name="kind">function</field>
+			<field name="can_not_be_deleted">True</field>
+			<field name="required">True</field>
+			<field name="sequence" eval="40" />
+			<field name="flow_start" eval="False"/>
+			<field name="flow_stop" eval="True"/>
+			<field name="action">write({'display_state': 'cancel', 'state': 'cancel'})
+			                     wkf_cancel()</field>
+		</record>
+
+
+		<!-- TRANSITION -->
+		<!-- draft to waiting -->
+		<record id="account_bank_statement_openprod_draft_to_validated" model="workflow.transition">
+			<field name="sequence" eval="10" />
+			<field name="act_from" ref="account_bank_statement_openprod_act_draft" />
+			<field name="act_to" ref="account_bank_statement_openprod_act_validated" />
+			<field name="signal">validated</field>
+			<field name="is_default">True</field>
+			<field name="visible_button">True</field>
+			<field name="button_label">Validated</field>
+			<field name="button_class">openprod_logical_button</field>
+		</record>
+		<!-- validated to done -->
+        <record id="account_bank_statement_openprod_validated_to_done" model="workflow.transition">
+            <field name="sequence" eval="30" />
+            <field name="act_from" ref="account_bank_statement_openprod_act_validated" />
+            <field name="act_to" ref="account_bank_statement_openprod_act_done" />
+            <field name="signal">done</field>
+            <field name="is_default">True</field>
+            <field name="visible_button">True</field>
+            <field name="button_label">Done</field>
+            <field name="button_class">openprod_logical_button</field>
+        </record>
+        <!-- cancel to draft -->
+        <record id="account_bank_statement_openprod_cancel_to_draft" model="workflow.transition">
+            <field name="sequence" eval="50" />
+            <field name="act_from" ref="account_bank_statement_openprod_act_cancel" />
+            <field name="act_to" ref="account_bank_statement_openprod_act_draft" />
+            <field name="signal">draft</field>
+            <field name="is_default">True</field>
+            <field name="visible_button">True</field>
+            <field name="button_label">Draft</field>
+            <field name="button_class">openprod_logical_button</field>
+        </record>
+		<!-- draft to cancel -->
+        <record id="account_bank_statement_openprod_draft_to_cancel" model="workflow.transition">
+            <field name="sequence" eval="60" />
+            <field name="act_from" ref="account_bank_statement_openprod_act_draft" />
+            <field name="act_to" ref="account_bank_statement_openprod_act_cancel" />
+            <field name="signal">draft_cancel</field>
+            <field name="is_default">True</field>
+            <field name="visible_button">True</field>
+            <field name="button_label">Cancel</field>
+            <field name="button_class">openprod_cancel_button</field>
+        </record>
+        <!-- validated to cancel -->
+        <record id="account_bank_statement_openprod_validated_to_cancel" model="workflow.transition">
+            <field name="sequence" eval="80" />
+            <field name="act_from" ref="account_bank_statement_openprod_act_validated" />
+            <field name="act_to" ref="account_bank_statement_openprod_act_cancel" />
+            <field name="signal">validated_cancel</field>
+            <field name="is_default">True</field>
+            <field name="visible_button">True</field>
+            <field name="button_label">Cancel</field>
+            <field name="button_class">openprod_cancel_button</field>
+        </record>
+        <!-- done to cancel -->
+        <record id="account_bank_statement_openprod_done_to_cancel" model="workflow.transition">
+            <field name="sequence" eval="90" />
+            <field name="act_from" ref="account_bank_statement_openprod_act_done" />
+            <field name="act_to" ref="account_bank_statement_openprod_act_cancel" />
+            <field name="signal">done_cancel</field>
+            <field name="is_default">True</field>
+            <field name="visible_button">True</field>
+            <field name="button_label">Cancel</field>
+            <field name="button_class">openprod_cancel_button</field>
+        </record>
+	</data>
+</openerp>

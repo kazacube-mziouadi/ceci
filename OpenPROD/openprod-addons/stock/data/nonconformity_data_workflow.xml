@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data noupdate="0">
+
+		<!-- WORKFLOW -->
+		<record id="wkf_nonconformity_file" model="workflow">
+			<field name="name">nonconformity_file</field>
+			<field name="osv">nonconformity.file</field>
+			<field name="on_create">True</field>
+		</record>
+
+
+		<!-- DISPLAY STATE -->
+		<record id="nonconformity_display_state_draft" model="workflow.display.state">
+			<field name="wkf_id" ref="wkf_nonconformity_file" />
+			<field name="sequence" eval="0" />
+			<field name="label">Draft</field>
+			<field name="name">draft</field>
+			<field name="always_visible" eval="True" />
+		</record>
+		<record id="nonconformity_display_state_progress" model="workflow.display.state">
+			<field name="wkf_id" ref="wkf_nonconformity_file" />
+			<field name="sequence" eval="10" />
+			<field name="label">Progress</field>
+			<field name="name">progress</field>
+			<field name="always_visible" eval="True" />
+		</record>
+		<record id="nonconformity_display_state_done" model="workflow.display.state">
+			<field name="wkf_id" ref="wkf_nonconformity_file" />
+			<field name="sequence" eval="20" />
+			<field name="label">Done</field>
+			<field name="name">done</field>
+			<field name="always_visible" eval="True" />
+		</record>
+		<record id="nonconformity_display_state_cancel" model="workflow.display.state">
+			<field name="wkf_id" ref="wkf_nonconformity_file" />
+			<field name="sequence" eval="30" />
+			<field name="label">Cancel</field>
+			<field name="name">cancel</field>
+			<field name="always_visible" eval="False" />
+		</record>
+
+
+		<!-- ACTIVITY -->
+		<!-- Draft -->
+		<record id="nonconformity_act_draft" model="workflow.activity">
+			<field name="wkf_id" ref="wkf_nonconformity_file" />
+			<field name="name">Draft</field>
+			<field name="kind">function</field>
+			<field name="can_not_be_deleted">False</field>
+			<field name="required">False</field>
+			<field name="sequence" eval="10" />
+			<field name="flow_start" eval="True"/>
+			<field name="flow_stop" eval="False"/>
+			<field name="action">write({'display_state': 'draft', 'state': 'draft'})</field>
+		</record>
+		<!-- Progress -->
+		<record id="nonconformity_act_progress" model="workflow.activity">
+			<field name="wkf_id" ref="wkf_nonconformity_file" />
+			<field name="name">Progress</field>
+			<field name="kind">function</field>
+			<field name="can_not_be_deleted">False</field>
+			<field name="required">False</field>
+			<field name="sequence" eval="20" />
+			<field name="flow_start" eval="False"/>
+			<field name="flow_stop" eval="False"/>
+			<field name="action">write({'display_state': 'progress', 'state': 'progress'})</field>
+		</record>
+		<!-- Done -->
+		<record id="nonconformity_act_done" model="workflow.activity">
+			<field name="wkf_id" ref="wkf_nonconformity_file" />
+			<field name="name">Done</field>
+			<field name="kind">function</field>
+			<field name="can_not_be_deleted">False</field>
+			<field name="required">False</field>
+			<field name="sequence" eval="30" />
+			<field name="flow_start" eval="False"/>
+			<field name="flow_stop" eval="True"/>
+			<field name="action">write({'display_state': 'done', 'state': 'done'})</field>
+		</record>
+		<!-- Cancel -->
+		<record id="nonconformity_act_cancel" model="workflow.activity">
+			<field name="wkf_id" ref="wkf_nonconformity_file" />
+			<field name="name">Cancel</field>
+			<field name="kind">function</field>
+			<field name="can_not_be_deleted">False</field>
+			<field name="required">False</field>
+			<field name="sequence" eval="40" />
+			<field name="flow_start" eval="False"/>
+			<field name="flow_stop" eval="True"/>
+			<field name="action">write({'display_state': 'cancel', 'state': 'cancel'})</field>
+		</record>
+
+
+		<!-- TRANSITION -->
+		<!-- Draft to Progress -->
+		<record id="nonconformity_draft_to_progress" model="workflow.transition">
+			<field name="sequence" eval="10" />
+			<field name="act_from" ref="nonconformity_act_draft" />
+			<field name="act_to" ref="nonconformity_act_progress" />
+			<field name="signal">progress</field>
+			<field name="is_default">True</field>
+			<field name="visible_button">True</field>
+			<field name="button_label">Progress</field>
+			<field name="button_class">openprod_logical_button</field>
+		</record>
+		<!-- Progress to Done -->
+		<record id="nonconformity_progress_to_done" model="workflow.transition">
+			<field name="sequence" eval="20" />
+			<field name="act_from" ref="nonconformity_act_progress" />
+			<field name="act_to" ref="nonconformity_act_done" />
+			<field name="signal">done</field>
+			<field name="is_default">True</field>
+			<field name="visible_button">True</field>
+			<field name="button_label">Done</field>
+			<field name="button_class">openprod_logical_button</field>
+		</record>
+		<!-- Draft to Cancel -->
+		<record id="nonconformity_draft_to_cancel" model="workflow.transition">
+			<field name="sequence" eval="30" />
+			<field name="act_from" ref="nonconformity_act_draft" />
+			<field name="act_to" ref="nonconformity_act_cancel" />
+			<field name="signal">cancel</field>
+			<field name="is_default">True</field>
+			<field name="visible_button">True</field>
+			<field name="button_label">Cancel</field>
+            <field name="button_class">openprod_cancel_button</field>
+		</record>
+		<!-- Progress to Cancel -->
+		<record id="nonconformity_progress_to_cancel" model="workflow.transition">
+			<field name="sequence" eval="40" />
+			<field name="act_from" ref="nonconformity_act_progress" />
+			<field name="act_to" ref="nonconformity_act_cancel" />
+			<field name="signal">cancel</field>
+			<field name="is_default">True</field>
+			<field name="visible_button">True</field>
+			<field name="button_label">Cancel</field>
+            <field name="button_class">openprod_cancel_button</field>
+		</record>
+		<!-- Done to Cancel -->
+		<record id="nonconformity_done_to_cancel" model="workflow.transition">
+			<field name="sequence" eval="50" />
+			<field name="act_from" ref="nonconformity_act_done" />
+			<field name="act_to" ref="nonconformity_act_cancel" />
+			<field name="signal">cancel</field>
+			<field name="is_default">True</field>
+			<field name="visible_button">True</field>
+			<field name="button_label">Cancel</field>
+            <field name="button_class">openprod_cancel_button</field>
+		</record>
+		<!-- Cancel to Draft -->
+		<record id="nonconformity_cancel_to_draft" model="workflow.transition">
+			<field name="sequence" eval="60" />
+			<field name="act_from" ref="nonconformity_act_cancel" />
+			<field name="act_to" ref="nonconformity_act_draft" />
+			<field name="signal">reopen</field>
+			<field name="is_default">True</field>
+			<field name="visible_button">True</field>
+			<field name="button_label">Reopen</field>
+			<field name="button_class">openprod_logical_button</field>
+		</record>
+	</data>
+</openerp>

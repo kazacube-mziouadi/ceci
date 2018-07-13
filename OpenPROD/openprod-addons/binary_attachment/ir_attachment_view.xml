@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+        
+		<record id='view_binary_attachment_form' model='ir.ui.view'>
+			<field name="name">view_binary_attachment_form</field>
+			<field name="model">ir.attachment</field>
+			<field name="inherit_id" ref="base.view_attachment_form"/>
+			<field name="priority" eval="1000"/>
+			<field name="arch" type="xml">
+				<xpath expr="//field[@name='index_content']/.." position="after">
+					<group string="Binary field infos" colspan="4">
+						<field name="is_binary_field"/>
+						<field name="binary_field"/>
+					</group>
+				</xpath>
+			</field>
+		</record>
+
+		<!-- <record id='view_binary_attachment_tree' model='ir.ui.view'>
+			<field name="name">view_binary_attachment_tree</field>
+			<field name="model">ir.attachment</field>
+			<field name="inherit_id" ref="document.view_document_file_tree"/>
+			<field name="priority" eval="1000"/>
+			<field name="arch" type="xml">
+				<xpath expr="//tree" position="attributes">
+					<attribute name="colors">blue:type in ('url',);green:is_binary_field</attribute>
+				</xpath>
+				<xpath expr="//tree" position="inside">
+					<field name="is_binary_field" invisible="1"/>
+				</xpath>
+			</field>
+		</record> -->
+
+		<record id='view_binary_attachment_search' model='ir.ui.view'>
+			<field name="name">view_binary_attachment_search</field>
+			<field name="model">ir.attachment</field>
+			<field name="inherit_id" ref="base.view_attachment_search"/>
+			<field name="priority" eval="1000"/>
+			<field name="arch" type="xml">
+				<xpath expr="//filter[@name='my_documents_filter']" position="after">
+                    <filter name="field_binary" string="Attachments from binary fields" icon="terp-personal" domain="[('is_binary_field','=',True)]" help="Attachments from binary fields"/>
+                    <filter name="not_field_binary" string="Attachments standard" icon="terp-personal" domain="[('is_binary_field','=',False)]" help="Attachments standard"/>
+                </xpath>
+			</field>
+		</record>
+
+	</data>
+</openerp>

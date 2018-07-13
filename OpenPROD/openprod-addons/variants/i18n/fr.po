@@ -1,0 +1,982 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* variants
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 9.0c\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-05-24 13:19+0000\n"
+"PO-Revision-Date: 2017-05-24 13:19+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: variants
+#: model:ir.model.fields,field_description:variants.field_variant_category_active
+msgid "Active"
+msgstr "Actif"
+
+#. module: variants
+#: model:ir.model,name:variants.model_update_variants_categories
+msgid "Add a new variant category to existing variants of a product"
+msgstr "Add a new variant category to existing variants of a product"
+
+#. module: variants
+#: model:ir.ui.view,arch_db:variants.view_form_sale_order_configure
+msgid "Add line"
+msgstr "Ajouter une ligne"
+
+#. module: variants
+#: model:ir.model,name:variants.model_fill_questionnaire_answer
+msgid "Answer to a question"
+msgstr "Réponse à une question"
+
+#. module: variants
+#: model:ir.model.fields,field_description:variants.field_fill_questionnaire_answer_ids
+msgid "Answers"
+msgstr "Réponses"
+
+#. module: variants
+#: model:ir.model.fields,field_description:variants.field_variants_question_condition_question
+msgid "Applicability depends on"
+msgstr "Applicabilité dépend de"
+
+#. module: variants
+#: model:ir.model.fields,field_description:variants.field_variants_question_condition_operator
+msgid "Applicability operator"
+msgstr "Opérateur"
+
+#. module: variants
+#: model:ir.model.fields,field_description:variants.field_variants_question_condition_value_bool
+#: model:ir.model.fields,field_description:variants.field_variants_question_condition_value_dimension
+#: model:ir.model.fields,field_description:variants.field_variants_question_condition_value_option
+#: model:ir.model.fields,field_description:variants.field_variants_question_condition_value_variant
+msgid "Applicability value"
+msgstr "Valeur de comparaison"
+
+#. module: variants
+#: model:ir.model.fields,field_description:variants.field_create_variants_copy_attributes
+#: model:ir.model.fields,field_description:variants.field_update_variants_copy_attributes
+msgid "Attributes"
+msgstr "Attributs"
+
+#. module: variants
+#: model:ir.model,name:variants.model_mrp_bom
+msgid "Bill of Material"
+msgstr "Nomenclature"
+
+#. module: variants
+#: model:ir.model.fields,field_description:variants.field_product_product_bom_ids
+msgid "BoM"
+msgstr "Nomenclature"
+
+#. module: variants
+#: code:addons/variants/questionnaire.py:33
+#, python-format
+msgid "Boolean"
+msgstr "Booléen"
+
+#. module: variants
+#: code:addons/variants/product.py:14
+#, python-format
+msgid "Can't change variant categories. Variants already have been generated"
+msgstr "Impossible de changer les catégories. Des variantes ont déjà été générées"
+
+#. module: variants
+#: model:ir.ui.view,arch_db:variants.view_form_create_configure_sol
+msgid "Cancel"
+msgstr "Annuler"
+
+#. module: variants
+#: model:ir.model.fields,field_description:variants.field_mrp_bom_categories_str
+#: model:ir.model.fields,field_description:variants.field_mrp_bom_variant_category_ids
+#: model:ir.model.fields,field_description:variants.field_variants_wizard_edit_categories_category_ids
+#: model:ir.ui.view,arch_db:variants.view_form_create_variants
+msgid "Categories"
+msgstr "Catégories"
+
+#. module: variants
+#: model:ir.model.fields,field_description:variants.field_update_variants_categories_variant_category_id
+#: model:ir.model.fields,field_description:variants.field_variant_category_value_variant_category_id
+#: model:ir.ui.view,arch_db:variants.view_form_variant_category
+#: model:ir.ui.view,arch_db:variants.view_search_variant_category_value
+msgid "Category"
+msgstr "Catégorie de variante"
+
+#. module: variants
+#: model:ir.actions.act_window,name:variants.act_variant_category
+msgid "Category variant"
+msgstr "Categorie de variante"
+
+#. module: variants
+#: model:ir.model.fields,field_description:variants.field_create_variants_copy_characteristics
+#: model:ir.model.fields,field_description:variants.field_update_variants_copy_characteristics
+msgid "Characteristics"
+msgstr "Caractéristiques"
+
+#. module: variants
+#: model:ir.model.fields,field_description:variants.field_variant_code
+msgid "Code"
+msgstr "Code"
+
+#. module: variants
+#: model:ir.model.fields,field_description:variants.field_variant_code_add
+msgid "Code add"
+msgstr "Code additionnel"
+
+#. module: variants
+#: model:ir.model.fields,field_description:variants.field_variant_category_value_code_suffix
+msgid "Code suffix"
+msgstr "Suffixe code"
+
+#. module: variants
+#: model:ir.ui.view,arch_db:variants.view_form_question
+msgid "Condition"
+msgstr "Condition"
+
+#. module: variants
+#: model:ir.ui.menu,name:variants.menu_questionnaire
+msgid "Configurator MCQ"
+msgstr "QCM configurateur"
+
+#. module: variants
+#: model:ir.ui.view,arch_db:variants.view_form_create_configure_sol
+#: model:ir.ui.view,arch_db:variants.view_form_mrp_manufacturingorder
+#: model:ir.ui.view,arch_db:variants.view_form_sale_order_line_mrp
+#: model:ir.ui.view,arch_db:variants.view_form_sale_order_mrp
+msgid "Configure"
+msgstr "Configurer"
+
+#. module: variants
+#: model:ir.ui.view,arch_db:variants.view_form_create_variants
+#: model:ir.ui.view,arch_db:variants.view_form_update_variants
+msgid "Copy"
+msgstr "Copier"
+
+#. module: variants
+#: model:ir.model.fields,field_description:variants.field_update_variants_copy_fields
+msgid "Copy fields"
+msgstr "Copier champs"
+
+#. module: variants
+#: model:ir.actions.act_window,name:variants.act_create_variants
+#: model:ir.ui.view,arch_db:variants.view_form_create_variants
+msgid "Create Variants"
+msgstr "Créer les variantes"
+
+#. module: variants
+#: model:ir.actions.act_window,name:variants.act_create_configure_sol
+#: model:ir.ui.view,arch_db:variants.view_form_create_configure_sol
+msgid "Create and configure SOL"
+msgstr "Créer et configurer une ligne de vente"
+
+#. module: variants
+#: model:ir.model,name:variants.model_create_configure_sol
+msgid "Create and configure a Sale Order Line"
+msgstr "Créer et configurer une ligne de vente"
+
+#. module: variants
+#: model:ir.model,name:variants.model_create_variants
+msgid "Create variants"
+msgstr "Créer les variantes"
+
+#. module: variants
+#: model:ir.model.fields,field_description:variants.field_create_configure_sol_create_uid
+#: model:ir.model.fields,field_description:variants.field_create_variants_create_uid
+#: model:ir.model.fields,field_description:variants.field_dimension_value_create_uid
+#: model:ir.model.fields,field_description:variants.field_fill_questionnaire_answer_create_uid
+#: model:ir.model.fields,field_description:variants.field_fill_questionnaire_create_uid
+#: model:ir.model.fields,field_description:variants.field_option_incompatibility_create_uid
+#: model:ir.model.fields,field_description:variants.field_update_variants_categories_create_uid
+#: model:ir.model.fields,field_description:variants.field_update_variants_create_uid
+#: model:ir.model.fields,field_description:variants.field_variant_category_create_uid
+#: model:ir.model.fields,field_description:variants.field_variant_category_value_create_uid
+#: model:ir.model.fields,field_description:variants.field_variant_create_uid
+#: model:ir.model.fields,field_description:variants.field_variants_incompatibility_create_uid
+#: model:ir.model.fields,field_description:variants.field_variants_modified_create_uid
+#: model:ir.model.fields,field_description:variants.field_variants_question_create_uid
+#: model:ir.model.fields,field_description:variants.field_variants_questionnaire_create_uid
+#: model:ir.model.fields,field_description:variants.field_variants_wizard_edit_categories_create_uid
+msgid "Created by"
+msgstr "Créé par"
+
+#. module: variants
+#: model:ir.model.fields,field_description:variants.field_create_configure_sol_create_date
+#: model:ir.model.fields,field_description:variants.field_create_variants_create_date
+#: model:ir.model.fields,field_description:variants.field_dimension_value_create_date
+#: model:ir.model.fields,field_description:variants.field_fill_questionnaire_answer_create_date
+#: model:ir.model.fields,field_description:variants.field_fill_questionnaire_create_date
+#: model:ir.model.fields,field_description:variants.field_option_incompatibility_create_date
+#: model:ir.model.fields,field_description:variants.field_update_variants_categories_create_date
+#: model:ir.model.fields,field_description:variants.field_update_variants_create_date
+#: model:ir.model.fields,field_description:variants.field_variant_category_create_date
+#: model:ir.model.fields,field_description:variants.field_variant_category_value_create_date
+#: model:ir.model.fields,field_description:variants.field_variant_create_date
+#: model:ir.model.fields,field_description:variants.field_variants_incompatibility_create_date
+#: model:ir.model.fields,field_description:variants.field_variants_modified_create_date
+#: model:ir.model.fields,field_description:variants.field_variants_question_create_date
+#: model:ir.model.fields,field_description:variants.field_variants_questionnaire_create_date
+#: model:ir.model.fields,field_description:variants.field_variants_wizard_edit_categories_create_date
+msgid "Created on"
+msgstr "Créé le"
+
+#. module: variants
+#: model:ir.ui.view,arch_db:variants.view_form_product
+msgid "Criteria"
+msgstr "Critères"
+
+#. module: variants
+#: model:ir.model.fields,field_description:variants.field_create_configure_sol_sale_partner_id
+msgid "Customer"
+msgstr "Client"
+
+#. module: variants
+#: model:ir.model.fields,field_description:variants.field_create_variants_copy_customer_ref
+#: model:ir.model.fields,field_description:variants.field_update_variants_copy_customer_ref
+msgid "Customer ref"
+msgstr "Référence client"
+
+#. module: variants
+#: code:addons/variants/questionnaire.py:32
+#, python-format
+msgid "Dimension"
+msgstr "Dimension"
+
+#. module: variants
+#: model:ir.ui.view,arch_db:variants.view_form_question
+msgid "Dimension configuration"
+msgstr "Valeurs de dimensions"
+
+#. module: variants
+#: model:ir.model,name:variants.model_dimension_value
+msgid "Dimension value"
+msgstr "Valeur de dimensions"
+
+#. module: variants
+#: model:ir.ui.view,arch_db:variants.view_form_question
+msgid "Dimensions"
+msgstr "Dimensions"
+
+#. module: variants
+#: model:ir.model.fields,field_description:variants.field_create_configure_sol_display_name
+#: model:ir.model.fields,field_description:variants.field_create_variants_display_name
+#: model:ir.model.fields,field_description:variants.field_dimension_value_display_name
+#: model:ir.model.fields,field_description:variants.field_fill_questionnaire_answer_display_name
+#: model:ir.model.fields,field_description:variants.field_fill_questionnaire_display_name
+#: model:ir.model.fields,field_description:variants.field_option_incompatibility_display_name
+#: model:ir.model.fields,field_description:variants.field_update_variants_categories_display_name
+#: model:ir.model.fields,field_description:variants.field_update_variants_display_name
+#: model:ir.model.fields,field_description:variants.field_variant_category_display_name
+#: model:ir.model.fields,field_description:variants.field_variant_category_value_display_name
+#: model:ir.model.fields,field_description:variants.field_variant_display_name
+#: model:ir.model.fields,field_description:variants.field_variants_incompatibility_display_name
+#: model:ir.model.fields,field_description:variants.field_variants_modified_display_name
+#: model:ir.model.fields,field_description:variants.field_variants_question_display_name
+#: model:ir.model.fields,field_description:variants.field_variants_questionnaire_display_name
+#: model:ir.model.fields,field_description:variants.field_variants_wizard_edit_categories_display_name
+msgid "Display Name"
+msgstr "Nom affiché"
+
+#. module: variants
+#: model:ir.ui.view,arch_db:variants.view_form_mrp_bom
+msgid "Edit"
+msgstr "Modifier"
+
+#. module: variants
+#: model:ir.actions.act_window,name:variants.act_edit_categories
+#: model:ir.ui.view,arch_db:variants.view_form_edit_categories
+msgid "Edit categories"
+msgstr "Éditer les catégories"
+
+#. module: variants
+#: model:ir.model,name:variants.model_variants_wizard_edit_categories
+msgid "Edit variant categories"
+msgstr "Éditer les catégories"
+
+#. module: variants
+#: code:addons/variants/product.py:230
+#, python-format
+msgid "Error"
+msgstr "Erreur"
+
+#. module: variants
+#: model:ir.model,name:variants.model_fill_questionnaire
+msgid "Fill a  questionnaire for a sale order line"
+msgstr "Remplir un questionnaire pour une ligne de vente"
+
+#. module: variants
+#: model:ir.actions.act_window,name:variants.act_fill_questionnaire
+#: model:ir.model.fields,field_description:variants.field_fill_questionnaire_answer_fill_questionnaire_id
+#: model:ir.ui.view,arch_db:variants.view_form_fill_questionnaire
+#: model:ir.ui.view,arch_db:variants.view_form_fill_questionnaire_answer_boolean
+#: model:ir.ui.view,arch_db:variants.view_form_fill_questionnaire_answer_dimension
+#: model:ir.ui.view,arch_db:variants.view_form_fill_questionnaire_answer_option
+#: model:ir.ui.view,arch_db:variants.view_form_fill_questionnaire_answer_variant
+msgid "Fill questionnaire"
+msgstr "Remplir un questionnaire"
+
+#. module: variants
+#: model:ir.model.fields,field_description:variants.field_option_incompatibility_first_value_id
+#: model:ir.model.fields,field_description:variants.field_variants_incompatibility_first_value_id
+msgid "First value"
+msgstr "Première valeur"
+
+#. module: variants
+#: code:addons/variants/questionnaire.py:39
+#, python-format
+msgid "Free"
+msgstr "Libre"
+
+#. module: variants
+#: model:ir.ui.view,arch_db:variants.view_form_create_variants
+msgid "Generate products"
+msgstr "Génerer les produits"
+
+#. module: variants
+#: model:ir.ui.view,arch_db:variants.view_form_create_variants
+#: model:ir.ui.view,arch_db:variants.view_form_product
+msgid "Generate variants"
+msgstr "Génerer les variantes"
+
+#. module: variants
+#: model:ir.ui.view,arch_db:variants.view_search_variant_category_value
+msgid "Group By"
+msgstr "Regrouper par"
+
+#. module: variants
+#: model:ir.model.fields,field_description:variants.field_mrp_bom_has_parent_variant_categories
+msgid "Has parent_categories"
+msgstr "A des catégories parentes"
+
+#. module: variants
+#: model:ir.model.fields,field_description:variants.field_fill_questionnaire_answer_help_text
+#: model:ir.model.fields,field_description:variants.field_variants_question_help_text
+msgid "Help text"
+msgstr "Texte d'aide"
+
+#. module: variants
+#: model:ir.model.fields,field_description:variants.field_create_configure_sol_id
+#: model:ir.model.fields,field_description:variants.field_create_variants_id
+#: model:ir.model.fields,field_description:variants.field_dimension_value_id
+#: model:ir.model.fields,field_description:variants.field_fill_questionnaire_answer_id
+#: model:ir.model.fields,field_description:variants.field_fill_questionnaire_id
+#: model:ir.model.fields,field_description:variants.field_option_incompatibility_id
+#: model:ir.model.fields,field_description:variants.field_update_variants_categories_id
+#: model:ir.model.fields,field_description:variants.field_update_variants_id
+#: model:ir.model.fields,field_description:variants.field_variant_category_id
+#: model:ir.model.fields,field_description:variants.field_variant_category_value_id
+#: model:ir.model.fields,field_description:variants.field_variant_id
+#: model:ir.model.fields,field_description:variants.field_variants_incompatibility_id
+#: model:ir.model.fields,field_description:variants.field_variants_modified_id
+#: model:ir.model.fields,field_description:variants.field_variants_question_id
+#: model:ir.model.fields,field_description:variants.field_variants_questionnaire_id
+#: model:ir.model.fields,field_description:variants.field_variants_wizard_edit_categories_id
+msgid "ID"
+msgstr "ID"
+
+#. module: variants
+#: code:addons/variants/product.py:230
+#, python-format
+msgid "Impossible to delete a category value."
+msgstr "Impossible de supprimer un critère"
+
+#. module: variants
+#: model:ir.model.fields,field_description:variants.field_variants_question_option_incompatibility_ids
+#: model:ir.model.fields,field_description:variants.field_variants_question_variant_incompatibility_ids
+#: model:ir.ui.view,arch_db:variants.view_form_question
+msgid "Incompatibilities"
+msgstr "Incompatibilitées"
+
+#. module: variants
+#: model:ir.model.fields,field_description:variants.field_create_variants_copy_internal_plans
+#: model:ir.model.fields,field_description:variants.field_update_variants_copy_internal_plans
+msgid "Internal documents"
+msgstr "Documents internes"
+
+#. module: variants
+#: model:ir.model.fields,field_description:variants.field_product_product_is_model
+msgid "Is Model"
+msgstr "Est modèle"
+
+#. module: variants
+#: model:ir.model.fields,field_description:variants.field_fill_questionnaire_answer_question_label
+#: model:ir.model.fields,field_description:variants.field_variants_question_label
+msgid "Label"
+msgstr "Libellé"
+
+#. module: variants
+#: model:ir.model.fields,field_description:variants.field_create_configure_sol___last_update
+#: model:ir.model.fields,field_description:variants.field_create_variants___last_update
+#: model:ir.model.fields,field_description:variants.field_dimension_value___last_update
+#: model:ir.model.fields,field_description:variants.field_fill_questionnaire___last_update
+#: model:ir.model.fields,field_description:variants.field_fill_questionnaire_answer___last_update
+#: model:ir.model.fields,field_description:variants.field_option_incompatibility___last_update
+#: model:ir.model.fields,field_description:variants.field_update_variants___last_update
+#: model:ir.model.fields,field_description:variants.field_update_variants_categories___last_update
+#: model:ir.model.fields,field_description:variants.field_variant___last_update
+#: model:ir.model.fields,field_description:variants.field_variant_category___last_update
+#: model:ir.model.fields,field_description:variants.field_variant_category_value___last_update
+#: model:ir.model.fields,field_description:variants.field_variants_incompatibility___last_update
+#: model:ir.model.fields,field_description:variants.field_variants_modified___last_update
+#: model:ir.model.fields,field_description:variants.field_variants_question___last_update
+#: model:ir.model.fields,field_description:variants.field_variants_questionnaire___last_update
+#: model:ir.model.fields,field_description:variants.field_variants_wizard_edit_categories___last_update
+msgid "Last Modified on"
+msgstr "Dernière modification le"
+
+#. module: variants
+#: model:ir.model.fields,field_description:variants.field_create_configure_sol_write_uid
+#: model:ir.model.fields,field_description:variants.field_create_variants_write_uid
+#: model:ir.model.fields,field_description:variants.field_dimension_value_write_uid
+#: model:ir.model.fields,field_description:variants.field_fill_questionnaire_answer_write_uid
+#: model:ir.model.fields,field_description:variants.field_fill_questionnaire_write_uid
+#: model:ir.model.fields,field_description:variants.field_option_incompatibility_write_uid
+#: model:ir.model.fields,field_description:variants.field_update_variants_categories_write_uid
+#: model:ir.model.fields,field_description:variants.field_update_variants_write_uid
+#: model:ir.model.fields,field_description:variants.field_variant_category_value_write_uid
+#: model:ir.model.fields,field_description:variants.field_variant_category_write_uid
+#: model:ir.model.fields,field_description:variants.field_variant_write_uid
+#: model:ir.model.fields,field_description:variants.field_variants_incompatibility_write_uid
+#: model:ir.model.fields,field_description:variants.field_variants_modified_write_uid
+#: model:ir.model.fields,field_description:variants.field_variants_question_write_uid
+#: model:ir.model.fields,field_description:variants.field_variants_questionnaire_write_uid
+#: model:ir.model.fields,field_description:variants.field_variants_wizard_edit_categories_write_uid
+msgid "Last Updated by"
+msgstr "Dernière mise à jour par"
+
+#. module: variants
+#: model:ir.model.fields,field_description:variants.field_create_configure_sol_write_date
+#: model:ir.model.fields,field_description:variants.field_create_variants_write_date
+#: model:ir.model.fields,field_description:variants.field_dimension_value_write_date
+#: model:ir.model.fields,field_description:variants.field_fill_questionnaire_answer_write_date
+#: model:ir.model.fields,field_description:variants.field_fill_questionnaire_write_date
+#: model:ir.model.fields,field_description:variants.field_option_incompatibility_write_date
+#: model:ir.model.fields,field_description:variants.field_update_variants_categories_write_date
+#: model:ir.model.fields,field_description:variants.field_update_variants_write_date
+#: model:ir.model.fields,field_description:variants.field_variant_category_value_write_date
+#: model:ir.model.fields,field_description:variants.field_variant_category_write_date
+#: model:ir.model.fields,field_description:variants.field_variant_write_date
+#: model:ir.model.fields,field_description:variants.field_variants_incompatibility_write_date
+#: model:ir.model.fields,field_description:variants.field_variants_modified_write_date
+#: model:ir.model.fields,field_description:variants.field_variants_question_write_date
+#: model:ir.model.fields,field_description:variants.field_variants_questionnaire_write_date
+#: model:ir.model.fields,field_description:variants.field_variants_wizard_edit_categories_write_date
+msgid "Last Updated on"
+msgstr "Mis à jour le"
+
+#. module: variants
+#: model:ir.model.fields,field_description:variants.field_fill_questionnaire_answer_dimension_limit_type
+#: model:ir.model.fields,field_description:variants.field_variants_question_dimension_limit_type
+msgid "Limit type"
+msgstr "Type de limite"
+
+#. module: variants
+#: model:ir.model,name:variants.model_mrp_manufacturingorder
+#: model:ir.model.fields,field_description:variants.field_fill_questionnaire_mo_id
+msgid "Manufacturing order"
+msgstr "Ordre de fabrication"
+
+#. module: variants
+#: model:ir.model.fields,field_description:variants.field_variants_question_dimension_limit_max
+msgid "Max"
+msgstr "Max"
+
+#. module: variants
+#: model:ir.model.fields,field_description:variants.field_variants_question_dimension_limit_min
+msgid "Min"
+msgstr "Min"
+
+#. module: variants
+#: code:addons/variants/questionnaire.py:40
+#, python-format
+msgid "Min/max values"
+msgstr "Valeurs min/max"
+
+#. module: variants
+#: model:ir.model.fields,field_description:variants.field_create_variants_model_id
+#: model:ir.model.fields,field_description:variants.field_product_product_model_id
+msgid "Model"
+msgstr "Modèle"
+
+#. module: variants
+#: model:ir.model.fields,field_description:variants.field_common_attribute_model_model_id
+#: model:ir.model.fields,field_description:variants.field_pricelist_customerinfo_model_id
+#: model:ir.model.fields,field_description:variants.field_pricelist_supplierinfo_model_id
+#: model:ir.model.fields,field_description:variants.field_product_customerinfo_model_id
+#: model:ir.model.fields,field_description:variants.field_product_supplierinfo_model_id
+#: model:ir.model.fields,field_description:variants.field_quality_control_product_model_id
+#: model:ir.model.fields,field_description:variants.field_stock_quality_control_model_id
+#: model:ir.model.fields,field_description:variants.field_stock_warehouse_orderpoint_model_id
+#: model:ir.model.fields,field_description:variants.field_variant_model_id
+msgid "Model id"
+msgstr "Model id"
+
+#. module: variants
+#: code:addons/variants/mrp.py:56
+#: code:addons/variants/sale.py:18
+#, python-format
+msgid "Multiple values for the same category selected"
+msgstr "Plusieurs critères pour la même catégorie"
+
+#. module: variants
+#: model:ir.model.fields,field_description:variants.field_variant_category_name
+#: model:ir.model.fields,field_description:variants.field_variant_name
+#: model:ir.model.fields,field_description:variants.field_variants_questionnaire_name
+msgid "Name"
+msgstr "Nom"
+
+#. module: variants
+#: model:ir.model.fields,field_description:variants.field_variant_name_add
+msgid "Name add"
+msgstr "Nom additionnel"
+
+#. module: variants
+#: model:ir.model.fields,field_description:variants.field_variant_category_value_name_suffix
+msgid "Name suffix"
+msgstr "Suffixe nom"
+
+#. module: variants
+#: model:ir.ui.view,arch_db:variants.view_form_fill_questionnaire_answer_boolean
+#: model:ir.ui.view,arch_db:variants.view_form_fill_questionnaire_answer_dimension
+#: model:ir.ui.view,arch_db:variants.view_form_fill_questionnaire_answer_option
+#: model:ir.ui.view,arch_db:variants.view_form_fill_questionnaire_answer_variant
+msgid "Next question"
+msgstr "Question suivante"
+
+#. module: variants
+#: code:addons/variants/questionnaire.py:31
+#, python-format
+msgid "Option"
+msgstr "Option"
+
+#. module: variants
+#: model:ir.model.fields,field_description:variants.field_variants_question_option_group_id
+msgid "Option group"
+msgstr "Groupe d'options"
+
+#. module: variants
+#: model:ir.model,name:variants.model_option_incompatibility
+msgid "Option incompatibility"
+msgstr "Incompatibilités entre options"
+
+#. module: variants
+#: model:ir.model.fields,field_description:variants.field_variants_question_option_group_value_ids
+#: model:ir.ui.view,arch_db:variants.view_form_question
+msgid "Options"
+msgstr "Options"
+
+#. module: variants
+#: model:ir.model.fields,field_description:variants.field_variants_question_dimension_type
+msgid "Parameter"
+msgstr "Paramètre"
+
+#. module: variants
+#: model:ir.actions.act_window,name:variants.action_parameter_dimension_type
+msgid "Parameter Dimension Type"
+msgstr "Type paramètre dimension"
+
+#. module: variants
+#: model:ir.model.fields,field_description:variants.field_create_variants_copy_parameters
+#: model:ir.model.fields,field_description:variants.field_update_variants_copy_parameters
+msgid "Parameters"
+msgstr "Paramètres"
+
+#. module: variants
+#: model:ir.model.fields,field_description:variants.field_update_variants_categories_parent_id
+msgid "Parent"
+msgstr "Parent"
+
+#. module: variants
+#: model:ir.model.fields,field_description:variants.field_variants_wizard_edit_categories_parent_category_ids
+msgid "Parent category ids"
+msgstr "Parent category ids"
+
+#. module: variants
+#: model:ir.model.fields,field_description:variants.field_create_variants_copy_plan_ctrl
+#: model:ir.model.fields,field_description:variants.field_update_variants_copy_plan_ctrl
+msgid "Plan and control"
+msgstr "Plan et contrôle"
+
+#. module: variants
+#: model:ir.model.fields,help:variants.field_variants_question_condition_operator
+msgid "Possible operators are '<', '>', '=' and '!=' for dimension, '=' for boolean, in and not in for variants and options\n"
+"Example : 'Length' '>' '3' "
+msgstr "Les opérateurs possibles sont '<', '>' et '=' pour une dimension, '=' pour un booléen, et 'in' pour les variantes et les propriétés\n"
+"Exemple : 'Length' '>' '3' "
+
+#. module: variants
+#: model:ir.model.fields,field_description:variants.field_variants_question_dimension_possible_values
+msgid "Possible values"
+msgstr "Valeurs possibles"
+
+#. module: variants
+#: model:ir.model.fields,field_description:variants.field_fill_questionnaire_last_replied_question_stack
+msgid "Previous"
+msgstr "Précédent"
+
+#. module: variants
+#: model:ir.ui.view,arch_db:variants.view_form_fill_questionnaire_answer_boolean
+#: model:ir.ui.view,arch_db:variants.view_form_fill_questionnaire_answer_dimension
+#: model:ir.ui.view,arch_db:variants.view_form_fill_questionnaire_answer_option
+#: model:ir.ui.view,arch_db:variants.view_form_fill_questionnaire_answer_variant
+msgid "Previous question"
+msgstr "Question précédente"
+
+#. module: variants
+#: model:ir.model.fields,field_description:variants.field_variant_category_old_price_unit
+#: model:ir.model.fields,field_description:variants.field_variant_category_price_unit
+#: model:ir.model.fields,field_description:variants.field_variant_category_value_price_unit
+msgid "Price unit"
+msgstr "Prix unitaire"
+
+#. module: variants
+#: model:ir.model,name:variants.model_pricelist_customerinfo
+msgid "Pricelist customerinfo"
+msgstr "Liste de prix informations client"
+
+#. module: variants
+#: model:ir.model,name:variants.model_pricelist_supplierinfo
+msgid "Pricelist supplierinfo"
+msgstr "Liste de prix des informations fournisseurs"
+
+#. module: variants
+#: model:ir.model,name:variants.model_procurement_order
+msgid "Procurement order"
+msgstr "Ordre d'approvisionnement"
+
+#. module: variants
+#: model:ir.model,name:variants.model_product_product
+#: model:ir.model.fields,field_description:variants.field_create_configure_sol_product_id
+msgid "Product"
+msgstr "Produit"
+
+#. module: variants
+#: model:ir.model,name:variants.model_product_customerinfo
+msgid "Product customerinfo"
+msgstr "Produit informations client"
+
+#. module: variants
+#: model:ir.model,name:variants.model_product_supplierinfo
+msgid "Product supplierinfo"
+msgstr "Produit des informations des fournisseurs"
+
+#. module: variants
+#: model:ir.model,name:variants.model_quality_control_product
+msgid "Quality Control Product"
+msgstr "Contrôle qualité produit"
+
+#. module: variants
+#: model:ir.model.fields,field_description:variants.field_create_variants_copy_quality_control
+#: model:ir.model.fields,field_description:variants.field_update_variants_copy_quality_control
+msgid "Quality control"
+msgstr "Contrôle qualité"
+
+#. module: variants
+#: model:ir.model.fields,field_description:variants.field_create_configure_sol_quantity
+msgid "Quantity"
+msgstr "Quantité"
+
+#. module: variants
+#: model:ir.model.fields,field_description:variants.field_dimension_value_question_id
+#: model:ir.model.fields,field_description:variants.field_fill_questionnaire_answer_question_id
+#: model:ir.ui.view,arch_db:variants.view_form_question
+#: model:ir.ui.view,arch_db:variants.view_form_questionnaire
+msgid "Question"
+msgstr "Question"
+
+#. module: variants
+#: model:ir.model.fields,field_description:variants.field_option_incompatibility_question_id
+#: model:ir.model.fields,field_description:variants.field_variants_incompatibility_question_id
+msgid "Question id"
+msgstr "Question id"
+
+#. module: variants
+#: model:ir.model,name:variants.model_variants_question
+msgid "Question of variant questionnaire"
+msgstr "Question of variant questionnaire"
+
+#. module: variants
+#: model:ir.model.fields,field_description:variants.field_variants_question_condition_question_type
+#: model:ir.model.fields,field_description:variants.field_variants_question_type
+msgid "Question type"
+msgstr "Type de question"
+
+#. module: variants
+#: model:ir.actions.act_window,name:variants.act_questionnaire
+#: model:ir.model.fields,field_description:variants.field_fill_questionnaire_questionnaire_id
+#: model:ir.model.fields,field_description:variants.field_variants_question_questionnaire_id
+#: model:ir.ui.view,arch_db:variants.view_form_questionnaire
+msgid "Questionnaire"
+msgstr "Consignes"
+
+#. module: variants
+#: model:ir.model,name:variants.model_variants_questionnaire
+msgid "Questionnaire for variants configuration"
+msgstr "Questionnaire for variants configuration"
+
+#. module: variants
+#: model:ir.model.fields,field_description:variants.field_variants_questionnaire_question_ids
+msgid "Questions"
+msgstr "Questions"
+
+#. module: variants
+#: model:ir.model.fields,field_description:variants.field_create_configure_sol_requested_date
+msgid "Requested date"
+msgstr "Date demandée"
+
+#. module: variants
+#: model:ir.model.fields,field_description:variants.field_create_configure_sol_sale_order_id
+msgid "Sale order"
+msgstr "Commande de vente"
+
+#. module: variants
+#: model:ir.model,name:variants.model_sale_order_line
+#: model:ir.model.fields,field_description:variants.field_fill_questionnaire_sale_order_line_id
+msgid "Sale order line"
+msgstr "Ligne de commande de vente"
+
+#. module: variants
+#: model:ir.ui.view,arch_db:variants.view_form_edit_categories
+msgid "Save"
+msgstr "Sauvegarder"
+
+#. module: variants
+#: model:ir.model.fields,field_description:variants.field_option_incompatibility_second_value_id
+#: model:ir.model.fields,field_description:variants.field_variants_incompatibility_second_value_id
+msgid "Second value"
+msgstr "Seconde valeur"
+
+#. module: variants
+#: code:addons/variants/questionnaire.py:41
+#, python-format
+msgid "Selection"
+msgstr "Sélection"
+
+#. module: variants
+#: model:ir.model.fields,field_description:variants.field_variants_question_sequence
+msgid "Sequence"
+msgstr "Séquence"
+
+#. module: variants
+#: model:ir.model,name:variants.model_stock_quality_control
+msgid "Stock quality control"
+msgstr "Contrôle qualité stock"
+
+#. module: variants
+#: model:ir.model,name:variants.model_stock_warehouse_orderpoint
+#: model:ir.model.fields,field_description:variants.field_create_variants_copy_stock_rule
+#: model:ir.model.fields,field_description:variants.field_update_variants_copy_stock_rule
+msgid "Stock rule"
+msgstr "Règle de stock"
+
+#. module: variants
+#: model:ir.model.fields,field_description:variants.field_create_variants_copy_supplier_ref
+#: model:ir.model.fields,field_description:variants.field_update_variants_copy_supplier_ref
+msgid "Supplier ref"
+msgstr "Référence fournisseur"
+
+#. module: variants
+#: model:ir.model,name:variants.model_mrp_option
+msgid "TODO"
+msgstr "TODO"
+
+#. module: variants
+#: model:ir.model.fields,help:variants.field_variant_code
+msgid "The code must be unique"
+msgstr "Le code doit être unique"
+
+#. module: variants
+#: model:ir.ui.view,arch_db:variants.view_form_update_variants_categories
+msgid "Update"
+msgstr "Mise à jour"
+
+#. module: variants
+#: model:ir.ui.view,arch_db:variants.view_form_update_variants_categories
+msgid "Update Categories"
+msgstr "Update Categories"
+
+#. module: variants
+#: model:ir.actions.act_window,name:variants.act_update_variants
+#: model:ir.ui.view,arch_db:variants.view_form_update_variants
+msgid "Update Variants"
+msgstr "MàJ des variantes"
+
+#. module: variants
+#: model:ir.actions.act_window,name:variants.act_update_variants_categories
+msgid "Update Variants Categories"
+msgstr "MàJ des catégories de variantes"
+
+#. module: variants
+#: model:ir.ui.view,arch_db:variants.view_form_update_variants
+#: model:ir.ui.view,arch_db:variants.view_form_update_variants_categories
+msgid "Update products"
+msgstr "MàJ des produits"
+
+#. module: variants
+#: model:ir.model,name:variants.model_update_variants
+#: model:ir.ui.view,arch_db:variants.view_form_product
+msgid "Update variants"
+msgstr "MàJ des variantes"
+
+#. module: variants
+#: model:ir.ui.view,arch_db:variants.view_form_product
+msgid "Update variants categories"
+msgstr "MàJ des catégories de variantes"
+
+#. module: variants
+#: model:ir.actions.act_window,name:variants.act_variant_category_value
+#: model:ir.model.fields,field_description:variants.field_dimension_value_value
+#: model:ir.model.fields,field_description:variants.field_fill_questionnaire_answer_value_bool
+#: model:ir.model.fields,field_description:variants.field_fill_questionnaire_answer_value_dimension
+#: model:ir.model.fields,field_description:variants.field_fill_questionnaire_answer_value_dimension_selection
+#: model:ir.model.fields,field_description:variants.field_variant_category_value_value
+#: model:ir.model.fields,field_description:variants.field_variants_modified_value_id
+#: model:ir.ui.view,arch_db:variants.view_form_fill_questionnaire_answer_option
+#: model:ir.ui.view,arch_db:variants.view_form_variant_category_value
+msgid "Value"
+msgstr "Valeur"
+
+#. module: variants
+#: model:ir.model.fields,field_description:variants.field_variant_value_ids
+msgid "Value ids"
+msgstr "Valeurs"
+
+#. module: variants
+#: model:ir.model.fields,field_description:variants.field_fill_questionnaire_answer_value_option
+msgid "Value option"
+msgstr "Valeur (option)"
+
+#. module: variants
+#: model:ir.model.fields,field_description:variants.field_fill_questionnaire_answer_value_variant
+msgid "Value variant"
+msgstr "Valeur (variante)"
+
+#. module: variants
+#: model:ir.model.fields,field_description:variants.field_create_variants_value_ids
+#: model:ir.model.fields,field_description:variants.field_sale_order_line_variant_category_value_ids
+#: model:ir.model.fields,field_description:variants.field_variant_category_value_ids
+#: model:ir.ui.view,arch_db:variants.view_form_create_variants
+#: model:ir.ui.view,arch_db:variants.view_form_variant_category
+#: model:ir.ui.view,arch_db:variants.view_form_variant_category_value
+msgid "Values"
+msgstr "Valeurs"
+
+#. module: variants
+#: code:addons/variants/questionnaire.py:30
+#: model:ir.model.fields,field_description:variants.field_variants_modified_product_id
+#, python-format
+msgid "Variant"
+msgstr "Variante"
+
+#. module: variants
+#: model:ir.model,name:variants.model_variants_modified
+msgid "Variant +  valeur à donner pour la nouvelle categorie"
+msgstr "Variant +  valeur à donner pour la nouvelle catégorie"
+
+#. module: variants
+#: model:ir.model.fields,field_description:variants.field_create_variants_variant_category_ids
+#: model:ir.model.fields,field_description:variants.field_product_product_variant_category_ids
+#: model:ir.model.fields,field_description:variants.field_update_variants_categories_category_in_use_ids
+#: model:ir.ui.menu,name:variants.variant_categories
+msgid "Variant Categories"
+msgstr "Catégories de variante"
+
+#. module: variants
+#: model:ir.ui.menu,name:variants.variant_values
+msgid "Variant Values"
+msgstr "Critères"
+
+#. module: variants
+#: model:ir.model.fields,field_description:variants.field_variants_question_variant_category_id
+#: model:ir.ui.menu,name:variants.menu_variant_category_menu_sale
+#: model:ir.ui.view,arch_db:variants.view_form_product
+msgid "Variant category"
+msgstr "Catégorie de variante"
+
+#. module: variants
+#: model:ir.model.fields,field_description:variants.field_variants_question_variant_category_value_ids
+msgid "Variant category values"
+msgstr "Variant category values"
+
+#. module: variants
+#: model:ir.ui.view,arch_db:variants.view_tree_variant_category_value
+msgid "Variant value"
+msgstr "Critère"
+
+#. module: variants
+#: model:ir.model.fields,field_description:variants.field_mrp_manufacturingorder_variant_value_ids
+#: model:ir.model.fields,field_description:variants.field_product_product_variant_values_ids
+#: model:ir.ui.view,arch_db:variants.view_form_mrp_manufacturingorder
+#: model:ir.ui.view,arch_db:variants.view_form_sale_order_line_mrp
+#: model:ir.ui.view,arch_db:variants.view_form_sale_order_mrp
+msgid "Variant values"
+msgstr "Critères"
+
+#. module: variants
+#: model:ir.model.fields,field_description:variants.field_create_variants_variant_ids
+#: model:ir.model.fields,field_description:variants.field_product_product_variant_ids
+#: model:ir.model.fields,field_description:variants.field_update_variants_categories_variant_to_modify_ids
+#: model:ir.model.fields,field_description:variants.field_update_variants_variant_ids
+#: model:ir.ui.view,arch_db:variants.view_form_create_variants
+#: model:ir.ui.view,arch_db:variants.view_form_product
+#: model:ir.ui.view,arch_db:variants.view_form_question
+#: model:ir.ui.view,arch_db:variants.view_form_update_variants
+msgid "Variants"
+msgstr "Variantes"
+
+#. module: variants
+#: model:ir.model,name:variants.model_variants_incompatibility
+msgid "Variants incompatibility"
+msgstr "Incompatibilités entre variantes"
+
+#. module: variants
+#: code:addons/variants/mrp.py:70
+#, python-format
+msgid "Warning"
+msgstr "Attention"
+
+#. module: variants
+#: model:ir.model.fields,help:variants.field_variants_question_option_incompatibility_ids
+#: model:ir.model.fields,help:variants.field_variants_question_variant_incompatibility_ids
+msgid "When 'first value' has been selected in a previous answer, 'second value' won't be a possible answer"
+msgstr "When 'first value' has been selected in a previous answer, 'second value' won't be a possible answer"
+
+#. module: variants
+#: model:ir.model.fields,field_description:variants.field_variants_modified_wizard_id
+msgid "Wizard"
+msgstr "Wizard"
+
+#. module: variants
+#: model:ir.model,name:variants.model_mrp_workorder
+msgid "Workorder"
+msgstr "Ordre de travail"
+
+#. module: variants
+#: model:ir.model,name:variants.model_common_attribute_model
+msgid "common.attribute.model"
+msgstr "common.attribute.model"
+
+#. module: variants
+#: model:ir.model.fields,field_description:variants.field_variant_category_value_name
+msgid "name"
+msgstr "Nom"
+
+#. module: variants
+#: model:ir.model,name:variants.model_variant
+msgid "variant"
+msgstr "variant"
+
+#. module: variants
+#: model:ir.model,name:variants.model_variant_category
+msgid "variant.category"
+msgstr "variant.category"
+
+#. module: variants
+#: model:ir.model,name:variants.model_variant_category_value
+msgid "variant.category.value"
+msgstr "variant.category.value"
+

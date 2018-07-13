@@ -1,0 +1,305 @@
+html, body {
+	height:100%;
+	font-size: 20px;
+}
+
+h3 {
+	margin: 0 0 0 0;
+}
+.wrapper-col {
+	display:flex;
+	flex-direction:column;
+	height:inherit;
+	flex-grow:1;
+}
+#main {
+	flex-grow: 1;
+	display: flex;
+	flex-basis: 0;
+	overflow-y: hidden;
+}
+.wrapper {
+	display:flex;
+}
+.wrapper div {
+	flex-grow:1;
+}
+.buttons {
+	background: lightyellow;
+	border: 1px solid darkgrey;
+}
+.buttons button {
+	width: 90%;
+	margin: 5px;
+}
+.declaration {
+	background: lightyellow;
+	display:flex;
+	flex-direction:column;
+}
+#rawmaterial {
+    overflow-y: auto;
+    padding: 0 15px;
+}
+#declaration_buttons {
+	display:flex;
+	justify-content: space-around;
+}
+#declaration_buttons div {
+	flex-grow:1;
+	display:flex;
+	justify-content: space-around;
+	margin-bottom: 10px;
+}
+#header {
+	background: lightgrey;
+}
+#header div {
+	border: 1px solid black;
+	padding: 5px;
+}
+#col-right {
+	display:flex;
+	flex-direction:column;
+}
+#col-right div {
+	flex-grow: 1;
+	display:flex;
+	flex-direction:column;
+	justify-content: space-around;
+}
+#firstresource {
+	background: lightgrey;
+}
+#rawmaterial li {
+	list-style-type: none;
+	margin: 10px;
+	display:flex;
+}
+#rawmaterial li .labels {
+	display:flex;
+	margin-left:10px;
+	flex-wrap: wrap;
+}
+.labels {
+	margin-bottom: 15px;
+	display: flex;
+	flex-wrap: wrap;
+}
+.labels .label {
+	background: lightblue;
+	margin-left:10px;
+	padding-bottom: 5px;
+	border-radius: 5px;
+	border: 1px solid blue;
+}
+.rm {
+	background-color: #8AF;
+	padding: 10px;
+	border-radius: 10px;
+}
+.btn {
+	font-size:inherit;
+}
+.form {
+	display: flex;
+    flex-direction: column;
+    height: inherit;
+    flex-grow: 1;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+}
+.form .actions {
+	display: flex;
+	justify-content: space-around;
+}
+.space > * {
+	margin: 15px;
+}
+#gen-div, #val-div {
+	flex-shrink: 0;
+}
+.form li {
+	list-style-type: none;
+	display: flex;
+}
+.form li label {
+	flex-shrink: 0;
+}
+.form li input {
+	margin-right: 30px;
+	width: 300px;
+}
+.cleaning,.setting {
+	background: #f0ad4e;
+}
+.production {
+	background: #5cb85c;
+}
+.stop {
+	background: #d9534f;
+}
+.waiting {
+	background: #5bc0de;
+}
+.track_label {
+	background-color: #F44;
+}
+#unassigned {
+	padding: 10px;
+}
+.complete-selected {
+	background:lightgrey;
+	border-radius: 6px;
+}
+#replacement {
+	min-width:250px;
+}
+#complete {
+	padding: 0px;
+	margin: 0px;
+	position:absolute;
+}
+.form h3 {
+	font-size: larger;
+}
+::-webkit-scrollbar {
+	-webkit-appearance: none;
+}
+::-webkit-scrollbar:vertical {
+    width: 11px;
+}
+
+::-webkit-scrollbar:horizontal {
+    height: 11px;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 8px;
+    border: 2px solid white; /* should match background, can't be transparent */
+    background-color: rgba(0, 0, 0, .5);
+}
+
+::-webkit-scrollbar-track { 
+    background-color: #fff; 
+    border-radius: 8px; 
+}
+.alert {
+	color: red;
+	font-weight: bold;
+    font-size: x-large;
+}
+#no_traceability {
+	flex-grow: 1;
+}
+#declaration input {
+	width: 150px;
+	text-align: right;
+}
+#declaration div {
+    align-items: center;
+    display: flex;
+}
+#declaration h3 {
+    margin-bottom: 20px;
+    margin-left: 10px;
+    color: #163F7F;
+}
+#declaration {
+	background: #dbdbdb;
+}
+input[type=checkbox] {
+  -ms-transform: scale(2);
+  -moz-transform: scale(2);
+  -webkit-transform: scale(2);
+  -o-transform: scale(2);
+}
+.no-shrink {
+	flex-shrink: 0;
+}
+.actions button {
+	height: 63px;
+}
+#conso_rawmaterial {
+	width: 90%;
+}
+#conso_rawmaterial .wrapper > div {
+	flex-basis: 0;
+}
+#conso_rawmaterial .wrapper > div input {
+	width: 150px;
+	margin-right:0;
+}
+.form-conso {
+	height: initial;
+	margin: 15px
+}
+.track_label.rm button {
+	float:right;
+	font-size: 20px;
+	padding: 0 8px;
+	margin: 0 5px;
+	width: 30px;
+}
+.remove-rm {
+	float: right;
+	margin: 0 5px;
+	width: 30px;
+}
+#section_labels {
+	overflow-y: auto;
+	overflow-x: hidden;
+	width: 100%;
+	height:100%;
+	background: white;
+}
+#section_labels ul {
+	width: 100%;
+	height:100%;
+	margin-top: 25px;
+	margin: auto;
+}
+#section_labels li > * {
+	flex-grow: 4;
+	flex-basis: 10px;
+}
+#section_labels li > input[type=checkbox] {
+	display: inline-block;
+	margin: auto 0;
+	flex-grow: 1;
+}
+.wrapper.space {
+	margin-left: 10px;
+}
+#section_labels span {
+    color: #163F7F;
+}
+.conso_add_another {
+	width: 100%;
+}
+.conso_add_another div {
+	margin: 15px;
+}
+.conso_add_another button {
+	margin: 15px;
+}
+.complete_popup {
+	background-color: #DBDBDB;
+	border-radius: 10px;
+}
+.modal-body #complete.add_resource {
+    top: 15px;
+    right:-170px;
+    margin:0;
+}
+.modal-body #complete {
+	margin: 0px 210px;
+}
+
+.overflow-product{
+    overflow-y: auto;
+    max-height: 120px;
+	border: none !important;
+    padding: 0px !important;
+}

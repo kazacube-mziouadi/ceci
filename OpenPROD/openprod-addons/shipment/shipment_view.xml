@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+		<!-- FORM VIEW Shipment -->
+		<record id='view_form_shipment' model='ir.ui.view'>
+			<field name="name">view_form_shipment</field>
+			<field name="model">shipment</field>
+			<field name="arch" type="xml">
+				<form string="Shipment" version="8.0">
+					<header>
+						<button string="Draft" states="ready" type="object" name="wkf_draft" class="openprod_logical_button" />
+						<button string="Ready" states="draft" type="object" name="wkf_validated" class="openprod_logical_button" />
+						<button string="Sent" states="validated" type="object" name="wkf_done" class="openprod_logical_button" />
+						<button string="Invoice grand export" attrs="{'invisible':['|', ('state', '!=', 'ready'), ('grand_export_invoiced', '!=', False)]}" type="object" name="invoice_grand_export" />
+						<button string="Reopen" states="done" type="object" name="reopen" />
+						<button string="Cancel" states="draft,ready,validated" type="object" name="wkf_cancel" class="openprod_cancel_button" />
+						<field name="state" widget="statusbar" statusbar_visible="draft,validated,done" />
+					</header>
+					<group colspan="4" col="9">
+						<group colspan="8" col="6">
+							<group colspan="4" col="6">
+								<group colspan="4" col="4">
+									<field name="name" class="oe_inline" />
+									<field name="customer_id" domain="[('is_company', '=', True), ('is_customer', '=', True), ('can_be_delivered', '=', True)]" context="{'default_is_company': True, 'default_is_customer': True, 'default_can_be_delivered': True}" />
+									<field name="selected_transporter_id" />
+									<field name="forwarding_agent_id" context="{'default_is_company': True}" />
+								</group>
+								<group colspan="2" col="2">
+									<field name="incoterm_id" attrs="{'readonly':['|', ('picking_ids', '!=', []), ('state', 'in', ['ready', 'canceled', 'sent'])]}" />
+									<field name="desired_departure_date" />
+									<field name="desired_arrival_date" />
+								</group>
+							</group>
+							<notebook colspan="6">
+								<page string="Delivery orders" name="delivery_orders">
+									<group name="delivery_orders">
+										<field name="picking_ids" widget="many2many" nolabel="1" domain="[
+												('incoterm_id', '=', incoterm_id), 
+												('street', '=', street), 
+												('street2', '=', street2), 
+												('zip', '=', zip), 
+												('city', '=', city), 
+												('region_id', '=', region_id), 
+												('country_id', '=', country_id), 
+												('address_name', '=', address_name), 
+												('forwarding_agent_id', '=', forwarding_agent_id),
+                                                ('shipment_id', '=', False), 
+                                                ('type', '=', 'out')
+											]" context="{'form_view_ref':'stock.view_form_stock_picking_out'}">
+											<tree edit="false">
+												<field name="name" />
+												<field name="partner_id" />
+												<field name="origin" />
+												<field name="date_expected" />
+												<field name="backorder_id" />
+												<field name="availability" widget="progressbar" />
+												<field name="invoice_state" />
+												<field name="state" />
+												<field name="shipment_state_related" invisible="1" />
+<!-- 												<button name="remove_from_shipment" type="object" string="Remove" attrs="{'invisible': [('shipment_state_related', '!=', 'draft')]}" /> -->
+											</tree>
+										</field>
+									</group>
+									<group string="Synthesis" name="synthesis" colspan="4" col="8">
+										<field name="pallet_type_id" colspan="4" />
+										<newline name="after_pallet_type" />
+										<field name="pallet_number" />
+										<field name="package_number" />
+										<field name="label_number" />
+										<field name="weight" />
+										<field name="length" />
+										<field name="width" />
+										<field name="height" />
+										<group colspan="2" col="25">
+											<field name="volume" colspan="24" />
+											<button name="%(action_volume_calculate)d" type="action" string="" class="oe_inline oe_stat_button" icon="fa-calculator" colspan="1" />
+										</group>
+										<field name="shipment_comments" colspan="8" />
+									</group>
+                                    <group string="Dates" name="synthesis" colspan="4" col="4">
+                                        <group colspan="4" col="6">
+                                            <field name="delay" />
+                                            <field name="forecast_departure_date" />
+                                            <field name="forecast_arrival_date" />
+                                            <label string="" />
+                                            <label string="" />
+                                            <field name="real_departure_date" />
+                                            <field name="real_arrival_date" />
+                                        </group>
+                                    </group>
+								</page>
+								<page string="Transport" name="transport">
+									<group>
+										<field name="carrier_ids" nolabel="1">
+											<tree editable="top" colors="blue:price_quote_deadline_send==True">
+												<field name="transporter_id" domain="[('is_transporter', '=', True)]" />
+												<button type="object" name="action_mail_transport" string="Price quote/deadline" icon="fa-envelope" class="oe_inline oe_stat_button" />
+												<field name="sinfo_id" attrs="{'readonly':[('transporter_id', '=', False)]}" domain="[('partner_id', '=', transporter_id)]" />
+												<field name="total_price" />
+												<field name="delay" />
+												<field name="currency_id" />
+												<field name="departure_date" />
+												<field name="arrival_date" />
+												<field name="selected" readonly="1" />
+												<field name="shipment_state" invisible="1" />
+												<button name="select" type="object" string="Select" attrs="{'invisible': ['|', ('selected', '=', True), ('shipment_state', '!=', 'draft')]}" />
+												<field name="price_quote_deadline_send" invisible="1" />
+											</tree>
+										</field>
+									</group>
+									<group string="Transporter" colspan="4" col="6">
+										<field name="real_departure_date" />
+										<separator />
+										<separator />
+										<field name="insurance_value" />
+										<field name="transporter_contact_id" options="{'no_create': True}" />
+										<field name="transport_cost" />
+										<field name="transporter_comments" colspan="6" />
+									</group>
+								</page>
+								<page string="Addresses" name="addresses">
+									<group colspan="4" col="4">
+										<group colspan="2" col="4" string="Customer address">
+											<field name="address_id" domain="[('partner_address_id', '=', customer_id)]" colspan="4" />
+											<field name="address_name" colspan="4" />
+											<field name="street" colspan="4" />
+											<field name="street2" colspan="4" />
+											<field name="street3" colspan="4" />
+											<field name="zip" />
+											<field name="city" />
+											<field name="region_id" domain="[('country_id','=',country_id)]" />
+											<field name="country_id" />
+											<field name="grand_export_invoiced" invisible="1" />
+										</group>
+										<group colspan="2" col="4" string="Forwarding agent address">
+											<field name="forwarding_agent_address_id" domain="[('partner_address_id', '=', forwarding_agent_id)]" colspan="4" />
+											<field name="forwarding_agent_address_name" colspan="4" />
+											<field name="forwarding_agent_street" colspan="4" />
+											<field name="forwarding_agent_street2" colspan="4" />
+											<field name="forwarding_agent_street3" colspan="4" />
+											<field name="forwarding_agent_zip" />
+											<field name="forwarding_agent_city" />
+											<field name="forwarding_agent_region_id" domain="[('country_id', '=', forwarding_agent_country_id)]" />
+											<field name="forwarding_agent_country_id" />
+										</group>
+									</group>
+								</page>
+								<page string="Invoices">
+									<group colspan="4" col="4" string="Invoices">
+										<field name="invoice_ids" nolabel="1" colspan="4" />
+									</group>
+								</page>
+								<page string="Mail">
+									<group colspan="4" col="4" string="Mail">
+										<field name="mail_ids" nolabel="1" colspan="4" />
+									</group>
+								</page>
+								<page string="EDI" groups="edi_openprod.group_edi_openprod">
+									<group colspan="2" col="4" string="Shipping advice">
+										<field name="shipment_processing_id" colspan="4" />
+										<field name="shipment_processing_start_date" />
+										<field name="shipment_processing_end_date" />
+										<field name="shipment_processing_state" colspan="4" />
+										<button type="object" colspan="4" name="run_processing" string="Resend" context="{'processing_field': 'shipment_processing_id'}" />
+									</group>
+									<group colspan="2" col="4" string="Carrier processing">
+										<field name="carrier_processing_id" colspan="4" />
+										<field name="carrier_processing_start_date" />
+										<field name="carrier_processing_end_date" />
+										<field name="carrier_processing_state" colspan="4" />
+										<button type="object" colspan="4" name="run_processing" string="Resend" context="{'processing_field': 'carrier_processing_id'}" />
+									</group>
+								</page>
+							</notebook>
+						</group>
+						<group colspan="1" col="1" class="op_shortcuts" name="shipment_action_menu">
+							<separator string="Actions" colspan="1" name="separator_action_menu" />
+							<button name="unselect" type="object" class="oe_inline oe_stat_button" string="Unselect" attrs="{'invisible': ['|', ('selected_transporter_id', '=', False), ('state', '!=', 'draft')]}" icon="fa-ban" />
+							<button name="action_send_mail" type="object" string="Send Mail" class="oe_inline oe_stat_button" icon="fa-envelope" />
+							<button name="create_invoice" type="object" string="Major export invoice" class="oe_inline oe_stat_button" icon="fa-usd" attrs="{'invisible': ['|', ('state', '!=', 'validated')]}" />
+						</group>
+					</group>
+				</form>
+			</field>
+		</record>
+
+		<!-- TREE VIEW Shipment -->
+		<record id='view_tree_shipment' model='ir.ui.view'>
+			<field name="name">view_tree_shipment</field>
+			<field name="model">shipment</field>
+			<field name="arch" type="xml">
+				<tree string="Shipments" version="8.0" create="true">
+					<field name="name" />
+					<field name="state" />
+					<field name="customer_id" />
+					<field name="incoterm_id" />
+					<field name="street" />
+					<field name="street2" />
+					<field name="street3" />
+					<field name="zip" />
+					<field name="city" />
+					<field name="region_id" />
+					<field name="country_id" />
+				</tree>
+			</field>
+		</record>
+
+		<!-- SEARCH VIEW Shipment -->
+		<record id='view_search_shipment' model='ir.ui.view'>
+			<field name="name">view_search_shipment</field>
+			<field name="model">shipment</field>
+			<field name="arch" type="xml">
+				<search version="8.0">
+				</search>
+			</field>
+		</record>
+
+		<!-- ACTION Shipment -->
+		<record id="act_shipment" model="ir.actions.act_window">
+			<field name="name">Shipment</field>
+			<field name="res_model">shipment</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+			<field name="domain">[]</field>
+			<field name="context">{}</field>
+			<field name="search_view_id" ref="view_search_shipment" />
+		</record>
+
+		<menuitem name="Shipment" action="act_shipment" id="menu_shipment" parent="stock.menu_stock_stock_out" sequence="40" groups="stock.group_menu_delivery_order" />
+
+
+		<!-- FORM VIEW Pallet type -->
+		<record id='view_form_stock_pallet_type' model='ir.ui.view'>
+			<field name="name">view_form_stock_pallet_type</field>
+			<field name="model">stock.pallet.type</field>
+			<field name="arch" type="xml">
+				<form string="Pallet type" version="8.0">
+					<sheet>
+						<group colspan="4" col="4">
+							<field name="name" />
+							<field name="active" />
+							<field name="length" />
+							<field name="width" />
+						</group>
+					</sheet>
+				</form>
+			</field>
+		</record>
+
+		<!-- TREE VIEW Pallet type -->
+		<record id='view_tree_stock_pallet_type' model='ir.ui.view'>
+			<field name="name">view_tree_stock_pallet_type</field>
+			<field name="model">stock.pallet.type</field>
+			<field name="arch" type="xml">
+				<tree string="Pallet types" version="8.0">
+					<field name="name" />
+					<field name="length" />
+					<field name="width" />
+					<field name="active" />
+				</tree>
+			</field>
+		</record>
+
+		<!-- SEARCH VIEW Pallet type -->
+		<record id='view_search_stock_pallet_type' model='ir.ui.view'>
+			<field name="name">view_search_stock_pallet_type</field>
+			<field name="model">stock.pallet.type</field>
+			<field name="arch" type="xml">
+				<search version="8.0">
+					<field name="name" />
+				</search>
+			</field>
+		</record>
+
+		<!-- ACTION Pallet type -->
+		<record id="act_stock_pallet_type" model="ir.actions.act_window">
+			<field name="name">Pallet type</field>
+			<field name="res_model">stock.pallet.type</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+			<field name="search_view_id" ref="view_search_stock_pallet_type" />
+		</record>
+
+		<menuitem name="Pallet type" action="act_stock_pallet_type" id="menu_stock_pallet_type" parent="stock.menu_stock_configuration" />
+	</data>
+</openerp>

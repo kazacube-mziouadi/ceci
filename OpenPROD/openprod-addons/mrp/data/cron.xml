@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data noupdate="1">
+		<record id="ir_cron_mrp_prices" model="ir.cron">
+			<field name="name">Compute all routings and BoMs prices</field>
+			<field name="interval_number">1</field>
+			<field name="interval_type">months</field>
+			<field name="numbercall">-1</field>
+			<field name="doall" eval="False" />
+			<field name="active" eval="False" />
+			<field name="model">mrp.bom</field>
+			<field name="function">action_compute_all_prices</field>
+		</record>
+    </data>
+</openerp>

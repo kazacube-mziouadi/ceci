@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+        <record id="view_form_stock_config_setting" model="ir.ui.view">
+            <field name="name">view_form_stock_config_setting</field>
+            <field name="inherit_id" ref="stock.stock_config_settings" />
+            <field name="model">stock.config.settings</field>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='depreciation_coeff_2y']" position="after">
+                    <field name="declaration_grouping_flag" />
+                    <field name="label_consumption_grouping_flag" />
+                </xpath>
+            </field>
+        </record>
+    </data>
+</openerp>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+		<record id="view_form_wo_change_mo_qty" model="ir.ui.view">
+			<field name="name">view_form_wo_change_mo_qty</field>
+			<field name="model">wo.change.mo.qty</field>
+			<field name="type">form</field>
+			<field name="arch" type="xml">
+				<form string="Change ManufacturingOrder Quantity" version="8.0">
+					<group colspan="4" col="4">
+						<field name="old_qty" colspan="4" />
+						<field name="new_qty" />
+						<field name="factor" />
+						<field name="spread" attrs="{'invisible':[('is_mo', '=', True)]}" />
+						<field name="is_mo" invisible="1" />
+					</group>
+					<footer>
+						<button name="action_validation" string="OK" type="object" class="oe_highlight" />
+						or
+						<button string="Cancel" class="oe_link" special="cancel" />
+					</footer>
+				</form>
+			</field>
+		</record>
+	     	<record model="ir.actions.act_window" id="act_wo_change_mo_qty">
+			<field name="name">Change ManufacturingOrder Quantity</field>
+			<field name="res_model">wo.change.mo.qty</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">form</field>
+			<field name="target">new</field>
+		</record>
+	</data>
+</openerp>

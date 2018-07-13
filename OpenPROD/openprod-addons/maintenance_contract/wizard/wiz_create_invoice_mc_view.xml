@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+		<record id="view_form_wiz_create_invoice_mc" model="ir.ui.view">
+            <field name="name">view_form_wiz_create_invoice_mc</field>
+            <field name="model">wiz.create.invoice.mc</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Create invoice maintenance contract" version="8.0">
+                    <group colspan="4" col="4">
+	                    <field name="maintenance_contract_id" invisible="1" />
+	                    <field name="end_date" />
+                    </group>
+                    <footer>
+                        <button name="action_validation" string="OK" type="object" class="oe_highlight" />
+                        or
+                        <button string="Cancel" class="oe_link" special="cancel" />
+                    </footer>
+                </form>
+            </field>
+        </record>
+         
+         <record model="ir.actions.act_window" id="act_wiz_create_invoice_mc">
+            <field name="name">Create invoice maintenance contract</field>
+            <field name="res_model">wiz.create.invoice.mc</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+
+	</data>
+</openerp>
